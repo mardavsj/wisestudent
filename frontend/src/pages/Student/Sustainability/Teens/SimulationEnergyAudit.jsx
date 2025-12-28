@@ -84,7 +84,7 @@ const SimulationEnergyAudit = () => {
       options: [
         { id: "b", text: "Run constantly", emoji: "🔄", isCorrect: false },
         { id: "a", text: "Use efficiently", emoji: "⚡", isCorrect: true },
-        { id: "c", text: "Keep old models", emoji: " outdated", isCorrect: false },
+        { id: "c", text: "Keep old models", emoji: "📼", isCorrect: false },
         { id: "d", text: "Overload circuits", emoji: "🔌", isCorrect: false }
       ]
     },

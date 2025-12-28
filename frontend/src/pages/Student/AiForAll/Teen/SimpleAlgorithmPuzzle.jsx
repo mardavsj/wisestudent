@@ -22,32 +22,32 @@ const SimpleAlgorithmPuzzle = () => {
   const [selectedRight, setSelectedRight] = useState(null);
   const [showResult, setShowResult] = useState(false);
 
-  // Algorithm steps (left side) - 6 items
+  // AI Algorithm Steps (left side) - 6 items
   const leftItems = [
-    { id: 1, name: "Brush teeth", emoji: "🦷", description: "Clean teeth before eating" },
-    { id: 2, name: "Eat breakfast", emoji: "🍳", description: "Have a nutritious meal" },
-    { id: 3, name: "Pack school bag", emoji: "🎒", description: "Gather books and supplies" },
-    { id: 4, name: "Put on uniform", emoji: "👕", description: "Get dressed for school" },
-    { id: 5, name: "Tie shoelaces", emoji: "👟", description: "Secure footwear" }
+    { id: 5, name: "Deployment", emoji: "🚀", description: "Deploy to production" },
+    { id: 2, name: "Feature Selection", emoji: "🔍", description: "Choose relevant attributes" },
+    { id: 3, name: "Model Training", emoji: "🏋️", description: "Train the algorithm" },
+    { id: 4, name: "Testing & Validation", emoji: "🧪", description: "Validate on test data" },
+    { id: 1, name: "Data Collection", emoji: "📊", description: "Gather training data" },
   ];
 
-  // Step positions (right side) - 6 items, rearranged to split matches
+  // Algorithm Order (right side) - 6 items, rearranged to split matches
   const rightItems = [
-    { id: 1, name: "First", emoji: "1️⃣", description: "The initial step" },
-    { id: 2, name: "Fifth", emoji: "5️⃣", description: "The fifth step" },
-    { id: 3, name: "Third", emoji: "3️⃣", description: "The third step" },
-    { id: 4, name: "Fourth", emoji: "4️⃣", description: "The fourth step" },
-    { id: 5, name: "Second", emoji: "2️⃣", description: "The next step" },
+    { id: 1, name: "First", emoji: "1️⃣", description: "The beginning step" },
+    { id: 2, name: "Second", emoji: "2️⃣", description: "A middle step" },
+    { id: 3, name: "Third", emoji: "3️⃣", description: "An important step" },
+    { id: 4, name: "Fourth", emoji: "4️⃣", description: "A verification step" },
+    { id: 5, name: "Fifth", emoji: "5️⃣", description: "The final step" },
     
   ];
 
   // Correct matches (split across different positions for variety)
   const correctMatches = [
-    { leftId: 1, rightId: 1 }, // Brush teeth → First
-    { leftId: 2, rightId: 5 }, // Eat breakfast → Second
-    { leftId: 3, rightId: 4 }, // Pack school bag → Fourth
-    { leftId: 4, rightId: 3 }, // Put on uniform → Third
-    { leftId: 5, rightId: 2 }, // Tie shoelaces → Fifth
+    { leftId: 1, rightId: 1 }, // Data Collection → First
+    { leftId: 2, rightId: 2 }, // Feature Selection → Second
+    { leftId: 3, rightId: 3 }, // Model Training → Third
+    { leftId: 4, rightId: 4 }, // Testing & Validation → Fourth
+    { leftId: 5, rightId: 5 }, // Deployment → Fifth
   ];
 
   const handleLeftSelect = (item) => {
@@ -125,7 +125,7 @@ const SimpleAlgorithmPuzzle = () => {
     <GameShell
       title="Simple Algorithm Puzzle"
       score={score}
-      subtitle={showResult ? "Game Complete!" : `Match Morning Routine Steps (${matches.length}/${leftItems.length} matched)`}
+      subtitle={showResult ? "Game Complete!" : `Match AI Algorithm Steps (${matches.length}/${leftItems.length} matched)`}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -145,7 +145,7 @@ const SimpleAlgorithmPuzzle = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left column - Morning routine steps */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Morning Steps</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">AI Algorithm Steps</h3>
               <div className="space-y-4">
                 {leftItems.map(item => (
                   <button
@@ -180,7 +180,7 @@ const SimpleAlgorithmPuzzle = () => {
                 <p className="text-white/80 mb-4">
                   {selectedLeft 
                     ? `Selected: ${selectedLeft.name}` 
-                    : "Select a Morning Step"}
+                    : "Select an Algorithm Step"}
                 </p>
                 <button
                   onClick={handleMatch}
@@ -202,7 +202,7 @@ const SimpleAlgorithmPuzzle = () => {
 
             {/* Right column - Step positions */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Step Order</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">Order in Process</h3>
               <div className="space-y-4">
                 {rightItems.map(item => (
                   <button
@@ -236,7 +236,7 @@ const SimpleAlgorithmPuzzle = () => {
                 <div className="text-5xl mb-4">🎉</div>
                 <h3 className="text-2xl font-bold text-white mb-4">Algorithm Expert!</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You correctly matched {score} out of {leftItems.length} morning routine steps!
+                  You correctly matched {score} out of {leftItems.length} AI algorithm steps!
                   You understand how algorithms work!
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
@@ -251,7 +251,7 @@ const SimpleAlgorithmPuzzle = () => {
                 <div className="text-5xl mb-4">💪</div>
                 <h3 className="text-2xl font-bold text-white mb-4">Keep Practicing!</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You matched {score} out of {leftItems.length} steps correctly.
+                  You matched {score} out of {leftItems.length} algorithm steps correctly.
                   Remember, algorithms are everywhere in AI!
                 </p>
                 <button
@@ -261,7 +261,7 @@ const SimpleAlgorithmPuzzle = () => {
                   Try Again
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Think about the logical order of daily activities - what needs to happen first?
+                  Tip: In machine learning, algorithms follow a specific sequence - data collection comes first!
                 </p>
               </div>
             )}

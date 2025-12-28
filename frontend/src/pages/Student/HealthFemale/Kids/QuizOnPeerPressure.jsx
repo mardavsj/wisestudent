@@ -19,6 +19,7 @@ const QuizOnPeerPressure = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
+  const [showAnswerConfetti, setShowAnswerConfetti] = useState(false);
   const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
 
   const questions = [
@@ -90,20 +91,20 @@ const QuizOnPeerPressure = () => {
           // description: "Just because everyone does it doesn't make it safe.",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "You should still say No",
-          emoji: "🛑",
-          // description: "Yes! Safety first.",
-          isCorrect: false
-        },
+        
         {
           id: "c",
           text: "Take a picture",
           emoji: "📸",
           // description: "Focus on keeping yourself safe.",
+          isCorrect: false
+        },{
+          id: "b",
+          text: "You should still say No",
+          emoji: "🛑",
+          // description: "Yes! Safety first.",
           isCorrect: true
-        }
+        },
       ]
     },
     {
@@ -116,7 +117,7 @@ const QuizOnPeerPressure = () => {
           text: "Confidence in yourself",
           emoji: "😎",
           // description: "Correct! Trust your own feelings.",
-          isCorrect: false
+          isCorrect: true
         },
         {
           id: "b",
@@ -130,7 +131,7 @@ const QuizOnPeerPressure = () => {
           text: "Eating candy",
           emoji: "🍬",
           // description: "Candy doesn't help with pressure.",
-          isCorrect: true
+          isCorrect: false
         }
       ]
     },
@@ -177,6 +178,7 @@ const QuizOnPeerPressure = () => {
     if (isCorrect) {
       setCoins(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+      setShowAnswerConfetti(true);
     } else {
       showCorrectAnswerFeedback(0, false);
     }
@@ -188,6 +190,7 @@ const QuizOnPeerPressure = () => {
         setCurrentQuestion(prev => prev + 1);
         setSelectedOption(null);
         setShowFeedback(false);
+        setShowAnswerConfetti(false);
         resetFeedback();
       } else {
         setGameFinished(true);
@@ -211,7 +214,7 @@ const QuizOnPeerPressure = () => {
       gameType="health-female"
       totalLevels={5}
       currentLevel={62}
-      showConfetti={gameFinished}
+      showConfetti={gameFinished || showAnswerConfetti}
       backPath="/games/health-female/kids"
       maxScore={maxScore}
       coinsPerLevel={coinsPerLevel}

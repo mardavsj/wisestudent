@@ -55,13 +55,13 @@ const AiInSpaceStory = () => {
         { 
           id: "no", 
           text: "No, AI cannot assist", 
-          emoji: "❌", 
+          emoji: "🤖", 
           isCorrect: false
         },
         { 
           id: "yes", 
           text: "Yes, AI assists humans", 
-          emoji: "🧠🛰️", 
+          emoji: "🛰️", 
           isCorrect: true
         },
         { 
@@ -79,7 +79,7 @@ const AiInSpaceStory = () => {
         { 
           id: "no", 
           text: "No, AI cannot help", 
-          emoji: "❌", 
+          emoji: "👎", 
           isCorrect: false
         },
         { 
@@ -91,7 +91,7 @@ const AiInSpaceStory = () => {
         { 
           id: "yes", 
           text: "Yes, as a helper", 
-          emoji: "🧠🛸", 
+          emoji: "🛸", 
           isCorrect: true
         }
       ]
@@ -103,13 +103,13 @@ const AiInSpaceStory = () => {
         { 
           id: "ai", 
           text: "Yes, AI helps safely", 
-          emoji: "🧠🔬", 
+          emoji: "🧠", 
           isCorrect: true
         },
         { 
           id: "no", 
           text: "No, AI cannot help", 
-          emoji: "❌", 
+          emoji: "🙅", 
           isCorrect: false
         },
         { 
@@ -127,13 +127,13 @@ const AiInSpaceStory = () => {
         { 
           id: "no", 
           text: "No, humans do it alone", 
-          emoji: "❌", 
+          emoji: "🤦‍♂️", 
           isCorrect: false
         },
         { 
           id: "ai", 
           text: "Yes, AI will assist", 
-          emoji: "🧠🌍", 
+          emoji: "🌍", 
           isCorrect: true
         },
         { 

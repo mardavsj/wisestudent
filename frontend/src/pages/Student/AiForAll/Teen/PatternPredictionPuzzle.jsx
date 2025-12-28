@@ -24,31 +24,31 @@ const PatternPredictionPuzzle = () => {
 
   // Pattern sequences (left side) - 6 items
   const leftItems = [
-    { id: 1, name: "2, 4, 6, 8, ?", emoji: "🔢", description: "Even numbers increasing by 2" },
-    { id: 2, name: "5, 10, 15, 20, ?", emoji: "🔢", description: "Multiples of 5" },
-    { id: 3, name: "1, 4, 9, 16, ?", emoji: "🔢", description: "Perfect squares" },
-    { id: 4, name: "100, 90, 80, 70, ?", emoji: "🔢", description: "Decreasing by 10" },
-    { id: 5, name: "1, 1, 2, 3, 5, ?", emoji: "🔢", description: "Fibonacci sequence" }
+    { id: 1, name: "2, 4, 8, 16, ?", emoji: "🔢", description: "Powers of 2" },
+    { id: 2, name: "1, 4, 7, 10, ?", emoji: "🔢", description: "Arithmetic sequence +3" },
+    { id: 3, name: "1, 8, 27, 64, ?", emoji: "🔢", description: "Cubes of natural numbers" },
+    { id: 4, name: "100, 96, 92, 88, ?", emoji: "🔢", description: "Decreasing arithmetic -4" },
+    { id: 5, name: "2, 6, 18, 54, ?", emoji: "🔢", description: "Geometric sequence ×3" }
     
   ];
 
   // Answers (right side) - 6 items, rearranged to split matches
   const rightItems = [
-    { id: 1, name: "50", emoji: "㊿", description: "Next in decreasing sequence" },
-    { id: 2, name: "10", emoji: "🔟", description: "Next even number" },
-    { id: 3, name: "36", emoji: "㉟", description: "Next perfect square" },
-    { id: 4, name: "30", emoji: "㉞", description: "Next multiple of 5" },
-    { id: 5, name: "8", emoji: "⑧", description: "Next Fibonacci number" }
+    { id: 2, name: "13", emoji: "🔢",  },
+    { id: 3, name: "125", emoji: "🔢",  },
+    { id: 1, name: "32", emoji: "🔢",  },
+    { id: 5, name: "162", emoji: "🔢",  },
+    { id: 4, name: "84", emoji: "🔢",  },
     
   ];
 
   // Correct matches (split across different positions for variety)
   const correctMatches = [
-    { leftId: 1, rightId: 2 }, // 2,4,6,8,? → 10
-    { leftId: 2, rightId: 4 }, // 5,10,15,20,? → 30
-    { leftId: 3, rightId: 3 }, // 1,4,9,16,? → 36
-    { leftId: 4, rightId: 1 }, // 100,90,80,70,? → 50
-    { leftId: 5, rightId: 5 }, // 1,1,2,3,5,? → 8
+    { leftId: 1, rightId: 1 }, // 2,4,8,16,? → 32
+    { leftId: 2, rightId: 2 }, // 1,4,7,10,? → 13
+    { leftId: 3, rightId: 3 }, // 1,8,27,64,? → 125
+    { leftId: 4, rightId: 4 }, // 100,96,92,88,? → 84
+    { leftId: 5, rightId: 5 }, // 2,6,18,54,? → 162
   ];
 
   const handleLeftSelect = (item) => {

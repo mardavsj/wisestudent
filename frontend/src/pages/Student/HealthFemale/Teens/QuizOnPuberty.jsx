@@ -15,6 +15,7 @@ const QuizOnPuberty = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
+  const [showAnswerConfetti, setShowAnswerConfetti] = useState(false);
   const { flashPoints, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
@@ -153,6 +154,7 @@ const QuizOnPuberty = () => {
     if (isCorrect) {
       setCoins(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+      setShowAnswerConfetti(true);
     }
     
     setSelectedOption(optionId);
@@ -164,6 +166,7 @@ const QuizOnPuberty = () => {
         setSelectedOption(null);
         resetFeedback();
         setShowFeedback(false);
+        setShowAnswerConfetti(false);
       } else {
         setGameFinished(true);
       }
@@ -188,7 +191,7 @@ const QuizOnPuberty = () => {
       gameType="health-female"
       totalLevels={30}
       currentLevel={22}
-      showConfetti={gameFinished}
+      showConfetti={gameFinished || showAnswerConfetti}
       flashPoints={flashPoints}
       backPath="/games/health-female/teens"
     >

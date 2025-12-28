@@ -24,51 +24,51 @@ const RobotHelperOrVillain = () => {
     {
       id: 1,
       emoji: "🤖",
-      situation: "An old man drops his stick.",
+      situation: "A robot needs to learn how to help people.",
       choices: [
-        { id: 1, text: "Steal phone", isCorrect: false },
-        { id: 2, text: "Walk away", isCorrect: false },
-        { id: 3, text: "Help old man", isCorrect: true },
+        { id: 2, text: "Do whatever it wants", isCorrect: false },
+        { id: 3, text: "Ignore people's needs", isCorrect: false },
+        { id: 1, text: "Be kind and helpful", isCorrect: true },
       ]
     },
     {
       id: 2,
       emoji: "🤖",
-      situation: "Robot sees a lost wallet.",
+      situation: "How should we teach a robot to handle private information?",
       choices: [
-        { id: 1, text: "Return it", isCorrect: true },
-        { id: 2, text: "Keep it", isCorrect: false },
-        { id: 3, text: "Leave it", isCorrect: false }
+        { id: 1, text: "Keep secrets safe", isCorrect: true },
+        { id: 2, text: "Share everything", isCorrect: false },
+        { id: 3, text: "Forget important details", isCorrect: false }
       ]
     },
     {
       id: 3,
       emoji: "🤖",
-      situation: "Kid falls down.",
+      situation: "What should a robot do when it sees someone in need?",
       choices: [
-        { id: 1, text: "Help kid", isCorrect: true },
-        { id: 2, text: "Laugh", isCorrect: false },
-        { id: 3, text: "Record video", isCorrect: false }
+        { id: 1, text: "Offer help", isCorrect: true },
+        { id: 2, text: "Make fun of them", isCorrect: false },
+        { id: 3, text: "Pretend not to see", isCorrect: false }
       ]
     },
     {
       id: 4,
       emoji: "🤖",
-      situation: "Robot finds a phone on road.",
+      situation: "How should we program a robot to make decisions?",
       choices: [
-        { id: 1, text: "Steal phone", isCorrect: false },
-        { id: 2, text: "Give to owner", isCorrect: true },
-        { id: 3, text: "Sell it online", isCorrect: false }
+        { id: 2, text: "Do whatever is easiest", isCorrect: false },
+        { id: 1, text: "Follow good values", isCorrect: true },
+        { id: 3, text: "Trick people sometimes", isCorrect: false }
       ]
     },
     {
       id: 5,
       emoji: "🤖",
-      situation: "Someone needs directions.",
+      situation: "How can we make sure a robot is trustworthy?",
       choices: [
-        { id: 1, text: "Guide them", isCorrect: true },
-        { id: 2, text: "Ignore", isCorrect: false },
-        { id: 3, text: "Give wrong directions", isCorrect: false }
+        { id: 2, text: "Let it lie when needed", isCorrect: false },
+        { id: 3, text: "Not important to teach honesty", isCorrect: false },
+        { id: 1, text: "Teach it to be honest", isCorrect: true },
       ]
     }
   ];

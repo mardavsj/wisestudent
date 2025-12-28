@@ -21,52 +21,52 @@ const SelfDrivingCar = () => {
   const signals = [
     {
       id: 1,
-      light: "green",
-      emoji: "🟢",
+      light: "school-zone",
+      emoji: "🎓",
       choices: [
-        { id: 1, text: "Go", emoji: "▶️", isCorrect: true },
-        { id: 2, text: "Brake", emoji: "🛑", isCorrect: false },
-        { id: 3, text: "Slow Down", emoji: "⚠️", isCorrect: false }
+        { id: 2, text: "Honk Horn", emoji: "📢", isCorrect: false },
+        { id: 3, text: "Speed Up", emoji: "⚡", isCorrect: false },
+        { id: 1, text: "Slow Down", emoji: "⚠️", isCorrect: true },
       ]
     },
     {
       id: 2,
-      light: "red",
-      emoji: "🔴",
+      light: "construction",
+      emoji: "🚧",
       choices: [
-        { id: 1, text: "Speed Up", emoji: "⚡", isCorrect: false },
-        { id: 2, text: "Brake", emoji: "🛑", isCorrect: true },
-        { id: 3, text: "Go", emoji: "▶️", isCorrect: false }
+        { id: 1, text: "Stop and Wait", emoji: "✋", isCorrect: true },
+        { id: 2, text: "Keep Driving", emoji: "🚗", isCorrect: false },
+        { id: 3, text: "Change Lane", emoji: "🔄", isCorrect: false }
       ]
     },
     {
       id: 3,
-      light: "green",
-      emoji: "🟢",
+      light: "pedestrian",
+      emoji: "🚶",
       choices: [
-        { id: 1, text: "Stop", emoji: "✋", isCorrect: false },
-        { id: 2, text: "Slow Down", emoji: "⚠️", isCorrect: false },
-        { id: 3, text: "Go", emoji: "▶️", isCorrect: true }
+        { id: 2, text: "Go Fast Before They Cross", emoji: "⚡", isCorrect: false },
+        { id: 1, text: "Stop and Let Them Cross", emoji: "✋", isCorrect: true },
+        { id: 3, text: "Honk to Warn Them", emoji: "📢", isCorrect: false }
       ]
     },
     {
       id: 4,
-      light: "red",
-      emoji: "🔴",
+      light: "emergency",
+      emoji: "🚑",
       choices: [
-        { id: 1, text: "Go", emoji: "▶️", isCorrect: false },
-        { id: 2, text: "Honk", emoji: "📢", isCorrect: false },
-        { id: 3, text: "Brake", emoji: "🛑", isCorrect: true }
+        { id: 1, text: "Pull Over and Stop", emoji: "🛑", isCorrect: true },
+        { id: 2, text: "Keep Driving", emoji: "🚗", isCorrect: false },
+        { id: 3, text: "Speed Up to Get Out of the Way", emoji: "⚡", isCorrect: false }
       ]
     },
     {
       id: 5,
-      light: "red",
-      emoji: "🔴",
+      light: "weather",
+      emoji: "🌧️",
       choices: [
-        { id: 1, text: "Brake", emoji: "🛑", isCorrect: true },
-        { id: 2, text: "Go", emoji: "▶️", isCorrect: false },
-        { id: 3, text: "Turn Left", emoji: "⬅️", isCorrect: false }
+        { id: 2, text: "Drive Normally", emoji: "🚗", isCorrect: false },
+        { id: 3, text: "Stop and Wait for Rain to Stop", emoji: "✋", isCorrect: false },
+        { id: 1, text: "Drive Slowly and Carefully", emoji: "🐢", isCorrect: true },
       ]
     }
   ];
@@ -123,7 +123,7 @@ const SelfDrivingCar = () => {
     <GameShell
       title="Self-Driving Car Game"
       score={score}
-      subtitle={showResult ? "Game Complete!" : `Signal ${currentSignal + 1} of ${signals.length}`}
+      subtitle={showResult ? "Game Complete!" : `Scenario ${currentSignal + 1} of ${signals.length}`}
       onNext={handleNext}
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
@@ -176,7 +176,7 @@ const SelfDrivingCar = () => {
                   <span>+{coins} Coins</span>
                 </div>
                 <p className="text-white/80">
-                  💡 Self-driving cars use AI to make decisions! They recognize traffic lights and drive safely!
+                  💡 Self-driving cars use AI to make smart decisions in different situations! They recognize road signs, pedestrians, and emergencies!
                 </p>
               </div>
             ) : (
@@ -194,7 +194,7 @@ const SelfDrivingCar = () => {
                   Try Again
                 </button>
                 <p className="text-white/80 text-sm">
-                  💡 Self-driving cars use AI to make decisions! They recognize traffic lights and drive safely!
+                  💡 Self-driving cars use AI to make smart decisions in different situations! They recognize road signs, pedestrians, and emergencies!
                 </p>
               </div>
             )}

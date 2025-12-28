@@ -19,7 +19,8 @@ const QuizOnHygiene = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
+  const [showAnswerConfetti, setShowAnswerConfetti] = useState(false);
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
 
   const questions = [
     {
@@ -62,20 +63,21 @@ const QuizOnHygiene = () => {
           // description: "Water alone doesn't kill germs.",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "Soap and Water",
-          emoji: "🧼",
-          // description: "Correct! Soap fights the germs.",
-          isCorrect: false
-        },
+        
         {
           id: "c",
           text: "A towel only",
           emoji: "🧖‍♀️",
           // description: "A towel dries, but doesn't clean.",
+          isCorrect: false
+        },
+        {
+          id: "b",
+          text: "Soap and Water",
+          emoji: "🧼",
+          // description: "Correct! Soap fights the germs.",
           isCorrect: true
-        }
+        },
       ]
     },
     {
@@ -84,19 +86,20 @@ const QuizOnHygiene = () => {
       emoji: "🦷",
       options: [
         {
-          id: "a",
-          text: "Before breakfast",
-          emoji: "🌅",
-          // description: "Good start, but do it twice a day.",
-          isCorrect: true
-        },
-        {
           id: "b",
           text: "Morning and Night",
           emoji: "🦷",
           // description: "Perfect! Twice a day keeps cavities away.",
+          isCorrect: true
+        },
+        {
+          id: "a",
+          text: "Before breakfast",
+          emoji: "🌅",
+          // description: "Good start, but do it twice a day.",
           isCorrect: false
         },
+        
         {
           id: "c",
           text: "Only if you ate candy",
@@ -109,7 +112,7 @@ const QuizOnHygiene = () => {
     {
       id: 4,
       text: "Why do we wear clean underwear every day?",
-      emoji: "🩲",
+      emoji: "🧼",
       options: [
         
         {
@@ -129,7 +132,7 @@ const QuizOnHygiene = () => {
         {
           id: "a",
           text: "To stop germs and odors",
-          emoji: "🩲",
+          emoji: "😷",
           // description: "Exactly! It keeps your private parts healthy.",
           isCorrect: true
         },
@@ -178,6 +181,7 @@ const QuizOnHygiene = () => {
     if (isCorrect) {
       setCoins(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+      setShowAnswerConfetti(true);
     } else {
       showCorrectAnswerFeedback(0, false);
     }
@@ -189,6 +193,7 @@ const QuizOnHygiene = () => {
         setCurrentQuestion(prev => prev + 1);
         setSelectedOption(null);
         setShowFeedback(false);
+        setShowAnswerConfetti(false);
         resetFeedback();
       } else {
         setGameFinished(true);
@@ -212,12 +217,13 @@ const QuizOnHygiene = () => {
       gameType="health-female"
       totalLevels={5}
       currentLevel={42}
-      showConfetti={gameFinished}
+      showConfetti={gameFinished || showAnswerConfetti}
       backPath="/games/health-female/kids"
       maxScore={maxScore}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      flashPoints={flashPoints}>
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         {!gameFinished && questions[currentQuestion] ? (
           <div className="space-y-6">

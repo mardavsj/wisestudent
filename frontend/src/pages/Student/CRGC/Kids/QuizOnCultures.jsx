@@ -15,6 +15,7 @@ const QuizOnCultures = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
+  const [showAnswerConfetti, setShowAnswerConfetti] = useState(false);
   const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
 
   const questions = [
@@ -98,7 +99,7 @@ const QuizOnCultures = () => {
     {
       id: 4,
       text: "Which of these is a traditional greeting in Japan?",
-      emoji: "🇯🇵",
+      emoji: "🏯",
       options: [
         {
           id: "a",
@@ -160,6 +161,7 @@ const QuizOnCultures = () => {
     if (isCorrect) {
       setCoins(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+      setShowAnswerConfetti(true);
     } else {
       showCorrectAnswerFeedback(0, false);
     }
@@ -171,6 +173,7 @@ const QuizOnCultures = () => {
         setCurrentQuestion(prev => prev + 1);
         setSelectedOption(null);
         setShowFeedback(false);
+        setShowAnswerConfetti(false);
         resetFeedback();
       } else {
         setGameFinished(true);
@@ -197,7 +200,7 @@ const QuizOnCultures = () => {
       gameType="civic-responsibility"
       totalLevels={90}
       currentLevel={82}
-      showConfetti={gameFinished}
+      showConfetti={gameFinished || showAnswerConfetti}
       backPath="/games/civic-responsibility/kids"
       maxScore={questions.length} // Max score is total number of questions (all correct)
       coinsPerLevel={coinsPerLevel}

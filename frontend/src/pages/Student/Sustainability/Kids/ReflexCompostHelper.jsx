@@ -34,7 +34,7 @@ const questions = [
     text: "What's compostable?",
     options: [
       { id: 'a', text: " Coffee Grounds", emoji: "☕", isCorrect: true },
-      { id: 'b', text: " Plastic Wrap", emoji: "Wrapper", isCorrect: false },
+      { id: 'b', text: " Plastic Wrap", emoji: "🩹", isCorrect: false },
       { id: 'c', text: " Oil", emoji: "⛽", isCorrect: false },
       { id: 'd', text: " Chemicals", emoji: "🧪", isCorrect: false }
     ]

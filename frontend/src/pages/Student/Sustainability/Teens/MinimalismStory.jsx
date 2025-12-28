@@ -53,7 +53,7 @@ const MinimalismStory = () => {
   // Log when game completes and update location state with nextGameId
   useEffect(() => {
     if (showResult) {
-      console.log(`🎮 Minimalism Story game completed! Score: ${score}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
+      console.log(`🎮 Minimalism Story game completed! Score: ${coins}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
       if (nextGameId && window.history && window.history.replaceState) {
         const currentState = window.history.state || {};
         window.history.replaceState({
@@ -62,16 +62,17 @@ const MinimalismStory = () => {
         }, '');
       }
     }
-  }, [showResult, score, gameId, nextGamePath, nextGameId]);
+  }, [showResult, coins, gameId, nextGamePath, nextGameId]);
 
   const questions = [
     {
       id: 1,
       text: "You want to declutter. How do you do it sustainably?",
       options: [
-        { id: "a", text: "Donate usable items to charity", emoji: "🤝", isCorrect: true },
+       
         { id: "b", text: "Throw everything in the trash", emoji: "🗑️", isCorrect: false },
-        { id: "c", text: "Sell items online", emoji: "💰", isCorrect: false }
+        { id: "c", text: "Sell items online", emoji: "💰", isCorrect: false },
+         { id: "a", text: "Donate usable items to charity", emoji: "🤝", isCorrect: true },
       ]
     },
     {
@@ -87,17 +88,19 @@ const MinimalismStory = () => {
       id: 3,
       text: "How can minimalism help the environment?",
       options: [
+       
         { id: "b", text: "Increases spending", emoji: "💸", isCorrect: false },
-        { id: "a", text: "Reduces consumption and waste", emoji: "🌍", isCorrect: true },
-        { id: "c", text: "Has no environmental impact", emoji: "❓", isCorrect: false }
+        { id: "c", text: "Has no environmental impact", emoji: "❓", isCorrect: false },
+         { id: "a", text: "Reduces consumption and waste", emoji: "🌍", isCorrect: true },
       ]
     },
     {
       id: 4,
       text: "What should you consider before buying something new?",
       options: [
-        { id: "a", text: "Do I really need this?", emoji: "🤔", isCorrect: true },
+        
         { id: "b", text: "Is it trendy?", emoji: "✨", isCorrect: false },
+        { id: "a", text: "Do I really need this?", emoji: "🤔", isCorrect: true },
         { id: "c", text: "How expensive is it?", emoji: "💰", isCorrect: false }
       ]
     },
@@ -105,9 +108,9 @@ const MinimalismStory = () => {
       id: 5,
       text: "How can you maintain a minimalist lifestyle?",
       options: [
+        { id: "a", text: "Buy only what you need", emoji: "✅", isCorrect: true },
         { id: "b", text: "Always buy the latest items", emoji: "🆕", isCorrect: false },
         { id: "c", text: "Collect many things", emoji: "📦", isCorrect: false },
-        { id: "a", text: "Buy only what you need", emoji: "✅", isCorrect: true },
       ]
     }
   ];

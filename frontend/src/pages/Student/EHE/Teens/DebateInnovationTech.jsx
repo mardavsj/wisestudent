@@ -160,7 +160,22 @@ const DebateInnovationTech = () => {
     }, 1500);
   };
 
-  const getCurrentQuestion = () => questions[currentQuestion];
+  const getCurrentQuestion = () => {
+    // If game is finished, return the last question
+    if (gameFinished && questions.length > 0) {
+      return questions[questions.length - 1];
+    }
+    // If currentQuestion is within bounds, return the current question
+    if (currentQuestion >= 0 && currentQuestion < questions.length) {
+      return questions[currentQuestion];
+    }
+    // Fallback: return the first question if somehow currentQuestion is negative
+    if (questions.length > 0) {
+      return questions[0];
+    }
+    // If no questions exist, return a default object
+    return { text: '', options: [] };
+  };
 
   const handleNext = () => {
     navigate("/student/ehe/teens/journal-teen-innovation");

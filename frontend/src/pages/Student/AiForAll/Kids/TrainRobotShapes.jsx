@@ -28,52 +28,58 @@ const TrainRobotShapes = () => {
   const items = [
     {
       id: 1,
-      name: "Red Circle",
-      emoji: "🔴",
+      name: "Snowflake",
+      emoji: "❄️",
+      question: "The robot is building a winter wonderland! Which container should hold this 6-pointed snowflake?",
       choices: [
-        { id: 1, text: "Circle Box", shape: "circle", isCorrect: true },
-        { id: 2, text: "Triangle Box", shape: "triangle", isCorrect: false },
-        { id: 3, text: "Square Box", shape: "square", isCorrect: false }
+        { id: 2, text: "Star", shape: "star", isCorrect: false },
+        { id: 1, text: "Hexagon", shape: "hexagon", isCorrect: true },
+        { id: 3, text: "Crescent", shape: "crescent", isCorrect: false }
       ]
     },
     {
       id: 2,
-      name: "Blue Triangle",
-      emoji: "🔺",
+      name: "Stop Sign",
+      emoji: "🛑",
+      question: "The robot is organizing road signs! What shape is this stop sign?",
       choices: [
-        { id: 1, text: "Circle Box", shape: "circle", isCorrect: false },
-        { id: 2, text: "Triangle Box", shape: "triangle", isCorrect: true },
-        { id: 3, text: "Rectangle Box", shape: "rectangle", isCorrect: false }
+        { id: 1, text: "Octagon", shape: "octagon", isCorrect: true },
+        { id: 2, text: "Hexagon", shape: "hexagon", isCorrect: false },
+        { id: 3, text: "Circle", shape: "circle", isCorrect: false }
       ]
     },
     {
       id: 3,
-      name: "Green Circle",
-      emoji: "🟢",
+      name: "Yield Sign",
+      emoji: "⚠️",
+      question: "The robot is sorting traffic signs! This yield sign has a special triangle shape. Where should it go?",
       choices: [
-        { id: 1, text: "Square Box", shape: "square", isCorrect: false },
-        { id: 2, text: "Circle Box", shape: "circle", isCorrect: true },
-        { id: 3, text: "Triangle Box", shape: "triangle", isCorrect: false }
+        { id: 3, text: "Diamond", shape: "diamond", isCorrect: false },
+        { id: 1, text: "Inverted Triangle", shape: "inverted-triangle", isCorrect: false },
+        { id: 2, text: "Regular Triangle", shape: "triangle", isCorrect: true },
       ]
     },
     {
       id: 4,
-      name: "Yellow Triangle",
-      emoji: "🔻",
+      name: "Hourglass",
+      emoji: "⏳",
+      question: "The robot is organizing time tools! This hourglass has two triangle shapes stacked together. Where should it go?",
       choices: [
-        { id: 1, text: "Rectangle Box", shape: "rectangle", isCorrect: false },
-        { id: 2, text: "Circle Box", shape: "circle", isCorrect: false },
-        { id: 3, text: "Triangle Box", shape: "triangle", isCorrect: true }
+        { id: 2, text: "Rectangle Box", shape: "rectangle", isCorrect: false },
+        { id: 1, text: "Two-Triangle Box", shape: "two-triangles", isCorrect: true },
+        { id: 3, text: "Circle Box", shape: "circle", isCorrect: false }
       ]
     },
     {
       id: 5,
-      name: "Purple Circle",
-      emoji: "🟣",
+      name: "Starfish",
+      emoji: "⭐",
+      question: "The robot is organizing sea creatures! This starfish has five arms. What shape box should it go in?",
       choices: [
-        { id: 1, text: "Triangle Box", shape: "triangle", isCorrect: false },
-        { id: 2, text: "Square Box", shape: "square", isCorrect: false },
-        { id: 3, text: "Circle Box", shape: "circle", isCorrect: true }
+       
+        { id: 2, text: "Pentagon Box", shape: "pentagon", isCorrect: false },
+        { id: 3, text: "Circle Box", shape: "circle", isCorrect: false },
+         { id: 1, text: "Star Box", shape: "star", isCorrect: true },
       ]
     }
   ];
@@ -128,7 +134,7 @@ const TrainRobotShapes = () => {
 
   return (
     <GameShell
-      title="Train Robot Shapes"
+      title="Train Robot: Shape Scenarios"
       score={score}
       subtitle={showResult ? "Game Complete!" : `Item ${currentItem + 1} of ${items.length}`}
       onNext={handleNext}
@@ -151,7 +157,7 @@ const TrainRobotShapes = () => {
         {!showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
             <h3 className="text-white text-xl font-bold mb-6 text-center">
-              Drag the item to the correct shape box!
+              {currentItemData.question}
             </h3>
 
             <div className="bg-white/10 rounded-lg p-12 mb-6 flex justify-center items-center">

@@ -32,13 +32,13 @@ const AIorHumanQuiz = () => {
           id: "ai", 
           text: "AI", 
           emoji: "🤖", 
-          isCorrect: true
+          isCorrect: false
         },
         { 
           id: "human", 
           text: "Human", 
           emoji: "🧑", 
-          isCorrect: false
+          isCorrect: true
         },
         { 
           id: "both", 
@@ -52,18 +52,19 @@ const AIorHumanQuiz = () => {
       id: 2,
       text: "Who paints realistic portraits faster — AI or Human?",
       options: [
+         { 
+          id: "ai", 
+          text: "AI", 
+          emoji: "🤖", 
+          isCorrect: true
+        },
         { 
           id: "maybe", 
           text: "Maybe", 
           emoji: "🤔", 
           isCorrect: false
         },
-        { 
-          id: "ai", 
-          text: "AI", 
-          emoji: "🤖", 
-          isCorrect: true
-        },
+       
         { 
           id: "human", 
           text: "Human", 
@@ -86,13 +87,13 @@ const AIorHumanQuiz = () => {
           id: "human", 
           text: "Human", 
           emoji: "🧑", 
-          isCorrect: false
+          isCorrect: true
         },
         { 
           id: "ai", 
           text: "AI", 
           emoji: "🤖", 
-          isCorrect: true
+          isCorrect: false
         }
       ]
     },

@@ -13,9 +13,9 @@ const questions = [
     id: 1,
     text: "Which is an emerging green technology?",
     options: [
-      { id: 'a', text: " Solar panels", emoji: "☀️", isCorrect: true },
       { id: 'b', text: " Coal mining", emoji: "⛏️", isCorrect: false },
       { id: 'c', text: " Oil drilling", emoji: "🛢️", isCorrect: false },
+      { id: 'a', text: " Solar panels", emoji: "☀️", isCorrect: true },
       { id: 'd', text: " Gas extraction", emoji: "⛽", isCorrect: false }
     ]
   },
@@ -23,8 +23,8 @@ const questions = [
     id: 2,
     text: "What's a new energy storage technology?",
     options: [
-      { id: 'a', text: " Lithium batteries", emoji: "🔋", isCorrect: true },
       { id: 'b', text: " Coal storage", emoji: "🏭", isCorrect: false },
+      { id: 'a', text: " Lithium batteries", emoji: "🔋", isCorrect: true },
       { id: 'c', text: " Oil tanks", emoji: "🛢️", isCorrect: false },
       { id: 'd', text: " Gas pipelines", emoji: "⛽", isCorrect: false }
     ]
@@ -33,10 +33,10 @@ const questions = [
     id: 3,
     text: "Which technology improves energy efficiency?",
     options: [
-      { id: 'a', text: " Smart thermostats", emoji: "🌡️", isCorrect: true },
       { id: 'b', text: " Old light bulbs", emoji: "💡", isCorrect: false },
       { id: 'c', text: " Gas heaters", emoji: "🔥", isCorrect: false },
-      { id: 'd', text: " Coal stoves", emoji: "🏭", isCorrect: false }
+      { id: 'd', text: " Coal stoves", emoji: "🏭", isCorrect: false },
+      { id: 'a', text: " Smart thermostats", emoji: "🌡️", isCorrect: true },
     ]
   },
   {
@@ -53,9 +53,9 @@ const questions = [
     id: 5,
     text: "Which technology reduces carbon emissions?",
     options: [
-      { id: 'a', text: " Electric vehicles", emoji: "🚗", isCorrect: true },
       { id: 'b', text: " Gas cars", emoji: "⛽", isCorrect: false },
       { id: 'c', text: " Diesel trucks", emoji: "🚛", isCorrect: false },
+      { id: 'a', text: " Electric vehicles", emoji: "🚗", isCorrect: true },
       { id: 'd', text: " Coal trains", emoji: "🚂", isCorrect: false }
     ]
   }

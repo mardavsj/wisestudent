@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
+import { getSustainabilityKidsGames } from "../../../../pages/Games/GameCategories/Sustainability/kidGamesData";
 
 const PuzzleSortWaste = () => {
   const navigate = useNavigate();
@@ -37,12 +38,13 @@ const PuzzleSortWaste = () => {
   const gameId = "sustainability-kids-4";
   const gameData = getGameDataById(gameId);
   
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
+  const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 1;
+  const totalCoins = gameData?.coins || location.state?.totalCoins || wasteItems.length;
+  const totalXp = gameData?.xp || location.state?.totalXp || 10;
 
   const [score, setScore] = useState(0);
+  const [coins, setCoins] = useState(0);
   const [matches, setMatches] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [selectedMethod, setSelectedMethod] = useState(null);
@@ -105,6 +107,7 @@ const PuzzleSortWaste = () => {
     // If the match is correct, add score and show flash/confetti
     if (newMatch.isCorrect) {
       setScore(prev => prev + 1);
+      setCoins(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
     } else {
       showCorrectAnswerFeedback(0, false);
@@ -259,7 +262,7 @@ const PuzzleSortWaste = () => {
                   You correctly matched {score} out of {wasteItems.length} waste items with their disposal methods!
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>+{coins} Coins</span>
                 </div>
                 <p className="text-white/80">
                   Lesson: Proper waste sorting helps protect our environment and conserve resources!

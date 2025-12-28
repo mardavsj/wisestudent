@@ -74,17 +74,17 @@ const SimulationEcoFriendlyCity = () => {
       options: [
         { id: "a", text: "Large landfills", emoji: "🗑️", isCorrect: false },
         { id: "b", text: "Burn all waste", emoji: "🔥", isCorrect: false },
-        { id: "c", text: "Comprehensive recycling", emoji: "♻️", isCorrect: false },
-        { id: "d", text: "Ocean dumping", emoji: "🌊", isCorrect: true }
+        { id: "d", text: "Ocean dumping", emoji: "🌊", isCorrect: false },
+        { id: "c", text: "Comprehensive recycling", emoji: "♻️", isCorrect: true },
       ]
     },
     {
       id: 3,
       text: "What transportation should the city promote?",
       options: [
-        { id: "a", text: "Private cars only", emoji: "🚗", isCorrect: true },
+        { id: "c", text: "Public transport", emoji: "🚌", isCorrect: true },
+        { id: "a", text: "Private cars only", emoji: "🚗", isCorrect: false },
         { id: "b", text: "More airports", emoji: "✈️", isCorrect: false },
-        { id: "c", text: "Public transport", emoji: "🚌", isCorrect: false },
         { id: "d", text: "Walking and cycling", emoji: "🚴", isCorrect: false }
       ]
     },
@@ -93,9 +93,9 @@ const SimulationEcoFriendlyCity = () => {
       text: "How should buildings be designed in an eco-friendly city?",
       options: [
         { id: "a", text: "Glass skyscrapers", emoji: "🏙️", isCorrect: false },
-        { id: "b", text: "Energy-efficient designs", emoji: "🏠", isCorrect: false },
         { id: "c", text: "No insulation", emoji: "❄️", isCorrect: false },
-        { id: "d", text: "Single-pane windows", emoji: "🪟", isCorrect: true }
+        { id: "d", text: "Single-pane windows", emoji: "🪟", isCorrect: false },
+        { id: "b", text: "Energy-efficient designs", emoji: "🏠", isCorrect: true },
       ]
     },
     {
@@ -103,8 +103,8 @@ const SimulationEcoFriendlyCity = () => {
       text: "What should the city do to protect green spaces?",
       options: [
         { id: "a", text: "Convert parks to malls", emoji: "🛍️", isCorrect: false },
-        { id: "b", text: "Cut down all trees", emoji: "🪓", isCorrect: true },
-        { id: "c", text: "Expand urban forests", emoji: "🌳", isCorrect: false },
+        { id: "c", text: "Expand urban forests", emoji: "🌳", isCorrect: true },
+        { id: "b", text: "Cut down all trees", emoji: "🪓", isCorrect: false },
         { id: "d", text: "Pave over grass", emoji: "🛣️", isCorrect: false }
       ]
     }

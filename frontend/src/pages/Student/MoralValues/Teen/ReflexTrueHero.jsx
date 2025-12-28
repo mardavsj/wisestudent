@@ -29,57 +29,57 @@ const ReflexTrueHero = () => {
   const questions = [
     {
       id: 1,
-      question: "Admit you broke a vase 💬",
-      correctAnswer: "Speak Truth",
+      question: "Your friend asks if her new haircut looks good, but you think it looks awkward. What do you do? 💬",
+      correctAnswer: "Be tactful and supportive",
       options: [
-        { text: "Speak Truth", isCorrect: true, emoji: "💚" },
-        { text: "Hide Wrong", isCorrect: false, emoji: "💔" },
-        { text: "Blame Others", isCorrect: false, emoji: "🙈" },
-        { text: "Deny", isCorrect: false, emoji: "🙊" }
+        { text: "Tell the harsh truth", isCorrect: false, emoji: "💔" },
+        { text: "Be tactful and supportive", isCorrect: true, emoji: "💚" },
+        { text: "Lie to hurt her feelings", isCorrect: false, emoji: "🙈" },
+        { text: "Avoid the conversation", isCorrect: false, emoji: "🙊" }
       ]
     },
     {
       id: 2,
-      question: "Tell the teacher you copied notes 📖",
-      correctAnswer: "Speak Truth",
+      question: "You see a classmate being cyberbullied in a group chat. What is your response? 📱",
+      correctAnswer: "Stand up for the classmate",
       options: [
-        { text: "Hide Wrong", isCorrect: false, emoji: "💔" },
-        { text: "Speak Truth", isCorrect: true, emoji: "💚" },
-        { text: "Blame Others", isCorrect: false, emoji: "🙈" },
-        { text: "Deny", isCorrect: false, emoji: "🙊" }
+        { text: "Stand up for the classmate", isCorrect: true, emoji: "💚" },
+        { text: "Ignore it completely", isCorrect: false, emoji: "💔" },
+        { text: "Join in to fit in", isCorrect: false, emoji: "🙈" },
+        { text: "Stay silent to avoid conflict", isCorrect: false, emoji: "🙊" }
       ]
     },
     {
       id: 3,
-      question: "Speak honestly to your parents 🗣️",
-      correctAnswer: "Speak Truth",
+      question: "You accidentally overhear your parents talking about financial problems. How do you handle this? 🗣️",
+      correctAnswer: "Respect their privacy but offer support",
       options: [
-        { text: "Blame Others", isCorrect: false, emoji: "🙈" },
-        { text: "Deny", isCorrect: false, emoji: "🙊" },
-        { text: "Speak Truth", isCorrect: true, emoji: "💚" },
-        { text: "Hide Wrong", isCorrect: false, emoji: "💔" }
+        { text: "Gossip about it at school", isCorrect: false, emoji: "🙈" },
+        { text: "Pretend you didn't hear and stay quiet", isCorrect: false, emoji: "🙊" },
+        { text: "Respect their privacy but offer support", isCorrect: true, emoji: "💚" },
+        { text: "Confront them immediately", isCorrect: false, emoji: "💔" }
       ]
     },
     {
       id: 4,
-      question: "Blame your friend for it 🙈",
-      correctAnswer: "Hide Wrong",
+      question: "Your teammate takes credit for a project you both worked on in front of the teacher. What do you do? 🙈",
+      correctAnswer: "Address it privately with your teammate",
       options: [
-        { text: "Hide Wrong", isCorrect: true, emoji: "💔" },
-        { text: "Speak Truth", isCorrect: false, emoji: "💚" },
-        { text: "Blame Others", isCorrect: false, emoji: "🙈" },
-        { text: "Deny", isCorrect: false, emoji: "🙊" }
+        { text: "Address it privately with your teammate", isCorrect: true, emoji: "💔" },
+        { text: "Publicly correct the record", isCorrect: false, emoji: "💚" },
+        { text: "Let them take all the credit", isCorrect: false, emoji: "🙈" },
+        { text: "Tell the teacher directly", isCorrect: false, emoji: "🙊" }
       ]
     },
     {
       id: 5,
-      question: "Hide your test paper 🫣",
-      correctAnswer: "Hide Wrong",
+      question: "You find out your best friend is planning to cheat on an important exam. How do you react? 🫣",
+      correctAnswer: "Encourage them to study and be honest",
       options: [
-        { text: "Blame Others", isCorrect: false, emoji: "🙈" },
-        { text: "Deny", isCorrect: false, emoji: "🙊" },
-        { text: "Speak Truth", isCorrect: false, emoji: "💚" },
-        { text: "Hide Wrong", isCorrect: true, emoji: "💔" }
+        { text: "Help them cheat to stay loyal", isCorrect: false, emoji: "🙈" },
+        { text: "Tell the teacher immediately", isCorrect: false, emoji: "🙊" },
+        { text: "Pretend you don't know anything", isCorrect: false, emoji: "💔" },
+        { text: "Encourage them to study and be honest", isCorrect: true, emoji: "💚" },
       ]
     }
   ];

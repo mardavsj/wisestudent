@@ -15,6 +15,7 @@ const QuizOnSelfEsteem = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
+  const [showAnswerConfetti, setShowAnswerConfetti] = useState(false);
   const { flashPoints, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
@@ -26,7 +27,7 @@ const QuizOnSelfEsteem = () => {
         {
           id: "a",
           text: "Positive self-talk and self-acceptance",
-          emoji: "😊",
+          emoji: "👍",
           isCorrect: true
         },
         {
@@ -64,7 +65,7 @@ const QuizOnSelfEsteem = () => {
          {
           id: "b",
           text: "Achieving them builds genuine confidence",
-          emoji: "🎯",
+          emoji: "🎳",
           isCorrect: true
         },
       ]
@@ -83,7 +84,7 @@ const QuizOnSelfEsteem = () => {
         {
           id: "b",
           text: "Learn from them as growth opportunities",
-          emoji: "📈",
+          emoji: "💡",
           isCorrect: true
         },
         {
@@ -108,7 +109,7 @@ const QuizOnSelfEsteem = () => {
         {
           id: "b",
           text: "They provide encouragement and validation",
-          emoji: "🤗",
+          emoji: "❤️",
           isCorrect: true
         },
         {
@@ -139,7 +140,7 @@ const QuizOnSelfEsteem = () => {
         {
           id: "c",
           text: "It reduces self-criticism and promotes resilience",
-          emoji: "🧘",
+          emoji: "🙂‍↕️",
           isCorrect: true
         }
       ]
@@ -152,6 +153,7 @@ const QuizOnSelfEsteem = () => {
     if (isCorrect) {
       setCoins(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+      setShowAnswerConfetti(true);
     }
     
     setSelectedOption(optionId);
@@ -163,6 +165,7 @@ const QuizOnSelfEsteem = () => {
         setSelectedOption(null);
         resetFeedback();
         setShowFeedback(false);
+        setShowAnswerConfetti(false);
       } else {
         setGameFinished(true);
       }
@@ -187,7 +190,7 @@ const QuizOnSelfEsteem = () => {
       gameType="health-female"
       totalLevels={10}
       currentLevel={2}
-      showConfetti={gameFinished}
+      showConfetti={gameFinished || showAnswerConfetti}
       flashPoints={flashPoints}
       backPath="/games/health-female/teens"
     >

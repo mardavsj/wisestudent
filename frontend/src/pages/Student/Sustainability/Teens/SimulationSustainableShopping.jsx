@@ -104,8 +104,8 @@ const SimulationSustainableShopping = () => {
       options: [
         { id: "b", text: "Consider the environmental impact of products", emoji: "🌱", isCorrect: true },
         { id: "a", text: "Focus only on the lowest price", emoji: "📉", isCorrect: false },
-        { id: "c", text: "Buy in bulk regardless of need", emoji: "囤", isCorrect: false },
-        { id: "d", text: "Follow all trends without research", emoji: "流行", isCorrect: false }
+        { id: "c", text: "Buy in bulk regardless of need", emoji: "🤔", isCorrect: false },
+        { id: "d", text: "Follow all trends without research", emoji: "🔎", isCorrect: false }
       ]
     }
   ];

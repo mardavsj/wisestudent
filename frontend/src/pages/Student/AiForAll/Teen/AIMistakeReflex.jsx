@@ -31,62 +31,62 @@ const AIMistakeReflex = () => {
   const questions = [
     {
       id: 1,
-      question: "AI says: 2+2=5. What should you do?",
-      statement: "AI says: 2+2=5",
-      correctAnswer: "Correct it",
+      question: "An AI medical diagnostic system recommends a treatment that contradicts established medical guidelines. What should you do?",
+      statement: "AI recommends unproven treatment for common condition",
+      correctAnswer: "Verify with medical professional",
       options: [
-        { text: "Ignore", isCorrect: false, emoji: "🙈" },
-        { text: "Agree", isCorrect: false, emoji: "👍" },
-        { text: "Correct it", isCorrect: true, emoji: "🔧" },
-        { text: "Report", isCorrect: false, emoji: "🚩" }
+        { text: "Follow AI recommendation", isCorrect: false, emoji: "🤖" },
+        { text: "Verify with medical professional", isCorrect: true, emoji: "⚕️" },
+        { text: "Ignore and self-treat", isCorrect: false, emoji: "💊" },
+        { text: "Share with friends", isCorrect: false, emoji: "👥" }
       ]
     },
     {
       id: 2,
-      question: "AI says: Sun rises in the west. What should you do?",
-      statement: "AI says: Sun rises in the west",
-      correctAnswer: "Correct it",
+      question: "A job application AI system consistently rejects qualified candidates from a specific demographic. What does this indicate?",
+      statement: "AI hiring system shows bias in selection",
+      correctAnswer: "Algorithmic bias requiring review",
       options: [
-        { text: "Correct it", isCorrect: true, emoji: "🔧" },
-        { text: "Ignore", isCorrect: false, emoji: "🙈" },
-        { text: "Share", isCorrect: false, emoji: "📤" },
-        { text: "Laugh", isCorrect: false, emoji: "😂" }
+        { text: "Algorithmic bias requiring review", isCorrect: true, emoji: "⚖️" },
+        { text: "Efficient selection", isCorrect: false, emoji: "😄" },
+        { text: "Market trend", isCorrect: false, emoji: "📈" },
+        { text: "Coincidence", isCorrect: false, emoji: "🎲" }
       ]
     },
     {
       id: 3,
-      question: "AI says: Water boils at 100°C. What should you do?",
-      statement: "AI says: Water boils at 100°C",
-      correctAnswer: "Ignore",
+      question: "An AI voice assistant accidentally records private conversations and stores them. What privacy concern does this represent?",
+      statement: "AI assistant records unintended private data",
+      correctAnswer: "Data privacy and consent violation",
       options: [
-        { text: "Correct it", isCorrect: false, emoji: "🔧" },
-        { text: "Ignore", isCorrect: true, emoji: "🙈" },
-        { text: "Question", isCorrect: false, emoji: "❓" },
-        { text: "Verify", isCorrect: false, emoji: "🔍" }
+        { text: "Normal operation", isCorrect: false, emoji: "🔄" },
+        { text: "Storage issue", isCorrect: false, emoji: "💾" },
+        { text: "Network error", isCorrect: false, emoji: "📶" },
+        { text: "Data privacy and consent violation", isCorrect: true, emoji: "🔒" },
       ]
     },
     {
       id: 4,
-      question: "AI says: Earth is flat. What should you do?",
-      statement: "AI says: Earth is flat",
-      correctAnswer: "Correct it",
+      question: "An AI content filter blocks educational material about human biology as inappropriate. What is this an example of?",
+      statement: "AI content filter incorrectly blocks educational content",
+      correctAnswer: "Overfitting and lack of context understanding",
       options: [
-        { text: "Correct it", isCorrect: true, emoji: "🔧" },
-        { text: "Ignore", isCorrect: false, emoji: "🙈" },
-        { text: "Debate", isCorrect: false, emoji: "🗣️" },
-        { text: "Accept", isCorrect: false, emoji: "✅" }
+        { text: "Appropriate filtering", isCorrect: false, emoji: "✅" },
+        { text: "User error", isCorrect: false, emoji: "👤" },
+        { text: "Overfitting and lack of context understanding", isCorrect: true, emoji: "🧠" },
+        { text: "System update needed", isCorrect: false, emoji: "🔄" }
       ]
     },
     {
       id: 5,
-      question: "AI says: 10-5=5. What should you do?",
-      statement: "AI says: 10-5=5",
-      correctAnswer: "Ignore",
+      question: "An AI system makes a decision that affects someone's credit score, but cannot explain how it reached that decision. What AI challenge does this represent?",
+      statement: "AI makes unexplainable decision affecting credit",
+      correctAnswer: "Lack of algorithmic transparency",
       options: [
-        { text: "Correct it", isCorrect: false, emoji: "🔧" },
-        { text: "Challenge", isCorrect: false, emoji: "⚔️" },
-        { text: "Ignore", isCorrect: true, emoji: "🙈" },
-        { text: "Confirm", isCorrect: false, emoji: "✔️" }
+        { text: "Lack of algorithmic transparency", isCorrect: true, emoji: "🔍" },
+        { text: "Efficient processing", isCorrect: false, emoji: "⚡" },
+        { text: "Data security", isCorrect: false, emoji: "🛡️" },
+        { text: "Network latency", isCorrect: false, emoji: "⏱️" }
       ]
     }
   ];

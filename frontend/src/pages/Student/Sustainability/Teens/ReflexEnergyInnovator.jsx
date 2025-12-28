@@ -13,8 +13,8 @@ const questions = [
     id: 1,
     text: "Which energy solution is innovative?",
     options: [
-      { id: 'a', text: " Smart Grid", emoji: "⚡", isCorrect: true },
       { id: 'b', text: " Coal Plant", emoji: "🏭", isCorrect: false },
+      { id: 'a', text: " Smart Grid", emoji: "⚡", isCorrect: true },
       { id: 'c', text: " Oil Drilling", emoji: "🛢️", isCorrect: false },
       { id: 'd', text: " Nuclear Plant", emoji: "☢️", isCorrect: false }
     ]
@@ -33,19 +33,19 @@ const questions = [
     id: 3,
     text: "Which energy storage is innovative?",
     options: [
-      { id: 'a', text: " Lithium Batteries", emoji: "🔋", isCorrect: true },
       { id: 'b', text: " Coal Storage", emoji: "🏭", isCorrect: false },
       { id: 'c', text: " Oil Tanks", emoji: "🛢️", isCorrect: false },
-      { id: 'd', text: " Gas Pipelines", emoji: "⛽", isCorrect: false }
+      { id: 'd', text: " Gas Pipelines", emoji: "⛽", isCorrect: false },
+      { id: 'a', text: " Lithium Batteries", emoji: "🔋", isCorrect: true },
     ]
   },
   {
     id: 4,
     text: "What's an innovative energy efficiency solution?",
     options: [
-      { id: 'a', text: " Smart Thermostats", emoji: "🌡️", isCorrect: true },
       { id: 'b', text: " Old Light Bulbs", emoji: "💡", isCorrect: false },
       { id: 'c', text: " Gas Heaters", emoji: "🔥", isCorrect: false },
+      { id: 'a', text: " Smart Thermostats", emoji: "🌡️", isCorrect: true },
       { id: 'd', text: " Coal Stoves", emoji: "🏭", isCorrect: false }
     ]
   },
@@ -53,8 +53,8 @@ const questions = [
     id: 5,
     text: "Which energy innovation helps the environment?",
     options: [
-      { id: 'a', text: " Wind Turbines", emoji: "💨", isCorrect: true },
       { id: 'b', text: " Oil Rigs", emoji: "🛢️", isCorrect: false },
+      { id: 'a', text: " Wind Turbines", emoji: "💨", isCorrect: true },
       { id: 'c', text: " Coal Plants", emoji: "🏭", isCorrect: false },
       { id: 'd', text: " Gas Stations", emoji: "⛽", isCorrect: false }
     ]

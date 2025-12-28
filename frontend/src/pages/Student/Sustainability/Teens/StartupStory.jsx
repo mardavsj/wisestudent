@@ -10,6 +10,17 @@ const StartupStory = () => {
   const navigate = useNavigate();
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
+  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
+  const coinsPerLevel = 1;
+  const totalCoins = 5;
+  const totalXp = 10;
+
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [coins, setCoins] = useState(0);
+  const [choices, setChoices] = useState([]);
+  const [showResult, setShowResult] = useState(false);
+  const [finalScore, setFinalScore] = useState(0);
+  
   const gameData = getGameDataById("sustainability-teens-90");
   const gameId = gameData?.id || "sustainability-teens-90";
   
@@ -35,7 +46,7 @@ const StartupStory = () => {
       console.warn("Error finding next game:", error);
     }
     return { nextGamePath: null, nextGameId: null };
-  }, [location.state, gameId]);
+  }, [location, gameId]);
   
   useEffect(() => {
     if (showResult) {
@@ -48,18 +59,7 @@ const StartupStory = () => {
         }, '');
       }
     }
-  }, [showResult, finalScore, gameId, nextGamePath, nextGameId]);
-
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
-
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [coins, setCoins] = useState(0);
-  const [choices, setChoices] = useState([]);
-  const [showResult, setShowResult] = useState(false);
-  const [finalScore, setFinalScore] = useState(0);
+  }, [showResult, finalScore, gameId, nextGamePath, nextGameId, location.state]);
 
   const questions = [
     {

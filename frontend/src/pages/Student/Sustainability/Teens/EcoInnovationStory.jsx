@@ -7,8 +7,20 @@ import { getSustainabilityTeenGames } from "../../../../pages/Games/GameCategori
 
 const EcoInnovationStory = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
+  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
+  const coinsPerLevel = 1;
+  const totalCoins = 5;
+  const totalXp = 10;
+
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [coins, setCoins] = useState(0);
+  const [choices, setChoices] = useState([]);
+  const [showResult, setShowResult] = useState(false);
+  const [finalScore, setFinalScore] = useState(0);
+
   const gameData = getGameDataById("sustainability-teens-86");
   const gameId = gameData?.id || "sustainability-teens-86";
   
@@ -34,7 +46,7 @@ const EcoInnovationStory = () => {
       console.warn("Error finding next game:", error);
     }
     return { nextGamePath: null, nextGameId: null };
-  }, [location.state, gameId]);
+  }, [location, gameId]);
   
   useEffect(() => {
     if (showResult) {
@@ -47,18 +59,7 @@ const EcoInnovationStory = () => {
         }, '');
       }
     }
-  }, [showResult, finalScore, gameId, nextGamePath, nextGameId]);
-
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
-
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [coins, setCoins] = useState(0);
-  const [choices, setChoices] = useState([]);
-  const [showResult, setShowResult] = useState(false);
-  const [finalScore, setFinalScore] = useState(0);
+  }, [showResult, finalScore, gameId, nextGamePath, nextGameId, location.state]);
 
   const questions = [
     {
@@ -93,16 +94,16 @@ const EcoInnovationStory = () => {
       text: "What's important when developing a green technology solution?",
       options: [
         { id: 'a', text: "Ignore user feedback", emoji: "🔇", isCorrect: false },
-        { id: 'c', text: "Focus only on technical specs", emoji: "⚙️", isCorrect: false },
-        { id: 'b', text: "Make it affordable and accessible", emoji: "✅", isCorrect: true },
+        { id: 'b', text: "Focus only on technical specs", emoji: "⚙️", isCorrect: false },
+        { id: 'c', text: "Make it affordable and accessible", emoji: "🙂‍↕️", isCorrect: true },
       ]
     },
     {
       id: 5,
       text: "How do you scale your green innovation effectively?",
       options: [
-        { id: 'b', text: "Build partnerships with industry", emoji: "🤝", isCorrect: true },
-        { id: 'a', text: "Work alone to maintain control", emoji: "👤", isCorrect: false },
+        { id: 'a', text: "Build partnerships with industry", emoji: "🤝", isCorrect: true },
+        { id: 'b', text: "Work alone to maintain control", emoji: "👤", isCorrect: false },
         { id: 'c', text: "Avoid sharing knowledge", emoji: "🔒", isCorrect: false }
       ]
     }

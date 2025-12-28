@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -6,7 +6,7 @@ import { getGameDataById } from "../../../../utils/getGameData";
 import { getSustainabilityKidsGames } from "../../../../pages/Games/GameCategories/Sustainability/kidGamesData";
 
 const TOTAL_ROUNDS = 5;
-const ROUND_TIME = 10;
+const ROUND_TIME = 8;
 
 const ReflexCommunityCare = () => {
   const navigate = useNavigate();
@@ -91,52 +91,52 @@ const ReflexCommunityCare = () => {
   const questions = [
     {
       id: 1,
-      text: "Tap for 'Help Community,' avoid 'Ignore Community'",
+      text: "Your neighbor is moving heavy boxes. What do you do?",
       options: [
-        { id: 'b', text: "Ignore Community", emoji: "🙈", isCorrect: false },
-        { id: 'c', text: "Maybe Later", emoji: "⏰", isCorrect: false },
-        { id: 'a', text: "Help Community", emoji: "🤝", isCorrect: true },
-        { id: 'd', text: "Not My Problem", emoji: "🤷", isCorrect: false }
+        { id: 'b', text: "Watch from window", emoji: "🪟", isCorrect: false },
+        { id: 'a', text: "Help carry them", emoji: "💪", isCorrect: true },
+        { id: 'c', text: "Ignore them", emoji: "🙈", isCorrect: false },
+        { id: 'd', text: "Tell them to be quiet", emoji: "🤫", isCorrect: false }
       ]
     },
     {
       id: 2,
-      text: "Choose 'Volunteer' or avoid 'Don't Help'",
+      text: "The school playground needs cleaning. What's your choice?",
       options: [
-        { id: 'a', text: "Volunteer", emoji: "💪", isCorrect: true },
-        { id: 'b', text: "Don't Help", emoji: "❌", isCorrect: false },
-        { id: 'c', text: "Maybe", emoji: "🤔", isCorrect: false },
-        { id: 'd', text: "Too Busy", emoji: "📱", isCorrect: false }
+        { id: 'a', text: "Join the cleanup", emoji: "🧹", isCorrect: true },
+        { id: 'b', text: "Stay home playing games", emoji: "🎮", isCorrect: false },
+        { id: 'c', text: "Maybe tomorrow", emoji: "⏰", isCorrect: false },
+        { id: 'd', text: "Not my job", emoji: "🤷", isCorrect: false }
       ]
     },
     {
       id: 3,
-      text: "Tap for 'Be Kind to Neighbors' or avoid 'Be Rude'",
+      text: "A classmate is sitting alone at lunch. What do you do?",
       options: [
-        { id: 'b', text: "Be Rude", emoji: "😠", isCorrect: false },
-        { id: 'c', text: "Don't Care", emoji: "🤷", isCorrect: false },
-        { id: 'd', text: "Stay Away", emoji: "🚶", isCorrect: false },
-        { id: 'a', text: "Be Kind", emoji: "😊", isCorrect: true },
+        { id: 'b', text: "Look away", emoji: "🙈", isCorrect: false },
+        { id: 'c', text: "Point and laugh", emoji: "😂", isCorrect: false },
+        { id: 'd', text: "Ignore and sit elsewhere", emoji: "🚶", isCorrect: false },
+        { id: 'a', text: "Invite them to join us", emoji: "😊", isCorrect: true },
       ]
     },
     {
       id: 4,
-      text: "Choose 'Share Resources' or avoid 'Keep Everything'",
+      text: "You have extra art supplies. What do you do?",
       options: [
-        { id: 'a', text: "Share Resources", emoji: "🤝", isCorrect: true },
-        { id: 'b', text: "Keep Everything", emoji: " selfish", isCorrect: false },
-        { id: 'c', text: "Maybe Share", emoji: "🤔", isCorrect: false },
-        { id: 'd', text: "Not Needed", emoji: "🤷", isCorrect: false }
+        { id: 'a', text: "Share with classmates who need them", emoji: "🎨", isCorrect: true },
+        { id: 'b', text: "Hide them from others", emoji: "🔒", isCorrect: false },
+        { id: 'c', text: "Throw them away", emoji: "🗑️", isCorrect: false },
+        { id: 'd', text: "Keep using them myself", emoji: "✏️", isCorrect: false }
       ]
     },
     {
       id: 5,
-      text: "Tap for 'Work Together' or avoid 'Work Alone'",
+      text: "Your class is organizing a food drive. What's your action?",
       options: [
-        { id: 'b', text: "Work Alone", emoji: "👤", isCorrect: false },
-        { id: 'a', text: "Work Together", emoji: "👥", isCorrect: true },
-        { id: 'c', text: "Sometimes Together", emoji: "🤷", isCorrect: false },
-        { id: 'd', text: "Prefer Alone", emoji: "🚫", isCorrect: false }
+        { id: 'b', text: "Tell others not to participate", emoji: "❌", isCorrect: false },
+        { id: 'c', text: "Stay quiet about it", emoji: "🤐", isCorrect: false },
+        { id: 'a', text: "Bring items from home", emoji: "🍎", isCorrect: true },
+        { id: 'd', text: "Think it's not important", emoji: "🤷", isCorrect: false }
       ]
     }
   ];
@@ -189,7 +189,7 @@ const ReflexCommunityCare = () => {
       showAnswerConfetti={showAnswerConfetti}
       totalLevels={TOTAL_ROUNDS}
       maxScore={TOTAL_ROUNDS}
-      showConfetti={gameState === "finished" && score >= 3}
+      showConfetti={gameState === "finished" && score >= 4}
       totalCoins={totalCoins}
       totalXp={totalXp}
       nextGamePath={nextGamePath}
@@ -248,7 +248,7 @@ const ReflexCommunityCare = () => {
 
         {gameState === "finished" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-            {score >= 3 ? (
+            {score >= 4 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
                 <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
@@ -270,7 +270,7 @@ const ReflexCommunityCare = () => {
                   You got {score} out of {TOTAL_ROUNDS} rounds correct.
                 </p>
                 <p className="text-white/80 text-sm">
-                  Tip: Small acts of community care make a big difference!
+                  Tip: Try to get at least 4 correct answers next time! Small acts of community care make a big difference!
                 </p>
               </div>
             )}

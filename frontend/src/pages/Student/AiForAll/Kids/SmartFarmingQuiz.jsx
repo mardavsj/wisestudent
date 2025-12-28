@@ -91,7 +91,7 @@ const SmartFarmingQuiz = () => {
         { 
           id: "yes", 
           text: "Yes", 
-          emoji: "💦", 
+          emoji: "💧", 
           isCorrect: true
         }
       ]
@@ -133,7 +133,7 @@ const SmartFarmingQuiz = () => {
         { 
           id: "yes", 
           text: "Yes", 
-          emoji: "🌱", 
+          emoji: "🌿", 
           isCorrect: true
         },
         { 

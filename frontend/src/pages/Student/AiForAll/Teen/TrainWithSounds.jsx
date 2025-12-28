@@ -53,138 +53,140 @@ const TrainWithSounds = () => {
   const questions = [
     {
       id: 1,
-      text: "What animal makes this sound?",
-      audio: "Woof",
-      emoji: "🐶",
+      text: "An AI assistant is designed to recognize emergency vehicle sirens. Which scenario would be most challenging for the AI to accurately identify?",
+      audio: "🚨",
+      emoji: "🔊",
       options: [
         { 
           id: 1, 
-          text: "Dog", 
-          emoji: "🐶", 
-          isCorrect: true
+          text: "Siren in a quiet residential area", 
+          emoji: "🏘️", 
+          isCorrect: false
         },
         { 
           id: 2, 
-          text: "Cat", 
-          emoji: "🐱", 
-          isCorrect: false
+          text: "Siren in heavy traffic with multiple sound sources", 
+          emoji: "🚗", 
+          isCorrect: true
         },
         { 
           id: 3, 
-          text: "Bird", 
-          emoji: "🐦",
+          text: "Siren at night with minimal background noise", 
+          emoji: "🌙",
           isCorrect: false
         }
       ],
-      explanation: "That's a dog! Dogs bark 'woof' as their primary vocalization. AI sound recognition systems can distinguish between different animal sounds to help with wildlife monitoring, pet care applications, and security systems."
+      explanation: "Siren in heavy traffic! This is a complex audio recognition challenge for AI. In busy traffic, the AI must use advanced sound separation techniques to distinguish the emergency siren from other vehicle sounds, horns, and engine noise. This is an example of 'audio source separation' in AI signal processing."
     },
     {
       id: 2,
-      text: "What animal makes this sound?",
-      audio: "Meow",
-      emoji: "🐱",
+      text: "A smart home AI needs to distinguish between different household sounds. Which sound combination would be most difficult to process correctly?",
+      audio: "🏠",
+      emoji: "🏠",
       options: [
         { 
           id: 1, 
-          text: "Dog", 
-          emoji: "🐶", 
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "Cat", 
-          emoji: "🐱", 
+          text: "Crying baby and running dishwasher", 
+          emoji: "👶", 
           isCorrect: true
         },
         { 
+          id: 2, 
+          text: "Running vacuum cleaner alone", 
+          emoji: "🧹", 
+          isCorrect: false
+        },
+        { 
           id: 3, 
-          text: "Cow", 
-          emoji: "🐮", 
+          text: "Television playing at low volume", 
+          emoji: "📺", 
           isCorrect: false
         }
       ],
-      explanation: "That's a cat! Cats meow to communicate with humans and other cats. AI systems can learn to recognize different cat vocalizations to understand their needs, emotions, and health conditions."
+      explanation: "Crying baby and dishwasher! This is challenging for AI because both sounds occupy similar frequency ranges. The AI must use advanced pattern recognition to separate and identify the baby's cry, which might be critical for safety purposes, from the background noise of the dishwasher. This requires sophisticated 'sound event detection' algorithms."
     },
     {
       id: 3,
-      text: "What animal makes this sound?",
-      audio: "Woof",
-      emoji: "🐕",
+      text: "Which application demonstrates the most advanced use of AI in sound processing?",
+      audio: "🤖",
+      emoji: "🧠",
       options: [
         { 
           id: 1, 
-          text: "Dog", 
-          emoji: "🐕",
-          isCorrect: true
+          text: "Voice assistants recognizing 'Hey Siri' or 'OK Google'", 
+          emoji: "📱",
+          isCorrect: false
+        },
+        
+        { 
+          id: 3, 
+          text: "Music recognition apps identifying song titles", 
+          emoji: "🎵",
+          isCorrect: false
         },
         { 
           id: 2, 
-          text: "Cat", 
-          emoji: "😿", 
-          isCorrect: false
+          text: "AI detecting subtle changes in a person's voice to predict health issues", 
+          emoji: "🏥",
+          isCorrect: true
         },
-        { 
-          id: 3, 
-          text: "Horse", 
-          emoji: "🐴", 
-          isCorrect: false
-        }
       ],
-      explanation: "Another dog! Dogs use barking as their primary form of vocal communication. AI sound recognition can help identify specific dogs by their unique barks, which is useful for pet identification and security applications."
+      explanation: "AI detecting health issues through voice changes! This represents cutting-edge AI research where subtle changes in voice patterns, tone, and speech rhythm can indicate health conditions like depression, Parkinson's disease, or respiratory issues. The AI must analyze complex acoustic features that even humans might not consciously notice."
     },
     {
       id: 4,
-      text: "What animal makes this sound?",
-      audio: "Meow",
-      emoji: "😺",
+      text: "In a noisy restaurant, an AI-powered hearing aid needs to focus on the user's conversation. What technology enables this?",
+      audio: "🍽️",
+      emoji: "👂",
       options: [
         { 
           id: 1, 
-          text: "Dog", 
-          emoji: "🐶", 
+          text: "Noise cancellation", 
+          emoji: "🔇", 
           isCorrect: false
         },
         { 
           id: 2, 
-          text: "Cat", 
-          emoji: "😺", 
+          text: "Beamforming and audio source separation", 
+          emoji: "🎯", 
           isCorrect: true
         },
         { 
           id: 3, 
-          text: "Pig", 
-          emoji: "🐷",
+          text: "Volume amplification", 
+          emoji: "🔊",
           isCorrect: false
         }
       ],
-      explanation: "Another cat! Cats have a wide range of vocalizations beyond just meowing, including purring, hissing, and chirping. AI systems can learn to distinguish between these different sounds to better understand feline behavior."
+      explanation: "Beamforming and audio source separation! This advanced AI technology can spatially isolate the desired sound source (the person you're talking to) from background noise. The AI uses multiple microphones and complex algorithms to 'focus' on the specific direction of the conversation while suppressing other sounds."
     },
     {
       id: 5,
-      text: "Training AI with sounds helps it:",
-      audio: "🔊",
-      emoji: "🤖",
+      text: "What is the most challenging aspect of training AI to recognize and interpret human emotions through voice?",
+      audio: "🎭",
+      emoji: "💬",
       options: [
-        { 
-          id: 1, 
-          text: "Understand the environment", 
-          emoji: "🌍", 
+         { 
+          id: 2, 
+          text: "Accounting for individual vocal characteristics and cultural differences", 
+          emoji: "👤", 
           isCorrect: true
         },
         { 
-          id: 2, 
-          text: "See better", 
-          emoji: "👀",
+          id: 1, 
+          text: "Distinguishing between different languages", 
+          emoji: "🌐", 
           isCorrect: false
         },
+       
         { 
           id: 3, 
-          text: "Move faster", 
-          emoji: "🏃", 
+          text: "Processing audio quickly enough", 
+          emoji: "⚡",
           isCorrect: false
         }
       ],
-      explanation: "Understanding the environment! Training AI with sounds helps it perceive and interpret its surroundings, just like how voice assistants recognize commands or how smart security systems detect unusual noises. This auditory capability makes AI more aware and responsive."
+      explanation: "Accounting for individual and cultural differences! Emotions are expressed differently across individuals and cultures. AI must be trained on diverse datasets to understand that the same emotion might be expressed with different vocal patterns, intensity levels, and cultural expressions. This requires complex machine learning models and extensive, diverse training data."
     }
   ];
 

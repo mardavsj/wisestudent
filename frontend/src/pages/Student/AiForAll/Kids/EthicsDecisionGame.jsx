@@ -157,7 +157,7 @@ const EthicsDecisionGame = () => {
 
     if (isCorrect) {
       setScore(prev => prev + 1);
-      showCorrectAnswerFeedback(1, false);
+      showCorrectAnswerFeedback(1, true);
     }
 
     if (currentScenario < scenarios.length - 1) {

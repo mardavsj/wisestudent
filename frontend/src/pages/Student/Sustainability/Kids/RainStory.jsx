@@ -141,7 +141,7 @@ const RainStory = () => {
         { 
           id: "container", 
           text: "Use clean containers", 
-          emoji: ".IContainer", 
+          emoji: "🫙", 
           isCorrect: true
         },
         { 

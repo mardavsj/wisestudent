@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -6,7 +6,7 @@ import { getGameDataById } from "../../../../utils/getGameData";
 import { getSustainabilityKidsGames } from "../../../../pages/Games/GameCategories/Sustainability/kidGamesData";
 
 const TOTAL_ROUNDS = 5;
-const ROUND_TIME = 10;
+const ROUND_TIME = 8;
 
 const ReflexSustainableLife = () => {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const ReflexSustainableLife = () => {
   const currentRoundRef = useRef(1);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const { nextGamePath, nextGameId } = useMemo(() => {
+  const { nextGamePath, nextGameId } = React.useMemo(() => {
     if (location.state?.nextGamePath) {
       return {
         nextGamePath: location.state.nextGamePath,
@@ -91,52 +91,52 @@ const ReflexSustainableLife = () => {
   const questions = [
     {
       id: 1,
-      text: "Tap for 'Sustainable,' avoid 'Wasteful'",
+      text: "You're at the grocery store. Which option is most sustainable?",
       options: [
-        { id: 'b', text: "Wasteful", emoji: "🗑️", isCorrect: false },
-        { id: 'c', text: "Indifferent", emoji: "🤷", isCorrect: false },
-        { id: 'a', text: "Sustainable", emoji: "🌱", isCorrect: true },
-        { id: 'd', text: "Unsure", emoji: "🤔", isCorrect: false }
+        { id: 'b', text: "Use plastic bags", emoji: "🛍️", isCorrect: false },
+        { id: 'a', text: "Use reusable bags", emoji: "🛍️", isCorrect: true },
+        { id: 'c', text: "Buy individually wrapped items", emoji: "🍫", isCorrect: false },
+        { id: 'd', text: "Buy more than needed", emoji: "🛒", isCorrect: false }
       ]
     },
     {
       id: 2,
-      text: "Choose 'Save Energy' or avoid 'Waste Energy'",
+      text: "How can you save energy at home?",
       options: [
-        { id: 'a', text: "Save Energy", emoji: "💡", isCorrect: true },
-        { id: 'b', text: "Waste Energy", emoji: "⚡", isCorrect: false },
-        { id: 'c', text: "It's OK", emoji: "🆗", isCorrect: false },
-        { id: 'd', text: "No Choice", emoji: "❌", isCorrect: false }
+        { id: 'a', text: "Turn off lights when leaving room", emoji: "💡", isCorrect: true },
+        { id: 'b', text: "Leave TV on all day", emoji: "📺", isCorrect: false },
+        { id: 'c', text: "Keep AC at lowest temperature", emoji: "❄️", isCorrect: false },
+        { id: 'd', text: "Use hair dryer on high", emoji: "💨", isCorrect: false }
       ]
     },
     {
       id: 3,
-      text: "Tap for 'Help Community,' avoid 'Ignore Community'",
+      text: "What's the best way to travel for short distances?",
       options: [
-        { id: 'b', text: "Ignore Community", emoji: "🙈", isCorrect: false },
-        { id: 'a', text: "Help Community", emoji: "🤝", isCorrect: true },
-        { id: 'c', text: "Maybe Later", emoji: "⏰", isCorrect: false },
-        { id: 'd', text: "Not My Problem", emoji: "🤷", isCorrect: false }
+        { id: 'b', text: "Ask for a car ride", emoji: "🚗", isCorrect: false },
+        { id: 'c', text: "Take a taxi", emoji: "🚕", isCorrect: false },
+        { id: 'd', text: "Ride motorcycle", emoji: "🏍️", isCorrect: false },
+        { id: 'a', text: "Walk or ride a bicycle", emoji: "🚲", isCorrect: true },
       ]
     },
     {
       id: 4,
-      text: "Choose 'Protect Nature' or avoid 'Harm Nature'",
+      text: "What should you do with food scraps?",
       options: [
-        { id: 'b', text: "Harm Nature", emoji: "🔥", isCorrect: false },
-        { id: 'c', text: "Not Important", emoji: "🤷", isCorrect: false },
-        { id: 'a', text: "Protect Nature", emoji: "🌿", isCorrect: true },
-        { id: 'd', text: "Don't Care", emoji: "😑", isCorrect: false }
+        { id: 'b', text: "Throw in regular trash", emoji: "🗑️", isCorrect: false },
+        { id: 'c', text: "Pour down the drain", emoji: "🚰", isCorrect: false },
+        { id: 'a', text: "Compost them", emoji: "🌱", isCorrect: true },
+        { id: 'd', text: "Leave them out to rot", emoji: "🦠", isCorrect: false }
       ]
     },
     {
       id: 5,
-      text: "Tap for 'Recycle' or avoid 'Throw Away'",
+      text: "How can you save water at home?",
       options: [
-        { id: 'b', text: "Throw Away", emoji: "🗑️", isCorrect: false },
-        { id: 'c', text: "Ignore", emoji: "🙈", isCorrect: false },
-        { id: 'd', text: "Don't Know", emoji: "🤔", isCorrect: false },
-        { id: 'a', text: "Recycle", emoji: "♻️", isCorrect: true },
+        { id: 'b', text: "Leave tap running while brushing", emoji: "🚰", isCorrect: false },
+        { id: 'a', text: "Take shorter showers", emoji: "🚿", isCorrect: true },
+        { id: 'c', text: "Wash car daily", emoji: "🚗", isCorrect: false },
+        { id: 'd', text: "Water lawn frequently", emoji: "🌱", isCorrect: false }
       ]
     }
   ];
@@ -189,7 +189,7 @@ const ReflexSustainableLife = () => {
       showAnswerConfetti={showAnswerConfetti}
       totalLevels={TOTAL_ROUNDS}
       maxScore={TOTAL_ROUNDS}
-      showConfetti={gameState === "finished" && score >= 3}
+      showConfetti={gameState === "finished" && score >= 4}
       totalCoins={totalCoins}
       totalXp={totalXp}
       nextGamePath={nextGamePath}
@@ -248,7 +248,7 @@ const ReflexSustainableLife = () => {
 
         {gameState === "finished" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-            {score >= 3 ? (
+            {score >= 4 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
                 <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
@@ -270,7 +270,7 @@ const ReflexSustainableLife = () => {
                   You got {score} out of {TOTAL_ROUNDS} rounds correct.
                 </p>
                 <p className="text-white/80 text-sm">
-                  Tip: Making sustainable choices helps our planet and community!
+                  Tip: Try to get at least 4 correct answers next time! Small sustainable changes make a big difference!
                 </p>
               </div>
             )}

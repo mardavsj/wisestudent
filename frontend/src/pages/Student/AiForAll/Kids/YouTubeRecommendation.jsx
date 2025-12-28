@@ -153,7 +153,6 @@ const YouTubeRecommendation = () => {
                   onClick={() => handleChoice(choice.id)}
                   className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white p-6 rounded-xl text-lg font-semibold transition-all transform hover:scale-105"
                 >
-                  <div className="text-2xl mb-2">{choice.text.split(" ")[1]}</div>
                   <h3 className="font-bold text-xl mb-2">{choice.text}</h3>
                 </button>
               ))}

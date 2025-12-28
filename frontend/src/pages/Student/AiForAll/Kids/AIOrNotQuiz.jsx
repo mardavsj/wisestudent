@@ -134,13 +134,13 @@ const AIOrNotQuiz = () => {
           id: "yes", 
           text: "Yes - It's AI", 
           emoji: "🤖", 
-          isCorrect: false
+          isCorrect: true
         },
         { 
           id: "no", 
           text: "No - It's not AI", 
           emoji: "❌", 
-          isCorrect: true
+          isCorrect: false
         }
       ]
     }

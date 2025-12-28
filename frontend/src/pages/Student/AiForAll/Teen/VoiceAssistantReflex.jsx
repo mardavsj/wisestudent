@@ -31,62 +31,62 @@ const VoiceAssistantReflex = () => {
   const questions = [
     {
       id: 1,
-      question: "Can a voice assistant do this task?",
-      task: { emoji: "🎵", text: "Play Music" },
-      correctAnswer: "Yes",
+      question: "You're working on a group project and need to quickly schedule a meeting with all members. What can a voice assistant do?",
+      task: { emoji: "📅", text: "Schedule a group meeting with multiple participants" },
+      correctAnswer: "With limitations",
       options: [
-        { text: "Yes", isCorrect: true, emoji: "✅" },
-        { text: "No", isCorrect: false, emoji: "❌" },
-        { text: "Sometimes", isCorrect: false, emoji: "⏰" },
-        { text: "Only with app", isCorrect: false, emoji: "📱" }
+        { text: "Yes, schedule instantly", isCorrect: false, emoji: "📔" },
+        { text: "No, not possible", isCorrect: false, emoji: "🛑" },
+        { text: "With limitations", isCorrect: true, emoji: "⚠️" },
+        { text: "Only via calendar app", isCorrect: false, emoji: "📅" }
       ]
     },
     {
       id: 2,
-      question: "Can a voice assistant do this task?",
-      task: { emoji: "⏰", text: "Set Alarm" },
+      question: "You're studying and want to set up a focused work session with breaks. Can a voice assistant help manage your time?",
+      task: { emoji: "⏰", text: "Set up a Pomodoro timer with work/break intervals" },
       correctAnswer: "Yes",
       options: [
-        { text: "Yes", isCorrect: true, emoji: "✅" },
-        { text: "No", isCorrect: false, emoji: "❌" },
-        { text: "Requires permission", isCorrect: false, emoji: "🔒" },
-        { text: "Only on phone", isCorrect: false, emoji: "📱" }
+        { text: "Yes, with timer skills", isCorrect: true, emoji: "⏱️" },
+        { text: "No, not possible", isCorrect: false, emoji: "🚫" },
+        { text: "Only basic timers", isCorrect: false, emoji: "⏱️" },
+        { text: "Requires third-party app", isCorrect: false, emoji: "📱" }
       ]
     },
     {
       id: 3,
-      question: "Can a voice assistant do this task?",
-      task: { emoji: "📷", text: "Open Camera" },
-      correctAnswer: "No",
+      question: "You need to translate a conversation in real-time with a friend who speaks a different language. Can a voice assistant handle this?",
+      task: { emoji: "🌐", text: "Real-time voice translation between two people" },
+      correctAnswer: "Limited capability",
       options: [
-        { text: "Yes", isCorrect: false, emoji: "✅" },
-        { text: "No", isCorrect: true, emoji: "❌" },
-        { text: "With smart device", isCorrect: false, emoji: "📱" },
-        { text: "Only with app", isCorrect: false, emoji: "📲" }
+        { text: "Yes, perfectly", isCorrect: false, emoji: "👌" },
+        { text: "No, not possible", isCorrect: false, emoji: "🙅" },
+        { text: "Limited capability", isCorrect: true, emoji: "🗣️" },
+        { text: "Only text translation", isCorrect: false, emoji: "📝" }
       ]
     },
     {
       id: 4,
-      question: "Can a voice assistant do this task?",
-      task: { emoji: "📰", text: "Read News" },
+      question: "You want to send a message to your study group while driving to avoid using your phone. Can a voice assistant help?",
+      task: { emoji: "🚗", text: "Send a group message while driving hands-free" },
       correctAnswer: "Yes",
       options: [
-        { text: "Yes", isCorrect: true, emoji: "✅" },
-        { text: "No", isCorrect: false, emoji: "❌" },
-        { text: "Only with subscription", isCorrect: false, emoji: "💳" },
-        { text: "Requires internet", isCorrect: false, emoji: "🌐" }
+        { text: "No, not safe", isCorrect: false, emoji: "🙅‍♀️" },
+        { text: "Only with Bluetooth", isCorrect: false, emoji: "📡" },
+        { text: "Requires app integration", isCorrect: false, emoji: "📱" },
+        { text: "Yes, with voice commands", isCorrect: true, emoji: "⏺️" },
       ]
     },
     {
       id: 5,
-      question: "Can a voice assistant do this task?",
-      task: { emoji: "💡", text: "Turn on Lights" },
-      correctAnswer: "No",
+      question: "You're cooking and want to set multiple timers for different dishes without touching a screen. Can a voice assistant handle this?",
+      task: { emoji: "🍳", text: "Manage multiple simultaneous timers with different names" },
+      correctAnswer: "Yes",
       options: [
-        { text: "Yes", isCorrect: false, emoji: "✅" },
-        { text: "No", isCorrect: true, emoji: "❌" },
-        { text: "With smart lights", isCorrect: false, emoji: "💡" },
-        { text: "Only with hub", isCorrect: false, emoji: "📡" }
+        { text: "No, only one timer", isCorrect: false, emoji: "❌" },
+        { text: "Yes, with named timers", isCorrect: true, emoji: "⏲️" },
+        { text: "Only basic timers", isCorrect: false, emoji: "⏱️" },
+        { text: "Requires screen interaction", isCorrect: false, emoji: "📱" }
       ]
     }
   ];

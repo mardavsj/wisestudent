@@ -24,9 +24,9 @@ const SortingColors = () => {
       emoji: "🍎",
       color: "red",
       choices: [
-        { id: 1, text: "Red Box",  isCorrect: true },
-        { id: 2, text: "Blue Box",  isCorrect: false },
-        { id: 3, text: "Green Box",  isCorrect: false }
+        { id: 1, text: "Red ",  isCorrect: true },
+        { id: 2, text: "Blue",  isCorrect: false },
+        { id: 3, text: "Green ",  isCorrect: false }
       ]
     },
     {
@@ -34,9 +34,9 @@ const SortingColors = () => {
       emoji: "🔵",
       color: "blue",
       choices: [
-        { id: 1, text: "Yellow Box",  isCorrect: false },
-        { id: 2, text: "Blue Box",  isCorrect: true },
-        { id: 3, text: "Red Box",  isCorrect: false }
+        { id: 1, text: "Yellow ",  isCorrect: false },
+        { id: 2, text: "Blue ",  isCorrect: true },
+        { id: 3, text: "Red ",  isCorrect: false }
       ]
     },
     {
@@ -44,19 +44,19 @@ const SortingColors = () => {
       emoji: "🌹",
       color: "red",
       choices: [
-        { id: 1, text: "Purple Box",  isCorrect: false },
-        { id: 2, text: "Green Box",  isCorrect: false },
-        { id: 3, text: "Red Box",  isCorrect: true }
+        { id: 1, text: "Purple ",  isCorrect: false },
+        { id: 2, text: "Green ",  isCorrect: false },
+        { id: 3, text: "Red ",  isCorrect: true }
       ]
     },
     {
       id: 4,
-      emoji: "🦋",
+      emoji: "🍊",
       color: "orange",
       choices: [
-        { id: 1, text: "Red Box",  isCorrect: false },
-        { id: 2, text: "Orange Box",  isCorrect: true },
-        { id: 3, text: "Blue Box",  isCorrect: false }
+        { id: 1, text: "Red ",  isCorrect: false },
+        { id: 2, text: "Orange ",  isCorrect: true },
+        { id: 3, text: "Blue ",  isCorrect: false }
       ]
     },
     {
@@ -64,9 +64,9 @@ const SortingColors = () => {
       emoji: "🍓",
       color: "red",
       choices: [
-        { id: 1, text: "Blue Box",  isCorrect: false },
-        { id: 2, text: "Pink Box",  isCorrect: false },
-        { id: 3, text: "Red Box",  isCorrect: true }
+        { id: 1, text: "Blue ",  isCorrect: false },
+        { id: 2, text: "Pink ",  isCorrect: false },
+        { id: 3, text: "Red ",  isCorrect: true }
       ]
     }
   ];

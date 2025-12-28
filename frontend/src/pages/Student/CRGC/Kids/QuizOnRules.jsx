@@ -15,6 +15,7 @@ const QuizOnRules = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
+  const [showAnswerConfetti, setShowAnswerConfetti] = useState(false);
   const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
 
   const questions = [
@@ -158,6 +159,7 @@ const QuizOnRules = () => {
     if (isCorrect) {
       setCoins(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+      setShowAnswerConfetti(true);
     } else {
       showCorrectAnswerFeedback(0, false);
     }
@@ -169,6 +171,7 @@ const QuizOnRules = () => {
         setCurrentQuestion(prev => prev + 1);
         setSelectedOption(null);
         setShowFeedback(false);
+        setShowAnswerConfetti(false);
         resetFeedback();
       } else {
         setGameFinished(true);
@@ -195,7 +198,7 @@ const QuizOnRules = () => {
       gameType="civic-responsibility"
       totalLevels={80}
       currentLevel={72}
-      showConfetti={gameFinished}
+      showConfetti={gameFinished || showAnswerConfetti}
       backPath="/games/civic-responsibility/kids"
       maxScore={questions.length} // Max score is total number of questions (all correct)
       coinsPerLevel={coinsPerLevel}

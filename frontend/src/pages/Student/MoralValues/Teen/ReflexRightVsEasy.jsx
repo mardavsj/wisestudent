@@ -29,57 +29,57 @@ const ReflexRightVsEasy = () => {
   const questions = [
     {
       id: 1,
-      question: "Do homework yourself 📘",
-      correctAnswer: "Right",
+      question: "Your friend is being cyberbullied and asks for your help. What do you do?",
+      correctAnswer: "Support your friend by reporting the bullying to school authorities",
       options: [
-        { text: "Right", isCorrect: true, emoji: "✅" },
-        { text: "Easy", isCorrect: false, emoji: "😅" },
-        { text: "Cheat", isCorrect: false, emoji: "🙈" },
-        { text: "Skip", isCorrect: false, emoji: "⏭️" }
+        { text: "Ignore it to avoid getting involved", isCorrect: false, emoji: "🙈" },
+        { text: "Join in to fit in with others", isCorrect: false, emoji: "👥" },
+        { text: "Support your friend by reporting the bullying to school authorities", isCorrect: true, emoji: "🤝" },
+        { text: "Tell your friend to deal with it themselves", isCorrect: false, emoji: "🤷" }
       ]
     },
     {
       id: 2,
-      question: "Tell truth about mistake 💬",
-      correctAnswer: "Right",
+      question: "During a test, you notice a classmate cheating. What's your response?",
+      correctAnswer: "Focus on your own test and report it to the teacher afterward",
       options: [
-        { text: "Easy", isCorrect: false, emoji: "😅" },
-        { text: "Right", isCorrect: true, emoji: "✅" },
-        { text: "Cheat", isCorrect: false, emoji: "🙈" },
-        { text: "Skip", isCorrect: false, emoji: "⏭️" }
+        { text: "Ignore it since it's not your problem", isCorrect: false, emoji: "🤷" },
+        { text: "Focus on your own test and report it to the teacher afterward", isCorrect: true, emoji: "✅" },
+        { text: "Start cheating too to stay competitive", isCorrect: false, emoji: "📝" },
+        { text: "Confront the cheater during the test", isCorrect: false, emoji: "⚔️" }
       ]
     },
     {
       id: 3,
-      question: "Help clean up mess 🧹",
-      correctAnswer: "Right",
+      question: "You find out that your best friend is spreading a harmful rumor about another student. How do you handle it?",
+      correctAnswer: "Confront your friend and convince them to stop spreading the rumor",
       options: [
-        { text: "Cheat", isCorrect: false, emoji: "🙈" },
-        { text: "Skip", isCorrect: false, emoji: "⏭️" },
-        { text: "Right", isCorrect: true, emoji: "✅" },
-        { text: "Easy", isCorrect: false, emoji: "😅" }
+        { text: "Confront your friend and convince them to stop spreading the rumor", isCorrect: true, emoji: "🗣️" },
+        { text: "Join in spreading the rumor to stay loyal to your friend", isCorrect: false, emoji: "🗣️" },
+        { text: "Ignore it and hope it goes away", isCorrect: false, emoji: "🤞" },
+        { text: "Spread an even worse rumor about the other student", isCorrect: false, emoji: "🌪️" }
       ]
     },
     {
       id: 4,
-      question: "Copy a friend's answers 📄",
-      correctAnswer: "Easy",
+      question: "Your parents are away and your friends want to come over for a party while you're supposed to be babysitting your younger sibling. What do you do?",
+      correctAnswer: "Decline the party and stay responsible for your sibling",
       options: [
-        { text: "Easy", isCorrect: true, emoji: "😅" },
-        { text: "Right", isCorrect: false, emoji: "✅" },
-        { text: "Cheat", isCorrect: false, emoji: "🙈" },
-        { text: "Skip", isCorrect: false, emoji: "⏭️" }
+        { text: "Let your friends come over for the party anyway", isCorrect: false, emoji: "🎉" },
+        { text: "Leave your sibling alone to attend the party", isCorrect: false, emoji: "🏃" },
+        { text: "Ask your sibling to leave so you can have the party", isCorrect: false, emoji: "🚪" },
+        { text: "Decline the party and stay responsible for your sibling", isCorrect: true, emoji: "👶" },
       ]
     },
     {
       id: 5,
-      question: "Stand up for a friend 🦸‍♀️",
-      correctAnswer: "Right",
+      question: "You witness a group of students stealing from a classmate's locker. What is the right action?",
+      correctAnswer: "Tell a teacher or school counselor about what you witnessed",
       options: [
-        { text: "Cheat", isCorrect: false, emoji: "🙈" },
-        { text: "Skip", isCorrect: false, emoji: "⏭️" },
-        { text: "Easy", isCorrect: false, emoji: "😅" },
-        { text: "Right", isCorrect: true, emoji: "✅" }
+        { text: "Tell a teacher or school counselor about what you witnessed", isCorrect: true, emoji: "📢" },
+        { text: "Stay quiet to avoid becoming a target", isCorrect: false, emoji: "🤐" },
+        { text: "Join the theft to be accepted by the group", isCorrect: false, emoji: "🤝" },
+        { text: "Take something too since others are doing it", isCorrect: false, emoji: "😊" }
       ]
     }
   ];
@@ -167,8 +167,8 @@ const ReflexRightVsEasy = () => {
 
   return (
     <GameShell
-      title="Reflex: Right vs Easy"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Choose right or easy!` : "Choose right or easy!"}
+      title="Moral Dilemmas: Right vs Wrong"
+      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Make the right choice!` : "Make the right choice!"}
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -188,11 +188,11 @@ const ReflexRightVsEasy = () => {
             <div className="text-5xl mb-6">⚖️</div>
             <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
             <p className="text-white/90 text-lg mb-6">
-              Tap "Right" for good actions, "Easy" for shortcuts!<br />
+              Make ethical decisions in challenging situations!<br />
               You have {ROUND_TIME} seconds for each question.
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              You have {TOTAL_ROUNDS} moral dilemmas with {ROUND_TIME} seconds each!
             </p>
             <button
               onClick={startGame}

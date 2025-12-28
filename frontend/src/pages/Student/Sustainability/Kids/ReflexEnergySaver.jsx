@@ -35,8 +35,8 @@ const questions = [
     options: [
       { id: 'a', text: " Ceiling Fan", emoji: "🌀", isCorrect: false },
       { id: 'b', text: " Electric Heater", emoji: "🔥", isCorrect: false },
-      { id: 'c', text: " Energy Star Fridge", emoji: "❄️", isCorrect: true },
-      { id: 'd', text: " LED Bulb", emoji: "💡", isCorrect: false }
+      { id: 'd', text: " LED Bulb", emoji: "💡", isCorrect: true },
+      { id: 'c', text: " Energy Star Fridge", emoji: "❄️", isCorrect: false },
     ]
   },
   {

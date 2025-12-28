@@ -21,52 +21,52 @@ const TeachRobotColors = () => {
   const items = [
     {
       id: 1,
-      name: "Apple",
-      emoji: "🍎",
+      name: "Fire Truck",
+      emoji: "🚒",
       choices: [
-        { id: 1, text: "Red Box", color: "red", isCorrect: true },
-        { id: 2, text: "Yellow Box", color: "yellow", isCorrect: false },
-        { id: 3, text: "Green Box", color: "green", isCorrect: false }
+        { id: 1, text: "Red Light", color: "red", isCorrect: true },
+        { id: 2, text: "Blue Light", color: "blue", isCorrect: false },
+        { id: 3, text: "Green Light", color: "green", isCorrect: false }
       ]
     },
     {
       id: 2,
-      name: "Banana",
-      emoji: "🍌",
+      name: "Sun",
+      emoji: "☀️",
       choices: [
-        { id: 1, text: "Red Box", color: "red", isCorrect: false },
-        { id: 2, text: "Yellow Box", color: "yellow", isCorrect: true },
-        { id: 3, text: "Blue Box", color: "blue", isCorrect: false }
+        { id: 1, text: "Orange Glow", color: "orange", isCorrect: false },
+        { id: 2, text: "Yellow Glow", color: "yellow", isCorrect: true },
+        { id: 3, text: "Red Glow", color: "red", isCorrect: false }
       ]
     },
     {
       id: 3,
-      name: "Cherry",
-      emoji: "🍒",
+      name: "Ocean",
+      emoji: "🌊",
       choices: [
-        { id: 1, text: "Purple Box", color: "purple", isCorrect: false },
-        { id: 2, text: "Red Box", color: "red", isCorrect: true },
-        { id: 3, text: "Yellow Box", color: "yellow", isCorrect: false }
+        { id: 1, text: "Blue Depths", color: "blue", isCorrect: true },
+        { id: 2, text: "Green Depths", color: "green", isCorrect: false },
+        { id: 3, text: "Purple Depths", color: "purple", isCorrect: false }
       ]
     },
     {
       id: 4,
-      name: "Lemon",
-      emoji: "🍋",
+      name: "Grass",
+      emoji: "🌱",
       choices: [
-        { id: 1, text: "Orange Box", color: "orange", isCorrect: false },
-        { id: 2, text: "Red Box", color: "red", isCorrect: false },
-        { id: 3, text: "Yellow Box", color: "yellow", isCorrect: true }
+        { id: 1, text: "Brown Soil", color: "brown", isCorrect: false },
+        { id: 2, text: "Red Flowers", color: "red", isCorrect: false },
+        { id: 3, text: "Green Blades", color: "green", isCorrect: true }
       ]
     },
     {
       id: 5,
-      name: "Strawberry",
-      emoji: "🍓",
+      name: "Sky",
+      emoji: "🌤️",
       choices: [
-        { id: 1, text: "Pink Box", color: "pink", isCorrect: false },
-        { id: 2, text: "Red Box", color: "red", isCorrect: true },
-        { id: 3, text: "Green Box", color: "green", isCorrect: false }
+        { id: 1, text: "Gray Clouds", color: "gray", isCorrect: false },
+        { id: 2, text: "Blue Expanse", color: "blue", isCorrect: true },
+        { id: 3, text: "Purple Sunset", color: "purple", isCorrect: false }
       ]
     }
   ];
@@ -121,7 +121,7 @@ const TeachRobotColors = () => {
 
   return (
     <GameShell
-      title="Teach the Robot Colors"
+      title="Train the AI Assistant Colors"
       score={score}
       subtitle={showResult ? "Game Complete!" : `Item ${currentItem + 1} of ${items.length}`}
       onNext={handleNext}
@@ -144,7 +144,7 @@ const TeachRobotColors = () => {
         {!showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
             <h3 className="text-white text-xl font-bold mb-6 text-center">
-              Help the robot sort items by color!
+              Help the AI assistant identify colors in the world!
             </h3>
 
             <div className="bg-white/10 rounded-lg p-6 mb-6">
@@ -169,15 +169,15 @@ const TeachRobotColors = () => {
             {finalScore >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🤖</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Robot Learned Colors!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">AI Assistant Trained!</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You sorted {finalScore} out of {items.length} correctly! ({Math.round((finalScore / items.length) * 100)}%)
+                  You taught {finalScore} out of {items.length} correctly! ({Math.round((finalScore / items.length) * 100)}%)
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
                   <span>+{coins} Coins</span>
                 </div>
                 <p className="text-white/80">
-                  💡 Robots learn from examples you provide. Sorting colors is like giving training data!
+                  💡 AI learns from examples you provide. Recognizing colors is like training data!
                 </p>
               </div>
             ) : (
@@ -185,8 +185,8 @@ const TeachRobotColors = () => {
                 <div className="text-5xl mb-4">💪</div>
                 <h3 className="text-2xl font-bold text-white mb-4">Keep Training!</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You sorted {finalScore} out of {items.length} correctly. ({Math.round((finalScore / items.length) * 100)}%)
-                  Keep practicing to teach the robot better!
+                  You taught {finalScore} out of {items.length} correctly. ({Math.round((finalScore / items.length) * 100)}%)
+                  Keep practicing to train the AI better!
                 </p>
                 <button
                   onClick={handleTryAgain}
@@ -195,7 +195,7 @@ const TeachRobotColors = () => {
                   Try Again
                 </button>
                 <p className="text-white/80 text-sm">
-                  💡 Robots learn from examples you provide. Sorting colors is like giving training data!
+                  💡 AI learns from examples you provide. Recognizing colors is like training data!
                 </p>
               </div>
             )}

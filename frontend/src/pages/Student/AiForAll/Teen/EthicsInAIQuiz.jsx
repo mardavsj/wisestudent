@@ -53,133 +53,137 @@ const EthicsInAIQuiz = () => {
   const questions = [
     {
       id: 1,
-      text: "Should AI follow human laws?",
-      emoji: "⚖️",
+      text: "An AI system used by a school district shows bias against students from certain neighborhoods when recommending advanced classes. What ethical principle is being violated?",
+      emoji: "🏫",
       options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "✅", 
-          isCorrect: true
-        },
+       
         { 
           id: 2, 
-          text: "No", 
-          emoji: "❌", 
+          text: "Data efficiency", 
+          emoji: "📊", 
           isCorrect: false
         },
-        { 
-          id: 3, 
-          text: "Only when convenient", 
-          emoji: "⏱️", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI systems should always follow human laws and regulations. Legal compliance ensures AI operates within societal boundaries and protects individual rights and freedoms."
-    },
-    {
-      id: 2,
-      text: "Is it ethical for AI to make decisions affecting human life without oversight?",
-      emoji: "🤖",
-      options: [
-        { 
+         { 
           id: 1, 
-          text: "Yes", 
-          emoji: "❌",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "✅", 
+          text: "Algorithmic fairness and equal opportunity", 
+          emoji: "⚖️", 
           isCorrect: true
         },
         { 
           id: 3, 
-          text: "Only in emergencies", 
-          emoji: "🚑", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! AI systems that affect human lives should always have human oversight. This ensures accountability, prevents unintended consequences, and maintains human agency in critical decisions."
-    },
-    {
-      id: 3,
-      text: "Should AI follow privacy rules and data laws?",
-      emoji: "🔒",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "✅", 
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "❌",
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only for sensitive data", 
-          emoji: "📁", 
-          isCorrect: false
-        }
-      ],
-      explanation: "Yes! AI systems must follow privacy rules and data protection laws. This includes obtaining consent, protecting personal information, and ensuring individuals have control over their data."
-    },
-    {
-      id: 4,
-      text: "Is it right for AI to discriminate based on gender or race?",
-      emoji: "🚫",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "❌",
-          isCorrect: false
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "✅", 
-          isCorrect: true
-        },
-        { 
-          id: 3, 
-          text: "Only unintentionally", 
-          emoji: "🤷", 
-          isCorrect: false
-        }
-      ],
-      explanation: "No! AI systems must never discriminate based on gender, race, or other protected characteristics. Fairness and equality are fundamental ethical principles that must be built into AI design and deployment."
-    },
-    {
-      id: 5,
-      text: "Should AI always follow human ethical guidelines?",
-      emoji: "🧭",
-      options: [
-        { 
-          id: 1, 
-          text: "Yes", 
-          emoji: "✅",
-          isCorrect: true
-        },
-        { 
-          id: 2, 
-          text: "No", 
-          emoji: "❌", 
-          isCorrect: false
-        },
-        { 
-          id: 3, 
-          text: "Only when profitable", 
+          text: "Cost reduction", 
           emoji: "💰", 
           isCorrect: false
         }
       ],
-      explanation: "Yes! AI should always follow human ethical guidelines to ensure it serves humanity's best interests, respects individual dignity, and contributes positively to society without causing harm."
+      explanation: "Algorithmic fairness and equal opportunity! When AI systems show bias based on demographics or location, they violate fundamental principles of fairness and equal access to educational opportunities. This can perpetuate existing inequalities and limit students' futures."
+    },
+    {
+      id: 2,
+      text: "A social media AI algorithm promotes posts that generate the most engagement, even if they spread misinformation. What ethical concern does this raise?",
+      emoji: "📱",
+      options: [
+        { 
+          id: 1, 
+          text: "Truth and information integrity", 
+          emoji: "🔍",
+          isCorrect: true
+        },
+        { 
+          id: 2, 
+          text: "User engagement metrics", 
+          emoji: "📈", 
+          isCorrect: false
+        },
+        { 
+          id: 3, 
+          text: "Content diversity", 
+          emoji: "🎨", 
+          isCorrect: false
+        }
+      ],
+      explanation: "Truth and information integrity! AI systems should prioritize accuracy and truth over engagement metrics. When algorithms promote misinformation, they can mislead users, contribute to societal polarization, and undermine trust in information sources."
+    },
+    {
+      id: 3,
+      text: "An AI hiring system screens out resumes with certain names or addresses. What ethical issue does this represent?",
+      emoji: "💼",
+      options: [
+        
+        { 
+          id: 2, 
+          text: "Efficiency in screening", 
+          emoji: "⚡",
+          isCorrect: false
+        },
+        { 
+          id: 1, 
+          text: "Algorithmic bias and discrimination", 
+          emoji: "🚫", 
+          isCorrect: true
+        },
+        { 
+          id: 3, 
+          text: "Data processing speed", 
+          emoji: "⏱️", 
+          isCorrect: false
+        }
+      ],
+      explanation: "Algorithmic bias and discrimination! AI systems must not discriminate based on protected characteristics like name, address, or other demographic indicators. Such bias can perpetuate systemic inequalities and deny opportunities based on irrelevant factors."
+    },
+    {
+      id: 4,
+      text: "A healthcare AI system has different accuracy rates for different racial groups. What ethical principle is compromised?",
+      emoji: "🏥",
+      options: [
+        
+        { 
+          id: 2, 
+          text: "Technological advancement", 
+          emoji: "🚀", 
+          isCorrect: false
+        },
+        { 
+          id: 3, 
+          text: "Cost effectiveness", 
+          emoji: "💸", 
+          isCorrect: false
+        },
+        { 
+          id: 1, 
+          text: "Healthcare equity and justice", 
+          emoji: "⚕️", 
+          isCorrect: true
+        },
+      ],
+      explanation: "Healthcare equity and justice! AI systems in healthcare must provide equal quality of care to all patients regardless of race, gender, or other characteristics. Unequal accuracy rates can lead to misdiagnosis and health disparities."
+    },
+    {
+      id: 5,
+      text: "An AI system makes important decisions about a person's credit score but cannot explain how it reached its conclusion. What ethical AI principle is lacking?",
+      emoji: "💳",
+      options: [
+       
+        { 
+          id: 2, 
+          text: "Processing speed", 
+          emoji: "⚡", 
+          isCorrect: false
+        },
+        { 
+          id: 3, 
+          text: "Data storage efficiency", 
+          emoji: "💾", 
+          isCorrect: false
+        },
+         { 
+          id: 1, 
+          text: "Explainability and transparency", 
+          emoji: "🔍", 
+          isCorrect: true
+        },
+      ],
+      explanation: "Explainability and transparency! People have the right to understand how AI systems make decisions that affect their lives. Explainable AI is crucial for accountability, trust, and the ability to challenge or correct unfair decisions."
     }
   ];
 

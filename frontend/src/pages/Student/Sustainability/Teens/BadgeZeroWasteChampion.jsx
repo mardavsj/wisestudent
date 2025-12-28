@@ -134,7 +134,7 @@ const BadgeZeroWasteChampion = () => {
       icon: Trophy,
       item: "Zero Waste Champion",
       options: [
-        { id: "a", text: "Ignore waste problems", emoji: "-dismiss", correct: false, coins: 0 },
+        { id: "a", text: "Ignore waste problems", emoji: "😕", correct: false, coins: 0 },
         { id: "b", text: "Focus only on recycling", emoji: "♻️", correct: false, coins: 0 },
         { id: "c", text: "Apply reduce, reuse, recycle, compost", emoji: "🌍", correct: true, coins: 1 },
         { id: "d", text: "Generate more waste", emoji: "🗑️", correct: false, coins: 0 }

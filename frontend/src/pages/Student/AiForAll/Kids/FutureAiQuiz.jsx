@@ -37,13 +37,13 @@ const FutureAiQuiz = () => {
         { 
           id: "yes", 
           text: "Yes", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         },
         { 
           id: "no", 
           text: "No", 
-          emoji: "❌", 
+          emoji: "👎", 
           isCorrect: false
         }
       ]
@@ -61,7 +61,7 @@ const FutureAiQuiz = () => {
         { 
           id: "yes", 
           text: "Yes, as a helper", 
-          emoji: "🧠🏙️", 
+          emoji: "🏙️", 
           isCorrect: true
         },
         { 
@@ -91,7 +91,7 @@ const FutureAiQuiz = () => {
         { 
           id: "yes", 
           text: "Yes, it will help astronauts", 
-          emoji: "🧠🚀", 
+          emoji: "🚀", 
           isCorrect: true
         }
       ]
@@ -103,7 +103,7 @@ const FutureAiQuiz = () => {
         { 
           id: "yes", 
           text: "Yes, as a helper", 
-          emoji: "🧠💉", 
+          emoji: "💉", 
           isCorrect: true
         },
         { 
@@ -139,7 +139,7 @@ const FutureAiQuiz = () => {
         { 
           id: "yes", 
           text: "Yes, it can assist humans", 
-          emoji: "🧠🌳", 
+          emoji: "🌳", 
           isCorrect: true
         }
       ]

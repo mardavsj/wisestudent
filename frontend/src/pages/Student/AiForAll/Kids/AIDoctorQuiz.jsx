@@ -28,16 +28,11 @@ const AIDoctorQuiz = () => {
       id: 1,
       text: "Can AI detect cancer in X-rays?",
       options: [
-        { 
-          id: "yes", 
-          text: "Yes ", 
-          emoji: "✅", 
-          isCorrect: true
-        },
+       
         { 
           id: "no", 
           text: "No ", 
-          emoji: "❌", 
+          emoji: "👎", 
           isCorrect: false
         },
         { 
@@ -45,7 +40,13 @@ const AIDoctorQuiz = () => {
           text: "Maybe", 
           emoji: "🤔", 
           isCorrect: false
-        }
+        },
+         { 
+          id: "yes", 
+          text: "Yes ", 
+          emoji: "👍", 
+          isCorrect: true
+        },
       ]
     },
     {
@@ -61,13 +62,13 @@ const AIDoctorQuiz = () => {
         { 
           id: "yes", 
           text: "Yes ", 
-          emoji: "✅", 
+          emoji: "🤞", 
           isCorrect: true
         },
         { 
           id: "no", 
           text: "No ", 
-          emoji: "❌", 
+          emoji: "🤦‍♂️", 
           isCorrect: false
         }
       ]
@@ -85,13 +86,13 @@ const AIDoctorQuiz = () => {
         { 
           id: "no", 
           text: "No ", 
-          emoji: "❌", 
+          emoji: "👎", 
           isCorrect: true
         },
         { 
           id: "yes", 
           text: "Yes ", 
-          emoji: "✅", 
+          emoji: "🙂‍↕️", 
           isCorrect: false
         }
       ]
@@ -103,13 +104,13 @@ const AIDoctorQuiz = () => {
         { 
           id: "yes", 
           text: "Yes ", 
-          emoji: "✅", 
+          emoji: "👍", 
           isCorrect: true
         },
         { 
           id: "no", 
           text: "No ", 
-          emoji: "❌", 
+          emoji: "👎", 
           isCorrect: false
         },
         { 
@@ -130,18 +131,19 @@ const AIDoctorQuiz = () => {
           emoji: "🤔", 
           isCorrect: false
         },
-        { 
-          id: "yes", 
-          text: "Yes ", 
-          emoji: "✅", 
-          isCorrect: true
-        },
+       
         { 
           id: "no", 
           text: "No ", 
-          emoji: "❌", 
+          emoji: "👎", 
           isCorrect: false
-        }
+        },
+         { 
+          id: "yes", 
+          text: "Yes ", 
+          emoji: "😊", 
+          isCorrect: true
+        },
       ]
     }
   ];

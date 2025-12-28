@@ -82,7 +82,7 @@ const BadgeSustainabilityLeader = () => {
       item: "Sustainable Agriculture",
       options: [
         { id: "a", text: "Excessive chemical use", emoji: "🧪", correct: false, coins: 0 },
-        { id: "b", text: "Ignoring environmental impact", emoji: "-dismiss", correct: false, coins: 0 },
+        { id: "b", text: "Ignoring environmental impact", emoji: "😕", correct: false, coins: 0 },
         { id: "c", text: "Monoculture farming only", emoji: "🌽", correct: false, coins: 0 },
         { id: "d", text: "Organic methods and soil health", emoji: "🌱", correct: true, coins: 1 }
       ],
@@ -132,7 +132,7 @@ const BadgeSustainabilityLeader = () => {
       icon: Earth,
       item: "Sustainability Leader",
       options: [
-        { id: "a", text: "Ignore sustainability", emoji: "-dismiss", correct: false, coins: 0 },
+        { id: "a", text: "Ignore sustainability", emoji: "😕", correct: false, coins: 0 },
         { id: "b", text: "Work against environmental goals", emoji: "🔥", correct: false, coins: 0 },
         { id: "c", text: "Focus only on profits", emoji: "💰", correct: false, coins: 0 },
         { id: "d", text: "Master all sustainability challenges and lead change", emoji: "🌍", correct: true, coins: 1 }

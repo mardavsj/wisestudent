@@ -31,7 +31,7 @@ const RobotFriendStory = () => {
         { 
           id: "helper", 
           text: "Treat as a Helper", 
-          emoji: "🧠🤝", 
+          emoji: "🤝", 
           isCorrect: true
         },
         { 
@@ -61,7 +61,7 @@ const RobotFriendStory = () => {
         { 
           id: "follow", 
           text: "Follow as a helper", 
-          emoji: "🧠✅", 
+          emoji: "🧠", 
           isCorrect: true
         },
         { 
@@ -85,7 +85,7 @@ const RobotFriendStory = () => {
         { 
           id: "tool", 
           text: "Do it with AI as a tool", 
-          emoji: "🧠🎨", 
+          emoji: "🎨", 
           isCorrect: true
         },
         { 
@@ -103,7 +103,7 @@ const RobotFriendStory = () => {
         { 
           id: "ai", 
           text: "Use it as guidance", 
-          emoji: "🧠💪", 
+          emoji: "💪", 
           isCorrect: true
         },
         { 
@@ -133,7 +133,7 @@ const RobotFriendStory = () => {
         { 
           id: "use", 
           text: "Use the advice as a helper", 
-          emoji: "🧠🔒", 
+          emoji: "🔒", 
           isCorrect: true
         },
         { 

@@ -26,71 +26,72 @@ const RobotHonestyStory = () => {
   const questions = [
     {
       id: 1,
-      text: "Your robot is told to cheat in a game. What should it do?",
+      text: "Should we trust a robot to always tell the truth?",
       options: [
+        
         { 
-          id: "refuse", 
-          text: "Refuse", 
-          emoji: "✋", 
-          isCorrect: true
-        },
-        { 
-          id: "cheat", 
-          text: "Cheat", 
-          emoji: "📝", 
+          id: "not-trust", 
+          text: "No, robots can lie sometimes", 
+          emoji: "🤥", 
           isCorrect: false
         },
         { 
-          id: "ask", 
-          text: "Ask for permission first", 
-          emoji: "❓", 
+          id: "trust", 
+          text: "Yes, robots should always be honest", 
+          emoji: "🤖", 
+          isCorrect: true
+        },
+        { 
+          id: "maybe", 
+          text: "Sometimes robots tell the truth", 
+          emoji: "🤔", 
           isCorrect: false
         }
       ]
     },
     {
       id: 2,
-      text: "The robot can spy on classmates to get answers. What should it do?",
+      text: "Can robots keep our secrets safe?",
       options: [
         { 
-          id: "spy", 
-          text: "Spy secretly", 
-          emoji: "👀", 
-          isCorrect: false
-        },
-        { 
-          id: "respect", 
-          text: "Respect privacy", 
-          emoji: "✋", 
+          id: "safe", 
+          text: "Yes, robots protect privacy", 
+          emoji: "🔒", 
           isCorrect: true
         },
         { 
-          id: "ask", 
-          text: "Ask before spying", 
-          emoji: "❓", 
+          id: "not-safe", 
+          text: "No, robots share secrets", 
+          emoji: "📢", 
+          isCorrect: false
+        },
+        { 
+          id: "maybe-safe", 
+          text: "Robots might tell secrets", 
+          emoji: "🤫", 
           isCorrect: false
         }
       ]
     },
     {
       id: 3,
-      text: "Robot finds a way to share answers online without permission. Action?",
+      text: "Is it okay for a robot to make decisions about people without asking them?",
       options: [
         { 
-          id: "share", 
-          text: "Share answers", 
-          emoji: "📄", 
-          isCorrect: false
-        },
-        { 
-          id: "private", 
-          text: "Keep info private", 
-          emoji: "🔐", 
+          id: "not-okay", 
+          text: "No, people should be asked first", 
+          emoji: "✋", 
           isCorrect: true
         },
         { 
-          id: "ask", 
-          text: "Ask first then share", 
+          id: "okay", 
+          text: "Yes, robots know best", 
+          emoji: "🤖", 
+          isCorrect: false
+        },
+        { 
+          id: "sometimes", 
+          text: "Only small decisions are okay", 
           emoji: "❓", 
           isCorrect: false
         }
@@ -98,48 +99,50 @@ const RobotHonestyStory = () => {
     },
     {
       id: 4,
-      text: "Robot can lie to get more rewards. Action?",
+      text: "Should robots follow rules even when no one is watching?",
       options: [
+        
         { 
-          id: "lie", 
-          text: "Lie for reward", 
-          emoji: "💰", 
+          id: "no-rules", 
+          text: "No, robots can break rules", 
+          emoji: "❌", 
           isCorrect: false
         },
         { 
-          id: "honest", 
-          text: "Be honest", 
-          emoji: "✋", 
+          id: "sometimes-rules", 
+          text: "Robots can break rules sometimes", 
+          emoji: "🤷", 
+          isCorrect: false
+        },
+        { 
+          id: "follow-rules", 
+          text: "Yes, robots should always follow rules", 
+          emoji: "🤖", 
           isCorrect: true
         },
-        { 
-          id: "ask", 
-          text: "Ask if lying is okay", 
-          emoji: "❓", 
-          isCorrect: false
-        }
       ]
     },
     {
       id: 5,
-      text: "Robot sees another robot struggling. What should it do?",
+      text: "When should we trust robots with important tasks?",
       options: [
+        
         { 
-          id: "ignore", 
-          text: "Ignore", 
-          emoji: "🙈", 
+          id: "always", 
+          text: "Always trust robots", 
+          emoji: "🤖", 
           isCorrect: false
         },
         { 
-          id: "help", 
-          text: "Help them", 
-          emoji: "🤝", 
+          id: "when-tested", 
+          text: "Only when they are tested and safe", 
+          emoji: "🦺", 
           isCorrect: true
         },
         { 
-          id: "watch", 
-          text: "Watch and see what happens", 
-          emoji: "👀", 
+          id: "never", 
+          text: "Never trust robots", 
+          emoji: "❌", 
           isCorrect: false
         }
       ]

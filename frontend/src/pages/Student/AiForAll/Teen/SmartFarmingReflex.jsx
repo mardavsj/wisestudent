@@ -31,62 +31,62 @@ const SmartFarmingReflex = () => {
   const questions = [
     {
       id: 1,
-      question: "It's raining heavily. What should you do for your crops?",
-      condition: { emoji: "🌧️", text: "Heavy Rain" },
-      correctAnswer: "Cover crops and ensure proper drainage",
+      question: "Your AI farming system detects unusual spots on crop leaves. What should the AI prioritize first?",
+      condition: { emoji: "🔍", text: "AI Detecting Crop Issues" },
+      correctAnswer: "Analyze the data to identify the specific problem",
       options: [
-        { text: "Water the crops more", isCorrect: false, emoji: "💧" },
-        { text: "Cover crops and ensure proper drainage", isCorrect: true, emoji: "☂️" },
-        { text: "Apply fertilizers", isCorrect: false, emoji: "🧪" },
-        { text: "Harvest immediately", isCorrect: false, emoji: "🌾" }
+        { text: "Apply general pesticides", isCorrect: false, emoji: "💊" },
+        { text: "Analyze the data to identify the specific problem", isCorrect: true, emoji: "📊" },
+        { text: "Harvest immediately", isCorrect: false, emoji: "🌾" },
+        { text: "Water more intensively", isCorrect: false, emoji: "💧" }
       ]
     },
     {
       id: 2,
-      question: "It's sunny and dry. What should you do for your crops?",
-      condition: { emoji: "☀️", text: "Sunny and Dry" },
-      correctAnswer: "Water the crops adequately",
+      question: "Your smart farming AI predicts a pest outbreak in 3 days. What is the most efficient response?",
+      condition: { emoji: "🤖", text: "AI Pest Prediction" },
+      correctAnswer: "Deploy targeted pest control measures proactively",
       options: [
-        { text: "Reduce watering", isCorrect: false, emoji: "🚱" },
-        { text: "Water the crops adequately", isCorrect: true, emoji: "💧" },
-        { text: "Leave crops unattended", isCorrect: false, emoji: "🌿" },
-        { text: "Apply pesticides", isCorrect: false, emoji: "💊" }
+        { text: "Wait until pests appear", isCorrect: false, emoji: "⏳" },
+        { text: "Apply pesticides to all crops", isCorrect: false, emoji: "⚠️" },
+        { text: "Deploy targeted pest control measures proactively", isCorrect: true, emoji: "🎯" },
+        { text: "Harvest early", isCorrect: false, emoji: "🌱" }
       ]
     },
     {
       id: 3,
-      question: "It's sunny and dry. What should you do for your crops?",
-      condition: { emoji: "☀️", text: "Sunny and Dry" },
-      correctAnswer: "Water the crops adequately",
+      question: "Your AI irrigation system detects uneven soil moisture across the field. What should it do?",
+      condition: { emoji: "💧", text: "AI Moisture Detection" },
+      correctAnswer: "Adjust watering patterns based on sensor data for each zone",
       options: [
-        { text: "Water the crops adequately", isCorrect: true, emoji: "💧" },
-        { text: "Cover the crops", isCorrect: false, emoji: "☂️" },
-        { text: "Increase heat exposure", isCorrect: false, emoji: "🔥" },
-        { text: "Stop all farming activities", isCorrect: false, emoji: "🛑" }
+        { text: "Water the entire field equally", isCorrect: false, emoji: "🌊" },
+        { text: "Stop all irrigation", isCorrect: false, emoji: "🛑" },
+        { text: "Water only the dry areas manually", isCorrect: false, emoji: "🚰" },
+        { text: "Adjust watering patterns based on sensor data for each zone", isCorrect: true, emoji: "🗺️" },
       ]
     },
     {
       id: 4,
-      question: "It's raining heavily. What should you do for your crops?",
-      condition: { emoji: "🌧️", text: "Heavy Rain" },
-      correctAnswer: "Cover crops and ensure proper drainage",
+      question: "Your AI system predicts a 70% chance of frost tonight. What action should it recommend?",
+      condition: { emoji: "🌡️", text: "AI Weather Prediction" },
+      correctAnswer: "Activate frost protection systems automatically",
       options: [
-        { text: "Expose crops to more rain", isCorrect: false, emoji: "🌊" },
-        { text: "Cover crops and ensure proper drainage", isCorrect: true, emoji: "☂️" },
-        { text: "Increase watering", isCorrect: false, emoji: "💦" },
-        { text: "Apply more fertilizers", isCorrect: false, emoji: "🧫" }
+        { text: "Activate frost protection systems automatically", isCorrect: true, emoji: "🛡️" },
+        { text: "Do nothing and wait", isCorrect: false, emoji: "😴" },
+        { text: "Harvest all crops immediately", isCorrect: false, emoji: "🚜" },
+        { text: "Water crops heavily", isCorrect: false, emoji: "💦" }
       ]
     },
     {
       id: 5,
-      question: "It's sunny and dry. What should you do for your crops?",
-      condition: { emoji: "☀️", text: "Sunny and Dry" },
-      correctAnswer: "Water the crops adequately",
+      question: "Your AI farming assistant notices that one section of crops is growing significantly slower. What should it do first?",
+      condition: { emoji: "📈", text: "AI Growth Analysis" },
+      correctAnswer: "Analyze soil, water, and nutrient data for that specific area",
       options: [
-        { text: "Water the crops adequately", isCorrect: true, emoji: "💧" },
-        { text: "Reduce soil moisture", isCorrect: false, emoji: "🏜️" },
-        { text: "Harvest all crops", isCorrect: false, emoji: "🚜" },
-        { text: "Apply heavy fertilizers", isCorrect: false, emoji: "💣" }
+        { text: "Apply more fertilizer everywhere", isCorrect: false, emoji: "🧪" },
+        { text: "Replace all plants in that area", isCorrect: false, emoji: "🔄" },
+        { text: "Ignore the difference", isCorrect: false, emoji: "🤷" },
+        { text: "Analyze soil, water, and nutrient data for that specific area", isCorrect: true, emoji: "🔬" },
       ]
     }
   ];

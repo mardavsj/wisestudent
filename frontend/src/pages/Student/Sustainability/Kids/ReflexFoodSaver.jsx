@@ -43,7 +43,7 @@ const questions = [
     id: 4,
     text: "Which action helps reduce food waste?",
     options: [
-        { id: 'b', text: " Take Too Much", emoji: "overeating", isCorrect: false },
+        { id: 'b', text: " Take Too Much", emoji: "😋", isCorrect: false },
         { id: 'a', text: " Take Reasonable Portions", emoji: "🍽️", isCorrect: true },
       { id: 'c', text: " Waste Leftovers", emoji: "❌", isCorrect: false },
       { id: 'd', text: " Cook Extra", emoji: "🍳", isCorrect: false }

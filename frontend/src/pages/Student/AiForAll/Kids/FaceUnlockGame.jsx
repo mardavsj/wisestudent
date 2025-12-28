@@ -23,46 +23,51 @@ const FaceUnlockGame = () => {
     {
       id: 1,
       emoji: "😊",
+      question: "Can the phone recognize this clear, front-facing smile?",
       choices: [
-        { id: 1, text: "Can Unlock Phone", isCorrect: true },
-        { id: 2, text: "Cannot Unlock Phone", isCorrect: false },
-        { id: 3, text: "Needs Password", isCorrect: false }
+        { id: 2, text: "No, face is too dark", isCorrect: false },
+        { id: 3, text: "No, face is turned away", isCorrect: false },
+        { id: 1, text: "Yes, face is clear and visible", isCorrect: true },
       ]
     },
     {
       id: 2,
       emoji: "😎",
+      question: "Can the phone recognize this face with sunglasses?",
       choices: [
-        { id: 1, text: "Can Unlock Phone", isCorrect: false },
-        { id: 2, text: "Cannot Unlock Phone", isCorrect: true },
-        { id: 3, text: "Needs Fingerprint", isCorrect: false }
+        { id: 1, text: "Yes, sunglasses don't affect recognition", isCorrect: false },
+        { id: 2, text: "No, sunglasses block key features", isCorrect: true },
+        { id: 3, text: "Yes, sunglasses make it easier", isCorrect: false }
       ]
     },
     {
       id: 3,
       emoji: "😇",
+      question: "Can the phone recognize this face that is well-lit and centered?",
       choices: [
-        { id: 1, text: "Cannot Unlock Phone", isCorrect: false },
-        { id: 2, text: "Needs Password", isCorrect: false },
-        { id: 3, text: "Can Unlock Phone", isCorrect: true }
+        { id: 1, text: "No, face is too bright", isCorrect: false },
+        { id: 2, text: "No, face is not visible", isCorrect: false },
+        { id: 3, text: "Yes, face is perfect for recognition", isCorrect: true }
       ]
     },
     {
       id: 4,
       emoji: "😡",
+      question: "Can the phone recognize this face showing strong emotions?",
       choices: [
-        { id: 1, text: "Cannot Unlock Phone", isCorrect: true },
-        { id: 2, text: "Can Unlock Phone", isCorrect: false },
-        { id: 3, text: "Needs Face Scan", isCorrect: false }
+        { id: 2, text: "No, strong expressions change face shape", isCorrect: true },
+        { id: 1, text: "Yes, emotions help recognition", isCorrect: false },
+        { id: 3, text: "Yes, anger makes face clearer", isCorrect: false }
       ]
     },
     {
       id: 5,
       emoji: "🙂",
+      question: "Can the phone recognize this partially turned face?",
       choices: [
-        { id: 1, text: "Needs Voice Recognition", isCorrect: false },
-        { id: 2, text: "Can Unlock Phone", isCorrect: true },
-        { id: 3, text: "Cannot Unlock Phone", isCorrect: false }
+        { id: 1, text: "Yes, phone can see all features", isCorrect: false },
+        { id: 2, text: "Yes, side face is best", isCorrect: false },
+        { id: 3, text: "No, phone needs front view", isCorrect: true }
       ]
     }
   ];
@@ -140,7 +145,7 @@ const FaceUnlockGame = () => {
         {!showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
             <div className="text-9xl mb-6 text-center animate-pulse">{currentFaceData.emoji}</div>
-            <h3 className="text-white text-xl font-bold mb-6 text-center">Can this face unlock the phone?</h3>
+            <h3 className="text-white text-xl font-bold mb-6 text-center">{currentFaceData.question}</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {currentFaceData.choices.map((choice) => (

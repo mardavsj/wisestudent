@@ -31,62 +31,62 @@ const SelfDrivingCarReflexx = () => {
   const questions = [
     {
       id: 1,
-      question: "What should a self-driving car do when it sees a red light?",
-      signal: { emoji: "🟥", text: "Red Light" },
-      correctAnswer: "Stop",
+      question: "You're in a self-driving car during a heavy rainstorm. A pedestrian suddenly steps into the road. What should the AI prioritize?",
+      signal: { emoji: "🌧️", text: "Pedestrian in Road" },
+      correctAnswer: "Stop for pedestrian safety",
       options: [
-        { text: "Stop", isCorrect: true, emoji: "🛑" },
-        { text: "Go", isCorrect: false, emoji: "🏎️" },
-        { text: "Slow Down", isCorrect: false, emoji: "⚠️" },
-        { text: "Speed Up", isCorrect: false, emoji: "⚡" }
+        { text: "Speed up to pass quickly", isCorrect: false, emoji: "🏎️" },
+        { text: "Slow down but continue", isCorrect: false, emoji: "⚠️" },
+        { text: "Stop for pedestrian safety", isCorrect: true, emoji: "🛑" },
+        { text: "Change lanes to avoid", isCorrect: false, emoji: "©️" }
       ]
     },
     {
       id: 2,
-      question: "What should a self-driving car do when it sees a green light?",
-      signal: { emoji: "🟢", text: "Green Light" },
-      correctAnswer: "Go",
+      question: "Your self-driving car approaches a construction zone with temporary signals. How should the AI respond?",
+      signal: { emoji: "🚧", text: "Construction Zone" },
+      correctAnswer: "Follow temporary traffic rules",
       options: [
-        { text: "Stop", isCorrect: false, emoji: "🛑" },
-        { text: "Go", isCorrect: true, emoji: "🏎️" },
-        { text: "Slow Down", isCorrect: false, emoji: "⚠️" },
-        { text: "Turn Around", isCorrect: false, emoji: "🔄" }
+        { text: "Follow temporary traffic rules", isCorrect: true, emoji: "🚦" },
+        { text: "Maintain regular speed", isCorrect: false, emoji: "🏎️" },
+        { text: "Wait for human override", isCorrect: false, emoji: "✋" },
+        { text: "Find an alternate route", isCorrect: false, emoji: "🗺️" }
       ]
     },
     {
       id: 3,
-      question: "What should a self-driving car do when it sees a yellow light?",
-      signal: { emoji: "🟡", text: "Yellow Light" },
-      correctAnswer: "Slow Down",
+      question: "The self-driving car detects an ambulance approaching with sirens. What is the appropriate response?",
+      signal: { emoji: "🚑", text: "Emergency Vehicle" },
+      correctAnswer: "Yield safely to emergency vehicle",
       options: [
-        { text: "Stop", isCorrect: false, emoji: "🛑" },
-        { text: "Go", isCorrect: false, emoji: "🏎️" },
-        { text: "Slow Down", isCorrect: true, emoji: "⚠️" },
-        { text: "Park", isCorrect: false, emoji: "🅿️" }
+        { text: "Maintain current position", isCorrect: false, emoji: "⏹️" },
+        { text: "Speed up to clear the way", isCorrect: false, emoji: "💨" },
+        { text: "Ignore and continue", isCorrect: false, emoji: "🔇" },
+        { text: "Yield safely to emergency vehicle", isCorrect: true, emoji: "🚨" },
       ]
     },
     {
       id: 4,
-      question: "What should a self-driving car do when it sees a green light?",
-      signal: { emoji: "🟢", text: "Green Light" },
-      correctAnswer: "Go",
+      question: "The car's sensors detect black ice on the road ahead. What should the AI do?",
+      signal: { emoji: "🧊", text: "Black Ice Detected" },
+      correctAnswer: "Reduce speed and increase distance",
       options: [
-        { text: "Stop", isCorrect: false, emoji: "🛑" },
-        { text: "Go", isCorrect: true, emoji: "🏎️" },
-        { text: "Slow Down", isCorrect: false, emoji: "⚠️" },
-        { text: "Honk", isCorrect: false, emoji: "📢" }
+        { text: "Reduce speed and increase distance", isCorrect: true, emoji: "🐢" },
+        { text: "Apply brakes suddenly", isCorrect: false, emoji: "🛑" },
+        { text: "Continue normal driving", isCorrect: false, emoji: "🏎️" },
+        { text: "Turn on windshield wipers", isCorrect: false, emoji: "💦" }
       ]
     },
     {
       id: 5,
-      question: "What should a self-driving car do when it sees a red light?",
-      signal: { emoji: "🟥", text: "Red Light" },
-      correctAnswer: "Stop",
+      question: "The self-driving car approaches a school zone during dismissal time. How should it adjust its behavior?",
+      signal: { emoji: "🏫", text: "School Zone" },
+      correctAnswer: "Reduce speed significantly",
       options: [
-        { text: "Stop", isCorrect: true, emoji: "🛑" },
-        { text: "Go", isCorrect: false, emoji: "🏎️" },
-        { text: "Slow Down", isCorrect: false, emoji: "⚠️" },
-        { text: "Reverse", isCorrect: false, emoji: "◀️" }
+        { text: "Maintain regular speed", isCorrect: false, emoji: "🏎️" },
+        { text: "Reduce speed significantly", isCorrect: true, emoji: "📉" },
+        { text: "Speed up to clear zone", isCorrect: false, emoji: "⚡" },
+        { text: "Turn on hazard lights", isCorrect: false, emoji: "⚠️" }
       ]
     }
   ];

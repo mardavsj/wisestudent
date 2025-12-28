@@ -27,138 +27,114 @@ const AIDoctorSimulation = () => {
   const scenarios = [
     {
       id: 1,
-      title: "Fever and Cough",
-      description: "A patient has a high fever and persistent cough. What disease should the AI doctor identify?",
+      title: "AI Medical Imaging",
+      description: "An AI doctor looks at X-ray images to find problems. What is this AI most likely helping doctors find?",
       choices: [
         { 
-          text: "Flu", 
-          emoji: "🤒",
+          text: "Broken bones", 
+          emoji: "🦴",
           isCorrect: true
         },
         { 
-          text: "Cold", 
-          emoji: "🤧",
+          text: "Weather patterns", 
+          emoji: "☀️",
           isCorrect: false
         },
         { 
-          text: "Migraine", 
-          emoji: "🤕",
-          isCorrect: false
-        },
-        { 
-          text: "Allergy", 
-          emoji: "🤧",
+          text: "Car problems", 
+          emoji: "🚗",
           isCorrect: false
         }
       ]
     },
     {
       id: 2,
-      title: "Stomach Ache",
-      description: "A patient complains of severe stomach pain after eating. What should the AI diagnose?",
+      title: "AI Health Assistant",
+      description: "Sarah talks to an AI health assistant on her phone. She describes her symptoms and gets health tips. What is this AI helping with?",
       choices: [
         { 
-          text: "Cold", 
-          emoji: "🤧",
+          text: "Finding nearby restaurants", 
+          emoji: "🍔",
           isCorrect: false
         },
         { 
-          text: "Food Poisoning", 
-          emoji: "🤢",
+          text: "Checking symptoms and giving health advice", 
+          emoji: "🩺",
           isCorrect: true
         },
         { 
-          text: "Flu", 
-          emoji: "🤒",
-          isCorrect: false
-        },
-        { 
-          text: "Stomach Ulcer", 
-          emoji: "😖",
+          text: "Playing video games", 
+          emoji: "🎮",
           isCorrect: false
         }
       ]
     },
     {
       id: 3,
-      title: "Sneezing and Runny Nose",
-      description: "A patient has frequent sneezing and a runny nose. What is the most likely diagnosis?",
+      title: "AI Disease Detection",
+      description: "A hospital uses AI to look at blood test results. What can the AI help doctors do better?",
       choices: [
+       
         { 
-          text: "Migraine", 
-          emoji: "🤕",
+          text: "Cook meals for patients", 
+          emoji: "🍲",
           isCorrect: false
         },
         { 
-          text: "Food Poisoning", 
-          emoji: "🤢",
+          text: "Clean hospital rooms", 
+          emoji: "🧹",
           isCorrect: false
         },
-        { 
-          text: "Cold", 
-          emoji: "🤧",
+         { 
+          text: "Predict diseases early", 
+          emoji: "🔬",
           isCorrect: true
         },
-        { 
-          text: "Sinusitis", 
-          emoji: "😷",
-          isCorrect: false
-        }
       ]
     },
     {
       id: 4,
-      title: "Headache and Dizziness",
-      description: "A patient experiences severe headache with dizziness. What should the AI doctor identify?",
+      title: "AI for Medicine Discovery",
+      description: "Scientists use AI to discover new medicines. How does the AI help?",
       choices: [
-       
         { 
-          text: "Flu", 
-          emoji: "🤒",
-          isCorrect: false
-        },
-        { 
-          text: "Cold", 
-          emoji: "🤧",
-          isCorrect: false
-        },
-        { 
-          text: "Dehydration", 
-          emoji: "💧",
-          isCorrect: false
-        },
-         { 
-          text: "Migraine", 
-          emoji: "🤕",
+          text: "Design new medicine molecules", 
+          emoji: "💊",
           isCorrect: true
         },
+        { 
+          text: "Drive ambulances", 
+          emoji: "🚑",
+          isCorrect: false
+        },
+        { 
+          text: "Write music for hospitals", 
+          emoji: "🎵",
+          isCorrect: false
+        }
       ]
     },
     {
       id: 5,
-      title: "Skin Rash and Itching",
-      description: "A patient has developed red, itchy skin patches. What condition should the AI identify?",
+      title: "AI Health Monitoring",
+      description: "Smart watches can track your heart rate, sleep, and steps. How can AI help with this health data?",
       choices: [
+        
         { 
-          text: "Eczema", 
-          emoji: "🔴",
+          text: "Make phone calls for you", 
+          emoji: "📞",
+          isCorrect: false
+        },
+        { 
+          text: "Take photos of your food", 
+          emoji: "📸",
+          isCorrect: false
+        },
+        { 
+          text: "Find patterns that might show health problems", 
+          emoji: "📊",
           isCorrect: true
         },
-        { 
-          text: "Migraine", 
-          emoji: "🤕",
-          isCorrect: false
-        },
-        { 
-          text: "Flu", 
-          emoji: "🤒",
-          isCorrect: false
-        },
-        { 
-          text: "Hives", 
-          emoji: "🔥",
-          isCorrect: false
-        }
       ]
     }
   ];

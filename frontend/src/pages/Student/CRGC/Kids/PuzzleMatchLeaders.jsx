@@ -21,7 +21,7 @@ const PuzzleMatchLeaders = () => {
   const leaders = [
     { id: 1, name: "Class Monitor", emoji: "📚", description: "Student who helps manage classroom" },
     { id: 2, name: "Mayor", emoji: "🏙️", description: "Leader of a city or town" },
-    { id: 3, name: "Prime Minister", emoji: "🇮🌄", description: "Head of government of a country" },
+    { id: 3, name: "Prime Minister", emoji: "🌄", description: "Head of government of a country" },
     { id: 4, name: "Team Captain", emoji: "⚽", description: "Leader of a sports team" },
     { id: 5, name: "Community Volunteer", emoji: "🤝", description: "Person who helps local community" }
   ];

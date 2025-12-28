@@ -31,13 +31,13 @@ const WrongPredictionQuiz = () => {
         { 
           id: "no", 
           text: "No", 
-          emoji: "❌", 
+          emoji: "👎", 
           isCorrect: true
         },
         { 
           id: "yes", 
           text: "Yes", 
-          emoji: "✔️", 
+          emoji: "👍", 
           isCorrect: false
         },
         { 
@@ -61,13 +61,13 @@ const WrongPredictionQuiz = () => {
         { 
           id: "no", 
           text: "No", 
-          emoji: "❌", 
+          emoji: "🙅", 
           isCorrect: true
         },
         { 
           id: "yes", 
           text: "Yes", 
-          emoji: "✔️", 
+          emoji: "🙂‍↕️", 
           isCorrect: false
         }
       ]
@@ -91,7 +91,7 @@ const WrongPredictionQuiz = () => {
         { 
           id: "yes", 
           text: "That's right", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         }
       ]
@@ -103,13 +103,13 @@ const WrongPredictionQuiz = () => {
         { 
           id: "no", 
           text: "No", 
-          emoji: "❌", 
+          emoji: "👎", 
           isCorrect: true
         },
         { 
           id: "yes", 
           text: "Yes", 
-          emoji: "✔️", 
+          emoji: "👍", 
           isCorrect: false
         },
         { 
@@ -133,13 +133,13 @@ const WrongPredictionQuiz = () => {
         { 
           id: "yes", 
           text: "Yes", 
-          emoji: "✔️", 
+          emoji: "🙂", 
           isCorrect: false
         },
         { 
           id: "no", 
           text: "No way!", 
-          emoji: "❌", 
+          emoji: "👎", 
           isCorrect: true
         }
       ]

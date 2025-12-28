@@ -31,62 +31,62 @@ const SelfDrivingCarReflex = () => {
   const questions = [
     {
       id: 1,
-      question: "What should you do when you see this traffic signal?",
-      signal: "🟢",
-      correctAnswer: "Go",
+      question: "An AI self-driving car encounters a jaywalker crossing the road unexpectedly. What should the AI prioritize?",
+      signal: "🚶‍♂️",
+      correctAnswer: "Stop to avoid collision",
       options: [
-        { text: "Go", isCorrect: true, emoji: "▶️" },
-        { text: "Stop", isCorrect: false, emoji: "🛑" },
-        { text: "Slow Down", isCorrect: false, emoji: "🐢" },
-        { text: "Honk", isCorrect: false, emoji: "📢" }
+        { text: "Continue at same speed", isCorrect: false, emoji: "▶️" },
+        { text: "Speed up to pass quickly", isCorrect: false, emoji: "⚡" },
+        { text: "Stop to avoid collision", isCorrect: true, emoji: "🛑" },
+        { text: "Honk to warn pedestrian", isCorrect: false, emoji: "📢" }
       ]
     },
     {
       id: 2,
-      question: "What should you do when you see this traffic signal?",
-      signal: "🔴",
-      correctAnswer: "Stop",
+      question: "An AI car detects an ambulance approaching with sirens. How should it respond?",
+      signal: "🚑",
+      correctAnswer: "Yield and make way safely",
       options: [
-        { text: "Go", isCorrect: false, emoji: "▶️" },
-        { text: "Speed Up", isCorrect: false, emoji: "⚡" },
-        { text: "Stop", isCorrect: true, emoji: "🛑" },
-        { text: "Turn Around", isCorrect: false, emoji: "🔄" }
+        { text: "Yield and make way safely", isCorrect: true, emoji: "🚦" },
+        { text: "Maintain current position", isCorrect: false, emoji: "⏹️" },
+        { text: "Speed up to clear path", isCorrect: false, emoji: "💨" },
+        { text: "Ignore emergency vehicle", isCorrect: false, emoji: "🔇" }
       ]
     },
     {
       id: 3,
-      question: "What should you do when you see this traffic signal?",
-      signal: "🟢",
-      correctAnswer: "Go",
+      question: "An AI car approaches a school zone during dismissal time. What should it do?",
+      signal: "🏫",
+      correctAnswer: "Reduce speed significantly",
       options: [
-        { text: "Go", isCorrect: true, emoji: "▶️" },
-        { text: "Stop", isCorrect: false, emoji: "🛑" },
-        { text: "Park", isCorrect: false, emoji: "🅿️" },
-        { text: "Reverse", isCorrect: false, emoji: "◀️" }
+        { text: "Maintain regular speed", isCorrect: false, emoji: "▶️" },
+        { text: "Reduce speed significantly", isCorrect: true, emoji: "🐢" },
+        { text: "Speed up to clear zone", isCorrect: false, emoji: "⚡" },
+        { text: "Turn on hazard lights", isCorrect: false, emoji: "⚠️" }
       ]
     },
     {
       id: 4,
-      question: "What should you do when you see this traffic signal?",
-      signal: "🔴",
-      correctAnswer: "Stop",
+      question: "An AI car's sensors detect black ice on the road ahead. What is the safest action?",
+      signal: "🧊",
+      correctAnswer: "Reduce speed and increase distance",
       options: [
-        { text: "Go", isCorrect: false, emoji: "▶️" },
-        { text: "Stop", isCorrect: true, emoji: "🛑" },
-        { text: "Merge", isCorrect: false, emoji: "🔀" },
-        { text: "Overtake", isCorrect: false, emoji: "💨" }
+        { text: "Reduce speed and increase distance", isCorrect: true, emoji: "🐢" },
+        { text: "Apply brakes suddenly", isCorrect: false, emoji: "🛑" },
+        { text: "Continue normal driving", isCorrect: false, emoji: "▶️" },
+        { text: "Turn on windshield wipers", isCorrect: false, emoji: "💦" }
       ]
     },
     {
       id: 5,
-      question: "What should you do when you see this traffic signal?",
-      signal: "🟢",
-      correctAnswer: "Go",
+      question: "An AI car approaches an intersection where the traffic light is malfunctioning. What should it do?",
+      signal: "⚠️",
+      correctAnswer: "Treat as 4-way stop and proceed carefully",
       options: [
-        { text: "Stop", isCorrect: false, emoji: "🛑" },
-        { text: "Wait", isCorrect: false, emoji: "⏳" },
-        { text: "Exit", isCorrect: false, emoji: "🚪" },
-        { text: "Go", isCorrect: true, emoji: "▶️" },
+        { text: "Go through quickly", isCorrect: false, emoji: "💨" },
+        { text: "Stop and wait indefinitely", isCorrect: false, emoji: "⏹️" },
+        { text: "Call emergency services", isCorrect: false, emoji: "📞" },
+        { text: "Treat as 4-way stop and proceed carefully", isCorrect: true, emoji: "🚫" },
       ]
     }
   ];

@@ -15,6 +15,7 @@ const QuizOnFoodGroups = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
+  const [showAnswerConfetti, setShowAnswerConfetti] = useState(false);
   const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
   const questions = [
     {
@@ -82,6 +83,7 @@ const QuizOnFoodGroups = () => {
     if (isCorrect) {
       setCoins(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+      setShowAnswerConfetti(true);
     } else {
       showCorrectAnswerFeedback(0, false);
     }
@@ -93,6 +95,7 @@ const QuizOnFoodGroups = () => {
         setCurrentQuestion(prev => prev + 1);
         setSelectedOption(null);
         setShowFeedback(false);
+        setShowAnswerConfetti(false);
         resetFeedback();
       } else {
         setGameFinished(true);
@@ -119,7 +122,7 @@ const QuizOnFoodGroups = () => {
       gameType="health-female"
       totalLevels={20}
       currentLevel={12}
-      showConfetti={gameFinished}
+      showConfetti={gameFinished || showAnswerConfetti}
       backPath="/games/health-female/kids"
       maxScore={questions.length} // Max score is total number of questions (all correct)
       coinsPerLevel={coinsPerLevel}

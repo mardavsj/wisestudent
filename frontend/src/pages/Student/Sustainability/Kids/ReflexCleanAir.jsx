@@ -43,10 +43,10 @@ const questions = [
     id: 4,
     text: "What reduces pollution?",
     options: [
-      { id: 'a', text: " Public Transport", emoji: "🚌", isCorrect: false },
       { id: 'b', text: " Organic Farming", emoji: "🌿", isCorrect: false },
       { id: 'c', text: " Walking", emoji: "🚶", isCorrect: false },
-      { id: 'd', text: " Recycling Waste", emoji: "♻️", isCorrect: true }
+      { id: 'd', text: " Recycling Waste", emoji: "♻️", isCorrect: false },
+      { id: 'a', text: " Public Transport", emoji: "🚌", isCorrect: true },
     ]
   },
   {
@@ -54,8 +54,8 @@ const questions = [
     text: "Which habit protects air?",
     options: [
       { id: 'a', text: " Littering", emoji: "🚯", isCorrect: false },
-      { id: 'b', text: " Water Conservation", emoji: "💧", isCorrect: true },
-      { id: 'c', text: " Eco-friendly Products", emoji: "🌱", isCorrect: false },
+      { id: 'c', text: " Eco-friendly Products", emoji: "🌱", isCorrect: true },
+      { id: 'b', text: " Water Conservation", emoji: "💧", isCorrect: false },
       { id: 'd', text: " Burning Leaves", emoji: "🔥", isCorrect: false }
     ]
   }

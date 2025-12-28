@@ -30,13 +30,13 @@ const AITranslatorQuiz = () => {
       options: [
         { 
           id: "yes", 
-          text: "Yes, it uses AI 🤖", 
-          emoji: "✅", 
+          text: "Yes, it uses AI ", 
+          emoji: "🤖", 
           isCorrect: true
         },
         { 
           id: "no", 
-          text: "No, it doesn't ❌", 
+          text: "No, it doesn't ", 
           emoji: "❌", 
           isCorrect: false
         },
@@ -60,13 +60,13 @@ const AITranslatorQuiz = () => {
         },
         { 
           id: "reading", 
-          text: "Reading lots of text data 📖", 
+          text: "Reading lots of text data ", 
           emoji: "🧠", 
           isCorrect: true
         },
         { 
           id: "guessing", 
-          text: "Random guessing 🎯", 
+          text: "Random guessing ", 
           emoji: "🎲", 
           isCorrect: false
         }
@@ -84,13 +84,13 @@ const AITranslatorQuiz = () => {
         },
         { 
           id: "no", 
-          text: "No, they stay the same ⚙️", 
+          text: "No, they stay the same ", 
           emoji: "🛑", 
           isCorrect: false
         },
         { 
           id: "yes", 
-          text: "Yes, they keep learning 🧩", 
+          text: "Yes, they keep learning ", 
           emoji: "🚀", 
           isCorrect: true
         }
@@ -102,14 +102,14 @@ const AITranslatorQuiz = () => {
       options: [
         { 
           id: "report", 
-          text: "Report or correct it 📝", 
-          emoji: "✅", 
+          text: "Report or correct it ", 
+          emoji: "📝", 
           isCorrect: true
         },
         { 
           id: "ignore", 
-          text: "Ignore it 😐", 
-          emoji: "❌", 
+          text: "Ignore it ", 
+          emoji: "😐", 
           isCorrect: false
         },
         { 
@@ -132,13 +132,13 @@ const AITranslatorQuiz = () => {
         },
         { 
           id: "google", 
-          text: "Google Translate 🌐", 
+          text: "Google Translate ", 
           emoji: "🤖", 
           isCorrect: false
         },
         { 
           id: "dictionary", 
-          text: "Paper Dictionary 📘", 
+          text: "Paper Dictionary ", 
           emoji: "📖", 
           isCorrect: true
         }
