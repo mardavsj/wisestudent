@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion as Motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Users,
   MessageSquare,
@@ -72,133 +72,147 @@ const TeacherChatContacts = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
-        <Motion.div
+      <div className="flex items-center justify-center min-h-screen bg-slate-50">
+        <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          className="w-16 h-16 border-4 border-indigo-600 border-t-transparent rounded-full"
+          className="w-8 h-8 border-2 border-indigo-600 border-t-transparent rounded-full"
         />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-6 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Motion.button
-                onClick={() => navigate('/school-teacher/overview')}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
-              >
-                <ArrowLeft className="w-6 h-6" />
-              </Motion.button>
-              <div>
-                <h1 className="text-3xl font-black">Chat Contacts</h1>
-                <p className="text-white/90 mt-1">Connect with students and parents</p>
+    <div className="min-h-screen bg-slate-50 py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-xl border border-slate-200 shadow-sm mb-6"
+        >
+          <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-6 rounded-t-xl">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <motion.button
+                  onClick={() => navigate('/school-teacher/overview')}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all"
+                >
+                  <ArrowLeft className="w-5 h-5 text-white" />
+                </motion.button>
+                <div>
+                  <h1 className="text-2xl font-bold text-white mb-1">Chat Contacts</h1>
+                  <p className="text-sm text-white/80">Connect with students and parents</p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-6">
-              <div className="text-right">
-                <p className="text-sm text-white/80">Total Contacts</p>
-                <p className="text-2xl font-bold">{contacts.length}</p>
+              <div className="flex items-center gap-4">
+                <div className="text-right">
+                  <p className="text-xs text-white/80 uppercase tracking-wide">Total Contacts</p>
+                  <p className="text-2xl font-bold text-white">{contacts.length}</p>
+                </div>
+                <div className="p-3 bg-white/10 rounded-lg">
+                  <MessageSquare className="w-6 h-6 text-white" />
+                </div>
               </div>
-              <MessageSquare className="w-12 h-12 text-white/90" />
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 py-8">
+        </motion.div>
         {/* Search and Filters */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-xl border border-slate-200 shadow-sm p-4 mb-6"
+        >
           <div className="flex flex-col md:flex-row gap-4">
             {/* Search Bar */}
             <div className="flex-1 relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
               <input
                 type="text"
                 placeholder="Search students and parents..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-white"
               />
             </div>
-              <button
-                onClick={() => setFilter('students')}
-                className={`px-4 py-2 rounded-xl font-semibold transition-all ${
-                  filter === 'students'
-                    ? 'bg-indigo-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                Students ({studentsCount})
-              </button>
+            <button
+              onClick={() => setFilter('students')}
+              className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                filter === 'students'
+                  ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+              }`}
+            >
+              Students ({studentsCount})
+            </button>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Contacts List - Single Column */}
+        {/* Contacts List */}
         {filteredContacts.length === 0 ? (
-          <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
-            <Users className="w-20 h-20 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">No contacts found</h3>
-            <p className="text-gray-600">Try adjusting your search or filters</p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white rounded-xl border border-slate-200 shadow-sm p-12 text-center"
+          >
+            <Users className="w-12 h-12 text-slate-300 mx-auto mb-4" />
+            <h3 className="text-lg font-bold text-slate-900 mb-2">No contacts found</h3>
+            <p className="text-sm text-slate-600">Try adjusting your search or filters</p>
+          </motion.div>
         ) : (
           <div className="space-y-4">
-            {filteredContacts.map((contact) => (
-              <Motion.div
+            {filteredContacts.map((contact, idx) => (
+              <motion.div
                 key={contact.id}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                whileHover={{ x: 5 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.05 }}
+                whileHover={{ y: -2 }}
                 onClick={() => handleContactClick(contact)}
-                className="bg-white rounded-xl shadow-md p-4 cursor-pointer hover:shadow-lg transition-all border-2 border-gray-100 hover:border-indigo-300"
+                className="bg-white rounded-xl border border-slate-200 shadow-sm p-4 cursor-pointer hover:border-indigo-300 hover:shadow-md transition-all"
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4 flex-1">
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4 flex-1 min-w-0">
                     {/* Avatar */}
                     <div className="relative flex-shrink-0">
-                      <div className={`w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl ${
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg ${
                         contact.role === 'student'
-                          ? 'bg-gradient-to-br from-blue-500 to-cyan-600'
-                          : 'bg-gradient-to-br from-purple-500 to-pink-600'
+                          ? 'bg-indigo-600'
+                          : 'bg-purple-600'
                       }`}>
                         {contact.name?.charAt(0).toUpperCase()}
                       </div>
-                      <Circle className={`absolute -bottom-1 -right-1 w-5 h-5 ${
+                      <Circle className={`absolute -bottom-1 -right-1 w-4 h-4 ${
                         contact.role === 'student' ? 'fill-green-500 text-green-500' : 'fill-blue-500 text-blue-500'
                       }`} />
                     </div>
 
                     {/* Info */}
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-1">
-                        <h3 className="text-lg font-bold text-gray-900 truncate">{contact.name}</h3>
-                        <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${
-                          contact.role === 'student' ? 'bg-blue-100 text-blue-700' : 'bg-purple-100 text-purple-700'
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <h3 className="text-base font-semibold text-slate-900 truncate">{contact.name}</h3>
+                        <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                          contact.role === 'student' ? 'bg-indigo-100 text-indigo-700' : 'bg-purple-100 text-purple-700'
                         }`}>
                           {contact.role === 'student' ? 'Student' : 'Parent'}
                         </span>
                       </div>
-                      <div className="flex items-center gap-3 text-sm text-gray-600">
-                        <span> {contact.grade}</span>
+                      <div className="flex items-center gap-2 text-xs text-slate-600 flex-wrap">
+                        <span>{contact.grade}</span>
                         <span>•</span>
                         <span>{contact.age}</span>
                         {contact.xp > 0 && (
                           <>
                             <span>•</span>
-                            <span className="text-indigo-600 font-semibold">{contact.xp} XP</span>
+                            <span className="text-indigo-600 font-medium">{contact.xp} XP</span>
                           </>
                         )}
                         {contact.streak > 0 && (
                           <>
                             <span>•</span>
-                            <span className="text-orange-600 font-semibold">{contact.streak} day streak</span>
+                            <span className="text-orange-600 font-medium">{contact.streak} day streak</span>
                           </>
                         )}
                       </div>
@@ -206,11 +220,11 @@ const TeacherChatContacts = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex items-center gap-2 ml-4">
-                    <Motion.button 
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors flex items-center gap-2 shadow-md"
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    <motion.button 
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-all flex items-center gap-2"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleContactClick(contact, 'student');
@@ -218,11 +232,11 @@ const TeacherChatContacts = () => {
                     >
                       <MessageSquare className="w-4 h-4" />
                       Chat to Student
-                    </Motion.button>
-                    <Motion.button 
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition-colors flex items-center gap-2 shadow-md"
+                    </motion.button>
+                    <motion.button 
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-all flex items-center gap-2"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleContactClick(contact, 'parent');
@@ -230,10 +244,10 @@ const TeacherChatContacts = () => {
                     >
                       <MessageSquare className="w-4 h-4" />
                       Chat to Parent
-                    </Motion.button>
+                    </motion.button>
                   </div>
                 </div>
-              </Motion.div>
+              </motion.div>
             ))}
           </div>
         )}

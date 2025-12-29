@@ -37,6 +37,7 @@ export const logActivity = async (req, res, next) => {
       // If the student has an assigned teacher, emit to that teacher's room
       if (req.user.linkedIds?.teacherIds?.length > 0) {
         req.user.linkedIds.teacherIds.forEach(teacherId => {
+          // Emit legacy event for backward compatibility
           io.to(`teacher-${teacherId}`).emit('student-activity', {
             activityLog,
             user: {
@@ -45,6 +46,33 @@ export const logActivity = async (req, res, next) => {
               role: req.user.role,
             },
           });
+          
+          // Emit new event for teacher dashboard
+          io.to(teacherId.toString()).emit('teacher:activity:update', {
+            type: 'student_activity',
+            activityLog,
+            student: {
+              id: req.user._id,
+              name: req.user.name,
+              role: req.user.role,
+            },
+            timestamp: new Date()
+          });
+        });
+      }
+      
+      // Also emit to tenant room for broader updates
+      const tenantId = req.user.tenantId || req.tenantId;
+      if (tenantId) {
+        io.to(tenantId).emit('teacher:activity:update', {
+          type: 'student_activity',
+          activityLog,
+          student: {
+            id: req.user._id,
+            name: req.user.name,
+            role: req.user.role,
+          },
+          timestamp: new Date()
         });
       }
     }

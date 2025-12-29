@@ -25,8 +25,28 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
   const [csvErrors, setCsvErrors] = useState([]);
   const [uploadResults, setUploadResults] = useState(null);
 
+  // Prevent background scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+
+      return () => {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [isOpen]);
+
+  // Generate invite links when modal opens
+  useEffect(() => {
+    if (isOpen && classId) {
       generateInviteLinks();
     }
   }, [isOpen, classId]);
@@ -323,19 +343,19 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
+          className="relative w-full max-w-4xl bg-white rounded-xl shadow-xl overflow-hidden max-h-[90vh] flex flex-col border border-slate-200"
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-500 to-cyan-600 px-6 py-4">
+          <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-5">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-white/20 rounded-lg">
-                  <Users className="w-6 h-6 text-white" />
+                <div className="p-2 bg-white/20 backdrop-blur rounded-lg">
+                  <Users className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-white">Add Students</h2>
-                  <p className="text-blue-100 text-sm">
-                {className ? `to ${className}` : "Add students to your class"}
+                  <h2 className="text-xl font-bold text-white">Add Students</h2>
+                  <p className="text-white/80 text-sm">
+                    {className ? `Add students to ${className}` : "Add students to your class"}
                   </p>
                 </div>
               </div>
@@ -343,69 +363,69 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                 onClick={handleClose}
                 className="p-2 hover:bg-white/20 rounded-lg transition-all"
               >
-                <X className="w-6 h-6 text-white" />
+                <X className="w-5 h-5 text-white" />
               </button>
             </div>
           </div>
 
           {/* Tabs */}
-          <div className="flex border-b-2 border-gray-200 bg-gray-50 px-6">
+          <div className="flex border-b border-slate-200 bg-slate-50 px-6">
             <button
               onClick={() => setActiveTab("existing")}
-              className={`px-6 py-3 font-semibold transition-all relative ${
+              className={`px-6 py-3 font-medium transition-all relative ${
                 activeTab === "existing"
-                  ? "text-blue-600"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-indigo-600"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
               <div className="flex items-center gap-2">
-                <Search className="w-5 h-5" />
+                <Search className="w-4 h-4" />
                 Add Existing
               </div>
               {activeTab === "existing" && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute bottom-0 left-0 right-0 h-1 bg-blue-600"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600"
                 />
               )}
             </button>
             
             <button
               onClick={() => setActiveTab("invite")}
-              className={`px-6 py-3 font-semibold transition-all relative ${
+              className={`px-6 py-3 font-medium transition-all relative ${
                 activeTab === "invite"
-                  ? "text-blue-600"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-indigo-600"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
               <div className="flex items-center gap-2">
-                <UserPlus className="w-5 h-5" />
+                <UserPlus className="w-4 h-4" />
                 Invite New
               </div>
               {activeTab === "invite" && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute bottom-0 left-0 right-0 h-1 bg-blue-600"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600"
                 />
               )}
             </button>
             
             <button
               onClick={() => setActiveTab("bulk")}
-              className={`px-6 py-3 font-semibold transition-all relative ${
+              className={`px-6 py-3 font-medium transition-all relative ${
                 activeTab === "bulk"
-                  ? "text-blue-600"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-indigo-600"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
               <div className="flex items-center gap-2">
-                <Upload className="w-5 h-5" />
+                <Upload className="w-4 h-4" />
                 Bulk Upload
               </div>
               {activeTab === "bulk" && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute bottom-0 left-0 right-0 h-1 bg-blue-600"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600"
                 />
               )}
             </button>
@@ -416,12 +436,12 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
             {/* Add Existing Student Tab */}
             {activeTab === "existing" && (
               <div className="space-y-6">
-                <div className="bg-blue-50 rounded-xl p-4 border-2 border-blue-200">
+                <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-200">
                   <div className="flex items-start gap-3">
-                    <Search className="w-5 h-5 text-blue-600 mt-0.5" />
+                    <Search className="w-5 h-5 text-indigo-600 mt-0.5" />
                     <div>
-                      <h3 className="font-bold text-gray-900 mb-1">Search Existing Students</h3>
-                      <p className="text-sm text-gray-600">
+                      <h3 className="font-bold text-slate-900 mb-1">Search Existing Students</h3>
+                      <p className="text-sm text-slate-600">
                         Search by registration number or phone number to find students already in the system.
                       </p>
                     </div>
@@ -436,14 +456,14 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Enter registration number or phone..."
                     onKeyPress={(e) => e.key === "Enter" && handleSearch()}
-                    className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none transition-all"
+                    className="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition-all"
                   />
                   <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     onClick={handleSearch}
                     disabled={searchLoading}
-                    className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 flex items-center gap-2"
+                    className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all disabled:opacity-50 flex items-center gap-2"
                   >
                     {searchLoading ? (
                       <>
@@ -469,10 +489,10 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                           key={student._id}
                           whileHover={{ scale: 1.01 }}
                           onClick={() => handleToggleStudent(student)}
-                          className={`p-4 rounded-xl border-2 cursor-pointer transition-all ${
+                          className={`p-4 rounded-lg border cursor-pointer transition-all ${
                             selectedStudents.find(s => s._id === student._id)
-                              ? "bg-blue-50 border-blue-500"
-                              : "bg-white border-gray-200 hover:border-blue-300"
+                              ? "bg-indigo-50 border-indigo-500"
+                              : "bg-white border-slate-200 hover:border-indigo-300"
                           }`}
                         >
                           <div className="flex items-center justify-between">
@@ -489,7 +509,7 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                               </div>
                             </div>
                             {selectedStudents.find(s => s._id === student._id) && (
-                              <Check className="w-6 h-6 text-blue-600" />
+                              <Check className="w-6 h-6 text-indigo-600" />
                             )}
                           </div>
                         </motion.div>
@@ -505,7 +525,7 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                     whileTap={{ scale: 0.98 }}
                     onClick={handleAssignStudents}
                     disabled={loading}
-                    className="w-full px-6 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-bold hover:shadow-lg transition-all disabled:opacity-50 text-lg"
+                    className="w-full px-6 py-4 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-all disabled:opacity-50"
                   >
                     {loading ? "Assigning..." : `Assign ${selectedStudents.length} Student(s) to ${className}`}
                   </motion.button>
@@ -517,7 +537,7 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
             {activeTab === "invite" && (
               <div className="space-y-6">
                 {/* Pre-filled Registration Link */}
-                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6">
+                <div className="bg-indigo-50 rounded-lg p-6 border border-indigo-200">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
                       <div className="bg-white p-4 rounded-xl shadow-lg">
@@ -540,7 +560,7 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                         whileTap={{ scale: 0.95 }}
                         onClick={() => handleDownloadQR(registrationLink, "registration-qr")}
                         disabled={!registrationLink}
-                        className="mt-3 w-full px-4 py-2 bg-purple-500 text-white rounded-lg font-semibold hover:bg-purple-600 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                        className="mt-3 w-full px-4 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                       >
                         <Download className="w-4 h-4" />
                         Download QR
@@ -549,17 +569,17 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                     
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-3">
-                        <UserPlus className="w-5 h-5 text-purple-600" />
-                        <h3 className="text-lg font-bold text-gray-900">Pre-filled Registration Link</h3>
+                        <UserPlus className="w-5 h-5 text-indigo-600" />
+                        <h3 className="text-lg font-bold text-slate-900">Pre-filled Registration Link</h3>
                       </div>
-                      <p className="text-sm text-gray-600 mb-4">
+                      <p className="text-sm text-slate-600 mb-4">
                         New students can scan this QR code or use the link below. Upon registration, 
                         they will be automatically assigned to <strong>{className}</strong>.
                       </p>
                       
-                      <div className="bg-white rounded-lg p-3 border-2 border-purple-200 mb-4">
-                        <p className="text-xs text-gray-500 mb-1">How it works:</p>
-                        <ol className="text-sm text-gray-700 space-y-1 list-decimal list-inside">
+                      <div className="bg-white rounded-lg p-3 border border-indigo-200 mb-4">
+                        <p className="text-xs text-slate-500 mb-1">How it works:</p>
+                        <ol className="text-sm text-slate-700 space-y-1 list-decimal list-inside">
                           <li>Student scans QR or clicks link</li>
                           <li>Registration form opens with class pre-selected</li>
                           <li>Student completes registration</li>
@@ -572,17 +592,17 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                           type="text"
                           value={registrationLink}
                           readOnly
-                          className="flex-1 px-4 py-3 bg-white border-2 border-purple-200 rounded-xl font-mono text-sm"
+                          className="flex-1 px-4 py-3 bg-white border border-indigo-200 rounded-lg font-mono text-sm"
                         />
                         <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
                           onClick={() => handleCopyLink(registrationLink, "registration")}
                           disabled={!registrationLink}
-                          className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+                          className={`px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2 ${
                             copied
-                              ? "bg-green-500 text-white"
-                              : "bg-gradient-to-r from-purple-500 to-pink-600 text-white hover:shadow-lg"
+                              ? "bg-green-600 text-white"
+                              : "bg-indigo-600 text-white hover:bg-indigo-700"
                           }`}
                         >
                           {copied ? (
@@ -603,12 +623,12 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                 </div>
 
                 {/* Email Invites */}
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6">
+                <div className="bg-indigo-50 rounded-lg p-6 border border-indigo-200">
                   <div className="flex items-center gap-2 mb-3">
-                    <Mail className="w-5 h-5 text-green-600" />
-                    <h3 className="text-lg font-bold text-gray-900">Send Email Invites</h3>
+                    <Mail className="w-5 h-5 text-indigo-600" />
+                    <h3 className="text-lg font-bold text-slate-900">Send Email Invites</h3>
                   </div>
-                  <p className="text-sm text-gray-600 mb-4">
+                  <p className="text-sm text-slate-600 mb-4">
                     Enter student/parent email addresses (comma-separated) to send personalized registration invitations.
                   </p>
                   
@@ -617,7 +637,7 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                     onChange={(e) => setEmailList(e.target.value)}
                     placeholder="student1@example.com, parent1@example.com, student2@example.com"
                     rows={3}
-                    className="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:outline-none transition-all resize-none mb-3"
+                    className="w-full px-4 py-3 border border-indigo-200 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition-all resize-none mb-3"
                   />
                   
                   <motion.button
@@ -625,7 +645,7 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                     whileTap={{ scale: 0.98 }}
                     onClick={handleSendEmails}
                     disabled={loading || !emailList.trim()}
-                    className="w-full px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     <Mail className="w-5 h-5" />
                     {loading ? "Sending..." : "Send Email Invites"}
@@ -637,12 +657,12 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
             {/* Bulk Upload Tab */}
             {activeTab === "bulk" && (
               <div className="space-y-6">
-                <div className="bg-amber-50 rounded-xl p-4 border-2 border-amber-200">
+                <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
                   <div className="flex items-start gap-3">
                     <FileText className="w-5 h-5 text-amber-600 mt-0.5" />
                     <div>
-                      <h3 className="font-bold text-gray-900 mb-1">CSV Format Requirements</h3>
-                      <p className="text-sm text-gray-600 mb-2">
+                      <h3 className="font-bold text-slate-900 mb-1">CSV Format Requirements</h3>
+                      <p className="text-sm text-slate-600 mb-2">
                         Required columns: <strong>reg_no, first_name, last_name, dob, phone, email, grade, section</strong>
                       </p>
                       <button
@@ -655,7 +675,7 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                           a.download = "student_template.csv";
                           a.click();
                         }}
-                        className="text-amber-600 hover:text-amber-700 font-semibold text-sm underline"
+                        className="text-indigo-600 hover:text-indigo-700 font-medium text-sm underline"
                       >
                         Download Sample CSV
                       </button>
@@ -664,7 +684,7 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                 </div>
 
                 {/* File Upload */}
-                <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-blue-500 transition-all">
+                <div className="border-2 border-dashed border-slate-300 rounded-lg p-8 text-center hover:border-indigo-500 transition-all">
                   <input
                     type="file"
                     accept=".csv"
@@ -673,11 +693,11 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                     id="csv-upload"
                   />
                   <label htmlFor="csv-upload" className="cursor-pointer">
-                    <Upload className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-                    <p className="text-lg font-semibold text-gray-700 mb-1">
+                    <Upload className="w-12 h-12 text-slate-400 mx-auto mb-3" />
+                    <p className="text-base font-semibold text-slate-700 mb-1">
                       {csvFile ? csvFile.name : "Click to upload CSV"}
                     </p>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-slate-500">
                       or drag and drop your file here
                     </p>
                   </label>
@@ -696,9 +716,9 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                       )}
                     </div>
                     
-                    <div className="overflow-x-auto rounded-xl border-2 border-gray-200">
+                    <div className="overflow-x-auto rounded-lg border border-slate-200">
                       <table className="w-full text-sm">
-                        <thead className="bg-gray-100">
+                        <thead className="bg-slate-100">
                           <tr>
                             <th className="px-3 py-2 text-left font-semibold">#</th>
                             <th className="px-3 py-2 text-left font-semibold">Reg No</th>
@@ -753,7 +773,7 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
                       whileTap={{ scale: 0.98 }}
                       onClick={handleBulkUpload}
                       disabled={loading || csvErrors.length > 0}
-                      className="w-full px-6 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-xl font-bold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+                      className="w-full px-6 py-4 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {loading ? (
                         <>
@@ -801,12 +821,12 @@ const InviteStudentsModal = ({ isOpen, onClose, classId, className, onSuccess })
           </div>
 
           {/* Footer */}
-          <div className="px-6 py-4 bg-gray-50 border-t-2 border-gray-100">
+          <div className="px-6 py-4 bg-slate-50 border-t border-slate-200">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleClose}
-              className="w-full px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all"
+              className="w-full px-6 py-3 bg-slate-200 text-slate-700 rounded-lg font-medium hover:bg-slate-300 transition-all"
             >
               Close
             </motion.button>

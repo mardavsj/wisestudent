@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
@@ -19,58 +19,133 @@ import {
   User,
   Users,
   Paperclip,
+  Zap,
+  RefreshCw,
 } from "lucide-react";
 import api from "../../utils/api";
 import { toast } from "react-hot-toast";
+import { useSocket } from "../../context/SocketContext";
 
 const TeacherMessages = () => {
+  const socket = useSocket()?.socket;
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [messages, setMessages] = useState([]);
   const [selectedMessage, setSelectedMessage] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterType, setFilterType] = useState("all");
   const [showCompose, setShowCompose] = useState(false);
   const [teacherProfile, setTeacherProfile] = useState(null);
+  const [lastUpdated, setLastUpdated] = useState(null);
   const [composeData, setComposeData] = useState({
     to: "",
     subject: "",
     message: ""
   });
 
-  useEffect(() => {
-    fetchMessages();
-    fetchProfile();
-  }, []);
-
-  const fetchMessages = async () => {
+  const fetchMessages = useCallback(async (showLoading = true) => {
     try {
+      if (showLoading) setLoading(true);
+      
       const response = await api.get("/api/school/teacher/messages");
       setMessages(response.data.messages || []);
+      setLastUpdated(new Date());
     } catch (error) {
       console.error("Error fetching messages:", error);
       toast.error("Failed to load messages");
+      setMessages([]);
     } finally {
-      setLoading(false);
+      if (showLoading) setLoading(false);
     }
-  };
+  }, []);
 
-  const fetchProfile = async () => {
+  // Real-time socket listeners
+  useEffect(() => {
+    if (!socket) return;
+
+    const handleNewNotification = (data) => {
+      console.log("Real-time new notification:", data);
+      if (data.type === 'message' || data.type === 'announcement' || data.type === 'alert') {
+        toast.success(`New message: ${data.title || 'Message'}`, { icon: '📬' });
+        fetchMessages(false);
+      }
+    };
+
+    const handleNewAnnouncement = (data) => {
+      console.log("Real-time new announcement:", data);
+      toast.info(`New announcement: ${data.announcement?.title || 'Announcement'}`, { icon: '📢' });
+      fetchMessages(false);
+    };
+
+    const handleMessageRead = (data) => {
+      console.log("Real-time message read update:", data);
+      setMessages(prev => prev.map(m => 
+        m._id === data.messageId ? { ...m, read: true } : m
+      ));
+    };
+
+    socket.on('notification', handleNewNotification);
+    socket.on('announcement:new', handleNewAnnouncement);
+    socket.on('message:read', handleMessageRead);
+
+    return () => {
+      socket.off('notification', handleNewNotification);
+      socket.off('announcement:new', handleNewAnnouncement);
+      socket.off('message:read', handleMessageRead);
+    };
+  }, [socket, fetchMessages]);
+
+  const fetchProfile = useCallback(async () => {
     try {
       const response = await api.get("/api/user/profile");
       setTeacherProfile(response.data);
     } catch (error) {
       console.error("Error fetching profile:", error);
     }
+  }, []);
+
+  const handleRefresh = useCallback(async () => {
+    setRefreshing(true);
+    try {
+      await fetchMessages(false);
+      toast.success("Messages refreshed!", { icon: '✅' });
+    } catch (error) {
+      console.error("Error refreshing messages:", error);
+      toast.error("Failed to refresh messages");
+    } finally {
+      setRefreshing(false);
+    }
+  }, [fetchMessages]);
+
+  const formatTimeAgo = (date) => {
+    if (!date) return "Never";
+    const now = new Date();
+    const then = new Date(date);
+    const diff = now - then;
+    const seconds = Math.floor(diff / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    if (days > 0) return `${days} day${days > 1 ? 's' : ''} ago`;
+    if (hours > 0) return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+    if (minutes > 0) return `${minutes} min${minutes > 1 ? 's' : ''} ago`;
+    return "Just now";
   };
+
+  useEffect(() => {
+    fetchMessages();
+    fetchProfile();
+  }, [fetchMessages, fetchProfile]);
 
   const handleMarkAsRead = async (messageId, type) => {
     try {
       await api.put(`/api/school/teacher/messages/${messageId}/read`, { type });
-      setMessages(messages.map(m => m._id === messageId ? { ...m, read: true } : m));
-      toast.success("Marked as read");
+      setMessages(prev => prev.map(m => m._id === messageId ? { ...m, read: true } : m));
+      // Don't show toast for auto-read when opening message
     } catch (error) {
       console.error("Error marking as read:", error);
-      toast.error("Failed to mark as read");
+      // Silent fail for auto-read
     }
   };
 
@@ -83,14 +158,35 @@ const TeacherMessages = () => {
     }
 
     try {
-      // In a real app, you'd send this to a proper messaging endpoint
+      // Try to find student by name or email
+      const searchResponse = await api.get("/api/school/teacher/search-students", {
+        params: { query: composeData.to }
+      });
+      
+      const students = searchResponse.data.students || [];
+      
+      if (students.length === 0) {
+        toast.error("Student not found. Please enter a valid student name or email.");
+        return;
+      }
+
+      // Send message to first matching student
+      const studentId = students[0]._id;
+      await api.post(`/api/school/teacher/student/${studentId}/message`, {
+        message: composeData.subject ? `${composeData.subject}\n\n${composeData.message}` : composeData.message
+      });
+
       toast.success("Message sent successfully!");
       setShowCompose(false);
       setComposeData({ to: "", subject: "", message: "" });
-      fetchMessages();
+      fetchMessages(false);
     } catch (error) {
       console.error("Error sending message:", error);
-      toast.error("Failed to send message");
+      if (error.response?.status === 404) {
+        toast.error("Student not found. Please check the recipient name or email.");
+      } else {
+        toast.error("Failed to send message");
+      }
     }
   };
 
@@ -108,74 +204,134 @@ const TeacherMessages = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <div className="flex items-center justify-center min-h-screen bg-slate-50">
         <motion.div
           animate={{ rotate: 360 }}
-          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="w-20 h-20 border-4 border-purple-500 border-t-transparent rounded-full"
+          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+          className="w-8 h-8 border-2 border-indigo-600 border-t-transparent rounded-full"
         />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-12">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-between"
-          >
-            <div>
-              <h1 className="text-4xl font-black mb-2">
-                {teacherProfile?.name}'s Messages
-              </h1>
-              <p className="text-lg text-white/90">
-                Stay connected with students, parents, and staff
-              </p>
+    <div className="min-h-screen bg-slate-50 py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-xl border border-slate-200 shadow-sm mb-6"
+        >
+          <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-6 rounded-t-xl">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="flex-1">
+                <h1 className="text-2xl font-bold text-white mb-1">
+                  Messages
+                </h1>
+                <p className="text-sm text-white/80">
+                  Stay connected with students, parents, and staff
+                  {lastUpdated && (
+                    <span className="ml-2 text-white/70">
+                      • Last updated: {formatTimeAgo(lastUpdated)}
+                    </span>
+                  )}
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleRefresh}
+                  disabled={refreshing || loading}
+                  className="px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg text-white text-sm font-medium transition-all flex items-center gap-2 border border-white/20 hover:border-white/30 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <RefreshCw className={`w-4 h-4 ${refreshing ? 'animate-spin' : ''}`} />
+                  Refresh
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setShowCompose(true)}
+                  className="px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg text-white text-sm font-medium transition-all flex items-center gap-2 border border-white/20 hover:border-white/30"
+                >
+                  <Send className="w-4 h-4" />
+                  Compose
+                </motion.button>
+              </div>
             </div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setShowCompose(true)}
-              className="px-6 py-3 bg-white text-purple-600 rounded-xl font-bold hover:shadow-lg transition-all flex items-center gap-2"
-            >
-              <Send className="w-5 h-5" />
-              Compose
-            </motion.button>
-          </motion.div>
-        </div>
-      </div>
+          </div>
+        </motion.div>
 
-      <div className="max-w-7xl mx-auto px-6 -mt-8">
+        {/* Stats Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6"
+        >
+          <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Total Messages</p>
+                <p className="text-2xl font-bold text-slate-900 mt-1">{messages.length}</p>
+              </div>
+              <div className="p-3 bg-indigo-50 rounded-lg">
+                <Mail className="w-6 h-6 text-indigo-600" />
+              </div>
+            </div>
+          </div>
+          <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Unread</p>
+                <p className="text-2xl font-bold text-slate-900 mt-1">{unreadCount}</p>
+              </div>
+              <div className="p-3 bg-purple-50 rounded-lg">
+                <AlertCircle className="w-6 h-6 text-purple-600" />
+              </div>
+            </div>
+          </div>
+          <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Important</p>
+                <p className="text-2xl font-bold text-slate-900 mt-1">
+                  {messages.filter(m => m.isPinned).length}
+                </p>
+              </div>
+              <div className="p-3 bg-amber-50 rounded-lg">
+                <Star className="w-6 h-6 text-amber-600" />
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Messages List */}
           <div className="lg:col-span-2">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 overflow-hidden"
+              className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
             >
               {/* Toolbar */}
-              <div className="p-4 border-b-2 border-gray-100 bg-gray-50">
+              <div className="p-4 border-b border-slate-200 bg-slate-50">
                 <div className="flex items-center gap-4 flex-wrap">
                   <div className="flex-1 relative min-w-[250px]">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
                     <input
                       type="text"
                       placeholder="Search messages..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none"
+                      className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-white"
                     />
                   </div>
 
                   <select
                     value={filterType}
                     onChange={(e) => setFilterType(e.target.value)}
-                    className="px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none bg-white font-semibold"
+                    className="px-4 py-2 border border-slate-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-white font-medium"
                   >
                     <option value="all">All Messages</option>
                     <option value="unread">Unread ({unreadCount})</option>
@@ -187,12 +343,12 @@ const TeacherMessages = () => {
               </div>
 
               {/* Messages */}
-              <div className="divide-y divide-gray-100 max-h-[600px] overflow-y-auto">
+              <div className="divide-y divide-slate-200 max-h-[calc(100vh-400px)] overflow-y-auto">
                 {filteredMessages.length === 0 ? (
-                  <div className="text-center py-12">
-                    <Inbox className="w-16 h-16 text-gray-300 mx-auto mb-3" />
-                    <h3 className="text-xl font-bold text-gray-600">No messages found</h3>
-                    <p className="text-gray-500 mt-2">Try adjusting your filters</p>
+                  <div className="text-center py-16">
+                    <Inbox className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">No messages found</h3>
+                    <p className="text-slate-500 text-sm">Try adjusting your search or filters</p>
                   </div>
                 ) : (
                   filteredMessages.map((msg, idx) => (
@@ -205,43 +361,46 @@ const TeacherMessages = () => {
                         setSelectedMessage(msg);
                         if (!msg.read) handleMarkAsRead(msg._id, msg.type);
                       }}
-                      className={`p-4 cursor-pointer transition-all ${
+                      className={`p-4 cursor-pointer transition-all hover:bg-slate-50 ${
                         selectedMessage?._id === msg._id
-                          ? "bg-purple-50 border-l-4 border-purple-500"
-                          : msg.read
-                          ? "hover:bg-gray-50"
-                          : "bg-blue-50 hover:bg-blue-100 border-l-4 border-blue-500"
+                          ? "bg-indigo-50 border-l-4 border-indigo-600"
+                          : !msg.read
+                          ? "bg-indigo-50/50 border-l-4 border-indigo-400"
+                          : ""
                       }`}
                     >
-                      <div className="flex items-start gap-3">
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-white ${
-                          msg.isPinned ? "bg-amber-500" : "bg-purple-500"
+                      <div className="flex items-start gap-4">
+                        <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-white text-lg ${
+                          msg.isPinned ? "bg-amber-500" : "bg-indigo-600"
                         }`}>
-                          {msg.sender.charAt(0)}
+                          {msg.sender.charAt(0).toUpperCase()}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between mb-1">
-                            <p className={`font-bold ${msg.read ? "text-gray-700" : "text-gray-900"}`}>
-                              {msg.sender}
-                            </p>
-                            <span className="text-xs text-gray-500">{msg.time}</span>
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 mb-1">
+                                <p className={`font-semibold text-sm ${msg.read ? "text-slate-700" : "text-slate-900"}`}>
+                                  {msg.sender}
+                                </p>
+                                {!msg.read && (
+                                  <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
+                                )}
+                                {msg.isPinned && (
+                                  <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                                )}
+                              </div>
+                              <p className={`text-sm font-semibold mb-1 ${msg.read ? "text-slate-600" : "text-slate-900"}`}>
+                                {msg.subject}
+                              </p>
+                            </div>
+                            <span className="text-xs text-slate-500 whitespace-nowrap">{msg.time}</span>
                           </div>
-                          <p className={`text-sm mb-1 ${msg.read ? "text-gray-600" : "text-gray-900 font-semibold"}`}>
-                            {msg.subject}
-                          </p>
-                          <p className="text-xs text-gray-500 truncate">{msg.message}</p>
-                          <div className="flex items-center gap-2 mt-2">
-                            {msg.isPinned && (
-                              <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-xs font-bold">
-                                Important
-                              </span>
-                            )}
-                            {msg.type && (
-                              <span className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs font-semibold capitalize">
-                                {msg.type}
-                              </span>
-                            )}
-                          </div>
+                          <p className="text-sm text-slate-600 line-clamp-2 mb-2">{msg.message}</p>
+                          {msg.type && (
+                            <span className="inline-block px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded text-xs font-medium capitalize">
+                              {msg.type}
+                            </span>
+                          )}
                         </div>
                       </div>
                     </motion.div>
@@ -251,18 +410,18 @@ const TeacherMessages = () => {
             </motion.div>
           </div>
 
-          {/* Message Detail / Compose */}
-          <div>
+          {/* Message Detail / Compose Sidebar */}
+          <div className="space-y-6">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 overflow-hidden"
+              className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
             >
               {showCompose ? (
                 /* Compose Form */
                 <div>
-                  <div className="p-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white flex items-center justify-between">
+                  <div className="p-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white flex items-center justify-between">
                     <h3 className="font-bold text-lg">Compose Message</h3>
                     <button
                       onClick={() => setShowCompose(false)}
@@ -274,37 +433,37 @@ const TeacherMessages = () => {
 
                   <form onSubmit={handleSendMessage} className="p-6 space-y-4">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">To *</label>
+                      <label className="block text-sm font-medium text-slate-700 mb-2">To *</label>
                       <input
                         type="text"
                         required
                         value={composeData.to}
                         onChange={(e) => setComposeData({ ...composeData, to: e.target.value })}
                         placeholder="student@example.com or Student Name"
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none"
+                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-white"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
+                      <label className="block text-sm font-medium text-slate-700 mb-2">Subject</label>
                       <input
                         type="text"
                         value={composeData.subject}
                         onChange={(e) => setComposeData({ ...composeData, subject: e.target.value })}
                         placeholder="Message subject"
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none"
+                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-white"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
+                      <label className="block text-sm font-medium text-slate-700 mb-2">Message *</label>
                       <textarea
                         required
                         value={composeData.message}
                         onChange={(e) => setComposeData({ ...composeData, message: e.target.value })}
                         placeholder="Type your message..."
                         rows={8}
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none resize-none"
+                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none resize-none bg-white"
                       />
                     </div>
 
@@ -313,9 +472,9 @@ const TeacherMessages = () => {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         type="submit"
-                        className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2"
+                        className="flex-1 px-6 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all flex items-center justify-center gap-2"
                       >
-                        <Send className="w-5 h-5" />
+                        <Send className="w-4 h-4" />
                         Send Message
                       </motion.button>
                       <motion.button
@@ -323,7 +482,7 @@ const TeacherMessages = () => {
                         whileTap={{ scale: 0.98 }}
                         type="button"
                         onClick={() => setShowCompose(false)}
-                        className="px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all"
+                        className="px-6 py-2 bg-slate-200 text-slate-700 rounded-lg font-medium hover:bg-slate-300 transition-all"
                       >
                         Cancel
                       </motion.button>
@@ -333,7 +492,7 @@ const TeacherMessages = () => {
               ) : selectedMessage ? (
                 /* Message Detail */
                 <div>
-                  <div className="p-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white">
+                  <div className="p-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white">
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="font-bold text-lg">{selectedMessage.subject}</h3>
                       <button
@@ -353,14 +512,14 @@ const TeacherMessages = () => {
 
                   <div className="p-6">
                     <div className="prose max-w-none mb-6">
-                      <p className="text-gray-700 whitespace-pre-wrap">{selectedMessage.message}</p>
+                      <p className="text-slate-700 whitespace-pre-wrap">{selectedMessage.message}</p>
                     </div>
 
                     {/* Actions */}
-                    <div className="flex gap-2 pt-4 border-t-2 border-gray-100">
+                    <div className="flex gap-2 pt-4 border-t border-slate-200">
                       <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
                         onClick={() => {
                           setShowCompose(true);
                           setComposeData({
@@ -369,23 +528,23 @@ const TeacherMessages = () => {
                             subject: `Re: ${selectedMessage.subject}`
                           });
                         }}
-                        className="px-4 py-2 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition-all flex items-center gap-2"
+                        className="px-4 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all flex items-center gap-2"
                       >
                         <Reply className="w-4 h-4" />
                         Reply
                       </motion.button>
                       <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-all flex items-center gap-2"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="px-4 py-2 bg-slate-200 text-slate-700 rounded-lg font-medium hover:bg-slate-300 transition-all flex items-center gap-2"
                       >
                         <Archive className="w-4 h-4" />
                         Archive
                       </motion.button>
                       <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-4 py-2 bg-red-100 text-red-600 rounded-lg font-semibold hover:bg-red-200 transition-all flex items-center gap-2"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="px-4 py-2 bg-red-100 text-red-600 rounded-lg font-medium hover:bg-red-200 transition-all flex items-center gap-2"
                       >
                         <Trash2 className="w-4 h-4" />
                         Delete
@@ -396,99 +555,54 @@ const TeacherMessages = () => {
               ) : (
                 /* No Selection */
                 <div className="p-12 text-center">
-                  <Mail className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-gray-600 mb-2">No Message Selected</h3>
-                  <p className="text-gray-500 mb-6">Select a message from the list to read</p>
+                  <Mail className="w-12 h-12 text-slate-300 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">No Message Selected</h3>
+                  <p className="text-slate-500 text-sm mb-6">Select a message from the list to read</p>
                   <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     onClick={() => setShowCompose(true)}
-                    className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all flex items-center gap-2 mx-auto"
+                    className="px-6 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all flex items-center gap-2 mx-auto"
                   >
-                    <Send className="w-5 h-5" />
+                    <Send className="w-4 h-4" />
                     Compose New Message
                   </motion.button>
                 </div>
               )}
             </motion.div>
-          </div>
 
-          {/* Sidebar Stats */}
-          <div className="space-y-6">
-            {/* Inbox Stats */}
+            {/* Quick Actions */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
-            >
-              <h3 className="font-bold text-gray-900 mb-4">Inbox Stats</h3>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
-                  <span className="font-semibold text-gray-700">Total Messages</span>
-                  <span className="text-2xl font-black text-blue-600">{messages.length}</span>
-                </div>
-                <div className="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
-                  <span className="font-semibold text-gray-700">Unread</span>
-                  <span className="text-2xl font-black text-purple-600">{unreadCount}</span>
-                </div>
-                <div className="flex items-center justify-between p-3 bg-amber-50 rounded-lg">
-                  <span className="font-semibold text-gray-700">Important</span>
-                  <span className="text-2xl font-black text-amber-600">
-                    {messages.filter(m => m.isPinned).length}
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Quick Compose */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl shadow-lg p-6 text-white"
+              className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-xl shadow-sm p-6 text-white"
             >
-              <h3 className="font-bold mb-4">Quick Send</h3>
+              <h3 className="font-bold mb-4 flex items-center gap-2">
+                <Zap className="w-5 h-5" />
+                Quick Actions
+              </h3>
               <div className="space-y-2">
                 <button
                   onClick={() => {
                     setShowCompose(true);
                     setComposeData({ ...composeData, subject: "Class Announcement" });
                   }}
-                  className="w-full px-4 py-3 bg-white/20 hover:bg-white/30 rounded-lg font-semibold transition-all flex items-center justify-between"
+                  className="w-full px-4 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg font-medium transition-all flex items-center justify-between border border-white/20 hover:border-white/30"
                 >
                   <span>Class Announcement</span>
-                  <Users className="w-5 h-5" />
+                  <Users className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => {
                     setShowCompose(true);
                     setComposeData({ ...composeData, subject: "Individual Message" });
                   }}
-                  className="w-full px-4 py-3 bg-white/20 hover:bg-white/30 rounded-lg font-semibold transition-all flex items-center justify-between"
+                  className="w-full px-4 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg font-medium transition-all flex items-center justify-between border border-white/20 hover:border-white/30"
                 >
                   <span>Message Student</span>
-                  <User className="w-5 h-5" />
+                  <User className="w-4 h-4" />
                 </button>
-              </div>
-            </motion.div>
-
-            {/* Tips */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
-            >
-              <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-blue-600" />
-                Tips
-              </h3>
-              <div className="space-y-2 text-sm text-gray-600">
-                <p>• Use filters to organize messages</p>
-                <p>• Mark important messages with star</p>
-                <p>• Archive old conversations</p>
-                <p>• Reply promptly to parent queries</p>
               </div>
             </motion.div>
           </div>

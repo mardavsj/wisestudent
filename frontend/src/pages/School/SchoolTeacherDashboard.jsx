@@ -330,9 +330,13 @@ const SchoolTeacherDashboard = () => {
         <ExpiredSubscriptionModal
           isOpen={showExpiredModal}
           onClose={() => setShowExpiredModal(false)}
-          schoolName={accessInfo?.schoolName}
-          schoolContact={accessInfo?.schoolContact}
-          onRefresh={checkTeacherAccess}
+          schoolInfo={accessInfo ? {
+            name: accessInfo.schoolName,
+            planStatus: accessInfo.subscriptionStatus,
+            planEndDate: accessInfo.subscriptionEndDate,
+          } : null}
+          contactInfo={accessInfo?.schoolContact || null}
+          onCheckAgain={checkTeacherAccess}
         />
         {/* Blocked content overlay */}
         <div className="flex items-center justify-center min-h-screen p-4">

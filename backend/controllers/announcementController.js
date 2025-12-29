@@ -65,9 +65,51 @@ export const createAnnouncement = async (req, res) => {
       isPinned
     });
 
+    // Populate announcement for socket emission
+    const populatedAnnouncement = await Announcement.findById(announcement._id)
+      .populate('createdBy', 'name email avatar')
+      .populate('targetClasses', 'classNumber stream')
+      .lean();
+
+    // Emit real-time notification via Socket.IO
+    const io = req.app?.get('io');
+    if (io) {
+      // Emit to all users in the tenant
+      io.to(tenantId).emit('announcement:new', {
+        announcement: populatedAnnouncement,
+        tenantId,
+        targetAudience,
+        createdAt: new Date()
+      });
+
+      // Also emit to specific rooms based on target audience
+      if (targetAudience === 'teachers') {
+        io.to(`${tenantId}:teachers`).emit('announcement:new', {
+          announcement: populatedAnnouncement,
+          tenantId,
+          targetAudience,
+          createdAt: new Date()
+        });
+      } else if (targetAudience === 'students') {
+        io.to(`${tenantId}:students`).emit('announcement:new', {
+          announcement: populatedAnnouncement,
+          tenantId,
+          targetAudience,
+          createdAt: new Date()
+        });
+      } else if (targetAudience === 'parents') {
+        io.to(`${tenantId}:parents`).emit('announcement:new', {
+          announcement: populatedAnnouncement,
+          tenantId,
+          targetAudience,
+          createdAt: new Date()
+        });
+      }
+    }
+
     res.status(201).json({
       message: 'Announcement created successfully',
-      announcement
+      announcement: populatedAnnouncement
     });
   } catch (error) {
     console.error('Error creating announcement:', error);
@@ -161,6 +203,42 @@ export const updateAnnouncement = async (req, res) => {
 
     if (!announcement) {
       return res.status(404).json({ message: 'Announcement not found' });
+    }
+
+    // Emit real-time update via Socket.IO
+    const io = req.app?.get('io');
+    if (io) {
+      // Emit to all users in the tenant
+      io.to(tenantId).emit('announcement:updated', {
+        announcement,
+        tenantId,
+        targetAudience: announcement.targetAudience,
+        updatedAt: new Date()
+      });
+
+      // Also emit to specific rooms based on target audience
+      if (announcement.targetAudience === 'teachers') {
+        io.to(`${tenantId}:teachers`).emit('announcement:updated', {
+          announcement,
+          tenantId,
+          targetAudience: announcement.targetAudience,
+          updatedAt: new Date()
+        });
+      } else if (announcement.targetAudience === 'students') {
+        io.to(`${tenantId}:students`).emit('announcement:updated', {
+          announcement,
+          tenantId,
+          targetAudience: announcement.targetAudience,
+          updatedAt: new Date()
+        });
+      } else if (announcement.targetAudience === 'parents') {
+        io.to(`${tenantId}:parents`).emit('announcement:updated', {
+          announcement,
+          tenantId,
+          targetAudience: announcement.targetAudience,
+          updatedAt: new Date()
+        });
+      }
     }
 
     res.json({

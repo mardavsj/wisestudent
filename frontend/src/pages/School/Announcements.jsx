@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Bell, Search, Filter, Calendar, Users, AlertCircle, Clock,
   CheckCircle, X, Star, Pin, MessageSquare, FileText, Target,
-  Zap, Eye, ChevronDown, ChevronUp, Plus, Send, Save
+  Zap, Eye, ChevronDown, ChevronUp, Plus, Send, Save, RefreshCw
 } from "lucide-react";
 import api from "../../utils/api";
 import { toast } from "react-hot-toast";
 import { useAuth } from "../../context/AuthUtils";
+import { useSocket } from "../../context/SocketContext";
 
 const Announcements = () => {
   const { user } = useAuth();
+  const socket = useSocket()?.socket;
   const [announcements, setAnnouncements] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [hasSchoolChildren, setHasSchoolChildren] = useState(null); // null = checking, true/false = result
   const [searchTerm, setSearchTerm] = useState("");
   const [filterType, setFilterType] = useState("all");
@@ -21,6 +24,7 @@ const Announcements = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [expandedAnnouncements, setExpandedAnnouncements] = useState(new Set());
   const [showFilters, setShowFilters] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(null);
   
   // Modals
   const [showViewModal, setShowViewModal] = useState(false);
@@ -64,6 +68,31 @@ const Announcements = () => {
     { value: "parents", label: "Parents Only" },
     { value: "specific_class", label: "Specific Classes" }
   ];
+
+  // Real-time socket listeners
+  useEffect(() => {
+    if (!socket) return;
+
+    const handleNewAnnouncement = (data) => {
+      console.log("Real-time new announcement:", data);
+      toast.success(`New announcement: ${data.title || 'Announcement'}`, { icon: '🔔' });
+      fetchAnnouncements(false);
+    };
+
+    const handleAnnouncementUpdate = (data) => {
+      console.log("Real-time announcement update:", data);
+      toast.info("Announcement updated", { icon: '📢' });
+      fetchAnnouncements(false);
+    };
+
+    socket.on('announcement:new', handleNewAnnouncement);
+    socket.on('announcement:updated', handleAnnouncementUpdate);
+
+    return () => {
+      socket.off('announcement:new', handleNewAnnouncement);
+      socket.off('announcement:updated', handleAnnouncementUpdate);
+    };
+  }, [socket]);
 
   // Check if parent has school children (only for regular parent role, not school_parent)
   useEffect(() => {
@@ -129,9 +158,10 @@ const Announcements = () => {
     };
   }, [showCreateModal, showViewModal]);
 
-  const fetchAnnouncements = async () => {
+  const fetchAnnouncements = useCallback(async (showLoading = true) => {
     try {
-      setLoading(true);
+      if (showLoading) setLoading(true);
+      
       const params = new URLSearchParams({
         page: currentPage,
         limit: 10,
@@ -150,15 +180,47 @@ const Announcements = () => {
 
       if (endpoint) {
         const response = await api.get(endpoint);
-        setAnnouncements(response.data.announcements);
-        setTotalPages(response.data.totalPages);
+        setAnnouncements(response.data.announcements || []);
+        setTotalPages(response.data.totalPages || 1);
+        setLastUpdated(new Date());
       }
     } catch (error) {
       console.error("Error fetching announcements:", error);
       toast.error("Failed to load announcements");
+      setAnnouncements([]);
+      setTotalPages(1);
     } finally {
-      setLoading(false);
+      if (showLoading) setLoading(false);
     }
+  }, [currentPage, filterType, filterPriority, user?.role]);
+
+  const handleRefresh = useCallback(async () => {
+    setRefreshing(true);
+    try {
+      await fetchAnnouncements(false);
+      toast.success("Announcements refreshed!", { icon: '✅' });
+    } catch (error) {
+      console.error("Error refreshing announcements:", error);
+      toast.error("Failed to refresh announcements");
+    } finally {
+      setRefreshing(false);
+    }
+  }, [fetchAnnouncements]);
+
+  const formatTimeAgo = (date) => {
+    if (!date) return "Never";
+    const now = new Date();
+    const then = new Date(date);
+    const diff = now - then;
+    const seconds = Math.floor(diff / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    if (days > 0) return `${days} day${days > 1 ? 's' : ''} ago`;
+    if (hours > 0) return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+    if (minutes > 0) return `${minutes} min${minutes > 1 ? 's' : ''} ago`;
+    return "Just now";
   };
 
   const markAsRead = async (announcementId) => {
@@ -329,14 +391,33 @@ const Announcements = () => {
           className="bg-white rounded-xl border border-slate-200 shadow-sm mb-6"
         >
           <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-6 rounded-t-xl">
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-white/20 backdrop-blur rounded-lg">
-                <Bell className="w-5 h-5 text-white" />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-white/20 backdrop-blur rounded-lg">
+                  <Bell className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold text-white">Announcements</h1>
+                  <p className="text-sm text-white/80">
+                    Stay updated with school announcements
+                    {lastUpdated && (
+                      <span className="ml-2 text-white/70">
+                        • Last updated: {formatTimeAgo(lastUpdated)}
+                      </span>
+                    )}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h1 className="text-2xl font-bold text-white">Announcements</h1>
-                <p className="text-sm text-white/80">Stay updated with school announcements</p>
-              </div>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleRefresh}
+                disabled={refreshing || loading}
+                className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-white font-medium transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <RefreshCw className={`w-4 h-4 ${refreshing ? 'animate-spin' : ''}`} />
+                Refresh
+              </motion.button>
             </div>
           </div>
         </motion.div>

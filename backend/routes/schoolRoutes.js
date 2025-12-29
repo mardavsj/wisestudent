@@ -26,6 +26,7 @@ import {
   getTeacherStats,
   getTeacherClasses,
   getTeacherAssignments,
+  getAssignmentTypeStats,
   getTeacherTimetable,
   getAllStudentsForTeacher,
   getStudentAnalyticsForTeacher,
@@ -35,6 +36,7 @@ import {
   getSessionEngagement,
   getPendingTasks,
   getLeaderboard,
+  exportTeacherAnalytics,
   getClassStudents,
   getTeacherMessages,
   getClassMissions,
@@ -352,6 +354,7 @@ router.get('/teacher/access', requireAuth, requireSchoolRole, checkTeacherAccess
 router.get('/teacher/stats', requireAuth, requireSchoolRole, getTeacherStats);
 router.get('/teacher/classes', requireAuth, requireSchoolRole, getTeacherClasses);
 router.get('/teacher/assignments', requireAuth, requireSchoolRole, getTeacherAssignments);
+router.get('/teacher/assignment-type-stats', requireAuth, requireSchoolRole, getAssignmentTypeStats);
 router.get('/teacher/timetable', requireAuth, requireSchoolRole, getTeacherTimetable);
 router.get('/teacher/all-students', requireAuth, requireSchoolRole, getAllStudentsForTeacher);
 router.get('/teacher/student/:studentId/analytics', requireAuth, requireSchoolRole, getStudentAnalyticsForTeacher);
@@ -364,6 +367,7 @@ router.get('/teacher/leaderboard', requireAuth, requireSchoolRole, getLeaderboar
 router.get('/teacher/class/:classId/students', requireAuth, requireSchoolRole, getClassStudents);
 router.get('/teacher/messages', requireAuth, requireSchoolRole, getTeacherMessages);
 router.get('/teacher/class-missions', requireAuth, requireSchoolRole, getClassMissions);
+router.get('/teacher/analytics/export', requireAuth, requireSchoolRole, exportTeacherAnalytics);
 
 // Assignment/Task CRUD
 router.post('/teacher/assignments', requireAuth, requireSchoolRole, createAssignment);

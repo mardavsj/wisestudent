@@ -427,10 +427,32 @@ const QuestionBuilder = ({ questions = [], onQuestionsChange, template = null, a
   };
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Questions</h3>
-        <p className="text-gray-600">Add and configure questions for your assignment</p>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.15 }}
+      className="space-y-6"
+    >
+      <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+        <div className="flex items-center gap-3 mb-2">
+          <div className="p-2 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg">
+            <FileText className="w-5 h-5 text-white" />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-gray-900">Questions</h3>
+            <p className="text-sm text-gray-600">Add and configure questions for your assignment</p>
+          </div>
+        </div>
+        {questions.length > 0 && (
+          <div className="mt-4 flex items-center gap-4 text-sm">
+            <div className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg font-semibold">
+              {questions.length} Question{questions.length !== 1 ? 's' : ''}
+            </div>
+            <div className="px-3 py-1.5 bg-green-50 text-green-700 rounded-lg font-semibold">
+              {questions.reduce((total, q) => total + (q.points || 0), 0)} Total Points
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Existing Questions */}
@@ -440,9 +462,22 @@ const QuestionBuilder = ({ questions = [], onQuestionsChange, template = null, a
         </div>
       )}
 
-      {/* Add New Question */}
-      <div className="bg-gray-50 rounded-xl p-6 border-2 border-dashed border-gray-300">
-        <h4 className="font-semibold text-gray-900 mb-4">Add New Question</h4>
+      {/* Add New Question - Enhanced */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-6 border-2 border-dashed border-blue-300"
+      >
+        <div className="flex items-center gap-3 mb-6">
+          <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
+            <Plus className="w-5 h-5 text-white" />
+          </div>
+          <div>
+            <h4 className="text-lg font-bold text-gray-900">Add New Question</h4>
+            <p className="text-sm text-gray-600">Create a new question for your assignment</p>
+          </div>
+        </div>
         
         <div className="space-y-4">
           {/* Question Type */}
@@ -586,21 +621,22 @@ const QuestionBuilder = ({ questions = [], onQuestionsChange, template = null, a
             )}
           </div>
 
-          {/* Add Button */}
-          <div className="flex justify-end">
+          {/* Add Button - Enhanced */}
+          <div className="flex justify-end pt-4 border-t border-blue-200">
             <motion.button
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(37, 99, 235, 0.3)" }}
               whileTap={{ scale: 0.95 }}
               onClick={addQuestion}
-              className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              disabled={!newQuestion.question.trim()}
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl font-semibold hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              <Plus className="w-4 h-4" />
-              Add Question
+              <Plus className="w-5 h-5" />
+              <span>Add Question</span>
             </motion.button>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

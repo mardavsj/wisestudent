@@ -815,10 +815,30 @@ export const getTeacherStats = async (req, res) => {
     // First get the classes assigned to this teacher
     const assignedClasses = await SchoolClass.find({
       tenantId,
-      'sections.classTeacher': user._id
+      $or: [
+        { 'sections.classTeacher': user._id },
+        { 'subjects.teachers': user._id }
+      ]
     }).select('_id').lean();
 
     const classIds = assignedClasses.map(cls => cls._id);
+
+    // Get all assignments for this teacher
+    const teacherAssignments = await Assignment.find({
+      tenantId,
+      teacherId: user._id,
+      isActive: true
+    }).select('_id').lean();
+
+    const assignmentIds = teacherAssignments.map(a => a._id);
+
+    // Count pending grading tasks (submitted but not graded)
+    const pendingGradingCount = assignmentIds.length > 0 ? await AssignmentAttempt.countDocuments({
+      assignmentId: { $in: assignmentIds },
+      tenantId,
+      status: 'submitted',
+      graded: { $ne: true }
+    }) : 0;
 
     const [
       totalStudents,
@@ -829,28 +849,43 @@ export const getTeacherStats = async (req, res) => {
       SchoolStudent.countDocuments({ 
         tenantId,
         classId: { $in: classIds }
-      }),
+      }).catch(() => 0),
       SchoolClass.countDocuments({ 
         tenantId,
-        'sections.classTeacher': user._id
-      }),
+        $or: [
+          { 'sections.classTeacher': user._id },
+          { 'subjects.teachers': user._id }
+        ]
+      }).catch(() => 0),
       SchoolStudent.aggregate([
         { $match: { tenantId, classId: { $in: classIds } } },
         { $group: { _id: null, avg: { $avg: '$attendance.percentage' } } }
-      ]),
-      // Mock data - in real app, this would come from Assignment model
-      25
+      ]).catch(() => [{ avg: 0 }]),
+      // Count graded assignments
+      assignmentIds.length > 0 ? AssignmentAttempt.countDocuments({
+        assignmentId: { $in: assignmentIds },
+        tenantId,
+        graded: true
+      }).catch(() => 0) : Promise.resolve(0)
     ]);
 
     res.json({
-      totalStudents,
-      totalClasses,
+      totalStudents: totalStudents || 0,
+      totalClasses: totalClasses || 0,
       attendanceRate: Math.round(attendanceRate[0]?.avg || 0),
-      assignmentsGraded
+      assignmentsGraded: assignmentsGraded || 0,
+      pendingTasks: pendingGradingCount || 0
     });
   } catch (error) {
     console.error('Error fetching teacher stats:', error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ 
+      message: 'Server error',
+      totalStudents: 0,
+      totalClasses: 0,
+      attendanceRate: 0,
+      assignmentsGraded: 0,
+      pendingTasks: 0
+    });
   }
 };
 
@@ -960,6 +995,178 @@ export const getTeacherClasses = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
+// Get assignment type statistics for teacher
+export const getAssignmentTypeStats = async (req, res) => {
+  try {
+    const { tenantId, user } = req;
+
+    // Get all assignments for this teacher
+    const assignments = await Assignment.find({
+      tenantId,
+      teacherId: user._id,
+      isActive: true
+    }).select('type status createdAt dueDate _id').lean();
+
+    // Get assignment IDs for fetching attempts
+    const assignmentIds = assignments.map(a => a._id);
+
+    // Get assignment attempts for completion stats
+    const AssignmentAttempt = (await import('../models/AssignmentAttempt.js')).default;
+    const attempts = await AssignmentAttempt.find({
+      assignmentId: { $in: assignmentIds },
+      tenantId
+    }).select('assignmentId status totalScore percentage submittedAt').lean();
+
+    // Group attempts by assignment ID
+    const attemptsByAssignment = {};
+    attempts.forEach(attempt => {
+      if (!attemptsByAssignment[attempt.assignmentId]) {
+        attemptsByAssignment[attempt.assignmentId] = [];
+      }
+      attemptsByAssignment[attempt.assignmentId].push(attempt);
+    });
+
+    // Calculate statistics by type
+    const stats = {
+      homework: {
+        total: 0,
+        published: 0,
+        pending: 0,
+        completed: 0,
+        recent: 0, // Created in last 7 days
+        totalSubmissions: 0,
+        averageScore: 0,
+        completionRate: 0,
+        pendingGrading: 0
+      },
+      quiz: {
+        total: 0,
+        published: 0,
+        pending: 0,
+        completed: 0,
+        recent: 0,
+        totalSubmissions: 0,
+        averageScore: 0,
+        completionRate: 0,
+        pendingGrading: 0
+      },
+      test: {
+        total: 0,
+        published: 0,
+        pending: 0,
+        completed: 0,
+        recent: 0,
+        totalSubmissions: 0,
+        averageScore: 0,
+        completionRate: 0,
+        pendingGrading: 0
+      },
+      classwork: {
+        total: 0,
+        published: 0,
+        pending: 0,
+        completed: 0,
+        recent: 0,
+        totalSubmissions: 0,
+        averageScore: 0,
+        completionRate: 0,
+        pendingGrading: 0
+      },
+      project: {
+        total: 0,
+        published: 0,
+        pending: 0,
+        completed: 0,
+        recent: 0,
+        totalSubmissions: 0,
+        averageScore: 0,
+        completionRate: 0,
+        pendingGrading: 0
+      }
+    };
+
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
+    assignments.forEach(assignment => {
+      const type = assignment.type || 'homework';
+      if (stats[type]) {
+        stats[type].total++;
+        
+        if (assignment.status === 'published' || assignment.status === 'in_progress') {
+          stats[type].published++;
+        } else if (assignment.status === 'pending' || assignment.status === 'pending_approval') {
+          stats[type].pending++;
+        } else if (assignment.status === 'completed' || assignment.status === 'approved') {
+          stats[type].completed++;
+        }
+
+        if (assignment.createdAt && new Date(assignment.createdAt) >= sevenDaysAgo) {
+          stats[type].recent++;
+        }
+
+        // Calculate submission stats for this assignment
+        const assignmentAttempts = attemptsByAssignment[assignment._id.toString()] || [];
+        const submittedAttempts = assignmentAttempts.filter(a => a.status === 'submitted');
+        const pendingGrading = submittedAttempts.filter(a => !a.graded || a.graded === false).length;
+        
+        stats[type].totalSubmissions += submittedAttempts.length;
+        stats[type].pendingGrading += pendingGrading;
+
+        // Calculate average score properly (accumulate all scores, then average at the end)
+        if (submittedAttempts.length > 0) {
+          const totalScore = submittedAttempts.reduce((sum, a) => sum + (a.percentage || 0), 0);
+          // Store for proper calculation later
+          if (!stats[type]._scoreSum) {
+            stats[type]._scoreSum = 0;
+            stats[type]._scoreCount = 0;
+            stats[type]._expectedSubmissions = 0;
+          }
+          stats[type]._scoreSum += totalScore;
+          stats[type]._scoreCount += submittedAttempts.length;
+          
+          // Add expected submissions for completion rate calculation
+          const expectedStudents = studentCountsByAssignment[assignment._id.toString()] || 25;
+          stats[type]._expectedSubmissions += expectedStudents;
+        }
+      }
+    });
+
+    // Calculate completion rates and finalize average scores
+    Object.keys(stats).forEach(type => {
+      if (stats[type].total > 0) {
+        // Calculate proper average score from accumulated values
+        if (stats[type]._scoreCount > 0) {
+          stats[type].averageScore = Math.round((stats[type]._scoreSum / stats[type]._scoreCount) * 10) / 10;
+        }
+        
+        // Calculate completion rate using actual expected submissions
+        if (stats[type]._expectedSubmissions > 0) {
+          stats[type].completionRate = Math.min(100, Math.round((stats[type].totalSubmissions / stats[type]._expectedSubmissions) * 100));
+        }
+        
+        // Clean up temporary properties
+        delete stats[type]._scoreSum;
+        delete stats[type]._scoreCount;
+        delete stats[type]._expectedSubmissions;
+      }
+    });
+
+    res.json({
+      success: true,
+      stats,
+      lastUpdated: new Date()
+    });
+  } catch (error) {
+    console.error('Error fetching assignment type stats:', error);
+    res.status(500).json({ 
+      success: false,
+      message: 'Failed to fetch assignment statistics',
+      error: error.message 
+    });
+  }
+};
+
 // Teacher Assignments
 export const getTeacherAssignments = async (req, res) => {
   try {
@@ -1458,95 +1665,165 @@ export const getAllStudentsForTeacher = async (req, res) => {
   try {
     const { tenantId, user, isLegacyUser } = req;
 
-    // Build query based on user type
-    const query = {};
-    
-    // Add tenantId filter for multi-tenant users
-    if (!isLegacyUser && tenantId) {
-      query.tenantId = tenantId;
-      query.role = 'school_student';
-    } else {
-      // For legacy users, get all students
-      query.role = { $in: ['student', 'school_student'] };
+    // First get the classes assigned to this teacher
+    const assignedClasses = await SchoolClass.find({
+      tenantId,
+      $or: [
+        { 'sections.classTeacher': user._id },
+        { 'subjects.teachers': user._id }
+      ]
+    }).select('_id').lean();
+
+    const classIds = assignedClasses.map(cls => cls._id);
+
+    // If teacher has no assigned classes, return empty array
+    if (classIds.length === 0) {
+      return res.json({ students: [] });
     }
 
-    const students = await User.find(query)
-      .select('name email role tenantId orgId createdAt')
+    // Get students from teacher's classes
+    const schoolStudents = await SchoolStudent.find({
+      tenantId,
+      classId: { $in: classIds }
+    })
+      .populate('userId', 'name email avatar role tenantId orgId createdAt')
       .lean()
       .catch(err => {
-        console.error('User query error:', err);
+        console.error('SchoolStudent query error:', err);
         return [];
       });
 
-    // Get additional data for each student
-    const enrichedStudents = await Promise.all(students.map(async (student) => {
+    const students = schoolStudents
+      .map(ss => ss.userId)
+      .filter(Boolean);
+
+    // Get additional data for each student (enriched like getClassStudents)
+    const enrichedStudents = await Promise.all(schoolStudents.map(async (schoolStudent, index) => {
       try {
-        // Get progress data
-        const progress = await UserProgress.findOne({ userId: student._id }).lean();
-        
-        // Get wallet data
-        const wallet = await Wallet.findOne({ userId: student._id }).lean();
-        
-        // Get class/grade information from SchoolStudent
+        const student = schoolStudent.userId;
+        if (!student || !student._id) return null;
+
+        const sevenDaysAgo = new Date();
+        sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
+        const [progress, wallet, gameProgress, recentMoods, recentActivities] = await Promise.all([
+          UserProgress.findOne({ userId: student._id }).lean(),
+          Wallet.findOne({ userId: student._id }).lean(),
+          UnifiedGameProgress.find({ userId: student._id }).lean(),
+          MoodLog.find({ userId: student._id, createdAt: { $gte: sevenDaysAgo } }).sort({ createdAt: -1 }).limit(1).lean(),
+          ActivityLog.find({ userId: student._id, createdAt: { $gte: sevenDaysAgo } }).lean()
+        ]);
+
+        // Calculate pillar mastery
+        const pillars = [
+          { key: 'finance', name: 'Financial Literacy', totalGames: 42 },
+          { key: 'mental', name: 'Mental Health', totalGames: 42 },
+          { key: 'ai', name: 'AI for All', totalGames: 42 },
+          { key: 'brain', name: 'Brain Health', totalGames: 42 },
+          { key: 'uvls', name: 'Life Skills & Values', totalGames: 42 },
+          { key: 'dcos', name: 'Digital Citizenship', totalGames: 42 },
+          { key: 'moral', name: 'Moral Values', totalGames: 42 },
+          { key: 'ehe', name: 'Entrepreneurship', totalGames: 42 },
+          { key: 'crgc', name: 'Global Citizenship', totalGames: 42 },
+          { key: 'educational', name: 'Education', totalGames: 42 }
+        ];
+
+        const pillarMasteryData = pillars.map(pillar => {
+          const pillarGames = gameProgress.filter(game => game.gameType === pillar.key);
+          if (pillarGames.length === 0) {
+            return { pillar: pillar.name, mastery: 0, gamesCompleted: 0, totalGames: pillar.totalGames };
+          }
+          const gamesCompleted = pillarGames.filter(g => g.fullyCompleted).length;
+          const mastery = Math.round((gamesCompleted / pillar.totalGames) * 100);
+          return { pillar: pillar.name, mastery, gamesCompleted, totalGames: pillar.totalGames };
+        });
+
+        const pillarMastery = pillarMasteryData.length > 0
+          ? Math.round(pillarMasteryData.reduce((sum, p) => sum + p.mastery, 0) / pillarMasteryData.length)
+          : 0;
+
+        // Get recent mood
+        const latestMood = recentMoods[0];
+        const moodScore = latestMood?.score || 3;
+        const moodEmojis = {
+          1: '😢', 2: '😔', 3: '😊', 4: '😄', 5: '🤩'
+        };
+
+        const totalMinutes = recentActivities.reduce((sum, log) => sum + (log.duration || 0), 0);
+        const avgMood = recentMoods.length > 0 ? recentMoods.reduce((sum, log) => sum + (log.score || 3), 0) / recentMoods.length : 3;
+        const flagged = totalMinutes < 30 || avgMood < 2.5;
+
+        // Format last active
+        // Format last active (handle both Date objects and strings)
+        let lastActive = 'Never';
+        if (student.lastActive) {
+          try {
+            lastActive = formatTimeAgo(student.lastActive);
+          } catch (error) {
+            console.error(`Error formatting lastActive for student ${student._id}:`, error);
+            lastActive = 'Unknown';
+          }
+        }
+
+        // Get class/grade information
         let classInfo = 'N/A';
-        let rollNumber = 'N/A';
+        let rollNumber = schoolStudent.rollNumber || 'N/A';
         
         try {
-          const schoolStudent = await SchoolStudent.findOne({ userId: student._id, tenantId })
-            .populate({
-              path: 'classId',
-              select: 'classNumber',
-              allowLegacy: true  // Allow legacy query for populate
-            })
-            .lean();
-          
-          if (schoolStudent?.classId?.classNumber) {
-            classInfo = `Class ${schoolStudent.classId.classNumber}`;
-          }
-          
-          if (schoolStudent?.rollNumber) {
-            rollNumber = schoolStudent.rollNumber;
+          if (schoolStudent.classId) {
+            const classData = await SchoolClass.findById(schoolStudent.classId).select('classNumber stream').lean();
+            if (classData?.classNumber) {
+              classInfo = `Class ${classData.classNumber}${classData.stream ? ` ${classData.stream}` : ''}`;
+            }
           }
         } catch (error) {
           console.error(`Error fetching class info for student ${student._id}:`, error);
-          // Keep default 'N/A' values
+        }
+
+        // Generate roll number if not exists
+        if (!rollNumber || rollNumber === 'N/A') {
+          const year = new Date().getFullYear().toString().slice(-2);
+          rollNumber = `ROLL${year}${String(index + 1).padStart(4, '0')}`;
         }
 
         return {
           _id: student._id,
+          schoolStudentId: schoolStudent._id,
           name: student.name,
           email: student.email,
+          avatar: student.avatar,
           class: classInfo,
           rollNumber: rollNumber,
           level: progress?.level || 1,
           xp: progress?.xp || 0,
+          coins: wallet?.balance || 0,
           healCoins: wallet?.balance || 0,
           streak: progress?.streak || 0,
+          pillarMastery,
+          moodScore,
+          moodEmoji: moodEmojis[moodScore] || '😊',
+          lastActive,
+          flagged,
+          admissionNumber: schoolStudent.admissionNumber,
+          section: schoolStudent.section,
+          academicYear: schoolStudent.academicYear,
           createdAt: student.createdAt
         };
       } catch (error) {
-        console.error(`Error enriching student ${student._id}:`, error);
-        return {
-          _id: student._id,
-          name: student.name,
-          email: student.email,
-          class: 'N/A',
-          rollNumber: 'N/A',
-          level: 1,
-          xp: 0,
-          healCoins: 0,
-          streak: 0,
-          createdAt: student.createdAt
-        };
+        console.error(`Error enriching student:`, error);
+        return null;
       }
     }));
 
+    // Filter out null values
+    const validStudents = enrichedStudents.filter(s => s !== null);
+
     // Get unique classes for filtering
-    const classes = [...new Set(enrichedStudents.map(s => s.class).filter(c => c !== 'N/A'))];
+    const classes = [...new Set(validStudents.map(s => s.class).filter(c => c !== 'N/A'))];
 
     res.json({
-      students: enrichedStudents,
-      classes: classes.length > 0 ? classes : ['Class 8', 'Class 9', 'Class 10'] // Fallback
+      students: validStudents,
+      classes: classes.length > 0 ? classes : []
     });
   } catch (error) {
     console.error('Error fetching all students:', error);
@@ -2167,19 +2444,61 @@ export const getStudentAnalyticsForTeacher = async (req, res) => {
 // Get class mastery by pillar
 export const getClassMasteryByPillar = async (req, res) => {
   try {
-    const { tenantId, user, isLegacyUser } = req;
-    const teacherId = user._id;
+    const { tenantId, isLegacyUser } = req;
+    const teacherId = req.user?._id;
+    const { timeRange = 'week', classId } = req.query;
+
+    if (!teacherId) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    // Calculate date range based on timeRange
+    const now = new Date();
+    let startDate = new Date();
+    switch (timeRange) {
+      case 'week':
+        startDate.setDate(now.getDate() - 7);
+        break;
+      case 'month':
+        startDate.setMonth(now.getMonth() - 1);
+        break;
+      case 'semester':
+        startDate.setMonth(now.getMonth() - 6);
+        break;
+      case 'year':
+        startDate.setFullYear(now.getFullYear() - 1);
+        break;
+      default:
+        startDate.setDate(now.getDate() - 7);
+    }
 
     // First get the classes assigned to this teacher
-    const assignedClasses = await SchoolClass.find({
+    let classQuery = {
       tenantId,
-      'sections.classTeacher': teacherId
-    }).select('_id').lean();
+      $or: [
+        { 'sections.classTeacher': teacherId },
+        { 'subjects.teachers': teacherId }
+      ]
+    };
+
+    // Filter by specific class if provided
+    if (classId && classId !== 'all') {
+      classQuery._id = classId;
+    }
+
+    const assignedClasses = await SchoolClass.find(classQuery).select('_id').lean();
 
     const classIds = assignedClasses.map(cls => cls._id);
 
     if (classIds.length === 0) {
-      return res.json({});
+      return res.json({
+        'Financial Literacy': 0,
+        'Brain Health': 0,
+        'UVLS': 0,
+        'Digital Citizenship': 0,
+        'Moral Values': 0,
+        'AI for All': 0
+      });
     }
 
     // Get students assigned to the teacher's classes
@@ -2188,11 +2507,25 @@ export const getClassMasteryByPillar = async (req, res) => {
       classId: { $in: classIds }
     }).populate('userId', '_id').lean();
 
-    const studentIds = schoolStudents.map(ss => ss.userId._id).filter(Boolean);
+    const studentIds = schoolStudents
+      .map(ss => ss.userId?._id)
+      .filter(Boolean);
 
-    // Get game progress for all students
+    if (studentIds.length === 0) {
+      return res.json({
+        'Financial Literacy': 0,
+        'Brain Health': 0,
+        'UVLS': 0,
+        'Digital Citizenship': 0,
+        'Moral Values': 0,
+        'AI for All': 0
+      });
+    }
+
+    // Get game progress for all students within time range
     const gameProgress = await UnifiedGameProgress.find({ 
-      userId: { $in: studentIds } 
+      userId: { $in: studentIds },
+      updatedAt: { $gte: startDate }
     }).lean();
 
     // Calculate mastery by pillar
@@ -2203,9 +2536,9 @@ export const getClassMasteryByPillar = async (req, res) => {
 
     const classMastery = {};
     pillarNames.forEach(pillar => {
-      const pillarGames = gameProgress.filter(g => g.category === pillar);
+      const pillarGames = gameProgress.filter(g => g?.category === pillar);
       if (pillarGames.length > 0) {
-        const avgProgress = pillarGames.reduce((sum, g) => sum + (g.progress || 0), 0) / pillarGames.length;
+        const avgProgress = pillarGames.reduce((sum, g) => sum + (g?.progress || 0), 0) / pillarGames.length;
         classMastery[pillar] = Math.round(avgProgress);
       } else {
         classMastery[pillar] = 0;
@@ -2224,15 +2557,43 @@ export const getStudentsAtRisk = async (req, res) => {
   try {
     const { tenantId, isLegacyUser } = req;
     const teacherId = req.user._id;
+    const { timeRange = 'week', classId } = req.query;
 
-    const sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    // Calculate date range based on timeRange
+    const now = new Date();
+    let startDate = new Date();
+    switch (timeRange) {
+      case 'week':
+        startDate.setDate(now.getDate() - 7);
+        break;
+      case 'month':
+        startDate.setMonth(now.getMonth() - 1);
+        break;
+      case 'semester':
+        startDate.setMonth(now.getMonth() - 6);
+        break;
+      case 'year':
+        startDate.setFullYear(now.getFullYear() - 1);
+        break;
+      default:
+        startDate.setDate(now.getDate() - 7);
+    }
 
     // First get the classes assigned to this teacher
-    const assignedClasses = await SchoolClass.find({
+    let classQuery = {
       tenantId,
-      'sections.classTeacher': teacherId
-    }).select('_id').lean();
+      $or: [
+        { 'sections.classTeacher': teacherId },
+        { 'subjects.teachers': teacherId }
+      ]
+    };
+
+    // Filter by specific class if provided
+    if (classId && classId !== 'all') {
+      classQuery._id = classId;
+    }
+
+    const assignedClasses = await SchoolClass.find(classQuery).select('_id').lean();
 
     const classIds = assignedClasses.map(cls => cls._id);
 
@@ -2254,7 +2615,7 @@ export const getStudentsAtRisk = async (req, res) => {
       // Check engagement
       const recentActivities = await ActivityLog.find({
         userId: student._id,
-        createdAt: { $gte: sevenDaysAgo }
+        createdAt: { $gte: startDate }
       }).lean();
 
       const totalMinutes = recentActivities.reduce((sum, log) => sum + (log.duration || 0), 0);
@@ -2262,7 +2623,7 @@ export const getStudentsAtRisk = async (req, res) => {
       // Check mood
       const recentMoods = await MoodLog.find({
         userId: student._id,
-        createdAt: { $gte: sevenDaysAgo }
+        createdAt: { $gte: startDate }
       }).lean();
 
       const avgMood = recentMoods.length > 0
@@ -2302,16 +2663,48 @@ export const getStudentsAtRisk = async (req, res) => {
 export const getSessionEngagement = async (req, res) => {
   try {
     const { tenantId, isLegacyUser } = req;
-    const teacherId = req.user._id;
+    const teacherId = req.user?._id;
+    const { timeRange = 'week', classId } = req.query;
 
-    const sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    if (!teacherId) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    // Calculate date range based on timeRange
+    const now = new Date();
+    let startDate = new Date();
+    switch (timeRange) {
+      case 'week':
+        startDate.setDate(now.getDate() - 7);
+        break;
+      case 'month':
+        startDate.setMonth(now.getMonth() - 1);
+        break;
+      case 'semester':
+        startDate.setMonth(now.getMonth() - 6);
+        break;
+      case 'year':
+        startDate.setFullYear(now.getFullYear() - 1);
+        break;
+      default:
+        startDate.setDate(now.getDate() - 7);
+    }
 
     // First get the classes assigned to this teacher
-    const assignedClasses = await SchoolClass.find({
+    let classQuery = {
       tenantId,
-      'sections.classTeacher': teacherId
-    }).select('_id').lean();
+      $or: [
+        { 'sections.classTeacher': teacherId },
+        { 'subjects.teachers': teacherId }
+      ]
+    };
+
+    // Filter by specific class if provided
+    if (classId && classId !== 'all') {
+      classQuery._id = classId;
+    }
+
+    const assignedClasses = await SchoolClass.find(classQuery).select('_id').lean();
 
     const classIds = assignedClasses.map(cls => cls._id);
 
@@ -2329,18 +2722,31 @@ export const getSessionEngagement = async (req, res) => {
       classId: { $in: classIds }
     }).populate('userId', '_id').lean();
 
-    const studentIds = schoolStudents.map(ss => ss.userId._id).filter(Boolean);
+    const studentIds = schoolStudents
+      .map(ss => ss.userId?._id)
+      .filter(Boolean);
+
+    if (studentIds.length === 0) {
+      return res.json({ 
+        averageEngagement: 0,
+        totalSessions: 0,
+        engagementTrend: [],
+        games: 0,
+        lessons: 0,
+        overall: 0
+      });
+    }
 
     // Get activity logs
     const activityLogs = await ActivityLog.find({
       userId: { $in: studentIds },
-      createdAt: { $gte: sevenDaysAgo }
+      createdAt: { $gte: startDate }
     }).lean();
 
     // Calculate engagement percentages
     const totalSessions = activityLogs.length;
     const gameSessions = activityLogs.filter(log => 
-      log.activityType === 'game' || log.action?.includes('game')
+      log && (log.activityType === 'game' || log.action?.includes('game'))
     ).length;
     const lessonSessions = totalSessions - gameSessions;
 
@@ -2362,27 +2768,65 @@ export const getPendingTasks = async (req, res) => {
   try {
     const { tenantId, user } = req;
 
+    // Get all active assignments for this teacher
     const assignments = await Assignment.find({
       tenantId,
       teacherId: user._id,
-      status: { $in: ['pending', 'in_progress'] },
-      isActive: true
+      isActive: true,
+      status: { $in: ['published', 'in_progress'] }
     })
-      .sort({ priority: -1, dueDate: 1 })
+      .sort({ dueDate: 1 })
       .lean();
 
-    const tasks = assignments.map(assignment => ({
-      _id: assignment._id,
-      title: assignment.title,
-      class: assignment.className,
-      section: assignment.section,
-      dueDate: new Date(assignment.dueDate).toLocaleDateString(),
-      priority: assignment.priority,
-      type: assignment.type,
-      status: assignment.status,
-      submissions: assignment.submissions?.length || 0,
-      totalStudents: assignment.submissions?.length || 0
-    }));
+    // Get tasks that need grading (have submitted attempts that aren't graded)
+    const tasksWithPendingGrading = await Promise.all(
+      assignments.map(async (assignment) => {
+        try {
+          const submittedAttempts = await AssignmentAttempt.countDocuments({
+            assignmentId: assignment._id,
+            tenantId,
+            status: 'submitted',
+            graded: { $ne: true }
+          });
+
+          const totalAttempts = await AssignmentAttempt.countDocuments({
+            assignmentId: assignment._id,
+            tenantId
+          });
+
+          // Only include if there are submissions to grade
+          if (submittedAttempts > 0) {
+            return {
+              _id: assignment._id,
+              title: assignment.title,
+              class: assignment.className || assignment.class || 'N/A',
+              section: assignment.section || 'N/A',
+              dueDate: assignment.dueDate ? new Date(assignment.dueDate).toLocaleDateString() : 'N/A',
+              priority: submittedAttempts > 10 ? 'high' : submittedAttempts > 5 ? 'medium' : 'low',
+              type: assignment.type || 'homework',
+              status: assignment.status || 'published',
+              submissions: submittedAttempts,
+              totalStudents: totalAttempts
+            };
+          }
+          return null;
+        } catch (err) {
+          console.error(`Error processing assignment ${assignment._id}:`, err);
+          return null;
+        }
+      })
+    );
+
+    // Filter out null values and sort by priority and due date
+    const tasks = tasksWithPendingGrading
+      .filter(task => task !== null)
+      .sort((a, b) => {
+        const priorityOrder = { high: 3, medium: 2, low: 1 };
+        if (priorityOrder[a.priority] !== priorityOrder[b.priority]) {
+          return priorityOrder[b.priority] - priorityOrder[a.priority];
+        }
+        return new Date(a.dueDate) - new Date(b.dueDate);
+      });
 
     res.json({ tasks });
   } catch (error) {
@@ -2395,12 +2839,23 @@ export const getLeaderboard = async (req, res) => {
   try {
     const { tenantId, isLegacyUser } = req;
     const teacherId = req.user._id;
+    const { timeRange = 'week', classId } = req.query;
 
     // First get the classes assigned to this teacher
-    const assignedClasses = await SchoolClass.find({
+    let classQuery = {
       tenantId,
-      'sections.classTeacher': teacherId
-    }).select('_id').lean();
+      $or: [
+        { 'sections.classTeacher': teacherId },
+        { 'subjects.teachers': teacherId }
+      ]
+    };
+
+    // Filter by specific class if provided
+    if (classId && classId !== 'all') {
+      classQuery._id = classId;
+    }
+
+    const assignedClasses = await SchoolClass.find(classQuery).select('_id').lean();
 
     const classIds = assignedClasses.map(cls => cls._id);
 
@@ -2437,14 +2892,239 @@ export const getLeaderboard = async (req, res) => {
       })
     );
 
-    // Sort by total XP and take top 5
+    // Sort by total XP (descending) and take top 5
     const topStudents = leaderboardData
-      .sort((a, b) => b.totalXP - a.totalXP)
+      .sort((a, b) => {
+        // Primary sort by XP
+        if (b.totalXP !== a.totalXP) {
+          return b.totalXP - a.totalXP;
+        }
+        // Secondary sort by level
+        if (b.level !== a.level) {
+          return b.level - a.level;
+        }
+        // Tertiary sort by streak
+        return b.streak - a.streak;
+      })
       .slice(0, 5);
 
     res.json({ leaderboard: topStudents });
   } catch (error) {
     console.error('Error fetching leaderboard:', error);
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+// Export teacher analytics report
+export const exportTeacherAnalytics = async (req, res) => {
+  try {
+    const { tenantId } = req;
+    const teacherId = req.user?._id;
+    const { timeRange = 'week', classId, format = 'json' } = req.query;
+
+    if (!teacherId) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    // Calculate date range
+    const now = new Date();
+    let startDate = new Date();
+    switch (timeRange) {
+      case 'week':
+        startDate.setDate(now.getDate() - 7);
+        break;
+      case 'month':
+        startDate.setMonth(now.getMonth() - 1);
+        break;
+      case 'semester':
+        startDate.setMonth(now.getMonth() - 6);
+        break;
+      case 'year':
+        startDate.setFullYear(now.getFullYear() - 1);
+        break;
+      default:
+        startDate.setDate(now.getDate() - 7);
+    }
+
+    // Get classes
+    let classQuery = {
+      tenantId,
+      $or: [
+        { 'sections.classTeacher': teacherId },
+        { 'subjects.teachers': teacherId }
+      ]
+    };
+
+    if (classId && classId !== 'all') {
+      classQuery._id = classId;
+    }
+
+    const assignedClasses = await SchoolClass.find(classQuery).select('_id name classNumber stream').lean();
+    const classIds = assignedClasses.map(cls => cls._id);
+
+    // Fetch all analytics data directly (not via HTTP)
+    const studentIds = classIds.length > 0 ? (await SchoolStudent.find({
+      tenantId,
+      classId: { $in: classIds }
+    }).populate('userId', '_id').lean()).map(ss => ss.userId?._id).filter(Boolean) : [];
+
+    // Get mastery data
+    const gameProgress = studentIds.length > 0 ? await UnifiedGameProgress.find({
+      userId: { $in: studentIds },
+      updatedAt: { $gte: startDate }
+    }).lean() : [];
+
+    const pillarNames = ['Financial Literacy', 'Brain Health', 'UVLS', 'Digital Citizenship', 'Moral Values', 'AI for All'];
+    const masteryData = {};
+    pillarNames.forEach(pillar => {
+      const pillarGames = gameProgress.filter(g => g?.category === pillar);
+      masteryData[pillar] = pillarGames.length > 0
+        ? Math.round(pillarGames.reduce((sum, g) => sum + (g?.progress || 0), 0) / pillarGames.length)
+        : 0;
+    });
+
+    // Get students at risk
+    const schoolStudents = classIds.length > 0 ? await SchoolStudent.find({
+      tenantId,
+      classId: { $in: classIds }
+    }).populate('userId', '_id name avatar').lean() : [];
+
+    const atRiskStudents = [];
+    for (const schoolStudent of schoolStudents) {
+      const student = schoolStudent.userId;
+      if (!student) continue;
+
+      const [recentActivities, recentMoods] = await Promise.all([
+        ActivityLog.find({ userId: student._id, createdAt: { $gte: startDate } }).lean(),
+        MoodLog.find({ userId: student._id, createdAt: { $gte: startDate } }).lean()
+      ]);
+
+      const totalMinutes = recentActivities.reduce((sum, log) => sum + (log.duration || 0), 0);
+      const avgMood = recentMoods.length > 0
+        ? recentMoods.reduce((sum, log) => sum + (log.score || 3), 0) / recentMoods.length
+        : 3;
+
+      if (totalMinutes < 30) {
+        atRiskStudents.push({
+          _id: student._id,
+          name: student.name,
+          avatar: student.avatar,
+          reason: 'Low engagement',
+          riskLevel: 'High',
+          metric: `${totalMinutes}min/${timeRange}`
+        });
+      } else if (avgMood < 2.5) {
+        atRiskStudents.push({
+          _id: student._id,
+          name: student.name,
+          avatar: student.avatar,
+          reason: 'Low mood pattern',
+          riskLevel: 'Medium',
+          metric: `Avg mood: ${avgMood.toFixed(1)}`
+        });
+      }
+    }
+
+    // Get engagement data
+    const activityLogs = studentIds.length > 0 ? await ActivityLog.find({
+      userId: { $in: studentIds },
+      createdAt: { $gte: startDate }
+    }).lean() : [];
+
+    const totalSessions = activityLogs.length;
+    const gameSessions = activityLogs.filter(log => log && (log.activityType === 'game' || log.action?.includes('game'))).length;
+    const lessonSessions = totalSessions - gameSessions;
+    const engagementData = {
+      games: totalSessions > 0 ? Math.round((gameSessions / totalSessions) * 100) : 0,
+      lessons: totalSessions > 0 ? Math.round((lessonSessions / totalSessions) * 100) : 0,
+      overall: totalSessions > 0 ? Math.round(((gameSessions + lessonSessions) / totalSessions) * 100) : 0
+    };
+
+    // Get leaderboard
+    const leaderboardData = [];
+    if (studentIds.length > 0) {
+      const students = schoolStudents.map(ss => ss.userId).filter(Boolean);
+      const leaderboardPromises = students.map(async (student) => {
+        const [progress, wallet] = await Promise.all([
+          UserProgress.findOne({ userId: student._id }).lean(),
+          Wallet.findOne({ userId: student._id }).lean()
+        ]);
+        return {
+          _id: student._id,
+          name: student.name,
+          avatar: student.avatar,
+          class: 'N/A',
+          totalXP: progress?.xp || 0,
+          level: progress?.level || 1,
+          healCoins: wallet?.balance || 0,
+          streak: progress?.streak || 0
+        };
+      });
+      const leaderboardResults = await Promise.all(leaderboardPromises);
+      leaderboardData.push(...leaderboardResults.sort((a, b) => b.totalXP - a.totalXP).slice(0, 5));
+    }
+
+    const reportData = {
+      generatedAt: new Date().toISOString(),
+      timeRange,
+      classFilter: classId || 'all',
+      classes: assignedClasses.map(c => ({
+        id: c._id,
+        name: c.name || `Class ${c.classNumber}${c.stream ? ` ${c.stream}` : ''}`,
+        classNumber: c.classNumber,
+        stream: c.stream
+      })),
+      mastery: masteryData,
+      studentsAtRisk: atRiskStudents,
+      engagement: engagementData,
+      leaderboard: leaderboardData,
+      summary: {
+        totalClasses: assignedClasses.length,
+        totalStudents: leaderboardData.length,
+        averageMastery: Object.values(masteryData).length > 0
+          ? Math.round(Object.values(masteryData).reduce((a, b) => a + b, 0) / Object.values(masteryData).length)
+          : 0,
+        studentsAtRiskCount: atRiskStudents.length,
+        engagementRate: engagementData.overall || 0
+      }
+    };
+
+    if (format === 'json') {
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader('Content-Disposition', `attachment; filename=analytics-report-${timeRange}-${new Date().toISOString().split('T')[0]}.json`);
+      return res.status(200).json(reportData);
+    } else {
+      // CSV format
+      const csv = `Teacher Analytics Report
+Generated: ${new Date().toLocaleString()}
+Time Range: ${timeRange}
+Class Filter: ${classId || 'all'}
+
+=== Summary ===
+Total Classes: ${reportData.summary.totalClasses}
+Total Students: ${reportData.summary.totalStudents}
+Average Mastery: ${reportData.summary.averageMastery}%
+Students At Risk: ${reportData.summary.studentsAtRiskCount}
+Engagement Rate: ${reportData.summary.engagementRate}%
+
+=== Pillar Mastery ===
+${Object.entries(reportData.mastery).map(([pillar, percentage]) => `${pillar},${percentage}%`).join('\n')}
+
+=== Students At Risk ===
+Name,Reason,Risk Level,Metric
+${reportData.studentsAtRisk.map(s => `${s.name},${s.reason},${s.riskLevel},${s.metric}`).join('\n')}
+
+=== Top Performers ===
+Rank,Name,Level,XP,Coins,Streak
+${reportData.leaderboard.map((s, idx) => `${idx + 1},${s.name},${s.level},${s.totalXP},${s.healCoins},${s.streak}`).join('\n')}
+`;
+
+      res.setHeader('Content-Type', 'text/csv');
+      res.setHeader('Content-Disposition', `attachment; filename=analytics-report-${timeRange}-${new Date().toISOString().split('T')[0]}.csv`);
+      return res.send(csv);
+    }
+  } catch (error) {
+    console.error('Error exporting teacher analytics:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
@@ -2467,11 +3147,24 @@ export const getClassStudents = async (req, res) => {
       return res.json({ students: [] });
     }
 
+    // Filter out any schoolStudent records with null userId (broken references)
+    const validSchoolStudents = schoolStudents.filter(ss => ss.userId !== null && ss.userId !== undefined);
+
+    if (validSchoolStudents.length === 0) {
+      return res.json({ students: [] });
+    }
+
     // Extract user data from populated SchoolStudent records
     // Enrich with progress data
     const enrichedStudents = await Promise.all(
-      schoolStudents.map(async (schoolStudent, index) => {
+      validSchoolStudents.map(async (schoolStudent, index) => {
         const student = schoolStudent.userId;
+        
+        // Additional safety check (shouldn't be needed after filter, but just in case)
+        if (!student || !student._id) {
+          return null;
+        }
+        
         const sevenDaysAgo = new Date();
         sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
@@ -2542,10 +3235,16 @@ export const getClassStudents = async (req, res) => {
         const avgMood = recentMoods.length > 0 ? recentMoods.reduce((sum, log) => sum + (log.score || 3), 0) / recentMoods.length : 3;
         const flagged = totalMinutes < 30 || avgMood < 2.5;
 
-        // Format last active
-        const lastActive = student.lastActive 
-          ? formatTimeAgo(student.lastActive)
-          : 'Never';
+        // Format last active (handle both Date objects and strings)
+        let lastActive = 'Never';
+        if (student.lastActive) {
+          try {
+            lastActive = formatTimeAgo(student.lastActive);
+          } catch (error) {
+            console.error(`Error formatting lastActive for student ${student._id}:`, error);
+            lastActive = 'Unknown';
+          }
+        }
 
         // Generate roll number if not exists
         let rollNumber = schoolStudent.rollNumber;
@@ -2580,7 +3279,10 @@ export const getClassStudents = async (req, res) => {
       })
     );
 
-    res.json({ students: enrichedStudents });
+    // Filter out any null results (from invalid student references)
+    const validEnrichedStudents = enrichedStudents.filter(student => student !== null);
+
+    res.json({ students: validEnrichedStudents });
   } catch (error) {
     console.error('Error fetching class students:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
@@ -2778,11 +3480,21 @@ export const createAssignment = async (req, res) => {
         return q;
       }),
       questionCount: assignmentData.questionCount || 0,
-      instructions: assignmentData.instructions || "Complete all questions carefully.",
-      gradingType: assignmentData.gradingType || "auto",
+      instructions: assignmentData.instructions || (
+        assignmentData.type === 'classwork' 
+          ? "Participate actively and complete all activities during class time."
+          : assignmentData.type === 'project'
+          ? "Follow the project guidelines and submit all required deliverables."
+          : "Complete all questions carefully."
+      ),
+      gradingType: assignmentData.gradingType || (
+        assignmentData.type === 'classwork' ? "participation" 
+        : assignmentData.type === 'project' ? "manual"
+        : "auto"
+      ),
       allowRetake: assignmentData.allowRetake !== false,
-      maxAttempts: assignmentData.maxAttempts || 3,
-      duration: assignmentData.duration || 60, // in minutes
+      maxAttempts: assignmentData.maxAttempts || (assignmentData.type === 'project' ? 1 : 3), // Projects typically allow only one submission
+      duration: assignmentData.duration || (assignmentData.type === 'project' ? 0 : 60), // Projects don't have time limits
       // Project-specific fields
       projectMode: assignmentData.projectMode || 'instructions',
       projectData: assignmentData.projectData || {}
@@ -2801,9 +3513,45 @@ export const createAssignment = async (req, res) => {
 
     const assignment = await Assignment.create(assignmentToCreate);
 
+    // Populate assignment for socket emission
+    const populatedAssignment = await Assignment.findById(assignment._id)
+      .populate('classId', 'name section academicYear')
+      .populate('assignedToClasses', 'name section academicYear')
+      .populate('teacherId', 'name email')
+      .lean();
+
+    // Emit real-time notification via Socket.IO
+    const io = req.app?.get('io');
+    if (io) {
+      // Emit to teacher
+      io.to(user._id.toString()).emit('assignment:created', {
+        assignment: populatedAssignment,
+        tenantId,
+        teacherId: user._id,
+        createdAt: new Date()
+      });
+
+      // Emit to all users in tenant
+      io.to(tenantId).emit('assignment:created', {
+        assignment: populatedAssignment,
+        tenantId,
+        teacherId: user._id,
+        createdAt: new Date()
+      });
+      
+      // Emit teacher task update for dashboard refresh
+      io.to(user._id.toString()).emit('teacher:task:update', {
+        type: 'assignment_created',
+        assignment: populatedAssignment,
+        tenantId,
+        teacherId: user._id,
+        timestamp: new Date()
+      });
+    }
+
     res.status(201).json({ 
       success: true,
-      assignment, 
+      assignment: populatedAssignment || assignment, 
       message: 'Assignment created successfully' 
     });
   } catch (error) {
@@ -2827,10 +3575,42 @@ export const updateAssignment = async (req, res) => {
       { _id: assignmentId, tenantId, teacherId: user._id },
       updates,
       { new: true }
-    );
+    )
+      .populate('classId', 'name section academicYear')
+      .populate('assignedToClasses', 'name section academicYear')
+      .populate('teacherId', 'name email');
 
     if (!assignment) {
       return res.status(404).json({ message: 'Assignment not found' });
+    }
+
+    // Emit real-time update via Socket.IO
+    const io = req.app?.get('io');
+    if (io) {
+      // Emit to teacher
+      io.to(user._id.toString()).emit('assignment:updated', {
+        assignment,
+        tenantId,
+        teacherId: user._id,
+        updatedAt: new Date()
+      });
+
+      // Emit to all users in tenant
+      io.to(tenantId).emit('assignment:updated', {
+        assignment,
+        tenantId,
+        teacherId: user._id,
+        updatedAt: new Date()
+      });
+      
+      // Emit teacher task update for dashboard refresh
+      io.to(user._id.toString()).emit('teacher:task:update', {
+        type: 'assignment_updated',
+        assignment,
+        tenantId,
+        teacherId: user._id,
+        timestamp: new Date()
+      });
     }
 
     res.json({ assignment, message: 'Assignment updated successfully' });
@@ -2859,6 +3639,37 @@ export const deleteAssignmentForTeacher = async (req, res) => {
 
     if (!assignment) {
       return res.status(404).json({ message: 'Assignment not found' });
+    }
+
+    // Emit real-time delete via Socket.IO
+    const io = req.app?.get('io');
+    if (io) {
+      // Emit to teacher
+      io.to(user._id.toString()).emit('assignment:deleted', {
+        assignmentId,
+        tenantId,
+        teacherId: user._id,
+        deleteType: 'soft_teacher',
+        deletedAt: new Date()
+      });
+
+      // Emit to all users in tenant
+      io.to(tenantId).emit('assignment:deleted', {
+        assignmentId,
+        tenantId,
+        teacherId: user._id,
+        deleteType: 'soft_teacher',
+        deletedAt: new Date()
+      });
+      
+      // Emit teacher task update for dashboard refresh
+      io.to(user._id.toString()).emit('teacher:task:update', {
+        type: 'assignment_deleted',
+        assignmentId,
+        tenantId,
+        teacherId: user._id,
+        timestamp: new Date()
+      });
     }
 
     res.json({ 
@@ -2900,6 +3711,28 @@ export const deleteAssignmentForEveryone = async (req, res) => {
       { assignmentId: assignmentId, tenantId },
       { isActive: false }
     );
+
+    // Emit real-time delete via Socket.IO
+    const io = req.app?.get('io');
+    if (io) {
+      // Emit to teacher
+      io.to(user._id.toString()).emit('assignment:deleted', {
+        assignmentId,
+        tenantId,
+        teacherId: user._id,
+        deleteType: 'hard',
+        deletedAt: new Date()
+      });
+
+      // Emit to all users in tenant
+      io.to(tenantId).emit('assignment:deleted', {
+        assignmentId,
+        tenantId,
+        teacherId: user._id,
+        deleteType: 'hard',
+        deletedAt: new Date()
+      });
+    }
 
     res.json({ 
       success: true,
@@ -3007,6 +3840,17 @@ export const markMessageAsRead = async (req, res) => {
         { $addToSet: { readBy: { userId: user._id, readAt: new Date() } } },
         { new: true }
       );
+      
+      // Emit real-time update via Socket.IO
+      const io = req.app?.get('io');
+      if (io && announcement) {
+        io.to(user._id.toString()).emit('message:read', {
+          messageId,
+          type: 'announcement',
+          read: true
+        });
+      }
+      
       return res.json({ success: true, announcement });
     } else {
       const notification = await Notification.findByIdAndUpdate(
@@ -3014,6 +3858,17 @@ export const markMessageAsRead = async (req, res) => {
         { read: true },
         { new: true }
       );
+      
+      // Emit real-time update via Socket.IO
+      const io = req.app?.get('io');
+      if (io && notification) {
+        io.to(user._id.toString()).emit('message:read', {
+          messageId,
+          type: 'notification',
+          read: true
+        });
+      }
+      
       return res.json({ success: true, notification });
     }
   } catch (error) {
@@ -3402,12 +4257,19 @@ export const sendStudentMessage = async (req, res) => {
     const { studentId } = req.params;
     const { message } = req.body;
     const teacherId = req.user._id;
+    const { tenantId } = req;
 
     // Create notification for student
-    await Notification.create({
+    const notification = await Notification.create({
       userId: studentId,
-      type: 'info',
-      message: `Message from ${req.user.name}: ${message}`,
+      type: 'message',
+      title: `Message from ${req.user.name}`,
+      message: message,
+      metadata: {
+        senderId: teacherId,
+        senderName: req.user.name,
+        senderRole: req.user.role
+      }
     });
 
     // Log activity for timeline
@@ -3418,6 +4280,25 @@ export const sendStudentMessage = async (req, res) => {
       details: { senderId: teacherId, senderName: req.user.name },
       metadata: { page: '/school-teacher/students' },
     });
+
+    // Emit real-time notification via Socket.IO
+    const io = req.app?.get('io');
+    if (io) {
+      io.to(studentId.toString()).emit('notification', {
+        _id: notification._id,
+        userId: studentId,
+        type: 'message',
+        title: `Message from ${req.user.name}`,
+        message: message,
+        metadata: {
+          senderId: teacherId,
+          senderName: req.user.name,
+          senderRole: req.user.role
+        },
+        read: false,
+        createdAt: notification.createdAt
+      });
+    }
 
     res.json({
       success: true,
@@ -4044,6 +4925,30 @@ export const bulkUploadStudents = async (req, res) => {
           error: error.message,
           data: {}
         });
+      }
+    }
+
+    // Emit socket events for real-time updates
+    const io = req.app && typeof req.app.get === 'function' ? req.app.get('io') : null;
+    if (io && successResults.length > 0 && classId) {
+      const studentIds = successResults
+        .filter(r => r.studentId)
+        .map(r => r.studentId.toString());
+      
+      if (studentIds.length > 0) {
+        const payload = {
+          tenantId,
+          orgId: req.user?.orgId ? req.user.orgId.toString() : null,
+          classId: classId.toString(),
+          studentIds,
+          section: req.body.section || 'A',
+          count: studentIds.length,
+          updatedAt: new Date().toISOString(),
+          action: 'bulk_upload'
+        };
+
+        io.emit('school:students:updated', payload);
+        io.emit('school:class-roster:updated', payload);
       }
     }
 

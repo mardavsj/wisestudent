@@ -6,32 +6,24 @@ import {
   Users,
   TrendingUp,
   AlertCircle,
-  Plus,
-  Mail,
   CheckCircle,
   Trophy,
   Activity,
-  Target,
   ArrowRight,
   Calendar,
   Clock,
   BarChart3,
-  MessageSquare,
-  Sparkles,
-  Gamepad2,
-  Brain,
-  Heart,
-  Star,
-  Flame,
   UserPlus,
-  FileText,
   Award,
   Zap,
+  Loader2,
   TrendingDown,
+  Target,
+  MessageSquare,
+  RefreshCw,
 } from "lucide-react";
 import api from "../../utils/api";
 import { toast } from "react-hot-toast";
-import NewAssignmentModal from "../../components/NewAssignmentModal";
 import InviteStudentsModal from "../../components/InviteStudentsModal";
 import ExpiredSubscriptionModal from "../../components/School/ExpiredSubscriptionModal";
 import { useSocket } from "../../context/SocketContext";
@@ -49,7 +41,7 @@ const TeacherOverview = () => {
   const [teacherProfile, setTeacherProfile] = useState(null);
   const [classMastery, setClassMastery] = useState({});
   const [sessionEngagement, setSessionEngagement] = useState({});
-  const [showNewAssignment, setShowNewAssignment] = useState(false);
+  const [recentActivities, setRecentActivities] = useState([]);
   const [showInviteStudents, setShowInviteStudents] = useState(false);
   const [selectedClassForInvite, setSelectedClassForInvite] = useState(null);
   
@@ -58,6 +50,11 @@ const TeacherOverview = () => {
   const [accessLoading, setAccessLoading] = useState(true);
   const [accessInfo, setAccessInfo] = useState(null);
   const [showExpiredModal, setShowExpiredModal] = useState(false);
+  
+  // Refresh states
+  const [refreshing, setRefreshing] = useState(false);
+  const [refreshingActivities, setRefreshingActivities] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(null);
 
   // Check teacher access on mount and when socket connects
   useEffect(() => {
@@ -77,7 +74,6 @@ const TeacherOverview = () => {
             duration: 5000,
             icon: '🎉'
           });
-          // Refresh dashboard data
           fetchDashboardData();
         } else {
           setShowExpiredModal(true);
@@ -89,10 +85,28 @@ const TeacherOverview = () => {
       }
     };
 
+    const handleActivityUpdate = (data) => {
+      if (data && data.type === 'student_activity') {
+        fetchRecentActivities();
+      }
+    };
+
+    const handleTaskUpdate = (data) => {
+      if (data) {
+        fetchDashboardData();
+      }
+    };
+
     socket.on('teacher:access:updated', handleAccessUpdate);
+    socket.on('teacher:activity:update', handleActivityUpdate);
+    socket.on('teacher:task:update', handleTaskUpdate);
+    socket.on('assignment:submitted', handleTaskUpdate);
 
     return () => {
       socket.off('teacher:access:updated', handleAccessUpdate);
+      socket.off('teacher:activity:update', handleActivityUpdate);
+      socket.off('teacher:task:update', handleTaskUpdate);
+      socket.off('assignment:submitted', handleTaskUpdate);
     };
   }, [socket]);
 
@@ -105,33 +119,161 @@ const TeacherOverview = () => {
         setHasAccess(accessData.hasAccess === true);
         setAccessInfo(accessData);
         
-        // Show modal if access is denied
         if (!accessData.hasAccess) {
           setShowExpiredModal(true);
-          setLoading(false); // Stop loading spinner when access is denied
+          setLoading(false);
         }
       }
     } catch (error) {
       console.error('Error checking teacher access:', error);
-      // On error, assume access is denied for safety
       setHasAccess(false);
       setShowExpiredModal(true);
-      setLoading(false); // Stop loading spinner on error
+      setLoading(false);
     } finally {
       setAccessLoading(false);
     }
   };
 
   useEffect(() => {
-    // Only fetch dashboard data if teacher has access
     if (hasAccess && !accessLoading) {
       fetchDashboardData();
     }
   }, [hasAccess, accessLoading]);
 
-  const fetchDashboardData = async () => {
+  const formatRelativeTime = (date) => {
+    if (!date) return "just now";
+    const value = new Date(date).getTime();
+    if (Number.isNaN(value)) {
+      return "just now";
+    }
+    const diff = Date.now() - value;
+    const seconds = Math.floor(diff / 1000);
+    if (seconds < 60) return "just now";
+    const minutes = Math.floor(seconds / 60);
+    if (minutes < 60) return `${minutes} min${minutes > 1 ? "s" : ""} ago`;
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+    const days = Math.floor(hours / 24);
+    if (days < 7) return `${days} day${days > 1 ? "s" : ""} ago`;
+    const weeks = Math.floor(days / 7);
+    if (weeks < 4) return `${weeks} week${weeks > 1 ? "s" : ""} ago`;
+    const months = Math.floor(days / 30);
+    return `${months} month${months > 1 ? "s" : ""} ago`;
+  };
+
+  const fetchRecentActivities = async (showLoading = false) => {
     try {
-      setLoading(true);
+      if (showLoading) setRefreshingActivities(true);
+      
+      // Optimized: Fetch only student IDs first, then get recent activities
+      // This avoids the heavy all-students endpoint that enriches every student
+      const studentsRes = await api.get("/api/school/teacher/all-students?limit=10&minimal=true").catch(() => ({ data: { students: [] } }));
+      const students = studentsRes.data?.students || [];
+      
+      if (students.length === 0) {
+        setRecentActivities([]);
+        if (showLoading) setRefreshingActivities(false);
+        return;
+      }
+
+      const activities = [];
+      const studentIds = students.map(s => s._id || s.userId?._id).filter(Boolean).slice(0, 3); // Limit to 3 students for faster loading
+      const studentMap = new Map(students.map(s => [(s._id || s.userId?._id).toString(), s.name || "Student"]));
+
+      // Fetch activity logs in parallel but with timeout to prevent blocking
+      const activityPromises = studentIds.map(async (studentId) => {
+        try {
+          const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+          
+          // Add timeout to prevent slow requests from blocking
+          const timeoutPromise = new Promise((_, reject) => 
+            setTimeout(() => reject(new Error('Timeout')), 5000)
+          );
+          
+          const analyticsRes = await Promise.race([
+            api.get(`/api/school/teacher/student/${studentId}/analytics?startDate=${sevenDaysAgo}`),
+            timeoutPromise
+          ]).catch(() => ({ data: { activityTimeline: [] } }));
+
+          const activityTimeline = analyticsRes.data?.activityTimeline || [];
+          const studentName = studentMap.get(studentId.toString()) || "Student";
+          
+          // Only process the most recent 2 activities per student
+          activityTimeline.slice(0, 2).forEach((log) => {
+            let icon = "🎯";
+            let action = "";
+
+            const activityType = log.type || log.activityType || "";
+            const activityTitle = log.title || log.action || "";
+            const activityDescription = log.description || "";
+            const activityDetails = log.details || {};
+
+            const actualActivityName = 
+              activityTitle || 
+              activityDescription || 
+              activityDetails?.gameName || 
+              activityDetails?.activityName || 
+              activityDetails?.name ||
+              activityDetails?.title ||
+              "";
+
+            if (activityType.includes("game") || activityType.includes("mission") || activityTitle.toLowerCase().includes("mission")) {
+              icon = "🎯";
+              action = actualActivityName ? `${studentName} completed ${actualActivityName}` : `${studentName} completed a mission`;
+            } else if (activityType.includes("lesson") || activityType.includes("learning")) {
+              icon = "📚";
+              action = actualActivityName ? `${studentName} completed ${actualActivityName}` : `${studentName} completed a lesson`;
+            } else if (activityType.includes("achievement") || activityType.includes("badge")) {
+              icon = "🏆";
+              action = actualActivityName ? `${studentName} achieved ${actualActivityName}` : `${studentName} achieved a new badge`;
+            } else if (activityType.includes("quiz") || activityType.includes("assignment")) {
+              icon = "✅";
+              action = actualActivityName ? `${studentName} completed ${actualActivityName}` : `${studentName} completed a quiz`;
+            } else {
+              icon = "📝";
+              action = actualActivityName ? `${studentName} ${actualActivityName}` : (activityType ? `${studentName} ${activityType.replace(/_/g, " ")}` : `${studentName} completed an activity`);
+            }
+
+            activities.push({
+              action,
+              time: formatRelativeTime(log.timestamp || log.createdAt),
+              icon,
+              student: studentName,
+              timestamp: new Date(log.timestamp || log.createdAt).getTime(),
+            });
+          });
+        } catch (error) {
+          console.error(`Error fetching activities for student ${studentId}:`, error);
+        }
+      });
+
+      // Use Promise.allSettled to not block on individual failures
+      await Promise.allSettled(activityPromises);
+
+      const sortedActivities = activities
+        .sort((a, b) => b.timestamp - a.timestamp)
+        .slice(0, 3);
+
+      setRecentActivities(sortedActivities);
+      if (showLoading) {
+        toast.success("Recent activities refreshed");
+      }
+    } catch (error) {
+      console.error("Error fetching recent activities:", error);
+      setRecentActivities([]);
+      if (showLoading) {
+        toast.error("Failed to refresh activities");
+      }
+    } finally {
+      if (showLoading) setRefreshingActivities(false);
+    }
+  };
+
+  const fetchDashboardData = async (showLoading = true, showToast = false) => {
+    try {
+      if (showLoading) setLoading(true);
+      if (showToast) setRefreshing(true);
+      
       const [
         statsRes,
         classesRes,
@@ -143,73 +285,105 @@ const TeacherOverview = () => {
         masteryRes,
         engagementRes,
       ] = await Promise.all([
-        api.get("/api/school/teacher/stats"),
-        api.get("/api/school/teacher/classes"),
-        api.get("/api/school/teacher/students-at-risk"),
-        api.get("/api/school/teacher/leaderboard"),
-        api.get("/api/school/teacher/pending-tasks"),
+        api.get("/api/school/teacher/stats").catch((err) => {
+          console.error("Error fetching stats:", err);
+          return { data: {} };
+        }),
+        api.get("/api/school/teacher/classes").catch((err) => {
+          console.error("Error fetching classes:", err);
+          return { data: { classes: [] } };
+        }),
+        api.get("/api/school/teacher/students-at-risk").catch((err) => {
+          console.error("Error fetching at-risk students:", err);
+          return { data: { students: [] } };
+        }),
+        api.get("/api/school/teacher/leaderboard").catch((err) => {
+          console.error("Error fetching leaderboard:", err);
+          return { data: { leaderboard: [] } };
+        }),
+        api.get("/api/school/teacher/pending-tasks").catch((err) => {
+          console.error("Error fetching pending tasks:", err);
+          return { data: { tasks: [] } };
+        }),
         api.get("/api/school/teacher/messages").catch(() => ({ data: { messages: [] } })),
         api.get("/api/user/profile").catch(() => ({ data: null })),
-        api.get("/api/school/teacher/class-mastery"),
-        api.get("/api/school/teacher/session-engagement"),
+        api.get("/api/school/teacher/class-mastery").catch((err) => {
+          console.error("Error fetching class mastery:", err);
+          return { data: {} };
+        }),
+        api.get("/api/school/teacher/session-engagement").catch((err) => {
+          console.error("Error fetching session engagement:", err);
+          return { data: {} };
+        }),
       ]);
 
-      setStats(statsRes.data);
+      setStats(statsRes.data || {});
       const classesData = classesRes.data?.classes || [];
-      console.log('Classes data:', classesData);
       setClasses(classesData);
-      setStudentsAtRisk(atRiskRes.data.students || []);
-      setLeaderboard(leaderboardRes.data.leaderboard || []);
-      setPendingTasks(pendingRes.data.tasks || []);
-      setMessages(messagesRes.data.messages || []);
+      setStudentsAtRisk(atRiskRes.data?.students || []);
+      setLeaderboard(leaderboardRes.data?.leaderboard || []);
+      setPendingTasks(pendingRes.data?.tasks || []);
+      setMessages(messagesRes.data?.messages || []);
       setTeacherProfile(profileRes.data);
       setClassMastery(masteryRes.data || {});
-      setSessionEngagement(engagementRes.data || {});
+      setSessionEngagement(engagementRes.data || {
+        games: 0,
+        lessons: 0,
+        overall: 0
+      });
+      
+      setLastUpdated(new Date());
+      
+      // Load activities in background (non-blocking)
+      fetchRecentActivities().catch(err => {
+        console.error("Error loading activities in background:", err);
+      });
+      
+      if (showToast) {
+        toast.success("Dashboard refreshed successfully");
+      }
     } catch (error) {
       console.error("Error fetching dashboard data:", error);
       toast.error("Failed to load dashboard data");
     } finally {
-      setLoading(false);
+      if (showLoading) setLoading(false);
+      if (showToast) setRefreshing(false);
     }
   };
 
-  const StatCard = ({ title, value, icon: Icon, color, trend, onClick, subtitle }) => (
+  const handleRefresh = () => {
+    fetchDashboardData(true, true);
+  };
+
+  const StatCard = ({ title, value, icon: Icon, gradient, trend, onClick, subtitle }) => (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -5, scale: 1.02 }}
+      whileHover={{ y: -4, scale: 1.02 }}
       onClick={onClick}
-      className={`bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6 cursor-pointer transition-all ${
-        onClick ? "hover:shadow-xl hover:border-purple-300" : ""
+      className={`group relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all ${
+        onClick ? "cursor-pointer hover:border-indigo-300 hover:shadow-lg" : ""
       }`}
     >
-      <div className="flex items-center justify-between mb-4">
-        <div className={`p-4 rounded-xl bg-gradient-to-br ${color}`}>
-          <Icon className="w-8 h-8 text-white" />
-        </div>
-        {trend && (
-          <div className={`flex items-center gap-1 ${trend.startsWith('+') ? 'text-green-600' : 'text-red-600'}`}>
-            {trend.startsWith('+') ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
-            <span className="text-sm font-bold">{trend}</span>
+      <div className="p-6">
+        <div className="flex items-center justify-between mb-4">
+          <div className={`p-3 rounded-xl bg-gradient-to-br ${gradient} shadow-md`}>
+            <Icon className="w-6 h-6 text-white" />
           </div>
-        )}
+          {trend && (
+            <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-emerald-50 border border-emerald-200">
+              <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
+              <span className="text-xs font-bold text-emerald-700">{trend}</span>
+            </div>
+          )}
+        </div>
+        <div>
+          <p className="text-xs font-semibold text-slate-600 mb-1 uppercase tracking-wide">{title}</p>
+          <p className="text-3xl font-bold text-slate-900 mb-1">{value}</p>
+          {subtitle && <p className="text-xs text-slate-500">{subtitle}</p>}
+        </div>
       </div>
-      <p className="text-sm font-medium text-gray-600 mb-1">{title}</p>
-      <p className="text-3xl font-black text-gray-900">{value}</p>
-      {subtitle && <p className="text-xs text-gray-500 mt-1">{subtitle}</p>}
     </motion.div>
-  );
-
-  const QuickActionButton = ({ label, icon: Icon, color, onClick }) => (
-    <motion.button
-      whileHover={{ scale: 1.05, y: -2 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={onClick}
-      className={`flex items-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r ${color} text-white font-bold shadow-lg hover:shadow-xl transition-all`}
-    >
-      <Icon className="w-6 h-6" />
-      {label}
-    </motion.button>
   );
 
   const handleOpenInviteStudents = (classInfo) => {
@@ -243,26 +417,20 @@ const TeacherOverview = () => {
     setShowInviteStudents(true);
   };
 
-  // Show loading spinner only if we're still checking access or loading dashboard data
   if (accessLoading || (loading && hasAccess)) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
-        <motion.div
-          animate={{ rotate: 360, scale: [1, 1.2, 1] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="w-20 h-20 border-4 border-purple-500 border-t-transparent rounded-full"
-        />
+      <div className="flex items-center justify-center min-h-screen bg-slate-50">
+        <Loader2 className="h-8 w-8 animate-spin text-indigo-600" />
       </div>
     );
   }
 
-  // If access is denied, show only the modal (no dashboard content)
   if (!hasAccess && !accessLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <div className="min-h-screen bg-slate-50">
         <ExpiredSubscriptionModal
           isOpen={true}
-          onClose={() => {}} // Prevent closing - modal must stay open when access is denied
+          onClose={() => {}}
           schoolInfo={accessInfo ? {
             name: accessInfo.schoolName,
             planStatus: accessInfo.subscriptionStatus,
@@ -276,72 +444,60 @@ const TeacherOverview = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-12">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-between flex-wrap gap-4"
-          >
-            <div>
-              <h1 className="text-4xl font-black mb-2">
-                Welcome back, {teacherProfile?.name || "Teacher"}! 👋
-              </h1>
-              <p className="text-lg text-white/90">
-                Here's what's happening with your classes today
-              </p>
+    <div className="min-h-screen bg-slate-50 py-6">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
+          <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-6 rounded-t-xl">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h1 className="text-2xl font-bold text-white mb-1">
+                  Welcome back, {teacherProfile?.name?.split(" ")[0] || "Teacher"}! 👋
+                </h1>
+                <p className="text-sm text-white/90">
+                  Here's what's happening with your classes today
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="text-right hidden sm:block">
+                  <p className="text-xs text-white/80 mb-1">
+                    {new Date().toLocaleDateString("en-US", { weekday: "long" })}
+                  </p>
+                  <p className="text-sm font-semibold text-white">
+                    {new Date().toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </p>
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.05, rotate: 180 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleRefresh}
+                  disabled={refreshing}
+                  className="p-2.5 bg-white/20 hover:bg-white/30 rounded-lg border border-white/30 transition-all disabled:opacity-50"
+                  title="Refresh dashboard"
+                >
+                  <RefreshCw className={`w-5 h-5 text-white ${refreshing ? 'animate-spin' : ''}`} />
+                </motion.button>
+              </div>
             </div>
-            <div className="text-right">
-              <p className="text-sm text-white/80">Today's Date</p>
-              <p className="text-xl font-bold">
-                {new Date().toLocaleDateString("en-US", {
-                  weekday: "long",
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
-            </div>
-          </motion.div>
+            {lastUpdated && (
+              <div className="mt-2 text-xs text-white/70">
+                Last updated: {lastUpdated.toLocaleTimeString()}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 -mt-8">
-        {/* Quick Actions Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8"
-        >
-          <QuickActionButton
-            label="New Assignment"
-            icon={Plus}
-            color="from-purple-500 to-pink-600"
-            onClick={() => setShowNewAssignment(true)}
-          />
-          <QuickActionButton
-            label="Invite Students"
-            icon={UserPlus}
-            color="from-blue-500 to-cyan-600"
-            onClick={() => handleOpenInviteStudents()}
-          />
-          <QuickActionButton
-            label="View Messages"
-            icon={Mail}
-            color="from-green-500 to-emerald-600"
-            onClick={() => navigate("/school-teacher/messages")}
-          />
-        </motion.div>
 
         {/* Key Metrics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <StatCard
             title="Total Students"
             value={stats.totalStudents || 0}
             icon={Users}
-            color="from-blue-500 to-cyan-600"
+            gradient="from-blue-500 to-cyan-600"
             trend="+5%"
             subtitle="Across all classes"
             onClick={() => navigate("/school-teacher/students")}
@@ -350,7 +506,7 @@ const TeacherOverview = () => {
             title="Active Classes"
             value={Array.isArray(classes) ? classes.length : 0}
             icon={BookOpen}
-            color="from-green-500 to-emerald-600"
+            gradient="from-purple-500 to-pink-600"
             subtitle="Teaching this semester"
             onClick={() => navigate("/school-teacher/students")}
           />
@@ -358,7 +514,7 @@ const TeacherOverview = () => {
             title="At Risk Students"
             value={studentsAtRisk.length}
             icon={AlertCircle}
-            color="from-red-500 to-pink-600"
+            gradient="from-red-500 to-pink-600"
             trend={studentsAtRisk.length > 5 ? "+3" : "-2"}
             subtitle="Needs attention"
             onClick={() => navigate("/school-teacher/analytics")}
@@ -367,478 +523,397 @@ const TeacherOverview = () => {
             title="Pending Tasks"
             value={pendingTasks.length}
             icon={CheckCircle}
-            color="from-amber-500 to-orange-600"
+            gradient="from-amber-500 to-orange-600"
             subtitle="Assignments to grade"
             onClick={() => navigate("/school-teacher/tasks")}
           />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Column */}
+          {/* Left Column - Main Content */}
           <div className="lg:col-span-2 space-y-6">
             {/* My Classes */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
+              className="rounded-xl border border-slate-200 bg-white shadow-sm"
             >
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                  <BookOpen className="w-7 h-7 text-purple-600" />
-                  My Classes
-                </h2>
-                <button
-                  onClick={() => navigate("/school-teacher/students")}
-                  className="text-purple-600 hover:text-purple-700 font-semibold flex items-center gap-2 transition-all"
-                >
-                  View All <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {(Array.isArray(classes) ? classes : []).slice(0, 4).map((cls, idx) => {
-                  // Ensure cls is an object and has the required properties
-                  if (!cls || typeof cls !== 'object') {
-                    console.warn('Invalid class object:', cls);
-                    return null;
-                  }
-                  return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.1 }}
-                    whileHover={{ scale: 1.03, y: -3 }}
+              <div className="border-b border-slate-200 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 px-6 py-4">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <div className="p-2 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg">
+                      <BookOpen className="w-5 h-5 text-white" />
+                    </div>
+                    My Classes
+                  </h2>
+                  <button
                     onClick={() => navigate("/school-teacher/students")}
-                    className="p-5 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 cursor-pointer hover:shadow-lg transition-all"
+                    className="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1.5 transition-colors"
                   >
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-lg font-bold text-gray-900">{cls.name || 'Unnamed Class'}</h3>
-                      <div className="p-2 bg-purple-500 rounded-lg">
-                        <Users className="w-5 h-5 text-white" />
-                      </div>
+                    View All <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {(Array.isArray(classes) ? classes : []).length > 0 ? (
+                    (Array.isArray(classes) ? classes : []).slice(0, 4).map((cls, idx) => {
+                      if (!cls || typeof cls !== 'object') return null;
+                      return (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          whileHover={{ y: -2 }}
+                          onClick={() => navigate("/school-teacher/students")}
+                          className="p-5 rounded-lg bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 border-2 border-indigo-200 cursor-pointer hover:border-indigo-400 hover:shadow-lg transition-all"
+                        >
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-lg font-bold text-slate-900">{cls.name || 'Unnamed Class'}</h3>
+                          <div className="p-2.5 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg shadow-md">
+                            <Users className="w-5 h-5 text-white" />
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-3 gap-3">
+                          <div className="text-center">
+                            <p className="text-2xl font-bold text-blue-600">{cls.studentCount || cls.students || 0}</p>
+                            <p className="text-xs text-slate-600 font-medium">Students</p>
+                          </div>
+                          <div className="text-center">
+                            <p className="text-2xl font-bold text-purple-600">{Array.isArray(cls.subjects) ? cls.subjects.length : (cls.subjects ? 1 : 0)}</p>
+                            <p className="text-xs text-slate-600 font-medium">Subjects</p>
+                          </div>
+                          <div className="text-center">
+                            <p className="text-2xl font-bold text-indigo-600">{cls.academicYear || new Date().getFullYear().toString()}</p>
+                            <p className="text-xs text-slate-600 font-medium">Year</p>
+                          </div>
+                        </div>
+                      </motion.div>
+                      );
+                    })
+                  ) : (
+                    <div className="col-span-2 text-center py-12">
+                      <BookOpen className="w-12 h-12 text-slate-300 mx-auto mb-3" />
+                      <p className="text-slate-500 text-sm mb-3">No classes assigned yet</p>
+                      <button
+                        onClick={() => navigate("/school-teacher/students")}
+                        className="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
+                      >
+                        View Students
+                      </button>
                     </div>
-                    <div className="grid grid-cols-3 gap-2">
-                      <div className="text-center">
-                        <p className="text-2xl font-black text-blue-600">{cls.studentCount || 0}</p>
-                        <p className="text-xs text-gray-600">Students</p>
-                      </div>
-                      <div className="text-center">
-                        <p className="text-2xl font-black text-green-600">{Array.isArray(cls.subjects) ? cls.subjects.length : 0}</p>
-                        <p className="text-xs text-gray-600">Subjects</p>
-                      </div>
-                      <div className="text-center">
-                        <p className="text-2xl font-black text-purple-600">{cls.academicYear || '2024'}</p>
-                        <p className="text-xs text-gray-600">Year</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                  );
-                })}
+                  )}
+                </div>
               </div>
             </motion.div>
 
-            {/* Class Performance by Pillar */}
+            {/* Recent Activity */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="rounded-xl border border-slate-200 bg-white shadow-sm"
+            >
+              <div className="border-b border-slate-200 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 px-6 py-4">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg">
+                      <Activity className="w-5 h-5 text-white" />
+                    </div>
+                    Recent Activity
+                  </h2>
+                  <motion.button
+                    whileHover={{ scale: 1.05, rotate: 180 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => fetchRecentActivities(true)}
+                    disabled={refreshingActivities}
+                    className="p-1.5 text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all disabled:opacity-50"
+                    title="Refresh activities"
+                  >
+                    <RefreshCw className={`w-4 h-4 ${refreshingActivities ? 'animate-spin' : ''}`} />
+                  </motion.button>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="space-y-3">
+                  {refreshingActivities ? (
+                    <div className="flex items-center justify-center py-12">
+                      <Loader2 className="w-6 h-6 animate-spin text-indigo-600" />
+                    </div>
+                  ) : recentActivities.length > 0 ? (
+                    recentActivities.map((activity, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.1 }}
+                        className="flex items-start gap-3 p-4 rounded-lg bg-gradient-to-r from-indigo-50/50 via-purple-50/50 to-pink-50/50 border border-indigo-200/50 hover:border-indigo-300 hover:shadow-md transition-all"
+                      >
+                        <span className="text-2xl">{activity.icon}</span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-semibold text-slate-900">
+                            {activity.action}
+                          </p>
+                          <p className="text-xs text-slate-500 mt-1">
+                            {activity.student} • {activity.time}
+                          </p>
+                        </div>
+                      </motion.div>
+                    ))
+                  ) : (
+                    <div className="text-center py-12">
+                      <Activity className="w-12 h-12 text-slate-300 mx-auto mb-3" />
+                      <p className="text-slate-500 text-sm mb-3">No recent activity</p>
+                      <button
+                        onClick={() => fetchRecentActivities(true)}
+                        className="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
+                      >
+                        Refresh to check for updates
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Class Mastery by Pillar */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
+              className="rounded-xl border border-slate-200 bg-white shadow-sm"
             >
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                  <BarChart3 className="w-7 h-7 text-green-600" />
-                  Class Mastery by Pillar
-                </h2>
-                <button
-                  onClick={() => navigate("/school-teacher/analytics")}
-                  className="text-green-600 hover:text-green-700 font-semibold flex items-center gap-2 transition-all"
-                >
-                  Details <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-              <div className="space-y-3">
-                {Object.entries(classMastery).slice(0, 6).map(([pillar, percentage], idx) => (
-                  <motion.div
-                    key={pillar}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.05 }}
-                    className="group"
+              <div className="border-b border-slate-200 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 px-6 py-4">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg">
+                      <BarChart3 className="w-5 h-5 text-white" />
+                    </div>
+                    Class Mastery by Pillar
+                  </h2>
+                  <button
+                    onClick={() => navigate("/school-teacher/analytics")}
+                    className="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1.5 transition-colors"
                   >
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-semibold text-gray-700">{pillar}</span>
-                      <span className="text-sm font-bold text-gray-900">{percentage}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${percentage}%` }}
-                        transition={{ duration: 1, delay: idx * 0.1 }}
-                        className={`h-full rounded-full ${
-                          percentage >= 75
-                            ? "bg-gradient-to-r from-green-500 to-emerald-600"
-                            : percentage >= 50
-                            ? "bg-gradient-to-r from-blue-500 to-cyan-600"
-                            : "bg-gradient-to-r from-amber-500 to-orange-600"
-                        }`}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
+                    Details <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
-            </motion.div>
-
-            {/* Top Performers */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                  <Trophy className="w-7 h-7 text-amber-500" />
-                  Top Performers
-                </h2>
-              </div>
-              <div className="space-y-3">
-                {leaderboard.slice(0, 5).map((student, idx) => (
-                  <motion.div
-                    key={student._id}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.05 }}
-                    whileHover={{ scale: 1.02, x: 5 }}
-                    onClick={() => navigate(`/school-teacher/student/${student._id}/progress`)}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-amber-50 to-yellow-50 hover:from-amber-100 hover:to-yellow-100 border-2 border-amber-200 cursor-pointer transition-all"
-                  >
-                    <div className="flex-shrink-0">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center font-black text-white ${
-                        idx === 0 ? "bg-gradient-to-br from-yellow-400 to-amber-500" :
-                        idx === 1 ? "bg-gradient-to-br from-gray-400 to-gray-500" :
-                        idx === 2 ? "bg-gradient-to-br from-orange-400 to-orange-600" :
-                        "bg-gradient-to-br from-blue-400 to-blue-500"
-                      }`}>
-                        {idx + 1}
+              <div className="p-6">
+                <div className="space-y-4">
+                  {Object.keys(classMastery).length > 0 ? (
+                    Object.entries(classMastery).slice(0, 6).map(([pillar, percentage], idx) => (
+                    <motion.div
+                      key={pillar}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.05 }}
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-semibold text-slate-700">{pillar}</span>
+                        <span className="text-sm font-bold text-slate-900">{percentage}%</span>
                       </div>
-                    </div>
-                    <img
-                      src={student.avatar || "/avatars/avatar1.png"}
-                      alt={student.name}
-                      className="w-12 h-12 rounded-full border-2 border-amber-300"
-                    />
-                    <div className="flex-1">
-                      <p className="font-bold text-gray-900">{student.name}</p>
-                      <p className="text-xs text-gray-600">Level {student.level} • {student.totalXP} XP</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="flex items-center gap-1">
-                        <Flame className="w-4 h-4 text-orange-500" />
-                        <span className="font-bold text-orange-600">{student.streak}</span>
+                      <div className="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${percentage}%` }}
+                          transition={{ duration: 1, delay: idx * 0.1 }}
+                          className={`h-full rounded-full ${
+                            percentage >= 75
+                              ? "bg-gradient-to-r from-emerald-500 to-green-600"
+                              : percentage >= 50
+                              ? "bg-gradient-to-r from-blue-500 to-cyan-600"
+                              : "bg-gradient-to-r from-amber-500 to-orange-600"
+                          }`}
+                        />
                       </div>
+                    </motion.div>
+                    ))
+                  ) : (
+                    <div className="text-center py-12">
+                      <BarChart3 className="w-12 h-12 text-slate-300 mx-auto mb-3" />
+                      <p className="text-slate-500 text-sm">No mastery data available</p>
+                      <p className="text-xs text-slate-400 mt-1">Data will appear as students complete activities</p>
                     </div>
-                  </motion.div>
-                ))}
+                  )}
+                </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Right Column */}
+          {/* Right Column - Sidebar */}
           <div className="space-y-6">
             {/* At Risk Students */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
+              className="rounded-xl border border-slate-200 bg-white shadow-sm"
             >
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
-                  <AlertCircle className="w-6 h-6 text-red-500" />
-                  At Risk
-                </h2>
-                <button
-                  onClick={() => navigate("/school-teacher/analytics")}
-                  className="text-red-600 hover:text-red-700 font-semibold text-sm flex items-center gap-1"
-                >
-                  View All <ArrowRight className="w-3 h-3" />
-                </button>
-              </div>
-              <div className="space-y-3">
-                {studentsAtRisk.slice(0, 5).map((student, idx) => (
-                  <motion.div
-                    key={student._id}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.05 }}
-                    whileHover={{ scale: 1.03 }}
-                    onClick={() => navigate(`/school-teacher/student/${student._id}/progress`)}
-                    className="flex items-center gap-3 p-3 rounded-xl bg-red-50 hover:bg-red-100 border border-red-200 cursor-pointer transition-all"
+              <div className="border-b border-slate-200 bg-gradient-to-r from-red-50 via-pink-50 to-rose-50 px-6 py-4">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <div className="p-2 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg">
+                      <AlertCircle className="w-5 h-5 text-white" />
+                    </div>
+                    At Risk
+                  </h2>
+                  <button
+                    onClick={() => navigate("/school-teacher/analytics")}
+                    className="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1.5 transition-colors"
                   >
-                    <img
-                      src={student.avatar || "/avatars/avatar1.png"}
-                      alt={student.name}
-                      className="w-10 h-10 rounded-full border-2 border-red-300"
-                    />
-                    <div className="flex-1">
-                      <p className="font-bold text-gray-900 text-sm">{student.name}</p>
-                      <p className="text-xs text-red-600">{student.reason}</p>
+                    View All <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="space-y-3">
+                  {studentsAtRisk.slice(0, 5).map((student, idx) => (
+                    <motion.div
+                      key={student._id}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.05 }}
+                      whileHover={{ y: -2 }}
+                      onClick={() => navigate(`/school-teacher/student/${student._id}/progress`)}
+                      className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-red-50/50 via-pink-50/50 to-rose-50/50 border border-red-200/50 hover:border-red-400 hover:shadow-md cursor-pointer transition-all"
+                    >
+                      <img
+                        src={student.avatar || "/avatars/avatar1.png"}
+                        alt={student.name}
+                        className="w-10 h-10 rounded-full border-2 border-red-400"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <p className="font-semibold text-slate-900 text-sm truncate">{student.name}</p>
+                        <p className="text-xs text-red-600 truncate">{student.reason}</p>
+                      </div>
+                      <div className={`px-2.5 py-1 rounded-lg text-xs font-bold ${
+                        student.riskLevel === "High" ? "bg-red-500 text-white" : "bg-amber-500 text-white"
+                      }`}>
+                        {student.riskLevel}
+                      </div>
+                    </motion.div>
+                  ))}
+                  {studentsAtRisk.length === 0 && (
+                    <div className="text-center py-8">
+                      <CheckCircle className="w-12 h-12 text-emerald-500 mx-auto mb-3" />
+                      <p className="text-slate-600 text-sm font-medium">All students doing well!</p>
                     </div>
-                    <div className={`px-2 py-1 rounded text-xs font-bold ${
-                      student.riskLevel === "High" ? "bg-red-500 text-white" : "bg-amber-500 text-white"
-                    }`}>
-                      {student.riskLevel}
-                    </div>
-                  </motion.div>
-                ))}
-                {studentsAtRisk.length === 0 && (
-                  <div className="text-center py-8">
-                    <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-2" />
-                    <p className="text-gray-600">All students doing well!</p>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </motion.div>
 
             {/* Pending Tasks */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
+              className="rounded-xl border border-slate-200 bg-white shadow-sm"
             >
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
-                  <CheckCircle className="w-6 h-6 text-purple-500" />
-                  Pending Tasks
-                </h2>
-                <button
-                  onClick={() => navigate("/school-teacher/tasks")}
-                  className="text-purple-600 hover:text-purple-700 font-semibold text-sm flex items-center gap-1"
-                >
-                  View All <ArrowRight className="w-3 h-3" />
-                </button>
-              </div>
-              <div className="space-y-2">
-                {pendingTasks.slice(0, 4).map((task, idx) => (
-                  <motion.div
-                    key={task._id}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.05 }}
-                    whileHover={{ scale: 1.02, x: 5 }}
+              <div className="border-b border-slate-200 bg-gradient-to-r from-amber-50 via-orange-50 to-yellow-50 px-6 py-4">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <div className="p-2 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                    </div>
+                    Pending Tasks
+                  </h2>
+                  <button
                     onClick={() => navigate("/school-teacher/tasks")}
-                    className="p-3 rounded-lg bg-purple-50 hover:bg-purple-100 border border-purple-200 cursor-pointer transition-all"
+                    className="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1.5 transition-colors"
                   >
-                    <div className="flex items-start justify-between mb-1">
-                      <p className="font-semibold text-gray-900 text-sm">{task.title}</p>
-                      <span className={`px-2 py-0.5 rounded text-xs font-bold ${
-                        task.priority === "high" ? "bg-red-500 text-white" :
-                        task.priority === "medium" ? "bg-amber-500 text-white" :
-                        "bg-green-500 text-white"
-                      }`}>
-                        {task.priority}
-                      </span>
+                    View All <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="space-y-3">
+                  {pendingTasks.slice(0, 4).map((task, idx) => (
+                    <motion.div
+                      key={task._id}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.05 }}
+                      whileHover={{ y: -2 }}
+                      onClick={() => navigate("/school-teacher/tasks")}
+                      className="p-4 rounded-lg bg-gradient-to-r from-amber-50/50 via-orange-50/50 to-yellow-50/50 border border-amber-200/50 hover:border-amber-400 hover:shadow-md cursor-pointer transition-all"
+                    >
+                      <div className="flex items-start justify-between mb-2">
+                        <p className="font-semibold text-slate-900 text-sm flex-1">{task.title}</p>
+                        <span className={`px-2 py-1 rounded-lg text-xs font-bold ml-2 ${
+                          task.priority === "high" ? "bg-red-500 text-white" :
+                          task.priority === "medium" ? "bg-amber-500 text-white" :
+                          "bg-emerald-500 text-white"
+                        }`}>
+                          {task.priority}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-slate-600">
+                        <Calendar className="w-3.5 h-3.5" />
+                        <span>{task.dueDate}</span>
+                        <span className="mx-1">•</span>
+                        <span>{task.class}</span>
+                      </div>
+                    </motion.div>
+                  ))}
+                  {pendingTasks.length === 0 && (
+                    <div className="text-center py-8">
+                      <CheckCircle className="w-12 h-12 text-emerald-500 mx-auto mb-3" />
+                      <p className="text-slate-600 text-sm font-medium">All caught up!</p>
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-gray-600">
-                      <Calendar className="w-3 h-3" />
-                      <span>{task.dueDate}</span>
-                      <span className="mx-1">•</span>
-                      <span>{task.class}</span>
-                    </div>
-                  </motion.div>
-                ))}
-                {pendingTasks.length === 0 && (
-                  <div className="text-center py-8">
-                    <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-2" />
-                    <p className="text-gray-600">All caught up!</p>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </motion.div>
 
-            {/* Recent Messages */}
+            {/* Quick Actions */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
+              className="rounded-xl border border-slate-200 bg-white shadow-sm"
             >
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center gap-3">
-                  <Mail className="w-6 h-6 text-blue-500" />
-                  Recent Messages
-                </h2>
-                <button
-                  onClick={() => navigate("/school-teacher/messages")}
-                  className="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1"
-                >
-                  Inbox <ArrowRight className="w-3 h-3" />
-                </button>
-              </div>
-              <div className="space-y-2">
-                {messages.slice(0, 4).map((msg, idx) => (
-                  <motion.div
-                    key={msg._id}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.05 }}
-                    whileHover={{ scale: 1.02, x: 5 }}
-                    onClick={() => navigate("/school-teacher/messages")}
-                    className={`p-3 rounded-lg ${
-                      msg.read ? "bg-gray-50" : "bg-blue-50 border-2 border-blue-200"
-                    } hover:bg-blue-100 cursor-pointer transition-all`}
-                  >
-                    <div className="flex items-start justify-between mb-1">
-                      <p className={`font-semibold text-sm ${msg.read ? "text-gray-700" : "text-gray-900"}`}>
-                        {msg.subject}
-                      </p>
-                      {!msg.read && (
-                        <div className="w-2 h-2 rounded-full bg-blue-500" />
-                      )}
-                    </div>
-                    <p className="text-xs text-gray-600">{msg.sender} • {msg.time}</p>
-                  </motion.div>
-                ))}
-                {messages.length === 0 && (
-                  <div className="text-center py-8">
-                    <Mail className="w-12 h-12 text-gray-300 mx-auto mb-2" />
-                    <p className="text-gray-500">No new messages</p>
+              <div className="border-b border-slate-200 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 px-6 py-4">
+                <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                  <div className="p-2 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg">
+                    <Zap className="w-5 h-5 text-white" />
                   </div>
-                )}
+                  Quick Actions
+                </h2>
+              </div>
+              <div className="p-6">
+                <div className="space-y-3">
+                  <button
+                    onClick={() => handleOpenInviteStudents()}
+                    className="w-full px-4 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 border border-indigo-200 rounded-lg font-semibold text-slate-900 transition-all flex items-center justify-between group"
+                  >
+                    <span>Invite Students</span>
+                    <UserPlus className="w-5 h-5 text-indigo-600 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <button
+                    onClick={() => navigate("/school-teacher/analytics")}
+                    className="w-full px-4 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 border border-indigo-200 rounded-lg font-semibold text-slate-900 transition-all flex items-center justify-between group"
+                  >
+                    <span>Analytics Dashboard</span>
+                    <BarChart3 className="w-5 h-5 text-indigo-600 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <button
+                    onClick={() => navigate("/school-teacher/messages")}
+                    className="w-full px-4 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100 border border-indigo-200 rounded-lg font-semibold text-slate-900 transition-all flex items-center justify-between group"
+                  >
+                    <span>View Messages</span>
+                    <MessageSquare className="w-5 h-5 text-indigo-600 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
-
-        {/* Engagement and Quick Stats Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          {/* Engagement Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
-          >
-            <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Activity className="w-6 h-6 text-indigo-500" />
-              Engagement
-            </h2>
-            <div className="space-y-4">
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-gray-700">Games</span>
-                  <span className="text-sm font-bold text-gray-900">{sessionEngagement.games || 0}%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div
-                    className="h-full rounded-full bg-gradient-to-r from-pink-500 to-rose-600"
-                    style={{ width: `${sessionEngagement.games || 0}%` }}
-                  />
-                </div>
-              </div>
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-gray-700">Lessons</span>
-                  <span className="text-sm font-bold text-gray-900">{sessionEngagement.lessons || 0}%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div
-                    className="h-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-600"
-                    style={{ width: `${sessionEngagement.lessons || 0}%` }}
-                  />
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* This Week Stats Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl shadow-lg p-6 text-white"
-          >
-            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
-              <Calendar className="w-6 h-6" />
-              This Week
-            </h2>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5" />
-                  <span className="font-semibold">Active Students</span>
-                </div>
-                <span className="text-2xl font-black">{stats.totalStudents || 2}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Trophy className="w-5 h-5" />
-                  <span className="font-semibold">Achievements</span>
-                </div>
-                <span className="text-2xl font-black">{leaderboard.length * 3 || 6}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Zap className="w-5 h-5" />
-                  <span className="font-semibold">Avg Engagement</span>
-                </div>
-                <span className="text-2xl font-black">{sessionEngagement.overall || 100}%</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Quick Actions Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
-          >
-            <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <Zap className="w-6 h-6 text-yellow-500" />
-              Quick Actions
-            </h2>
-            <div className="space-y-3">
-              <button
-                onClick={() => navigate("/school-teacher/students")}
-                className="w-full px-4 py-3 bg-gradient-to-r from-blue-50 to-cyan-50 hover:from-blue-100 hover:to-cyan-100 border-2 border-blue-200 rounded-lg font-semibold text-gray-900 transition-all flex items-center justify-between group"
-              >
-                <span>View All Students</span>
-                <Users className="w-5 h-5 text-blue-600 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => navigate("/school-teacher/analytics")}
-                className="w-full px-4 py-3 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 border-2 border-green-200 rounded-lg font-semibold text-gray-900 transition-all flex items-center justify-between group"
-              >
-                <span>Analytics Dashboard</span>
-                <BarChart3 className="w-5 h-5 text-green-600 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => setShowNewAssignment(true)}
-                className="w-full px-4 py-3 bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 border-2 border-purple-200 rounded-lg font-semibold text-gray-900 transition-all flex items-center justify-between group"
-              >
-                <span>Create Assignment</span>
-                <Plus className="w-5 h-5 text-purple-600 group-hover:rotate-90 transition-transform" />
-              </button>
-              <button
-                onClick={() => navigate("/school-teacher/settings")}
-                className="w-full px-4 py-3 bg-gradient-to-r from-gray-50 to-slate-50 hover:from-gray-100 hover:to-slate-100 border-2 border-gray-200 rounded-lg font-semibold text-gray-900 transition-all flex items-center justify-between group"
-              >
-                <span>Settings</span>
-                <ArrowRight className="w-5 h-5 text-gray-600 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-          </motion.div>
-        </div>
       </div>
 
       {/* Modals */}
-      <NewAssignmentModal
-        isOpen={showNewAssignment}
-        onClose={() => setShowNewAssignment(false)}
-        onSuccess={fetchDashboardData}
-      />
-
       <InviteStudentsModal
         isOpen={showInviteStudents}
         onClose={() => {
@@ -849,7 +924,6 @@ const TeacherOverview = () => {
         className={selectedClassForInvite?.name}
       />
 
-      {/* Expired Subscription Modal */}
       <ExpiredSubscriptionModal
         isOpen={showExpiredModal}
         onClose={() => setShowExpiredModal(false)}

@@ -274,11 +274,11 @@ const Navbar = () => {
                                 <motion.button
                                     key={index}
                                     onClick={item.onClick}
-                                    className="flex items-center gap-2 px-3 xl:px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 border-2 border-gray-200 duration-200 shadow-md hover:shadow-lg cursor-pointer whitespace-nowrap flex-shrink-0"
-                                    whileHover={{ scale: 1.02, y: -1 }}
+                                    className="flex items-center gap-2 px-3 xl:px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 bg-white hover:bg-gradient-to-r hover:from-indigo-50 hover:via-purple-50 hover:to-pink-50 border border-slate-200 hover:border-indigo-300 duration-200 shadow-sm hover:shadow-md cursor-pointer whitespace-nowrap flex-shrink-0 transition-all"
+                                    whileHover={{ scale: 1.05, y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
-                                    <div className="w-4 h-4">{item.icon}</div>
+                                    <div className="w-4 h-4 text-indigo-600">{item.icon}</div>
                                     <span className="whitespace-nowrap">{item.label}</span>
                                 </motion.button>
                             ))}
@@ -290,22 +290,22 @@ const Navbar = () => {
                                 <motion.button
                                     key={index}
                                     onClick={item.onClick}
-                                    className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-xs font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 border-2 border-gray-200 duration-200 shadow-md hover:shadow-lg cursor-pointer whitespace-nowrap flex-shrink-0"
-                                    whileHover={{ scale: 1.02, y: -1 }}
+                                    className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-xs font-semibold text-slate-700 bg-white hover:bg-gradient-to-r hover:from-indigo-50 hover:via-purple-50 hover:to-pink-50 border border-slate-200 hover:border-indigo-300 duration-200 shadow-sm hover:shadow-md cursor-pointer whitespace-nowrap flex-shrink-0 transition-all"
+                                    whileHover={{ scale: 1.05, y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
-                                    <div className="w-3.5 h-3.5">{item.icon}</div>
+                                    <div className="w-3.5 h-3.5 text-indigo-600">{item.icon}</div>
                                     <span className="whitespace-nowrap">{item.label}</span>
                                 </motion.button>
                             ))}
                             {navigationItems.length > 6 && (
                                 <motion.button
                                     onClick={() => setShowMobileMenu(true)}
-                                    className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-xs font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 border-2 border-gray-200 duration-200 shadow-md hover:shadow-lg cursor-pointer whitespace-nowrap flex-shrink-0"
-                                    whileHover={{ scale: 1.02, y: -1 }}
+                                    className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-xs font-semibold text-slate-700 bg-white hover:bg-gradient-to-r hover:from-indigo-50 hover:via-purple-50 hover:to-pink-50 border border-slate-200 hover:border-indigo-300 duration-200 shadow-sm hover:shadow-md cursor-pointer whitespace-nowrap flex-shrink-0 transition-all"
+                                    whileHover={{ scale: 1.05, y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
-                                    <div className="w-3.5 h-3.5">⋯</div>
+                                    <div className="w-3.5 h-3.5 text-indigo-600">⋯</div>
                                     <span className="whitespace-nowrap">More</span>
                                 </motion.button>
                             )}
@@ -371,7 +371,7 @@ const Navbar = () => {
                                     {/* Chat Icon for Teachers */}
                                     {user.role === "school_teacher" && (
                                         <motion.button
-                                            className="relative p-2 sm:p-2.5 text-gray-700 bg-gray-100 hover:bg-gray-200 border-2 border-gray-300 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
+                                            className="relative p-2 sm:p-2.5 text-indigo-600 bg-white hover:bg-gradient-to-r hover:from-indigo-50 hover:via-purple-50 hover:to-pink-50 border border-slate-200 hover:border-indigo-300 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
                                             whileHover={{ scale: 1.08 }}
                                             whileTap={{ scale: 0.95 }}
                                             onClick={() => navigate(`/school-teacher/chat-contacts`)}
@@ -384,7 +384,7 @@ const Navbar = () => {
                                     {/* Profile Menu */}
                                     <div className="relative" ref={profileMenuRef}>
                                         <motion.button
-                                            className="flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-lg bg-gray-100 hover:bg-gray-200 border-2 border-gray-300 transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer"
+                                            className="flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-lg bg-white hover:bg-gradient-to-r hover:from-indigo-50 hover:via-purple-50 hover:to-pink-50 border border-slate-200 hover:border-indigo-300 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setShowProfileMenu(!showProfileMenu);
@@ -472,7 +472,7 @@ const Navbar = () => {
 
                             {/* Mobile Menu Button */}
                             <motion.button
-                                className="md:hidden p-2 text-gray-700 bg-gray-100 hover:bg-gray-200 border-2 border-gray-300 rounded-lg transition-all duration-200 shadow-sm mobile-menu-button"
+                                className="md:hidden p-2 text-slate-700 bg-white hover:bg-gradient-to-r hover:from-indigo-50 hover:via-purple-50 hover:to-pink-50 border border-slate-200 hover:border-indigo-300 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md mobile-menu-button"
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     setShowMobileMenu(!showMobileMenu);

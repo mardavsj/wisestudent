@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
@@ -23,17 +23,22 @@ import {
   BookOpen,
   Activity,
   ArrowRight,
-  Mail,
   Plus,
+  Mail,
+  RefreshCw,
+  Loader2,
 } from "lucide-react";
 import api from "../../utils/api";
 import { toast } from "react-hot-toast";
-import NewAssignmentModal from "../../components/NewAssignmentModal";
 import InviteStudentsModal from "../../components/InviteStudentsModal";
+import NewAssignmentModal from "../../components/NewAssignmentModal";
+import { useSocket } from "../../context/SocketContext";
 
 const TeacherAnalytics = () => {
   const navigate = useNavigate();
+  const socket = useSocket()?.socket;
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [teacherProfile, setTeacherProfile] = useState(null);
   const [classMastery, setClassMastery] = useState({});
   const [studentsAtRisk, setStudentsAtRisk] = useState([]);
@@ -42,16 +47,59 @@ const TeacherAnalytics = () => {
   const [selectedTimeRange, setSelectedTimeRange] = useState("week");
   const [selectedClass, setSelectedClass] = useState("all");
   const [classes, setClasses] = useState([]);
-  const [showNewAssignment, setShowNewAssignment] = useState(false);
   const [showInviteStudents, setShowInviteStudents] = useState(false);
+  const [showNewAssignment, setShowNewAssignment] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(null);
 
   useEffect(() => {
     fetchAnalyticsData();
   }, [selectedTimeRange, selectedClass]);
 
-  const fetchAnalyticsData = async () => {
+  // Real-time socket listeners
+  useEffect(() => {
+    if (!socket) return;
+
+    const handleStudentActivity = (data) => {
+      console.log("Real-time student activity:", data);
+      toast.success(`New activity from ${data.studentName || 'a student'}!`, { icon: '⚡' });
+      fetchAnalyticsData(false);
+    };
+
+    const handleStudentsUpdated = (data) => {
+      console.log("Real-time students update:", data);
+      toast.info("Student roster updated", { icon: '🔄' });
+      fetchAnalyticsData(false);
+    };
+
+    const handleAssignmentUpdate = (data) => {
+      console.log("Real-time assignment update:", data);
+      fetchAnalyticsData(false);
+    };
+
+    socket.on('student:activity:new', handleStudentActivity);
+    socket.on('school:students:updated', handleStudentsUpdated);
+    socket.on('school:class-roster:updated', handleStudentsUpdated);
+    socket.on('assignment:submitted', handleAssignmentUpdate);
+    socket.on('teacher:task:update', handleAssignmentUpdate);
+
+    return () => {
+      socket.off('student:activity:new', handleStudentActivity);
+      socket.off('school:students:updated', handleStudentsUpdated);
+      socket.off('school:class-roster:updated', handleStudentsUpdated);
+      socket.off('assignment:submitted', handleAssignmentUpdate);
+      socket.off('teacher:task:update', handleAssignmentUpdate);
+    };
+  }, [socket]);
+
+  const fetchAnalyticsData = useCallback(async (showLoading = true) => {
     try {
-      setLoading(true);
+      if (showLoading) setLoading(true);
+      
+      const params = {
+        timeRange: selectedTimeRange,
+        classId: selectedClass !== "all" ? selectedClass : undefined
+      };
+
       const [
         masteryRes,
         atRiskRes,
@@ -60,26 +108,95 @@ const TeacherAnalytics = () => {
         profileRes,
         classesRes,
       ] = await Promise.all([
-        api.get("/api/school/teacher/class-mastery"),
-        api.get("/api/school/teacher/students-at-risk"),
-        api.get("/api/school/teacher/session-engagement"),
-        api.get("/api/school/teacher/leaderboard"),
+        api.get("/api/school/teacher/class-mastery", { params }),
+        api.get("/api/school/teacher/students-at-risk", { params }),
+        api.get("/api/school/teacher/session-engagement", { params }),
+        api.get("/api/school/teacher/leaderboard", { params }),
         api.get("/api/user/profile"),
         api.get("/api/school/teacher/classes"),
       ]);
 
       setClassMastery(masteryRes.data || {});
       setStudentsAtRisk(atRiskRes.data.students || []);
-      setSessionEngagement(engagementRes.data || {});
+      setSessionEngagement(engagementRes.data || {
+        games: 0,
+        lessons: 0,
+        overall: 0
+      });
       setLeaderboard(leaderboardRes.data.leaderboard || []);
       setTeacherProfile(profileRes.data);
       setClasses(classesRes.data?.classes || []);
+      setLastUpdated(new Date());
     } catch (error) {
       console.error("Error fetching analytics:", error);
       toast.error("Failed to load analytics");
+      // Set fallback empty data
+      setClassMastery({});
+      setStudentsAtRisk([]);
+      setSessionEngagement({ games: 0, lessons: 0, overall: 0 });
+      setLeaderboard([]);
     } finally {
-      setLoading(false);
+      if (showLoading) setLoading(false);
     }
+  }, [selectedTimeRange, selectedClass]);
+
+  const handleRefresh = useCallback(async () => {
+    setRefreshing(true);
+    try {
+      await fetchAnalyticsData(false);
+      toast.success("Analytics refreshed successfully", { icon: '✅' });
+    } catch (error) {
+      console.error("Error refreshing analytics:", error);
+      toast.error("Failed to refresh analytics");
+    } finally {
+      setRefreshing(false);
+    }
+  }, [fetchAnalyticsData]);
+
+  const handleExportReport = async () => {
+    try {
+      toast.loading("Generating report...", { id: 'export' });
+      const params = {
+        timeRange: selectedTimeRange,
+        classId: selectedClass !== "all" ? selectedClass : undefined,
+        format: 'json'
+      };
+
+      const response = await api.get("/api/school/teacher/analytics/export", { params });
+
+      // Convert JSON response to blob for download
+      const jsonStr = JSON.stringify(response.data, null, 2);
+      const blob = new Blob([jsonStr], { type: 'application/json' });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `analytics-report-${selectedTimeRange}-${new Date().toISOString().split('T')[0]}.json`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+
+      toast.success("Report exported successfully!", { id: 'export' });
+    } catch (error) {
+      console.error("Error exporting report:", error);
+      toast.error("Failed to export report", { id: 'export' });
+    }
+  };
+
+  const formatTimeAgo = (date) => {
+    if (!date) return "Never";
+    const now = new Date();
+    const then = new Date(date);
+    const diff = now - then;
+    const seconds = Math.floor(diff / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    if (days > 0) return `${days} day${days > 1 ? 's' : ''} ago`;
+    if (hours > 0) return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+    if (minutes > 0) return `${minutes} min${minutes > 1 ? 's' : ''} ago`;
+    return "Just now";
   };
 
   const pillarIcons = {
@@ -93,41 +210,81 @@ const TeacherAnalytics = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <div className="flex items-center justify-center min-h-screen bg-slate-50">
         <motion.div
           animate={{ rotate: 360 }}
-          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="w-20 h-20 border-4 border-purple-500 border-t-transparent rounded-full"
+          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+          className="w-8 h-8 border-2 border-indigo-600 border-t-transparent rounded-full"
         />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-12">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <h1 className="text-4xl font-black mb-2">
-              Class Analytics Dashboard
-            </h1>
-            <p className="text-lg text-white/90">
-              {teacherProfile?.name}'s comprehensive class performance insights
-            </p>
-          </motion.div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 -mt-8">
+    <div className="min-h-screen bg-slate-50 py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-xl border border-slate-200 shadow-sm mb-6"
+        >
+          <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-6 rounded-t-xl">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="flex-1">
+                <h1 className="text-2xl font-bold text-white mb-1">
+                  Class Analytics Dashboard
+                </h1>
+                <p className="text-sm text-white/80">
+                  {teacherProfile?.name}'s comprehensive class performance insights
+                  {lastUpdated && (
+                    <span className="ml-2 text-white/70">
+                      • Last updated: {formatTimeAgo(lastUpdated)}
+                    </span>
+                  )}
+                </p>
+              </div>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleRefresh}
+                disabled={refreshing || loading}
+                className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-white font-medium transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <RefreshCw className={`w-4 h-4 ${refreshing ? 'animate-spin' : ''}`} />
+                Refresh
+              </motion.button>
+              <div className="flex items-center gap-3 flex-wrap">
+                <button
+                  onClick={() => navigate("/school-teacher/students")}
+                  className="px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg text-white text-sm font-medium transition-all flex items-center gap-2 border border-white/20 hover:border-white/30"
+                >
+                  <Users className="w-4 h-4" />
+                  Manage Students
+                </button>
+                <button
+                  onClick={() => setShowNewAssignment(true)}
+                  className="px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg text-white text-sm font-medium transition-all flex items-center gap-2 border border-white/20 hover:border-white/30"
+                >
+                  <Plus className="w-4 h-4" />
+                  Create Assignment
+                </button>
+                <button
+                  onClick={() => navigate("/school-teacher/messages")}
+                  className="px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg text-white text-sm font-medium transition-all flex items-center gap-2 border border-white/20 hover:border-white/30"
+                >
+                  <Mail className="w-4 h-4" />
+                  View Messages
+                </button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
         {/* Filters */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-4 mb-8 flex items-center justify-between flex-wrap gap-4"
+          className="bg-white rounded-xl border border-slate-200 shadow-sm p-4 mb-6 flex items-center justify-between flex-wrap gap-4"
         >
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
@@ -135,7 +292,7 @@ const TeacherAnalytics = () => {
               <select
                 value={selectedTimeRange}
                 onChange={(e) => setSelectedTimeRange(e.target.value)}
-                className="px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none bg-white font-semibold"
+                className="px-4 py-2 border border-slate-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-white font-medium"
               >
                 <option value="week">This Week</option>
                 <option value="month">This Month</option>
@@ -149,20 +306,24 @@ const TeacherAnalytics = () => {
               <select
                 value={selectedClass}
                 onChange={(e) => setSelectedClass(e.target.value)}
-                className="px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none bg-white font-semibold"
+                className="px-4 py-2 border border-slate-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none bg-white font-medium"
               >
                 <option value="all">All Classes</option>
                 {classes.map((cls) => (
-                  <option key={cls.name} value={cls.name}>{cls.name}</option>
+                  <option key={cls._id || cls.id} value={cls._id || cls.id}>
+                    {cls.name || `Class ${cls.classNumber}${cls.stream ? ` ${cls.stream}` : ''}`}
+                  </option>
                 ))}
               </select>
             </div>
           </div>
 
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all flex items-center gap-2"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={handleExportReport}
+            disabled={loading}
+            className="px-6 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Download className="w-5 h-5" />
             Export Report
@@ -173,14 +334,14 @@ const TeacherAnalytics = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* Pillar Mastery Chart */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="lg:col-span-2 bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
+            className="lg:col-span-2 bg-white rounded-xl border border-slate-200 shadow-sm p-6"
           >
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                <BarChart3 className="w-7 h-7 text-purple-600" />
+            <div className="flex items-center justify-between mb-5">
+              <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                <BarChart3 className="w-5 h-5 text-indigo-600" />
                 Educational Pillar Mastery
               </h2>
             </div>
@@ -194,38 +355,38 @@ const TeacherAnalytics = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="group"
                 >
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl">{pillarIcons[pillar] || "📚"}</span>
-                      <span className="text-sm font-bold text-gray-900">{pillar}</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-lg font-black text-gray-900">{percentage}%</span>
-                      <div className={`px-2 py-1 rounded text-xs font-bold ${
-                        percentage >= 75 ? "bg-green-100 text-green-700" :
-                        percentage >= 50 ? "bg-blue-100 text-blue-700" :
-                        "bg-amber-100 text-amber-700"
-                      }`}>
-                        {percentage >= 75 ? "Excellent" : percentage >= 50 ? "Good" : "Needs Focus"}
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">{pillarIcons[pillar] || "📚"}</span>
+                        <span className="text-sm font-bold text-slate-900">{pillar}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="text-base font-bold text-slate-900">{percentage}%</span>
+                        <div className={`px-2 py-1 rounded text-xs font-medium ${
+                          percentage >= 75 ? "bg-green-100 text-green-700" :
+                          percentage >= 50 ? "bg-indigo-100 text-indigo-700" :
+                          "bg-amber-100 text-amber-700"
+                        }`}>
+                          {percentage >= 75 ? "Excellent" : percentage >= 50 ? "Good" : "Needs Focus"}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="relative">
-                    <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${percentage}%` }}
-                        transition={{ duration: 1, delay: idx * 0.1 }}
-                        className={`h-full rounded-full ${
-                          percentage >= 75
-                            ? "bg-gradient-to-r from-green-500 to-emerald-600"
-                            : percentage >= 50
-                            ? "bg-gradient-to-r from-blue-500 to-cyan-600"
-                            : "bg-gradient-to-r from-amber-500 to-orange-600"
-                        }`}
-                      />
+                    <div className="relative">
+                      <div className="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${percentage}%` }}
+                          transition={{ duration: 1, delay: idx * 0.1 }}
+                          className={`h-full rounded-full ${
+                            percentage >= 75
+                              ? "bg-green-600"
+                              : percentage >= 50
+                              ? "bg-indigo-600"
+                              : "bg-amber-600"
+                          }`}
+                        />
+                      </div>
                     </div>
-                  </div>
                 </motion.div>
               ))}
             </div>
@@ -239,39 +400,39 @@ const TeacherAnalytics = () => {
             className="space-y-6"
           >
             {/* Overall Performance */}
-            <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl shadow-lg p-6 text-white">
-              <h3 className="font-bold mb-4">Overall Class Performance</h3>
+            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-xl shadow-sm p-6 text-white">
+              <h3 className="font-bold mb-4 text-sm">Overall Class Performance</h3>
               <div className="text-center">
-                <div className="inline-block p-6 bg-white/20 rounded-full mb-3">
-                  <TrendingUp className="w-12 h-12" />
+                <div className="inline-block p-4 bg-white/20 backdrop-blur rounded-full mb-3">
+                  <TrendingUp className="w-8 h-8" />
                 </div>
-                <p className="text-5xl font-black mb-2">
+                <p className="text-4xl font-black mb-2">
                   {Object.values(classMastery).length > 0
                     ? Math.round(Object.values(classMastery).reduce((a, b) => a + b, 0) / Object.values(classMastery).length)
                     : 0}%
                 </p>
-                <p className="text-sm opacity-90">Average Mastery</p>
+                <p className="text-xs opacity-90">Average Mastery</p>
               </div>
             </div>
 
             {/* Engagement Breakdown */}
-            <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6">
-              <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Activity className="w-5 h-5 text-blue-600" />
+            <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+              <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <Activity className="w-5 h-5 text-indigo-600" />
                 Engagement Split
               </h3>
               <div className="space-y-4">
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                    <span className="text-sm font-semibold text-slate-700 flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-pink-500" />
                       Games
                     </span>
                     <span className="text-sm font-bold">{sessionEngagement.games || 0}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div className="w-full bg-slate-200 rounded-full h-3">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-pink-500 to-rose-600"
+                      className="h-full rounded-full bg-pink-600"
                       style={{ width: `${sessionEngagement.games || 0}%` }}
                     />
                   </div>
@@ -279,15 +440,15 @@ const TeacherAnalytics = () => {
 
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-                      <BookOpen className="w-4 h-4 text-blue-500" />
+                    <span className="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                      <BookOpen className="w-4 h-4 text-indigo-500" />
                       Lessons
                     </span>
                     <span className="text-sm font-bold">{sessionEngagement.lessons || 0}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div className="w-full bg-slate-200 rounded-full h-3">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-600"
+                      className="h-full rounded-full bg-indigo-600"
                       style={{ width: `${sessionEngagement.lessons || 0}%` }}
                     />
                   </div>
@@ -299,19 +460,19 @@ const TeacherAnalytics = () => {
 
         {/* Students at Risk Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6 mb-8"
+          className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 mb-6"
         >
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-              <AlertCircle className="w-7 h-7 text-red-500" />
+          <div className="flex items-center justify-between mb-5">
+            <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <AlertCircle className="w-5 h-5 text-indigo-600" />
               Students Requiring Attention
             </h2>
             <button
               onClick={() => navigate("/school-teacher/students")}
-              className="text-red-600 hover:text-red-700 font-semibold flex items-center gap-2"
+              className="text-indigo-600 hover:text-indigo-700 font-medium flex items-center gap-1.5 text-sm"
             >
               View All <ArrowRight className="w-4 h-4" />
             </button>
@@ -319,9 +480,9 @@ const TeacherAnalytics = () => {
 
           {studentsAtRisk.length === 0 ? (
             <div className="text-center py-12">
-              <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-3" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">All Students Doing Great!</h3>
-              <p className="text-gray-600">No students currently at risk. Keep up the excellent work!</p>
+              <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-3" />
+              <h3 className="text-lg font-bold text-slate-900 mb-2">All Students Doing Great!</h3>
+              <p className="text-slate-600 text-sm">No students currently at risk. Keep up the excellent work!</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -331,9 +492,9 @@ const TeacherAnalytics = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: idx * 0.05 }}
-                  whileHover={{ scale: 1.03, y: -3 }}
+                  whileHover={{ y: -2 }}
                   onClick={() => navigate(`/school-teacher/student/${student._id}/progress`)}
-                  className="p-4 rounded-xl bg-gradient-to-br from-red-50 to-pink-50 border-2 border-red-200 cursor-pointer hover:shadow-lg transition-all"
+                  className="p-4 rounded-lg bg-slate-50 border border-slate-200 hover:border-red-300 hover:shadow-md cursor-pointer transition-all"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <img
@@ -342,17 +503,17 @@ const TeacherAnalytics = () => {
                       className="w-12 h-12 rounded-full border-2 border-red-300"
                     />
                     <div className="flex-1">
-                      <p className="font-bold text-gray-900">{student.name}</p>
-                      <p className="text-xs text-gray-600">{student.reason}</p>
+                      <p className="font-bold text-slate-900">{student.name}</p>
+                      <p className="text-xs text-slate-600">{student.reason}</p>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                       student.riskLevel === "High" ? "bg-red-500 text-white" : "bg-amber-500 text-white"
                     }`}>
                       {student.riskLevel} Risk
                     </span>
-                    <span className="text-xs text-gray-600">{student.metric}</span>
+                    <span className="text-xs text-slate-600">{student.metric}</span>
                   </div>
                 </motion.div>
               ))}
@@ -364,14 +525,14 @@ const TeacherAnalytics = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Top Performers */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
+            className="bg-white rounded-xl border border-slate-200 shadow-sm p-6"
           >
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
-                <Trophy className="w-7 h-7 text-amber-500" />
+            <div className="flex items-center justify-between mb-5">
+              <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                <Trophy className="w-5 h-5 text-indigo-600" />
                 Class Leaderboard
               </h2>
             </div>
@@ -383,9 +544,9 @@ const TeacherAnalytics = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.1 }}
-                  whileHover={{ scale: 1.02, x: 5 }}
+                  whileHover={{ y: -2 }}
                   onClick={() => navigate(`/school-teacher/student/${student._id}/progress`)}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-amber-50 to-yellow-50 hover:from-amber-100 hover:to-yellow-100 border-2 border-amber-200 cursor-pointer transition-all"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-indigo-300 hover:shadow-md cursor-pointer transition-all"
                 >
                   <div className="flex-shrink-0">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center font-black text-lg ${
@@ -403,11 +564,11 @@ const TeacherAnalytics = () => {
                     className="w-14 h-14 rounded-full border-3 border-amber-300"
                   />
                   <div className="flex-1">
-                    <p className="font-bold text-gray-900 text-lg">{student.name}</p>
+                    <p className="font-bold text-slate-900">{student.name}</p>
                     <div className="flex items-center gap-2 mt-1">
-                      <span className="text-xs font-semibold text-gray-600">Level {student.level}</span>
-                      <span className="text-gray-400">•</span>
-                      <span className="text-xs font-bold text-amber-600">{student.totalXP} XP</span>
+                      <span className="text-xs font-semibold text-slate-600">Level {student.level}</span>
+                      <span className="text-slate-400">•</span>
+                      <span className="text-xs font-bold text-indigo-600">{student.totalXP} XP</span>
                     </div>
                   </div>
                   <div className="text-right">
@@ -433,25 +594,25 @@ const TeacherAnalytics = () => {
             className="space-y-6"
           >
             {/* Overall Score */}
-            <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl shadow-lg p-6 text-white">
-              <h3 className="font-bold mb-4 flex items-center gap-2">
+            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-xl shadow-sm p-6 text-white">
+              <h3 className="font-bold mb-4 flex items-center gap-2 text-sm">
                 <Target className="w-5 h-5" />
                 Class Average
               </h3>
               <div className="text-center">
-                <p className="text-6xl font-black mb-2">
+                <p className="text-4xl font-black mb-2">
                   {Object.values(classMastery).length > 0
                     ? Math.round(Object.values(classMastery).reduce((a, b) => a + b, 0) / Object.values(classMastery).length)
                     : 0}%
                 </p>
-                <p className="text-sm opacity-90">Overall Mastery</p>
+                <p className="text-xs opacity-90">Overall Mastery</p>
               </div>
             </div>
 
             {/* Insights Cards */}
-            <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6">
-              <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Brain className="w-5 h-5 text-purple-600" />
+            <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+              <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <Brain className="w-5 h-5 text-indigo-600" />
                 Key Insights
               </h3>
               <div className="space-y-3">
@@ -494,21 +655,21 @@ const TeacherAnalytics = () => {
             </div>
 
             {/* Recommendations */}
-            <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6">
-              <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-purple-600" />
+            <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+              <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-indigo-600" />
                 Recommendations
               </h3>
               <div className="space-y-2">
-                <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
-                  <p className="text-sm font-semibold text-purple-900 mb-1">Focus on Weak Pillars</p>
-                  <p className="text-xs text-purple-700">
+                <div className="p-3 bg-indigo-50 rounded-lg border border-indigo-200">
+                  <p className="text-sm font-semibold text-indigo-900 mb-1">Focus on Weak Pillars</p>
+                  <p className="text-xs text-indigo-700">
                     Create targeted assignments for pillars below 50%
                   </p>
                 </div>
-                <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
-                  <p className="text-sm font-semibold text-blue-900 mb-1">Engage At-Risk Students</p>
-                  <p className="text-xs text-blue-700">
+                <div className="p-3 bg-indigo-50 rounded-lg border border-indigo-200">
+                  <p className="text-sm font-semibold text-indigo-900 mb-1">Engage At-Risk Students</p>
+                  <p className="text-xs text-indigo-700">
                     {studentsAtRisk.length} students need individual attention
                   </p>
                 </div>
@@ -516,36 +677,6 @@ const TeacherAnalytics = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
-        >
-          <button
-            onClick={() => navigate("/school-teacher/students")}
-            className="px-6 py-4 bg-white rounded-xl shadow-lg border-2 border-gray-100 hover:border-purple-300 hover:shadow-xl transition-all font-bold text-gray-900 flex items-center justify-between"
-          >
-            <span>Manage Students</span>
-            <Users className="w-6 h-6 text-purple-600" />
-          </button>
-          <button
-            onClick={() => setShowNewAssignment(true)}
-            className="px-6 py-4 bg-white rounded-xl shadow-lg border-2 border-gray-100 hover:border-blue-300 hover:shadow-xl transition-all font-bold text-gray-900 flex items-center justify-between"
-          >
-            <span>Create Assignment</span>
-            <Plus className="w-6 h-6 text-blue-600" />
-          </button>
-          <button
-            onClick={() => navigate("/school-teacher/messages")}
-            className="px-6 py-4 bg-white rounded-xl shadow-lg border-2 border-gray-100 hover:border-green-300 hover:shadow-xl transition-all font-bold text-gray-900 flex items-center justify-between"
-          >
-            <span>View Messages</span>
-            <Mail className="w-6 h-6 text-green-600" />
-          </button>
-        </motion.div>
       </div>
 
       {/* Modals */}

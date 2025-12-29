@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
+import TeacherProtectedRoute from "./components/TeacherProtectedRoute";
 import { useAuth } from "./hooks/useAuth";
 
 // Global UI
@@ -711,129 +712,129 @@ const App = () => {
           <Route
             path="/school-teacher/overview"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherOverview />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/dashboard"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <SchoolTeacherDashboard />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/students"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherStudents />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/analytics"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherAnalytics />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/messages"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherMessages />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/chat-contacts"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherChatContacts />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/announcements"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <Announcements />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/tasks"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherTasks />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/tracking"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <AssignmentTracking />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/settings"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherSettings />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school_teacher/settings"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherSettings />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/student/:studentId/progress"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherStudentProgress />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/student-chat/:studentId"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherStudentChat />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/student/:studentId/parent-chat"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherParentChat />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school-teacher/profile"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherProfile />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
           <Route
             path="/school_teacher/profile"
             element={
-              <ProtectedRoute roles={["school_teacher"]}>
+              <TeacherProtectedRoute>
                 <TeacherProfile />
-              </ProtectedRoute>
+              </TeacherProtectedRoute>
             }
           />
 

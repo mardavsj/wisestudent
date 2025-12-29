@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, BookOpen, Users, Upload, Plus, Trash2, ArrowLeft } from "lucide-react";
+import { X, Calendar, BookOpen, Users, Upload, Plus, Trash2, ArrowLeft, CheckCircle } from "lucide-react";
 import api from "../utils/api";
 import { toast } from "react-hot-toast";
 import AssignmentTypeSelector from "./AssignmentTypeSelector";
@@ -78,6 +78,25 @@ const NewAssignmentModal = ({ isOpen, onClose, onSuccess, defaultClassId, defaul
       }
     }
   }, [isOpen, editMode, assignmentToEdit]);
+
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+
+      return () => {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [isOpen]);
 
   const fetchClasses = async () => {
     try {
@@ -318,39 +337,66 @@ const NewAssignmentModal = ({ isOpen, onClose, onSuccess, defaultClassId, defaul
 
             {showQuestionBuilder && (
               <div className="space-y-6">
-                {/* Back Button */}
-                <div className="flex items-center gap-4">
+                {/* Back Button - Enhanced */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="flex items-center gap-4"
+                >
                   <motion.button
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.05, x: -2 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleBackToTypeSelector}
-                    className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-all font-semibold"
                   >
                     <ArrowLeft className="w-5 h-5" />
-                    <span className="font-semibold">Back to Type Selection</span>
+                    <span>Back to Type Selection</span>
                   </motion.button>
-                </div>
+                  <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+                </motion.div>
 
-                {/* Assignment Details */}
-                <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Assignment Details</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Assignment Details - Professional Design */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"
+                >
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
+                      <BookOpen className="w-5 h-5 text-white" />
+                    </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Title *
+                      <h3 className="text-xl font-bold text-gray-900">Assignment Details</h3>
+                      <p className="text-sm text-gray-500">Configure the basic information for your assignment</p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    {/* Title */}
+                    <div className="md:col-span-2">
+                      <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+                        <span>Title</span>
+                        <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
                         required
                         value={formData.title}
                         onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                        placeholder="e.g., Math Quiz - Chapter 5"
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-all"
+                        placeholder="e.g., Math Homework - Chapter 5: Algebraic Expressions"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all bg-white"
                       />
+                      {formData.title && formData.title.length > 0 && (
+                        <p className="text-xs text-gray-500 mt-1">{formData.title.length} characters</p>
+                      )}
                     </div>
+
+                    {/* Subject */}
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Subject *
+                      <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+                        <span>Subject</span>
+                        <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
@@ -358,47 +404,85 @@ const NewAssignmentModal = ({ isOpen, onClose, onSuccess, defaultClassId, defaul
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                         placeholder="e.g., Mathematics"
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-all"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all bg-white"
                       />
                     </div>
+
+                    {/* Due Date */}
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Due Date *
+                      <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+                        <Calendar className="w-4 h-4" />
+                        <span>Due Date</span>
+                        <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="datetime-local"
                         required
                         value={formData.dueDate}
                         onChange={(e) => setFormData({ ...formData, dueDate: e.target.value })}
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-all"
+                        min={new Date().toISOString().slice(0, 16)}
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all bg-white"
                       />
+                      {formData.dueDate && (
+                        <p className="text-xs text-gray-500 mt-1">
+                          {new Date(formData.dueDate).toLocaleDateString('en-US', { 
+                            weekday: 'long', 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                          })}
+                        </p>
+                      )}
                     </div>
+
+                    {/* Total Points - Enhanced */}
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Total Points
+                      <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+                        <span>Total Points</span>
+                        <span className="text-xs text-gray-400 font-normal">(Auto-calculated)</span>
                       </label>
-                      <input
-                        type="number"
-                        min="0"
-                        value={questions.reduce((total, q) => total + (q.points || 0), 0)}
-                        readOnly
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-gray-100"
-                      />
+                      <div className="relative">
+                        <input
+                          type="number"
+                          min="0"
+                          value={questions.reduce((total, q) => total + (q.points || 0), 0)}
+                          readOnly
+                          className="w-full px-4 py-3 border border-slate-300 rounded-lg bg-gradient-to-r from-blue-50 to-cyan-50 text-blue-700 font-bold text-lg"
+                        />
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2">
+                          <span className="text-blue-600 font-semibold">pts</span>
+                        </div>
+                      </div>
+                      {questions.length > 0 && (
+                        <p className="text-xs text-gray-500 mt-1">
+                          {questions.length} question{questions.length !== 1 ? 's' : ''} configured
+                        </p>
+                      )}
                     </div>
                   </div>
-                  <div className="mt-4">
+
+                  {/* Description - Enhanced */}
+                  <div className="mt-5">
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Description
+                      <span className="text-xs text-gray-400 font-normal ml-2">(Optional but recommended)</span>
                     </label>
                     <textarea
                       value={formData.description}
                       onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                      placeholder="Provide details about the assignment..."
-                      rows={3}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-all resize-none"
+                      placeholder="Provide detailed instructions, learning objectives, and any additional context for students..."
+                      rows={4}
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all resize-none bg-white"
                     />
+                    {formData.description && (
+                      <p className="text-xs text-gray-500 mt-1">
+                        {formData.description.length} characters
+                      </p>
+                    )}
                   </div>
-                </div>
+                </motion.div>
 
             {/* Question Builder or Project Builder */}
             {formData.type === 'project' ? (
@@ -417,64 +501,135 @@ const NewAssignmentModal = ({ isOpen, onClose, onSuccess, defaultClassId, defaul
               />
             )}
 
-                {/* Assign to Classes */}
-                <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Assign to Classes</h3>
-                  <div className="grid grid-cols-1 gap-2">
-                    {classes.map((cls, index) => (
-                      <motion.button
-                        key={cls._id || cls.name || `class-${index}`}
-                        type="button"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        onClick={() => handleClassToggle(cls._id || cls.name)}
-                        className={`px-4 py-3 rounded-xl border-2 font-semibold transition-all ${
-                          formData.assignedTo.includes(cls._id || cls.name)
-                            ? "bg-gradient-to-r from-purple-500 to-pink-600 text-white border-purple-500"
-                            : "bg-white text-gray-700 border-gray-200 hover:border-purple-300"
-                        }`}
-                      >
-                        <div className="text-left">
-                          <div className="font-bold">{cls.name}</div>
-                          {cls.academicYear && (
-                            <div className="text-sm opacity-75">Academic Year: {cls.academicYear}</div>
-                          )}
-                          {cls.sections && cls.sections.length > 0 && (
-                            <div className="text-sm opacity-75">
-                              Sections: {cls.sections.map(s => s.name).join(', ')}
-                            </div>
-                          )}
-                        </div>
-                      </motion.button>
-                    ))}
+                {/* Assign to Classes - Professional Design */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"
+                >
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg">
+                      <Users className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900">Assign to Classes</h3>
+                      <p className="text-sm text-gray-500">
+                        Select one or more classes to assign this assignment
+                        {formData.assignedTo.length > 0 && (
+                          <span className="text-blue-600 font-semibold ml-1">
+                            ({formData.assignedTo.length} selected)
+                          </span>
+                        )}
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-3 pt-4 border-t-2 border-gray-100">
+                  {classes.length === 0 ? (
+                    <div className="text-center py-8 text-gray-500">
+                      <Users className="w-12 h-12 mx-auto mb-3 text-gray-300" />
+                      <p className="font-semibold">No classes available</p>
+                      <p className="text-sm">Please create a class first before assigning assignments.</p>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {classes.map((cls, index) => {
+                        const isSelected = formData.assignedTo.includes(cls._id || cls.name);
+                        return (
+                          <motion.button
+                            key={cls._id || cls.name || `class-${index}`}
+                            type="button"
+                            whileHover={{ scale: 1.02, y: -2 }}
+                            whileTap={{ scale: 0.98 }}
+                            onClick={() => handleClassToggle(cls._id || cls.name)}
+                            className={`relative px-5 py-4 rounded-xl border-2 font-semibold transition-all text-left overflow-hidden ${
+                              isSelected
+                                ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-blue-500 shadow-lg"
+                                : "bg-white text-gray-700 border-slate-200 hover:border-blue-300 hover:shadow-md"
+                            }`}
+                          >
+                            {isSelected && (
+                              <motion.div
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                className="absolute top-2 right-2"
+                              >
+                                <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                  <CheckCircle className="w-4 h-4 text-white" />
+                                </div>
+                              </motion.div>
+                            )}
+                            <div className="flex items-start gap-3">
+                              <div className={`p-2 rounded-lg ${isSelected ? 'bg-white/20' : 'bg-blue-50'}`}>
+                                <Users className={`w-5 h-5 ${isSelected ? 'text-white' : 'text-blue-600'}`} />
+                              </div>
+                              <div className="flex-1">
+                                <div className={`font-bold text-lg mb-1 ${isSelected ? 'text-white' : 'text-gray-900'}`}>
+                                  {cls.name}
+                                </div>
+                                {cls.academicYear && (
+                                  <div className={`text-sm ${isSelected ? 'text-white/90' : 'text-gray-600'}`}>
+                                    Academic Year: {cls.academicYear}
+                                  </div>
+                                )}
+                                {cls.sections && cls.sections.length > 0 && (
+                                  <div className={`text-sm ${isSelected ? 'text-white/90' : 'text-gray-600'}`}>
+                                    Sections: {cls.sections.map(s => s.name).join(', ')}
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </motion.button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </motion.div>
+
+                {/* Action Buttons - Professional Design */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="flex gap-4 pt-6 border-t border-slate-200"
+                >
                   <motion.button
                     type="button"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={handleClose}
-                    className="flex-1 px-6 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-all"
+                    className="flex-1 px-6 py-3.5 bg-slate-100 text-slate-700 rounded-xl font-semibold hover:bg-slate-200 transition-all border border-slate-200"
                   >
                     Cancel
                   </motion.button>
                   <motion.button
                     type="button"
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(99, 102, 241, 0.3)" }}
                     whileTap={{ scale: 0.98 }}
                     onClick={handleSubmit}
                     disabled={loading || formData.assignedTo.length === 0 || 
                       (formData.type === 'quiz' && questions.length === 0) ||
                       (formData.type === 'test' && questions.length === 0) ||
                       (formData.type === 'project' && projectData.mode === 'virtual' && questions.length === 0)}
-                    className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 px-6 py-3.5 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl font-semibold hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
                   >
-                    {loading ? "Creating..." : "Create Assignment"}
+                    {loading ? (
+                      <>
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                          className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                        />
+                        <span>Creating Assignment...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Plus className="w-5 h-5" />
+                        <span>Create Assignment</span>
+                      </>
+                    )}
                   </motion.button>
-                </div>
+                </motion.div>
               </div>
             )}
           </div>

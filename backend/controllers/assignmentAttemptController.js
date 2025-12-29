@@ -274,34 +274,169 @@ export const submitAssignment = async (req, res) => {
     attempt.status = 'submitted';
     attempt.submittedAt = new Date();
 
-    // Auto-grade if possible
-    if (assignment.type === 'quiz' || assignment.type === 'test') {
+    // For projects, mark as requiring manual grading
+    if (assignment.type === 'project') {
+      attempt.autoGraded = false;
+      attempt.graded = false;
+      attempt.requiresManualGrading = true;
+      // Projects may not have objective scoring, so set initial score to 0
+      attempt.totalScore = 0;
+      attempt.maxScore = assignment.totalMarks || 100;
+      attempt.percentage = 0;
+    }
+
+    // Auto-grade if possible (quizzes, tests, and classwork support auto-grading for objective questions)
+    // Classwork can use auto-grading for objective questions, but may also include participation-based activities
+    // Projects require manual grading as they are typically research-based, creative, or multi-phase assignments
+    if (assignment.type === 'quiz' || assignment.type === 'test' || assignment.type === 'classwork') {
       let totalScore = 0;
+      let autoGradableCount = 0;
+      let manualGradingCount = 0;
       
       attempt.answers.forEach(answer => {
-        const question = assignment.questions.find(q => q.id === answer.questionId);
+        const question = assignment.questions.find(q => q.id === answer.questionId || q._id?.toString() === answer.questionId);
         if (question) {
           let isCorrect = false;
+          let canAutoGrade = true;
           
+          // Auto-grade supported question types
           if (question.type === 'multiple_choice') {
-            isCorrect = answer.answer === question.correctAnswer;
+            isCorrect = answer.answer === question.correctAnswer || 
+                       answer.answer?.toString() === question.correctAnswer?.toString();
           } else if (question.type === 'true_false') {
-            isCorrect = answer.answer === question.correctAnswer;
-          } else if (question.type === 'fill_blank') {
-            isCorrect = answer.answer.toLowerCase().trim() === question.correctAnswer.toLowerCase().trim();
+            isCorrect = answer.answer === question.correctAnswer || 
+                       answer.answer?.toString() === question.correctAnswer?.toString();
+          } else if (question.type === 'fill_in_blank' || question.type === 'fill_blank') {
+            const correctAnswer = (question.correctAnswer || '').toLowerCase().trim();
+            const studentAnswer = (answer.answer || '').toLowerCase().trim();
+            isCorrect = correctAnswer === studentAnswer || 
+                       correctAnswer.split(',').some(ca => ca.trim() === studentAnswer);
+          } else if (question.type === 'short_answer') {
+            // For short answer, try to match if correct answer is provided
+            if (question.correctAnswer) {
+              const correctAnswer = question.correctAnswer.toLowerCase().trim();
+              const studentAnswer = (answer.answer || '').toLowerCase().trim();
+              // Allow partial matches for short answers
+              isCorrect = correctAnswer === studentAnswer || 
+                         studentAnswer.includes(correctAnswer) || 
+                         correctAnswer.includes(studentAnswer);
+            } else {
+              canAutoGrade = false; // Needs manual grading
+            }
+          } else if (question.type === 'matching') {
+            // For matching questions, check if all pairs match
+            if (question.correctAnswer && answer.answer) {
+              try {
+                const correctPairs = Array.isArray(question.correctAnswer) 
+                  ? question.correctAnswer 
+                  : JSON.parse(question.correctAnswer);
+                const studentPairs = Array.isArray(answer.answer) 
+                  ? answer.answer 
+                  : JSON.parse(answer.answer);
+                
+                if (Array.isArray(correctPairs) && Array.isArray(studentPairs)) {
+                  isCorrect = correctPairs.every((cp, idx) => {
+                    const sp = studentPairs[idx];
+                    return sp && cp.left === sp.left && cp.right === sp.right;
+                  });
+                }
+              } catch (e) {
+                canAutoGrade = false; // Needs manual grading
+              }
+            } else {
+              canAutoGrade = false; // Needs manual grading
+            }
+          } else {
+            // Essay, problem_solving, word_problem, etc. need manual grading
+            canAutoGrade = false;
           }
           
-          answer.isCorrect = isCorrect;
-          answer.points = isCorrect ? (question.points || 0) : 0;
-          totalScore += answer.points;
+          if (canAutoGrade) {
+            answer.isCorrect = isCorrect;
+            answer.points = isCorrect ? (question.points || 0) : 0;
+            totalScore += answer.points;
+            autoGradableCount++;
+          } else {
+            // Mark for manual grading
+            answer.isCorrect = null;
+            answer.points = 0; // Will be set by teacher during manual grading
+            answer.requiresManualGrading = true;
+            manualGradingCount++;
+          }
         }
       });
       
       attempt.totalScore = totalScore;
-      attempt.autoGraded = true;
+      attempt.maxScore = assignment.totalMarks || assignment.questions?.reduce((sum, q) => sum + (q.points || 0), 0) || 100;
+      attempt.percentage = attempt.maxScore > 0 ? Math.round((totalScore / attempt.maxScore) * 100 * 10) / 10 : 0;
+      
+      // Mark as auto-graded if all questions were auto-gradable
+      if (manualGradingCount === 0) {
+        attempt.autoGraded = true;
+        attempt.graded = true; // Fully auto-graded
+      } else if (autoGradableCount > 0) {
+        attempt.autoGraded = true; // Partially auto-graded
+        attempt.graded = false; // Needs manual grading for some questions
+        attempt.requiresManualGrading = true;
+      } else {
+        attempt.autoGraded = false;
+        attempt.graded = false;
+        attempt.requiresManualGrading = true;
+      }
     }
 
     await attempt.save();
+
+    // Get student info for notification
+    const User = (await import('../models/User.js')).default;
+    const student = await User.findById(studentId).select('name email').lean();
+
+    // Emit real-time notification via Socket.IO
+    const io = req.app?.get('io');
+    if (io && assignment.teacherId) {
+      // Emit to teacher
+      io.to(assignment.teacherId.toString()).emit('assignment:submitted', {
+        assignmentId: assignment._id,
+        assignmentTitle: assignment.title,
+        assignmentType: assignment.type, // Include assignment type for filtering
+        studentId: studentId,
+        studentName: student?.name || 'Student',
+        attemptId: attempt._id,
+        submittedAt: attempt.submittedAt,
+        isLate: attempt.isLate,
+        autoGraded: attempt.autoGraded,
+        totalScore: attempt.totalScore,
+        percentage: attempt.percentage,
+        tenantId
+      });
+
+      // Also emit to tenant room
+      io.to(tenantId).emit('assignment:submitted', {
+        assignmentId: assignment._id,
+        assignmentTitle: assignment.title,
+        assignmentType: assignment.type, // Include assignment type for filtering
+        studentId: studentId,
+        studentName: student?.name || 'Student',
+        attemptId: attempt._id,
+        submittedAt: attempt.submittedAt,
+        isLate: attempt.isLate,
+        autoGraded: attempt.autoGraded,
+        totalScore: attempt.totalScore,
+        percentage: attempt.percentage,
+        tenantId
+      });
+      
+      // Emit teacher task update for dashboard refresh
+      io.to(assignment.teacherId.toString()).emit('teacher:task:update', {
+        type: 'assignment_submitted',
+        assignmentId: assignment._id,
+        assignmentTitle: assignment.title,
+        studentId: studentId,
+        studentName: student?.name || 'Student',
+        tenantId,
+        timestamp: new Date()
+      });
+    }
 
     res.json({
       success: true,
@@ -416,6 +551,24 @@ export const getAssignmentStats = async (req, res) => {
 
     console.log('✅ Assignment found:', assignment.title);
 
+    // Get total number of students assigned to this assignment
+    // Count students from assigned classes
+    const SchoolStudent = (await import('../models/SchoolStudent.js')).default;
+    let totalAssignedStudents = 0;
+    
+    if (assignment.assignedToClasses && assignment.assignedToClasses.length > 0) {
+      const classIds = assignment.assignedToClasses.map(c => c._id || c);
+      totalAssignedStudents = await SchoolStudent.countDocuments({
+        tenantId,
+        classId: { $in: classIds }
+      });
+    } else if (assignment.classId) {
+      totalAssignedStudents = await SchoolStudent.countDocuments({
+        tenantId,
+        classId: assignment.classId._id || assignment.classId
+      });
+    }
+
     // Get all attempts for this assignment
     const attempts = await AssignmentAttempt.find({
       assignmentId,
@@ -424,9 +577,12 @@ export const getAssignmentStats = async (req, res) => {
       .sort({ submittedAt: -1 });
 
     console.log('📈 Found attempts:', attempts.length);
+    console.log('👥 Total assigned students:', totalAssignedStudents);
 
     // Calculate statistics
-    const totalStudents = attempts.length;
+    // Use totalAssignedStudents if available, otherwise fall back to unique students who have attempts
+    const uniqueStudentsWithAttempts = new Set(attempts.map(a => a.studentId?._id?.toString() || a.studentId?.toString()));
+    const totalStudents = totalAssignedStudents > 0 ? totalAssignedStudents : uniqueStudentsWithAttempts.size;
     const submittedAttempts = attempts.filter(attempt => attempt.status === 'submitted');
     const submittedCount = submittedAttempts.length;
     const pendingCount = totalStudents - submittedCount;
@@ -533,7 +689,10 @@ export const getAssignmentStats = async (req, res) => {
           isLate: attempt.isLate || false,
           timeSpent: attempt.timeSpent || 0,
           status: attempt.status,
-          attemptNumber: attempt.attemptNumber || 1
+          attemptNumber: attempt.attemptNumber || 1,
+          autoGraded: attempt.autoGraded || false,
+          graded: attempt.graded || false,
+          requiresManualGrading: attempt.requiresManualGrading || false
         }))
       }
     });
