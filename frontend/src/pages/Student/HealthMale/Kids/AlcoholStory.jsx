@@ -25,133 +25,128 @@ const AlcoholStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "You see adults drinking at a party. What should you drink?",
-      options: [
-        {
-          id: "b",
-          text: "Try their drink",
-          emoji: "🍷",
-          isCorrect: false
-        },
-        
-        {
-          id: "c",
-          text: "Pretend to drink",
-          emoji: "🎭",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Juice or Water",
-          emoji: "🧃",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "Why is alcohol bad for kids?",
-      options: [
-        {
-          id: "a",
-          text: "It harms your developing brain and body",
-          emoji: "🧠",
-          isCorrect: true
-        },
-        
-        {
-          id: "b",
-          text: "It makes you too tall",
-          emoji: "📏",
-          isCorrect: false
-        },
-        
-       
-        {
-          id: "c",
-          text: "It's too expensive",
-          emoji: "💰",
-          isCorrect: false
-        },
-        
-      ]
-    },
-    {
-      id: 3,
-      text: "What happens if you drink alcohol?",
-      options: [
-        {
-          id: "b",
-          text: "You become a superhero",
-          emoji: "🦸",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "You might get sick and dizzy",
-          emoji: "🤢",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "You run faster",
-          emoji: "🏃",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "If a friend dares you to drink, what do you do?",
-      options: [
-        {
-          id: "c",
-          text: "Do it to be cool",
-          emoji: "😎",
-          isCorrect: false
-        },
-        
-        {
-          id: "b",
-          text: "Drink a little bit",
-          emoji: "🤏",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Say No and leave",
-          emoji: "🚶",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "If someone offers you alcohol, who should you tell?",
-      options: [
-        {
-          id: "b",
-          text: "No one",
-          emoji: "🤐",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Your friends",
-          emoji: "👥",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Parents or Teachers",
-          emoji: "👨‍👩‍👧",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You are at a New Year's celebration and adults are having alcohol. What is the best choice for you?",
+    options: [
+      {
+        id: "a",
+        text: "Sip their drink quietly",
+        emoji: "🍷",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Hold the glass to look grown-up",
+        emoji: "🫗",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Choose water or juice instead",
+        emoji: "🧃",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Why should children stay away from alcohol?",
+    options: [
+      {
+        id: "a",
+        text: "Because it smells bad",
+        emoji: "👃",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Because it can harm a growing brain",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Because it is only sold at night",
+        emoji: "🌙",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "What could happen if a child drinks alcohol?",
+    options: [
+      {
+        id: "a",
+        text: "They may feel sick, dizzy, or confused",
+        emoji: "🤢",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "They instantly become stronger",
+        emoji: "💪",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "They can think faster",
+        emoji: "⚡",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Your friends tease you for saying no to alcohol. What is the smartest action?",
+    options: [
+      {
+        id: "a",
+        text: "Give in so they stop teasing",
+        emoji: "😔",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Stay firm and choose what’s right",
+        emoji: "🛡️",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Laugh and change the topic",
+        emoji: "😄",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "If someone pressures you to drink alcohol, who should you talk to?",
+    options: [
+      {
+        id: "a",
+        text: "Keep it a secret",
+        emoji: "🤐",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Post about it online",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "A trusted adult like a parent or teacher",
+        emoji: "👨‍👩‍👧",
+        isCorrect: true
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     if (answered) return;

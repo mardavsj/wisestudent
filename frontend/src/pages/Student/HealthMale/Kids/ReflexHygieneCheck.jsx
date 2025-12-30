@@ -32,52 +32,52 @@ const ReflexHygieneCheck = () => {
   const questions = [
     {
       id: 1,
-      question: "What to use for bath?",
+      question: "You notice your hands are sticky after playing. What should you do before eating?",
       options: [
-        { id: 'a', text: "Skip Bath", emoji: "❌", isCorrect: false },
-        { id: 'b', text: "Dirt", emoji: "💩", isCorrect: false },
-        { id: 'c', text: "Oil", emoji: "🛢️", isCorrect: false },
-        { id: 'd', text: "Soap", emoji: "🧼", isCorrect: true }
+        { id: 'b', text: "Wipe with shirt", emoji: "👕", isCorrect: false },
+        { id: 'a', text: "Wash with soap", emoji: "🧼", isCorrect: true },
+        { id: 'c', text: "Use sanitizer", emoji: "🧴", isCorrect: false },
+        { id: 'd', text: "Ignore it", emoji: "🤷", isCorrect: false }
       ]
     },
     {
       id: 2,
-      question: "What to use for smell?",
+      question: "After using the bathroom, what's the most important step before leaving?",
       options: [
-        { id: 'a', text: "Deodorant", emoji: "🧴", isCorrect: true },
-        { id: 'b', text: "No Deodorant", emoji: "🦨", isCorrect: false },
-        { id: 'c', text: "Water", emoji: "💧", isCorrect: false },
-        { id: 'd', text: "Mud", emoji: "🟤", isCorrect: false }
+        { id: 'a', text: "Check hair", emoji: "💇", isCorrect: false },
+        { id: 'c', text: "Flush toilet", emoji: "🚽", isCorrect: false },
+        { id: 'd', text: "Turn off light", emoji: "💡", isCorrect: false },
+        { id: 'b', text: "Wash hands", emoji: "🧽", isCorrect: true },
       ]
     },
     {
       id: 3,
-      question: "What to wear?",
+      question: "You're sweating after running. What should you do to stay hygienic?",
       options: [
-        { id: 'a', text: "Dirty Shirt", emoji: "👕", isCorrect: false },
-        { id: 'b', text: "Clean Clothes", emoji: "🧺", isCorrect: true },
-        { id: 'c', text: "Wet Clothes", emoji: "💦", isCorrect: false },
-        { id: 'd', text: "Torn Clothes", emoji: "✂️", isCorrect: false }
+        { id: 'a', text: "Wear fresh clothes", emoji: "👕", isCorrect: true },
+        { id: 'b', text: "Stay in wet clothes", emoji: "💦", isCorrect: false },
+        { id: 'c', text: "Fan yourself", emoji: "💨", isCorrect: false },
+        { id: 'd', text: "Drink water", emoji: "💧", isCorrect: false }
       ]
     },
     {
       id: 4,
-      question: "How to clean body?",
+      question: "Before touching your face, what should you check about your hands?",
       options: [
-        { id: 'a', text: "Skip Shower", emoji: "😴", isCorrect: false },
-        { id: 'b', text: "Sleep", emoji: "🛌", isCorrect: false },
-        { id: 'c', text: "Shower", emoji: "🚿", isCorrect: true },
-        { id: 'd', text: "Run", emoji: "🏃", isCorrect: false }
+        { id: 'b', text: "They're warm", emoji: "🌡️", isCorrect: false },
+        { id: 'c', text: "They're soft", emoji: "👐", isCorrect: false },
+        { id: 'a', text: "They're clean", emoji: "🤔", isCorrect: true },
+        { id: 'd', text: "They're dry", emoji: "🧽", isCorrect: false }
       ]
     },
     {
       id: 5,
-      question: "How to clean teeth?",
+      question: "When should you change your clothes for best hygiene?",
       options: [
-        { id: 'a', text: "Eat Candy", emoji: "🍬", isCorrect: false },
-        { id: 'b', text: "Sleep", emoji: "💤", isCorrect: false },
-        { id: 'c', text: "Brush Teeth", emoji: "🪥", isCorrect: true },
-        { id: 'd', text: "Drink Soda", emoji: "🥤", isCorrect: false }
+        { id: 'b', text: "Weekly", emoji: "🗓️", isCorrect: false },
+        { id: 'a', text: "Daily", emoji: "📅", isCorrect: true },
+        { id: 'c', text: "Monthly", emoji: "📅", isCorrect: false },
+        { id: 'd', text: "When it smells", emoji: "👃", isCorrect: false }
       ]
     }
   ];

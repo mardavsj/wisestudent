@@ -30,57 +30,58 @@ const ReflexHabitCheck = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      question: "It's morning! Choose the GOOD habit!",
-      options: [
-        { id: 'a', text: "Make Bed", emoji: "🛏️", isCorrect: true },
-        { id: 'b', text: "Watch TV", emoji: "📺", isCorrect: false },
-        { id: 'c', text: "Sleep More", emoji: "😴", isCorrect: false },
-        { id: 'd', text: "Eat Junk", emoji: "🍔", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      question: "You finished lunch. Choose the GOOD habit!",
-      options: [
-        { id: 'a', text: "Run Away", emoji: "🏃", isCorrect: false },
-        { id: 'b', text: "Leave Mess", emoji: "🧹", isCorrect: false },
-        { id: 'c', text: "Clean Up", emoji: "🍽️", isCorrect: true },
-        { id: 'd', text: "Play Games", emoji: "🎮", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      question: "You have homework. Choose the GOOD habit!",
-      options: [
-        { id: 'a', text: "Procrastinate", emoji: "⏰", isCorrect: false },
-        { id: 'b', text: "Do It Now", emoji: "📝", isCorrect: true },
-        { id: 'c', text: "Watch Videos", emoji: "📱", isCorrect: false },
-        { id: 'd', text: "Play Games", emoji: "🎮", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      question: "It's raining. Choose the GOOD habit!",
-      options: [
-        { id: 'a', text: "Play in Mud", emoji: "🌧️", isCorrect: false },
-        { id: 'b', text: "Stay Indoors", emoji: "🏠", isCorrect: false },
-        { id: 'c', text: "Watch Rain", emoji: "☔", isCorrect: false },
-        { id: 'd', text: "Read Book", emoji: "📚", isCorrect: true }
-      ]
-    },
-    {
-      id: 5,
-      question: "Bedtime is near. Choose the GOOD habit!",
-      options: [
-        { id: 'a', text: "Eat Candy", emoji: "🍬", isCorrect: false },
-        { id: 'b', text: "Stay Up Late", emoji: "🌙", isCorrect: false },
-        { id: 'c', text: "Drink Soda", emoji: "🥤", isCorrect: false },
-        { id: 'd', text: "Brush Teeth", emoji: "🦷", isCorrect: true }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "While getting ready for school, Arya notices her room is messy and time is short. What action shows a smart daily reflex?",
+    options: [
+      { id: 'a', text: "Ignore it completely", emoji: "🙈", isCorrect: false },
+      { id: 'b', text: "Sit and think about it", emoji: "🤔", isCorrect: false },
+      { id: 'c', text: "Quickly organize essentials", emoji: "🧺", isCorrect: true },
+      { id: 'd', text: "Leave everything for later", emoji: "🚪", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    question: "After finishing a meal, Ritu hears the bell for the next class. What habit helps her stay responsible without being told?",
+    options: [
+      { id: 'a', text: "Rush out immediately", emoji: "🏃‍♀️", isCorrect: false },
+      { id: 'b', text: "Wait for someone else", emoji: "👀", isCorrect: false },
+      { id: 'c', text: "Play until reminded", emoji: "🎮", isCorrect: false },
+      { id: 'd', text: "Clear her place quickly", emoji: "🍽️", isCorrect: true }
+    ]
+  },
+  {
+    id: 3,
+    question: "A project is due tomorrow. Kunal has some free time now. What reflex shows good planning skills?",
+    options: [
+      { id: 'a', text: "Check messages first", emoji: "📱", isCorrect: false },
+      { id: 'b', text: "Start with small project tasks", emoji: "🧠", isCorrect: true },
+      { id: 'c', text: "Wait until night", emoji: "🌙", isCorrect: false },
+      { id: 'd', text: "Hope for extra time", emoji: "⏳", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    question: "During a rainy afternoon, power goes out at home. What habit helps Neha use her time wisely?",
+    options: [
+      { id: 'a', text: "Pick a book or puzzle", emoji: "📚", isCorrect: true },
+      { id: 'b', text: "Complain loudly", emoji: "😤", isCorrect: false },
+      { id: 'c', text: "Wait and do nothing", emoji: "🛋️", isCorrect: false },
+      { id: 'd', text: "Run outside immediately", emoji: "🌧️", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    question: "Just before sleeping, Aarav remembers his day was very active. Which quick habit supports a healthy routine?",
+    options: [
+      { id: 'a', text: "Snack again", emoji: "🍿", isCorrect: false },
+      { id: 'b', text: "Scroll videos", emoji: "📱", isCorrect: false },
+      { id: 'c', text: "Chat for long hours", emoji: "💬", isCorrect: false },
+      { id: 'd', text: "Follow bedtime hygiene", emoji: "🪥", isCorrect: true }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

@@ -32,52 +32,52 @@ const ReflexSafeBody = () => {
   const questions = [
     {
       id: 1,
-      question: "What is private?",
+      question: "What should you do if someone touches your body parts?",
       options: [
-        { id: 'a', text: "Protected", emoji: "🛡️", isCorrect: true },
-        { id: 'b', text: "Ignored", emoji: "❌", isCorrect: false },
-        { id: 'c', text: "Shared", emoji: "📢", isCorrect: false },
-        { id: 'd', text: "Forgotten", emoji: "🤷", isCorrect: false }
+        { id: 'a', text: "Tell a trusted adult right away", emoji: "👩‍🏫", isCorrect: true },
+        { id: 'b', text: "Keep it a secret", emoji: "🤐", isCorrect: false },
+        { id: 'c', text: "Let them continue", emoji: "🆗", isCorrect: false },
+        { id: 'd', text: "Touch them back", emoji: "👆", isCorrect: false }
       ]
     },
     {
       id: 2,
-      question: "How to treat body parts?",
+      question: "Is it OK for someone to touch your body parts if they tell you it's a secret?",
       options: [
-        { id: 'a', text: "Share Everything", emoji: "👀", isCorrect: false },
-        { id: 'b', text: "Dislike Them", emoji: "👎", isCorrect: false },
-        { id: 'c', text: "Respect Them", emoji: "🙏", isCorrect: true },
-        { id: 'd', text: "Hide Them", emoji: "🙈", isCorrect: false }
+        { id: 'a', text: "Yes, if they say it's a secret", emoji: "🤐", isCorrect: false },
+        { id: 'b', text: "No, never", emoji: "❌", isCorrect: true },
+        { id: 'c', text: "Only if they're a family member", emoji: "👨‍👩‍👧‍👦", isCorrect: false },
+        { id: 'd', text: "Only if it doesn't hurt", emoji: "😊", isCorrect: false }
       ]
     },
     {
       id: 3,
-      question: "Keep private parts...",
+      question: "What makes a touch safe?",
       options: [
-        { id: 'a', text: "Public", emoji: "🌍", isCorrect: false },
-        { id: 'b', text: "Safe", emoji: "🔒", isCorrect: true },
-        { id: 'c', text: "Open", emoji: "🔓", isCorrect: false },
-        { id: 'd', text: "Unsafe", emoji: "⚠️", isCorrect: false }
+        { id: 'a', text: "When it's in public", emoji: "🌍", isCorrect: false },
+        { id: 'b', text: "When it's from someone you trust and it feels OK", emoji: "🤝", isCorrect: true },
+        { id: 'c', text: "When it's from a stranger", emoji: "😣", isCorrect: false },
+        { id: 'd', text: "When it's on your body parts", emoji: "🤨", isCorrect: false }
       ]
     },
     {
       id: 4,
-      question: "How to feel about your body?",
+      question: "Where are the parts of your body only you should touch?",
       options: [
-        { id: 'a', text: "Ashamed", emoji: "😞", isCorrect: false },
-        { id: 'b', text: "Confused", emoji: "😕", isCorrect: false },
-        { id: 'c', text: "Scared", emoji: "😨", isCorrect: false },
-        { id: 'd', text: "Love It", emoji: "💖", isCorrect: true }
+        { id: 'a', text: "Your hands and face", emoji: "✋", isCorrect: false },
+        { id: 'c', text: "Your feet and legs", emoji: "🦵", isCorrect: false },
+        { id: 'd', text: "Your arms and neck", emoji: "💪", isCorrect: false },
+        { id: 'b', text: "Areas covered by your clothes", emoji: "👕", isCorrect: true },
       ]
     },
     {
       id: 5,
-      question: "If someone makes you uncomfortable?",
+      question: "What should you do if someone makes you feel uncomfortable?",
       options: [
-        { id: 'a', text: "Stay Silent", emoji: "🤐", isCorrect: false },
-        { id: 'b', text: "Hide", emoji: "📦", isCorrect: false },
-        { id: 'c', text: "Ignore", emoji: "🤷", isCorrect: false },
-        { id: 'd', text: "Tell Adult", emoji: "🗣️", isCorrect: true }
+        { id: 'a', text: "Stay quiet so you don't get in trouble", emoji: "🤐", isCorrect: false },
+        { id: 'c', text: "Try to handle it yourself", emoji: "💪", isCorrect: false },
+        { id: 'b', text: "Tell a trusted adult right away", emoji: "👩‍🏫", isCorrect: true },
+        { id: 'd', text: "Wait to see if it happens again", emoji: "⏰", isCorrect: false }
       ]
     }
   ];

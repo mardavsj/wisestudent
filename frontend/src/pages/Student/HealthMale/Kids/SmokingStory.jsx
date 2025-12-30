@@ -24,144 +24,146 @@ const SmokingStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "What does smoking do to your lungs?",
-      options: [
-        {
-          id: "a",
-          text: "Makes them black and sick",
-          emoji: "🫁",
-          description: "Smoking fills lungs with tar and bad stuff",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Makes them stronger",
-          emoji: "💪",
-          description: "Smoking hurts your lungs and makes it hard to breathe",
-          isCorrect: false
-        },
+  {
+    id: 1,
+    text: "How does smoking affect your lungs over time?",
+    options: [
+      {
+        id: "a",
+        text: "They become weak and damaged",
+        emoji: "😣",
         
-        {
-          id: "c",
-          text: "Makes them smell like flowers",
-          emoji: "🌸",
-          description: "Smoking makes everything smell bad",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "If someone offers you a cigarette, what do you say?",
-      options: [
-        {
-          id: "c",
-          text: "Maybe later",
-          emoji: "🤔",
-          description: "You should always say no clearly",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "No thanks, I want to be healthy",
-          emoji: "✋",
-          description: "Saying no keeps your body safe",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Yes, I'll try it",
-          emoji: "🚬",
-          description: "Never try smoking, it's very dangerous",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Why is smoking bad for sports?",
-      options: [
-        {
-          id: "b",
-          text: "It makes you run too fast",
-          emoji: "🏃",
-          description: "Smoking makes you slower, not faster",
-          isCorrect: false
-        },
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "They grow bigger and stronger",
+        emoji: "💪",
         
-        {
-          id: "c",
-          text: "It makes the ball slippery",
-          emoji: "⚽",
-          description: "Smoking hurts your body, not the ball",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "You run out of breath easily",
-          emoji: "😮‍💨",
-          description: "Your lungs need clean air to run and play",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "What is in a cigarette?",
-      options: [
-        {
-          id: "c",
-          text: "Vitamins",
-          emoji: "💊",
-          description: "Cigarettes have poisons, not vitamins",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Dangerous poisons",
-          emoji: "☠️",
-          description: "There are many harmful chemicals in cigarettes",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Candy",
-          emoji: "🍬",
-          description: "Cigarettes are not a treat",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "How do you stay smoke-free?",
-      options: [
-        {
-          id: "b",
-          text: "Hang out with smokers",
-          emoji: "👥",
-          description: "Stay away from smoke to be healthy",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Try it once",
-          emoji: "1️⃣",
-          description: "Don't even try it once!",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Choose healthy friends and habits",
-          emoji: "🌟",
-          description: "Good friends help you make good choices",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "They stay the same forever",
+        emoji: "⏳",
+        
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Someone asks you to try smoking. What is the smartest response?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Just one time is okay",
+        emoji: "🚬",
+        
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "I’ll decide later",
+        emoji: "🤔",
+        
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "No, I care about my health",
+        emoji: "✋",
+        
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: "Why can smoking make playing sports harder?",
+    options: [
+      {
+        id: "a",
+        text: "You get tired very quickly",
+        emoji: "😮‍💨",
+        
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Your shoes stop working",
+        emoji: "👟",
+        
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "The game rules change",
+        emoji: "📋",
+        
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "What kind of substances are found in cigarettes?",
+    options: [
+     
+      {
+        id: "b",
+        text: "Energy boosters",
+        emoji: "⚡",
+        
+        isCorrect: false
+      },
+       {
+        id: "a",
+        text: "Harmful chemicals",
+        emoji: "☠️",
+        
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Healthy nutrients",
+        emoji: "🥗",
+        
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "What helps you stay smoke-free as you grow up?",
+    options: [
+     
+      {
+        id: "b",
+        text: "Trying risky things for fun",
+        emoji: "🎲",
+        
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Copying everything others do",
+        emoji: "👥",
+        
+        isCorrect: false
+      },
+       {
+        id: "a",
+        text: "Making healthy choices and friends",
+        emoji: "🌟",
+        
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     if (answered) return;

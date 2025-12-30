@@ -27,121 +27,123 @@ const GrowingTallerStory = () => {
   const questions = [
     {
       id: 1,
-      text: "You notice you're taller than last year. Is this normal growth?",
+      text: "You're growing taller. Which body part grows first during a growth spurt?",
       options: [
+       
         {
           id: "b",
-          text: "No, something's wrong",
-          emoji: "😟",
-          
+          text: "Arms",
+          emoji: "💪",
           isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Yes, it's normal",
-          emoji: "🙂",
-          isCorrect: true
         },
         {
           id: "c",
-          text: "Only sometimes",
-          emoji: "🤷",
+          text: "Head",
+          emoji: "🧠",
           isCorrect: false
-        }
+        },
+         {
+          id: "a",
+          text: "Legs",
+          emoji: "🦵",
+          isCorrect: true
+        },
       ]
     },
     {
       id: 2,
-      text: "Your clothes don't fit anymore. What should you do?",
+      text: "During growth, which vitamin helps your body use calcium from food?",
       options: [
         {
           id: "a",
-          text: "Get new bigger clothes",
-          emoji: "👕",
+          text: "Vitamin D",
+          emoji: "☀️",
           isCorrect: true
         },
         {
           id: "b",
-          text: "Stop growing",
-          emoji: "🛑",
+          text: "Vitamin C",
+          emoji: "🍊",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Wear tight clothes",
-          emoji: "😣",
+          text: "Vitamin B12",
+          emoji: "💊",
           isCorrect: false
         }
       ]
     },
     {
       id: 3,
-      text: "You grow faster than your friends. Should you worry?",
+      text: "What happens to your skeleton as you grow taller?",
       options: [
+       
         {
-          id: "c",
-          text: "Tell them to grow faster",
+          id: "b",
+          text: "Bones just get longer without changing",
           emoji: "📏",
           isCorrect: false
         },
         {
-          id: "b",
-          text: "Yes, it's a problem",
-          emoji: "😰",
+          id: "c",
+          text: "You grow extra bones",
+          emoji: "🧩",
           isCorrect: false
         },
-        {
+         {
           id: "a",
-          text: "No, everyone grows differently",
-          emoji: "🌱",
+          text: "Old bones break down and new bones form",
+          emoji: "🔄",
           isCorrect: true
-        }
+        },
       ]
     },
     {
       id: 4,
-      text: "Your shoes are too small. What does this mean?",
+      text: "Why do you need more energy as you grow taller?",
       options: [
+        
         {
           id: "b",
-          text: "Your feet are shrinking",
-          emoji: "🦶",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Nothing important",
+          text: "You get more tired easily",
           emoji: "😴",
           isCorrect: false
         },
         {
           id: "a",
-          text: "You're growing taller",
-          emoji: "📈",
+          text: "Your body needs energy to build new tissue",
+          emoji: "⚡",
           isCorrect: true
+        },
+        {
+          id: "c",
+          text: "Food tastes better when growing",
+          emoji: "😋",
+          isCorrect: false
         }
       ]
     },
     {
       id: 5,
-      text: "You need to measure your height for school. How do you feel?",
+      text: "Which part of your bones helps you grow taller?",
       options: [
         {
-          id: "b",
-          text: "Scared of the results",
-          emoji: "😨",
-          isCorrect: false
-        },
-        {
           id: "a",
-          text: "Excited to see growth",
-          emoji: "😊",
+          text: "Growth plates",
+          emoji: "📈",
           isCorrect: true
         },
         {
+          id: "b",
+          text: "Bone marrow",
+          emoji: "🦴",
+          isCorrect: false
+        },
+        {
           id: "c",
-          text: "Don't care at all",
-          emoji: "😐",
+          text: "Cartilage in joints",
+          emoji: "🔗",
           isCorrect: false
         }
       ]

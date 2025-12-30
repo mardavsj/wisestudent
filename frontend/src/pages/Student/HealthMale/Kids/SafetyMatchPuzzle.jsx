@@ -25,20 +25,20 @@ const SafetyMatchPuzzle = () => {
 
   // Safety Scenarios (left side) - 5 items
   const scenarios = [
-    { id: 1, name: "Bike Riding", emoji: "🚴", description: "Two-wheel transport" },
-    { id: 2, name: "Car Travel", emoji: "🚗", description: "Vehicle journey" },
-    { id: 3, name: "Street Crossing", emoji: "🚸", description: "Road passage" },
-    { id: 4, name: "Sunny Weather", emoji: "☀️", description: "Bright conditions" },
-    { id: 5, name: "Pool Swimming", emoji: "🏊", description: "Water activity" }
+    { id: 1, name: "Bike Riding", emoji: "🚴",  },
+    { id: 2, name: "Car Travel", emoji: "🚗" },
+    { id: 3, name: "Street Crossing", emoji: "🚸" },
+    { id: 4, name: "Sunny Weather", emoji: "☀️" },
+    { id: 5, name: "Pool Swimming", emoji: "🏊" }
   ];
 
   // Safety Items (right side) - 5 items
   const items = [
-    { id: 4, name: "Sunscreen", emoji: "🧴", description: "Skin protection" },
-    { id: 5, name: "Life Jacket", emoji: "🦺", description: "Water safety" },
-    { id: 1, name: "Helmet", emoji: "⛑️", description: "Head protection" },
-    { id: 3, name: "Crosswalk", emoji: "🦓", description: "Safe crossing" },
-    { id: 2, name: "Seatbelt", emoji: "💺", description: "Vehicle safety" }
+    { id: 4, name: "Sunscreen", emoji: "🧴" },
+    { id: 5, name: "Life Jacket", emoji: "🦺" },
+    { id: 1, name: "Helmet", emoji: "⛑️" },
+    { id: 3, name: "Crosswalk", emoji: "🦓" },
+    { id: 2, name: "Seatbelt", emoji: "💺" }
   ];
 
   // Correct matches

@@ -32,58 +32,58 @@ const ReflexBodyBasics = () => {
   const questions = [
     {
       id: 1,
-      question: "How do organs work?",
-      emoji: "🧬",
-      correctAnswer: "Work Together",
+      question: "What do you call the special tubes in your body that carry blood?",
+      emoji: "🩸",
+      correctAnswer: "Blood vessels",
       options: [
-        { text: "Work Alone", emoji: "❌", isCorrect: false },
-        { text: "Work Together", emoji: "💚", isCorrect: true }, // Position B
-        { text: "Fight Each Other", emoji: "⚔️", isCorrect: false },
-        { text: "Stop Working", emoji: "🛑", isCorrect: false }
+        { text: "Blood vessels", emoji: "😥", isCorrect: true },
+        { text: "Nerves", emoji: "⚡", isCorrect: false },
+        { text: "Muscles", emoji: "💪", isCorrect: false },
+        { text: "Bones", emoji: "🦴", isCorrect: false }
       ],
      
     },
     {
       id: 2,
-      question: "What does the heart do?",
+      question: "Which part of your skin helps you feel things like hot, cold, and soft?",
       options: [
-        { text: "Breathes", emoji: "💨", isCorrect: false },
-        { text: "Digests Food", emoji: "🍎", isCorrect: false },
-        { text: "Pumps Blood", emoji: "🩸", isCorrect: true }, // Position C
-        { text: "Thinks", emoji: "🤔", isCorrect: false }
+        { text: "Sweat glands", emoji: "🤔", isCorrect: false },
+        { text: "Hair", emoji: "🦳", isCorrect: false },
+        { text: "Touch receptors", emoji: "✋", isCorrect: true },
+        { text: "Oil glands", emoji: "🤔", isCorrect: false }
       ]
     },
     {
       id: 3,
-      question: "What do lungs do?",
-      emoji: "🫁",
-      correctAnswer: "Give Oxygen",
+      question: "What helps your body keep germs out and protects all your organs?",
+      emoji: "🛡️",
+      correctAnswer: "Skin",
       options: [
-        { text: "Pump Blood", emoji: "❤️", isCorrect: false },
-        { text: "Digest", emoji: "🍔", isCorrect: false },
-        { text: "Move Body", emoji: "💪", isCorrect: false },
-        { text: "Give Oxygen", emoji: "🫁", isCorrect: true } // Position D
+        { text: "Muscles", emoji: "💪", isCorrect: false },
+        { text: "Blood", emoji: "🩸", isCorrect: false },
+        { text: "Bones", emoji: "🦴", isCorrect: false },
+        { text: "Skin", emoji: "✋", isCorrect: true },
       ],
       
     },
     {
       id: 4,
-      question: "What does the stomach do?",
+      question: "What do you call the special liquid in your mouth that helps break down food?",
       options: [
-        { text: "Digests Food", emoji: "🫄", isCorrect: true }, // Position A
-        { text: "Thinks", emoji: "🤔", isCorrect: false },
-        { text: "Breathes", emoji: "🌬️", isCorrect: false },
-        { text: "Sees", emoji: "👁️", isCorrect: false }
+        { text: "Blood", emoji: "🩸", isCorrect: false },
+        { text: "Water", emoji: "💧", isCorrect: false },
+        { text: "Saliva", emoji: "💧", isCorrect: true },
+        { text: "Juice", emoji: "🍊", isCorrect: false }
       ]
     },
     {
       id: 5,
-      question: "What does the brain do?",
+      question: "Which part of your body cleans your blood and helps remove waste?",
       options: [
-        { text: "Pumps", emoji: "💓", isCorrect: false },
-        { text: "Controls Body", emoji: "🧠", isCorrect: true }, // Position B
-        { text: "Digests", emoji: "🍎", isCorrect: false },
-        { text: "Walks", emoji: "🚶", isCorrect: false },
+        { text: "Liver", emoji: "🤔", isCorrect: false },
+        { text: "Kidneys", emoji: "🫘", isCorrect: true },
+        { text: "Lungs", emoji: "🫁", isCorrect: false },
+        { text: "Heart", emoji: "❤️", isCorrect: false }
       ]
     }
   ];

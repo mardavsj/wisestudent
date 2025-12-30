@@ -32,21 +32,20 @@ const FriendsDareStory = () => {
           id: "b",
           text: "Skip homework and play",
           emoji: "🏃",
-          description: "Homework helps you learn and do well in school",
+          
           isCorrect: false
         },
         {
           id: "a",
           text: "Finish homework first, then play",
           emoji: "📚",
-          description: "Doing homework shows responsibility and good choices",
+         
           isCorrect: true
         },
         {
           id: "c",
           text: "Hide homework and pretend it's done",
           emoji: "🙈",
-          description: "Honesty and completing work are important",
           isCorrect: false
         }
       ]
@@ -59,21 +58,18 @@ const FriendsDareStory = () => {
           id: "a",
           text: "Say no and wait for proper dessert",
           emoji: "⏰",
-          description: "Waiting shows self-control and healthy choices",
           isCorrect: true
         },
         {
           id: "c",
           text: "Eat it all and feel sick",
           emoji: "🤢",
-          description: "Too much sugar isn't healthy for your body",
           isCorrect: false
         },
         {
           id: "b",
           text: "Take just a little bite",
           emoji: "🍰",
-          description: "It's better to say no to unhealthy dares completely",
           isCorrect: false
         }
       ]
@@ -86,21 +82,18 @@ const FriendsDareStory = () => {
           id: "b",
           text: "Run across quickly",
           emoji: "🏃",
-          description: "Running across busy streets is very dangerous",
           isCorrect: false
         },
         {
           id: "c",
           text: "Ask an adult to help",
           emoji: "👨‍👩‍👧",
-          description: "Asking for help with dangerous dares is smart",
           isCorrect: false
         },
         {
           id: "a",
           text: "Say no and find a safe way to cross",
           emoji: "🚦",
-          description: "Safety is more important than any dare",
           isCorrect: true
         },
       ]
@@ -113,21 +106,18 @@ const FriendsDareStory = () => {
           id: "c",
           text: "Stay up all night",
           emoji: "🕚",
-          description: "Sleep is important for your body and brain",
           isCorrect: false
         },
         {
           id: "a",
           text: "Say no and get good sleep",
           emoji: "😴",
-          description: "Good sleep helps you learn and stay healthy",
           isCorrect: true
         },
         {
           id: "b",
           text: "Play just a little longer",
           emoji: "🎮",
-          description: "Bedtime rules help you get enough rest",
           isCorrect: false
         }
       ]
@@ -140,21 +130,18 @@ const FriendsDareStory = () => {
           id: "b",
           text: "Throw it on the ground",
           emoji: "🗑️",
-          description: "Littering hurts the environment and shows bad character",
           isCorrect: false
         },
         {
           id: "c",
           text: "Find a trash can instead",
           emoji: "♻️",
-          description: "Finding proper disposal shows respect for the environment",
           isCorrect: false
         },
         {
           id: "a",
           text: "Say no and explain why it's wrong",
           emoji: "🗣️",
-          description: "Standing up for what's right makes you a good friend",
           isCorrect: true
         }
       ]

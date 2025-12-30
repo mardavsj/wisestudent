@@ -33,21 +33,20 @@ const BodySystemStory = () => {
           id: "b",
           text: "No, they're the same",
           emoji: "🤷",
-          description: "Boys and girls have some different body systems",
+          
           isCorrect: false
         },
         {
           id: "a",
           text: "Yes, that's right",
-          emoji: "✅",
-          description: "Different body systems help boys and girls grow differently",
+          emoji: "👍",
+          
           isCorrect: true
         },
         {
           id: "c",
           text: "I don't know",
           emoji: "🤔",
-          description: "Learning about body differences is important",
           isCorrect: false
         }
       ]
@@ -60,21 +59,18 @@ const BodySystemStory = () => {
           id: "a",
           text: "Fascinated",
           emoji: "🤩",
-          description: "Learning how body works is amazing",
           isCorrect: true
         },
         {
           id: "b",
           text: "Scared",
           emoji: "😨",
-          description: "Body systems are normal and healthy",
           isCorrect: false
         },
         {
           id: "c",
           text: "Bored",
           emoji: "😴",
-          description: "Understanding body helps you stay healthy",
           isCorrect: false
         }
       ]
@@ -86,22 +82,19 @@ const BodySystemStory = () => {
         {
           id: "c",
           text: "Pump blood",
-          emoji: "❤️",
-          description: "Lungs help us breathe oxygen",
+          emoji: "🩸",
           isCorrect: false
         },
         {
           id: "b",
           text: "Think thoughts",
-          emoji: "🧠",
-          description: "Brain thinks, lungs breathe",
+          emoji: "🤔",
           isCorrect: false
         },
         {
           id: "a",
           text: "Help us breathe",
-          emoji: "🫁",
-          description: "Lungs bring oxygen into our body",
+          emoji: "😣",
           isCorrect: true
         }
       ]
@@ -114,21 +107,18 @@ const BodySystemStory = () => {
           id: "b",
           text: "They fight each other",
           emoji: "⚔️",
-          description: "Organs cooperate to keep body healthy",
           isCorrect: false
         },
         {
           id: "c",
           text: "They work separately",
           emoji: "🔄",
-          description: "Body systems work together as a team",
           isCorrect: false
         },
         {
           id: "a",
           text: "They help each other",
           emoji: "🤝",
-          description: "All organs work together for body health",
           isCorrect: true
         }
       ]
@@ -141,21 +131,18 @@ const BodySystemStory = () => {
           id: "b",
           text: "Makes us taller",
           emoji: "📏",
-          description: "Digestion helps turn food into energy",
           isCorrect: false
         },
         {
           id: "a",
           text: "Turns food into energy",
           emoji: "⚡",
-          description: "Digestive system breaks down food for body use",
           isCorrect: true
         },
         {
           id: "c",
           text: "Helps us sleep",
           emoji: "😴",
-          description: "Digestion provides nutrients for all body functions",
           isCorrect: false
         }
       ]

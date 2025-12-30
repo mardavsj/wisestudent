@@ -33,21 +33,20 @@ const AcneStory = () => {
                     id: "b",
                     text: "Squeeze them",
                     emoji: "🤏",
-                    description: "Squeezing can make pimples worse and cause scars",
+                    
                     isCorrect: false
                 },
                 {
                     id: "a",
                     text: "Wash face gently, don't squeeze",
                     emoji: "🧴",
-                    description: "Gentle washing helps without damaging skin",
+                        
                     isCorrect: true
                 },
                 {
                     id: "c",
                     text: "Ignore them",
                     emoji: "😴",
-                    description: "Gentle care helps pimples heal properly",
                     isCorrect: false
                 }
             ]
@@ -60,21 +59,18 @@ const AcneStory = () => {
                     id: "a",
                     text: "Gentle face wash",
                     emoji: "🧼",
-                    description: "Gentle cleansers help without drying skin",
                     isCorrect: true
                 },
                 {
                     id: "b",
                     text: "Any soap",
                     emoji: "🧽",
-                    description: "Face needs special gentle care",
                     isCorrect: false
                 },
                 {
                     id: "c",
                     text: "Nothing",
                     emoji: "❌",
-                    description: "Clean face daily prevents more breakouts",
                     isCorrect: false
                 }
             ]
@@ -87,21 +83,18 @@ const AcneStory = () => {
                     id: "c",
                     text: "Keep touching them",
                     emoji: "👆",
-                    description: "Touching spreads bacteria and makes it worse",
                     isCorrect: false
                 },
                 {
                     id: "b",
                     text: "Pop them open",
                     emoji: "💥",
-                    description: "Popping can cause infection and scarring",
                     isCorrect: false
                 },
                 {
                     id: "a",
                     text: "Leave them alone",
                     emoji: "🙌",
-                    description: "Letting them heal naturally is best",
                     isCorrect: true
                 }
             ]
@@ -114,21 +107,18 @@ const AcneStory = () => {
                     id: "b",
                     text: "Yes, it's permanent",
                     emoji: "😰",
-                    description: "Most acne improves with proper care",
                     isCorrect: false
                 },
                 {
                     id: "c",
                     text: "Hide your face",
                     emoji: "🙈",
-                    description: "Acne is common and treatable",
                     isCorrect: false
                 },
                 {
                     id: "a",
                     text: "Talk to trusted adult",
                     emoji: "👨‍👦",
-                    description: "Adults can help find the right skin care",
                     isCorrect: true
                 }
             ]
@@ -141,21 +131,18 @@ const AcneStory = () => {
                     id: "b",
                     text: "Expensive products",
                     emoji: "💰",
-                    description: "Gentle daily care is more important than cost",
                     isCorrect: false
                 },
                 {
                     id: "a",
                     text: "Daily gentle washing",
                     emoji: "🧴",
-                    description: "Consistent gentle care gives best results",
                     isCorrect: true
                 },
                 {
                     id: "c",
                     text: "Magic cream",
                     emoji: "✨",
-                    description: "Patience and proper care work best",
                     isCorrect: false
                 }
             ]

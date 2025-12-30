@@ -32,52 +32,52 @@ const ReflexHealthySteps = () => {
   const questions = [
     {
       id: 1,
-      question: "You just finished eating. Choose the HEALTHY step!",
+      question: "What happens to your teeth if you don't brush them after eating sugary food?",
       options: [
-        { id: 'a', text: "Brush Teeth", emoji: "🦷", isCorrect: true },
-        { id: 'b', text: "Eat Candy", emoji: "🍬", isCorrect: false },
-        { id: 'c', text: "Play Games", emoji: "🎮", isCorrect: false },
-        { id: 'd', text: "Watch TV", emoji: "📺", isCorrect: false }
+        { id: 'a', text: "They become stronger", emoji: "🦷", isCorrect: false },
+        { id: 'b', text: "Cavities can form", emoji: "🕳️", isCorrect: true },
+        { id: 'c', text: "They turn invisible", emoji: "👻", isCorrect: false },
+        { id: 'd', text: "Nothing happens", emoji: "😐", isCorrect: false }
       ]
     },
     {
       id: 2,
-      question: "You played outside and got dirty. Choose the HEALTHY step!",
+      question: "Why is it important to wash your hands before eating?",
       options: [
-        { id: 'a', text: "Go to Bed", emoji: "🛌", isCorrect: false },
-        { id: 'b', text: "Take Bath", emoji: "🚿", isCorrect: true },
-        { id: 'c', text: "Eat Snack", emoji: "🍎", isCorrect: false },
-        { id: 'd', text: "Play More", emoji: "⚽", isCorrect: false }
+        { id: 'b', text: "To remove germs that can make you sick", emoji: "🤧", isCorrect: true },
+        { id: 'a', text: "So they smell nice", emoji: "👃", isCorrect: false },
+        { id: 'c', text: "To make them soft", emoji: "🤲", isCorrect: false },
+        { id: 'd', text: "To make food taste better", emoji: "😋", isCorrect: false }
       ]
     },
     {
       id: 3,
-      question: "You are about to eat dinner. Choose the HEALTHY step!",
+      question: "How many hours of sleep does a child need each night for healthy growth?",
       options: [
-        { id: 'a', text: "Play Games", emoji: "🎮", isCorrect: false },
-        { id: 'b', text: "Watch Phone", emoji: "📱", isCorrect: false },
-        { id: 'c', text: "Wash Hands", emoji: "🧼", isCorrect: true },
-        { id: 'd', text: "Skip Wash", emoji: "🚫", isCorrect: false }
+        { id: 'a', text: "2-3 hours", emoji: "😴", isCorrect: false },
+        { id: 'b', text: "5-6 hours", emoji: "😪", isCorrect: false },
+        { id: 'c', text: "10-12 hours", emoji: "🌙", isCorrect: true },
+        { id: 'd', text: "15-16 hours", emoji: "😵", isCorrect: false }
       ]
     },
     {
       id: 4,
-      question: "It's bedtime. Choose the HEALTHY step!",
+      question: "Which drink helps keep your body hydrated without added sugar?",
       options: [
-        { id: 'a', text: "Watch TV", emoji: "📺", isCorrect: false },
-        { id: 'b', text: "Stay Up", emoji: "🌙", isCorrect: false },
-        { id: 'c', text: "Play Games", emoji: "🎮", isCorrect: false },
-        { id: 'd', text: "Sleep", emoji: "😴", isCorrect: true }
+        { id: 'a', text: "Soda", emoji: "🥤", isCorrect: false },
+        { id: 'b', text: "Fruit juice", emoji: "🧃", isCorrect: false },
+        { id: 'd', text: "Energy drinks", emoji: "⚡", isCorrect: false },
+        { id: 'c', text: "Water", emoji: "💧", isCorrect: true },
       ]
     },
     {
       id: 5,
-      question: "You are thirsty. Choose the HEALTHY step!",
+      question: "What is the best way to prevent catching germs from others?",
       options: [
-        { id: 'a', text: "Drink Soda", emoji: "🥤", isCorrect: false },
-        { id: 'b', text: "Drink Water", emoji: "💧", isCorrect: true },
-        { id: 'c', text: "Drink Juice", emoji: "🧃", isCorrect: false },
-        { id: 'd', text: "Drink Milk", emoji: "🥛", isCorrect: false }
+        { id: 'a', text: "Shake hands a lot", emoji: "🤝", isCorrect: false },
+        { id: 'b', text: "Sneeze without covering your nose", emoji: "🤧", isCorrect: false },
+        { id: 'c', text: "Wash hands frequently", emoji: "🤲", isCorrect: true },
+        { id: 'd', text: "Stay in crowded places", emoji: "👥", isCorrect: false }
       ]
     }
   ];

@@ -162,7 +162,7 @@ const BodyBasicsBadge = () => {
         },
         {
           text: "Yes, completely normal",
-          emoji: "✅",
+          emoji: "👍",
           isCorrect: true
         },
         {

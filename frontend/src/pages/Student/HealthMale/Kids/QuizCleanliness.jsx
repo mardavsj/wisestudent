@@ -21,7 +21,7 @@ const QuizCleanliness = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   const questions = [
     {
@@ -205,6 +205,7 @@ const QuizCleanliness = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         {!gameFinished && currentQuestionData ? (

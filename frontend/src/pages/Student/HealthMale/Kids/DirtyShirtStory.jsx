@@ -32,21 +32,21 @@ const DirtyShirtStory = () => {
           id: "b",
           text: "Shirt becomes stronger",
           emoji: "💪",
-          description: "Dirty clothes get weaker, not stronger",
+         
           isCorrect: false
         },
         {
           id: "a",
           text: "Shirt smells bad",
           emoji: "🤢",
-          description: "Sweat creates bad odors over time",
+         
           isCorrect: true
         },
         {
           id: "c",
           text: "Nothing changes",
           emoji: "😊",
-          description: "Dirt and sweat build up over time",
+      
           isCorrect: false
         }
       ]
@@ -59,21 +59,18 @@ const DirtyShirtStory = () => {
           id: "b",
           text: "Spray perfume",
           emoji: "🌸",
-          description: "Perfume only covers smell, doesn't clean",
           isCorrect: false
         },
         {
           id: "c",
           text: "Ignore them",
           emoji: "😤",
-          description: "Clean habits are important for health",
           isCorrect: false
         },
         {
           id: "a",
           text: "Take a bath and change shirt",
           emoji: "🛁",
-          description: "Clean clothes and body fix the smell",
           isCorrect: true
         }
       ]
@@ -86,21 +83,18 @@ const DirtyShirtStory = () => {
           id: "a",
           text: "Skin gets rashes",
           emoji: "🤕",
-          description: "Germs and dirt can cause skin problems",
           isCorrect: true
         },
         {
           id: "b",
           text: "Skin becomes tougher",
           emoji: "🛡️",
-          description: "Dirty skin is more likely to get infections",
           isCorrect: false
         },
         {
           id: "c",
           text: "Nothing happens",
           emoji: "👍",
-          description: "Dirty clothes affect skin health",
           isCorrect: false
         }
       ]
@@ -113,21 +107,18 @@ const DirtyShirtStory = () => {
           id: "b",
           text: "To match your shoes",
           emoji: "👟",
-          description: "Hygiene is more important than fashion",
           isCorrect: false
         },
         {
           id: "a",
           text: "To prevent smelly feet",
           emoji: "🦶",
-          description: "Feet sweat a lot and need clean socks",
           isCorrect: true
         },
         {
           id: "c",
           text: "Socks never get dirty",
           emoji: "🧦",
-          description: "Socks collect sweat and bacteria",
           isCorrect: false
         }
       ]
@@ -140,21 +131,18 @@ const DirtyShirtStory = () => {
           id: "b",
           text: "Hide them under bed",
           emoji: "🛏️",
-          description: "They will smell and attract bugs",
           isCorrect: false
         },
         {
           id: "c",
           text: "Wear them again",
           emoji: "👕",
-          description: "Dirty clothes should be washed",
           isCorrect: false
         },
         {
           id: "a",
           text: "Put them in laundry basket",
           emoji: "🧺",
-          description: "Keep them separate for washing",
           isCorrect: true
         }
       ]

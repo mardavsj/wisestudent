@@ -24,142 +24,128 @@ const MorningRoutineStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "The sun is up! What is the first thing you should do?",
-      options: [
-        {
-          id: "b",
-          text: "Watch TV",
-          emoji: "📺",
-          description: "TV can wait until later.",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Wake up and stretch",
-          emoji: "🙆‍♂️",
-          description: "Stretching wakes up your muscles!",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Go back to sleep",
-          emoji: "😴",
-          description: "It's time to start the day!",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You are hungry. What is a good breakfast?",
-      options: [
-        {
-          id: "c",
-          text: "Candy bar",
-          emoji: "🍫",
-          description: "Candy gives you a sugar crash.",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Oatmeal and fruit",
-          emoji: "🥣",
-          description: "Healthy food gives you energy for the day!",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Soda",
-          emoji: "🥤",
-          description: "Soda is not a breakfast food.",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Your teeth feel fuzzy. What do you do?",
-      options: [
-        {
-          id: "b",
-          text: "Eat an apple",
-          emoji: "🍎",
-          description: "Apples are good, but they don't clean teeth.",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Ignore it",
-          emoji: "🤷",
-          description: "Fuzzy teeth mean germs!",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Brush them well",
-          emoji: "🪥",
-          description: "Brushing keeps your smile bright and healthy.",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "It's time to get dressed. What do you wear?",
-      options: [
-        {
-          id: "c",
-          text: "Dirty pajamas",
-          emoji: "👚",
-          description: "Put on fresh clothes for a fresh day.",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Clean clothes",
-          emoji: "👕",
-          description: "Clean clothes make you feel good!",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Swimsuit",
-          emoji: "🩳",
-          description: "Only if you are going swimming!",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You are ready for school. What do you grab?",
-      options: [
-        {
-          id: "b",
-          text: "Toys",
-          emoji: "🧸",
-          description: "Toys stay at home.",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Nothing",
-          emoji: "💨",
-          description: "You need your supplies!",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Backpack and lunch",
-          emoji: "🎒",
-          description: "Being prepared helps you learn.",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Your alarm rings and daylight is coming through the window. You want your body to feel ready for the day. What fits this moment best?",
+    options: [
+      {
+        id: "a",
+        text: "Scroll on a phone",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Stay still under the blanket",
+        emoji: "🛌",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Get up and gently move your body",
+        emoji: "🙆‍♂️",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Before leaving home, you want energy that lasts through the morning. Which choice supports that?",
+    options: [
+      {
+        id: "a",
+        text: "A balanced meal with grains and fruit",
+        emoji: "🥣",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "A fizzy drink",
+        emoji: "🥤",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Only a sweet snack",
+        emoji: "🍬",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "While getting ready, you notice your mouth doesn’t feel fresh. What action helps you feel confident at school?",
+    options: [
+      {
+        id: "a",
+        text: "Chew gum and hope it helps",
+        emoji: "🍬",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Clean your teeth properly",
+        emoji: "🪥",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Drink water and ignore it",
+        emoji: "🚰",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You open your cupboard and choose what to wear for a busy school day. Which choice shows readiness?",
+    options: [
+      {
+        id: "a",
+        text: "Fresh, clean clothes for the day",
+        emoji: "👕",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Yesterday’s outfit",
+        emoji: "🧺",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Sleepwear because it’s comfy",
+        emoji: "😴",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "You are about to step out the door. What helps your day go smoothly once school starts?",
+    options: [
+      {
+        id: "a",
+        text: "Extra toys just in case",
+        emoji: "🧸",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Only snacks in your hands",
+        emoji: "🍪",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Your school bag with needed items",
+        emoji: "🎒",
+        isCorrect: true
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     if (answered) return;

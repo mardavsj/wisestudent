@@ -32,52 +32,52 @@ const ReflexGrowthBasics = () => {
   const questions = [
     {
       id: 1,
-      question: "What helps you grow?",
+      question: "When you accidentally touch something hot, your hand pulls away before you think. What is this called?",
       options: [
-        { id: 'a', text: "Healthy Sleep", emoji: "🛌", isCorrect: true },
-        { id: 'b', text: "Stay Awake", emoji: "🌙", isCorrect: false },
-        { id: 'c', text: "Watch TV", emoji: "📺", isCorrect: false },
-        { id: 'd', text: "Eat Candy", emoji: "🍬", isCorrect: false }
+        { id: 'a', text: "A reflex action", emoji: "⚡", isCorrect: true },
+        { id: 'b', text: "A slow reaction", emoji: "🐌", isCorrect: false },
+        { id: 'c', text: "A choice", emoji: "🤔", isCorrect: false },
+        { id: 'd', text: "A memory", emoji: "🧠", isCorrect: false }
       ]
     },
     {
       id: 2,
-      question: "What helps keep your bones strong?",
+      question: "Which part of your body helps you balance when you ride a bike?",
       options: [
-        { id: 'a', text: "Candy", emoji: "🍬", isCorrect: false },
-        { id: 'b', text: "Milk", emoji: "🥛", isCorrect: true },
-        { id: 'c', text: "Soda", emoji: "🥤", isCorrect: false },
-        { id: 'd', text: "Water", emoji: "💧", isCorrect: false }
+        { id: 'b', text: "Your nose", emoji: "👃", isCorrect: false },
+        { id: 'a', text: "Your inner ear", emoji: "👂", isCorrect: true },
+        { id: 'c', text: "Your eyes", emoji: "👀", isCorrect: false },
+        { id: 'd', text: "Your skin", emoji: "🖐️", isCorrect: false }
       ]
     },
     {
       id: 3,
-      question: "What makes muscles strong?",
+      question: "Why do you grow taller when you sleep?",
       options: [
-        { id: 'a', text: "Sitting", emoji: "🪑", isCorrect: false },
-        { id: 'b', text: "Sleeping", emoji: "😴", isCorrect: false },
-        { id: 'c', text: "Gaming", emoji: "🎮", isCorrect: false },
-        { id: 'd', text: "Exercise", emoji: "🏃", isCorrect: true }
+        { id: 'b', text: "You drink milk while sleeping", emoji: "🥛", isCorrect: false },
+        { id: 'c', text: "Your muscles relax", emoji: "🧘", isCorrect: false },
+        { id: 'a', text: "Your spine decompresses", emoji: "😴", isCorrect: true },
+        { id: 'd', text: "You dream about growing", emoji: "💭", isCorrect: false }
       ]
     },
     {
       id: 4,
-      question: "Which food helps you grow strong?",
+      question: "What happens to your pupils when you look at a bright light?",
       options: [
-        { id: 'a', text: "Candy", emoji: "🍬", isCorrect: false },
-        { id: 'b', text: "Fries", emoji: "🍟", isCorrect: false },
-        { id: 'c', text: "Fruits", emoji: "🍎", isCorrect: true },
-        { id: 'd', text: "Cookies", emoji: "🍪", isCorrect: false }
+        { id: 'b', text: "They get bigger", emoji: "😮", isCorrect: false },
+        { id: 'c', text: "They change color", emoji: "🌈", isCorrect: false },
+        { id: 'd', text: "Nothing happens", emoji: "😐", isCorrect: false },
+        { id: 'a', text: "They get smaller", emoji: "👀", isCorrect: true },
       ]
     },
     {
       id: 5,
-      question: "Good habit for growth?",
+      question: "Which reflex helps protect your eyes from dust and debris?",
       options: [
-        { id: 'a', text: "Skip Meals", emoji: "🚫", isCorrect: false },
-        { id: 'b', text: "Sleep Late", emoji: "⏰", isCorrect: false },
-        { id: 'c', text: "Eat Breakfast", emoji: "🍳", isCorrect: true },
-        { id: 'd', text: "No Water", emoji: "🏜️", isCorrect: false }
+        { id: 'a', text: "Blinking", emoji: "👁️", isCorrect: true },
+        { id: 'b', text: "Sneezing", emoji: "🤧", isCorrect: false },
+        { id: 'c', text: "Coughing", emoji: "🤧", isCorrect: false },
+        { id: 'd', text: "Yawning", emoji: "🥱", isCorrect: false }
       ]
     }
   ];

@@ -21,162 +21,162 @@ const SafeKidBadge = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      title: "Say No",
-      text: "What is the best way to refuse bad things?",
-      options: [
-        {
-          text: "Maybe later",
-          emoji: "⏰",
-          isCorrect: false
-        },
-        {
-          text: "Smile and take it",
-          emoji: "😊",
-          isCorrect: false
-        },
-        {
-          text: "Say NO clearly",
-          emoji: "✋",
-          isCorrect: true
-        },
-        {
-          text: "Run away silently",
-          emoji: "🏃",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Correct! Being clear and firm is the best way to say no.",
-        wrong: "You need to be clear so they know you mean it."
+  {
+    id: 1,
+    title: "Clear Boundaries",
+    text: "You are playing outside when someone asks you to do something that feels unsafe. What action earns a Safe Kid badge?",
+    options: [
+      {
+        text: "Laugh and change the topic",
+        emoji: "😅",
+        isCorrect: false
+      },
+      {
+        text: "Stay quiet and hope it stops",
+        emoji: "🤐",
+        isCorrect: false
+      },
+      {
+        text: "Walk away without saying anything",
+        emoji: "🚶",
+        isCorrect: false
+      },
+      {
+        text: "Firmly refuse and step back",
+        emoji: "✋",
+        isCorrect: true
       }
-    },
-    {
-      id: 2,
-      title: "Healthy Body",
-      text: "What should you put in your body?",
-      options: [
-        {
-          text: "Smoke",
-          emoji: "🚬",
-          isCorrect: false
-        },
-        {
-          text: "Alcohol",
-          emoji: "🍷",
-          isCorrect: false
-        },
-        {
-          text: "Junk food only",
-          emoji: "🍟",
-          isCorrect: false
-        },
-        {
-          text: "Healthy Food & Water",
-          emoji: "🍎",
-          isCorrect: true
-        }
-      ],
-      feedback: {
-        correct: "Yes! Healthy food and water make you strong.",
-        wrong: "Smoke and alcohol hurt your body."
-      }
-    },
-    {
-      id: 3,
-      title: "Peer Pressure",
-      text: "What if friends pressure you?",
-      options: [
-        {
-          text: "Do it to fit in",
-          emoji: "👥",
-          isCorrect: false
-        },
-        {
-          text: "Leave and tell an adult",
-          emoji: "🚪",
-          isCorrect: true
-        },
-        {
-          text: "Get angry",
-          emoji: "😠",
-          isCorrect: false
-        },
-        {
-          text: "Ignore them completely",
-          emoji: "🤐",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Exactly! Leave the situation and find a safe adult.",
-        wrong: "Don't give in to pressure. Your safety matters more."
-      }
-    },
-    {
-      id: 4,
-      title: "Medicine Safety",
-      text: "Who gives you medicine?",
-      options: [
-        {
-          text: "Parents or Doctors",
-          emoji: "👨‍⚕️",
-          isCorrect: true
-        },
-        {
-          text: "Friends",
-          emoji: "👦",
-          isCorrect: false
-        },
-        {
-          text: "Strangers",
-          emoji: "👤",
-          isCorrect: false
-        },
-        {
-          text: "Take it yourself",
-          emoji: "💊",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Right! Only trust parents or doctors with medicine.",
-        wrong: "Never take medicine from friends or strangers."
-      }
-    },
-    {
-      id: 5,
-      title: "Stay Safe",
-      text: "What makes you a Safe Kid?",
-      options: [
-        {
-          text: "Taking risks",
-          emoji: "🎢",
-          isCorrect: false
-        },
-        {
-          text: "Following others",
-          emoji: "👣",
-          isCorrect: false
-        },
-        {
-          text: "Making smart choices",
-          emoji: "🧠",
-          isCorrect: true
-        },
-        {
-          text: "Keeping secrets",
-          emoji: "🤫",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "You got it! Smart choices keep you safe and happy!",
-        wrong: "Being safe means thinking for yourself and making good choices."
-      }
+    ],
+    feedback: {
+      correct: "Yes! Clear actions and words show confidence and safety.",
+      wrong: "Staying safe means clearly setting boundaries."
     }
-  ];
+  },
+  {
+    id: 2,
+    title: "Daily Choices",
+    text: "Before school, you choose how to start your day. Which choice shows care for your body?",
+    options: [
+      {
+        text: "Eat a healthy meal and drink water",
+        emoji: "🍎",
+        isCorrect: true
+      },
+      {
+        text: "Skip breakfast completely",
+        emoji: "⏩",
+        isCorrect: false
+      },
+      {
+        text: "Only eat sweets",
+        emoji: "🍬",
+        isCorrect: false
+      },
+      {
+        text: "Try something meant for adults",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ],
+    feedback: {
+      correct: "Correct! Healthy habits help you stay active and focused.",
+      wrong: "Your body needs good fuel to stay strong."
+    }
+  },
+  {
+    id: 3,
+    title: "Peer Pressure Moment",
+    text: "At school, friends keep pushing you to join an activity you don’t feel good about. What shows real strength?",
+    options: [
+      {
+        text: "Join so they stop asking",
+        emoji: "👥",
+        isCorrect: false
+      },
+      {
+        text: "Argue loudly",
+        emoji: "🗯️",
+        isCorrect: false
+      },
+      {
+        text: "Pretend you didn’t hear them",
+        emoji: "🙉",
+        isCorrect: false
+      },
+      {
+        text: "Leave the situation and talk to an adult",
+        emoji: "🧑‍🏫",
+        isCorrect: true
+      }
+    ],
+    feedback: {
+      correct: "Exactly! Safe kids know when to step away and ask for help.",
+      wrong: "Giving in to pressure is never the safest option."
+    }
+  },
+  {
+    id: 4,
+    title: "Medicine Awareness",
+    text: "You are feeling unwell and find medicine at home. What action shows responsibility?",
+    options: [
+      {
+        text: "Ask a parent or doctor first",
+        emoji: "👨‍⚕️",
+        isCorrect: true
+      },
+      {
+        text: "Take it because it looks familiar",
+        emoji: "💊",
+        isCorrect: false
+      },
+      {
+        text: "Ask a friend what to do",
+        emoji: "👦",
+        isCorrect: false
+      },
+      {
+        text: "Ignore the instructions",
+        emoji: "📄",
+        isCorrect: false
+      }
+    ],
+    feedback: {
+      correct: "Right! Medicine is safe only when given by trusted adults.",
+      wrong: "Medicine should never be taken without guidance."
+    }
+  },
+  {
+    id: 5,
+    title: "Safe Kid Mindset",
+    text: "You are given a chance to earn a Safe Kid badge. Which behavior truly shows you deserve it?",
+    options: [
+      {
+        text: "Following whatever others do",
+        emoji: "👣",
+        isCorrect: false
+      },
+      {
+        text: "Taking risks for fun",
+        emoji: "🎢",
+        isCorrect: false
+      },
+      {
+        text: "Thinking before you act",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        text: "Keeping unsafe secrets",
+        emoji: "🤫",
+        isCorrect: false
+      }
+    ],
+    feedback: {
+      correct: "Perfect! Thinking first is what makes a Safe Kid.",
+      wrong: "Safety starts with smart decisions."
+    }
+  }
+];
 
   const handleChoice = (optionIndex) => {
     if (answered) return;

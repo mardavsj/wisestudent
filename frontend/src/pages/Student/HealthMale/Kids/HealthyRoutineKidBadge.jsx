@@ -21,164 +21,82 @@ const HealthyRoutineKidBadge = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      title: "Morning Star",
-      text: "What starts your day right?",
-      options: [
-        {
-          text: "Sleeping in",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          text: "TV time",
-          emoji: "📺",
-          isCorrect: false
-        },
-        {
-          text: "Healthy Breakfast",
-          emoji: "🍳",
-          isCorrect: true
-        },
-        {
-          text: "Skipping breakfast",
-          emoji: "⏭️",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Yes! Breakfast gives you energy for the whole day.",
-        wrong: "A healthy breakfast is the best way to start."
-      }
-    },
-    {
-      id: 2,
-      title: "Clean Machine",
-      text: "How do you keep germs away?",
-      options: [
-        {
-          text: "Wipe on clothes",
-          emoji: "👕",
-          isCorrect: false
-        },
-        {
-          text: "Wash Hands Often",
-          emoji: "🧼",
-          isCorrect: true
-        },
-        {
-          text: "Ignore them",
-          emoji: "🚫",
-          isCorrect: false
-        },
-        {
-          text: "Blow on them",
-          emoji: "💨",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Perfect! Washing hands stops germs from spreading.",
-        wrong: "Washing hands with soap and water is the only way."
-      }
-    },
-    {
-      id: 3,
-      title: "Active Kid",
-      text: "What keeps your heart strong?",
-      options: [
-        {
-          text: "Sitting still",
-          emoji: "🪑",
-          isCorrect: false
-        },
-        {
-          text: "Playing Video Games",
-          emoji: "🎮",
-          isCorrect: false
-        },
-        
-        {
-          text: "Napping all day",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          text: "Exercise & Play",
-          emoji: "🏃",
-          isCorrect: true
-        },
-      ],
-      feedback: {
-        correct: "Great! Moving your body makes your heart happy!",
-        wrong: "Exercise and active play are key to a strong heart."
-      }
-    },
-    {
-      id: 4,
-      title: "Brain Power",
-      text: "What helps your brain grow?",
-      options: [
-        {
-          text: "Eating candy",
-          emoji: "🍬",
-          isCorrect: false
-        },
-        {
-          text: "Watching TV",
-          emoji: "📺",
-          isCorrect: false
-        },
-        {
-          text: "Reading & Learning",
-          emoji: "📚",
-          isCorrect: true
-        },
-        {
-          text: "Listening to music",
-          emoji: "🎵",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Exactly! Reading and learning new things exercises your brain.",
-        wrong: "Your brain needs books and learning to grow strong."
-      }
-    },
-    {
-      id: 5,
-      title: "Sleep Tight",
-      text: "Why do you need sleep?",
-      options: [
-        {
-          text: "To rest & grow",
-          emoji: "😴",
-          isCorrect: true
-        },
-        {
-          text: "To dream",
-          emoji: "💭",
-          isCorrect: false
-        },
-        {
-          text: "To be bored",
-          emoji: "😑",
-          isCorrect: false
-        },
-        
-        {
-          text: "To avoid chores",
-          emoji: "🧹",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "You got it! Sleep helps your body repair and grow.",
-        wrong: "Sleep is when your body does its most important growing work."
-      }
+  {
+    id: 1,
+    title: "Smart Chef",
+    text: "A young chef is getting ready to cook for others. What routine shows care for health?",
+    options: [
+      { text: "Taste everything quickly", emoji: "👅", isCorrect: false }, // a
+      { text: "Rush to finish fast", emoji: "⏱️", isCorrect: false },     // b
+      { text: "Cook without planning", emoji: "🍲", isCorrect: false },  // c
+      { text: "Check ingredients and tools first", emoji: "📝", isCorrect: true } // d ✅
+    ],
+    feedback: {
+      correct: "Yes! Planning first keeps food safe and healthy.",
+      wrong: "Healthy routines start before the work begins."
     }
-  ];
+  },
+  {
+    id: 2,
+    title: "Calm Nurse",
+    text: "A nurse feels tired during a busy shift. What habit helps stay healthy at work?",
+    options: [
+      { text: "Pause and breathe deeply", emoji: "🌬️", isCorrect: true }, // a ✅
+      { text: "Ignore tiredness", emoji: "😵", isCorrect: false },        // b
+      { text: "Run faster", emoji: "🏃", isCorrect: false },              // c
+      { text: "Skip breaks", emoji: "🚫", isCorrect: false }              // d
+    ],
+    feedback: {
+      correct: "Correct! Calm breathing helps the body reset.",
+      wrong: "Healthy routines include caring for your energy."
+    }
+  },
+  {
+    id: 3,
+    title: "Team Athlete",
+    text: "After practice, an athlete wants to stay fit for tomorrow. What routine helps most?",
+    options: [
+      { text: "Compete again immediately", emoji: "🏆", isCorrect: false }, // a
+      { text: "Sit without moving", emoji: "🪑", isCorrect: false },        // b
+      { text: "Check phone for hours", emoji: "📱", isCorrect: false },     // c
+      { text: "Stretch and cool down", emoji: "🧘", isCorrect: true }       // d ✅
+    ],
+    feedback: {
+      correct: "Right! Cooling down protects muscles and joints.",
+      wrong: "Recovery is part of a healthy routine."
+    }
+  },
+  {
+    id: 4,
+    title: "Young Scientist",
+    text: "A scientist works with models and experiments all day. What habit keeps the mind fresh?",
+    options: [
+      { text: "Switch tasks for a while", emoji: "🔄", isCorrect: true }, // a ✅
+      { text: "Stare at one thing", emoji: "👀", isCorrect: false },      // b
+      { text: "Rush experiments", emoji: "⚡", isCorrect: false },        // c
+      { text: "Skip thinking time", emoji: "❌", isCorrect: false }       // d
+    ],
+    feedback: {
+      correct: "Exactly! Changing focus keeps the brain healthy.",
+      wrong: "Healthy minds need balance, not pressure."
+    }
+  },
+  {
+    id: 5,
+    title: "Helpful Teacher",
+    text: "A teacher helper finishes helping classmates. What routine supports long-term health?",
+    options: [
+      { text: "Do extra work nonstop", emoji: "📚", isCorrect: false },   // a
+      { text: "Stay silent always", emoji: "🤐", isCorrect: false },      // b
+      { text: "Reflect and organize the day", emoji: "📒", isCorrect: true }, // c ✅
+      { text: "Leave everything messy", emoji: "🧹", isCorrect: false }   // d
+    ],
+    feedback: {
+      correct: "Yes! Reflecting helps both mind and body stay balanced.",
+      wrong: "Healthy routines include thinking back and organizing."
+    }
+  }
+];
 
   const handleChoice = (optionIndex) => {
     if (answered) return;

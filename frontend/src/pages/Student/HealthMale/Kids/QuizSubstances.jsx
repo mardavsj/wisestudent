@@ -22,133 +22,131 @@ const QuizSubstances = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "What is alcohol?",
-      options: [
-        {
-          id: "a",
-          text: "A drink for adults only",
-          emoji: "🍷",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "A healthy juice",
-          emoji: "🧃",
-          isCorrect: false
-        },
-        
-        {
-          id: "c",
-          text: "Water",
-          emoji: "💧",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Why should kids avoid alcohol?",
-      options: [
-       
-        {
-          id: "b",
-          text: "It makes you super strong",
-          emoji: "💪",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "It tastes too sweet",
-          emoji: "🍬",
-          isCorrect: false
-        },
-         {
-          id: "a",
-          text: "It hurts the brain and body",
-          emoji: "🧠",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "What is a drug?",
-      options: [
-        {
-          id: "a",
-          text: "Something that changes how your body works",
-          emoji: "💊",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "A toy",
-          emoji: "🧸",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "A type of food",
-          emoji: "🍔",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Who can give you medicine safely?",
-      options: [
-        {
-          id: "a",
-          text: "Parents or Doctors",
-          emoji: "👨‍⚕️",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "A friend at school",
-          emoji: "🎒",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "A stranger",
-          emoji: "👤",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What is the best choice?",
-      options: [
-       
-        {
-          id: "b",
-          text: "Try everything once",
-          emoji: "🎲",
-          isCorrect: false
-        },
-         {
-          id: "a",
-          text: "Stay drug and alcohol free",
-          emoji: "🌟",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Do what friends do",
-          emoji: "👯",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Why is alcohol unsafe for children?",
+    options: [
+      {
+        id: "a",
+        text: "Because it tastes bitter",
+        emoji: "😖",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Because it can harm a growing brain",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Because it is too cold to drink",
+        emoji: "🧊",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "What should you do if you find a pill on the ground?",
+    options: [
+      {
+        id: "a",
+        text: "Pick it up and taste it",
+        emoji: "😋",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Give it to a friend",
+        emoji: "👫",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Tell a trusted adult",
+        emoji: "🧑‍🏫",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "What does a harmful substance do to the body?",
+    options: [
+      {
+        id: "a",
+        text: "It can damage health and thinking",
+        emoji: "⚠️",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "It helps you grow taller",
+        emoji: "📏",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "It makes homework easier",
+        emoji: "📚",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Who should decide when you take medicine?",
+    options: [
+      {
+        id: "a",
+        text: "Your classmates",
+        emoji: "🎒",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "A parent or doctor",
+        emoji: "👨‍⚕️",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Someone online",
+        emoji: "💻",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "What is the safest way to grow up healthy?",
+    options: [
+      {
+        id: "a",
+        text: "Copy what others try",
+        emoji: "👀",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Take risks for fun",
+        emoji: "🎢",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Avoid harmful substances",
+        emoji: "🚫",
+        isCorrect: true
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;
@@ -203,7 +201,8 @@ const QuizSubstances = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      flashPoints={flashPoints}>
+      flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}>
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         {!gameFinished && questions[currentQuestion] ? (
           <div className="space-y-6">

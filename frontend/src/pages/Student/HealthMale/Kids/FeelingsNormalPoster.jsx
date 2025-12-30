@@ -25,144 +25,131 @@ const FeelingsNormalPoster = () => {
 
   const stages = [
     {
-      question: "Which poster shows it's okay to cry?",
+      question: "Which emotion is healthy to express when you're really sad?",
       posters: [
         {
           id: 1,
-          title: "Stop Crying",
-          description: "A poster saying crying is for babies",
-          emoji: "🚫",
+          title: "Hide Your Face",
+          emoji: "🙈",
           isCorrect: false
         },
         {
           id: 2,
-          title: "Tears are Okay",
-          description: "A poster showing it's healthy to cry when sad",
-          emoji: "😢",
+          title: "Let Tears Flow",
+          emoji: "💧",
           isCorrect: true
         },
         {
           id: 3,
-          title: "Hide Tears",
-          description: "A poster saying to hide your tears",
-          emoji: "🙈",
+          title: "Laugh It Off",
+          emoji: "😂",
           isCorrect: false
         }
       ],
-      correctFeedback: "Tears are Okay is right!",
-      explanation: "Crying helps let sad feelings out, and that's healthy!"
+      correctFeedback: "Letting your emotions out is healthy!",
+      explanation: "Crying helps release sad feelings and can make you feel better."
     },
     {
-      question: "Which poster shows handling anger?",
+      question: "What's the best thing to do when you feel really angry?",
       posters: [
         {
           id: 1,
           title: "Hit Something",
-          description: "A poster showing hitting when mad",
           emoji: "👊",
           isCorrect: false
         },
         {
           id: 3,
-          title: "Yell Loudly",
-          description: "A poster showing yelling at friends",
+          title: "Shout Loudly",
           emoji: "🗣️",
           isCorrect: false
         },
         {
           id: 2,
-          title: "Take a Breath",
-          description: "A poster showing deep breathing to calm down",
-          emoji: "🧘",
+          title: "Take Deep Breaths",
+          emoji: "🧘‍♂️",
           isCorrect: true
         }
       ],
-      correctFeedback: "Take a Breath is the best way!",
-      explanation: "Calming down helps you make better choices when angry."
+      correctFeedback: "Deep breathing helps calm your body and mind!",
+      explanation: "Taking slow, deep breaths gives your brain time to think clearly again."
     },
     {
-      question: "Which poster shows sharing happiness?",
+      question: "When you experience joy, what's a healthy way to handle it?",
       posters: [
-        {
-          id: 2,
-          title: "Share the Joy",
-          description: "A poster showing laughing with friends",
-          emoji: "😄",
-          isCorrect: true
-        },
         {
           id: 1,
-          title: "Keep it Secret",
-          description: "A poster showing hiding a smile",
-          emoji: "🤐",
-          isCorrect: false
-        },
-        {
-          id: 3,
-          title: "Be Serious",
-          description: "A poster saying not to laugh",
-          emoji: "😐",
-          isCorrect: false
-        }
-      ],
-      correctFeedback: "Share the Joy is wonderful!",
-      explanation: "Happiness grows when you share it with others!"
-    },
-    {
-      question: "Which poster shows dealing with fear?",
-      posters: [
-        {
-          id: 3,
-          title: "Pretend",
-          description: "A poster showing pretending not to be scared",
-          emoji: "🎭",
+          title: "Keep It Inside",
+          emoji: "🤫",
           isCorrect: false
         },
         {
           id: 2,
-          title: "Ask for Help",
-          description: "A poster showing talking to an adult",
-          emoji: "🤝",
+          title: "Share It With Others",
+          emoji: "🎉",
+          isCorrect: true
+        },
+        {
+          id: 3,
+          title: "Look Serious",
+          emoji: "😟",
+          isCorrect: false
+        }
+      ],
+      correctFeedback: "Sharing happiness makes it grow!",
+      explanation: "Joy becomes even more special when you share it with friends and family."
+    },
+    {
+      question: "What should you do when you're feeling scared?",
+      posters: [
+         {
+          id: 2,
+          title: "Talk to Someone You Trust",
+          emoji: "👨‍👩‍👧‍👦",
           isCorrect: true
         },
         {
           id: 1,
+          title: "Hide Away",
+          emoji: "🛌",
+          isCorrect: false
+        },
+       
+        {
+          id: 3,
           title: "Run Away",
-          description: "A poster showing running from problems",
-          emoji: "🏃",
+          emoji: "🏃‍♂️",
           isCorrect: false
         }
       ],
-      correctFeedback: "Ask for Help is smart!",
-      explanation: "Everyone gets scared sometimes. Asking for help is brave!"
+      correctFeedback: "Talking helps you feel safer!",
+      explanation: "When you share your fears with someone who cares, you feel stronger."
     },
     {
-      question: "Which poster shows all feelings are normal?",
+      question: "Which statement about emotions is true?",
       posters: [
         {
-          id: 3,
-          title: "No Feelings",
-          description: "A poster showing a robot with no feelings",
+          id: 1,
+          title: "Only Happy Emotions Matter",
           emoji: "🤖",
           isCorrect: false
         },
+        
         {
-          id: 1,
-          title: "Only Happy",
-          description: "A poster saying you must always be happy",
+          id: 3,
+          title: "Emotions Should Be Hidden",
           emoji: "😊",
           isCorrect: false
         },
         {
           id: 2,
-          title: "Feelings Wheel",
-          description: "A poster showing many different feelings are okay",
+          title: "All Emotions Are Normal",
           emoji: "🌈",
           isCorrect: true
-        }
+        },
       ],
-      correctFeedback: "Feelings Wheel is perfect!",
-      explanation: "All feelings—happy, sad, angry, scared—are a normal part of life!"
+      correctFeedback: "All emotions are normal and healthy!",
+      explanation: "Every emotion has a purpose - they help us understand ourselves and the world."
     }
   ];
 

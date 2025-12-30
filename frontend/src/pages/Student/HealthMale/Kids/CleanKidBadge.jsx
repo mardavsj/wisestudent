@@ -24,156 +24,159 @@ const CleanKidBadge = () => {
     {
       id: 1,
       title: "Hand Washing",
-      text: "When is the most important time to wash hands?",
+      text: "You just came back from playing outside. What should you do before eating your snack?",
       options: [
+       
         {
-          text: "Before eating and after bathroom",
+          text: "Just wipe hands on pants",
+          emoji: "👖",
+          isCorrect: false
+        },
+        {
+          text: "Use hand sanitizer only",
+          emoji: "🧴",
+          isCorrect: false
+        },
+        {
+          text: "Nothing, hands are clean enough",
+          emoji: "✋",
+          isCorrect: false
+        },
+         {
+          text: "Wash hands with soap for 20 seconds",
           emoji: "🧼",
           isCorrect: true
         },
-        {
-          text: "Only when they look dirty",
-          emoji: "🧐",
-          isCorrect: false
-        },
-        {
-          text: "Once a week",
-          emoji: "📅",
-          isCorrect: false
-        },
-        {
-          text: "Never wash hands",
-          emoji: "🚫",
-          isCorrect: false
-        }
       ],
       feedback: {
-        correct: "Excellent! Washing hands before eating and after the bathroom stops germs!",
-        wrong: "You should wash hands before eating and after using the bathroom, even if they look clean!"
+        correct: "Excellent! Washing hands with soap for 20 seconds removes germs and keeps you healthy!",
+        wrong: "You need to properly wash your hands with soap for 20 seconds to remove germs and dirt!"
       }
     },
     {
       id: 2,
-      title: "Daily Bath",
-      text: "Why do we take a bath every day?",
+      title: "Tooth Care",
+      text: "Tommy has white spots on his teeth and his breath smells bad. What habit should he start?",
       options: [
         {
-          text: "To play with water",
-          emoji: "🛁",
-          isCorrect: false
-        },
-        {
-          text: "Because mom says so",
-          emoji: "👩",
-          isCorrect: false
-        },
-        {
-          text: "To remove dirt and sweat",
-          emoji: "🚿",
+          text: "Brush teeth twice daily and floss",
+          emoji: "🦷",
           isCorrect: true
         },
         {
-          text: "To stay wet",
-          emoji: "💦",
+          text: "Only brush teeth when they hurt",
+          emoji: "😖",
+          isCorrect: false
+        },
+        {
+          text: "Eat more candy to cover bad breath",
+          emoji: "🍬",
+          isCorrect: false
+        },
+        {
+          text: "Rinse mouth with water only",
+          emoji: "💧",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Perfect! Baths remove dirt, sweat, and germs to keep you healthy!",
-        wrong: "While playing is fun, the main reason is to clean dirt and sweat off your body!"
+        correct: "Perfect! Brushing teeth twice daily and flossing prevents tooth decay and bad breath!",
+        wrong: "Regular brushing and flossing are needed to keep teeth healthy and breath fresh!"
       }
     },
     {
       id: 3,
-      title: "Brushing Teeth",
-      text: "How long should you brush your teeth?",
+      title: "Hair Care",
+      text: "Why should you wash your hair regularly?",
       options: [
+        
         {
-          text: "10 seconds",
-          emoji: "⏱️",
+          text: "To make hair grow faster",
+          emoji: "💇",
           isCorrect: false
         },
         {
-          text: "1 hour",
-          emoji: "⏰",
+          text: "To change hair color",
+          emoji: "🌈",
           isCorrect: false
         },
         {
-          text: "30 minutes",
-          emoji: "⏳",
-          isCorrect: false
-        },
-        {
-          text: "2 minutes",
-          emoji: "🦷",
+          text: "To remove oil, dirt and keep scalp healthy",
+          emoji: "🧴",
           isCorrect: true
+        },
+        {
+          text: "To make hair softer only",
+          emoji: "💇",
+          isCorrect: false
         }
       ],
       feedback: {
-        correct: "Amazing! 2 minutes is the perfect time to get all teeth clean!",
-        wrong: "You need to brush for about 2 minutes to make sure every tooth is clean!"
+        correct: "Amazing! Washing hair removes oil and dirt, keeping your scalp healthy!",
+        wrong: "Hair washing primarily removes oil, dirt, and dead skin cells to keep your scalp healthy!"
       }
     },
     {
       id: 4,
-      title: "Clean Clothes",
-      text: "What should you do with dirty clothes?",
+      title: "Nail Hygiene",
+      text: "Sarah has long, dirty fingernails. What should she do to stay healthy?",
       options: [
         {
-          text: "Wear them again",
-          emoji: "👕",
-          isCorrect: false
-        },
-        {
-          text: "Put them in the laundry",
-          emoji: "🧺",
+          text: "Keep nails short and clean",
+          emoji: "✂️",
           isCorrect: true
         },
         {
-          text: "Hide them",
-          emoji: "👕",
+          text: "Paint nails to hide the dirt",
+          emoji: "💅",
           isCorrect: false
         },
         {
-          text: "Throw them away",
-          emoji: "🗑️",
+          text: "Leave them long for style",
+          emoji: "✋",
+          isCorrect: false
+        },
+        {
+          text: "Bite the nails to clean them",
+          emoji: "🦷",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Great! Dirty clothes go in the laundry to be washed!",
-        wrong: "Dirty clothes should be washed, not worn again or hidden!"
+        correct: "Great! Keeping nails short and clean prevents germs and bacteria from hiding under them!",
+        wrong: "Nails should be kept short and clean to prevent germs and bacteria from hiding underneath!"
       }
     },
     {
       id: 5,
-      title: "Confidence",
-      text: "How does being clean make you feel?",
+      title: "Deodorant Use",
+      text: "After playing sports, you feel sweaty and smell bad. What should you do?",
       options: [
+       
         {
-          text: "Tired",
-          emoji: "😴",
+          text: "Just change shirt and use perfume",
+          emoji: "👕",
           isCorrect: false
         },
-        {
-          text: "Fresh and Confident",
-          emoji: "😊",
+         {
+          text: "Take a shower and use deodorant if needed",
+          emoji: "🚿",
           isCorrect: true
         },
         {
-          text: "Sad",
-          emoji: "😢",
+          text: "Nothing, sweating is normal",
+          emoji: "😅",
           isCorrect: false
         },
         {
-          text: "Angry",
-          emoji: "😠",
+          text: "Wipe with a towel only",
+          emoji: "🧽",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Wonderful! Good hygiene makes you feel fresh, happy, and confident!",
-        wrong: "Being clean usually makes you feel fresh and confident, not tired or sad!"
+        correct: "Wonderful! Showering after sweating removes bacteria and using deodorant keeps you fresh!",
+        wrong: "After sweating, you should shower to remove bacteria and possibly use deodorant to stay fresh!"
       }
     }
   ];

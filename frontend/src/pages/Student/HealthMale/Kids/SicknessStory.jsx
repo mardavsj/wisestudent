@@ -26,139 +26,123 @@ const SicknessStory = () => {
   const questions = [
     {
       id: 1,
-      text: "You wake up feeling hot and tired. What should you do?",
+      text: "Tommy has a fever and feels very hot. His mom touches his forehead. What is the best thing for Tommy to do?",
       options: [
         {
-          id: "b",
-          text: "Go to school anyway",
-          emoji: "🏫",
-          description: "You might make others sick",
-          isCorrect: false
-        },
-       
-        {
-          id: "c",
-          text: "Eat lots of candy",
-          emoji: "🍬",
-          description: "Candy won't help you feel better",
-          isCorrect: false
-        },
-         {
           id: "a",
-          text: "Tell a parent you feel sick",
-          emoji: "🤒",
-          description: "Parents can help you get better",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "You have a runny nose. What do you need?",
-      options: [
-        {
-          id: "c",
-          text: "Your sleeve",
-          emoji: "👕",
-          description: "Using your sleeve spreads germs",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "A tissue",
-          emoji: "🤧",
-          description: "Tissues catch germs so you can throw them away",
+          text: "Drink cool water and rest in bed",
+          emoji: "😴",
           isCorrect: true
         },
         {
           id: "b",
-          text: "A towel",
-          emoji: "🧖",
-          description: "Towels are for drying off after a bath",
+          text: "Go outside to play with friends",
+          emoji: "🏃",
+          isCorrect: false
+        },
+        {
+          id: "c",
+          text: "Eat ice cream to cool down",
+          emoji: "🍦",
           isCorrect: false
         }
       ]
     },
     {
-      id: 3,
-      text: "The doctor gives you medicine. What do you do?",
+      id: 2,
+      text: "When you have the flu, which part of your body usually helps you fight the sickness?",
       options: [
         {
           id: "a",
-          text: "Take it exactly as told",
-          emoji: "💊",
-          description: "Medicine helps your body fight sickness",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Hide it",
-          emoji: "🙈",
-          description: "Medicine only works if you take it",
+          text: "Your muscles",
+          emoji: "💪",
           isCorrect: false
         },
         
         {
           id: "c",
-          text: "Give it to your pet",
-          emoji: "🐕",
-          description: "Medicine is only for the person who is sick",
+          text: "Your bones",
+          emoji: "🦴",
+          isCorrect: false
+        },
+        {
+          id: "b",
+          text: "Your immune system",
+          emoji: "🧬",
+          isCorrect: true
+        },
+      ]
+    },
+    {
+      id: 3,
+      text: "Sarah has a cough and runny nose. To prevent spreading germs to others, what should she do when she coughs?",
+      options: [
+        
+        {
+          id: "b",
+          text: "Cough as loudly as possible",
+          emoji: "🗣️",
+          isCorrect: false
+        },
+        {
+          id: "a",
+          text: "Cough into her elbow, not her hands",
+          emoji: "🤧",
+          isCorrect: true
+        },
+        {
+          id: "c",
+          text: "Hold in her cough",
+          emoji: "🤐",
           isCorrect: false
         }
       ]
     },
     {
       id: 4,
-      text: "What helps you get better when you are sick?",
+      text: "Which of these is NOT a way to help your body recover when you're sick?",
       options: [
         {
-          id: "c",
-          text: "Playing video games all night",
-          emoji: "🎮",
-          description: "You need sleep to heal",
+          id: "a",
+          text: "Getting plenty of sleep",
+          emoji: "😴",
           isCorrect: false
         },
-       
         {
           id: "b",
-          text: "Running around",
-          emoji: "🏃",
-          description: "Running uses up energy you need for healing",
+          text: "Eating nutritious foods like soup",
+          emoji: "🍲",
           isCorrect: false
         },
-         {
-          id: "a",
-          text: "Rest and sleep",
-          emoji: "😴",
-          description: "Sleep gives your body energy to heal",
+        {
+          id: "c",
+          text: "Playing video games for many hours",
+          emoji: "🎮",
           isCorrect: true
-        },
+        }
       ]
     },
     {
       id: 5,
-      text: "How do you stop germs from spreading?",
+      text: "When you're feeling better after being sick, what is the best way to know if you're ready to go back to school?",
       options: [
         {
+          id: "a",
+          text: "Wait until you haven't had a fever for 24 hours without medicine",
+          emoji: "🌡️",
+          isCorrect: true
+        },
+        {
           id: "b",
-          text: "Touch everything",
-          emoji: "👆",
-          description: "Touching things spreads germs",
+          text: "As soon as you feel a little better",
+          emoji: "🏃",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Cough on friends",
-          emoji: "🗣️",
-          description: "Never cough on others!",
+          text: "After one day of feeling better",
+          emoji: "📅",
           isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Wash your hands often",
-          emoji: "🧼",
-          description: "Washing hands kills germs",
-          isCorrect: true
         }
       ]
     }
@@ -234,7 +218,6 @@ const SicknessStory = () => {
                   >
                     <div className="text-3xl mb-3">{option.emoji}</div>
                     <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
                   </button>
                 ))}
               </div>

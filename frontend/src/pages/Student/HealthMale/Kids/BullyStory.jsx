@@ -26,21 +26,21 @@ const BullyStory = () => {
           id: "b",
           text: "Steal the candy to fit in",
           emoji: "🍬",
-          description: "Stealing is wrong and can get you in big trouble",
+          
           isCorrect: false
         },
         {
           id: "a",
           text: "Say no and walk away",
           emoji: "🚶",
-          description: "Saying no shows strength and protects you from trouble",
+          
           isCorrect: true
         },
         {
           id: "c",
           text: "Ask if they have money to buy it",
           emoji: "💰",
-          description: "It's better to just say no than make excuses",
+          
           isCorrect: false
         }
       ]
@@ -53,21 +53,18 @@ const BullyStory = () => {
           id: "a",
           text: "Tell them you won't be bullied",
           emoji: "🛡️",
-          description: "Standing up to bullying shows courage and strength",
           isCorrect: true
         },
         {
           id: "c",
           text: "Do what they want to stay safe",
           emoji: "😨",
-          description: "Blackmail is wrong - tell a trusted adult instead",
           isCorrect: false
         },
         {
           id: "b",
           text: "Give them what they want",
           emoji: "😞",
-          description: "Bullies want power - don't let them have it",
           isCorrect: false
         }
       ]
@@ -80,21 +77,18 @@ const BullyStory = () => {
           id: "b",
           text: "Fight back physically",
           emoji: "👊",
-          description: "Fighting can make things worse - use words or get help",
           isCorrect: false
         },
         {
           id: "a",
           text: "Tell a teacher or parent",
           emoji: "🆘",
-          description: "Adults can help stop bullying and keep you safe",
           isCorrect: true
         },
         {
           id: "c",
           text: "Give them the money",
           emoji: "💵",
-          description: "Giving in only encourages more bullying",
           isCorrect: false
         }
       ]
@@ -107,7 +101,6 @@ const BullyStory = () => {
           id: "c",
           text: "Spread rumors back about them",
           emoji: "👥",
-          description: "Fighting rumors with rumors makes everything worse",
           isCorrect: false
         },
        
@@ -115,14 +108,12 @@ const BullyStory = () => {
           id: "b",
           text: "Get very upset and cry",
           emoji: "😢",
-          description: "It's okay to feel hurt, but respond with strength",
           isCorrect: false
         },
          {
           id: "a",
           text: "Ignore it and stay confident",
           emoji: "💪",
-          description: "Bullies want reactions - confidence shows strength",
           isCorrect: true
         },
       ]
@@ -135,21 +126,18 @@ const BullyStory = () => {
           id: "b",
           text: "Beg them to let you join",
           emoji: "🙏",
-          description: "Real friends don't make you beg to be included",
           isCorrect: false
         },
         {
           id: "c",
           text: "Find other friends to play with",
           emoji: "🤝",
-          description: "There are always other people who will include you",
           isCorrect: false
         },
         {
           id: "a",
           text: "Remember your worth and find activities you enjoy",
           emoji: "⭐",
-          description: "Your value doesn't depend on others' approval",
           isCorrect: true
         }
       ]

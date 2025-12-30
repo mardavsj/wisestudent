@@ -33,21 +33,19 @@ const HairGrowthStory = () => {
           id: "b",
           text: "I'm sick",
           emoji: "🤒",
-          description: "New facial hair is a normal sign of puberty",
+        
           isCorrect: false
         },
         {
           id: "a",
           text: "Puberty",
           emoji: "🌱",
-          description: "Body hair growth is a normal part of growing up",
           isCorrect: true
         },
         {
           id: "c",
           text: "I ate something wrong",
           emoji: "😕",
-          description: "Hair growth is a natural body change",
           isCorrect: false
         }
       ]
@@ -60,21 +58,18 @@ const HairGrowthStory = () => {
           id: "a",
           text: "No, it's normal growth",
           emoji: "✨",
-          description: "Body hair is a normal part of development",
           isCorrect: true
         },
         {
           id: "b",
           text: "Yes, remove it all",
           emoji: "🪒",
-          description: "Body hair is natural and doesn't need removal",
           isCorrect: false
         },
         {
           id: "c",
           text: "Hide it from friends",
           emoji: "🙈",
-          description: "Body hair is nothing to be ashamed of",
           isCorrect: false
         }
       ]
@@ -87,21 +82,18 @@ const HairGrowthStory = () => {
           id: "c",
           text: "Never shower there",
           emoji: "🚫",
-          description: "Regular hygiene is important for all body areas",
           isCorrect: false
         },
         {
           id: "b",
           text: "Try to pull it out",
           emoji: "🤏",
-          description: "Hair removal should be done safely if desired",
           isCorrect: false
         },
         {
           id: "a",
           text: "Keep it clean",
           emoji: "🧼",
-          description: "Good hygiene is important as body changes",
           isCorrect: true
         }
       ]
@@ -114,21 +106,18 @@ const HairGrowthStory = () => {
           id: "b",
           text: "Embarrassed",
           emoji: "😳",
-          description: "Body hair is normal and happens to all boys",
           isCorrect: false
         },
         {
           id: "c",
           text: "Confused",
           emoji: "😕",
-          description: "Understanding puberty helps you feel normal",
           isCorrect: false
         },
         {
           id: "a",
           text: "It's normal",
           emoji: "😊",
-          description: "All boys experience body hair growth during puberty",
           isCorrect: true
         }
       ]
@@ -141,21 +130,18 @@ const HairGrowthStory = () => {
           id: "b",
           text: "I don't know",
           emoji: "🤷",
-          description: "Understanding puberty helps explain changes",
           isCorrect: false
         },
         {
           id: "a",
           text: "It's part of growing up",
           emoji: "🌱",
-          description: "Explaining puberty helps friends understand too",
           isCorrect: true
         },
         {
           id: "c",
           text: "Stop asking questions",
           emoji: "😠",
-          description: "Questions about puberty are normal",
           isCorrect: false
         }
       ]

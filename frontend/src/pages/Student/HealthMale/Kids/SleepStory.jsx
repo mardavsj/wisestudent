@@ -32,7 +32,7 @@ const SleepStory = () => {
           id: "b",
           text: "Start a new movie",
           emoji: "🎬",
-          description: "Movies keep you awake too late.",
+         
           isCorrect: false
         },
         
@@ -40,14 +40,13 @@ const SleepStory = () => {
           id: "c",
           text: "Eat a big meal",
           emoji: "🍔",
-          description: "Eating late can give you a tummy ache.",
+          
           isCorrect: false
         },
         {
           id: "a",
           text: "Start getting ready for bed",
           emoji: "🥱",
-          description: "A routine helps you sleep better.",
           isCorrect: true
         },
       ]
@@ -60,21 +59,18 @@ const SleepStory = () => {
           id: "c",
           text: "Playing video games",
           emoji: "🎮",
-          description: "Screens wake up your brain.",
           isCorrect: false
         },
         {
           id: "a",
           text: "Reading a book",
           emoji: "📖",
-          description: "Reading calms your mind.",
           isCorrect: true
         },
         {
           id: "b",
           text: "Running laps",
           emoji: "🏃",
-          description: "Exercise wakes up your body.",
           isCorrect: false
         }
       ]
@@ -87,21 +83,18 @@ const SleepStory = () => {
           id: "b",
           text: "Bright and noisy",
           emoji: "📢",
-          description: "Noise and light keep you awake.",
           isCorrect: false
         },
         {
           id: "a",
           text: "Dark and quiet",
           emoji: "🌙",
-          description: "Darkness tells your body it's sleep time.",
           isCorrect: true
         },
         {
           id: "c",
           text: "Full of toys",
           emoji: "🧸",
-          description: "Too many toys can be distracting.",
           isCorrect: false
         }
       ]
@@ -114,14 +107,12 @@ const SleepStory = () => {
           id: "a",
           text: "It helps you grow and learn",
           emoji: "📈",
-          description: "Your brain and body work while you sleep.",
           isCorrect: true
         },
         {
           id: "c",
           text: "It's boring",
           emoji: "😐",
-          description: "Sleep is vital, not boring!",
           isCorrect: false
         },
        
@@ -129,7 +120,6 @@ const SleepStory = () => {
           id: "b",
           text: "It wastes time",
           emoji: "⏳",
-          description: "Sleep is the best use of time for health.",
           isCorrect: false
         }
       ]
@@ -142,21 +132,18 @@ const SleepStory = () => {
           id: "b",
           text: "Grumpy",
           emoji: "😠",
-          description: "Good sleep makes you happy!",
           isCorrect: false
         },
         {
           id: "c",
           text: "Tired",
           emoji: "😫",
-          description: "Good sleep gives you energy.",
           isCorrect: false
         },
         {
           id: "a",
           text: "Happy and energized",
           emoji: "😄",
-          description: "Ready for a great day!",
           isCorrect: true
         }
       ]

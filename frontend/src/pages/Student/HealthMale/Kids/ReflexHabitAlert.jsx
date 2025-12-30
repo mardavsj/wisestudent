@@ -30,57 +30,57 @@ const ReflexHabitAlert = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      question: "You are late! Choose the GOOD habit!",
-      options: [
-        { id: 'a', text: "Skip It", emoji: "🚫", isCorrect: false },
-        { id: 'b', text: "Eat Breakfast", emoji: "🍎", isCorrect: true },
-        { id: 'c', text: "Drink Soda", emoji: "🥤", isCorrect: false },
-        { id: 'd', text: "Sleep More", emoji: "😴", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      question: "You are tired. Choose the GOOD habit!",
-      options: [
-        { id: 'a', text: "Drink Coffee", emoji: "☕", isCorrect: false },
-        { id: 'b', text: "Stay Up", emoji: "🌙", isCorrect: false },
-        { id: 'c', text: "Sleep Early", emoji: "😴", isCorrect: true },
-        { id: 'd', text: "Play Games", emoji: "🎮", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      question: "You are bored. Choose the GOOD habit!",
-      options: [
-        { id: 'a', text: "Watch TV", emoji: "📺", isCorrect: false },
-        { id: 'b', text: "Play Outside", emoji: "⚽", isCorrect: false },
-        { id: 'c', text: "Read Book", emoji: "📖", isCorrect: true },
-        { id: 'd', text: "Listen Music", emoji: "🎵", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      question: "Your hands are dirty. Choose the GOOD habit!",
-      options: [
-        { id: 'a', text: "Wipe on Pants", emoji: "👖", isCorrect: false },
-        { id: 'b', text: "Use Sanitizer", emoji: "🧴", isCorrect: false },
-        { id: 'c', text: "Ignore It", emoji: "✋", isCorrect: false },
-        { id: 'd', text: "Wash Hands", emoji: "🧼", isCorrect: true }
-      ]
-    },
-    {
-      id: 5,
-      question: "You are thirsty. Choose the GOOD habit!",
-      options: [
-        { id: 'a', text: "Drink Water", emoji: "💧", isCorrect: true },
-        { id: 'b', text: "Drink Juice", emoji: "🧃", isCorrect: false },
-        { id: 'c', text: "Drink Soda", emoji: "🥤", isCorrect: false },
-        { id: 'd', text: "Wait Longer", emoji: "⏳", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "A painter is about to start work with new colors. What reflex habit keeps the artwork safe?",
+    options: [
+      { id: 'a', text: "Start Painting Fast", emoji: "🎨", isCorrect: false },
+      { id: 'b', text: "Mix All Colors Together", emoji: "🌀", isCorrect: false },
+      { id: 'c', text: "Leave Lids Open", emoji: "🫙", isCorrect: false },
+      { id: 'd', text: "Cover the Table First", emoji: "🧻", isCorrect: true }
+    ]
+  },
+  {
+    id: 2,
+    question: "A librarian notices many books returned today. What habit helps keep the place organized?",
+    options: [
+      { id: 'a', text: "Stack Randomly", emoji: "📚", isCorrect: false },
+      { id: 'b', text: "Leave on Desk", emoji: "🪑", isCorrect: false },
+      { id: 'c', text: "Sort by Labels", emoji: "🏷️", isCorrect: true },
+      { id: 'd', text: "Push to Corner", emoji: "↘️", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    question: "A gardener finishes using tools in the park. What reflex habit keeps others safe?",
+    options: [
+      { id: 'a', text: "Walk Away Quickly", emoji: "🚶", isCorrect: false },
+      { id: 'b', text: "Put Tools Back Properly", emoji: "🧰", isCorrect: true },
+      { id: 'c', text: "Leave on Grass", emoji: "🌱", isCorrect: false },
+      { id: 'd', text: "Hide Them Under Leaves", emoji: "🍂", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    question: "A shop helper finishes helping a customer. What habit shows responsibility?",
+    options: [
+      { id: 'a', text: "Update the Item Count", emoji: "🧾", isCorrect: true },
+      { id: 'b', text: "Chat With Friends", emoji: "💬", isCorrect: false },
+      { id: 'c', text: "Check Phone", emoji: "📱", isCorrect: false },
+      { id: 'd', text: "Sit and Wait", emoji: "🪑", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    question: "A construction helper finishes moving materials. What habit prevents future problems?",
+    options: [
+      { id: 'a', text: "Leave Path Blocked", emoji: "🚧", isCorrect: false },
+      { id: 'b', text: "Stack Anywhere", emoji: "📦", isCorrect: false },
+      { id: 'c', text: "Clear the Walking Area", emoji: "🦺", isCorrect: true },
+      { id: 'd', text: "Mark Nothing", emoji: "❓", isCorrect: false }
+    ]
+  }
+];
 
   // Update ref when currentRound changes
   useEffect(() => {

@@ -25,144 +25,135 @@ const StayFreshPosterAdvanced = () => {
 
     const stages = [
         {
-            question: "Which poster shows good daily hygiene?",
+            question: "Which poster shows the best way to prepare for a school presentation when you feel nervous and sweaty?",
             posters: [
                 {
                     id: 1,
-                    title: "Daily Bath",
-                    description: "A poster showing a daily shower routine",
+                    title: "Freshen Up Beforehand",
                     emoji: "🚿",
+                    
                     isCorrect: true
                 },
                 {
                     id: 2,
-                    title: "Once a Week",
-                    description: "A poster showing bathing only on Sundays",
-                    emoji: "📅",
+                    title: "Just Use Perfume",
+                    emoji: "🌸",
+                    
                     isCorrect: false
                 },
                 {
                     id: 3,
-                    title: "Perfume Only",
-                    description: "A poster showing using perfume instead of bath",
-                    emoji: "🌸",
+                    title: "Ignore It, Focus on Content",
+                    emoji: "📚",
+                    
                     isCorrect: false
                 }
             ],
-            correctFeedback: "Daily Bath is the best choice!",
-            explanation: "Bathing every day keeps your body clean and fresh!"
+            correctFeedback: "Freshening up beforehand helps you feel confident!",
+            explanation: "Taking time to freshen up before important events helps you feel your best and be more confident."
         },
         {
-            question: "Which poster shows clean clothes?",
+            question: "Your friend is feeling hot after playing sports. Which poster shows the best way to help them feel refreshed?",
             posters: [
                 {
                     id: 1,
-                    title: "Dirty Shirt",
-                    description: "A poster showing wearing the same shirt for a week",
+                    title: "Suggest Cool Shower",
+                    emoji: "🚿",
+                    isCorrect: false
+                },
+                
+                {
+                    id: 3,
+                    title: "Tell Them to Wait",
+                    emoji: "⏰",
+                    isCorrect: false
+                },
+                {
+                    id: 2,
+                    title: "Offer Cool Water & Towel",
+                    emoji: "💧",
+                    isCorrect: true
+                },
+            ],
+            correctFeedback: "Cool water and a towel are perfect for feeling refreshed!",
+            explanation: "When hot and sweaty, cool water and a damp towel help you cool down and feel refreshed quickly."
+        },
+        {
+            question: "Which poster shows the best way to feel fresh during a long summer day at camp?",
+            posters: [
+                {
+                    id: 1,
+                    title: "Stay in Shade, Hydrate",
+                    emoji: "🌳",
+                    isCorrect: false
+                },
+                {
+                    id: 2,
+                    title: "Quick Cool Down Break",
+                    emoji: "❄️",
+                    isCorrect: true
+                },
+                {
+                    id: 3,
+                    title: "Dive Into Activities",
+                    emoji: "🏃",
+               
+                    isCorrect: false
+                }
+            ],
+            correctFeedback: "Taking cool-down breaks keeps you fresh all day!",
+            explanation: "Taking regular cool-down breaks during hot days helps maintain energy and keeps you feeling fresh."
+        },
+        {
+            question: "After a long day at school, which poster shows the best way to transition to feeling fresh for evening activities?",
+            posters: [
+               
+                {
+                    id: 3,
+                    title: "Change Clothes Only",
                     emoji: "👕",
                     isCorrect: false
                 },
                 {
-                    id: 3,
-                    title: "Wet Clothes",
-                    description: "A poster showing wearing wet clothes",
-                    emoji: "💦",
-                    isCorrect: false
-                },
-                {
-                    id: 2,
-                    title: "Fresh Clothes",
-                    description: "A poster showing wearing clean clothes daily",
-                    emoji: "🧺",
-                    isCorrect: true
-                }
-            ],
-            correctFeedback: "Fresh Clothes keep you healthy!",
-            explanation: "Changing into clean clothes prevents bad smells and germs!"
-        },
-        {
-            question: "Which poster shows dental care?",
-            posters: [
-                {
                     id: 1,
-                    title: "Candy All Day",
-                    description: "A poster showing eating sweets constantly",
-                    emoji: "🍬",
+                    title: "Jump Right Into Evening",
+                    emoji: "⚡",
                     isCorrect: false
                 },
-                {
+                 {
                     id: 2,
-                    title: "Brush Twice",
-                    description: "A poster showing brushing teeth morning and night",
-                    emoji: "🪥",
-                    isCorrect: true
-                },
-                {
-                    id: 3,
-                    title: "No Brush",
-                    description: "A poster showing skipping brushing",
-                    emoji: "🚫",
-                    isCorrect: false
-                }
-            ],
-            correctFeedback: "Brush Twice is perfect!",
-            explanation: "Brushing twice a day keeps your teeth strong and breath fresh!"
-        },
-        {
-            question: "Which poster shows hand hygiene?",
-            posters: [
-                {
-                    id: 2,
-                    title: "Lick Fingers",
-                    description: "A poster showing licking dirty fingers",
-                    emoji: "😋",
-                    isCorrect: false
-                },
-                {
-                    id: 3,
-                    title: "Wash with Soap",
-                    description: "A poster showing washing hands with soap and water",
-                    emoji: "🧼",
-                    isCorrect: true
-                },
-                {
-                    id: 1,
-                    title: "Wipe on Pants",
-                    description: "A poster showing wiping hands on clothes",
-                    emoji: "👖",
-                    isCorrect: false
-                }
-            ],
-            correctFeedback: "Wash with Soap is the safe way!",
-            explanation: "Soap and water kill germs and keep you healthy!"
-        },
-        {
-            question: "Which poster shows overall freshness?",
-            posters: [
-                {
-                    id: 2,
-                    title: "Clean & Groomed",
-                    description: "A poster showing a neat and clean appearance",
+                    title: "Quick Freshen Up",
                     emoji: "✨",
                     isCorrect: true
                 },
+            ],
+            correctFeedback: "A quick freshen up resets your energy!",
+            explanation: "Taking a few minutes to freshen up after school helps you transition to evening activities feeling renewed."
+        },
+        {
+            question: "Which poster shows the best morning routine to stay fresh throughout the day?",
+            posters: [
+                {
+                    id: 2,
+                    title: "Complete Morning Routine",
+                    emoji: "🌅",
+                    isCorrect: true
+                },
                 {
                     id: 1,
-                    title: "Messy Hair",
-                    description: "A poster showing uncombed hair",
-                    emoji: "🦁",
+                    title: "Quick Splash & Go",
+                    emoji: "🏃",
                     isCorrect: false
                 },
                 {
                     id: 3,
-                    title: "Muddy Shoes",
-                    description: "A poster showing wearing muddy shoes inside",
-                    emoji: "👞",
+                    title: "Use Morning Scents",
+                    emoji: "🌿",
                     isCorrect: false
                 }
             ],
-            correctFeedback: "Clean & Groomed is the goal!",
-            explanation: "Looking and feeling clean boosts your confidence!"
+            correctFeedback: "A complete morning routine sets you up for the day!",
+            explanation: "Starting your day with a complete freshening routine gives you the best foundation to stay fresh all day long."
         }
     ];
 

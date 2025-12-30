@@ -23,147 +23,133 @@ const SayNoPoster = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const stages = [
-    {
-      id: 1,
-      title: "Be Clear",
-      question: "Which poster shows the best way to say NO?",
-      options: [
-        {
-          id: "a",
-          text: "Say NO Firmly",
-          emoji: "✋",
-          description: "Be clear and strong with your answer.",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Whisper No",
-          emoji: "🤫",
-          description: "If you whisper, they might not hear you.",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Smile and Nod",
-          emoji: "🙂",
-          description: "Smiling might make them think you mean yes.",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Walk Away",
-      question: "Which poster shows what to do after saying no?",
-      options: [
-        {
-          id: "b",
-          text: "Stay and Watch",
-          emoji: "👀",
-          description: "Staying might tempt you to join in.",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Argue with Them",
-          emoji: "🗣️",
-          description: "Arguing keeps you in the bad situation.",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Walk Away Fast",
-          emoji: "🏃",
-          description: "Leave the situation immediately.",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Healthy Choice",
-      question: "Which poster shows a healthy alternative?",
-      options: [
-        {
-          id: "c",
-          text: "Drink Soda",
-          emoji: "🥤",
-          description: "Soda isn't the healthiest choice either.",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Eat Candy",
-          emoji: "🍭",
-          description: "Candy is okay sometimes, but not the best.",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Play Sports",
-          emoji: "🏀",
-          description: "Sports are fun and keep you healthy!",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Real Friends",
-      question: "Which poster shows what real friends do?",
-      options: [
-        {
-          id: "b",
-          text: "Pressure You",
-          emoji: "😤",
-          description: "Friends shouldn't force you to do bad things.",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Make Fun of You",
-          emoji: "😝",
-          description: "Teasing isn't what friends do.",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Respect Your No",
-          emoji: "🤝",
-          description: "Real friends listen when you say no.",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Stay Strong",
-      question: "Which poster shows a strong kid?",
-      options: [
-        {
-          id: "c",
-          text: "Follows the Crowd",
-          emoji: "🐑",
-          description: "Doing what everyone else does isn't strength.",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Makes Own Choices",
-          emoji: "🦁",
-          description: "Being a leader of your own life is strong!",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Hides Away",
-          emoji: "🙈",
-          description: "Hiding doesn't solve the problem.",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Clear Message",
+    question: "A poster shows a child standing straight with a calm face and raised hand. What message is the poster sending?",
+    options: [
+      {
+        id: "a",
+        text: "The child is asking a question",
+        emoji: "❓",
+        
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "The child wants attention",
+        emoji: "👀",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "The child is clearly setting a boundary",
+        emoji: "🫥",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Next Step",
+    question: "In a poster, a child is shown turning away after refusing something unsafe. What does this action mean?",
+    options: [
+      {
+        id: "a",
+        text: "Leaving to stay safe",
+        emoji: "🚶",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Ignoring everyone forever",
+        emoji: "🙉",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Feeling embarrassed",
+        emoji: "😳",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Positive Choice",
+    question: "A poster shows kids choosing an activity together after saying no. What idea is being shared?",
+    options: [
+      {
+        id: "a",
+        text: "Distractions solve every problem",
+        emoji: "🎮",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Healthy activities give better options",
+        emoji: "🏀",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Fun only matters",
+        emoji: "🎉",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "True Friendship",
+    question: "A poster shows two friends listening calmly when one says no. What value is the poster teaching?",
+    options: [
+      {
+        id: "a",
+        text: "Respecting each other’s choices",
+        emoji: "🤝",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Always agreeing with friends",
+        emoji: "👍",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Avoiding difficult talks",
+        emoji: "😶",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Inner Strength",
+    question: "A poster shows a child choosing a different path while others go another way. What strength is being shown?",
+    options: [
+      {
+        id: "a",
+        text: "Wanting to be different",
+        emoji: "🎨",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Confidence to make safe decisions",
+        emoji: "🛡️",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Disliking groups",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ]
+  }
+];
 
   const handleOptionSelect = (option) => {
     if (option.isCorrect) {

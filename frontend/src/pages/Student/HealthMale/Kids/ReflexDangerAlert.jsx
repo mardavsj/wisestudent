@@ -31,57 +31,58 @@ const ReflexDangerAlert = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      instruction: "You see smoke. Tap the SAFE choice!",
-      options: [
-        { id: 'a', emoji: "🏃", text: "Run Away", isCorrect: true },
-        { id: 'b', emoji: "👃", text: "Smell It", isCorrect: false },
-        { id: 'c', emoji: "🚫", text: "Stay Inside", isCorrect: false },
-        { id: 'd', emoji: "😱", text: "Scream", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      instruction: "Someone offers pills. Tap the SAFE choice!",
-      options: [
-        { id: 'a', emoji: "💊", text: "Take Them", isCorrect: false },
-        { id: 'b', emoji: "✋", text: "Say No", isCorrect: true },
-        { id: 'c', emoji: "🍰", text: "Eat Candy", isCorrect: false },
-        { id: 'd', emoji: "🎮", text: "Play Games", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      instruction: "You feel pressured. Tap the SAFE choice!",
-      options: [
-        { id: 'a', emoji: "🤐", text: "Keep Secret", isCorrect: false },
-        { id: 'b', emoji: "👀", text: "Look Around", isCorrect: false },
-        { id: 'c', emoji: "🗣️", text: "Tell Adult", isCorrect: true },
-        { id: 'd', emoji: "👍", text: "Nod Head", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      instruction: "A stranger offers a ride. Tap the SAFE choice!",
-      options: [
-        { id: 'a', emoji: "🚗", text: "Get In", isCorrect: false },
-        { id: 'b', emoji: "🚶", text: "Walk Away", isCorrect: false },
-        { id: 'c', emoji: "👋", text: "Wave Hello", isCorrect: false },
-        { id: 'd', emoji: "🚫", text: "Don't Go", isCorrect: true }
-      ]
-    },
-    {
-      id: 5,
-      instruction: "You found a lighter. Tap the SAFE choice!",
-      options: [
-        { id: 'a', emoji: "🔥", text: "Play With It", isCorrect: false },
-        { id: 'b', emoji: "🚲", text: "Ride Bike", isCorrect: false },
-        { id: 'c', emoji: "👨‍👩‍👧", text: "Tell Parents", isCorrect: true },
-        { id: 'd', emoji: "📺", text: "Watch TV", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    instruction: "An alarm sounds and you notice smoke near a room. Your body needs to react fast. What action fits the alert?",
+    options: [
+      { id: 'a', emoji: "👀", text: "Look for the source closely", isCorrect: false },
+      { id: 'b', emoji: "🏃", text: "Move away toward fresh air", isCorrect: true },
+      { id: 'c', emoji: "📱", text: "Record a video", isCorrect: false },
+      { id: 'd', emoji: "🪑", text: "Sit and wait", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    instruction: "A classmate hands you something unknown and says it will help you feel better. What response matches a safety reflex?",
+    options: [
+      { id: 'a', emoji: "✋", text: "Refuse and keep distance", isCorrect: true },
+      { id: 'b', emoji: "💊", text: "Examine it closely", isCorrect: false },
+      { id: 'c', emoji: "😅", text: "Laugh it off", isCorrect: false },
+      { id: 'd', emoji: "🎒", text: "Put it in your bag", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    instruction: "You feel uncomfortable when someone keeps insisting after you say no. What reflex action helps protect you?",
+    options: [
+      { id: 'a', emoji: "🤐", text: "Stay silent", isCorrect: false },
+      { id: 'b', emoji: "👀", text: "Watch what happens next", isCorrect: false },
+      { id: 'c', emoji: "😬", text: "Try to ignore it", isCorrect: false },
+      { id: 'd', emoji: "🗣️", text: "Reach out to a trusted adult", isCorrect: true }
+    ]
+  },
+  {
+    id: 4,
+    instruction: "A vehicle slows down and someone you don’t know calls your name. Your reflex should guide you. What fits best?",
+    options: [
+      { id: 'a', emoji: "👋", text: "Answer politely", isCorrect: false },
+      { id: 'b', emoji: "❓", text: "Ask why they stopped", isCorrect: false },
+      { id: 'c', emoji: "🚫", text: "Keep distance and do not engage", isCorrect: true },
+      { id: 'd', emoji: "📍", text: "Stand still", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    instruction: "You notice a risky object lying around at home that could cause harm. What reflex action supports safety?",
+    options: [
+      { id: 'a', emoji: "👨‍👩‍👧", text: "Inform a responsible adult", isCorrect: true },
+      { id: 'b', emoji: "🧪", text: "Test how it works", isCorrect: false },
+      { id: 'c', emoji: "📦", text: "Hide it somewhere", isCorrect: false },
+      { id: 'd', emoji: "🎮", text: "Ignore and move on", isCorrect: false }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

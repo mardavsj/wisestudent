@@ -25,20 +25,20 @@ const GrowthHelpersPuzzle = () => {
 
   // Growth Helpers (left side) - 5 items
   const helpers = [
-    { id: 1, name: "Milk", emoji: "🥛", description: "Dairy beverage" },
-    { id: 2, name: "Exercise", emoji: "🏃", description: "Physical activity" },
-    { id: 3, name: "Sleep", emoji: "🛌", description: "Rest time" },
-    { id: 4, name: "Vegetables", emoji: "🥕", description: "Plant foods" },
-    { id: 5, name: "Water", emoji: "💧", description: "Clear liquid" }
+    { id: 1, name: "Milk", emoji: "🥛",  },
+    { id: 2, name: "Exercise", emoji: "🏃",  },
+    { id: 3, name: "Sleep", emoji: "🛌",  },
+    { id: 4, name: "Vegetables", emoji: "🥕",  },
+    { id: 5, name: "Water", emoji: "💧",  }
   ];
 
   // Benefits (right side) - 5 items
   const benefits = [
-    { id: 3, name: "More Energy", emoji: "⚡", description: "Active feeling" },
-    { id: 5, name: "Hydrated Body", emoji: "💦", description: "Moisture balance" },
-    { id: 1, name: "Strong Bones", emoji: "🦴", description: "Skeleton support" },
-    { id: 4, name: "Healthy Muscles", emoji: "💪", description: "Body strength" },
-    { id: 2, name: "Better Mood", emoji: "😊", description: "Positive feeling" }
+    { id: 3, name: "More Energy", emoji: "⚡",  },
+    { id: 5, name: "Hydrated Body", emoji: "😄",  },
+    { id: 1, name: "Strong Bones", emoji: "🦴",  },
+    { id: 4, name: "Healthy Muscles", emoji: "💪",  },
+    { id: 2, name: "Better Mood", emoji: "😊",  }
   ];
 
   // Correct matches

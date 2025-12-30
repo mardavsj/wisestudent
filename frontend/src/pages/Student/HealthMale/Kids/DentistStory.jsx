@@ -19,6 +19,7 @@ const DentistStory = () => {
 
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [choices, setChoices] = useState([]);
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
@@ -26,126 +27,125 @@ const DentistStory = () => {
   const questions = [
     {
       id: 1,
-      text: "Who helps keep your teeth healthy?",
+      text: "Why is it important to visit the dentist regularly?",
       options: [
+        
         {
           id: "b",
-          text: "The baker",
-          emoji: "👨‍🍳",
-        
+          text: "Only when teeth hurt",
+          emoji: "😖",
           isCorrect: false
         },
-        
         {
           id: "c",
-          text: "The gardener",
-          emoji: "🌻",
-         
+          text: "To get toys and stickers",
+          emoji: "🎁",
           isCorrect: false
         },
         {
           id: "a",
-          text: "The dentist",
+          text: "To catch problems early and keep teeth healthy",
           emoji: "🦷",
-         
           isCorrect: true
         },
       ]
     },
     {
       id: 2,
-      text: "How often should you brush your teeth?",
+      text: "How long should you brush your teeth for optimal cleaning?",
       options: [
         {
           id: "a",
-          text: "Twice a day",
-          emoji: "☀️🌙",
+          text: "2 minutes, twice a day",
+          emoji: "⏰",
           isCorrect: true
         },
         {
-          id: "c",
-          text: "Once a week",
-          emoji: "📅",
+          id: "b",
+          text: "5 seconds to save time",
+          emoji: "⚡",
           isCorrect: false
         },
-        
         {
-          id: "b",
-          text: "Only on birthdays",
-          emoji: "🎂",
+          id: "c",
+          text: "1 hour every night",
+          emoji: "🕐",
           isCorrect: false
         }
       ]
     },
     {
       id: 3,
-      text: "What food is bad for your teeth?",
+      text: "What does flossing do that brushing can't?",
       options: [
+       
         {
           id: "b",
-          text: "Apples",
-          emoji: "🍎",
+          text: "Makes teeth sparkle brighter",
+          emoji: "✨",
           isCorrect: false
         },
-        {
+         {
           id: "a",
-          text: "Sticky candy",
-          emoji: "🍬",
+          text: "Cleans between teeth where brush bristles can't reach",
+          emoji: "🧵",
           isCorrect: true
         },
         {
           id: "c",
-          text: "Carrots",
-          emoji: "🥕",
+          text: "Replaces the need for brushing",
+          emoji: "❌",
           isCorrect: false
         }
       ]
     },
     {
       id: 4,
-      text: "What does floss do?",
+      text: "Which foods are most likely to cause cavities if eaten frequently?",
       options: [
         {
-          id: "c",
-          text: "Makes teeth blue",
-          emoji: "🔵",
+          id: "a",
+          text: "Crunchy apples and carrots",
+          emoji: "🍎",
           isCorrect: false
         },
+       
         {
-          id: "a",
-          text: "Cleans between teeth",
-          emoji: "🧵",
+          id: "c",
+          text: "Milk and cheese",
+          emoji: "🥛",
+          isCorrect: false
+        },
+         {
+          id: "b",
+          text: "Sugary snacks and sticky candies",
+          emoji: "🍭",
           isCorrect: true
         },
-        {
-          id: "b",
-          text: "Tastes like pizza",
-          emoji: "🍕",
-          isCorrect: false
-        }
       ]
     },
     {
       id: 5,
-      text: "Why do we go to the dentist?",
+      text: "What is the purpose of baby teeth since they fall out anyway?",
       options: [
+       
         {
           id: "b",
-          text: "To get toys",
-          emoji: "🧸",
+          text: "They have no real purpose",
+          emoji: "❓",
           isCorrect: false
+        },
+         {
+          id: "a",
+          text: "They hold space for permanent teeth to grow in properly",
+          emoji: "👶",
+          isCorrect: true
         },
         {
           id: "c",
-          text: "To take a nap",
-          emoji: "😴",
+          text: "They help with talking only",
+          emoji: "🗣️",
           isCorrect: false
-        },
-        {
-          id: "a",
-          text: "To check for cavities",
-          emoji: "🔍",
-          isCorrect: true
         }
       ]
     }
@@ -154,7 +154,7 @@ const DentistStory = () => {
   const handleChoice = (optionId) => {
     if (answered) return;
     
-    const selectedOption = questions[currentQuestion].options.find(opt => opt.id === optionId);
+    const selectedOption = getCurrentQuestion().options.find(opt => opt.id === optionId);
     const isCorrect = selectedOption.isCorrect;
     
     setAnswered(true);
@@ -164,6 +164,8 @@ const DentistStory = () => {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
     }
+
+    setChoices([...choices, { question: currentQuestion, optionId, isCorrect }]);
 
     const isLastQuestion = currentQuestion === questions.length - 1;
     setTimeout(() => {
@@ -176,8 +178,10 @@ const DentistStory = () => {
     }, 500);
   };
 
+  const getCurrentQuestion = () => questions[currentQuestion];
+
   const handleNext = () => {
-    navigate("/student/health-male/kids/reflex-healthy-steps");
+    navigate("/games/health-male/kids");
   };
 
   return (
@@ -188,18 +192,21 @@ const DentistStory = () => {
       nextEnabled={false}
       showGameOver={showResult}
       score={score}
-      gameId={gameId}
-      gameType="health-male"
-      flashPoints={flashPoints}
-      showAnswerConfetti={showAnswerConfetti}
-      maxScore={questions.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      gameId={gameId}
+      gameType="health-male"
+      totalLevels={5}
+      currentLevel={78}
       showConfetti={showResult && score >= 3}
+      flashPoints={flashPoints}
+      backPath="/games/health-male/kids"
+      showAnswerConfetti={showAnswerConfetti}
+      maxScore={5}
     >
       <div className="space-y-8">
-        {!showResult && questions[currentQuestion] ? (
+        {!showResult && getCurrentQuestion() ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
@@ -208,11 +215,11 @@ const DentistStory = () => {
               </div>
               
               <p className="text-white text-lg mb-6">
-                {questions[currentQuestion].text}
+                {getCurrentQuestion().text}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {questions[currentQuestion].options.map((option) => (
+                {getCurrentQuestion().options.map((option) => (
                   <button
                     key={option.id}
                     onClick={() => handleChoice(option.id)}

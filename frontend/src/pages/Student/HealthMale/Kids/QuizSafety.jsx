@@ -27,125 +27,123 @@ const QuizSafety = () => {
   const questions = [
     {
       id: 1,
-      text: "What should you wear when riding a bike?",
+      text: "Why is it important to wear a helmet when riding a bike?",
       options: [
-       
-        {
-          id: "b",
-          text: "A cool hat",
-          emoji: "🧢",
-          isCorrect: false
-        },
         
         {
-          id: "c",
-          text: "Sunglasses",
-          emoji: "🕶️",
+          id: "b",
+          text: "It makes you look cool and stylish",
+          emoji: "😎",
           isCorrect: false
         },
-         {
+        {
+          id: "c",
+          text: "It helps you ride faster",
+          emoji: "💨",
+          isCorrect: false
+        },
+        {
           id: "a",
-          text: "A helmet",
-          emoji: "⛑️",
+          text: "It protects your head from serious injuries during falls or crashes",
+          emoji: "🤯",
           isCorrect: true
         },
       ]
     },
     {
       id: 2,
-      text: "What do you do before crossing the street?",
+      text: "What is the safest way to cross the street?",
       options: [
         {
           id: "a",
-          text: "Look left, right, then left again",
-          emoji: "👀",
+          text: "Use crosswalks and traffic signals, look both ways before crossing",
+          emoji: "🚶",
           isCorrect: true
         },
         {
           id: "b",
-          text: "Close your eyes",
-          emoji: "🙈",
+          text: "Run quickly across without looking",
+          emoji: "🏃",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Run fast",
-          emoji: "🏃",
+          text: "Cross anywhere you want without checking",
+          emoji: "⚠️",
           isCorrect: false
         }
       ]
     },
     {
       id: 3,
-      text: "What should you do if you find matches?",
+      text: "What should you do if you find matches or lighters?",
       options: [
-       
+        
         {
           id: "b",
-          text: "Play with them",
+          text: "Try to light them to see what happens",
           emoji: "🔥",
           isCorrect: false
         },
-       
+        {
+          id: "a",
+          text: "Leave them alone and tell a trusted adult right away",
+          emoji: "👨‍👩‍👧",
+          isCorrect: true
+        },
         {
           id: "c",
-          text: "Hide them",
+          text: "Hide them so adults won't see them",
           emoji: "📦",
           isCorrect: false
+        }
+      ]
+    },
+    {
+      id: 4,
+      text: "What is the safest way to stay safe around strangers?",
+      options: [
+        
+        {
+          id: "b",
+          text: "Accept gifts or candy from strangers",
+          emoji: "🎁",
+          isCorrect: false
         },
-         {
+        {
+          id: "c",
+          text: "Go with strangers if they seem friendly",
+          emoji: "🤝",
+          isCorrect: false
+        },
+        {
           id: "a",
-          text: "Tell an adult immediately",
+          text: "Stay close to trusted adults and never go anywhere with strangers",
           emoji: "👨‍👩‍👧",
           isCorrect: true
         },
       ]
     },
     {
-      id: 4,
-      text: "Is it safe to talk to strangers?",
-      options: [
-        {
-          id: "a",
-          text: "No, stay with your parents",
-          emoji: "🚫",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Yes, if they look nice",
-          emoji: "😊",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Yes, if they have candy",
-          emoji: "🍬",
-          isCorrect: false
-        }
-      ]
-    },
-    {
       id: 5,
-      text: "What do you do in a car?",
+      text: "Why is it important to wear a seatbelt in a car?",
       options: [
-        
-        {
-          id: "b",
-          text: "Jump around",
-          emoji: "🤾",
-          isCorrect: false
-        },
         {
           id: "a",
-          text: "Wear your seatbelt",
+          text: "It keeps you secure and prevents serious injury in a crash",
           emoji: "🚗",
           isCorrect: true
         },
         {
+          id: "b",
+          text: "It helps you sleep better during car rides",
+          emoji: "😴",
+          isCorrect: false
+        },
+        {
           id: "c",
-          text: "Stick head out window",
-          emoji: "🌬️",
+          text: "It allows you to move around freely in the car",
+          emoji: "🤸",
           isCorrect: false
         }
       ]

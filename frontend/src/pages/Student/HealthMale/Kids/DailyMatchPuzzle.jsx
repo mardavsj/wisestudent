@@ -25,20 +25,20 @@ const DailyMatchPuzzle = () => {
 
   // Daily Activities (left side) - 5 items
   const activities = [
-    { id: 1, name: "Sleep", emoji: "😴", description: "Nightly rest" },
-    { id: 2, name: "Healthy Food", emoji: "🍎", description: "Nutritious meals" },
-    { id: 3, name: "Exercise", emoji: "🏃", description: "Physical activity" },
-    { id: 4, name: "Reading", emoji: "📚", description: "Learning time" },
-    { id: 5, name: "Bathing", emoji: "🛁", description: "Personal hygiene" }
+    { id: 1, name: "Sleep", emoji: "😴", },
+    { id: 2, name: "Healthy Food", emoji: "🍎", },
+    { id: 3, name: "Exercise", emoji: "🏃", },
+    { id: 4, name: "Reading", emoji: "📚", },
+    { id: 5, name: "Bathing", emoji: "🛁", },
   ];
 
   // Benefits (right side) - 5 items
   const benefits = [
-    { id: 3, name: "Heart Health", emoji: "❤️", description: "Cardiovascular wellness" },
-    { id: 5, name: "Germs Removed", emoji: "🧼", description: "Cleanliness benefit" },
-    { id: 1, name: "Energy Boost", emoji: "⚡", description: "Recharging benefit" },
-    { id: 4, name: "Brain Power", emoji: "🧠", description: "Knowledge gain" },
-    { id: 2, name: "Strong Muscles", emoji: "💪", description: "Physical strength" }
+    { id: 3, name: "Heart Health", emoji: "❤️", },
+    { id: 5, name: "Germs Removed", emoji: "🧼", },
+    { id: 1, name: "Energy Boost", emoji: "⚡", },
+    { id: 4, name: "Brain Power", emoji: "🧠", },
+    { id: 2, name: "Strong Muscles", emoji: "💪", },
   ];
 
   // Correct matches

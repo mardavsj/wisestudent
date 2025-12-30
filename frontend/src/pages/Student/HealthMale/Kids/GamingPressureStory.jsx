@@ -32,21 +32,19 @@ const GamingPressureStory = () => {
           id: "b",
           text: "Skip class and go gaming",
           emoji: "🎮",
-          description: "School is important - gaming can wait until after school",
+          
           isCorrect: false
         },
         {
           id: "a",
           text: "Say no and go to class",
           emoji: "🏫",
-          description: "Choosing school shows responsibility and good priorities",
           isCorrect: true
         },
         {
           id: "c",
           text: "Go but come back quickly",
           emoji: "⚡",
-          description: "Skipping any class time isn't responsible",
           isCorrect: false
         }
       ]
@@ -59,7 +57,6 @@ const GamingPressureStory = () => {
           id: "c",
           text: "Play all night and sleep in class",
           emoji: "😴",
-          description: "Sleep is essential for learning and health",
           isCorrect: false
         },
        
@@ -67,14 +64,12 @@ const GamingPressureStory = () => {
           id: "b",
           text: "Play just a little longer",
           emoji: "🎯",
-          description: "Bedtime rules help you stay healthy and focused",
           isCorrect: false
         },
          {
           id: "a",
           text: "Set a time limit and get good sleep",
           emoji: "⏰",
-          description: "Balance gaming with healthy sleep habits",
           isCorrect: true
         },
       ]
@@ -87,14 +82,12 @@ const GamingPressureStory = () => {
           id: "a",
           text: "Save money and play free games",
           emoji: "💰",
-          description: "Smart money choices help you afford what you want",
           isCorrect: true
         },
         {
           id: "b",
           text: "Spend all the money",
           emoji: "💸",
-          description: "Save money for things you really need",
           isCorrect: false
         },
        
@@ -102,7 +95,6 @@ const GamingPressureStory = () => {
           id: "c",
           text: "Ask parents for more money",
           emoji: "🙏",
-          description: "It's better to make do with what you have",
           isCorrect: false
         }
       ]
@@ -115,21 +107,18 @@ const GamingPressureStory = () => {
           id: "c",
           text: "Beg parents to buy it for you",
           emoji: "😢",
-          description: "Coolness comes from character, not expensive games",
           isCorrect: false
         },
         {
           id: "a",
           text: "Play what you have and enjoy it",
           emoji: "😊",
-          description: "Being yourself is cooler than following trends",
           isCorrect: true
         },
         {
           id: "b",
           text: "Feel bad about not having it",
           emoji: "😞",
-          description: "Everyone has different things - be happy with yours",
           isCorrect: false
         }
       ]
@@ -142,21 +131,18 @@ const GamingPressureStory = () => {
           id: "b",
           text: "Lie to go gaming",
           emoji: "🤥",
-          description: "Honesty builds trust - lying breaks it",
           isCorrect: false
         },
         {
           id: "c",
           text: "Tell them you can't lie",
           emoji: "🗣️",
-          description: "Being honest shows integrity and strength",
           isCorrect: false
         },
         {
           id: "a",
           text: "Say no and suggest honest alternatives",
           emoji: "🤝",
-          description: "Honesty and creativity make better friendships",
           isCorrect: true
         }
       ]

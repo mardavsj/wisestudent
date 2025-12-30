@@ -32,22 +32,21 @@ const GrowthStory = () => {
         {
           id: "b",
           text: "False",
-          emoji: "❌",
-          description: "Boys and girls do experience different changes",
+          emoji: "👎",
+          
           isCorrect: false
         },
-        {
+        { 
           id: "a",
           text: "True",
-          emoji: "✅",
-          description: "Each gender has unique growth patterns and changes",
+          emoji: "👍",
+          
           isCorrect: true
         },
         {
           id: "c",
           text: "Only sometimes",
           emoji: "🤷",
-          description: "Body changes are different for boys and girls",
           isCorrect: false
         }
       ]
@@ -60,21 +59,19 @@ const GrowthStory = () => {
           id: "a",
           text: "Yes, growth rates vary",
           emoji: "📏",
-          description: "Everyone grows at their own pace and time",
+          
           isCorrect: true
         },
         {
           id: "b",
           text: "No, something's wrong",
           emoji: "😟",
-          description: "Different growth patterns are completely normal",
           isCorrect: false
         },
         {
           id: "c",
           text: "She should stop growing",
           emoji: "🛑",
-          description: "Growth is natural and should not be stopped",
           isCorrect: false
         }
       ]
@@ -87,21 +84,18 @@ const GrowthStory = () => {
           id: "c",
           text: "Make fun of them",
           emoji: "😈",
-          description: "All body changes should be respected",
           isCorrect: false
         },
         {
           id: "b",
           text: "Tell them to stop",
           emoji: "🛑",
-          description: "Body changes are natural and can't be controlled",
           isCorrect: false
         },
         {
           id: "a",
           text: "Support and understand",
           emoji: "🤝",
-          description: "Being supportive helps everyone feel normal",
           isCorrect: true
         }
       ]
@@ -114,21 +108,18 @@ const GrowthStory = () => {
           id: "b",
           text: "Someone is doing something wrong",
           emoji: "😠",
-          description: "Different timing is completely normal",
           isCorrect: false
         },
         {
           id: "c",
           text: "Only popular kids change first",
           emoji: "👑",
-          description: "Body changes happen when the body is ready",
           isCorrect: false
         },
         {
           id: "a",
           text: "Everyone develops uniquely",
           emoji: "🌱",
-          description: "Each person has their own development timeline",
           isCorrect: true
         }
       ]
@@ -141,21 +132,18 @@ const GrowthStory = () => {
           id: "b",
           text: "Worried about differences",
           emoji: "😰",
-          description: "Body diversity is beautiful and normal",
           isCorrect: false
         },
         {
           id: "a",
           text: "Everyone is unique and normal",
           emoji: "🌟",
-          description: "All body types and changes are natural",
           isCorrect: true
         },
         {
           id: "c",
           text: "Want everyone to look the same",
           emoji: "🤖",
-          description: "Individual differences make us special",
           isCorrect: false
         }
       ]

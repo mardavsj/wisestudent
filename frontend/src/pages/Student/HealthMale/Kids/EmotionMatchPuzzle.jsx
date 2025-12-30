@@ -25,11 +25,11 @@ const EmotionMatchPuzzle = () => {
 
   // Emotions (left side) - 5 items
   const emotions = [
-    { id: 1, name: "Happy", emoji: "😊", description: "Feeling joyful" },
-    { id: 2, name: "Sad", emoji: "😢", description: "Feeling down" },
-    { id: 3, name: "Angry", emoji: "😠", description: "Feeling mad" },
-    { id: 4, name: "Scared", emoji: "😨", description: "Feeling afraid" },
-    { id: 5, name: "Surprised", emoji: "😲", description: "Feeling shocked" }
+    { id: 1, name: "Happy", emoji: "😊",  },
+    { id: 2, name: "Sad", emoji: "😢",  },
+    { id: 3, name: "Angry", emoji: "😠",  },
+    { id: 4, name: "Scared", emoji: "😨",  },
+    { id: 5, name: "Surprised", emoji: "😲",  },
   ];
 
   // Expressions (right side) - 5 items

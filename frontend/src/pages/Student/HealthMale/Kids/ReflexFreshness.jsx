@@ -32,52 +32,52 @@ const ReflexFreshness = () => {
     const questions = [
         {
             id: 1,
-            question: "What to wear?",
+            question: "After playing sports, what should you do first?",
             options: [
-                { id: 'a', text: "Clean Clothes", emoji: "👕", isCorrect: true },
-                { id: 'b', text: "Dirty Shirt", emoji: "❌", isCorrect: false },
-                { id: 'c', text: "Wet Clothes", emoji: "💦", isCorrect: false },
-                { id: 'd', text: "Torn Clothes", emoji: "✂️", isCorrect: false }
+                { id: 'b', text: "Keep playing", emoji: "🏃", isCorrect: false },
+                { id: 'a', text: "Change sweaty shirt", emoji: "👕", isCorrect: true },
+                { id: 'c', text: "Drink water", emoji: "💧", isCorrect: false },
+                { id: 'd', text: "Sit in shade", emoji: "☀️", isCorrect: false }
             ]
         },
         {
             id: 2,
-            question: "How to smell good?",
+            question: "How often should you wash your hair?",
             options: [
-                { id: 'a', text: "Skip Bath", emoji: "🦨", isCorrect: false },
-                { id: 'b', text: "Dirt", emoji: "💩", isCorrect: false },
-                { id: 'c', text: "Mud", emoji: "🟤", isCorrect: false },
-                { id: 'd', text: "Fresh Soap", emoji: "🧼", isCorrect: true }
+                { id: 'a', text: "Every day", emoji: "🚿", isCorrect: true },
+                { id: 'b', text: "Once a month", emoji: "📅", isCorrect: false },
+                { id: 'c', text: "Only when dirty", emoji: "😒", isCorrect: false },
+                { id: 'd', text: "Never", emoji: "🚫", isCorrect: false }
             ]
         },
         {
             id: 3,
-            question: "How to keep face clean?",
+            question: "What should you do with your socks after sports?",
             options: [
-                { id: 'a', text: "Dirty Face", emoji: "😞", isCorrect: false },
-                { id: 'b', text: "Oily Face", emoji: "🛢️", isCorrect: false },
-                { id: 'c', text: "Clean Face", emoji: "🧴", isCorrect: true },
-                { id: 'd', text: "Sticky Face", emoji: "🍯", isCorrect: false }
+                { id: 'b', text: "Keep wearing them", emoji: "👟", isCorrect: false },
+                { id: 'c', text: "Throw them away", emoji: "🗑️", isCorrect: false },
+                { id: 'a', text: "Wash and dry them", emoji: "🧦", isCorrect: true },
+                { id: 'd', text: "Hide them", emoji: "🤫", isCorrect: false }
             ]
         },
         {
             id: 4,
-            question: "How to keep teeth clean?",
+            question: "What helps you feel fresh after exercise?",
             options: [
-                { id: 'a', text: "Eat Candy", emoji: "🍬", isCorrect: false },
-                { id: 'b', text: "Brush Teeth", emoji: "🦷", isCorrect: true },
-                { id: 'c', text: "Drink Soda", emoji: "🥤", isCorrect: false },
-                { id: 'd', text: "Skip Brushing", emoji: "🦶", isCorrect: false },
+                { id: 'a', text: "Cool shower", emoji: "🚿", isCorrect: true },
+                { id: 'b', text: "Hot bath", emoji: "♨️", isCorrect: false },
+                { id: 'c', text: "Cold drink", emoji: "🥤", isCorrect: false },
+                { id: 'd', text: "Rest only", emoji: "😴", isCorrect: false }
             ]
         },
         {
             id: 5,
-            question: "How to stay fresh?",
+            question: "How should you care for your skin in summer?",
             options: [
-                { id: 'a', text: "Daily Bath", emoji: "🚿", isCorrect: true },
-                { id: 'b', text: "Stay Dirty", emoji: "🤢", isCorrect: false },
-                { id: 'c', text: "Roll in Mud", emoji: "🐷", isCorrect: false },
-                { id: 'd', text: "Never Wash", emoji: "🙅", isCorrect: false }
+                { id: 'b', text: "Avoid water", emoji: "🚫", isCorrect: false },
+                { id: 'c', text: "Wear dark clothes", emoji: "👕", isCorrect: false },
+                { id: 'd', text: "Stay in sun", emoji: "☀️", isCorrect: false },
+                { id: 'a', text: "Use sunscreen", emoji: "🧴", isCorrect: true },
             ]
         }
     ];

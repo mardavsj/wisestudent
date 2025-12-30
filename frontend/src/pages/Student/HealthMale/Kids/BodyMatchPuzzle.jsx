@@ -25,20 +25,20 @@ const BodyMatchPuzzle = () => {
 
   // Body Organs (left side) - 5 items
   const organs = [
-    { id: 1, name: "Heart", emoji: "❤️", description: "Blood pump" },
-    { id: 2, name: "Lungs", emoji: "🫁", description: "Air exchange" },
-    { id: 3, name: "Stomach", emoji: "🌀", description: "Food processor" },
-    { id: 4, name: "Brain", emoji: "🧠", description: "Thought center" },
-    { id: 5, name: "Liver", emoji: "☯️", description: "Body cleaner" }
+    { id: 1, name: "Heart", emoji: "❤️",  },
+    { id: 2, name: "Lungs", emoji: "🫁",  },
+    { id: 3, name: "Stomach", emoji: "🌀",  },
+    { id: 4, name: "Brain", emoji: "🧠",  },
+    { id: 5, name: "Liver", emoji: "☯️",  }
   ];
 
   // Functions (right side) - 5 items
   const functions = [
-    { id: 3, name: "Digest Food", emoji: "🍽️", description: "Break down meals" },
-    { id: 5, name: "Filter Toxins", emoji: "💧", description: "Clean blood" },
-    { id: 1, name: "Pump Blood", emoji: "🩸", description: "Circulate fluid" },
-    { id: 4, name: "Process Thoughts", emoji: "💭", description: "Control mind" },
-    { id: 2, name: "Absorb Oxygen", emoji: "💨", description: "Take in air" }
+    { id: 3, name: "Digest Food", emoji: "🍽️" },
+    { id: 5, name: "Filter Toxins", emoji: "💧" },
+    { id: 1, name: "Pump Blood", emoji: "🩸" },
+    { id: 4, name: "Process Thoughts", emoji: "💭" },
+    { id: 2, name: "Absorb Oxygen", emoji: "💨" }
   ];
 
   // Correct matches

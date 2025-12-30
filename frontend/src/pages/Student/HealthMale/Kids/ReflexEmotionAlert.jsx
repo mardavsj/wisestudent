@@ -32,52 +32,54 @@ const ReflexEmotionAlert = () => {
   const scenarios = [
     {
       id: 1,
-      instruction: "When you feel sad, should you...?",
+      instruction: "Your friend is crying because he lost his favorite toy. What should you do first?",
       options: [
-        { id: 'a', text: "Hide Emotions", emoji: "🤐", isCorrect: false },
-        { id: 'b', text: "Talk About Feelings", emoji: "💬", isCorrect: true },
-        { id: 'c', text: "Cry Alone", emoji: "😢", isCorrect: false },
-        { id: 'd', text: "Ignore Friends", emoji: "🙅", isCorrect: false }
+        { id: 'a', text: "Give him a hug and listen", emoji: "🤗", isCorrect: true },
+        { id: 'b', text: "Tell him to stop crying", emoji: "🤫", isCorrect: false },
+        { id: 'c', text: "Make fun of him for being sad", emoji: "😂", isCorrect: false },
+        { id: 'd', text: "Walk away to avoid the situation", emoji: "🚶", isCorrect: false }
       ]
     },
     {
       id: 2,
-      instruction: "When you're angry, you should...?",
+      instruction: "You feel really angry after someone took your snack without asking. What's the best way to handle this?",
       options: [
-        { id: 'a', text: "Break Things", emoji: "😡", isCorrect: false },
-        { id: 'b', text: "Calm Down", emoji: "🧘", isCorrect: false },
-        { id: 'c', text: "Yell Loudly", emoji: "😱", isCorrect: false },
-        { id: 'd', text: "Take Deep Breaths", emoji: "😐", isCorrect: true }
+        { id: 'a', text: "Punch the wall to release anger", emoji: "🤜", isCorrect: false },
+        { id: 'b', text: "Take deep breaths and count to 5", emoji: "😮‍💨", isCorrect: true },
+        { id: 'c', text: "Yell at the person loudly", emoji: "😠", isCorrect: false },
+        { id: 'd', text: "Hide your anger and stay quiet", emoji: "🤐", isCorrect: false }
       ]
     },
     {
       id: 3,
-      instruction: "When excited, it's good to...?",
+      instruction: "You just scored the winning goal in soccer! How can you celebrate while being respectful to others?",
       options: [
-        { id: 'a', text: "Jump Up And Down", emoji: "😄", isCorrect: false },
-        { id: 'b', text: "Share Excitement", emoji: "😊", isCorrect: true },
-        { id: 'c', text: "Act Bored", emoji: "😑", isCorrect: false },
-        { id: 'd', text: "Celebrate Joyfully", emoji: "🎉", isCorrect: false }
+        { id: 'a', text: "Jump up and down and high-five teammates", emoji: "🙌", isCorrect: true },
+        { id: 'b', text: "Point at the other team and laugh", emoji: "👉", isCorrect: false },
+        { id: 'c', text: "Stay calm and pretend it wasn't a big deal", emoji: "😐", isCorrect: false },
+        { id: 'd', text: "Shout loudly right next to someone's ear", emoji: "🗣️", isCorrect: false }
       ]
     },
     {
       id: 4,
-      instruction: "When scared, you can...?",
+      instruction: "You're scared to try out for the school play because you might forget your lines. What should you do?",
       options: [
-        { id: 'b', text: "Face Fear", emoji: "🤝", isCorrect: true },
-        { id: 'a', text: "Run Away", emoji: "🏃", isCorrect: false },
-        { id: 'c', text: "Ask for Help", emoji: "🤝", isCorrect: false },
-        { id: 'd', text: "Hide Yourself", emoji: "🙈", isCorrect: false }
+       
+        { id: 'b', text: "Just avoid trying out completely", emoji: "🏃", isCorrect: false },
+        { id: 'c', text: "Blame others if you make mistakes", emoji: "🤦", isCorrect: false },
+        { id: 'd', text: "Get angry at yourself for being scared", emoji: "😤", isCorrect: false },
+         { id: 'a', text: "Practice your lines every day to build confidence", emoji: "🎭", isCorrect: true },
       ]
     },
     {
       id: 5,
-      instruction: "When worried, try to...?",
+      instruction: "Your parents are worried about money and seem stressed. How can you help at home?",
       options: [
-        { id: 'a', text: "Think Positive", emoji: "💭", isCorrect: false },
-        { id: 'b', text: "Keep Worrying", emoji: "😰", isCorrect: false },
-        { id: 'd', text: "Problem Solve", emoji: "🤔", isCorrect: true },
-        { id: 'c', text: "Seek Help", emoji: "🤝", isCorrect: false },
+        
+        { id: 'b', text: "Ask for expensive toys to add to their stress", emoji: "🧸", isCorrect: false },
+        { id: 'c', text: "Ignore the situation completely", emoji: "😶", isCorrect: false },
+        { id: 'a', text: "Do extra chores without being asked", emoji: "🧹", isCorrect: true },
+        { id: 'd', text: "Blame them for being worried", emoji: "🙄", isCorrect: false }
       ]
     }
   ];

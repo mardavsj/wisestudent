@@ -26,138 +26,127 @@ const VaccineStory = () => {
   const questions = [
     {
       id: 1,
-      text: "What is a vaccine?",
+      text: "Which disease has been completely wiped out from the world thanks to vaccines?",
       options: [
+       
         {
           id: "b",
-          text: "A type of candy",
-          emoji: "🍬",
-          description: "Vaccines are medicine, not treats",
+          text: "Chickenpox",
+          emoji: "🤒",
           isCorrect: false
-        },
-        {
-          id: "a",
-          text: "A shield against germs",
-          emoji: "🛡️",
-          description: "Vaccines teach your body how to fight germs",
-          isCorrect: true
         },
         {
           id: "c",
-          text: "A magic spell",
-          emoji: "✨",
-          description: "It's science, not magic!",
+          text: "Common cold",
+          emoji: "🤧",
           isCorrect: false
-        }
+        },
+         {
+          id: "a",
+          text: "Smallpox",
+          emoji: "🫥",
+          
+          isCorrect: true
+        },
       ]
     },
     {
       id: 2,
-      text: "Why do we get vaccines?",
+      text: "How many diseases can vaccines protect children from?",
       options: [
          {
           id: "a",
-          text: "To stay healthy and strong",
-          emoji: "💪",
-          description: "They protect you from dangerous diseases",
+          text: "More than 30 diseases",
+          emoji: "🛡️",
           isCorrect: true
         },
         {
-          id: "c",
-          text: "To get sick",
-          emoji: "🤒",
-          description: "Vaccines prevent sickness",
+          id: "b",
+          text: "Only 5 diseases",
+          emoji: "❌",
           isCorrect: false
         },
         {
-          id: "b",
-          text: "Because it's fun",
-          emoji: "🎉",
-          description: "It's for health, not entertainment",
+          id: "c",
+          text: "Just 1 disease",
+          emoji: "😔",
           isCorrect: false
         }
       ]
     },
     {
       id: 3,
-      text: "Does a vaccine hurt?",
+      text: "What happens to your body when you get a vaccine?",
       options: [
+        
         {
           id: "b",
-          text: "It hurts a lot forever",
-          emoji: "😫",
-          description: "The pinch only lasts a second",
+          text: "Your body gets sick immediately",
+          emoji: "🤢",
           isCorrect: false
         },
-      
         {
-          id: "c",
-          text: "It tickles",
-          emoji: "😂",
-          description: "It feels like a small pinch or scratch",
-          isCorrect: false
-        },
-          {
           id: "a",
-          text: "Just a tiny pinch",
-          emoji: "🤏",
-          description: "It's a quick pinch for long-term protection",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "What happens after a vaccine?",
-      options: [
-         {
-          id: "a",
-          text: "Your body learns to fight germs",
+          text: "Your body creates special cells to remember and fight the disease",
           emoji: "🧠",
-          description: "Your immune system gets smarter",
+            
           isCorrect: true
         },
         {
           id: "c",
-          text: "You turn green",
-          emoji: "👽",
-          description: "You stay your normal color!",
-          isCorrect: false
-        },
-       
-        {
-          id: "b",
-          text: "You can fly",
-          emoji: "✈️",
-          description: "Vaccines give health, not superpowers",
+          text: "Your body becomes very weak",
+          emoji: "😵",
           isCorrect: false
         }
       ]
     },
     {
-      id: 5,
-      text: "Who helps you get vaccines?",
+      id: 4,
+      text: "Since 1974, how many children's lives have vaccines saved worldwide?",
       options: [
+        
         {
           id: "b",
-          text: "The mailman",
-          emoji: "✉️",
-          description: "Doctors and nurses give vaccines",
+          text: "About 10 million lives",
+          emoji: "🔢",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Your teacher",
-          emoji: "👩‍🏫",
-          description: "Teachers teach, doctors give medicine",
+          text: "About 50 million lives",
+          emoji: "📈",
           isCorrect: false
         },
-        {
+         {
           id: "a",
-          text: "Doctors and nurses",
-          emoji: "👨‍⚕️",
-          description: "Healthcare professionals keep you safe",
+          text: "More than 150 million lives",
+          emoji: "🌟",
           isCorrect: true
+        },
+      ]
+    },
+    {
+      id: 5,
+      text: "What's special about getting vaccinated?",
+      options: [
+       
+        {
+          id: "b",
+          text: "It only protects you",
+          emoji: "👤",
+          isCorrect: false
+        },
+         {
+          id: "a",
+          text: "It protects not only you but also your family and community",
+          emoji: "👥",
+          isCorrect: true
+        },
+        {
+          id: "c",
+          text: "It only helps the doctors",
+          emoji: "👨‍⚕️",
+          isCorrect: false
         }
       ]
     }

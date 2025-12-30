@@ -27,121 +27,123 @@ const SweatStory = () => {
   const questions = [
     {
       id: 1,
-      text: "You notice sweating more during play. What should you do?",
+      text: "During football practice, your face turns red and you start sweating. What's happening to your body?",
       options: [
-        {
-          id: "b",
-          text: "Ignore it",
-          emoji: "😅",
-         
-          isCorrect: false
-        },
+        
         {
           id: "a",
-          text: "Take a bath",
-          emoji: "🧼",
-          isCorrect: true
+          text: "Your body is getting sick",
+          emoji: "🤒",
+          isCorrect: false
         },
         {
           id: "c",
-          text: "Put on more clothes",
+          text: "Your clothes are too warm",
           emoji: "👕",
           isCorrect: false
-        }
+        },
+        {
+          id: "b",
+          text: "Your body is cooling itself down",
+          emoji: "🌡️",
+          isCorrect: true
+        },
       ]
     },
     {
       id: 2,
-      text: "You sweat a lot during sports. What's the right response?",
+      text: "After running in the hot sun, you notice wet patches on your shirt. What should you do when you get home?",
       options: [
         {
           id: "a",
-          text: "Drink water and rest",
-          emoji: "💧",
+          text: "Take a bath and change into clean clothes",
+          emoji: "🚿",
           isCorrect: true
         },
         {
           id: "b",
-          text: "Stop playing forever",
-          emoji: "😞",
+          text: "Keep the sweaty shirt until tomorrow",
+          emoji: "😴",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Wear tight clothes",
-          emoji: "👔",
+          text: "Just wipe with a towel and continue playing",
+          emoji: "🧻",
           isCorrect: false
         }
       ]
     },
     {
       id: 3,
-      text: "Your shirt gets sweaty at school. What do you do?",
+      text: "Your friend Tom says sweating makes him smell bad and he feels embarrassed. What would you tell him?",
       options: [
+        
+        {
+          id: "a",
+          text: "Use deodorant to stop smelling",
+          emoji: "💨",
+          isCorrect: false
+        },
         {
           id: "c",
-          text: "Keep wearing it all day",
-          emoji: "👕",
-          isCorrect: false
+          text: "Sweating is normal and helps keep your body healthy",
+          emoji: "💪",
+          isCorrect: true
         },
         {
           id: "b",
-          text: "Spray perfume to hide smell",
-          emoji: "🌸",
+          text: "Avoid playing sports to prevent sweating",
+          emoji: "🚫",
           isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Change shirt after school",
-          emoji: "🧺",
-          isCorrect: true
         }
       ]
     },
     {
       id: 4,
-      text: "You sweat during a test at school. Should you worry?",
+      text: "You notice your friend's shirt is wet with sweat during a game. What's the right way to respond?",
       options: [
+        
         {
           id: "b",
-          text: "Yes, it's embarrassing",
-          emoji: "😳",
+          text: "Make fun of him for sweating",
+          emoji: "😂",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Tell everyone about it",
-          emoji: "📢",
+          text: "Stop the game because he looks gross",
+          emoji: "🤢",
           isCorrect: false
         },
         {
           id: "a",
-          text: "No, it's normal",
-          emoji: "😊",
+          text: "Keep playing and respect that sweating is normal",
+          emoji: "👍",
           isCorrect: true
-        }
+        },
       ]
     },
     {
       id: 5,
-      text: "After playing outside, you feel sticky. Best action?",
+      text: "After a long bike ride, your body feels sticky. Why is it important to clean up?",
       options: [
         {
           id: "b",
-          text: "Wait until tomorrow",
-          emoji: "⏰",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Take a cool shower",
-          emoji: "🚿",
+          text: "To remove bacteria and prevent skin irritation",
+          emoji: "🦠",
           isCorrect: true
         },
         {
+          id: "a",
+          text: "To look better for photos",
+          emoji: "📸",
+          isCorrect: false
+        },
+        {
           id: "c",
-          text: "Just wipe with towel",
-          emoji: "🧻",
+          text: "To make your clothes last longer",
+          emoji: "👕",
           isCorrect: false
         }
       ]

@@ -32,52 +32,52 @@ const ReflexPeerCheck = () => {
   const scenarios = [
     {
       id: 1,
-      instruction: "Friends want you to try smoking. Choose the SAFE choice!",
+      instruction: "Your friends want you to try smoking because they say it makes you look cool. What should you do to stay healthy?",
       options: [
-        { id: 'a', text: "Say No", emoji: "🙅", isCorrect: true },
-        { id: 'b', text: "Try It", emoji: "🚬", isCorrect: false },
-        { id: 'c', text: "Watch", emoji: "👀", isCorrect: false },
-        { id: 'd', text: "Laugh", emoji: "😂", isCorrect: false }
+        { id: 'a', text: "Politely decline and suggest a fun activity instead", emoji: "😊", isCorrect: true },
+        { id: 'b', text: "Try it once to see what it's like", emoji: "🤔", isCorrect: false },
+        { id: 'c', text: "Just watch and not participate", emoji: "👀", isCorrect: false },
+        { id: 'd', text: "Laugh and say nothing", emoji: "😂", isCorrect: false }
       ]
     },
     {
       id: 2,
-      instruction: "Someone dares you to jump from high place. Choose the SAFE choice!",
+      instruction: "Your friends dare you to climb to a dangerous high place. What is the safest choice?",
       options: [
-        { id: 'a', text: "Jump", emoji: "😨", isCorrect: false },
-        { id: 'b', text: "Walk Away", emoji: "🚶", isCorrect: true },
-        { id: 'c', text: "Watch Friends", emoji: "👀", isCorrect: false },
-        { id: 'd', text: "Laugh", emoji: "😂", isCorrect: false }
+        { id: 'a', text: "Climb carefully but only if you feel safe", emoji: "🧗", isCorrect: false },
+        { id: 'b', text: "Politely refuse and suggest a safer activity", emoji: "🚶", isCorrect: true },
+        { id: 'c', text: "Stay and watch your friends climb", emoji: "👀", isCorrect: false },
+        { id: 'd', text: "Tell them it's dangerous but stay anyway", emoji: "💬", isCorrect: false }
       ]
     },
     {
       id: 3,
-      instruction: "Friends pressure you to cheat on test. Choose the SAFE choice!",
+      instruction: "A classmate offers to let you copy their answers during a test. What is the right thing to do?",
       options: [
-        { id: 'a', text: "Cheat", emoji: "📋", isCorrect: false },
-        { id: 'b', text: "Copy", emoji: "📚", isCorrect: false },
-        { id: 'c', text: "Tell Teacher", emoji: "👩‍🏫", isCorrect: true },
-        { id: 'd', text: "Stay Quiet", emoji: "🤐", isCorrect: false }
+        { id: 'a', text: "Accept the offer to get a good grade", emoji: "📝", isCorrect: false },
+        { id: 'b', text: "Tell the teacher about the offer", emoji: "👩‍🏫", isCorrect: false },
+        { id: 'd', text: "Just stay quiet and ignore", emoji: "🤐", isCorrect: false },
+        { id: 'c', text: "Politely decline and do your best on your own", emoji: "💪", isCorrect: true },
       ]
     },
     {
       id: 4,
-      instruction: "Someone wants you to steal candy. Choose the SAFE choice!",
+      instruction: "A friend suggests you take candy from a store without paying. What should you do?",
       options: [
-        { id: 'a', text: "Steal", emoji: "🍬", isCorrect: false },
-        { id: 'b', text: "Buy Candy", emoji: "💰", isCorrect: false },
-        { id: 'c', text: "Ask for Candy", emoji: "🙋", isCorrect: false },
-        { id: 'd', text: "Walk Away", emoji: "🚶", isCorrect: true }
+        { id: 'a', text: "Take it because you think no one will notice", emoji: "🍬", isCorrect: false },
+        { id: 'b', text: "Buy the candy with your own money instead", emoji: "💰", isCorrect: false },
+        { id: 'c', text: "Politely say no and explain why stealing is wrong", emoji: "🚫", isCorrect: true },
+        { id: 'd', text: "Ask the store owner if you can have some", emoji: "🙋", isCorrect: false }
       ]
     },
     {
       id: 5,
-      instruction: "Friends dare you to cross street without looking. Choose the SAFE choice!",
+      instruction: "Friends dare you to cross a busy street without looking. What is the safest action?",
       options: [
-        { id: 'a', text: "Run Across", emoji: "🏃", isCorrect: false },
-        { id: 'b', text: "Close Eyes", emoji: "🙈", isCorrect: false },
-        { id: 'c', text: "Follow Friends", emoji: "👥", isCorrect: false },
-        { id: 'd', text: "Look Both Ways", emoji: "👀", isCorrect: true }
+        { id: 'a', text: "Run across quickly to get it over with", emoji: "🏃", isCorrect: false },
+        { id: 'b', text: "Wait for the traffic light and use the crosswalk", emoji: "🚦", isCorrect: true },
+        { id: 'c', text: "Follow your friends even though you're scared", emoji: "👥", isCorrect: false },
+        { id: 'd', text: "Close your eyes and cross", emoji: "🙈", isCorrect: false }
       ]
     }
   ];

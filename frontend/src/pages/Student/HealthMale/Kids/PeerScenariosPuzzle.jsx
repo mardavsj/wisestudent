@@ -25,28 +25,28 @@ const PeerScenariosPuzzle = () => {
 
   // Peer Pressure Scenarios (left side) - 5 items
   const scenarios = [
-    { id: 1, name: "Skip Homework", emoji: "📚", description: "Schoolwork pressure" },
-    { id: 2, name: "Try Smoking", emoji: "🚬", description: "Unhealthy dare" },
-    { id: 3, name: "Cheat on Test", emoji: "📝", description: "Academic dishonesty" },
-    { id: 4, name: "Steal Items", emoji: "🏪", description: "Illegal activity" },
-    { id: 5, name: "Bully Someone", emoji: "😢", description: "Hurt others" }
+    { id: 1, name: "Skip Homework", emoji: "📚", description: "Friends pressure you to skip studying" },
+    { id: 2, name: "Try Smoking", emoji: "🚬", description: "Someone offers you a cigarette" },
+    { id: 3, name: "Cheat on Test", emoji: "📝", description: "Classmate suggests copying answers" },
+    { id: 4, name: "Steal Items", emoji: "🏪", description: "Friend wants to shoplift" },
+    { id: 5, name: "Bully Someone", emoji: "😢", description: "Group wants to tease a classmate" }
   ];
 
   // Appropriate Responses (right side) - 5 items
   const responses = [
-    { id: 3, name: "Walk Away", emoji: "🚶", description: "Leave situation" },
-    { id: 5, name: "Get Help", emoji: "🆘", description: "Seek assistance" },
-    { id: 1, name: "Say No Firmly", emoji: "🙅", description: "Direct refusal" },
-    { id: 4, name: "Suggest Alternative", emoji: "💡", description: "Positive redirect" },
-    { id: 2, name: "Explain Why", emoji: "💬", description: "Share reasoning" }
+    { id: 1, name: "Say No Firmly", emoji: "🙅", description: "Politely but firmly refuse" },
+    { id: 2, name: "Walk Away", emoji: "🚶", description: "Remove yourself from the situation" },
+    { id: 3, name: "Suggest Alternative", emoji: "💡", description: "Propose a better activity" },
+    { id: 5, name: "Get Help", emoji: "🆘", description: "Tell a trusted adult" },
+    { id: 4, name: "Explain Why", emoji: "💬", description: "Share your reasons for not participating" },
   ];
 
   // Correct matches
   const correctMatches = [
-    { scenarioId: 1, responseId: 1 }, // Skip Homework → Say No Firmly
-    { scenarioId: 2, responseId: 2 }, // Try Smoking → Explain Why
-    { scenarioId: 3, responseId: 3 }, // Cheat on Test → Walk Away
-    { scenarioId: 4, responseId: 4 }, // Steal Items → Suggest Alternative
+    { scenarioId: 1, responseId: 4 }, // Skip Homework → Explain Why
+    { scenarioId: 2, responseId: 1 }, // Try Smoking → Say No Firmly
+    { scenarioId: 3, responseId: 3 }, // Cheat on Test → Suggest Alternative
+    { scenarioId: 4, responseId: 2 }, // Steal Items → Walk Away
     { scenarioId: 5, responseId: 5 }  // Bully Someone → Get Help
   ];
 

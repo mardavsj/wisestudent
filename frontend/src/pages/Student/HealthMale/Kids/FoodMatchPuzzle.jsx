@@ -25,20 +25,20 @@ const FoodMatchPuzzle = () => {
 
   // Foods (left side) - 5 items
   const foods = [
-    { id: 1, name: "Milk", emoji: "🥛", description: "Dairy drink" },
-    { id: 2, name: "Dal (Lentils)", emoji: "🍛", description: "Protein-rich legume" },
-    { id: 3, name: "Carrot", emoji: "🥕", description: "Orange vegetable" },
-    { id: 4, name: "Banana", emoji: "🍌", description: "Yellow fruit" },
-    { id: 5, name: "Egg", emoji: "🥚", description: "Chicken product" }
+    { id: 1, name: "Milk", emoji: "🥛",  },
+    { id: 2, name: "Dal (Lentils)", emoji: "🍛",  },
+    { id: 3, name: "Carrot", emoji: "🥕",  },
+    { id: 4, name: "Banana", emoji: "🍌",  },
+    { id: 5, name: "Egg", emoji: "🥚",  },
   ];
 
   // Nutrients (right side) - 5 items
   const nutrients = [
-    { id: 3, name: "Vitamins", emoji: "🌟", description: "Essential compounds" },
-    { id: 5, name: "Protein", emoji: "💪", description: "Muscle builder" },
-    { id: 1, name: "Calcium", emoji: "🦴", description: "Bone strengthener" },
-    { id: 4, name: "Energy", emoji: "⚡", description: "Body fuel" },
-    { id: 2, name: "Fiber", emoji: "🌾", description: "Digestive aid" }
+    { id: 3, name: "Vitamins", emoji: "🌟",  },
+    { id: 5, name: "Protein", emoji: "💪",  },
+    { id: 1, name: "Calcium", emoji: "🦴",  },
+    { id: 4, name: "Energy", emoji: "⚡",  },
+    { id: 2, name: "Fiber", emoji: "🌾",  }
   ];
 
   // Correct matches

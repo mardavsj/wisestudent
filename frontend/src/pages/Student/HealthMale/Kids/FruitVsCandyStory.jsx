@@ -27,135 +27,122 @@ const FruitVsCandyStory = () => {
   const questions = [
     {
       id: 1,
-      text: "You see an apple and candy at snack time. Which do you choose?",
+      text: "You're feeling tired after playing. Which snack will give you energy that lasts?",
       options: [
         {
           id: "b",
-          text: "Candy",
-          emoji: "🍬",
-          description: "Candy has lots of sugar but no healthy nutrients",
+          text: "Candy bar",
+          emoji: "🍫",
+         
           isCorrect: false
         },
         {
           id: "a",
-          text: "Apple",
-          emoji: "🍎",
-          description: "Apple gives you vitamins and keeps you healthy",
+          text: "Banana and nuts",
+          emoji: "🍌",
+          
           isCorrect: true
         },
         {
           id: "c",
-          text: "Both equally",
-          emoji: "🤷",
-          description: "Apple is much healthier than candy",
+          text: "Soda",
+          emoji: "🥤",
           isCorrect: false
         }
       ]
     },
     {
       id: 2,
-      text: "Your friend offers you chocolate or an orange. What do you pick?",
+      text: "Before brushing your teeth, which snack is better for your dental health?",
       options: [
         {
           id: "a",
-          text: "Orange",
-          emoji: "🍊",
-          description: "Orange has vitamin C and natural sweetness",
+          text: "Apple slices",
+          emoji: "🍏",
           isCorrect: true
         },
         {
           id: "b",
-          text: "Chocolate",
-          emoji: "🍫",
-          description: "Chocolate is tasty but has too much sugar",
+          text: "Gummy bears",
+          emoji: "🧸",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Neither",
-          emoji: "❌",
-          description: "Orange is the healthy choice here",
+          text: "Cookies",
+          emoji: "🍪",
           isCorrect: false
         }
       ]
     },
     {
       id: 3,
-      text: "At birthday party, you can have cake or banana. Which one?",
+      text: "For a healthy breakfast, what would help you focus better in school?",
       options: [
         {
           id: "c",
-          text: "Skip both",
-          emoji: "😴",
-          description: "Banana is healthy and gives you energy",
+          text: "Cereal with lots of sugar",
+          emoji: "🥣",
           isCorrect: false
         },
         {
           id: "b",
-          text: "Cake",
-          emoji: "🍰",
-          description: "Cake has too much sugar and fat",
+          text: "Chocolate donut",
+          emoji: "🍩",
           isCorrect: false
         },
         {
           id: "a",
-          text: "Banana",
-          emoji: "🍌",
-          description: "Banana is naturally sweet and nutritious",
+          text: "Oatmeal with berries",
+          emoji: "🫐",
           isCorrect: true
         }
       ]
     },
     {
       id: 4,
-      text: "Mom gives you choice: cookies or grapes. What do you choose?",
+      text: "You have a sports game today. Which pre-game snack will help you perform best?",
       options: [
         {
           id: "b",
-          text: "Cookies",
-          emoji: "🍪",
-          description: "Cookies are processed and have lots of sugar",
+          text: "Candy",
+          emoji: "🍬",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Both",
-          emoji: "😊",
-          description: "Grapes are much healthier than cookies",
+          text: "Nothing",
+          emoji: "❌",
           isCorrect: false
         },
         {
           id: "a",
-          text: "Grapes",
-          emoji: "🍇",
-          description: "Grapes give you antioxidants and natural energy",
+          text: "Whole grain toast with honey",
+          emoji: "🍯",
           isCorrect: true
         }
       ]
     },
     {
       id: 5,
-      text: "School lunch: chips or apple slices. Which is better?",
+      text: "Which snack helps your body grow stronger and taller?",
       options: [
         {
           id: "b",
-          text: "Chips",
-          emoji: "🥔",
-          description: "Chips are fried and have too much salt",
+          text: "Candy",
+          emoji: "🍬",
           isCorrect: false
         },
         {
           id: "a",
-          text: "Apple slices",
-          emoji: "🍏",
-          description: "Apple slices are fresh and full of fiber",
+          text: "Yogurt with fruit",
+          emoji: "🥛",
           isCorrect: true
         },
         {
           id: "c",
-          text: "Mix them",
-          emoji: "🤝",
-          description: "Apple slices are the clear healthy choice",
+          text: "Chips",
+          emoji: "🥔",
           isCorrect: false
         }
       ]

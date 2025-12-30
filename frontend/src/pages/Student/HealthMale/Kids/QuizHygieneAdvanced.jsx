@@ -28,125 +28,125 @@ const QuizHygieneAdvanced = () => {
   const questions = [
     {
       id: 1,
-      text: "Which prevents body odor?",
+      text: "After playing sports outside, what should you do first?",
       options: [
-       
+        {
+          id: "a",
+          text: "Take a shower to wash off sweat and bacteria",
+          emoji: "🚿",
+          isCorrect: true
+        },
         {
           id: "b",
-          text: "Wearing same shirt",
+          text: "Put on clean clothes over your sweaty ones",
           emoji: "👕",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Using lots of perfume",
-          emoji: "🌸",
-          isCorrect: false
-        },
-         {
-          id: "a",
-          text: "Bathing daily",
-          emoji: "🧼",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "How often should you change your clothes?",
-      options: [
-        {
-          id: "a",
-          text: "When they're dirty",
-          emoji: "🧺",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Only on special days",
-          emoji: "🎉",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Once a week",
-          emoji: "📅",
+          text: "Wait until tomorrow to clean up",
+          emoji: "⏰",
           isCorrect: false
         }
       ]
     },
     {
+      id: 2,
+      text: "What is the best way to prevent nail infections?",
+      options: [
+        
+        {
+          id: "b",
+          text: "Paint them with colorful nail polish",
+          emoji: "🎨",
+          isCorrect: false
+        },
+        {
+          id: "c",
+          text: "Keep them long to look cool",
+          emoji: "💅",
+          isCorrect: false
+        },
+        {
+          id: "a",
+          text: "Keep nails short and clean",
+          emoji: "✂️",
+          isCorrect: true
+        },
+      ]
+    },
+    {
       id: 3,
-      text: "What's the best way to handle sweaty clothes?",
+      text: "Why is it important to dry your body completely after a bath?",
       options: [
         {
           id: "a",
-          text: "Wash them regularly",
+          text: "Moist areas can grow bacteria and cause infections",
           emoji: "🧽",
           isCorrect: true
         },
         {
           id: "b",
-          text: "Keep wearing them",
-          emoji: "♻️",
+          text: "It makes you feel cooler",
+          emoji: "❄️",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Spray with air freshener",
-          emoji: "🌬️",
+          text: "It saves time",
+          emoji: "⏱️",
           isCorrect: false
         }
       ]
     },
     {
       id: 4,
-      text: "When should you wash your face?",
+      text: "When should you replace your toothbrush?",
       options: [
        
         {
           id: "b",
-          text: "Only when it looks dirty",
-          emoji: "👀",
+          text: "Only when it runs out of toothpaste",
+          emoji: "🧴",
           isCorrect: false
         },
          {
           id: "a",
-          text: "Morning and night",
-          emoji: "🌅",
+          text: "Every 3-4 months or when bristles are frayed",
+          emoji: "🦷",
           isCorrect: true
         },
         {
           id: "c",
-          text: "Never, it cleans itself",
-          emoji: "🤷",
+          text: "Once a year",
+          emoji: "📅",
           isCorrect: false
         }
       ]
     },
     {
       id: 5,
-      text: "Why is deodorant important for growing kids?",
+      text: "What should you do if you get a small cut while playing?",
       options: [
-        
+       
         {
           id: "b",
-          text: "It makes you popular",
-          emoji: "👑",
+          text: "Just blow on it and continue playing",
+          emoji: "💨",
           isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Controls body odor",
-          emoji: "🌸",
-          isCorrect: true
         },
         {
           id: "c",
-          text: "Changes your height",
-          emoji: "📏",
+          text: "Use dirt to stop the bleeding",
+          emoji: "🌍",
           isCorrect: false
-        }
+        },
+         {
+          id: "a",
+          text: "Clean it with soap and water, then cover with a bandage",
+          emoji: "🩹",
+          isCorrect: true
+        },
       ]
     }
   ];
@@ -220,7 +220,7 @@ const QuizHygieneAdvanced = () => {
                 <span className="text-yellow-400 font-bold">Score: {coins}/{questions.length}</span>
               </div>
               
-              <div className="text-6xl mb-4 text-center">🧼</div>
+              <div className="text-6xl mb-4 text-center">😶‍🌫️</div>
               
               <p className="text-white text-lg md:text-xl mb-6 text-center">
                 {questions[currentQuestion].text}

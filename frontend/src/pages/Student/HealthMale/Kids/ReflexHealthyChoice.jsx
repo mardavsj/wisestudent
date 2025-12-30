@@ -32,52 +32,52 @@ const ReflexHealthyChoice = () => {
   const questions = [
     {
       id: 1,
-      question: "Which one is healthy?",
+      question: "Which activity helps your body grow strong?",
       options: [
-        { id: 'a', text: "Vegetables", emoji: "🥦", isCorrect: true },
-        { id: 'b', text: "Chips", emoji: "🍟", isCorrect: false },
-        { id: 'c', text: "Candy", emoji: "🍬", isCorrect: false },
-        { id: 'd', text: "Soda", emoji: "🥤", isCorrect: false }
+        { id: 'b', text: "Watching TV all day", emoji: "📺", isCorrect: false },
+        { id: 'c', text: "Staying in bed", emoji: "🛏️", isCorrect: false },
+        { id: 'd', text: "Playing video games", emoji: "🎮", isCorrect: false },
+        { id: 'a', text: "Playing outside", emoji: "🏃", isCorrect: true },
       ]
     },
     {
       id: 2,
-      question: "Pick the healthy snack!",
+      question: "What should you do when you feel thirsty after playing?",
       options: [
-        { id: 'a', text: "Cookie", emoji: "🍪", isCorrect: false },
-        { id: 'b', text: "Apple", emoji: "🍎", isCorrect: true },
-        { id: 'c', text: "Cake", emoji: "🍰", isCorrect: false },
-        { id: 'd', text: "Donut", emoji: "🍩", isCorrect: false }
+        { id: 'b', text: "Eat candy", emoji: "🍬", isCorrect: false },
+        { id: 'a', text: "Drink water", emoji: "💧", isCorrect: true },
+        { id: 'c', text: "Eat chips", emoji: "🍟", isCorrect: false },
+        { id: 'd', text: "Drink soda", emoji: "🥤", isCorrect: false }
       ]
     },
     {
       id: 3,
-      question: "Choose the best drink!",
+      question: "How many hours of sleep does a child need each night?",
       options: [
-        { id: 'a', text: "Soda", emoji: "🥤", isCorrect: false },
-        { id: 'b', text: "Juice Box", emoji: "🧃", isCorrect: false },
-        { id: 'c', text: "Milk", emoji: "🥛", isCorrect: true },
-        { id: 'd', text: "Energy Drink", emoji: "⚡", isCorrect: false }
+        { id: 'a', text: "8-10 hours", emoji: "😴", isCorrect: true },
+        { id: 'b', text: "2-3 hours", emoji: "⏰", isCorrect: false },
+        { id: 'c', text: "10-14 hours", emoji: "🕐", isCorrect: false },
+        { id: 'd', text: "24 hours", emoji: "🕛", isCorrect: false }
       ]
     },
     {
       id: 4,
-      question: "What makes you strong?",
+      question: "What should you do before eating to stay healthy?",
       options: [
-        { id: 'a', text: "Candy", emoji: "🍬", isCorrect: false },
-        { id: 'b', text: "Chips", emoji: "🍟", isCorrect: false },
-        { id: 'c', text: "Carrot", emoji: "🥕", isCorrect: true },
-        { id: 'd', text: "Chocolate", emoji: "🍫", isCorrect: false }
+        { id: 'b', text: "Touch your face", emoji: "😷", isCorrect: false },
+        { id: 'c', text: "Skip brushing teeth", emoji: "🦷", isCorrect: false },
+        { id: 'a', text: "Wash your hands", emoji: "🧼", isCorrect: true },
+        { id: 'd', text: "Eat without washing", emoji: "🍽️", isCorrect: false }
       ]
     },
     {
       id: 5,
-      question: "Best breakfast choice?",
+      question: "Which of these helps your body fight off germs?",
       options: [
-        { id: 'a', text: "Ice Cream", emoji: "🍦", isCorrect: false },
-        { id: 'b', text: "Pizza", emoji: "🍕", isCorrect: false },
-        { id: 'c', text: "Burger", emoji: "🍔", isCorrect: false },
-        { id: 'd', text: "Eggs", emoji: "🍳", isCorrect: true }
+        { id: 'a', text: "Eating fruits and vegetables", emoji: "🥬", isCorrect: true },
+        { id: 'b', text: "Eating only cookies", emoji: "🍪", isCorrect: false },
+        { id: 'c', text: "Drinking only juice", emoji: "🥤", isCorrect: false },
+        { id: 'd', text: "Eating chips", emoji: "🍟", isCorrect: false }
       ]
     }
   ];

@@ -27,124 +27,124 @@ const JunkFoodStory = () => {
   const questions = [
     {
       id: 1,
-      text: "Friends buy chips every day at school. They ask you to join. What do you say?",
+      text: "You're at a movie theater with your family. There's a large bucket of buttered popcorn, nachos with cheese, and a big soda. What do you choose to eat?",
       options: [
         {
           id: "b",
-          text: "Yes, I want chips too",
-          emoji: "🍟",
-         
+          text: "All of the snacks and soda",
+          emoji: "🍽️",
           isCorrect: false
         },
         {
           id: "a",
-          text: "No, I brought healthy snacks",
-          emoji: "🥕",
-          
+          text: "Just a small portion of popcorn",
+          emoji: "🍿",
           isCorrect: true
         },
         {
           id: "c",
-          text: "Maybe tomorrow",
-          emoji: "⏰",
+          text: "Skip the snacks and drink water",
+          emoji: "💧",
           isCorrect: false
         }
       ]
     },
     {
       id: 2,
-      text: "At birthday party, everyone eats candy. You want some too. What do you do?",
+      text: "Your parents allow you to pick one snack for movie night. Which do you choose to make it special but still healthy?",
       options: [
         {
           id: "a",
-          text: "Take one piece, then stop",
-          emoji: "🍬",
+          text: "Air-popped popcorn with a small amount of seasoning",
+          emoji: "🍿",
           isCorrect: true
         },
         {
           id: "b",
-          text: "Eat as much as I want",
+          text: "Candy and cookies",
           emoji: "🍭",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Don't eat any",
-          emoji: "❌",
-            isCorrect: false
+          text: "Nothing at all",
+          emoji: "😶",
+          isCorrect: false
         }
       ]
     },
     {
       id: 3,
-      text: "Your friend shares soda with you during break. Should you drink it?",
+      text: "At a school carnival, you have 5 tickets for food. The options are: cotton candy, candy apples, or fresh fruit kabobs. What do you pick?",
       options: [
         {
           id: "c",
-          text: "Drink the whole bottle",
-          emoji: "🥤",
+          text: "Cotton candy with all tickets",
+          emoji: "🍭",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "Yes, soda is tasty",
-          emoji: "😋",
-            isCorrect: false
-        },
+       
         {
           id: "a",
-          text: "No, I'll drink water",
-          emoji: "💧",
+          text: "Only fruit kabobs",
+          emoji: "🍎",
+          isCorrect: false
+        },
+         {
+          id: "b",
+          text: "Mix of cotton candy and fruit kabobs",
+          emoji: "💭",
           isCorrect: true
-        }
+        },
       ]
     },
     {
       id: 4,
-      text: "Classmates buy ice cream after school. They invite you. What do you choose?",
+      text: "You're at a fast food restaurant with your grandparents. They say you can order one thing. What do you choose?",
       options: [
         {
           id: "b",
-          text: "Buy ice cream every day",
-          emoji: "🍦",
+          text: "Extra large fries and a milkshake",
+          emoji: "🍟",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Never eat ice cream",
-          emoji: "😔",
-          isCorrect: false
+          text: "A small burger with a side salad",
+          emoji: "🥗",
+          isCorrect: true
         },
         {
           id: "a",
-          text: "Sometimes as a treat",
-          emoji: "🎉",
-          isCorrect: true
+          text: "Just a drink",
+          emoji: "🥤",
+          isCorrect: false
         }
       ]
     },
     {
       id: 5,
-      text: "Your best friend always chooses junk food. How do you stay healthy?",
+      text: "Your mom packed your lunch, but your friends brought store-bought snacks to share. Some kids pressure you to trade. What's the best approach?",
       options: [
         {
           id: "b",
-          text: "Always eat what friend eats",
-          emoji: "👫",
+          text: "Trade for the snacks every day",
+          emoji: "🍫",
+          isCorrect: false
+        },
+        
+        {
+          id: "c",
+          text: "Refuse all snacks from friends",
+          emoji: "🙅",
           isCorrect: false
         },
         {
           id: "a",
-          text: "Suggest healthy options together",
-          emoji: "🥗",
+          text: "Keep your healthy lunch but try a small bite of their snack",
+          emoji: "😋",
           isCorrect: true
         },
-        {
-          id: "c",
-          text: "Stop being friends",
-          emoji: "😠",
-          isCorrect: false
-        }
       ]
     }
   ];

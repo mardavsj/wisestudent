@@ -31,22 +31,21 @@ const PreventionFirstPoster = () => {
         {
           id: "a",
           text: "Wash Hands Often",
-          emoji: "🧼",
-          description: "Washing hands with soap and water kills germs!",
+          emoji: "🤲",
+          
           isCorrect: true
         },
         {
           id: "b",
           text: "Wipe on Pants",
           emoji: "👖",
-          description: "Wiping on clothes doesn't clean your hands.",
+       
           isCorrect: false
         },
         {
           id: "c",
           text: "Just Use Water",
           emoji: "💧",
-          description: "Water alone isn't enough to kill germs.",
           isCorrect: false
         }
       ]
@@ -60,21 +59,18 @@ const PreventionFirstPoster = () => {
           id: "b",
           text: "Cough in Air",
           emoji: "🌬️",
-          description: "Coughing in the air spreads germs to everyone.",
           isCorrect: false
         },
         {
           id: "c",
           text: "Cough in Hands",
           emoji: "🤲",
-          description: "Coughing in hands spreads germs when you touch things.",
           isCorrect: false
         },
         {
           id: "a",
           text: "Vampire Cough",
           emoji: "🧛",
-          description: "Coughing into your elbow keeps germs contained!",
           isCorrect: true
         }
       ]
@@ -88,21 +84,18 @@ const PreventionFirstPoster = () => {
           id: "b",
           text: "Soda Pop",
           emoji: "🥤",
-          description: "Soda doesn't have the vitamins you need.",
           isCorrect: false
         },
         {
           id: "a",
           text: "Fruits & Veggies",
           emoji: "🍎",
-          description: "Vitamins in fruits and veggies boost your immune system!",
           isCorrect: true
         },
         {
           id: "c",
           text: "Only Candy",
           emoji: "🍭",
-          description: "Sugar can make it harder to fight sickness.",
           isCorrect: false
         }
       ]
@@ -116,21 +109,18 @@ const PreventionFirstPoster = () => {
           id: "c",
           text: "Sleep All Day",
           emoji: "🛌",
-          description: "You need sleep, but you also need to move!",
           isCorrect: false
         },
         {
           id: "b",
           text: "Watch TV All Day",
           emoji: "📺",
-          description: "Sitting all day doesn't make muscles strong.",
           isCorrect: false
         },
         {
           id: "a",
           text: "Play Outside",
           emoji: "⚽",
-          description: "Exercise makes your heart and body strong!",
           isCorrect: true
         }
       ]
@@ -144,21 +134,18 @@ const PreventionFirstPoster = () => {
           id: "b",
           text: "Sleep with Lights On",
           emoji: "💡",
-          description: "It's harder to get deep sleep with lights on.",
           isCorrect: false
         },
         {
           id: "a",
           text: "Early Bedtime",
           emoji: "🌙",
-          description: "Getting enough sleep helps your body repair itself!",
           isCorrect: true
         },
         {
           id: "c",
           text: "Stay Up Late",
           emoji: "🦉",
-          description: "Staying up late makes you tired and weak.",
           isCorrect: false
         }
       ]

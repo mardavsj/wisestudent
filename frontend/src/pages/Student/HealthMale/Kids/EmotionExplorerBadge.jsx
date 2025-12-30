@@ -23,157 +23,159 @@ const EmotionExplorerBadge = () => {
   const questions = [
     {
       id: 1,
-      title: "Happy Feelings",
-      text: "Which feeling makes you smile?",
+      title: "Exploring Joy",
+      text: "What happens in your body when you feel happy?",
       options: [
         {
-          text: "Sad",
-          emoji: "😢",
+          text: "Your heart beats slower",
+          emoji: "💓",
           isCorrect: false
         },
         {
-          text: "Angry",
-          emoji: "😠",
-          isCorrect: false
-        },
-        {
-          text: "Happy",
+          text: "Your face might smile and your body feels light",
           emoji: "😊",
           isCorrect: true
         },
         {
-          text: "Scared",
-          emoji: "😨",
+          text: "Your muscles become tense",
+          emoji: "😰",
+          isCorrect: false
+        },
+        {
+          text: "You want to hide from others",
+          emoji: "🙈",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Yes! Happiness makes us smile and feel good!",
-        wrong: "Happiness is the feeling that makes us smile!"
+        correct: "Excellent! When you feel happy, your face often smiles and your body feels light and energetic!",
+        wrong: "When you feel happy, your face might smile and your body feels light and energetic!"
       }
     },
     {
       id: 2,
-      title: "Sadness Helpers",
-      text: "What helps when you are sad?",
+      title: "Understanding Frustration",
+      text: "What is frustration?",
       options: [
-        {
-          text: "Stay alone forever",
-          emoji: "🙍",
-          isCorrect: false
-        },
-        {
-          text: "Talk to a friend",
-          emoji: "💬",
+         {
+          text: "Feeling upset when things don't go as planned",
+          emoji: "😤",
           isCorrect: true
         },
         {
-          text: "Yell at people",
-          emoji: "🤬",
+          text: "Feeling excited about something new",
+          emoji: "🤩",
+          isCorrect: false
+        },
+       
+        {
+          text: "Feeling sleepy and tired",
+          emoji: "😴",
           isCorrect: false
         },
         {
-          text: "Cry loudly",
-          emoji: "😭",
+          text: "Feeling happy about your achievements",
+          emoji: "🥳",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Great! Sharing your feelings with a friend helps you feel better!",
-        wrong: "Talking to a friend is a great way to feel better when sad!"
+        correct: "Great job! Frustration is the feeling when things don't go the way we hoped or planned.",
+        wrong: "Frustration is the feeling when things don't go the way we hoped or planned. It's normal to feel this way sometimes!"
       }
     },
     {
       id: 3,
-      title: "Calming Anger",
-      text: "How can you calm down when angry?",
+      title: "Discovering Calm",
+      text: "Which activity helps you feel calm?",
       options: [
         {
-          text: "Throw things",
-          emoji: "💣",
+          text: "Running around quickly",
+          emoji: "🏃",
           isCorrect: false
         },
         {
-          text: "Hit someone",
-          emoji: "👊",
-          isCorrect: false
-        },
-        {
-          text: "Take deep breaths",
-          emoji: "🌬️",
-          isCorrect: true
-        },
-        {
-          text: "Scream loudly",
+          text: "Yelling loudly",
           emoji: "🗣️",
           isCorrect: false
-        }
+        },
+        
+        {
+          text: "Playing loud music",
+          emoji: "🎵",
+          isCorrect: false
+        },
+        {
+          text: "Taking slow, deep breaths",
+          emoji: "😌",
+          isCorrect: true
+        },
       ],
       feedback: {
-        correct: "Perfect! Deep breaths help your body and mind relax!",
-        wrong: "Taking deep breaths is the best way to calm down!"
+        correct: "Perfect! Taking slow, deep breaths helps your body and mind feel calm and relaxed!",
+        wrong: "Taking slow, deep breaths is one of the best ways to help your body and mind feel calm and relaxed!"
       }
     },
     {
       id: 4,
-      title: "Showing Excitement",
-      text: "What is a good way to show excitement?",
+      title: "Recognizing Empathy",
+      text: "What does it mean to show empathy?",
       options: [
         {
-          text: "Jump and cheer",
-          emoji: "🙌",
+          text: "To laugh at someone who is sad",
+          emoji: "😹",
+          isCorrect: false
+        },
+        {
+          text: "To understand and care about how someone else feels",
+          emoji: "❤️",
           isCorrect: true
         },
         {
-          text: "Push people",
-          emoji: "👊",
+          text: "To ignore other people's feelings",
+          emoji: "😑",
           isCorrect: false
         },
         {
-          text: "Break something",
-          emoji: "💥",
-          isCorrect: false
-        },
-        {
-          text: "Run away",
-          emoji: "🏃",
+          text: "To only think about yourself",
+          emoji: "👤",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Yay! Jumping and cheering is a fun way to show excitement!",
-        wrong: "Jumping and cheering is a safe and fun way to show you're excited!"
+        correct: "Wonderful! Empathy means understanding and caring about how someone else feels!",
+        wrong: "Empathy means understanding and caring about how someone else feels. It helps us connect with others!"
       }
     },
     {
       id: 5,
-      title: "Sharing Feelings",
-      text: "Who can you talk to about feelings?",
+      title: "Managing Disappointment",
+      text: "How can you handle disappointment in a healthy way?",
       options: [
         {
-          text: "No one",
+          text: "Get angry at everyone around you",
+          emoji: "💢",
+          isCorrect: false
+        },
+        {
+          text: "Hide your feelings and never talk about them",
           emoji: "🤐",
           isCorrect: false
         },
         {
-          text: "A wall",
-          emoji: "🧱",
-          isCorrect: false
-        },
-        {
-          text: "Parents or Teachers",
-          emoji: "👨‍🏫",
+          text: "Express your feelings and try to understand them",
+          emoji: "🗣️",
           isCorrect: true
         },
         {
-          text: "Strangers online",
-          emoji: "🌐",
+          text: "Blame others for how you feel",
+          emoji: "👈",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Exactly! Parents and teachers are there to listen and help!",
-        wrong: "Parents and teachers are great people to talk to about feelings!"
+        correct: "Brilliant! Expressing your feelings and understanding them helps you deal with disappointment healthily!",
+        wrong: "Expressing your feelings and understanding them helps you deal with disappointment in a healthy way!"
       }
     }
   ];

@@ -23,157 +23,159 @@ const SafetySmartKidBadge = () => {
   const questions = [
     {
       id: 1,
-      title: "Helmet Hero",
-      text: "Why do we wear helmets?",
+      title: "Fire Safety Expert",
+      text: "What is the safest way to escape if there's a fire in your home?",
       options: [
         {
-          text: "To look like an alien",
-          emoji: "👽",
+          text: "Take your time to collect your toys",
+          emoji: "🧸",
           isCorrect: false
         },
         {
-          text: "To keep hair dry",
-          emoji: "☂️",
-          isCorrect: false
-        },
-        {
-          text: "To protect our brain",
-          emoji: "🧠",
+          text: "Crawl low under smoke and feel doors for heat",
+          emoji: "💨",
           isCorrect: true
         },
         {
-          text: "To look cool",
-          emoji: "😎",
+          text: "Hide in a closet until help arrives",
+          emoji: "🚪",
+          isCorrect: false
+        },
+        {
+          text: "Use the elevator to go downstairs quickly",
+          emoji: "⬆️",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Exactly! Helmets protect your most important body part - your brain!",
-        wrong: "Helmets are safety gear designed to protect your head and brain from injury."
+        correct: "Correct! Crawl low under smoke and feel doors with the back of your hand. If hot, find another exit.",
+        wrong: "In a fire, never hide or use elevators. Crawl low under smoke and feel doors for heat before opening."
       }
     },
     {
       id: 2,
       title: "Stranger Safety",
-      text: "What if a stranger offers you a ride?",
+      text: "A stranger approaches and says your parents sent them to pick you up. What should you do?",
       options: [
         {
-          text: "Get in the car",
+          text: "Go with them immediately",
           emoji: "🚗",
           isCorrect: false
         },
         {
-          text: "Ask for candy first",
-          emoji: "🍬",
+          text: "Ask to see their ID",
+          emoji: "🆔",
           isCorrect: false
         },
         {
-          text: "Say NO and run away",
-          emoji: "🏃",
+          text: "Refuse and find a trusted adult",
+          emoji: "👤",
           isCorrect: true
         },
         {
-          text: "Talk to them",
-          emoji: "💬",
+          text: "Get in their car to call your parents",
+          emoji: "📱",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Perfect! Never go with strangers. Run to a safe place and tell an adult.",
-        wrong: "Never get in a car with a stranger. It's very dangerous!"
+        correct: "Great job! Never go with strangers, even if they claim your parents sent them. Find a trusted adult.",
+        wrong: "Never go anywhere with strangers, even if they say your parents sent them. Always check with a trusted adult first."
       }
     },
     {
       id: 3,
-      title: "Healthy Body",
-      text: "What keeps your body strong?",
+      title: "Water Safety",
+      text: "Why is it important to have a buddy when swimming?",
       options: [
         {
-          text: "Watching TV all day",
-          emoji: "📺",
-          isCorrect: false
-        },
-        {
-          text: "Eating only cookies",
-          emoji: "🍪",
-          isCorrect: false
-        },
-        {
-          text: "Playing video games",
+          text: "So you can play games together",
           emoji: "🎮",
           isCorrect: false
         },
         {
-          text: "Healthy food and exercise",
-          emoji: "🥦",
+          text: "To make sure someone can help or get help if needed",
+          emoji: "🤝",
           isCorrect: true
+        },
+        {
+          text: "To have someone watch your belongings",
+          emoji: "🎒",
+          isCorrect: false
+        },
+        {
+          text: "To race each other in the water",
+          emoji: "🏁",
+          isCorrect: false
         }
       ],
       feedback: {
-        correct: "Great! Good food and moving your body keeps you strong and healthy!",
-        wrong: "Your body needs nutritious food and exercise to grow strong."
+        correct: "Perfect! Having a buddy means if one person needs help, the other can provide assistance or get an adult.",
+        wrong: "The buddy system is important in water because if one person gets into trouble, the other can help or get help."
       }
     },
     {
       id: 4,
-      title: "Clean Hands",
-      text: "When should you wash your hands?",
+      title: "Poison Safety",
+      text: "If you accidentally swallow something that might be poisonous, what is the FIRST thing you should do?",
       options: [
         {
-          text: "Before eating",
-          emoji: "🍽️",
+          text: "Drink lots of water to dilute it",
+          emoji: "🚰",
+          isCorrect: false
+        },
+        {
+          text: "Induce vomiting immediately",
+          emoji: "🤢",
+          isCorrect: false
+        },
+        
+        {
+          text: "Wait to see if you feel sick",
+          emoji: "😴",
+          isCorrect: false
+        },
+        {
+          text: "Tell an adult or call poison control right away",
+          emoji: "📞",
           isCorrect: true
         },
-        {
-          text: "Only once a week",
-          emoji: "📅",
-          isCorrect: false
-        },
-        {
-          text: "Never",
-          emoji: "🙅",
-          isCorrect: false
-        },
-        {
-          text: "After playing outside",
-          emoji: "🌳",
-          isCorrect: false
-        }
       ],
       feedback: {
-        correct: "Yes! Washing hands before eating stops germs from getting in your body.",
-        wrong: "You should wash hands often, especially before eating and after using the bathroom."
+        correct: "Excellent! Always tell an adult or call poison control immediately. Do not try to treat it yourself.",
+        wrong: "If you swallow something poisonous, tell an adult or call poison control immediately. Do not wait or try to treat it yourself."
       }
     },
     {
       id: 5,
-      title: "Safety First",
-      text: "What is the most important rule?",
+      title: "Emergency Preparedness",
+      text: "What should be included in a family emergency plan?",
       options: [
         {
-          text: "Have fun no matter what",
-          emoji: "🎉",
+          text: "Favorite snacks for the kids",
+          emoji: "🍪",
+          isCorrect: false
+        },
+        
+        {
+          text: "Where to go shopping after",
+          emoji: "🛍️",
           isCorrect: false
         },
         {
-          text: "Win every game",
-          emoji: "🥇",
-          isCorrect: false
-        },
-        {
-          text: "Safety comes first",
-          emoji: "✅",
+          text: "Meeting place and emergency contact information",
+          emoji: "📍",
           isCorrect: true
         },
         {
-          text: "Be the fastest",
-          emoji: "⚡",
+          text: "What games to play during the emergency",
+          emoji: "🎮",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "You got it! Having fun is great, but staying safe is always the most important thing!",
-        wrong: "Safety is always number one. You can't have fun if you get hurt!"
+        correct: "Right! A family emergency plan should include meeting places and emergency contact information for all family members.",
+        wrong: "An emergency plan should include meeting places, emergency contacts, and escape routes - not snacks or games."
       }
     }
   ];

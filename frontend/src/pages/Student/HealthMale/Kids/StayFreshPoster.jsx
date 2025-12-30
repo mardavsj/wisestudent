@@ -31,21 +31,20 @@ const StayFreshPoster = () => {
         {
           id: 2,
           title: "Only bath on weekends",
-          description: "A poster showing a child skipping baths during the week",
+          
           emoji: "😴",
           isCorrect: false
         },
          {
           id: 1,
           title: "Take a bath every day",
-          description: "A poster showing a child taking a fun bubble bath",
+          
           emoji: "🛁",
           isCorrect: true
         },
         {
           id: 3,
           title: "Just use cologne",
-          description: "A poster showing a child spraying cologne instead of bathing",
           emoji: "💨",
           isCorrect: false
         }

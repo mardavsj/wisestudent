@@ -23,147 +23,136 @@ const GoodHabitsPoster = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const stages = [
-    {
-      id: 1,
-      title: "Morning Star",
-      question: "Which poster shows a great morning?",
-      options: [
-        {
-          id: "a",
-          text: "Wake Up Happy",
-          emoji: "☀️",
-          description: "Start the day with a smile!",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Sleep In Late",
-          emoji: "🛌",
-          description: "Sleeping too late wastes the morning.",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Skip Breakfast",
-          emoji: "🍽️",
-          description: "Breakfast gives you fuel.",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Clean & Fresh",
-      question: "Which poster shows good hygiene?",
-      options: [
-        {
-          id: "b",
-          text: "Messy Hair",
-          emoji: "🦁",
-          description: "Combing hair looks neat.",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Dirty Clothes",
-          emoji: "👕",
-          description: "Wear clean clothes every day.",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Brush & Wash",
-          emoji: "🚿",
-          description: "Clean body feels great!",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Active Kid",
-      question: "Which poster shows a healthy activity?",
-      options: [
-        {
-          id: "b",
-          text: "Play Video Games",
-          emoji: "🎮",
-          description: "Limit screen time.",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Ride Bike",
-          emoji: "🚲",
-          description: "Biking is great exercise!",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Sit on Couch",
-          emoji: "🛋️",
-          description: "Sitting too long isn't healthy.",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Smart Eater",
-      question: "Which poster shows smart eating?",
-      options: [
-        {
-          id: "c",
-          text: "Skip Lunch",
-          emoji: "🚫",
-          description: "Your body needs food energy.",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Only Dessert",
-          emoji: "🍰",
-          description: "Too much sugar is bad.",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Balanced Meal",
-          emoji: "🥗",
-          description: "Protein, veggies, and grains!",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Sleep Tight",
-      question: "Which poster shows good sleep?",
-      options: [
-        {
-          id: "b",
-          text: "Sleep on Floor",
-          emoji: "🧱",
-          description: "A bed is more comfortable.",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Early Bedtime",
-          emoji: "🛌",
-          description: "Early to bed, early to rise!",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Stay Up All Night",
-          emoji: "🦉",
-          description: "You need rest to grow.",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Ready Explorer",
+    question: "Which poster best shows a kid who plans ahead for the day?",
+    options: [
+      {
+        id: "a",
+        text: "Running Late",
+        emoji: "⏰",
+        
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Waiting for Help",
+        emoji: "🙋",
+       
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Prepared the Night Before",
+        emoji: "🎒",
+        
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Mindful Speaker",
+    question: "Which poster shows a habit that builds strong friendships?",
+    options: [
+      {
+        id: "a",
+        text: "Listening Before Speaking",
+        emoji: "👂",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Talking Non-Stop",
+        emoji: "🗣️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Walking Away Quickly",
+        emoji: "🚶",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Focus Builder",
+    question: "Which poster shows a habit that helps learning improve?",
+    options: [
+      {
+        id: "a",
+        text: "Multitasking Everywhere",
+        emoji: "🔀",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Finishing One Task Fully",
+        emoji: "📘",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Switching Often",
+        emoji: "📱",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Kind Citizen",
+    question: "Which poster shows a habit that improves shared spaces?",
+    options: [
+      {
+        id: "a",
+        text: "Putting Things Back",
+        emoji: "🧹",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Using and Leaving",
+        emoji: "🚪",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Waiting for Cleaners",
+        emoji: "🧍",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Balanced Thinker",
+    question: "Which poster shows a habit that supports a calm mind?",
+    options: [
+      {
+        id: "a",
+        text: "Always Staying Busy",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Taking Short Quiet Breaks",
+        emoji: "🌿",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Avoiding All Work",
+        emoji: "🛋️",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleOptionSelect = (option) => {
     if (option.isCorrect) {

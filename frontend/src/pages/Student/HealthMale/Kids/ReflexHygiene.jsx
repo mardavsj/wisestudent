@@ -32,52 +32,52 @@ const ReflexHygiene = () => {
   const questions = [
     {
       id: 1,
-      question: "You just played outside! QUICK! What to do before eating?",
+      question: "You see a cut on your finger! QUICK! What should you do first?",
       options: [
-        { id: 'a', text: "Wash Hands", isCorrect: true, emoji: "🧼" },
-        { id: 'b', text: "Eat Dirty", isCorrect: false, emoji: "❌" },
-        { id: 'c', text: "Wipe on Shirt", isCorrect: false, emoji: "👕" },
-        { id: 'd', text: "Lick Fingers", isCorrect: false, emoji: "🤢" }
+        { id: 'b', text: "Ignore It", isCorrect: false, emoji: "❌" },
+        { id: 'c', text: "Touch with Dirty Hands", isCorrect: false, emoji: "✋" },
+        { id: 'd', text: "Cover with Dust", isCorrect: false, emoji: "🧹" },
+        { id: 'a', text: "Clean with Water", isCorrect: true, emoji: "💧" },
       ]
     },
     {
       id: 2,
-      question: "You used the bathroom! QUICK! What next?",
+      question: "You're sweating after sports! QUICK! What's needed now?",
       options: [
-        { id: 'a', text: "Touch Door", isCorrect: false, emoji: "🚪" },
-        { id: 'b', text: "Run Out", isCorrect: false, emoji: "🏃" },
-        { id: 'c', text: "Wash Hands", isCorrect: true, emoji: "🧼" },
-        { id: 'd', text: "Dry Only", isCorrect: false, emoji: "💨" }
+        { id: 'a', text: "Take a Bath", isCorrect: true, emoji: "🚿" },
+        { id: 'b', text: "Wear Same Clothes", isCorrect: false, emoji: "👕" },
+        { id: 'c', text: "Sleep Without Washing", isCorrect: false, emoji: "😴" },
+        { id: 'd', text: "Fan Yourself Only", isCorrect: false, emoji: "💨" }
       ]
     },
     {
       id: 3,
-      question: "Your hands are dirty! QUICK! Choose the healthy option!",
+      question: "You touched a sick friend! QUICK! What should you do?",
       options: [
-        { id: 'a', text: "Touch Face", isCorrect: false, emoji: "🤦" },
-        { id: 'b', text: "Rub Eyes", isCorrect: false, emoji: "👀" },
-        { id: 'c', text: "Eat Food", isCorrect: false, emoji: "🍎" },
-        { id: 'd', text: "Wash Hands", isCorrect: true, emoji: "🧼" }
+        { id: 'b', text: "Touch Your Face", isCorrect: false, emoji: "🤦" },
+        { id: 'c', text: "Share Food", isCorrect: false, emoji: "🍽️" },
+        { id: 'a', text: "Sanitize Hands", isCorrect: true, emoji: "🧴" },
+        { id: 'd', text: "Nothing Special", isCorrect: false, emoji: "🤷" }
       ]
     },
     {
       id: 4,
-      question: "Dinner time! Germs on hands! QUICK! What do you do?",
+      question: "Your nails are long and dirty! QUICK! What's the best action?",
       options: [
-        { id: 'a', text: "Eat Anyway", isCorrect: false, emoji: "🍽️" },
-        { id: 'b', text: "Use Fork Only", isCorrect: false, emoji: "🍴" },
-        { id: 'c', text: "Ask Mom", isCorrect: false, emoji: "🗣️" },
-        { id: 'd', text: "Wash Hands", isCorrect: true, emoji: "🧼" }
+        { id: 'b', text: "Bite Them", isCorrect: false, emoji: "🦷" },
+        { id: 'a', text: "Cut and Clean Nails", isCorrect: true, emoji: "✂️" },
+        { id: 'c', text: "Hide Them", isCorrect: false, emoji: "🙈" },
+        { id: 'd', text: "Leave as Is", isCorrect: false, emoji: "✋" }
       ]
     },
     {
       id: 5,
-      question: "You touched something dirty! QUICK! Make the healthy choice!",
+      question: "You used the toilet without washing hands! QUICK! What's essential now?",
       options: [
-        { id: 'a', text: "Stay Dirty", isCorrect: false, emoji: "🤢" },
-        { id: 'b', text: "Touch Toy", isCorrect: false, emoji: "🧸" },
-        { id: 'c', text: "Wash Hands", isCorrect: true, emoji: "🧼" },
-        { id: 'd', text: "Sleep", isCorrect: false, emoji: "😴" }
+        { id: 'b', text: "Touch Door Handle", isCorrect: false, emoji: "🚪" },
+        { id: 'c', text: "Eat Food", isCorrect: false, emoji: "🍔" },
+        { id: 'd', text: "Touch Face", isCorrect: false, emoji: "🤦" },
+        { id: 'a', text: "Wash Hands Thoroughly", isCorrect: true, emoji: "🧼" },
       ]
     }
   ];

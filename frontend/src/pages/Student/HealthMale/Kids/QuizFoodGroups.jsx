@@ -22,127 +22,130 @@ const QuizFoodGroups = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   const questions = [
     {
       id: 1,
-      text: "Which food gives you protein for strong muscles?",
+      text: "You're planning a healthy breakfast that will keep you full until lunch. Which combination would be best?",
       options: [
-        {
-          id: "a",
-          text: "Dal (lentils)",
-          emoji: "🍛",
-          isCorrect: true
-        },
+        
         {
           id: "b",
-          text: "Rice",
-          emoji: "🍚",
+          text: "Cereal with just sugar and artificial colors",
+          emoji: "🥣",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Chocolate",
-          emoji: "🍫",
+          text: "Just orange juice",
+          emoji: "🥤",
           isCorrect: false
-        }
+        },
+        {
+          id: "a",
+          text: "Oatmeal with berries and nuts",
+          emoji: "🥜",
+          isCorrect: true
+        },
       ]
     },
     {
       id: 2,
-      text: "What food group gives you energy to play?",
+      text: "Your body needs protein to grow strong muscles and repair itself. Which snack would help you the most after playing sports?",
       options: [
         {
           id: "a",
-          text: "Milk",
+          text: "Yogurt with granola",
           emoji: "🥛",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Bread and rice",
-          emoji: "🍞",
           isCorrect: true
         },
         {
+          id: "b",
+          text: "Candy bar",
+          emoji: "🍫",
+          isCorrect: false
+        },
+        {
           id: "c",
-          text: "Vegetables",
-          emoji: "🥕",
+          text: "Soda",
+          emoji: "🥤",
           isCorrect: false
         }
       ]
     },
     {
       id: 3,
-      text: "Which food has vitamins to keep you healthy?",
+      text: "You want to have energy to play all afternoon. Which lunch would give you the most sustained energy?",
       options: [
-        {
-          id: "a",
-          text: "Fruits",
-          emoji: "🍎",
-          isCorrect: true
-        },
+        
         {
           id: "b",
-          text: "Chips",
-          emoji: "🥔",
+          text: "French fries",
+          emoji: "🍟",
           isCorrect: false
         },
         {
+          id: "a",
+          text: "Whole wheat pasta with vegetables",
+          emoji: "🍝",
+          isCorrect: true
+        },
+        {
           id: "c",
-          text: "Candy",
-          emoji: "🍬",
+          text: "Cookies",
+          emoji: "🍪",
           isCorrect: false
         }
       ]
     },
     {
       id: 4,
-      text: "What food group helps build strong bones?",
+      text: "Your mom says you need calcium for strong bones and teeth. Which food group should you eat for this?",
       options: [
         {
           id: "a",
-          text: "Bread",
-          emoji: "🍞",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Dairy products",
+          text: "Dairy products like milk and cheese",
           emoji: "🧀",
           isCorrect: true
         },
         {
+          id: "b",
+          text: "Candy and sugary snacks",
+          emoji: "🍬",
+          isCorrect: false
+        },
+        {
           id: "c",
-          text: "Meat",
-          emoji: "🥩",
+          text: "Bread only",
+          emoji: "🍞",
           isCorrect: false
         }
       ]
     },
     {
       id: 5,
-      text: "Which food protects you from getting sick?",
+      text: "You want to avoid getting sick during winter. Which foods help boost your immune system?",
       options: [
-        {
-          id: "a",
-          text: "Vegetables",
-          emoji: "🥬",
-          isCorrect: true
-        },
+        
         {
           id: "b",
-          text: "Soda",
-          emoji: "🥤",
+          text: "Processed snacks",
+          emoji: "🍟",
           isCorrect: false
         },
         {
           id: "c",
-          text: "Pizza",
-          emoji: "🍕",
+          text: "Soda and chips",
+          emoji: "🥔",
           isCorrect: false
-        }
+        },
+        {
+          id: "a",
+          text: "Colorful fruits and vegetables rich in vitamins",
+          emoji: "🍊",
+          isCorrect: true
+        },
       ]
     }
   ];
@@ -201,6 +204,7 @@ const QuizFoodGroups = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         {!gameFinished && questions[currentQuestion] ? (

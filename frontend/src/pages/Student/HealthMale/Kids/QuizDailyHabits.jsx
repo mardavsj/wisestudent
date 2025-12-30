@@ -22,133 +22,131 @@ const QuizDailyHabits = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "How much sleep do kids need?",
-      options: [
-       
-        {
-          id: "b",
-          text: "2 hours",
-          emoji: "⚡",
-          isCorrect: false
-        },
-         {
-          id: "a",
-          text: "9-11 hours",
-          emoji: "😴",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "24 hours",
-          emoji: "🐻",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Why is exercise good?",
-      options: [
-        {
-          id: "a",
-          text: "It makes muscles strong",
-          emoji: "💪",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "It's boring",
-          emoji: "🥱",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "It makes you tired",
-          emoji: "😫",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "When should you wash your hands?",
-      options: [
-        
-        {
-          id: "b",
-          text: "Only on Sundays",
-          emoji: "📅",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Never",
-          emoji: "🦠",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Before eating and after bathroom",
-          emoji: "🧼",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "What is a healthy snack?",
-      options: [
-        {
-          id: "a",
-          text: "Carrots and hummus",
-          emoji: "🥕",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Cookies",
-          emoji: "🍪",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Potato chips",
-          emoji: "🥔",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why do we drink water?",
-      options: [
-       
-        {
-          id: "b",
-          text: "To float",
-          emoji: "🏊",
-          isCorrect: false
-        },
-         {
-          id: "a",
-          text: "To keep our body working",
-          emoji: "💧",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "To change color",
-          emoji: "🌈",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Ayaan feels sleepy in class and can’t focus. Last night, he slept very late. What habit should he change to feel fresh tomorrow?",
+    options: [
+      {
+        id: "a",
+        text: "Going to bed earlier each night",
+        emoji: "🛌",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Skipping breakfast",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Watching more videos at night",
+        emoji: "📱",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Meera plays outside every day. Her teacher says this helps her body in many ways. What is the biggest benefit of this habit?",
+    options: [
+      {
+        id: "a",
+        text: "It wastes time",
+        emoji: "⏳",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "It makes her feel bored",
+        emoji: "😐",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "It keeps her body strong and active",
+        emoji: "🏃‍♀️",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Before eating lunch, Rohan notices his hands are dirty after playing. What is the safest choice he can make?",
+    options: [
+      {
+        id: "a",
+        text: "Wipe hands on clothes",
+        emoji: "👕",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Wash hands with soap and water",
+        emoji: "🧼",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Ignore it and eat fast",
+        emoji: "🍽️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "During break time, Sara feels hungry. She wants energy that lasts till evening. Which snack helps her the most?",
+    options: [
+      {
+        id: "a",
+        text: "Sugary candy",
+        emoji: "🍬",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Fried chips",
+        emoji: "🍟",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Fruit with nuts",
+        emoji: "🥜",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "After playing in the sun, Kabir feels tired and thirsty. What habit will help his body recover quickly?",
+    options: [
+      {
+        id: "a",
+        text: "Drinking water regularly",
+        emoji: "💧",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Eating only sweets",
+        emoji: "🍭",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Going straight to sleep without water",
+        emoji: "😴",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;
@@ -203,7 +201,8 @@ const QuizDailyHabits = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      flashPoints={flashPoints}>
+      flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}>
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         {!gameFinished && questions[currentQuestion] ? (
           <div className="space-y-6">

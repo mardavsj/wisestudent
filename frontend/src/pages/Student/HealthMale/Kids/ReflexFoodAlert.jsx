@@ -32,52 +32,52 @@ const ReflexFoodAlert = () => {
   const questions = [
     {
       id: 1,
-      question: "Which drink is healthy?",
+      question: "Your friend is thirsty after playing. What should they drink?",
       options: [
         { id: 'a', text: "Soda", emoji: "🥤", isCorrect: false },
         { id: 'b', text: "Water", emoji: "💧", isCorrect: true },
-        { id: 'c', text: "Juice", emoji: "🧃", isCorrect: false },
-        { id: 'd', text: "Energy Drink", emoji: "⚡", isCorrect: false }
+        { id: 'c', text: "Sports drink", emoji: "🧃", isCorrect: false },
+        { id: 'd', text: "Lemonade", emoji: "🍋", isCorrect: false }
       ]
     },
     {
       id: 2,
-      question: "Pick the healthy snack!",
+      question: "Which snack will help you grow taller and stronger?",
       options: [
-        { id: 'a', text: "Chips", emoji: "🍟", isCorrect: false },
-        { id: 'b', text: "Candy", emoji: "🍬", isCorrect: false },
-        { id: 'c', text: "Cookie", emoji: "🍪", isCorrect: false },
-        { id: 'd', text: "Apple", emoji: "🍎", isCorrect: true }
+        { id: 'b', text: "Banana", emoji: "🍌", isCorrect: true },
+        { id: 'a', text: "French fries", emoji: "🍟", isCorrect: false },
+        { id: 'c', text: "Candy bar", emoji: "🍫", isCorrect: false },
+        { id: 'd', text: "Cookies", emoji: "🍪", isCorrect: false }
       ]
     },
     {
       id: 3,
-      question: "Choose the best lunch!",
+      question: "You're packing lunch for school. What makes the best choice?",
       options: [
         { id: 'a', text: "Pizza", emoji: "🍕", isCorrect: false },
-        { id: 'b', text: "Burger", emoji: "🍔", isCorrect: false },
-        { id: 'c', text: "Salad", emoji: "🥗", isCorrect: true },
-        { id: 'd', text: "Sandwich", emoji: "🥪", isCorrect: false }
+        { id: 'b', text: "Hamburger", emoji: "🍔", isCorrect: false },
+        { id: 'd', text: "Hot dog", emoji: "🌭", isCorrect: false },
+        { id: 'c', text: "Whole grain sandwich with veggies", emoji: "🥬", isCorrect: true },
       ]
     },
     {
       id: 4,
-      question: "What gives you energy?",
+      question: "Before your big soccer game, what should you eat for energy?",
       options: [
-        { id: 'a', text: "Oatmeal", emoji: "🥣", isCorrect: true },
-        { id: 'b', text: "Sugar", emoji: "🍭", isCorrect: false },
-        { id: 'c', text: "Cake", emoji: "🍰", isCorrect: false },
-        { id: 'd', text: "Donut", emoji: "🍩", isCorrect: false }
+        { id: 'b', text: "Candy", emoji: "🍬", isCorrect: false },
+        { id: 'c', text: "Ice cream", emoji: "🍦", isCorrect: false },
+        { id: 'a', text: "Cereal with milk", emoji: "🥣", isCorrect: true },
+        { id: 'd', text: "Soda", emoji: "🥤", isCorrect: false }
       ]
     },
     {
       id: 5,
-      question: "Best for strong bones?",
+      question: "Which food helps keep your teeth strong and healthy?",
       options: [
-        { id: 'a', text: "Soda", emoji: "🥤", isCorrect: false },
-        { id: 'b', text: "Milk", emoji: "🥛", isCorrect: true },
-        { id: 'c', text: "Tea", emoji: "🍵", isCorrect: false },
-        { id: 'd', text: "Coffee", emoji: "☕", isCorrect: false }
+        { id: 'a', text: "Chips", emoji: "🥔", isCorrect: false },
+        { id: 'b', text: "Cheese", emoji: "🧀", isCorrect: true },
+        { id: 'c', text: "Candy", emoji: "🍭", isCorrect: false },
+        { id: 'd', text: "Soda", emoji: "🥤", isCorrect: false }
       ]
     }
   ];

@@ -25,131 +25,135 @@ const GrowingUpPoster = () => {
 
   const stages = [
     {
-      question: "Which poster shows normal growth?",
+      question: "What happens to your body as you grow up?",
       posters: [
-        {
-          id: 1,
-          title: "Stop Growing",
-         
-          emoji: "🚫",
-          isCorrect: false
-        },
+        
         {
           id: 2,
-          title: "Growing Strong",
+          title: "I stay the same",
           
-          emoji: "💪",
-          isCorrect: true
+          emoji: "⏸️",
+          isCorrect: false
         },
         {
           id: 3,
-          title: "Shrinking Kid",
+          title: "I shrink",
+          
           emoji: "📉",
           isCorrect: false
-        }
+        },
+        {
+          id: 1,
+          title: "My body changes as I grow",
+         
+          emoji: "👨",
+          isCorrect: true
+        },
       ],
-      correctFeedback: "Growing Strong is the right message!",
-      explanation: "Growing taller and stronger is a normal part of being a kid!"
+      correctFeedback: "Great job! Your body changes as you grow up!",
+      explanation: "As you grow up, your body changes in many ways. This is normal and healthy!"
     },
     {
-      question: "Which poster explains voice changes?",
+      question: "Why might your voice sound different as you grow?",
       posters: [
         {
           id: 1,
-          title: "Silent Voice",
+          title: "My voice gets deeper",
+          emoji: "🗣️",
+          isCorrect: true
+        },
+        {
+          id: 2,
+          title: "I can't talk anymore",
           emoji: "🤐",
           isCorrect: false
         },
         {
           id: 3,
-          title: "Scary Sounds",
+          title: "My voice sounds scary",
           emoji: "😱",
           isCorrect: false
-        },
-        {
-          id: 2,
-          title: "New Voice",
-          emoji: "🗣️",
-          isCorrect: true
         }
       ],
-      correctFeedback: "New Voice explains it best!",
-      explanation: "Your voice changing is just your body growing up!"
+      correctFeedback: "Yes! Your voice gets deeper as you grow!",
+      explanation: "As boys grow up, their voices get deeper. This is a normal part of growing up!"
     },
     {
-      question: "Which poster shows healthy habits for growth?",
+      question: "What helps your body grow healthy and strong?",
       posters: [
+        
         {
           id: 2,
-          title: "Stay Up Late",
+          title: "Stay up all night",
           emoji: "🌙",
           isCorrect: false
         },
         {
+          id: 3,
+          title: "Only eat candy",
+          emoji: "🍭",
+          isCorrect: false
+        },
+        {
           id: 1,
-          title: "Sleep & Eat Well",
-          emoji: "🛌",
+          title: "Eat healthy foods & sleep well",
+          emoji: "🍎",
           isCorrect: true
         },
-        {
-          id: 3,
-          title: "Junk Food Only",
-          emoji: "🍟",
-          isCorrect: false
-        }
       ],
-      correctFeedback: "Sleep & Eat Well is the winner!",
-      explanation: "Healthy food and plenty of sleep help your body grow its best!"
+      correctFeedback: "Perfect! Healthy food and sleep help you grow!",
+      explanation: "Eating good food and getting enough sleep helps your body grow strong and healthy!"
     },
     {
-      question: "Which poster is about body hair?",
+      question: "What happens to your body as you get older?",
       posters: [
         {
-          id: 3,
-          title: "Hide Your Hair",
-          emoji: "🙈",
-          isCorrect: false
-        },
-        {
-          id: 2,
-          title: "Hair is Normal",
+          id: 1,
+          title: "I might grow body hair",
           emoji: "🧔",
           isCorrect: true
         },
         {
-          id: 1,
-          title: "Shave It All",
+          id: 2,
+          title: "I should hide my body",
+          emoji: "🙈",
+          isCorrect: false
+        },
+        {
+          id: 3,
+          title: "I need to remove all hair",
           emoji: "🪒",
           isCorrect: false
         }
       ],
-      correctFeedback: "Hair is Normal is correct!",
-      explanation: "Body hair growth happens to everyone during puberty!"
+      correctFeedback: "That's right! Body hair is normal!",
+      explanation: "As you get older, you might grow hair in new places. This is a normal part of growing up!"
     },
     {
-      question: "Which poster shows confidence?",
+      question: "How should you feel about your body as it changes?",
       posters: [
+        
         {
           id: 2,
-          title: "Proud of Me",
-          emoji: "😎",
-          isCorrect: true
-        },
-        {
-          id: 1,
-          title: "Be Ashamed",
+          title: "I should feel bad",
           emoji: "😔",
           isCorrect: false
         },
         {
           id: 3,
-          title: "Fear Growth",
+          title: "I should be scared",
           emoji: "😨",
           isCorrect: false
-        }
+        },
+        {
+          id: 1,
+          title: "I feel good about my body",
+          emoji: "😊",
+          isCorrect: true
+        },
       ],
-      correctFeedback: "Proud of Me is the best attitude!",
-      explanation: "Be proud of your growing body and the amazing changes happening!"
+      correctFeedback: "Wonderful! It's good to feel positive about your body!",
+      explanation: "It's important to feel good about your body as it changes. These changes are normal and healthy!"
     }
   ];
 

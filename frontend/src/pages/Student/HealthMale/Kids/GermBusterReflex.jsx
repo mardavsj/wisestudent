@@ -32,52 +32,52 @@ const GermBusterReflex = () => {
   const questions = [
     {
       id: 1,
-      question: "You played on dirty playground equipment! Choose the germ buster!",
+      question: "You coughed without covering your mouth! What's the best germ prevention?",
       options: [
-        { id: 'a', text: "Soap", isCorrect: true, emoji: "🧼" },
-        { id: 'b', text: "Dirty Hands", isCorrect: false, emoji: "🤢" },
-        { id: 'c', text: "Towel", isCorrect: false, emoji: "🧺" },
-        { id: 'd', text: "Water Only", isCorrect: false, emoji: "💧" }
+        { id: 'b', text: "Cough in hands", isCorrect: false, emoji: "✋" },
+        { id: 'c', text: "Cough without covering", isCorrect: false, emoji: "💨" },
+        { id: 'd', text: "Cough on others", isCorrect: false, emoji: "❌" },
+        { id: 'a', text: "Cover with elbow", isCorrect: true, emoji: "💪" },
       ]
     },
     {
       id: 2,
-      question: "You petted a dog! What should you do before eating?",
+      question: "You used the public restroom! What should you do before touching anything else?",
       options: [
-        { id: 'a', text: "Touch Food", isCorrect: false, emoji: "🍔" },
-        { id: 'b', text: "Soap", isCorrect: true, emoji: "🧼" },
-        { id: 'c', text: "Pet Again", isCorrect: false, emoji: "🐕" },
-        { id: 'd', text: "Wipe Pants", isCorrect: false, emoji: "👖" }
+        { id: 'b', text: "Wipe with tissue", isCorrect: false, emoji: "🧻" },
+        { id: 'c', text: "Shake hands dry", isCorrect: false, emoji: "👋" },
+        { id: 'a', text: "Wash hands with soap", isCorrect: true, emoji: "🧼" },
+        { id: 'd', text: "Touch door handle", isCorrect: false, emoji: "🚪" },
       ]
     },
     {
       id: 3,
-      question: "You sneezed into your hands! Choose the healthy option!",
+      question: "You shared food with a sick friend! What's the safest action?",
       options: [
-        { id: 'a', text: "Shake Hands", isCorrect: false, emoji: "🤝" },
-        { id: 'b', text: "Touch Face", isCorrect: false, emoji: "🤦" },
-        { id: 'c', text: "Soap", isCorrect: true, emoji: "🧼" },
-        { id: 'd', text: "High Five", isCorrect: false, emoji: "✋" }
+        { id: 'a', text: "Wash hands immediately", isCorrect: true, emoji: "🧽" },
+        { id: 'b', text: "Keep eating", isCorrect: false, emoji: "😋" },
+        { id: 'c', text: "Share more food", isCorrect: false, emoji: "🍽️" },
+        { id: 'd', text: "Touch face", isCorrect: false, emoji: "🤦" }
       ]
     },
     {
       id: 4,
-      question: "Bedtime! Your hands touched many things today! What do you do?",
+      question: "You touched the shopping cart at the store! What should you do?",
       options: [
-        { id: 'a', text: "Skip Washing", isCorrect: false, emoji: "🚫" },
-        { id: 'b', text: "Sanitizer", isCorrect: true, emoji: "🧴" },
-        { id: 'c', text: "Soap", isCorrect: false, emoji: "🧼" },
-        { id: 'd', text: "Sleep Dirty", isCorrect: false, emoji: "😴" }
+        { id: 'b', text: "Touch your face", isCorrect: false, emoji: "😐" },
+        { id: 'a', text: "Use hand sanitizer", isCorrect: true, emoji: "🧴" },
+        { id: 'c', text: "Touch other items", isCorrect: false, emoji: "🛒" },
+        { id: 'd', text: "Do nothing", isCorrect: false, emoji: "🤷" }
       ]
     },
     {
       id: 5,
-      question: "You touched something germy! Be the germ buster!",
+      question: "You're at school and someone sneezed nearby! What's your first action?",
       options: [
-        { id: 'a', text: "Wash Hands", isCorrect: true, emoji: "🧼" },
-        { id: 'b', text: "Stay Germy", isCorrect: false, emoji: "🤢" },
-        { id: 'c', text: "Eat", isCorrect: false, emoji: "🍽️" },
-        { id: 'd', text: "Ignore", isCorrect: false, emoji: "🤷" }
+        { id: 'a', text: "Move away and wash hands", isCorrect: true, emoji: "🏃" },
+        { id: 'b', text: "Go closer to see", isCorrect: false, emoji: "👀" },
+        { id: 'c', text: "Ignore and continue", isCorrect: false, emoji: "👂" },
+        { id: 'd', text: "Touch shared items", isCorrect: false, emoji: "📚" }
       ]
     }
   ];

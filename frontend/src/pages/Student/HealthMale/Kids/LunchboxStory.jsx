@@ -27,124 +27,124 @@ const LunchboxStory = () => {
   const questions = [
     {
       id: 1,
-      text: "Your lunchbox has burger and homemade sandwich. Which do you eat?",
+      text: "You packed a lunch with a turkey and veggie wrap, an apple, and water. Your friend offers to trade for chips and soda. What do you do?",
       options: [
         {
           id: "b",
-          text: "Burger",
-          emoji: "🍔",
-          
+          text: "Trade for the chips and soda",
+          emoji: "🥤",
           isCorrect: false
         },
         {
           id: "a",
-          text: "Homemade sandwich",
-          emoji: "🥪",
-          
+          text: "Keep your healthy lunch",
+          emoji: "🥗",
           isCorrect: true
         },
         {
           id: "c",
-          text: "Neither",
-          emoji: "😕",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "School cafeteria: pizza or vegetable wrap. What do you choose?",
-      options: [
-        {
-          id: "a",
-          text: "Vegetable wrap",
-          emoji: "🥬",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Pizza",
-          emoji: "🍕",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Both",
+          text: "Share both lunches",
           emoji: "🤝",
           isCorrect: false
         }
       ]
     },
     {
-      id: 3,
-      text: "Mom packed fruit salad or cookies. Which one do you pick?",
+      id: 2,
+      text: "During recess, you feel thirsty and tired. You have a choice between a sports drink or water with a banana. What do you choose?",
       options: [
         {
-          id: "c",
-          text: "Mix both",
-          emoji: "🍪+🍓",
-          isCorrect: false
+          id: "a",
+          text: "Water with banana",
+          emoji: "🍌",
+          isCorrect: true
         },
         {
           id: "b",
-          text: "Cookies",
-          emoji: "🍪",
+          text: "Sports drink",
+          emoji: "🥤",
           isCorrect: false
         },
         {
-          id: "a",
-          text: "Fruit salad",
-          emoji: "🍓",
-          isCorrect: true
+          id: "c",
+          text: "Skip both",
+          emoji: "😴",
+          isCorrect: false
         }
       ]
     },
     {
-      id: 4,
-      text: "Field trip lunch: hot dog or veggie sticks with hummus. What do you eat?",
+      id: 3,
+      text: "You forgot your lunch money but brought a packed lunch. A classmate forgot their lunch and has money for the cafeteria. What is the kind thing to do?",
       options: [
+        
         {
           id: "b",
-          text: "Hot dog",
-          emoji: "🌭",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Both equally",
-          emoji: "🤷",
+          text: "Trade your lunch for their money",
+          emoji: "💰",
           isCorrect: false
         },
         {
           id: "a",
-          text: "Veggie sticks with hummus",
-          emoji: "🥕",
+          text: "Eat your lunch alone",
+          emoji: "🤫",
+          isCorrect: false
+        },
+        {
+          id: "c",
+          text: "Share your lunch with your friend",
+          emoji: "🤝",
           isCorrect: true
+        },
+      ]
+    },
+    {
+      id: 4,
+      text: "You packed a warm soup in your thermos, but it's still cold at lunchtime. What should you do?",
+      options: [
+        {
+          id: "b",
+          text: "Ask the cafeteria staff to warm it",
+          emoji: "🌡️",
+          isCorrect: false
+        },
+        {
+          id: "c",
+          text: "Eat it cold or wait for it to warm up",
+          emoji: "😋",
+          isCorrect: true
+        },
+        {
+          id: "a",
+          text: "Throw it away and buy lunch",
+          emoji: "🗑️",
+          isCorrect: false
         }
       ]
     },
     {
       id: 5,
-      text: "Birthday party lunch: cake or yogurt with berries. Which is better?",
+      text: "You notice your friend always brings unhealthy snacks and never eats lunch. How can you help?",
       options: [
-        {
-          id: "b",
-          text: "Cake",
-          emoji: "🍰",
-          isCorrect: false
-        },
+        
         {
           id: "a",
-          text: "Yogurt with berries",
-          emoji: "🫐",
-          isCorrect: true
+          text: "Ignore the problem",
+          emoji: "🤷",
+          isCorrect: false
         },
         {
           id: "c",
-          text: "Skip lunch",
-          emoji: "😴",
+          text: "Complain about it to others",
+          emoji: "🤐",
           isCorrect: false
-        }
+        },
+        {
+          id: "b",
+          text: "Teach your friend about healthy choices",
+          emoji: "📚",
+          isCorrect: true
+        },
       ]
     }
   ];

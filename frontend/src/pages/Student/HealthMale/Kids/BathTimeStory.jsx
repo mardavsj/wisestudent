@@ -32,21 +32,21 @@ const BathTimeStory = () => {
           id: "b",
           text: "Skip bath sometimes",
           emoji: "😅",
-          description: "Skipping baths leads to germs and bad smell",
+         
           isCorrect: false
         },
         {
           id: "a",
           text: "Take bath daily",
           emoji: "🛁",
-          description: "Clean body stays healthy and fresh",
+         
           isCorrect: true
         },
         {
           id: "c",
           text: "Only bath once a week",
           emoji: "📅",
-          description: "Daily bathing is important for hygiene",
+          
           isCorrect: false
         }
       ]
@@ -59,21 +59,21 @@ const BathTimeStory = () => {
           id: "b",
           text: "Go straight to dinner",
           emoji: "🍽️",
-          description: "Dirty body brings germs to food",
+        
           isCorrect: false
         },
         {
           id: "c",
           text: "Just change clothes",
           emoji: "👕",
-          description: "Need bath to clean body, not just clothes",
+          
           isCorrect: false
         },
         {
           id: "a",
           text: "Take a refreshing bath",
           emoji: "🧼",
-          description: "Bath removes dirt and sweat from playing",
+         
           isCorrect: true
         }
       ]
@@ -86,21 +86,21 @@ const BathTimeStory = () => {
           id: "b",
           text: "Clean body stays healthy",
           emoji: "💪",
-          description: "Daily baths prevent sickness",
+         
           isCorrect: true
         },
         {
           id: "a",
           text: "You're right, I'll skip",
           emoji: "😒",
-          description: "Skipping baths is unhealthy",
+          
           isCorrect: false
         },
         {
           id: "c",
           text: "Make it fun with toys",
           emoji: "🦆",
-          description: "Bathing can be fun and healthy",
+        
           isCorrect: false
         }
       ]
@@ -113,21 +113,21 @@ const BathTimeStory = () => {
           id: "b",
           text: "Wait until tomorrow",
           emoji: "⏰",
-          description: "Chemicals and germs should be washed off today",
+          
           isCorrect: false
         },
         {
           id: "a",
           text: "Take shower immediately",
           emoji: "🚿",
-          description: "Pool water has chemicals that need washing off",
+          
           isCorrect: true
         },
         {
           id: "c",
           text: "Just dry off",
           emoji: "💨",
-          description: "Need soap and water to clean properly",
+         
           isCorrect: false
         }
       ]
@@ -140,21 +140,18 @@ const BathTimeStory = () => {
           id: "b",
           text: "Everyone stays away",
           emoji: "😷",
-          description: "Bad smell from no baths pushes friends away",
           isCorrect: false
         },
         {
           id: "c",
           text: "You feel sick",
           emoji: "🤒",
-          description: "Germs from dirt can make you ill",
-          isCorrect: false
+            isCorrect: false
         },
         {
           id: "a",
           text: "Mom reminds you to bath",
           emoji: "🛁",
-          description: "Daily baths keep you fresh and clean",
           isCorrect: true
         }
       ]

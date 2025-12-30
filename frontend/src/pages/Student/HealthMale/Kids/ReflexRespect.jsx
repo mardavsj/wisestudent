@@ -32,52 +32,52 @@ const ReflexRespect = () => {
   const questions = [
     {
       id: 1,
-      instruction: "Friends want you to break a rule. What do you do?",
+      instruction: "Your friends want you to skip lunch to play games. Your body needs food to stay healthy. What should you do?",
       options: [
-        { id: 'a', text: "Break the Rule", emoji: "🚫", isCorrect: false },
-        { id: 'b', text: "Respect Boundaries", emoji: "🙅", isCorrect: true },
-        { id: 'c', text: "Ignore Friends", emoji: "🤫", isCorrect: false },
-        { id: 'd', text: "Laugh It Off", emoji: "😂", isCorrect: false }
+        { id: 'a', text: "Skip lunch to play with friends", emoji: "🎮", isCorrect: false },
+        { id: 'b', text: "Eat lunch first, then play", emoji: "🍎", isCorrect: true },
+        { id: 'c', text: "Tell friends to wait while you eat", emoji: "⏰", isCorrect: false },
+        { id: 'd', text: "Just have a quick snack", emoji: "🍎", isCorrect: false }
       ]
     },
     {
       id: 2,
-      instruction: "Someone pressures you to share secrets. What do you do?",
+      instruction: "Someone at school asks for your home address to visit you. What is the safest choice?",
       options: [
-        { id: 'a', text: "Share Secrets", emoji: "💬", isCorrect: false },
-        { id: 'b', text: "Stay Silent", emoji: "🤐", isCorrect: false },
-        { id: 'c', text: "Respect Privacy", emoji: "🔒", isCorrect: true },
-        { id: 'd', text: "Tell Everyone", emoji: "📢", isCorrect: false }
+        { id: 'b', text: "Tell a trusted adult first", emoji: "👩‍🏫", isCorrect: true },
+        { id: 'a', text: "Give them your address", emoji: "🏠", isCorrect: false },
+        { id: 'c', text: "Give only the city name", emoji: "📍", isCorrect: false },
+        { id: 'd', text: "Tell them to ask your parents", emoji: "📞", isCorrect: false }
       ]
     },
     {
       id: 3,
-      instruction: "Friends want you to ignore your parents' rules. What do you do?",
+      instruction: "Your parents set a bedtime for good health, but friends want you to stay up late. What shows respect for your body?",
       options: [
-        { id: 'a', text: "Follow Parents", emoji: "👨‍👩‍👧‍👦", isCorrect: true },
-        { id: 'b', text: "Ignore Rules", emoji: "🙈", isCorrect: false },
-        { id: 'c', text: "Argue Loudly", emoji: "🗣️", isCorrect: false },
-        { id: 'd', text: "Leave Scene", emoji: "🚪", isCorrect: false }
+        { id: 'a', text: "Stay up late with friends", emoji: "🌙", isCorrect: false },
+        { id: 'c', text: "Stay up a little later", emoji: "🕐", isCorrect: false },
+        { id: 'd', text: "Ask friends to come early", emoji: "🌅", isCorrect: false },
+        { id: 'b', text: "Go to bed on time for health", emoji: "😴", isCorrect: true },
       ]
     },
     {
       id: 4,
-      instruction: "Someone asks for your personal information. What do you do?",
+      instruction: "A classmate wants to see your private journal. What is the right way to protect your privacy?",
       options: [
-        { id: 'a', text: "Give Details", emoji: "📱", isCorrect: false },
-        { id: 'b', text: "Walk Away", emoji: "🚶", isCorrect: false },
-        { id: 'c', text: "Ask Adult", emoji: "👩‍🏫", isCorrect: false },
-        { id: 'd', text: "Protect Info", emoji: "🛡️", isCorrect: true }
+        { id: 'a', text: "Let them read everything", emoji: "📖", isCorrect: false },
+        { id: 'b', text: "Share only happy parts", emoji: "😊", isCorrect: false },
+        { id: 'c', text: "Say no, it's private", emoji: "🔒", isCorrect: true },
+        { id: 'd', text: "Ask teacher to decide", emoji: "👩‍🏫", isCorrect: false }
       ]
     },
     {
       id: 5,
-      instruction: "Friends pressure you to do something that feels wrong. What do you do?",
+      instruction: "You feel uncomfortable when someone touches you in a way that doesn't feel right. What should you do?",
       options: [
-        { id: 'a', text: "Trust Yourself", emoji: "🧠", isCorrect: true },
-        { id: 'b', text: "Follow Crowd", emoji: "🐑", isCorrect: false },
-        { id: 'c', text: "Ignore Feeling", emoji: "😐", isCorrect: false },
-        { id: 'd', text: "Make Excuse", emoji: "🤥", isCorrect: false }
+        { id: 'a', text: "Stay quiet to avoid problems", emoji: "🤐", isCorrect: false },
+        { id: 'b', text: "Move away and tell a trusted adult", emoji: "🏃‍♂️", isCorrect: true },
+        { id: 'c', text: "Laugh it off to seem brave", emoji: "😂", isCorrect: false },
+        { id: 'd', text: "Push the person away", emoji: "💪", isCorrect: false }
       ]
     }
   ];

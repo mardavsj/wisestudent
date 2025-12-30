@@ -213,7 +213,7 @@ const QuizBodyFunctions = () => {
                 <span className="text-yellow-400 font-bold">Score: {finalScore}/{questions.length}</span>
               </div>
               
-              <div className="text-6xl mb-4 text-center">🧠</div>
+              <div className="text-6xl mb-4 text-center">🤔</div>
               
               <p className="text-white text-lg md:text-xl mb-6 text-center">
                 {currentQuestionData.text}

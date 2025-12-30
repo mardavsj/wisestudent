@@ -32,21 +32,20 @@ const PeerStory = () => {
           id: "b",
           text: "I should do it too",
           emoji: "🐑",
-          description: "Don't just follow the crowd.",
+         
           isCorrect: false
         },
         {
           id: "a",
           text: "I make my own choices",
           emoji: "🦁",
-          description: "Be a leader, not a follower!",
+         
           isCorrect: true
         },
         {
           id: "c",
           text: "I don't know",
           emoji: "🤷",
-          description: "Trust yourself to make good choices.",
           isCorrect: false
         }
       ]
@@ -59,21 +58,18 @@ const PeerStory = () => {
           id: "c",
           text: "Sad and give in",
           emoji: "😢",
-          description: "Don't let mean words change your mind.",
           isCorrect: false
         },
         {
           id: "a",
           text: "Proud to be healthy",
           emoji: "😎",
-          description: "Being healthy is the coolest thing!",
           isCorrect: true
         },
         {
           id: "b",
           text: "Angry and fight",
           emoji: "😠",
-          description: "Fighting isn't the answer.",
           isCorrect: false
         }
       ]
@@ -86,14 +82,12 @@ const PeerStory = () => {
           id: "a",
           text: "Someone who respects you",
           emoji: "🤝",
-          description: "Good friends want you to be safe and happy.",
           isCorrect: true
         },
         {
           id: "b",
           text: "Someone who dares you",
           emoji: "😈",
-          description: "Dares can be dangerous.",
           isCorrect: false
         },
         
@@ -101,7 +95,6 @@ const PeerStory = () => {
           id: "c",
           text: "Someone who gives you candy",
           emoji: "🍬",
-          description: "Friendship is more than just treats.",
           isCorrect: false
         }
       ]
@@ -114,7 +107,6 @@ const PeerStory = () => {
           id: "c",
           text: "Mumble it",
           emoji: "😶",
-          description: "Speak up so they hear you!",
           isCorrect: false
         },
         
@@ -122,14 +114,12 @@ const PeerStory = () => {
           id: "b",
           text: "Laugh",
           emoji: "😂",
-          description: "They might think you are joking.",
           isCorrect: false
         },
         {
           id: "a",
           text: "Say it loud and clear",
           emoji: "📢",
-          description: "Make sure they know you mean it.",
           isCorrect: true
         },
       ]
@@ -142,21 +132,18 @@ const PeerStory = () => {
           id: "b",
           text: "Stay and listen",
           emoji: "👂",
-          description: "Don't stay if they won't stop.",
           isCorrect: false
         },
         {
           id: "c",
           text: "Yell at them",
           emoji: "🤬",
-          description: "Stay calm and safe.",
           isCorrect: false
         },
         {
           id: "a",
           text: "Leave and find new friends",
           emoji: "👋",
-          description: "You deserve friends who treat you well.",
           isCorrect: true
         }
       ]

@@ -24,156 +24,159 @@ const GrowingStrongBadge = () => {
     {
       id: 1,
       title: "Height Growth",
-      text: "Is it normal to grow taller?",
+      text: "What happens to your body as you grow older?",
       options: [
         {
-          text: "No, it's weird",
-          emoji: "🤔",
-          isCorrect: false
-        },
-        {
-          text: "Only for some",
-          emoji: "👥",
-          isCorrect: false
-        },
-        {
-          text: "Yes, absolutely",
-          emoji: "😄",
+          text: "You grow taller",
+          emoji: "📏",
           isCorrect: true
         },
         {
-          text: "It stops after 10",
-          emoji: "🛑",
+          text: "You shrink smaller",
+          emoji: "⬇️",
+          isCorrect: false
+        },
+        {
+          text: "Nothing changes",
+          emoji: "⏸️",
+          isCorrect: false
+        },
+        {
+          text: "You get shorter",
+          emoji: "📉",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Correct! Growing taller is a completely normal part of childhood!",
-        wrong: "Growing taller is a natural and normal part of growing up for everyone!"
+        correct: "Correct! As you grow older, your body grows taller and stronger!",
+        wrong: "As you grow older, your body grows taller and stronger - it's a natural part of growing up!"
       }
     },
     {
       id: 2,
       title: "Voice Change",
-      text: "What happens to your voice?",
+      text: "During puberty, what change might happen to a boy's voice?",
       options: [
+        
         {
-          text: "It disappears",
-          emoji: "🤫",
+          text: "It gets higher",
+          emoji: "📈",
+          isCorrect: false
+        },
+        {
+          text: "It stays the same",
+          emoji: "⏸️",
           isCorrect: false
         },
         {
           text: "It gets deeper",
-          emoji: "🎤",
+          emoji: "📉",
           isCorrect: true
         },
         {
-          text: "It stays the same",
-          emoji: "🔁",
-          isCorrect: false
-        },
-        {
-          text: "It becomes silent",
-          emoji: "🔇",
+          text: "It gets softer",
+          emoji: "🔈",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "That's right! Your voice getting deeper is a sign of growing up!",
-        wrong: "During puberty, it's normal for a boy's voice to get deeper!"
+        correct: "That's right! During puberty, a boy's voice typically gets deeper!",
+        wrong: "During puberty, it's normal for a boy's voice to get deeper, not higher or softer!"
       }
     },
     {
       id: 3,
       title: "Body Hair",
-      text: "Is body hair natural?",
+      text: "What happens to body hair during puberty?",
       options: [
+        
         {
-          text: "Yes, it's natural",
-          emoji: "👍",
-          isCorrect: true
-        },
-        {
-          text: "No, it's bad",
-          emoji: "👎",
+          text: "It falls out everywhere",
+          emoji: "🍂",
           isCorrect: false
         },
         {
-          text: "Only on head",
+          text: "It only grows on head",
           emoji: "💇",
           isCorrect: false
         },
         {
-          text: "It's artificial",
-          emoji: "😣",
+          text: "It disappears completely",
+          emoji: "💨",
           isCorrect: false
-        }
+        },
+        {
+          text: "It grows in new places",
+          emoji: "🌿",
+          isCorrect: true
+        },
       ],
       feedback: {
-        correct: "Spot on! Body hair growth is a natural change during puberty!",
-        wrong: "Body hair appearing in new places is a natural part of growing up!"
+        correct: "Spot on! Body hair growth in new places is a natural change during puberty!",
+        wrong: "During puberty, body hair grows in new places, not disappears!"
       }
     },
     {
       id: 4,
       title: "Strength",
-      text: "How do you get stronger?",
+      text: "What helps your muscles grow stronger?",
       options: [
         {
-          text: "Sitting still",
-          emoji: "🛋️",
-          isCorrect: false
-        },
-        {
-          text: "Sleeping only",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          text: "Exercise & food",
+          text: "Exercise and good food",
           emoji: "💪",
           isCorrect: true
         },
         {
-          text: "Wishing hard",
-          emoji: "✨",
+          text: "Only watching TV",
+          emoji: "📺",
+          isCorrect: false
+        },
+        {
+          text: "Playing video games",
+          emoji: "🎮",
+          isCorrect: false
+        },
+        {
+          text: "Staying in bed",
+          emoji: "🛏️",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Great job! Healthy food and exercise help your muscles grow strong!",
-        wrong: "To build strength, you need a mix of healthy food and exercise!"
+        correct: "Great job! Exercise and good food help your muscles grow strong!",
+        wrong: "To build strength, you need physical activity and good nutrition, not just resting!"
       }
     },
     {
       id: 5,
       title: "Self Acceptance",
-      text: "How should you feel about growing?",
+      text: "How should you feel about the changes happening to your body?",
       options: [
+       
         {
-          text: "Scared",
-          emoji: "😨",
+          text: "Worried and scared",
+          emoji: "😰",
           isCorrect: false
         },
-        {
-          text: "Proud & Happy",
+         {
+          text: "Proud and excited",
           emoji: "😊",
           isCorrect: true
         },
         {
-          text: "Ashamed",
+          text: "Embarrassed",
           emoji: "😳",
           isCorrect: false
         },
         {
-          text: "Indifferent",
-          emoji: "😐",
+          text: "Angry",
+          emoji: "😠",
           isCorrect: false
         }
       ],
       feedback: {
-        correct: "Wonderful! Be proud of your growing body and the changes happening!",
-        wrong: "You should feel proud and happy about your body growing and changing!"
+        correct: "Wonderful! It's great to feel proud and excited about your body's natural changes!",
+        wrong: "It's normal to feel all kinds of emotions, but remember that changes to your body are natural and something to feel proud of!"
       }
     }
   ];
