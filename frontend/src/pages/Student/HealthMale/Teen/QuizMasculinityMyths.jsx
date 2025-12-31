@@ -16,130 +16,132 @@ const QuizMasculinityMyths = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Which is true?",
-      options: [
-        {
-          id: "a",
-          text: "Men can show emotions",
-          emoji: "😊",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Men must be tough always",
-          emoji: "💪",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Men can't be sensitive",
-          emoji: "😐",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What defines healthy masculinity?",
-      options: [
-        {
-          id: "a",
-          text: "Never showing weakness",
-          emoji: "💪",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Respecting all people equally",
-          emoji: "🤝",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Suppressing emotions",
-          emoji: "😶",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How should men handle stress?",
-      options: [
-        {
-          id: "a",
-          text: "Bottle it up inside",
-          emoji: "🤐",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Ignore it completely",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Talk about feelings with friends",
-          emoji: "💬",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Is it okay for men to have hobbies like cooking or gardening?",
-      options: [
-        {
-          id: "a",
-          text: "No, those are for women",
-          emoji: "🚫",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Only if no one sees",
-          emoji: "👀",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Yes, hobbies are for everyone",
-          emoji: "🍳",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What does consent mean?",
-      options: [
-        {
-          id: "a",
-          text: "Getting what you want",
-          emoji: "😤",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Respecting boundaries",
-          emoji: "🛑",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Ignoring 'no'",
-          emoji: "🙉",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which belief about masculinity is a myth?",
+    options: [
+     
+      {
+        id: "b",
+        text: "Men can ask for help when needed",
+        emoji: "🤝",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Men experience emotions deeply",
+        emoji: "❤️",
+        isCorrect: false
+      },
+       {
+        id: "a",
+        text: "Men should solve problems alone",
+        emoji: "🧱",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "Why is the idea 'men must always be strong' harmful?",
+    options: [
+      {
+        id: "a",
+        text: "It encourages teamwork",
+        emoji: "👥",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "It prevents men from seeking support",
+        emoji: "🚧",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "It improves mental health",
+        emoji: "🧠",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Which behavior challenges traditional masculinity myths?",
+    options: [
+      {
+        id: "a",
+        text: "Listening without interrupting",
+        emoji: "👂",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Always competing with others",
+        emoji: "🏆",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Hiding fear at all costs",
+        emoji: "🎭",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "What does modern masculinity encourage?",
+    options: [
+      {
+        id: "a",
+        text: "Emotional awareness and responsibility",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Control over others",
+        emoji: "👑",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Avoiding vulnerability",
+        emoji: "🔒",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Which statement best reflects a healthy masculinity mindset?",
+    options: [
+      {
+        id: "a",
+        text: "Respect is earned through fear",
+        emoji: "😨",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Respect comes from empathy and integrity",
+        emoji: "⭐",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Respect requires dominance",
+        emoji: "🦁",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;
@@ -195,6 +197,7 @@ const QuizMasculinityMyths = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

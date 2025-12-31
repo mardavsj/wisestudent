@@ -19,128 +19,53 @@ const PeerPressureStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Friends say 'Try smoking once.' Should you?",
-      options: [
-        {
-          id: "a",
-          text: "No, firmly refuse",
-          emoji: "✋",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Yes, just once won't hurt",
-          emoji: "🚬",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Say I'll think about it",
-          emoji: "🤔",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "How do you respond when friends pressure you to smoke?",
-      options: [
-        {
-          id: "a",
-          text: "Walk away silently",
-          emoji: "🚶",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Explain health risks",
-          emoji: "📚",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Give in to fit in",
-          emoji: "😔",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What should you do if peer pressure continues?",
-      options: [
-        {
-          id: "a",
-          text: "Find new friends",
-          emoji: "👥",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Start smoking to stop pressure",
-          emoji: "🚬",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Keep saying maybe",
-          emoji: "🤷",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How can you help friends avoid smoking?",
-      options: [
-        
-        {
-          id: "b",
-          text: "Force them to stop",
-          emoji: "🛑",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Ignore their smoking",
-          emoji: "🙈",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Share facts about smoking dangers",
-          emoji: "📊",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "What strengthens you against peer pressure?",
-      options: [
-        {
-          id: "b",
-          text: "Strong personal values",
-          emoji: "💪",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Going along with crowd",
-          emoji: "👥",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Wanting to be popular",
-          emoji: "⭐",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Friends urge you to try vaping, saying 'Everyone does it.' How should you respond?",
+    options: [
+      { id: "b", text: "Try it once to fit in", emoji: "💨", isCorrect: false },
+      { id: "a", text: "Politely refuse and explain risks", emoji: "✋", isCorrect: true },
+      { id: "c", text: "Pretend to try but avoid inhaling", emoji: "😏", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "A friend teases you for avoiding alcohol at a party. What’s a strong response?",
+    options: [
+      { id: "a", text: "Stay confident and suggest fun alternatives", emoji: "🎉", isCorrect: true },
+      { id: "b", text: "Drink just to avoid teasing", emoji: "🍺", isCorrect: false },
+      { id: "c", text: "Leave the party silently", emoji: "🚶", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "Peer pressure keeps repeating. What’s the best long-term strategy?",
+    options: [
+      { id: "b", text: "Give in occasionally to avoid conflict", emoji: "😔", isCorrect: false },
+      { id: "c", text: "Argue aggressively with peers", emoji: "🔥", isCorrect: false },
+      { id: "a", text: "Surround yourself with supportive friends", emoji: "👥", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    text: "How can you influence friends to make safer choices?",
+    options: [
+      { id: "b", text: "Criticize or force them to change", emoji: "🛑", isCorrect: false },
+      { id: "a", text: "Share factual health risks and personal experiences", emoji: "📊", isCorrect: true },
+      { id: "c", text: "Ignore their risky behavior", emoji: "🙈", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "Which trait makes you resilient to peer pressure?",
+    options: [
+      { id: "a", text: "Strong personal values and self-awareness", emoji: "💪", isCorrect: true },
+      { id: "b", text: "Desire to be popular at any cost", emoji: "⭐", isCorrect: false },
+      { id: "c", text: "Avoiding social situations completely", emoji: "🏠", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

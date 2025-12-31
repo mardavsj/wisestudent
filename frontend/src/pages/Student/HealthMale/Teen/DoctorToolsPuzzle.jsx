@@ -19,20 +19,20 @@ const DoctorToolsPuzzle = () => {
 
   // Medical Tools (left side) - 5 items
   const tools = [
-    { id: 1, name: "Stethoscope", emoji: "🩺", description: "Listening device" },
-    { id: 2, name: "Thermometer", emoji: "🌡️", description: "Temperature checker" },
-    { id: 3, name: "Vaccine", emoji: "💉", description: "Prevention shot" },
-    { id: 4, name: "Blood Pressure Cuff", emoji: "🩹", description: "Pressure measurer" },
-    { id: 5, name: "Otoscope", emoji: "👂", description: "Ear examiner" }
+    { id: 1, name: "Stethoscope", emoji: "🩺",  },
+    { id: 2, name: "Thermometer", emoji: "🌡️",  },
+    { id: 3, name: "Vaccine", emoji: "💉",  },
+    { id: 4, name: "Blood Pressure Cuff", emoji: "🩹",  },
+    { id: 5, name: "Otoscope", emoji: "👂",  }
   ];
 
   // Body Parts/Functions (right side) - 5 items
   const functions = [
-    { id: 3, name: "Protection", emoji: "🛡️", description: "Disease defense" },
-    { id: 5, name: "Ears", emoji: "👂", description: "Hearing organs" },
-    { id: 1, name: "Heart", emoji: "❤️", description: "Blood pump" },
-    { id: 4, name: "Blood Pressure", emoji: "🩸", description: "Artery force" },
-    { id: 2, name: "Fever", emoji: "🤒", description: "High temperature" }
+    { id: 3, name: "Protection", emoji: "🛡️",  },
+    { id: 5, name: "Ears", emoji: "👂",  },
+    { id: 1, name: "Heart", emoji: "❤️",  },
+    { id: 4, name: "Blood Pressure", emoji: "🩸",  },
+    { id: 2, name: "Fever", emoji: "🤒",  }
   ];
 
   // Correct matches

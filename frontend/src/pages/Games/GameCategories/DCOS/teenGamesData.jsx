@@ -548,7 +548,7 @@ export const getDcosTeenGames = (gameCompletionStatus)=> {
 },
 {
   id: "dcos-teen-38",
-  title: "Truth Journal2",
+  title: "Truth Journal",
   description: "Write: ‘One fake news I spotted recently was ___.’",
   icon: <Award className="w-6 h-6" />,
   difficulty: "Easy",
@@ -814,7 +814,7 @@ export const getDcosTeenGames = (gameCompletionStatus)=> {
 },
 {
   id: "dcos-teen-57",
-  title: "Digital Footprint Story1",
+  title: "Digital Footprint Story",
   description: "Story: Old photo posted again. Impact = Stays forever.",
   icon: <Award className="w-6 h-6" />,
   difficulty: "Medium",
@@ -926,7 +926,7 @@ export const getDcosTeenGames = (gameCompletionStatus)=> {
 },
 {
   id: "dcos-teen-65",
-  title: "Debate Stage1",
+  title: "Debate Stage 2",
   description: "Topic: Does online identity matter for success? → Yes.",
   icon: <Award className="w-6 h-6" />,
   difficulty: "Hard",
@@ -1066,7 +1066,7 @@ export const getDcosTeenGames = (gameCompletionStatus)=> {
 },
 {
   id: "dcos-teen-75",
-  title: "AI in Jobs Debate1",
+  title: "AI in Jobs Debate",
   description: "Will AI take jobs or create new ones? → Both, fairness needed.",
   icon: <MessageSquare className="w-6 h-6" />,
   difficulty: "Hard",
@@ -1206,7 +1206,7 @@ export const getDcosTeenGames = (gameCompletionStatus)=> {
 },
 {
   id: "dcos-teen-85",
-  title: "Debate Stage2",
+  title: "Debate Stage 3",
   description: "Should hate speech be allowed online? Correct = No.",
   icon: <MessageSquare className="w-6 h-6" />,
   difficulty: "Hard",
@@ -1262,7 +1262,7 @@ export const getDcosTeenGames = (gameCompletionStatus)=> {
 },
 {
   id: "dcos-teen-89",
-  title: "Reflex Flag1",
+  title: "Reflex Flag",
   description: "Tap ‘Flag’ when hate comment appears.",
   icon: <Flag className="w-6 h-6" />,
   difficulty: "Easy",
@@ -1318,7 +1318,7 @@ export const getDcosTeenGames = (gameCompletionStatus)=> {
 },
 {
   id: "dcos-teen-93",
-  title: "Debate Stage",
+  title: "Debate Stage 4",
   description: "Is tech only for entertainment or also for growth? Correct = Growth too.",
   icon: <MessageSquare className="w-6 h-6" />,
   difficulty: "Hard",
@@ -1374,7 +1374,7 @@ export const getDcosTeenGames = (gameCompletionStatus)=> {
 },
 {
   id: "dcos-teen-97",
-  title: "Social Media Story1",
+  title: "Social Media Story",
   description: "Teen uses Instagram to promote school project. Correct = Smart Use.",
   icon: <BookOpen className="w-6 h-6" />,
   difficulty: "Medium",

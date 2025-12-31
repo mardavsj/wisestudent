@@ -19,134 +19,134 @@ const QuizHygiene = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   const questions = [
     {
-      id: 1,
-      text: "How often should you change your underwear?",
-      options: [
-         {
-          id: "a",
-          text: "Every day",
-          emoji: "📅",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Every week",
-          emoji: "🗓️",
-          isCorrect: false
-        },
-       
-        {
-          id: "c",
-          text: "When it smells",
-          emoji: "🤢",
-          isCorrect: false
-        }
-      ]
+        id: 1,
+        text: "Why is over-washing your skin with harsh soap harmful?",
+        options: [
+            
+            {
+                id: "b",
+                text: "It makes skin waterproof",
+                emoji: "🚫",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "It stops sweat glands permanently",
+                emoji: "❌",
+                isCorrect: false
+            },
+            {
+                id: "a",
+                text: "It removes protective skin bacteria and oils",
+                emoji: "🧬",
+                isCorrect: true
+            },
+        ]
     },
     {
-      id: 2,
-      text: "What causes foot odor?",
-      options: [
-       
-        {
-          id: "b",
-          text: "Large feet",
-          emoji: "🦶",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Walking too fast",
-          emoji: "🚶",
-          isCorrect: false
-        },
-         {
-          id: "a",
-          text: "Bacteria and sweat",
-          emoji: "🦠",
-          isCorrect: true
-        },
-      ]
+        id: 2,
+        text: "Why should towels be dried completely after use?",
+        options: [
+           
+            {
+                id: "b",
+                text: "Wet towels smell nicer",
+                emoji: "🌸",
+                isCorrect: false
+            },
+             {
+                id: "a",
+                text: "Moist towels grow bacteria and fungi",
+                emoji: "🦠",
+                isCorrect: true
+            },
+            {
+                id: "c",
+                text: "Dry towels absorb less water",
+                emoji: "🧻",
+                isCorrect: false
+            }
+        ]
     },
     {
-      id: 3,
-      text: "How long should you brush your teeth?",
-      options: [
-        
-        {
-          id: "b",
-          text: "10 seconds",
-          emoji: "⏱️",
-          isCorrect: false
-        },
-       {
-          id: "a",
-          text: "2 minutes",
-          emoji: "🦷",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Until they hurt",
-          emoji: "😖",
-          isCorrect: false
-        }
-      ]
+        id: 3,
+        text: "Why is showering immediately after intense sweating recommended?",
+        options: [
+            {
+                id: "a",
+                text: "Sweat feeds odor-causing bacteria if left on skin",
+                emoji: "🧫",
+                isCorrect: true
+            },
+            {
+                id: "b",
+                text: "Sweat damages muscles",
+                emoji: "💪",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "Water blocks sweat glands",
+                emoji: "🚿",
+                isCorrect: false
+            }
+        ]
     },
     {
-      id: 4,
-      text: "Why should you trim your nails?",
-      options: [
-        {
-          id: "a",
-          text: "To prevent dirt buildup",
-          emoji: "💅",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "To look scary",
-          emoji: "🧛",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "To stop them growing",
-          emoji: "🛑",
-          isCorrect: false
-        }
-      ]
+        id: 4,
+        text: "Why is sharing personal hygiene items risky?",
+        options: [
+            
+            {
+                id: "b",
+                text: "They stop working after sharing",
+                emoji: "🔧",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "They lose their smell",
+                emoji: "👃",
+                isCorrect: false
+            },
+            {
+                id: "a",
+                text: "They can transfer bacteria, fungi, or viruses",
+                emoji: "⚠️",
+                isCorrect: true
+            },
+        ]
     },
     {
-      id: 5,
-      text: "What is the best way to wash your hands?",
-      options: [
-        
-        {
-          id: "b",
-          text: "Water only",
-          emoji: "💧",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Wipe on pants",
-          emoji: "👖",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Soap and water for 20s",
-          emoji: "🧼",
-          isCorrect: true
-        },
-      ]
+        id: 5,
+        text: "Which habit supports long-term hygiene, not just cleanliness?",
+        options: [
+            {
+                id: "a",
+                text: "Consistent routines + clean environment",
+                emoji: "🏠",
+                isCorrect: true
+            },
+            {
+                id: "b",
+                text: "Using perfume daily",
+                emoji: "🌸",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "Only washing when dirty",
+                emoji: "🕒",
+                isCorrect: false
+            }
+        ]
     }
-  ];
+];
+
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;
@@ -202,6 +202,7 @@ const QuizHygiene = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         {!gameFinished && questions[currentQuestion] ? (

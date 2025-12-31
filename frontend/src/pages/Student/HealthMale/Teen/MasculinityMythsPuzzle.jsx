@@ -17,32 +17,33 @@ const MasculinityMythsPuzzle = () => {
   const totalCoins = 5;
   const totalXp = 10;
 
-  // Masculinity Myths (left side) - 5 items
-  const myths = [
-    { id: 1, name: "Real Men Help", emoji: "🤝", description: "Assistance behavior" },
-    { id: 2, name: "Men Can't Cry", emoji: "😢", description: "Emotional suppression" },
-    { id: 3, name: "Men Respect Women", emoji: "🙏", description: "Gender relations" },
-    { id: 4, name: "Real Men Fight", emoji: "👊", description: "Conflict resolution" },
-    { id: 5, name: "Men Show Emotions", emoji: "💬", description: "Expression openness" }
-  ];
+  // Masculinity Myths (left side) - 5 unique items
+const myths = [
+  { id: 1, name: "Strength Means Silence", emoji: "🗿" },
+  { id: 2, name: "Winning Is Everything", emoji: "🏆" },
+  { id: 3, name: "Men Must Always Lead", emoji: "🧭" },
+  { id: 4, name: "Anger Shows Power", emoji: "🔥" },
+  { id: 5, name: "Care Is a Weakness", emoji: "🧊" }
+];
 
-  // Reality Checks (right side) - 5 items
-  const realities = [
-    { id: 3, name: "Mutual Respect", emoji: "✨", description: "Healthy interaction" },
-    { id: 5, name: "Emotional Honesty", emoji: "💖", description: "Authentic feelings" },
-    { id: 1, name: "Community Support", emoji: "🏘️", description: "Social cooperation" },
-    { id: 4, name: "Peaceful Solutions", emoji: "🕊️", description: "Non-violent approach" },
-    { id: 2, name: "Emotional Release", emoji: "😊", description: "Healthy expression" }
-  ];
+// Reality Checks (right side) - 5 meaningful counters
+const realities = [
+  { id: 2, name: "Growth Matters More Than Victory", emoji: "🌱" },
+  { id: 3, name: "Leadership Can Be Shared", emoji: "🤝" },
+  { id: 5, name: "Care Creates Connection", emoji: "💞" },
+  { id: 1, name: "Speaking Up Builds Strength", emoji: "🎤" },
+  { id: 4, name: "Calm Control Is Real Power", emoji: "🧘" },
+];
 
-  // Correct matches
-  const correctMatches = [
-    { mythId: 1, realityId: 1 }, // Real Men Help → Community Support
-    { mythId: 2, realityId: 2 }, // Men Can't Cry → Emotional Release
-    { mythId: 3, realityId: 3 }, // Men Respect Women → Mutual Respect
-    { mythId: 4, realityId: 4 }, // Real Men Fight → Peaceful Solutions
-    { mythId: 5, realityId: 5 }  // Men Show Emotions → Emotional Honesty
-  ];
+// Correct matches
+const correctMatches = [
+  { mythId: 1, realityId: 1 }, // Strength Means Silence → Speaking Up Builds Strength
+  { mythId: 2, realityId: 2 }, // Winning Is Everything → Growth Matters More Than Victory
+  { mythId: 3, realityId: 3 }, // Men Must Always Lead → Leadership Can Be Shared
+  { mythId: 4, realityId: 4 }, // Anger Shows Power → Calm Control Is Real Power
+  { mythId: 5, realityId: 5 }  // Care Is a Weakness → Care Creates Connection
+];
+
 
   const handleMythSelect = (myth) => {
     if (gameFinished) return;

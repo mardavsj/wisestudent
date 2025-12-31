@@ -20,169 +20,180 @@ const TeenShavingSimulation = () => {
     const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
     const steps = [
-        {
-            id: 1,
-            title: "Preparation",
-            instruction: "Get ready to shave.",
-            options: [
-                 {
-                    id: "a",
-                    text: "Wash face with warm water",
-                    emoji: "🚿",
-                    isCorrect: true
-                },
-                {
-                    id: "b",
-                    text: "Start dry shaving",
-                    emoji: "🌵",
-                    isCorrect: false
-                },
-                {
-                    id: "c",
-                    text: "Put on cologne",
-                    emoji: "🧴",
-                    isCorrect: false
-                },
-                {
-                    id: "d",
-                    text: "Apply pre-shave oil",
-                    emoji: "💧",
-                    isCorrect: false
-                }
-            ]
-        },
-        {
-            id: 2,
-            title: "Lather Up",
-            instruction: "Apply product.",
-            options: [
-               
-                {
-                    id: "b",
-                    text: "Use nothing",
-                    emoji: "🚫",
-                    isCorrect: false
-                },
-                 {
-                    id: "a",
-                    text: "Apply shaving cream/gel",
-                    emoji: "🧼",
-                    isCorrect: true
-                },
-                {
-                    id: "c",
-                    text: "Use toothpaste",
-                    emoji: "🦷",
-                    isCorrect: false
-                },
-                {
-                    id: "d",
-                    text: "Use quality shaving soap",
-                    emoji: "🧼",
-                    isCorrect: false
-                }
-            ]
-        },
-        {
-            id: 3,
-            title: "The Shave",
-            instruction: "Start shaving.",
-            options: [
-               
-                {
-                    id: "b",
-                    text: "Press very hard",
-                    emoji: "💪",
-                    isCorrect: false
-                },
-                {
-                    id: "c",
-                    text: "Shave against grain fast",
-                    emoji: "⬆️",
-                    isCorrect: false
-                },
-                {
-                    id: "d",
-                    text: "Use light, steady pressure",
-                    emoji: "👐",
-                    isCorrect: false
-                },
-                 {
-                    id: "a",
-                    text: "Gentle strokes with grain",
-                    emoji: "⬇️",
-                    isCorrect: true
-                },
-            ]
-        },
-        {
-            id: 4,
-            title: "Rinse",
-            instruction: "Clean up.",
-            options: [
-               
-                {
-                    id: "b",
-                    text: "Wipe with dirty towel",
-                    emoji: "🧣",
-                    isCorrect: false
-                },
-                {
-                    id: "c",
-                    text: "Leave cream on",
-                    emoji: "👻",
-                    isCorrect: false
-                },
-                 {
-                    id: "a",
-                    text: "Rinse with cool water",
-                    emoji: "💧",
-                    isCorrect: true
-                },
-                {
-                    id: "d",
-                    text: "Pat dry with clean towel",
-                    emoji: "🧻",
-                    isCorrect: false
-                },
-            ]
-        },
-        {
-            id: 5,
-            title: "Aftercare",
-            instruction: "Finish up.",
-            options: [
-                
-                {
-                    id: "b",
-                    text: "Scratch face",
-                    emoji: "💅",
-                    isCorrect: false
-                },
-                {
-                    id: "a",
-                    text: "Apply moisturizer/balm",
-                    emoji: "🧴",
-                    isCorrect: true
-                },
-                {
-                    id: "c",
-                    text: "Go out in sun immediately",
-                    emoji: "☀️",
-                    isCorrect: false
-                },
-                {
-                    id: "d",
-                    text: "Use aftershave balm",
-                    emoji: "🌿",
-                    isCorrect: false
-                }
-            ]
-        }
-    ];
+    {
+        id: 1,
+        title: "Skin Readiness",
+        instruction: "Prepare your skin safely before shaving.",
+        options: [
+            {
+                id: "a",
+                text: "Soften hair using warm water or steam",
+                emoji: "♨️",
+                isCorrect: true
+            },
+            {
+                id: "b",
+                text: "Splash cold water immediately",
+                emoji: "🧊",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "Apply perfume first",
+                emoji: "🌸",
+                isCorrect: false
+            },
+            {
+                id: "d",
+                text: "Shave as soon as you wake up",
+                emoji: "⏰",
+                isCorrect: false
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Product Choice",
+        instruction: "Choose the safest shaving aid.",
+        options: [
+           
+            {
+                id: "b",
+                text: "Use soap meant for clothes",
+                emoji: "👕",
+                isCorrect: false
+            },
+             {
+                id: "a",
+                text: "Use a lubricating shaving gel or cream",
+                emoji: "🫧",
+                isCorrect: true
+            },
+            {
+                id: "c",
+                text: "Use body spray foam",
+                emoji: "💨",
+                isCorrect: false
+            },
+            {
+                id: "d",
+                text: "Use water only to save time",
+                emoji: "💦",
+                isCorrect: false
+            }
+        ]
+    },
+    {
+        id: 3,
+        title: "Blade Technique",
+        instruction: "Reduce irritation while shaving.",
+        options: [
+           
+            {
+                id: "b",
+                text: "Drag razor repeatedly over same spot",
+                emoji: "🔁",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "Apply force for a closer shave",
+                emoji: "💥",
+                isCorrect: false
+            },
+             {
+                id: "a",
+                text: "Move the razor in hair-growth direction",
+                emoji: "📉",
+                isCorrect: true
+            },
+            {
+                id: "d",
+                text: "Rush to finish quickly",
+                emoji: "🏃",
+                isCorrect: false
+            }
+        ]
+    },
+    {
+        id: 4,
+        title: "Post-Shave Clean",
+        instruction: "Protect skin after shaving.",
+        options: [
+           
+            {
+                id: "b",
+                text: "Rub face aggressively",
+                emoji: "😖",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "Skip washing completely",
+                emoji: "🚫",
+                isCorrect: false
+            },
+            {
+                id: "d",
+                text: "Use shared towel",
+                emoji: "🧺",
+                isCorrect: false
+            },
+             {
+                id: "a",
+                text: "Cool water rinse to calm skin",
+                emoji: "❄️",
+                isCorrect: true
+            },
+        ]
+    },
+    {
+        id: 5,
+        title: "Skin Recovery",
+        instruction: "Help skin heal after shaving.",
+        options: [
+            {
+                id: "a",
+                text: "Apply alcohol-free soothing balm",
+                emoji: "🌿",
+                isCorrect: true
+            },
+            {
+                id: "b",
+                text: "Expose skin to heat immediately",
+                emoji: "🔥",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "Scratch itchy areas",
+                emoji: "🤏",
+                isCorrect: false
+            },
+            {
+                id: "d",
+                text: "Apply strong fragrance",
+                emoji: "🌺",
+                isCorrect: false
+            }
+        ]
+    }
+];
+
 
     const handleChoice = (optionId) => {
+        // Check if current scenario and its options exist
+        if (!steps[currentScenario] || !steps[currentScenario].options) {
+            return;
+        }
+        
         const selectedOption = steps[currentScenario].options.find(opt => opt.id === optionId);
+        
+        // Check if selected option exists
+        if (!selectedOption) {
+            return;
+        }
+        
         const isCorrect = selectedOption.isCorrect;
 
         if (isCorrect) {
@@ -206,7 +217,7 @@ const TeenShavingSimulation = () => {
     return (
         <GameShell
             title="Shaving Simulation"
-            subtitle={`Scenario ${currentScenario + 1} of ${steps.length}`}
+            subtitle={`Scenario ${Math.min(currentScenario + 1, steps.length)} of ${steps.length}`}
             onNext={handleNext}
             nextEnabled={gameFinished}
             showGameOver={gameFinished}
@@ -223,20 +234,20 @@ const TeenShavingSimulation = () => {
             <div className="space-y-8">
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
                     <div className="flex justify-between items-center mb-4">
-                        <span className="text-white/80">Scenario {currentScenario + 1}/{steps.length}</span>
+                        <span className="text-white/80">Scenario {Math.min(currentScenario + 1, steps.length)}/{steps.length}</span>
                         <span className="text-yellow-400 font-bold">Coins: {coins}</span>
                     </div>
 
                     <h2 className="text-xl font-semibold text-white mb-4">
-                        {steps[currentScenario].title}
+                        {steps[currentScenario] ? steps[currentScenario].title : "Loading..."}
                     </h2>
                     
                     <p className="text-white/90 mb-6">
-                        {steps[currentScenario].instruction}
+                        {steps[currentScenario] ? steps[currentScenario].instruction : "Loading..."}
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {steps[currentScenario].options.map(option => (
+                        {steps[currentScenario] && steps[currentScenario].options ? steps[currentScenario].options.map(option => (
                             <button
                                 key={option.id}
                                 onClick={() => handleChoice(option.id)}
@@ -249,7 +260,7 @@ const TeenShavingSimulation = () => {
                                     </div>
                                 </div>
                             </button>
-                        ))}
+                        )) : <div className="text-white text-center py-8">Loading options...</div>}
                     </div>
                 </div>
             </div>

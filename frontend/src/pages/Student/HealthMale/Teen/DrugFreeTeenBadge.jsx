@@ -22,167 +22,87 @@ const DrugFreeTeenBadge = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      icon: <Shield className="w-12 h-12 text-blue-400" />,
-      title: "Refusal Skills",
-      text: "What is the best way to say no to drugs?",
-      options: [
-        {
-          text: "Say 'Maybe later'",
-          emoji: "⏰",
-          isCorrect: false
-        },
-        {
-          text: "Take it and hide it",
-          emoji: "🤥",
-          isCorrect: false
-        },
-        {
-          text: "Say 'No' confidently",
-          emoji: "✋",
-          isCorrect: true
-        },
-        {
-          text: "Ignore the person",
-          emoji: "🤐",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Exactly! Being clear and confident shows you mean what you say.",
-        wrong: "Saying 'no' clearly and confidently is the most effective way to refuse drugs."
-      }
-    },
-    {
-      id: 2,
-      icon: <Heart className="w-12 h-12 text-red-400" />,
-      title: "Health Impact",
-      text: "Why are drugs dangerous for teens?",
-      options: [
-        {
-          text: "They taste bad",
-          emoji: "🤢",
-          isCorrect: false
-        },
-        {
-          text: "They are expensive",
-          emoji: "💸",
-          isCorrect: false
-        },
-        {
-          text: "They affect brain development",
-          emoji: "🧠",
-          isCorrect: true
-        },
-        {
-          text: "They make you sleepy",
-          emoji: "😴",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "That's right! During adolescence, your brain is still developing and drugs can cause lasting damage.",
-        wrong: "Drugs are particularly dangerous for teens because they can interfere with critical brain development."
-      }
-    },
-    {
-      id: 3,
-      icon: <ThumbsUp className="w-12 h-12 text-green-400" />,
-      title: "Positive Choices",
-      text: "What is a healthy alternative to substance use?",
-      options: [
-        {
-          text: "Sports and hobbies",
-          emoji: "⚽",
-          isCorrect: true
-        },
-        {
-          text: "Sleeping all day",
-          emoji: "🛌",
-          isCorrect: false
-        },
-        {
-          text: "Skipping school",
-          emoji: "🚫",
-          isCorrect: false
-        },
-        {
-          text: "Spending money recklessly",
-          emoji: "💰",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Great choice! Engaging in positive activities helps build a fulfilling life.",
-        wrong: "Healthy alternatives like sports, arts, and hobbies provide natural rewards and help develop skills."
-      }
-    },
-    {
-      id: 4,
-      icon: <Star className="w-12 h-12 text-yellow-400" />,
-      title: "Future Goals",
-      text: "How does staying drug-free help your future?",
-      options: [
-        {
-          text: "It doesn't matter",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        {
-          text: "Protects health and opportunities",
-          emoji: "🛡️",
-          isCorrect: true
-        },
-        {
-          text: "Makes life boring",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          text: "Nobody cares anyway",
-          emoji: "😑",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Absolutely! Staying drug-free protects your health, relationships, and opens doors to opportunities.",
-        wrong: "Being drug-free preserves your physical and mental health, academic performance, and career prospects."
-      }
-    },
-    {
-      id: 5,
-      icon: <Award className="w-12 h-12 text-purple-400" />,
-      title: "Support System",
-      text: "Who can you talk to if you feel pressured?",
-      options: [
-        {
-          text: "Strangers online",
-          emoji: "🖥️",
-          isCorrect: false
-        },
-        {
-          text: "Nobody",
-          emoji: "😶",
-          isCorrect: false
-        },
-        {
-          text: "Parents or trusted adults",
-          emoji: "👨‍👩‍👧‍👦",
-          isCorrect: true
-        },
-        {
-          text: "Other teens using substances",
-          emoji: "👥",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "That's right! Trusted adults can provide guidance and support when facing challenges.",
-        wrong: "Talking to parents, counselors, or other trusted adults is crucial for getting help when facing peer pressure."
-      }
+  {
+    id: 1,
+    icon: <Shield className="w-12 h-12 text-blue-400" />,
+    title: "Refusal Skills",
+    text: "Someone at a party keeps offering you drugs and insists 'Just this once'. What's the smartest response?",
+    options: [
+      { text: "Politely but firmly say 'No' and leave if pressured", emoji: "✋", isCorrect: true },
+      { text: "Say 'Maybe later' to avoid conflict", emoji: "⏰", isCorrect: false },
+      { text: "Take it secretly to see what happens", emoji: "🤫", isCorrect: false },
+      { text: "Ignore them and hope they stop", emoji: "🙈", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Correct! Being assertive and removing yourself from pressure is the safest approach.",
+      wrong: "The best way is to clearly refuse and exit the situation if the pressure continues."
     }
-  ];
+  },
+  {
+    id: 2,
+    icon: <Heart className="w-12 h-12 text-red-400" />,
+    title: "Brain & Body Impact",
+    text: "Why are drugs particularly risky for teens, even if friends say they 'help you relax'?",
+    options: [
+      { text: "They are expensive and addictive", emoji: "💸", isCorrect: false },
+      { text: "They interfere with developing brain pathways and decision-making", emoji: "🧠", isCorrect: true },
+      { text: "They make you sleepy", emoji: "😴", isCorrect: false },
+      { text: "They taste bad", emoji: "🤢", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Exactly! Drugs can alter brain development, affecting learning, memory, and impulse control.",
+      wrong: "During adolescence, the brain is still developing, so drugs can cause long-term cognitive and emotional issues."
+    }
+  },
+  {
+    id: 3,
+    icon: <ThumbsUp className="w-12 h-12 text-green-400" />,
+    title: "Smart Alternatives",
+    text: "You feel stressed and your peers suggest using substances. Which choice builds resilience instead?",
+    options: [
+      { text: "Sleep excessively to escape stress", emoji: "🛌", isCorrect: false },
+      { text: "Skip school or responsibilities", emoji: "🚫", isCorrect: false },
+      { text: "Engage in sports, arts, or hobbies", emoji: "⚽", isCorrect: true },
+      { text: "Spend money recklessly to feel better", emoji: "💰", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Yes! Positive activities improve mood, skills, and social connections safely.",
+      wrong: "Constructive activities like sports, arts, or hobbies help you cope without harming your health."
+    }
+  },
+  {
+    id: 4,
+    icon: <Star className="w-12 h-12 text-yellow-400" />,
+    title: "Future Planning",
+    text: "Choosing to stay drug-free affects your future by:",
+    options: [
+      { text: "Not making a difference", emoji: "🤷", isCorrect: false },
+      { text: "Protecting health, relationships, and opportunities", emoji: "🛡️", isCorrect: true },
+      { text: "Making life boring and isolated", emoji: "😴", isCorrect: false },
+      { text: "Other people won’t notice anyway", emoji: "😑", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Correct! Staying drug-free supports your long-term goals and well-being.",
+      wrong: "Avoiding substances preserves health, learning ability, and opens up life opportunities."
+    }
+  },
+  {
+    id: 5,
+    icon: <Award className="w-12 h-12 text-purple-400" />,
+    title: "Trusted Support",
+    text: "If you feel pressured by peers to use substances, who is the most reliable to approach?",
+    options: [
+      { text: "Strangers online", emoji: "🖥️", isCorrect: false },
+      { text: "Nobody, handle it alone", emoji: "😶", isCorrect: false },
+      { text: "Parents, guardians, or trusted adults", emoji: "👨‍👩‍👧‍👦", isCorrect: true },
+      { text: "Friends who also use substances", emoji: "👥", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Exactly! Trusted adults provide guidance, safety, and strategies to resist peer pressure.",
+      wrong: "The safest approach is to reach out to parents, counselors, or other trusted adults for support."
+    }
+  }
+];
 
   const handleChoice = (optionIndex) => {
     if (answered) return;

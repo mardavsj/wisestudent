@@ -28,62 +28,63 @@ const ReflexShavingTeen = () => {
     const currentRoundRef = useRef(0);
 
     const questions = [
-        {
-            id: 1,
-            question: "You need to shave. What first?",
-            correctAnswer: "Wash Face",
-            options: [
-                { text: "Wash Face", isCorrect: true, emoji: "🚿" },
-                { text: "Start Shaving", isCorrect: false, emoji: "🪒" },
-                { text: "Dry Face", isCorrect: false, emoji: "🌵" },
-                { text: "Apply Ice", isCorrect: false, emoji: "🧊" }
-            ]
-        },
-        {
-            id: 2,
-            question: "You are shaving. Which way?",
-            correctAnswer: "With Grain",
-            options: [
-                { text: "Against Grain", isCorrect: false, emoji: "⬆️" },
-                { text: "Sideways", isCorrect: false, emoji: "↔️" },
-                { text: "With Grain", isCorrect: true, emoji: "⬇️" },
-                { text: "Circles", isCorrect: false, emoji: "🔄" }
-            ]
-        },
-        {
-            id: 3,
-            question: "You cut yourself. Quick!",
-            correctAnswer: "Tissue/Pressure",
-            options: [
-                { text: "Scream", isCorrect: false, emoji: "😱" },
-                { text: "Tissue/Pressure", isCorrect: true, emoji: "🧻" },
-                { text: "Rub It", isCorrect: false, emoji: "👋" },
-                { text: "Ignore", isCorrect: false, emoji: "🙈" }
-            ]
-        },
-        {
-            id: 4,
-            question: "Done shaving. Now what?",
-            correctAnswer: "Moisturize",
-            options: [
-                { text: "Scratch", isCorrect: false, emoji: "💅" },
-                { text: "Moisturize", isCorrect: true, emoji: "🧴" },
-                { text: "Sleep", isCorrect: false, emoji: "😴" },
-                { text: "Sunbathe", isCorrect: false, emoji: "☀️" }
-            ]
-        },
-        {
-            id: 5,
-            question: "Razor is dull. What to do?",
-            correctAnswer: "Replace It",
-            options: [
-                { text: "Use It Anyway", isCorrect: false, emoji: "🤕" },
-                { text: "Sharpen on Rock", isCorrect: false, emoji: "🪨" },
-                { text: "Share Friend's", isCorrect: false, emoji: "🤝" },
-                { text: "Replace It", isCorrect: true, emoji: "🆕" },
-            ]
-        }
-    ];
+    {
+        id: 1,
+        question: "You notice red bumps appearing mid-shave. React fast!",
+        correctAnswer: "Reduce Pressure",
+        options: [
+            { text: "Shave Faster", isCorrect: false, emoji: "⚡" },
+            { text: "Press Harder", isCorrect: false, emoji: "💥" },
+            { text: "Ignore It", isCorrect: false, emoji: "🙈" },
+            { text: "Reduce Pressure", isCorrect: true, emoji: "🖐️" },
+        ]
+    },
+    {
+        id: 2,
+        question: "Your skin starts burning after applying a product. What now?",
+        correctAnswer: "Rinse Immediately",
+        options: [
+            { text: "Apply More", isCorrect: false, emoji: "➕" },
+            { text: "Rub With Towel", isCorrect: false, emoji: "🧣" },
+            { text: "Rinse Immediately", isCorrect: true, emoji: "💦" },
+            { text: "Go Outside", isCorrect: false, emoji: "🏃" }
+        ]
+    },
+    {
+        id: 3,
+        question: "You feel stubble pulling painfully while shaving.",
+        correctAnswer: "Stop And Re-lather",
+        options: [
+            { text: "Pull Skin Tight", isCorrect: false, emoji: "🤏" },
+            { text: "Stop And Re-lather", isCorrect: true, emoji: "🫧" },
+            { text: "Use Force", isCorrect: false, emoji: "💪" },
+            { text: "Switch Direction", isCorrect: false, emoji: "🔀" }
+        ]
+    },
+    {
+        id: 4,
+        question: "You accidentally shave over the same spot repeatedly.",
+        correctAnswer: "Move To Another Area",
+        options: [
+            { text: "Move To Another Area", isCorrect: true, emoji: "➡️" },
+            { text: "Keep Going There", isCorrect: false, emoji: "🔁" },
+            { text: "Scratch It", isCorrect: false, emoji: "💅" },
+            { text: "Dry Shave It", isCorrect: false, emoji: "🌵" },
+        ]
+    },
+    {
+        id: 5,
+        question: "You’re sweating while shaving. Best reflex response?",
+        correctAnswer: "Pause And Cool Skin",
+        options: [
+            { text: "Continue Quickly", isCorrect: false, emoji: "🏃" },
+            { text: "Pause And Cool Skin", isCorrect: true, emoji: "❄️" },
+            { text: "Add More Pressure", isCorrect: false, emoji: "📉" },
+            { text: "Wipe With Sleeve", isCorrect: false, emoji: "👕" }
+        ]
+    }
+];
+
 
     // Update ref when currentRound changes
     useEffect(() => {

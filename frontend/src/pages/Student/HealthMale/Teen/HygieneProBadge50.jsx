@@ -21,165 +21,87 @@ const HygieneProBadge50 = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      title: "Sweat Control",
-      text: "What controls sweat odor?",
-      options: [
-        {
-          text: "Perfume",
-          emoji: "🌸",
-          isCorrect: false
-        },
-        {
-          text: "Water",
-          emoji: "💧",
-          isCorrect: false
-        },
-       
-        {
-          text: "Powder",
-          emoji: "⚪",
-          isCorrect: false
-        },
-         {
-          text: "Deodorant",
-          emoji: "🧴",
-          isCorrect: true
-        },
-      ],
-      feedback: {
-        correct: "Correct! Deodorant or Antiperspirant.",
-        wrong: "Perfume only masks the smell."
-      }
-    },
-    {
-      id: 2,
-      title: "Teeth Care",
-      text: "Brush teeth for how long?",
-      options: [
-        {
-          text: "2 minutes",
-          emoji: "🦷",
-          isCorrect: true
-        },
-        {
-          text: "10 seconds",
-          emoji: "⏱️",
-          isCorrect: false
-        },
-        {
-          text: "1 hour",
-          emoji: "🕰️",
-          isCorrect: false
-        },
-        
-        {
-          text: "30 seconds",
-          emoji: "⏱️",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Yes! 2 minutes, twice a day.",
-        wrong: "You need 2 minutes to clean properly."
-      }
-    },
-    {
-      id: 3,
-      title: "Hand Washing",
-      text: "When to wash hands?",
-      options: [
-        {
-          text: "Never",
-          emoji: "🙅",
-          isCorrect: false
-        },
-        {
-          text: "Once a week",
-          emoji: "📅",
-          isCorrect: false
-        },
-        {
-          text: "Before Eating",
-          emoji: "🍽️",
-          isCorrect: false
-        },
-        {
-          text: "After using bathroom",
-          emoji: "🚻",
-          isCorrect: true
-        }
-      ],
-      feedback: {
-        correct: "Exactly! And before eating.",
-        wrong: "Always wash before eating and after using the bathroom."
-      }
-    },
-    {
-      id: 4,
-      title: "Clothing Care",
-      text: "Change underwear...",
-      options: [
-        {
-          text: "Weekly",
-          emoji: "📅",
-          isCorrect: false
-        },
-         {
-          text: "Daily",
-          emoji: "👕",
-          isCorrect: true
-        },
-        {
-          text: "Monthly",
-          emoji: "📆",
-          isCorrect: false
-        },
-       
-        {
-          text: "When smelly",
-          emoji: "👃",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Right! Fresh underwear every day.",
-        wrong: "Hygiene requires daily changes."
-      }
-    },
-    {
-      id: 5,
-      title: "Confidence Boost",
-      text: "Good hygiene boosts...",
-      options: [
-        {
-          text: "Ego",
-          emoji: "🤨",
-          isCorrect: false
-        },
-        {
-          text: "Height",
-          emoji: "📏",
-          isCorrect: false
-        },
-        {
-          text: "Confidence",
-          emoji: "😎",
-          isCorrect: false
-        },
-        {
-          text: "Self-esteem",
-          emoji: "💪",
-          isCorrect: true
-        }
-      ],
-      feedback: {
-        correct: "Smart! You feel better when clean.",
-        wrong: "It makes you feel confident and boosts self-esteem."
-      }
+  {
+    id: 1,
+    title: "Sweat Control",
+    text: "Which helps prevent sweat odor during sports?",
+    options: [
+      { text: "Perfume", emoji: "🌸", isCorrect: false },
+      { text: "Loose breathable clothes", emoji: "👕", isCorrect: true },
+      { text: "Water splash only", emoji: "💧", isCorrect: false },
+      { text: "Layering sweatshirts", emoji: "🧥", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Exactly! Breathable clothing helps prevent odor by letting sweat evaporate.",
+      wrong: "Perfume masks smell but doesn't prevent it. Breathable fabrics are key."
     }
-  ];
+  },
+  {
+    id: 2,
+    title: "Teeth Care",
+    text: "Best habit to keep teeth healthy?",
+    options: [
+      
+      { text: "Rinse with water only", emoji: "💧", isCorrect: false },
+      { text: "Chew gum constantly", emoji: "🍬", isCorrect: false },
+      { text: "Brush once a week", emoji: "🗓️", isCorrect: false },
+      { text: "Brush 2x/day", emoji: "🪥", isCorrect: true },
+    ],
+    feedback: {
+      correct: "Yes! Brushing twice a day keeps teeth strong and prevents cavities.",
+      wrong: "Water rinse alone is not enough; brushing twice daily is essential."
+    }
+  },
+  {
+    id: 3,
+    title: "Hand Hygiene",
+    text: "After which situation is hand hygiene most critical?",
+    options: [
+      
+      { text: "After sitting in class", emoji: "🏫", isCorrect: false },
+      { text: "After reading a book", emoji: "📖", isCorrect: false },
+      { text: "After petting animals", emoji: "🐶", isCorrect: true },
+      { text: "After texting", emoji: "📱", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Exactly! Hands can carry germs from animals, so washing after is important.",
+      wrong: "You must wash hands after contact with animals or potentially dirty surfaces."
+    }
+  },
+  {
+    id: 4,
+    title: "Clothing Hygiene",
+    text: "Which habit prevents body odor the most?",
+    options: [
+      
+      { text: "Use perfume only", emoji: "🌸", isCorrect: false },
+      { text: "Change underwear daily", emoji: "🫥", isCorrect: true },
+      { text: "Wear same socks 2 days", emoji: "🧦", isCorrect: false },
+      { text: "Layer clothes without washing", emoji: "🧥", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Right! Daily changes of underwear and socks prevent odor and infections.",
+      wrong: "Perfume masks smell but does not prevent bacteria buildup."
+    }
+  },
+  {
+    id: 5,
+    title: "Confidence Boost",
+    text: "Why does good hygiene improve social confidence?",
+    options: [
+       { text: "You feel fresh and respected", emoji: "😎", isCorrect: true },
+      { text: "You look taller", emoji: "📏", isCorrect: false },
+     
+      { text: "You earn money", emoji: "💰", isCorrect: false },
+      { text: "You skip chores", emoji: "🧹", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Exactly! Feeling clean boosts self-esteem and social confidence.",
+      wrong: "Good hygiene makes you feel fresh and confident, positively affecting social interactions."
+    }
+  }
+];
+
 
   const handleChoice = (optionIndex) => {
     if (answered) return;

@@ -28,62 +28,63 @@ const ReflexRespectCheck = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "Someone is speaking. Respectful action?",
-      correctAnswer: "Listen Actively",
-      options: [
-        { text: "Interrupt", isCorrect: false, emoji: "🗣️" },
-        { text: "Listen Actively", isCorrect: true, emoji: "👂" },
-        { text: "Check phone", isCorrect: false, emoji: "📱" },
-        { text: "Walk away", isCorrect: false, emoji: "🚶" }
-      ]
-    },
-    {
-      id: 2,
-      question: "A friend is different from you. Respectful action?",
-      correctAnswer: "Be Inclusive",
-      options: [
-        { text: "Mock them", isCorrect: false, emoji: "😂" },
-        { text: "Exclude them", isCorrect: false, emoji: "🚫" },
-        { text: "Be Inclusive", isCorrect: true, emoji: "🤗" },
-        { text: "Ignore them", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You disagree with someone. Respectful action?",
-      correctAnswer: "Discuss calmly",
-      options: [
-        { text: "Shout", isCorrect: false, emoji: "📢" },
-        { text: "Discuss calmly", isCorrect: true, emoji: "💬" },
-        { text: "Insult them", isCorrect: false, emoji: "🤬" },
-        { text: "Fight", isCorrect: false, emoji: "🥊" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Someone needs help. Respectful action?",
-      correctAnswer: "Offer help",
-      options: [
-        { text: "Offer help", isCorrect: true, emoji: "🤝" },
-        { text: "Laugh", isCorrect: false, emoji: "😆" },
-        { text: "Ignore", isCorrect: false, emoji: "🤷" },
-        { text: "Record it", isCorrect: false, emoji: "📹" }
-      ]
-    },
-    {
-      id: 5,
-      question: "How to treat everyone?",
-      correctAnswer: "With Kindness",
-      options: [
-        { text: "With Kindness", isCorrect: true, emoji: "❤️" },
-        { text: "With Rudeness", isCorrect: false, emoji: "😒" },
-        { text: "With Anger", isCorrect: false, emoji: "😠" },
-        { text: "With Fear", isCorrect: false, emoji: "😨" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "Someone shares an opinion you strongly disagree with. Immediate respectful reflex?",
+    correctAnswer: "Pause before responding",
+    options: [
+      { text: "Laugh sarcastically", isCorrect: false, emoji: "😏" },
+      { text: "Correct them instantly", isCorrect: false, emoji: "⚡" },
+      { text: "Pause before responding", isCorrect: true, emoji: "⏸️" },
+      { text: "Roll eyes", isCorrect: false, emoji: "🙄" }
+    ]
+  },
+  {
+    id: 2,
+    question: "A classmate mispronounces a word while speaking. Reflex response?",
+    correctAnswer: "Let them finish speaking",
+    options: [
+      { text: "Correct them loudly", isCorrect: false, emoji: "📢" },
+      { text: "Let them finish speaking", isCorrect: true, emoji: "🧘" },
+      { text: "Laugh quietly", isCorrect: false, emoji: "😬" },
+      { text: "Record and share", isCorrect: false, emoji: "📱" }
+    ]
+  },
+  {
+    id: 3,
+    question: "Someone sets a boundary with you. Respectful reflex?",
+    correctAnswer: "Acknowledge and adjust",
+    options: [
+      { text: "Acknowledge and adjust", isCorrect: true, emoji: "🔄" },
+      { text: "Argue your intent", isCorrect: false, emoji: "🗯️" },
+      { text: "Ignore it", isCorrect: false, emoji: "🚫" },
+      { text: "Mock sensitivity", isCorrect: false, emoji: "🤡" }
+    ]
+  },
+  {
+    id: 4,
+    question: "Someone is emotional in public. Best respectful reflex?",
+    correctAnswer: "Give space or quiet support",
+    options: [
+      { text: "Tell them to calm down", isCorrect: false, emoji: "✋" },
+      { text: "Stare", isCorrect: false, emoji: "👀" },
+      { text: "Ask many questions", isCorrect: false, emoji: "❓" },
+      { text: "Give space or quiet support", isCorrect: true, emoji: "🌱" },
+    ]
+  },
+  {
+    id: 5,
+    question: "You realize you hurt someone unintentionally. Reflex response?",
+    correctAnswer: "Apologize without excuses",
+    options: [
+      { text: "Explain why you didn't mean it", isCorrect: false, emoji: "📜" },
+      { text: "Apologize without excuses", isCorrect: true, emoji: "🙏" },
+      { text: "Wait for them to forget", isCorrect: false, emoji: "⏳" },
+      { text: "Blame misunderstanding", isCorrect: false, emoji: "👉" }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

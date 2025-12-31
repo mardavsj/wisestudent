@@ -23,122 +23,124 @@ const ShavingDebateTeen = () => {
     const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
     const questions = [
-        {
-            id: 1,
-            text: "Is it mandatory to shave?",
-            options: [
-                {
-                    id: "a",
-                    text: "It's your choice",
-                    emoji: "🤷"
-                },
-                {
-                    id: "b",
-                    text: "Yes, always",
-                    emoji: "🪒"
-                },
-                {
-                    id: "c",
-                    text: "No, never",
-                    emoji: "🧔"
-                }
-            ],
-            correctAnswer: "b",
-            explanation: "Some prefer clean shaven. Do what feels right for you, and not a rule."
-        },
-        {
-            id: 2,
-            text: "Can I use my friend's razor?",
-            options: [
-                {
-                    id: "b",
-                    text: "Yes, save money",
-                    emoji: "💰"
-                },
-                {
-                    id: "a",
-                    text: "No, never share",
-                    emoji: "🚫"
-                },
-                {
-                    id: "c",
-                    text: "Only if washed",
-                    emoji: "🚿"
-                }
-            ],
-            correctAnswer: "a",
-            explanation: "Spreads bacteria and blood. Unsanitary, and still risky."
-        },
-        {
-            id: 3,
-            text: "Which razor is better?",
-            options: [
-                {
-                    id: "c",
-                    text: "Knife",
-                    emoji: "🔪"
-                },
-                {
-                    id: "b",
-                    text: "Only Electric",
-                    emoji: "⚡"
-                },
-                {
-                    id: "a",
-                    text: "Whichever you prefer",
-                    emoji: "✅"
-                }
-            ],
-            correctAnswer: "a",
-            explanation: "It's personal preference. Both have pros and cons, and dangerous!"
-        },
-        {
-            id: 4,
-            text: "Does aftershave sting?",
-            options: [
-                {
-                    id: "b",
-                    text: "It burns skin off",
-                    emoji: "🔥"
-                },
-                {
-                    id: "a",
-                    text: "Some do (alcohol)",
-                    emoji: "🧴"
-                },
-                {
-                    id: "c",
-                    text: "It feels like ice",
-                    emoji: "❄️"
-                }
-            ],
-            correctAnswer: "a",
-            explanation: "Alcohol-free ones are gentler. Exaggeration, and not usually."
-        },
-        {
-            id: 5,
-            text: "How often should I shave?",
-            options: [
-                {
-                    id: "c",
-                    text: "Every hour",
-                    emoji: "⏰"
-                },
-                {
-                    id: "b",
-                    text: "Once a year",
-                    emoji: "🗓️"
-                },
-                {
-                    id: "a",
-                    text: "When needed",
-                    emoji: "📅"
-                }
-            ],
-            correctAnswer: "a",
-            explanation: "Depends on hair growth. Impossible, and you'll have a long beard."
-        }
-    ];
+    {
+        id: 1,
+        text: "A teen feels pressured to shave because friends tease them. What is the healthiest response?",
+        options: [
+            {
+                id: "a",
+                text: "Shave immediately to fit in",
+                emoji: "😬"
+            },
+            {
+                id: "b",
+                text: "Ignore grooming forever",
+                emoji: "🙈"
+            },
+            {
+                id: "c",
+                text: "Decide based on personal comfort",
+                emoji: "🧠"
+            }
+        ],
+        correctAnswer: "c",
+        explanation: "Grooming choices should be based on personal comfort, not peer pressure."
+    },
+    {
+        id: 2,
+        text: "Why is sharing a razor risky even if it looks clean?",
+        options: [
+            {
+                id: "a",
+                text: "It becomes dull",
+                emoji: "⚙️"
+            },
+            {
+                id: "b",
+                text: "Invisible cuts can spread infections",
+                emoji: "🦠"
+            },
+            {
+                id: "c",
+                text: "It won’t shave properly",
+                emoji: "🪒"
+            }
+        ],
+        correctAnswer: "b",
+        explanation: "Tiny cuts and blood can spread bacteria or viruses even when a razor looks clean."
+    },
+    {
+        id: 3,
+        text: "A teen gets frequent razor bumps. What is the BEST adjustment?",
+        options: [
+            {
+                id: "a",
+                text: "Shave faster",
+                emoji: "⚡"
+            },
+            {
+                id: "b",
+                text: "Use more pressure",
+                emoji: "💪"
+            },
+            {
+                id: "c",
+                text: "Shave less often or change method",
+                emoji: "🔄"
+            }
+        ],
+        correctAnswer: "c",
+        explanation: "Razor bumps often improve by shaving less often or switching to a gentler method."
+    },
+    {
+        id: 4,
+        text: "Why might alcohol-based aftershave be a problem for teens?",
+        options: [
+            {
+                id: "a",
+                text: "It smells bad",
+                emoji: "👃"
+            },
+            {
+                id: "b",
+                text: "It can dry and irritate sensitive skin",
+                emoji: "🔥"
+            },
+            {
+                id: "c",
+                text: "It stops hair growth",
+                emoji: "✋"
+            }
+        ],
+        correctAnswer: "b",
+        explanation: "Teen skin can be sensitive; alcohol may cause burning, dryness, or irritation."
+    },
+    {
+        id: 5,
+        text: "Which statement best describes healthy shaving habits?",
+        options: [
+            {
+                id: "c",
+                text: "Shaving routines depend on skin and hair type",
+                emoji: "🧬"
+            },
+            {
+                id: "a",
+                text: "Everyone should shave the same way",
+                emoji: "📏"
+            },
+            {
+                id: "b",
+                text: "Shaving is required for hygiene",
+                emoji: "🚿"
+            },
+            
+        ],
+        correctAnswer: "c",
+        explanation: "Skin type, hair growth, and comfort all affect how and whether someone should shave."
+    }
+];
+
 
     const handleOptionSelect = (optionId) => {
         const currentQuestion = questions[currentQuestionIndex];

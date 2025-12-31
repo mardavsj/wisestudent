@@ -19,131 +19,134 @@ const QuizPubertyTeen = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "What is the main cause of puberty changes?",
-      options: [
-        {
-          id: "a",
-          text: "Eating vegetables",
-          emoji: "🥦",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Playing video games",
-          emoji: "🎮",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Hormones",
-          emoji: "🧬",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which is a sign of puberty in boys?",
-      options: [
-        {
-          id: "a",
-          text: "Losing hair",
-          emoji: "👴",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Shrinking feet",
-          emoji: "🦶",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Deepening voice",
-          emoji: "🗣️",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "When does puberty usually start?",
-      options: [
-        {
-          id: "a",
-          text: "Age 9-14",
-          emoji: "👦",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Age 5-7",
-          emoji: "🧒",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Age 20",
-          emoji: "👨",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What happens to your skin during puberty?",
-      options: [
-        {
-          id: "a",
-          text: "It gets drier",
-          emoji: "🌵",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "It gets oilier",
-          emoji: "💧",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "It turns blue",
-          emoji: "🔵",
-          isCorrect: false
-        },
-        
-      ]
-    },
-    {
-      id: 5,
-      text: "Is it normal to feel awkward during puberty?",
-      options: [
-        {
-          id: "a",
-          text: "Only if you are weird",
-          emoji: "👽",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "No, never",
-          emoji: "🤖",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Yes, absolutely",
-          emoji: "😅",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which body system directly controls the start of puberty?",
+    options: [
+      {
+        id: "b",
+        text: "Endocrine system",
+        emoji: "🧪",
+        isCorrect: true
+      },
+      {
+        id: "a",
+        text: "Digestive system",
+        emoji: "🍽️",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Respiratory system",
+        emoji: "🫁",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Why do teens need more sleep during puberty?",
+    options: [
+      {
+        id: "a",
+        text: "Because school is tiring",
+        emoji: "📚",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Because screens damage eyes",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Because growth hormones release during sleep",
+        emoji: "🌙",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: "Which change happens internally during puberty?",
+    options: [
+      {
+        id: "a",
+        text: "Brain rewires for decision-making",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Bones become hollow",
+        emoji: "🦴",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Heart size shrinks",
+        emoji: "❤️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Why do teens sometimes feel confused about choices?",
+    options: [
+      {
+        id: "a",
+        text: "They lack intelligence",
+        emoji: "❌",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Adults confuse them on purpose",
+        emoji: "🧓",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "The emotional brain develops before control centers",
+        emoji: "⚖️",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "Which habit best supports healthy puberty development?",
+    options: [
+      {
+        id: "a",
+        text: "Extreme dieting",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Balanced nutrition, sleep, and activity",
+        emoji: "🥗",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Skipping meals to stay slim",
+        emoji: "⚠️",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;
@@ -199,6 +202,7 @@ const QuizPubertyTeen = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

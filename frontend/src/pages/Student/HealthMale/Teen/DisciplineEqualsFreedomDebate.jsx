@@ -18,124 +18,63 @@ const DisciplineEqualsFreedomDebate = () => {
   const totalXp = 10;
 
   const questions = [
-    {
-      id: 1,
-      text: "Does discipline give freedom or restrict life?",
-      options: [
-        {
-          id: "a",
-          text: "Restricts life",
-          emoji: "🔒"
-        },
-        {
-          id: "b",
-          text: "Limits choices",
-          emoji: "🚫"
-        },
-        {
-          id: "c",
-          text: "Gives freedom",
-          emoji: "🕊️"
-        }
-      ],
-      correctAnswer: "c",
-      explanation: "Self-discipline leads to greater personal freedom. Discipline creates structure that enables freedom rather than restricting it."
-    },
-    {
-      id: 2,
-      text: "How does discipline help teens succeed?",
-      options: [
-        {
-          id: "b",
-          text: "Creates more work",
-          emoji: "📚"
-        },
-        {
-          id: "a",
-          text: "Builds self-control",
-          emoji: "💪"
-        },
-        {
-          id: "c",
-          text: "Removes fun",
-          emoji: "😔"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Self-control is key to personal freedom. Discipline makes achieving goals easier and enables more enjoyable experiences."
-    },
-    {
-      id: 3,
-      text: "What is the relationship between rules and freedom?",
-      options: [
-         {
-          id: "c",
-          text: "Rules enable responsible freedom",
-          emoji: "⚖️"
-        },
-        {
-          id: "a",
-          text: "Rules prevent freedom",
-          emoji: "🚫"
-        },
-          
-        {
-          id: "b",
-          text: "No relationship",
-          emoji: "🤷"
-        }
-      ],
-      correctAnswer: "b",
-      explanation: "Rules and freedom are connected. Following rules responsibly leads to more freedom, as rules provide the structure for true freedom."
-    },
-    {
-      id: 4,
-      text: "How does self-discipline affect future opportunities?",
-      options: [
-        {
-          id: "b",
-          text: "Limits opportunities",
-          emoji: "🚪"
-        },
-        {
-          id: "a",
-          text: "Creates more opportunities",
-          emoji: "🚀"
-        },
-        {
-          id: "c",
-          text: "No effect",
-          emoji: "😐"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Self-discipline leads to success and choices. Discipline directly affects future success by opening doors to more opportunities."
-    },
-    {
-      id: 5,
-      text: "What is the ultimate result of consistent discipline?",
-      options: [
-        {
-          id: "c",
-          text: "Personal mastery and freedom",
-          emoji: "👑"
-        },
-        {
-          id: "a",
-          text: "Boredom and restriction",
-          emoji: "😴"
-        },
-        
-        {
-          id: "b",
-          text: "Constant struggle",
-          emoji: "😩"
-        }
-      ],
-      correctAnswer: "c",
-      explanation: "Mastering discipline gives true personal freedom. Discipline leads to achievement and fulfillment, and becomes easier with practice."
-    }
-  ];
+  {
+    id: 1,
+    text: "Does practicing discipline give you freedom or restrict your life?",
+    options: [
+      { id: "a", text: "It restricts life", emoji: "🔒" },
+      { id: "b", text: "It limits choices", emoji: "🚫" },
+      { id: "c", text: "It enables freedom", emoji: "🕊️" }
+    ],
+    correctAnswer: "c",
+    explanation: "Self-discipline creates structure, allowing you to make better choices and pursue goals freely, rather than feeling constrained by impulsive decisions."
+  },
+  {
+    id: 2,
+    text: "How does self-discipline help teens achieve long-term success?",
+    options: [
+      { id: "a", text: "Builds self-control", emoji: "💪" },
+      { id: "b", text: "Adds more work", emoji: "📚" },
+      { id: "c", text: "Removes all fun", emoji: "😔" }
+    ],
+    correctAnswer: "a",
+    explanation: "Discipline fosters self-control, which is essential for achieving personal and academic goals, leading to greater independence and fulfillment."
+  },
+  {
+    id: 3,
+    text: "What is the subtle link between rules and freedom?",
+    options: [
+      { id: "a", text: "Rules prevent freedom", emoji: "🚫" },
+      { id: "b", text: "No connection", emoji: "🤷" },
+      { id: "c", text: "Rules enable responsible freedom", emoji: "⚖️" }
+    ],
+    correctAnswer: "c",
+    explanation: "Rules provide a framework that guides responsible behavior, which paradoxically increases freedom by reducing chaos and consequences of poor choices."
+  },
+  {
+    id: 4,
+    text: "In what way does self-discipline affect future opportunities?",
+    options: [
+      { id: "b", text: "Limits chances", emoji: "🚪" },
+      { id: "a", text: "Creates more opportunities", emoji: "🚀" },
+      { id: "c", text: "Has no effect", emoji: "😐" }
+    ],
+    correctAnswer: "a",
+    explanation: "Consistent discipline helps teens build skills, reputation, and habits that open doors to academic, career, and personal opportunities."
+  },
+  {
+    id: 5,
+    text: "What is the ultimate outcome of consistent self-discipline?",
+    options: [
+      { id: "c", text: "Personal mastery and freedom", emoji: "👑" },
+      { id: "a", text: "Boredom and restriction", emoji: "😴" },
+      { id: "b", text: "Constant struggle", emoji: "😩" },
+    ],
+    correctAnswer: "c",
+    explanation: "Mastering discipline gives teens control over their actions, leading to true freedom, confidence, and the ability to achieve meaningful goals."
+  }
+];
+
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || showFeedback) return;
@@ -211,12 +150,7 @@ const DisciplineEqualsFreedomDebate = () => {
               const showCorrect = showFeedback && isCorrect;
               const showIncorrect = showFeedback && isSelected && !isCorrect;
               
-              // Add emojis for each option like in the reference game
-              const optionEmojis = {
-                a: "✅",
-                b: "❌",
-                c: "⚠️"
-              };
+
               
               return (
                 <button
@@ -228,7 +162,7 @@ const DisciplineEqualsFreedomDebate = () => {
                   }`}
                 >
                   <div className="flex items-center">
-                    <div className="text-2xl mr-4">{optionEmojis[option.id] || '❓'}</div>
+                    <div className="text-2xl mr-4">{option.emoji}</div>
                     <div>
                       <h3 className="font-bold text-xl mb-1">{option.text}</h3>
                     </div>

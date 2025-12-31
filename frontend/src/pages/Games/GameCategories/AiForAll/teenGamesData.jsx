@@ -539,7 +539,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-38",
-          title: "Self-Driving Car Reflexx",
+          title: "Self-Driving Car Reflex 2",
           description: "Click correct traffic signals for autonomous vehicle",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Easy",
@@ -567,7 +567,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-40",
-          title: "Smart City Traffic Gamee",
+          title: "Smart City Traffic Game",
           description: "Follow AI traffic signals in urban simulation",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Easy",
@@ -721,7 +721,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-51",
-          title: "Data Labeling Gamee",
+          title: "Data Labeling Game",
           description: "Drag images to correct categories. Robot learns supervised basics.",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Easy",
@@ -749,7 +749,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-53",
-          title: "Missing Data Puzzlee",
+          title: "Missing Data Puzzle",
           description:"AI can’t answer due to missing info. Teen adds correct data.",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Easy",
@@ -777,7 +777,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-55",
-          title: "Overfitting Storyy",
+          title: "Overfitting Story",
           description:"AI trained on limited data fails on new input. Teen learns variety helps.",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Medium",
@@ -847,7 +847,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-60",
-          title: "AI Training Badgee",
+          title: "AI Training Badge",
           description: "Finish 5 training games to earn badge.",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Medium",
@@ -889,7 +889,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-63",
-          title: "Robot Confusion Storyy",
+          title: "Robot Confusion Story",
           description:"AI mistakes lion for tiger. Teen corrects with better data.",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Medium",
@@ -973,7 +973,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-69",
-          title: "Wrong Prediction Quizz",
+          title: "Wrong Prediction Quiz",
           description: "Can AI always be right? Teen learns AI has limits.",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Easy",
@@ -1057,7 +1057,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-75",
-          title: "Training Hero Badgee",
+          title: "Training Hero Badge",
           description:"Complete 10 training & bias games → badge 'AI Teacher'.",
           icon: <Star className="w-6 h-6" />,
           difficulty: "Hard",
@@ -1099,7 +1099,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-78",
-          title: "AI Bias Roleplayy",
+          title: "AI Bias Roleplay 2",
           description:"AI gives jobs only to boys. Teen corrects to include all for fairness.",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Medium",
@@ -1141,7 +1141,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-81",
-          title: "Cyberbullying Storyy",
+          title: "Cyberbullying Story",
           description: "Robot posts mean comments online. Teen must report.",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Medium",
@@ -1183,7 +1183,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-84",
-          title: "Dangerous Robot Storyy",
+          title: "Dangerous Robot Story",
           description: "Robot starts harming. Teen clicks 'Switch off' to stay safe.",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Hard",
@@ -1407,7 +1407,7 @@ export const getAiTeenGames = (gameCompletionStatus)=> {
         },
         {
           id: "ai-teen-100",
-          title: "AI Explorer Hero Badgee",
+          title: "AI Explorer Hero Badge",
           description:"Finish all 25 ethics/future games for full AI literacy recognition.",
           icon: <Globe className="w-6 h-6" />,
           difficulty: "Easy",

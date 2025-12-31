@@ -16,161 +16,162 @@ const ClinicVisitSimulation = () => {
   const totalCoins = 5;
   const totalXp = 10;
 
-  const scenarios = [
-    {
-      id: 1,
-      text: "You book a doctor visit online. When you arrive, you see many people waiting. What do you do?",
-      options: [
-        {
-          id: "a",
-          text: "Get angry and demand immediate service",
-          emoji: "😠",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Wait calmly and read",
-          emoji: "📖",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Panic and leave",
-          emoji: "😰",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Arrive early next time to avoid crowds",
-          emoji: "⏰",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "The nurse calls your name. How do you respond when they ask about your symptoms?",
-      options: [
-         {
-          id: "d",
-          text: "Describe symptoms clearly and accurately",
-          emoji: "📝",
-          isCorrect: true
-        },
-        {
-          id: "a",
-          text: "Be detailed and honest",
-          emoji: "💬",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Give vague answers",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Exaggerate symptoms",
-          emoji: "📢",
-          isCorrect: false
-        },
-       
-      ]
-    },
-    {
-      id: 3,
-      text: "Doctor explains treatment options. What's the best way to respond?",
-      options: [
-        {
-          id: "a",
-          text: "Agree to everything immediately",
-          emoji: "✅",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Refuse all suggestions",
-          emoji: "❌",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Request written information about treatments",
-          emoji: "📄",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Ask questions about options",
-          emoji: "❓",
-          isCorrect: false
-        },
-        
-      ]
-    },
-    {
-      id: 4,
-      text: "The visit is over and you have new prescriptions. What should you do next?",
-      options: [
-        {
-          id: "a",
-          text: "Fill prescriptions immediately",
-          emoji: "💊",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Wait a few days",
-          emoji: "⏰",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Ignore the prescriptions",
-          emoji: "🗑️",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Review instructions and ask pharmacist questions",
-          emoji: "🔍",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "How should you prepare for your next follow-up appointment?",
-      options: [
-        {
-          id: "a",
-          text: "Cancel if feeling better",
-          emoji: "✅",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Track symptoms and medication effects",
-          emoji: "📊",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Note any questions or concerns",
-          emoji: "📝",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Schedule and show up",
-          emoji: "📅",
-          isCorrect: false
-        },
-        
-      ]
-    }
-  ];
+ const scenarios = [
+  {
+    id: 1,
+    text: "You arrive at the clinic and learn appointments are delayed. What is the smartest response?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Complain loudly about the delay",
+        emoji: "📣",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Ask staff for the expected waiting time",
+        emoji: "🕒",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Leave without informing anyone",
+        emoji: "🚪",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Assume the appointment is canceled",
+        emoji: "❓",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "During check-in, the nurse asks about your health history. What helps the visit most?",
+    options: [
+     
+      {
+        id: "b",
+        text: "Only mention today’s problem",
+        emoji: "📍",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Say you don’t remember anything",
+        emoji: "🤷",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Let parents answer everything",
+        emoji: "👨‍👩‍👧",
+        isCorrect: false
+      },
+       {
+        id: "a",
+        text: "Share past illnesses and medicines taken",
+        emoji: "📋",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: "The doctor suggests two treatment choices. What is the best next step?",
+    options: [
+      {
+        id: "a",
+        text: "Ask about benefits and risks of each option",
+        emoji: "⚖️",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Choose the cheapest option immediately",
+        emoji: "💰",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Let the doctor decide without discussion",
+        emoji: "🤐",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Refuse treatment altogether",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You receive medicine instructions that seem confusing. What should you do?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Figure it out later at home",
+        emoji: "🏠",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Take medicine only when symptoms feel strong",
+        emoji: "📉",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Ask for clarification before leaving",
+        emoji: "🗣️",
+        isCorrect: true
+      },
+      {
+        id: "d",
+        text: "Follow advice from friends instead",
+        emoji: "👥",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Before your next clinic visit, what habit helps doctors help you better?",
+    options: [
+      {
+        id: "a",
+        text: "Keep a simple record of symptoms and changes",
+        emoji: "📒",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Rely only on memory",
+        emoji: "🧠",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Search random health videos online",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Skip follow-up if pain reduces",
+        emoji: "⏭️",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const selectedOption = scenarios[currentScenario].options.find(opt => opt.id === optionId);

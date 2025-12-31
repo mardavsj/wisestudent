@@ -20,166 +20,85 @@ const NutritionProBadge = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      title: "Muscle Builder",
-      text: "Which nutrient builds muscle?",
-      options: [
-        {
-          text: "Sugar",
-          emoji: "🍬",
-          isCorrect: false
-        },
-        {
-          text: "Fat",
-          emoji: "🥓",
-          isCorrect: false
-        },
-        {
-          text: "Protein",
-          emoji: "🍗",
-          isCorrect: true
-        },
-        {
-          text: "Fiber",
-          emoji: "🥦",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Correct! Protein builds and repairs muscle.",
-        wrong: "Protein is the key for muscle growth."
-      }
-    },
-    {
-      id: 2,
-      title: "Energy Source",
-      text: "Best source of long-lasting energy?",
-      options: [
-        {
-          text: "Soda",
-          emoji: "🥤",
-          isCorrect: false
-        },
-        {
-          text: "Complex Carbs",
-          emoji: "🌾",
-          isCorrect: true
-        },
-        {
-          text: "Candy",
-          emoji: "🍭",
-          isCorrect: false
-        },
-        
-        {
-          text: "Ice Cream",
-          emoji: "🍦",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Yes! Oats and rice give steady energy.",
-        wrong: "Sugar gives a crash. Complex carbs last longer."
-      }
-    },
-    {
-      id: 3,
-      title: "Hydration Hero",
-      text: "What should you drink most?",
-      options: [
-        {
-          text: "Juice",
-          emoji: "🧃",
-          isCorrect: false
-        },
-        {
-          text: "Energy Drinks",
-          emoji: "⚡",
-          isCorrect: false
-        },
-        {
-          text: "Water",
-          emoji: "💧",
-          isCorrect: true
-        },
-        {
-          text: "Milk",
-          emoji: "🥛",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Exactly! Water is essential for life.",
-        wrong: "Water is the best choice for hydration."
-      }
-    },
-    {
-      id: 4,
-      title: "Bone Strength",
-      text: "What makes bones strong?",
-      options: [
-        {
-          text: "Iron",
-          emoji: "🧲",
-          isCorrect: false
-        },
-        {
-          text: "Salt",
-          emoji: "🧂",
-          isCorrect: false
-        },
-       
-        {
-          text: "Vitamin D",
-          emoji: "🌞",
-          isCorrect: false
-        },
-         {
-          text: "Calcium",
-          emoji: "🦴",
-          isCorrect: true
-        },
-      ],
-      feedback: {
-        correct: "Right! Calcium builds strong bones.",
-        wrong: "Calcium (from milk, greens) is for bones."
-      }
-    },
-    {
-      id: 5,
-      title: "Junk Food",
-      text: "How often should you eat junk food?",
-      options: [
-        {
-          text: "In moderation",
-          emoji: "⚖️",
-          isCorrect: true
-        },
-        {
-          text: "Every day",
-          emoji: "🔁",
-          isCorrect: false
-        },
-        {
-          text: "Never",
-          emoji: "🚫",
-          isCorrect: false
-        },
-        
-        {
-          text: "Weekly",
-          emoji: "📅",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Smart! Balance is key.",
-        wrong: "Moderation allows treats without harming health."
-      }
+ const questions = [
+  {
+    id: 1,
+    title: "Micronutrient Master",
+    text: "Which nutrient helps your body convert food into usable energy?",
+    options: [
+      { text: "Vitamin B-Complex", emoji: "🧬", isCorrect: true },
+      { text: "Cholesterol", emoji: "🧈", isCorrect: false },
+      { text: "Sodium", emoji: "🧂", isCorrect: false },
+      { text: "Protein Powder", emoji: "🏋️", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Correct! B vitamins help release energy from food.",
+      wrong: "B-complex vitamins are essential for energy metabolism."
     }
-  ];
+  },
+  {
+    id: 2,
+    title: "Smart Fats",
+    text: "Which fat is considered heart-healthy when eaten in balance?",
+    options: [
+      { text: "Trans Fat", emoji: "🚫", isCorrect: false },
+      { text: "Omega-3 Fatty Acids", emoji: "🐟", isCorrect: true },
+      { text: "Refined Vegetable Oil", emoji: "🛢️", isCorrect: false },
+      { text: "Deep-Fried Fat", emoji: "🍟", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Yes! Omega-3 supports brain and heart health.",
+      wrong: "Omega-3 fats are beneficial when consumed properly."
+    }
+  },
+  {
+    id: 3,
+    title: "Glycemic Control",
+    text: "Which food causes the slowest rise in blood sugar?",
+    options: [
+      { text: "White Bread", emoji: "🍞", isCorrect: false },
+      { text: "Sugary Cereal", emoji: "🥣", isCorrect: false },
+      { text: "Lentils", emoji: "🌱", isCorrect: true },
+      { text: "Fruit Juice", emoji: "🧃", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Correct! Lentils have a low glycemic index.",
+      wrong: "Low-GI foods like lentils control blood sugar better."
+    }
+  },
+  {
+    id: 4,
+    title: "Hidden Sugars",
+    text: "Which product often contains hidden added sugars?",
+    options: [
+      { text: "Flavored Yogurt", emoji: "🍦", isCorrect: true },
+      { text: "Plain Oats", emoji: "🌾", isCorrect: false },
+      { text: "Boiled Eggs", emoji: "🥚", isCorrect: false },
+      { text: "Steamed Vegetables", emoji: "🥕", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Right! Many flavored yogurts contain added sugars.",
+      wrong: "Check labels—flavored foods often hide sugar."
+    }
+  },
+  {
+    id: 5,
+    title: "Performance Nutrition",
+    text: "What should you prioritize eating before intense physical activity?",
+    options: [
+      { text: "Fast Sugar Snacks", emoji: "🍬", isCorrect: false },
+      { text: "Heavy Fried Foods", emoji: "🍗", isCorrect: false },
+      { text: "Complex Carbs with Some Protein", emoji: "🍚", isCorrect: true },
+      { text: "Energy Drinks", emoji: "⚡", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Exactly! This combo fuels muscles efficiently.",
+      wrong: "Balanced carbs and protein support sustained performance."
+    }
+  }
+];
+
+
 
   const handleChoice = (optionIndex) => {
     if (answered) return;

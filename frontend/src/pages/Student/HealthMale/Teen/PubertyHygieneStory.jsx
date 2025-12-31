@@ -19,127 +19,128 @@ const PubertyHygieneStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "You notice you are sweating more than usual. What's happening?",
-      options: [
-        {
-          id: "b",
-          text: "I'm sick",
-          emoji: "🤒",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "It's puberty",
-          emoji: "🧍",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "It's too hot",
-          emoji: "☀️",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Your sweat starts to smell. What should you use?",
-      options: [
-        {
-          id: "c",
-          text: "Perfume only",
-          emoji: "🌸",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Deodorant or Antiperspirant",
-          emoji: "🧴",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Nothing",
-          emoji: "🤷",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How often should you shower now?",
-      options: [
-        {
-          id: "b",
-          text: "Once a week",
-          emoji: "🗓️",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Only when dirty",
-          emoji: "💩",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Every day",
-          emoji: "🚿",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You notice hair growing in new places. What do you do?",
-      options: [
-        {
-          id: "c",
-          text: "Panic",
-          emoji: "😱",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Keep it clean",
-          emoji: "🧼",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Cut it all off",
-          emoji: "✂️",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Your face feels oily. What helps?",
-      options: [
-        {
-          id: "b",
-          text: "Scrubbing hard",
-          emoji: "🧽",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Touching it",
-          emoji: "👆",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Washing gently twice a day",
-          emoji: "💧",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "During a school presentation week, you feel sudden mood changes without a clear reason. What is the most realistic explanation?",
+    options: [
+      {
+        id: "a",
+        text: "Lack of discipline",
+        emoji: "📋",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Too much screen time",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Hormonal changes affecting emotions",
+        emoji: "🧠",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "You start feeling more tired even with enough sleep, but medical tests are normal. What should be your first healthy response?",
+    options: [
+      {
+        id: "a",
+        text: "Balance sleep, nutrition, and physical activity",
+        emoji: "⚖️",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Avoid all exercise",
+        emoji: "🛑",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Drink energy drinks daily",
+        emoji: "⚡",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "You notice rapid physical changes compared to friends, making you feel insecure. What mindset helps most?",
+    options: [
+      {
+        id: "a",
+        text: "Compare yourself constantly",
+        emoji: "📊",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Understand everyone develops at a different pace",
+        emoji: "⏳",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Hide from social situations",
+        emoji: "🚪",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You feel stronger emotions during conflicts at home than before. What is the most mature way to handle this?",
+    options: [
+      {
+        id: "a",
+        text: "Suppress all emotions",
+        emoji: "🔒",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "React instantly and loudly",
+        emoji: "📢",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Pause, reflect, and communicate calmly",
+        emoji: "🧩",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "You start questioning your identity and future more deeply than before. What does this indicate?",
+    options: [
+      {
+        id: "a",
+        text: "Normal cognitive and emotional growth during adolescence",
+        emoji: "🌱",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "A serious mental problem",
+        emoji: "🚨",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Confusion that should be ignored",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

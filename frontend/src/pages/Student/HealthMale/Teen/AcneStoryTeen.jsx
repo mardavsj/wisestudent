@@ -22,127 +22,53 @@ const AcneStoryTeen = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "You wake up with a big pimple on your nose. What do you do?",
-      options: [
-        {
-          id: "b",
-          text: "Squeeze it hard",
-          emoji: "🤏",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Wash face gently",
-          emoji: "🧼",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Cover it with marker",
-          emoji: "🖊️",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Your friend says chocolate causes acne. Is it true?",
-      options: [
-        {
-          id: "c",
-          text: "Yes, 100%",
-          emoji: "🍫",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Not entirely",
-          emoji: "🤷",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "No, chocolate cures acne",
-          emoji: "🍬",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What is the best way to prevent acne?",
-      options: [
-        {
-          id: "b",
-          text: "Never wash your face",
-          emoji: "🚫",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Scrub with sandpaper",
-          emoji: "🧱",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Daily gentle cleansing",
-          emoji: "💧",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You feel embarrassed about your acne.",
-      options: [
-        {
-          id: "c",
-          text: "Hide in your room forever",
-          emoji: "🏠",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Remember it's normal",
-          emoji: "😌",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Wear a mask always",
-          emoji: "😷",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "When should you see a doctor for acne?",
-      options: [
-        {
-          id: "b",
-          text: "For one small pimple",
-          emoji: "🔍",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Never",
-          emoji: "❌",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "If it's severe or painful",
-          emoji: "👨‍⚕️",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You notice a painful red bump on your forehead. What should you do?",
+    options: [
+      { id: "a", text: "Gently clean and apply spot treatment", emoji: "🫧", isCorrect: true },
+      { id: "b", text: "Squeeze it immediately", emoji: "🤏", isCorrect: false },
+      { id: "c", text: "Cover it with heavy makeup", emoji: "💄", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Someone tells you oily food causes acne. What’s the right answer?",
+    options: [
+      { id: "b", text: "All oily food is acne medicine", emoji: "🍔", isCorrect: false },
+      { id: "a", text: "Oily food alone doesn’t directly cause acne", emoji: "🍟", isCorrect: true },
+      { id: "c", text: "Oily food is the only cause", emoji: "🍕", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "You want to prevent breakouts. Which daily habit helps most?",
+    options: [
+      { id: "a", text: "Wash your face twice gently", emoji: "💧", isCorrect: true },
+      { id: "b", text: "Use harsh scrubs and exfoliators", emoji: "🧱", isCorrect: false },
+      { id: "c", text: "Skip washing to let skin 'breathe'", emoji: "🚫", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "Acne makes you feel self-conscious at school. How do you cope?",
+    options: [
+      { id: "b", text: "Avoid friends entirely", emoji: "🙈", isCorrect: false },
+      { id: "c", text: "Cover every blemish with makeup constantly", emoji: "🎭", isCorrect: false },
+      { id: "a", text: "Remember it’s common and temporary", emoji: "😌", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    text: "When should a dermatologist be consulted?",
+    options: [
+      { id: "b", text: "For every small whitehead", emoji: "🔍", isCorrect: false },
+      { id: "a", text: "If acne is severe, painful, or leaves scars", emoji: "👨‍⚕️", isCorrect: true },
+      { id: "c", text: "Never, it will go away on its own", emoji: "❌", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

@@ -19,127 +19,130 @@ const SpecialistStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "You have severe acne that won't go away. Should you see a dermatologist?",
-      options: [
-        {
-          id: "a",
-          text: "Try random home remedies",
-          emoji: "🧴",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Yes, get professional help",
-          emoji: "🏥",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Wait and hope it improves",
-          emoji: "⏰",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What should you tell the dermatologist about your acne?",
-      options: [
-        {
-          id: "a",
-          text: "Be completely honest about symptoms",
-          emoji: "💬",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Minimize the problem",
-          emoji: "😅",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Exaggerate for attention",
-          emoji: "📢",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Dermatologist prescribes treatment. What's the best approach?",
-      options: [
-        {
-          id: "a",
-          text: "Use only when convenient",
-          emoji: "📅",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Follow instructions exactly",
-          emoji: "✅",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Stop if no immediate results",
-          emoji: "⏹️",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How often should you follow up with the specialist?",
-      options: [
-        {
-          id: "a",
-          text: "Skip follow-ups",
-          emoji: "❌",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Go only if problems worsen",
-          emoji: "📈",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "As recommended by doctor",
-          emoji: "📋",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What should you do if treatment causes side effects?",
-      options: [
-        {
-          id: "a",
-          text: "Contact the dermatologist immediately",
-          emoji: "📞",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Stop treatment on your own",
-          emoji: "⏹️",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Ignore minor side effects",
-          emoji: "🤷",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Your acne suddenly worsens after starting a new gym supplement and appears along the jawline. What is the most informed next step?",
+    options: [
+      {
+        id: "a",
+        text: "Continue supplements and add face washes",
+        emoji: "🙂",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Consult a dermatologist and mention supplement use",
+        emoji: "🧑‍⚕️",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Assume it’s hormonal and ignore it",
+        emoji: "🤷",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Why is sharing your full medical history with a dermatologist clinically important?",
+    options: [
+      {
+        id: "a",
+        text: "It helps rule out drug interactions and underlying conditions",
+        emoji: "😊",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "It speeds up the appointment",
+        emoji: "⏱️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Doctors prefer detailed stories",
+        emoji: "📖",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "A dermatologist prescribes a retinoid that initially causes mild irritation. What does this usually indicate?",
+    options: [
+      {
+        id: "a",
+        text: "The treatment is ineffective",
+        emoji: "❌",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "You should stop immediately",
+        emoji: "⛔",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Skin is adjusting to increased cell turnover",
+        emoji: "🔄",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 4,
+    text: "Why are follow-up visits essential even if your skin shows improvement?",
+    options: [
+      {
+        id: "a",
+        text: "To monitor long-term effects and prevent relapse",
+        emoji: "📊",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "To change medicines frequently",
+        emoji: "🔁",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Doctors require regular visits",
+        emoji: "📅",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "You experience unusual dryness and vision discomfort during acne treatment. What is the safest action?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Increase moisturizer only",
+        emoji: "🧴",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Reduce dose and inform the dermatologist immediately",
+        emoji: "📞",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Stop treatment without consultation",
+        emoji: "⏹️",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

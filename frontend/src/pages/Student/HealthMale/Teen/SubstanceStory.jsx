@@ -19,129 +19,53 @@ const SubstanceStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Teen at party sees drugs. Should he take them?",
-      options: [
-       
-        {
-          id: "c",
-          text: "Try just a little",
-          emoji: "🤏",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Ask what they are",
-          emoji: "❓",
-          isCorrect: false
-        },
-         {
-          id: "b",
-          text: "No, absolutely not",
-          emoji: "✋",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "Friends offer you drugs at a party. What's your response?",
-      options: [
-        {
-          id: "a",
-          text: "Firmly say no and leave",
-          emoji: "🚪",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Say maybe later",
-          emoji: "⏰",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Take them to fit in",
-          emoji: "😔",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How should you handle drug pressure from friends?",
-      options: [
-        {
-          id: "c",
-          text: "Report to authorities",
-          emoji: "📞",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Say no and explain why",
-          emoji: "💬",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Try it once to see",
-          emoji: "🤔",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What should you do if someone offers you drugs?",
-      options: [
-        {
-          id: "a",
-          text: "Politely but firmly refuse",
-          emoji: "✋",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Pretend to take them",
-          emoji: "🎭",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Take them secretly",
-          emoji: "🤫",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "How can you help friends avoid drugs?",
-      options: [
-        
-        {
-          id: "a",
-          text: "Force them to stop",
-          emoji: "🛑",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Be a positive influence",
-          emoji: "⭐",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Ignore their choices",
-          emoji: "🙈",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "At a party, you notice unknown substances. What is the safest decision scientifically?",
+    options: [
+      { id: "b", text: "Refuse completely and avoid contact", emoji: "✋", isCorrect: true },
+      { id: "a", text: "Ask what they are to understand risks", emoji: "❓", isCorrect: false },
+      { id: "c", text: "Try a tiny amount to see effects", emoji: "🤏", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Your friends insist you take drugs to fit in. What is the most responsible response?",
+    options: [
+      { id: "b", text: "Say maybe later to avoid conflict", emoji: "⏰", isCorrect: false },
+      { id: "a", text: "Firmly refuse, explain why, and leave if pressured", emoji: "💬", isCorrect: true },
+      { id: "c", text: "Take them secretly to fit in", emoji: "🤫", isCorrect: false },
+    ]
+  },
+  {
+    id: 3,
+    text: "How can you maintain long-term safety when friends pressure you toward substance use?",
+    options: [
+      { id: "b", text: "Try once to see effects and adjust later", emoji: "🤔", isCorrect: false },
+      { id: "c", text: "Report friends immediately without dialogue", emoji: "📞", isCorrect: false },
+      { id: "a", text: "Politely refuse and provide evidence-based reasons", emoji: "💬", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    text: "Someone offers you drugs and mocks your refusal. What is the best approach?",
+    options: [
+      { id: "a", text: "Politely but firmly refuse and remove yourself", emoji: "🚶", isCorrect: true },
+      { id: "b", text: "Pretend to take them to avoid embarrassment", emoji: "🎭", isCorrect: false },
+      { id: "c", text: "Take them secretly to satisfy peer pressure", emoji: "🤫", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "You want to help friends avoid substance abuse. Which approach is most effective long-term?",
+    options: [
+      { id: "a", text: "Force them to stop immediately", emoji: "🛑", isCorrect: false },
+      { id: "b", text: "Be a consistent positive role model and share factual risks", emoji: "📊", isCorrect: true },
+      { id: "c", text: "Ignore their choices and avoid discussion", emoji: "🙈", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

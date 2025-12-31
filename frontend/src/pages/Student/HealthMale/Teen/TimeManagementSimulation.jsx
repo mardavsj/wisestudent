@@ -17,159 +17,58 @@ const TimeManagementSimulation = () => {
   const totalXp = 10;
 
   const scenarios = [
-    {
-      id: 1,
-      text: "Teen has exams + sports practice. ",
-      options: [
-        {
-          id: "a",
-          text: "Waste time",
-          emoji: "⏳",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Balance time",
-          emoji: "⚖️",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Skip everything",
-          emoji: "🏃",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Prioritize tasks",
-          emoji: "📋",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "How should you prioritize when overwhelmed with tasks?",
-      options: [
-        {
-          id: "a",
-          text: "Focus on one task",
-          emoji: "🎯",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Do everything at once",
-          emoji: "💥",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Procrastinate",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Make a schedule",
-          emoji: "📅",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What helps with time management for schoolwork?",
-      options: [
-        {
-          id: "d",
-          text: "Daily study routine",
-          emoji: "📖",
-          isCorrect: true
-        },
-        {
-          id: "a",
-          text: "Study with friends",
-          emoji: "👥",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Copy from friends",
-          emoji: "👥",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Study only before tests",
-          emoji: "📚",
-          isCorrect: false
-        },
-        
-      ]
-    },
-    {
-      id: 4,
-      text: "How should teens handle conflicting activities?",
-      options: [
-        {
-          id: "a",
-          text: "Discuss with friends",
-          emoji: "💬",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Cancel all plans",
-          emoji: "❌",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Try to do everything",
-          emoji: "🤹",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Prioritize important tasks",
-          emoji: "⭐",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What is the key to successful time management?",
-      options: [
-        {
-          id: "a",
-          text: "Avoiding schedules",
-          emoji: "🎲",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Flexible scheduling",
-          emoji: "📅",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Consistency and planning",
-          emoji: "📋",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Working all the time",
-          emoji: "💼",
-          isCorrect: false
-        },
-        
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A teen has exams, sports practice, and a part-time hobby. What’s the best approach?",
+    options: [
+      { id: "a", text: "Ignore some tasks", emoji: "🙈", isCorrect: false },
+      { id: "b", text: "Balance time carefully", emoji: "⚖️", isCorrect: true },
+      { id: "c", text: "Do only fun activities", emoji: "🎉", isCorrect: false },
+      { id: "d", text: "Multitask everything at once", emoji: "🤹", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Overwhelmed with multiple assignments and extracurriculars, what should you do first?",
+    options: [
+      { id: "a", text: "Work randomly on any task", emoji: "🎲", isCorrect: false },
+      { id: "b", text: "Procrastinate and hope for the best", emoji: "😴", isCorrect: false },
+      { id: "c", text: "Make a detailed schedule", emoji: "📅", isCorrect: true },
+      { id: "d", text: "Ask friends to do it for you", emoji: "👥", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "Which habit helps maximize schoolwork efficiency?",
+    options: [
+      { id: "a", text: "Study intensively only before exams", emoji: "📚", isCorrect: false },
+      { id: "b", text: "Copy classmates’ notes", emoji: "📝", isCorrect: false },
+      { id: "d", text: "Spend time on unrelated hobbies during study hours", emoji: "🎨", isCorrect: false },
+      { id: "c", text: "Daily study routine with breaks", emoji: "📖", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    text: "Two important events clash: a school debate and a sports match. How should a teen respond?",
+    options: [
+      { id: "a", text: "Try to attend both without preparation", emoji: "🤹", isCorrect: false },
+      { id: "b", text: "Cancel both events", emoji: "❌", isCorrect: false },
+      { id: "c", text: "Seek advice and prioritize based on goals", emoji: "⭐", isCorrect: true },
+      { id: "d", text: "Let friends decide for you", emoji: "👥", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "What’s the ultimate key to mastering time management for teens?",
+    options: [
+      { id: "c", text: "Consistency with flexible planning", emoji: "📋", isCorrect: true },
+      { id: "a", text: "Avoid planning to stay flexible", emoji: "🎲", isCorrect: false },
+      { id: "b", text: "Rigidly stick to a plan without adjustments", emoji: "📏", isCorrect: false },
+      { id: "d", text: "Working nonstop without breaks", emoji: "💼", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const selectedOption = scenarios[currentScenario].options.find(opt => opt.id === optionId);

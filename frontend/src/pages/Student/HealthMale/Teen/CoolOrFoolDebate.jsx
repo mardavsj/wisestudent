@@ -18,123 +18,62 @@ const CoolOrFoolDebate = () => {
   const totalXp = 10;
 
   const questions = [
-    {
-      id: 1,
-      text: "Is smoking/drinking cool or harmful?",
-      options: [
-        {
-          id: "a",
-          text: "Cool",
-          emoji: "😎"
-        },
-        {
-          id: "b",
-          text: "Makes you popular",
-          emoji: "⭐"
-        },
-        {
-          id: "c",
-          text: "Harmful",
-          emoji: "⚠️"
-        }
-      ],
-      correctAnswer: "c",
-      explanation: "Real friends respect healthy choices. Making healthy decisions shows real strength and leads to more genuine friendships."
-    },
-    {
-      id: 2,
-      text: "What happens when teens use substances to seem cool?",
-      options: [
-        {
-          id: "c",
-          text: "Creates health problems",
-          emoji: "🏥"
-        },
-        {
-          id: "b",
-          text: "Gains real respect",
-          emoji: "🏆"
-        },
-        {
-          id: "a",
-          text: "Impresses everyone",
-          emoji: "👏"
-        },
-        
-      ],
-      correctAnswer: "c",
-      explanation: "Most people respect healthy, responsible choices. True confidence comes from making good decisions, not from impressing others with risky behaviors."
-    },
-    {
-      id: 3,
-      text: "How should teens respond to friends who use substances?",
-      options: [
-        {
-          id: "a",
-          text: "Join them to fit in",
-          emoji: "👥"
-        },
-        {
-          id: "c",
-          text: "Encourage healthy alternatives",
-          emoji: "💪"
-        },
-        {
-          id: "b",
-          text: "Judge and criticize",
-          emoji: "👎"
-        }
-      ],
-      correctAnswer: "c",
-      explanation: "Healthy choices are more important than fitting in. Being true to your values is more important than peer pressure."
-    },
-    {
-      id: 4,
-      text: "What is the 'cool' thing about staying substance-free?",
-      options: [
-        {
-          id: "b",
-          text: "Being different",
-          emoji: "🦄"
-        },
-        {
-          id: "a",
-          text: "Protecting your future",
-          emoji: "🚀"
-        },
-        {
-          id: "c",
-          text: "Following rules",
-          emoji: "📋"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Substance-free life leads to more opportunities. Protecting your health and future opens doors to achievements and experiences."
-    },
-    {
-      id: 5,
-      text: "How does society view teen substance use?",
-      options: [
-        {
-          id: "a",
-          text: "As a rite of passage",
-          emoji: "🎭"
-        },
-        {
-          id: "b",
-          text: "As normal teen behavior",
-          emoji: "😊"
-        },
-        {
-          id: "c",
-          text: "As a serious health risk",
-          emoji: "⚠️"
-        }
-      ],
-      correctAnswer: "c",
-      explanation: "Substance use is recognized as harmful to teens. Society increasingly understands the dangers of teen substance use and supports prevention efforts."
-    }
-  ];
+  {
+    id: 1,
+    text: "Some teens think smoking or drinking makes them look mature. What is the reality?",
+    options: [
+      { id: "a", text: "Cool and mature", emoji: "😎" },
+      { id: "b", text: "Popular instantly", emoji: "⭐" },
+      { id: "c", text: "Harms body and mind", emoji: "⚠️" }
+    ],
+    correctAnswer: "c",
+    explanation: "Perceived 'coolness' is short-lived. Smoking and drinking damage health, impair decision-making, and can affect long-term opportunities."
+  },
+  {
+    id: 2,
+    text: "Using substances to seem cool may lead to what hidden risks?",
+    options: [
+      { id: "a", text: "Everyone admires you", emoji: "👏" },
+      { id: "c", text: "Addiction, poor health, and social problems", emoji: "🩺" },
+      { id: "b", text: "Gain respect and trust", emoji: "🏆" },
+    ],
+    correctAnswer: "c",
+    explanation: "Temporary peer approval can lead to addiction, mental health issues, and strained relationships. True respect comes from responsible behavior."
+  },
+  {
+    id: 3,
+    text: "Your friends use substances at a party. How should you respond wisely?",
+    options: [
+      { id: "c", text: "Suggest fun, healthy alternatives", emoji: "💡" },
+      { id: "a", text: "Join to fit in", emoji: "👥" },
+      { id: "b", text: "Criticize them harshly", emoji: "👎" },
+    ],
+    correctAnswer: "c",
+    explanation: "Promoting positive alternatives maintains friendships while protecting your health. Leading by example influences peers more effectively than criticism."
+  },
+  {
+    id: 4,
+    text: "Which choice best demonstrates 'cool' in a long-term sense?",
+    options: [
+      { id: "b", text: "Being different for attention", emoji: "🦄" },
+      { id: "a", text: "Protecting your health and future", emoji: "🚀" },
+      { id: "c", text: "Following all rules blindly", emoji: "📋" }
+    ],
+    correctAnswer: "a",
+    explanation: "True coolness is about confidence, health, and planning for success. It’s about making smart choices, not just standing out temporarily."
+  },
+  {
+    id: 5,
+    text: "Society increasingly views teen substance use as:",
+    options: [
+      { id: "a", text: "A fun experiment", emoji: "🎉" },
+      { id: "b", text: "Typical teen behavior", emoji: "😊" },
+      { id: "c", text: "A serious public health concern", emoji: "⚠️" }
+    ],
+    correctAnswer: "c",
+    explanation: "Public health data shows teen substance use is risky. Awareness campaigns highlight the dangers to prevent addiction and long-term health consequences."
+  }
+];
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || showFeedback) return;
@@ -210,12 +149,7 @@ const CoolOrFoolDebate = () => {
               const showCorrect = showFeedback && isCorrect;
               const showIncorrect = showFeedback && isSelected && !isCorrect;
               
-              // Add emojis for each option like in the reference game
-              const optionEmojis = {
-                a: "✅",
-                b: "❌",
-                c: "⚠️"
-              };
+
               
               return (
                 <button
@@ -227,7 +161,7 @@ const CoolOrFoolDebate = () => {
                   }`}
                 >
                   <div className="flex items-center">
-                    <div className="text-2xl mr-4">{optionEmojis[option.id] || '❓'}</div>
+                    <div className="text-2xl mr-4">{option.emoji}</div>
                     <div>
                       <h3 className="font-bold text-xl mb-1">{option.text}</h3>
                     </div>

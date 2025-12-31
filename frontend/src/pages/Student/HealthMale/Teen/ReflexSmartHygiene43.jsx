@@ -28,62 +28,63 @@ const ReflexSmartHygiene43 = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "You touched a dog. Hands are dirty.",
-      correctAnswer: "Wash Hands",
-      options: [
-        { text: "Lick Hands", isCorrect: false, emoji: "👅" },
-        { text: "Wash Hands", isCorrect: true, emoji: "🧼" },
-        { text: "Wipe on Shirt", isCorrect: false, emoji: "👕" },
-        { text: "Do Nothing", isCorrect: false, emoji: "🤷" }
-      ]
-    },
-    {
-      id: 2,
-      question: "You are going to school. Smell good!",
-      correctAnswer: "Deodorant",
-      options: [
-        { text: "Deodorant", isCorrect: true, emoji: "🧴" },
-        { text: "Garlic", isCorrect: false, emoji: "🧄" },
-        { text: "Mud", isCorrect: false, emoji: "💩" },
-        { text: "Onion", isCorrect: false, emoji: "🧅" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Your teeth feel fuzzy.",
-      correctAnswer: "Brush",
-      options: [
-        { text: "Eat Candy", isCorrect: false, emoji: "🍬" },
-        { text: "Drink Soda", isCorrect: false, emoji: "🥤" },
-        { text: "Brush", isCorrect: true, emoji: "🪥" },
-        { text: "Sleep", isCorrect: false, emoji: "😴" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Nails are too long.",
-      correctAnswer: "Trim",
-      options: [
-        { text: "Bite Them", isCorrect: false, emoji: "😬" },
-        { text: "Trim", isCorrect: true, emoji: "✂️" },
-        { text: "Paint Them", isCorrect: false, emoji: "💅" }, // Painting doesn't shorten them
-        { text: "Break Them", isCorrect: false, emoji: "🔨" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Gym class is over. You are sweaty.",
-      correctAnswer: "Shower",
-      options: [
-        { text: "Stay Sweaty", isCorrect: false, emoji: "🥵" },
-        { text: "More Perfume", isCorrect: false, emoji: "🌸" },
-        { text: "Run More", isCorrect: false, emoji: "🏃" },
-        { text: "Shower", isCorrect: true, emoji: "🚿" },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You used your phone on public transport and now want to eat.",
+    correctAnswer: "Clean Phone First",
+    options: [
+      { text: "Clean Phone First", isCorrect: true, emoji: "📱" },
+      { text: "Eat Immediately", isCorrect: false, emoji: "🍔" },
+      { text: "Blow on Phone", isCorrect: false, emoji: "💨" },
+      { text: "Ignore It", isCorrect: false, emoji: "🙈" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Your reusable water bottle smells strange.",
+    correctAnswer: "Deep Clean Bottle",
+    options: [
+      { text: "Add Juice", isCorrect: false, emoji: "🧃" },
+      { text: "Deep Clean Bottle", isCorrect: true, emoji: "🧴" },
+      { text: "Close Lid Tight", isCorrect: false, emoji: "🔒" },
+      { text: "Drink Anyway", isCorrect: false, emoji: "🤢" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You wore the same hoodie all week. It looks fine.",
+    correctAnswer: "Wash It",
+    options: [
+      { text: "Spray Perfume", isCorrect: false, emoji: "🌸" },
+      { text: "Air It Out", isCorrect: false, emoji: "🌬️" },
+      { text: "Wash It", isCorrect: true, emoji: "🧺" },
+      { text: "Wear Again", isCorrect: false, emoji: "😎" }
+    ]
+  },
+  {
+    id: 4,
+    question: "You have a small cut after sports practice.",
+    correctAnswer: "Clean and Cover",
+    options: [
+      { text: "Ignore It", isCorrect: false, emoji: "🙄" },
+      { text: "Lick It", isCorrect: false, emoji: "👅" },
+      { text: "Scratch It", isCorrect: false, emoji: "😖" },
+      { text: "Clean and Cover", isCorrect: true, emoji: "🩹" },
+    ]
+  },
+  {
+    id: 5,
+    question: "Your earphones are shared with friends daily.",
+    correctAnswer: "Disinfect Earphones",
+    options: [
+      { text: "Share More", isCorrect: false, emoji: "🎧" },
+      { text: "Ignore Germs", isCorrect: false, emoji: "🦠" },
+      { text: "Disinfect Earphones", isCorrect: true, emoji: "🎧" },
+      { text: "Put in Pocket", isCorrect: false, emoji: "👖" }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

@@ -19,133 +19,131 @@ const QuizHygieneChanges = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Why do you need to change clothes more often in puberty?",
-      options: [
-        
-        {
-          id: "b",
-          text: "To look cool",
-          emoji: "😎",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Sweat and bacteria build up",
-          emoji: "🦠",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Because parents say so",
-          emoji: "👪",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What is the best way to prevent foot odor?",
-      options: [
-        {
-          id: "a",
-          text: "Change socks daily",
-          emoji: "🧦",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Spray perfume on shoes",
-          emoji: "💨",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Wear shoes without socks",
-          emoji: "👟",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "When should you brush your teeth?",
-      options: [
-        
-        {
-          id: "b",
-          text: "Once a week",
-          emoji: "📅",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Only when eating candy",
-          emoji: "🍬",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Twice a day",
-          emoji: "🪥",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "Is it okay to share a razor?",
-      options: [
-       
-        {
-          id: "b",
-          text: "If you wash it",
-          emoji: "🚿",
-          isCorrect: false
-        },
-         {
-          id: "a",
-          text: "No, never",
-          emoji: "🚫",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Yes, with friends",
-          emoji: "🤝",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What causes acne?",
-      options: [
-        {
-          id: "a",
-          text: "Clogged pores and oil",
-          emoji: "🧴",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Eating chocolate",
-          emoji: "🍫",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Being dirty",
-          emoji: "💩",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "After sports practice, you notice your clothes smell even though you didn't sweat much. What is the most accurate reason?",
+    options: [
+      {
+        id: "a",
+        text: "Dust from the ground sticks to clothes",
+        emoji: "🏟️",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Bacteria break down sweat proteins over time",
+        emoji: "🦠",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Fabric naturally produces odor",
+        emoji: "👕",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "You shower regularly but still notice scalp itchiness during puberty. What hygiene adjustment is most logical?",
+    options: [
+      {
+        id: "a",
+        text: "Wash hair multiple times a day",
+        emoji: "🚿",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Stop using shampoo completely",
+        emoji: "🛑",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Use a mild shampoo suitable for oil balance",
+        emoji: "🧴",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "You start getting minor skin infections from small cuts. Which hygiene habit reduces this risk most effectively?",
+    options: [
+      {
+        id: "a",
+        text: "Cleaning wounds promptly and keeping skin dry",
+        emoji: "🩹",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Covering cuts without cleaning",
+        emoji: "📦",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Ignoring small injuries",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You use deodorant daily but body odor returns quickly. What is the most overlooked hygiene factor?",
+    options: [
+      {
+        id: "a",
+        text: "Deodorant brand choice",
+        emoji: "🏷️",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Regular washing of clothes and towels",
+        emoji: "🧺",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Applying more deodorant layers",
+        emoji: "➕",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "During puberty, why is sharing personal hygiene items considered a health risk rather than just a bad habit?",
+    options: [
+      {
+        id: "a",
+        text: "It causes embarrassment",
+        emoji: "😳",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "It damages the items faster",
+        emoji: "⚙️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "It can transfer bacteria, fungi, and skin infections",
+        emoji: "🧬",
+        isCorrect: true
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;
@@ -201,6 +199,7 @@ const QuizHygieneChanges = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

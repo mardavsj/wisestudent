@@ -18,122 +18,63 @@ const BoysShouldNotCryDebate = () => {
   const totalXp = 10;
 
   const questions = [
-    {
-      id: 1,
-      text: "Is crying weakness or natural?",
-      options: [
-        {
-          id: "b",
-          text: "Weakness",
-          emoji: "💪"
-        },
-        {
-          id: "a",
-          text: "Natural",
-          emoji: "😢"
-        },
-        {
-          id: "c",
-          text: "Only for girls",
-          emoji: "👧"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Crying is a natural emotional response for everyone, regardless of gender. Expressing emotions is healthy and shows emotional intelligence."
-    },
-    {
-      id: 2,
-      text: "What happens when boys suppress emotions?",
-      options: [
-        {
-          id: "a",
-          text: "Makes them stronger",
-          emoji: "💪"
-        },
-        {
-          id: "c",
-          text: "Nothing happens",
-          emoji: "😐"
-        },
-        {
-          id: "b",
-          text: "Builds mental health issues",
-          emoji: "😞"
-        }
-      ],
-      correctAnswer: "b",
-      explanation: "Suppressing emotions can lead to mental health issues. Acknowledging and processing emotions is healthier."
-    },
-    {
-      id: 3,
-      text: "How should teens handle difficult emotions?",
-      options: [
-        {
-          id: "c",
-          text: "Talk about feelings openly",
-          emoji: "💬"
-        },
-        {
-          id: "a",
-          text: "Hide them completely",
-          emoji: "🤐"
-        },
-        {
-          id: "b",
-          text: "Only cry in private",
-          emoji: "🏠"
-        }
-      ],
-      correctAnswer: "c",
-      explanation: "Talking about feelings with trusted individuals helps process emotions healthily. Open communication leads to better mental health and stronger relationships."
-    },
-    {
-      id: 4,
-      text: "A friend is crying. What is the manly thing to do?",
-      options: [
-        {
-          id: "b",
-          text: "Laugh at him",
-          emoji: "😆"
-        },
-        {
-          id: "a",
-          text: "Comfort him",
-          emoji: "🤗"
-        },
-        {
-          id: "c",
-          text: "Tell him to stop",
-          emoji: "🛑"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Being supportive and empathetic toward friends who are struggling shows true strength and character. Comforting friends in need builds stronger relationships."
-    },
-    {
-      id: 5,
-      text: "You feel like crying but are in public. Is it okay?",
-      options: [
-        {
-          id: "a",
-          text: "No, never show weakness",
-          emoji: "🚫"
-        },
-        {
-          id: "b",
-          text: "Run away",
-          emoji: "🏃"
-        },
-        {
-          id: "c",
-          text: "Yes, it's a natural reaction",
-          emoji: "😢"
-        }
-      ],
-      correctAnswer: "c",
-      explanation: "It's completely natural and okay to express emotions anywhere. Vulnerability is not weakness - it's a normal part of being human."
-    }
-  ];
+  {
+    id: 1,
+    text: "Is crying a sign of weakness or emotional strength?",
+    options: [
+      { id: "b", text: "Sign of weakness", emoji: "😟" },
+      { id: "c", text: "Depends on situation", emoji: "🤔" },
+      { id: "a", text: "Sign of strength", emoji: "💪" },
+    ],
+    correctAnswer: "a",
+    explanation: "Crying demonstrates self-awareness and emotional intelligence. Expressing emotions is a sign of strength, not weakness."
+  },
+  {
+    id: 2,
+    text: "What are the risks of always hiding emotions?",
+    options: [
+      { id: "b", text: "Increases stress & mental health issues", emoji: "😞" },
+      { id: "a", text: "Improves toughness", emoji: "🛡️" },
+      { id: "c", text: "Nothing significant", emoji: "😐" }
+    ],
+    correctAnswer: "b",
+    explanation: "Constant suppression of feelings can lead to stress, anxiety, depression, and difficulties in relationships."
+  },
+  {
+    id: 3,
+    text: "How can expressing sadness benefit boys?",
+    options: [
+      { id: "a", text: "Develop empathy and emotional bonds", emoji: "🤝" },
+      { id: "b", text: "Makes them weak", emoji: "💔" },
+      { id: "c", text: "Reduces respect from peers", emoji: "🙅" }
+    ],
+    correctAnswer: "a",
+    explanation: "Expressing emotions helps build deeper connections, empathy, and resilience."
+  },
+  {
+    id: 4,
+    text: "If a boy cries in front of peers, what is the healthy perspective?",
+    options: [
+      { id: "b", text: "He should be teased", emoji: "😆" },
+      { id: "c", text: "He should hide immediately", emoji: "🏃‍♂️" },
+      { id: "a", text: "It’s natural and brave", emoji: "😢" },
+    ],
+    correctAnswer: "a",
+    explanation: "Acknowledging emotions in front of others shows courage and normalizes vulnerability, encouraging a supportive culture."
+  },
+  {
+    id: 5,
+    text: "Can teaching boys to hide emotions impact society?",
+    options: [
+      { id: "a", text: "Yes, may perpetuate toxic masculinity", emoji: "⚠️" },
+      { id: "b", text: "No, society is unaffected", emoji: "😐" },
+      { id: "c", text: "Only affects individuals", emoji: "👤" }
+    ],
+    correctAnswer: "a",
+    explanation: "Encouraging boys to suppress emotions can reinforce harmful stereotypes and limit emotional growth, affecting interpersonal relationships and societal mental health."
+  }
+];
+
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || showFeedback) return;

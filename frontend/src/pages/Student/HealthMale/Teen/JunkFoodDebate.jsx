@@ -25,122 +25,124 @@ const JunkFoodDebate = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Is it okay to eat junk food sometimes?",
-      options: [
-        {
-          id: "a",
-          text: "Yes, in moderation",
-          emoji: "⚖️"
-        },
-        {
-          id: "b",
-          text: "No, never ever",
-          emoji: "🚫"
-        },
-        {
-          id: "c",
-          text: "Yes, every day",
-          emoji: "🍔"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Eating junk food in moderation is okay. That's too strict, and too restrictive can lead to binges."
-    },
-    {
-      id: 2,
-      text: "Friends are eating pizza. What do you do?",
-      options: [
-        {
-          id: "b",
-          text: "Eat 10 slices",
-          emoji: "🍕"
-        },
-        {
-          id: "a",
-          text: "Have 1-2 slices & salad",
-          emoji: "🥗"
-        },
-        {
-          id: "c",
-          text: "Sit and starve",
-          emoji: "🤐"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Balance is key. Overeating makes you sluggish, and you can enjoy food socially."
-    },
-    {
-      id: 3,
-      text: "Does junk food give you good energy?",
-      options: [
-        {
-          id: "c",
-          text: "Yes, forever",
-          emoji: "🔋"
-        },
-        {
-          id: "b",
-          text: "It makes you super strong",
-          emoji: "💪"
-        },
-        {
-          id: "a",
-          text: "No, it causes a crash",
-          emoji: "📉"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Sugar highs are followed by lows. No, it's short-lived, and it usually makes you tired."
-    },
-    {
-      id: 4,
-      text: "Is junk food cheaper than home cooking?",
-      options: [
-        {
-          id: "b",
-          text: "Always cheaper",
-          emoji: "💸"
-        },
-        {
-          id: "a",
-          text: "Home cooking saves money",
-          emoji: "🏠"
-        },
-        {
-          id: "c",
-          text: "They cost the same",
-          emoji: "🤷"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Buying ingredients is usually cheaper. Not always, and health costs add up. Eating out is usually pricier."
-    },
-    {
-      id: 5,
-      text: "What happens if you only eat junk?",
-      options: [
-        {
-          id: "c",
-          text: "You become a superhero",
-          emoji: "🦸"
-        },
-        {
-          id: "b",
-          text: "Nothing changes",
-          emoji: "😐"
-        },
-        {
-          id: "a",
-          text: "Health problems later",
-          emoji: "🏥"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Heart issues, diabetes, etc. Unlikely, and your body will suffer."
-    }
-  ];
+  {
+    id: 1,
+    text: "Is junk food designed more for taste than nutrition?",
+    options: [
+      
+      {
+        id: "b",
+        text: "No, nutrition comes first",
+        emoji: "🥦"
+      },
+      {
+        id: "c",
+        text: "Both are equally important",
+        emoji: "⚖️"
+      },
+      {
+        id: "a",
+        text: "Yes, taste is the main goal",
+        emoji: "👅"
+      },
+    ],
+    correctAnswer: "a",
+    explanation: "Most junk foods are engineered for flavor, texture, and craving—not nutritional balance."
+  },
+  {
+    id: 2,
+    text: "Should food ads targeting teens be regulated?",
+    options: [
+      {
+        id: "a",
+        text: "Yes, they influence choices",
+        emoji: "📺"
+      },
+      {
+        id: "b",
+        text: "No, ads don’t affect decisions",
+        emoji: "🙄"
+      },
+      {
+        id: "c",
+        text: "Only ads for kids, not teens",
+        emoji: "🧒"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Teen brains are still developing, and marketing strongly affects cravings and habits."
+  },
+  {
+    id: 3,
+    text: "Does junk food affect mental performance?",
+    options: [
+      {
+        id: "b",
+        text: "No effect on brain",
+        emoji: "🧠"
+      },
+      {
+        id: "a",
+        text: "Yes, it can reduce focus",
+        emoji: "😵‍💫"
+      },
+      {
+        id: "c",
+        text: "Only affects mood, not focus",
+        emoji: "🙂"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Highly processed foods can affect concentration, memory, and learning ability."
+  },
+  {
+    id: 4,
+    text: "Is homemade junk (like fries or burgers at home) different?",
+    options: [
+      {
+        id: "a",
+        text: "Yes, ingredients are controlled",
+        emoji: "🏠"
+      },
+      {
+        id: "b",
+        text: "No, junk is junk",
+        emoji: "🍔"
+      },
+      {
+        id: "c",
+        text: "Only taste matters",
+        emoji: "😋"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Homemade versions usually contain less oil, salt, and additives than fast food."
+  },
+  {
+    id: 5,
+    text: "What’s the biggest hidden risk of frequent junk food?",
+    options: [
+      {
+        id: "b",
+        text: "Instant weight gain",
+        emoji: "⚖️"
+      },
+      {
+        id: "a",
+        text: "Habit formation & cravings",
+        emoji: "🧠"
+      },
+      {
+        id: "c",
+        text: "Food boredom",
+        emoji: "😐"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Junk food trains the brain to crave high salt, sugar, and fat—making healthy food less appealing."
+  }
+];
+
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || showFeedback) return;
@@ -214,12 +216,7 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
               const showCorrect = showFeedback && isCorrect;
               const showIncorrect = showFeedback && isSelected && !isCorrect;
               
-              // Add emojis for each option like in the reference game
-              const optionEmojis = {
-                a: "✅",
-                b: "❌",
-                c: "⚠️"
-              };
+
               
               return (
                 <button
@@ -231,7 +228,7 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
                   }`}
                 >
                   <div className="flex items-center">
-                    <div className="text-2xl mr-4">{optionEmojis[option.id] || '❓'}</div>
+                    <div className="text-2xl mr-4">{option.emoji}</div>
                     <div>
                       <h3 className="font-bold text-xl mb-1">{option.text}</h3>
                     </div>

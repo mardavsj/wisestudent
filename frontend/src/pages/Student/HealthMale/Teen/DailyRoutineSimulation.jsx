@@ -22,165 +22,159 @@ const DailyRoutineSimulation = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const scenarios = [
-    {
-      id: 1,
-      time: "7:00 AM",
-      situation: "You just woke up. What's the first step?",
-      options: [
-        {
-          id: "a",
-          text: "Check phone for 30 mins",
-          emoji: "📱",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Brush teeth & wash face",
-          emoji: "🪥",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Skip everything",
-          emoji: "🏃",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Drink water and stretch",
-          emoji: "💧",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      time: "7:30 AM",
-      situation: "Time to get dressed. Your favorite shirt smells a bit.",
-      options: [
-        {
-          id: "a",
-          text: "Pick a clean shirt",
-          emoji: "👔",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Wear it anyway",
-          emoji: "👕",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Spray perfume on it",
-          emoji: "💨",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Wear a jacket over it",
-          emoji: "🧥",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      time: "8:00 AM",
-      situation: "Breakfast time. What do you eat?",
-      options: [
-        
-        {
-          id: "b",
-          text: "Nothing",
-          emoji: "🚫",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Healthy breakfast",
-          emoji: "🍳",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Just coffee",
-          emoji: "☕",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Balanced meal with protein",
-          emoji: "🥞",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      time: "4:00 PM",
-      situation: "Back from school. You feel sticky.",
-      options: [
-       
-        {
-          id: "b",
-          text: "Go straight to homework",
-          emoji: "📚",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Sit on the couch",
-          emoji: "🛋️",
-          isCorrect: false
-        },
-         {
-          id: "a",
-          text: "Take a shower",
-          emoji: "🛁",
-          isCorrect: true
-        },
-        {
-          id: "d",
-          text: "Wash face & change",
-          emoji: "🚿",
-          isCorrect: false
-        },
-      ]
-    },
-    {
-      id: 5,
-      time: "9:00 PM",
-      situation: "Bedtime routine. Don't forget...",
-      options: [
-        {
-          id: "a",
-          text: "Eat a snack",
-          emoji: "🍪",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Just sleep",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Brush teeth & wash face",
-          emoji: "🌙",
-          isCorrect: true
-        },
-        {
-          id: "d",
-          text: "Set alarm and prepare tomorrow",
-          emoji: "⏰",
-          description: "Planning ahead reduces morning stress.",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    situation: "You wake up feeling mentally foggy before a long school day. Which action best sets your routine in motion?",
+    options: [
+      {
+        id: "a",
+        text: "Scroll social media to feel awake",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Lie down longer to recover",
+        emoji: "🛌",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Skip routine and rush out",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Hydrate and reset your body",
+        emoji: "💧",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    situation: "While getting ready, you notice yesterday’s clothes still look fine but don’t smell fresh. What decision shows routine discipline?",
+    options: [
+      {
+        id: "a",
+        text: "Use deodorant to mask it",
+        emoji: "🧴",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Choose freshly cleaned clothes",
+        emoji: "👕",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Wear it once more",
+        emoji: "🔁",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Layer clothes to hide it",
+        emoji: "🧥",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    situation: "You have a demanding academic day ahead that needs focus and stamina. Which routine choice supports long-term energy?",
+    options: [
+      {
+        id: "a",
+        text: "Eat a structured, nourishing meal",
+        emoji: "🥗",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Rely on caffeine only",
+        emoji: "☕",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Skip food to save time",
+        emoji: "⏭️",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Snack randomly all day",
+        emoji: "🍫",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    situation: "After returning home, your body feels uncomfortable and unfocused. What routine adjustment improves productivity next?",
+    options: [
+      {
+        id: "a",
+        text: "Sit down and start work immediately",
+        emoji: "📚",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Ignore discomfort and relax",
+        emoji: "🛋️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Reset with personal hygiene and fresh clothes",
+        emoji: "🚿",
+        isCorrect: true
+      },
+      {
+        id: "d",
+        text: "Distract yourself with entertainment",
+        emoji: "🎮",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    situation: "Before ending your day, which habit strengthens both discipline and mental clarity for tomorrow?",
+    options: [
+      {
+        id: "a",
+        text: "Sleep immediately to save time",
+        emoji: "😴",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Stay active online till late",
+        emoji: "🌐",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Think about plans without acting",
+        emoji: "💭",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Complete hygiene and prep for next day",
+        emoji: "🧼",
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const selectedOption = scenarios[currentScenario].options.find(opt => opt.id === optionId);

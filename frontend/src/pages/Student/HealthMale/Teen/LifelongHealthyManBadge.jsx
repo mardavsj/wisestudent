@@ -19,144 +19,63 @@ const LifelongHealthyManBadge = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const challenges = [
-    {
-      id: 1,
-      title: "Healthy Routine",
-      question: "What is a key part of a lifelong healthy routine?",
-      options: [
-        {
-          text: "Ignoring grooming",
-          emoji: "🙅",
-          isCorrect: false
-        },
-        {
-          text: "Consistent personal hygiene",
-          emoji: "🚿",
-          isCorrect: true
-        },
-        {
-          text: "Showering once a week",
-          emoji: "🗓️",
-          isCorrect: false
-        },
-        {
-          text: "Using only deodorant",
-          emoji: "💨",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Physical Health",
-      question: "How do you maintain a healthy body for life?",
-      options: [
-        {
-          text: "Eat junk food only",
-          emoji: "🍔",
-          isCorrect: false
-        },
-        {
-          text: "Balanced diet & regular exercise",
-          emoji: "🥗",
-          isCorrect: true
-        },
-        {
-          text: "Sit on the couch all day",
-          emoji: "📺",
-          isCorrect: false
-        },
-        {
-          text: "Skip all meals",
-          emoji: "❌",
-          isCorrect: false
-        },
-        
-      ]
-    },
-    {
-      id: 3,
-      title: "Emotional Maturity",
-      question: "What shows emotional maturity in a man?",
-      options: [
-        {
-          text: "Hiding all emotions",
-          emoji: "🤐",
-          isCorrect: false
-        },
-        {
-          text: "Acting tough always",
-          emoji: "💪",
-          isCorrect: false
-        },
-        {
-          text: "Expressing feelings & seeking help",
-          emoji: "🧠",
-          isCorrect: true
-        },
-        {
-          text: "Ignoring stress",
-          emoji: "🙈",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Making Decisions",
-      question: "What is responsible decision making?",
-      options: [
-        {
-          text: "Doing what friends say",
-          emoji: "👥",
-          isCorrect: false
-        },
-        {
-          text: "Impulsive choices",
-          emoji: "⚡",
-          isCorrect: false
-        },
-        {
-          text: "Ignoring consequences",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        {
-          text: "Weighing pros & cons before acting",
-          emoji: "⚖️",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Personal Growth",
-      question: "What does a 'Lifelong Healthy Man' commit to?",
-      options: [
-        {
-          text: "Continuous learning & self-improvement",
-          emoji: "📈",
-          isCorrect: true
-        },
-        {
-          text: "Stopping learning after school",
-          emoji: "🛑",
-          isCorrect: false
-        },
-        {
-          text: "Staying exactly the same",
-          emoji: "🗿",
-          isCorrect: false
-        },
-        {
-          text: "Avoiding new ideas",
-          emoji: "🙉",
-          isCorrect: false
-        },
-        
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Daily Habits",
+    question: "Which habit most consistently supports lifelong health?",
+    options: [
+      { text: "Skipping hygiene when busy", emoji: "🙅", isCorrect: false },
+      { text: "Maintaining consistent hygiene & grooming", emoji: "🚿", isCorrect: true },
+      { text: "Showering only on weekends", emoji: "🗓️", isCorrect: false },
+      { text: "Using deodorant instead of bathing", emoji: "💨", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    title: "Nutrition & Fitness",
+    question: "What combination ensures sustainable physical health?",
+    options: [
+      { text: "Fast food & minimal movement", emoji: "🍔", isCorrect: false },
+      { text: "Only exercising, ignoring diet", emoji: "🏋️", isCorrect: false },
+      { text: "Balanced meals, regular exercise, and rest", emoji: "🥗", isCorrect: true },
+      { text: "Skipping meals to lose weight quickly", emoji: "❌", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    title: "Emotional Intelligence",
+    question: "Which behavior demonstrates true emotional strength?",
+    options: [
+      { text: "Recognizing emotions and seeking support when needed", emoji: "🧠", isCorrect: true },
+      { text: "Suppressing all feelings", emoji: "🤐", isCorrect: false },
+      { text: "Pretending to be tough always", emoji: "💪", isCorrect: false },
+      { text: "Ignoring stress until it goes away", emoji: "🙈", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    title: "Decision Making",
+    question: "Which reflects responsible, long-term decision making?",
+    options: [
+      { text: "Following friends blindly", emoji: "👥", isCorrect: false },
+      { text: "Acting on impulse", emoji: "⚡", isCorrect: false },
+      { text: "Ignoring potential outcomes", emoji: "🤷", isCorrect: false },
+      { text: "Carefully evaluating pros, cons, and consequences", emoji: "⚖️", isCorrect: true }
+    ]
+  },
+  {
+    id: 5,
+    title: "Lifelong Growth",
+    question: "Which mindset is essential for lifelong personal development?",
+    options: [
+      { text: "Stopping learning after formal education", emoji: "🛑", isCorrect: false },
+      { text: "Continuously learning and improving oneself", emoji: "📈", isCorrect: true },
+      { text: "Remaining the same throughout life", emoji: "🗿", isCorrect: false },
+      { text: "Avoiding new experiences or ideas", emoji: "🙉", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;

@@ -25,122 +25,124 @@ const HygieneConfidenceDebate = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Does looking clean help you make a good first impression?",
-      options: [
-        {
-          id: "a",
-          text: "Yes, definitely",
-          emoji: "👍"
-        },
-        {
-          id: "b",
-          text: "No, looks don't matter",
-          emoji: "👎"
-        },
-        {
-          id: "c",
-          text: "Only if you wear expensive clothes",
-          emoji: "💰"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Looking clean and hygienic definitely helps make a good first impression. Cleanliness shows respect for yourself and others."
-    },
-    {
-      id: 2,
-      text: "How does smelling good make you feel?",
-      options: [
-        {
-          id: "b",
-          text: "Nervous",
-          emoji: "😰"
-        },
-        {
-          id: "a",
-          text: "Confident and ready",
-          emoji: "😎"
-        },
-        {
-          id: "c",
-          text: "Tired",
-          emoji: "😴"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Knowing you're fresh boosts confidence. Usually, it reduces anxiety, and smelling good doesn't make you tired."
-    },
-    {
-      id: 3,
-      text: "Does bad hygiene affect friendships?",
-      options: [
-        {
-          id: "c",
-          text: "Friends don't care",
-          emoji: "🤷"
-        },
-        {
-          id: "b",
-          text: "It makes you popular",
-          emoji: "🌟"
-        },
-        {
-          id: "a",
-          text: "Yes, it can push people away",
-          emoji: "🚶"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Bad hygiene can definitely push people away. People prefer being around others who maintain good hygiene practices."
-    },
-    {
-      id: 4,
-      text: "Is hygiene important for a job interview?",
-      options: [
-        {
-          id: "b",
-          text: "No, only skills matter",
-          emoji: "🧠"
-        },
-        {
-          id: "a",
-          text: "Yes, it shows responsibility",
-          emoji: "👔"
-        },
-        {
-          id: "c",
-          text: "Only for models",
-          emoji: "📸"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "It shows you can take care of details. Presentation is part of professionalism, and it matters for every job."
-    },
-    {
-      id: 5,
-      text: "Can a shower improve your mood?",
-      options: [
-        {
-          id: "c",
-          text: "It makes you sad",
-          emoji: "😢"
-        },
-        {
-          id: "b",
-          text: "It does nothing",
-          emoji: "😐"
-        },
-        {
-          id: "a",
-          text: "Yes, it's refreshing",
-          emoji: "🚿"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Self-care is a mood booster. Showers are refreshing, and it physically resets your state."
-    }
-  ];
+  {
+    id: 1,
+    text: "During a group presentation, one teammate is very skilled but ignores basic hygiene. How does this most realistically affect the team’s confidence as a whole?",
+    options: [
+      {
+        id: "c",
+        text: "It has no effect if work is good",
+        emoji: "📄"
+      },
+      {
+        id: "a",
+        text: "It can quietly lower the group’s confidence",
+        emoji: "📉"
+      },
+      {
+        id: "b",
+        text: "It improves focus on skills only",
+        emoji: "🎯"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Even strong skills can be overshadowed by discomfort. Confidence in teams depends on both performance and presence."
+  },
+  {
+    id: 2,
+    text: "In debates and discussions, why is personal hygiene often linked to how seriously others take your opinion?",
+    options: [
+      {
+        id: "b",
+        text: "It signals discipline and self-awareness",
+        emoji: "🧠"
+      },
+      
+      {
+        id: "c",
+        text: "It makes you louder",
+        emoji: "🔊"
+      },
+      {
+        id: "a",
+        text: "It shows social class",
+        emoji: "🏷️"
+      },
+    ],
+    correctAnswer: "b",
+    explanation: "People subconsciously link hygiene with responsibility and clarity—important traits in communication and debate."
+  },
+  {
+    id: 3,
+    text: "A student argues that confidence is purely internal and hygiene is irrelevant. What is the strongest counter-argument?",
+    options: [
+      {
+        id: "a",
+        text: "Confidence changes depending on environment",
+        emoji: "🌍"
+      },
+      {
+        id: "c",
+        text: "External comfort affects internal mindset",
+        emoji: "🔁"
+      },
+      {
+        id: "b",
+        text: "Everyone feels confident sometimes",
+        emoji: "🙂"
+      }
+    ],
+    correctAnswer: "c",
+    explanation: "Mental state is influenced by physical comfort. Hygiene reduces distraction and boosts self-assurance."
+  },
+  {
+    id: 4,
+    text: "In competitive spaces (sports trials, interviews, debates), hygiene mostly affects which layer of confidence?",
+    options: [
+      {
+        id: "a",
+        text: "Deep performance confidence",
+        emoji: "🏗️"
+      },
+      {
+        id: "b",
+        text: "Surface confidence only",
+        emoji: "🎭"
+      },
+      
+      {
+        id: "c",
+        text: "It has no measurable impact",
+        emoji: "❌"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "When you’re not distracted by discomfort or self-doubt, performance confidence becomes stronger."
+  },
+  {
+    id: 5,
+    text: "Which statement best balances confidence and hygiene without exaggeration?",
+    options: [
+      {
+        id: "c",
+        text: "Hygiene replaces skill",
+        emoji: "🔄"
+      },
+      {
+        id: "a",
+        text: "Hygiene supports confidence, not defines worth",
+        emoji: "⚖️"
+      },
+      {
+        id: "b",
+        text: "Hygiene is only for public settings",
+        emoji: "🏫"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Hygiene is a confidence amplifier—not a measure of intelligence or value, but a powerful support system."
+  }
+];
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || showFeedback) return;
@@ -214,12 +216,7 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
               const showCorrect = showFeedback && isCorrect;
               const showIncorrect = showFeedback && isSelected && !isCorrect;
               
-              // Add emojis for each option like in the reference game
-              const optionEmojis = {
-                a: "✅",
-                b: "❌",
-                c: "⚠️"
-              };
+
               
               return (
                 <button
@@ -231,7 +228,7 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
                   }`}
                 >
                   <div className="flex items-center">
-                    <div className="text-2xl mr-4">{optionEmojis[option.id] || '❓'}</div>
+                    <div className="text-2xl mr-4">{option.emoji}</div>
                     <div>
                       <h3 className="font-bold text-xl mb-1">{option.text}</h3>
                     </div>

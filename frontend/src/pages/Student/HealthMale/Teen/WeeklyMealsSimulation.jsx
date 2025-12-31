@@ -20,167 +20,165 @@ const WeeklyMealsSimulation = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const scenarios = [
-    {
-      id: 1,
-      day: "Monday Breakfast",
-      situation: "Start the week right!",
-      options: [
-        {
-          id: "a",
-          text: "Eggs & Toast",
-          emoji: "🍳",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Oatmeal with fruits",
-          emoji: "🥣",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Skip it",
-          emoji: "🏃",
-          isCorrect: false
-        },
-        
-        {
-          id: "c",
-          text: "Just coffee",
-          emoji: "☕",
-          isCorrect: false
-        },
-        
-      ]
-    },
-    {
-      id: 2,
-      day: "Tuesday Lunch",
-      situation: "School cafeteria choices.",
-      options: [
-        {
-          id: "a",
-          text: "Burger & Fries",
-          emoji: "🍔",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Fried Chicken only",
-          emoji: "🍗",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Vending machine snacks",
-          emoji: "🍫",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Sandwich & Fruit",
-          emoji: "🥪",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      day: "Wednesday Snack",
-      situation: "Mid-day hunger.",
-      options: [
-        {
-          id: "d",
-          text: "Yogurt",
-          emoji: "🥣",
-          isCorrect: true
-        },
-        {
-          id: "a",
-          text: "Nuts",
-          emoji: "🥜",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Cookies",
-          emoji: "🍪",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Soda",
-          emoji: "🥤",
-          isCorrect: false
-        },
-        
-      ]
-    },
-    {
-      id: 4,
-      day: "Thursday Dinner",
-      situation: "Family meal time.",
-      options: [
-        {
-          id: "a",
-          text: "Burger & Fries",
-          emoji: "🍔",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Order Pizza",
-          emoji: "🍕",
-          isCorrect: false
-        },
-         {
-          id: "d",
-          text: "Grilled Fish & Veggies",
-          emoji: "🐟",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Eat in room alone",
-          emoji: "🚪",
-          isCorrect: false
-        },
-       
-      ]
-    },
-    {
-      id: 5,
-      day: "Friday Treat",
-      situation: "End of the week celebration.",
-      options: [
-        {
-          id: "a",
-          text: "Small Ice Cream",
-          emoji: "🍦",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Binge eat everything",
-          emoji: "🤢",
-          isCorrect: false
-        },
-        
-        {
-          id: "c",
-          text: "Starve to save calories",
-          emoji: "🤐",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Fruit salad",
-          emoji: "🍎",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    day: "Monday Breakfast",
+    situation: "You have a long school day and morning sports practice.",
+    options: [
+      {
+        id: "a",
+        text: "Sugary cereal only",
+        emoji: "🥣",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Toast with jam",
+        emoji: "🍞",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Peanut butter sandwich",
+        emoji: "🥪",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Egg wrap with vegetables",
+        emoji: "🌯",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    day: "Tuesday Lunch",
+    situation: "You feel sleepy after yesterday’s heavy dinner.",
+    options: [
+      {
+        id: "a",
+        text: "Extra cheesy pasta",
+        emoji: "🧀",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Instant noodles",
+        emoji: "🍜",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Rice, lentils & salad",
+        emoji: "🍚",
+        isCorrect: true
+      },
+      {
+        id: "d",
+        text: "Energy drink",
+        emoji: "⚡",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    day: "Wednesday Snack",
+    situation: "You need focus for an evening exam revision.",
+    options: [
+      {
+        id: "a",
+        text: "Chocolate bar",
+        emoji: "🍫",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Roasted chickpeas",
+        emoji: "🌰",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Flavored chips",
+        emoji: "🍟",
+        isCorrect: false
+      },
+      
+      {
+        id: "d",
+        text: "Cold soda",
+        emoji: "🥤",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    day: "Thursday Dinner",
+    situation: "You worked out in the evening and need recovery food.",
+    options: [
+      {
+        id: "c",
+        text: "Paneer stir-fry with veggies",
+        emoji: "🥘",
+        isCorrect: true
+      },
+      {
+        id: "a",
+        text: "Plain white rice",
+        emoji: "🍚",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Fried street food",
+        emoji: "🍗",
+        isCorrect: false
+      },
+      
+      {
+        id: "d",
+        text: "Skip dinner",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    day: "Friday Treat Choice",
+    situation: "Friends plan a food hangout after school.",
+    options: [
+      {
+        id: "a",
+        text: "Unlimited fast food challenge",
+        emoji: "🍔",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Only dessert, no meal",
+        emoji: "🍰",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Balanced meal + one treat",
+        emoji: "⚖️",
+        isCorrect: true
+      },
+      {
+        id: "d",
+        text: "Skip food to save calories",
+        emoji: "🤐",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const selectedOption = scenarios[currentScenario].options.find(opt => opt.id === optionId);

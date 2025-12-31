@@ -17,157 +17,57 @@ const PeerPressureSimulation = () => {
   const totalXp = 10;
 
   const scenarios = [
-    {
-      id: 1,
-      text: "At a party, friends offer you alcohol. What do you do?",
-      options: [
-        {
-          id: "a",
-          text: "Join them",
-          emoji: "🍺",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Say No",
-          emoji: "✋",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Walk Away",
-          emoji: "🚶",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Suggest a non-alcoholic alternative",
-          emoji: "🥤",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Friends say 'Everyone smokes, why don't you?' How do you respond?",
-      options: [
-        {
-          id: "a",
-          text: "Explain health reasons",
-          emoji: "💬",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Make excuses",
-          emoji: "😅",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Say 'I don't want to'",
-          emoji: "✋",
-          isCorrect: true
-        },
-        {
-          id: "d",
-          text: "Question why they smoke",
-          emoji: "🤔",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "At school, classmates pressure you to try vaping. What's your strategy?",
-      options: [
-        {
-          id: "a",
-          text: "Tell a teacher",
-          emoji: "📞",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Change the subject",
-          emoji: "💬",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Try it to stop pressure",
-          emoji: "💨",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Leave the area",
-          emoji: "🚪",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Online, friends challenge you to substance dares. How do you handle it?",
-      options: [
-        {
-          id: "a",
-          text: "Accept the challenge",
-          emoji: "✅",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Ignore the messages",
-          emoji: "🙈",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Block and report",
-          emoji: "🚫",
-          isCorrect: true
-        },
-        {
-          id: "d",
-          text: "Talk to a trusted adult",
-          emoji: "👨‍🏫",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What strengthens you against substance peer pressure?",
-      options: [
-        {
-          id: "a",
-          text: "Going with the crowd",
-          emoji: "👥",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Having clear personal values",
-          emoji: "💪",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Wanting approval",
-          emoji: "👍",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Practicing refusal skills",
-          emoji: "🏋️",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "At a party, some friends insist you try alcohol to 'fit in'. How do you respond?",
+    options: [
+      { id: "a", text: "Drink to avoid being left out", emoji: "🍺", isCorrect: false },
+      { id: "b", text: "Politely refuse and explain your choice", emoji: "✋", isCorrect: true },
+      { id: "c", text: "Leave quietly without explanation", emoji: "🚶", isCorrect: false },
+      { id: "d", text: "Suggest a fun, alcohol-free activity", emoji: "🥤", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Friends say, 'Everyone smokes, why don't you?' What's the most effective response?",
+    options: [
+      { id: "a", text: "Explain the health risks calmly", emoji: "💬", isCorrect: true },
+      { id: "b", text: "Say 'Maybe later' to avoid conflict", emoji: "😅", isCorrect: false },
+      { id: "c", text: "Firmly say 'I choose not to'", emoji: "✋", isCorrect: false },
+      { id: "d", text: "Question their reasoning and choices", emoji: "🤔", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "A classmate pressures you to try vaping to seem 'cool'. What is your best action?",
+    options: [
+      { id: "b", text: "Deflect with humor or change the topic", emoji: "💬", isCorrect: false },
+      { id: "c", text: "Try it once to stop the pressure", emoji: "💨", isCorrect: false },
+      { id: "d", text: "Leave the area and avoid the peer", emoji: "🚪", isCorrect: false },
+      { id: "a", text: "Report the pressure to a teacher or counselor", emoji: "📞", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    text: "Online friends dare you to use substances. What is a safe, proactive approach?",
+    options: [
+      { id: "a", text: "Accept the dare to prove bravery", emoji: "😊", isCorrect: false },
+      { id: "b", text: "Ignore the messages and avoid engagement", emoji: "🙈", isCorrect: false },
+      { id: "c", text: "Block the senders and report to platform moderators", emoji: "🚫", isCorrect: true },
+      { id: "d", text: "Talk to a trusted adult about the messages", emoji: "👨‍🏫", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "Which strategy most effectively strengthens resistance to substance peer pressure?",
+    options: [
+      { id: "b", text: "Developing and sticking to clear personal values", emoji: "💪", isCorrect: true },
+      { id: "a", text: "Following the crowd for social approval", emoji: "👥", isCorrect: false },
+      { id: "c", text: "Seeking constant peer approval", emoji: "👍", isCorrect: false },
+      { id: "d", text: "Practicing refusal skills through role-play", emoji: "🏋️", isCorrect: false }
+    ]
+  }
+];
 
   const handleChoice = (optionId) => {
     const selectedOption = scenarios[currentScenario].options.find(opt => opt.id === optionId);

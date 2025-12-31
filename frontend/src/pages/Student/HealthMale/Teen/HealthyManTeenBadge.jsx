@@ -21,162 +21,166 @@ const HealthyManTeenBadge = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      title: "Myth Busting",
-      text: "Which statement about masculinity is a myth?",
-      options: [
-        {
-          text: "It's okay for men to ask for help",
-          emoji: "✅",
-          isCorrect: false
-        },
-        {
-          text: "Men can be caring and nurturing",
-          emoji: "❤️",
-          isCorrect: false
-        },
-        {
-          text: "Men should never cry or show weakness",
-          emoji: "🚫",
-          isCorrect: true
-        },
-        {
-          text: "Strength includes emotional intelligence",
-          emoji: "🧠",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Exactly! Men should never suppress their emotions. Expressing feelings is a sign of strength, not weakness.",
-        wrong: "Real strength includes emotional intelligence and the ability to express feelings healthily."
+  {
+    id: 1,
+    title: "Identity & Strength",
+    text: "Which behavior best reflects long-term inner strength in a man?",
+    options: [
+      {
+        text: "Always appearing confident in public",
+        emoji: "🎭",
+        isCorrect: false
+      },
+      {
+        text: "Adapting values when alone vs with peers",
+        emoji: "🔄",
+        isCorrect: false
+      },
+      {
+        text: "Acting according to values even when unpopular",
+        emoji: "🧭",
+        isCorrect: true
+      },
+      {
+        text: "Winning arguments to prove dominance",
+        emoji: "🏆",
+        isCorrect: false
       }
-    },
-    {
-      id: 2,
-      title: "Emotional Health",
-      text: "What is a healthy way to deal with anger?",
-      options: [
-        {
-          text: "Yelling at friends",
-          emoji: "🗣️",
-          isCorrect: false
-        },
-        {
-          text: "Talking about it or exercising",
-          emoji: "🏃",
-          isCorrect: true
-        },
-        {
-          text: "Punching a wall",
-          emoji: "👊",
-          isCorrect: false
-        },
-        {
-          text: "Bottling it up inside",
-          emoji: "🤐",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Great choice! Talking about your feelings or channeling energy into physical activity are healthy outlets for anger.",
-        wrong: "Healthy anger management involves expressing emotions constructively rather than suppressing or exploding."
-      }
-    },
-    {
-      id: 3,
-      title: "Respect",
-      text: "How do you show respect in a relationship?",
-      options: [
-        {
-          text: "Listening and valuing their opinion",
-          emoji: "👂",
-          isCorrect: true
-        },
-        {
-          text: "Controlling who they see",
-          emoji: "📱",
-          isCorrect: false
-        },
-        {
-          text: "Making all the decisions",
-          emoji: "👑",
-          isCorrect: false
-        },
-        {
-          text: "Ignoring their boundaries",
-          emoji: "🚫",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Perfect! Respect in relationships means listening, valuing opinions, and honoring boundaries.",
-        wrong: "Respect involves mutual consideration, open communication, and recognizing each other's autonomy."
-      }
-    },
-    {
-      id: 4,
-      title: "Non-Violence",
-      text: "What does it mean to choose non-violence?",
-      options: [
-        {
-          text: "Only fighting if someone starts it",
-          emoji: "🥊",
-          isCorrect: false
-        },
-        {
-          text: "Being aggressive to get respect",
-          emoji: "😠",
-          isCorrect: false
-        },
-        {
-          text: "Solving conflicts with words, not fists",
-          emoji: "🤝",
-          isCorrect: true
-        },
-        {
-          text: "Intimidating others",
-          emoji: "😤",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Exactly! Non-violence means resolving conflicts through communication and understanding rather than aggression.",
-        wrong: "Choosing non-violence demonstrates strength of character and commitment to peaceful conflict resolution."
-      }
-    },
-    {
-      id: 5,
-      title: "Healthy Relationships",
-      text: "What is a sign of a healthy friendship?",
-      options: [
-        {
-          text: "Teasing that hurts feelings",
-          emoji: "😢",
-          isCorrect: false
-        },
-        {
-          text: "Support and mutual trust",
-          emoji: "🌟",
-          isCorrect: true
-        },
-        {
-          text: "Peer pressure to do bad things",
-          emoji: "😈",
-          isCorrect: false
-        },
-        {
-          text: "Competition to be better",
-          emoji: "🏆",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Absolutely! Healthy friendships are built on support, trust, and genuine care for each other's wellbeing.",
-        wrong: "Healthy friendships encourage positive growth, mutual respect, and emotional support without pressure or competition."
-      }
+    ],
+    feedback: {
+      correct: "Yes. Integrity means consistency between values and actions, especially under pressure. This is a core marker of healthy masculinity.",
+      wrong: "Confidence and dominance can be performative. True strength is value-driven behavior even when it costs social approval."
     }
-  ];
+  },
+  {
+    id: 2,
+    title: "Emotional Intelligence",
+    text: "What is the most emotionally intelligent response when you feel intense anger but lack clarity?",
+    options: [
+      {
+        text: "Distract yourself until it fades",
+        emoji: "📺",
+        isCorrect: false
+      },
+      {
+        text: "Pause, identify the emotion, then choose action",
+        emoji: "🎭",
+        isCorrect: true
+      },
+      {
+        text: "Immediately confront the source",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      
+      {
+        text: "Suppress it to avoid conflict",
+        emoji: "🧱",
+        isCorrect: false
+      }
+    ],
+    feedback: {
+      correct: "Correct. Naming emotions before acting reduces impulsive behavior and improves decision-making.",
+      wrong: "Avoidance or impulsive reactions delay resolution. Emotional intelligence starts with awareness, not action."
+    }
+  },
+  {
+    id: 3,
+    title: "Power & Respect",
+    text: "Which situation shows misuse of power rather than leadership?",
+    options: [
+      {
+        text: "Using fear to ensure obedience",
+        emoji: "😨",
+        isCorrect: true
+      },
+      {
+        text: "Setting clear boundaries in a group",
+        emoji: "🚧",
+        isCorrect: false
+      },
+      {
+        text: "Listening before making decisions",
+        emoji: "👂",
+        isCorrect: false
+      },
+      
+      {
+        text: "Taking responsibility for outcomes",
+        emoji: "📦",
+        isCorrect: false
+      }
+    ],
+    feedback: {
+      correct: "Yes. Fear-based control creates compliance, not respect, and reflects insecurity rather than strength.",
+      wrong: "Leadership builds trust and accountability. Control through fear weakens relationships and character."
+    }
+  },
+  {
+    id: 4,
+    title: "Conflict Ethics",
+    text: "You are insulted publicly. Which response best preserves self-respect without escalating harm?",
+    options: [
+      {
+        text: "Respond with a sharper insult",
+        emoji: "🔥",
+        isCorrect: false
+      },
+      {
+        text: "Stay silent but resentful",
+        emoji: "🫥",
+        isCorrect: false
+      },
+      
+      {
+        text: "Gather friends to confront together",
+        emoji: "👥",
+        isCorrect: false
+      },
+      {
+        text: "Address it calmly later or disengage",
+        emoji: "🕊️",
+        isCorrect: true
+      },
+    ],
+    feedback: {
+      correct: "Exactly. Self-respect is maintained by control, not retaliation. Timing and tone matter.",
+      wrong: "Escalation or suppression both damage emotional health. Calm disengagement is a mature choice."
+    }
+  },
+  {
+    id: 5,
+    title: "Relationships & Autonomy",
+    text: "Which belief most strongly supports healthy relationships?",
+    options: [
+      {
+        text: "Love requires sacrifice of personal boundaries",
+        emoji: "🩸",
+        isCorrect: false
+      },
+      {
+        text: "Trust means constant access to each other",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        text: "Both people remain independent and accountable",
+        emoji: "⚖️",
+        isCorrect: true
+      },
+      {
+        text: "Jealousy proves emotional investment",
+        emoji: "👁️",
+        isCorrect: false
+      }
+    ],
+    feedback: {
+      correct: "Correct. Healthy relationships balance connection with independence and mutual respect.",
+      wrong: "Control, jealousy, and boundary loss are warning signs, not proof of care."
+    }
+  }
+];
+
 
   const handleChoice = (optionIndex) => {
     if (answered) return;

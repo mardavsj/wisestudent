@@ -18,129 +18,132 @@ const ViolenceStory = () => {
   const [showResult, setShowResult] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
 
-  const questions = [
-    {
-      id: 1,
-      text: 'Peer says: "Be a man, fight him." Should you?',
-      options: [
-        {
-          id: "a",
-          text: "Yes, prove you're tough",
-          emoji: "💪",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Fight back harder",
-          emoji: "👊",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "No, walk away",
-          emoji: "🚶",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What should you do if someone challenges you to fight?",
-      options: [
-        {
-          id: "b",
-          text: "Accept to save face",
-          emoji: "😤",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Report to an adult",
-          emoji: "📞",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Fight to win respect",
-          emoji: "🏆",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How can you respond to peer pressure to fight?",
-      options: [
-        {
-          id: "c",
-          text: "Say no and suggest talking instead",
-          emoji: "💬",
-          isCorrect: true
-        },
-        {
-          id: "a",
-          text: "Give in to pressure",
-          emoji: "😞",
-          isCorrect: false
-        },
-        
-        {
-          id: "b",
-          text: "Challenge them back",
-          emoji: "👊",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You see someone being bullied. What is the best action?",
-      options: [
-        {
-          id: "a",
-          text: "Join the bully",
-          emoji: "😈",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Ignore it",
-          emoji: "🙈",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Get help or intervene safely",
-          emoji: "🛡️",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Is violence ever the answer to solve a disagreement?",
-      options: [
-        {
-          id: "a",
-          text: "Yes, always",
-          emoji: "⚔️",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "No, communication is key",
-          emoji: "🗣️",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Only if you are angry",
-          emoji: "😡",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+ const questions = [
+  {
+    id: 1,
+    text: "A video of you being insulted is spreading online. Everyone is watching to see your reaction. What choice protects you long-term?",
+    options: [
+      {
+        id: "a",
+        text: "Publicly threaten the person to stop it",
+        emoji: "📢",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Respond calmly and document everything",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Confront them alone to settle it",
+        emoji: "🚪",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Your closest friend plans to bring a weapon to scare someone who humiliated him. What is the most responsible move?",
+    options: [
+      {
+        id: "a",
+        text: "Stay quiet to protect your friendship",
+        emoji: "🤐",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Go with him to make sure it doesn't get worse",
+        emoji: "⚠️",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Convince him to pause and involve a trusted adult",
+        emoji: "🛑",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: "Someone keeps provoking you verbally in public but never touches you. What response shows real control?",
+    options: [
+      {
+        id: "b",
+        text: "Stay composed and remove yourself",
+        emoji: "🧘",
+        isCorrect: true
+      },
+      {
+        id: "a",
+        text: "Insult them back so others respect you",
+        emoji: "🔥",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Shove them to end it quickly",
+        emoji: "👊",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "A crowd is encouraging a fight and recording it. What action weakens the cycle of violence?",
+    options: [
+      {
+        id: "a",
+        text: "Fight so the story ends on your terms",
+        emoji: "🎥",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Wait to see who throws the first punch",
+        emoji: "⏳",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Call for help and create a distraction",
+        emoji: "📞",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "After avoiding a fight, people call you weak. What response shows strength without violence?",
+    options: [
+      {
+        id: "a",
+        text: "Prove them wrong next time with force",
+        emoji: "💥",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Accept discomfort and stand by your choice",
+        emoji: "🛡️",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Spread rumors to regain status",
+        emoji: "🕵️",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

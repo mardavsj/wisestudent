@@ -31,62 +31,63 @@ const ReflexSmartDrink = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "You are thirsty after running. Pick the best drink!",
-      correctAnswer: "Water",
-      options: [
-        { text: "Water", isCorrect: true, emoji: "💧" },
-        { text: "Soda", isCorrect: false, emoji: "🥤" },
-        { text: "Beer", isCorrect: false, emoji: "🍺" },
-        { text: "Coffee", isCorrect: false, emoji: "☕" }
-      ]
-    },
-    {
-      id: 2,
-      question: "It's breakfast time. What goes with cereal?",
-      correctAnswer: "Milk",
-      options: [
-        { text: "Cola", isCorrect: false, emoji: "🥤" },
-        { text: "Milk", isCorrect: true, emoji: "🥛" },
-        { text: "Energy Drink", isCorrect: false, emoji: "⚡" },
-        { text: "Wine", isCorrect: false, emoji: "🍷" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You need Vitamin C. Pick the juice!",
-      correctAnswer: "Orange Juice",
-      options: [
-        { text: "Soda", isCorrect: false, emoji: "🥤" },
-        { text: "Tea", isCorrect: false, emoji: "🍵" },
-        { text: "Orange Juice", isCorrect: true, emoji: "🍊" },
-        { text: "Water", isCorrect: false, emoji: "💧" }
-      ]
-    },
-    {
-      id: 4,
-      question: "It's cold outside. Pick a warm, healthy drink!",
-      correctAnswer: "Herbal Tea",
-      options: [
-        { text: "Cold Soda", isCorrect: false, emoji: "🧊" },
-        { text: "Ice Water", isCorrect: false, emoji: "❄️" },
-        { text: "Beer", isCorrect: false, emoji: "🍺" },
-        { text: "Herbal Tea", isCorrect: true, emoji: "🍵" }
-      ]
-    },
-    {
-      id: 5,
-      question: "You are tired. Avoid the sugar crash!",
-      correctAnswer: "Water",
-      options: [
-        { text: "Energy Drink", isCorrect: false, emoji: "⚡" },
-        { text: "Sugary Soda", isCorrect: false, emoji: "🥤" },
-        { text: "Water", isCorrect: true, emoji: "💧" },
-        { text: "Candy Juice", isCorrect: false, emoji: "🍭" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You feel dizzy after standing up quickly. What helps most?",
+    correctAnswer: "Electrolyte Solution",
+    options: [
+      { text: "Cold Cola", isCorrect: false, emoji: "🥤" },
+      { text: "Electrolyte Solution", isCorrect: true, emoji: "⚡" },
+      { text: "Iced Coffee", isCorrect: false, emoji: "☕" },
+      { text: "Sweet Milkshake", isCorrect: false, emoji: "🍨" }
+    ]
+  },
+  {
+    id: 2,
+    question: "You’re studying late and want focus without jitter.",
+    correctAnswer: "Warm Turmeric Milk",
+    options: [
+      { text: "Strong Espresso", isCorrect: false, emoji: "☕" },
+      { text: "Sugary Juice", isCorrect: false, emoji: "🧃" },
+      { text: "Warm Turmeric Milk", isCorrect: true, emoji: "🥛" },
+      { text: "Energy Shot", isCorrect: false, emoji: "⚠️" }
+    ]
+  },
+  {
+    id: 3,
+    question: "Your stomach feels upset after street food.",
+    correctAnswer: "Jeera Water",
+    options: [
+      { text: "Fizzy Drink", isCorrect: false, emoji: "🫧" },
+      { text: "Chocolate Shake", isCorrect: false, emoji: "🍫" },
+      { text: "Cold Milk", isCorrect: false, emoji: "🥛" },
+      { text: "Jeera Water", isCorrect: true, emoji: "🌿" },
+    ]
+  },
+  {
+    id: 4,
+    question: "You’re playing in hot weather and sweating salt.",
+    correctAnswer: "Coconut Water",
+    options: [
+      { text: "Coconut Water", isCorrect: true, emoji: "🥥" },
+      { text: "Plain Juice", isCorrect: false, emoji: "🧃" },
+      { text: "Sweet Lassi", isCorrect: false, emoji: "🍶" },
+      { text: "Iced Tea", isCorrect: false, emoji: "🍵" }
+    ]
+  },
+  {
+    id: 5,
+    question: "You wake up with a dry throat and heavy mouth.",
+    correctAnswer: "Warm Lemon Water",
+    options: [
+      { text: "Cold Soda", isCorrect: false, emoji: "🥤" },
+      { text: "Warm Lemon Water", isCorrect: true, emoji: "🍋" },
+      { text: "Chocolate Drink", isCorrect: false, emoji: "🍫" },
+      { text: "Packaged Juice", isCorrect: false, emoji: "🧃" }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

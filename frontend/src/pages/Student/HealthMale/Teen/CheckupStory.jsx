@@ -19,127 +19,128 @@ const CheckupStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "You feel weak often and tired all the time. What should you do?",
-      options: [
-        {
-          id: "a",
-          text: "Ignore it and push through",
-          emoji: "💪",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Schedule a health checkup",
-          emoji: "🏥",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Just rest more",
-          emoji: "😴",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "At the doctor's office, you're nervous. How do you respond?",
-      options: [
-        {
-          id: "a",
-          text: "Be honest about symptoms",
-          emoji: "💬",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Downplay your concerns",
-          emoji: "😅",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Leave without talking",
-          emoji: "🚪",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Doctor recommends follow-up tests. What's the best approach?",
-      options: [
-        {
-          id: "a",
-          text: "Skip some tests",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Follow all recommendations",
-          emoji: "✅",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Ignore recommendations",
-          emoji: "❌",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How often should teens get routine checkups?",
-      options: [
-        {
-          id: "a",
-          text: "Only when sick",
-          emoji: "🤒",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Every few years",
-          emoji: "⏰",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Annually for preventive care",
-          emoji: "📅",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "After checkup, doctor gives health tips. What should you do?",
-      options: [
-        {
-          id: "a",
-          text: "Follow the advice immediately",
-          emoji: "💯",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Wait and see",
-          emoji: "⏳",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Ignore the suggestions",
-          emoji: "🙈",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You notice fatigue, poor focus, and frequent headaches for weeks. What is the smartest first step?",
+    options: [
+      {
+        id: "a",
+        text: "Increase caffeine and energy drinks",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Track symptoms and consult a doctor",
+        emoji: "📋",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Assume it's just school stress",
+        emoji: "📚",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "During the checkup, the doctor asks lifestyle questions. Why are these important?",
+    options: [
+      {
+        id: "a",
+        text: "Doctors are being nosy",
+        emoji: "👀",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Health is affected by habits and routines",
+        emoji: "🔄",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "To judge your discipline",
+        emoji: "⚖️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Test results show no serious illness, but early warning signs. What does this mean?",
+    options: [
+      {
+        id: "a",
+        text: "The visit was unnecessary",
+        emoji: "🙄",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "You can ignore changes for now",
+        emoji: "⏸️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Early action can prevent future problems",
+        emoji: "🛡️",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "The doctor suggests improving sleep, diet, and screen habits. Why start now?",
+    options: [
+      {
+        id: "a",
+        text: "Teen habits shape adult health",
+        emoji: "🌱",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Doctors exaggerate risks",
+        emoji: "📢",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Health matters only later in life",
+        emoji: "⌛",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "You feel better after following advice for a month. What is the healthiest mindset?",
+    options: [
+      {
+        id: "a",
+        text: "Stop caring since the problem is gone",
+        emoji: "🛑",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Maintain habits and self-awareness",
+        emoji: "🔁",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Only act when symptoms return",
+        emoji: "🔔",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

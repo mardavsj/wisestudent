@@ -20,128 +20,130 @@ const SweatControlStory = () => {
 
   const questions = [
     {
-      id: 1,
-      text: "You notice you are sweating more than usual. What is happening?",
-      options: [
-        {
-          id: "b",
-          text: "You are melting",
-          emoji: "🫠",
-          isCorrect: false
-        },
-        
-        {
-          id: "c",
-          text: "You drank too much water",
-          emoji: "💧",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Puberty hormones",
-          emoji: "🧬",
-          isCorrect: true
-        },
-      ]
+        id: 1,
+        text: "You start sweating heavily even when sitting calmly. Which system is mainly responsible?",
+        options: [
+            
+            {
+                id: "b",
+                text: "Digestive system",
+                emoji: "🍽️",
+                isCorrect: false
+            },
+            {
+                id: "a",
+                text: "Nervous system activating sweat glands",
+                emoji: "🧠",
+                isCorrect: true
+            },
+            {
+                id: "c",
+                text: "Respiratory system",
+                emoji: "🫁",
+                isCorrect: false
+            }
+        ]
     },
     {
-      id: 2,
-      text: "What is the difference between deodorant and antiperspirant?",
-      options: [
-        {
-          id: "c",
-          text: "They are the same",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Deodorant masks smell, antiperspirant stops sweat",
-          emoji: "🛡️",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "One is for boys, one for girls",
-          emoji: "🚻",
-          isCorrect: false
-        }
-      ]
+        id: 2,
+        text: "You sweat more during stress than exercise. Why?",
+        options: [
+            
+            {
+                id: "b",
+                text: "Your body is overheating",
+                emoji: "🔥",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "You are unhealthy",
+                emoji: "❌",
+                isCorrect: false
+            },
+            {
+                id: "a",
+                text: "Stress sweat comes from different glands",
+                emoji: "🧪",
+                isCorrect: true
+            },
+        ]
     },
     {
-      id: 3,
-      text: "When is the best time to apply antiperspirant?",
-      options: [
-        {
-          id: "b",
-          text: "While sweating",
-          emoji: "💦",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "On clean, dry skin",
-          emoji: "✨",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "After a workout without showering",
-          emoji: "🏋️",
-          isCorrect: false
-        }
-      ]
+        id: 3,
+        text: "Your sweat smells stronger during puberty. What causes this?",
+        options: [
+            {
+                id: "a",
+                text: "Bacteria breaking down sweat proteins",
+                emoji: "🦠",
+                isCorrect: true
+            },
+            {
+                id: "b",
+                text: "Too much water in the body",
+                emoji: "💧",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "Poor blood circulation",
+                emoji: "🩸",
+                isCorrect: false
+            }
+        ]
     },
     {
-      id: 4,
-      text: "Your clothes smell like sweat. What should you do?",
-      options: [
-          {
-          id: "a",
-          text: "Wash them",
-          emoji: "🧺",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Spray perfume on them",
-          emoji: "🌸",
-          isCorrect: false
-        },
-      
-        {
-          id: "b",
-          text: "Wear them again",
-          emoji: "👕",
-          isCorrect: false
-        }
-      ]
+        id: 4,
+        text: "You change shirts but still smell sweaty. Why?",
+        options: [
+            {
+                id: "a",
+                text: "Sweat bacteria live on skin, not clothes only",
+                emoji: "🧬",
+                isCorrect: true
+            },
+            {
+                id: "b",
+                text: "Your clothes are cursed",
+                emoji: "🧿",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "Fabric absorbs emotions",
+                emoji: "😵",
+                isCorrect: false
+            }
+        ]
     },
     {
-      id: 5,
-      text: "Is sweating bad for you?",
-      options: [
-        {
-          id: "b",
-          text: "Yes, always stop it",
-          emoji: "🛑",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Only if it smells",
-          emoji: "👃",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "No, it cools the body",
-          emoji: "❄️",
-          isCorrect: true
-        }
-      ]
+        id: 5,
+        text: "Which habit best supports long-term sweat control?",
+        options: [
+           
+            {
+                id: "b",
+                text: "Avoid moving your arms",
+                emoji: "🙅",
+                isCorrect: false
+            },
+            {
+                id: "c",
+                text: "Using perfume repeatedly",
+                emoji: "🌸",
+                isCorrect: false
+            },
+             {
+                id: "a",
+                text: "Daily hygiene + breathable fabrics",
+                emoji: "👕",
+                isCorrect: true
+            },
+        ]
     }
-  ];
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

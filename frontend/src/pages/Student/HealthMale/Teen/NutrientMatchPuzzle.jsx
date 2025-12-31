@@ -25,20 +25,20 @@ const NutrientMatchPuzzle = () => {
 
   // Nutrients (left side) - 5 items
   const nutrients = [
-    { id: 1, name: "Protein", emoji: "🥩", description: "Muscle builder" },
-    { id: 2, name: "Vitamin C", emoji: "🍊", description: "Immunity booster" },
-    { id: 3, name: "Iron", emoji: "🔗", description: "Oxygen carrier" },
-    { id: 4, name: "Calcium", emoji: "🦴", description: "Bone strengthener" },
-    { id: 5, name: "Carbohydrates", emoji: "🌾", description: "Energy provider" }
+    { id: 1, name: "Protein", emoji: "💪",  },
+    { id: 2, name: "Vitamin C", emoji: "©️" },
+    { id: 3, name: "Iron", emoji: "🔗" },
+    { id: 4, name: "Calcium", emoji: "🦴" },
+    { id: 5, name: "Carbohydrates", emoji: "🌾" }
   ];
 
   // Foods (right side) - 5 items
   const foods = [
-    { id: 3, name: "Spinach", emoji: "🍃", description: "Leafy green" },
-    { id: 5, name: "Rice", emoji: "🍚", description: "Grain staple" },
-    { id: 1, name: "Eggs", emoji: "🥚", description: "Complete protein" },
-    { id: 4, name: "Milk", emoji: "🥛", description: "Dairy product" },
-    { id: 2, name: "Orange", emoji: "🍊", description: "Citrus fruit" }
+    { id: 3, name: "Spinach", emoji: "🍃" },
+    { id: 5, name: "Rice", emoji: "🍚" },
+    { id: 1, name: "Eggs", emoji: "🥚" },
+    { id: 4, name: "Milk", emoji: "🥛" },
+    { id: 2, name: "Orange", emoji: "🍊" }
   ];
 
   // Correct matches

@@ -19,131 +19,131 @@ const QuizPubertyHealthTeen = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [showFeedback, setShowFeedback] = useState(false);
     const [gameFinished, setGameFinished] = useState(false);
-    const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+    const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
     const questions = [
-        {
-            id: 1,
-            text: "How much sleep do teens need?",
-            options: [
-                {
-                    id: "a",
-                    text: "5 hours",
-                    emoji: "🥱",
-                    isCorrect: false
-                },
-                {
-                    id: "b",
-                    text: "8-10 hours",
-                    emoji: "🛌",
-                    isCorrect: true
-                },
-                {
-                    id: "c",
-                    text: "15 hours",
-                    emoji: "😴",
-                    isCorrect: false
-                }
-            ]
-        },
-        {
-            id: 2,
-            text: "What helps reduce stress?",
-            options: [
-                {
-                    id: "a",
-                    text: "Staying up late",
-                    emoji: "🌙",
-                    isCorrect: false
-                },
-                {
-                    id: "b",
-                    text: "Eating junk food",
-                    emoji: "🍔",
-                    isCorrect: false
-                },
-                {
-                    id: "c",
-                    text: "Exercise",
-                    emoji: "🏃",
-                    isCorrect: true
-                }
-            ]
-        },
-        {
-            id: 3,
-            text: "Why is personal space important?",
-            options: [
-                {
-                    id: "a",
-                    text: "To hide secrets",
-                    emoji: "🤫",
-                    isCorrect: false
-                },
-                {
-                    id: "b",
-                    text: "To avoid chores",
-                    emoji: "🧹",
-                    isCorrect: false
-                },
-                {
-                    id: "c",
-                    text: "For privacy and comfort",
-                    emoji: "🚪",
-                    isCorrect: true
-                }
-            ]
-        },
-        {
-            id: 4,
-            text: "What is a healthy way to express anger?",
-            options: [
-                {
-                    id: "a",
-                    text: "Holding it in",
-                    emoji: "🤐",
-                    isCorrect: false
-                },
-                {
-                    id: "c",
-                    text: "Talking or writing",
-                    emoji: "📝",
-                    isCorrect: true
-                },
-                {
-                    id: "b",
-                    text: "Breaking things",
-                    emoji: "🔨",
-                    isCorrect: false
-                },
-                
-            ]
-        },
-        {
-            id: 5,
-            text: "Who can you talk to about puberty?",
-            options: [
-                {
-                    id: "a",
-                    text: "Strangers online",
-                    emoji: "💻",
-                    isCorrect: false
-                },
-                {
-                    id: "b",
-                    text: "No one",
-                    emoji: "😶",
-                    isCorrect: false
-                },
-                {
-                    id: "c",
-                    text: "Parents or Doctors",
-                    emoji: "👨‍⚕️",
-                    isCorrect: true
-                }
-            ]
-        }
-    ];
+  {
+    id: 1,
+    text: "Why does the teen body sometimes grow faster than coordination skills?",
+    options: [
+      {
+        id: "a",
+        text: "Muscles grow before the brain adapts",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Bones forget signals",
+        emoji: "🦴",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Nerves stop working",
+        emoji: "⚡",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Why do teens often feel hungry more frequently during puberty?",
+    options: [
+      {
+        id: "a",
+        text: "Growth increases energy demand",
+        emoji: "🔋",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Hormones cause boredom eating",
+        emoji: "🍿",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Stomach size increases suddenly",
+        emoji: "📦",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "What is the main reason emotions feel stronger during puberty?",
+    options: [
+      {
+        id: "a",
+        text: "Emotional brain develops before control center",
+        emoji: "🧩",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Teens exaggerate feelings",
+        emoji: "🎭",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Hormones remove self-control",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Why is skipping meals harmful during puberty?",
+    options: [
+      {
+        id: "a",
+        text: "It can slow growth and affect focus",
+        emoji: "📉",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "It only affects mood",
+        emoji: "😠",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "It causes instant weight gain",
+        emoji: "⚖️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "What does it mean if puberty changes happen earlier or later than friends?",
+    options: [
+      {
+        id: "a",
+        text: "Everyone’s body follows its own timeline",
+        emoji: "⏳",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Something is wrong",
+        emoji: "❌",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Growth will stop early",
+        emoji: "🛑",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
     const handleAnswer = (optionId) => {
         if (showFeedback || gameFinished) return;
@@ -199,6 +199,7 @@ const QuizPubertyHealthTeen = () => {
             totalCoins={totalCoins}
             totalXp={totalXp}
             flashPoints={flashPoints}
+            showAnswerConfetti={showAnswerConfetti}
         >
             <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

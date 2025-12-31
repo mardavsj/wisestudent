@@ -18,122 +18,126 @@ const DoctorFearDebate = () => {
   const totalXp = 10;
 
   const questions = [
-    {
-      id: 1,
-      text: "Is visiting doctors scary or safe?",
-      options: [
-        {
-          id: "a",
-          text: "Scary",
-          emoji: "😱"
-        },
-        {
-          id: "b",
-          text: "Safe",
-          emoji: "🛡️"
-        },
-        {
-          id: "c",
-          text: "Only for emergencies",
-          emoji: "🚑"
-        }
-      ],
-      correctAnswer: "b",
-      explanation: "While it's normal to feel nervous about doctor visits, healthcare professionals are trained to provide safe, expert care. Doctors help prevent and treat health issues, making visits beneficial for your well-being."
-    },
-    {
-      id: 2,
-      text: "What should teens know about medical procedures?",
-      options: [
-        {
-          id: "a",
-          text: "Procedures are designed to help",
-          emoji: "💊"
-        },
-        {
-          id: "b",
-          text: "Avoid all procedures",
-          emoji: "❌"
-        },
-        {
-          id: "c",
-          text: "All procedures are dangerous",
-          emoji: "⚠️"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Some medical procedures are necessary for good health. Medical procedures are designed to improve health and save lives, and most are safe when performed by qualified professionals."
-    },
-    {
-      id: 3,
-      text: "How should teens prepare for doctor visits?",
-      options: [
-        {
-          id: "a",
-          text: "Avoid going altogether",
-          emoji: "🏃"
-        },
-        {
-          id: "b",
-          text: "Research and ask questions",
-          emoji: "📚"
-        },
-        {
-          id: "c",
-          text: "Go without preparation",
-          emoji: "🤷"
-        }
-      ],
-      correctAnswer: "b",
-      explanation: "Being informed helps reduce anxiety about healthcare. Researching and preparing questions can make visits more productive, but going in without any preparation can still be valuable."
-    },
-    {
-      id: 4,
-      text: "What role do doctors play in teen health?",
-      options: [
-        {
-          id: "a",
-          text: "Partners in health journey",
-          emoji: "🤝"
-        },
-        {
-          id: "b",
-          text: "Only for sick people",
-          emoji: "🤒"
-        },
-        {
-          id: "c",
-          text: "Authority figures to fear",
-          emoji: "👨‍⚕️"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Doctors guide teens through health decisions and are partners in your health journey. They help prevent illness, not just treat it, and are supportive allies in maintaining your well-being."
-    },
-    {
-      id: 5,
-      text: "How can teens overcome fear of doctors?",
-      options: [
-        {
-          id: "a",
-          text: "Never go to doctors",
-          emoji: "🙈"
-        },
-        {
-          id: "b",
-          text: "Wait until emergency",
-          emoji: "🚨"
-        },
-        {
-          id: "c",
-          text: "Start with regular checkups",
-          emoji: "📅"
-        }
-      ],
-      correctAnswer: "c",
-      explanation: "Familiarity with healthcare reduces fear over time. Starting with regular checkups helps build comfort with healthcare providers and makes future visits less intimidating."
-    }
-  ];
+  {
+    id: 1,
+    text: "Why do many people feel fear before visiting a doctor?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Doctors are unsafe",
+        emoji: "🚫"
+      },
+      {
+        id: "a",
+        text: "Fear of diagnosis and bad news",
+        emoji: "😱"
+      },
+      {
+        id: "c",
+        text: "Hospitals always cause pain",
+        emoji: "🏥"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Doctor fear is often psychological, linked to fear of uncertainty or bad news—not because doctors are unsafe. Understanding this helps reduce anxiety and encourages timely care."
+  },
+  {
+    id: 2,
+    text: "Which situation shows unhealthy doctor avoidance?",
+    options: [
+      {
+        id: "a",
+        text: "Skipping visits despite ongoing symptoms",
+        emoji: "⏳"
+      },
+      {
+        id: "b",
+        text: "Asking questions before treatment",
+        emoji: "❓"
+      },
+      {
+        id: "c",
+        text: "Taking time to choose a trusted doctor",
+        emoji: "🤝"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Avoiding doctors while symptoms continue can worsen health outcomes. Asking questions and choosing trusted professionals are healthy behaviors, not fear."
+  },
+  {
+    id: 3,
+    text: "How does delaying doctor visits impact long-term health?",
+    options: [
+      
+      {
+        id: "b",
+        text: "The body always heals itself",
+        emoji: "✨"
+      },
+      {
+        id: "c",
+        text: "Doctors prefer late visits",
+        emoji: "🙅"
+      },
+      {
+        id: "a",
+        text: "Issues may become harder to treat",
+        emoji: "📉"
+      },
+    ],
+    correctAnswer: "a",
+    explanation: "Early medical care often prevents complications. Delays can allow manageable conditions to progress into serious health problems."
+  },
+  {
+    id: 4,
+    text: "What mindset helps reduce fear during medical appointments?",
+    options: [
+     
+      {
+        id: "b",
+        text: "Assuming worst outcomes",
+        emoji: "😰"
+      },
+       {
+        id: "a",
+        text: "Viewing doctors as collaborators",
+        emoji: "🤝"
+      },
+      {
+        id: "c",
+        text: "Staying completely silent",
+        emoji: "🤐"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Seeing doctors as partners encourages open communication, builds trust, and reduces fear. Healthcare works best when patients participate actively."
+  },
+  {
+    id: 5,
+    text: "Which action best transforms fear into confidence about healthcare?",
+    options: [
+      {
+        id: "a",
+        text: "Learning how the body works",
+        emoji: "🧬"
+      },
+      {
+        id: "b",
+        text: "Relying only on online advice",
+        emoji: "🌐"
+      },
+      {
+        id: "c",
+        text: "Avoiding medical discussions",
+        emoji: "🙈"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Health knowledge empowers patients. Understanding the body and medical processes reduces fear, improves decision-making, and builds confidence in seeking care."
+  }
+];
+
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || showFeedback) return;
@@ -209,12 +213,7 @@ const DoctorFearDebate = () => {
               const showCorrect = showFeedback && isCorrect;
               const showIncorrect = showFeedback && isSelected && !isCorrect;
               
-              // Add emojis for each option like in the reference game
-              const optionEmojis = {
-                a: "✅",
-                b: "❌",
-                c: "⚠️"
-              };
+
               
               return (
                 <button
@@ -226,7 +225,7 @@ const DoctorFearDebate = () => {
                   }`}
                 >
                   <div className="flex items-center">
-                    <div className="text-3xl mr-4">{optionEmojis[option.id] || '❓'}</div>
+                    <div className="text-3xl mr-4">{option.emoji}</div>
                     <div>
                       <h3 className="font-bold text-xl mb-1">{option.text}</h3>
                     </div>

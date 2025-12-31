@@ -21,165 +21,88 @@ const HygieneProBadge = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      title: "Daily Routine",
-      text: "What is essential every day?",
-      options: [
-        {
-          text: "Perfume only",
-          emoji: "🌸",
-          isCorrect: false
-        },
-        {
-          text: "Changing shoes",
-          emoji: "👟",
-          isCorrect: false
-        },
-        {
-          text: "Shower & Brush",
-          emoji: "🚿",
-          isCorrect: true
-        },
-        {
-          text: "Wearing makeup",
-          emoji: "💄",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Correct! Daily showering and brushing are non-negotiable.",
-        wrong: "Perfume or shoes aren't enough. You need to clean your body."
-      }
-    },
-    {
-      id: 2,
-      title: "Sweat Control",
-      text: "How do you handle puberty sweat?",
-      options: [
-         {
-          text: "Deodorant & Wash",
-          emoji: "🧴",
-          isCorrect: true
-        },
-        {
-          text: "Ignore it",
-          emoji: "👃",
-          isCorrect: false
-        },
-        {
-          text: "Wear thick clothes",
-          emoji: "🧥",
-          isCorrect: false
-        },
-       
-        {
-          text: "Use cologne",
-          emoji: "👃",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Yes! Deodorant and washing keep odor away.",
-        wrong: "Ignoring sweat leads to bad odor and bacteria."
-      }
-    },
-    {
-      id: 3,
-      title: "Skin Care",
-      text: "How do you treat acne?",
-      options: [
-        {
-          text: "Scrub hard",
-          emoji: "🧽",
-          isCorrect: false
-        },
-        {
-          text: "Pop pimples",
-          emoji: "✋",
-          isCorrect: false
-        },
-        
-        {
-          text: "Cover with makeup",
-          emoji: "💄",
-          isCorrect: false
-        },
-        {
-          text: "Gentle Wash",
-          emoji: "🛁",
-          isCorrect: true
-        },
-      ],
-      feedback: {
-        correct: "Exactly! Gentle washing prevents irritation.",
-        wrong: "Scrubbing or popping makes acne worse."
-      }
-    },
-    {
-      id: 4,
-      title: "Oral Health",
-      text: "How often should you brush?",
-      options: [
-        {
-          text: "Once a week",
-          emoji: "📅",
-          isCorrect: false
-        },
-        {
-          text: "Twice a day",
-          emoji: "🦷",
-          isCorrect: true
-        },
-        {
-          text: "Only mornings",
-          emoji: "🌅",
-          isCorrect: false
-        },
-        
-        {
-          text: "After every meal",
-          emoji: "🍽️",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Right! Morning and night for a healthy smile.",
-        wrong: "Once a day isn't enough to fight cavities."
-      }
-    },
-    {
-      id: 5,
-      title: "Confidence",
-      text: "Good hygiene leads to...",
-      options: [
-        {
-          text: "Tiredness",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          text: "Boredom",
-          emoji: "🥱",
-          isCorrect: false
-        },
-        {
-          text: "Confidence",
-          emoji: "😎",
-          isCorrect: true
-        },
-        {
-          text: "Overconfidence",
-          emoji: "😏",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "You got it! Looking good makes you feel good.",
-        wrong: "Hygiene boosts your self-esteem!"
-      }
+  {
+    id: 1,
+    title: "Personal Items Rule",
+    text: "Which item should NEVER be shared?",
+    options: [
+      { text: "Story Book", emoji: "📘", isCorrect: false },
+      { text: "Water Bottle", emoji: "🥤", isCorrect: true },
+      { text: "Board Game", emoji: "🎲", isCorrect: false },
+      { text: "School Bag", emoji: "🎒", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Correct! Sharing bottles can spread germs.",
+      wrong: "Some items carry saliva and germs."
     }
-  ];
+  },
+
+  {
+    id: 2,
+    title: "Sneezing Sense",
+    text: "You feel a sneeze coming in class. Best action?",
+    options: [
+      { text: "Sneeze openly", emoji: "😮", isCorrect: false },
+      { text: "Hold it forcefully", emoji: "😖", isCorrect: false },
+      { text: "Sneeze into hands", emoji: "✋", isCorrect: false },
+      { text: "Turn away & cover elbow", emoji: "🤧", isCorrect: true },
+    ],
+    feedback: {
+      correct: "Yes! Elbow covering blocks germ spread.",
+      wrong: "Sneezes can travel far if uncovered."
+    }
+  },
+
+  {
+    id: 3,
+    title: "Food Safety",
+    text: "Your lunch smells strange. What should you do?",
+    options: [
+      { text: "Throw it away", emoji: "🗑️", isCorrect: true },
+      { text: "Eat fast", emoji: "😋", isCorrect: false },
+      { text: "Share with friend", emoji: "👫", isCorrect: false },
+      { text: "Just taste a little", emoji: "🍱", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Correct! Spoiled food can make you sick.",
+      wrong: "Bad-smelling food is unsafe to eat."
+    }
+  },
+
+  {
+    id: 4,
+    title: "Screen Hygiene",
+    text: "After using a shared tablet, what should you do?",
+    options: [
+      { text: "Nothing", emoji: "😌", isCorrect: false },
+      { text: "Wipe shirt", emoji: "👕", isCorrect: false },
+      { text: "Clean hands", emoji: "🧼", isCorrect: true },
+      { text: "Use again later", emoji: "📱", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Right! Screens carry many germs.",
+      wrong: "Shared screens need hygiene care."
+    }
+  },
+
+  {
+    id: 5,
+    title: "Wound Care",
+    text: "You get a small cut while playing. First step?",
+    options: [
+      { text: "Ignore it", emoji: "😎", isCorrect: false },
+      { text: "Wash & cover", emoji: "🩹", isCorrect: true },
+      { text: "Blow on it", emoji: "💨", isCorrect: false },
+      { text: "Scratch it", emoji: "😬", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Great! Clean cuts heal faster.",
+      wrong: "Open cuts can get infected."
+    }
+  }
+];
+
+
 
   const handleChoice = (optionIndex) => {
     if (answered) return;

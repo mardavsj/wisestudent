@@ -28,62 +28,65 @@ const ReflexMasculinityCheck = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "A friend is sad. Healthy response?",
-      correctAnswer: "Listen & Support",
-      options: [
-        { text: "Mock him", isCorrect: false, emoji: "😂" },
-        { text: "Listen & Support", isCorrect: true, emoji: "👂" },
-        { text: "Ignore him", isCorrect: false, emoji: "🙈" },
-        { text: "Tell him to man up", isCorrect: false, emoji: "😠" }
-      ]
-    },
-    {
-      id: 2,
-      question: "You feel overwhelmed. Best action?",
-      correctAnswer: "Talk to someone",
-      options: [
-        { text: "Punch a wall", isCorrect: false, emoji: "👊" },
-        { text: "Bottle it up", isCorrect: false, emoji: "🤐" },
-        { text: "Talk to someone", isCorrect: true, emoji: "🗣️" },
-        { text: "Drink alcohol", isCorrect: false, emoji: "🍺" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Someone insults you. Strongest reaction?",
-      correctAnswer: "Stay calm & walk away",
-      options: [
-        { text: "Fight back", isCorrect: false, emoji: "🥊" },
-        { text: "Stay calm & walk away", isCorrect: true, emoji: "🚶" },
-        { text: "Insult them back", isCorrect: false, emoji: "🤬" },
-        { text: "Cry publicly", isCorrect: false, emoji: "😭" }
-      ]
-    },
-    {
-      id: 4,
-      question: "You made a mistake. What to do?",
-      correctAnswer: "Admit & Apologize",
-      options: [
-        { text: "Admit & Apologize", isCorrect: true, emoji: "🙇" },
-        { text: "Blame others", isCorrect: false, emoji: "👉" },
-        { text: "Hide it", isCorrect: false, emoji: "🤫" },
-        { text: "Lie about it", isCorrect: false, emoji: "🤥" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What shows true strength?",
-      correctAnswer: "Kindness & Respect",
-      options: [
-        { text: "Big muscles", isCorrect: false, emoji: "💪" },
-        { text: "Being loud", isCorrect: false, emoji: "📢" },
-        { text: "Controlling others", isCorrect: false, emoji: "🎮" },
-        { text: "Kindness & Respect", isCorrect: true, emoji: "❤️" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "Someone asks you for emotional help. What’s the best reflex?",
+    correctAnswer: "Take them seriously",
+    options: [
+      { text: "Change the topic", isCorrect: false, emoji: "🔄" },
+      { text: "Laugh it off", isCorrect: false, emoji: "😆" },
+      { text: "Take them seriously", isCorrect: true, emoji: "🎧" },
+      { text: "Tell them to handle it alone", isCorrect: false, emoji: "🚫" }
+    ]
+  },
+  {
+    id: 2,
+    question: "You feel pressure to act tough around friends.",
+    correctAnswer: "Be authentic",
+    options: [
+      { text: "Fake confidence", isCorrect: false, emoji: "🎭" },
+      { text: "Be authentic", isCorrect: true, emoji: "🧭" },
+      { text: "Compete aggressively", isCorrect: false, emoji: "🏆" },
+      { text: "Mock others", isCorrect: false, emoji: "😏" }
+    ]
+  },
+  {
+    id: 3,
+    question: "A friend succeeds where you failed. Healthy reaction?",
+    correctAnswer: "Congratulate & reflect",
+    options: [
+      { text: "Feel threatened", isCorrect: false, emoji: "😤" },
+      { text: "Congratulate & reflect", isCorrect: true, emoji: "👏" },
+      { text: "Put them down", isCorrect: false, emoji: "👇" },
+      
+      { text: "Avoid them", isCorrect: false, emoji: "🚪" }
+    ]
+  },
+  {
+    id: 4,
+    question: "Someone says masculinity means dominance. Your reflex?",
+    correctAnswer: "Disagree respectfully",
+    options: [
+      { text: "Agree silently", isCorrect: false, emoji: "😶" },
+      { text: "Argue aggressively", isCorrect: false, emoji: "🔥" },
+     
+      { text: "Mock their opinion", isCorrect: false, emoji: "😜" },
+       { text: "Disagree respectfully", isCorrect: true, emoji: "🗣️" },
+    ]
+  },
+  {
+    id: 5,
+    question: "You’re unsure about something important. Best move?",
+    correctAnswer: "Ask questions",
+    options: [
+      { text: "Pretend to know everything", isCorrect: false, emoji: "🎭" },
+      { text: "Stay silent", isCorrect: false, emoji: "🔇" },
+      { text: "Ask questions", isCorrect: true, emoji: "❓" },
+      { text: "Let others decide for you", isCorrect: false, emoji: "🧍" }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

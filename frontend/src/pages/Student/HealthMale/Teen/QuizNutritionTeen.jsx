@@ -19,132 +19,135 @@ const QuizNutritionTeen = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Which nutrient helps build muscles?",
-      options: [
-        {
-          id: "a",
-          text: "Protein",
-          emoji: "🥩",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Sugar",
-          emoji: "🍬",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Fat",
-          emoji: "🥑",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What gives you long-lasting energy?",
-      options: [
-        {
-          id: "a",
-          text: "Soda",
-          emoji: "🥤",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Complex Carbs (Oats, Rice)",
-          emoji: "🌾",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Candy",
-          emoji: "🍭",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Why is Calcium important?",
-      options: [
-         {
-          id: "c",
-          text: "Strong bones and teeth",
-          emoji: "🦴",
-          isCorrect: true
-        },
-        {
-          id: "a",
-          text: "For better eyesight",
-          emoji: "👀",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "To stop sweating",
-          emoji: "💦",
-          isCorrect: false
-        },
-       
-      ]
-    },
-    {
-      id: 4,
-      text: "Which food is a 'Junk Food'?",
-      options: [
-        {
-          id: "a",
-          text: "Grilled Fish",
-          emoji: "🐟",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Banana",
-          emoji: "🍌",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Deep Fried Chips",
-          emoji: "🍟",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What happens if you skip meals?",
-      options: [
-        {
-          id: "c",
-          text: "You get tired and lose focus",
-          emoji: "😫",
-          isCorrect: true
-        },
-        {
-          id: "a",
-          text: "You get stronger",
-          emoji: "💪",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Nothing",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Why should you eat different colored foods in a day?",
+    options: [
+      {
+        id: "a",
+        text: "They taste better together",
+        emoji: "😋",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Each color gives different nutrients",
+        emoji: "🌈",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "To make the plate look big",
+        emoji: "🍽️",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 2,
+    text: "What is the main job of fiber in food?",
+    options: [
+      {
+        id: "a",
+        text: "Helps digestion and gut health",
+        emoji: "🦠",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Makes food sweet",
+        emoji: "🍯",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Gives instant energy",
+        emoji: "⚡",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 3,
+    text: "Why is eating too fast not healthy?",
+    options: [
+      {
+        id: "a",
+        text: "Body can’t feel full in time",
+        emoji: "⏱️",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Food disappears",
+        emoji: "🫥",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "It reduces taste",
+        emoji: "👅",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 4,
+    text: "Which habit helps your body absorb nutrients better?",
+    options: [
+      {
+        id: "a",
+        text: "Skipping meals",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Eating while distracted",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Eating mindfully and slowly",
+        emoji: "🧘",
+        isCorrect: true
+      }
+    ]
+  },
+
+  {
+    id: 5,
+    text: "Why is homemade food usually healthier?",
+    options: [
+      {
+        id: "a",
+        text: "Less hidden salt and sugar",
+        emoji: "🧂",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "It is always spicy",
+        emoji: "🌶️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "It takes more time",
+        emoji: "⏰",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;
@@ -200,6 +203,7 @@ const QuizNutritionTeen = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

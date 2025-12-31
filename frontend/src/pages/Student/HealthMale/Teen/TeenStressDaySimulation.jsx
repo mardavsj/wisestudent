@@ -17,157 +17,58 @@ const TeenStressDaySimulation = () => {
   const totalXp = 10;
 
   const scenarios = [
-    {
-      id: 1,
-      text: "Teen has exams + sports practice",
-      options: [
-        {
-          id: "a",
-          text: "Panic",
-          emoji: "😰",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Relax + Plan",
-          emoji: "📅",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Skip everything",
-          emoji: "🏃",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Ask for help",
-          emoji: "🤝",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "During study session, feeling overwhelmed. What do you do?",
-      options: [
-        {
-          id: "a",
-          text: "Take a 10-minute break",
-          emoji: "⏸️",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Push through without break",
-          emoji: "💪",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Give up studying",
-          emoji: "😞",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Ask for help",
-          emoji: "🤝",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "After sports, feeling tired and stressed. Best recovery?",
-      options: [
-        {
-          id: "a",
-          text: "More intense workout",
-          emoji: "🏋️",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Skip meals and rest",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Light exercise + healthy snack",
-          emoji: "🥗",
-          isCorrect: true
-        },
-        {
-          id: "d",
-          text: "Sleep for 2 hours",
-          emoji: "💤",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Late night, can't sleep because of worry. What to do?",
-      options: [
-        {
-          id: "a",
-          text: "Check social media",
-          emoji: "📱",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Read or listen to music",
-          emoji: "🎧",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Stare at ceiling",
-          emoji: "👀",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Write worries in journal",
-          emoji: "📝",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Friend cancels plans last minute. Reaction?",
-      options: [
-        {
-          id: "a",
-          text: "Get angry",
-          emoji: "😡",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Feel rejected",
-          emoji: "😢",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Understand and reschedule",
-          emoji: "🤝",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Communicate and plan ahead",
-          emoji: "💬",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Teen has exams and sports practice in the same day. How to manage?",
+    options: [
+      { id: "a", text: "Panic and do everything at once", emoji: "😰", isCorrect: false },
+      { id: "b", text: "Relax, prioritize tasks, and plan schedule", emoji: "📅", isCorrect: true },
+      { id: "c", text: "Skip sports and focus only on exams", emoji: "🏃", isCorrect: false },
+      { id: "d", text: "Ask teacher or coach for guidance", emoji: "🤝", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Feeling overwhelmed during study session. Best approach?",
+    options: [
+      { id: "a", text: "Take a 10-minute mindfulness break", emoji: "🧘", isCorrect: true },
+      { id: "b", text: "Push through without pause", emoji: "💪", isCorrect: false },
+      { id: "c", text: "Quit studying for the day", emoji: "😞", isCorrect: false },
+      { id: "d", text: "Distract yourself with phone", emoji: "📱", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "After sports practice, energy is low and stress is high. What helps recover?",
+    options: [
+      { id: "a", text: "Do more intense exercise", emoji: "🏋️", isCorrect: false },
+      { id: "b", text: "Skip meals and sleep", emoji: "😴", isCorrect: false },
+      { id: "c", text: "Do light stretching + have a healthy snack", emoji: "🥗", isCorrect: true },
+      { id: "d", text: "Take a nap for 2 hours immediately", emoji: "💤", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "Can't sleep at night due to worries. Best way to calm mind?",
+    options: [
+      { id: "b", text: "Read a book or listen to calming music", emoji: "🎧", isCorrect: true },
+      { id: "a", text: "Scroll social media endlessly", emoji: "📱", isCorrect: false },
+      { id: "c", text: "Stare at ceiling and overthink", emoji: "👀", isCorrect: false },
+      { id: "d", text: "Write worries in a journal to organize thoughts", emoji: "📝", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "Friend cancels plans last minute. Healthy response?",
+    options: [
+      { id: "a", text: "Get angry and lash out", emoji: "😡", isCorrect: false },
+      { id: "b", text: "Feel rejected and stay upset", emoji: "😢", isCorrect: false },
+      { id: "c", text: "Accept and reschedule without communication", emoji: "🤝", isCorrect: false },
+      { id: "d", text: "Communicate calmly and plan an alternative", emoji: "💬", isCorrect: true }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const selectedOption = scenarios[currentScenario].options.find(opt => opt.id === optionId);

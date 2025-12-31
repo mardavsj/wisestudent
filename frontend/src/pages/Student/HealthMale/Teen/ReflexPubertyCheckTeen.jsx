@@ -28,62 +28,62 @@ const ReflexPubertyCheckTeen = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "You feel a mood swing coming. What's the best reaction?",
-      correctAnswer: "Breathe",
-      options: [
-        { text: "Breathe", isCorrect: true, emoji: "🧘" },
-        { text: "Scream", isCorrect: false, emoji: "🤬" },
-        { text: "Hit Wall", isCorrect: false, emoji: "👊" },
-        { text: "Break Stuff", isCorrect: false, emoji: "💥" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Your voice cracks in class. What do you do?",
-      correctAnswer: "Laugh it off",
-      options: [
-        { text: "Cry", isCorrect: false, emoji: "😭" },
-        { text: "Hide", isCorrect: false, emoji: "🙈" },
-        { text: "Laugh it off", isCorrect: true, emoji: "😂" },
-        { text: "Run Away", isCorrect: false, emoji: "🏃" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You have a new pimple. Don't touch it!",
-      correctAnswer: "Wash Face",
-      options: [
-        { text: "Pop It", isCorrect: false, emoji: "🤏" },
-        { text: "Wash Face", isCorrect: true, emoji: "🧼" },
-        { text: "Cover with Mud", isCorrect: false, emoji: "💩" },
-        { text: "Scratch It", isCorrect: false, emoji: "💅" }
-      ]
-    },
-    {
-      id: 4,
-      question: "You are growing fast. You feel clumsy.",
-      correctAnswer: "Be Patient",
-      options: [
-        { text: "Stop Moving", isCorrect: false, emoji: "🛑" },
-        { text: "Get Angry", isCorrect: false, emoji: "😡" },
-        { text: "Be Patient", isCorrect: true, emoji: "⏳" },
-        { text: "Give Up Sports", isCorrect: false, emoji: "🏳️" }
-      ]
-    },
-    {
-      id: 5,
-      question: "You need to buy deodorant. Don't be shy!",
-      correctAnswer: "Buy It",
-      options: [
-      { text: "Buy It", isCorrect: true, emoji: "🛒" },   
-        { text: "Steal It", isCorrect: false, emoji: "🦹" },
-        { text: "Smell Bad", isCorrect: false, emoji: "🤢" },
-        { text: "Ask Stranger", isCorrect: false, emoji: "❓" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You suddenly feel extremely hungry late at night. What’s the smart reflex?",
+    correctAnswer: "Healthy snack",
+    options: [
+      { text: "Ignore it completely", isCorrect: false, emoji: "🚫" },
+      { text: "Eat junk nonstop", isCorrect: false, emoji: "🍔" },
+      { text: "Drink soda", isCorrect: false, emoji: "🥤" },
+      { text: "Healthy snack", isCorrect: true, emoji: "🥬" },
+    ]
+  },
+  {
+    id: 2,
+    question: "Your sleep schedule is messed up during puberty. Best quick fix?",
+    correctAnswer: "Set sleep routine",
+    options: [
+      { text: "Scroll phone all night", isCorrect: false, emoji: "📱" },
+      { text: "Set sleep routine", isCorrect: true, emoji: "⏰" },
+      { text: "Skip sleep", isCorrect: false, emoji: "😵" },
+      { text: "Drink coffee", isCorrect: false, emoji: "☕" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You feel suddenly self-conscious about your body in public. Reflex response?",
+    correctAnswer: "Stay confident",
+    options: [
+      { text: "Hide at home", isCorrect: false, emoji: "🏠" },
+      { text: "Compare with others", isCorrect: false, emoji: "📊" },
+      { text: "Stay confident", isCorrect: true, emoji: "💪" },
+      { text: "Blame yourself", isCorrect: false, emoji: "❌" }
+    ]
+  },
+  {
+    id: 4,
+    question: "You feel tired more often than before. What should you react with?",
+    correctAnswer: "Rest and fuel body",
+    options: [
+      { text: "Rest and fuel body", isCorrect: true, emoji: "🛌" },
+      { text: "Push harder always", isCorrect: false, emoji: "🔥" },
+      { text: "Skip meals", isCorrect: false, emoji: "🍽️" },
+      { text: "Energy drinks", isCorrect: false, emoji: "⚡" }
+    ]
+  },
+  {
+    id: 5,
+    question: "Your interests suddenly change during puberty. Best reflex mindset?",
+    correctAnswer: "Explore safely",
+    options: [
+      { text: "Explore safely", isCorrect: true, emoji: "🧭" },
+      { text: "Force old habits", isCorrect: false, emoji: "🔒" },
+      { text: "Follow peers blindly", isCorrect: false, emoji: "👥" },
+      { text: "Quit everything", isCorrect: false, emoji: "🏳️" }
+    ]
+  }
+];
 
   // Update ref when currentRound changes
   useEffect(() => {

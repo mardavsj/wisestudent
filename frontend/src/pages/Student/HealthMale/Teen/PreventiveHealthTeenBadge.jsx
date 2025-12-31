@@ -18,144 +18,64 @@ const PreventiveHealthTeenBadge = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Health Checkups",
-      question: "Why should you schedule regular health checkups?",
-      options: [
-        {
-          text: "Only when you are very sick",
-          emoji: "🤒",
-          isCorrect: false
-        },
-        {
-          text: "To catch health issues early",
-          emoji: "📅",
-          isCorrect: true
-        },
-        {
-          text: "To waste time",
-          emoji: "⌚",
-          isCorrect: false
-        },
-        {
-          text: "Doctors are scary",
-          emoji: "😱",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Vaccinations",
-      question: "What is the purpose of vaccinations?",
-      options: [
-        {
-          text: "To make you sick",
-          emoji: "🤢",
-          isCorrect: false
-        },
-        {
-          text: "They are not important",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        {
-          text: "To protect you from serious diseases",
-          emoji: "💉",
-          isCorrect: true
-        },
-        {
-          text: "Only mainly for babies",
-          emoji: "👶",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Exercise Routine",
-      question: "How does exercise help preventive health?",
-      options: [
-        {
-          text: "It makes you tired",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          text: "It's only for athletes",
-          emoji: "🏆",
-          isCorrect: false
-        },
-        {
-          text: "It causes injuries",
-          emoji: "🤕",
-          isCorrect: false
-        },
-        {
-          text: "It strengthens your body and immunity",
-          emoji: "💪",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Nutrition",
-      question: "What role does a balanced diet play?",
-      options: [
-        {
-          text: "It prevents lifestyle diseases",
-          emoji: "🥗",
-          isCorrect: true
-        },
-        {
-          text: "It tastes bad",
-          emoji: "🥦",
-          isCorrect: false
-        },
-        {
-          text: "You can eat whatever you want",
-          emoji: "🍔",
-          isCorrect: false
-        },
-        {
-          text: "It's too expensive",
-          emoji: "💰",
-          isCorrect: false
-        },
-        
-      ]
-    },
-    {
-      id: 5,
-      title: "Mental Health",
-      question: "Why is mental health part of preventive care?",
-      options: [
-        {
-          text: "It doesn't affect the body",
-          emoji: "🧠",
-          isCorrect: false
-        },
-        {
-          text: "It's all in your head",
-          emoji: "💭",
-          isCorrect: false
-        },
-        {
-          text: "You should ignore feelings",
-          emoji: "😐",
-          isCorrect: false
-        },
-        {
-          text: "Mental well-being affects physical health",
-          emoji: "🧘",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+ const challenges = [
+  {
+    id: 1,
+    title: "Proactive Health",
+    question: "Why is it recommended for teens to get annual checkups even when healthy?",
+    options: [
+      { text: "Only if sick", emoji: "🤒", isCorrect: false },
+      { text: "Detect hidden health risks early", emoji: "🔍", isCorrect: true },
+      { text: "Doctors want extra visits", emoji: "💰", isCorrect: false },
+      { text: "Peer pressure", emoji: "👥", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    title: "Immunity Boost",
+    question: "How do vaccines contribute to long-term preventive health?",
+    options: [
+      { text: "They temporarily make you sick", emoji: "🤢", isCorrect: false },
+      { text: "They only work for a few weeks", emoji: "⏳", isCorrect: false },
+      { text: "They create memory cells for future protection", emoji: "🛡️", isCorrect: true },
+      { text: "They are unnecessary after childhood", emoji: "👶", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    title: "Exercise Science",
+    question: "Which effect of regular exercise is crucial for preventive health?",
+    options: [
+      { text: "Boosts immunity and metabolic health", emoji: "💪", isCorrect: true },
+      { text: "Only builds muscles", emoji: "🏋️", isCorrect: false },
+      { text: "Causes frequent fatigue", emoji: "😴", isCorrect: false },
+      { text: "Increases risk of injury", emoji: "🤕", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    title: "Smart Nutrition",
+    question: "Why does a nutrient-rich diet reduce risk of lifestyle diseases?",
+    options: [
+      { text: "Just tastes better", emoji: "😋", isCorrect: false },
+      { text: "Can be ignored if active", emoji: "🏃", isCorrect: false },
+      { text: "Prevents every possible illness", emoji: "🧬", isCorrect: false },
+      { text: "Supports immune and organ function", emoji: "🥗", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    title: "Mind-Body Connection",
+    question: "Why is mental well-being a critical part of preventive health?",
+    options: [
+      { text: "Emotions don’t affect physical health", emoji: "🧠", isCorrect: false },
+      { text: "Only affects social life", emoji: "👥", isCorrect: false },
+      { text: "Stress and anxiety can trigger physical illness", emoji: "🛡️", isCorrect: true },
+      { text: "Mental health is unrelated to nutrition or exercise", emoji: "🥗", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;

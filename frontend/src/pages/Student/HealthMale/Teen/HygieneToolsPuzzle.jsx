@@ -25,20 +25,20 @@ const HygieneToolsPuzzle = () => {
 
   // Hygiene Tools (left side) - 5 items
   const tools = [
-    { id: 1, name: "Razor & Cream", emoji: "🪒", description: "Shaving equipment" },
-    { id: 2, name: "Deodorant", emoji: "🧴", description: "Odor fighter" },
-    { id: 3, name: "Face Wash", emoji: "🧼", description: "Skin cleanser" },
-    { id: 4, name: "Brush & Floss", emoji: "🪥", description: "Dental tools" },
-    { id: 5, name: "Nail Clippers", emoji: "✂️", description: "Nail trimmer" }
+    { id: 1, name: "Razor & Cream", emoji: "🪒",  },
+    { id: 2, name: "Deodorant", emoji: "🧴" },
+    { id: 3, name: "Face Wash", emoji: "🧼" },
+    { id: 4, name: "Brush & Floss", emoji: "🪥" },
+    { id: 5, name: "Nail Clippers", emoji: "✂️" }
   ];
 
   // Purposes (right side) - 5 items
   const purposes = [
-    { id: 3, name: "Clean Pores", emoji: "🧽", description: "Skin clearing" },
-    { id: 5, name: "Trim Nails", emoji: "💅", description: "Cutting tool" },
-    { id: 1, name: "Smooth Skin", emoji: "🦵", description: "Hair removal" },
-    { id: 4, name: "Fresh Breath", emoji: "😮", description: "Oral hygiene" },
-    { id: 2, name: "Stop Smell", emoji: "🌸", description: "Odor control" }
+    { id: 3, name: "Clean Pores", emoji: "🧽" },
+    { id: 5, name: "Trim Nails", emoji: "💅" },
+    { id: 1, name: "Smooth Skin", emoji: "🦵" },
+    { id: 4, name: "Fresh Breath", emoji: "😮" },
+    { id: 2, name: "Stop Smell", emoji: "🌸" }
   ];
 
   // Correct matches

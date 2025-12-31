@@ -28,62 +28,62 @@ const ReflexEmotionalHealth = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "You feel overwhelmed by emotions. Best action?",
-      correctAnswer: "Journal/Talk",
-      options: [
-        { text: "Yell", isCorrect: false, emoji: "🤬" },
-        { text: "Journal/Talk", isCorrect: true, emoji: "📝" },
-        { text: "Ignore", isCorrect: false, emoji: "🙈" },
-        { text: "Break things", isCorrect: false, emoji: "🔨" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Someone insults you. Healthy response?",
-      correctAnswer: "Stay calm/Walk away",
-      options: [
-        { text: "Fight", isCorrect: false, emoji: "🥊" },
-        { text: "Insult back", isCorrect: false, emoji: "🗣️" },
-        { text: "Stay calm/Walk away", isCorrect: true, emoji: "🚶" },
-        { text: "Cry", isCorrect: false, emoji: "😢" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You are jealous of a friend's success.",
-      correctAnswer: "Focus on self-growth",
-      options: [
-        { text: "Sabotage them", isCorrect: false, emoji: "😈" },
-        { text: "Focus on self-growth", isCorrect: true, emoji: "🌱" },
-        { text: "Hate them", isCorrect: false, emoji: "😠" },
-        { text: "Gossip", isCorrect: false, emoji: "🤫" }
-      ]
-    },
-    {
-      id: 4,
-      question: "You feel lonely and isolated.",
-      correctAnswer: "Reach out to family/friends",
-      options: [
-        { text: "Reach out to family/friends", isCorrect: true, emoji: "📞" },
-        { text: "Isolate more", isCorrect: false, emoji: "🔒" },
-        { text: "Blame others", isCorrect: false, emoji: "👉" },
-        { text: "Sleep all day", isCorrect: false, emoji: "🛌" }
-      ]
-    },
-    {
-      id: 5,
-      question: "You are angry at your parents.",
-      correctAnswer: "Calmly discuss later",
-      options: [
-        { text: "Scream", isCorrect: false, emoji: "📢" },
-        { text: "Slam doors", isCorrect: false, emoji: "🚪" },
-        { text: "Run away", isCorrect: false, emoji: "🏃" },
-        { text: "Calmly discuss later", isCorrect: true, emoji: "🗣️" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You feel overwhelmed by emotions after a tough day. Best action?",
+    correctAnswer: "Journal/Talk",
+    options: [
+      { text: "Yell at someone", isCorrect: false, emoji: "🤬" },
+      { text: "Journal your feelings or talk to someone", isCorrect: true, emoji: "📝" },
+      { text: "Ignore your emotions", isCorrect: false, emoji: "🙈" },
+      { text: "Break things", isCorrect: false, emoji: "🔨" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Someone insults or teases you. Healthy response?",
+    correctAnswer: "Stay calm/Walk away",
+    options: [
+      { text: "Fight back", isCorrect: false, emoji: "🥊" },
+      { text: "Insult them in return", isCorrect: false, emoji: "🗣️" },
+      { text: "Stay calm and walk away", isCorrect: true, emoji: "🚶" },
+      { text: "Cry alone", isCorrect: false, emoji: "😢" }
+    ]
+  },
+  {
+    id: 3,
+    question: "Feeling jealous of a friend's success. Best approach?",
+    correctAnswer: "Focus on self-growth",
+    options: [
+      { text: "Sabotage or compete aggressively", isCorrect: false, emoji: "😈" },
+      { text: "Focus on improving yourself and your growth", isCorrect: true, emoji: "🌱" },
+      { text: "Harbor hatred", isCorrect: false, emoji: "😠" },
+      { text: "Gossip or complain", isCorrect: false, emoji: "🤫" }
+    ]
+  },
+  {
+    id: 4,
+    question: "Feeling lonely or isolated at home or school?",
+    correctAnswer: "Reach out to family/friends",
+    options: [
+      { text: "Reach out to family/friends for support", isCorrect: true, emoji: "📞" },
+      { text: "Isolate yourself more", isCorrect: false, emoji: "🔒" },
+      { text: "Blame others for your loneliness", isCorrect: false, emoji: "👉" },
+      { text: "Sleep all day to avoid feelings", isCorrect: false, emoji: "🛌" }
+    ]
+  },
+  {
+    id: 5,
+    question: "You feel angry or frustrated with your parents.",
+    correctAnswer: "Calmly discuss later",
+    options: [
+      { text: "Scream immediately", isCorrect: false, emoji: "📢" },
+      { text: "Slam doors or act out", isCorrect: false, emoji: "🚪" },
+      { text: "Run away or ignore", isCorrect: false, emoji: "🏃" },
+      { text: "Calmly discuss your feelings later", isCorrect: true, emoji: "🗣️" }
+    ]
+  }
+];
 
   // Update ref when currentRound changes
   useEffect(() => {

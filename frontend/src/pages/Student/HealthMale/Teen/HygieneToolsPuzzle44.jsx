@@ -21,32 +21,34 @@ const HygieneToolsPuzzle44 = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Hygiene Tools (left side) - 5 items
-  const tools = [
-    { id: 1, name: "Toothbrush", emoji: "🪥", description: "Dental cleaner" },
-    { id: 2, name: "Comb", emoji: "💇", description: "Hair detangler" },
-    { id: 3, name: "Deodorant", emoji: "🧴", description: "Odor controller" },
-    { id: 4, name: "Nail Clipper", emoji: "💅", description: "Nail trimmer" },
-    { id: 5, name: "Loofah/Sponge", emoji: "🧽", description: "Skin scrubber" }
-  ];
+ const tools = [
+  { id: 1, name: "Tongue Scraper", emoji: "👅" },
+  { id: 2, name: "Antifungal Powder", emoji: "🧪" },
+  { id: 3, name: "Silicone Face Cleansing Pad", emoji: "🔘" },
+  { id: 4, name: "Laundry Disinfectant", emoji: "🧺" },
+  { id: 5, name: "Microfiber Towel", emoji: "🧻" }
+];
+
 
   // Body Parts/Purposes (right side) - 5 items
-  const bodyParts = [
-    { id: 3, name: "Underarms", emoji: "🦿", description: "Sweat zone" },
-    { id: 5, name: "Back/Body", emoji: "🧼", description: "Full cleansing" },
-    { id: 1, name: "Teeth/Mouth", emoji: "🦷", description: "Oral care" },
-    { id: 4, name: "Fingers/Toes", emoji: "👐", description: "Nail area" },
-    { id: 2, name: "Head/Hair", emoji: "🧠", description: "Scalp care" }
-  ];
+ const bodyParts = [
+  { id: 3, name: "Preventing Fungal Growth in Moist Areas", emoji: "🍄" },
+  { id: 1, name: "Reducing Oral Bacteria That Cause Bad Breath", emoji: "🦠" },
+  { id: 5, name: "Avoiding Bacteria Transfer After Bathing", emoji: "🚫" },
+  { id: 2, name: "Gentle Removal of Dead Skin Without Damage", emoji: "✨" },
+  { id: 4, name: "Eliminating Germs From Clothing Fibers", emoji: "🧬" }
+];
+
 
   // Correct matches
-  const correctMatches = [
-    { toolId: 1, bodyPartId: 1 }, // Toothbrush → Teeth/Mouth
-    { toolId: 2, bodyPartId: 2 }, // Comb → Head/Hair
-    { toolId: 3, bodyPartId: 3 }, // Deodorant → Underarms
-    { toolId: 4, bodyPartId: 4 }, // Nail Clipper → Fingers/Toes
-    { toolId: 5, bodyPartId: 5 }  // Loofah/Sponge → Back/Body
-  ];
+ const correctMatches = [
+  { toolId: 1, bodyPartId: 1 }, // Tongue Scraper → Oral bacteria & bad breath
+  { toolId: 2, bodyPartId: 3 }, // Antifungal Powder → Prevent fungal growth
+  { toolId: 3, bodyPartId: 2 }, // Silicone Pad → Gentle dead-skin removal
+  { toolId: 4, bodyPartId: 4 }, // Laundry Disinfectant → Germ-free clothes
+  { toolId: 5, bodyPartId: 5 }  // Microfiber Towel → Prevent bacteria transfer
+];
+
 
   const handleToolSelect = (tool) => {
     if (gameFinished) return;

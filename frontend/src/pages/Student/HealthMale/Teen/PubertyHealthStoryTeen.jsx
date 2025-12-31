@@ -19,129 +19,130 @@ const PubertyHealthStoryTeen = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "You notice you are gaining weight during puberty. Is this bad?",
-      options: [
-         {
-          id: "a",
-          text: "No, it's normal growth",
-          emoji: "📈",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Yes, stop eating",
-          emoji: "🚫",
-          isCorrect: false
-        },
-       
-        {
-          id: "c",
-          text: "Only eat salad",
-          emoji: "🥗",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You feel tired all the time. Why?",
-      options: [
-        {
-          id: "c",
-          text: "You are lazy",
-          emoji: "🛋️",
-          isCorrect: false
-        },
-       
-        {
-          id: "b",
-          text: "Too much homework",
-          emoji: "📚",
-          isCorrect: false
-        },
-         {
-          id: "a",
-          text: "Growing takes energy",
-          emoji: "🔋",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "You have body odor even after showering. What helps?",
-      options: [
-        {
-          id: "b",
-          text: "Shower 5 times a day",
-          emoji: "🚿",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Wear perfume only",
-          emoji: "🌸",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Antiperspirant",
-          emoji: "🧴",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You feel like no one understands you.",
-      options: [
-        {
-          id: "c",
-          text: "Run away",
-          emoji: "🏃",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Talk to a friend/adult",
-          emoji: "🗣️",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Scream at everyone",
-          emoji: "🤬",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Is it okay to cry if you are a boy?",
-      options: [
-        {
-          id: "b",
-          text: "No, boys don't cry",
-          emoji: "🤖",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Only when alone",
-          emoji: "🚪",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Yes, emotions are human",
-          emoji: "❤️",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Over a few months, your body shape changes even though your eating habits are the same. What is the healthiest explanation?",
+    options: [
+      
+      {
+        id: "b",
+        text: "You suddenly became unhealthy",
+        emoji: "⚠️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Your metabolism stopped working",
+        emoji: "🛑",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Hormones are redistributing fat and muscle",
+        emoji: "🧬",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "You feel hungry again soon after meals during puberty. What is the best response?",
+    options: [
+      {
+        id: "a",
+        text: "Eat balanced meals more regularly",
+        emoji: "🥗",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Ignore hunger signals",
+        emoji: "🙅",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Eat only snacks",
+        emoji: "🍪",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "You notice increased sweating even on calm days. What’s the most accurate reason?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Poor fitness",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Sweat glands become more active due to hormones",
+        emoji: "💧",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Drinking water causes sweat",
+        emoji: "🚰",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You feel emotionally drained after social interactions. What is a healthy interpretation?",
+    options: [
+     
+      {
+        id: "b",
+        text: "You are antisocial",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "People are the problem",
+        emoji: "👥",
+        isCorrect: false
+      },
+       {
+        id: "a",
+        text: "Your brain is learning emotional regulation",
+        emoji: "🧠",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "You start comparing your body to others online and feel worse. What is the healthiest action?",
+    options: [
+      {
+        id: "a",
+        text: "Limit comparison and focus on your own development",
+        emoji: "🪞",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Try extreme body changes",
+        emoji: "⚠️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Assume something is wrong with you",
+        emoji: "❌",
+        isCorrect: false
+      }
+    ]
+  }
+];
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

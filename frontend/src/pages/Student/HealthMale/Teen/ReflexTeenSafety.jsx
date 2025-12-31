@@ -25,62 +25,63 @@ const ReflexTeenSafety = () => {
   const timerRef = useRef(null);
 
   const questions = [
-    {
-      id: 1,
-      question: "You have a new medicine prescription. What is the most important step?",
-      correctAnswer: "Follow Instructions",
-      options: [
-        { text: "Follow Instructions", isCorrect: true, emoji: "�" },
-        { text: "Ignore Warnings", isCorrect: false, emoji: "⚠️" },
-        { text: "Skip Doses", isCorrect: false, emoji: "❌" },
-        { text: "Guess Dosage", isCorrect: false, emoji: "🎲" }
-      ]
-    },
-    {
-      id: 2,
-      question: "You notice some strange side effects after taking medication. What should you do?",
-      correctAnswer: "Report Side Effects",
-      options: [
-        { text: "Hide Problems", isCorrect: false, emoji: "🤐" },
-        { text: "Report Side Effects", isCorrect: true, emoji: "📞" },
-        { text: "Take More", isCorrect: false, emoji: "💊" },
-        { text: "Sleep it Off", isCorrect: false, emoji: "😴" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You found some old pills in the cabinet. How do you check if they are safe?",
-      correctAnswer: "Check Expiry",
-      options: [
-        { text: "Use Friend's Meds", isCorrect: false, emoji: "🚫" },
-        { text: "Keep Forever", isCorrect: false, emoji: "🏚️" },
-        { text: "Check Expiry", isCorrect: true, emoji: "📅" },
-        { text: "Mix Randomly", isCorrect: false, emoji: "🧪" }
-      ]
-    },
-    {
-      id: 4,
-      question: "You are unsure about how a medicine interacts with food. Who do you ask?",
-      correctAnswer: "Ask Questions",
-      options: [
-        { text: "Self-Medicate", isCorrect: false, emoji: "🩹" },
-        { text: "Search Online Only", isCorrect: false, emoji: "💻" },
-        { text: "Ask Questions", isCorrect: true, emoji: "❓" },
-        { text: "Ask a Peer", isCorrect: false, emoji: "🤷" }
-      ]
-    },
-    {
-      id: 5,
-      question: "The doctor prescribed a 5-day course, but you feel better after 2 days.",
-      correctAnswer: "Finish the Course",
-      options: [
-        { text: "Stop Immediately", isCorrect: false, emoji: "🛑" },
-        { text: "Finish the Course", isCorrect: true, emoji: "✅" },
-        { text: "Double Dose", isCorrect: false, emoji: "2️⃣" },
-        { text: "Save for Later", isCorrect: false, emoji: "📦" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You miss one dose of a daily medicine. What is the safest reflex action?",
+    correctAnswer: "Follow Official Advice",
+    options: [
+      { text: "Double the Next Dose", isCorrect: false, emoji: "⚠️" },
+      { text: "Stop Taking It", isCorrect: false, emoji: "🛑" },
+      { text: "Follow Official Advice", isCorrect: true, emoji: "📄" },
+      { text: "Take It at Random Time", isCorrect: false, emoji: "🎲" }
+    ]
+  },
+  {
+    id: 2,
+    question: "A medicine label says 'take with food'. What does this usually mean?",
+    correctAnswer: "Reduces Side Effects",
+    options: [
+      { text: "Food Makes It Stronger", isCorrect: false, emoji: "💥" },
+      { text: "Reduces Side Effects", isCorrect: true, emoji: "🛡️" },
+      { text: "Only Take After Dinner", isCorrect: false, emoji: "🌙" },
+      { text: "Food Is Optional", isCorrect: false, emoji: "❓" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You are prescribed two medicines by different doctors. What is the safest step?",
+    correctAnswer: "Check for Interactions",
+    options: [
+      { text: "Check for Interactions", isCorrect: true, emoji: "🔍" },
+      { text: "Take Both Immediately", isCorrect: false, emoji: "💊" },
+      { text: "Alternate Days Yourself", isCorrect: false, emoji: "🔁" },
+      { text: "Stop One Without Telling", isCorrect: false, emoji: "🤐" }
+    ]
+  },
+  {
+    id: 4,
+    question: "Why should medicines be stored away from heat and sunlight?",
+    correctAnswer: "They Can Lose Effectiveness",
+    options: [
+      { text: "They Melt", isCorrect: false, emoji: "🔥" },
+      { text: "They Become Poison", isCorrect: false, emoji: "☠️" },
+      { text: "It Only Affects Taste", isCorrect: false, emoji: "👅" },
+      { text: "They Can Lose Effectiveness", isCorrect: true, emoji: "📉" },
+    ]
+  },
+  {
+    id: 5,
+    question: "Someone offers you their prescription saying it helped them. What’s the safest response?",
+    correctAnswer: "Refuse and Seek Medical Advice",
+    options: [
+      { text: "Try One Dose", isCorrect: false, emoji: "🤏" },
+      { text: "Save It for Emergency", isCorrect: false, emoji: "📦" },
+      { text: "Refuse and Seek Medical Advice", isCorrect: true, emoji: "🩺" },
+      { text: "Mix with Your Medicine", isCorrect: false, emoji: "🧪" }
+    ]
+  }
+];
+
 
   // Handle time up - move to next question or show results
   const handleTimeUp = useCallback(() => {

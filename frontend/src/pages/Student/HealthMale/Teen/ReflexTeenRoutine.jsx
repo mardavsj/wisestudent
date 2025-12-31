@@ -25,57 +25,58 @@ const ReflexTeenRoutine = () => {
   const ROUND_TIME = 10;
 
   const scenarios = [
-    {
-      id: 1,
-      question: "It's time for bed, but your phone buzzes.",
-      options: [
-        { text: "Sleep Schedule", isCorrect: true, emoji: "😴" },
-        { text: "Scroll All Night", isCorrect: false, emoji: "📱" },
-        { text: "Text Friends", isCorrect: false, emoji: "💬" },
-        { text: "Watch Videos", isCorrect: false, emoji: "📹" }
-      ]
-    },
-    {
-      id: 2,
-      question: "You have homework due tomorrow morning.",
-      options: [
-        { text: "Video Games", isCorrect: false, emoji: "🎮" },
-        { text: "Do Homework", isCorrect: true, emoji: "📝" },
-        { text: "Procrastinate", isCorrect: false, emoji: "⏳" },
-        { text: "Watch TV", isCorrect: false, emoji: "📺" }
-      ]
-    },
-    {
-      id: 3,
-      question: "It's time for your daily exercise.",
-      options: [
-        { text: "Sit on Couch", isCorrect: false, emoji: "🛋️" },
-        { text: "Eat Junk Food", isCorrect: false, emoji: "🍔" },
-        { text: "Skip It", isCorrect: false, emoji: "🚫" },
-        { text: "Workout", isCorrect: true, emoji: "💪" }
-      ]
-    },
-    {
-      id: 4,
-      question: "You feel stressed about a test.",
-      options: [
-        { text: "Study Plan", isCorrect: true, emoji: "📅" },
-        { text: "Panic", isCorrect: false, emoji: "😱" },
-        { text: "Ignore It", isCorrect: false, emoji: "🙈" },
-        { text: "Cheating", isCorrect: false, emoji: "👀" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Your room is a mess.",
-      options: [
-        { text: "Leave It", isCorrect: false, emoji: "🗑️" },
-        { text: "Clean Up", isCorrect: true, emoji: "🧹" },
-        { text: "Wait for Mom", isCorrect: false, emoji: "👩" },
-        { text: "Hide Mess", isCorrect: false, emoji: "📦" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "It's past 10 PM and your phone buzzes with notifications. What keeps your routine healthy?",
+    options: [
+      { text: "Scroll social media endlessly", isCorrect: false, emoji: "📱" },
+      { text: "Stick to sleep schedule", isCorrect: true, emoji: "😴" },
+      { text: "Reply to every message", isCorrect: false, emoji: "💬" },
+      { text: "Watch late-night videos", isCorrect: false, emoji: "📹" }
+    ]
+  },
+  {
+    id: 2,
+    question: "You have multiple homework assignments due tomorrow. What choice supports success?",
+    options: [
+      { text: "Play video games to relax", isCorrect: false, emoji: "🎮" },
+      { text: "Procrastinate and rush later", isCorrect: false, emoji: "⏳" },
+      { text: "Prioritize and do homework first", isCorrect: true, emoji: "📝" },
+      { text: "Binge-watch TV", isCorrect: false, emoji: "📺" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You are tempted to skip your daily exercise. Best reflex choice?",
+    options: [
+      { text: "Sit on the couch", isCorrect: false, emoji: "🛋️" },
+      { text: "Eat snacks instead", isCorrect: false, emoji: "🍔" },
+      { text: "Skip and plan tomorrow", isCorrect: false, emoji: "🚫" },
+      { text: "Complete the workout", isCorrect: true, emoji: "💪" },
+    ]
+  },
+  {
+    id: 4,
+    question: "Feeling overwhelmed by an upcoming test, what’s a productive response?",
+    options: [
+      { text: "Panic and stress out", isCorrect: false, emoji: "😱" },
+      { text: "Follow a structured study plan", isCorrect: true, emoji: "📅" },
+      { text: "Ignore preparation", isCorrect: false, emoji: "🙈" },
+      { text: "Cheat during the test", isCorrect: false, emoji: "👀" }
+    ]
+  },
+  {
+    id: 5,
+    question: "Your room is extremely messy. How do you respond to maintain a good habit?",
+    options: [
+      { text: "Clean and organize immediately", isCorrect: true, emoji: "🧹" },
+      { text: "Leave it for later", isCorrect: false, emoji: "🗑️" },
+      { text: "Wait for someone else to do it", isCorrect: false, emoji: "👩" },
+      { text: "Hide the mess temporarily", isCorrect: false, emoji: "📦" }
+    ]
+  }
+];
+
 
   const handleNext = () => {
     navigate("/student/health-male/teens/habit-builder-puzzle");

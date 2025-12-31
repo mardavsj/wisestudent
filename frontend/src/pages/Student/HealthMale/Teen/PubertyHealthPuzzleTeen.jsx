@@ -21,32 +21,34 @@ const PubertyHealthPuzzleTeen = () => {
     const [gameFinished, setGameFinished] = useState(false);
     const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-    // Puberty Health Topics (left side) - 5 items
-    const topics = [
-        { id: 1, name: "Sleep", emoji: "😴", description: "Rest period" },
-        { id: 2, name: "Hygiene", emoji: "🧼", description: "Cleanliness practice" },
-        { id: 3, name: "Stress", emoji: "😰", description: "Tension management" },
-        { id: 4, name: "Acne", emoji: "😞", description: "Skin condition" },
-        { id: 5, name: "Growth", emoji: "📈", description: "Development phase" }
-    ];
+    // Puberty Health Clues (left side)
+const topics = [
+  { id: 1, name: "Late-Night Alert Brain", emoji: "🧠", },
+  { id: 2, name: "Sudden Sweat Spikes", emoji: "💦",  },
+  { id: 3, name: "Red Inflamed Skin", emoji: "🔥",  },
+  { id: 4, name: "Constant Irritability", emoji: "⚡",  },
+  { id: 5, name: "Rapid Bone Stretching", emoji: "🦴",  }
+];
 
-    // Solutions (right side) - 5 items
-    const solutions = [
-        { id: 3, name: "Deep Breathing", emoji: "🌬️", description: "Relaxation technique" },
-        { id: 5, name: "Physical Activity", emoji: "🏃", description: "Exercise routine" },
-        { id: 1, name: "Dark Environment", emoji: "🌑", description: "Sleep-friendly setting" },
-        { id: 4, name: "Clean Face", emoji: "✨", description: "Skincare routine" },
-        { id: 2, name: "Soap Cleansing", emoji: "🧽", description: "Hygiene method" }
-    ];
 
-    // Correct matches
+    // Puberty Health Responses (right side)
+const solutions = [
+    { id: 1, name: "Low-Glycemic Eating", emoji: "🥦",  },
+    { id: 2, name: "Antibacterial Fabric Choice", emoji: "👕",  },
+    { id: 3, name: "Nervous System Reset", emoji: "🔁",  },
+  { id: 4, name: "Consistent Wind-Down Routine", emoji: "🌙",  },
+  { id: 5, name: "Stretch + Mobility Work", emoji: "🧘‍♂️",  },
+];
+
+
     const correctMatches = [
-        { topicId: 1, solutionId: 1 }, // Sleep → Dark Environment
-        { topicId: 2, solutionId: 2 }, // Hygiene → Soap Cleansing
-        { topicId: 3, solutionId: 3 }, // Stress → Deep Breathing
-        { topicId: 4, solutionId: 4 }, // Acne → Clean Face
-        { topicId: 5, solutionId: 5 }  // Growth → Physical Activity
-    ];
+  { topicId: 1, solutionId: 4 }, // Late-Night Alert Brain → Wind-Down Routine
+  { topicId: 2, solutionId: 2 }, // Sudden Sweat Spikes → Antibacterial Fabric
+  { topicId: 3, solutionId: 1 }, // Red Inflamed Skin → Low-Glycemic Eating
+  { topicId: 4, solutionId: 3 }, // Constant Irritability → Nervous System Reset
+  { topicId: 5, solutionId: 5 }  // Rapid Bone Stretching → Stretch + Mobility Work
+];
+
 
     const handleTopicSelect = (topic) => {
         if (gameFinished) return;

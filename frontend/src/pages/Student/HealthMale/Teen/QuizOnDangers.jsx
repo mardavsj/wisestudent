@@ -16,131 +16,56 @@ const QuizOnDangers = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Smoking causes?",
-      options: [
-        {
-          id: "a",
-          text: "Cancer",
-          emoji: "🦠",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Stronger lungs",
-          emoji: "🫁",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Healthy teeth",
-          emoji: "🦷",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What happens to your heart when you smoke?",
-      options: [
-        {
-          id: "a",
-          text: "No effect",
-          emoji: "😐",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Higher risk of heart disease",
-          emoji: "💔",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Gets stronger",
-          emoji: "❤️",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How does alcohol affect the liver?",
-      options: [
-        {
-          id: "a",
-          text: "Makes it healthier",
-          emoji: "🫀",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "No effect on liver",
-          emoji: "✅",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Causes liver damage",
-          emoji: "🩹",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What does drug use do to the brain?",
-      options: [
-        {
-          id: "c",
-          text: "Changes brain chemistry",
-          emoji: "⚗️",
-          isCorrect: true
-        },
-        {
-          id: "a",
-          text: "Improves brain function",
-          emoji: "🧠",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "No brain effects",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        
-      ]
-    },
-    {
-      id: 5,
-      text: "Why should teens avoid substance use?",
-      options: [
-        {
-          id: "a",
-          text: "It's not cool",
-          emoji: "😎",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Only adults can handle it",
-          emoji: "👨‍🦳",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Affects brain development",
-          emoji: "🧠",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which health risk is directly linked to smoking?",
+    options: [
+      { id: "b", text: "Improved lung capacity", emoji: "💨", isCorrect: false },
+      { id: "c", text: "Stronger teeth and gums", emoji: "🦷", isCorrect: false },
+      { id: "a", text: "Lung cancer and chronic respiratory disease", emoji: "🫁", isCorrect: true },
+    ]
+  },
+  {
+    id: 2,
+    text: "Smoking increases the chance of which cardiovascular issue?",
+    options: [
+      { id: "a", text: "No impact on heart", emoji: "😐", isCorrect: false },
+      { id: "b", text: "Heart disease, high blood pressure, and stroke", emoji: "💔", isCorrect: true },
+      { id: "c", text: "Heart becomes stronger", emoji: "❤️", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "Excessive alcohol consumption affects which organ the most?",
+    options: [
+      { id: "a", text: "Improves liver function", emoji: "🫀", isCorrect: false },
+      { id: "b", text: "Has no effect on the liver", emoji: "😲", isCorrect: false },
+      { id: "c", text: "Causes liver inflammation, fatty liver, or cirrhosis", emoji: "🩹", isCorrect: true }
+    ]
+  },
+  {
+    id: 4,
+    text: "How do drugs interfere with normal brain function?",
+    options: [
+      { id: "a", text: "Enhance memory and learning", emoji: "🧠", isCorrect: false },
+      { id: "c", text: "Alter neurotransmitters, affect judgment, and can cause addiction", emoji: "⚗️", isCorrect: true },
+      { id: "b", text: "No measurable effect", emoji: "🤷", isCorrect: false },
+    ]
+  },
+  {
+    id: 5,
+    text: "Why is substance use especially risky during adolescence?",
+    options: [
+      { id: "c", text: "Teen brains are still developing", emoji: "🧠", isCorrect: true },
+      { id: "a", text: "It isn’t risky if done occasionally", emoji: "😎", isCorrect: false },
+      { id: "b", text: "Adults can handle it, teens cannot", emoji: "👨‍🦳", isCorrect: false },
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;
@@ -196,6 +121,7 @@ const QuizOnDangers = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

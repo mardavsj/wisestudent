@@ -31,62 +31,65 @@ const ReflexDietCheck = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "You need energy for sports. Pick the best fuel!",
-      correctAnswer: "Banana",
-      options: [
-        { text: "Banana", isCorrect: true, emoji: "🍌" },
-        { text: "Candy", isCorrect: false, emoji: "🍬" },
-        { text: "Soda", isCorrect: false, emoji: "🥤" },
-        { text: "Chips", isCorrect: false, emoji: "🍟" }
-      ]
-    },
-    {
-      id: 2,
-      question: "It's lunch time. Pick the balanced meal!",
-      correctAnswer: "Rice & Dal",
-      options: [
-        { text: "Burger", isCorrect: false, emoji: "🍔" },
-        { text: "Rice & Dal", isCorrect: true, emoji: "🍛" },
-        { text: "Pizza", isCorrect: false, emoji: "🍕" },
-        { text: "Cake", isCorrect: false, emoji: "🍰" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You want stronger bones. Pick the calcium source!",
-      correctAnswer: "Milk",
-      options: [
-        { text: "Cola", isCorrect: false, emoji: "🥤" },
-        { text: "Tea", isCorrect: false, emoji: "☕" },
-        { text: "Milk", isCorrect: true, emoji: "🥛" },
-        { text: "Juice", isCorrect: false, emoji: "🧃" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Late night snack. Pick the healthy option!",
-      correctAnswer: "Nuts",
-      options: [
-        { text: "Cookies", isCorrect: false, emoji: "🍪" },
-        { text: "Ice Cream", isCorrect: false, emoji: "🍦" },
-        { text: "Donut", isCorrect: false, emoji: "🍩" },
-        { text: "Nuts", isCorrect: true, emoji: "🥜" }
-      ]
-    },
-    {
-      id: 5,
-      question: "You are thirsty. Pick the best hydration!",
-      correctAnswer: "Water",
-      options: [
-        { text: "Energy Drink", isCorrect: false, emoji: "⚡" },
-        { text: "Milkshake", isCorrect: false, emoji: "🥤" },
-        { text: "Water", isCorrect: true, emoji: "💧" },
-        { text: "Beer", isCorrect: false, emoji: "🍺" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You feel sleepy during online class. What food choice helps avoid sugar crash?",
+    correctAnswer: "Whole Grain Snack",
+    options: [
+      { text: "Chocolate Bar", isCorrect: false, emoji: "🍫" },
+      { text: "Energy Candy", isCorrect: false, emoji: "🍭" },
+    
+      { text: "Sweet Juice", isCorrect: false, emoji: "🧃" },
+        { text: "Whole Grain Snack", isCorrect: true, emoji: "🌾" },
+    ]
+  },
+  {
+    id: 2,
+    question: "Your stomach feels heavy after eating. What was likely the mistake?",
+    correctAnswer: "Overeating Quickly",
+    options: [
+      { text: "Eating slowly", isCorrect: false, emoji: "🐢" },
+      { text: "Drinking water", isCorrect: false, emoji: "💧" },
+      { text: "Overeating Quickly", isCorrect: true, emoji: "⚡" },
+      { text: "Chewing properly", isCorrect: false, emoji: "🦷" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You skip breakfast often. What problem can show up first?",
+    correctAnswer: "Low Focus",
+    options: [
+      { text: "Low Focus", isCorrect: true, emoji: "😵‍💫" },
+      { text: "Better memory", isCorrect: false, emoji: "🧠" },
+      
+      { text: "Extra energy", isCorrect: false, emoji: "🔥" },
+      { text: "Faster growth", isCorrect: false, emoji: "📈" },
+    ]
+  },
+  {
+    id: 4,
+    question: "Which habit improves digestion instantly?",
+    correctAnswer: "Eating Without Phone",
+    options: [
+      { text: "Watching reels", isCorrect: false, emoji: "📱" },
+      { text: "Eating late night", isCorrect: false, emoji: "🌙" },
+      { text: "Eating Without Phone", isCorrect: true, emoji: "🍽️" },
+      { text: "Standing while eating", isCorrect: false, emoji: "🧍" }
+    ]
+  },
+  {
+    id: 5,
+    question: "Which food choice hides the most unnecessary sugar?",
+    correctAnswer: "Packaged Flavored Yogurt",
+    options: [
+      { text: "Plain Curd", isCorrect: false, emoji: "🥣" },
+      { text: "Packaged Flavored Yogurt", isCorrect: true, emoji: "📦" },
+      { text: "Home Salad", isCorrect: false, emoji: "🥗" },
+      { text: "Boiled Eggs", isCorrect: false, emoji: "🥚" }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

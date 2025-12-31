@@ -339,7 +339,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
         },
         {
           id: "dcos-kids-23",
-          title: "Family Rules Story1",
+          title: "Family Rules Story 2",
           description: "Parents say 'No phones at dinner.' Correct = Obey.",
           icon: <BookOpen className="w-6 h-6" />,
           difficulty: "Easy",
@@ -549,7 +549,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
         },
         {
           id: "dcos-kids-38",
-          title: "Journal of Truth1",
+          title: "Journal of Truth",
           description: "Write: 'Today I fact-checked ___.'",
           icon: <PenTool className="w-6 h-6" />,
           difficulty: "Medium",
@@ -927,7 +927,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
       },
       {
         id: "dcos-kids-65",
-        title: "Emoji Reflex1",
+        title: "Emoji Reflex 2",
         description: "Tap 👍 for positive posts, 👎 for rude posts.",
         icon: <Zap className="w-6 h-6" />,
         difficulty: "Easy",
@@ -1026,7 +1026,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
 
       {
         id: "dcos-kids-72",
-        title: "Reflex AI Safety1",
+        title: "Reflex AI Safety",
         description: "Tap for “AI draws a cat,” for “AI spreads rumor.”",
         icon: <Award className="w-6 h-6" />,
         difficulty: "Easy",
@@ -1056,7 +1056,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
 
       {
         id: "dcos-kids-74",
-        title: "Fairness Quiz1",
+        title: "Fairness Quiz",
         description: "Game AI always favors one player. Is this fair? → No.",
         icon: <Award className="w-6 h-6" />,
         difficulty: "Easy",
@@ -1101,7 +1101,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
 
       {
         id: "dcos-kids-77",
-        title: "Poster Task2",
+        title: "Poster Task 2",
         description: "Create/select poster: “Use AI Wisely.”",
         icon: <Award className="w-6 h-6" />,
         difficulty: "Medium",
@@ -1131,7 +1131,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
 
       {
         id: "dcos-kids-79",
-        title: "Classroom Story3",
+        title: "Classroom Story",
         description: "AI app answers test questions. Correct = Don’t use to cheat.",
         icon: <Award className="w-6 h-6" />,
         difficulty: "Medium",
@@ -1174,7 +1174,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
       },
       {
         id: "dcos-kids-82",
-        title: "Reflex Respect1",
+        title: "Reflex Respect",
         description: "Words appear. Tap for “Thank you,” for “Idiot.”",
         icon: <Award className="w-6 h-6" />,
         difficulty: "Medium",
@@ -1202,7 +1202,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
       },
       {
         id: "dcos-kids-84",
-        title: "Puzzle: Respect Match1",
+        title: "Puzzle: Respect Match",
         description: "Match “Listen = Respect, Mock = Hurt.”",
         icon: <Award className="w-6 h-6" />,
         difficulty: "Medium",
@@ -1230,7 +1230,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
       },
       {
         id: "dcos-kids-86",
-        title: "Poster Task3",
+        title: "Poster Task 3",
         description: "Select/create poster: “Words Can Hurt or Heal.”",
         icon: <Award className="w-6 h-6" />,
         difficulty: "Creative",
@@ -1342,7 +1342,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
       },
       {
         id: "dcos-kids-94",
-        title: "Homework Story1",
+        title: "Homework Story",
         description: "Friend uses YouTube for homework tips. Correct = Useful.",
         icon: <Award className="w-6 h-6" />,
         difficulty: "Medium",
@@ -1370,7 +1370,7 @@ export const getDcosKidsGames = (gameCompletionStatus)=> {
       },
       {
         id: "dcos-kids-96",
-        title: "Poster Task4",
+        title: "Poster Task 4",
         description: "Select/create poster: “Use Tech to Learn.”",
         icon: <Award className="w-6 h-6" />,
         difficulty: "Creative",

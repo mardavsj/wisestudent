@@ -22,127 +22,131 @@ const NightSweatStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "You wake up sweaty in the middle of the night. What happened?",
-      options: [
-        {
-          id: "b",
-          text: "The bed is on fire",
-          emoji: "🔥",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "You peed the bed",
-          emoji: "🛏️",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Night sweats / Overheating",
-          emoji: "🥵",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What should you wear to sleep?",
-      options: [
-        {
-          id: "c",
-          text: "Winter coat",
-          emoji: "🧥",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Breathable cotton",
-          emoji: "👕",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Plastic suit",
-          emoji: "🛍️",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Your sheets are damp. What to do?",
-      options: [
-        {
-          id: "a",
-          text: "Change sheets",
-          emoji: "🛏️",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Sleep on floor",
-          emoji: "🧱",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Flip pillow only",
-          emoji: "🔄",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Should you shower in the morning if you sweat at night?",
-      options: [
-        {
-          id: "c",
-          text: "No, save water",
-          emoji: "💧",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Only if going out",
-          emoji: "🏠",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Yes, wash off sweat",
-          emoji: "🚿",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Is it normal to sweat at night?",
-      options: [
-        {
-          id: "b",
-          text: "Never",
-          emoji: "❌",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Yes, especially in puberty",
-          emoji: "📈",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Only when sick",
-          emoji: "🤒",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You wake up drenched in sweat after a stressful exam day. What likely triggered it?",
+    options: [
+      {
+        id: "a",
+        text: "Stress hormones increasing body heat",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Mosquito bite reaction",
+        emoji: "🦟",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Sudden weight gain overnight",
+        emoji: "⚖️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "You had spicy food late at night and woke up sweating. What is the best adjustment?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Drink soda before bed",
+        emoji: "🥤",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Sleep immediately after eating",
+        emoji: "😴",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Avoid heavy or spicy food before sleep",
+        emoji: "🌶️",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: "You notice night sweats happen only on days you scroll on your phone till late.",
+    options: [
+      
+      {
+        id: "b",
+        text: "Increase screen brightness",
+        emoji: "🔆",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Reduce screen time before bed",
+        emoji: "📵",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Sleep with phone under pillow",
+        emoji: "📱",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Night sweats continue for weeks with fatigue and weight loss. What should you do?",
+    options: [
+      {
+        id: "a",
+        text: "Talk to a doctor",
+        emoji: "👩‍⚕️",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Ignore it completely",
+        emoji: "🙈",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Use stronger perfume",
+        emoji: "🌸",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "You wake up sweaty but feel cold immediately after. What is the smartest response?",
+    options: [
+     
+      {
+        id: "b",
+        text: "Turn AC to maximum",
+        emoji: "❄️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Stay in wet clothes",
+        emoji: "💧",
+        isCorrect: false
+      },
+       {
+        id: "a",
+        text: "Dry off and regulate body temperature",
+        emoji: "🌡️",
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

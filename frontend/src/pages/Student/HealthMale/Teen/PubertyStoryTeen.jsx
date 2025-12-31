@@ -18,128 +18,132 @@ const PubertyStoryTeen = () => {
   const [showResult, setShowResult] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
 
-  const questions = [
-    {
-      id: 1,
-      text: "You notice your voice cracking when you talk. What's happening?",
-      options: [
-        {
-          id: "b",
-          text: "You are losing your voice",
-          emoji: "😶",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Your voice box is growing",
-          emoji: "🗣️",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "You shouted too much",
-          emoji: "📢",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You feel angry for no reason sometimes. Is this normal?",
-      options: [
-        {
-          id: "c",
-          text: "No, you are bad",
-          emoji: "😈",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Yes, it's hormones",
-          emoji: "🧪",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "You need more sleep only",
-          emoji: "😴",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You are growing taller very fast. What do you need?",
-      options: [
-        {
-          id: "b",
-          text: "Less food",
-          emoji: "🍽️",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "More coffee",
-          emoji: "☕",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Healthy food and sleep",
-          emoji: "🥗",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You start sweating more. What should you do?",
-      options: [
-        {
-          id: "c",
-          text: "Stop exercising",
-          emoji: "🛑",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Use deodorant",
-          emoji: "🧴",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Wear heavy clothes",
-          emoji: "🧥",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You see hair growing on your face. Should you shave?",
-      options: [
-        {
-          id: "b",
-          text: "You must shave daily",
-          emoji: "🪒",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Pluck it out",
-          emoji: "🤏",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "It's your choice",
-          emoji: "🧔",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+ const questions = [
+  {
+    id: 1,
+    text: "During class, you suddenly feel very self-conscious about how you look compared to others. What’s the healthiest way to handle this feeling?",
+    options: [
+      {
+        id: "a",
+        text: "Understand that everyone develops at a different pace",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Compare yourself constantly to classmates",
+        emoji: "📏",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Avoid people until you feel confident",
+        emoji: "🚪",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "You notice your emotions feel stronger than before—happiness, anger, and sadness all feel intense. What’s most likely causing this?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Weak personality",
+        emoji: "🪫",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Too much screen time only",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Brain and hormone changes affecting emotions",
+        emoji: "🧬",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: "You start needing more privacy than before and get irritated when it’s not respected. What does this usually mean?",
+    options: [
+      
+      {
+        id: "b",
+        text: "You are becoming antisocial",
+        emoji: "🙅",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "You are developing personal boundaries",
+        emoji: "🚧",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "You dislike your family",
+        emoji: "🏠",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You feel pressure to act more ‘grown-up’ even when you’re unsure. What’s the smartest response?",
+    options: [
+      {
+        id: "a",
+        text: "Make choices based on your values, not pressure",
+        emoji: "🧭",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Do whatever others expect",
+        emoji: "👥",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Ignore consequences to seem mature",
+        emoji: "⚠️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "You begin questioning who you are and what you believe in. What does this phase usually help build?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Confusion that never ends",
+        emoji: "🌫️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Disconnection from reality",
+        emoji: "🧩",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Personal identity and self-awareness",
+        emoji: "🪞",
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

@@ -19,128 +19,53 @@ const DisciplineStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "You skip all chores and homework. Should you change this?",
-      options: [
-        {
-          id: "a",
-          text: "No, it's too much work",
-          emoji: "😩",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Yes, chores build responsibility",
-          emoji: "💪",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Maybe later",
-          emoji: "⏰",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "How does completing chores help teens?",
-      options: [
-        {
-          id: "c",
-          text: "Teaches time management",
-          emoji: "⏱️",
-          isCorrect: true
-        },
-        {
-          id: "a",
-          text: "Wastes time",
-          emoji: "⏳",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Only makes parents happy",
-          emoji: "😊",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What happens when teens avoid all responsibilities?",
-      options: [
-        {
-          id: "a",
-          text: "More freedom",
-          emoji: "🆓",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Builds character and skills",
-          emoji: "⭐",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "No consequences",
-          emoji: "🤷",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How should parents encourage teen discipline?",
-      options: [
-        {
-          id: "b",
-          text: "Set clear expectations",
-          emoji: "📋",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Do everything for them",
-          emoji: "🧹",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Give no chores",
-          emoji: "✅",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What is the benefit of self-discipline for teens?",
-      options: [
-        
-        {
-          id: "c",
-          text: "More restrictions",
-          emoji: "🔒",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Less work",
-          emoji: "😌",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Greater independence",
-          emoji: "🦅",
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You procrastinate on homework and personal tasks daily. What’s a smart approach?",
+    options: [
+      { id: "a", text: "Continue postponing", emoji: "⏳", isCorrect: false },
+      { id: "b", text: "Set a schedule and follow it", emoji: "📅", isCorrect: true },
+      { id: "c", text: "Only do urgent tasks", emoji: "⚡", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "How does consistent task completion help teens in life?",
+    options: [
+      { id: "a", text: "Builds reliability and trust", emoji: "🤝", isCorrect: true },
+      { id: "b", text: "Leads to perfectionism", emoji: "🎯", isCorrect: false },
+      { id: "c", text: "Creates unnecessary stress", emoji: "😰", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "You avoid responsibilities at home and school. Long-term effect?",
+    options: [
+      { id: "b", text: "Freedom from obligations", emoji: "🆓", isCorrect: false },
+      { id: "c", text: "No impact at all", emoji: "🤷", isCorrect: false },
+      { id: "a", text: "Missed opportunities", emoji: "🚪", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    text: "What strategy helps teens stay disciplined without feeling controlled?",
+    options: [
+      { id: "a", text: "Set personal goals and rewards", emoji: "🏆", isCorrect: true },
+      { id: "b", text: "Let parents micromanage tasks", emoji: "👀", isCorrect: false },
+      { id: "c", text: "Ignore small responsibilities", emoji: "🚫", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "Why is self-discipline a superpower for teens?",
+    options: [
+      { id: "b", text: "Reduces social connections", emoji: "👥", isCorrect: false },
+      { id: "c", text: "Limits creative thinking", emoji: "🎨", isCorrect: false },
+      { id: "a", text: "It enables independence and confidence", emoji: "🦅", isCorrect: true },
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

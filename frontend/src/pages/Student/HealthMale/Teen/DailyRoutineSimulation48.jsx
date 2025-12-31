@@ -20,163 +20,166 @@ const DailyRoutineSimulation48 = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const steps = [
-    {
-      id: 1,
-      time: "7:00 AM",
-      activity: "Wake up. First thing?",
-      options: [
-        {
-          id: "a",
-          text: "Check phone",
-          emoji: "📱",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Brush teeth/Wash face",
-          emoji: "🪥",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Eat candy",
-          emoji: "🍬",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Drink water and stretch",
-          emoji: "💧",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 2,
-      time: "7:15 AM",
-      activity: "Getting dressed.",
-      options: [
-        {
-          id: "a",
-          text: "Wear yesterday's socks",
-          emoji: "🧦",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Put on deodorant & clean clothes",
-          emoji: "👕",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Skip underwear",
-          emoji: "👖",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Choose weather-appropriate outfit",
-          emoji: "🧥",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      time: "12:00 PM",
-      activity: "Lunch time. Hands are dirty.",
-      options: [
-        {
-          id: "a",
-          text: "Eat immediately",
-          emoji: "🍔",
-          isCorrect: false
-        },
-        
-        {
-          id: "c",
-          text: "Lick fingers",
-          emoji: "👅",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Wash hands first",
-          emoji: "🧼",
-          isCorrect: true
-        },
-        {
-          id: "d",
-          text: "Sanitize with hand gel",
-          emoji: "🧴",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      time: "4:00 PM",
-      activity: "Back from sports.",
-      options: [
-        {
-          id: "a",
-          text: "Shower",
-          emoji: "🚿",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Sit on couch",
-          emoji: "🛋️",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Spray perfume",
-          emoji: "🌸",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Change into dry clothes",
-          emoji: "👚",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      time: "9:00 PM",
-      activity: "Bedtime.",
-      options: [
-        {
-          id: "a",
-          text: "Sleep in jeans",
-          emoji: "👖",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Brush teeth & wear PJs",
-          emoji: "🛌",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Eat sugar",
-          emoji: "🍭",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Set alarm and organize tomorrow",
-          emoji: "⏰",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    time: "6:45 AM",
+    activity: "You wake up feeling slightly dehydrated and sluggish.",
+    options: [
+      {
+        id: "a",
+        text: "Ignore it and rush out",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Drink water + light movement",
+        emoji: "🧘",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Energy drink immediately",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Scroll social media in bed",
+        emoji: "📱",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    time: "7:20 AM",
+    activity: "Weather is humid. You’ll be active all day.",
+    options: [
+      
+      {
+        id: "b",
+        text: "Wear thick fashionable clothes",
+        emoji: "🧥",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Layer heavily to look cool",
+        emoji: "😎",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Reuse yesterday’s outfit",
+        emoji: "🔁",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Choose breathable fabrics",
+        emoji: "🌬️",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    time: "1:00 PM",
+    activity: "After lunch, you feel sticky and uncomfortable.",
+    options: [
+      
+      {
+        id: "b",
+        text: "Ignore discomfort",
+        emoji: "🙃",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Blame food only",
+        emoji: "🍔",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Adjust hygiene discreetly",
+        emoji: "🧴",
+        isCorrect: true
+      },
+      {
+        id: "d",
+        text: "Overuse fragrance",
+        emoji: "🌸",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    time: "5:30 PM",
+    activity: "You’re tired after activity but have plans later.",
+    options: [
+      
+      {
+        id: "b",
+        text: "Stay in sweaty clothes",
+        emoji: "🥵",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Reset body with quick clean + rest",
+        emoji: "♻️",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Just sit and recover",
+        emoji: "🛋️",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Cover it up with spray",
+        emoji: "🌫️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    time: "10:00 PM",
+    activity: "Before sleep, you reflect on tomorrow.",
+    options: [
+      {
+        id: "a",
+        text: "Prepare clothes & hygiene kit",
+        emoji: "🎒",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Sleep immediately",
+        emoji: "😴",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Late-night snacks",
+        emoji: "🍕",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Gaming till midnight",
+        emoji: "🎮",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const selectedOption = steps[currentStep].options.find(opt => opt.id === optionId);

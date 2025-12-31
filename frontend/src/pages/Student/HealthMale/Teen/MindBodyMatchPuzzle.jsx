@@ -19,20 +19,20 @@ const MindBodyMatchPuzzle = () => {
 
   // Activities (left side) - 5 items
   const activities = [
-    { id: 1, name: "Exercise", emoji: "🏃", description: "Physical movement" },
-    { id: 2, name: "Sleep", emoji: "😴", description: "Rest period" },
-    { id: 3, name: "Deep Breath", emoji: "🫁", description: "Breathing technique" },
-    { id: 4, name: "Meditation", emoji: "🧘", description: "Mindfulness practice" },
-    { id: 5, name: "Healthy Food", emoji: "🥗", description: "Nutritious eating" }
+    { id: 1, name: "Exercise", emoji: "🏃",  },
+    { id: 2, name: "Sleep", emoji: "😴",  },
+    { id: 3, name: "Deep Breath", emoji: "🫁",  },
+    { id: 4, name: "Meditation", emoji: "🧘",  },
+    { id: 5, name: "Healthy Food", emoji: "🥗",  }
   ];
 
   // Benefits (right side) - 5 items
   const benefits = [
-    { id: 3, name: "Inner Peace", emoji: "🧘", description: "Mental tranquility" },
-    { id: 5, name: "Sustained Energy", emoji: "⚡", description: "Long-lasting vigor" },
-    { id: 1, name: "Stress Relief", emoji: "😌", description: "Tension reduction" },
-    { id: 4, name: "Emotional Balance", emoji: "😊", description: "Mood stability" },
-    { id: 2, name: "Muscle Recovery", emoji: "💪", description: "Body restoration" }
+    { id: 3, name: "Inner Peace", emoji: "🧘",  },
+    { id: 5, name: "Sustained Energy", emoji: "⚡",  },
+    { id: 1, name: "Stress Relief", emoji: "😌",  },
+    { id: 4, name: "Emotional Balance", emoji: "😊",  },
+    { id: 2, name: "Muscle Recovery", emoji: "💪",  }
   ];
 
   // Correct matches

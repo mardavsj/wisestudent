@@ -31,62 +31,62 @@ const ReflexHygieneAlert = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "You see a dirty shirt on the floor. What do you do?",
-      correctAnswer: "Wash It",
-      options: [
-        { text: "Wash It", isCorrect: true, emoji: "🧺" },
-        { text: "Wear It", isCorrect: false, emoji: "👕" },
-        { text: "Hide It", isCorrect: false, emoji: "🙈" },
-        { text: "Give to Friend", isCorrect: false, emoji: "🎁" }
-      ]
-    },
-    {
-      id: 2,
-      question: "You are sweating a lot. What is the best action?",
-      correctAnswer: "Shower",
-      options: [
-        { text: "Air Dry", isCorrect: false, emoji: "🌬️" },
-        { text: "Shower", isCorrect: true, emoji: "🚿" },
-        { text: "Use Fan", isCorrect: false, emoji: "🌀" },
-        { text: "Wipe with Towel", isCorrect: false, emoji: "🧖" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Your nails are getting too long. What now?",
-      correctAnswer: "Clip Them",
-      options: [
-        { text: "Bite Them", isCorrect: false, emoji: "😬" },
-        { text: "Break Them", isCorrect: false, emoji: "🔨" },
-        { text: "Clip Them", isCorrect: true, emoji: "✂️" },
-        { text: "Paint over dirt", isCorrect: false, emoji: "💅" }
-      ]
-    },
-    {
-      id: 4,
-      question: "You have bad breath before a meeting. Quick fix?",
-      correctAnswer: "Brush",
-      options: [
-        { text: "Stay Quiet", isCorrect: false, emoji: "🤐" },
-        { text: "Eat Mint", isCorrect: false, emoji: "🍬" },
-        { text: "Drink Water", isCorrect: false, emoji: "💧" },
-        { text: "Brush", isCorrect: true, emoji: "🪥" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Your hair is messy and tangled. What do you do?",
-      correctAnswer: "Comb It",
-      options: [
-        { text: "Hide It", isCorrect: false, emoji: "🧢" },
-        { text: "Comb It", isCorrect: true, emoji: "💈" },
-        { text: "Cut It", isCorrect: false, emoji: "✂️" },
-        { text: "Gel it down", isCorrect: false, emoji: "🧴" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You accidentally spill juice on your clothes before going out. What should you do first?",
+    correctAnswer: "Change into clean clothes",
+    options: [
+      { text: "Cover it with a jacket", isCorrect: false, emoji: "🧥" },
+      { text: "Change into clean clothes", isCorrect: true, emoji: "👕" },
+      { text: "Ignore the stain", isCorrect: false, emoji: "🙄" },
+      { text: "Spray perfume on it", isCorrect: false, emoji: "🌸" }
+    ]
+  },
+  {
+    id: 2,
+    question: "After playing outside, your hands are dirty. What is the healthiest reflex?",
+    correctAnswer: "Wash hands with soap",
+    options: [
+      { text: "Wash hands with soap", isCorrect: true, emoji: "🧼" },
+      { text: "Wipe on clothes", isCorrect: false, emoji: "👖" },
+      { text: "Shake hands dry", isCorrect: false, emoji: "🤝" },
+      { text: "Wait until later", isCorrect: false, emoji: "⏰" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You notice dirt under your fingernails during class. What should you plan to do?",
+    correctAnswer: "Clean and trim nails",
+    options: [
+      { text: "Hide hands", isCorrect: false, emoji: "🙈" },
+      { text: "Scratch it out", isCorrect: false, emoji: "😬" },
+      { text: "Clean and trim nails", isCorrect: true, emoji: "✂️" },
+      { text: "Paint nails", isCorrect: false, emoji: "💅" }
+    ]
+  },
+  {
+    id: 4,
+    question: "You wake up in the morning and feel your mouth tastes bad. What is the best reflex?",
+    correctAnswer: "Brush your teeth",
+    options: [
+      { text: "Drink juice", isCorrect: false, emoji: "🧃" },
+      { text: "Chew gum", isCorrect: false, emoji: "🍬" },
+      { text: "Skip breakfast", isCorrect: false, emoji: "🚫" },
+      { text: "Brush your teeth", isCorrect: true, emoji: "🪥" },
+    ]
+  },
+  {
+    id: 5,
+    question: "Your hair feels oily and uncomfortable during the day. What should you do?",
+    correctAnswer: "Wash and comb hair",
+    options: [
+      { text: "Wash and comb hair", isCorrect: true, emoji: "🚿" },
+      { text: "Wear a cap all day", isCorrect: false, emoji: "🧢" },
+      { text: "Use only gel", isCorrect: false, emoji: "🧴" },
+      { text: "Ignore the feeling", isCorrect: false, emoji: "😕" }
+    ]
+  }
+];
 
   // Update ref when currentRound changes
   useEffect(() => {

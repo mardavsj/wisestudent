@@ -22,57 +22,57 @@ const ReflexTeenAlert = () => {
   const ROUND_TIME = 10;
 
   const scenarios = [
-    {
-      id: 1,
-      question: "You see something unsafe happening online.",
-      options: [
-        { text: "Report It", isCorrect: true, emoji: "🚨" },
-        { text: "Share It", isCorrect: false, emoji: "📲" },
-        { text: "Ignore It", isCorrect: false, emoji: "🙅" },
-        { text: "Laugh", isCorrect: false, emoji: "😂" }
-      ]
-    },
-    {
-      id: 2,
-      question: "A stranger asks for personal info.",
-      options: [
-        { text: "Give Info", isCorrect: false, emoji: "📝" },
-        { text: "Block User", isCorrect: true, emoji: "🚫" },
-        { text: "Start Chat", isCorrect: false, emoji: "💬" },
-        { text: "Ask Friend", isCorrect: false, emoji: "🤔" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You feel unsafe at a party.",
-      options: [
-        { text: "Stay Quiet", isCorrect: false, emoji: "🤫" },
-        { text: "Hide", isCorrect: false, emoji: "🙈" },
-        { text: "Leave Now", isCorrect: true, emoji: "🚪" },
-        { text: "Wait It Out", isCorrect: false, emoji: "⏳" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Someone offers you a ride home who has been drinking.",
-      options: [
-        { text: "Call Parent", isCorrect: true, emoji: "📞" },
-        { text: "Accept Ride", isCorrect: false, emoji: "🚗" },
-        { text: "Drive Self", isCorrect: false, emoji: "🔑" },
-        { text: "Walk Alone", isCorrect: false, emoji: "🚶" }
-      ]
-    },
-    {
-      id: 5,
-      question: "You notice a friend is being bullied.",
-      options: [
-        { text: "Join In", isCorrect: false, emoji: "👊" },
-        { text: "Film It", isCorrect: false, emoji: "📹" },
-        { text: "Walk Away", isCorrect: false, emoji: "🏃" },
-        { text: "Get Help", isCorrect: true, emoji: "🆘" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You notice a suspicious link in a group chat claiming free gift cards.",
+    options: [
+      { text: "Click It Immediately", isCorrect: false, emoji: "🖱️" },
+      { text: "Forward to Friends", isCorrect: false, emoji: "📲" },
+      { text: "Ignore but Keep It", isCorrect: false, emoji: "🙈" },
+      { text: "Report It to Admin", isCorrect: true, emoji: "🚨" },
+    ]
+  },
+  {
+    id: 2,
+    question: "A stranger online wants your location for a 'game challenge'.",
+    options: [
+      { text: "Share Location", isCorrect: false, emoji: "📍" },
+      { text: "Block and Report", isCorrect: true, emoji: "🚫" },
+      { text: "Ask Why", isCorrect: false, emoji: "❓" },
+      { text: "Send Fake Info", isCorrect: false, emoji: "🤥" }
+    ]
+  },
+  {
+    id: 3,
+    question: "At a late-night party, you feel uncomfortable with the crowd.",
+    options: [
+      { text: "Leave Immediately with Friend", isCorrect: true, emoji: "🚪" },
+      { text: "Blend In Silently", isCorrect: false, emoji: "🤫" },
+      { text: "Hide in Corner", isCorrect: false, emoji: "🙈" },
+      { text: "Post on Social Media", isCorrect: false, emoji: "📱" }
+    ]
+  },
+  {
+    id: 4,
+    question: "A ride is offered home, but the driver appears intoxicated.",
+    options: [
+      { text: "Accept to Avoid Walking", isCorrect: false, emoji: "🚗" },
+      { text: "Call a Parent or Trusted Adult", isCorrect: true, emoji: "📞" },
+      { text: "Argue and Drive Themselves", isCorrect: false, emoji: "🔑" },
+      { text: "Take Public Transport Alone", isCorrect: false, emoji: "🚌" }
+    ]
+  },
+  {
+    id: 5,
+    question: "You see a friend being harassed online in a group chat.",
+    options: [
+      { text: "Ignore and Stay Silent", isCorrect: false, emoji: "🙈" },
+      { text: "Confront the Harasser Alone", isCorrect: false, emoji: "😡" },
+      { text: "Document and Report to Trusted Adult", isCorrect: true, emoji: "🆘" },
+      { text: "React with Memes", isCorrect: false, emoji: "😂" }
+    ]
+  }
+];
 
   const handleNext = () => {
     navigate("/student/health-male/teens/lifelong-healthy-man-badge");

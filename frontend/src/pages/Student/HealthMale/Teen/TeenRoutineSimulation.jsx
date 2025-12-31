@@ -20,162 +20,63 @@ const TeenRoutineSimulation = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const scenarios = [
-    {
-      id: 1,
-      time: "Morning Shower",
-      situation: "You are in a rush. Shower or skip?",
-      options: [
-         {
-          id: "a",
-          text: "Quick shower",
-          emoji: "🚿",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Skip shower",
-          emoji: "🏃",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Just wash hair",
-          emoji: "💇",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Take a quick rinse",
-          emoji: "💧",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      time: "Getting Dressed",
-      situation: "Your favorite shirt is dirty.",
-      options: [
-        {
-          id: "a",
-          text: "Wear a clean one",
-          emoji: "👔",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Spray perfume on dirty shirt",
-          emoji: "💨",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Wear it anyway",
-          emoji: "👕",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Choose a different clean shirt",
-          emoji: "👕",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      time: "After School",
-      situation: "You played sports and are sweaty.",
-      options: [
-        {
-          id: "a",
-          text: "Wash face and change",
-          emoji: "🧼",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Sit on sofa",
-          emoji: "🛋️",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Go to sleep",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Take a shower",
-          emoji: "🚿",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      time: "Shaving",
-      situation: "You see some facial hair.",
-      options: [
-        {
-          id: "a",
-          text: "Use shaving cream",
-          emoji: "🪒",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Use soap only",
-          emoji: "🧼",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Shave dry",
-          emoji: "🌵",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Use gel and razor",
-          emoji: "🧴",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      time: "Bedtime",
-      situation: "You are tired. Brush teeth?",
-      options: [
-         {
-          id: "a",
-          text: "Brush for 2 mins",
-          emoji: "🪥",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Skip tonight",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Chew gum",
-          emoji: "🍬",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Brush and floss",
-          emoji: "🦷",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    time: "Morning Shower",
+    situation: "You're running late for school. What’s the best choice?",
+    options: [
+      { id: "b", text: "Skip it entirely", emoji: "🏃", isCorrect: false },
+      { id: "a", text: "Take a quick 3-min shower", emoji: "🚿", isCorrect: true },
+      { id: "c", text: "Only wash underarms", emoji: "🙋‍♂️", isCorrect: false },
+      { id: "d", text: "Splash cold water on face", emoji: "💧", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    time: "Getting Dressed",
+    situation: "Your favorite shirt is stained. What’s best?",
+    options: [
+      { id: "a", text: "Spray perfume on it", emoji: "💨", isCorrect: false },
+      { id: "c", text: "Wear it anyway and hope no one notices", emoji: "👔", isCorrect: false },
+      { id: "b", text: "Wear a different clean shirt", emoji: "👕", isCorrect: true },
+      { id: "d", text: "Cover it with a jacket", emoji: "🧥", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    time: "After School",
+    situation: "You played soccer and are sweaty. What do you do first?",
+    options: [
+      { id: "a", text: "Wash face and hands", emoji: "🖐️", isCorrect: true },
+      { id: "b", text: "Go straight to homework", emoji: "📚", isCorrect: false },
+      { id: "c", text: "Take a long shower and skip snack", emoji: "🚿", isCorrect: false },
+      { id: "d", text: "Sit on sofa and relax without washing", emoji: "🛋️", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    time: "Shaving",
+    situation: "You notice facial hair. How to shave safely?",
+    options: [
+      { id: "b", text: "Shave dry with just a razor", emoji: "🌵", isCorrect: false },
+      { id: "c", text: "Use only soap", emoji: "🧼", isCorrect: false },
+      { id: "d", text: "Pluck with fingers", emoji: "🤏", isCorrect: false },
+      { id: "a", text: "Use shaving gel and razor", emoji: "🧴", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    time: "Bedtime",
+    situation: "You are exhausted. How to care for teeth?",
+    options: [
+      { id: "b", text: "Chew gum instead", emoji: "🍬", isCorrect: false },
+      { id: "a", text: "Brush for 2 minutes", emoji: "🪥", isCorrect: true },
+      { id: "c", text: "Skip brushing tonight", emoji: "😴", isCorrect: false },
+      { id: "d", text: "Brush and floss carefully", emoji: "🦷", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const selectedOption = scenarios[currentScenario].options.find(opt => opt.id === optionId);

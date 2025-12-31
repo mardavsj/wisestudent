@@ -28,62 +28,63 @@ const ReflexSmartHygiene = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "You are sweaty after the gym. What is the SMART choice?",
-      correctAnswer: "Shower",
-      options: [
-        { text: "Shower", isCorrect: true, emoji: "🚿" },
-        { text: "Sleep", isCorrect: false, emoji: "🛌" },
-        { text: "Perfume", isCorrect: false, emoji: "🌸" },
-        { text: "Ignore", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 2,
-      question: "You have a pimple. What should you do?",
-      correctAnswer: "Wash Face",
-      options: [
-        { text: "Pop It", isCorrect: false, emoji: "🤏" },
-        { text: "Wash Face", isCorrect: true, emoji: "🧼" },
-        { text: "Scratch It", isCorrect: false, emoji: "💅" },
-        { text: "Ignore", isCorrect: false, emoji: "🤷" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Your breath smells bad. What is the best fix?",
-      correctAnswer: "Brush Teeth",
-      options: [
-        { text: "Eat Candy", isCorrect: false, emoji: "🍬" },
-        { text: "Chew Gum", isCorrect: false, emoji: "🦷" },
-        { text: "Brush Teeth", isCorrect: true, emoji: "🪥" },
-        { text: "Drink Soda", isCorrect: false, emoji: "🥤" }
-      ]
-    },
-    {
-      id: 4,
-      question: "You need to shave. What tool do you use?",
-      correctAnswer: "Use Razor",
-      options: [
-        { text: "Use Knife", isCorrect: false, emoji: "🔪" },
-        { text: "Use Scissors", isCorrect: false, emoji: "✂️" },
-        { text: "Pluck", isCorrect: false, emoji: "🤏" },
-        { text: "Use Razor", isCorrect: true, emoji: "🪒" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Your clothes are dirty. What is the hygienic choice?",
-      correctAnswer: "Wash Them",
-      options: [
-        { text: "Wear Again", isCorrect: false, emoji: "👕" },
-        { text: "Spray Perfume", isCorrect: false, emoji: "💨" },
-        { text: "Wash Them", isCorrect: true, emoji: "🧺" },
-        { text: "Iron Them", isCorrect: false, emoji: "🔥" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You finish a late football practice and have 10 minutes before leaving. What reflex-smart hygiene move matters MOST right now?",
+    correctAnswer: "Change Sweat-Soaked Clothes",
+    options: [
+      { text: "Change Sweat-Soaked Clothes", isCorrect: true, emoji: "👕" },
+      { text: "Drink Cold Water", isCorrect: false, emoji: "🥤" },
+      { text: "Scroll Phone", isCorrect: false, emoji: "📱" },
+      { text: "Spray Deodorant", isCorrect: false, emoji: "🧴" }
+    ]
+  },
+  {
+    id: 2,
+    question: "You touch gym equipment, then feel an itch near your eye. What is the fastest SAFE reflex?",
+    correctAnswer: "Wash Hands First",
+    options: [
+      { text: "Rub Eye Quickly", isCorrect: false, emoji: "👁️" },
+      { text: "Use Hand Sanitizer", isCorrect: false, emoji: "🧪" },
+      { text: "Wash Hands First", isCorrect: true, emoji: "🧼" },
+      { text: "Ignore the Itch", isCorrect: false, emoji: "🙃" }
+    ]
+  },
+  {
+    id: 3,
+    question: "Your razor slips slightly during shaving but doesn’t cut deeply. What reflex action prevents infection?",
+    correctAnswer: "Rinse and Clean the Area",
+    options: [
+      { text: "Continue Shaving", isCorrect: false, emoji: "🪒" },
+      { text: "Rinse and Clean the Area", isCorrect: true, emoji: "🚿" },
+      { text: "Apply Perfume", isCorrect: false, emoji: "🌸" },
+      { text: "Cover Without Cleaning", isCorrect: false, emoji: "🩹" }
+    ]
+  },
+  {
+    id: 4,
+    question: "You realize you forgot deodorant but notice body odor starting. What reflex decision actually helps?",
+    correctAnswer: "Wash Underarms with Water",
+    options: [
+      { text: "Layer More Clothes", isCorrect: false, emoji: "🧥" },
+      { text: "Ignore It", isCorrect: false, emoji: "🙈" },
+      { text: "Spray Body Mist", isCorrect: false, emoji: "💨" },
+      { text: "Wash Underarms with Water", isCorrect: true, emoji: "🚰" }
+    ]
+  },
+  {
+    id: 5,
+    question: "You wake up late and your mouth tastes bad. No time to brush fully. Best reflex hygiene choice?",
+    correctAnswer: "Rinse Mouth Thoroughly",
+    options: [
+      { text: "Eat Mint Candy", isCorrect: false, emoji: "🍬" },
+      { text: "Drink Soda", isCorrect: false, emoji: "🥤" },
+      { text: "Rinse Mouth Thoroughly", isCorrect: true, emoji: "💦" },
+      { text: "Skip Breakfast", isCorrect: false, emoji: "⏭️" }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

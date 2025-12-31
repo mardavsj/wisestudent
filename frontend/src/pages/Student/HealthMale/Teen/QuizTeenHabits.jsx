@@ -10,7 +10,7 @@ const QuizTeenHabits = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   // Hardcode rewards
   const coinsPerLevel = 1;
@@ -18,127 +18,53 @@ const QuizTeenHabits = () => {
   const totalXp = 10;
 
   const questions = [
-    {
-      id: 1,
-      text: "Which supports health?",
-      options: [
-        {
-          id: "a",
-          text: "Sleep + balanced diet",
-          emoji: "😴",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Skipping meals",
-          emoji: "🍽️",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Staying up all night",
-          emoji: "🌙",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What is a healthy teen habit for mental health?",
-      options: [
-        {
-          id: "a",
-          text: "Skipping school",
-          emoji: "🏫",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Regular exercise",
-          emoji: "🏃",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Social media all day",
-          emoji: "📱",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How does a consistent bedtime help teens?",
-      options: [
-        {
-          id: "a",
-          text: "Better school performance",
-          emoji: "📚",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "More time for TV",
-          emoji: "📺",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "No difference",
-          emoji: "🤷",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What is important for teen physical health?",
-      options: [
-        {
-          id: "a",
-          text: "Avoiding all sports",
-          emoji: "⚽",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Daily movement and activity",
-          emoji: "🏃",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Only eating junk food",
-          emoji: "🍔",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "How should teens manage screen time?",
-      options: [
-        {
-          id: "a",
-          text: "No limits needed",
-          emoji: "📱",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Only use screens",
-          emoji: "💻",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Set healthy limits",
-          emoji: "⏰",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You feel tired and stressed after school. Which routine best supports your overall health?",
+    options: [
+      { id: "b", text: "Skip meals to save time", emoji: "🍽️", isCorrect: false },
+      { id: "c", text: "Stay up late gaming to relax", emoji: "🌙", isCorrect: false },
+      { id: "a", text: "Sleep 8+ hours and maintain a balanced diet", emoji: "😴", isCorrect: true },
+    ]
+  },
+  {
+    id: 2,
+    text: "Which habit is most beneficial for both mental and emotional health?",
+    options: [
+      { id: "a", text: "Avoid social interactions entirely", emoji: "🙈", isCorrect: false },
+      { id: "b", text: "Engage in regular exercise and outdoor activity", emoji: "🏃", isCorrect: true },
+      { id: "c", text: "Spend long hours on social media to unwind", emoji: "📱", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "Maintaining a consistent bedtime helps teens by:",
+    options: [
+      { id: "a", text: "Improving cognitive function and school performance", emoji: "📚", isCorrect: true },
+      { id: "b", text: "Giving more time for late-night entertainment", emoji: "📺", isCorrect: false },
+      { id: "c", text: "Having no significant effect", emoji: "🤷", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "Which activity pattern best supports teen physical health?",
+    options: [
+      { id: "a", text: "Avoid physical activity to prevent fatigue", emoji: "🛋️", isCorrect: false },
+      { id: "b", text: "Incorporate daily movement, sports, or active hobbies", emoji: "🏃‍♂️", isCorrect: true },
+      { id: "c", text: "Consume mainly processed and sugary foods", emoji: "🍔", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "To maintain healthy screen habits, teens should:",
+    options: [
+      { id: "a", text: "Use devices with no restrictions", emoji: "📱", isCorrect: false },
+      { id: "b", text: "Spend most of the day on screens", emoji: "💻", isCorrect: false },
+      { id: "c", text: "Set time limits and balance screen use with offline activities", emoji: "⏰", isCorrect: true }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;
@@ -196,6 +122,7 @@ const QuizTeenHabits = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

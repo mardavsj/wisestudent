@@ -24,133 +24,128 @@ const ReadingStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Why is reading good for you?",
-      options: [
-        {
-          id: "b",
-          text: "It makes you sleepy",
-          emoji: "😴",
-        
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "It exercises your brain",
-          emoji: "🧠",
-         
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "It hurts your eyes",
-          emoji: "👓",
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "When is a good time to read?",
-      options: [
-         {
-          id: "a",
-          text: "Before bed",
-          emoji: "🌙",
-          
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "While riding a bike",
-          emoji: "🚲",
-         
-          isCorrect: false
-        },
-       
-        {
-          id: "b",
-          text: "In the shower",
-          emoji: "🚿",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What can you learn from books?",
-      options: [
-        {
-          id: "b",
-          text: "Nothing",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "How to fly",
-          emoji: "🧚",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "New words and ideas",
-          emoji: "💡",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Where can you get books?",
-      options: [
-        {
-          id: "c",
-          text: "The grocery store",
-          emoji: "🛒",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "The library",
-          emoji: "🏛️",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "The gym",
-          emoji: "🏋️",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Reading is like...",
-      options: [
-        {
-          id: "b",
-          text: "A chore",
-          emoji: "🧹",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "A punishment",
-          emoji: "☹️",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "An adventure",
-          emoji: "🗺️",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Riya wants to become a journalist. While reading a long news article, which habit will help her understand facts clearly?",
+    options: [
+      {
+        id: "a",
+        text: "Skipping paragraphs randomly",
+        emoji: "⏭️",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Only reading headlines",
+        emoji: "📰",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Noting important details and sources",
+        emoji: "📝",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Arjun dreams of becoming a scientist. While reading a science story, what should he focus on to understand experiments?",
+    options: [
+      {
+        id: "a",
+        text: "Steps, results, and explanations",
+        emoji: "🔬",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Only the pictures",
+        emoji: "🖼️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Ignoring difficult words",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Meera is interested in becoming a lawyer. While reading a case story, what reading skill helps her most?",
+    options: [
+      {
+        id: "a",
+        text: "Guessing without reading fully",
+        emoji: "🎯",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Understanding arguments from both sides",
+        emoji: "⚖️",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Reading only the ending",
+        emoji: "📘",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Kabir wants to become a game designer. While reading a fantasy story, what should he observe to create better games?",
+    options: [
+      {
+        id: "a",
+        text: "Characters, challenges, and story flow",
+        emoji: "🎮",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Counting pages",
+        emoji: "📄",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Memorizing words without meaning",
+        emoji: "🔤",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Ananya wants to become a doctor. While reading a medical story for kids, what reading approach is most useful?",
+    options: [
+      {
+        id: "a",
+        text: "Skipping symptoms",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Reading only difficult terms",
+        emoji: "📚",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Connecting symptoms with causes and care",
+        emoji: "🩺",
+        isCorrect: true
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     if (answered) return;

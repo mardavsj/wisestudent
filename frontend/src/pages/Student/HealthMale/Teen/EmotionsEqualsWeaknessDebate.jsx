@@ -18,122 +18,126 @@ const EmotionsEqualsWeaknessDebate = () => {
   const totalXp = 10;
 
   const questions = [
-    {
-      id: 1,
-      text: "Is showing emotions weak or strong?",
-      options: [
-        {
-          id: "b",
-          text: "Strong",
-          emoji: "💪"
-        },
-        {
-          id: "a",
-          text: "Weak",
-          emoji: "😔"
-        },
-        {
-          id: "c",
-          text: "Only for certain emotions",
-          emoji: "🤔"
-        }
-      ],
-      correctAnswer: "b",
-      explanation: "Expressing emotions takes courage and builds emotional intelligence. Suppressing emotions can harm mental health, and all emotions are valid and should be expressed healthily."
-    },
-    {
-      id: 2,
-      text: "What happens when men express emotions?",
-      options: [
-        {
-          id: "a",
-          text: "They appear weaker",
-          emoji: "😞"
-        },
-        {
-          id: "c",
-          text: "They build stronger relationships",
-          emoji: "🤝"
-        },
-        {
-          id: "b",
-          text: "Nothing changes",
-          emoji: "😐"
-        }
-      ],
-      correctAnswer: "c",
-      explanation: "Open emotional expression improves connections with others. Expressing emotions shows emotional maturity, and emotional expression leads to better mental health."
-    },
-    {
-      id: 3,
-      text: "How should society view men who express emotions?",
-      options: [
-        {
-          id: "b",
-          text: "As less masculine",
-          emoji: "👎"
-        },
-        {
-          id: "a",
-          text: "As emotionally healthy",
-          emoji: "❤️"
-        },
-        {
-          id: "c",
-          text: "As attention-seeking",
-          emoji: "📢"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Healthy emotional expression benefits everyone. Emotional expression is a sign of strength, and expressing emotions is a normal human need."
-    },
-    {
-      id: 4,
-      text: "What is the result of suppressing emotions?",
-      options: [
-        {
-          id: "a",
-          text: "Better focus",
-          emoji: "🎯"
-        },
-        {
-          id: "b",
-          text: "Increased stress and anxiety",
-          emoji: "😫"
-        },
-        {
-          id: "c",
-          text: "More friends",
-          emoji: "👯"
-        }
-      ],
-      correctAnswer: "b",
-      explanation: "Bottling up feelings harms mental and physical health. Suppression often leads to distraction and stress, and authenticity attracts genuine friends."
-    },
-    {
-      id: 5,
-      text: "Can a leader show vulnerability?",
-      options: [
-        {
-          id: "a",
-          text: "No, never",
-          emoji: "🙅"
-        },
-        {
-          id: "b",
-          text: "Yes, it builds trust",
-          emoji: "🤝"
-        },
-        {
-          id: "c",
-          text: "Only if they are failing",
-          emoji: "📉"
-        }
-      ],
-      correctAnswer: "b",
-      explanation: "Vulnerability shows humanity and builds connection. Vulnerability builds trust, and vulnerability is powerful in success and failure."
-    }
-  ];
+  {
+    id: 1,
+    text: "During a crisis, a leader admits fear but continues to act. How should this be judged?",
+    options: [
+      {
+        id: "b",
+        text: "Fear plus action shows strength",
+        emoji: "🧠"
+      },
+      {
+        id: "a",
+        text: "Fear shows lack of control",
+        emoji: "⚠️"
+      },
+      
+      {
+        id: "c",
+        text: "Leaders should hide emotions",
+        emoji: "🎭"
+      }
+    ],
+    correctAnswer: "b",
+    explanation: "Acknowledging fear while acting responsibly reflects emotional regulation, not weakness. Strength is not absence of emotion, but the ability to function with it."
+  },
+  {
+    id: 2,
+    text: "A man cries privately after failure but performs confidently in public. What does this suggest?",
+    options: [
+      {
+        id: "a",
+        text: "Emotions should stay hidden",
+        emoji: "🤫"
+      },
+      
+      {
+        id: "c",
+        text: "Crying delays success",
+        emoji: "⏳"
+      },
+      {
+        id: "b",
+        text: "Emotions help process failure",
+        emoji: "🔄"
+      },
+    ],
+    correctAnswer: "b",
+    explanation: "Emotional processing allows recovery and learning. Suppressing emotions often leads to burnout or misplaced aggression later."
+  },
+  {
+    id: 3,
+    text: "Why do some cultures label emotional men as weak?",
+    options: [
+      {
+        id: "a",
+        text: "Because emotions reduce productivity",
+        emoji: "📉"
+      },
+      {
+        id: "b",
+        text: "Because control is confused with silence",
+        emoji: "🔒"
+      },
+      {
+        id: "c",
+        text: "Because emotions are biologically harmful",
+        emoji: "🧬"
+      }
+    ],
+    correctAnswer: "b",
+    explanation: "Many societies mistake emotional suppression for strength. True control involves understanding and managing emotions, not denying them."
+  },
+  {
+    id: 4,
+    text: "Which situation best demonstrates emotional strength?",
+    options: [
+      {
+        id: "b",
+        text: "Recognizing emotions and choosing responses",
+        emoji: "⚖️"
+      },
+      {
+        id: "a",
+        text: "Never showing anger or sadness",
+        emoji: "🧊"
+      },
+      
+      {
+        id: "c",
+        text: "Expressing emotions loudly to prove honesty",
+        emoji: "📢"
+      }
+    ],
+    correctAnswer: "b",
+    explanation: "Emotional strength is about regulation, not repression or explosion. Awareness + choice defines maturity."
+  },
+  {
+    id: 5,
+    text: "If emotions were truly weakness, what would logically follow?",
+    options: [
+      {
+        id: "a",
+        text: "Relationships would improve without them",
+        emoji: "🤝"
+      },
+      {
+        id: "b",
+        text: "Empathy-based leadership would fail",
+        emoji: "🏛️"
+      },
+      {
+        id: "c",
+        text: "Humans would function better like machines",
+        emoji: "🤖"
+      }
+    ],
+    correctAnswer: "b",
+    explanation: "Empathy, trust, and motivation rely on emotions. History shows emotionally aware leaders build stronger teams and societies."
+  }
+];
+
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || showFeedback) return;
@@ -211,12 +215,7 @@ const EmotionsEqualsWeaknessDebate = () => {
               const showCorrect = showFeedback && isCorrect;
               const showIncorrect = showFeedback && isSelected && !isCorrect;
               
-              // Add emojis for each option like in the reference game
-              const optionEmojis = {
-                a: "✅",
-                b: "❌",
-                c: "⚠️"
-              };
+
               
               return (
                 <button
@@ -228,7 +227,7 @@ const EmotionsEqualsWeaknessDebate = () => {
                   }`}
                 >
                   <div className="flex items-center">
-                    <div className="text-2xl mr-4">{optionEmojis[option.id] || '❓'}</div>
+                    <div className="text-2xl mr-4">{option.emoji}</div>
                     <div>
                       <h3 className="font-bold text-xl mb-1">{option.text}</h3>
                     </div>

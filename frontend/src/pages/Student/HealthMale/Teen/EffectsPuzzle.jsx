@@ -19,20 +19,20 @@ const EffectsPuzzle = () => {
 
   // Activities/Substances (left side) - 5 items
   const activities = [
-    { id: 1, name: "Smoking", emoji: "🚬", description: "Tobacco inhalation" },
-    { id: 2, name: "Alcohol", emoji: "🍺", description: "Liquid consumption" },
-    { id: 3, name: "Drugs", emoji: "💊", description: "Chemical substances" },
-    { id: 4, name: "Vaping", emoji: "💨", description: "Inhalation device" },
-    { id: 5, name: "Exercise", emoji: "🏃", description: "Physical activity" }
+    { id: 1, name: "Smoking", emoji: "🚬",  },
+    { id: 2, name: "Alcohol", emoji: "🍺",  },
+    { id: 3, name: "Drugs", emoji: "💊",  },
+    { id: 4, name: "Vaping", emoji: "💨",  },
+    { id: 5, name: "Exercise", emoji: "🏃",  }
   ];
 
   // Effects on Body (right side) - 5 items
   const effects = [
-    { id: 3, name: "Brain Damage", emoji: "🧠", description: "Neural impairment" },
-    { id: 5, name: "Heart Health", emoji: "❤️", description: "Cardiovascular benefit" },
-    { id: 4, name: "Respiratory Issues", emoji: "😮", description: "Breathing problems" },
-    { id: 1, name: "Lung Damage", emoji: "🫁", description: "Respiratory harm" },
-    { id: 2, name: "Liver Damage", emoji: "🫀", description: "Organ impairment" }
+    { id: 3, name: "Brain Damage", emoji: "🧠",  },
+    { id: 5, name: "Heart Health", emoji: "❤️",  },
+    { id: 4, name: "Respiratory Issues", emoji: "😮",  },
+    { id: 1, name: "Lung Damage", emoji: "🫁",  },
+    { id: 2, name: "Liver Damage", emoji: "🫀",  }
   ];
 
   // Correct matches

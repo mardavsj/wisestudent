@@ -22,31 +22,32 @@ const PubertySignsPuzzleTeen = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   // Puberty Signs (left side) - 5 items
-  const signs = [
-    { id: 1, name: "Voice Changes", emoji: "🗣️", description: "Sound transformation" },
-    { id: 2, name: "Skin Changes", emoji: "🧴", description: "Surface adjustments" },
-    { id: 3, name: "Height Growth", emoji: "📈", description: "Vertical expansion" },
-    { id: 4, name: "Hair Growth", emoji: "🧔", description: "Body covering" },
-    { id: 5, name: "Emotion Shifts", emoji: "🎭", description: "Feeling fluctuations" }
-  ];
+const signs = [
+  { id: 1, name: "Voice Changes", emoji: "🗣️" },
+  { id: 2, name: "Skin Changes", emoji: "🧴" },
+  { id: 3, name: "Height Growth", emoji: "📈" },
+  { id: 4, name: "Hair Growth", emoji: "🧔" },
+  { id: 5, name: "Emotion Shifts", emoji: "🎭" },
+];
 
-  // Body Changes (right side) - 5 items
-  const changes = [
-    { id: 3, name: "Growth Spurt", emoji: "📏", description: "Rapid height increase" },
-    { id: 5, name: "Mood Swings", emoji: "😞", description: "Emotional variability" },
-    { id: 1, name: "Deeper Voice", emoji: "👨", description: "Lower pitch sounds" },
-    { id: 4, name: "Body Hair", emoji: "🦰", description: "New follicle growth" },
-    { id: 2, name: "Oily Skin", emoji: "😅", description: "Increased sebum production" }
-  ];
+// Body Changes (right side) - 5 items (harder / less obvious)
+const changes = [
+  { id: 5, name: "Hormonal Mood Fluctuations", emoji: "😵" }, // Emotion
+  { id: 3, name: "Sudden Growth Spurt", emoji: "📏" }, // Height
+  { id: 1, name: "Pitch Deepening", emoji: "🎤" },   // Voice
+  { id: 2, name: "Sebum Increase", emoji: "💧" },     // Skin oily
+  { id: 4, name: "Terminal Hair", emoji: "🦰" },     // Hair
+];
 
-  // Correct matches
-  const correctMatches = [
-    { signId: 1, changeId: 1 }, // Voice Changes → Deeper Voice
-    { signId: 2, changeId: 2 }, // Skin Changes → Oily Skin
-    { signId: 3, changeId: 3 }, // Height Growth → Growth Spurt
-    { signId: 4, changeId: 4 }, // Hair Growth → Body Hair
-    { signId: 5, changeId: 5 }  // Emotion Shifts → Mood Swings
-  ];
+// Correct matches
+const correctMatches = [
+  { signId: 1, changeId: 1 }, // Voice Changes → Pitch Deepening
+  { signId: 2, changeId: 2 }, // Skin Changes → Sebum Increase
+  { signId: 3, changeId: 3 }, // Height Growth → Sudden Growth Spurt
+  { signId: 4, changeId: 4 }, // Hair Growth → Terminal Hair
+  { signId: 5, changeId: 5 }  // Emotion Shifts → Hormonal Mood Fluctuations
+];
+
 
   const handleSignSelect = (sign) => {
     if (gameFinished) return;

@@ -22,122 +22,127 @@ const HygieneConfidenceDebate46 = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Does smelling good make you confident?",
-      options: [
+  {
+    id: 1,
+    text: "Someone mocks hygiene openly but avoids close conversations. What does this show?",
+    options: [
+    
+      {
+        id: "b",
+        text: "They are confident leaders",
+        emoji: "👑"
+      },
+      {
+        id: "c",
+        text: "They dislike talking",
+        emoji: "🚫"
+      },
         {
-          id: "a",
-          text: "Yes, it boosts self-esteem",
-          emoji: "💪"
-        },
-        {
-          id: "b",
-          text: "No, it doesn't matter much",
-          emoji: "🤷"
-        },
-        {
-          id: "c",
-          text: "Yes, helps in social situations",
-          emoji: "🤝"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Good hygiene boosts self-esteem. You feel better when you smell fresh, and it impacts social interactions positively."
-    },
-    {
-      id: 2,
-      text: "Can bad breath ruin a conversation?",
-      options: [
-        {
-          id: "b",
-          text: "No, people ignore it",
-          emoji: "🤥"
-        },
-        {
-          id: "a",
-          text: "Yes, it's distracting",
-          emoji: "🤢"
-        },
-        {
-          id: "c",
-          text: "Only if you shout",
-          emoji: "🗣️"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "It pushes people away. It's hard to ignore, and even whispering spreads it."
-    },
-    {
-      id: 3,
-      text: "Do clean clothes matter?",
-      options: [
-        {
-          id: "c",
-          text: "No, messy is cool",
-          emoji: "🗑️"
-        },
-        {
-          id: "b",
-          text: "Only expensive ones",
-          emoji: "💲"
-        },
-        {
-          id: "a",
-          text: "Yes, shows self-respect",
-          emoji: "👔"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "You feel better in clean clothes. Clean is respectful, and cleanliness > brand."
-    },
-    {
-      id: 4,
-      text: "Can you be confident with acne?",
-      options: [
-        {
-          id: "b",
-          text: "No, hide face",
-          emoji: "🙈"
-        },
-        {
-          id: "a",
-          text: "Yes, personality shines",
-          emoji: "✨"
-        },
-        {
-          id: "c",
-          text: "Only in dark rooms",
-          emoji: "🌑"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "You are more than your skin. Don't hide, and be confident everywhere."
-    },
-    {
-      id: 5,
-      text: "Is self-care selfish?",
-      options: [
-        {
-          id: "c",
-          text: "Yes, help others only",
-          emoji: "🤲"
-        },
-        {
-          id: "b",
-          text: "It's a waste of time",
-          emoji: "⌛"
-        },
-        {
-          id: "a",
-          text: "No, it's healthy",
-          emoji: "❤️"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Taking care of you is good. You must help yourself first, and it's essential."
-    }
-  ];
+        id: "a",
+        text: "They feel insecure inside",
+        emoji: "🧠"
+      },
+    ],
+    correctAnswer: "a",
+    explanation: "Mocking hygiene can be a defense mechanism. Avoidance often signals inner insecurity, not confidence."
+  },
+  {
+    id: 2,
+    text: "Why do people judge hygiene silently instead of speaking?",
+    options: [
+      
+      {
+        id: "b",
+        text: "They forget instantly",
+        emoji: "🧠"
+      },
+      {
+        id: "a",
+        text: "Fear of awkwardness",
+        emoji: "😬"
+      },
+      {
+        id: "c",
+        text: "They enjoy judging",
+        emoji: "👀"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Hygiene is personal. People avoid conflict, but judgments still affect trust and social distance."
+  },
+  {
+    id: 3,
+    text: "A confident speaker loses attention mid-talk. Hygiene-related reason?",
+    options: [
+      {
+        id: "a",
+        text: "Distracting discomfort for listeners",
+        emoji: "⚠️"
+      },
+      {
+        id: "b",
+        text: "Audience jealousy",
+        emoji: "😒"
+      },
+      {
+        id: "c",
+        text: "Poor microphone quality",
+        emoji: "🎤"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Confidence includes awareness. Discomfort breaks connection even if words are strong."
+  },
+  {
+    id: 4,
+    text: "Which hygiene habit impacts confidence the MOST subconsciously?",
+    options: [
+     
+      {
+        id: "b",
+        text: "Mirror selfies",
+        emoji: "📸"
+      },
+      {
+        id: "c",
+        text: "Wearing brands",
+        emoji: "🏷️"
+      },
+       {
+        id: "a",
+        text: "Personal scent awareness",
+        emoji: "👃"
+      },
+    ],
+    correctAnswer: "a",
+    explanation: "Smell triggers emotional reactions faster than visuals. It strongly affects presence and confidence."
+  },
+  {
+    id: 5,
+    text: "True confidence linked to hygiene means:",
+    options: [
+      
+      {
+        id: "b",
+        text: "Looking perfect always",
+        emoji: "🎭"
+      },
+      {
+        id: "a",
+        text: "Being comfortable around others",
+        emoji: "🤝"
+      },
+      {
+        id: "c",
+        text: "Never caring about feedback",
+        emoji: "🧱"
+      }
+    ],
+    correctAnswer: "a",
+    explanation: "Confidence grows when you remove barriers—hygiene helps people feel relaxed around you."
+  }
+];
+
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || showFeedback) return;
@@ -211,12 +216,7 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
               const showCorrect = showFeedback && isCorrect;
               const showIncorrect = showFeedback && isSelected && !isCorrect;
               
-              // Add emojis for each option like in the reference game
-              const optionEmojis = {
-                a: "✅",
-                b: "❌",
-                c: "⚠️"
-              };
+
               
               return (
                 <button
@@ -228,7 +228,7 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
                   }`}
                 >
                   <div className="flex items-center">
-                    <div className="text-2xl mr-4">{optionEmojis[option.id] || '❓'}</div>
+                    <div className="text-2xl mr-4">{option.emoji}</div>
                     <div>
                       <h3 className="font-bold text-xl mb-1">{option.text}</h3>
                     </div>

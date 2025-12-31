@@ -10,7 +10,7 @@ const QuizStressRelief = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
   // Hardcode rewards
   const coinsPerLevel = 1;
@@ -18,127 +18,53 @@ const QuizStressRelief = () => {
   const totalXp = 10;
 
   const questions = [
-    {
-      id: 1,
-      text: "Which reduces stress?",
-      options: [
-        {
-          id: "a",
-          text: "Skip meals",
-          emoji: "🍽️",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Sleep + Exercise",
-          emoji: "😴",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Worry More",
-          emoji: "😟",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Best way to handle exam stress?",
-      options: [
-        {
-          id: "a",
-          text: "Study all night",
-          emoji: "🌙",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Ignore the exams",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Regular study breaks",
-          emoji: "⏸️",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What helps with stress before bed?",
-      options: [
-        {
-          id: "a",
-          text: "More studying",
-          emoji: "📚",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Screen time",
-          emoji: "📱",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Deep breathing exercises",
-          emoji: "🫁",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How does physical activity help stress?",
-      options: [
-        {
-          id: "a",
-          text: "Releases feel-good chemicals",
-          emoji: "😊",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Makes you more tired",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Increases anxiety",
-          emoji: "😰",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What should you do when feeling overwhelmed?",
-      options: [
-        {
-          id: "a",
-          text: "Ignore the feelings",
-          emoji: "🙈",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Talk to a trusted adult",
-          emoji: "💬",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Keep it all inside",
-          emoji: "🤐",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which activity is most effective to reduce stress?",
+    options: [
+      { id: "a", text: "Skip meals", emoji: "🍽️", isCorrect: false },
+      { id: "b", text: "Sleep and exercise regularly", emoji: "😴", isCorrect: true },
+      { id: "c", text: "Worry constantly", emoji: "😟", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Best approach to handle exam stress?",
+    options: [
+      { id: "a", text: "Pull all-nighters", emoji: "🌙", isCorrect: false },
+      { id: "b", text: "Ignore exams", emoji: "🤷", isCorrect: false },
+      { id: "c", text: "Take regular study breaks", emoji: "⏸️", isCorrect: true }
+    ]
+  },
+  {
+    id: 3,
+    text: "What is a healthy pre-bed stress relief habit?",
+    options: [
+      { id: "a", text: "Late-night studying", emoji: "📚", isCorrect: false },
+      { id: "b", text: "Endless screen scrolling", emoji: "📱", isCorrect: false },
+      { id: "c", text: "Deep breathing or meditation", emoji: "🧘", isCorrect: true }
+    ]
+  },
+  {
+    id: 4,
+    text: "How does regular physical activity help reduce stress?",
+    options: [
+      { id: "a", text: "Releases feel-good chemicals like endorphins", emoji: "😊", isCorrect: true },
+      { id: "b", text: "Makes you more tired and cranky", emoji: "😴", isCorrect: false },
+      { id: "c", text: "Increases anxiety", emoji: "😰", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "If you feel overwhelmed, what’s the best action?",
+    options: [
+      { id: "a", text: "Ignore your feelings", emoji: "🙈", isCorrect: false },
+      { id: "b", text: "Talk to a trusted adult or friend", emoji: "🤝", isCorrect: true },
+      { id: "c", text: "Keep it all inside", emoji: "🤐", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;
@@ -196,6 +122,7 @@ const QuizStressRelief = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         {!gameFinished ? (

@@ -22,88 +22,89 @@ const ShavingProBadgeTeen = () => {
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [showResult, setShowResult] = useState(false);
 
-    const levels = [
-        {
-            id: 1,
-            title: "Tools",
-            question: "What is essential for shaving?",
-            icon: UserCheck,
-            options: [
-                { id: "a", text: "Just Water", emoji: "💧", correct: false },
-                { id: "c", text: "Shaving Cream", emoji: "🧴", correct: true },
-                { id: "b", text: "Dry Razor", emoji: "🪒", correct: false },
-                { id: "d", text: "Soap", emoji: "🧼", correct: false }
-            ],
-            feedback: {
-                correct: "Correct! Cream protects your skin.",
-                wrong: "You need lubrication to prevent cuts."
-            }
-        },
-        {
-            id: 2,
-            title: "Direction",
-            question: "Which way to shave?",
-            icon: Shield,
-            options: [
-                { id: "c", text: "With Grain", emoji: "✅", correct: true },
-                { id: "a", text: "Against Grain", emoji: "❌", correct: false },
-                { id: "b", text: "Sideways", emoji: "↔️", correct: false },
-                { id: "d", text: "In Circles", emoji: "🌀", correct: false }
-            ],
-            feedback: {
-                correct: "Yes! Follow hair growth.",
-                wrong: "Shaving against the grain causes irritation."
-            }
-        },
-        {
-            id: 3,
-            title: "Hygiene",
-            question: "Can you share razors?",
-            icon: AlertTriangle,
-            options: [
-                { id: "a", text: "Sometimes", emoji: "⏰", correct: false },
-                { id: "b", text: "With Family", emoji: "👨‍👩‍👧‍👦", correct: false },
-                { id: "c", text: "Never", emoji: "🚫", correct: true },
-                { id: "d", text: "Only With Friends", emoji: "👥", correct: false }
-            ],
-            feedback: {
-                correct: "Exactly! It's unsanitary.",
-                wrong: "Sharing razors spreads bacteria and blood."
-            }
-        },
-        {
-            id: 4,
-            title: "Aftercare",
-            question: "What to do after shaving?",
-            icon: Heart,
-            options: [
-                { id: "a", text: "Rub Hard", emoji: "💪", correct: false },
-                { id: "b", text: "Nothing", emoji: "😶", correct: false },
-                { id: "d", text: "Wash With Hot Water", emoji: "🔥", correct: false },
-                { id: "c", text: "Moisturize", emoji: "🧴", correct: true },
-            ],
-            feedback: {
-                correct: "Right! Soothe the skin.",
-                wrong: "Your skin needs hydration after shaving."
-            }
-        },
-        {
-            id: 5,
-            title: "Safety",
-            question: "What if you cut yourself?",
-            icon: Badge,
-            options: [
-                { id: "a", text: "Ignore", emoji: "🙈", correct: false },
-                { id: "b", text: "Panic", emoji: "😱", correct: false },
-                { id: "c", text: "Apply Pressure", emoji: "✋", correct: false },
-                { id: "d", text: "Clean And Bandage", emoji: "🩹", correct: true }
-            ],
-            feedback: {
-                correct: "Smart! Stop the bleeding.",
-                wrong: "Apply pressure to stop bleeding."
-            }
+   const levels = [
+    {
+        id: 1,
+        title: "Skin Awareness",
+        question: "Your skin feels tight and itchy before shaving. What should you do?",
+        icon: UserCheck,
+        options: [
+            { id: "a", text: "Shave Immediately", emoji: "⚡", correct: false },
+            { id: "b", text: "Add Fragrance", emoji: "🌸", correct: false },
+            { id: "c", text: "Hydrate Skin First", emoji: "💧", correct: true },
+            { id: "d", text: "Use Extra Pressure", emoji: "💪", correct: false }
+        ],
+        feedback: {
+            correct: "Correct! Hydrated skin reduces irritation.",
+            wrong: "Dry skin increases cuts and razor burn."
         }
-    ];
+    },
+    {
+        id: 2,
+        title: "Blade Control",
+        question: "Hair keeps clogging your razor mid-shave. Best move?",
+        icon: Shield,
+        options: [
+            { id: "a", text: "Keep Shaving", emoji: "🏃", correct: false },
+            { id: "b", text: "Tap Razor Dry", emoji: "🧻", correct: false },
+            { id: "d", text: "Shake Aggressively", emoji: "🤜", correct: false },
+            { id: "c", text: "Rinse Blade Often", emoji: "🚿", correct: true },
+        ],
+        feedback: {
+            correct: "Exactly! A clean blade shaves safely.",
+            wrong: "Clogged blades pull hair and damage skin."
+        }
+    },
+    {
+        id: 3,
+        title: "Product Knowledge",
+        question: "Which ingredient is BEST for sensitive skin?",
+        icon: AlertTriangle,
+        options: [
+            { id: "c", text: "Aloe Vera", emoji: "🌿", correct: true },
+            { id: "a", text: "Alcohol", emoji: "🔥", correct: false },
+            { id: "b", text: "Menthol", emoji: "❄️", correct: false },
+            { id: "d", text: "Strong Fragrance", emoji: "💨", correct: false }
+        ],
+        feedback: {
+            correct: "Right! Aloe soothes and heals skin.",
+            wrong: "Harsh ingredients irritate sensitive skin."
+        }
+    },
+    {
+        id: 4,
+        title: "Technique Mastery",
+        question: "You feel razor drag on your skin. What does this signal?",
+        icon: Heart,
+        options: [
+            { id: "a", text: "Skin Is Dirty", emoji: "🧼", correct: false },
+            { id: "b", text: "Blade Needs Attention", emoji: "🪒", correct: true },
+            { id: "c", text: "Hair Is Stronger", emoji: "💪", correct: false },
+            { id: "d", text: "Shave Faster", emoji: "⚡", correct: false }
+        ],
+        feedback: {
+            correct: "Correct! Drag means blade or lubrication issue.",
+            wrong: "Ignoring drag causes razor burn and cuts."
+        }
+    },
+    {
+        id: 5,
+        title: "Pro Decision",
+        question: "You notice redness spreading after shaving. Pro response?",
+        icon: Badge,
+        options: [
+            { id: "a", text: "Apply Heat", emoji: "🔥", correct: false },
+            { id: "b", text: "Scratch Area", emoji: "💅", correct: false },
+            { id: "c", text: "Apply Cooling Balm", emoji: "❄️", correct: true },
+            { id: "d", text: "Shave Again", emoji: "🔁", correct: false }
+        ],
+        feedback: {
+            correct: "Excellent! Calm the skin immediately.",
+            wrong: "Redness means inflammation — treat gently."
+        }
+    }
+];
+
 
     const currentLevelData = levels[currentLevel - 1];
     const Icon = currentLevelData?.icon;

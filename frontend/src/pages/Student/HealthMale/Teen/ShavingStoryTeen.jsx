@@ -18,128 +18,133 @@ const ShavingStoryTeen = () => {
     const [showResult, setShowResult] = useState(false);
     const [finalScore, setFinalScore] = useState(0);
 
-    const questions = [
+   const questions = [
+  {
+    id: 1,
+    text: "It's your first shave and your skin is sensitive. What razor is safest?",
+    options: [
+        
+      {
+        id: "a",
+        text: "Multi-blade razor",
+        emoji: "🪒",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Single-blade razor",
+        emoji: "1️⃣",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Old used razor",
+        emoji: "⚠️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "You notice razor bumps after shaving. Why did this happen?",
+    options: [
         {
-            id: 1,
-            text: "You want to start shaving. What do you need?",
-            options: [
-                {
-                    id: "b",
-                    text: "Just water",
-                    emoji: "💧",
-                    isCorrect: false
-                },
-                {
-                    id: "a",
-                    text: "Razor and Shaving Cream",
-                    emoji: "🪒",
-                    isCorrect: true
-                },
-                {
-                    id: "c",
-                    text: "Scissors only",
-                    emoji: "✂️",
-                    isCorrect: false
-                }
-            ]
-        },
+        id: "b",
+        text: "Pressing the razor too hard",
+        emoji: "💪",
+        isCorrect: true
+      },
+      {
+        id: "a",
+        text: "Shaving too fast",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Using water",
+        emoji: "💧",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Your razor feels dull but still cuts hair. What’s the smart choice?",
+    options: [
+      {
+        id: "a",
+        text: "Keep using it",
+        emoji: "🔁",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Sharpen it on jeans",
+        emoji: "👖",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Replace the blade",
+        emoji: "♻️",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "After shaving, your skin feels itchy and red. What prevents this?",
+    options: [
+      {
+        id: "a",
+        text: "Alcohol-based aftershave",
+        emoji: "🔥",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Cold water + moisturizer",
+        emoji: "🧴",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Scratching the skin",
+        emoji: "💅",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "You shave every day and get pimples. What's the real issue?",
+    options: [
         {
-            id: 2,
-            text: "What should you do before shaving?",
-            options: [
-                {
-                    id: "c",
-                    text: "Dry your face",
-                    emoji: "🌵",
-                    isCorrect: false
-                },
-                {
-                    id: "a",
-                    text: "Wash face with warm water",
-                    emoji: "🚿",
-                    isCorrect: true
-                },
-                {
-                    id: "b",
-                    text: "Apply ice",
-                    emoji: "🧊",
-                    isCorrect: false
-                }
-            ]
-        },
-        {
-            id: 3,
-            text: "Which direction should you shave?",
-            options: [
-                {
-                    id: "b",
-                    text: "Sideways",
-                    emoji: "↔️",
-                    isCorrect: false
-                },
-                {
-                    id: "c",
-                    text: "Against the grain",
-                    emoji: "⬆️",
-                    isCorrect: false
-                },
-                {
-                    id: "a",
-                    text: "With the grain (hair growth)",
-                    emoji: "⬇️",
-                    isCorrect: true
-                }
-            ]
-        },
-        {
-            id: 4,
-            text: "You cut yourself while shaving. What to do?",
-            options: [
-                {
-                    id: "c",
-                    text: "Cry",
-                    emoji: "😭",
-                    isCorrect: false
-                },
-                {
-                    id: "a",
-                    text: "Apply pressure/tissue",
-                    emoji: "🧻",
-                    isCorrect: true
-                },
-                {
-                    id: "b",
-                    text: "Ignore it",
-                    emoji: "🩸",
-                    isCorrect: false
-                }
-            ]
-        },
-        {
-            id: 5,
-            text: "What to do after shaving?",
-            options: [
-                {
-                    id: "b",
-                    text: "Rub with towel",
-                    emoji: "🧣",
-                    isCorrect: false
-                },
-                {
-                    id: "c",
-                    text: "Nothing",
-                    emoji: "🤷",
-                    isCorrect: false
-                },
-                {
-                    id: "a",
-                    text: "Rinse and moisturize",
-                    emoji: "🧴",
-                    isCorrect: true
-                }
-            ]
-        }
-    ];
+        id: "b",
+        text: "Skin barrier is damaged",
+        emoji: "🧬",
+        isCorrect: true
+      },
+      {
+        id: "a",
+        text: "Hair grows too fast",
+        emoji: "📈",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Face is dirty",
+        emoji: "🧼",
+        isCorrect: false
+      },
+      
+    ]
+  }
+];
+
 
     const handleChoice = (optionId) => {
         const newChoices = [...choices, { 

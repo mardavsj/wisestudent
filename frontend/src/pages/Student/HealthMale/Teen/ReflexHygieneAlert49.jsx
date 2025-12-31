@@ -28,62 +28,65 @@ const ReflexHygieneAlert49 = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "You sneezed. Hands are germy.",
-      correctAnswer: "Wash Hands",
-      options: [
-        { text: "Touch Face", isCorrect: false, emoji: "🤦" },
-        { text: "Shake Hands", isCorrect: false, emoji: "🤝" },
-        { text: "Wash Hands", isCorrect: true, emoji: "🧼" },
-        { text: "High Five", isCorrect: false, emoji: "✋" }
-      ]
-    },
-    {
-      id: 2,
-      question: "You stepped in mud.",
-      correctAnswer: "Clean Shoes",
-      options: [
-        { text: "Walk Inside", isCorrect: false, emoji: "🏠" },
-        { text: "Clean Shoes", isCorrect: true, emoji: "👟" },
-        { text: "Jump on Bed", isCorrect: false, emoji: "🛏️" },
-        { text: "Ignore", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You are sweating a lot.",
-      correctAnswer: "Drink Water",
-      options: [
-        { text: "Drink Water", isCorrect: true, emoji: "💧" },
-        { text: "Wear Sweater", isCorrect: false, emoji: "🧥" },
-        { text: "Stop Moving", isCorrect: false, emoji: "🛑" },
-        { text: "Eat Salt", isCorrect: false, emoji: "🧂" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Your hair is oily.",
-      correctAnswer: "Shampoo",
-      options: [
-        { text: "Add Oil", isCorrect: false, emoji: "🛢️" },
-        { text: "Cut It All", isCorrect: false, emoji: "✂️" },
-        { text: "Wear Hat Forever", isCorrect: false, emoji: "🧢" },
-        { text: "Shampoo", isCorrect: true, emoji: "🧴" },
-      ]
-    },
-    {
-      id: 5,
-      question: "You have a rash.",
-      correctAnswer: "Tell Adult",
-      options: [
-        { text: "Scratch It", isCorrect: false, emoji: "💅" },
-        { text: "Tell Adult", isCorrect: true, emoji: "🗣️" },
-        { text: "Hide It", isCorrect: false, emoji: "🙈" },
-        { text: "Put Dirt On It", isCorrect: false, emoji: "💩" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "Someone coughs near you in a crowded bus.",
+    correctAnswer: "Create Distance",
+    options: [
+      { text: "Lean closer", isCorrect: false, emoji: "🤝" },
+      { text: "Cover their mouth", isCorrect: false, emoji: "✋" },
+      { text: "Create Distance", isCorrect: true, emoji: "↔️" },
+      { text: "Laugh it off", isCorrect: false, emoji: "😂" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Your gym clothes stay damp in your bag.",
+    correctAnswer: "Air Dry Immediately",
+    options: [
+      { text: "Leave overnight", isCorrect: false, emoji: "🌙" },
+      { text: "Air Dry Immediately", isCorrect: true, emoji: "🌬️" },
+      { text: "Cover with perfume", isCorrect: false, emoji: "🌸" },
+      { text: "Reuse tomorrow", isCorrect: false, emoji: "🔁" }
+    ]
+  },
+  {
+    id: 3,
+    question: "Your skin feels itchy after sweating all day.",
+    correctAnswer: "Change Into Dry Clothes",
+    options: [
+      { text: "Change Into Dry Clothes", isCorrect: true, emoji: "👕" },
+      { text: "Scratch more", isCorrect: false, emoji: "💅" },
+      { text: "Ignore sensation", isCorrect: false, emoji: "🙃" },
+      
+      { text: "Add fragrance", isCorrect: false, emoji: "🌫️" }
+    ]
+  },
+  {
+    id: 4,
+    question: "You share earphones with a friend.",
+    correctAnswer: "Clean Before Use",
+    options: [
+      { text: "Use immediately", isCorrect: false, emoji: "🎧" },
+      
+      { text: "Blow on them", isCorrect: false, emoji: "💨" },
+      { text: "Ignore hygiene", isCorrect: false, emoji: "🙈" },
+      { text: "Clean Before Use", isCorrect: true, emoji: "🧻" },
+    ]
+  },
+  {
+    id: 5,
+    question: "Your feet feel damp after long hours.",
+    correctAnswer: "Let Feet Breathe",
+    options: [
+      { text: "Wear tighter shoes", isCorrect: false, emoji: "👞" },
+      { text: "Sleep with socks", isCorrect: false, emoji: "🧦" },
+      { text: "Let Feet Breathe", isCorrect: true, emoji: "🌬️" },
+      { text: "Apply perfume", isCorrect: false, emoji: "🌸" }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

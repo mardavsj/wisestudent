@@ -19,127 +19,129 @@ const SportsHygieneStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "You just finished a football match. You are soaked in sweat. What now?",
-      options: [
-        {
-          id: "b",
-          text: "Go straight to bed",
-          emoji: "🛌",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Shower immediately",
-          emoji: "🚿",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Spray perfume",
-          emoji: "💨",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What about your gym clothes?",
-      options: [
-        {
-          id: "c",
-          text: "Wear them tomorrow",
-          emoji: "👕",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Wash them",
-          emoji: "🧺",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Leave them in bag",
-          emoji: "🎒",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Your feet are itchy after sports. What could it be?",
-      options: [
-        {
-          id: "b",
-          text: "Mosquito bite",
-          emoji: "🦟",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Dry skin",
-          emoji: "🌵",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Athlete's Foot",
-          emoji: "🦶",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How do you prevent Athlete's Foot?",
-      options: [
-        {
-          id: "c",
-          text: "Wear tight shoes",
-          emoji: "👞",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Keep feet dry and clean",
-          emoji: "✨",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Never wash feet",
-          emoji: "🚫",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You have a small cut from playing. What do you do?",
-      options: [
-        {
-          id: "b",
-          text: "Ignore it",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Rub dirt on it",
-          emoji: "🌱",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Clean and cover it",
-          emoji: "🩹",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "After a tournament match, you stay in sweaty gear during the team bus ride. By the time you reach home, what hidden hygiene risk has increased most?",
+    options: [
+      {
+        id: "c",
+        text: "Muscle soreness",
+        emoji: "💪",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Skin infections from trapped moisture",
+        emoji: "🦠",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Dehydration only",
+        emoji: "🥤",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Your coach asks everyone to remove shoes immediately after practice. Why is this rule actually important?",
+    options: [
+      {
+        id: "b",
+        text: "To cool feet faster",
+        emoji: "❄️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "To avoid smell complaints",
+        emoji: "😖",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "To stop fungi growing in warm, closed shoes",
+        emoji: "🦶",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "You notice small blisters forming after wearing new sports shoes. What is the smartest hygiene-sports response?",
+    options: [
+      {
+        id: "a",
+        text: "Pop them to release pressure",
+        emoji: "🤏",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Cover, keep clean, and let skin heal",
+        emoji: "🩹",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Ignore and keep training",
+        emoji: "🏃",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Your jersey still smells even after drying overnight. What mistake most likely caused this?",
+    options: [
+      
+      {
+        id: "a",
+        text: "Too much sunlight",
+        emoji: "☀️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Using sports fabric",
+        emoji: "👕",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Drying without washing first",
+        emoji: "🌬️",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "During a match, you get a small scrape but keep playing. What should be done immediately AFTER the game?",
+    options: [
+      {
+        id: "c",
+        text: "Wash, disinfect, and cover the wound",
+        emoji: "🧼",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Let sweat dry naturally",
+        emoji: "💦",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Apply ice only",
+        emoji: "🧊",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

@@ -25,62 +25,63 @@ const ReflexTeenChoice = () => {
   const timerRef = useRef(null);
 
   const questions = [
-    {
-      id: 1,
-      question: "You're stressed about an exam. What's a healthy way to cope?",
-      correctAnswer: "Exercise",
-      options: [
-        { text: "Exercise", isCorrect: true, emoji: "🏃" },
-        { text: "Drink Alcohol", isCorrect: false, emoji: "🍺" },
-        { text: "Smoke", isCorrect: false, emoji: "🚬" },
-        { text: "Isolate Yourself", isCorrect: false, emoji: "🚪" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Your friends are pressuring you to vape. What do you do?",
-      correctAnswer: "Say No",
-      options: [
-        { text: "Say No", isCorrect: true, emoji: "🛑" },
-        { text: "Try it Once", isCorrect: false, emoji: "💨" },
-        { text: "Make Excuses", isCorrect: false, emoji: "🤥" },
-        { text: "Join Them", isCorrect: false, emoji: "🤝" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You want to improve your mood and energy. What should you choose?",
-      correctAnswer: "Healthy Food",
-      options: [
-        { text: "Junk Food", isCorrect: false, emoji: "🍔" },
-        { text: "Energy Drinks", isCorrect: false, emoji: "🥤" },
-        { text: "Healthy Food", isCorrect: true, emoji: "🥗" },
-        { text: "Sugary Snacks", isCorrect: false, emoji: "🍭" }
-      ]
-    },
-    {
-      id: 4,
-      question: "You're bored at a party. What is a positive choice?",
-      correctAnswer: "Socialize",
-      options: [
-        { text: "Use Drugs", isCorrect: false, emoji: "💊" },
-        { text: "Socialize", isCorrect: true, emoji: "🗣️" },
-        { text: "Drink", isCorrect: false, emoji: "🍷" },
-        { text: "Leave Angrily", isCorrect: false, emoji: "😠" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What activity helps build long-term confidence?",
-      correctAnswer: "Sports/Hobbies",
-      options: [
-        { text: "Bullying", isCorrect: false, emoji: "👎" },
-        { text: "Sports/Hobbies", isCorrect: true, emoji: "⚽" },
-        { text: "Skipping School", isCorrect: false, emoji: "🏫" },
-        { text: "Ignoring Problems", isCorrect: false, emoji: "🙈" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You're overwhelmed with exam stress and sleep-deprived. Which coping strategy best supports brain function and emotional resilience?",
+    correctAnswer: "Exercise and Sleep Regulation",
+    options: [
+      { text: "Consume Caffeine All Night", isCorrect: false, emoji: "☕" },
+      { text: "Exercise and Sleep Regulation", isCorrect: true, emoji: "🛌" },
+      { text: "Ignore Sleep and Stress", isCorrect: false, emoji: "😵" },
+      { text: "Avoid People Completely", isCorrect: false, emoji: "🚪" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Peers insist on trying vaping. What scientifically safest response reduces addiction risk and peer conflict?",
+    correctAnswer: "Assertive Refusal and Explain Risks",
+    options: [
+      { text: "Assertive Refusal and Explain Risks", isCorrect: true, emoji: "🛑" },
+      { text: "Try Once to Fit In", isCorrect: false, emoji: "💨" },
+      { text: "Use Humor to Avoid", isCorrect: false, emoji: "😂" },
+      { text: "Join Them Secretly", isCorrect: false, emoji: "🤫" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You want sustained energy and improved cognitive function. Which choice aligns with neuroscience research?",
+    correctAnswer: "Whole Foods and Balanced Nutrition",
+    options: [
+      { text: "Energy Drinks and Sugary Snacks", isCorrect: false, emoji: "🥤" },
+      { text: "Skipping Meals Frequently", isCorrect: false, emoji: "⛔" },
+      { text: "High-Fat Fast Food Only", isCorrect: false, emoji: "🍔" },
+      { text: "Whole Foods and Balanced Nutrition", isCorrect: true, emoji: "🥗" },
+    ]
+  },
+  {
+    id: 4,
+    question: "At a social gathering, boredom arises. Which approach promotes mental well-being and social skill development?",
+    correctAnswer: "Engage in Meaningful Social Interaction",
+    options: [
+      { text: "Experiment with Drugs or Alcohol", isCorrect: false, emoji: "💊" },
+      { text: "Engage in Meaningful Social Interaction", isCorrect: true, emoji: "🗣️" },
+      { text: "Withdraw Completely", isCorrect: false, emoji: "🏠" },
+      { text: "React with Anger or Impulsivity", isCorrect: false, emoji: "😡" }
+    ]
+  },
+  {
+    id: 5,
+    question: "Which activity scientifically supports long-term self-esteem, resilience, and neural growth in teens?",
+    correctAnswer: "Regular Physical Activity and Hobbies",
+    options: [
+      { text: "Engaging in Bullying or Negative Behavior", isCorrect: false, emoji: "👎" },
+      { text: "Avoiding Challenges or School", isCorrect: false, emoji: "🏫" },
+      { text: "Regular Physical Activity and Hobbies", isCorrect: true, emoji: "🎨" },
+      { text: "Ignoring Problems or Responsibilities", isCorrect: false, emoji: "🙈" }
+    ]
+  }
+];
+
 
   // Handle time up - move to next question or show results
   const handleTimeUp = useCallback(() => {

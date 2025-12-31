@@ -173,7 +173,7 @@ export const getMoralKidsGames = (gameCompletionStatus)=> {
         },
         {
           id: "moral-kids-12",
-          title: "Polite Words Quiz2",
+          title: "Polite Words Quiz",
           description: "Identify polite language",
           icon: <MessageSquare className="w-6 h-6" />,
           difficulty: "Easy",
@@ -327,7 +327,7 @@ export const getMoralKidsGames = (gameCompletionStatus)=> {
         },
         {
           id: "moral-kids-23",
-          title: "Reflex Kindnesss",
+          title: "Reflex Kindness",
           description: "Tap when 'Help' appears, ignore 'Mock'.",
           icon: <Award className="w-6 h-6" />,
           difficulty: "Easy",
@@ -355,7 +355,7 @@ export const getMoralKidsGames = (gameCompletionStatus)=> {
         },
             {
             id: "moral-kids-25",
-            title: "Animal Storyy",
+            title: "Animal Story",
             description: "Puppy is thirsty. Do you give water? → Yes.",
             icon: <Award className="w-6 h-6" />,
             difficulty: "Easy",
@@ -425,7 +425,7 @@ export const getMoralKidsGames = (gameCompletionStatus)=> {
             },
             {
             id: "moral-kids-30",
-            title: "Badge: Kind Kidd",
+            title: "Badge: Kind Kid",
             description: "Do 5 acts of kindness to unlock badge 'Kind Kid.'",
             icon: <Award className="w-6 h-6" />,
             difficulty: "Easy",
@@ -439,7 +439,7 @@ export const getMoralKidsGames = (gameCompletionStatus)=> {
             },
             {
             id: "moral-kids-31",
-            title: "Homework Storyy",
+            title: "Homework Story",
             description: "You promised to finish homework. Do you do it or play instead? → Finish homework.",
             icon: <Award className="w-6 h-6" />,
             difficulty: "Easy",
@@ -565,7 +565,7 @@ export const getMoralKidsGames = (gameCompletionStatus)=> {
             },
             {
             id: "moral-kids-40",
-            title: "Badge: Responsible Kidd",
+            title: "Badge: Responsible Kid",
             description: "Complete 5 responsible actions to unlock badge 'Responsible Kid.'",
             icon: <Award className="w-6 h-6" />,
             difficulty: "Easy",
@@ -817,7 +817,7 @@ export const getMoralKidsGames = (gameCompletionStatus)=> {
             },
             {
             id: "moral-kids-58",
-            title: "Bully Story1",
+            title: "Bully Story",
             description: "Friend is teased. Do you support or laugh? → Support.",
             icon: <Award className="w-6 h-6" />,
             difficulty: "Easy",
@@ -915,7 +915,7 @@ export const getMoralKidsGames = (gameCompletionStatus)=> {
             },
             {
             id: "moral-kids-65",
-            title: "Classroom Story1",
+            title: "Classroom Story",
             description: "Group project — do you contribute or let others do all? → Contribute.",
             icon: <Award className="w-6 h-6" />,
             difficulty: "Easy",

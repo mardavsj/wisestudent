@@ -28,62 +28,62 @@ const ReflexStressCheck = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "You have a big test tomorrow. What to do?",
-      correctAnswer: "Study & Sleep",
-      options: [
-        { text: "Panic", isCorrect: false, emoji: "😱" },
-        { text: "Study & Sleep", isCorrect: true, emoji: "📚" },
-        { text: "Ignore", isCorrect: false, emoji: "🙈" },
-        { text: "Cheat", isCorrect: false, emoji: "🤥" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Someone is bullying you. Best reaction?",
-      correctAnswer: "Tell Adult",
-      options: [
-        { text: "Fight", isCorrect: false, emoji: "🥊" },
-        { text: "Cry alone", isCorrect: false, emoji: "😢" },
-        { text: "Tell Adult", isCorrect: true, emoji: "🗣️" },
-        { text: "Hide", isCorrect: false, emoji: "📦" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You feel sad for no reason.",
-      correctAnswer: "Talk to someone",
-      options: [
-        { text: "Isolate", isCorrect: false, emoji: "🔒" },
-        { text: "Talk to someone", isCorrect: true, emoji: "💬" },
-        { text: "Eat junk", isCorrect: false, emoji: "🍔" },
-        { text: "Sleep all day", isCorrect: false, emoji: "🛌" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Too much homework to do!",
-      correctAnswer: "Plan/Prioritize",
-      options: [
-        { text: "Plan/Prioritize", isCorrect: true, emoji: "📝" },
-        { text: "Burn homework", isCorrect: false, emoji: "🔥" },
-        { text: "Copy friend", isCorrect: false, emoji: "👀" },
-        { text: "Give up", isCorrect: false, emoji: "🏳️" }
-      ]
-    },
-    {
-      id: 5,
-      question: "You made a big mistake.",
-      correctAnswer: "Learn from it",
-      options: [
-        { text: "Blame others", isCorrect: false, emoji: "👉" },
-        { text: "Lie", isCorrect: false, emoji: "🤥" },
-        { text: "Quit", isCorrect: false, emoji: "🚪" },
-        { text: "Learn from it", isCorrect: true, emoji: "🧠" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You have a big test tomorrow. How do you handle stress?",
+    correctAnswer: "Study & Sleep",
+    options: [
+      { text: "Panic", isCorrect: false, emoji: "😱" },
+      { text: "Study & Sleep", isCorrect: true, emoji: "🛌" },
+      { text: "Ignore", isCorrect: false, emoji: "🙈" },
+      { text: "Cheat", isCorrect: false, emoji: "🤥" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Someone is bullying you. Best reaction?",
+    correctAnswer: "Tell Adult",
+    options: [
+      { text: "Fight", isCorrect: false, emoji: "🥊" },
+      { text: "Cry alone", isCorrect: false, emoji: "😢" },
+      { text: "Tell Adult", isCorrect: true, emoji: "🗣️" },
+      { text: "Hide", isCorrect: false, emoji: "📦" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You feel sad or overwhelmed for no reason. What should you do?",
+    correctAnswer: "Talk to someone",
+    options: [
+      { text: "Isolate yourself", isCorrect: false, emoji: "🔒" },
+      { text: "Talk to someone", isCorrect: true, emoji: "💬" },
+      { text: "Eat junk food", isCorrect: false, emoji: "🍔" },
+      { text: "Sleep all day", isCorrect: false, emoji: "🛌" }
+    ]
+  },
+  {
+    id: 4,
+    question: "Too much homework to handle?",
+    correctAnswer: "Plan/Prioritize",
+    options: [
+      { text: "Plan & Prioritize", isCorrect: true, emoji: "📝" },
+      { text: "Burn homework", isCorrect: false, emoji: "🔥" },
+      { text: "Copy from a friend", isCorrect: false, emoji: "👀" },
+      { text: "Give up", isCorrect: false, emoji: "🏳️" }
+    ]
+  },
+  {
+    id: 5,
+    question: "You made a big mistake. How do you respond?",
+    correctAnswer: "Learn from it",
+    options: [
+      { text: "Blame others", isCorrect: false, emoji: "👉" },
+      { text: "Lie", isCorrect: false, emoji: "🤥" },
+      { text: "Quit", isCorrect: false, emoji: "🚪" },
+      { text: "Learn from it", isCorrect: true, emoji: "🧠" }
+    ]
+  }
+];
 
   // Update ref when currentRound changes
   useEffect(() => {

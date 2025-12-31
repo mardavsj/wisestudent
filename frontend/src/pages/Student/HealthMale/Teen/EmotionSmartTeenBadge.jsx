@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
-import { Award, Heart, Brain, Shield, Star, Smile } from "lucide-react";
+import { Award, Heart, Brain, Shield, Star, Smile, Handshake } from "lucide-react";
 
 const EmotionSmartTeenBadge = () => {
   const navigate = useNavigate();
@@ -22,171 +22,88 @@ const EmotionSmartTeenBadge = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      title: "Emotional Intelligence",
-      text: "What is emotional intelligence?",
-      icon: <Brain className="w-12 h-12 text-purple-400" />,
-      options: [
-        {
-          text: "Being smart at math",
-          emoji: "➗",
-          isCorrect: false
-        },
-        {
-          text: "Ignoring emotions",
-          emoji: "🙈",
-          isCorrect: false
-        },
-        {
-          text: "Understanding & managing emotions",
-          emoji: "🧠",
-          isCorrect: true
-        },
-        {
-          text: "Never expressing feelings",
-          emoji: "🤐",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Exactly! Emotional intelligence involves recognizing, understanding, and managing our own emotions and those of others.",
-        wrong: "Emotional intelligence is about understanding and managing emotions effectively, not about academic subjects or suppressing feelings."
-      }
-    },
-    {
-      id: 2,
-      title: "Empathy Importance",
-      text: "Why is empathy important?",
-      icon: <Heart className="w-12 h-12 text-red-400" />,
-      options: [
-        {
-          text: "Connects us to others",
-          emoji: "🤝",
-          isCorrect: true
-        },
-        {
-          text: "Makes you weak",
-          emoji: "🦺",
-          isCorrect: false
-        },
-        {
-          text: "Wastes time",
-          emoji: "⏰",
-          isCorrect: false
-        },
-        {
-          text: "Creates conflict",
-          emoji: "⚔️",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "That's right! Empathy helps us form meaningful connections and understand different perspectives.",
-        wrong: "Empathy is a strength that enables us to relate to others and build stronger relationships."
-      }
-    },
-    {
-      id: 3,
-      title: "Handling Rejection",
-      text: "How to handle rejection?",
-      icon: <Shield className="w-12 h-12 text-blue-400" />,
-      options: [
-        {
-          text: "Seek revenge",
-          emoji: "⚔️",
-          isCorrect: false
-        },
-        {
-          text: "Accept and move on",
-          emoji: "✅",
-          isCorrect: true
-        },
-        {
-          text: "Give up forever",
-          emoji: "🏳️",
-          isCorrect: false
-        },
-        
-        {
-          text: "Blame everyone else",
-          emoji: "😠",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Exactly! Acceptance allows us to learn from experiences and continue growing.",
-        wrong: "Healthy responses to rejection involve acceptance, learning, and moving forward constructively."
-      }
-    },
-    {
-      id: 4,
-      title: "Healthy Boundaries",
-      text: "What is a healthy boundary?",
-      icon: <Star className="w-12 h-12 text-yellow-400" />,
-      options: [
-        {
-          text: "Always saying yes",
-          emoji: "👍",
-          isCorrect: false
-        },
-        {
-          text: "Never talking to anyone",
-          emoji: "🔇",
-          isCorrect: false
-        },
-        {
-          text: "Saying no when needed",
-          emoji: "✋",
-          isCorrect: true
-        },
-        {
-          text: "Controlling others",
-          emoji: "👑",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Perfect! Setting boundaries means knowing your limits and communicating them respectfully.",
-        wrong: "Healthy boundaries involve self-respect, clear communication, and mutual respect in relationships."
-      }
-    },
-    {
-      id: 5,
-      title: "Self-Care Practices",
-      text: "Self-care includes...",
-      icon: <Smile className="w-12 h-12 text-green-400" />, 
-      options: [
-       
-        {
-          text: "Only physical exercise",
-          emoji: "🏃",
-          isCorrect: false
-        },
-        
-       
-        {
-          text: "Neglecting your needs",
-          emoji: "🙈",
-          isCorrect: false
-        },
-        {
-          text: "Working constantly",
-          emoji: "💼",
-          isCorrect: false
-        },
-         {
-          text: "Physical and mental wellness",
-          emoji: "🧘",
-          isCorrect: true
-        },
-      ],
-      feedback: {
-        correct: "Absolutely! Self-care involves activities that restore and rejuvenate your mind and body.",
-        wrong: "True self-care encompasses physical, emotional, and mental well-being through balanced practices."
-      }
+  {
+    id: 1,
+    title: "Emotional Awareness",
+    text: "Why is it important to identify your emotions?",
+    icon: <Brain className="w-12 h-12 text-purple-400" />,
+    options: [
+      { text: "To ignore them", emoji: "🙈", isCorrect: false },
+      { text: "To blame others", emoji: "👉", isCorrect: false },
+      { text: "To hide them", emoji: "🤐", isCorrect: false },
+      { text: "To control and respond effectively", emoji: "🧠", isCorrect: true },
+    ],
+    feedback: {
+      correct: "Right! Recognizing emotions helps you respond thoughtfully instead of reacting impulsively.",
+      wrong: "Understanding your emotions is key to managing them effectively, not suppressing or ignoring them."
     }
-  ];
+  },
+  {
+    id: 2,
+    title: "Active Listening",
+    text: "Why is active listening important in friendships?",
+    icon: <Heart className="w-12 h-12 text-blue-400" />,
+    options: [
+      { text: "To respond faster", emoji: "⚡", isCorrect: false },
+      { text: "To genuinely understand others", emoji: "🤝", isCorrect: true },
+      { text: "To judge them secretly", emoji: "🕵️", isCorrect: false },
+      { text: "To ignore feelings", emoji: "🙈", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Exactly! Active listening shows empathy and strengthens trust in relationships.",
+      wrong: "Active listening is about understanding and validating others' feelings, not judging or ignoring them."
+    }
+  },
+  {
+    id: 3,
+    title: "Handling Peer Pressure",
+    text: "How can you handle peer pressure positively?",
+    icon: <Shield className="w-12 h-12 text-red-400" />,
+    options: [
+      { text: "Politely decline and assert your values", emoji: "✋", isCorrect: true },
+      { text: "Give in to fit in", emoji: "🤷", isCorrect: false },
+      { text: "Ignore friends forever", emoji: "🚪", isCorrect: false },
+      { text: "Rebel aggressively", emoji: "🔥", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Correct! Standing firm on your values shows self-respect and emotional maturity.",
+      wrong: "Handling peer pressure effectively means being assertive, not ignoring or rebelling without thought."
+    }
+  },
+  {
+    id: 4,
+    title: "Managing Stress",
+    text: "Which strategy helps manage stress effectively?",
+    icon: <Star className="w-12 h-12 text-yellow-400" />,
+    options: [
+      { text: "Bottling it up", emoji: "🙈", isCorrect: false },
+      { text: "Complain constantly", emoji: "📢", isCorrect: false },
+      { text: "Engage in healthy coping like exercise or meditation", emoji: "🧘", isCorrect: true },
+      { text: "Avoid responsibilities", emoji: "🏃", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Yes! Healthy coping mechanisms reduce stress and improve overall well-being.",
+      wrong: "Effective stress management requires active, healthy strategies, not avoidance or complaints."
+    }
+  },
+  {
+    id: 5,
+    title: "Conflict Resolution",
+    text: "Best way to resolve a disagreement with a friend?",
+    icon: <Handshake className="w-12 h-12 text-green-400" />,
+    options: [
+      { text: "Yell to win", emoji: "📢", isCorrect: false },
+      { text: "Listen, express feelings calmly, and seek compromise", emoji: "💬", isCorrect: true },
+      { text: "Ignore them forever", emoji: "🚪", isCorrect: false },
+      { text: "Gossip about them", emoji: "🤫", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Exactly! Calm communication and compromise strengthen friendships.",
+      wrong: "Healthy conflict resolution involves listening, expressing yourself, and finding a fair solution."
+    }
+  }
+];
+
 
   const handleChoice = (optionIndex) => {
     if (answered) return;

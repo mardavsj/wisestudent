@@ -393,7 +393,7 @@ export const getMoralTeenGames = (gameCompletionStatus)=> {
         },
         {
         id: "moral-teen-27",
-        title: "Journal of Empathy1",
+        title: "Journal of Empathy",
         description: "Write: ‘One time I understood someone’s feelings was ___.’",
         icon: <Notebook className="w-6 h-6" />,
         difficulty: "Easy",
@@ -589,7 +589,7 @@ export const getMoralTeenGames = (gameCompletionStatus)=> {
         },
         {
         id: "moral-teen-41",
-        title: "Classroom Story2",
+        title: "Classroom Story",
         description: "Teacher blames wrong student. Do you defend them? → Yes.",
         icon: <BookOpen className="w-6 h-6" />,
         difficulty: "Easy",
@@ -631,7 +631,7 @@ export const getMoralTeenGames = (gameCompletionStatus)=> {
         },
         {
         id: "moral-teen-44",
-        title: "Puzzle of Fairness1",
+        title: "Puzzle of Fairness",
         description: "Match ‘Equality → Justice, Bullying → Injustice.’",
         icon: <Puzzle className="w-6 h-6" />,
         difficulty: "Medium",
@@ -645,7 +645,7 @@ export const getMoralTeenGames = (gameCompletionStatus)=> {
         },
         {
         id: "moral-teen-45",
-        title: "Bully Story2",
+        title: "Bully Story",
         description: "Friend is bullied. Do you stand with the victim? → Yes.",
         icon: <Users className="w-6 h-6" />,
         difficulty: "Medium",
@@ -743,7 +743,7 @@ export const getMoralTeenGames = (gameCompletionStatus)=> {
         },
         {
         id: "moral-teen-52",
-        title: "Courage Quiz1",
+        title: "Courage Quiz",
         description: "Which is real courage? Correct = Protecting others.",
         icon: <HelpCircle className="w-6 h-6" />,
         difficulty: "Easy",
@@ -813,7 +813,7 @@ export const getMoralTeenGames = (gameCompletionStatus)=> {
         },
         {
         id: "moral-teen-57",
-        title: "Courage Journal1",
+        title: "Courage Journal",
         description: "Write: ‘A time I stood up for someone was ___.’",
         icon: <Notebook className="w-6 h-6" />,
         difficulty: "Easy",
@@ -1345,7 +1345,7 @@ export const getMoralTeenGames = (gameCompletionStatus)=> {
         },
         {
         id: "moral-teen-95",
-        title: "Peer Pressure Story1",
+        title: "Peer Pressure Story",
         description: "Friends push you to break rule. Correct = Refuse.",
         icon: <Users className="w-6 h-6" />,
         difficulty: "Medium",

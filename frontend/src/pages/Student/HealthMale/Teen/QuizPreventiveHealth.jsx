@@ -16,130 +16,133 @@ const QuizPreventiveHealth = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints, showAnswerConfetti } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Which is preventive care?",
-      options: [
-        {
-          id: "a",
-          text: "Getting vaccines",
-          emoji: "💉",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Treating symptoms after they appear",
-          emoji: "💊",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Ignoring fever until it worsens",
-          emoji: "🤒",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What is the main goal of preventive healthcare?",
-      options: [
-        {
-          id: "a",
-          text: "Treat existing diseases",
-          emoji: "🏥",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Emergency care only",
-          emoji: "🚑",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Prevent health problems",
-          emoji: "🛡️",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How often should teens get dental checkups?",
-      options: [
-        {
-          id: "a",
-          text: "Every 6 months",
-          emoji: "🦷",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Every 2-3 years",
-          emoji: "⏰",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Only when in pain",
-          emoji: "😬",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which preventive measure helps mental health?",
-      options: [
-        {
-          id: "a",
-          text: "Isolating when stressed",
-          emoji: "🏠",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Regular exercise routine",
-          emoji: "🏃",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Ignoring emotions",
-          emoji: "😶",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What should teens do for preventive eye care?",
-      options: [
-        {
-          id: "a",
-          text: "Only wear glasses when needed",
-          emoji: "👓",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Ignore vision changes",
-          emoji: "🙈",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Regular eye exams",
-          emoji: "👁️",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+ const questions = [
+  {
+    id: 1,
+    text: "Why is preventive health more cost-effective than curative care over a lifetime?",
+    options: [
+     
+      {
+        id: "b",
+        text: "Doctors prefer prevention",
+        emoji: "👨‍⚕️",
+        isCorrect: false
+      },
+       {
+        id: "a",
+        text: "It avoids expensive late-stage treatments",
+        emoji: "💰",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Illness rarely becomes serious",
+        emoji: "🤷",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Which habit most strongly supports preventive health across ALL body systems?",
+    options: [
+      {
+        id: "a",
+        text: "Consistent sleep routine",
+        emoji: "🌙",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Occasional intense workouts",
+        emoji: "🏋️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Vitamin supplements alone",
+        emoji: "💊",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Why are early screenings important even when no symptoms are present?",
+    options: [
+      {
+        id: "a",
+        text: "Many conditions develop silently",
+        emoji: "🔍",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Doctors require routine tests",
+        emoji: "📄",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Symptoms always appear late",
+        emoji: "⏳",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Which mental habit supports preventive health the MOST?",
+    options: [
+      {
+        id: "a",
+        text: "Ignoring stress until exams end",
+        emoji: "📚",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Distracting yourself constantly",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Self-monitoring mood and energy levels",
+        emoji: "📊",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "Which statement best defines preventive health responsibility?",
+    options: [
+      {
+        id: "a",
+        text: "Relying on doctors to fix problems",
+        emoji: "🏥",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Actively managing habits before illness starts",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Waiting for visible symptoms",
+        emoji: "👀",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;
@@ -195,6 +198,7 @@ const QuizPreventiveHealth = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
+      showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

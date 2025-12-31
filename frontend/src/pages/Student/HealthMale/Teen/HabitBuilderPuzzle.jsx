@@ -16,33 +16,33 @@ const HabitBuilderPuzzle = () => {
   const coinsPerLevel = 1;
   const totalCoins = 5;
   const totalXp = 10;
+// Habits (left side) - 5 items
+const habits = [
+  { id: 1, name: "Mindful Meditation", emoji: "🧘",  },
+  { id: 2, name: "Strength Training", emoji: "🏋️",  },
+  { id: 3, name: "Deep Reading", emoji: "📖",  },
+  { id: 4, name: "Early Sleep Routine", emoji: "🌙",  },
+  { id: 5, name: "Balanced Breakfast", emoji: "🥗",  }
+];
 
-  // Habits (left side) - 5 items
-  const habits = [
-    { id: 1, name: "Water", emoji: "💧", description: "Liquid intake" },
-    { id: 2, name: "Sports", emoji: "⚽", description: "Physical activity" },
-    { id: 3, name: "Study", emoji: "📚", description: "Learning time" },
-    { id: 4, name: "Sleep", emoji: "😴", description: "Rest period" },
-    { id: 5, name: "Breakfast", emoji: "🥣", description: "Morning meal" }
-  ];
+// Benefits (right side) - 5 items
+const benefits = [
+  { id: 2, name: "Muscle Strength", emoji: "💪",  },
+  { id: 1, name: "Stress Reduction", emoji: "�",  },
+  { id: 3, name: "Improved Concentration", emoji: "🧠",  },
+  { id: 5, name: "Sustained Energy", emoji: "⚡",  },
+  { id: 4, name: "Hormonal Balance", emoji: "⚖️",  },
+];
 
-  // Benefits (right side) - 5 items
-  const benefits = [
-    { id: 3, name: "Focus", emoji: "🎯", description: "Concentration aid" },
-    { id: 5, name: "Energy", emoji: "⚡", description: "Power boost" },
-    { id: 1, name: "Hydration", emoji: "🚰", description: "Body fluid" },
-    { id: 4, name: "Energy", emoji: "⚡", description: "Power boost" },
-    { id: 2, name: "Fitness", emoji: "💪", description: "Strength gain" }
-  ];
+// Correct matches
+const correctMatches = [
+  { habitId: 1, benefitId: 1 }, // Mindful Meditation → Stress Reduction
+  { habitId: 2, benefitId: 2 }, // Strength Training → Muscle Strength
+  { habitId: 3, benefitId: 3 }, // Deep Reading → Improved Concentration
+  { habitId: 4, benefitId: 4 }, // Early Sleep Routine → Hormonal Balance
+  { habitId: 5, benefitId: 5 }  // Balanced Breakfast → Sustained Energy
+];
 
-  // Correct matches
-  const correctMatches = [
-    { habitId: 1, benefitId: 1 }, // Water → Hydration
-    { habitId: 2, benefitId: 2 }, // Sports → Fitness
-    { habitId: 3, benefitId: 3 }, // Study → Focus
-    { habitId: 4, benefitId: 4 }, // Sleep → Energy
-    { habitId: 5, benefitId: 5 }  // Breakfast → Energy
-  ];
 
   const handleHabitSelect = (habit) => {
     if (gameFinished) return;

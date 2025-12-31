@@ -28,62 +28,62 @@ const ReflexPreventiveHealth = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "Preventive health action?",
-      correctAnswer: "Regular Checkups",
-      options: [
-        { text: "Regular Checkups", isCorrect: true, emoji: "🏥" },
-        { text: "Ignore Symptoms", isCorrect: false, emoji: "🙈" },
-        { text: "Self-Medicate", isCorrect: false, emoji: "💊" },
-        { text: "Skip Doctor", isCorrect: false, emoji: "❌" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Best way to prevent disease?",
-      correctAnswer: "Get Vaccines",
-      options: [
-        { text: "Avoid Vaccines", isCorrect: false, emoji: "🚫" },
-        { text: "Get Vaccines", isCorrect: true, emoji: "💉" },
-        { text: "Trust Rumors", isCorrect: false, emoji: "🗣️" },
-        { text: "Use Herbs Only", isCorrect: false, emoji: "🌿" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Healthy lifestyle choice?",
-      correctAnswer: "Balanced Diet",
-      options: [
-        { text: "Junk Food Only", isCorrect: false, emoji: "🍕" },
-        { text: "Balanced Diet", isCorrect: true, emoji: "🥗" },
-        { text: "Skip Meals", isCorrect: false, emoji: "🍽️" },
-        { text: "Energy Drinks", isCorrect: false, emoji: "🥤" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Preventive mental health?",
-      correctAnswer: "Manage Stress",
-      options: [
-        { text: "Manage Stress", isCorrect: true, emoji: "🧘" },
-        { text: "Bottle Emotions", isCorrect: false, emoji: "🤐" },
-        { text: "Isolate Self", isCorrect: false, emoji: "🏠" },
-        { text: "Overwork", isCorrect: false, emoji: "😫" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Preventive dental care?",
-      correctAnswer: "Brush Daily",
-      options: [
-        { text: "Eat Sweets", isCorrect: false, emoji: "🍬" },
-        { text: "Brush Daily", isCorrect: true, emoji: "🦷" },
-        { text: "Skip Flossing", isCorrect: false, emoji: "🧵" },
-        { text: "Drink Soda", isCorrect: false, emoji: "🥤" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You feel fine, but your sleep, mood, and focus are slowly worsening. Best preventive reflex?",
+    correctAnswer: "Track habits & get evaluated",
+    options: [
+      { text: "Track habits & get evaluated", isCorrect: true, emoji: "📊" },
+      { text: "Wait until illness appears", isCorrect: false, emoji: "⏳" },
+      { text: "Use random supplements", isCorrect: false, emoji: "💊" },
+      { text: "Blame school pressure only", isCorrect: false, emoji: "📚" }
+    ]
+  },
+  {
+    id: 2,
+    question: "A health trend goes viral online. Preventive reflex?",
+    correctAnswer: "Check credible medical sources",
+    options: [
+      { text: "Follow influencers", isCorrect: false, emoji: "📱" },
+      { text: "Try it once anyway", isCorrect: false, emoji: "🤷" },
+      { text: "Check credible medical sources", isCorrect: true, emoji: "🔍" },
+      { text: "Ignore all health advice", isCorrect: false, emoji: "🙈" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You’re often stressed but still functioning well. Preventive mental-health move?",
+    correctAnswer: "Build stress-release routines early",
+    options: [
+      { text: "Push harder until burnout", isCorrect: false, emoji: "🔥" },
+      { text: "Distract nonstop with screens", isCorrect: false, emoji: "📱" },
+      { text: "Assume stress is normal forever", isCorrect: false, emoji: "😐" },
+      { text: "Build stress-release routines early", isCorrect: true, emoji: "🧘" },
+    ]
+  },
+  {
+    id: 4,
+    question: "Which daily choice MOST protects long-term health?",
+    correctAnswer: "Consistent routines over extreme habits",
+    options: [
+      { text: "Extreme diets sometimes", isCorrect: false, emoji: "⚡" },
+      { text: "Consistent routines over extreme habits", isCorrect: true, emoji: "🔁" },
+      { text: "Occasional detoxes", isCorrect: false, emoji: "🧪" },
+      { text: "Relying on youth alone", isCorrect: false, emoji: "🧒" }
+    ]
+  },
+  {
+    id: 5,
+    question: "Preventive health mindset means…",
+    correctAnswer: "Acting before problems become visible",
+    options: [
+      { text: "Fixing damage after it happens", isCorrect: false, emoji: "🛠️" },
+      { text: "Avoiding doctors completely", isCorrect: false, emoji: "🚫" },
+      { text: "Acting before problems become visible", isCorrect: true, emoji: "🛡️" },
+      { text: "Depending only on medicines", isCorrect: false, emoji: "💉" }
+    ]
+  }
+];
 
   // Update ref when currentRound changes
   useEffect(() => {

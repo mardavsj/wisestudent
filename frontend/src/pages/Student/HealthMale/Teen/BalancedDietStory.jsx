@@ -25,127 +25,57 @@ const BalancedDietStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "You're hungry after school. What's the best snack?",
-      options: [
-        {
-          id: "b",
-          text: "Bag of chips",
-          emoji: "🍟",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Apple and nuts",
-          emoji: "🍎",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Candy bar",
-          emoji: "🍫",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Your friends are eating fast food. What do you do?",
-      options: [
-        {
-          id: "c",
-          text: "Eat only fries",
-          emoji: "🍟",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Order a grilled chicken wrap",
-          emoji: "🌯",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Get the biggest burger",
-          emoji: "🍔",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Why is protein important for teens?",
-      options: [
-        {
-          id: "b",
-          text: "It tastes good",
-          emoji: "😋",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "It makes you sleep",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Builds muscles and height",
-          emoji: "💪",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You're thirsty. What should you drink?",
-      options: [
-        {
-          id: "c",
-          text: "Energy drink",
-          emoji: "⚡",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Water",
-          emoji: "💧",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Soda",
-          emoji: "🥤",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What should be on half your plate?",
-      options: [
-        {
-          id: "b",
-          text: "Rice",
-          emoji: "🍚",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Meat",
-          emoji: "🥩",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Fruits and Vegetables",
-          emoji: "🥦",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "It’s exam week. You need focus for evening study. What do you choose for a snack?",
+    options: [
+      { id: "a", text: "Sugary biscuit pack", emoji: "🍪", isCorrect: false },
+      { id: "b", text: "Banana with peanut butter", emoji: "🍌", isCorrect: true },
+      { id: "c", text: "Instant noodles", emoji: "🍜", isCorrect: false }
+    ]
+  },
+
+  {
+    id: 2,
+    text: "After sports practice, your body feels tired and sore. What helps recovery best?",
+    options: [
+      { id: "b", text: "Protein + carbs meal", emoji: "🍗", isCorrect: true },
+      { id: "a", text: "Cold drink", emoji: "🥤", isCorrect: false },
+      { id: "c", text: "Only fries", emoji: "🍟", isCorrect: false }
+    ]
+  },
+
+  {
+    id: 3,
+    text: "You often feel sleepy in afternoon classes. What food habit could be the reason?",
+    options: [
+      { id: "b", text: "Eating fruit at lunch", emoji: "🍎", isCorrect: false },
+      { id: "c", text: "Drinking water", emoji: "💧", isCorrect: false },
+      { id: "a", text: "Skipping breakfast", emoji: "⏰", isCorrect: true },
+    ]
+  },
+
+  {
+    id: 4,
+    text: "Your skin feels dull and hair feels weak. Which nutrient is most likely missing?",
+    options: [
+      { id: "a", text: "Healthy fats", emoji: "🥑", isCorrect: true },
+      { id: "b", text: "Extra sugar", emoji: "🍬", isCorrect: false },
+      { id: "c", text: "More salt", emoji: "🧂", isCorrect: false }
+    ]
+  },
+
+  {
+    id: 5,
+    text: "It’s dinner time. You had a heavy lunch already. What’s the smartest dinner choice?",
+    options: [
+      { id: "b", text: "Large pizza", emoji: "🍕", isCorrect: false },
+      { id: "a", text: "Light, balanced meal", emoji: "🥗", isCorrect: true },
+      { id: "c", text: "Skip dinner", emoji: "🚫", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

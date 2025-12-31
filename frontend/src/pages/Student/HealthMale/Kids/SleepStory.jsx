@@ -23,132 +23,128 @@ const SleepStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "It's 8:00 PM. What should you do?",
-      options: [
-        {
-          id: "b",
-          text: "Start a new movie",
-          emoji: "🎬",
-         
-          isCorrect: false
-        },
-        
-        {
-          id: "c",
-          text: "Eat a big meal",
-          emoji: "🍔",
-          
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Start getting ready for bed",
-          emoji: "🥱",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "What helps you relax before sleep?",
-      options: [
-        {
-          id: "c",
-          text: "Playing video games",
-          emoji: "🎮",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Reading a book",
-          emoji: "📖",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Running laps",
-          emoji: "🏃",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Your room should be...",
-      options: [
-        {
-          id: "b",
-          text: "Bright and noisy",
-          emoji: "📢",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Dark and quiet",
-          emoji: "🌙",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Full of toys",
-          emoji: "🧸",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Why is sleep important?",
-      options: [
-        {
-          id: "a",
-          text: "It helps you grow and learn",
-          emoji: "📈",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "It's boring",
-          emoji: "😐",
-          isCorrect: false
-        },
-       
-        {
-          id: "b",
-          text: "It wastes time",
-          emoji: "⏳",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You wake up feeling...",
-      options: [
-        {
-          id: "b",
-          text: "Grumpy",
-          emoji: "😠",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Tired",
-          emoji: "😫",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Happy and energized",
-          emoji: "😄",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+ const questions = [
+  {
+    id: 1,
+    text: "A young artist wants steady hands for drawing tomorrow morning. What choice supports that goal?",
+    options: [
+      {
+        id: "a",
+        text: "Draw all night",
+        emoji: "✏️",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Watch random videos",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Pack art tools and rest early",
+        emoji: "🎨",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "A pilot-in-training has a practice session early. What evening habit fits the role?",
+    options: [
+      {
+        id: "a",
+        text: "Drink sugary drinks",
+        emoji: "🥤",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Check schedule and wind down",
+        emoji: "🛫",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Play fast-paced games",
+        emoji: "🎮",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "A nurse wants to stay calm and focused for the next day. What routine helps most?",
+    options: [
+      {
+        id: "a",
+        text: "Quiet time with dim lights",
+        emoji: "🌙",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Loud music",
+        emoji: "🔊",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Late-night snacks",
+        emoji: "🍕",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "An athlete wants quick reflexes in tomorrow’s match. What evening choice supports that?",
+    options: [
+      {
+        id: "a",
+        text: "Practice nonstop",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Stretch, relax, and rest",
+        emoji: "🧘",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Scroll on phone",
+        emoji: "📲",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "A young inventor wants fresh ideas tomorrow. What night habit helps creativity?",
+    options: [
+      {
+        id: "a",
+        text: "Keep thinking without stopping",
+        emoji: "💡",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Leave the room messy",
+        emoji: "🧹",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Write ideas, then sleep peacefully",
+        emoji: "📓",
+        isCorrect: true
+      }
+    ]
+  }
+];
 
   const handleChoice = (optionId) => {
     if (answered) return;

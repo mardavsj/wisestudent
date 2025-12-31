@@ -28,79 +28,62 @@ const ReflexHealthyTeen = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "You are hungry. Pick the growth food!",
-      correctAnswer: "Chicken/Beans",
-      options: [
-        { text: "Chicken/Beans", isCorrect: true, emoji: "🍗" },
-        { text: "Candy", isCorrect: false, emoji: "🍬" },
-        { text: "Soda", isCorrect: false, emoji: "🥤" },
-        { text: "Chips", isCorrect: false, emoji: "🍟" }
-      ]
-    },
-    {
-      id: 2,
-      question: "You are tired. What helps you grow?",
-      correctAnswer: "Sleep",
-      options: [
-        { text: "Video Games", isCorrect: false, emoji: "🎮" },
-        { text: "Sleep", isCorrect: true, emoji: "😴" },
-        { text: "Energy Drink", isCorrect: false, emoji: "⚡" },
-        { text: "TV", isCorrect: false, emoji: "📺" }
-      ]
-    },
-    {
-      id: 3,
-      question: "You are stressed. What helps?",
-      correctAnswer: "Talk/Exercise",
-      options: [
-        { text: "Yell", isCorrect: false, emoji: "🤬" },
-        { text: "Hide", isCorrect: false, emoji: "🙈" },
-        { text: "Talk/Exercise", isCorrect: true, emoji: "🏃" },
-        { text: "Eat Junk", isCorrect: false, emoji: "🍔" }
-      ]
-    },
-    {
-      id: 4,
-      question: "You smell bad. Quick fix?",
-      correctAnswer: "Shower",
-      options: [
-        { text: "Perfume", isCorrect: false, emoji: "🌸" },
-        { text: "Ignore", isCorrect: false, emoji: "🤷" },
-        { text: "Shower", isCorrect: true, emoji: "🚿" },
-        { text: "Change Shirt Only", isCorrect: false, emoji: "👕" }
-      ]
-    },
-    {
-      id: 5,
-      question: "You have acne. Don't do this!",
-      correctAnswer: "Pop It",
-      options: [
-        { text: "Wash Face", isCorrect: false, emoji: "🧼" },
-        { text: "Pop It", isCorrect: true, emoji: "🤏" }, // Question asks what NOT to do, but reflex usually asks for correct action. Let's rephrase question to "What is bad for acne?" and correct answer is "Pop It" (identifying the bad thing) OR "What is good?" -> "Wash". Let's stick to "Pick the HEALTHY choice" pattern.
-        // Rephrasing question to be consistent with "Pick the right choice"
-        // Question: "You have acne. Best action?"
-        // Correct: "Wash Face"
-      ]
-    }
-  ];
-
-  // Correcting Q5 for consistency
-  const refinedQuestions = [
-    ...questions.slice(0, 4),
-    {
-      id: 5,
-      question: "You have acne. Best action?",
-      correctAnswer: "Wash Face",
-      options: [
-        { text: "Pop It", isCorrect: false, emoji: "🤏" },
-        { text: "Wash Face", isCorrect: true, emoji: "🧼" },
-        { text: "Cover with Dirt", isCorrect: false, emoji: "💩" },
-        { text: "Scratch", isCorrect: false, emoji: "💅" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You skipped breakfast. What helps your body most now?",
+    correctAnswer: "Fruit + Nuts",
+    options: [
+      { text: "Chocolate Bar", isCorrect: false, emoji: "🍫" },
+      { text: "Instant Noodles", isCorrect: false, emoji: "🍜" },
+      { text: "Soft Drink", isCorrect: false, emoji: "🥤" },
+      { text: "Fruit + Nuts", isCorrect: true, emoji: "🥜" },
+    ]
+  },
+  {
+    id: 2,
+    question: "Your eyes hurt after long screen time. Best reflex?",
+    correctAnswer: "Look away & blink",
+    options: [
+      { text: "Increase brightness", isCorrect: false, emoji: "💡" },
+      { text: "Look away & blink", isCorrect: true, emoji: "👀" },
+      { text: "Rub eyes hard", isCorrect: false, emoji: "✋" },
+      { text: "Keep scrolling", isCorrect: false, emoji: "📱" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You feel dizzy after standing up fast. What helps?",
+    correctAnswer: "Sit and breathe",
+    options: [
+      { text: "Run it off", isCorrect: false, emoji: "🏃" },
+      { text: "Ignore it", isCorrect: false, emoji: "😐" },
+      { text: "Drink soda", isCorrect: false, emoji: "🥤" },
+      { text: "Sit and breathe", isCorrect: true, emoji: "🪑" },
+    ]
+  },
+  {
+    id: 4,
+    question: "Your lips feel dry and cracked. Best quick care?",
+    correctAnswer: "Use lip balm",
+    options: [
+      { text: "Lick lips", isCorrect: false, emoji: "👅" },
+      { text: "Use lip balm", isCorrect: true, emoji: "💄" },
+      { text: "Peel skin", isCorrect: false, emoji: "🤏" },
+      { text: "Ignore it", isCorrect: false, emoji: "🤷" }
+    ]
+  },
+  {
+    id: 5,
+    question: "You feel angry suddenly. Healthiest reflex?",
+    correctAnswer: "Take deep breaths",
+    options: [
+      { text: "Take deep breaths", isCorrect: true, emoji: "🌬️" },
+      { text: "Shout loudly", isCorrect: false, emoji: "📢" },
+      { text: "Throw something", isCorrect: false, emoji: "🪨" },
+      { text: "Break phone", isCorrect: false, emoji: "📱" }
+    ]
+  }
+];
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -217,7 +200,7 @@ const ReflexHealthyTeen = () => {
     navigate("/student/health-male/teens/puberty-smart-teen-badge");
   };
 
-  const currentQuestion = refinedQuestions[currentRound - 1];
+  const currentQuestion = questions[currentRound - 1];
 
   return (
     <GameShell

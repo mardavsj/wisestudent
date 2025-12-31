@@ -27,63 +27,64 @@ const ReflexPubertyHealthTeen = () => {
     const timerRef = useRef(null);
     const currentRoundRef = useRef(0);
 
-    const questions = [
-        {
-            id: 1,
-            question: "You feel overwhelmed. What to do?",
-            correctAnswer: "Take a Break",
-            options: [
-                { text: "Take a Break", isCorrect: true, emoji: "🧘" },
-                { text: "Panic", isCorrect: false, emoji: "😱" },
-                { text: "Quit Everything", isCorrect: false, emoji: "🏳️" },
-                { text: "Yell", isCorrect: false, emoji: "🤬" }
-            ]
-        },
-        {
-            id: 2,
-            question: "You are gaining muscle. Keep it up!",
-            correctAnswer: "Exercise",
-            options: [
-                { text: "Sleep All Day", isCorrect: false, emoji: "🛌" },
-                { text: "Exercise", isCorrect: true, emoji: "🏋️" },
-                { text: "Eat Junk", isCorrect: false, emoji: "🍔" },
-                { text: "Watch TV", isCorrect: false, emoji: "📺" }
-            ]
-        },
-        {
-            id: 3,
-            question: "You have a question about your body.",
-            correctAnswer: "Ask Adult",
-            options: [
-                { text: "Guess", isCorrect: false, emoji: "🤷" },
-                { text: "Ignore It", isCorrect: false, emoji: "🙈" },
-                { text: "Ask Adult", isCorrect: true, emoji: "👨‍⚕️" },
-                { text: "Ask Stranger", isCorrect: false, emoji: "❓" }
-            ]
-        },
-        {
-            id: 4,
-            question: "You feel sad for no reason.",
-            correctAnswer: "It's Okay",
-            options: [
-                { text: "Be Angry", isCorrect: false, emoji: "😡" },
-                { text: "Hide", isCorrect: false, emoji: "📦" },
-                { text: "Give Up", isCorrect: false, emoji: "🏳️" },
-                { text: "It's Okay", isCorrect: true, emoji: "❤️" },
-            ]
-        },
-        {
-            id: 5,
-            question: "You need privacy. What to say?",
-            correctAnswer: "Knock Please",
-            options: [
-                { text: "Go Away!", isCorrect: false, emoji: "😠" },
-                { text: "Knock Please", isCorrect: true, emoji: "🚪" },
-                { text: "Scream", isCorrect: false, emoji: "🗣️" },
-                { text: "Lock Door Forever", isCorrect: false, emoji: "🔒" }
-            ]
-        }
-    ];
+   const questions = [
+  {
+    id: 1,
+    question: "You suddenly feel dizzy during growth phase. Instant best action?",
+    correctAnswer: "Sit and Hydrate",
+    options: [
+      { text: "Sit and Hydrate", isCorrect: true, emoji: "💧" },
+      { text: "Ignore It", isCorrect: false, emoji: "🙄" },
+      { text: "Run Outside", isCorrect: false, emoji: "🏃" },
+      { text: "Drink Soda", isCorrect: false, emoji: "🥤" }
+    ]
+  },
+  {
+    id: 2,
+    question: "You’re sleeping late daily and feel foggy. Reflex fix?",
+    correctAnswer: "Fix Sleep Timing",
+    options: [
+      { text: "More Caffeine", isCorrect: false, emoji: "☕" },
+      { text: "Fix Sleep Timing", isCorrect: true, emoji: "⏰" },
+      { text: "Skip Breakfast", isCorrect: false, emoji: "🚫" },
+      { text: "Scroll Phone", isCorrect: false, emoji: "📱" }
+    ]
+  },
+  {
+    id: 3,
+    question: "Your skin breaks out after heavy sweating. Fast response?",
+    correctAnswer: "Clean Gently",
+    options: [
+      { text: "Scrub Hard", isCorrect: false, emoji: "🧽" },
+      { text: "Ignore It", isCorrect: false, emoji: "🙈" },
+      { text: "Apply Random Cream", isCorrect: false, emoji: "🧴" },
+      { text: "Clean Gently", isCorrect: true, emoji: "🧼" },
+    ]
+  },
+  {
+    id: 4,
+    question: "You feel sudden anger without reason. Smart reflex?",
+    correctAnswer: "Pause and Cool Down",
+    options: [
+        { text: "Argue Back", isCorrect: false, emoji: "🗯️" },
+        { text: "Break Something", isCorrect: false, emoji: "💥" },
+        { text: "Pause and Cool Down", isCorrect: true, emoji: "❄️" },
+      { text: "Blame Yourself", isCorrect: false, emoji: "😔" }
+    ]
+  },
+  {
+    id: 5,
+    question: "Your appetite suddenly increases. Best reflex choice?",
+    correctAnswer: "Balanced Meal",
+    options: [
+        { text: "Only Snacks", isCorrect: false, emoji: "🍪" },
+        { text: "Balanced Meal", isCorrect: true, emoji: "🥗" },
+      { text: "Skip Eating", isCorrect: false, emoji: "🚫" },
+      { text: "Energy Drink", isCorrect: false, emoji: "⚡" }
+    ]
+  }
+];
+
 
     // Update ref when currentRound changes
     useEffect(() => {

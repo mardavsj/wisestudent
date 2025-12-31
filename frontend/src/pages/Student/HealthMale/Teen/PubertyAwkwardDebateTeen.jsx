@@ -22,122 +22,63 @@ const PubertyAwkwardDebateTeen = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Are voice cracks embarrassing?",
-      options: [
-        {
-          id: "a",
-          text: "It's natural, don't worry",
-          emoji: "😌"
-        },
-        {
-          id: "b",
-          text: "Yes, hide forever",
-          emoji: "🙈"
-        },
-        {
-          id: "c",
-          text: "Stop talking",
-          emoji: "🤐"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Voice cracks are natural during puberty. Don't worry about it, and everyone goes through it."
-    },
-    {
-      id: 2,
-      text: "Is body hair gross?",
-      options: [
-        {
-          id: "b",
-          text: "Yes, shave it all",
-          emoji: "🪒"
-        },
-        {
-          id: "a",
-          text: "No, it's normal",
-          emoji: "🧔"
-        },
-        {
-          id: "c",
-          text: "Only on aliens",
-          emoji: "👽"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "It protects your skin. It's a personal choice, not gross, and humans have hair too."
-    },
-    {
-      id: 3,
-      text: "Is being clumsy okay?",
-      options: [
-        {
-          id: "c",
-          text: "No, be perfect",
-          emoji: "🤖"
-        },
-        {
-          id: "b",
-          text: "Quit sports",
-          emoji: "🏳️"
-        },
-        {
-          id: "a",
-          text: "Yes, body is adjusting",
-          emoji: "📏"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Your brain is catching up to your height. Nobody is perfect, and keep moving!"
-    },
-    {
-      id: 4,
-      text: "Are you crazy for having mood swings?",
-      options: [
-        {
-          id: "b",
-          text: "Yes, totally",
-          emoji: "🤪"
-        },
-        {
-          id: "a",
-          text: "No, it's hormones",
-          emoji: "🧪"
-        },
-        {
-          id: "c",
-          text: "Only if you cry",
-          emoji: "😢"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Chemicals are changing in your body. You are not crazy, and crying is normal too."
-    },
-    {
-      id: 5,
-      text: "Is it okay to ask about puberty?",
-      options: [
-        {
-          id: "c",
-          text: "Never speak of it",
-          emoji: "🤫"
-        },
-        {
-          id: "b",
-          text: "Google only",
-          emoji: "💻"
-        },
-        {
-          id: "a",
-          text: "Yes, ask trusted adults",
-          emoji: "👨‍👩‍👦"
-        }
-      ],
-      correctAnswer: "a",
-      explanation: "Parents, doctors, or teachers can help. Knowledge is power, and internet can be misleading."
-    }
-  ];
+  {
+    id: 1,
+    text: "Your voice cracks during a presentation. How should you react?",
+    options: [
+      { id: "b", text: "Stop talking and hide", emoji: "🙈" },
+      { id: "a", text: "Laugh it off confidently", emoji: "😂" },
+      { id: "c", text: "Apologize repeatedly", emoji: "😅" }
+    ],
+    correctAnswer: "a",
+    explanation: "Voice cracks are normal during puberty. Laughing it off shows confidence and everyone experiences it."
+  },
+  {
+    id: 2,
+    text: "You notice hair growth in new places. How should you feel?",
+    options: [
+      { id: "a", text: "It's a natural part of growing up", emoji: "🧔" },
+      { id: "b", text: "Shave everything immediately", emoji: "🪒" },
+      { id: "c", text: "Cover it with clothes all the time", emoji: "👕" }
+    ],
+    correctAnswer: "a",
+    explanation: "Body hair is normal and healthy. Everyone experiences it at their own pace."
+  },
+  {
+    id: 3,
+    text: "You trip often because you're growing quickly. What’s best?",
+    options: [
+      { id: "b", text: "Avoid sports entirely", emoji: "🏳️" },
+      { id: "c", text: "Blame yourself for being clumsy", emoji: "😓" },
+      { id: "a", text: "Be patient, coordination improves", emoji: "⏳" },
+    ],
+    correctAnswer: "a",
+    explanation: "Rapid growth can make you clumsy temporarily. With practice, your body and brain adapt."
+  },
+  {
+    id: 4,
+    text: "Your emotions are all over the place lately. What’s true?",
+    options: [
+      { id: "b", text: "You must control them perfectly", emoji: "🛑" },
+      { id: "a", text: "Hormones are causing the shifts", emoji: "🧪" },
+      { id: "c", text: "You're unusual if you feel sad sometimes", emoji: "😢" }
+    ],
+    correctAnswer: "a",
+    explanation: "Mood swings are a normal part of puberty. Everyone experiences them."
+  },
+  {
+    id: 5,
+    text: "You want to learn about your changing body. What should you do?",
+    options: [
+      { id: "a", text: "Ask trusted adults or health professionals", emoji: "👨‍👩‍👦" },
+      { id: "b", text: "Only search online", emoji: "💻" },
+      { id: "c", text: "Never ask anyone", emoji: "🤫" }
+    ],
+    correctAnswer: "a",
+    explanation: "Trusted adults provide accurate guidance. The internet can have misleading information."
+  }
+];
+
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || showFeedback) return;
@@ -211,12 +152,7 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
               const showCorrect = showFeedback && isCorrect;
               const showIncorrect = showFeedback && isSelected && !isCorrect;
               
-              // Add emojis for each option like in the reference game
-              const optionEmojis = {
-                a: "✅",
-                b: "❌",
-                c: "⚠️"
-              };
+
               
               return (
                 <button
@@ -228,7 +164,7 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
                   }`}
                 >
                   <div className="flex items-center">
-                    <div className="text-2xl mr-4">{optionEmojis[option.id] || '❓'}</div>
+                    <div className="text-2xl mr-4">{option.emoji}</div>
                     <div>
                       <h3 className="font-bold text-xl mb-1">{option.text}</h3>
                     </div>

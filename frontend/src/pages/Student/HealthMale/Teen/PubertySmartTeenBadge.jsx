@@ -21,165 +21,165 @@ const PubertySmartTeenBadge = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      title: "Hormones",
-      text: "What drives puberty?",
-      options: [
-        {
-          text: "Food",
-          emoji: "🍕",
-          isCorrect: false
-        },
-        {
-          text: "Weather",
-          emoji: "☀️",
-          isCorrect: false
-        },
-        
-        {
-          text: "Music",
-          emoji: "🎵",
-          isCorrect: false
-        },
-        {
-          text: "Hormones",
-          emoji: "🧪",
-          isCorrect: true
-        },
-      ],
-      feedback: {
-        correct: "Correct! Hormones are the chemical messengers.",
-        wrong: "It's hormones that cause the changes."
+  {
+    id: 1,
+    title: "Brain Development",
+    text: "Why do teens sometimes take more risks during puberty?",
+    options: [
+      {
+        text: "Peer pressure only",
+        emoji: "👥",
+        isCorrect: false
+      },
+      {
+        text: "Brain reward system matures earlier than control system",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        text: "They don’t understand danger",
+        emoji: "⚠️",
+        isCorrect: false
+      },
+      {
+        text: "Too much energy",
+        emoji: "⚡",
+        isCorrect: false
       }
-    },
-    {
-      id: 2,
-      title: "Hygiene",
-      text: "What helps with body odor?",
-      options: [
-        {
-          text: "Perfume only",
-          emoji: "🌸",
-          isCorrect: false
-        },
-        {
-          text: "Nothing",
-          emoji: "🚫",
-          isCorrect: false
-        },
-        {
-          text: "Shower & Deodorant",
-          emoji: "🚿",
-          isCorrect: true
-        },
-        {
-          text: "Changing clothes",
-          emoji: "👕",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Yes! Cleanliness is key.",
-        wrong: "You need to wash away the bacteria."
-      }
-    },
-    {
-      id: 3,
-      title: "Acne",
-      text: "Best way to treat acne?",
-      options: [
-        {
-          text: "Pop it",
-          emoji: "✋",
-          isCorrect: false
-        },
-        {
-          text: "Consult a dermatologist",
-          emoji: "👨‍⚕️",
-          isCorrect: true
-        },
-        {
-          text: "Scrub hard",
-          emoji: "🧽",
-          isCorrect: false
-        },
-        {
-          text: "Gentle Wash",
-          emoji: "🧴",
-          isCorrect: false
-        },
-        
-      ],
-      feedback: {
-        correct: "Exactly! Be gentle with your skin.",
-        wrong: "Popping or scrubbing makes it worse."
-      }
-    },
-    {
-      id: 4,
-      title: "Emotions",
-      text: "Are mood swings normal?",
-      options: [
-        {
-          text: "Very common",
-          emoji: "📊",
-          isCorrect: true
-        },
-        {
-          text: "No",
-          emoji: "❌",
-          isCorrect: false
-        },
-        {
-          text: "Only for some",
-          emoji: "👥",
-          isCorrect: false
-        },
-        {
-          text: "Yes",
-          emoji: "✅",
-          isCorrect: false
-        },
-        
-      ],
-      feedback: {
-        correct: "Right! It's part of growing up.",
-        wrong: "Mood swings are very common during puberty."
-      }
-    },
-    {
-      id: 5,
-      title: "Growth",
-      text: "What fuels your growth?",
-      options: [
-        {
-          text: "Candy",
-          emoji: "🍫",
-          isCorrect: false
-        },
-        {
-          text: "Video Games",
-          emoji: "🎮",
-          isCorrect: false
-        },
-        {
-          text: "Healthy Food & Sleep",
-          emoji: "🍏",
-          isCorrect: true
-        },
-        {
-          text: "Social Media",
-          emoji: "📱",
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Smart! Your body needs fuel and rest.",
-        wrong: "You need nutrients and rest to grow."
-      }
+    ],
+    feedback: {
+      correct: "Correct! The emotional/reward part develops before decision-making control.",
+      wrong: "Risk-taking is linked to brain development timing, not lack of intelligence."
     }
-  ];
+  },
+  {
+    id: 2,
+    title: "Growth Timing",
+    text: "Why do teens grow at different speeds during puberty?",
+    options: [
+      {
+        text: "Luck",
+        emoji: "🎲",
+        isCorrect: false
+      },
+      
+      {
+        text: "Exercise only",
+        emoji: "🏋️",
+        isCorrect: false
+      },
+      {
+        text: "Eating more food",
+        emoji: "🍽️",
+        isCorrect: false
+      },
+      {
+        text: "Genes and hormone timing",
+        emoji: "🧬",
+        isCorrect: true
+      },
+    ],
+    feedback: {
+      correct: "Exactly! Genetics and hormone release timing control growth patterns.",
+      wrong: "Growth speed isn’t something you can fully control."
+    }
+  },
+  {
+    id: 3,
+    title: "Sleep Science",
+    text: "Why do teens feel sleepy later at night?",
+    options: [
+       {
+        text: "Melatonin release shifts later",
+        emoji: "🌙",
+        isCorrect: true
+      },
+      {
+        text: "Too much phone use",
+        emoji: "📱",
+        isCorrect: false
+      },
+     
+      {
+        text: "They are lazy",
+        emoji: "😴",
+        isCorrect: false
+      },
+      {
+        text: "School stress",
+        emoji: "📚",
+        isCorrect: false
+      }
+    ],
+    feedback: {
+      correct: "Correct! Puberty shifts the body’s sleep hormone timing.",
+      wrong: "This is a biological change, not bad habits alone."
+    }
+  },
+  {
+    id: 4,
+    title: "Skin Changes",
+    text: "Why does skin become oilier during puberty?",
+    options: [
+      {
+        text: "Dirty skin",
+        emoji: "🧽",
+        isCorrect: false
+      },
+      
+      {
+        text: "Sweating more",
+        emoji: "💦",
+        isCorrect: false
+      },
+      {
+        text: "Oil glands grow under hormone influence",
+        emoji: "🧪",
+        isCorrect: true
+      },
+      {
+        text: "Using wrong soap",
+        emoji: "🧼",
+        isCorrect: false
+      }
+    ],
+    feedback: {
+      correct: "Right! Hormones activate oil glands beneath the skin.",
+      wrong: "Oil production is internal, not just surface hygiene."
+    }
+  },
+  {
+    id: 5,
+    title: "Emotional Awareness",
+    text: "What skill best helps teens handle strong emotions during puberty?",
+    options: [
+      {
+        text: "Ignoring feelings",
+        emoji: "🙈",
+        isCorrect: false
+      },
+      {
+        text: "Emotional regulation",
+        emoji: "🧘",
+        isCorrect: true
+      },
+      {
+        text: "Avoiding people",
+        emoji: "🚪",
+        isCorrect: false
+      },
+      {
+        text: "Keeping everything secret",
+        emoji: "🤐",
+        isCorrect: false
+      }
+    ],
+    feedback: {
+      correct: "Yes! Learning to understand and manage emotions is a key life skill.",
+      wrong: "Suppressing emotions can make things harder."
+    }
+  }
+];
 
   const handleChoice = (optionIndex) => {
     if (answered) return;

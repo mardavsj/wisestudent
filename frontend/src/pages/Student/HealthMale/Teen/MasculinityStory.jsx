@@ -19,127 +19,128 @@ const MasculinityStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: 'Teen hears "Real men don\'t cry." Should he believe?',
-      options: [
-        {
-          id: "c",
-          text: "Yes, crying is weak",
-          emoji: "💪",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Only in private",
-          emoji: "🏠",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "No, feelings are human",
-          emoji: "❤️",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What makes a real man according to healthy standards?",
-      options: [
-        {
-          id: "c",
-          text: "Showing respect to others",
-          emoji: "🤝",
-          isCorrect: true
-        },
-        {
-          id: "a",
-          text: "Being tough always",
-          emoji: "💪",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Never showing emotions",
-          emoji: "😐",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How should teens respond to toxic masculinity messages?",
-      options: [
-        {
-          id: "b",
-          text: "Accept them as truth",
-          emoji: "✅",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Question and learn healthy alternatives",
-          emoji: "🧠",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Ignore them completely",
-          emoji: "🤷",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "A friend is being bullied. What does a strong man do?",
-      options: [
-        {
-          id: "a",
-          text: "Join in the bullying",
-          emoji: "👊",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Stand up for the friend",
-          emoji: "🛡️",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Pretend not to see",
-          emoji: "🙈",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You made a mistake. What is the manly thing to do?",
-      options: [
-        {
-          id: "a",
-          text: "Blame someone else",
-          emoji: "👉",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Hide the mistake",
-          emoji: "🤫",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Admit and learn from it",
-          emoji: "🎓",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A teen boy feels like crying after failing an exam but stops himself because of what others might say. What is the healthiest understanding here?",
+    options: [
+      {
+        id: "a",
+        text: "Hiding emotions builds strength",
+        emoji: "🪨",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Crying means he is not strong enough",
+        emoji: "💪",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Expressing emotions helps recovery and growth",
+        emoji: "🌱",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Which behavior best reflects healthy masculinity?",
+    options: [
+      {
+        id: "a",
+        text: "Dominating others to prove power",
+        emoji: "👑",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Taking responsibility for actions",
+        emoji: "🧭",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Never asking for help",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "A boy is told that anger is the only acceptable emotion for men. What is the problem with this idea?",
+    options: [
+      {
+        id: "a",
+        text: "Anger hides other important emotions",
+        emoji: "🌋",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Anger is harmless",
+        emoji: "😡",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Men should not feel emotions at all",
+        emoji: "🤖",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "A teen boy supports his friend who is anxious instead of mocking him. What does this show?",
+    options: [
+      {
+        id: "a",
+        text: "Weakness",
+        emoji: "🥀",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Emotional maturity and leadership",
+        emoji: "⭐",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Loss of respect",
+        emoji: "⬇️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Which message helps boys grow into emotionally healthy men?",
+    options: [
+      {
+        id: "a",
+        text: "Real men never feel fear",
+        emoji: "🗿",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Real men control others",
+        emoji: "🎭",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Real men understand and manage emotions",
+        emoji: "🧠",
+        isCorrect: true
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

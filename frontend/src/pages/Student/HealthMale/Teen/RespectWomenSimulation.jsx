@@ -63,7 +63,6 @@ const RespectWomenSimulation = () => {
           emoji: "🗣️",
           isCorrect: false
         },
-,
         {
           id: "c",
           text: "Laugh along",
