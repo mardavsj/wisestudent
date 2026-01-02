@@ -35,21 +35,21 @@ const SafeFriendQuiz = () => {
           id: "a", 
           text: "Yes, to help friends", 
           emoji: "👥", 
-          description: "Helping friends is good",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No, that's cheating", 
           emoji: "🚫", 
-          description: "Sharing answers is cheating",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only if they ask nicely", 
           emoji: "🤔", 
-          description: "Share if asked politely",
+          
           isCorrect: false
         }
       ]
@@ -62,21 +62,18 @@ const SafeFriendQuiz = () => {
           id: "a", 
           text: "Send your full answers", 
           emoji: "📤", 
-          description: "Share complete answers",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ignore their question", 
           emoji: "🙈", 
-          description: "Don't help at all",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Explain how to solve it", 
           emoji: "💡", 
-          description: "Teach them how to solve it",
           isCorrect: true
         }
       ]
@@ -89,21 +86,18 @@ const SafeFriendQuiz = () => {
           id: "a", 
           text: "Ask a teacher or parent first", 
           emoji: "👨‍👩‍👧", 
-          description: "Ask adults before sharing",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Share it to be nice", 
           emoji: "😊", 
-          description: "Share to be helpful",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Trust them if they seem friendly", 
           emoji: "🤝", 
-          description: "Share if they're nice",
           isCorrect: false
         }
       ]
@@ -116,21 +110,18 @@ const SafeFriendQuiz = () => {
           id: "a", 
           text: "Yes, it helps me prepare", 
           emoji: "📖", 
-          description: "It helps with studying",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Sometimes, for learning", 
           emoji: "🤷", 
-          description: "It's okay sometimes",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "No, that's dishonest", 
           emoji: "❌", 
-          description: "Sharing test answers is cheating",
           isCorrect: true
         }
       ]
@@ -143,21 +134,18 @@ const SafeFriendQuiz = () => {
           id: "a", 
           text: "Share answers secretly", 
           emoji: "🤫", 
-          description: "Share answers privately",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Don't care what others do", 
           emoji: "😐", 
-          description: "Ignore what friends do",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Encourage honesty and learning", 
           emoji: "✨", 
-          description: "Help friends learn honestly",
           isCorrect: true
         }
       ]

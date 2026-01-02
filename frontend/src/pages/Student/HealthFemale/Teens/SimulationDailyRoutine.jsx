@@ -30,7 +30,7 @@ const SimulationDailyRoutine = () => {
         },
         {
           id: "b",
-          text: "Brush teeth, wash face, shower if needed",
+          text: "Brush teeth, wash face, shower",
           emoji: "🌞",
           isCorrect: true
         },

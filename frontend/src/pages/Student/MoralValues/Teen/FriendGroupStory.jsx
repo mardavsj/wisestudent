@@ -33,21 +33,20 @@ const FriendGroupStory = () => {
           id: "side", 
           text: "Take one friend's side", 
           emoji: "🙅", 
-          description: "Support one friend over the other",
+          
           isCorrect: false
         },
         { 
           id: "silent", 
           text: "Stay silent to avoid tension", 
           emoji: "😶", 
-          description: "Don't get involved to keep peace",
+          
           isCorrect: false
         },
         { 
           id: "credit", 
           text: "Give credit to both fairly", 
           emoji: "⚖️", 
-          description: "Acknowledge both friends' contributions equally",
           isCorrect: true
         }
       ]
@@ -60,21 +59,18 @@ const FriendGroupStory = () => {
           id: "louder", 
           text: "Let the louder friend take it", 
           emoji: "😅", 
-          description: "Give it to whoever speaks up first",
           isCorrect: false
         },
         { 
           id: "split", 
           text: "Split it equally or share turns", 
           emoji: "🫶", 
-          description: "Share it fairly between both friends",
           isCorrect: true
         },
         { 
           id: "secret", 
           text: "Take it secretly", 
           emoji: "🥴", 
-          description: "Take it for yourself without asking",
           isCorrect: false
         }
       ]
@@ -87,21 +83,18 @@ const FriendGroupStory = () => {
           id: "best", 
           text: "Let your best friend start", 
           emoji: "🎮", 
-          description: "Favor your closest friend",
           isCorrect: false
         },
         { 
           id: "quiet2", 
           text: "Start yourself quietly", 
           emoji: "🤫", 
-          description: "Take the first turn yourself",
           isCorrect: false
         },
         { 
           id: "turns", 
           text: "Use turns or a quick coin toss", 
           emoji: "🪙", 
-          description: "Use a fair method to decide turns",
           isCorrect: true
         }
       ]
@@ -114,21 +107,18 @@ const FriendGroupStory = () => {
           id: "help", 
           text: "Help them and remind teamwork", 
           emoji: "🤗", 
-          description: "Assist them and emphasize working together",
           isCorrect: true
         },
         { 
           id: "complain", 
           text: "Complain loudly to teacher", 
           emoji: "📢", 
-          description: "Report the problem to the teacher",
           isCorrect: false
         },
         { 
           id: "do", 
           text: "Do their part silently", 
           emoji: "😓", 
-          description: "Complete their work without saying anything",
           isCorrect: false
         }
       ]
@@ -141,21 +131,18 @@ const FriendGroupStory = () => {
           id: "join", 
           text: "Join in jokingly", 
           emoji: "😬", 
-          description: "Participate in spreading the rumor",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore and walk away", 
           emoji: "🚶", 
-          description: "Avoid getting involved",
           isCorrect: false
         },
         { 
           id: "peace", 
           text: "Ask them to apologize and make peace", 
           emoji: "🌈", 
-          description: "Encourage them to apologize and resolve the conflict",
           isCorrect: true
         }
       ]

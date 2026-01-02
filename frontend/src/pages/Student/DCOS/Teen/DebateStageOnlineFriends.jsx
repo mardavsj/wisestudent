@@ -36,7 +36,7 @@ const DebateStageOnlineFriends = () => {
         { 
           id: "yes-safe", 
           text: "Yes - it's safe if you're careful", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         },
         { 
@@ -78,7 +78,7 @@ const DebateStageOnlineFriends = () => {
         { 
           id: "yes-safe", 
           text: "Yes - video calls are safe", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         },
         { 

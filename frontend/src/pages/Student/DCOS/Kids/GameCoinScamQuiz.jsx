@@ -35,21 +35,20 @@ const GameCoinScamQuiz = () => {
           id: "a", 
           text: "Yes, it's a great deal!", 
           emoji: "😄", 
-          description: "Great deals are always safe",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No, it might be a scam.", 
           emoji: "🚫", 
-          description: "Suspicious offers are often scams",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only if it looks cool.", 
           emoji: "😎", 
-          description: "If it looks good, it's safe",
           isCorrect: false
         }
       ]
@@ -62,7 +61,6 @@ const GameCoinScamQuiz = () => {
           id: "a", 
           text: "Click it fast!", 
           emoji: "⚡", 
-          description: "Click immediately to claim",
           isCorrect: false
         },
         
@@ -70,14 +68,12 @@ const GameCoinScamQuiz = () => {
           id: "c", 
           text: "Share with friends first.", 
           emoji: "👥", 
-          description: "Share before clicking",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ignore or close it.", 
           emoji: "❌", 
-          description: "Pop-ups like this are usually scams",
           isCorrect: true
         },
       ]
@@ -90,14 +86,12 @@ const GameCoinScamQuiz = () => {
           id: "b", 
           text: "Never share your password.", 
           emoji: "🛡️", 
-          description: "Never share passwords with anyone",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Give it, to get coins.", 
           emoji: "💸", 
-          description: "Share password to get free coins",
           isCorrect: false
         },
         
@@ -105,7 +99,6 @@ const GameCoinScamQuiz = () => {
           id: "c", 
           text: "Ask a stranger online.", 
           emoji: "🤔", 
-          description: "Ask others for advice",
           isCorrect: false
         }
       ]
@@ -119,21 +112,18 @@ const GameCoinScamQuiz = () => {
           id: "b", 
           text: "Random links or pop-ups", 
           emoji: "⚠️", 
-          description: "Random links are safe",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Free download buttons", 
           emoji: "⬇️", 
-          description: "Free downloads are always safe",
           isCorrect: false
         },
          { 
           id: "a", 
           text: "Lock symbol & HTTPS", 
           emoji: "🔒", 
-          description: "Look for security symbols",
           isCorrect: true
         },
       ]
@@ -146,21 +136,18 @@ const GameCoinScamQuiz = () => {
           id: "a", 
           text: "Report it to an adult or teacher.", 
           emoji: "📢", 
-          description: "Tell a trusted adult about scams",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Try it once anyway.", 
           emoji: "😬", 
-          description: "Try it to see if it works",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignore and forget.", 
           emoji: "🤷‍♂️", 
-          description: "Just ignore it",
           isCorrect: false
         }
       ]

@@ -31,21 +31,19 @@ const CheatingOfferStory = () => {
           id: "accept", 
           text: "Accept the answers and copy", 
           emoji: "🤫", 
-          description: "Cheat",
+          
           isCorrect: false
         },
         { 
           id: "peek", 
           text: "Ignore and peek occasionally", 
           emoji: "👀", 
-          description: "Peek at answers",
           isCorrect: false
         },
         { 
           id: "refuse", 
           text: "Politely refuse and do your own work", 
           emoji: "🙅", 
-          description: "Stay honest",
           isCorrect: true
         }
       ]
@@ -58,21 +56,18 @@ const CheatingOfferStory = () => {
           id: "take", 
           text: "Take it without asking", 
           emoji: "🙊", 
-          description: "Accept the answer",
           isCorrect: false
         },
         { 
           id: "try", 
           text: "Try yourself first and refuse help", 
           emoji: "💪", 
-          description: "Learn independently",
           isCorrect: true
         },
         { 
           id: "copy", 
           text: "Copy and hope teacher doesn't notice", 
           emoji: "😅", 
-          description: "Cheat secretly",
           isCorrect: false
         }
       ]
@@ -85,21 +80,18 @@ const CheatingOfferStory = () => {
           id: "honest", 
           text: "Answer honestly on your own", 
           emoji: "🖊️", 
-          description: "Do your own work",
           isCorrect: true
         },
         { 
           id: "use", 
           text: "Use their answers", 
           emoji: "🤭", 
-          description: "Copy from friend",
           isCorrect: false
         },
         { 
           id: "mix", 
           text: "Mix their answers with yours", 
           emoji: "🤷", 
-          description: "Partial cheating",
           isCorrect: false
         }
       ]
@@ -112,21 +104,18 @@ const CheatingOfferStory = () => {
           id: "copy", 
           text: "Copy their results", 
           emoji: "😬", 
-          description: "Take their work",
           isCorrect: false
         },
         { 
           id: "change", 
           text: "Change some numbers to match theirs", 
           emoji: "😐", 
-          description: "Fake the results",
           isCorrect: false
         },
         { 
           id: "experiment", 
           text: "Do your own experiment honestly", 
           emoji: "🧪", 
-          description: "Work independently",
           isCorrect: true
         }
       ]
@@ -139,21 +128,18 @@ const CheatingOfferStory = () => {
           id: "accept", 
           text: "Accept secretly", 
           emoji: "🙈", 
-          description: "Take the answers",
           isCorrect: false
         },
         { 
           id: "no", 
           text: "Say no and focus on your own work", 
           emoji: "✋", 
-          description: "Stay honest",
           isCorrect: true
         },
         { 
           id: "peek", 
           text: "Peek occasionally", 
           emoji: "👁️", 
-          description: "Look at their paper",
           isCorrect: false
         }
       ]

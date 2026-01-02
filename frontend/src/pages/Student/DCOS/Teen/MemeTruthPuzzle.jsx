@@ -55,20 +55,20 @@ const MemeTruthPuzzle = () => {
 
   // Content types
   const leftItems = [
-    { id: 1, name: "Meme", emoji: "😂", description: "Funny image or video" },
-    { id: 2, name: "News", emoji: "📰", description: "Current events information" },
-    { id: 3, name: "Social Media Post", emoji: "📱", description: "User-generated content" },
-    { id: 4, name: "Official News Site", emoji: "🏛️", description: "Verified news source" },
-    { id: 5, name: "Viral Message", emoji: "📢", description: "Widely shared content" }
+    { id: 1, name: "Meme", emoji: "😂",  },
+    { id: 2, name: "News", emoji: "📰",  },
+    { id: 3, name: "Social Media Post", emoji: "📱",  },
+    { id: 4, name: "Official News Site", emoji: "🏛️",  },
+    { id: 5, name: "Viral Message", emoji: "📢",  }
   ];
 
   // Categories - varied options with different outcomes
   const rightItems = [
-    { id: 1, name: "Entertainment", emoji: "😄", description: "For fun, not facts" },
-    { id: 2, name: "Verify First", emoji: "🔍", description: "Check credibility before sharing" },
-    { id: 3, name: "Trusted Source", emoji: "✅", description: "Reliable information provider" },
-    { id: 4, name: "Fact-Based", emoji: "📚", description: "Contains verified information" },
-    { id: 5, name: "Caution Required", emoji: "⚠️", description: "May contain misinformation" }
+    { id: 1, name: "Entertainment", emoji: "😄",  },
+    { id: 2, name: "Verify First", emoji: "🔍",  },
+    { id: 3, name: "Trusted Source", emoji: "✅",  },
+    { id: 4, name: "Fact-Based", emoji: "📚",  },
+    { id: 5, name: "Caution Required", emoji: "⚠️",  }
   ];
 
   // Correct matches - varied positions for different outcomes

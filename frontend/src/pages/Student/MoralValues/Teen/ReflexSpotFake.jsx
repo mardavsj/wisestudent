@@ -35,9 +35,9 @@ const ReflexSpotFake = () => {
       correctAnswer: "Fake News",
       options: [
         { text: "Fake News", isCorrect: true, emoji: "🚫" },
-        { text: "Real News", isCorrect: false, emoji: "✓" },
+        { text: "Real News", isCorrect: false, emoji: "🙂" },
         { text: "Uncertain", isCorrect: false, emoji: "🤷" },
-        { text: "Verified", isCorrect: false, emoji: "✅" }
+        { text: "Verified", isCorrect: false, emoji: "🛡️" }
       ]
     },
     {
@@ -46,9 +46,9 @@ const ReflexSpotFake = () => {
       correctAnswer: "Real News",
       options: [
         { text: "Uncertain", isCorrect: false, emoji: "🤷" },
-        { text: "Real News", isCorrect: true, emoji: "✓" },
+        { text: "Real News", isCorrect: true, emoji: "🙂" },
         { text: "Fake News", isCorrect: false, emoji: "🚫" },
-        { text: "Verified", isCorrect: false, emoji: "✅" }
+        { text: "Verified", isCorrect: false, emoji: "🛡️" }
       ]
     },
     {
@@ -57,9 +57,9 @@ const ReflexSpotFake = () => {
       correctAnswer: "Fake News",
       options: [
         { text: "Uncertain", isCorrect: false, emoji: "🤷" },
-        { text: "Verified", isCorrect: false, emoji: "✅" },
+        { text: "Verified", isCorrect: false, emoji: "🛡️" },
         { text: "Fake News", isCorrect: true, emoji: "🚫" },
-        { text: "Real News", isCorrect: false, emoji: "✓" }
+        { text: "Real News", isCorrect: false, emoji: "🙂" }
       ]
     },
     {
@@ -67,10 +67,10 @@ const ReflexSpotFake = () => {
       question: "Weather forecast: Rain tomorrow 🌧️",
       correctAnswer: "Real News",
       options: [
-        { text: "Real News", isCorrect: true, emoji: "✓" },
+        { text: "Real News", isCorrect: true, emoji: "🙂" },
         { text: "Fake News", isCorrect: false, emoji: "🚫" },
         { text: "Uncertain", isCorrect: false, emoji: "🤷" },
-        { text: "Verified", isCorrect: false, emoji: "✅" }
+        { text: "Verified", isCorrect: false, emoji: "🛡️" }
       ]
     },
     {
@@ -79,8 +79,8 @@ const ReflexSpotFake = () => {
       correctAnswer: "Fake News",
       options: [
         { text: "Uncertain", isCorrect: false, emoji: "🤷" },
-        { text: "Verified", isCorrect: false, emoji: "✅" },
-        { text: "Real News", isCorrect: false, emoji: "✓" },
+        { text: "Verified", isCorrect: false, emoji: "🛡️" },
+        { text: "Real News", isCorrect: false, emoji: "🙂" },
         { text: "Fake News", isCorrect: true, emoji: "🚫" }
       ]
     }

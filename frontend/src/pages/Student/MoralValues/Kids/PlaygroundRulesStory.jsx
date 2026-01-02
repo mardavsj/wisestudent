@@ -31,21 +31,21 @@ const PlaygroundRulesStory = () => {
           id: "push", 
           text: "Push others to go first", 
           emoji: "🚶‍♂️", 
-          description: "Rush ahead",
+          
           isCorrect: false
         },
         { 
           id: "wait", 
           text: "Wait calmly and follow the line", 
           emoji: "🙂", 
-          description: "Follow the rules",
+          
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore and keep playing", 
           emoji: "🎮", 
-          description: "Don't listen",
+          
           isCorrect: false
         }
       ]
@@ -58,21 +58,18 @@ const PlaygroundRulesStory = () => {
           id: "keep", 
           text: "Keep swinging and ignore your friend", 
           emoji: "🙈", 
-          description: "Don't share",
           isCorrect: false
         },
         { 
           id: "longer", 
           text: "Swing for a very long time", 
           emoji: "⏰", 
-          description: "Take all the time",
           isCorrect: false
         },
         { 
           id: "let", 
           text: "Let your friend have a turn after you", 
           emoji: "🤝", 
-          description: "Share fairly",
           isCorrect: true
         }
       ]
@@ -85,21 +82,18 @@ const PlaygroundRulesStory = () => {
           id: "tell", 
           text: "Tell the teacher and ask permission", 
           emoji: "🙋‍♀️", 
-          description: "Ask first",
           isCorrect: true
         },
         { 
           id: "run", 
           text: "Run outside without telling anyone", 
           emoji: "🏃‍♂️", 
-          description: "Go without asking",
           isCorrect: false
         },
         { 
           id: "wait", 
           text: "Wait for someone else to get it", 
           emoji: "⏳", 
-          description: "Let others handle it",
           isCorrect: false
         }
       ]
@@ -112,21 +106,18 @@ const PlaygroundRulesStory = () => {
           id: "ignore", 
           text: "Ignore them — it's not your job", 
           emoji: "😐", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "pick", 
           text: "Pick them up and throw in the dustbin", 
           emoji: "♻️", 
-          description: "Clean up",
           isCorrect: true
         },
         { 
           id: "kick", 
           text: "Kick them aside", 
           emoji: "⚽", 
-          description: "Move them away",
           isCorrect: false
         }
       ]
@@ -139,21 +130,18 @@ const PlaygroundRulesStory = () => {
           id: "laugh", 
           text: "Laugh and keep playing", 
           emoji: "😂", 
-          description: "Make fun",
           isCorrect: false
         },
         { 
           id: "point", 
           text: "Point and tell others", 
           emoji: "👆", 
-          description: "Draw attention",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Help them stand and check if they're okay", 
           emoji: "🤗", 
-          description: "Show care",
           isCorrect: true
         }
       ]

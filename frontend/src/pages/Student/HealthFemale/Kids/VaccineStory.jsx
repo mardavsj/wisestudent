@@ -17,7 +17,7 @@ const VaccineStory = () => {
   const totalCoins = 5;
   const totalXp = 10;
   const maxScore = 5;
-  const gameId = "health-female-kids-71";
+  const gameId = "health-female-kids-10";
 
   const questions = [
     {

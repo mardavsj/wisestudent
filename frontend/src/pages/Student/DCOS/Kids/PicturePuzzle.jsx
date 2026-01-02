@@ -29,30 +29,32 @@ const PicturePuzzle = () => {
 
   // Pictures (left side)
   const leftItems = [
-    { id: 1, name: "Edited Picture with Unreal Shadows", emoji: "🖼️", description: "Unrealistic image" },
-    { id: 2, name: "Official School Notice Image", emoji: "🏫", description: "From trusted source" },
-    { id: 3, name: "Celebrity with Wings Photo", emoji: "😇", description: "Impossible image" },
-    { id: 4, name: "Photo from School Sports Day", emoji: "🏅", description: "Real event photo" },
-    { id: 5, name: "Image Claiming 'Cows Can Talk'", emoji: "🐮", description: "Unbelievable claim" }
+    { id: 1, name: "Picture with Unreal Shadows", emoji: "🖼️",  },
+    { id: 2, name: "School Notice Image", emoji: "🏫",  },
+    { id: 3, name: "Celebrity with Wings Photo", emoji: "😇",  },
+    { id: 4, name: "Photo from School Sports Day", emoji: "🏅",  },
+    { id: 5, name: "Image Claiming 'Cows Can Talk'", emoji: "🐮",  }
   ];
 
   // Categories (right side)
   const rightItems = [
-    { id: 1, name: "Fake News", emoji: "❌", description: "Not real or edited" },
-    { id: 2, name: "Real News", emoji: "✅", description: "True and verified" },
-    { id: 3, name: "Fake News", emoji: "❌", description: "Not real or edited" },
-    { id: 4, name: "Real News", emoji: "✅", description: "True and verified" },
-    { id: 5, name: "Fake News", emoji: "❌", description: "Not real or edited" }
-  ];
+    { id: 5, name: "False Claim Image", emoji: "⚠️" },
+    { id: 4, name: "Real Event Photo", emoji: "📸" },
+    { id: 2, name: "Official Source Photo", emoji: "📄" },
+    { id: 3, name: "Impossible Scene", emoji: "🚫" },
+    { id: 1, name: "Digitally Edited Image", emoji: "🛠️" },
+];
+
 
   // Correct matches (mapped to different positions like PuzzleOfSavingGoals)
-  const correctMatches = [
-    { leftId: 1, rightId: 3 }, // Edited Picture → Fake News (id: 3)
-    { leftId: 2, rightId: 2 }, // Official School Notice → Real News (id: 2)
-    { leftId: 3, rightId: 1 }, // Celebrity with Wings → Fake News (id: 1)
-    { leftId: 4, rightId: 4 }, // School Sports Day → Real News (id: 4)
-    { leftId: 5, rightId: 5 }  // Cows Can Talk → Fake News (id: 5)
-  ];
+ const correctMatches = [
+  { leftId: 1, rightId: 1 }, // Edited Picture → Digitally Edited Image
+  { leftId: 2, rightId: 2 }, // Official School Notice → Official Source Photo
+  { leftId: 3, rightId: 3 }, // Celebrity with Wings → Impossible Scene
+  { leftId: 4, rightId: 4 }, // School Sports Day → Real Event Photo
+  { leftId: 5, rightId: 5 }  // Cows Can Talk → False Claim Image
+];
+
 
   const handleLeftSelect = (item) => {
     if (showResult) return;

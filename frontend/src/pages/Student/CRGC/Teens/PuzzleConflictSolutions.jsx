@@ -19,20 +19,20 @@ const PuzzleConflictSolutions = () => {
 
   // Actions (left side) - 5 items
   const actions = [
-    { id: 1, name: "Listen", emoji: "👂", description: "Pay attention to others' perspectives" },
-    { id: 2, name: "Apologize", emoji: "🫂", description: "Express regret for wrongdoing" },
-    { id: 3, name: "Shout", emoji: "😠", description: "Raise voice in anger" },
-    { id: 4, name: "Compromise", emoji: "🤝", description: "Find middle ground solution" },
-    { id: 5, name: "Empathize", emoji: "❤️", description: "Understand others' feelings" }
+    { id: 1, name: "Listen", emoji: "👂",  },
+    { id: 2, name: "Apologize", emoji: "🫂",  },
+    { id: 3, name: "Shout", emoji: "😠",  },
+    { id: 4, name: "Compromise", emoji: "🤝",  },
+    { id: 5, name: "Empathize", emoji: "❤️",  }
   ];
 
   // Outcomes (right side) - 5 items
   const outcomes = [
-    { id: 2, name: "Heal", emoji: "🩹", description: "Repair damaged relationships" },
-    { id: 1, name: "Respect", emoji: "🙏", description: "Showing consideration for others" },
-    { id: 4, name: "Solution", emoji: "✅", description: "Effective resolution to problems" },
-    { id: 3, name: "Wrong", emoji: "❌", description: "Incorrect approach to conflict" },
-    { id: 5, name: "Connect", emoji: "🔗", description: "Build emotional bonds with others" }
+    { id: 2, name: "Heal", emoji: "🩹",  },
+    { id: 1, name: "Respect", emoji: "🙏",  },
+    { id: 4, name: "Solution", emoji: "✅",  },
+    { id: 3, name: "Wrong", emoji: "❌",  },
+    { id: 5, name: "Connect", emoji: "🔗",  }
   ];
 
   // Correct matches

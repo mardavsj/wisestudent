@@ -31,19 +31,18 @@ const ViralPostStory = () => {
         { 
           id: "share", 
           text: "Share it immediately", 
-          description: "Share the news right away with everyone",
+          
           isCorrect: false
         },
         { 
           id: "verify", 
           text: "Verify before sharing", 
-          description: "Check official sources before sharing the news",
+          
           isCorrect: true
         },
         { 
           id: "forward", 
           text: "Forward to friends", 
-          description: "Forward the message to your friends",
           isCorrect: false
         }
       ]
@@ -55,19 +54,16 @@ const ViralPostStory = () => {
         { 
           id: "share-right", 
           text: "Share it right away", 
-          description: "Share the breaking news immediately",
           isCorrect: false
         },
         { 
           id: "forward-all", 
           text: "Forward to everyone", 
-          description: "Forward the message to all your contacts",
           isCorrect: false
         },
         { 
           id: "check-sources", 
           text: "Check official sources first", 
-          description: "Verify with official news sources before sharing",
           isCorrect: true
         }
       ]
@@ -79,19 +75,16 @@ const ViralPostStory = () => {
         { 
           id: "share-warn", 
           text: "Share to warn others", 
-          description: "Share immediately to help others",
           isCorrect: false
         },
         { 
           id: "verify-health", 
           text: "Verify with health authorities first", 
-          description: "Check with official health authorities before sharing",
           isCorrect: true
         },
         { 
           id: "forward-immediate", 
           text: "Forward immediately", 
-          description: "Forward the warning right away",
           isCorrect: false
         }
       ]
@@ -103,19 +96,16 @@ const ViralPostStory = () => {
         { 
           id: "share-help", 
           text: "Share to help people", 
-          description: "Share to help others find the cure",
           isCorrect: false
         },
         { 
           id: "forward-family", 
           text: "Forward to family", 
-          description: "Forward to family members",
           isCorrect: false
         },
         { 
           id: "verify-medical", 
           text: "Verify with medical experts first", 
-          description: "Check with medical professionals before sharing",
           isCorrect: true
         }
       ]
@@ -127,19 +117,16 @@ const ViralPostStory = () => {
         { 
           id: "share-avoid", 
           text: "Share to avoid bad luck", 
-          description: "Share to prevent something bad from happening",
           isCorrect: false
         },
         { 
           id: "ignore-hoax", 
           text: "Ignore - it's a hoax", 
-          description: "Ignore it because it's a chain message hoax",
           isCorrect: true
         },
         { 
           id: "forward-ten", 
           text: "Forward to 10 people", 
-          description: "Forward to 10 people as requested",
           isCorrect: false
         }
       ]

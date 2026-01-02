@@ -31,8 +31,8 @@ const SafeGirlBadge = () => {
       question: "How do you earn the 'Safe Choice' badge?",
       options: [
         { 
-          text: "Try alcohol once", 
-          emoji: "🍺", 
+          text: "Try Energy drinks once", 
+          emoji: "⚡", 
           isCorrect: false
         },
         { 
@@ -103,7 +103,7 @@ const SafeGirlBadge = () => {
           isCorrect: false
         },
         { 
-          text: "Protecting your body from smoke and drugs", 
+          text: "Protecting your body from smoke and Energy drinks", 
           emoji: "🫁", 
           isCorrect: false
         },

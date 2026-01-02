@@ -34,8 +34,8 @@ const ReflexLearningTools = () => {
       question: "Dictionary App 📖 - Is this a good learning tool or bad tool?",
       correctAnswer: "Good Tool",
       options: [
-        { text: "Good Tool", isCorrect: true, emoji: "✅" },
-        { text: "Bad Tool", isCorrect: false, emoji: "❌" },
+        { text: "Bad Tool", isCorrect: false, emoji: "👎" },
+        { text: "Good Tool", isCorrect: true, emoji: "👍" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -45,8 +45,8 @@ const ReflexLearningTools = () => {
       question: "Spam Game 🎮 - Is this a good learning tool or bad tool?",
       correctAnswer: "Bad Tool",
       options: [
-        { text: "Good Tool", isCorrect: false, emoji: "✅" },
-        { text: "Bad Tool", isCorrect: true, emoji: "❌" },
+        { text: "Bad Tool", isCorrect: true, emoji: "👎" },
+        { text: "Good Tool", isCorrect: false, emoji: "👎" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -56,9 +56,9 @@ const ReflexLearningTools = () => {
       question: "Language Learning App 🌍 - Is this a good learning tool or bad tool?",
       correctAnswer: "Good Tool",
       options: [
-        { text: "Good Tool", isCorrect: true, emoji: "✅" },
-        { text: "Bad Tool", isCorrect: false, emoji: "❌" },
+        { text: "Bad Tool", isCorrect: false, emoji: "👎" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
+        { text: "Good Tool", isCorrect: true, emoji: "👍" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
     },
@@ -67,10 +67,10 @@ const ReflexLearningTools = () => {
       question: "Fake Prize App 🎁 - Is this a good learning tool or bad tool?",
       correctAnswer: "Bad Tool",
       options: [
-        { text: "Good Tool", isCorrect: false, emoji: "✅" },
-        { text: "Bad Tool", isCorrect: true, emoji: "❌" },
+        { text: "Good Tool", isCorrect: false, emoji: "👎" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
-        { text: "Maybe", isCorrect: false, emoji: "😐" }
+        { text: "Maybe", isCorrect: false, emoji: "😐" },
+        { text: "Bad Tool", isCorrect: true, emoji: "👎" },
       ]
     },
     {
@@ -78,8 +78,8 @@ const ReflexLearningTools = () => {
       question: "Science Quiz App 🔬 - Is this a good learning tool or bad tool?",
       correctAnswer: "Good Tool",
       options: [
-        { text: "Good Tool", isCorrect: true, emoji: "✅" },
-        { text: "Bad Tool", isCorrect: false, emoji: "❌" },
+        { text: "Bad Tool", isCorrect: false, emoji: "👎" },
+        { text: "Good Tool", isCorrect: true, emoji: "👍" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]

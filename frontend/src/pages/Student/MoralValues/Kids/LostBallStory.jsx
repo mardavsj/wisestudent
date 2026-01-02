@@ -32,21 +32,19 @@ const LostBallStory = () => {
           id: "keep", 
           text: "Keep it for yourself", 
           emoji: "😏", 
-          description: "Take it",
+          
           isCorrect: false
         },
          { 
           id: "return", 
           text: "Return it to your classmate", 
           emoji: "🙋", 
-          description: "Give it back",
           isCorrect: true
         },
         { 
           id: "leave", 
           text: "Leave it where it is", 
           emoji: "🚶", 
-          description: "Don't do anything",
           isCorrect: false
         }
       ]
@@ -59,21 +57,18 @@ const LostBallStory = () => {
           id: "teacher", 
           text: "Give it to the teacher to return", 
           emoji: "🛡️", 
-          description: "Report it to authority",
           isCorrect: true
         },
         { 
           id: "take", 
           text: "Take it home", 
           emoji: "😈", 
-          description: "Keep it",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore it", 
           emoji: "🙈", 
-          description: "Don't touch it",
           isCorrect: false
         }
       ]
@@ -86,21 +81,18 @@ const LostBallStory = () => {
           id: "found", 
           text: "Give it to lost and found", 
           emoji: "🙌", 
-          description: "Turn it in properly",
           isCorrect: true
         },
         { 
           id: "wear", 
           text: "Wear it yourself", 
           emoji: "😎", 
-          description: "Use it",
           isCorrect: false
         },
         { 
           id: "leave", 
           text: "Leave it on the desk", 
           emoji: "🪑", 
-          description: "Don't move it",
           isCorrect: false
         }
       ]
@@ -114,21 +106,18 @@ const LostBallStory = () => {
           id: "hide", 
           text: "Hide it", 
           emoji: "🙈", 
-          description: "Conceal it",
           isCorrect: false
         },
         { 
           id: "use", 
           text: "Use it for yourself", 
           emoji: "📝", 
-          description: "Take it",
           isCorrect: false
         },
         { 
           id: "polite", 
           text: "Return it to them politely", 
           emoji: "💌", 
-          description: "Give it back nicely",
           isCorrect: true
         },
       ]
@@ -142,21 +131,18 @@ const LostBallStory = () => {
           id: "eat", 
           text: "Eat it secretly", 
           emoji: "😋", 
-          description: "Take the food",
           isCorrect: false
         },
         { 
           id: "owner", 
           text: "Return it to the owner", 
           emoji: "🖐️", 
-          description: "Give it back",
           isCorrect: true
         },
         { 
           id: "throw", 
           text: "Throw it away", 
           emoji: "🗑️", 
-          description: "Discard it",
           isCorrect: false
         }
       ]

@@ -29,20 +29,20 @@ const PlayVsStudyPuzzle = () => {
 
   // Activities (left side)
   const leftItems = [
-    { id: 1, name: "Study", emoji: "📚", description: "Learning and homework" },
-    { id: 2, name: "Play", emoji: "🎮", description: "Fun activities" },
-    { id: 3, name: "Sleep", emoji: "😴", description: "Rest time" },
-    { id: 4, name: "Eat", emoji: "🍽️", description: "Meal time" },
-    { id: 5, name: "Read", emoji: "📖", description: "Reading books" }
+    { id: 1, name: "Study", emoji: "📚",  },
+    { id: 2, name: "Play", emoji: "🎮",  },
+    { id: 3, name: "Sleep", emoji: "😴",  },
+    { id: 4, name: "Eat", emoji: "🍽️",  },
+    { id: 5, name: "Read", emoji: "📖",  }
   ];
 
   // Places/Items (right side)
   const rightItems = [
-    { id: 1, name: "Homework", emoji: "📝", description: "Study work" },
-    { id: 2, name: "Playground", emoji: "🏞️", description: "Play area" },
-    { id: 3, name: "Bed", emoji: "🛏️", description: "Sleeping place" },
-    { id: 4, name: "Plate", emoji: "🍽️", description: "Eating utensil" },
-    { id: 5, name: "Book", emoji: "📚", description: "Reading material" }
+    { id: 1, name: "Homework", emoji: "📝" },
+    { id: 2, name: "Playground", emoji: "🏞️" },
+    { id: 3, name: "Bed", emoji: "🛏️" },
+    { id: 4, name: "Plate", emoji: "🍽️" },
+    { id: 5, name: "Book", emoji: "📚" }
   ];
 
   // Correct matches

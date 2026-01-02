@@ -32,21 +32,19 @@ const PeerPressureStory = () => {
           id: "refuse", 
           text: "Refuse and stand up against trolling", 
           emoji: "🛡️", 
-          description: "Say no and speak out against cyberbullying",
+          
           isCorrect: true
         },
         { 
           id: "join", 
           text: "Join them to fit in", 
           emoji: "😞", 
-          description: "Participate in trolling to be part of the group",
           isCorrect: false
         },
         { 
           id: "watch", 
           text: "Watch but don't participate", 
           emoji: "👀", 
-          description: "Observe but don't actively join in",
           isCorrect: false
         }
       ]
@@ -59,21 +57,18 @@ const PeerPressureStory = () => {
           id: "spread", 
           text: "Spread the rumor to fit in", 
           emoji: "😞", 
-          description: "Share the rumor to stay with the group",
           isCorrect: false
         },
         { 
           id: "stop", 
           text: "Refuse and stop the rumor", 
           emoji: "🛡️", 
-          description: "Refuse to spread it and try to stop it",
           isCorrect: true
         },
         { 
           id: "listen", 
           text: "Listen but don't share", 
           emoji: "👂", 
-          description: "Hear it but don't pass it on",
           isCorrect: false
         }
       ]
@@ -86,21 +81,18 @@ const PeerPressureStory = () => {
           id: "post-mean", 
           text: "Post mean comments to fit in", 
           emoji: "😞", 
-          description: "Post hurtful comments to be part of the group",
           isCorrect: false
         },
         { 
           id: "silent", 
           text: "Stay silent", 
           emoji: "🤐", 
-          description: "Don't participate but don't speak up either",
           isCorrect: false
         },
         { 
           id: "defend", 
           text: "Refuse and defend the person", 
           emoji: "🛡️", 
-          description: "Stand up for the person being targeted",
           isCorrect: true
         }
       ]
@@ -113,21 +105,18 @@ const PeerPressureStory = () => {
           id: "include", 
           text: "Refuse and include everyone", 
           emoji: "🛡️", 
-          description: "Stand up for inclusion and fairness",
           isCorrect: true
         },
         { 
           id: "block", 
           text: "Block them to fit in", 
           emoji: "😞", 
-          description: "Block the person to go along with friends",
           isCorrect: false
         },
         { 
           id: "neutral", 
           text: "Stay out of it", 
           emoji: "😐", 
-          description: "Don't get involved in the situation",
           isCorrect: false
         }
       ]
@@ -140,21 +129,18 @@ const PeerPressureStory = () => {
           id: "join-bully", 
           text: "Join them to fit in", 
           emoji: "😞", 
-          description: "Participate in cyberbullying to be accepted",
           isCorrect: false
         },
         { 
           id: "report", 
           text: "Refuse and report the bullying", 
           emoji: "🛡️", 
-          description: "Say no and report the cyberbullying",
           isCorrect: true
         },
         { 
           id: "sidelines", 
           text: "Watch from the sidelines", 
           emoji: "👀", 
-          description: "Observe but don't actively participate",
           isCorrect: false
         }
       ]

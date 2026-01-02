@@ -29,30 +29,32 @@ const PuzzleOnlineForever = () => {
 
   // Items (left side)
   const leftItems = [
-    { id: 1, name: "A photo you post online", emoji: "📸", description: "Shared on social media" },
-    { id: 2, name: "Your homework notebook", emoji: "📒", description: "Physical paper at home" },
-    { id: 3, name: "A story shared on social media", emoji: "📱", description: "Posted online" },
-    { id: 4, name: "A paper drawing at home", emoji: "🖍️", description: "Physical artwork" },
-    { id: 5, name: "A comment on someone's post", emoji: "💬", description: "Online interaction" }
+    { id: 1, name: "A photo you post online", emoji: "📸",  },
+    { id: 2, name: "Your homework notebook", emoji: "📒",  },
+    { id: 3, name: "A story shared on social media", emoji: "📱",  },
+    { id: 4, name: "A paper drawing at home", emoji: "🖍️",  },
+    { id: 5, name: "A comment on someone's post", emoji: "💬",  }
   ];
 
   // Categories (right side)
   const rightItems = [
-    { id: 1, name: "Stays Forever", emoji: "🌐", description: "Remains online permanently" },
-    { id: 2, name: "Can Be Erased", emoji: "🗑️", description: "Can be deleted or thrown away" },
-    { id: 3, name: "Stays Forever", emoji: "🌐", description: "Remains online permanently" },
-    { id: 4, name: "Can Be Erased", emoji: "🗑️", description: "Can be deleted or thrown away" },
-    { id: 5, name: "Stays Forever", emoji: "🌐", description: "Remains online permanently" }
-  ];
+    { id: 5, name: "Hard to Take Back", emoji: "⚠️" },
+  { id: 1, name: "Lives on the Internet", emoji: "🌍" },
+  { id: 4, name: "Stays at Home", emoji: "🏠" },
+  { id: 2, name: "Physical & Removable", emoji: "🧹" },
+  { id: 3, name: "Seen by Many People", emoji: "👀" },
+];
+
 
   // Correct matches (mapped to different positions like PuzzleOfSavingGoals)
   const correctMatches = [
-    { leftId: 1, rightId: 3 }, // A photo you post online → Stays Forever (id: 3)
-    { leftId: 2, rightId: 2 }, // Your homework notebook → Can Be Erased (id: 2)
-    { leftId: 3, rightId: 1 }, // A story shared on social media → Stays Forever (id: 1)
-    { leftId: 4, rightId: 4 }, // A paper drawing at home → Can Be Erased (id: 4)
-    { leftId: 5, rightId: 5 }  // A comment on someone's post → Stays Forever (id: 5)
-  ];
+  { leftId: 1, rightId: 1 }, // Photo posted online → Lives on the Internet
+  { leftId: 2, rightId: 2 }, // Homework notebook → Physical & Removable
+  { leftId: 3, rightId: 3 }, // Story on social media → Seen by Many People
+  { leftId: 4, rightId: 4 }, // Paper drawing → Stays at Home
+  { leftId: 5, rightId: 5 }  // Comment on post → Hard to Take Back
+];
+
 
   const handleLeftSelect = (item) => {
     if (showResult) return;

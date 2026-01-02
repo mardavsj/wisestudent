@@ -35,21 +35,20 @@ const PlaygroundBystander = () => {
           id: "a", 
           text: "Walk Away", 
           emoji: "🚶", 
-          description: "Walk away and ignore it",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Help and Tell Teacher", 
           emoji: "🙋", 
-          description: "Help the child and tell a teacher",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Just Watch", 
           emoji: "👀", 
-          description: "Watch but don't do anything",
           isCorrect: false
         }
       ]
@@ -62,21 +61,18 @@ const PlaygroundBystander = () => {
           id: "a", 
           text: "Help and Tell Adult", 
           emoji: "🛡️", 
-          description: "Help get the lunch back and tell an adult",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Laugh Along", 
           emoji: "😄", 
-          description: "Laugh along with the bully",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Pretend You Didn't See", 
           emoji: "🙈", 
-          description: "Pretend you didn't see anything",
           isCorrect: false
         }
       ]
@@ -90,21 +86,18 @@ const PlaygroundBystander = () => {
           id: "b", 
           text: "Share the Comments", 
           emoji: "📤", 
-          description: "Share the mean comments",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Report and Stand Up", 
           emoji: "📢", 
-          description: "Report it and stand up for them",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ignore Completely", 
           emoji: "😐", 
-          description: "Ignore it completely",
           isCorrect: false
         }
       ]
@@ -118,21 +111,18 @@ const PlaygroundBystander = () => {
           id: "b", 
           text: "Join In", 
           emoji: "😈", 
-          description: "Join in with the name calling",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Walk By Silently", 
           emoji: "🚶", 
-          description: "Walk by without saying anything",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Tell Them to Stop", 
           emoji: "🛑", 
-          description: "Tell them to stop and get help",
           isCorrect: true
         },
       ]
@@ -145,21 +135,18 @@ const PlaygroundBystander = () => {
           id: "a", 
           text: "Invite Them to Join", 
           emoji: "🤝", 
-          description: "Invite them to join and include them",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Ignore Like Others", 
           emoji: "😐", 
-          description: "Ignore them like everyone else",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Make Fun of Them", 
           emoji: "😄", 
-          description: "Make fun of them for being left out",
           isCorrect: false
         }
       ]

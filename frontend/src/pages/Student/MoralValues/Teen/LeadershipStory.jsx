@@ -33,21 +33,19 @@ const LeadershipStory = () => {
           id: "no", 
           text: "No, teamwork means sharing credit.", 
           emoji: "🙌", 
-          description: "Credit should be shared among all team members",
+          
           isCorrect: true
         },
         { 
           id: "yes", 
           text: "Yes, he's the leader!", 
           emoji: "😐", 
-          description: "Leaders deserve all the credit",
           isCorrect: false
         },
         { 
           id: "maybe", 
           text: "Maybe, if he helped a little.", 
           emoji: "🤔", 
-          description: "It depends on how much he contributed",
           isCorrect: false
         }
       ]
@@ -60,21 +58,18 @@ const LeadershipStory = () => {
           id: "complain", 
           text: "Complain to everyone else.", 
           emoji: "🙄", 
-          description: "Gossip about the problem with others",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore it, to stay friendly.", 
           emoji: "😅", 
-          description: "Avoid addressing the issue",
           isCorrect: false
         },
         { 
           id: "talk", 
           text: "Talk kindly and remind them of teamwork.", 
           emoji: "💬", 
-          description: "Address the issue directly and constructively",
           isCorrect: true
         }
       ]
@@ -87,21 +82,18 @@ const LeadershipStory = () => {
           id: "let", 
           text: "Let others decide their role.", 
           emoji: "🤷", 
-          description: "Let the team figure it out themselves",
           isCorrect: false
         },
         { 
           id: "ignore2", 
           text: "Ignore them until they speak up.", 
           emoji: "😶", 
-          description: "Wait for them to take initiative",
           isCorrect: false
         },
         { 
           id: "welcome", 
           text: "Welcome and involve them kindly.", 
           emoji: "🤗", 
-          description: "Actively include and welcome the new member",
           isCorrect: true
         }
       ]
@@ -114,21 +106,18 @@ const LeadershipStory = () => {
           id: "thank", 
           text: "Thank everyone and share the credit.", 
           emoji: "👏", 
-          description: "Acknowledge the entire team's effort",
           isCorrect: true
         },
         { 
           id: "myself", 
           text: "Thank only myself.", 
           emoji: "😎", 
-          description: "Take all the credit personally",
           isCorrect: false
         },
         { 
           id: "nothing", 
           text: "Say nothing about the team.", 
           emoji: "😶", 
-          description: "Don't mention the team at all",
           isCorrect: false
         }
       ]
@@ -141,21 +130,18 @@ const LeadershipStory = () => {
           id: "replace", 
           text: "Replace them immediately.", 
           emoji: "🚫", 
-          description: "Remove them from the task",
           isCorrect: false
         },
         { 
           id: "alone", 
           text: "Tell them to figure it out alone.", 
           emoji: "😐", 
-          description: "Leave them to solve it themselves",
           isCorrect: false
         },
         { 
           id: "guide", 
           text: "Guide and motivate them patiently.", 
           emoji: "💪", 
-          description: "Provide support and encouragement",
           isCorrect: true
         }
       ]

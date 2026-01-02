@@ -32,21 +32,20 @@ const SocialMediaStory1 = () => {
           id: "share-everything", 
           text: "Share all personal details", 
           emoji: "📤", 
-          description: "Post your full name, address, and school details",
+          
           isCorrect: false
         },
         { 
           id: "smart-promotion", 
           text: "Promote the project while protecting privacy", 
           emoji: "🛡️", 
-          description: "Share project highlights while keeping personal info private",
+         
           isCorrect: true
         },
         { 
           id: "don't-share", 
           text: "Don't share anything online", 
           emoji: "🚫", 
-          description: "Avoid using social media completely",
           isCorrect: false
         }
       ]
@@ -59,14 +58,12 @@ const SocialMediaStory1 = () => {
           id: "share-achievements", 
           text: "Share achievements without revealing location", 
           emoji: "🛡️", 
-          description: "Highlight your work without sharing personal location",
           isCorrect: true
         },
         { 
           id: "post-location", 
           text: "Post with your exact location", 
           emoji: "📍", 
-          description: "Share your precise location with every post",
           isCorrect: false
         },
         
@@ -74,7 +71,6 @@ const SocialMediaStory1 = () => {
           id: "never-post", 
           text: "Never post anything", 
           emoji: "🚫", 
-          description: "Don't use social media at all",
           isCorrect: false
         }
       ]
@@ -87,7 +83,6 @@ const SocialMediaStory1 = () => {
           id: "share-contact", 
           text: "Share your personal phone number", 
           emoji: "📱", 
-          description: "Post your phone number publicly",
           isCorrect: false
         },
        
@@ -95,14 +90,12 @@ const SocialMediaStory1 = () => {
           id: "no-connection", 
           text: "Don't connect with anyone", 
           emoji: "🚫", 
-          description: "Avoid connecting with others online",
           isCorrect: false
         },
          { 
           id: "use-platform-messaging", 
           text: "Use platform messaging and keep contact private", 
           emoji: "🛡️", 
-          description: "Use social media messaging without sharing personal contact",
           isCorrect: true
         },
       ]
@@ -115,21 +108,18 @@ const SocialMediaStory1 = () => {
           id: "share-all-info", 
           text: "Share all your personal information", 
           emoji: "📤", 
-          description: "Include all personal details in your portfolio",
           isCorrect: false
         },
         { 
           id: "showcase-work-safely", 
           text: "Showcase your work while protecting privacy", 
           emoji: "🛡️", 
-          description: "Display your work without revealing sensitive information",
           isCorrect: true
         },
         { 
           id: "no-portfolio", 
           text: "Don't create a portfolio", 
           emoji: "🚫", 
-          description: "Avoid creating any online portfolio",
           isCorrect: false
         }
       ]
@@ -142,14 +132,12 @@ const SocialMediaStory1 = () => {
           id: "use-smartly", 
           text: "Use social media smartly for growth while staying safe", 
           emoji: "🛡️", 
-          description: "Use platforms strategically while protecting your privacy",
           isCorrect: true
         },
         { 
           id: "share-everything-public", 
           text: "Share everything publicly", 
           emoji: "📤", 
-          description: "Make all your information public",
           isCorrect: false
         },
         
@@ -157,7 +145,6 @@ const SocialMediaStory1 = () => {
           id: "avoid-completely", 
           text: "Avoid social media completely", 
           emoji: "🚫", 
-          description: "Don't use social media at all",
           isCorrect: false
         }
       ]

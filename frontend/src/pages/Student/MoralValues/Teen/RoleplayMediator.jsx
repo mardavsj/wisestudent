@@ -44,21 +44,20 @@ const RoleplayMediator = () => {
           id: "a", 
           text: "Ask both to share their sides calmly one by one", 
           emoji: "👂", 
-          description: "Listening to both sides helps find solutions",
+          
           isCorrect: true 
         },
         { 
           id: "b", 
           text: "Let them argue until they calm down", 
           emoji: "😠", 
-          description: "Letting arguments continue doesn't help",
+          
           isCorrect: false 
         },
         { 
           id: "c", 
           text: "Pick your favorite side to stop the fight faster", 
           emoji: "👆", 
-          description: "Picking sides creates more conflict",
           isCorrect: false 
         }
       ]
@@ -71,21 +70,18 @@ const RoleplayMediator = () => {
           id: "a", 
           text: "Tell them to stay quiet and let the teacher decide", 
           emoji: "👩‍🏫", 
-          description: "Mediators should help resolve conflicts",
           isCorrect: false 
         },
         { 
           id: "b", 
           text: "Remind them that listening is key to solving conflicts", 
           emoji: "🕊️", 
-          description: "Encouraging listening helps resolve conflicts",
           isCorrect: true 
         },
         { 
           id: "c", 
           text: "Leave the situation to avoid stress", 
           emoji: "🚶", 
-          description: "Mediators should help, not leave",
           isCorrect: false 
         }
       ]
@@ -98,21 +94,18 @@ const RoleplayMediator = () => {
           id: "a", 
           text: "Tell them to forget it and move on", 
           emoji: "😶", 
-          description: "Ignoring feelings doesn't solve problems",
           isCorrect: false 
         },
         { 
           id: "b", 
           text: "Repeat what each person said to ensure clarity", 
           emoji: "🔄", 
-          description: "Clarifying helps people understand each other",
           isCorrect: true 
         },
         { 
           id: "c", 
           text: "Ask others to choose who's right", 
           emoji: "👥", 
-          description: "Choosing sides doesn't help find common ground",
           isCorrect: false 
         }
       ]
@@ -125,21 +118,18 @@ const RoleplayMediator = () => {
           id: "a", 
           text: "Encourage deep breaths and respectful tone", 
           emoji: "🕊️", 
-          description: "Calming techniques help de-escalate conflicts",
           isCorrect: true 
         },
         { 
           id: "b", 
           text: "Raise your voice to control them", 
           emoji: "😠", 
-          description: "Raising your voice escalates conflicts",
           isCorrect: false 
         },
         { 
           id: "c", 
           text: "Walk away immediately", 
           emoji: "🚶", 
-          description: "Mediators should help resolve, not abandon",
           isCorrect: false 
         }
       ]
@@ -152,7 +142,6 @@ const RoleplayMediator = () => {
           id: "a", 
           text: "Ignore both since the fight is over", 
           emoji: "😶", 
-          description: "Good mediators follow up to ensure peace",
           isCorrect: false 
         },
        
@@ -160,14 +149,12 @@ const RoleplayMediator = () => {
           id: "c", 
           text: "Remind them you were the hero", 
           emoji: "😏", 
-          description: "Bragging doesn't show good mediation",
           isCorrect: false 
         },
          { 
           id: "b", 
           text: "Check in later to ensure peace continues", 
           emoji: "💚", 
-          description: "Following up shows care and ensures lasting peace",
           isCorrect: true 
         },
       ]

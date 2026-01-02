@@ -22,20 +22,20 @@ const PuzzleOfGreatTeams = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const leftItems = [
-    { id: 1, name: "Wright Brothers", emoji: "✈️", description: "Aviation pioneers" }, // Matches with "Airplane" (rightId: 6)
-    { id: 2, name: "Cricket Team", emoji: "🏏", description: "Sports team" }, // Matches with "Victory" (rightId: 7)
-    { id: 3, name: "Avengers", emoji: "🦸", description: "Superhero team" }, // Matches with "Saving the World" (rightId: 8)
-    { id: 4, name: "Bees", emoji: "🐝", description: "Nature's workers" }, // Matches with "Making Honey Together" (rightId: 9)
-    { id: 5, name: "Musicians", emoji: "🎵", description: "Music creators" }, // Matches with "Creating Harmony" (rightId: 10)
+    { id: 1, name: "Wright Brothers", emoji: "✈️",  }, // Matches with "Airplane" (rightId: 6)
+    { id: 2, name: "Cricket Team", emoji: "🏏",  }, // Matches with "Victory" (rightId: 7)
+    { id: 3, name: "Avengers", emoji: "🦸",  }, // Matches with "Saving the World" (rightId: 8)
+    { id: 4, name: "Bees", emoji: "🐝",  }, // Matches with "Making Honey Together" (rightId: 9)
+    { id: 5, name: "Musicians", emoji: "🎵",  }, // Matches with "Creating Harmony" (rightId: 10)
   ];
 
   // Right items with correct matches in different positions: manually shuffled to avoid direct positional matching
   const rightItems = [
-    { id: 6, name: "Making Honey Together", emoji: "🍯", description: "Sweet teamwork" }, // Bees' achievement (originally id: 4)
-    { id: 7, name: "Victory", emoji: "🏆", description: "Winning together" }, // Cricket Team's achievement (originally id: 2)
-    { id: 8, name: "Creating Harmony", emoji: "🎶", description: "Beautiful music" }, // Musicians' achievement (originally id: 5)
-    { id: 9, name: "Airplane", emoji: "🛫", description: "Flying machine" }, // Wright Brothers' achievement (originally id: 1)
-    { id: 10, name: "Saving the World", emoji: "🌍", description: "Protecting all" }, // Avengers' achievement (originally id: 3)
+    { id: 6, name: "Making Honey Together", emoji: "🍯",  }, // Bees' achievement (originally id: 4)
+    { id: 7, name: "Victory", emoji: "🏆",  }, // Cricket Team's achievement (originally id: 2)
+    { id: 8, name: "Creating Harmony", emoji: "🎶",  }, // Musicians' achievement (originally id: 5)
+    { id: 9, name: "Airplane", emoji: "🛫",  }, // Wright Brothers' achievement (originally id: 1)
+    { id: 10, name: "Saving the World", emoji: "🌍",  }, // Avengers' achievement (originally id: 3)
   ];
 
   const correctMatches = [

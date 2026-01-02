@@ -64,21 +64,19 @@ const PasswordSharingStory = () => {
           id: "never", 
           text: "Never share passwords with anyone", 
           emoji: "🛡️", 
-          description: "Keep your password private, even from close friends",
+          
           isCorrect: true
         },
         { 
           id: "share", 
           text: "Share it - they're my best friend", 
           emoji: "🤝", 
-          description: "Give them your password since you trust them",
           isCorrect: false
         },
         { 
           id: "share-later", 
           text: "Share it but change it later", 
           emoji: "🔄", 
-          description: "Share now but change the password afterward",
           isCorrect: false
         }
       ]
@@ -91,21 +89,18 @@ const PasswordSharingStory = () => {
           id: "share-family", 
           text: "Share it - they're family", 
           emoji: "👨‍👩‍👧", 
-          description: "Share your password with family members",
           isCorrect: false
         },
         { 
           id: "never-family", 
           text: "Never share passwords, even with family", 
           emoji: "🛡️", 
-          description: "Keep passwords private from everyone, including family",
           isCorrect: true
         },
         { 
           id: "temporary", 
           text: "Share it temporarily", 
           emoji: "⏰", 
-          description: "Share for a short time then change it",
           isCorrect: false
         }
       ]
@@ -118,21 +113,18 @@ const PasswordSharingStory = () => {
           id: "help", 
           text: "Share it to help them", 
           emoji: "🤝", 
-          description: "Share your password to help a classmate",
           isCorrect: false
         },
         { 
           id: "monitor", 
           text: "Share it but monitor the account", 
           emoji: "👀", 
-          description: "Share but keep an eye on account activity",
           isCorrect: false
         },
         { 
           id: "never-classmate", 
           text: "Never share passwords with anyone", 
           emoji: "🛡️", 
-          description: "Keep your password private from everyone",
           isCorrect: true
         }
       ]
@@ -145,21 +137,18 @@ const PasswordSharingStory = () => {
           id: "never-online", 
           text: "Never share passwords with anyone", 
           emoji: "🛡️", 
-          description: "Never share passwords, especially with online contacts",
           isCorrect: true
         },
         { 
           id: "trust", 
           text: "Share it - they seem trustworthy", 
           emoji: "😊", 
-          description: "Share your password with someone online you trust",
           isCorrect: false
         },
         { 
           id: "change-after", 
           text: "Share it but change it immediately after", 
           emoji: "🔄", 
-          description: "Share now but change password right away",
           isCorrect: false
         }
       ]
@@ -172,21 +161,18 @@ const PasswordSharingStory = () => {
           id: "tech-support", 
           text: "Share it - they're tech support", 
           emoji: "🔧", 
-          description: "Share your password with tech support",
           isCorrect: false
         },
         { 
           id: "scam", 
           text: "Never share passwords - this is a scam", 
           emoji: "🛡️", 
-          description: "This is a scam - never share passwords with anyone",
           isCorrect: true
         },
         { 
           id: "verify-first", 
           text: "Share it but verify first", 
           emoji: "🤔", 
-          description: "Verify their identity before sharing",
           isCorrect: false
         }
       ]

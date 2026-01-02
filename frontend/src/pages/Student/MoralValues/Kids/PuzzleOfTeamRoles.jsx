@@ -25,20 +25,20 @@ const PuzzleOfTeamRoles = () => {
 
   // Team roles and their actions
   const leftItems = [
-    { id: 1, name: "Goalkeeper", emoji: "🧤", description: "Defends the goal" },
-    { id: 2, name: "Captain", emoji: "🎖️", description: "Leads the team" },
-    { id: 3, name: "Player", emoji: "⚽", description: "Plays on the field" },
-    { id: 4, name: "Coach", emoji: "📋", description: "Guides the team" },
-    { id: 5, name: "Supporter", emoji: "📣", description: "Encourages from sidelines" }
+    { id: 1, name: "Goalkeeper", emoji: "🧤",  },
+    { id: 2, name: "Captain", emoji: "🎖️",  },
+    { id: 3, name: "Player", emoji: "⚽",  },
+    { id: 4, name: "Coach", emoji: "📋",  },
+    { id: 5, name: "Supporter", emoji: "📣",  }
   ];
 
   // Actions - reordered so correct matches are in different positions
   const rightItems = [
-    { id: 1, name: "Leads", emoji: "🏆", description: "Guides and directs" },
-    { id: 2, name: "Cheers", emoji: "🎉", description: "Motivates the team" },
-    { id: 3, name: "Saves", emoji: "🛡️", description: "Protects the goal" },
-    { id: 4, name: "Supports", emoji: "🤝", description: "Helps teammates" },
-    { id: 5, name: "Guides", emoji: "📌", description: "Teaches and trains" }
+    { id: 1, name: "Leads", emoji: "🏆",  },
+    { id: 2, name: "Cheers", emoji: "🎉",  },
+    { id: 3, name: "Saves", emoji: "🛡️",  },
+    { id: 4, name: "Supports", emoji: "🤝",  },
+    { id: 5, name: "Guides", emoji: "📌",  }
   ];
 
   // Correct matches (with reordered right items)

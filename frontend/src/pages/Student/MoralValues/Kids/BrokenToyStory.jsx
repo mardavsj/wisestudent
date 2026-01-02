@@ -31,21 +31,20 @@ const BrokenToyStory = () => {
           id: "shout", 
           text: "Shout and call them names", 
           emoji: "😡", 
-          description: "Be angry",
+          
           isCorrect: false
         },
         { 
           id: "teacher", 
           text: "Tell a teacher immediately", 
           emoji: "🧑‍🏫", 
-          description: "Report them",
+          
           isCorrect: false
         },
         { 
           id: "forgive", 
           text: "Forgive and say 'It's okay'", 
           emoji: "🤗", 
-          description: "Be understanding",
           isCorrect: true
         }
       ]
@@ -58,21 +57,18 @@ const BrokenToyStory = () => {
           id: "keep", 
           text: "Keep it for yourself", 
           emoji: "😈", 
-          description: "Take it",
           isCorrect: false
         },
         { 
           id: "give", 
           text: "Give it back to them", 
           emoji: "😊", 
-          description: "Return it",
           isCorrect: true
         },
         { 
           id: "throw", 
           text: "Throw it away", 
           emoji: "🗑️", 
-          description: "Discard it",
           isCorrect: false
         }
       ]
@@ -85,21 +81,18 @@ const BrokenToyStory = () => {
           id: "share", 
           text: "Share your food with them", 
           emoji: "🤝", 
-          description: "Be generous",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore them", 
           emoji: "😐", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "tease", 
           text: "Tease them for forgetting", 
           emoji: "😏", 
-          description: "Be mean",
           isCorrect: false
         }
       ]
@@ -112,21 +105,18 @@ const BrokenToyStory = () => {
           id: "walk", 
           text: "Walk away quickly", 
           emoji: "🏃‍♀️", 
-          description: "Avoid helping",
           isCorrect: false
         },
         { 
           id: "wait", 
           text: "Wait for someone else to help", 
           emoji: "🕒", 
-          description: "Don't take initiative",
           isCorrect: false
         },
         { 
           id: "offer", 
           text: "Offer to help carry them", 
           emoji: "💪", 
-          description: "Be helpful",
           isCorrect: true
         }
       ]
@@ -139,21 +129,18 @@ const BrokenToyStory = () => {
           id: "kick", 
           text: "Kick it under the desk", 
           emoji: "👟", 
-          description: "Hide it",
           isCorrect: false
         },
         { 
           id: "pick", 
           text: "Pick it up and throw it in the bin", 
           emoji: "🗑️", 
-          description: "Keep it clean",
           isCorrect: true
         },
         { 
           id: "blame", 
           text: "Blame someone else", 
           emoji: "😠", 
-          description: "Shift responsibility",
           isCorrect: false
         }
       ]

@@ -32,21 +32,19 @@ const PasswordPrivacyStory = () => {
           id: "a", 
           text: "Share It", 
           emoji: "🔓", 
-          description: "Share it with them",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Keep Private", 
           emoji: "🔒", 
-          description: "Say no and keep it private",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Change Later", 
           emoji: "🔁", 
-          description: "Change password later",
           isCorrect: false
         }
       ]
@@ -59,21 +57,18 @@ const PasswordPrivacyStory = () => {
           id: "a", 
           text: "Give Password", 
           emoji: "📤", 
-          description: "Give them your password",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Share Once", 
           emoji: "🤫", 
-          description: "Share it just this once",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Create Own Account", 
           emoji: "🧠", 
-          description: "Create your own account",
           isCorrect: true
         }
       ]
@@ -86,21 +81,18 @@ const PasswordPrivacyStory = () => {
           id: "a", 
           text: "Say No", 
           emoji: "🙅‍♀️", 
-          description: "Say no, it's your account",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Tell Them", 
           emoji: "🏫", 
-          description: "Tell them since it's school work",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ask Teacher", 
           emoji: "👩‍🏫", 
-          description: "Ask teacher if it's okay",
           isCorrect: false
         }
       ]
@@ -113,21 +105,18 @@ const PasswordPrivacyStory = () => {
           id: "a", 
           text: "Let Them Play", 
           emoji: "🎮", 
-          description: "Let them play on your account",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Tell Secretly", 
           emoji: "🤐", 
-          description: "Tell them your password secretly",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Help Make Own", 
           emoji: "✨", 
-          description: "Help them make their own",
           isCorrect: true
         }
       ]
@@ -140,21 +129,18 @@ const PasswordPrivacyStory = () => {
           id: "a", 
           text: "Share for Reward", 
           emoji: "💰", 
-          description: "Share it to get the reward",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ask Friend", 
           emoji: "🤔", 
-          description: "Ask your friend if it's safe",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignore and Report", 
           emoji: "🚨", 
-          description: "Ignore the message and report",
           isCorrect: true
         }
       ]

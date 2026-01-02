@@ -31,21 +31,20 @@ const OldLadyStory = () => {
           id: "ignore", 
           text: "Ignore and walk away", 
           emoji: "🙁", 
-          description: "Don't help",
+          
           isCorrect: false
         },
         { 
           id: "laugh", 
           text: "Laugh at her struggle", 
           emoji: "😅", 
-          description: "Make fun",
+          
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Help her carry the bags", 
           emoji: "🤝", 
-          description: "Offer assistance",
           isCorrect: true
         }
       ]
@@ -58,21 +57,18 @@ const OldLadyStory = () => {
           id: "leave", 
           text: "Leave her", 
           emoji: "🙁", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "guide", 
           text: "Guide her safely across", 
           emoji: "🤝", 
-          description: "Help her cross",
           isCorrect: true
         },
         { 
           id: "hurry", 
           text: "Hurry past quickly", 
           emoji: "🏃", 
-          description: "Rush away",
           isCorrect: false
         }
       ]
@@ -85,21 +81,18 @@ const OldLadyStory = () => {
           id: "pick", 
           text: "Pick it up and return it", 
           emoji: "🤝", 
-          description: "Help her",
           isCorrect: true
         },
         { 
           id: "keep", 
           text: "Keep it for yourself", 
           emoji: "🙁", 
-          description: "Take it",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Pretend you didn't see", 
           emoji: "🙈", 
-          description: "Ignore it",
           isCorrect: false
         }
       ]
@@ -112,21 +105,18 @@ const OldLadyStory = () => {
           id: "too", 
           text: "No, it's too far", 
           emoji: "🙁", 
-          description: "Refuse to help",
           isCorrect: false
         },
         { 
           id: "part", 
           text: "Only carry a little bit", 
           emoji: "🤏", 
-          description: "Minimal help",
           isCorrect: false
         },
         { 
           id: "carry", 
           text: "Yes, carry them with her", 
           emoji: "🤝", 
-          description: "Go the distance",
           isCorrect: true
         }
       ]
@@ -139,21 +129,18 @@ const OldLadyStory = () => {
           id: "ignore", 
           text: "Ignore her thanks", 
           emoji: "🙁", 
-          description: "Don't acknowledge",
           isCorrect: false
         },
         { 
           id: "smile", 
           text: "Smile and nod", 
           emoji: "🤝", 
-          description: "Accept graciously",
           isCorrect: true
         },
         { 
           id: "ask", 
           text: "Ask for money", 
           emoji: "💰", 
-          description: "Expect payment",
           isCorrect: false
         }
       ]

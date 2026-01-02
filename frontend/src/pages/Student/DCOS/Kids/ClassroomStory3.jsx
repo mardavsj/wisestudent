@@ -32,21 +32,21 @@ const ClassroomStory3 = () => {
           id: "a", 
           text: "Use AI App", 
           emoji: "🤖", 
-          description: "Use the AI app to answer every question fast",
+         
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Do Test Honestly", 
-          emoji: "✅", 
-          description: "Ignore the app and do the test honestly",
+          emoji: "📝", 
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ask for Hints", 
           emoji: "💡", 
-          description: "Ask AI to give hints but not full answers",
+          
           isCorrect: false
         }
       ]
@@ -59,21 +59,18 @@ const ClassroomStory3 = () => {
           id: "a", 
           text: "Get Ideas, Write Yourself", 
           emoji: "🧠", 
-          description: "Ask AI to help with ideas, but write it yourself",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Copy from AI", 
           emoji: "📄", 
-          description: "Copy the essay from AI and submit it",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Half and Half", 
           emoji: "✍️", 
-          description: "Let AI write half and you write half",
           isCorrect: false
         }
       ]
@@ -87,21 +84,18 @@ const ClassroomStory3 = () => {
           id: "b", 
           text: "Share Immediately", 
           emoji: "📤", 
-          description: "Share it immediately to be helpful",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Post in Group", 
           emoji: "💬", 
-          description: "Post it in the group chat for everyone",
           isCorrect: false
         },
           { 
           id: "a", 
           text: "Tell to Ask Teacher", 
           emoji: "🧑‍🏫", 
-          description: "Tell them to ask the teacher first",
           isCorrect: true
         },
       ]
@@ -114,21 +108,18 @@ const ClassroomStory3 = () => {
           id: "a", 
           text: "Fact-Check", 
           emoji: "🔍", 
-          description: "Fact-check the answer from other trusted sources",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Trust AI", 
           emoji: "🤖", 
-          description: "Trust AI completely—it's always right",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Share Wrong Answer", 
           emoji: "📢", 
-          description: "Share the wrong answer with friends",
           isCorrect: false
         }
       ]
@@ -142,21 +133,18 @@ const ClassroomStory3 = () => {
           id: "b", 
           text: "Hide AI Help", 
           emoji: "🙊", 
-          description: "Hide that AI helped you",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Give Credit", 
           emoji: "🏆", 
-          description: "Give credit that AI helped and explain what you learned",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Say AI Made All", 
           emoji: "🤖", 
-          description: "Say AI made everything by itself",
           isCorrect: false
         }
       ]

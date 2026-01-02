@@ -27,7 +27,7 @@ const LunchboxStory = () => {
   const questions = [
     {
       id: 1,
-      text: "You packed a lunch with a turkey and veggie wrap, an apple, and water. Your friend offers to trade for chips and soda. What do you do?",
+      text: "You packed a lunch with a cheese and veggie wrap, an apple, and water. Your friend offers to trade for chips and soda. What do you do?",
       options: [
         {
           id: "b",

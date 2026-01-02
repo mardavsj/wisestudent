@@ -31,21 +31,19 @@ const PlaygroundGameStory = () => {
           id: "yes", 
           text: "Yes, winning is all that matters!", 
           emoji: "😏", 
-          description: "Claim the win anyway",
+          
           isCorrect: false
         },
         { 
           id: "no", 
           text: "No, it's unfair to others.", 
           emoji: "🛑", 
-          description: "Be honest about it",
           isCorrect: true
         },
         { 
           id: "quiet", 
           text: "Stay quiet and hope no one saw.", 
           emoji: "🙈", 
-          description: "Don't tell anyone",
           isCorrect: false
         }
       ]
@@ -58,21 +56,18 @@ const PlaygroundGameStory = () => {
           id: "quiet", 
           text: "Stay quiet and keep playing.", 
           emoji: "🤫", 
-          description: "Don't mention it",
           isCorrect: false
         },
         { 
           id: "blame", 
           text: "Blame someone else.", 
           emoji: "😬", 
-          description: "Shift the blame",
           isCorrect: false
         },
         { 
           id: "admit", 
           text: "Admit it and give the ball to the other team.", 
           emoji: "🤝", 
-          description: "Tell the truth",
           isCorrect: true
         }
       ]
@@ -85,21 +80,18 @@ const PlaygroundGameStory = () => {
           id: "tell", 
           text: "Tell the truth and lose the point.", 
           emoji: "🙂", 
-          description: "Be honest",
           isCorrect: true
         },
         { 
           id: "nothing", 
           text: "Say nothing and take the point.", 
           emoji: "😏", 
-          description: "Keep the point",
           isCorrect: false
         },
         { 
           id: "argue", 
           text: "Argue to confuse them.", 
           emoji: "😤", 
-          description: "Create confusion",
           isCorrect: false
         }
       ]
@@ -112,21 +104,18 @@ const PlaygroundGameStory = () => {
           id: "leave", 
           text: "Leave it and stay quiet.", 
           emoji: "🤐", 
-          description: "Don't fix it",
           isCorrect: false
         },
         { 
           id: "back", 
           text: "Move it back and continue fairly.", 
           emoji: "🔁", 
-          description: "Correct the mistake",
           isCorrect: true
         },
         { 
           id: "accident", 
           text: "Say it was an accident but keep it.", 
           emoji: "😅", 
-          description: "Make excuses",
           isCorrect: false
         }
       ]
@@ -139,21 +128,18 @@ const PlaygroundGameStory = () => {
           id: "run", 
           text: "Keep running and win.", 
           emoji: "🏃‍♀️", 
-          description: "Prioritize winning",
           isCorrect: false
         },
         { 
           id: "laugh", 
           text: "Laugh and keep going.", 
           emoji: "😅", 
-          description: "Find it funny",
           isCorrect: false
         },
         { 
           id: "stop", 
           text: "Stop and help your friend.", 
           emoji: "🤝", 
-          description: "Show care",
           isCorrect: true
         }
       ]

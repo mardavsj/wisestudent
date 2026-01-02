@@ -40,7 +40,7 @@ const PhotoShareQuiz = () => {
         { 
           id: "b", 
           text: "Yes, It's Fine", 
-          emoji: "✅", 
+          emoji: "👍", 
           isCorrect: false
         },
         { 

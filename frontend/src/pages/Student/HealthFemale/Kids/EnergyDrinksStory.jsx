@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 
-const AlcoholStory = () => {
+const EnergyDrinksStory = () => {
   const navigate = useNavigate();
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   const [coins, setCoins] = useState(0);
@@ -20,127 +20,128 @@ const AlcoholStory = () => {
   const gameId = "health-female-kids-85";
 
   const questions = [
-    {
-      id: 1,
-      text: "You see adults drinking funny-smelling drinks.",
-      options: [
-        {
-          id: "a",
-          text: "Ask for a sip",
-          emoji: "🍷",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Stick to your juice or water",
-          emoji: "🧃",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Smell it closely",
-          emoji: "👃",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Why can't kids drink alcohol?",
-      options: [
-        {
-          id: "a",
-          text: "It stops your brain from growing",
-          emoji: "🧠",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "It is too expensive",
-          emoji: "💰",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "It is only for Tuesday",
-          emoji: "📅",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "A friend says 'Try this beer'.",
-      options: [
-        {
-          id: "a",
-          text: "Drink it all",
-          emoji: "🍺",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Take a little bit",
-          emoji: "🤏",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Say 'No Thanks' and leave",
-          emoji: "🚶‍♀️",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "What happens if someone drinks too much?",
-      options: [
-        {
-          id: "b",
-          text: "They get sick and dizzy",
-          emoji: "😵",
-          isCorrect: true
-        },
-        {
-          id: "a",
-          text: "They get super powers",
-          emoji: "🦸",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "They fly",
-          emoji: "🦅",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What is the best drink for a growing girl?",
-      options: [
-        {
-          id: "a",
-          text: "Soda",
-          emoji: "🥤",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Beer",
-          emoji: "🍺",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Water and Milk",
-          emoji: "🥛",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You see adults drinking strong energy drinks.",
+    options: [
+      {
+        id: "a",
+        text: "Ask for a sip",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Stick to your juice or water",
+        emoji: "🧃",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Smell it closely",
+        emoji: "👃",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Why should kids avoid energy drinks?",
+    options: [
+      {
+        id: "a",
+        text: "They affect brain and body growth",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "They cost too much money",
+        emoji: "💰",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "They are only for special days",
+        emoji: "📅",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "A friend says, 'Try this energy drink.'",
+    options: [
+      {
+        id: "a",
+        text: "Drink it all",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Take a small sip",
+        emoji: "🤏",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Say 'No thanks' and walk away",
+        emoji: "🚶‍♀️",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "What can happen if someone drinks too many energy drinks?",
+    options: [
+      {
+        id: "a",
+        text: "They feel sick and dizzy",
+        emoji: "😵",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "They get super powers",
+        emoji: "🦸",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "They can fly",
+        emoji: "🦅",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "What is the best drink for a growing child?",
+    options: [
+      {
+        id: "a",
+        text: "Sugary soda",
+        emoji: "🥤",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Energy drinks",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Water and milk",
+        emoji: "🥛",
+        isCorrect: true
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 
@@ -192,7 +193,7 @@ const AlcoholStory = () => {
 
   return (
     <GameShell
-      title="Alcohol Story"
+      title="Energy Drinks story"
       score={coins}
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
@@ -245,13 +246,13 @@ const AlcoholStory = () => {
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Smart Choices!</h3>
                 <p className="text-white/90 text-base md:text-lg mb-4">
                   You got {finalScore} out of {questions.length} questions correct!
-                  You understand the dangers of alcohol and how to stay safe!
+                  You understand the dangers of energy drinks and how to stay safe!
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-2 md:py-3 px-4 md:px-6 rounded-full inline-flex items-center gap-2 mb-4 text-sm md:text-base">
                   <span>+{coins} Coins</span>
                 </div>
                 <p className="text-white/80 text-sm md:text-base">
-                  Great job! You know that alcohol is harmful to kids and how to make healthy choices!
+                  Great job! You know that energy drink is harmful to kids and how to make healthy choices!
                 </p>
               </div>
             ) : (
@@ -260,7 +261,7 @@ const AlcoholStory = () => {
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Keep Learning!</h3>
                 <p className="text-white/90 text-base md:text-lg mb-4">
                   You got {finalScore} out of {questions.length} questions correct.
-                  Remember, alcohol is harmful to kids!
+                  Remember, energy drinks is harmful to kids!
                 </p>
                 <button
                   onClick={handleTryAgain}
@@ -269,7 +270,7 @@ const AlcoholStory = () => {
                   Try Again
                 </button>
                 <p className="text-white/80 text-xs md:text-sm">
-                  Try to choose the option that shows how to stay safe and healthy around alcohol.
+                  Try to choose the option that shows how to stay safe and healthy around energy drinks.
                 </p>
               </div>
             )}
@@ -280,4 +281,4 @@ const AlcoholStory = () => {
   );
 };
 
-export default AlcoholStory;
+export default EnergyDrinksStory;

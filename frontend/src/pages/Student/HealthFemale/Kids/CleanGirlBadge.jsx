@@ -11,7 +11,7 @@ const CleanGirlBadge = () => {
   const totalCoins = 5;
   const totalXp = 10;
   const maxScore = 5;
-  const gameId = "health-female-kids-10";
+  const gameId = "health-female-kids-71";
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);

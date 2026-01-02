@@ -26,63 +26,65 @@ const ReflexSmartDrink = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(1);
 
-  const questions = [
-    {
-      id: 1,
-      question: "Which is HEALTHY?",
-      correctAnswer: "Water",
-      options: [
-        { text: "Beer", isCorrect: false, emoji: "🍺" },
-        { text: "Water", isCorrect: true, emoji: "💧" },
-        { text: "Wine", isCorrect: false, emoji: "🍷" },
-        { text: "Cola", isCorrect: false, emoji: "🥤" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Which one helps bones?",
-      correctAnswer: "Milk",
-      options: [
-        { text: "Coffee", isCorrect: false, emoji: "☕" },
-        { text: "Soda", isCorrect: false, emoji: "🥤" },
-        { text: "Milk", isCorrect: true, emoji: "🥛" },
-        { text: "Tea", isCorrect: false, emoji: "🍵" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Beer is for...",
-      correctAnswer: "Adults only",
-      options: [
-        { text: "Kids", isCorrect: false, emoji: "👶" },
-        { text: "Babies", isCorrect: false, emoji: "🍼" },
-        { text: "Pets", isCorrect: false, emoji: "🐶" },
-        { text: "Adults only", isCorrect: true, emoji: "👨" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Best juice is...",
-      correctAnswer: "Fresh Orange",
-      options: [
-        { text: "Fresh Orange", isCorrect: true, emoji: "🍊" },
-        { text: "Sugary box", isCorrect: false, emoji: "🧃" },
-        { text: "Blue dye", isCorrect: false, emoji: "🔵" },
-        { text: "Candy water", isCorrect: false, emoji: "🍬" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Drink water when?",
-      correctAnswer: "Thirsty",
-      options: [
-        { text: "Never", isCorrect: false, emoji: "🙅" },
-        { text: "Full", isCorrect: false, emoji: "🤢" },
-        { text: "Sleeping", isCorrect: false, emoji: "😴" },
-        { text: "Thirsty", isCorrect: true, emoji: "🥵" }
-      ]
-    }
-  ];
+const questions = [
+  {
+    id: 1,
+    question: "Which is healthy?",
+    correctAnswer: "Water",
+    options: [
+      { text: "Soda", isCorrect: false, emoji: "🥤" },
+      { text: "Water", isCorrect: true, emoji: "💧" },
+      { text: "Energy drink", isCorrect: false, emoji: "⚡" },
+      { text: "Cola", isCorrect: false, emoji: "🥤" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Which one helps bones?",
+    correctAnswer: "Milk",
+    options: [
+      { text: "Coffee", isCorrect: false, emoji: "☕" },
+      { text: "Soda", isCorrect: false, emoji: "🥤" },
+      { text: "Milk", isCorrect: true, emoji: "🥛" },
+      { text: "Tea", isCorrect: false, emoji: "🍵" }
+    ]
+  },
+  {
+    id: 3,
+    question: "Energy drinks are for...",
+    correctAnswer: "Adults only",
+    options: [
+      { text: "Kids", isCorrect: false, emoji: "👶" },
+      { text: "Babies", isCorrect: false, emoji: "🍼" },
+      { text: "Pets", isCorrect: false, emoji: "🐶" },
+      { text: "Adults only", isCorrect: true, emoji: "👨" }
+    ]
+  },
+  {
+    id: 4,
+    question: "Best juice is...",
+    correctAnswer: "Fresh orange",
+    options: [
+      { text: "Fresh orange", isCorrect: true, emoji: "🍊" },
+      { text: "Sugary box juice", isCorrect: false, emoji: "🧃" },
+      { text: "Artificial color drink", isCorrect: false, emoji: "🔵" },
+      { text: "Candy water", isCorrect: false, emoji: "🍬" }
+    ]
+  },
+  {
+    id: 5,
+    question: "When should you drink water?",
+    correctAnswer: "When thirsty",
+    options: [
+      { text: "Never", isCorrect: false, emoji: "🙅" },
+      { text: "When full", isCorrect: false, emoji: "🤢" },
+      { text: "While sleeping", isCorrect: false, emoji: "😴" },
+      { text: "When thirsty", isCorrect: true, emoji: "🥵" }
+    ]
+  }
+];
+
+
 
   // Update ref when currentRound changes
   useEffect(() => {

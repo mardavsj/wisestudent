@@ -29,57 +29,62 @@ const ReflexTeenHealth = () => {
   const currentRoundRef = useRef(1);
 
   const questions = [
-    {
-      id: 1,
-      question: "What's important for preventive healthcare?",
-      options: [
-        { text: "Avoid Doctor", emoji: "❌", isCorrect: false },
-        { text: "Regular Checkups", emoji: "🏥", isCorrect: true },
-        { text: "Stay Sedentary", emoji: "🛋️", isCorrect: false },
-        { text: "Skip Dose", emoji: "🚫", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      question: "How should you handle prescribed medications?",
-      options: [
-        { text: "Skip Dose", emoji: "🚫", isCorrect: false },
-        { text: "Take Medicine", emoji: "💊", isCorrect: true },
-        { text: "Avoid Doctor", emoji: "❌", isCorrect: false },
-        { text: "Stay Sedentary", emoji: "🛋️", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      question: "What supports overall wellness?",
-      options: [
-        { text: "Healthy Diet", emoji: "🥗", isCorrect: true },
-        { text: "Junk Food", emoji: "🍔", isCorrect: false },
-        { text: "Avoid Doctor", emoji: "❌", isCorrect: false },
-        { text: "Skip Dose", emoji: "🚫", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      question: "Which activity promotes physical fitness?",
-      options: [
-        { text: "Stay Sedentary", emoji: "🛋️", isCorrect: false },
-        { text: "Exercise Daily", emoji: "🏃", isCorrect: true },
-        { text: "Skip Dose", emoji: "🚫", isCorrect: false },
-        { text: "Avoid Doctor", emoji: "❌", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      question: "What's essential for maintaining health?",
-      options: [
-        { text: "Junk Food", emoji: "🍔", isCorrect: false },
-        { text: "Healthy Diet", emoji: "🥗", isCorrect: true },
-        { text: "Stay Sedentary", emoji: "🛋️", isCorrect: false },
-        { text: "Skip Dose", emoji: "🚫", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "Which habit best supports preventive healthcare over time?",
+    options: [
+      { text: "Visiting a doctor only when very sick", emoji: "🤒", isCorrect: false },
+      { text: "Following regular health checkups and screenings", emoji: "🏥", isCorrect: true },
+      { text: "Searching symptoms online instead of consulting", emoji: "📱", isCorrect: false },
+      { text: "Ignoring minor health signs", emoji: "🙈", isCorrect: false }
+    ]
+  },
+
+  {
+    id: 2,
+    question: "How should prescribed medicines be taken for best results?",
+    options: [
+      { text: "Stopping once you feel better", emoji: "😌", isCorrect: false },
+      { text: "Sharing medicines with friends", emoji: "🤝", isCorrect: false },
+      { text: "Taking them only when symptoms feel strong", emoji: "⚠️", isCorrect: false },
+      { text: "Taking them exactly as advised by the doctor", emoji: "💊", isCorrect: true },
+    ]
+  },
+
+  {
+    id: 3,
+    question: "Which combination most supports long-term wellness?",
+    options: [
+      { text: "Healthy eating, physical activity, and rest", emoji: "🥗", isCorrect: true },
+      { text: "Strict dieting without exercise", emoji: "⚖️", isCorrect: false },
+      { text: "Exercise with poor sleep habits", emoji: "😴", isCorrect: false },
+      { text: "Stress management without healthy food", emoji: "🧠", isCorrect: false }
+    ]
+  },
+
+  {
+    id: 4,
+    question: "Which daily habit improves physical fitness safely?",
+    options: [
+      { text: "Doing intense workouts without warm-up", emoji: "🔥", isCorrect: false },
+      { text: "Avoiding movement to prevent tiredness", emoji: "🛋️", isCorrect: false },
+      { text: "Staying active with regular exercise and rest", emoji: "🏃", isCorrect: true },
+      { text: "Exercising only once a week", emoji: "📅", isCorrect: false }
+    ]
+  },
+
+  {
+    id: 5,
+    question: "What is most important for maintaining good health during teenage years?",
+    options: [
+      { text: "Balanced nutrition, sleep, and stress control", emoji: "🌱", isCorrect: true },
+      { text: "Focusing only on body weight", emoji: "⚖️", isCorrect: false },
+      { text: "Copying health habits from social media", emoji: "📱", isCorrect: false },
+      { text: "Ignoring mental health concerns", emoji: "🙃", isCorrect: false }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

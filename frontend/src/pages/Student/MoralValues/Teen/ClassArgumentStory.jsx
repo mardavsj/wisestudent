@@ -33,21 +33,20 @@ const ClassArgumentStory = () => {
           id: "ignore", 
           text: "Ignore and continue your work", 
           emoji: "😐", 
-          description: "Focus on your own work without getting involved",
+          
           isCorrect: false
         },
         { 
           id: "sides", 
           text: "Take sides in the argument", 
           emoji: "😤", 
-          description: "Support one person over the other",
+          
           isCorrect: false
         },
         { 
           id: "mediate", 
           text: "Try to calm them down and mediate", 
           emoji: "🤝", 
-          description: "Help resolve the conflict peacefully",
           isCorrect: true
         }
       ]
@@ -60,21 +59,18 @@ const ClassArgumentStory = () => {
           id: "silent", 
           text: "Stay silent to avoid involvement", 
           emoji: "🤫", 
-          description: "Don't get involved in the conflict",
           isCorrect: false
         },
         { 
           id: "encourage", 
           text: "Encourage them to find a solution together", 
           emoji: "💬", 
-          description: "Help them focus on finding a solution",
           isCorrect: true
         },
         { 
           id: "blame", 
           text: "Join the blame to support your friend", 
           emoji: "🙄", 
-          description: "Support your friend by blaming the other person",
           isCorrect: false
         }
       ]
@@ -87,21 +83,18 @@ const ClassArgumentStory = () => {
           id: "walk", 
           text: "Walk away and ignore", 
           emoji: "🚶", 
-          description: "Leave them to handle it themselves",
           isCorrect: false
         },
         { 
           id: "side", 
           text: "Take one friend's side", 
           emoji: "👊", 
-          description: "Support one friend in the argument",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Help them talk it out and find the lunchbox", 
           emoji: "🕊️", 
-          description: "Help resolve the conflict and solve the problem",
           isCorrect: true
         }
       ]
@@ -114,21 +107,18 @@ const ClassArgumentStory = () => {
           id: "comfort", 
           text: "Comfort them and offer support", 
           emoji: "🤗", 
-          description: "Show empathy and provide emotional support",
           isCorrect: true
         },
         { 
           id: "laugh", 
           text: "Laugh or gossip with others", 
           emoji: "😂", 
-          description: "Make fun of them or spread gossip",
           isCorrect: false
         },
         { 
           id: "pretend", 
           text: "Pretend not to notice", 
           emoji: "🙈", 
-          description: "Ignore the situation completely",
           isCorrect: false
         }
       ]
@@ -141,21 +131,18 @@ const ClassArgumentStory = () => {
           id: "quiet2", 
           text: "Stay quiet and let them argue", 
           emoji: "😶", 
-          description: "Don't get involved in the argument",
           isCorrect: false
         },
         { 
           id: "show", 
           text: "Show it to them and help end the argument", 
           emoji: "🙋", 
-          description: "Point out the pencil case to resolve the conflict",
           isCorrect: true
         },
         { 
           id: "join", 
           text: "Join in blaming the accused", 
           emoji: "😡", 
-          description: "Participate in blaming the accused person",
           isCorrect: false
         }
       ]

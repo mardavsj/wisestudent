@@ -33,21 +33,21 @@ const CommunityStory = () => {
           id: "ignore", 
           text: "Ignore it; it's not your job", 
           emoji: "😐", 
-          description: "Leave it for others to handle",
+          
           isCorrect: false
         },
         { 
           id: "organize", 
           text: "Yes, organize a quick cleanup!", 
           emoji: "💪", 
-          description: "Take initiative and organize a cleanup effort",
+          
           isCorrect: true
         },
         { 
           id: "complain", 
           text: "Complain but don't act", 
           emoji: "🙄", 
-          description: "Talk about the problem without doing anything",
+          
           isCorrect: false
         }
       ]
@@ -60,21 +60,18 @@ const CommunityStory = () => {
           id: "walk", 
           text: "Walk away quickly", 
           emoji: "🚶‍♀️", 
-          description: "Continue on without helping",
           isCorrect: false
         },
         { 
           id: "watch", 
           text: "Watch but don't help", 
           emoji: "👀", 
-          description: "Observe without offering assistance",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Offer to help carry the bags", 
           emoji: "🤝", 
-          description: "Provide assistance with carrying groceries",
           isCorrect: true
         }
       ]
@@ -87,21 +84,18 @@ const CommunityStory = () => {
           id: "busy", 
           text: "Say you're too busy", 
           emoji: "😴", 
-          description: "Decline due to lack of time",
           isCorrect: false
         },
         { 
           id: "pretend", 
           text: "Pretend not to hear", 
           emoji: "🙈", 
-          description: "Ignore the request",
           isCorrect: false
         },
         { 
           id: "volunteer", 
           text: "Volunteer and invite others", 
           emoji: "🙋‍♀️", 
-          description: "Offer to help and encourage others to join",
           isCorrect: true
         }
       ]
@@ -114,21 +108,18 @@ const CommunityStory = () => {
           id: "report", 
           text: "Report it to local authorities", 
           emoji: "📞", 
-          description: "Notify the appropriate authorities about the issue",
           isCorrect: true
         },
         { 
           id: "nothing", 
           text: "Do nothing about it", 
           emoji: "😶", 
-          description: "Ignore the problem",
           isCorrect: false
         },
         { 
           id: "complain2", 
           text: "Complain to friends only", 
           emoji: "😒", 
-          description: "Talk about it but take no action",
           isCorrect: false
         }
       ]
@@ -141,21 +132,18 @@ const CommunityStory = () => {
           id: "walk2", 
           text: "Walk away after enjoying", 
           emoji: "🏃‍♀️", 
-          description: "Leave without helping clean up",
           isCorrect: false
         },
         { 
           id: "blame", 
           text: "Blame others for the mess", 
           emoji: "🤔", 
-          description: "Complain about others without helping",
           isCorrect: false
         },
         { 
           id: "gather", 
           text: "Gather a group to clean up", 
           emoji: "🧹", 
-          description: "Organize a cleanup effort with others",
           isCorrect: true
         }
       ]

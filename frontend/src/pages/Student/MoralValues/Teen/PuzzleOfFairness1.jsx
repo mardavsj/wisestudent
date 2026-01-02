@@ -22,20 +22,20 @@ const PuzzleOfFairness1 = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const leftItems = [
-    { id: 1, name: "Equality", emoji: "⚖️", description: "Same rights and opportunities" },
-    { id: 2, name: "Bullying", emoji: "👊", description: "Harmful behavior" },
-    { id: 3, name: "Cheating", emoji: "📝", description: "Dishonest act" },
-    { id: 4, name: "Cooperation", emoji: "🤝", description: "Working together" },
-    { id: 5, name: "Favoritism", emoji: "⭐", description: "Showing preference" },
+    { id: 1, name: "Equality", emoji: "⚖️",  },
+    { id: 2, name: "Bullying", emoji: "👊" },
+    { id: 3, name: "Cheating", emoji: "📝" },
+    { id: 4, name: "Cooperation", emoji: "🤝" },
+    { id: 5, name: "Favoritism", emoji: "⭐" },
   ];
 
   // Right items with clearer, more intuitive meanings
   const rightItems = [
-    { id: 7, name: "Harm to Others", emoji: "😢", description: "Causing pain or suffering" },
-    { id: 10, name: "Biased Preference", emoji: "🎭", description: "Showing favor to some over others" },
-    { id: 9, name: "Teamwork Success", emoji: "🤝", description: "Achieving together" },
-    { id: 8, name: "Unfair Advantage", emoji: "⚠️", description: "Getting ahead through wrong means" },
-    { id: 6, name: "Equal Rights", emoji: "⚖️", description: "Same opportunities for everyone" },
+    { id: 7, name: "Harm to Others", emoji: "😢" },
+    { id: 10, name: "Biased Preference", emoji: "🎭" },
+    { id: 9, name: "Teamwork Success", emoji: "🤝" },
+    { id: 8, name: "Unfair Advantage", emoji: "⚠️" },
+    { id: 6, name: "Equal Rights", emoji: "⚖️" },
   ];
 
   const correctMatches = [

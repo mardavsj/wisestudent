@@ -55,20 +55,20 @@ const PuzzleRespectVsHate = () => {
 
   // Behaviors
   const leftItems = [
-    { id: 1, name: "Respect", emoji: "🤝", description: "Treating others with dignity" },
-    { id: 2, name: "Hate", emoji: "😡", description: "Hostile feelings toward others" },
-    { id: 3, name: "Inclusion", emoji: "🌈", description: "Welcoming everyone" },
-    { id: 4, name: "Exclusion", emoji: "🚫", description: "Leaving people out" },
-    { id: 5, name: "Kindness", emoji: "💝", description: "Being friendly and caring" }
+    { id: 1, name: "Respect", emoji: "🤝",  },
+    { id: 2, name: "Hate", emoji: "😡",  },
+    { id: 3, name: "Inclusion", emoji: "🌈",  },
+    { id: 4, name: "Exclusion", emoji: "🚫",  },
+    { id: 5, name: "Kindness", emoji: "💝",  }
   ];
 
   // Outcomes - distinct options to make it harder
   const rightItems = [
-    { id: 3, name: "Belonging", emoji: "🤗", description: "Feeling accepted and valued" },
-    { id: 4, name: "Isolation", emoji: "👤", description: "Being alone and separated" },
-    { id: 1, name: "Inclusion", emoji: "🌈", description: "Welcomes everyone" },
-    { id: 5, name: "Love", emoji: "❤️", description: "Deep affection and care" },
-    { id: 2, name: "Hurt", emoji: "💔", description: "Causes emotional pain" },
+    { id: 3, name: "Belonging", emoji: "🤗",  },
+    { id: 4, name: "Isolation", emoji: "👤",  },
+    { id: 1, name: "Inclusion", emoji: "🌈",  },
+    { id: 5, name: "Love", emoji: "❤️",  },
+    { id: 2, name: "Hurt", emoji: "💔",  },
   ];
 
   // Correct matches

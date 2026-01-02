@@ -19,20 +19,20 @@ const PuzzleMatchMoneyTerms = () => {
 
   // Terms (left side) - 5 items
   const terms = [
-    { id: 1, name: "Earning", emoji: "💼", description: "Getting money from working or providing services" },
-    { id: 2, name: "Spending", emoji: "💸", description: "Using money to buy things you need or want" },
-    { id: 3, name: "Saving", emoji: "💰", description: "Putting money aside for future use" },
-    { id: 4, name: "Budget", emoji: "📋", description: "A plan for how to use your money" },
-    { id: 5, name: "Interest", emoji: "📈", description: "Money your savings earn over time" }
+    { id: 1, name: "Earning", emoji: "💼",  },
+    { id: 2, name: "Spending", emoji: "💸",  },
+    { id: 3, name: "Saving", emoji: "💰",  },
+    { id: 4, name: "Budget", emoji: "📋",  },
+    { id: 5, name: "Interest", emoji: "📈",  }
   ];
 
   // Definitions (right side) - 5 items
   const definitions = [
-    { id: 5, name: "Growth", emoji: "🌱", description: "Gradual increase or development" },
-    { id: 3, name: "Piggy Bank", emoji: "🐖", description: "Container for storing money" },
-    { id: 4, name: "Plan", emoji: "📝", description: "Detailed proposal for doing something" },
-    { id: 2, name: "Shop", emoji: "🛒", description: "Buying goods or services" },
-    { id: 1, name: "Work", emoji: "🔨", description: "Performing a job or task for payment" },
+    { id: 5, name: "Growth", emoji: "🌱",  },
+    { id: 3, name: "Piggy Bank", emoji: "🐖",  },
+    { id: 4, name: "Plan", emoji: "📝",  },
+    { id: 2, name: "Shop", emoji: "🛒",  },
+    { id: 1, name: "Work", emoji: "🔨",  },
   ];
 
   // Correct matches

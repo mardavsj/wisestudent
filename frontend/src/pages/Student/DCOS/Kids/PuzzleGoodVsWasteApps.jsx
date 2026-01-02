@@ -29,39 +29,42 @@ const PuzzleGoodVsWasteApps = () => {
 
   // Apps (left side)
   const leftItems = [
-    { id: 1, name: "Drawing App", emoji: "🎨", description: "Creative art tool" },
-    { id: 2, name: "Fake Prize App", emoji: "🎁", description: "Promises free gifts" },
-    { id: 3, name: "Math Practice App", emoji: "🧮", description: "Educational learning" },
-    { id: 4, name: "Random Ads Game", emoji: "📺", description: "Shows many ads" },
-    { id: 5, name: "Story Reading App", emoji: "📚", description: "Reading and learning" }
+    { id: 1, name: "Drawing App", emoji: "🎨",  },
+    { id: 2, name: "Fake Prize App", emoji: "🎁",  },
+    { id: 3, name: "Math Practice App", emoji: "🧮",  },
+    { id: 4, name: "Random Ads Game", emoji: "📺",  },
+    { id: 5, name: "Story Reading App", emoji: "📚",  }
   ];
 
   // Categories (right side)
   const rightItems = [
-    { id: 1, name: "Good App", emoji: "✅", description: "Helps you learn and create" },
-    { id: 2, name: "Waste App", emoji: "❌", description: "Shows ads or fake prizes" },
-    { id: 3, name: "Good App", emoji: "✅", description: "Helps you learn and create" },
-    { id: 4, name: "Waste App", emoji: "❌", description: "Shows ads or fake prizes" },
-    { id: 5, name: "Good App", emoji: "✅", description: "Helps you learn and create" }
-  ];
+    { id: 1, name: "Boosts Creativity", emoji: "🌈" },
+    { id: 2, name: "Trick or Scam App", emoji: "⚠️" },
+    { id: 3, name: "Builds Skills", emoji: "💡" },
+    { id: 4, name: "Time Waster", emoji: "⏳" },
+    { id: 5, name: "Improves Reading", emoji: "📖" }
+];
+
 
   // Correct matches
-  const correctMatches = [
-    { leftId: 1, rightId: 1 }, // Drawing App → Good App
-    { leftId: 2, rightId: 2 }, // Fake Prize App → Waste App
-    { leftId: 3, rightId: 3 }, // Math Practice App → Good App
-    { leftId: 4, rightId: 4 }, // Random Ads Game → Waste App
-    { leftId: 5, rightId: 5 }  // Story Reading App → Good App
-  ];
+ const correctMatches = [
+  { leftId: 1, rightId: 1 }, // Drawing App → Boosts Creativity
+  { leftId: 2, rightId: 2 }, // Fake Prize App → Trick or Scam App
+  { leftId: 3, rightId: 3 }, // Math Practice App → Builds Skills
+  { leftId: 4, rightId: 4 }, // Random Ads Game → Time Waster
+  { leftId: 5, rightId: 5 }  // Story Reading App → Improves Reading
+];
+
 
   // Shuffled right items for display (to split matches across positions)
   const shuffledRightItems = [
-    rightItems[1], // Waste App (id: 2) - position 1
-    rightItems[0], // Good App (id: 1) - position 2
-    rightItems[4], // Good App (id: 5) - position 3
-    rightItems[3], // Waste App (id: 4) - position 4
-    rightItems[2]  // Good App (id: 3) - position 5
-  ];
+  rightItems[3], // Time Waster
+  rightItems[0], // Boosts Creativity
+  rightItems[4], // Improves Reading
+  rightItems[1], // Trick or Scam App
+  rightItems[2]  // Builds Skills
+];
+
 
   const handleLeftSelect = (item) => {
     if (showResult) return;

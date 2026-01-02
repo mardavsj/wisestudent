@@ -33,21 +33,20 @@ const ResponsibilityStory = () => {
           id: "dump", 
           text: "Dump work on others", 
           emoji: "😅", 
-          description: "Push all the work onto other team members",
+          
           isCorrect: false
         },
         { 
           id: "divide", 
           text: "Divide work fairly", 
-          emoji: "✅", 
-          description: "Distribute tasks equally among all team members",
+          emoji: "🙂", 
+          
           isCorrect: true
         },
         { 
           id: "all", 
           text: "Do everything yourself", 
           emoji: "😤", 
-          description: "Take on all the work alone",
           isCorrect: false
         }
       ]
@@ -60,21 +59,18 @@ const ResponsibilityStory = () => {
           id: "share", 
           text: "Share credit equally", 
           emoji: "👏", 
-          description: "Acknowledge everyone's contributions",
           isCorrect: true
         },
         { 
           id: "take", 
           text: "Take all credit", 
           emoji: "🙄", 
-          description: "Claim all the success for yourself",
           isCorrect: false
         },
         { 
           id: "silent", 
           text: "Stay silent", 
           emoji: "😶", 
-          description: "Don't mention anyone's contributions",
           isCorrect: false
         }
       ]
@@ -87,21 +83,18 @@ const ResponsibilityStory = () => {
           id: "finish", 
           text: "Finish everything myself", 
           emoji: "😤", 
-          description: "Complete all tasks without helping others",
           isCorrect: false
         },
         { 
           id: "yell", 
           text: "Yell at them to hurry", 
           emoji: "😠", 
-          description: "Pressure them to work faster",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Help members complete tasks", 
           emoji: "🤝", 
-          description: "Support and guide struggling team members",
           isCorrect: true
         }
       ]
@@ -114,21 +107,18 @@ const ResponsibilityStory = () => {
           id: "mediate", 
           text: "Mediate fairly", 
           emoji: "🗣️", 
-          description: "Help resolve the conflict calmly and fairly",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore the argument", 
           emoji: "🙈", 
-          description: "Avoid getting involved in the conflict",
           isCorrect: false
         },
         { 
           id: "pick", 
           text: "Pick a side", 
           emoji: "😬", 
-          description: "Support one person over the other",
           isCorrect: false
         }
       ]
@@ -141,21 +131,18 @@ const ResponsibilityStory = () => {
           id: "force", 
           text: "Force others", 
           emoji: "😠", 
-          description: "Make someone else handle the extra work",
           isCorrect: false
         },
         { 
           id: "avoid", 
           text: "Avoid it completely", 
           emoji: "🙈", 
-          description: "Pretend not to see the task",
           isCorrect: false
         },
         { 
           id: "distribute", 
           text: "Distribute fairly", 
           emoji: "💪", 
-          description: "Divide the extra task among the team fairly",
           isCorrect: true
         }
       ]

@@ -19,20 +19,20 @@ const PuzzlePathwayMatch = () => {
 
   // Careers (left side) - 5 items
   const careers = [
-    { id: 1, name: "Lawyer", emoji: "⚖️", description: "Legal professional who advises and represents clients" },
-    { id: 2, name: "Artist", emoji: "🎨", description: "Creative professional expressing ideas through visual media" },
-    { id: 3, name: "Engineer", emoji: "⚙️", description: "Technical professional designing and building systems" },
-    { id: 4, name: "Doctor", emoji: "👨‍⚕️", description: "Medical professional diagnosing and treating patients" },
-    { id: 5, name: "Chef", emoji: "👨‍🍳", description: "Culinary professional creating and preparing food" }
+    { id: 1, name: "Lawyer", emoji: "⚖️",  },
+    { id: 2, name: "Artist", emoji: "🎨",  },
+    { id: 3, name: "Engineer", emoji: "⚙️",  },
+    { id: 4, name: "Doctor", emoji: "👨‍⚕️",  },
+    { id: 5, name: "Chef", emoji: "👨‍🍳",  }
   ];
 
   // Educational Pathways (right side) - 5 items
   const pathways = [
-    { id: 2, name: "Design College", emoji: "🎨", description: "Specialized art and design education" },
-    { id: 5, name: "Culinary School", emoji: "🍲", description: "Professional cooking and food preparation training" },
-    { id: 3, name: "Tech College", emoji: "💻", description: "Engineering and technology-focused education" },
-    { id: 1, name: "Law School", emoji: "📚", description: "Advanced legal education for practicing law" },
-    { id: 4, name: "Medical School", emoji: "🏥", description: "Comprehensive medical training program" },
+    { id: 2, name: "Design College", emoji: "🎨",  },
+    { id: 5, name: "Culinary School", emoji: "🍲",  },
+    { id: 3, name: "Tech College", emoji: "💻",  },
+    { id: 1, name: "Law School", emoji: "📚",  },
+    { id: 4, name: "Medical School", emoji: "🏥",  },
   ];
 
   // Correct matches

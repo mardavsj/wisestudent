@@ -19,20 +19,20 @@ const PuzzleGlobalLeaders = () => {
 
   // Global Organizations (left side) - 5 items
   const organizations = [
-    { id: 1, name: "UNICEF", emoji: "👧", description: "United Nations Children's Fund" },
-    { id: 2, name: "WHO", emoji: "🩺", description: "World Health Organization" },
-    { id: 3, name: "UNESCO", emoji: "📚", description: "United Nations Educational, Scientific and Cultural Organization" },
-    { id: 4, name: "UNHCR", emoji: "🏡", description: "UN Refugee Agency" },
-    { id: 5, name: "FAO", emoji: "🌾", description: "Food and Agriculture Organization" }
+    { id: 1, name: "UNICEF", emoji: "👧",  },
+    { id: 2, name: "WHO", emoji: "🩺",  },
+    { id: 3, name: "UNESCO", emoji: "📚",  },
+    { id: 4, name: "UNHCR", emoji: "🏡",  },
+    { id: 5, name: "FAO", emoji: "🌾",  }
   ];
 
   // Focus Areas (right side) - 5 items
   const focusAreas = [
-    { id: 2, name: "Health", emoji: "💊", description: "Improving global wellness" },
-    { id: 4, name: "Refugees", emoji: "🏠", description: "Assisting displaced populations" },
-    { id: 3, name: "Education", emoji: "🎓", description: "Promoting learning opportunities" },
-    { id: 5, name: "Food", emoji: "🍎", description: "Ensuring nutrition security" },
-    { id: 1, name: "Children", emoji: "🧸", description: "Protecting and supporting youth" },
+    { id: 2, name: "Health", emoji: "💊",  },
+    { id: 4, name: "Refugees", emoji: "🏠",  },
+    { id: 3, name: "Education", emoji: "🎓",  },
+    { id: 5, name: "Food", emoji: "🍎",  },
+    { id: 1, name: "Children", emoji: "🧸",  },
   ];
 
   // Correct matches

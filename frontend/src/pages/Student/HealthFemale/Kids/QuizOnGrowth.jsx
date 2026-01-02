@@ -15,7 +15,9 @@ const QuizOnGrowth = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();  const questions = [
+  const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();  
+  
+  const questions = [
     {
       id: 1,
       text: "Which food helps build muscles?",
@@ -63,9 +65,8 @@ const QuizOnGrowth = () => {
       emoji: "😴",
       options: [
         { id: "c", text: "While eating pizza", emoji: "🍕", isCorrect: false },
-        
-        { id: "b", text: "While you sleep", emoji: "🛌", isCorrect: false },
-        { id: "a", text: "While playing tag", emoji: "🏃", isCorrect: true },
+        { id: "a", text: "While playing tag", emoji: "🏃", isCorrect: false },
+       { id: "b", text: "While you sleep", emoji: "🛌", isCorrect: true },
       ]
     }
   ];

@@ -31,13 +31,13 @@ const HomeworkStory1 = () => {
         { 
           id: "a", 
           text: "Yes! It Can Help", 
-          emoji: "✅", 
+          emoji: "👍", 
           isCorrect: true
         },
         { 
           id: "b", 
           text: "No, Only for Fun", 
-          emoji: "❌", 
+          emoji: "👎", 
           isCorrect: false
         },
         { 

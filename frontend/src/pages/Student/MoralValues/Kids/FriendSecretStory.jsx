@@ -31,21 +31,19 @@ const FriendSecretStory = () => {
           id: "tell", 
           text: "Tell others for fun", 
           emoji: "🗣️", 
-          description: "Break the trust",
+          
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore it and forget", 
           emoji: "😐", 
-          description: "Don't care",
           isCorrect: false
         },
         { 
           id: "keep", 
           text: "Keep it safe and don't tell anyone", 
           emoji: "🛡️", 
-          description: "Respect the secret",
           isCorrect: true
         }
       ]
@@ -58,21 +56,18 @@ const FriendSecretStory = () => {
           id: "show", 
           text: "Show it to others", 
           emoji: "🗣️", 
-          description: "Share it",
           isCorrect: false
         },
         { 
           id: "keep", 
           text: "Keep it secret and don't copy", 
           emoji: "🛡️", 
-          description: "Be honest",
           isCorrect: true
         },
         { 
           id: "discard", 
           text: "Discard it immediately", 
           emoji: "🗑️", 
-          description: "Throw it away",
           isCorrect: false
         }
       ]
@@ -85,21 +80,18 @@ const FriendSecretStory = () => {
           id: "keep", 
           text: "Keep it secret", 
           emoji: "🤐", 
-          description: "Preserve the surprise",
           isCorrect: true
         },
         { 
           id: "tell", 
           text: "Tell others to help", 
           emoji: "🗣️", 
-          description: "Break the secret",
           isCorrect: false
         },
         { 
           id: "forget", 
           text: "Forget the plan", 
           emoji: "😅", 
-          description: "Don't remember",
           isCorrect: false
         }
       ]
@@ -112,21 +104,18 @@ const FriendSecretStory = () => {
           id: "tell", 
           text: "Tell others to find it", 
           emoji: "🗣️", 
-          description: "Break their trust",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore them", 
           emoji: "😐", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Help and keep it secret", 
           emoji: "🤝", 
-          description: "Support them quietly",
           isCorrect: true
         }
       ]
@@ -139,21 +128,18 @@ const FriendSecretStory = () => {
           id: "share", 
           text: "Share for fun", 
           emoji: "🗣️", 
-          description: "Break their trust",
           isCorrect: false
         },
         { 
           id: "keep", 
           text: "Keep it private", 
           emoji: "🖌️", 
-          description: "Respect their privacy",
           isCorrect: true
         },
         { 
           id: "throw", 
           text: "Throw it away", 
           emoji: "🗑️", 
-          description: "Disrespect them",
           isCorrect: false
         }
       ]

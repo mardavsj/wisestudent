@@ -50,7 +50,7 @@ const ReflexProductivity = () => {
       question: "An app shows endless scrolling videos with no purpose. What should you do?",
       correctAnswer: "Skip Endless Scroll",
       options: [
-        { text: "Use It", isCorrect: false, emoji: "✅" },
+        { text: "Use It", isCorrect: false, emoji: "🙂" },
         { text: "Skip Endless Scroll", isCorrect: true, emoji: "🚫" },
         { text: "Share It", isCorrect: false, emoji: "📤" },
         { text: "Like It", isCorrect: false, emoji: "👍" }
@@ -72,7 +72,7 @@ const ReflexProductivity = () => {
       question: "An app shows random memes for hours with no learning value. What should you do?",
       correctAnswer: "Skip Endless Scroll",
       options: [
-        { text: "Use It", isCorrect: false, emoji: "✅" },
+        { text: "Use It", isCorrect: false, emoji: "🙂" },
         { text: "Skip Endless Scroll", isCorrect: true, emoji: "🚫" },
         { text: "Share It", isCorrect: false, emoji: "📤" },
         { text: "Like It", isCorrect: false, emoji: "👍" }

@@ -9,7 +9,7 @@ const PeriodReadyBadge = () => {
   const location = useLocation();
   
   // Get game data from game category folder (source of truth)
-  const gameId = "health-female-kids-40";
+  const gameId = "health-female-kids-100";
   const gameData = getGameDataById(gameId);
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults

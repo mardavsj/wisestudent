@@ -32,21 +32,20 @@ const StrangerRequestStory = () => {
           id: "a", 
           text: "Tell City", 
           emoji: "🗺️", 
-          description: "Tell them your city",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Say Can't Share", 
           emoji: "🚫", 
-          description: "Say you can't share that",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ignore and Block", 
           emoji: "🙈", 
-          description: "Ignore and block",
           isCorrect: false
         }
       ]
@@ -59,21 +58,18 @@ const StrangerRequestStory = () => {
           id: "a", 
           text: "Tell Proudly", 
           emoji: "🏫", 
-          description: "Tell them proudly",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Add as Friend", 
           emoji: "👥", 
-          description: "Add them as a friend to chat",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Talk About Games", 
           emoji: "🎮", 
-          description: "Say you only talk about games",
           isCorrect: true
         }
       ]
@@ -86,21 +82,18 @@ const StrangerRequestStory = () => {
           id: "a", 
           text: "Say No", 
           emoji: "🛡️", 
-          description: "Say 'No, I don't share photos'",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Send Selfie", 
           emoji: "🤳", 
-          description: "Send a cute selfie",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignore", 
           emoji: "🚷", 
-          description: "Ignore the message",
           isCorrect: false
         }
       ]
@@ -113,21 +106,18 @@ const StrangerRequestStory = () => {
           id: "a", 
           text: "Share It", 
           emoji: "☎️", 
-          description: "Share it, what's the harm?",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ask Parent", 
           emoji: "👨‍👩‍👧", 
-          description: "Ask your parent first",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Say Don't Give", 
           emoji: "🚫", 
-          description: "Say 'I don't give my number online.'",
           isCorrect: true
         }
       ]
@@ -140,21 +130,18 @@ const StrangerRequestStory = () => {
           id: "a", 
           text: "Send Address", 
           emoji: "🏠", 
-          description: "Send your home address",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Send to School", 
           emoji: "🎒", 
-          description: "Ask them to send it to your school",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Refuse and Tell Parent", 
           emoji: "🧠", 
-          description: "Refuse and tell a parent",
           isCorrect: true
         }
       ]

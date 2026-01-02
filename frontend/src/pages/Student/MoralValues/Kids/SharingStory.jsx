@@ -31,21 +31,19 @@ const SharingStory = () => {
           id: "share", 
           text: "Share one chocolate", 
           emoji: "🤝", 
-          description: "Give one to your friend",
+          
           isCorrect: true
         },
         { 
           id: "keep", 
           text: "Keep both for yourself", 
           emoji: "🙅‍♀️", 
-          description: "Eat both yourself",
           isCorrect: false
         },
         { 
           id: "hide", 
           text: "Hide them", 
           emoji: "🙈", 
-          description: "Keep them secret",
           isCorrect: false
         }
       ]
@@ -59,21 +57,18 @@ const SharingStory = () => {
           id: "no", 
           text: "No, keep it to yourself", 
           emoji: "🙅‍♂️", 
-          description: "Keep it private",
           isCorrect: false
         },
         { 
           id: "let", 
           text: "Yes, let them play too", 
           emoji: "🤗", 
-          description: "Share and play together",
           isCorrect: true
         },
         { 
           id: "break", 
           text: "Break it so no one can play", 
           emoji: "💥", 
-          description: "Destroy the toy",
           isCorrect: false
         }
       ]
@@ -87,21 +82,18 @@ const SharingStory = () => {
           id: "no", 
           text: "No, they should buy one", 
           emoji: "🚫", 
-          description: "Refuse to help",
           isCorrect: false
         },
          { 
           id: "lend", 
           text: "Yes, lend your pencil", 
           emoji: "✌️", 
-          description: "Help them out",
           isCorrect: true
         },
         { 
           id: "hide", 
           text: "Hide your pencil", 
           emoji: "🙈", 
-          description: "Avoid sharing",
           isCorrect: false
         }
       ]
@@ -115,21 +107,18 @@ const SharingStory = () => {
           id: "eat", 
           text: "Eat it all yourself", 
           emoji: "😋", 
-          description: "Keep it all",
           isCorrect: false
         },
         { 
           id: "throw", 
           text: "Throw it away", 
           emoji: "🗑️", 
-          description: "Waste the food",
           isCorrect: false
         },
          { 
           id: "share", 
           text: "Share with your friend", 
           emoji: "🤲", 
-          description: "Give them some",
           isCorrect: true
         },
       ]
@@ -142,21 +131,18 @@ const SharingStory = () => {
           id: "lend", 
           text: "Yes, lend it for a while", 
           emoji: "🤝", 
-          description: "Let them read it",
           isCorrect: true
         },
         { 
           id: "keep", 
           text: "No, keep it", 
           emoji: "🙅‍♀️", 
-          description: "Don't share",
           isCorrect: false
         },
         { 
           id: "tear", 
           text: "Tear pages out", 
           emoji: "😈", 
-          description: "Destroy the book",
           isCorrect: false
         }
       ]

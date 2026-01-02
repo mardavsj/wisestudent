@@ -19,20 +19,20 @@ const PuzzleProcessMatch = () => {
 
   // Design Thinking Stages (left side) - 5 items
   const stages = [
-    { id: 1, name: "Empathize", emoji: "❤️", description: "Understanding users' needs and experiences" },
-    { id: 2, name: "Define", emoji: "📝", description: "Clearly stating the problem to solve" },
-    { id: 3, name: "Ideate", emoji: "💡", description: "Generating creative ideas and solutions" },
-    { id: 4, name: "Prototype", emoji: "🛠️", description: "Building early versions of solutions" },
-    { id: 5, name: "Test", emoji: "🧪", description: "Experimenting with prototypes to learn" }
+    { id: 1, name: "Empathize", emoji: "❤️",  },
+    { id: 2, name: "Define", emoji: "📝",  },
+    { id: 3, name: "Ideate", emoji: "💡",  },
+    { id: 4, name: "Prototype", emoji: "🛠️",  },
+    { id: 5, name: "Test", emoji: "🧪",  }
   ];
 
   // Descriptions (right side) - 5 items
   const descriptions = [
-    { id: 4, name: "Build", emoji: "🏗️", description: "Making tangible representations of concepts" },
-    { id: 1, name: "Understand", emoji: "🔍", description: "Researching to deeply comprehend user perspectives" },
-    { id: 5, name: "Experiment", emoji: "🔬", description: "Trying out solutions to gain insights" },
-    { id: 2, name: "Problem", emoji: "❓", description: "Articulating the core challenge clearly" },
-    { id: 3, name: "Brainstorm", emoji: "💭", description: "Creating many diverse ideas without judgment" },
+    { id: 4, name: "Build", emoji: "🏗️",  },
+    { id: 1, name: "Understand", emoji: "🔍",  },
+    { id: 5, name: "Experiment", emoji: "🔬",  },
+    { id: 2, name: "Problem", emoji: "❓",  },
+    { id: 3, name: "Brainstorm", emoji: "💭",  },
   ];
 
   // Correct matches

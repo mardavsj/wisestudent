@@ -55,20 +55,20 @@ const PrivacyLawsPuzzle = () => {
 
   // Privacy laws
   const leftItems = [
-    { id: 1, name: "GDPR", emoji: "🌍", description: "General Data Protection Regulation" },
-    { id: 2, name: "IT Act", emoji: "📜", description: "Information Technology Act" },
-    { id: 3, name: "COPPA", emoji: "🛡️", description: "Children's Online Privacy Protection Act" },
-    { id: 4, name: "CCPA", emoji: "🏛️", description: "California Consumer Privacy Act" },
-    { id: 5, name: "PIPEDA", emoji: "🛡️", description: "Personal Information Protection and Electronic Documents Act" }
+    { id: 1, name: "GDPR", emoji: "🌍",  },
+    { id: 2, name: "IT Act", emoji: "📜",  },
+    { id: 3, name: "COPPA", emoji: "🛡️",  },
+    { id: 4, name: "CCPA", emoji: "🏛️",  },
+    { id: 5, name: "PIPEDA", emoji: "🛡️",  }
   ];
 
   // Regions/Protection - shuffled order to make it harder
   const rightItems = [
-    { id: 1, name: "India", emoji: "🇮🇳🏛️", description: "Protects data in India" },
-    { id: 4, name: "California", emoji: "🏔️", description: "Protects consumers in California" },
-    { id: 2, name: "Europe", emoji: "🇪🇺🏛️", description: "Protects data in Europe" },
-    { id: 3, name: "Kids", emoji: "👶", description: "Protects children's privacy" },
-    { id: 5, name: "Canada", emoji: "🍁", description: "Protects personal information in Canada" }
+    { id: 1, name: "India", emoji: "🇮🇳🏛️",  },
+    { id: 4, name: "California", emoji: "🏔️",  },
+    { id: 2, name: "Europe", emoji: "🇪🇺🏛️",  },
+    { id: 3, name: "Kids", emoji: "👶",  },
+    { id: 5, name: "Canada", emoji: "🍁",  }
   ];
 
   // Correct matches

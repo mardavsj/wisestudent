@@ -35,21 +35,19 @@ const CourageQuiz1 = () => {
           id: "a", 
           text: "Protecting others", 
           emoji: "🛡️", 
-          description: "Protecting others shows true courage",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Teasing others", 
           emoji: "😏", 
-          description: "Teasing is not courage, it's bullying",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Running away", 
           emoji: "🏃", 
-          description: "Running away avoids facing challenges",
           isCorrect: false
         }
       ]
@@ -62,21 +60,18 @@ const CourageQuiz1 = () => {
           id: "a", 
           text: "Join the bully", 
           emoji: "😈", 
-          description: "Joining bullies is not brave",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Stay silent", 
           emoji: "😶", 
-          description: "Staying silent allows bullying to continue",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Stand up and help", 
           emoji: "🤝", 
-          description: "Standing up for others shows true courage",
           isCorrect: true
         }
       ]
@@ -89,21 +84,18 @@ const CourageQuiz1 = () => {
           id: "a", 
           text: "Never being scared", 
           emoji: "😎", 
-          description: "Everyone feels fear sometimes",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Showing off strength", 
           emoji: "🔥", 
-          description: "Showing off is not true courage",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Doing what is right even when scared", 
           emoji: "💪", 
-          description: "True courage is acting despite fear",
           isCorrect: true
         }
       ]
@@ -116,21 +108,18 @@ const CourageQuiz1 = () => {
           id: "a", 
           text: "Appreciate their honesty", 
           emoji: "👏", 
-          description: "Appreciating honesty encourages courage",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Laugh at them", 
           emoji: "😂", 
-          description: "Laughing discourages honesty",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignore them", 
           emoji: "😐", 
-          description: "Ignoring doesn't support their courage",
           isCorrect: false
         }
       ]
@@ -143,21 +132,18 @@ const CourageQuiz1 = () => {
           id: "a", 
           text: "Hiding mistakes", 
           emoji: "🙈", 
-          description: "Hiding mistakes shows fear, not courage",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Admitting you were wrong", 
           emoji: "🙋", 
-          description: "Admitting mistakes shows true bravery",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Blaming others", 
           emoji: "😬", 
-          description: "Blaming others avoids responsibility",
           isCorrect: false
         }
       ]

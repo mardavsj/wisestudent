@@ -32,7 +32,7 @@ const HateCommentStory = () => {
           id: "ignore", 
           text: "Ignore it - don't get involved", 
           emoji: "😐", 
-          description: "Stay out of it and don't respond",
+          
           isCorrect: false
         },
        
@@ -40,14 +40,14 @@ const HateCommentStory = () => {
           id: "reply", 
           text: "Reply with an insult", 
           emoji: "😡", 
-          description: "Respond with a negative comment",
+          
           isCorrect: false
         },
          { 
           id: "report", 
           text: "Report the hate comment", 
           emoji: "🚫", 
-          description: "Report the hateful comment to the platform",
+          
           isCorrect: true
         },
       ]
@@ -60,14 +60,13 @@ const HateCommentStory = () => {
           id: "report-hate", 
           text: "Report it as hate speech", 
           emoji: "🚫", 
-          description: "Report the hateful comment to moderators",
+          
           isCorrect: true
         },
         { 
           id: "scroll-past", 
           text: "Scroll past it", 
           emoji: "😐", 
-          description: "Just ignore it and move on",
           isCorrect: false
         },
         
@@ -75,7 +74,6 @@ const HateCommentStory = () => {
           id: "like", 
           text: "Like it to show support", 
           emoji: "👍", 
-          description: "Like the comment to agree with it",
           isCorrect: false
         }
       ]
@@ -88,21 +86,18 @@ const HateCommentStory = () => {
           id: "ignore-comment", 
           text: "Ignore it - it's just words", 
           emoji: "😐", 
-          description: "Don't pay attention to it",
           isCorrect: false
         },
         { 
           id: "report-discrimination", 
           text: "Report it - this is discrimination", 
           emoji: "🚫", 
-          description: "Report this discriminatory comment",
           isCorrect: true
         },
         { 
           id: "share", 
           text: "Share it to expose them", 
           emoji: "📤", 
-          description: "Share the comment to show others",
           isCorrect: false
         }
       ]
@@ -115,21 +110,18 @@ const HateCommentStory = () => {
           id: "not-my-business", 
           text: "Not my business - stay out", 
           emoji: "😐", 
-          description: "Don't get involved in others' conflicts",
           isCorrect: false
         },
         { 
           id: "report-religious-hate", 
           text: "Report it - religious hate is wrong", 
           emoji: "🚫", 
-          description: "Report this religious discrimination",
           isCorrect: true
         },
         { 
           id: "comment-back", 
           text: "Comment back with anger", 
           emoji: "😡", 
-          description: "Respond angrily to the hateful comment",
           isCorrect: false
         }
       ]
@@ -142,7 +134,6 @@ const HateCommentStory = () => {
           id: "ignore-stereotype", 
           text: "Ignore it - just a stereotype", 
           emoji: "😐", 
-          description: "It's just a stereotype, ignore it",
           isCorrect: false
         },
        
@@ -150,14 +141,12 @@ const HateCommentStory = () => {
           id: "laugh", 
           text: "Laugh it off", 
           emoji: "😄", 
-          description: "Treat it as a joke",
           isCorrect: false
         },
          { 
           id: "report-stereotype", 
           text: "Report it - this is hateful stereotyping", 
           emoji: "🚫", 
-          description: "Report this hateful and discriminatory comment",
           isCorrect: true
         },
       ]

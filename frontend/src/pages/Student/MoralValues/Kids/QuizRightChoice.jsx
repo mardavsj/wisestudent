@@ -30,21 +30,19 @@ const QuizRightChoice = () => {
           id: "a", 
           text: "Ask permission first", 
           emoji: "🙋", 
-          description: "Showing respect by asking before taking",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Take it without asking", 
           emoji: "😏", 
-          description: "Taking something without permission",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Take it secretly", 
           emoji: "🤫", 
-          description: "Taking something in a dishonest way",
           isCorrect: false
         }
       ]
@@ -57,21 +55,18 @@ const QuizRightChoice = () => {
           id: "a", 
           text: "Take it without checking", 
           emoji: "🤫", 
-          description: "Not following proper procedures",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ask librarian for permission", 
           emoji: "🫱", 
-          description: "Following rules and asking properly",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Take it when no one is looking", 
           emoji: "😏", 
-          description: "Being dishonest about library materials",
           isCorrect: false
         }
       ]
@@ -84,21 +79,18 @@ const QuizRightChoice = () => {
           id: "a", 
           text: "Take it secretly", 
           emoji: "😋", 
-          description: "Taking something without permission",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Take it when parents aren't looking", 
           emoji: "🙈", 
-          description: "Being sneaky instead of honest",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ask your parents first", 
           emoji: "🫵", 
-          description: "Asking for permission before taking",
           isCorrect: true
         }
       ]
@@ -111,21 +103,18 @@ const QuizRightChoice = () => {
           id: "a", 
           text: "Ask permission first", 
           emoji: "🙌", 
-          description: "Respecting others' belongings by asking",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Use it without asking", 
           emoji: "😎", 
-          description: "Using something without permission",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Take it when they're not around", 
           emoji: "😏", 
-          description: "Being dishonest about using others' things",
           isCorrect: false
         }
       ]
@@ -138,21 +127,18 @@ const QuizRightChoice = () => {
           id: "a", 
           text: "Keep it without asking", 
           emoji: "🤭", 
-          description: "Taking something that might belong to someone else",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Hide it for later", 
           emoji: "🙈", 
-          description: "Keeping found items without trying to return them",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Return it or ask if someone lost it", 
           emoji: "🫂", 
-          description: "Trying to return lost items to their owner",
           isCorrect: true
         }
       ]

@@ -19,20 +19,20 @@ const PuzzleMatchRights = () => {
 
   // Rights (left side) - 5 items
   const rights = [
-    { id: 1, name: "School", emoji: "📚", description: "Place where children receive education" },
-    { id: 2, name: "Hospital", emoji: "🏥", description: "Place where people receive medical care" },
-    { id: 3, name: "Food", emoji: "🍎", description: "Essential nutrition for survival" },
-    { id: 4, name: "Home", emoji: "🏠", description: "Safe place to live and rest" },
-    { id: 5, name: "Voice", emoji: "📢", description: "Ability to express opinions and ideas" }
+    { id: 1, name: "School", emoji: "📚",  },
+    { id: 2, name: "Hospital", emoji: "🏥",  },
+    { id: 3, name: "Food", emoji: "🍎",  },
+    { id: 4, name: "Home", emoji: "🏠",  },
+    { id: 5, name: "Voice", emoji: "📢",  }
   ];
 
   // Categories (right side) - 5 items
   const categories = [
-    { id: 2, name: "Healthcare", emoji: "⚕️", description: "Right to medical treatment and care" },
-    { id: 3, name: "Basic Needs", emoji: "🍽️", description: "Fundamental requirements for survival" },
-    { id: 1, name: "Education", emoji: "🏫", description: "Right to learn and gain knowledge" },
-    { id: 5, name: "Expression", emoji: "💬", description: "Right to communicate thoughts freely" },
-    { id: 4, name: "Shelter", emoji: "🛌", description: "Right to safe and adequate housing" },
+    { id: 2, name: "Healthcare", emoji: "⚕️",  },
+    { id: 3, name: "Basic Needs", emoji: "🍽️",  },
+    { id: 1, name: "Education", emoji: "🏫",  },
+    { id: 5, name: "Expression", emoji: "💬",  },
+    { id: 4, name: "Shelter", emoji: "🛌",  },
   ];
 
   // Correct matches

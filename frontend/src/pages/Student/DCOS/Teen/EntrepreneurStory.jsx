@@ -32,7 +32,7 @@ const EntrepreneurStory = () => {
           id: "share-personal", 
           text: "Share personal details with all buyers", 
           emoji: "📤", 
-          description: "Give out your full address and phone number to everyone",
+          
           isCorrect: false
         },
        
@@ -40,14 +40,13 @@ const EntrepreneurStory = () => {
           id: "meet-strangers", 
           text: "Meet buyers in person alone", 
           emoji: "👤", 
-          description: "Meet strangers in private locations",
+          
           isCorrect: false
         },
          { 
           id: "use-safe-platform", 
           text: "Use a safe platform and protect your privacy", 
           emoji: "🛡️", 
-          description: "Use trusted platforms and keep personal info private",
           isCorrect: true
         },
       ]
@@ -60,21 +59,18 @@ const EntrepreneurStory = () => {
           id: "give-address", 
           text: "Give your home address", 
           emoji: "🏠", 
-          description: "Share your home address directly",
           isCorrect: false
         },
         { 
           id: "use-public-meeting", 
           text: "Suggest a public meeting place", 
           emoji: "🛡️", 
-          description: "Meet in a safe, public location instead",
           isCorrect: true
         },
         { 
           id: "give-partial", 
           text: "Give partial address", 
           emoji: "📍", 
-          description: "Share just the street name",
           isCorrect: false
         }
       ]
@@ -87,14 +83,12 @@ const EntrepreneurStory = () => {
           id: "use-platform-payment", 
           text: "Use platform's secure payment system", 
           emoji: "🛡️", 
-          description: "Stick to the platform's secure payment methods",
           isCorrect: true
         },
         { 
           id: "share-bank", 
           text: "Share bank details directly", 
           emoji: "🏦", 
-          description: "Give them your bank account information",
           isCorrect: false
         },
        
@@ -102,7 +96,6 @@ const EntrepreneurStory = () => {
           id: "cash-only", 
           text: "Accept cash only", 
           emoji: "💵", 
-          description: "Only accept cash payments",
           isCorrect: false
         }
       ]
@@ -115,21 +108,18 @@ const EntrepreneurStory = () => {
           id: "give-phone", 
           text: "Give your phone number", 
           emoji: "📱", 
-          description: "Share your personal phone number",
           isCorrect: false
         },
         { 
           id: "keep-on-platform", 
           text: "Keep communication on the platform", 
           emoji: "🛡️", 
-          description: "Stay within the platform's messaging system",
           isCorrect: true
         },
         { 
           id: "give-email", 
           text: "Give email instead", 
           emoji: "📧", 
-          description: "Share your email address",
           isCorrect: false
         }
       ]
@@ -142,7 +132,6 @@ const EntrepreneurStory = () => {
           id: "share-everything", 
           text: "Share all personal information", 
           emoji: "📤", 
-          description: "Display all your personal details on your shop",
           isCorrect: false
         },
        
@@ -150,14 +139,12 @@ const EntrepreneurStory = () => {
           id: "trust-everyone", 
           text: "Trust everyone who contacts you", 
           emoji: "🤝", 
-          description: "Trust all buyers and share information freely",
           isCorrect: false
         },
          { 
           id: "protect-privacy", 
           text: "Protect your privacy and use safe practices", 
           emoji: "🛡️", 
-          description: "Keep personal info private and use secure methods",
           isCorrect: true
         },
       ]

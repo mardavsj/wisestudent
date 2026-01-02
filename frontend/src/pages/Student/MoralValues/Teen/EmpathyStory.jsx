@@ -33,21 +33,19 @@ const EmpathyStory = () => {
           id: "invite", 
           text: "Invite them to join your group", 
           emoji: "🤝", 
-          description: "Welcome the new student and make them feel included",
+          
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore them", 
           emoji: "😐", 
-          description: "Continue with your group and don't reach out",
           isCorrect: false
         },
         { 
           id: "elsewhere", 
           text: "Tell them to sit elsewhere", 
           emoji: "🚶", 
-          description: "Direct them away from your group",
           isCorrect: false
         }
       ]
@@ -60,21 +58,18 @@ const EmpathyStory = () => {
           id: "keep", 
           text: "Keep to your friends", 
           emoji: "😎", 
-          description: "Stay with your usual group",
           isCorrect: false
         },
         { 
           id: "invite2", 
           text: "Invite them to sit with you", 
           emoji: "🥗", 
-          description: "Include them in your lunch group",
           isCorrect: true
         },
         { 
           id: "fun", 
           text: "Make fun of them", 
           emoji: "😈", 
-          description: "Mock them for eating alone",
           isCorrect: false
         }
       ]
@@ -87,21 +82,18 @@ const EmpathyStory = () => {
           id: "ignore2", 
           text: "Ignore their struggle", 
           emoji: "🙄", 
-          description: "Focus on your own work and don't help",
           isCorrect: false
         },
         { 
           id: "slow", 
           text: "Tell them they're slow", 
           emoji: "😠", 
-          description: "Criticize them for their difficulty",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Offer to help them", 
           emoji: "📝", 
-          description: "Provide assistance and support",
           isCorrect: true
         }
       ]
@@ -114,21 +106,18 @@ const EmpathyStory = () => {
           id: "invite3", 
           text: "Invite them to play", 
           emoji: "🤾", 
-          description: "Include them in your activities",
           isCorrect: true
         },
         { 
           id: "usual", 
           text: "Go play with your usual friends", 
           emoji: "😎", 
-          description: "Continue with your regular group",
           isCorrect: false
         },
         { 
           id: "ignore3", 
           text: "Ignore them", 
           emoji: "😐", 
-          description: "Pretend not to notice their situation",
           isCorrect: false
         }
       ]
@@ -141,21 +130,18 @@ const EmpathyStory = () => {
           id: "alone", 
           text: "Let them find a team alone", 
           emoji: "😕", 
-          description: "Leave them to handle it themselves",
           isCorrect: false
         },
         { 
           id: "fun2", 
           text: "Make fun of them", 
           emoji: "😈", 
-          description: "Tease them for being left out",
           isCorrect: false
         },
         { 
           id: "include", 
           text: "Include them in your team", 
           emoji: "🎉", 
-          description: "Welcome them into your group",
           isCorrect: true
         }
       ]

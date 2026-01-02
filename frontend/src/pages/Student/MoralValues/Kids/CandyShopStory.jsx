@@ -31,21 +31,20 @@ const CandyShopStory = () => {
           id: "return", 
           text: "Return the extra candy to the shopkeeper", 
           emoji: "🙋", 
-          description: "Be honest and return it",
+          
           isCorrect: true
         },
         { 
           id: "keep", 
           text: "Keep it quietly", 
           emoji: "🤫", 
-          description: "Take it without telling",
+          
           isCorrect: false
         },
         { 
           id: "share", 
           text: "Share it with friends", 
           emoji: "👥", 
-          description: "Give it to others",
           isCorrect: false
         }
       ]
@@ -59,21 +58,18 @@ const CandyShopStory = () => {
           id: "keep", 
           text: "Keep the money and throw the wallet", 
           emoji: "💸", 
-          description: "Take the money",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore it and walk away", 
           emoji: "🚶", 
-          description: "Leave it behind",
           isCorrect: false
         },
         { 
           id: "find", 
           text: "Try to find the owner or give it to an adult", 
           emoji: "🔎", 
-          description: "Return it properly",
           isCorrect: true
         },
       ]
@@ -86,21 +82,18 @@ const CandyShopStory = () => {
           id: "refuse", 
           text: "Refuse and focus on your own paper", 
           emoji: "🙅‍♀️", 
-          description: "Stay honest",
           isCorrect: true
         },
         { 
           id: "look", 
           text: "Look at the answers secretly", 
           emoji: "👀", 
-          description: "Peek at the answers",
           isCorrect: false
         },
         { 
           id: "copy", 
           text: "Copy only one answer", 
           emoji: "✍️", 
-          description: "Copy just a little",
           isCorrect: false
         }
       ]
@@ -113,21 +106,18 @@ const CandyShopStory = () => {
           id: "hide", 
           text: "Hide the pieces quickly", 
           emoji: "😨", 
-          description: "Try to hide it",
           isCorrect: false
         },
         { 
           id: "tell", 
           text: "Tell your parents the truth", 
           emoji: "👨‍👩‍👧", 
-          description: "Be honest about it",
           isCorrect: true
         },
         { 
           id: "blame", 
           text: "Blame your sibling", 
           emoji: "🙈", 
-          description: "Shift the blame",
           isCorrect: false
         }
       ]
@@ -140,21 +130,18 @@ const CandyShopStory = () => {
           id: "help", 
           text: "Say no and help them learn it instead", 
           emoji: "💡", 
-          description: "Teach them properly",
           isCorrect: true
         },
         { 
           id: "let", 
           text: "Let them copy to be nice", 
           emoji: "😅", 
-          description: "Allow them to copy",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore them completely", 
           emoji: "🙄", 
-          description: "Don't help at all",
           isCorrect: false
         }
       ]

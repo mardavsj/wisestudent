@@ -35,21 +35,20 @@ const FairnessQuiz1 = () => {
           id: "a", 
           text: "Yes, it's fine", 
           emoji: "👍", 
-          description: "Favoring one player is okay",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No, all players should be treated equally", 
           emoji: "⚖️", 
-          description: "Fairness means treating everyone equally",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only if they're better", 
           emoji: "🏆", 
-          description: "Better players deserve favoritism",
           isCorrect: false
         }
       ]
@@ -61,22 +60,19 @@ const FairnessQuiz1 = () => {
         { 
           id: "a", 
           text: "Fair", 
-          emoji: "✔️", 
-          description: "This is fair",
+          emoji: "😇", 
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Unfair", 
-          emoji: "❌", 
-          description: "Everyone should get equal treatment",
+          emoji: "😈", 
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Depends on the game", 
           emoji: "🤔", 
-          description: "It depends on the situation",
           isCorrect: false
         }
       ]
@@ -89,21 +85,18 @@ const FairnessQuiz1 = () => {
           id: "a", 
           text: "Yes, they paid more", 
           emoji: "💸", 
-          description: "Paying more means more chances",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No, skill should matter", 
           emoji: "🏅", 
-          description: "Fairness means skill matters, not money",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Sometimes it's okay", 
           emoji: "🤷", 
-          description: "It's okay sometimes",
           isCorrect: false
         }
       ]
@@ -116,21 +109,18 @@ const FairnessQuiz1 = () => {
           id: "a", 
           text: "Fair", 
           emoji: "🎉", 
-          description: "Equal rewards for everyone is fair",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Unfair", 
           emoji: "🚫", 
-          description: "This is not fair",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Only for some players", 
           emoji: "👥", 
-          description: "Only some should get rewards",
           isCorrect: false
         }
       ]
@@ -142,22 +132,19 @@ const FairnessQuiz1 = () => {
         { 
           id: "a", 
           text: "Fair", 
-          emoji: "✅", 
-          description: "This is acceptable",
+          emoji: "😇", 
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Unfair", 
           emoji: "⚠️", 
-          description: "Blocking based on name is unfair",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Depends on the name", 
           emoji: "🤔", 
-          description: "It depends on what the name is",
           isCorrect: false
         }
       ]

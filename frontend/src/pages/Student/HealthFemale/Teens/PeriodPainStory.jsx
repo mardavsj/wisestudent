@@ -44,29 +44,31 @@ const PeriodPainStory = () => {
       ]
     },
     {
-      id: 2,
-      text: "Which over-the-counter medication can help with period cramps?",
-      options: [
-        {
-          id: "a",
-          text: "Antibiotics",
-          emoji: "🦠",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Ibuprofen or paracetamol",
-          emoji: "💊",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Caffeine pills",
-          emoji: "☕",
-          isCorrect: false
-        }
-      ]
+  id: 2,
+  text: "Who can suggest medicines for period cramps?",
+  options: [
+   
+    {
+      id: "b",
+      text: "A teacher",
+      emoji: "👩‍🏫",
+      isCorrect: false
     },
+     {
+      id: "a",
+      text: "A doctor",
+      emoji: "👩‍⚕️",
+      isCorrect: true
+    },
+    {
+      id: "c",
+      text: "A neighbour",
+      emoji: "🏠",
+      isCorrect: false
+    }
+  ]
+},
+
     {
       id: 3,
       text: "When should someone seek medical help for period pain?",

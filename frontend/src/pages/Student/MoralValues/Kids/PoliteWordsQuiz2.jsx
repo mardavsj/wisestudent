@@ -30,21 +30,20 @@ const PoliteWordsQuiz2 = () => {
           id: "a", 
           text: "Please", 
           emoji: "✨", 
-          description: "A respectful word used when asking for something",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Stupid", 
           emoji: "😠", 
-          description: "An impolite word that hurts others' feelings",
+          
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Idiot", 
           emoji: "👎", 
-          description: "A mean word that is disrespectful",
           isCorrect: false
         }
       ]
@@ -57,21 +56,18 @@ const PoliteWordsQuiz2 = () => {
           id: "a", 
           text: "Whatever", 
           emoji: "😒", 
-          description: "Being dismissive and ungrateful",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Thank you!", 
           emoji: "😊", 
-          description: "Showing gratitude and appreciation politely",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Finally!", 
           emoji: "🙄", 
-          description: "Being rude and unappreciative",
           isCorrect: false
         }
       ]
@@ -84,21 +80,18 @@ const PoliteWordsQuiz2 = () => {
           id: "a", 
           text: "Move!", 
           emoji: "😠", 
-          description: "Being rude and blaming others",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Watch it!", 
           emoji: "😤", 
-          description: "Being defensive instead of apologetic",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Sorry!", 
           emoji: "🙏", 
-          description: "Apologizing politely when you make a mistake",
           isCorrect: true
         }
       ]
@@ -111,21 +104,18 @@ const PoliteWordsQuiz2 = () => {
           id: "a", 
           text: "Please help me", 
           emoji: "💖", 
-          description: "Asking politely with respectful words",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Do this!", 
           emoji: "😡", 
-          description: "Demanding instead of asking politely",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Hurry up!", 
           emoji: "😤", 
-          description: "Being impatient and rude",
           isCorrect: false
         }
       ]
@@ -138,21 +128,18 @@ const PoliteWordsQuiz2 = () => {
           id: "a", 
           text: "So what?", 
           emoji: "😐", 
-          description: "Being ungrateful and dismissive",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "That's it?", 
           emoji: "🙄", 
-          description: "Being unappreciative of help received",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Thanks!", 
           emoji: "🌸", 
-          description: "Expressing gratitude politely for help received",
           isCorrect: true
         }
       ]

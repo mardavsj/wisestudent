@@ -31,21 +31,19 @@ const SchoolCleanUpStory = () => {
           id: "no", 
           text: "No, I'm busy", 
           emoji: "😴", 
-          description: "Refuse to help",
+          
           isCorrect: false
         },
         { 
           id: "friends", 
           text: "Only if friends join", 
           emoji: "👥", 
-          description: "Conditional participation",
           isCorrect: false
         },
         { 
           id: "yes", 
           text: "Yes, let's clean!", 
           emoji: "💪", 
-          description: "Participate enthusiastically",
           isCorrect: true
         }
       ]
@@ -58,21 +56,18 @@ const SchoolCleanUpStory = () => {
           id: "ignore", 
           text: "Ignore it", 
           emoji: "🙈", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "yes", 
           text: "Yes, every bit counts", 
           emoji: "🌿", 
-          description: "Clean thoroughly",
           isCorrect: true
         },
         { 
           id: "big", 
           text: "Only big pieces", 
           emoji: "👀", 
-          description: "Selective cleaning",
           isCorrect: false
         }
       ]
@@ -85,21 +80,18 @@ const SchoolCleanUpStory = () => {
           id: "yes", 
           text: "Yes, carefully", 
           emoji: "🌸", 
-          description: "Take care of plants",
           isCorrect: true
         },
         { 
           id: "no", 
           text: "No, someone else will", 
           emoji: "😅", 
-          description: "Avoid responsibility",
           isCorrect: false
         },
         { 
           id: "little", 
           text: "Just sprinkle a little", 
           emoji: "💦", 
-          description: "Minimal effort",
           isCorrect: false
         }
       ]
@@ -112,21 +104,18 @@ const SchoolCleanUpStory = () => {
           id: "ignore", 
           text: "Ignore them", 
           emoji: "🙃", 
-          description: "Don't bother",
           isCorrect: false
         },
         { 
           id: "some", 
           text: "Pull some, leave others", 
           emoji: "🤔", 
-          description: "Partial effort",
           isCorrect: false
         },
         { 
           id: "yes", 
           text: "Yes, keep garden neat", 
           emoji: "✂️", 
-          description: "Maintain the garden",
           isCorrect: true
         }
       ]
@@ -139,21 +128,18 @@ const SchoolCleanUpStory = () => {
           id: "no", 
           text: "No, I'm done", 
           emoji: "🛑", 
-          description: "Stop early",
           isCorrect: false
         },
         { 
           id: "yes", 
           text: "Yes, make sure all is tidy", 
-          emoji: "✅", 
-          description: "Be thorough",
+          emoji: "👀", 
           isCorrect: true
         },
         { 
           id: "small", 
           text: "Only check a small area", 
           emoji: "🔍", 
-          description: "Minimal check",
           isCorrect: false
         }
       ]

@@ -11,7 +11,7 @@ const ReflexDailyCheck = () => {
   const totalCoins = 5;
   const totalXp = 10;
   const maxScore = 5;
-  const gameId = "health-female-kids-99"; // Correct ID for progression
+  const gameId = "health-female-kids-39"; // Correct ID for progression
 
   const [gameState, setGameState] = useState('ready'); // ready, playing, finished
   const [currentRound, setCurrentRound] = useState(0);
@@ -137,7 +137,7 @@ const ReflexDailyCheck = () => {
         gameId={gameId}
         gameType="health-female"
         totalLevels={100}
-        currentLevel={99}
+        currentLevel={39}
         showConfetti={true}
         backPath="/games/health-female/kids"
         coinsPerLevel={coinsPerLevel}

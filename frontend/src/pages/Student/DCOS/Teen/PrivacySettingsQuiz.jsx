@@ -36,21 +36,21 @@ const PrivacySettingsQuiz = () => {
           id: "b", 
           text: "Private - only approved friends can see", 
           emoji: "🔐", 
-          description: "Private settings give you control over who sees your content and protect your privacy",
+          
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Public - so everyone can see my posts", 
           emoji: "🌍", 
-          description: "Public profiles expose your information to strangers and potential threats",
+          
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Public for photos, private for everything else", 
           emoji: "📸", 
-          description: "Even partial public settings can expose sensitive information",
+          
           isCorrect: false
         }
       ]
@@ -63,21 +63,18 @@ const PrivacySettingsQuiz = () => {
           id: "a", 
           text: "Yes - location sharing is fun", 
           emoji: "🗺️", 
-          description: "Sharing location with strangers can be dangerous and compromise your safety",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - keep location private", 
           emoji: "🔒", 
-          description: "Keeping location private protects you from stalking and unwanted attention",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only for close friends", 
           emoji: "👥", 
-          description: "Even sharing with friends can be risky if their accounts are compromised",
           isCorrect: false
         }
       ]
@@ -90,21 +87,18 @@ const PrivacySettingsQuiz = () => {
           id: "a", 
           text: "Everyone - it's just information", 
           emoji: "🌍", 
-          description: "Personal information in wrong hands can lead to identity theft and harassment",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Friends of friends", 
           emoji: "👥", 
-          description: "Friends of friends are still strangers and shouldn't see your personal information",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Only approved friends", 
           emoji: "🔐", 
-          description: "Limiting personal information to approved friends protects your privacy and safety",
           isCorrect: true
         }
       ]
@@ -117,21 +111,18 @@ const PrivacySettingsQuiz = () => {
           id: "b", 
           text: "No - keep posts private", 
           emoji: "🔒", 
-          description: "Keeping posts private protects your content and personal information from strangers",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Yes - public posts get more likes", 
           emoji: "👍", 
-          description: "Public posts expose you to strangers, scammers, and potential threats",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Only some posts public", 
           emoji: "📸", 
-          description: "Even selective public posts can reveal sensitive information about you",
           isCorrect: false
         }
       ]
@@ -144,21 +135,18 @@ const PrivacySettingsQuiz = () => {
           id: "a", 
           text: "Public - maximum visibility", 
           emoji: "🌍", 
-          description: "Public settings expose you to maximum risk from strangers and scammers",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Semi-public - friends of friends", 
           emoji: "👥", 
-          description: "Semi-public settings still expose you to people you don't know",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Private - only approved friends", 
           emoji: "🔐", 
-          description: "Private settings with approved friends only provide the best protection for your privacy",
           isCorrect: true
         }
       ]

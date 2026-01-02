@@ -43,22 +43,22 @@ const ContentOwnershipQuiz = () => {
         { 
           id: "a", 
           text: "Yes - it's fine", 
-          emoji: "✅",
-          description: "Copying and claiming others' videos as your own is copyright violation",
+          emoji: "🙂",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - that's copyright violation", 
-          emoji: "❌",
-          description: "Copying someone else's video and claiming it as yours violates copyright law",
+          emoji: "🚫",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Maybe - if you credit them", 
           emoji: "❓",
-          description: "Even with credit, you cannot claim others' work as your own",
+          
           isCorrect: false
         }
       ]
@@ -71,7 +71,6 @@ const ContentOwnershipQuiz = () => {
           id: "a", 
           text: "Yes - photos are free to use", 
           emoji: "📷",
-          description: "Photos are protected by copyright - you need permission to use them",
           isCorrect: false
         },
         
@@ -79,14 +78,12 @@ const ContentOwnershipQuiz = () => {
           id: "c", 
           text: "Only if you like it", 
           emoji: "👍",
-          description: "Liking content doesn't give you permission to use it",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - you need permission", 
           emoji: "🔐",
-          description: "You need permission from the creator to use someone's photo",
           isCorrect: true
         },
       ]
@@ -99,14 +96,12 @@ const ContentOwnershipQuiz = () => {
           id: "b", 
           text: "No - that's stealing their work", 
           emoji: "🚫",
-          description: "Reposting someone's artwork as your own is stealing their creative work",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Yes - if it's good", 
           emoji: "🎨",
-          description: "Quality doesn't matter - reposting others' artwork as your own is stealing",
           isCorrect: false
         },
        
@@ -114,7 +109,6 @@ const ContentOwnershipQuiz = () => {
           id: "c", 
           text: "Maybe - if no one sees", 
           emoji: "🙈",
-          description: "Stealing content is wrong regardless of who sees it",
           isCorrect: false
         }
       ]
@@ -127,21 +121,18 @@ const ContentOwnershipQuiz = () => {
           id: "a", 
           text: "Yes - music is free", 
           emoji: "🎵",
-          description: "Music is protected by copyright - copying and claiming it is illegal",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - that's copyright infringement", 
-          emoji: "❌",
-          description: "Copying someone's music and claiming it as yours is copyright infringement",
+          emoji: "🚫",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only if it's old", 
           emoji: "👴",
-          description: "Age doesn't matter - copyright still applies to old music",
           isCorrect: false
         }
       ]
@@ -153,15 +144,13 @@ const ContentOwnershipQuiz = () => {
         { 
           id: "b", 
           text: "No - always credit the creator", 
-          emoji: "✅",
-          description: "You must always credit the creator when using their written content",
+          emoji: "✍️",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Yes - words are free", 
           emoji: "📝",
-          description: "Written content is protected by copyright - you must credit the creator",
           isCorrect: false
         },
         
@@ -169,7 +158,6 @@ const ContentOwnershipQuiz = () => {
           id: "c", 
           text: "Only if you change it", 
           emoji: "🔄",
-          description: "Even if you change it, you should credit the original creator",
           isCorrect: false
         }
       ]

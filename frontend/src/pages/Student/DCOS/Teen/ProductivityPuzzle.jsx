@@ -55,20 +55,20 @@ const ProductivityPuzzle = () => {
 
   // Activities
   const leftItems = [
-    { id: 1, name: "Study App", emoji: "📚", description: "Educational learning application" },
-    { id: 2, name: "Endless Scroll", emoji: "📱", description: "Mindless social media browsing" },
-    { id: 3, name: "Online Course", emoji: "🎓", description: "Structured learning program" },
-    { id: 4, name: "Mindless Gaming", emoji: "🎮", description: "Non-educational video games" },
-    { id: 5, name: "Educational Video", emoji: "📹", description: "Learning-focused content" }
+    { id: 1, name: "Study App", emoji: "📚",  },
+    { id: 2, name: "Endless Scroll", emoji: "📱",  },
+    { id: 3, name: "Online Course", emoji: "🎓",  },
+    { id: 4, name: "Mindless Gaming", emoji: "🎮",  },
+    { id: 5, name: "Educational Video", emoji: "📹",  }
   ];
 
   // Categories - varied options with different outcomes
   const rightItems = [
-    { id: 1, name: "Waste Time", emoji: "❌", description: "Unproductive use of screen time" },
-    { id: 2, name: "Learn Skills", emoji: "✅", description: "Develops new abilities" },
-    { id: 3, name: "Gain Knowledge", emoji: "🧠", description: "Increases understanding" },
-    { id: 4, name: "Entertainment", emoji: "📺", description: "Leisure without learning" },
-    { id: 5, name: "Personal Growth", emoji: "📈", description: "Improves self-development" }
+    { id: 1, name: "Waste Time", emoji: "😐" },
+    { id: 2, name: "Learn Skills", emoji: "🧑‍🎓" },
+    { id: 3, name: "Gain Knowledge", emoji: "🧠" },
+    { id: 4, name: "Entertainment", emoji: "📺" },
+    { id: 5, name: "Personal Growth", emoji: "📈" }
   ];
 
   // Correct matches - varied positions for different outcomes

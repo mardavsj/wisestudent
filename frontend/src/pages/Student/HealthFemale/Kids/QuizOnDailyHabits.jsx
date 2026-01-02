@@ -116,10 +116,10 @@ const QuizOnDailyHabits = () => {
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
       score={finalScore}
-      gameId="health-female-kids-92"
+      gameId="health-female-kids-32"
       gameType="health-female"
       totalLevels={100}
-      currentLevel={92}
+      currentLevel={32}
       showConfetti={gameFinished}
       backPath="/games/health-female/kids"
       maxScore={questions.length} // Max score is total number of questions (all correct)

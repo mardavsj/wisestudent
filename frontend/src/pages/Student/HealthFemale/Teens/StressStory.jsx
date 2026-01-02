@@ -19,127 +19,133 @@ const StressStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Exams are coming up. What's the best approach to manage stress?",
-      options: [
-        {
-          id: "a",
-          text: "Plan regular breaks and study schedule",
-          emoji: "📅",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Panic and study all night",
-          emoji: "😰",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Ignore the exams completely",
-          emoji: "😴",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "During exam preparation, how should you handle difficult topics?",
-      options: [
-        {
-          id: "a",
-          text: "Break them into smaller parts and tackle one at a time",
-          emoji: "🧩",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Skip them and hope they don't appear",
-          emoji: "❌",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Ask teachers or peers for help",
-          emoji: "🙋",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How can you maintain energy during long study sessions?",
-      options: [
-        {
-          id: "a",
-          text: "Take short breaks, stay hydrated, and eat healthy snacks",
-          emoji: "💧",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Drink lots of caffeine and skip meals",
-          emoji: "☕",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Move around and stretch regularly",
-          emoji: "🤸",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What should you do if you feel overwhelmed during exams?",
-      options: [
-        {
-          id: "a",
-          text: "Practice deep breathing and positive self-talk",
-          emoji: "🧘",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Give up and stop trying",
-          emoji: "🏳️",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Compare yourself to others constantly",
-          emoji: "👥",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "After exams, how should you evaluate your performance?",
-      options: [
-        {
-          id: "a",
-          text: "Reflect on what went well and areas for improvement",
-          emoji: "🤔",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Only focus on mistakes and feel bad",
-          emoji: "😞",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Celebrate successes and learn from mistakes",
-          emoji: "🎉",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Exams are coming up. What is the best approach to manage stress?",
+    options: [
+      {
+        id: "a",
+        text: "Plan a study schedule with regular breaks",
+        emoji: "📅",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Panic and study all night",
+        emoji: "😰",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Ignore the exams completely",
+        emoji: "😴",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 2,
+    text: "During exam preparation, how should you handle difficult topics?",
+    options: [
+      {
+        id: "a",
+        text: "Avoid studying difficult topics until the last day",
+        emoji: "⏰",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Skip them and hope they do not appear",
+        emoji: "❌",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Ask teachers or peers for help",
+        emoji: "🙋",
+        isCorrect: true
+      }
+    ]
+  },
+
+  {
+    id: 3,
+    text: "How can you maintain energy during long study sessions?",
+    options: [
+      {
+        id: "a",
+        text: "Study continuously without resting",
+        emoji: "📚",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Drink a lot of caffeine and skip meals",
+        emoji: "☕",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Move around and stretch regularly",
+        emoji: "🤸",
+        isCorrect: true
+      }
+    ]
+  },
+
+  {
+    id: 4,
+    text: "What should you do if you feel overwhelmed during exams?",
+    options: [
+      {
+        id: "a",
+        text: "Practice deep breathing and positive self-talk",
+        emoji: "🧘",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Give up and stop trying",
+        emoji: "🏳️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Compare yourself to others constantly",
+        emoji: "👥",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 5,
+    text: "After exams, how should you evaluate your performance?",
+    options: [
+      {
+        id: "a",
+        text: "Ignore the results and do not think about them",
+        emoji: "🙈",
+        isCorrect: false
+      },
+       {
+        id: "c",
+        text: "Celebrate successes and learn from mistakes",
+        emoji: "🎉",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Only focus on mistakes and feel bad",
+        emoji: "😞",
+        isCorrect: false
+      },
+     
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

@@ -19,20 +19,20 @@ const PuzzleKindActs = () => {
 
   // Acts (left side) - 5 items
   const acts = [
-    { id: 1, name: "Help Elderly", emoji: "🧓", description: "Assist older people in daily tasks" },
-    { id: 2, name: "Help Animals", emoji: "🐕", description: "Care for animals in need" },
-    { id: 3, name: "Help Friends", emoji: "👂", description: "Support friends during tough times" },
-    { id: 4, name: "Help Neighbors", emoji: "🏘️", description: "Support people living nearby" },
-    { id: 5, name: "Help Environment", emoji: "🌍", description: "Take care of our planet Earth" }
+    { id: 1, name: "Help Elderly", emoji: "🧓",  },
+    { id: 2, name: "Help Animals", emoji: "🐕",  },
+    { id: 3, name: "Help Friends", emoji: "👂",  },
+    { id: 4, name: "Help Neighbors", emoji: "🏘️",  },
+    { id: 5, name: "Help Environment", emoji: "🌍",  },
   ];
 
   // Responses (right side) - 5 items
   const responses = [
-    { id: 2, name: "Feed", emoji: "🍖", description: "Provide food for hungry animals" },
-    { id: 3, name: "Listen", emoji: "💬", description: "Give attention to someone's concerns" },
-    { id: 1, name: "Carry Bags", emoji: "🛍️", description: "Help with heavy shopping items" },
-    { id: 5, name: "Plant Trees", emoji: "🌳", description: "Grow plants to clean the air" },
-    { id: 4, name: "Check On", emoji: "🏁", description: "Visit to see if they need help" },
+    { id: 2, name: "Feed", emoji: "🍖",  },
+    { id: 3, name: "Listen", emoji: "💬",  },
+    { id: 1, name: "Carry Bags", emoji: "🛍️",  },
+    { id: 5, name: "Plant Trees", emoji: "🌳",  },
+    { id: 4, name: "Check On", emoji: "🏁",  },
   ];
 
   // Correct matches

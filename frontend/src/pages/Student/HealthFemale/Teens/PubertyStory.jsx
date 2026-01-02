@@ -19,127 +19,128 @@ const PubertyStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "You start noticing your body changing. What is happening?",
-      options: [
-        {
-          id: "a",
-          text: "This is normal growth and development",
-          emoji: "🌱",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Something is wrong with me",
-          emoji: "❓",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "I should be worried about these changes",
-          emoji: "😟",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You notice breast development starting. How should you feel?",
-      options: [
-        {
-          id: "a",
-          text: "This is a normal sign of puberty",
-          emoji: "✅",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "This is a normal part of growing up",
-          emoji: "🦋",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "I should hide this from others",
-          emoji: "🙈",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Your hips are starting to widen. What does this mean?",
-      options: [
-        {
-          id: "a",
-          text: "My body is preparing for future reproductive health",
-          emoji: "🤰",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "This is a normal part of female development",
-          emoji: "👩",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "I'm gaining unhealthy weight",
-          emoji: "⚖️",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You're experiencing mood swings. Why is this happening?",
-      options: [
-        {
-          id: "a",
-          text: "Hormonal changes during puberty affect emotions",
-          emoji: "🌀",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "I'm becoming emotionally unstable",
-          emoji: "💔",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Something is seriously wrong with me",
-          emoji: "⚠️",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "How can you best handle these body changes?",
-      options: [
-        {
-          id: "a",
-          text: "Learn about changes and talk to trusted adults",
-          emoji: "📚",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Ignore the changes completely",
-          emoji: "😶",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Talk to trusted adults about concerns",
-          emoji: "💬",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You start noticing your body changing. What is happening?",
+    options: [
+      {
+        id: "a",
+        text: "This is normal growth and development",
+        emoji: "🌱",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Something is wrong with me",
+        emoji: "❓",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "I should be worried about these changes",
+        emoji: "😟",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "You notice breast development starting. How should you feel?",
+    options: [
+      {
+        id: "a",
+        text: "I feel confused and scared",
+        emoji: "😰",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "This is a normal part of growing up",
+        emoji: "🦋",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "I should hide this from others",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Your hips are starting to widen. What does this mean?",
+    options: [
+      {
+        id: "a",
+        text: "My body shape is changing as I grow",
+        emoji: "🔄",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "This is a normal part of female development",
+        emoji: "👩",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "I'm gaining unhealthy weight",
+        emoji: "⚖️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You're experiencing mood swings. Why is this happening?",
+    options: [
+      {
+        id: "a",
+        text: "Hormonal changes during puberty affect emotions",
+        emoji: "🌀",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "I'm becoming emotionally unstable",
+        emoji: "💔",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Something is seriously wrong with me",
+        emoji: "⚠️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "How can you best handle these body changes?",
+    options: [
+      {
+        id: "a",
+        text: "Learn about puberty from books or classes",
+        emoji: "📘",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Ignore the changes completely",
+        emoji: "😶",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Talk to trusted adults about concerns",
+        emoji: "💬",
+        isCorrect: true
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

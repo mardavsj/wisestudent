@@ -26,13 +26,13 @@ const RoutineStory = () => {
         {
           id: "a",
           text: "Yes, consistent sleep improves health and focus",
-          emoji: "✅",
+          emoji: "😴",
           isCorrect: true
         },
         {
           id: "b",
           text: "No, she's a teenager and should stay up late",
-          emoji: "❌",
+          emoji: "🥱",
           isCorrect: false
         },
         {
@@ -53,34 +53,36 @@ const RoutineStory = () => {
           emoji: "⏰",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "Improved productivity and well-being",
-          emoji: "📈",
-          isCorrect: true
-        },
+       
         {
           id: "c",
           text: "Less flexibility in daily activities",
           emoji: "🔒",
           isCorrect: false
-        }
+        },
+         {
+          id: "b",
+          text: "Improved productivity and well-being",
+          emoji: "📈",
+          isCorrect: true
+        },
       ]
     },
     {
       id: 3,
       text: "How does a morning routine benefit a teen?",
       options: [
-        {
-          id: "a",
-          text: "Starts the day with purpose and energy",
-          emoji: "🌞",
-          isCorrect: false
-        },
+        
         {
           id: "b",
           text: "Reduces decision fatigue in the morning",
           emoji: "🧠",
+          isCorrect: false
+        },
+        {
+          id: "a",
+          text: "Starts the day with purpose and energy",
+          emoji: "🌞",
           isCorrect: true
         },
         {

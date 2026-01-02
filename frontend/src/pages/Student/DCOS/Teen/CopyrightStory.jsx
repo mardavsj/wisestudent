@@ -31,7 +31,7 @@ const CopyrightStory = () => {
         { 
           id: "yes-own", 
           text: "Yes - I created it with AI", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         },
         
@@ -56,7 +56,7 @@ const CopyrightStory = () => {
         { 
           id: "acceptable", 
           text: "Yes - AI art is free to use", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         },
         { 
@@ -80,7 +80,7 @@ const CopyrightStory = () => {
         { 
           id: "ethical", 
           text: "Yes - AI is a tool like a calculator", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         },
         
@@ -105,7 +105,7 @@ const CopyrightStory = () => {
         { 
           id: "right", 
           text: "Yes - AI content has no owner", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         },
         { 
@@ -135,7 +135,7 @@ const CopyrightStory = () => {
         { 
           id: "ethical-sell", 
           text: "Yes - I modified it", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         },
         

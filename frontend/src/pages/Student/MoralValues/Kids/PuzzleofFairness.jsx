@@ -25,20 +25,20 @@ const PuzzleofFairness = () => {
 
   // Actions and their outcomes
   const leftItems = [
-    { id: 1, name: "Sharing", emoji: "🤝", description: "Dividing equally among friends" },
-    { id: 2, name: "Cheating", emoji: "😈", description: "Breaking rules unfairly" },
-    { id: 3, name: "Waiting Turn", emoji: "⏳", description: "Being patient in line" },
-    { id: 4, name: "Skipping Line", emoji: "🏃‍♂️", description: "Jumping ahead of others" },
-    { id: 5, name: "Taking Turns", emoji: "🎲", description: "Sharing opportunities fairly" }
+    { id: 1, name: "Sharing", emoji: "🤝",  },
+    { id: 2, name: "Cheating", emoji: "😈",  },
+    { id: 3, name: "Waiting Turn", emoji: "⏳",  },
+    { id: 4, name: "Skipping Line", emoji: "🏃‍♂️",  },
+    { id: 5, name: "Taking Turns", emoji: "🎲",  }
   ];
 
   // Outcomes - reordered so correct matches are in different positions
   const rightItems = [
-    { id: 1, name: "Friends Angry", emoji: "😡", description: "Causes conflict and upset" },
-    { id: 2, name: "Fun Together", emoji: "🎉", description: "Creates harmony and joy" },
-    { id: 3, name: "Friends Happy", emoji: "😊", description: "Everyone feels included" },
-    { id: 4, name: "Everyone Smiles", emoji: "😄", description: "Brings joy to all" },
-    { id: 5, name: "People Upset", emoji: "😠", description: "Makes others feel wronged" }
+    { id: 1, name: "Friends Angry", emoji: "😡",  },
+    { id: 2, name: "Fun Together", emoji: "🎉",  },
+    { id: 3, name: "Friends Happy", emoji: "😊",  },
+    { id: 4, name: "Everyone Smiles", emoji: "😄",  },
+    { id: 5, name: "People Upset", emoji: "😠",  }
   ];
 
   // Correct matches - rearranged so correct answers aren't always in the same position

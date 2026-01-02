@@ -22,20 +22,20 @@ const PuzzleOfEthics = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const leftItems = [
-    { id: 1, name: "Fairness", emoji: "⚖️", description: "Equal treatment" }, // Matches with "Justice and equality" (rightId: 6)
-    { id: 2, name: "Stealing", emoji: "👛", description: "Taking without permission" }, // Matches with "Wrong and unfair" (rightId: 7)
-    { id: 3, name: "Honesty", emoji: "💎", description: "Telling the truth" }, // Matches with "Telling the truth" (rightId: 8)
-    { id: 4, name: "Respect", emoji: "🙏", description: "Treating others well" }, // Matches with "Treating others kindly" (rightId: 9)
-    { id: 5, name: "Cheating", emoji: "📝", description: "Dishonest behavior" }, // Matches with "Dishonest and unethical" (rightId: 10)
+    { id: 1, name: "Fairness", emoji: "⚖️",  }, // Matches with "Justice and equality" (rightId: 6)
+    { id: 2, name: "Stealing", emoji: "👛" }, // Matches with "Wrong and unfair" (rightId: 7)
+    { id: 3, name: "Honesty", emoji: "💎" }, // Matches with "Telling the truth" (rightId: 8)
+    { id: 4, name: "Respect", emoji: "🙏" }, // Matches with "Treating others kindly" (rightId: 9)
+    { id: 5, name: "Cheating", emoji: "📝" }, // Matches with "Dishonest and unethical" (rightId: 10)
   ];
 
   // Right items with correct matches in different positions: manually shuffled to avoid direct positional matching
   const rightItems = [
-    { id: 6, name: "Treating others kindly", emoji: "💖", description: "Being respectful" }, // Respect's meaning (originally id: 4)
-    { id: 7, name: "Wrong and unfair", emoji: "❌", description: "Unethical action" }, // Stealing's meaning (originally id: 2)
-    { id: 8, name: "Dishonest and unethical", emoji: "🚫", description: "Wrong behavior" }, // Cheating's meaning (originally id: 5)
-    { id: 9, name: "Justice and equality", emoji: "✅", description: "Fair treatment" }, // Fairness's meaning (originally id: 1)
-    { id: 10, name: "Telling the truth", emoji: "🗣️", description: "Being honest" }, // Honesty's meaning (originally id: 3)
+    { id: 6, name: "Treating others kindly", emoji: "💖" }, // Respect's meaning (originally id: 4)
+    { id: 7, name: "Wrong and unfair", emoji: "❌" }, // Stealing's meaning (originally id: 2)
+    { id: 8, name: "Dishonest and unethical", emoji: "🚫" }, // Cheating's meaning (originally id: 5)
+    { id: 9, name: "Justice and equality", emoji: "✅" }, // Fairness's meaning (originally id: 1)
+    { id: 10, name: "Telling the truth", emoji: "🗣️" }, // Honesty's meaning (originally id: 3)
   ];
 
   const correctMatches = [

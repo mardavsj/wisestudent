@@ -32,21 +32,19 @@ const CyberBullyReport = () => {
           id: "a", 
           text: "Ignore It", 
           emoji: "🙈", 
-          description: "Ignore it completely",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Report to Adult", 
           emoji: "📢", 
-          description: "Report it to a parent or teacher",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Reply with Mean Comment", 
           emoji: "😠", 
-          description: "Reply with your own mean comment",
           isCorrect: false
         }
       ]
@@ -59,21 +57,18 @@ const CyberBullyReport = () => {
           id: "a", 
           text: "Report Immediately", 
           emoji: "🚨", 
-          description: "Report it immediately to an adult",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Forward to Friends", 
           emoji: "📤", 
-          description: "Forward it to other friends",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignore and Hope It Stops", 
           emoji: "😐", 
-          description: "Ignore it and hope it stops",
           isCorrect: false
         }
       ]
@@ -87,21 +82,18 @@ const CyberBullyReport = () => {
           id: "b", 
           text: "Follow the Fake Account", 
           emoji: "👀", 
-          description: "Follow the fake account",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Share with Others", 
           emoji: "📤", 
-          description: "Share it with others",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Report and Tell Adult", 
           emoji: "📢", 
-          description: "Report the fake account and tell an adult",
           isCorrect: true
         },
       ]
@@ -114,21 +106,18 @@ const CyberBullyReport = () => {
           id: "a", 
           text: "Report and Tell Adult", 
           emoji: "🛡️", 
-          description: "Report the post and tell a trusted adult",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Like and Share", 
           emoji: "👍", 
-          description: "Like and share the photo",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Comment Mean Things", 
           emoji: "😈", 
-          description: "Comment mean things on it",
           isCorrect: false
         }
       ]
@@ -142,21 +131,18 @@ const CyberBullyReport = () => {
           id: "b", 
           text: "Join In", 
           emoji: "😄", 
-          description: "Join in with the mean comments",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Leave and Report", 
           emoji: "🚪", 
-          description: "Leave the group and report it",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Stay Silent", 
           emoji: "👀", 
-          description: "Stay silent and watch",
           isCorrect: false
         }
       ]

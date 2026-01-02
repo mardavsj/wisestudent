@@ -31,21 +31,19 @@ const PlaygroundSharingStory = () => {
           id: "no", 
           text: "No, keep it for yourself", 
           emoji: "🙅", 
-          description: "Don't share",
+          
           isCorrect: false
         },
         { 
           id: "friends", 
           text: "Only share with close friends", 
           emoji: "👫", 
-          description: "Selective sharing",
           isCorrect: false
         },
         { 
           id: "share", 
           text: "Yes, let everyone take turns", 
           emoji: "🤝", 
-          description: "Share fairly",
           isCorrect: true
         }
       ]
@@ -58,21 +56,18 @@ const PlaygroundSharingStory = () => {
           id: "take", 
           text: "Take all the swings", 
           emoji: "🙃", 
-          description: "Hog the swings",
           isCorrect: false
         },
         { 
           id: "share", 
           text: "Share with others patiently", 
           emoji: "👍", 
-          description: "Wait your turn",
           isCorrect: true
         },
         { 
           id: "long", 
           text: "Swing for a very long time", 
           emoji: "⏰", 
-          description: "Don't give others a turn",
           isCorrect: false
         }
       ]
@@ -85,21 +80,18 @@ const PlaygroundSharingStory = () => {
           id: "wait", 
           text: "Wait for your turn and let others slide too", 
           emoji: "🙂", 
-          description: "Take turns fairly",
           isCorrect: true
         },
         { 
           id: "multiple", 
           text: "Go multiple times without letting others", 
           emoji: "😎", 
-          description: "Hog the slide",
           isCorrect: false
         },
         { 
           id: "push", 
           text: "Push others out of the way", 
           emoji: "😠", 
-          description: "Be aggressive",
           isCorrect: false
         }
       ]
@@ -112,21 +104,18 @@ const PlaygroundSharingStory = () => {
           id: "keep", 
           text: "Keep toys only for yourself", 
           emoji: "😡", 
-          description: "Don't share",
           isCorrect: false
         },
         { 
           id: "break", 
           text: "Break the toys so no one can play", 
           emoji: "💥", 
-          description: "Destroy them",
           isCorrect: false
         },
         { 
           id: "share", 
           text: "Share toys so everyone can play", 
           emoji: "🌟", 
-          description: "Include everyone",
           isCorrect: true
         }
       ]
@@ -139,21 +128,18 @@ const PlaygroundSharingStory = () => {
           id: "repeatedly", 
           text: "Play repeatedly without breaks", 
           emoji: "🙄", 
-          description: "Don't give others a turn",
           isCorrect: false
         },
         { 
           id: "turns", 
           text: "Take turns fairly with everyone", 
           emoji: "✌️", 
-          description: "Share fairly",
           isCorrect: true
         },
         { 
           id: "fight", 
           text: "Fight to go first", 
           emoji: "👊", 
-          description: "Be aggressive",
           isCorrect: false
         }
       ]

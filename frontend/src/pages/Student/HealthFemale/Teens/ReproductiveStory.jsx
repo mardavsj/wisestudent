@@ -115,28 +115,28 @@ const ReproductiveStory = () => {
         }
       ]
     },
+   {
+  id: 5,
+  text: "Learning about reproductive health helps you:",
+  options: [
     {
-      id: 5,
-      text: "Learning about reproductive health helps you:",
-      options: [
-        {
-          id: "a",
-          text: "Understand your body and make informed decisions",
-          emoji: "🧠",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Feel embarrassed and confused",
-          emoji: "😳",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Make better health decisions",
-          emoji: "✅",
-          isCorrect: true
-        }
+      id: "a",
+      text: "Feel scared about body changes",
+      emoji: "😟",
+      isCorrect: false
+    },
+    {
+      id: "b",
+      text: "Feel embarrassed and confused",
+      emoji: "😳",
+      isCorrect: false
+    },
+    {
+      id: "c",
+      text: "Make better health decisions",
+      emoji: "🙂",
+      isCorrect: true
+    }
       ]
     }
   ];

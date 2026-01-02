@@ -19,20 +19,20 @@ const PuzzleBusinessTerms = () => {
 
   // Terms (left side) - 5 items
   const terms = [
-    { id: 1, name: "Cost", emoji: "🛒", description: "The amount of money spent to produce goods or services" },
-    { id: 2, name: "Profit", emoji: "💰", description: "The financial gain from business activities" },
-    { id: 3, name: "Loss", emoji: "🔻", description: "When expenses exceed income in business" },
-    { id: 4, name: "Revenue", emoji: "💳", description: "Total income from sales of goods or services" },
-    { id: 5, name: "Budget", emoji: "📋", description: "A financial plan for managing income and expenses" }
+    { id: 1, name: "Cost", emoji: "🛒",  },
+    { id: 2, name: "Profit", emoji: "💰",  },
+    { id: 3, name: "Loss", emoji: "🔻",  },
+    { id: 4, name: "Revenue", emoji: "💳",  },
+    { id: 5, name: "Budget", emoji: "📋",  },
   ];
 
   // Definitions (right side) - 5 items
   const definitions = [
-    { id: 2, name: "Extra", emoji: "➕", description: "Additional amount earned beyond expenses" },
-    { id: 1, name: "Raw Material", emoji: "🥕", description: "Basic materials used to create products" },
-    { id: 4, name: "Total Income", emoji: "💵", description: "Complete earnings from all business activities" },
-    { id: 5, name: "Financial Plan", emoji: "📝", description: "Strategy for allocating money toward goals" },
-    { id: 3, name: "Overspend", emoji: "💸", description: "Spending more money than planned or earned" },
+    { id: 2, name: "Extra", emoji: "➕",  },
+    { id: 1, name: "Raw Material", emoji: "🥕",  },
+    { id: 4, name: "Total Income", emoji: "💵",  },
+    { id: 5, name: "Financial Plan", emoji: "📝",  },
+    { id: 3, name: "Overspend", emoji: "💸",  },
   ];
 
   // Correct matches

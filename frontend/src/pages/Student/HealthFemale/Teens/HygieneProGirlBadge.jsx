@@ -30,7 +30,7 @@ const HygieneProGirlBadge = () => {
           isCorrect: false
         },
         { 
-          text: "Daily or every other day", 
+          text: "Daily ", 
           emoji: "🚿", 
           isCorrect: true
         },
@@ -55,11 +55,7 @@ const HygieneProGirlBadge = () => {
       title: "Period Care",
       question: "How often should you change your pad or tampon during your period?",
       options: [
-        { 
-          text: "Every 4-6 hours or when soiled", 
-          emoji: "⏰", 
-          isCorrect: false
-        },
+        
         { 
           text: "Once a day", 
           emoji: "📅", 
@@ -68,6 +64,11 @@ const HygieneProGirlBadge = () => {
         { 
           text: "Only when it's soaked", 
           emoji: "💦", 
+          isCorrect: false
+        },
+        { 
+          text: "Every 4-6 hours or when soiled", 
+          emoji: "⏰", 
           isCorrect: true
         },
         { 
@@ -91,11 +92,7 @@ const HygieneProGirlBadge = () => {
           emoji: "🦷", 
           isCorrect: false
         },
-        { 
-          text: "Using harsh scrubbing soap", 
-          emoji: "🧽", 
-          isCorrect: false
-        },
+        
         { 
           text: "Washing face gently", 
           emoji: "😊", 
@@ -104,8 +101,13 @@ const HygieneProGirlBadge = () => {
         { 
           text: "Using deodorant", 
           emoji: "🌸", 
+          isCorrect: false
+        },
+        { 
+          text: "Using harsh scrubbing soap", 
+          emoji: "🧽", 
           isCorrect: true
-        }
+        },
       ],
       feedback: {
         correct: "Perfect! Harsh soaps can damage your skin's natural barrier and cause irritation!",
@@ -118,20 +120,22 @@ const HygieneProGirlBadge = () => {
       question: "What's the best way to care for acne-prone skin?",
       options: [
         { 
+          text: "Use gentle cleanser and avoid picking", 
+          emoji: "🫧", 
+          isCorrect: true
+        },
+        { 
           text: "Wash with hot water and scrub vigorously", 
           emoji: "🔥", 
           isCorrect: false
         },
-        { 
-          text: "Use gentle cleanser and avoid picking", 
-          emoji: "🫧", 
-          isCorrect: false
-        },
+       
         { 
           text: "Never wash your face", 
           emoji: "🚫", 
-          isCorrect: true
+          isCorrect: false
         },
+         
         { 
           text: "Apply lots of makeup to cover it", 
           emoji: "💄", 
@@ -153,10 +157,10 @@ const HygieneProGirlBadge = () => {
           emoji: "💰", 
           isCorrect: false
         },
-        { 
-          text: "Consistency in healthy habits", 
-          emoji: "🔁", 
-          isCorrect: false
+         { 
+          text: "Use gentle cleanser and avoid picking", 
+          emoji: "🫧", 
+          isCorrect: true
         },
         { 
           text: "Matching trends exactly", 
@@ -166,8 +170,13 @@ const HygieneProGirlBadge = () => {
         { 
           text: "Getting perfect skin", 
           emoji: "✨", 
+          isCorrect: false
+        },
+         { 
+          text: "Use gentle cleanser and avoid picking", 
+          emoji: "🫧", 
           isCorrect: true
-        }
+        },
       ],
       feedback: {
         correct: "Great choice! Consistent healthy habits build lasting confidence more than temporary fixes!",

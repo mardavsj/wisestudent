@@ -114,17 +114,27 @@ const ReflexHygieneAlert = () => {
   // Timer logic
   useEffect(() => {
     if (gameState !== "playing") {
-      if (timerRef.current) clearInterval(timerRef.current);
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
       return;
     }
 
-    if (timerRef.current) clearInterval(timerRef.current);
+    // Clear any existing timer
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
 
     timerRef.current = setInterval(() => {
       setTimeLeft((prev) => {
         const newTime = prev - 1;
         if (newTime <= 0) {
-          if (timerRef.current) clearInterval(timerRef.current);
+          if (timerRef.current) {
+            clearInterval(timerRef.current);
+            timerRef.current = null;
+          }
           handleTimeUp();
           return 0;
         }
@@ -133,9 +143,12 @@ const ReflexHygieneAlert = () => {
     }, 1000);
 
     return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
     };
-  }, [gameState, handleTimeUp]);
+  }, [gameState, handleTimeUp, currentRound]);
 
   const startGame = () => {
     setGameState("playing");

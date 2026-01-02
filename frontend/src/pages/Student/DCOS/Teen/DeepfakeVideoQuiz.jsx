@@ -44,14 +44,14 @@ const DeepfakeVideoQuiz = () => {
           id: "b", 
           text: "Check for signs of deepfake and verify with official sources", 
           emoji: "🔍",
-          description: "Lighting inconsistencies can be a sign of deepfake manipulation",
+          
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Share it immediately - it's breaking news!", 
           emoji: "📱",
-          description: "Never share unverified videos, especially of celebrities",
+          
           isCorrect: false
         },
        
@@ -59,7 +59,7 @@ const DeepfakeVideoQuiz = () => {
           id: "c", 
           text: "Ignore it - celebrities often do strange things",
           emoji: "🤷",
-          description: "It's important to learn how to identify deepfakes, not ignore them",
+          
           isCorrect: false
         }
       ]
@@ -72,21 +72,19 @@ const DeepfakeVideoQuiz = () => {
           id: "a", 
           text: "Send the money immediately - they need help!", 
           emoji: "💸",
-          description: "Always verify identity through another channel when asked for money",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Call your friend directly to verify if they sent this video", 
           emoji: "📞",
-          description: "Out of sync audio/video can indicate deepfake or other manipulation",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ignore it - probably spam",
           emoji: "🚫",
-          description: "While it might be spam, it's important to verify identity properly",
           isCorrect: false
         }
       ]
@@ -99,21 +97,18 @@ const DeepfakeVideoQuiz = () => {
           id: "a", 
           text: "Share it to warn others about the disaster",
           emoji: "⚠️",
-          description: "Sharing unverified disaster information can cause panic and misinformation",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Assume it's fake since it wasn't on the news",
           emoji: "🤔",
-          description: "While verification is important, don't assume all unreported videos are fake",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Check multiple reliable news sources to confirm the event",
           emoji: "📰",
-          description: "Unusual shadows and lighting could indicate video manipulation",
           isCorrect: true
         }
       ]
@@ -126,14 +121,12 @@ const DeepfakeVideoQuiz = () => {
           id: "b", 
           text: "Look for peer-reviewed research papers on the topic",
           emoji: "📚",
-          description: "Artifacts and lip-sync issues are common signs of deepfake manipulation",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Share it with your science class - it's revolutionary!",
           emoji: "📢",
-          description: "Always verify scientific claims with reputable sources before sharing",
           isCorrect: false
         },
        
@@ -141,7 +134,6 @@ const DeepfakeVideoQuiz = () => {
           id: "c", 
           text: "Assume it's real since it's about science",
           emoji: "🔬",
-          description: "Even science-related videos can be manipulated or taken out of context",
           isCorrect: false
         }
       ]
@@ -154,21 +146,18 @@ const DeepfakeVideoQuiz = () => {
           id: "a", 
           text: "Forward it to all your friends",
           emoji: "📤",
-          description: "Never forward potentially fake videos without verification",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Assume it's fake because it seems odd",
           emoji: "❓",
-          description: "Always verify with official sources rather than making assumptions",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Check your school's official website or contact them directly",
-          emoji: "✅",
-          description: "Inconsistent lighting and eye reflections are common signs of deepfakes",
+          emoji: "🔍",
           isCorrect: true
         }
       ]

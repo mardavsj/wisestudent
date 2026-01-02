@@ -25,20 +25,20 @@ const PuzzleActsOfKindness = () => {
 
   // Actions and their outcomes
   const leftItems = [
-    { id: 1, name: "Sharing", emoji: "🤲", description: "Giving to others" },
-    { id: 2, name: "Helping", emoji: "🤝", description: "Assisting those in need" },
-    { id: 3, name: "Teasing", emoji: "😈", description: "Making fun of others" },
-    { id: 4, name: "Ignoring", emoji: "🙅", description: "Not paying attention" },
-    { id: 5, name: "Complimenting", emoji: "💖", description: "Saying nice things" }
+    { id: 1, name: "Sharing", emoji: "🤲",  },
+    { id: 2, name: "Helping", emoji: "🤝",  },
+    { id: 3, name: "Teasing", emoji: "😈",  },
+    { id: 4, name: "Ignoring", emoji: "🙅",  },
+    { id: 5, name: "Complimenting", emoji: "💖",  }
   ];
 
   // Outcomes - reordered so correct matches are in different positions
   const rightItems = [
-    { id: 1, name: "Tears", emoji: "😢", description: "Causes sadness and hurt" },
-    { id: 2, name: "Smile", emoji: "😊", description: "Brings happiness to faces" },
-    { id: 3, name: "Happiness", emoji: "😄", description: "Creates joy and cheer" },
-    { id: 5, name: "Sadness", emoji: "😔", description: "Makes others feel alone" },
-    { id: 4, name: "Joy", emoji: "✨", description: "Spreads positive feelings" }
+    { id: 1, name: "Tears", emoji: "😢",  },
+    { id: 2, name: "Smile", emoji: "😊",  },
+    { id: 3, name: "Happiness", emoji: "😄",  },
+    { id: 5, name: "Sadness", emoji: "😔",  },
+    { id: 4, name: "Joy", emoji: "✨",  }
   ];
 
   // Correct matches (with reordered right items)

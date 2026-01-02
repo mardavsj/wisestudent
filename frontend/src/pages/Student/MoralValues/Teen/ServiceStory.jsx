@@ -33,21 +33,21 @@ const ServiceStory = () => {
           id: "keep", 
           text: "Keep it quietly", 
           emoji: "😏", 
-          description: "Take the money without telling anyone",
+          
           isCorrect: false
         },
         { 
           id: "return", 
           text: "Return it to the conductor immediately", 
           emoji: "🙋", 
-          description: "Give the money back to its rightful owner",
+         
           isCorrect: true
         },
         { 
           id: "leave", 
           text: "Leave it on the floor", 
           emoji: "👀", 
-          description: "Ignore it and let someone else handle it",
+          
           isCorrect: false
         }
       ]
@@ -60,21 +60,18 @@ const ServiceStory = () => {
           id: "walk", 
           text: "Just walk past silently", 
           emoji: "🚶‍♀️", 
-          description: "Continue on without offering assistance",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Offer to help her carry it", 
           emoji: "🤝", 
-          description: "Provide assistance to someone in need",
           isCorrect: true
         },
         { 
           id: "laugh", 
           text: "Laugh and walk away", 
           emoji: "😅", 
-          description: "Make light of her struggle",
           isCorrect: false
         }
       ]
@@ -87,21 +84,18 @@ const ServiceStory = () => {
           id: "leave2", 
           text: "Leave them as is", 
           emoji: "😐", 
-          description: "Ignore the mess and continue",
           isCorrect: false
         },
         { 
           id: "tell", 
           text: "Tell the librarian and walk away", 
           emoji: "👩‍🏫", 
-          description: "Report it but don't help clean up",
           isCorrect: false
         },
         { 
           id: "arrange", 
           text: "Help arrange the books properly", 
           emoji: "📖", 
-          description: "Take action to organize the books",
           isCorrect: true
         }
       ]
@@ -114,21 +108,18 @@ const ServiceStory = () => {
           id: "return2", 
           text: "Return it to the owner or nearest police", 
           emoji: "🫡", 
-          description: "Ensure it gets back to its rightful owner",
           isCorrect: true
         },
         { 
           id: "take", 
           text: "Keep the money and throw the wallet", 
           emoji: "💸", 
-          description: "Take the money and discard the wallet",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore it completely", 
           emoji: "😶", 
-          description: "Leave it and don't get involved",
           isCorrect: false
         }
       ]
@@ -141,21 +132,18 @@ const ServiceStory = () => {
           id: "complain", 
           text: "Complain to the teacher", 
           emoji: "🙄", 
-          description: "Report the spill without helping",
           isCorrect: false
         },
         { 
           id: "step", 
           text: "Step away and ignore", 
           emoji: "😬", 
-          description: "Avoid the situation entirely",
           isCorrect: false
         },
         { 
           id: "clean", 
           text: "Help clean up the mess", 
           emoji: "🧹", 
-          description: "Assist in cleaning the spill",
           isCorrect: true
         }
       ]

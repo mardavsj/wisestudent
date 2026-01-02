@@ -46,21 +46,20 @@ const RoleModelTask = () => {
           id: "a", 
           text: "Share the helpful blog post with your peers", 
           emoji: "📚",
-          description: "Sharing educational resources helps others learn and grow",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Keep it to yourself - they should figure it out", 
           emoji: " selfish",
-          description: "Keeping resources to yourself doesn't help the community",
+          
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Only share with close friends", 
           emoji: "👥",
-          description: "Limiting sharing to friends excludes others who could benefit",
           isCorrect: false
         }
       ]
@@ -74,21 +73,18 @@ const RoleModelTask = () => {
           id: "b", 
           text: "Don't share - it's not your responsibility", 
           emoji: "❓",
-          description: "Helping others with safety is a positive community behavior",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Share only if asked", 
           emoji: "🤔",
-          description: "Proactively sharing safety resources is more helpful",
           isCorrect: false
         },
          { 
           id: "a", 
           text: "Share the resource to help others stay safe", 
           emoji: "🛡️",
-          description: "Sharing safety resources helps protect others online",
           isCorrect: true
         },
       ]
@@ -102,21 +98,18 @@ const RoleModelTask = () => {
           id: "b", 
           text: "Keep your notes private", 
           emoji: "🔒",
-          description: "Keeping educational resources private doesn't help others",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Charge money for your notes", 
           emoji: "💰",
-          description: "Charging for educational help is not being a good role model",
           isCorrect: false
         },
          { 
           id: "a", 
           text: "Share your notes to help classmates succeed", 
           emoji: "📝",
-          description: "Sharing educational materials helps others learn",
           isCorrect: true
         },
       ]
@@ -129,21 +122,18 @@ const RoleModelTask = () => {
           id: "a", 
           text: "Share mental health resources to help others", 
           emoji: "💚",
-          description: "Sharing mental health resources can help those in need",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "It's personal - don't share", 
           emoji: "🤫",
-          description: "Sharing mental health resources can help others get support",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Only share if someone asks directly", 
           emoji: "❓",
-          description: "Proactively sharing mental health resources is more helpful",
           isCorrect: false
         }
       ]
@@ -157,21 +147,18 @@ const RoleModelTask = () => {
           id: "b", 
           text: "Keep your productivity secrets", 
           emoji: "🤫",
-          description: "Keeping helpful tips to yourself doesn't help others",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Share only with best friends", 
           emoji: "👥",
-          description: "Limiting sharing to friends excludes others who could benefit",
           isCorrect: false
         },
          { 
           id: "a", 
           text: "Share productivity tips to help others", 
           emoji: "⏰",
-          description: "Sharing productivity tips helps others improve their lives",
           isCorrect: true
         },
       ]

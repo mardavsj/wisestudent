@@ -35,21 +35,20 @@ const KindVsMeanQuiz = () => {
           id: "a", 
           text: "Stupid", 
           emoji: "😠", 
-          description: "Mean and hurtful word",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Friend", 
           emoji: "👫", 
-          description: "Kind and friendly word",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ugly", 
           emoji: "😞", 
-          description: "Mean and hurtful word",
           isCorrect: false
         }
       ]
@@ -62,21 +61,18 @@ const KindVsMeanQuiz = () => {
           id: "a", 
           text: "Nice", 
           emoji: "😊", 
-          description: "Kind and positive word",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Loser", 
           emoji: "😡", 
-          description: "Mean and hurtful word",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Hate", 
           emoji: "😠", 
-          description: "Mean and negative word",
           isCorrect: false
         }
       ]
@@ -90,21 +86,18 @@ const KindVsMeanQuiz = () => {
           id: "b", 
           text: "Idiot", 
           emoji: "😤", 
-          description: "Mean and hurtful word",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Dumb", 
           emoji: "😒", 
-          description: "Mean and insulting word",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Buddy", 
           emoji: "👋", 
-          description: "Friendly and kind word",
           isCorrect: true
         },
       ]
@@ -117,21 +110,18 @@ const KindVsMeanQuiz = () => {
           id: "a", 
           text: "You can do it!", 
           emoji: "💪", 
-          description: "Encouraging and supportive",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "You're useless", 
           emoji: "😠", 
-          description: "Mean and hurtful",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Go away", 
           emoji: "🚫", 
-          description: "Rude and unkind",
           isCorrect: false
         }
       ]
@@ -145,21 +135,18 @@ const KindVsMeanQuiz = () => {
           id: "b", 
           text: "Mean", 
           emoji: "😠", 
-          description: "Mean words spread negativity",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Kind", 
           emoji: "😊", 
-          description: "Kind words spread positivity",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Rude", 
           emoji: "😤", 
-          description: "Rude words are hurtful",
           isCorrect: false
         }
       ]

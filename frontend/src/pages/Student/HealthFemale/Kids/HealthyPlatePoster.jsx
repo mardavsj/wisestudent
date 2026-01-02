@@ -50,12 +50,12 @@ const HealthyPlatePoster = () => {
       ],
     },
     {
-      question: 'Which poster would best show why we eat colorful foods?',
-      choices: [
-        { text: "Poster showing colorful foods are just pretty 🎨", correct: false },
-        { text: "Poster showing all foods should be the same color 🌫️", correct: false },
-        { text: "Poster showing colorful foods are full of vitamins 💪", correct: true },
-      ],
+    question: 'Which poster would best show what makes a meal healthy?',
+    choices: [
+      { text: "Poster showing only one type of food on the plate 🍽️", correct: false },
+      { text: "Poster showing mostly junk food with little nutrition 🍟", correct: false },
+      { text: "Poster showing a balanced meal with fruits, vegetables, grains, and protein 🥦", correct: true },
+    ],
     },
   ];
 

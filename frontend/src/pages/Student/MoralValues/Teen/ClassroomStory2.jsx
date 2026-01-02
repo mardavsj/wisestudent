@@ -33,21 +33,20 @@ const ClassroomStory2 = () => {
           id: "silent", 
           text: "Stay silent", 
           emoji: "🤐", 
-          description: "Don't get involved to avoid trouble",
+          
           isCorrect: false
         },
         { 
           id: "defend", 
           text: "Defend the student", 
           emoji: "🙋", 
-          description: "Stand up for what's right and correct the mistake",
+          
           isCorrect: true
         },
         { 
           id: "wait", 
           text: "Wait to see what happens", 
           emoji: "👀", 
-          description: "Observe the situation before deciding",
           isCorrect: false
         }
       ]
@@ -60,14 +59,12 @@ const ClassroomStory2 = () => {
           id: "explain", 
           text: "Explain the truth", 
           emoji: "🗣️", 
-          description: "Speak up and clarify the misunderstanding",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore it", 
           emoji: "🙈", 
-          description: "Stay out of the situation",
           isCorrect: false
         },
         
@@ -75,7 +72,6 @@ const ClassroomStory2 = () => {
           id: "later", 
           text: "Tell them later privately", 
           emoji: "🤫", 
-          description: "Mention it privately after class",
           isCorrect: false
         }
       ]
@@ -88,7 +84,6 @@ const ClassroomStory2 = () => {
           id: "let", 
           text: "Let it be", 
           emoji: "😶", 
-          description: "Don't get involved in the argument",
           isCorrect: false
         },
         
@@ -96,14 +91,12 @@ const ClassroomStory2 = () => {
           id: "support", 
           text: "Support the punished student later", 
           emoji: "🤝", 
-          description: "Comfort them after class",
           isCorrect: false
         },
         { 
           id: "facts", 
           text: "Tell the teacher the correct facts", 
           emoji: "💬", 
-          description: "Provide accurate information to the teacher",
           isCorrect: true
         },
       ]
@@ -116,21 +109,18 @@ const ClassroomStory2 = () => {
           id: "admit", 
           text: "Admit your mistake", 
           emoji: "✋", 
-          description: "Take responsibility for what you did",
           isCorrect: true
         },
         { 
           id: "hide", 
           text: "Hide the truth", 
           emoji: "🙊", 
-          description: "Keep quiet and let them take the blame",
           isCorrect: false
         },
         { 
           id: "find", 
           text: "Try to find it first", 
           emoji: "🔍", 
-          description: "Search for the book before saying anything",
           isCorrect: false
         }
       ]
@@ -143,21 +133,18 @@ const ClassroomStory2 = () => {
           id: "let2", 
           text: "Let it go", 
           emoji: "😔", 
-          description: "Don't make a fuss about it",
           isCorrect: false
         },
         { 
           id: "clarify", 
           text: "Politely clarify your effort", 
           emoji: "🙋‍♂️", 
-          description: "Calmly explain your contribution",
           isCorrect: true
         },
         { 
           id: "angry", 
           text: "Get angry and confront them", 
           emoji: "😠", 
-          description: "Confront your friend angrily",
           isCorrect: false
         }
       ]

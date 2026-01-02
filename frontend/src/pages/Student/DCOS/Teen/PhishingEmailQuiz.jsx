@@ -44,14 +44,13 @@ const PhishingEmailQuiz = () => {
           id: "b", 
           text: "No - it's a phishing scam", 
           emoji: "🚫",
-          description: "Emails promising lottery wins are phishing scams designed to steal your information",
+          
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Yes - click the link", 
           emoji: "🖱️",
-          description: "Lottery win emails are common phishing scams - never click the link",
           isCorrect: false
         },
         
@@ -59,7 +58,6 @@ const PhishingEmailQuiz = () => {
           id: "c", 
           text: "Maybe - check first", 
           emoji: "🤔",
-          description: "Lottery win emails are always scams - don't click or check anything",
           isCorrect: false
         }
       ]
@@ -71,8 +69,7 @@ const PhishingEmailQuiz = () => {
         { 
           id: "a", 
           text: "Yes - click to verify", 
-          emoji: "✅",
-          description: "Account verification emails can be phishing scams - go to official site directly",
+          emoji: "🔗",
           isCorrect: false
         },
        
@@ -80,14 +77,12 @@ const PhishingEmailQuiz = () => {
           id: "c", 
           text: "Check the sender first", 
           emoji: "📧",
-          description: "Even if sender looks legitimate, go to official site directly to be safe",
           isCorrect: false
         },
          { 
           id: "b", 
           text: "No - it's phishing, go to official site", 
-          emoji: "❌",
-          description: "Never click links in verification emails - go to the official website directly",
+          emoji: "🌐",
           isCorrect: true
         },
       ]
@@ -99,22 +94,19 @@ const PhishingEmailQuiz = () => {
         { 
           id: "a", 
           text: "Yes - provide the info", 
-          emoji: "個人資訊",
-          description: "Never provide personal information to unsolicited prize emails",
+          emoji: "🔒",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - it's a phishing scam", 
           emoji: "⚠️",
-          description: "Emails asking for personal information to claim prizes are phishing scams",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ask for more details", 
           emoji: "❓",
-          description: "Don't engage with suspicious prize emails - delete them",
           isCorrect: false
         }
       ]
@@ -127,14 +119,12 @@ const PhishingEmailQuiz = () => {
           id: "b", 
           text: "No - go to official website directly", 
           emoji: "🌐",
-          description: "Never click links in password update emails - go to official website directly",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Yes - click and update", 
           emoji: "🔐",
-          description: "Urgent password update emails are often phishing scams",
           isCorrect: false
         },
        
@@ -142,7 +132,6 @@ const PhishingEmailQuiz = () => {
           id: "c", 
           text: "Check the email address first", 
           emoji: "📧",
-          description: "Even if email looks legitimate, go to official site directly to be safe",
           isCorrect: false
         }
       ]
@@ -155,7 +144,6 @@ const PhishingEmailQuiz = () => {
           id: "a", 
           text: "Yes - click for free gift", 
           emoji: "🎁",
-          description: "Free gift card offers in emails are phishing scams",
           isCorrect: false
         },
        
@@ -163,14 +151,12 @@ const PhishingEmailQuiz = () => {
           id: "c", 
           text: "Forward to friends first", 
           emoji: "📤",
-          description: "Never forward suspicious emails - delete them immediately",
           isCorrect: false
         },
          { 
           id: "b", 
           text: "No - it's a phishing scam", 
           emoji: "🚫",
-          description: "Emails offering free gift cards are phishing scams designed to steal your information",
           isCorrect: true
         },
       ]

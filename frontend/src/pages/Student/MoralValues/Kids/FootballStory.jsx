@@ -31,21 +31,21 @@ const FootballStory = () => {
           id: "yes", 
           text: "Yes, it's fine", 
           emoji: "🙃", 
-          description: "Keep it to yourself",
+          
           isCorrect: false
         },
         { 
           id: "sometimes", 
           text: "Sometimes it's okay", 
           emoji: "🤷", 
-          description: "Depends on situation",
+          
           isCorrect: false
         },
         { 
           id: "no", 
           text: "No, teamwork means passing", 
           emoji: "🤝", 
-          description: "Share and cooperate",
+          
           isCorrect: true
         }
       ]
@@ -58,21 +58,18 @@ const FootballStory = () => {
           id: "ignore", 
           text: "Ignore, let them fail", 
           emoji: "🙈", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "support", 
           text: "Support and encourage them", 
           emoji: "💪", 
-          description: "Help your teammate",
           isCorrect: true
         },
         { 
           id: "criticize", 
           text: "Tell them they're not good", 
           emoji: "😠", 
-          description: "Be negative",
           isCorrect: false
         }
       ]
@@ -85,21 +82,18 @@ const FootballStory = () => {
           id: "pass", 
           text: "Yes, share the opportunity", 
           emoji: "🏃‍♂️", 
-          description: "Pass the ball",
           isCorrect: true
         },
         { 
           id: "keep", 
           text: "No, keep it for yourself", 
           emoji: "😏", 
-          description: "Don't share",
           isCorrect: false
         },
         { 
           id: "wait", 
           text: "Wait and see what happens", 
           emoji: "⏳", 
-          description: "Hesitate",
           isCorrect: false
         }
       ]
@@ -112,21 +106,18 @@ const FootballStory = () => {
           id: "giveup", 
           text: "Give up, it's hopeless", 
           emoji: "😓", 
-          description: "Stop trying",
           isCorrect: false
         },
         { 
           id: "blame", 
           text: "Blame the coach", 
           emoji: "😤", 
-          description: "Find excuses",
           isCorrect: false
         },
         { 
           id: "motivated", 
           text: "Stay motivated and try your best", 
           emoji: "🔥", 
-          description: "Keep trying",
           isCorrect: true
         }
       ]
@@ -139,21 +130,18 @@ const FootballStory = () => {
           id: "blame", 
           text: "Blame them, it's their fault", 
           emoji: "😠", 
-          description: "Be critical",
           isCorrect: false
         },
         { 
           id: "support", 
           text: "Support and help them improve", 
           emoji: "🤗", 
-          description: "Be encouraging",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore them completely", 
           emoji: "😐", 
-          description: "Don't react",
           isCorrect: false
         }
       ]

@@ -22,20 +22,20 @@ const PuzzleOfLeaders = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const leftItems = [
-    { id: 1, name: "Marie Curie", emoji: "🔬", description: "Scientist and researcher" }, // Matches with "Dedication and discovery" (rightId: 6)
-    { id: 2, name: "Abraham Lincoln", emoji: "🏛️", description: "US President" }, // Matches with "Equality and freedom" (rightId: 7)
-    { id: 3, name: "Dr. A.P.J. Abdul Kalam", emoji: "🚀", description: "Indian scientist" }, // Matches with "Vision and hard work" (rightId: 8)
-    { id: 4, name: "Nelson Mandela", emoji: "✊", description: "South African leader" }, // Matches with "Forgiveness and equality" (rightId: 9)
-    { id: 5, name: "Martin Luther King Jr.", emoji: "🕊️", description: "Civil rights leader" }, // Matches with "Peace and justice" (rightId: 10)
+    { id: 1, name: "Marie Curie", emoji: "🔬", }, // Matches with "Dedication and discovery" (rightId: 6)
+    { id: 2, name: "Abraham Lincoln", emoji: "🏛️", }, // Matches with "Equality and freedom" (rightId: 7)
+    { id: 3, name: "Dr. A.P.J. Abdul Kalam", emoji: "🚀", }, // Matches with "Vision and hard work" (rightId: 8)
+    { id: 4, name: "Nelson Mandela", emoji: "✊", }, // Matches with "Forgiveness and equality" (rightId: 9)
+    { id: 5, name: "Martin Luther King Jr.", emoji: "🕊️", }, // Matches with "Peace and justice" (rightId: 10)
   ];
 
   // Right items with correct matches in different positions: manually shuffled to avoid direct positional matching
   const rightItems = [
-    { id: 7, name: "Equality and freedom", emoji: "🗽", description: "Universal rights" }, // Abraham Lincoln's value (originally id: 2)
-    { id: 6, name: "Dedication and discovery", emoji: "🔍", description: "Scientific pursuit" }, // Marie Curie's value (originally id: 1)
-    { id: 8, name: "Peace and justice", emoji: "⚖️", description: "Fair treatment" }, // MLK's value (originally id: 5)
-    { id: 9, name: "Forgiveness and equality", emoji: "🤝", description: "Unity and justice" }, // Mandela's value (originally id: 4)
-    { id: 10, name: "Vision and hard work", emoji: "🔭", description: "Dreams and effort" }, // Kalam's value (originally id: 3)
+    { id: 7, name: "Equality and freedom", emoji: "🗽", }, // Abraham Lincoln's value (originally id: 2)
+    { id: 6, name: "Dedication and discovery", emoji: "🔍", }, // Marie Curie's value (originally id: 1)
+    { id: 8, name: "Peace and justice", emoji: "⚖️", }, // MLK's value (originally id: 5)
+    { id: 9, name: "Forgiveness and equality", emoji: "🤝", }, // Mandela's value (originally id: 4)
+    { id: 10, name: "Vision and hard work", emoji: "🔭", }, // Kalam's value (originally id: 3)
   ];
 
   const correctMatches = [

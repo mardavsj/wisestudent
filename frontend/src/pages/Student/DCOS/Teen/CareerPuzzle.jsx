@@ -55,20 +55,20 @@ const CareerPuzzle = () => {
 
   // Careers
   const leftItems = [
-    { id: 1, name: "Engineer", emoji: "👨‍💻", description: "Builds software and systems" },
-    { id: 2, name: "Artist", emoji: "🎨", description: "Creates visual designs" },
-    { id: 3, name: "Data Scientist", emoji: "📊", description: "Analyzes data patterns" },
-    { id: 4, name: "Content Creator", emoji: "📹", description: "Makes videos and media" },
-    { id: 5, name: "Cybersecurity Expert", emoji: "🔒", description: "Protects digital systems" }
+    { id: 1, name: "Engineer", emoji: "👨‍💻",  },
+    { id: 2, name: "Artist", emoji: "🎨",  },
+    { id: 3, name: "Data Scientist", emoji: "📊",  },
+    { id: 4, name: "Content Creator", emoji: "📹",  },
+    { id: 5, name: "Cybersecurity Expert", emoji: "🔒",  }
   ];
 
   // Skills - shuffled order to make it harder
   const rightItems = [
-    { id: 1, name: "Digital Design", emoji: "🎨", description: "Creating visual content" },
-    { id: 5, name: "Security Protection", emoji: "🛡️", description: "Defending against threats" },
-    { id: 3, name: "Data Analysis", emoji: "📊", description: "Examining data patterns" },
-    { id: 2, name: "Coding", emoji: "💻", description: "Writing computer programs" },
-    { id: 4, name: "Video Production", emoji: "🎬", description: "Creating video content" },
+    { id: 1, name: "Digital Design", emoji: "🎨",  },
+    { id: 5, name: "Security Protection", emoji: "🛡️",  },
+    { id: 3, name: "Data Analysis", emoji: "📊",  },
+    { id: 2, name: "Coding", emoji: "💻",  },
+    { id: 4, name: "Video Production", emoji: "🎬",  },
   ];
 
   // Correct matches

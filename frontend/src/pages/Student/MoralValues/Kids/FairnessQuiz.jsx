@@ -30,21 +30,19 @@ const FairnessQuiz = () => {
           id: "a", 
           text: "Sharing equal turns", 
           emoji: "🤝", 
-          description: "Giving everyone the same opportunity to participate",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Skipping someone's turn", 
           emoji: "🙅‍♂️", 
-          description: "Leaving someone out or treating them unfairly",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Letting favorites go first", 
           emoji: "😏", 
-          description: "Showing favoritism instead of treating everyone equally",
           isCorrect: false
         }
       ]
@@ -57,21 +55,18 @@ const FairnessQuiz = () => {
           id: "a", 
           text: "Take it without asking", 
           emoji: "😠", 
-          description: "Taking something without considering others",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Take turns playing with it", 
           emoji: "😊", 
-          description: "Sharing and giving everyone equal time with the toy",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Keep it all for yourself", 
           emoji: "😈", 
-          description: "Being selfish and not sharing",
           isCorrect: false
         }
       ]
@@ -84,21 +79,18 @@ const FairnessQuiz = () => {
           id: "a", 
           text: "Yes, it's fine if they win", 
           emoji: "😏", 
-          description: "Accepting unfair advantages",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No, everyone should start together", 
           emoji: "🛑", 
-          description: "Ensuring equal rules and fair competition for all",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "It depends on who it is", 
           emoji: "🤷", 
-          description: "Applying different rules to different people",
           isCorrect: false
         }
       ]
@@ -111,21 +103,18 @@ const FairnessQuiz = () => {
           id: "a", 
           text: "Share them equally", 
           emoji: "🎁", 
-          description: "Dividing treats fairly so everyone gets the same amount",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Keep all for yourself", 
           emoji: "😈", 
-          description: "Being greedy and not sharing",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Give more to favorites", 
           emoji: "😏", 
-          description: "Showing favoritism instead of fairness",
           isCorrect: false
         }
       ]
@@ -138,21 +127,18 @@ const FairnessQuiz = () => {
           id: "a", 
           text: "Ignore them", 
           emoji: "🙄", 
-          description: "Not helping someone in need",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Eat alone without sharing", 
           emoji: "😐", 
-          description: "Keeping everything for yourself",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Share your lunch", 
           emoji: "❤️", 
-          description: "Helping others and treating everyone with kindness",
           isCorrect: true
         }
       ]

@@ -34,7 +34,7 @@ const DevicePrivacyReflex = () => {
       question: "This app asks: Allow camera access? What should you do?",
       correctAnswer: "Don't Allow",
       options: [
-        { text: "Allow", isCorrect: false, emoji: "✅" },
+        { text: "Allow", isCorrect: false, emoji: "🙂" },
         { text: "Don't Allow", isCorrect: true, emoji: "🚫" },
         { text: "Ask parent first", isCorrect: false, emoji: "👨‍👩‍👧" },
         { text: "Allow for now", isCorrect: false, emoji: "⏰" }
@@ -45,7 +45,7 @@ const DevicePrivacyReflex = () => {
       question: "This app asks: Allow microphone access? What should you do?",
       correctAnswer: "Don't Allow",
       options: [
-        { text: "Allow", isCorrect: false, emoji: "✅" },
+        { text: "Allow", isCorrect: false, emoji: "🙂" },
         { text: "Don't Allow", isCorrect: true, emoji: "🚫" },
         { text: "Ask parent first", isCorrect: false, emoji: "👨‍👩‍👧" },
         { text: "Allow for now", isCorrect: false, emoji: "⏰" }
@@ -56,7 +56,7 @@ const DevicePrivacyReflex = () => {
       question: "Game asks: Allow internet connection? What should you do?",
       correctAnswer: "Allow",
       options: [
-        { text: "Allow", isCorrect: true, emoji: "✅" },
+        { text: "Allow", isCorrect: true, emoji: "🙂" },
         { text: "Don't Allow", isCorrect: false, emoji: "🚫" },
         { text: "Ask parent first", isCorrect: false, emoji: "👨‍👩‍👧" },
         { text: "Not sure", isCorrect: false, emoji: "🤔" }
@@ -67,7 +67,7 @@ const DevicePrivacyReflex = () => {
       question: "Photo editor asks: Allow photo gallery access? What should you do?",
       correctAnswer: "Allow",
       options: [
-        { text: "Allow", isCorrect: true, emoji: "✅" },
+        { text: "Allow", isCorrect: true, emoji: "🙂" },
         { text: "Don't Allow", isCorrect: false, emoji: "🚫" },
         { text: "Ask parent first", isCorrect: false, emoji: "👨‍👩‍👧" },
         { text: "Not sure", isCorrect: false, emoji: "🤔" }
@@ -78,7 +78,7 @@ const DevicePrivacyReflex = () => {
       question: "Unknown app asks: Allow location access? What should you do?",
       correctAnswer: "Don't Allow",
       options: [
-        { text: "Allow", isCorrect: false, emoji: "✅" },
+        { text: "Allow", isCorrect: false, emoji: "🙂" },
         { text: "Don't Allow", isCorrect: true, emoji: "🚫" },
         { text: "Ask parent first", isCorrect: false, emoji: "👨‍👩‍👧" },
         { text: "Allow for now", isCorrect: false, emoji: "⏰" }

@@ -50,7 +50,7 @@ const ReflexAIResponsibility = () => {
       question: "AI is used to create fake news and spread misinformation. What should you do?",
       correctAnswer: "Avoid Harmful Use",
       options: [
-        { text: "Use It", isCorrect: false, emoji: "✅" },
+        { text: "Use It", isCorrect: false, emoji: "🙂" },
         { text: "Avoid Harmful Use", isCorrect: true, emoji: "🚫" },
         { text: "Share It", isCorrect: false, emoji: "📤" },
         { text: "Like It", isCorrect: false, emoji: "👍" }
@@ -72,7 +72,7 @@ const ReflexAIResponsibility = () => {
       question: "AI is used to create deepfake videos to harm someone. What should you do?",
       correctAnswer: "Avoid Harmful Use",
       options: [
-        { text: "Use It", isCorrect: false, emoji: "✅" },
+        { text: "Use It", isCorrect: false, emoji: "🙂" },
         { text: "Avoid Harmful Use", isCorrect: true, emoji: "🚫" },
         { text: "Share It", isCorrect: false, emoji: "📤" },
         { text: "Like It", isCorrect: false, emoji: "👍" }

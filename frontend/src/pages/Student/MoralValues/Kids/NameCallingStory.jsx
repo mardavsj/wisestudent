@@ -31,21 +31,21 @@ const NameCallingStory = () => {
           id: "shout", 
           text: "Shout back louder", 
           emoji: "😡", 
-          description: "Escalate the conflict",
+          
           isCorrect: false
         },
         { 
           id: "tell", 
           text: "Tell everyone they're mean", 
           emoji: "🗣️", 
-          description: "Spread negative words",
+          
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore and stay calm", 
           emoji: "😌", 
-          description: "Don't react negatively",
+          
           isCorrect: true
         }
       ]
@@ -58,21 +58,18 @@ const NameCallingStory = () => {
           id: "push", 
           text: "Push them", 
           emoji: "🤜", 
-          description: "Be physical",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore and keep playing happily", 
           emoji: "🙂", 
-          description: "Stay positive",
           isCorrect: true
         },
         { 
           id: "cry", 
           text: "Cry and leave the game", 
           emoji: "😢", 
-          description: "Give up",
           isCorrect: false
         }
       ]
@@ -85,21 +82,18 @@ const NameCallingStory = () => {
           id: "report", 
           text: "Ignore and report calmly", 
           emoji: "🧘", 
-          description: "Handle it maturely",
           isCorrect: true
         },
         { 
           id: "reply", 
           text: "Reply with mean words", 
           emoji: "😠", 
-          description: "Respond with anger",
           isCorrect: false
         },
         { 
           id: "attack", 
           text: "Tell your friends to attack them", 
           emoji: "👥", 
-          description: "Escalate the situation",
           isCorrect: false
         }
       ]
@@ -112,21 +106,18 @@ const NameCallingStory = () => {
           id: "stop", 
           text: "Stop talking to them", 
           emoji: "🙅", 
-          description: "End the friendship",
           isCorrect: false
         },
         { 
           id: "call", 
           text: "Call them a bad name back", 
           emoji: "😤", 
-          description: "Retaliate",
           isCorrect: false
         },
         { 
           id: "laugh", 
           text: "Laugh it off and stay friendly", 
           emoji: "😄", 
-          description: "Take it lightly",
           isCorrect: true
         }
       ]
@@ -139,21 +130,18 @@ const NameCallingStory = () => {
           id: "hit", 
           text: "Hit them next time", 
           emoji: "👊", 
-          description: "Use violence",
           isCorrect: false
         },
         { 
           id: "tell", 
           text: "Ignore and tell an adult or teacher", 
           emoji: "👩‍🏫", 
-          description: "Get help from adults",
           isCorrect: true
         },
         { 
           id: "call", 
           text: "Start calling them names too", 
           emoji: "😏", 
-          description: "Retaliate with words",
           isCorrect: false
         }
       ]

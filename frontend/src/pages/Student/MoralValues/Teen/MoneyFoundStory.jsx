@@ -33,21 +33,19 @@ const MoneyFoundStory = () => {
           id: "pick", 
           text: "Pick it and keep it secretly", 
           emoji: "😏", 
-          description: "Take the money without telling anyone",
+          
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore it and walk away", 
           emoji: "🚶", 
-          description: "Continue on without picking it up",
           isCorrect: false
         },
         { 
           id: "teacher", 
           text: "Give it to your teacher", 
           emoji: "👩‍🏫", 
-          description: "Turn it in to your teacher",
           isCorrect: true
         }
       ]
@@ -60,21 +58,18 @@ const MoneyFoundStory = () => {
           id: "throw", 
           text: "Take the money and throw wallet", 
           emoji: "💰", 
-          description: "Keep the money and discard the wallet",
           isCorrect: false
         },
         { 
           id: "hide", 
           text: "Hide it under a bench", 
           emoji: "🪑", 
-          description: "Conceal it for later",
           isCorrect: false
         },
         { 
           id: "give", 
           text: "Give wallet to your class teacher", 
           emoji: "🙋‍♀️", 
-          description: "Return the wallet to your teacher",
           isCorrect: true
         }
       ]
@@ -87,21 +82,18 @@ const MoneyFoundStory = () => {
           id: "keep", 
           text: "Keep it for yourself", 
           emoji: "😈", 
-          description: "Take the coin without telling your friend",
           isCorrect: false
         },
         { 
           id: "ignore2", 
           text: "Ignore it", 
           emoji: "😶", 
-          description: "Don't pick it up or mention it",
           isCorrect: false
         },
         { 
           id: "return", 
           text: "Pick and return it immediately", 
           emoji: "🤝", 
-          description: "Give it back to your friend right away",
           isCorrect: true
         }
       ]
@@ -114,21 +106,18 @@ const MoneyFoundStory = () => {
           id: "office", 
           text: "Give it to the principal's office", 
           emoji: "🏫", 
-          description: "Turn it in to the school office",
           isCorrect: true
         },
         { 
           id: "snacks", 
           text: "Keep it to buy snacks", 
           emoji: "🍫", 
-          description: "Use the money for yourself",
           isCorrect: false
         },
         { 
           id: "ask", 
           text: "Ask your friends who lost it", 
           emoji: "🗣️", 
-          description: "Try to find the owner yourself",
           isCorrect: false
         }
       ]
@@ -141,21 +130,18 @@ const MoneyFoundStory = () => {
           id: "lunch", 
           text: "Use it to buy your lunch", 
           emoji: "🍔", 
-          description: "Spend the money on food for yourself",
           isCorrect: false
         },
         { 
           id: "split", 
           text: "Ask your friends to split it", 
           emoji: "🤷‍♀️", 
-          description: "Share the money with friends",
           isCorrect: false
         },
         { 
           id: "manager", 
           text: "Hand it to the canteen manager", 
           emoji: "👨‍🍳", 
-          description: "Give it to the canteen manager to return",
           isCorrect: true
         }
       ]

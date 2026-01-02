@@ -33,21 +33,21 @@ const HelpingHandStory = () => {
           id: "ignore", 
           text: "Ignore and walk away", 
           emoji: "🚶‍♀️", 
-          description: "Continue on without helping",
+          
           isCorrect: false
         },
         { 
           id: "laugh", 
           text: "Laugh with others", 
           emoji: "😆", 
-          description: "Join in the laughter",
+          
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Help pick up the books", 
           emoji: "🤝", 
-          description: "Assist your classmate by picking up their books",
+          
           isCorrect: true
         }
       ]
@@ -60,21 +60,18 @@ const HelpingHandStory = () => {
           id: "help2", 
           text: "Help them clean and share your food", 
           emoji: "❤️", 
-          description: "Clean up together and offer your food",
           isCorrect: true
         },
         { 
           id: "ignore2", 
           text: "Ignore and continue eating", 
           emoji: "🍔", 
-          description: "Focus on your own lunch",
           isCorrect: false
         },
         { 
           id: "tell", 
           text: "Tell others to come and see", 
           emoji: "📢", 
-          description: "Draw attention to their accident",
           isCorrect: false
         }
       ]
@@ -87,21 +84,18 @@ const HelpingHandStory = () => {
           id: "run", 
           text: "Run ahead quickly", 
           emoji: "🏃", 
-          description: "Hurry past without helping",
           isCorrect: false
         },
         { 
           id: "watch", 
           text: "Watch silently", 
           emoji: "👀", 
-          description: "Observe without offering help",
           isCorrect: false
         },
         { 
           id: "offer", 
           text: "Offer to help carry the bag", 
           emoji: "💪", 
-          description: "Provide assistance with the heavy bag",
           isCorrect: true
         }
       ]
@@ -114,21 +108,18 @@ const HelpingHandStory = () => {
           id: "invite", 
           text: "Invite them to sit with you", 
           emoji: "😊", 
-          description: "Include them in your lunch group",
           isCorrect: true
         },
         { 
           id: "ignore3", 
           text: "Ignore and sit with your group", 
           emoji: "🙈", 
-          description: "Continue with your usual friends",
           isCorrect: false
         },
         { 
           id: "whisper", 
           text: "Whisper about them", 
           emoji: "😬", 
-          description: "Talk about them without including them",
           isCorrect: false
         }
       ]
@@ -141,21 +132,18 @@ const HelpingHandStory = () => {
           id: "leave", 
           text: "Leave immediately", 
           emoji: "🚪", 
-          description: "Exit without helping clean",
           isCorrect: false
         },
         { 
           id: "blame", 
           text: "Blame someone else", 
           emoji: "😒", 
-          description: "Point fingers instead of helping",
           isCorrect: false
         },
         { 
           id: "clean", 
           text: "Help clean even if it's not your mess", 
           emoji: "🧽", 
-          description: "Assist in cleaning the shared space",
           isCorrect: true
         }
       ]

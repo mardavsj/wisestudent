@@ -36,21 +36,19 @@ const DiversityQuiz = () => {
           id: "a", 
           text: "Defend them publicly and report the harassment", 
           emoji: "🛡️", 
-          description: "Publicly defending your friend and reporting harassment shows support and helps stop discrimination",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Ignore it - it's their problem", 
           emoji: "😐", 
-          description: "Ignoring discrimination allows it to continue and hurts your friend",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Tell them privately to ignore it", 
           emoji: "💬", 
-          description: "Private support is good, but public defense and reporting are more effective",
           isCorrect: false
         }
       ]
@@ -63,21 +61,18 @@ const DiversityQuiz = () => {
           id: "a", 
           text: "Stay out of it", 
           emoji: "😐", 
-          description: "Staying silent allows discrimination to continue and harm others",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Stand up and report the discrimination", 
           emoji: "🛡️", 
-          description: "Standing up against discrimination and reporting it helps protect others and creates a safer online space",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Just watch", 
           emoji: "👀", 
-          description: "Watching without acting allows discrimination to continue",
           isCorrect: false
         }
       ]
@@ -90,21 +85,18 @@ const DiversityQuiz = () => {
           id: "a", 
           text: "Ignore it", 
           emoji: "😑", 
-          description: "Ignoring bullying allows it to continue and causes harm",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Tell them to change", 
           emoji: "😞", 
-          description: "No one should have to change their cultural background - the bullying should stop",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Defend them and report the bullying", 
           emoji: "🛡️", 
-          description: "Defending your classmate and reporting bullying helps stop the harm and protects them",
           isCorrect: true
         }
       ]
@@ -117,21 +109,18 @@ const DiversityQuiz = () => {
           id: "a", 
           text: "Include them and stand against exclusion", 
           emoji: "🛡️", 
-          description: "Including them and standing against exclusion promotes diversity and creates an inclusive environment",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Let it happen", 
           emoji: "😐", 
-          description: "Allowing exclusion creates a harmful environment",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Stay neutral", 
           emoji: "😶", 
-          description: "Neutrality in the face of exclusion allows harm to continue",
           isCorrect: false
         }
       ]
@@ -144,21 +133,18 @@ const DiversityQuiz = () => {
           id: "a", 
           text: "Don't get involved", 
           emoji: "😐", 
-          description: "Not getting involved leaves your friend vulnerable to harassment",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Support them publicly and report harassment", 
           emoji: "🛡️", 
-          description: "Public support and reporting harassment helps protect your friend and shows others that discrimination is unacceptable",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Advise them to hide it", 
           emoji: "😔", 
-          description: "No one should have to hide their identity - the harassment should be stopped",
           isCorrect: false
         }
       ]

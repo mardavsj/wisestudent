@@ -32,21 +32,20 @@ const RespectEldersStory = () => {
           id: "ignore", 
           text: "Keep playing and ignore him", 
           emoji: "🎮", 
-          description: "Continue your activity",
+          
           isCorrect: false
         },
          { 
           id: "help", 
           text: "Help grandpa right away", 
           emoji: "💪", 
-          description: "Be helpful immediately",
+          
           isCorrect: true
         },
         { 
           id: "later", 
           text: "Say you'll help later", 
           emoji: "⏰", 
-          description: "Delay helping",
           isCorrect: false
         }
       ]
@@ -59,21 +58,18 @@ const RespectEldersStory = () => {
           id: "answer", 
           text: "Answer and ask how you can help", 
           emoji: "📞", 
-          description: "Respond and offer help",
           isCorrect: true
         },
         { 
           id: "pretend", 
           text: "Pretend you didn't hear", 
           emoji: "🙉", 
-          description: "Ignore the call",
           isCorrect: false
         },
         { 
           id: "busy", 
           text: "Say you're busy and continue watching", 
           emoji: "📺", 
-          description: "Prioritize TV",
           isCorrect: false
         }
       ]
@@ -87,21 +83,18 @@ const RespectEldersStory = () => {
           id: "wave", 
           text: "Just wave from far", 
           emoji: "👋", 
-          description: "Greet from distance",
           isCorrect: false
         },
         { 
           id: "wait", 
           text: "Wait till she finishes", 
           emoji: "⏳", 
-          description: "Do nothing",
           isCorrect: false
         },
          { 
           id: "offer", 
           text: "Offer to carry her bags and walk with her", 
           emoji: "👜", 
-          description: "Help her safely",
           isCorrect: true
         },
       ]
@@ -114,21 +107,18 @@ const RespectEldersStory = () => {
           id: "listen", 
           text: "Listen to grandpa first", 
           emoji: "👂", 
-          description: "Give him your attention",
           isCorrect: true
         },
         { 
           id: "phone", 
           text: "Answer your phone", 
           emoji: "📱", 
-          description: "Take the call",
           isCorrect: false
         },
         { 
           id: "walk", 
           text: "Walk away quietly", 
           emoji: "🚶", 
-          description: "Leave the situation",
           isCorrect: false
         }
       ]
@@ -142,21 +132,18 @@ const RespectEldersStory = () => {
           id: "ignore", 
           text: "Ignore them and continue being rude", 
           emoji: "😠", 
-          description: "Dismiss the advice",
           isCorrect: false
         },
          { 
           id: "thank", 
           text: "Say thank you and follow their advice", 
           emoji: "🙏", 
-          description: "Accept the guidance",
           isCorrect: true
         },
         { 
           id: "complain", 
           text: "Complain they're old-fashioned", 
           emoji: "😒", 
-          description: "Criticize them",
           isCorrect: false
         }
       ]

@@ -34,13 +34,13 @@ const SpotTheTruthQuiz = () => {
         { 
           id: "a", 
           text: "Real", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Fake", 
-          emoji: "❌", 
+          emoji: "🙃", 
           isCorrect: true
         },
         { 
@@ -58,13 +58,13 @@ const SpotTheTruthQuiz = () => {
         { 
           id: "a", 
           text: "Real", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Fake", 
-          emoji: "❌", 
+          emoji: "🙃", 
           isCorrect: false
         },
         { 
@@ -83,7 +83,7 @@ const SpotTheTruthQuiz = () => {
         { 
           id: "b", 
           text: "Real", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         },
         { 
@@ -95,7 +95,7 @@ const SpotTheTruthQuiz = () => {
         { 
           id: "a", 
           text: "Fake", 
-          emoji: "❌", 
+          emoji: "🙃", 
           isCorrect: true
         },
       ]
@@ -107,13 +107,13 @@ const SpotTheTruthQuiz = () => {
         { 
           id: "a", 
           text: "Real", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Fake", 
-          emoji: "❌", 
+          emoji: "🙃", 
           isCorrect: false
         },
         { 
@@ -132,13 +132,13 @@ const SpotTheTruthQuiz = () => {
         { 
           id: "b", 
           text: "Real", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Fake", 
-          emoji: "❌", 
+          emoji: " 🙃", 
           isCorrect: true
         },
         { 

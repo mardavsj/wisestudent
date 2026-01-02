@@ -34,8 +34,8 @@ const ReflexShareSafe = () => {
       question: "Helping animals is cool! 🐾 ❤️ - Should you share this?",
       correctAnswer: "Yes, Share",
       options: [
-        { text: "Yes, Share", isCorrect: true, emoji: "✅" },
         { text: "No, Skip", isCorrect: false, emoji: "🚫" },
+        { text: "Yes, Share", isCorrect: true, emoji: "👍" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -45,8 +45,8 @@ const ReflexShareSafe = () => {
       question: "This rumor about my classmate… 🤐 ⚠️ - Should you share this?",
       correctAnswer: "No, Skip",
       options: [
-        { text: "Yes, Share", isCorrect: false, emoji: "✅" },
         { text: "No, Skip", isCorrect: true, emoji: "🚫" },
+        { text: "Yes, Share", isCorrect: false, emoji: "👍" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -56,10 +56,10 @@ const ReflexShareSafe = () => {
       question: "Happy Friendship Day everyone! 🤝 🎉 - Should you share this?",
       correctAnswer: "Yes, Share",
       options: [
-        { text: "Yes, Share", isCorrect: true, emoji: "✅" },
         { text: "No, Skip", isCorrect: false, emoji: "🚫" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
-        { text: "Maybe", isCorrect: false, emoji: "😐" }
+        { text: "Maybe", isCorrect: false, emoji: "😐" },
+        { text: "Yes, Share", isCorrect: true, emoji: "👍" },
       ]
     },
     {
@@ -67,9 +67,9 @@ const ReflexShareSafe = () => {
       question: "Look at this embarrassing photo 😬 🚫 - Should you share this?",
       correctAnswer: "No, Skip",
       options: [
-        { text: "Yes, Share", isCorrect: false, emoji: "✅" },
-        { text: "No, Skip", isCorrect: true, emoji: "🚫" },
+        { text: "Yes, Share", isCorrect: false, emoji: "👍" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
+        { text: "No, Skip", isCorrect: true, emoji: "🚫" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
     },
@@ -78,7 +78,7 @@ const ReflexShareSafe = () => {
       question: "Let's clean our park together 🌳 🌟 - Should you share this?",
       correctAnswer: "Yes, Share",
       options: [
-        { text: "Yes, Share", isCorrect: true, emoji: "✅" },
+        { text: "Yes, Share", isCorrect: true, emoji: "👍" },
         { text: "No, Skip", isCorrect: false, emoji: "🚫" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }

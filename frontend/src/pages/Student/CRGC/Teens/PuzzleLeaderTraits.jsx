@@ -19,20 +19,20 @@ const PuzzleLeaderTraits = () => {
 
   // Leadership Traits (left side) - 5 items
   const traits = [
-    { id: 1, name: "Honesty", emoji: "🤝", description: "Being truthful and transparent" },
-    { id: 2, name: "Courage", emoji: "🦁", description: "Bravery to face challenges" },
-    { id: 3, name: "Respect", emoji: "🙌", description: "Valuing others' opinions and dignity" },
-    { id: 4, name: "Communication", emoji: "🗣️", description: "Effectively sharing ideas and listening" },
-    { id: 5, name: "Empathy", emoji: "❤️", description: "Understanding others' feelings" }
+    { id: 1, name: "Honesty", emoji: "🤝",  },
+    { id: 2, name: "Courage", emoji: "🦁",  },
+    { id: 3, name: "Respect", emoji: "🙌",  },
+    { id: 4, name: "Communication", emoji: "🗣️",  },
+    { id: 5, name: "Empathy", emoji: "❤️",  }
   ];
 
   // Outcomes (right side) - 5 items
   const outcomes = [
-    { id: 2, name: "Inspire", emoji: "⭐", description: "Motivate others to act" },
-    { id: 5, name: "Connection", emoji: "🔗", description: "Strong interpersonal bonds" },
-    { id: 1, name: "Trust", emoji: "🔒", description: "Confidence in reliability" },
-    { id: 3, name: "Loyalty", emoji: "⚓", description: "Faithful commitment to leaders" },
-    { id: 4, name: "Clarity", emoji: "🔍", description: "Clear understanding of goals" },
+    { id: 2, name: "Inspire", emoji: "⭐",  },
+    { id: 5, name: "Connection", emoji: "🔗",  },
+    { id: 1, name: "Trust", emoji: "🔒",  },
+    { id: 3, name: "Loyalty", emoji: "⚓",  },
+    { id: 4, name: "Clarity", emoji: "🔍",  },
   ];
 
   // Correct matches

@@ -62,20 +62,21 @@ const BadgeHygieneProGirl = () => {
       question: "How often should you change your toothbrush?",
       options: [
         { 
+          text: "When bristles look worn", 
+          emoji: "🔍", 
+          isCorrect: true
+        },
+        { 
           text: "Every 3-4 months", 
           emoji: "⏱️", 
-          isCorrect: true
+          isCorrect: false
         },
         { 
           text: "Once a year", 
           emoji: "📅", 
           isCorrect: false
         },
-        { 
-          text: "When bristles look worn", 
-          emoji: "🔍", 
-          isCorrect: false
-        },
+        
         { 
           text: "Every month", 
           emoji: "🔁", 

@@ -32,21 +32,19 @@ const PlaygroundRespectStory = () => {
           id: "sayno", 
           text: "Say no - they're too small", 
           emoji: "🙅", 
-          description: "Exclude them",
+          
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore them and keep playing", 
           emoji: "😐", 
-          description: "Don't respond",
           isCorrect: false
         },
          { 
           id: "allow", 
           text: "Allow them to join and play together", 
           emoji: "🤗", 
-          description: "Be inclusive",
           isCorrect: true
         },
       ]
@@ -59,21 +57,18 @@ const PlaygroundRespectStory = () => {
           id: "turn", 
           text: "Let them have a turn", 
           emoji: "😊", 
-          description: "Share the swing",
           isCorrect: true
         },
         { 
           id: "keep", 
           text: "Keep swinging, I got here first", 
           emoji: "😤", 
-          description: "Don't share",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore them and swing higher", 
           emoji: "🙈", 
-          description: "Pretend not to see",
           isCorrect: false
         }
       ]
@@ -87,21 +82,18 @@ const PlaygroundRespectStory = () => {
           id: "laugh", 
           text: "Laugh and keep running", 
           emoji: "😂", 
-          description: "Make fun of them",
           isCorrect: false
         },
         { 
           id: "tell", 
           text: "Tell others to look", 
           emoji: "📣", 
-          description: "Draw attention",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Help them get up and ask if they're okay", 
           emoji: "🤝", 
-          description: "Show care and concern",
           isCorrect: true
         },
       ]
@@ -115,21 +107,18 @@ const PlaygroundRespectStory = () => {
           id: "ignore", 
           text: "Ignore them since they're new", 
           emoji: "😐", 
-          description: "Don't interact",
           isCorrect: false
         },
         { 
           id: "include", 
           text: "Smile, introduce yourself, and include them", 
           emoji: "😄", 
-          description: "Make them welcome",
           isCorrect: true
         },
         { 
           id: "old", 
           text: "Only talk to your old friends", 
           emoji: "🙄", 
-          description: "Stay with friends",
           isCorrect: false
         }
       ]
@@ -142,21 +131,18 @@ const PlaygroundRespectStory = () => {
           id: "pick", 
           text: "Pick it up and keep the area clean", 
           emoji: "🌿", 
-          description: "Take responsibility",
           isCorrect: true
         },
         { 
           id: "leave", 
           text: "Leave it; not my problem", 
           emoji: "😶", 
-          description: "Ignore it",
           isCorrect: false
         },
         { 
           id: "blame", 
           text: "Blame others and walk away", 
           emoji: "🙈", 
-          description: "Shift responsibility",
           isCorrect: false
         }
       ]

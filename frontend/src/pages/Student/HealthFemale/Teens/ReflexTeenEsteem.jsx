@@ -43,8 +43,8 @@ const ReflexTeenEsteem = () => {
       id: 2,
       question: "How should you treat your own opinions?",
       options: [
-        { text: "Ignore My Thoughts", emoji: "🤫", isCorrect: false },
         { text: "Value My Opinions", emoji: "💭", isCorrect: true },
+        { text: "Ignore My Thoughts", emoji: "🤫", isCorrect: false },
         { text: "Put Myself Down", emoji: "💔", isCorrect: false },
         { text: "Let Others Walk Over Me", emoji: "🦶", isCorrect: false }
       ]
@@ -53,10 +53,10 @@ const ReflexTeenEsteem = () => {
       id: 3,
       question: "What should you do when facing challenges?",
       options: [
-        { text: "Stand Up for Myself", emoji: "✊", isCorrect: true },
         { text: "Let Others Walk Over Me", emoji: "🦶", isCorrect: false },
         { text: "Put Myself Down", emoji: "💔", isCorrect: false },
-        { text: "Ignore My Thoughts", emoji: "🤫", isCorrect: false }
+        { text: "Ignore My Thoughts", emoji: "🤫", isCorrect: false },
+        { text: "Stand Up for Myself", emoji: "✊", isCorrect: true },
       ]
     },
     {
@@ -74,8 +74,8 @@ const ReflexTeenEsteem = () => {
       question: "What's a healthy approach to self-worth?",
       options: [
         { text: "Let Others Walk Over Me", emoji: "🦶", isCorrect: false },
-        { text: "Respect Myself", emoji: "❤️", isCorrect: true },
         { text: "Put Myself Down", emoji: "💔", isCorrect: false },
+        { text: "Respect Myself", emoji: "❤️", isCorrect: true },
         { text: "Focus Only on Failures", emoji: "😞", isCorrect: false }
       ]
     }

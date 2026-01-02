@@ -34,9 +34,9 @@ const EmojiReflex = () => {
       question: "😊 means happy! - Is this true or false?",
       correctAnswer: "True",
       options: [
-        { text: "True", isCorrect: true, emoji: "✅" },
-        { text: "False", isCorrect: false, emoji: "❌" },
+        { text: "False", isCorrect: false, emoji: "👎" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
+        { text: "True", isCorrect: true, emoji: "👍" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
     },
@@ -45,8 +45,8 @@ const EmojiReflex = () => {
       question: "😢 means laughing hard! - Is this true or false?",
       correctAnswer: "False",
       options: [
-        { text: "True", isCorrect: false, emoji: "✅" },
-        { text: "False", isCorrect: true, emoji: "❌" },
+        { text: "True", isCorrect: false, emoji: "👍" },
+        { text: "False", isCorrect: true, emoji: "👎" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -56,8 +56,8 @@ const EmojiReflex = () => {
       question: "🔥 means something is cool! - Is this true or false?",
       correctAnswer: "True",
       options: [
-        { text: "True", isCorrect: true, emoji: "✅" },
-        { text: "False", isCorrect: false, emoji: "❌" },
+        { text: "True", isCorrect: true, emoji: "👍" },
+        { text: "False", isCorrect: false, emoji: "👎" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -67,10 +67,10 @@ const EmojiReflex = () => {
       question: "🐶 means a cat! - Is this true or false?",
       correctAnswer: "False",
       options: [
-        { text: "True", isCorrect: false, emoji: "✅" },
-        { text: "False", isCorrect: true, emoji: "❌" },
+        { text: "True", isCorrect: false, emoji: "👍" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
-        { text: "Maybe", isCorrect: false, emoji: "😐" }
+        { text: "Maybe", isCorrect: false, emoji: "😐" },
+        { text: "False", isCorrect: true, emoji: "👎" },
       ]
     },
     {
@@ -78,8 +78,8 @@ const EmojiReflex = () => {
       question: "🌞 means sunny day! - Is this true or false?",
       correctAnswer: "True",
       options: [
-        { text: "True", isCorrect: true, emoji: "✅" },
-        { text: "False", isCorrect: false, emoji: "❌" },
+        { text: "True", isCorrect: true, emoji: "👍" },
+        { text: "False", isCorrect: false, emoji: "👎" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]

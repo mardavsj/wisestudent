@@ -35,8 +35,8 @@ const PreventiveCareTeenBadge = () => {
           isCorrect: false
         },
         { 
-          text: "Once every 1-2 years", 
-          emoji: "📅", 
+          text: "Varies by individual", 
+          emoji: "🙂", 
           isCorrect: true
         },
         { 

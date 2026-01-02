@@ -35,7 +35,7 @@ const SimulationSchoolScenario = () => {
         },
         {
           id: "c",
-          text: "Ask the school nurse for assistance",
+          text: "Ask the school counsellor for assistance",
           emoji: "👩‍⚕️",
           isCorrect: false
         },
@@ -49,7 +49,7 @@ const SimulationSchoolScenario = () => {
     },
     {
       id: 2,
-      text: "Your friend seems uncomfortable and keeps going to the nurse. You suspect she might have period cramps. How do you help?",
+      text: "Your friend seems uncomfortable and keeps going to the counsellor. You suspect she might have period cramps. How do you help?",
       options: [
         {
           id: "a",
@@ -65,7 +65,7 @@ const SimulationSchoolScenario = () => {
         },
         {
           id: "c",
-          text: "Offer quiet support and suggest she talk to the nurse or counselor",
+          text: "Offer quiet support and suggest she talk to the counselor",
           emoji: "🤗",
           isCorrect: true
         },
@@ -139,7 +139,7 @@ const SimulationSchoolScenario = () => {
     },
     {
       id: 5,
-      text: "You need to go to the nurse for period supplies, but you're worried about being judged. What should you do?",
+      text: "You need to go to the counsellor for period supplies, but you're worried about being judged. What should you do?",
       options: [
         {
           id: "a",
@@ -161,7 +161,7 @@ const SimulationSchoolScenario = () => {
         },
         {
           id: "d",
-          text: "Remember that nurses are professionals who help with these needs regularly",
+          text: "Remember that counsellors are professionals who help with these needs regularly",
           emoji: "👩‍⚕️",
           isCorrect: true
         }

@@ -35,21 +35,19 @@ const SpotBullyQuiz = () => {
           id: "a", 
           text: "Helping a Friend", 
           emoji: "📚", 
-          description: "Helping a friend with homework",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Teasing About Clothes", 
           emoji: "😢", 
-          description: "Teasing someone about their clothes",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Sharing Lunch", 
           emoji: "🍎", 
-          description: "Sharing lunch with a classmate",
           isCorrect: false
         }
       ]
@@ -62,21 +60,18 @@ const SpotBullyQuiz = () => {
           id: "a", 
           text: "Join In", 
           emoji: "😈", 
-          description: "Join in with the bully",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Walk Away", 
           emoji: "🚶", 
-          description: "Walk away and ignore it",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Tell a Teacher", 
           emoji: "🙋", 
-          description: "Tell a teacher or trusted adult",
           isCorrect: true
         }
       ]
@@ -88,22 +83,19 @@ const SpotBullyQuiz = () => {
         { 
           id: "a", 
           text: "Yes, It Hurts Feelings", 
-          emoji: "✅", 
-          description: "Yes, it hurts people's feelings",
+          emoji: "😢", 
           isCorrect: true
         },
         { 
           id: "b", 
           text: "No, It's Just Joking", 
-          emoji: "❌", 
-          description: "No, it's just a joke",
+          emoji: "😄", 
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Only If They Get Upset", 
           emoji: "🤷", 
-          description: "Only if the person gets upset",
           isCorrect: false
         }
       ]
@@ -116,21 +108,18 @@ const SpotBullyQuiz = () => {
           id: "a", 
           text: "Playing Games Online", 
           emoji: "🎮", 
-          description: "Playing games on the internet",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Being Mean Online", 
           emoji: "😠", 
-          description: "Being mean to someone online",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Sharing Photos", 
           emoji: "📸", 
-          description: "Sharing photos with friends",
           isCorrect: false
         }
       ]
@@ -143,21 +132,18 @@ const SpotBullyQuiz = () => {
           id: "a", 
           text: "Stand Up and Be Kind", 
           emoji: "💪", 
-          description: "Stand up for others and be kind",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Laugh at Mean Jokes", 
           emoji: "😄", 
-          description: "Laugh at mean jokes",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Spread Rumors", 
           emoji: "🗣️", 
-          description: "Spread rumors about bullies",
           isCorrect: false
         }
       ]

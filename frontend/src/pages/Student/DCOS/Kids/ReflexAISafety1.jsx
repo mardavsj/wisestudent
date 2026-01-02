@@ -34,8 +34,8 @@ const ReflexAISafety1 = () => {
       question: "AI draws a cute cat 🐱 - Is this safe or unsafe?",
       correctAnswer: "Safe",
       options: [
-        { text: "Safe", isCorrect: true, emoji: "✅" },
-        { text: "Unsafe", isCorrect: false, emoji: "❌" },
+        { text: "Safe", isCorrect: true, emoji: "🛡️" },
+        { text: "Unsafe", isCorrect: false, emoji: "🤕" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -45,10 +45,10 @@ const ReflexAISafety1 = () => {
       question: "AI spreads a fake rumor 💬 - Is this safe or unsafe?",
       correctAnswer: "Unsafe",
       options: [
-        { text: "Safe", isCorrect: false, emoji: "✅" },
-        { text: "Unsafe", isCorrect: true, emoji: "❌" },
+        { text: "Safe", isCorrect: false, emoji: "🛡️" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
-        { text: "Maybe", isCorrect: false, emoji: "😐" }
+        { text: "Maybe", isCorrect: false, emoji: "😐" },
+        { text: "Unsafe", isCorrect: true, emoji: "🤕" },
       ]
     },
     {
@@ -56,9 +56,9 @@ const ReflexAISafety1 = () => {
       question: "AI helps with homework 📚 - Is this safe or unsafe?",
       correctAnswer: "Safe",
       options: [
-        { text: "Safe", isCorrect: true, emoji: "✅" },
-        { text: "Unsafe", isCorrect: false, emoji: "❌" },
+        { text: "Unsafe", isCorrect: false, emoji: "🤕" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
+        { text: "Safe", isCorrect: true, emoji: "🛡️" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
     },
@@ -67,8 +67,8 @@ const ReflexAISafety1 = () => {
       question: "AI makes a mean meme 😠 - Is this safe or unsafe?",
       correctAnswer: "Unsafe",
       options: [
-        { text: "Safe", isCorrect: false, emoji: "✅" },
-        { text: "Unsafe", isCorrect: true, emoji: "❌" },
+        { text: "Safe", isCorrect: false, emoji: "🛡️" },
+        { text: "Unsafe", isCorrect: true, emoji: "🤕" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -78,9 +78,9 @@ const ReflexAISafety1 = () => {
       question: "AI reminds you to rest 💤 - Is this safe or unsafe?",
       correctAnswer: "Safe",
       options: [
-        { text: "Safe", isCorrect: true, emoji: "✅" },
-        { text: "Unsafe", isCorrect: false, emoji: "❌" },
+        { text: "Unsafe", isCorrect: false, emoji: "🤕" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
+        { text: "Safe", isCorrect: true, emoji: "🛡️" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
     }

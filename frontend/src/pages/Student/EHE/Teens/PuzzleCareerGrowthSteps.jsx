@@ -19,20 +19,20 @@ const PuzzleCareerGrowthSteps = () => {
 
   // Career Growth Steps (left side) - 5 items
   const steps = [
-    { id: 1, name: "Courses", emoji: "📖", description: "Enrolling in educational programs and training" },
-    { id: 2, name: "Practice", emoji: "💪", description: "Repeatedly applying skills to improve proficiency" },
-    { id: 3, name: "Feedback", emoji: "🔄", description: "Receiving constructive input on performance" },
-    { id: 4, name: "Networking", emoji: "🤝", description: "Building professional relationships and connections" },
-    { id: 5, name: "Mentorship", emoji: "👨‍🏫", description: "Learning from experienced professionals" }
+    { id: 1, name: "Courses", emoji: "📖",  },
+    { id: 2, name: "Practice", emoji: "💪",  },
+    { id: 3, name: "Feedback", emoji: "🔄",  },
+    { id: 4, name: "Networking", emoji: "🤝",  },
+    { id: 5, name: "Mentorship", emoji: "👨‍🏫",  }
   ];
 
   // Outcomes (right side) - 5 items
   const outcomes = [
-    { id: 3, name: "Improvement", emoji: "📈", description: "Enhancing performance through corrections" },
-    { id: 1, name: "New Skills", emoji: "🔧", description: "Acquiring new abilities and competencies" },
-    { id: 2, name: "Expertise", emoji: "🎓", description: "Developing deep knowledge in a field" },
-    { id: 5, name: "Guidance", emoji: "🧭", description: "Direction and advice from experienced mentors" },
-    { id: 4, name: "Opportunities", emoji: "🚪", description: "Access to new roles and possibilities" },
+    { id: 3, name: "Improvement", emoji: "📈",  },
+    { id: 1, name: "New Skills", emoji: "🔧",  },
+    { id: 2, name: "Expertise", emoji: "🎓",  },
+    { id: 5, name: "Guidance", emoji: "🧭",  },
+    { id: 4, name: "Opportunities", emoji: "🚪",  },
   ];
 
   // Correct matches

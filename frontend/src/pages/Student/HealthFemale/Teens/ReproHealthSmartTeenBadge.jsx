@@ -93,7 +93,7 @@ const ReproHealthSmartTeenBadge = () => {
       question: "At what age should girls typically begin seeing a gynecologist?",
       options: [
         { 
-          text: "Between 13-15 years", 
+          text: "varies upon individual experiences ", 
           emoji: "🧑", 
           isCorrect: true
         },

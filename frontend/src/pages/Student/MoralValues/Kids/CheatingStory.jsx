@@ -31,21 +31,20 @@ const CheatingStory = () => {
           id: "join", 
           text: "Join them - everyone does it", 
           emoji: "😏", 
-          description: "Follow the crowd",
+          
           isCorrect: false
         },
         { 
           id: "sayno", 
           text: "Say no and do your own work", 
           emoji: "🛡️", 
-          description: "Stay honest and independent",
+          
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Pretend not to notice", 
           emoji: "🙈", 
-          description: "Avoid the situation",
           isCorrect: false
         }
       ]
@@ -58,21 +57,18 @@ const CheatingStory = () => {
           id: "tell", 
           text: "Tell a teacher or hand it in", 
           emoji: "🧑‍🏫", 
-          description: "Return it to authorities",
           isCorrect: true
         },
         { 
           id: "keep", 
           text: "Keep it and say nothing", 
           emoji: "💰", 
-          description: "Take it for yourself",
           isCorrect: false
         },
         { 
           id: "ask", 
           text: "Ask your friends what to do", 
           emoji: "🤔", 
-          description: "Get advice from peers",
           isCorrect: false
         }
       ]
@@ -86,21 +82,18 @@ const CheatingStory = () => {
           id: "copy", 
           text: "Let them copy quickly", 
           emoji: "📝", 
-          description: "Give them your answers",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore them", 
           emoji: "🙄", 
-          description: "Don't help at all",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Say no, but help them learn", 
           emoji: "🤝", 
-          description: "Support without cheating",
           isCorrect: true
         },
       ]
@@ -113,21 +106,18 @@ const CheatingStory = () => {
           id: "delete", 
           text: "Delete it and don't spread it", 
           emoji: "🚫", 
-          description: "Stop the rumor",
           isCorrect: true
         },
         { 
           id: "share", 
           text: "Share it to more friends", 
           emoji: "📱", 
-          description: "Spread it further",
           isCorrect: false
         },
         { 
           id: "laugh", 
           text: "Laugh and ignore", 
           emoji: "😅", 
-          description: "Find it funny",
           isCorrect: false
         }
       ]
@@ -141,21 +131,18 @@ const CheatingStory = () => {
           id: "argue", 
           text: "Argue and get angry", 
           emoji: "😠", 
-          description: "React with anger",
           isCorrect: false
         },
         { 
           id: "talk", 
           text: "Talk calmly with the teacher", 
           emoji: "🗣️", 
-          description: "Discuss it respectfully",
           isCorrect: true
         },
         { 
           id: "nothing", 
           text: "Do nothing and stay upset", 
           emoji: "😔", 
-          description: "Keep quiet",
           isCorrect: false
         }
       ]

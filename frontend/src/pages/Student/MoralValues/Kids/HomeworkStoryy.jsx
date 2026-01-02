@@ -32,21 +32,19 @@ const HomeworkStoryy = () => {
           id: "play", 
           text: "Play video games", 
           emoji: "🎮", 
-          description: "Have fun instead",
+          
           isCorrect: false
         },
          { 
           id: "finish", 
           text: "Finish your homework", 
           emoji: "📝", 
-          description: "Complete your work first",
           isCorrect: true
         },
         { 
           id: "delay", 
           text: "Do it later tonight", 
           emoji: "🌙", 
-          description: "Postpone it",
           isCorrect: false
         }
       ]
@@ -59,21 +57,18 @@ const HomeworkStoryy = () => {
           id: "complete", 
           text: "Complete your homework first", 
           emoji: "📝", 
-          description: "Finish work before play",
           isCorrect: true
         },
         { 
           id: "go", 
           text: "Go play outside", 
           emoji: "🏃‍♂️", 
-          description: "Choose fun",
           isCorrect: false
         },
         { 
           id: "copy", 
           text: "Copy from a friend later", 
           emoji: "📄", 
-          description: "Take shortcuts",
           isCorrect: false
         }
       ]
@@ -86,21 +81,18 @@ const HomeworkStoryy = () => {
           id: "now", 
           text: "Complete homework now", 
           emoji: "📝", 
-          description: "Get it done",
           isCorrect: true
         },
         { 
           id: "rest", 
           text: "Rest and delay homework", 
           emoji: "😴", 
-          description: "Take a break first",
           isCorrect: false
         },
         { 
           id: "skip", 
           text: "Skip it entirely", 
           emoji: "🙈", 
-          description: "Avoid it",
           isCorrect: false
         }
       ]
@@ -114,21 +106,18 @@ const HomeworkStoryy = () => {
           id: "procrastinate", 
           text: "Procrastinate", 
           emoji: "⏰", 
-          description: "Put it off",
           isCorrect: false
         },
         { 
           id: "half", 
           text: "Do only half of each", 
           emoji: "✂️", 
-          description: "Do partial work",
           isCorrect: false
         },
         { 
           id: "onebyone", 
           text: "Finish one by one", 
           emoji: "📝", 
-          description: "Work systematically",
           isCorrect: true
         },
       ]
@@ -142,21 +131,18 @@ const HomeworkStoryy = () => {
           id: "tv", 
           text: "Watch TV", 
           emoji: "📺", 
-          description: "Entertain yourself",
           isCorrect: false
         },
          { 
           id: "homework", 
           text: "Do homework first", 
           emoji: "📝", 
-          description: "Prioritize studies",
           isCorrect: true
         },
         { 
           id: "both", 
           text: "Watch TV while doing homework", 
           emoji: "🎬", 
-          description: "Multitask",
           isCorrect: false
         }
       ]

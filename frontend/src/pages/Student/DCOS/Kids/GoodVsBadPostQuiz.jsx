@@ -36,21 +36,19 @@ const GoodVsBadPostQuiz = () => {
           id: "a", 
           text: "Teacher is stupid. ", 
           emoji: "😡", 
-          description: "Mean posts about others",
+          
           isCorrect: false
         },
          { 
           id: "b", 
           text: "I love football! ", 
           emoji: "⚽", 
-          description: "Positive posts about hobbies are safe",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "My address is...", 
           emoji: "🏠", 
-          description: "Posts with personal information",
           isCorrect: false
         }
       ]
@@ -63,21 +61,18 @@ const GoodVsBadPostQuiz = () => {
           id: "a", 
           text: "You played really well today! ", 
           emoji: "👏", 
-          description: "Encouraging and positive comments",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "You're the worst player ever! ", 
           emoji: "😠", 
-          description: "Mean and hurtful comments",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "I don't care", 
           emoji: "😐", 
-          description: "Indifferent comments",
           isCorrect: false
         }
       ]
@@ -90,7 +85,6 @@ const GoodVsBadPostQuiz = () => {
           id: "a", 
           text: "Sharing fun team pictures ", 
           emoji: "🏆", 
-          description: "Positive team photos",
           isCorrect: false
         },
         
@@ -98,14 +92,12 @@ const GoodVsBadPostQuiz = () => {
           id: "c", 
           text: "Sharing your favorite book ", 
           emoji: "📚", 
-          description: "Sharing interests",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Posting mean comments about friends ", 
           emoji: "😢", 
-          description: "Mean posts hurt others",
           isCorrect: true
         },
       ]
@@ -118,21 +110,18 @@ const GoodVsBadPostQuiz = () => {
           id: "a", 
           text: "Congrats on your new puppy! ", 
           emoji: "🐶", 
-          description: "Kind and supportive posts",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Your puppy looks ugly. ", 
           emoji: "🙄", 
-          description: "Mean and rude posts",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "I hate puppies", 
           emoji: "😠", 
-          description: "Negative posts",
           isCorrect: false
         }
       ]
@@ -146,21 +135,18 @@ const GoodVsBadPostQuiz = () => {
           id: "b", 
           text: "Post it quickly without checking ", 
           emoji: "😬", 
-          description: "Post immediately",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Think if it's kind and safe ", 
           emoji: "😊", 
-          description: "Always think before posting",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ask strangers first", 
           emoji: "👥", 
-          description: "Get approval from strangers",
           isCorrect: false
         }
       ]

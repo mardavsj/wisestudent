@@ -35,21 +35,20 @@ const QuizOfFeelings = () => {
           id: "a", 
           text: "Comfort them", 
           emoji: "🤗", 
-          description: "Showing empathy helps others feel better",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Tease them", 
           emoji: "😈", 
-          description: "Teasing hurts others' feelings",
+          
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignore them", 
           emoji: "😐", 
-          description: "Ignoring shows lack of empathy",
           isCorrect: false
         }
       ]
@@ -62,21 +61,18 @@ const QuizOfFeelings = () => {
           id: "a", 
           text: "Make fun quietly", 
           emoji: "😏", 
-          description: "Making fun of sadness is unkind",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Sit and comfort them", 
           emoji: "💛", 
-          description: "Comforting shows you care about their feelings",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Walk away", 
           emoji: "🚶", 
-          description: "Walking away ignores their need for support",
           isCorrect: false
         }
       ]
@@ -89,21 +85,18 @@ const QuizOfFeelings = () => {
           id: "a", 
           text: "Laugh at their failure", 
           emoji: "😂", 
-          description: "Laughing at failure is hurtful",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ignore their feelings", 
           emoji: "😐", 
-          description: "Ignoring shows lack of empathy",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Cheer them up and offer help", 
           emoji: "📚", 
-          description: "Offering support shows empathy and kindness",
           isCorrect: true
         }
       ]
@@ -116,21 +109,18 @@ const QuizOfFeelings = () => {
           id: "a", 
           text: "Help them up", 
           emoji: "🤝", 
-          description: "Helping others shows empathy and care",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Point and laugh", 
           emoji: "😈", 
-          description: "Laughing at someone's fall is unkind",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Walk past", 
           emoji: "🚶", 
-          description: "Walking past ignores someone in need",
           isCorrect: false
         }
       ]
@@ -143,21 +133,18 @@ const QuizOfFeelings = () => {
           id: "a", 
           text: "Tease them about mistakes", 
           emoji: "😏", 
-          description: "Teasing increases their anxiety",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Encourage and support them", 
           emoji: "🌟", 
-          description: "Encouragement helps reduce nervousness",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ignore them", 
           emoji: "😐", 
-          description: "Ignoring doesn't help their confidence",
           isCorrect: false
         }
       ]

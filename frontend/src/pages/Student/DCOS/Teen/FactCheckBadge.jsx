@@ -35,7 +35,7 @@ const FactCheckBadge = () => {
         },
         { 
           text: "Verified a viral post before sharing", 
-          emoji: "✅", 
+          emoji: "🙂", 
           isCorrect: true
         },
         { 

@@ -30,21 +30,19 @@ const CourageQuiz = () => {
           id: "a", 
           text: "Speaking the truth", 
           emoji: "🗣️", 
-          description: "Being honest even when it's difficult",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Running away", 
           emoji: "🏃", 
-          description: "Avoiding problems instead of facing them",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Hiding from problems", 
           emoji: "🙈", 
-          description: "Not confronting challenges",
           isCorrect: false
         }
       ]
@@ -57,21 +55,18 @@ const CourageQuiz = () => {
           id: "a", 
           text: "Ignore it", 
           emoji: "🙄", 
-          description: "Looking away from problems",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Stand up and help", 
           emoji: "✊", 
-          description: "Protecting others and doing what's right",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Laugh along", 
           emoji: "😂", 
-          description: "Joining in harmful behavior",
           isCorrect: false
         }
       ]
@@ -84,21 +79,18 @@ const CourageQuiz = () => {
           id: "a", 
           text: "Blame someone else", 
           emoji: "👤", 
-          description: "Avoiding responsibility for your actions",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Stay quiet and hope nobody notices", 
           emoji: "🤫", 
-          description: "Hiding from the truth",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Admit your mistake", 
           emoji: "🙋", 
-          description: "Taking responsibility and being honest",
           isCorrect: true
         }
       ]
@@ -111,21 +103,18 @@ const CourageQuiz = () => {
           id: "a", 
           text: "Politely speak your mind", 
           emoji: "🗨️", 
-          description: "Standing up for what's right respectfully",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Stay silent", 
           emoji: "🤐", 
-          description: "Not speaking up when something is wrong",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Mock the rule and tease others", 
           emoji: "😏", 
-          description: "Being disrespectful instead of constructive",
           isCorrect: false
         }
       ]
@@ -138,21 +127,18 @@ const CourageQuiz = () => {
           id: "a", 
           text: "Cowardice", 
           emoji: "😨", 
-          description: "Being afraid and avoiding challenges",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Indifference", 
           emoji: "😐", 
-          description: "Not caring about challenges",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Courage", 
           emoji: "💪", 
-          description: "Being brave and facing challenges despite fear",
           isCorrect: true
         }
       ]

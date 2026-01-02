@@ -31,21 +31,21 @@ const LostWalletStory = () => {
           id: "keep", 
           text: "Keep the money", 
           emoji: "💰", 
-          description: "Take the money",
+          
           isCorrect: false
         },
         { 
           id: "return", 
           text: "Return the wallet to the owner", 
           emoji: "🙋‍♂️", 
-          description: "Find and return it",
+          
           isCorrect: true
         },
         { 
           id: "give", 
           text: "Give it to a friend", 
           emoji: "👥", 
-          description: "Share with friend",
+          
           isCorrect: false
         }
       ]
@@ -58,21 +58,18 @@ const LostWalletStory = () => {
           id: "ignore", 
           text: "Ignore it and leave it", 
           emoji: "🙈", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "school", 
           text: "Take it to school", 
           emoji: "🏫", 
-          description: "Bring to school",
           isCorrect: false
         },
         { 
           id: "useid", 
           text: "Use the ID to return the wallet", 
           emoji: "🙋‍♀️", 
-          description: "Find the owner",
           isCorrect: true
         }
       ]
@@ -85,21 +82,18 @@ const LostWalletStory = () => {
           id: "pick", 
           text: "Pick it up and return it", 
           emoji: "🙋", 
-          description: "Take time to help",
           isCorrect: true
         },
         { 
           id: "keep", 
           text: "Keep it for yourself", 
           emoji: "😎", 
-          description: "Take it",
           isCorrect: false
         },
         { 
           id: "leave", 
           text: "Leave it, someone else will take it", 
           emoji: "🤷", 
-          description: "Let others handle it",
           isCorrect: false
         }
       ]
@@ -112,21 +106,18 @@ const LostWalletStory = () => {
           id: "take", 
           text: "Take cash and discard wallet", 
           emoji: "😈", 
-          description: "Steal the money",
           isCorrect: false
         },
         { 
           id: "intact", 
           text: "Return the wallet intact", 
           emoji: "👐", 
-          description: "Return everything",
           isCorrect: true
         },
         { 
           id: "charity", 
           text: "Give cash to charity but keep wallet", 
           emoji: "🎁", 
-          description: "Give money away",
           isCorrect: false
         }
       ]
@@ -139,21 +130,18 @@ const LostWalletStory = () => {
           id: "keep", 
           text: "Keep it", 
           emoji: "🙃", 
-          description: "Take it",
           isCorrect: false
         },
         { 
           id: "friend", 
           text: "Ask a friend to handle it", 
           emoji: "👫", 
-          description: "Pass responsibility",
           isCorrect: false
         },
         { 
           id: "manager", 
           text: "Give it to the store manager to return", 
           emoji: "👩‍💼", 
-          description: "Let manager handle it",
           isCorrect: true
         }
       ]

@@ -31,7 +31,7 @@ const DebateStage3 = () => {
           id: "only-entertainment", 
           text: "Only for entertainment", 
           emoji: "📺", 
-          description: "Technology should only be used for fun and entertainment",
+          
           isCorrect: false
         },
        
@@ -39,14 +39,13 @@ const DebateStage3 = () => {
           id: "only-growth", 
           text: "Only for growth and learning", 
           emoji: "📚", 
-          description: "Technology should only be used for learning and growth",
+          
           isCorrect: false
         },
          { 
           id: "growth-too", 
           text: "Growth too - balance both", 
           emoji: "💹", 
-          description: "Technology should be used for both entertainment and growth",
           isCorrect: true
         },
       ]
@@ -59,21 +58,18 @@ const DebateStage3 = () => {
           id: "yes-fun", 
           text: "Yes - only for fun", 
           emoji: "🎮", 
-          description: "Technology should only be used for entertainment",
           isCorrect: false
         },
         { 
           id: "no-balance", 
           text: "No - balance fun and learning", 
           emoji: "⛔", 
-          description: "Balance entertainment with productive learning",
           isCorrect: true
         },
         { 
           id: "maybe", 
           text: "Maybe - depends on the device", 
           emoji: "🤔", 
-          description: "It depends on what device you're using",
           isCorrect: false
         }
       ]
@@ -86,14 +82,12 @@ const DebateStage3 = () => {
           id: "yes-learning", 
           text: "Yes - tech enables learning and growth", 
           emoji: "🚀", 
-          description: "Technology enables learning, skill-building, and personal growth",
           isCorrect: true
         },
         { 
           id: "no-only-fun", 
           text: "No - tech is only for fun", 
           emoji: "🎮", 
-          description: "Technology is only meant for entertainment",
           isCorrect: false
         },
        
@@ -101,7 +95,6 @@ const DebateStage3 = () => {
           id: "maybe", 
           text: "Maybe - only educational apps", 
           emoji: "📱", 
-          description: "Only educational apps help with growth",
           isCorrect: false
         }
       ]
@@ -114,21 +107,18 @@ const DebateStage3 = () => {
           id: "only-entertain", 
           text: "Only for entertainment", 
           emoji: "📺", 
-          description: "Use technology only for watching shows and playing games",
           isCorrect: false
         },
         { 
           id: "balance-both", 
           text: "Balance entertainment and productivity", 
           emoji: "⚖️", 
-          description: "Balance entertainment with productive activities like learning",
           isCorrect: true
         },
         { 
           id: "only-work", 
           text: "Only for work and learning", 
           emoji: "💼", 
-          description: "Use technology only for work and learning",
           isCorrect: false
         }
       ]
@@ -141,7 +131,6 @@ const DebateStage3 = () => {
           id: "no-only-fun", 
           text: "No - only for fun", 
           emoji: "🎮", 
-          description: "Teens should only use technology for entertainment",
           isCorrect: false
         },
         
@@ -149,14 +138,12 @@ const DebateStage3 = () => {
           id: "maybe", 
           text: "Maybe - only on weekends", 
           emoji: "📅", 
-          description: "Use for learning only on weekends",
           isCorrect: false
         },
         { 
           id: "yes-both", 
           text: "Yes - use for both fun and growth", 
           emoji: "🙂", 
-          description: "Teens should use technology for both entertainment and personal growth",
           isCorrect: true
         },
       ]

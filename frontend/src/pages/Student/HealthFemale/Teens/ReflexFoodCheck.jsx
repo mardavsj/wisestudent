@@ -29,57 +29,58 @@ const ReflexFoodCheck = () => {
   const currentRoundRef = useRef(1);
 
   const questions = [
-    {
-      id: 1,
-      question: "Which is the healthiest breakfast option?",
-      options: [
-        { text: "Pizza Every Day", emoji: "🍕", isCorrect: false },
-        { text: "Balanced Plate", emoji: "🥗", isCorrect: true },
-        { text: "Chips Only", emoji: "🍟", isCorrect: false },
-        { text: "Soda", emoji: "🥤", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      question: "What's best for a nutritious snack?",
-      options: [
-        { text: "Chips Only", emoji: "🍟", isCorrect: false },
-        { text: "Fast Food", emoji: "🍔", isCorrect: false },
-        { text: "Fresh Fruits", emoji: "🍎", isCorrect: true },
-        { text: "Soda", emoji: "🥤", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      question: "Which meal provides the most nutrients?",
-      options: [
-        { text: "Home Cooked Meal", emoji: "🍛", isCorrect: true },
-        { text: "Fast Food", emoji: "🍔", isCorrect: false },
-        { text: "Pizza Every Day", emoji: "🍕", isCorrect: false },
-        { text: "Chips Only", emoji: "🍟", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      question: "What should you drink for hydration?",
-      options: [
-        { text: "Soda", emoji: "🥤", isCorrect: false },
-        { text: "Water", emoji: "💧", isCorrect: true },
-        { text: "Chips Only", emoji: "🍟", isCorrect: false },
-        { text: "Fast Food", emoji: "🍔", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      question: "Which choice supports a healthy diet?",
-      options: [
-        { text: "Pizza Every Day", emoji: "🍕", isCorrect: false },
-        { text: "Balanced Plate", emoji: "🥗", isCorrect: true },
-        { text: "Chips Only", emoji: "🍟", isCorrect: false },
-        { text: "Soda", emoji: "🥤", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "Which is the healthiest breakfast option?",
+    options: [
+      { text: "Pizza every day", emoji: "🍕", isCorrect: false },
+      { text: "Balanced plate with fruits and grains", emoji: "🥗", isCorrect: true },
+      { text: "Chips only", emoji: "🍟", isCorrect: false },
+      { text: "Soda", emoji: "🥤", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    question: "What is best for a nutritious snack?",
+    options: [
+      { text: "Chips only", emoji: "🍟", isCorrect: false },
+      { text: "Fast food", emoji: "🍔", isCorrect: false },
+      { text: "Fresh fruits", emoji: "🍎", isCorrect: true },
+      { text: "Soda", emoji: "🥤", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    question: "Which meal provides the most nutrients?",
+    options: [
+      { text: "Home-cooked meal", emoji: "🍛", isCorrect: true },
+      { text: "Fast food", emoji: "🍔", isCorrect: false },
+      { text: "Pizza every day", emoji: "🍕", isCorrect: false },
+      { text: "Chips only", emoji: "🍟", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    question: "What should you drink to stay hydrated?",
+    options: [
+      { text: "Soda", emoji: "🥤", isCorrect: false },
+      { text: "Energy drink", emoji: "⚡", isCorrect: false },
+      { text: "Milkshake", emoji: "🥛", isCorrect: false },
+      { text: "Water", emoji: "💧", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    question: "Which food choice is healthiest when buying packaged snacks?",
+    options: [
+      { text: "Snack with high sugar and salt", emoji: "🍬", isCorrect: false },
+      { text: "Snack with natural ingredients and low sugar", emoji: "📦", isCorrect: true },
+      { text: "Colorful packet with cartoon ads", emoji: "🎨", isCorrect: false },
+      { text: "Largest packet size", emoji: "📏", isCorrect: false }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

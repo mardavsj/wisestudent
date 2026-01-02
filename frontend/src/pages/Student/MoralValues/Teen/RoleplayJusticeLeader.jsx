@@ -38,21 +38,19 @@ const RoleplayJusticeLeader = () => {
           id: "listen", 
           text: "Listen to both sides and help them divide work fairly", 
           emoji: "👂", 
-          description: "Fair mediation ensures justice for all",
+          
           isCorrect: true 
         },
         { 
           id: "ignore", 
           text: "Ignore the fight and move on", 
           emoji: "😶", 
-          description: "Ignoring conflicts doesn't solve them",
           isCorrect: false 
         },
         { 
           id: "friend", 
           text: "Take your friend's side automatically", 
           emoji: "👥", 
-          description: "Taking sides shows bias, not justice",
           isCorrect: false 
         }
       ]
@@ -66,21 +64,18 @@ const RoleplayJusticeLeader = () => {
           id: "manage", 
           text: "Tell them to manage on their own", 
           emoji: "😶", 
-          description: "This doesn't show fairness or care",
           isCorrect: false 
         },
         { 
           id: "share", 
           text: "Encourage sharing so everyone eats", 
           emoji: "🤝", 
-          description: "Sharing ensures fairness for everyone",
           isCorrect: true 
         },
         { 
           id: "friends", 
           text: "Give food only to your close friends", 
           emoji: "👥", 
-          description: "Favoritism is unfair",
           isCorrect: false 
         }
       ]
@@ -94,21 +89,18 @@ const RoleplayJusticeLeader = () => {
           id: "ignore", 
           text: "Ignore it because they're your friend", 
           emoji: "😶", 
-          description: "Ignoring rules for friends is unfair",
           isCorrect: false 
         },
         { 
           id: "same", 
           text: "Apply the same rule to everyone", 
           emoji: "⚖️", 
-          description: "Equal rules ensure fairness for all",
           isCorrect: true 
         },
         { 
           id: "scold", 
           text: "Scold others to distract attention", 
           emoji: "👆", 
-          description: "Blaming others is unjust",
           isCorrect: false 
         }
       ]
@@ -122,21 +114,18 @@ const RoleplayJusticeLeader = () => {
           id: "rotate", 
           text: "Rotate turns so everyone can share", 
           emoji: "🔄", 
-          description: "Fair rotation gives everyone equal opportunity",
           isCorrect: true 
         },
         { 
           id: "fast", 
           text: "Only pick the fast volunteers", 
           emoji: "👆", 
-          description: "This excludes quiet students",
           isCorrect: false 
         },
         { 
           id: "teacher", 
           text: "Let the teacher handle it", 
           emoji: "👩‍🏫", 
-          description: "Leaders should ensure fairness",
           isCorrect: false 
         }
       ]
@@ -150,21 +139,18 @@ const RoleplayJusticeLeader = () => {
           id: "praise", 
           text: "Take all the praise for yourself", 
           emoji: "😏", 
-          description: "Taking all credit is unfair",
           isCorrect: false 
         },
         { 
           id: "acknowledge", 
           text: "Acknowledge everyone's contribution equally", 
           emoji: "👏", 
-          description: "Equal recognition shows fairness",
           isCorrect: true 
         },
         { 
           id: "ignore", 
           text: "Ignore it—it doesn't matter", 
           emoji: "😶", 
-          description: "Ignoring contributions is unfair",
           isCorrect: false 
         }
       ]

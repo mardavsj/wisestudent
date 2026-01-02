@@ -55,20 +55,20 @@ const BankingSafetyPuzzle = () => {
 
   // Banking items
   const leftItems = [
-    { id: 1, name: "OTP", emoji: "🔢", description: "One-time password" },
-    { id: 2, name: "Bank App", emoji: "🏦", description: "Official banking application" },
-    { id: 3, name: "Fake Link", emoji: "🔗", description: "Suspicious website link" },
-    { id: 4, name: "Bank Password", emoji: "🔐", description: "Account access code" },
-    { id: 5, name: "Official Bank Website", emoji: "🏛️", description: "Verified bank website" }
+    { id: 1, name: "OTP", emoji: "🔢",  },
+    { id: 2, name: "Bank App", emoji: "🏦",  },
+    { id: 3, name: "Fake Link", emoji: "🔗",  },
+    { id: 4, name: "Bank Password", emoji: "🔐",  },
+    { id: 5, name: "Official Bank Website", emoji: "🏛️",  }
   ];
 
   // Categories - logical security classifications
   const rightItems = [
-    { id: 1, name: "Confidential", emoji: "🔒", description: "Sensitive information requiring protection" },
-    { id: 2, name: "Verified Platform", emoji: "✅", description: "Authenticated and secure service" },
-    { id: 3, name: "Security Threat", emoji: "⚠️", description: "Potential danger to financial safety" },
-    { id: 4, name: "Authentication", emoji: "🔑", description: "Verification mechanism for access" },
-    { id: 5, name: "Trusted Service", emoji: "🏦", description: "Legitimate banking channel" }
+    { id: 1, name: "Confidential", emoji: "🔒",  },
+    { id: 2, name: "Verified Platform", emoji: "✅",  },
+    { id: 3, name: "Security Threat", emoji: "⚠️",  },
+    { id: 4, name: "Authentication", emoji: "🔑",  },
+    { id: 5, name: "Trusted Service", emoji: "🏦",  }
   ];
 
   // Correct matches - logical pairings based on security functions

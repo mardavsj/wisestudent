@@ -38,21 +38,19 @@ const RoleplayRespectLeader = () => {
           id: "equal", 
           text: "Listen to everyone's ideas equally", 
           emoji: "👂", 
-          description: "Equal listening shows respect for all",
+          
           isCorrect: true 
         },
         { 
           id: "loud", 
           text: "Let loud members continue", 
           emoji: "🗣️", 
-          description: "This ignores quiet members",
           isCorrect: false 
         },
         { 
           id: "smart", 
           text: "Only listen to the smartest members", 
           emoji: "🧠", 
-          description: "This disrespects others' contributions",
           isCorrect: false 
         }
       ]
@@ -66,21 +64,18 @@ const RoleplayRespectLeader = () => {
           id: "ignore", 
           text: "Ignore their opinion", 
           emoji: "😶", 
-          description: "Ignoring shows disrespect",
           isCorrect: false 
         },
         { 
           id: "listen", 
           text: "Listen carefully and discuss calmly", 
           emoji: "🤝", 
-          description: "Respectful discussion builds understanding",
           isCorrect: true 
         },
         { 
           id: "command", 
           text: "Tell them you're the leader and they must follow", 
           emoji: "👆", 
-          description: "Commanding shows lack of respect",
           isCorrect: false 
         }
       ]
@@ -94,21 +89,18 @@ const RoleplayRespectLeader = () => {
           id: "let", 
           text: "Let them handle it since they're responsible", 
           emoji: "😶", 
-          description: "This takes advantage of them",
           isCorrect: false 
         },
         { 
           id: "appreciate", 
           text: "Appreciate them and redistribute tasks fairly", 
           emoji: "🙏", 
-          description: "Fair distribution shows respect",
           isCorrect: true 
         },
         { 
           id: "credit", 
           text: "Take credit for the team's success", 
           emoji: "😏", 
-          description: "Taking credit is disrespectful",
           isCorrect: false 
         }
       ]
@@ -122,21 +114,18 @@ const RoleplayRespectLeader = () => {
           id: "calm", 
           text: "Calm them, listen to both sides, and find balance", 
           emoji: "🕊️", 
-          description: "Calm mediation shows respect for all",
           isCorrect: true 
         },
         { 
           id: "argue", 
           text: "Let them argue it out", 
           emoji: "😠", 
-          description: "This doesn't resolve the conflict",
           isCorrect: false 
         },
         { 
           id: "pick", 
           text: "Pick a side quickly to end it", 
           emoji: "👆", 
-          description: "Picking sides shows bias",
           isCorrect: false 
         }
       ]
@@ -150,21 +139,18 @@ const RoleplayRespectLeader = () => {
           id: "argue", 
           text: "Argue back rudely", 
           emoji: "😠", 
-          description: "Rudeness shows lack of respect",
           isCorrect: false 
         },
         { 
           id: "calm", 
           text: "Stay calm, respond politely, and stand by your team", 
           emoji: "💪", 
-          description: "Calm respect shows strong leadership",
           isCorrect: true 
         },
         { 
           id: "giveup", 
           text: "Stop presenting and give up", 
           emoji: "😔", 
-          description: "Giving up doesn't show leadership",
           isCorrect: false 
         }
       ]

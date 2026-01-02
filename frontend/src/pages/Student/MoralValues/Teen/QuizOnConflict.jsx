@@ -35,21 +35,19 @@ const QuizOnConflict = () => {
           id: "a", 
           text: "Listen carefully to each other", 
           emoji: "👂", 
-          description: "Listening helps understand different perspectives",
+         
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Shout louder to prove your point", 
           emoji: "😡", 
-          description: "Shouting escalates conflicts",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignore and walk away", 
           emoji: "🚶", 
-          description: "Ignoring doesn't resolve conflicts",
           isCorrect: false
         }
       ]
@@ -62,21 +60,18 @@ const QuizOnConflict = () => {
           id: "a", 
           text: "Interrupt them", 
           emoji: "🗯️", 
-          description: "Interrupting prevents understanding",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Listen to understand", 
           emoji: "👂", 
-          description: "Listening helps find common ground",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Complain to the teacher", 
           emoji: "👩‍🏫", 
-          description: "Try resolving conflicts directly first",
           isCorrect: false
         }
       ]
@@ -89,21 +84,18 @@ const QuizOnConflict = () => {
           id: "a", 
           text: "Raising your voice", 
           emoji: "😤", 
-          description: "Raising your voice escalates arguments",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ignoring the person", 
           emoji: "🙄", 
-          description: "Ignoring doesn't solve problems",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Staying calm and speaking politely", 
           emoji: "🙂", 
-          description: "Calm communication prevents escalation",
           isCorrect: true
         }
       ]
@@ -116,21 +108,18 @@ const QuizOnConflict = () => {
           id: "a", 
           text: "Help them talk it out peacefully", 
           emoji: "🕊️", 
-          description: "Peaceful discussion resolves conflicts",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Take sides", 
           emoji: "⚔️", 
-          description: "Taking sides increases conflict",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Spread gossip about it", 
           emoji: "🗣️", 
-          description: "Gossip makes conflicts worse",
           isCorrect: false
         }
       ]
@@ -143,21 +132,18 @@ const QuizOnConflict = () => {
           id: "a", 
           text: "Avoiding people forever", 
           emoji: "🚷", 
-          description: "Avoidance doesn't build peace",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Saying sorry and forgiving", 
           emoji: "💖", 
-          description: "Apology and forgiveness restore peace",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ignoring feelings", 
           emoji: "😶", 
-          description: "Ignoring feelings prevents healing",
           isCorrect: false
         }
       ]

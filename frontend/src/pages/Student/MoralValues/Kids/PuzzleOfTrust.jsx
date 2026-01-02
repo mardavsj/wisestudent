@@ -25,20 +25,20 @@ const PuzzleOfTrust = () => {
 
   // Actions and their outcomes
   const leftItems = [
-    { id: 1, name: "Truth", emoji: "✨", description: "Being honest and truthful" },
-    { id: 2, name: "Lie", emoji: "🤥", description: "Not telling the truth" },
-    { id: 3, name: "Honesty", emoji: "💎", description: "Always telling truth" },
-    { id: 4, name: "Cheating", emoji: "🎭", description: "Breaking rules" },
-    { id: 5, name: "Promise", emoji: "🤝", description: "Keeping your word" }
+    { id: 1, name: "Truth", emoji: "✨",  },
+    { id: 2, name: "Lie", emoji: "🤥",  },
+    { id: 3, name: "Honesty", emoji: "💎",  },
+    { id: 4, name: "Cheating", emoji: "🎭",  },
+    { id: 5, name: "Promise", emoji: "🤝",  }
   ];
 
   // Outcomes - reordered so correct matches are in different positions
   const rightItems = [
-    { id: 1, name: "Trouble", emoji: "⚠️", description: "Problems and conflict" },
-    { id: 2, name: "Loyalty", emoji: "💖", description: "Faithful and reliable" },
-    { id: 3, name: "Trust", emoji: "🤝", description: "People believe in you" },
-    { id: 4, name: "Respect", emoji: "🙏", description: "Others admire you" },
-    { id: 5, name: "Guilt", emoji: "😔", description: "Feeling bad about actions" }
+    { id: 1, name: "Trouble", emoji: "⚠️",  },
+    { id: 2, name: "Loyalty", emoji: "💖",  },
+    { id: 3, name: "Trust", emoji: "🤝",  },
+    { id: 4, name: "Respect", emoji: "🙏",  },
+    { id: 5, name: "Guilt", emoji: "😔",  }
   ];
 
   // Correct matches (with reordered right items)

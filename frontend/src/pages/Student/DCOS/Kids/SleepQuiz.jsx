@@ -34,22 +34,22 @@ const SleepQuiz = () => {
         { 
           id: "a", 
           text: "Yes, it's fine", 
-          emoji: "✅", 
-          description: "Playing late is okay",
+          emoji: "👍", 
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No, sleep is important", 
-          emoji: "❌", 
-          description: "Sleep is essential for health",
+          emoji: "😴", 
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Maybe, depends on the game", 
           emoji: "🤔", 
-          description: "It depends on the situation",
+          
           isCorrect: false
         }
       ]
@@ -62,7 +62,7 @@ const SleepQuiz = () => {
           id: "a", 
           text: "5-6 hours", 
           emoji: "⏰", 
-          description: "5-6 hours is enough",
+          
           isCorrect: false
         },
        
@@ -70,14 +70,12 @@ const SleepQuiz = () => {
           id: "c", 
           text: "3-4 hours", 
           emoji: "⏰", 
-          description: "3-4 hours is sufficient",
           isCorrect: false
         },
          { 
           id: "b", 
           text: "9-11 hours", 
           emoji: "⏰", 
-          description: "Kids need 9-11 hours of sleep",
           isCorrect: true
         },
       ]
@@ -89,22 +87,19 @@ const SleepQuiz = () => {
         { 
           id: "a", 
           text: "No, it makes sleep harder", 
-          emoji: "❌", 
-          description: "Screens before bed disrupt sleep",
+          emoji: "😴", 
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Yes, it helps you relax", 
-          emoji: "✅", 
-          description: "Screens help you relax",
+          emoji: "😌", 
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Only on weekends", 
           emoji: "📅", 
-          description: "It's okay on weekends",
           isCorrect: false
         }
       ]
@@ -118,21 +113,18 @@ const SleepQuiz = () => {
           id: "b", 
           text: "Playing video games", 
           emoji: "🎮", 
-          description: "Games help you sleep",
           isCorrect: false
         },
          { 
           id: "a", 
           text: "Reading a book", 
           emoji: "📖", 
-          description: "Reading helps you relax and sleep",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Watching scary movies", 
           emoji: "🎬", 
-          description: "Movies help you sleep",
           isCorrect: false
         }
       ]
@@ -145,22 +137,19 @@ const SleepQuiz = () => {
         { 
           id: "b", 
           text: "Yes, sometimes it's okay", 
-          emoji: "✅", 
-          description: "Skipping sleep sometimes is fine",
+          emoji: "🤷", 
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Only on special occasions", 
           emoji: "🎊", 
-          description: "It's okay on special days",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "No, sleep is essential for health", 
-          emoji: "❌", 
-          description: "Sleep is necessary for your health",
+          emoji: "👎", 
           isCorrect: true
         },
       ]

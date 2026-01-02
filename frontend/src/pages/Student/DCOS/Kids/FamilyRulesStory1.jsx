@@ -32,21 +32,20 @@ const FamilyRulesStory1 = () => {
           id: "a", 
           text: "Hide Phone", 
           emoji: "📱", 
-          description: "Hide your phone and keep using it secretly",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Put Phone Away", 
           emoji: "😊", 
-          description: "Put your phone away and join the talk",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Complain", 
           emoji: "🙄", 
-          description: "Complain that the rule is boring",
           isCorrect: false
         }
       ]
@@ -59,21 +58,18 @@ const FamilyRulesStory1 = () => {
           id: "a", 
           text: "Play Games First", 
           emoji: "🎮", 
-          description: "Play video games first, homework later",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Finish Homework", 
-          emoji: "✅", 
-          description: "Finish homework, then play happily",
+          emoji: "📝", 
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ask Friend", 
           emoji: "🤫", 
-          description: "Ask your friend to do your homework",
           isCorrect: false
         }
       ]
@@ -86,21 +82,18 @@ const FamilyRulesStory1 = () => {
           id: "a", 
           text: "Wait for Breakfast", 
           emoji: "🍳", 
-          description: "Wait until breakfast is done",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Turn TV Secretly", 
           emoji: "🤫", 
-          description: "Turn on the TV quietly so no one knows",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignore Rule", 
           emoji: "😒", 
-          description: "Say rules don't matter in the morning",
           isCorrect: false
         }
       ]
@@ -113,21 +106,18 @@ const FamilyRulesStory1 = () => {
           id: "a", 
           text: "Go Outside First", 
           emoji: "🏃", 
-          description: "Do it later and go outside first",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Clean First", 
           emoji: "🌟", 
-          description: "Clean it up quickly, then go play",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Complain", 
           emoji: "😠", 
-          description: "Complain and argue about chores",
           isCorrect: false
         }
       ]
@@ -140,21 +130,18 @@ const FamilyRulesStory1 = () => {
           id: "a", 
           text: "Turn Off Lights", 
           emoji: "😴", 
-          description: "Turn off the lights and sleep",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Keep Reading", 
           emoji: "📖", 
-          description: "Keep reading secretly",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Argue", 
           emoji: "😤", 
-          description: "Argue about staying up late",
           isCorrect: false
         }
       ]

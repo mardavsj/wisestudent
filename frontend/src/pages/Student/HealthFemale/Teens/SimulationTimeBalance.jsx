@@ -60,10 +60,16 @@ const SimulationTimeBalance = () => {
           isCorrect: false
         },
          {
+          id: "c",
+          text: "Invite friend to study together before the party",
+          emoji: "👥",
+          isCorrect: true
+        },
+         {
           id: "d",
           text: "Attend the party but reschedule study time for later",
           emoji: "🎉",
-          isCorrect: true
+          isCorrect: false
         },
         {
           id: "b",
@@ -71,12 +77,7 @@ const SimulationTimeBalance = () => {
           emoji: "📚",
           isCorrect: false
         },
-        {
-          id: "c",
-          text: "Invite friend to study together before the party",
-          emoji: "👥",
-          isCorrect: false
-        },
+       
        
       ]
     },
@@ -127,13 +128,13 @@ const SimulationTimeBalance = () => {
           id: "d",
           text: "Finish the current episode and go to sleep 30 minutes late",
           emoji: "📺",
-          isCorrect: true
+          isCorrect: false
         },
         {
           id: "b",
           text: "Stop the movie immediately and go to sleep",
           emoji: "😴",
-          isCorrect: false
+          isCorrect: true
         },
         {
           id: "c",
@@ -152,13 +153,13 @@ const SimulationTimeBalance = () => {
         {
           id: "a",
           text: "Accept without considering impact on other commitments",
-          emoji: "✅",
+          emoji: "🙂",
           isCorrect: false
         },
         {
           id: "b",
           text: "Decline to avoid disrupting your current schedule",
-          emoji: "❌",
+          emoji: "🙃",
           isCorrect: false
         },
         {

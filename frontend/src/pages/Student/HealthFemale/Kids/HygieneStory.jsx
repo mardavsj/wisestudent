@@ -17,7 +17,7 @@ const HygieneStory = () => {
     const totalCoins = 5;
     const totalXp = 10;
     const maxScore = 5;
-    const gameId = "health-female-kids-38";
+    const gameId = "health-female-kids-98";
 
     const questions = [
         {

@@ -31,21 +31,21 @@ const ClassroomStory1 = () => {
           id: "nothing", 
           text: "Do nothing, let others handle it", 
           emoji: "😴", 
-          description: "Avoid working",
+          
           isCorrect: false
         },
         { 
           id: "little", 
           text: "Only help a little", 
           emoji: "🤏", 
-          description: "Do minimal work",
+          
           isCorrect: false
         },
         { 
           id: "contribute", 
           text: "Contribute actively", 
           emoji: "💡", 
-          description: "Do your fair share",
+          
           isCorrect: true
         }
       ]
@@ -58,21 +58,18 @@ const ClassroomStory1 = () => {
           id: "silent", 
           text: "Stay silent", 
           emoji: "🤐", 
-          description: "Don't participate",
           isCorrect: false
         },
         { 
           id: "share", 
           text: "Share your ideas", 
           emoji: "💭", 
-          description: "Participate actively",
           isCorrect: true
         },
         { 
           id: "agree", 
           text: "Only agree with others", 
           emoji: "👍", 
-          description: "Follow the crowd",
           isCorrect: false
         }
       ]
@@ -85,21 +82,18 @@ const ClassroomStory1 = () => {
           id: "help", 
           text: "Help them", 
           emoji: "💪", 
-          description: "Support your teammate",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore", 
           emoji: "🙅", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "tell", 
           text: "Tell them to ask someone else", 
           emoji: "👉", 
-          description: "Redirect responsibility",
           isCorrect: false
         }
       ]
@@ -112,21 +106,18 @@ const ClassroomStory1 = () => {
           id: "delay", 
           text: "Delay it", 
           emoji: "🛌", 
-          description: "Postpone it",
           isCorrect: false
         },
         { 
           id: "ask", 
           text: "Ask someone else to do it", 
           emoji: "🙋", 
-          description: "Pass it to others",
           isCorrect: false
         },
         { 
           id: "finish", 
           text: "Finish it on time", 
-          emoji: "✅", 
-          description: "Meet the deadline",
+          emoji: "⏰", 
           isCorrect: true
         }
       ]
@@ -139,21 +130,18 @@ const ClassroomStory1 = () => {
           id: "quiet", 
           text: "Stay quiet", 
           emoji: "🙊", 
-          description: "Don't present",
           isCorrect: false
         },
         { 
           id: "present", 
           text: "Present your part confidently", 
           emoji: "💪", 
-          description: "Take responsibility",
           isCorrect: true
         },
         { 
           id: "nod", 
           text: "Only nod along", 
           emoji: "🙂", 
-          description: "Minimal participation",
           isCorrect: false
         }
       ]

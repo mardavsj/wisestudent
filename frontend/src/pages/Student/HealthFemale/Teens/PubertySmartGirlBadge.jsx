@@ -133,16 +133,17 @@ const PubertySmartGirlBadge = () => {
           emoji: "⚖️", 
           isCorrect: false
         },
-        { 
-          text: "Getting periods", 
-          emoji: "🩸", 
-          isCorrect: false
-        },
+       
         { 
           text: "Monthly cycle changes", 
           emoji: "📅", 
+          isCorrect: false
+        },
+         { 
+          text: "Getting periods", 
+          emoji: "🩸", 
           isCorrect: true
-        }
+        },
       ],
       feedback: {
         correct: "Right! Menstruation is a normal part of female puberty.",

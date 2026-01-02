@@ -38,21 +38,21 @@ const RoleplayGroupLeader = () => {
           id: "priorities", 
           text: "Set clear priorities and encourage collaboration", 
           emoji: "📋", 
-          description: "Clear planning and teamwork help teams succeed",
+          
           isCorrect: true 
         },
         { 
           id: "yell", 
           text: "Yell at everyone to hurry", 
           emoji: "😠", 
-          description: "Yelling creates stress and reduces productivity",
+          
           isCorrect: false 
         },
         { 
           id: "alone", 
           text: "Do all tasks yourself", 
           emoji: "😶", 
-          description: "Doing everything alone doesn't build teamwork",
+          
           isCorrect: false 
         }
       ]
@@ -66,21 +66,18 @@ const RoleplayGroupLeader = () => {
           id: "ignore", 
           text: "Ignore them and hope they improve", 
           emoji: "😶", 
-          description: "Ignoring problems doesn't solve them",
           isCorrect: false 
         },
         { 
           id: "assign", 
           text: "Assign tasks suited to their strengths and guide them", 
           emoji: "💪", 
-          description: "Matching tasks to strengths helps team members contribute",
           isCorrect: true 
         },
         { 
           id: "criticize", 
           text: "Criticize publicly", 
           emoji: "👆", 
-          description: "Public criticism damages relationships",
           isCorrect: false 
         }
       ]
@@ -94,21 +91,18 @@ const RoleplayGroupLeader = () => {
           id: "fight", 
           text: "Let them fight it out", 
           emoji: "😠", 
-          description: "Letting conflicts continue delays progress",
           isCorrect: false 
         },
         { 
           id: "focus", 
           text: "Ignore conflict and focus on yourself", 
           emoji: "😶", 
-          description: "Leaders should address team conflicts",
           isCorrect: false 
         },
         { 
           id: "mediate", 
           text: "Mediate and help them reach agreement", 
           emoji: "🕊️", 
-          description: "Mediation resolves conflicts and helps teams work together",
           isCorrect: true 
         }
       ]
@@ -122,21 +116,18 @@ const RoleplayGroupLeader = () => {
           id: "support", 
           text: "Offer support, break tasks into manageable steps", 
           emoji: "💪", 
-          description: "Support and organization reduce stress",
           isCorrect: true 
         },
         { 
           id: "pressure", 
           text: "Add more pressure to force results", 
           emoji: "😠", 
-          description: "More pressure increases stress and reduces performance",
           isCorrect: false 
         },
         { 
           id: "panic", 
           text: "Let them panic and figure it out", 
           emoji: "😰", 
-          description: "Leaders should help, not abandon their team",
           isCorrect: false 
         }
       ]
@@ -150,21 +141,18 @@ const RoleplayGroupLeader = () => {
           id: "favorites", 
           text: "Assign fun tasks to favorites", 
           emoji: "😏", 
-          description: "Favoritism creates unfairness",
           isCorrect: false 
         },
         { 
           id: "rotate", 
           text: "Rotate tasks fairly and motivate the team", 
           emoji: "🔄", 
-          description: "Fair rotation ensures everyone participates",
           isCorrect: true 
         },
         { 
           id: "boring", 
           text: "Do boring tasks yourself", 
           emoji: "😶", 
-          description: "Leaders should distribute work fairly",
           isCorrect: false 
         }
       ]

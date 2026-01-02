@@ -19,127 +19,127 @@ const PeerStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "A classmate says \"Cool girls drink.\" Should you follow?",
-      options: [
-        {
-          id: "a",
-          text: "No, real coolness comes from making healthy choices",
-          emoji: "🙅‍♀️",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Yes, I want to fit in with the cool crowd",
-          emoji: "🍺",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Ask what they mean by 'drink'",
-          emoji: "❓",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Friends pressure you to try alcohol at a party. What do you do?",
-      options: [
-        {
-          id: "a",
-          text: "Go along with it to avoid being left out",
-          emoji: "👥",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Leave the party early",
-          emoji: "🚪",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Politely refuse and suggest a different activity",
-          emoji: "💬",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "An older student says you're not mature if you don't drink. How do you respond?",
-      options: [
-        {
-          id: "b",
-          text: "Feel insecure and consider trying alcohol",
-          emoji: "😰",
-          isCorrect: false
-        },
-        {
-          id: "a",
-          text: "Maturity means making responsible choices that protect my health",
-          emoji: "🧠",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Ignore what they said",
-          emoji: "👂",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You see friends getting into trouble after drinking. What do you learn?",
-      options: [
-        {
-          id: "a",
-          text: "Think it won't happen to you",
-          emoji: "🤷",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Tell your parents about it",
-          emoji: "👨‍👩‍👧‍👦",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "I'm glad I made the choice to stay away from alcohol",
-          emoji: "😊",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "A friend stops talking to you for saying no to alcohol. What do you do?",
-      options: [
-        {
-          id: "a",
-          text: "Try to convince them to drink to regain friendship",
-          emoji: "😔",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Accept that some friendships aren't healthy",
-          emoji: "💔",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Find friends who respect my healthy choices",
-          emoji: "🤝",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A classmate says, \"Cool girls drink energy drinks.\" Should you follow?",
+    options: [
+      {
+        id: "a",
+        text: "No, real coolness comes from making healthy choices",
+        emoji: "🙅‍♀️",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Yes, I want to fit in with the cool crowd",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Ask what the drink does to the body",
+        emoji: "❓",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Friends pressure you to try an energy drink at a party. What do you do?",
+    options: [
+      {
+        id: "a",
+        text: "Drink it so you are not left out",
+        emoji: "👥",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Leave the party quietly",
+        emoji: "🚪",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Politely refuse and choose water or juice instead",
+        emoji: "💬",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "An older student says you are not mature if you do not drink energy drinks. How do you respond?",
+    options: [
+      {
+        id: "b",
+        text: "Feel unsure and think about trying it",
+        emoji: "😰",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Maturity means making responsible choices that protect my health",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Change the topic and walk away",
+        emoji: "🚶‍♀️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You see friends feeling sick after drinking too many energy drinks. What do you learn?",
+    options: [
+      {
+        id: "a",
+        text: "Think it will not happen to you",
+        emoji: "🤷",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Laugh and ignore the situation",
+        emoji: "😂",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "I am glad I choose drinks that are healthy for my body",
+        emoji: "😊",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "A friend stops talking to you because you say no to energy drinks. What do you do?",
+    options: [
+      {
+        id: "a",
+        text: "Start drinking energy drinks to keep the friendship",
+        emoji: "😔",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Feel bad and stop caring about health",
+        emoji: "💔",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Choose friends who respect my healthy choices",
+        emoji: "🤝",
+        isCorrect: true
+      }
+    ]
+  }
+];
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

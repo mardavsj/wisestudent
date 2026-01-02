@@ -25,20 +25,20 @@ const PuzzleRespectMatch = () => {
 
   // Actions and their outcomes
   const leftItems = [
-    { id: 1, name: "Listen", emoji: "👂", description: "Paying attention to others" },
-    { id: 2, name: "Mock", emoji: "😈", description: "Making fun of others" },
-    { id: 3, name: "Help", emoji: "🤝", description: "Assisting those in need" },
-    { id: 4, name: "Ignore", emoji: "🙈", description: "Not paying attention" },
-    { id: 5, name: "Tell Truth", emoji: "🗣️", description: "Being honest always" }
+    { id: 1, name: "Listen", emoji: "👂",  },
+    { id: 2, name: "Mock", emoji: "😈",  },
+    { id: 3, name: "Help", emoji: "🤝",  },
+    { id: 4, name: "Ignore", emoji: "🙈",  },
+    { id: 5, name: "Tell Truth", emoji: "🗣️",  }
   ];
 
   // Outcomes - reordered so correct matches are in different positions
   const rightItems = [
-    { id: 2, name: "Hurt", emoji: "💔", description: "Causes pain and sadness" },
-    { id: 5, name: "Care", emoji: "💖", description: "Shows love and concern" },
-    { id: 4, name: "Lonely", emoji: "😢", description: "Makes others feel left out" },
-    { id: 3, name: "Trust", emoji: "🤝", description: "Builds confidence and belief" },
-    { id: 1, name: "Respect", emoji: "🙏", description: "Shows honor and value" },
+    { id: 2, name: "Hurt", emoji: "💔",  },
+    { id: 5, name: "Care", emoji: "💖",  },
+    { id: 4, name: "Lonely", emoji: "😢",  },
+    { id: 3, name: "Trust", emoji: "🤝",  },
+    { id: 1, name: "Respect", emoji: "🙏",  },
   ];
 
   // Correct matches (with reordered right items)

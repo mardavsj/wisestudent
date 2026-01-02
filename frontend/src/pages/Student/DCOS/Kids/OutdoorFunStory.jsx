@@ -32,21 +32,20 @@ const OutdoorFunStory = () => {
           id: "a", 
           text: "Keep Playing", 
           emoji: "🎮", 
-          description: "Say no and keep playing the game",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Go to Park", 
           emoji: "⚽", 
-          description: "Go to the park and play outside",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ask to Wait", 
           emoji: "⏳", 
-          description: "Ask them to wait until you finish",
           isCorrect: false
         }
       ]
@@ -59,21 +58,18 @@ const OutdoorFunStory = () => {
           id: "a", 
           text: "Join Bike Ride", 
           emoji: "🚴", 
-          description: "Join the bike ride",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Stay Home", 
           emoji: "📱", 
-          description: "Stay home and watch videos",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Bring Tablet", 
           emoji: "📲", 
-          description: "Bring the tablet on the ride",
           isCorrect: false
         }
       ]
@@ -87,21 +83,18 @@ const OutdoorFunStory = () => {
           id: "b", 
           text: "Stay Inside", 
           emoji: "🎮", 
-          description: "Stay inside and keep playing",
           isCorrect: false
         },
          { 
           id: "a", 
           text: "Go Play", 
           emoji: "🏃", 
-          description: "Put the phone away and go play",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Play at Playground", 
           emoji: "📱", 
-          description: "Play games while at the playground",
           isCorrect: false
         }
       ]
@@ -115,21 +108,18 @@ const OutdoorFunStory = () => {
           id: "b", 
           text: "Skip Walk", 
           emoji: "💻", 
-          description: "Skip the walk and keep gaming",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Finish Game First", 
           emoji: "⏰", 
-          description: "Ask to finish the game first",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Go for Walk", 
           emoji: "🚶", 
-          description: "Save the game and go for the walk",
           isCorrect: true
         },
       ]
@@ -142,21 +132,18 @@ const OutdoorFunStory = () => {
           id: "a", 
           text: "Join Sports", 
           emoji: "🏃", 
-          description: "Join the sports activities",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Stay Inside", 
           emoji: "📱", 
-          description: "Stay inside with your device",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Watch from Inside", 
           emoji: "👀", 
-          description: "Watch others play from inside",
           isCorrect: false
         }
       ]

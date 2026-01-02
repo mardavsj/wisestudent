@@ -19,20 +19,20 @@ const PuzzleAntiBullyingMatch = () => {
 
   // Actions (left side) - 5 items
   const actions = [
-    { id: 1, name: "Speak Up", emoji: "🗣️", description: "Say something when you see bullying" },
-    { id: 2, name: "Support Friend", emoji: "🤝", description: "Help a friend who is being bullied" },
-    { id: 3, name: "Ignore Bully", emoji: "🚫", description: "Do nothing when you see bullying" },
-    { id: 4, name: "Tell Adult", emoji: "📢", description: "Report bullying to a grown-up" },
-    { id: 5, name: "Include Everyone", emoji: "👥", description: "Make sure no one is left out" }
+    { id: 1, name: "Speak Up", emoji: "🗣️",  },
+    { id: 2, name: "Support Friend", emoji: "🤝",  },
+    { id: 3, name: "Ignore Bully", emoji: "🚫",  },
+    { id: 4, name: "Tell Adult", emoji: "📢",  },
+    { id: 5, name: "Include Everyone", emoji: "👥",  }
   ];
 
   // Values (right side) - 5 items
   const values = [
-    { id: 2, name: "Care", emoji: "❤️", description: "Showing concern for others" },
-    { id: 3, name: "Wrong", emoji: "❌", description: "Something that is incorrect" },
-    { id: 1, name: "Courage", emoji: "🦸", description: "Bravery to do the right thing" },
-    { id: 5, name: "Kindness", emoji: "😊", description: "Being friendly and generous" },
-    { id: 4, name: "Right", emoji: "✅", description: "Something that is correct" },
+    { id: 2, name: "Care", emoji: "❤️",  },
+    { id: 3, name: "Wrong", emoji: "❌",  },
+    { id: 1, name: "Courage", emoji: "🦸",  },
+    { id: 5, name: "Kindness", emoji: "😊",  },
+    { id: 4, name: "Right", emoji: "✅",  },
   ];
 
   // Correct matches

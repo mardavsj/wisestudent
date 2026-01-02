@@ -34,9 +34,9 @@ const ReflexPreventiveCare = () => {
       question: "What's the primary goal of preventive care?",
       options: [
         { text: "Cure Diseases", emoji: "💊", isCorrect: false },
-        { text: "Prevent Illness", emoji: "🛡️", isCorrect: true },
         { text: "Ignore Symptoms", emoji: "🙈", isCorrect: false },
-        { text: "Delay Treatment", emoji: "⏳", isCorrect: false }
+        { text: "Delay Treatment", emoji: "⏳", isCorrect: false },
+        { text: "Prevent Illness", emoji: "🛡️", isCorrect: true },
       ]
     },
     {
@@ -44,7 +44,7 @@ const ReflexPreventiveCare = () => {
       question: "How often should teens have health checkups?",
       options: [
         { text: "Only When Sick", emoji: "🤒", isCorrect: false },
-        { text: "Annual Visits", emoji: "📅", isCorrect: true },
+        { text: "Varies by individual", emoji: "📅", isCorrect: true },
         { text: "Never Needed", emoji: "🙅", isCorrect: false },
         { text: "Biannual Only", emoji: "📆", isCorrect: false }
       ]
@@ -64,8 +64,8 @@ const ReflexPreventiveCare = () => {
       question: "What's important for dental preventive care?",
       options: [
         { text: "Skip Brushing", emoji: "🚷", isCorrect: false },
-        { text: "Regular Cleanings", emoji: "🦷", isCorrect: true },
         { text: "Only Pain Relief", emoji: "🥲", isCorrect: false },
+        { text: "Regular Cleanings", emoji: "🦷", isCorrect: true },
         { text: "Avoid Dentist", emoji: "👻", isCorrect: false }
       ]
     },
@@ -73,10 +73,10 @@ const ReflexPreventiveCare = () => {
       id: 5,
       question: "Which screening is important for teens?",
       options: [
-        { text: "Vision Test", emoji: "👁️", isCorrect: true },
         { text: "Ignore Issues", emoji: "🙉", isCorrect: false },
         { text: "Only Weight Check", emoji: "⚖️", isCorrect: false },
-        { text: "No Screenings", emoji: "❌", isCorrect: false }
+        { text: "No Screenings", emoji: "❌", isCorrect: false },
+        { text: "Vision Test", emoji: "👁️", isCorrect: true },
       ]
     }
   ];

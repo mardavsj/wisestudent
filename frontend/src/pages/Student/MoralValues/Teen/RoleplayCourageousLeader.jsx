@@ -38,21 +38,19 @@ const RoleplayCourageousLeader = () => {
           id: "speak", 
           text: "Speak up and clarify everyone's role", 
           emoji: "🗣️", 
-          description: "Standing up for fairness shows courage",
+          
           isCorrect: true 
         },
         { 
           id: "silent", 
           text: "Stay silent to avoid conflict", 
           emoji: "😶", 
-          description: "Staying silent allows unfairness",
           isCorrect: false 
         },
         { 
           id: "join", 
           text: "Join others in blaming to stay popular", 
           emoji: "😏", 
-          description: "Joining unfair blame is wrong",
           isCorrect: false 
         }
       ]
@@ -66,21 +64,18 @@ const RoleplayCourageousLeader = () => {
           id: "ignore", 
           text: "Ignore the teasing", 
           emoji: "😶", 
-          description: "Ignoring allows bullying to continue",
           isCorrect: false 
         },
         { 
           id: "stop", 
           text: "Tell others to stop and encourage curiosity", 
           emoji: "🛡️", 
-          description: "Standing up against teasing shows courage",
           isCorrect: true 
         },
         { 
           id: "laugh", 
           text: "Laugh along to fit in", 
           emoji: "😄", 
-          description: "Laughing along supports bullying",
           isCorrect: false 
         }
       ]
@@ -94,21 +89,18 @@ const RoleplayCourageousLeader = () => {
           id: "let", 
           text: "Let it continue, it's their choice", 
           emoji: "😶", 
-          description: "Leaders should ensure inclusion",
           isCorrect: false 
         },
         { 
           id: "focus", 
           text: "Only focus on your work", 
           emoji: "📝", 
-          description: "Leaders should help the team",
           isCorrect: false 
         },
         { 
           id: "include", 
           text: "Include everyone and ensure fairness", 
           emoji: "🤝", 
-          description: "Including everyone shows courageous leadership",
           isCorrect: true 
         }
       ]
@@ -122,21 +114,18 @@ const RoleplayCourageousLeader = () => {
           id: "admit", 
           text: "Admit the mistake and accept fair results", 
           emoji: "💎", 
-          description: "Admitting mistakes shows courage and integrity",
           isCorrect: true 
         },
         { 
           id: "nothing", 
           text: "Say nothing since you won", 
           emoji: "😶", 
-          description: "Staying silent about cheating is wrong",
           isCorrect: false 
         },
         { 
           id: "defend", 
           text: "Defend the cheating as teamwork", 
           emoji: "😏", 
-          description: "Defending cheating is dishonest",
           isCorrect: false 
         }
       ]
@@ -150,21 +139,18 @@ const RoleplayCourageousLeader = () => {
           id: "accept", 
           text: "Accept it quietly", 
           emoji: "😶", 
-          description: "Accepting unfairness doesn't help",
           isCorrect: false 
         },
         { 
           id: "speak", 
           text: "Speak to the teacher about equal opportunities", 
           emoji: "🗣️", 
-          description: "Speaking up for fairness shows courage",
           isCorrect: true 
         },
         { 
           id: "complain", 
           text: "Complain secretly to friends", 
           emoji: "🤫", 
-          description: "Secret complaints don't solve problems",
           isCorrect: false 
         }
       ]

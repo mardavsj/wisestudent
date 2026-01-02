@@ -31,21 +31,19 @@ const DarkRoomStory = () => {
           id: "fear", 
           text: "Stay in fear", 
           emoji: "😨", 
-          description: "Avoid it",
+          
           isCorrect: false
         },
         { 
           id: "bravely", 
           text: "Go bravely yourself", 
           emoji: "💪", 
-          description: "Face your fear",
           isCorrect: true
         },
         { 
           id: "call", 
           text: "Call someone", 
           emoji: "📞", 
-          description: "Ask for help",
           isCorrect: false
         }
       ]
@@ -58,21 +56,18 @@ const DarkRoomStory = () => {
           id: "light", 
           text: "Wait for light", 
           emoji: "💡", 
-          description: "Need light first",
           isCorrect: false
         },
         { 
           id: "kick", 
           text: "Kick everything", 
           emoji: "👟", 
-          description: "Be destructive",
           isCorrect: false
         },
         { 
           id: "feel", 
           text: "Feel around slowly", 
           emoji: "🤏", 
-          description: "Try carefully",
           isCorrect: true
         }
       ]
@@ -85,21 +80,18 @@ const DarkRoomStory = () => {
           id: "flashlight", 
           text: "Use a flashlight", 
           emoji: "🔦", 
-          description: "Find a light source",
           isCorrect: true
         },
         { 
           id: "run", 
           text: "Run quickly", 
           emoji: "🏃", 
-          description: "Rush through",
           isCorrect: false
         },
         { 
           id: "stay", 
           text: "Stay put", 
           emoji: "🛑", 
-          description: "Don't go",
           isCorrect: false
         }
       ]
@@ -112,21 +104,18 @@ const DarkRoomStory = () => {
           id: "leave", 
           text: "Leave it", 
           emoji: "🚪", 
-          description: "Give up",
           isCorrect: false
         },
         { 
           id: "carefully", 
           text: "Go in carefully", 
           emoji: "🧍", 
-          description: "Be brave and cautious",
           isCorrect: true
         },
         { 
           id: "parent", 
           text: "Call parent", 
           emoji: "📞", 
-          description: "Get adult help",
           isCorrect: false
         }
       ]
@@ -139,21 +128,18 @@ const DarkRoomStory = () => {
           id: "rush", 
           text: "Rush in blindly", 
           emoji: "🏃", 
-          description: "Go fast",
           isCorrect: false
         },
         { 
           id: "throw", 
           text: "Throw something at it", 
           emoji: "🎯", 
-          description: "Try to knock it",
           isCorrect: false
         },
         { 
           id: "slowly", 
           text: "Move slowly and carefully", 
           emoji: "🐢", 
-          description: "Be cautious",
           isCorrect: true
         }
       ]

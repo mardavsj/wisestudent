@@ -44,14 +44,14 @@ const DeepfakeQuiz = () => {
           id: "b", 
           text: "Fake - verify with official sources", 
           emoji: "⚠️", 
-          description: "AI videos showing politicians saying false words are likely deepfakes - always verify with official sources",
+          
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Real - politicians say things", 
-          emoji: "✅", 
-          description: "AI-generated videos of politicians can be very convincing deepfakes",
+          emoji: "🙂", 
+          
           isCorrect: false
         },
         
@@ -59,7 +59,7 @@ const DeepfakeQuiz = () => {
           id: "c", 
           text: "Share it - it's interesting", 
           emoji: "📤", 
-          description: "Never share unverified videos of public figures - they may be deepfakes",
+          
           isCorrect: false
         }
       ]
@@ -71,22 +71,19 @@ const DeepfakeQuiz = () => {
         { 
           id: "a", 
           text: "Real - it looks real", 
-          emoji: "✅", 
-          description: "Deepfakes can look very real - always verify with official sources",
+          emoji: "🙂", 
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Fake - it's a deepfake", 
           emoji: "⚠️", 
-          description: "AI-generated videos showing people doing things they never did are deepfakes",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Maybe - check later", 
           emoji: "🤔", 
-          description: "Always verify immediately before sharing or believing",
           isCorrect: false
         }
       ]
@@ -98,8 +95,7 @@ const DeepfakeQuiz = () => {
         { 
           id: "a", 
           text: "Real - people move weird", 
-          emoji: "✅", 
-          description: "Unnatural face movements are a sign of deepfake manipulation",
+          emoji: "🙂", 
           isCorrect: false
         },
         
@@ -107,14 +103,12 @@ const DeepfakeQuiz = () => {
           id: "c", 
           text: "Not sure - share anyway", 
           emoji: "📤", 
-          description: "Never share videos you're unsure about - verify first",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Fake - unnatural movements indicate deepfake", 
           emoji: "⚠️", 
-          description: "Unnatural face movements are a key indicator of deepfake videos",
           isCorrect: true
         },
       ]
@@ -127,14 +121,12 @@ const DeepfakeQuiz = () => {
           id: "b", 
           text: "Fake - verify with official news sources", 
           emoji: "⚠️", 
-          description: "Always verify news videos with official news sources - they may be deepfakes",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Real - news anchors say things", 
-          emoji: "✅", 
-          description: "AI videos of news anchors can be deepfakes - verify with official news sources",
+          emoji: "🙂", 
           isCorrect: false
         },
        
@@ -142,7 +134,6 @@ const DeepfakeQuiz = () => {
           id: "c", 
           text: "Share it - it's news", 
           emoji: "📤", 
-          description: "Never share unverified news videos - check official sources first",
           isCorrect: false
         }
       ]
@@ -154,22 +145,19 @@ const DeepfakeQuiz = () => {
         { 
           id: "a", 
           text: "Real - technical glitch", 
-          emoji: "✅", 
-          description: "Mismatched lip movements are a sign of deepfake manipulation, not a glitch",
+          emoji: "🙂", 
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Fake - mismatched lips indicate deepfake", 
           emoji: "⚠️", 
-          description: "Mismatched lip movements are a clear indicator of deepfake videos",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Maybe - depends on quality", 
           emoji: "🤔", 
-          description: "Mismatched lips always indicate manipulation, regardless of video quality",
           isCorrect: false
         }
       ]

@@ -19,20 +19,20 @@ const PuzzleMatchCareers = () => {
 
   // Careers (left side) - 5 items
   const careers = [
-    { id: 1, name: "Space Scientist", emoji: "🚀", description: "Studies celestial bodies and space phenomena" },
-    { id: 2, name: "Geneticist", emoji: "🧬", description: "Researches genes and heredity" },
-    { id: 3, name: "Climate Scientist", emoji: "🌍", description: "Studies Earth's climate systems" },
-    { id: 4, name: "AI Researcher", emoji: "🤖", description: "Develops artificial intelligence systems" },
-    { id: 5, name: "Cybersecurity Expert", emoji: "🛡️", description: "Protects digital information and networks" }
+    { id: 1, name: "Space Scientist", emoji: "🚀",  },
+    { id: 2, name: "Geneticist", emoji: "🧬",  },
+    { id: 3, name: "Climate Scientist", emoji: "🌍",  },
+    { id: 4, name: "AI Researcher", emoji: "🤖",  },
+    { id: 5, name: "Cybersecurity Expert", emoji: "🛡️",  }
   ];
 
   // Areas of Focus (right side) - 5 items
   const areasOfFocus = [
-    { id: 5, name: "Networks", emoji: "🌐", description: "Digital infrastructure and security" },
-    { id: 1, name: "Mars", emoji: "🪐", description: "Red planet exploration and colonization" },
-    { id: 4, name: "Algorithms", emoji: "🔢", description: "Mathematical procedures for AI systems" },
-    { id: 2, name: "DNA", emoji: "🧬", description: "Genetic material and heredity studies" },
-    { id: 3, name: "Earth", emoji: "🌍", description: "Planet's climate and environmental systems" },
+    { id: 5, name: "Networks", emoji: "🌐",  },
+    { id: 1, name: "Mars", emoji: "🪐",  },
+    { id: 4, name: "Algorithms", emoji: "🔢",  },
+    { id: 2, name: "DNA", emoji: "🧬",  },
+    { id: 3, name: "Earth", emoji: "🌍",  },
   ];
 
   // Correct matches

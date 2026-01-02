@@ -22,20 +22,20 @@ const PuzzleOfGratitude = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const leftItems = [
-    { id: 1, name: "Write Thank You Note", emoji: "📝", description: "Expressing gratitude in writing" },
-    { id: 2, name: "Help Someone", emoji: "🤝", description: "Returning a favor" },
-    { id: 3, name: "Smile Appreciatively", emoji: "😊", description: "Showing grateful expression" },
-    { id: 4, name: "Publicly Acknowledge", emoji: "📢", description: "Recognizing in front of others" },
-    { id: 5, name: "Give a Gift", emoji: "🎁", description: "Showing appreciation through giving" },
+    { id: 1, name: "Write Thank You Note", emoji: "📝",  },
+    { id: 2, name: "Help Someone", emoji: "🤝" },
+    { id: 3, name: "Smile Appreciatively", emoji: "😊" },
+    { id: 4, name: "Publicly Acknowledge", emoji: "📢" },
+    { id: 5, name: "Give a Gift", emoji: "🎁" },
   ];
 
   // Right items with correct matches in different positions: manually shuffled to avoid direct positional matching
   const rightItems = [
-    { id: 7, name: "Creates goodwill", emoji: "💝", description: "Positive relationship building" },
-    { id: 6, name: "Person feels valued", emoji: "😊", description: "Recipient appreciates recognition" },
-    { id: 8, name: "Encourages kindness", emoji: "🤗", description: "Promotes more helpful behavior" },
-    { id: 10, name: "Motivates future help", emoji: "💪", description: "Inspires continued support" },
-    { id: 9, name: "Builds stronger bonds", emoji: "💞", description: "Deepens relationships" },
+    { id: 7, name: "Creates goodwill", emoji: "💝" },
+    { id: 6, name: "Person feels valued", emoji: "😊" },
+    { id: 8, name: "Encourages kindness", emoji: "🤗" },
+    { id: 10, name: "Motivates future help", emoji: "💪" },
+    { id: 9, name: "Builds stronger bonds", emoji: "💞" },
   ];
 
   const correctMatches = [

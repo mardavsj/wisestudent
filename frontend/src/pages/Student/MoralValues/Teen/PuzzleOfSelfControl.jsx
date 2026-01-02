@@ -22,20 +22,20 @@ const PuzzleOfSelfControl = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const leftItems = [
-    { id: 1, name: "Discipline", emoji: "💪", description: "Self-control and effort" },
-    { id: 2, name: "Laziness", emoji: "🛋️", description: "Avoiding work" },
-    { id: 3, name: "Consistency", emoji: "📅", description: "Regular practice" },
-    { id: 4, name: "Procrastination", emoji: "⏰", description: "Delaying tasks" },
-    { id: 5, name: "Focus", emoji: "🎯", description: "Concentration" },
+    { id: 1, name: "Discipline", emoji: "💪",  },
+    { id: 2, name: "Laziness", emoji: "🛋️",  },
+    { id: 3, name: "Consistency", emoji: "📅",  },
+    { id: 4, name: "Procrastination", emoji: "⏰",  },
+    { id: 5, name: "Focus", emoji: "🎯",  },
   ];
 
   // Right items with correct matches in different positions: Q1: pos 1, Q2: pos 2, Q3: pos 3, Q4: pos 1, Q5: pos 2
   const rightItems = [
-    { id: 1, name: "Success", emoji: "🏆", description: "Achieving goals" },
-    { id: 2, name: "Failure", emoji: "💔", description: "Not reaching goals" },
-    { id: 3, name: "Achievement", emoji: "🥇", description: "Accomplishment" },
-    { id: 4, name: "Missed Goals", emoji: "❌", description: "Unmet objectives" },
-    { id: 5, name: "Progress", emoji: "📈", description: "Moving forward" },
+    { id: 1, name: "Success", emoji: "🏆",  },
+    { id: 2, name: "Failure", emoji: "💔",  },
+    { id: 3, name: "Achievement", emoji: "🥇",  },
+    { id: 4, name: "Missed Goals", emoji: "❌",  },
+    { id: 5, name: "Progress", emoji: "📈",  },
   ];
 
   const correctMatches = [

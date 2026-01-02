@@ -14,7 +14,7 @@ const ReflexHygieneAlert2 = () => {
     const totalCoins = 5;
     const totalXp = 10;
     const maxScore = 5;
-    const gameId = "health-female-kids-39";
+    const gameId = "health-female-kids-99";
 
     const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 

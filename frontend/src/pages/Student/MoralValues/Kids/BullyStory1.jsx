@@ -31,21 +31,20 @@ const BullyStory1 = () => {
           id: "laugh", 
           text: "Laugh along with others", 
           emoji: "😂", 
-          description: "Join the teasing",
+          
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore it and walk away", 
           emoji: "🙈", 
-          description: "Avoid the situation",
           isCorrect: false
         },
         { 
           id: "support", 
           text: "Support your friend and stand up", 
           emoji: "🛡️", 
-          description: "Be brave and help",
+          
           isCorrect: true
         }
       ]
@@ -58,21 +57,18 @@ const BullyStory1 = () => {
           id: "join", 
           text: "Join the gossip to fit in", 
           emoji: "📢", 
-          description: "Spread it further",
           isCorrect: false
         },
         { 
           id: "stop", 
           text: "Stop the gossip and tell the truth", 
           emoji: "🤐", 
-          description: "Stop the rumor",
           isCorrect: true
         },
         { 
           id: "listen", 
           text: "Just listen quietly", 
           emoji: "👂", 
-          description: "Don't interfere",
           isCorrect: false
         }
       ]
@@ -85,21 +81,18 @@ const BullyStory1 = () => {
           id: "report", 
           text: "Report the comment and comfort your friend", 
           emoji: "📩", 
-          description: "Take action and help",
           isCorrect: true
         },
         { 
           id: "like", 
           text: "Like the comment to look cool", 
           emoji: "👍", 
-          description: "Support the bully",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore it completely", 
           emoji: "😶", 
-          description: "Do nothing",
           isCorrect: false
         }
       ]
@@ -112,21 +105,18 @@ const BullyStory1 = () => {
           id: "leave", 
           text: "Leave them alone — they'll find friends later", 
           emoji: "🕒", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "jokes", 
           text: "Make jokes about them", 
           emoji: "😜", 
-          description: "Tease them",
           isCorrect: false
         },
         { 
           id: "invite", 
           text: "Invite them to join your group", 
           emoji: "🤗", 
-          description: "Be inclusive",
           isCorrect: true
         }
       ]
@@ -139,21 +129,18 @@ const BullyStory1 = () => {
           id: "laugh", 
           text: "Laugh along so you don't look boring", 
           emoji: "😂", 
-          description: "Join in the mocking",
           isCorrect: false
         },
         { 
           id: "speak", 
           text: "Speak up and remind others to respect differences", 
           emoji: "🗯️", 
-          description: "Stand up for respect",
           isCorrect: true
         },
         { 
           id: "walk", 
           text: "Walk away quietly", 
           emoji: "🚶", 
-          description: "Avoid conflict",
           isCorrect: false
         }
       ]

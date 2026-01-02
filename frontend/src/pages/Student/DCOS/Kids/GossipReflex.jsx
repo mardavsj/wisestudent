@@ -35,7 +35,7 @@ const GossipReflex = () => {
       correctAnswer: "Gossip - Stop",
       options: [
         { text: "Gossip - Stop", isCorrect: true, emoji: "🚫" },
-        { text: "Safe Chat", isCorrect: false, emoji: "✅" },
+        { text: "Safe Chat", isCorrect: false, emoji: "🛡️" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -46,7 +46,7 @@ const GossipReflex = () => {
       correctAnswer: "Safe Chat",
       options: [
         { text: "Gossip - Stop", isCorrect: false, emoji: "🚫" },
-        { text: "Safe Chat", isCorrect: true, emoji: "✅" },
+        { text: "Safe Chat", isCorrect: true, emoji: "🛡️" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -57,7 +57,7 @@ const GossipReflex = () => {
       correctAnswer: "Gossip - Stop",
       options: [
         { text: "Gossip - Stop", isCorrect: true, emoji: "🚫" },
-        { text: "Safe Chat", isCorrect: false, emoji: "✅" },
+        { text: "Safe Chat", isCorrect: false, emoji: "🛡️" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -68,7 +68,7 @@ const GossipReflex = () => {
       correctAnswer: "Safe Chat",
       options: [
         { text: "Gossip - Stop", isCorrect: false, emoji: "🚫" },
-        { text: "Safe Chat", isCorrect: true, emoji: "✅" },
+        { text: "Safe Chat", isCorrect: true, emoji: "🛡️" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]
@@ -79,7 +79,7 @@ const GossipReflex = () => {
       correctAnswer: "Gossip - Stop",
       options: [
         { text: "Gossip - Stop", isCorrect: true, emoji: "🚫" },
-        { text: "Safe Chat", isCorrect: false, emoji: "✅" },
+        { text: "Safe Chat", isCorrect: false, emoji: "🛡️" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
       ]

@@ -38,21 +38,19 @@ const RoleplayTruthfulLeader = () => {
           id: "honest", 
           text: "Insist on honest, original work", 
           emoji: "💎", 
-          description: "Honesty builds trust and integrity",
+          
           isCorrect: true 
         },
         { 
           id: "copy", 
           text: "Agree to copy and finish fast", 
           emoji: "📋", 
-          description: "Copying is dishonest and wrong",
           isCorrect: false 
         },
         { 
           id: "ignore", 
           text: "Let them do what they want", 
           emoji: "😶", 
-          description: "Leaders should guide, not ignore",
           isCorrect: false 
         }
       ]
@@ -66,21 +64,18 @@ const RoleplayTruthfulLeader = () => {
           id: "ignore", 
           text: "Ignore it and work alone", 
           emoji: "😶", 
-          description: "Ignoring conflicts doesn't solve them",
           isCorrect: false 
         },
         { 
           id: "mediate", 
           text: "Calmly mediate and unite the team", 
           emoji: "🕊️", 
-          description: "Mediation brings teams together",
           isCorrect: true 
         },
         { 
           id: "sides", 
           text: "Take sides with your favorite", 
           emoji: "👆", 
-          description: "Taking sides creates more conflict",
           isCorrect: false 
         }
       ]
@@ -94,21 +89,18 @@ const RoleplayTruthfulLeader = () => {
           id: "scold", 
           text: "Scold publicly to set example", 
           emoji: "😠", 
-          description: "Public scolding damages relationships",
           isCorrect: false 
         },
         { 
           id: "silent", 
           text: "Do their work silently", 
           emoji: "😶", 
-          description: "Doing others' work doesn't help them learn",
           isCorrect: false 
         },
         { 
           id: "guide", 
           text: "Privately guide and motivate them", 
           emoji: "💪", 
-          description: "Private guidance shows care and leadership",
           isCorrect: true 
         }
       ]
@@ -122,21 +114,18 @@ const RoleplayTruthfulLeader = () => {
           id: "thank", 
           text: "Thank the whole team publicly", 
           emoji: "👏", 
-          description: "Sharing credit shows true leadership",
           isCorrect: true 
         },
         { 
           id: "accept", 
           text: "Accept all credit silently", 
           emoji: "😶", 
-          description: "Accepting all credit is unfair",
           isCorrect: false 
         },
         { 
           id: "bit", 
           text: "Say 'they helped a bit'", 
           emoji: "🤷", 
-          description: "Minimizing others' contributions is unkind",
           isCorrect: false 
         }
       ]
@@ -150,21 +139,18 @@ const RoleplayTruthfulLeader = () => {
           id: "friend", 
           text: "Choose your friend", 
           emoji: "👥", 
-          description: "Favoritism is unfair leadership",
           isCorrect: false 
         },
         { 
           id: "earned", 
           text: "Choose the one who earned it", 
           emoji: "🏆", 
-          description: "Fair decisions build respect",
           isCorrect: true 
         },
         { 
           id: "avoid", 
           text: "Avoid deciding", 
           emoji: "😶", 
-          description: "Leaders must make fair decisions",
           isCorrect: false 
         }
       ]

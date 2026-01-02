@@ -11,8 +11,8 @@ const HealthyRoutineKidBadge = () => {
   const totalCoins = 5;
   const totalXp = 10;
   const maxScore = 5;
-  const gameId = "health-female-kids-100";
-  const currentLevel = 100;
+  const gameId = "health-female-kids-40";
+  const currentLevel = 40;
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);

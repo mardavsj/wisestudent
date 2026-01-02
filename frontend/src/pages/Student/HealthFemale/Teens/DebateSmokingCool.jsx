@@ -32,7 +32,7 @@ const DebateSmokingCool = () => {
         {
           id: "a",
           text: "No, it harms health and appearance",
-          emoji: "❌",
+          emoji: "👎",
           correct: true
         },
         {
@@ -110,7 +110,7 @@ const DebateSmokingCool = () => {
         },
         {
           id: "a",
-          text: "Thousands of dollars annually plus health costs",
+          text: "Smoking slowly drains savings and destroys health",
           emoji: "💸",
           correct: true
         }

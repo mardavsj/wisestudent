@@ -30,21 +30,19 @@ const QuizService = () => {
           id: "a", 
           text: "Teasing the poor", 
           emoji: "😈", 
-          description: "Hurting others instead of helping",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ignoring the poor", 
           emoji: "🙁", 
-          description: "Not helping those in need",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Helping the poor", 
           emoji: "👐", 
-          description: "Assisting those who need support",
           isCorrect: true
         }
       ]
@@ -57,21 +55,18 @@ const QuizService = () => {
           id: "a", 
           text: "Helping classmates with homework", 
           emoji: "📚", 
-          description: "Supporting others with their studies",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Laughing at mistakes", 
           emoji: "😆", 
-          description: "Making fun of others instead of helping",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignoring someone in need", 
           emoji: "🙁", 
-          description: "Not helping when someone needs assistance",
           isCorrect: false
         }
       ]
@@ -84,21 +79,18 @@ const QuizService = () => {
           id: "a", 
           text: "Complaining about chores", 
           emoji: "😤", 
-          description: "Not being helpful or cooperative",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Refusing to help siblings", 
           emoji: "🙁", 
-          description: "Not supporting family members",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Helping parents with chores", 
           emoji: "🧹", 
-          description: "Contributing to household tasks and supporting family",
           isCorrect: true
         }
       ]
@@ -111,21 +103,18 @@ const QuizService = () => {
           id: "a", 
           text: "An act of service", 
           emoji: "🤝", 
-          description: "Providing comfort and support to those in need",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Being rude", 
           emoji: "😡", 
-          description: "Acting in a disrespectful way",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignoring them", 
           emoji: "🙁", 
-          description: "Not paying attention to those who need help",
           isCorrect: false
         }
       ]
@@ -138,21 +127,18 @@ const QuizService = () => {
           id: "a", 
           text: "Littering the park", 
           emoji: "🗑️", 
-          description: "Damaging public spaces",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Breaking park property", 
           emoji: "💥", 
-          description: "Causing harm to community spaces",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Cleaning the park", 
           emoji: "🧹", 
-          description: "Taking care of community spaces and helping others",
           isCorrect: true
         }
       ]

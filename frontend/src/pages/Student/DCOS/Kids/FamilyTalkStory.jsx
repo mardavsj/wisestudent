@@ -32,21 +32,20 @@ const FamilyTalkStory = () => {
           id: "a", 
           text: "Believe and Share", 
           emoji: "📤", 
-          description: "Believe it and share to everyone",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Tell Grandpa Kindly", 
           emoji: "💬", 
-          description: "Tell Grandpa kindly that it's fake news",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Laugh and Ignore", 
           emoji: "😅", 
-          description: "Laugh and ignore it",
           isCorrect: false
         }
       ]
@@ -59,21 +58,18 @@ const FamilyTalkStory = () => {
           id: "a", 
           text: "Verify from News", 
           emoji: "🧐", 
-          description: "Tell Grandpa to verify from news channels",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Forward Immediately", 
           emoji: "📲", 
-          description: "Forward it to friends immediately",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Stay Silent", 
           emoji: "😕", 
-          description: "Stay silent and confused",
           isCorrect: false
         }
       ]
@@ -86,21 +82,18 @@ const FamilyTalkStory = () => {
           id: "a", 
           text: "Click the Link", 
           emoji: "⚡", 
-          description: "Click the link fast",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Warn Grandpa", 
           emoji: "🛡️", 
-          description: "Warn Grandpa not to click suspicious links",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ignore", 
           emoji: "🤐", 
-          description: "Ignore but say nothing",
           isCorrect: false
         }
       ]
@@ -113,21 +106,18 @@ const FamilyTalkStory = () => {
           id: "a", 
           text: "Laugh and Forward", 
           emoji: "😆", 
-          description: "Laugh and forward it too",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Tell Kindly", 
           emoji: "💖", 
-          description: "Tell Grandpa kindly that jokes shouldn't hurt feelings",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ignore Message", 
           emoji: "🙈", 
-          description: "Ignore the message",
           isCorrect: false
         }
       ]
@@ -140,21 +130,18 @@ const FamilyTalkStory = () => {
           id: "a", 
           text: "Check with Doctors", 
           emoji: "👩‍⚕️", 
-          description: "Tell Grandpa to check with real doctors",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Follow Blindly", 
           emoji: "😇", 
-          description: "Follow it blindly",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Make Fun", 
           emoji: "😜", 
-          description: "Make fun of the message",
           isCorrect: false
         }
       ]

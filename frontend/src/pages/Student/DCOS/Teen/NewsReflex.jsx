@@ -41,7 +41,7 @@ const NewsReflex = () => {
       options: [
         { text: "Verify with Sources", isCorrect: true, emoji: "🔍" },
         { text: "Share Immediately", isCorrect: false, emoji: "📤" },
-        { text: "Believe It", isCorrect: false, emoji: "✅" },
+        { text: "Believe It", isCorrect: false, emoji: "🙂" },
         { text: "Ignore It", isCorrect: false, emoji: "🙈" }
       ]
     },
@@ -63,7 +63,7 @@ const NewsReflex = () => {
       options: [
         { text: "Verify Before Sharing", isCorrect: true, emoji: "🔍" },
         { text: "Share Immediately", isCorrect: false, emoji: "⚡" },
-        { text: "Believe It", isCorrect: false, emoji: "✅" },
+        { text: "Believe It", isCorrect: false, emoji: "🙂" },
         { text: "Ignore It", isCorrect: false, emoji: "🙈" }
       ]
     },

@@ -19,20 +19,20 @@ const PuzzleRespectMatch = () => {
 
   // People (left side) - 5 items
   const people = [
-    { id: 1, name: "Teacher", emoji: "👩‍🏫", description: "Educates students in school" },
-    { id: 2, name: "Elder", emoji: "🧓", description: "Older person in community" },
-    { id: 3, name: "Friend", emoji: "👫", description: "Close companion or buddy" },
-    { id: 4, name: "Classmate", emoji: "🧑‍🎓", description: "Fellow student in class" },
-    { id: 5, name: "Stranger", emoji: "👤", description: "Unknown person you meet" }
+    { id: 1, name: "Teacher", emoji: "👩‍🏫",  },
+    { id: 2, name: "Elder", emoji: "🧓",  },
+    { id: 3, name: "Friend", emoji: "👫",  },
+    { id: 4, name: "Classmate", emoji: "🧑‍🎓",  },
+    { id: 5, name: "Stranger", emoji: "👤",  }
   ];
 
   // Actions (right side) - 5 items
   const actions = [
-    { id: 2, name: "Help", emoji: "🤝", description: "Provide assistance to someone" },
-    { id: 1, name: "Listen", emoji: "👂", description: "Pay attention to someone speaking" },
-    { id: 5, name: "Be Polite", emoji: "🙏", description: "Show good manners and courtesy" },
-    { id: 3, name: "Share", emoji: "📦", description: "Divide things with others" },
-    { id: 4, name: "Include", emoji: "🙌", description: "Make someone feel welcome" },
+    { id: 2, name: "Help", emoji: "🤝",  },
+    { id: 1, name: "Listen", emoji: "👂",  },
+    { id: 5, name: "Be Polite", emoji: "🙏",  },
+    { id: 3, name: "Share", emoji: "📦",  },
+    { id: 4, name: "Include", emoji: "🙌",  },
   ];
 
   // Correct matches

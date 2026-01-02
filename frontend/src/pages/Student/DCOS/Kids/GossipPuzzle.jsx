@@ -29,20 +29,20 @@ const GossipPuzzle = () => {
 
   // Actions (left side)
   const leftItems = [
-    { id: 1, name: "Spreading rumors", emoji: "💬", description: "Telling untrue stories" },
-    { id: 2, name: "Telling someone's secrets", emoji: "🤫", description: "Sharing private information" },
-    { id: 3, name: "Gossiping about a friend", emoji: "👥", description: "Talking behind their back" },
-    { id: 4, name: "Making fun behind their back", emoji: "😈", description: "Teasing secretly" },
-    { id: 5, name: "Sharing private info without permission", emoji: "🔓", description: "Breaking trust" }
+    { id: 1, name: "Spreading rumors", emoji: "💬",  },
+    { id: 2, name: "Telling someone's secrets", emoji: "🤫",  },
+    { id: 3, name: "Gossiping about a friend", emoji: "👥",  },
+    { id: 4, name: "Making fun behind their back", emoji: "😈",  },
+    { id: 5, name: "Sharing private info without permission", emoji: "🔓",  }
   ];
 
   // Consequences (right side)
   const rightItems = [
-    { id: 1, name: "Hurt Feelings", emoji: "😢", description: "Causes emotional pain" },
-    { id: 2, name: "Broken Trust", emoji: "💔", description: "Destroys trust between friends" },
-    { id: 3, name: "Damaged Friendships", emoji: "👥", description: "Hurts relationships" },
-    { id: 4, name: "Hurt Feelings", emoji: "😢", description: "Causes emotional pain" },
-    { id: 5, name: "Broken Trust", emoji: "💔", description: "Destroys trust between friends" }
+    { id: 1, name: "Hurt Feelings", emoji: "😢",  },
+    { id: 2, name: "Broken Trust", emoji: "💔",  },
+    { id: 3, name: "Damaged Friendships", emoji: "👥",  },
+    { id: 4, name: "Hurt Feelings", emoji: "😢",  },
+    { id: 5, name: "Broken Trust", emoji: "💔",  }
   ];
 
   // Correct matches (mapped to different positions like PuzzleOfSavingGoals)

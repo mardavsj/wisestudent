@@ -19,20 +19,20 @@ const PuzzleJusticeHeroes = () => {
 
   // Justice Heroes (left side) - 5 items
   const heroes = [
-    { id: 1, name: "Mahatma Gandhi", emoji: "🕊️", description: "Leader of Indian independence movement" },
-    { id: 2, name: "Martin Luther King", emoji: "✊", description: "Civil rights leader in America" },
-    { id: 3, name: "Malala", emoji: "📖", description: "Advocate for girls' education" },
-    { id: 4, name: "Nelson Mandela", emoji: "🔓", description: "Fighter against apartheid in South Africa" },
-    { id: 5, name: "Rosa Parks", emoji: "🚌", description: "Civil rights activist who sparked change" }
+    { id: 1, name: "Mahatma Gandhi", emoji: "🕊️",  },
+    { id: 2, name: "Martin Luther King", emoji: "✊",  },
+    { id: 3, name: "Malala", emoji: "📖",  },
+    { id: 4, name: "Nelson Mandela", emoji: "🔓",  },
+    { id: 5, name: "Rosa Parks", emoji: "🚌",  },
   ];
 
   // Contributions (right side) - 5 items
   const contributions = [
-    { id: 3, name: "Education", emoji: "🎓", description: "Access to learning for everyone" },
-    { id: 1, name: "Freedom", emoji: "🗽", description: "Liberation from oppression" },
-    { id: 2, name: "Equality", emoji: "⚖️", description: "Equal treatment for all people" },
-    { id: 5, name: "Rights", emoji: "✋", description: "Fundamental human entitlements" },
-    { id: 4, name: "Justice", emoji: "⚔️", description: "Fairness and moral rightness" },
+    { id: 3, name: "Education", emoji: "🎓",  },
+    { id: 1, name: "Freedom", emoji: "🗽",  },
+    { id: 2, name: "Equality", emoji: "⚖️",  },
+    { id: 5, name: "Rights", emoji: "✋",  },
+    { id: 4, name: "Justice", emoji: "⚔️",  },
   ];
 
   // Correct matches

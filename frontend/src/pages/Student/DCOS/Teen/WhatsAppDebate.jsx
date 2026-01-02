@@ -30,19 +30,17 @@ const WhatsAppDebate = () => {
         { 
           id: "no-verify", 
           text: "No - always verify forwards", 
-          description: "Always verify forwarded messages before trusting them",
+          
           isCorrect: true
         },
         { 
           id: "yes-forwarded", 
           text: "Yes - if it's forwarded, it's true", 
-          description: "Forwarded messages are usually true",
           isCorrect: false
         },
         { 
           id: "maybe", 
           text: "Maybe - depends on who forwarded it", 
-          description: "It depends on who sent the forward",
           isCorrect: false
         }
       ]
@@ -54,19 +52,16 @@ const WhatsAppDebate = () => {
         { 
           id: "yes-friends", 
           text: "Yes - friends wouldn't lie", 
-          description: "Friends are trustworthy, so their forwards are safe",
           isCorrect: false
         },
         { 
           id: "sometimes", 
           text: "Sometimes - if it's from close friends", 
-          description: "Only trust forwards from close friends",
           isCorrect: false
         },
         { 
           id: "no-verify-friends", 
           text: "No - verify even from friends", 
-          description: "Always verify messages, even from friends",
           isCorrect: true
         }
       ]
@@ -78,19 +73,16 @@ const WhatsAppDebate = () => {
         { 
           id: "maybe", 
           text: "Maybe - if it seems important", 
-          description: "Share if the message seems important",
           isCorrect: false
         },
         { 
           id: "no-verify-first", 
           text: "No - verify before sharing", 
-          description: "Always verify messages before sharing them",
           isCorrect: true
         },
         { 
           id: "yes-share", 
           text: "Yes - if they ask, we should", 
-          description: "If someone asks to share, we should forward it",
           isCorrect: false
         }
       ]
@@ -102,19 +94,16 @@ const WhatsAppDebate = () => {
         { 
           id: "yes-viral", 
           text: "Yes - viral means verified", 
-          description: "Viral messages are always verified and true",
           isCorrect: false
         },
         { 
           id: "sometimes", 
           text: "Sometimes - if many people share it", 
-          description: "If many people share it, it's probably true",
           isCorrect: false
         },
         { 
           id: "no-viral", 
           text: "No - viral doesn't mean true", 
-          description: "Viral messages can be false, always verify",
           isCorrect: true
         }
       ]
@@ -126,19 +115,16 @@ const WhatsAppDebate = () => {
         { 
           id: "yes-help", 
           text: "Yes - it might help people", 
-          description: "Forward health advice to help others",
           isCorrect: false
         },
         { 
           id: "maybe", 
           text: "Maybe - if it seems helpful", 
-          description: "Share if the health advice seems helpful",
           isCorrect: false
         },
         { 
           id: "no-doctors", 
           text: "No - verify with doctors first", 
-          description: "Always verify health advice with doctors before sharing",
           isCorrect: true
         }
       ]

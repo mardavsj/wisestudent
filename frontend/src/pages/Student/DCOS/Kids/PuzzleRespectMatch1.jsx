@@ -29,39 +29,41 @@ const PuzzleRespectMatch1 = () => {
 
   // Actions (left side)
   const leftItems = [
-    { id: 1, name: "Listen", emoji: "👂", description: "Pay attention to others" },
-    { id: 2, name: "Mock", emoji: "😜", description: "Make fun of someone" },
-    { id: 3, name: "Help", emoji: "🤝", description: "Assist someone in need" },
-    { id: 4, name: "Tease", emoji: "😈", description: "Annoy or bother someone" },
-    { id: 5, name: "Apologize", emoji: "🙏", description: "Say sorry for mistakes" }
+    { id: 1, name: "Listen", emoji: "👂",  },
+    { id: 2, name: "Mock", emoji: "😜",  },
+    { id: 3, name: "Help", emoji: "🤝",  },
+    { id: 4, name: "Tease", emoji: "😈",  },
+    { id: 5, name: "Apologize", emoji: "🙏",  }
   ];
 
   // Meanings (right side)
   const rightItems = [
-    { id: 1, name: "Respect", emoji: "🙏", description: "Shows care and consideration" },
-    { id: 2, name: "Hurt", emoji: "😢", description: "Causes pain or sadness" },
-    { id: 3, name: "Kindness", emoji: "❤️", description: "Shows love and care" },
-    { id: 4, name: "Hurt", emoji: "😢", description: "Causes pain or sadness" },
-    { id: 5, name: "Respect", emoji: "🙏", description: "Shows care and consideration" }
-  ];
+  { id: 1, name: "Shows Respect", emoji: "🌟" },
+  { id: 2, name: "Hurts Feelings", emoji: "💔" },
+  { id: 3, name: "Spreads Kindness", emoji: "❤️" },
+  { id: 4, name: "Makes Others Sad", emoji: "😞" },
+  { id: 5, name: "Fixes Mistakes", emoji: "🩹" }
+];
 
   // Correct matches
   const correctMatches = [
-    { leftId: 1, rightId: 1 }, // Listen → Respect
-    { leftId: 2, rightId: 2 }, // Mock → Hurt
-    { leftId: 3, rightId: 3 }, // Help → Kindness
-    { leftId: 4, rightId: 4 }, // Tease → Hurt
-    { leftId: 5, rightId: 5 }  // Apologize → Respect
-  ];
+  { leftId: 1, rightId: 1 }, // Listen → Shows Respect
+  { leftId: 2, rightId: 2 }, // Mock → Hurts Feelings
+  { leftId: 3, rightId: 3 }, // Help → Spreads Kindness
+  { leftId: 4, rightId: 4 }, // Tease → Makes Others Sad
+  { leftId: 5, rightId: 5 }  // Apologize → Fixes Mistakes
+];
+
 
   // Shuffled right items for display (to split matches across positions)
   const shuffledRightItems = [
-    rightItems[1], // Hurt (id: 2) - position 1
-    rightItems[0], // Respect (id: 1) - position 2
-    rightItems[4], // Respect (id: 5) - position 3
-    rightItems[3], // Hurt (id: 4) - position 4
-    rightItems[2]  // Kindness (id: 3) - position 5
-  ];
+  rightItems[3], // Makes Others Sad
+  rightItems[0], // Shows Respect
+  rightItems[4], // Fixes Mistakes
+  rightItems[1], // Hurts Feelings
+  rightItems[2]  // Spreads Kindness
+];
+
 
   const handleLeftSelect = (item) => {
     if (showResult) return;

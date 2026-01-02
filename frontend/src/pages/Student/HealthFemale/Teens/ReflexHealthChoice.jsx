@@ -45,7 +45,7 @@ const ReflexHealthChoice = () => {
       options: [
         { text: "Ignore completely", emoji: "❌", isCorrect: false },
         { text: "Take unprescribed drugs", emoji: "💊", isCorrect: false },
-        { text: "Apply heat therapy", emoji: "🔥", isCorrect: true },
+        { text: "doctor prescribed medicines", emoji: "🧑‍⚕️", isCorrect: true },
         { text: "Suffer without help", emoji: "😣", isCorrect: false }
       ]
     },

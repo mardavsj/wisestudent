@@ -19,20 +19,20 @@ const PuzzleMatchCivicRoles = () => {
 
   // Civic Roles (left side) - 5 items
   const roles = [
-    { id: 1, name: "Judge", emoji: "⚖️", description: "Legal official who makes court decisions" },
-    { id: 2, name: "Police", emoji: "👮", description: "Law enforcement officers" },
-    { id: 3, name: "Voter", emoji: "🗳️", description: "Citizen who participates in elections" },
-    { id: 4, name: "Teacher", emoji: "🏫", description: "Educator in schools and institutions" },
-    { id: 5, name: "Citizen", emoji: "👥", description: "Member of a community or nation" }
+    { id: 1, name: "Judge", emoji: "⚖️",  },
+    { id: 2, name: "Police", emoji: "👮",  },
+    { id: 3, name: "Voter", emoji: "🗳️",  },
+    { id: 4, name: "Teacher", emoji: "🏫",  },
+    { id: 5, name: "Citizen", emoji: "👥",  }
   ];
 
   // Responsibilities (right side) - 5 items
   const responsibilities = [
-    { id: 3, name: "Democracy", emoji: "⚖️", description: "Participate in government decisions" },
-    { id: 2, name: "Safety", emoji: "🛡️", description: "Protect people and property" },
-    { id: 4, name: "Education", emoji: "🎓", description: "Provide knowledge and skills" },
-    { id: 5, name: "Responsibility", emoji: "📋", description: "Duties and obligations to society" },
-    { id: 1, name: "Court", emoji: "🏛️", description: "Administer justice in legal proceedings" },
+    { id: 3, name: "Democracy", emoji: "⚖️",  },
+    { id: 2, name: "Safety", emoji: "🛡️",  },
+    { id: 4, name: "Education", emoji: "🎓",  },
+    { id: 5, name: "Responsibility", emoji: "📋",  },
+    { id: 1, name: "Court", emoji: "🏛️",  },
   ];
 
   // Correct matches

@@ -195,7 +195,7 @@ const MorningRoutineStory = () => {
       score={coins}
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
-      gameId="health-female-kids-91"
+      gameId="health-female-kids-31"
       gameType="health-female"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

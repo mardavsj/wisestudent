@@ -65,7 +65,7 @@ const ShoppingSimulation = () => {
         },
         { 
           text: "Verified Retailer", 
-          emoji: "✅",
+          emoji: "🛒",
           isCorrect: true
         },
         { 

@@ -44,21 +44,19 @@ const RoleplayTrueLeader = () => {
           id: "a", 
           text: "Offer to help and motivate the team to finish together", 
           emoji: "💪", 
-          description: "Helping and motivating shows true leadership",
+          
           isCorrect: true 
         },
         { 
           id: "b", 
           text: "Tell them to hurry up without helping", 
           emoji: "😠", 
-          description: "Commanding without helping isn't true leadership",
           isCorrect: false 
         },
         { 
           id: "c", 
           text: "Blame them for being slow", 
           emoji: "👆", 
-          description: "Blaming doesn't help the team",
           isCorrect: false 
         }
       ]
@@ -71,21 +69,18 @@ const RoleplayTrueLeader = () => {
           id: "a", 
           text: "Complain loudly to the teacher", 
           emoji: "😠", 
-          description: "Complaining doesn't show leadership",
           isCorrect: false 
         },
         { 
           id: "b", 
           text: "Do the task yourself and inspire others by example", 
           emoji: "🌟", 
-          description: "Leading by example shows true leadership",
           isCorrect: true 
         },
         { 
           id: "c", 
           text: "Ignore it and leave the work unfinished", 
           emoji: "😶", 
-          description: "Ignoring problems doesn't show leadership",
           isCorrect: false 
         }
       ]
@@ -98,21 +93,18 @@ const RoleplayTrueLeader = () => {
           id: "a", 
           text: "Publicly argue and embarrass them", 
           emoji: "😠", 
-          description: "Public arguments damage relationships",
           isCorrect: false 
         },
         { 
           id: "b", 
           text: "Stop working with them forever", 
           emoji: "🚫", 
-          description: "Cutting ties doesn't resolve issues",
           isCorrect: false 
         },
         { 
           id: "c", 
           text: "Calmly talk later and focus on teamwork over ego", 
           emoji: "🤝", 
-          description: "Calm communication shows mature leadership",
           isCorrect: true 
         }
       ]
@@ -125,21 +117,18 @@ const RoleplayTrueLeader = () => {
           id: "a", 
           text: "Encourage them and remind others to be kind", 
           emoji: "💪", 
-          description: "Encouraging and promoting kindness shows leadership",
           isCorrect: true 
         },
         { 
           id: "b", 
           text: "Join in the laughter", 
           emoji: "😄", 
-          description: "Laughing at mistakes is unkind",
           isCorrect: false 
         },
         { 
           id: "c", 
           text: "Stay silent and ignore it", 
           emoji: "😶", 
-          description: "Leaders should support others",
           isCorrect: false 
         }
       ]
@@ -152,21 +141,18 @@ const RoleplayTrueLeader = () => {
           id: "a", 
           text: "Take all the praise for yourself", 
           emoji: "😏", 
-          description: "Taking all credit is selfish",
           isCorrect: false 
         },
         { 
           id: "b", 
           text: "Thank the team and share credit with everyone", 
           emoji: "👏", 
-          description: "Sharing credit shows true leadership",
           isCorrect: true 
         },
         { 
           id: "c", 
           text: "Ignore the team and post about it alone", 
           emoji: "😶", 
-          description: "Ignoring the team is disrespectful",
           isCorrect: false 
         }
       ]

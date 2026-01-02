@@ -35,21 +35,19 @@ const QuizLeadership = () => {
           id: "a", 
           text: "Serving and helping others", 
           emoji: "🤝", 
-          description: "True leaders serve and support their team",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Commanding others", 
           emoji: "📣", 
-          description: "Commanding creates fear, not respect",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignoring the team", 
           emoji: "🙈", 
-          description: "Ignoring the team shows poor leadership",
           isCorrect: false
         }
       ]
@@ -62,21 +60,18 @@ const QuizLeadership = () => {
           id: "a", 
           text: "Yelling for obedience", 
           emoji: "😠", 
-          description: "Yelling creates fear, not inspiration",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Setting a good example", 
           emoji: "🌟", 
-          description: "Leading by example inspires others",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Doing everything alone", 
           emoji: "🚶‍♂️", 
-          description: "Leaders work with their team",
           isCorrect: false
         }
       ]
@@ -89,21 +84,18 @@ const QuizLeadership = () => {
           id: "a", 
           text: "Blame them for failure", 
           emoji: "👎", 
-          description: "Blaming demotivates the team",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Stay silent", 
           emoji: "🤐", 
-          description: "Leaders should guide, not stay silent",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Support and guide them", 
           emoji: "🫶", 
-          description: "Supporting the team shows true leadership",
           isCorrect: true
         }
       ]
@@ -116,21 +108,18 @@ const QuizLeadership = () => {
           id: "a", 
           text: "Kindness and fairness", 
           emoji: "💖", 
-          description: "Kindness and fairness build trust",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Bossiness", 
           emoji: "😤", 
-          description: "Bossiness creates resentment",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Popularity", 
           emoji: "🎭", 
-          description: "Popularity doesn't equal good leadership",
           isCorrect: false
         }
       ]
@@ -143,21 +132,18 @@ const QuizLeadership = () => {
           id: "a", 
           text: "Only help themselves", 
           emoji: "🙄", 
-          description: "Self-serving decisions hurt the team",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Benefit everyone in the team", 
           emoji: "🌍", 
-          description: "Good leaders consider everyone's benefit",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Avoid responsibility", 
           emoji: "🚫", 
-          description: "Leaders take responsibility",
           isCorrect: false
         }
       ]

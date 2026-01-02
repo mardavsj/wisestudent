@@ -79,13 +79,7 @@ const QuizOnPreventiveHealth = () => {
       text: "Which habit supports preventive health?",
       emoji: "💪",
       options: [
-        {
-          id: "a",
-          text: "Regular exercise and balanced nutrition",
-          emoji: "🥗",
-          // description: "Healthy lifestyle prevents chronic diseases",
-          isCorrect: false
-        },
+       
         {
           id: "b",
           text: "Skipping meals to lose weight",
@@ -98,8 +92,15 @@ const QuizOnPreventiveHealth = () => {
           text: "Staying up late regularly",
           emoji: "🌙",
           // description: "Poor sleep weakens the immune system",
+          isCorrect: false
+        },
+         {
+          id: "a",
+          text: "Regular exercise and balanced nutrition",
+          emoji: "🥗",
+          // description: "Healthy lifestyle prevents chronic diseases",
           isCorrect: true
-        }
+        },
       ]
     },
     {
@@ -107,13 +108,7 @@ const QuizOnPreventiveHealth = () => {
       text: "Why are regular health screenings important?",
       emoji: "📋",
       options: [
-        {
-          id: "a",
-          text: "To detect problems early when treatable",
-          emoji: "🔍",
-          // description: "Early detection improves treatment outcomes",
-          isCorrect: false
-        },
+       
         {
           id: "b",
           text: "To avoid seeing a doctor",
@@ -126,8 +121,15 @@ const QuizOnPreventiveHealth = () => {
           text: "To prove you're healthy to others",
           emoji: "🧐",
           // description: "Screenings are for personal health management",
+          isCorrect: false
+        },
+         {
+          id: "a",
+          text: "To detect problems early when treatable",
+          emoji: "🔍",
+          // description: "Early detection improves treatment outcomes",
           isCorrect: true
-        }
+        },
       ]
     },
     {

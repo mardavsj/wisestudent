@@ -30,21 +30,19 @@ const KindOrRudeQuiz = () => {
           id: "a", 
           text: "Pushing", 
           emoji: "😡", 
-          description: "Using physical force in a harmful way",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Teasing", 
           emoji: "😏", 
-          description: "Making fun of others in a mean way",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Helping", 
           emoji: "🤗", 
-          description: "Assisting others with care and compassion",
           isCorrect: true
         }
       ]
@@ -57,21 +55,18 @@ const KindOrRudeQuiz = () => {
           id: "a", 
           text: "Sharing toys", 
           emoji: "🤝", 
-          description: "Letting others enjoy what you have",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Taking toys by force", 
           emoji: "😡", 
-          description: "Using aggression to get what you want",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignoring a friend", 
           emoji: "🙈", 
-          description: "Not paying attention to someone who needs you",
           isCorrect: false
         }
       ]
@@ -84,21 +79,18 @@ const KindOrRudeQuiz = () => {
           id: "a", 
           text: "Yelling at others", 
           emoji: "😤", 
-          description: "Speaking harshly and aggressively",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Gossiping", 
           emoji: "🗣️", 
-          description: "Talking about others behind their back",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Saying thank you", 
           emoji: "🙏", 
-          description: "Expressing gratitude and appreciation",
           isCorrect: true
         }
       ]
@@ -111,21 +103,18 @@ const KindOrRudeQuiz = () => {
           id: "a", 
           text: "Listening to someone", 
           emoji: "🫂", 
-          description: "Paying attention and showing you care",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Ignoring them", 
           emoji: "🙄", 
-          description: "Not paying attention when someone needs you",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Interrupting", 
           emoji: "😬", 
-          description: "Cutting someone off while they're speaking",
           isCorrect: false
         }
       ]
@@ -138,21 +127,18 @@ const KindOrRudeQuiz = () => {
           id: "a", 
           text: "Criticizing harshly", 
           emoji: "😡", 
-          description: "Saying mean things that hurt others",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Laughing at mistakes", 
           emoji: "😏", 
-          description: "Making fun of others when they're wrong",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Complimenting", 
           emoji: "😊", 
-          description: "Saying nice things to make others feel good",
           isCorrect: true
         }
       ]

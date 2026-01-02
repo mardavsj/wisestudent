@@ -19,127 +19,130 @@ const SportsEnergyStory = () => {
   const [finalScore, setFinalScore] = useState(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "After an intense sports session, you're thirsty and tired. What should you drink?",
-      options: [
-        {
-          id: "a",
-          text: "Water with a pinch of salt",
-          emoji: "💧",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Energy drink",
-          emoji: "⚡",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Soda",
-          emoji: "🥤",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You've just finished playing badminton. What should you eat for recovery?",
-      options: [
-        {
-          id: "a",
-          text: "Banana and nuts",
-          emoji: "🍌",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Chips and cola",
-          emoji: "🍟",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Yogurt with berries",
-          emoji: "🫐",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Before a morning sports practice, what should you eat?",
-      options: [
-        {
-          id: "a",
-          text: "Light snack like idli or banana",
-          emoji: "🍌",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Heavy meal like dosa with sambar",
-          emoji: "🍽️",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Oats with milk",
-          emoji: "🥣",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "During a long sports tournament, how often should you hydrate?",
-      options: [
-        {
-          id: "a",
-          text: "Only when feeling very thirsty",
-          emoji: "🥵",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Every 15-20 minutes",
-          emoji: "⏰",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Drink a lot at once during breaks",
-          emoji: "🥤",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "After sports, which combination helps muscle recovery best?",
-      options: [
-        {
-          id: "a",
-          text: "Protein and carbohydrates",
-          emoji: "🥚",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Only protein",
-          emoji: "🥩",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Carbohydrates and protein",
-          emoji: "🥞",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "After an intense sports session, you feel thirsty and tired. What should you drink?",
+    options: [
+      {
+        id: "a",
+        text: "Water with a pinch of salt",
+        emoji: "💧",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Energy drink",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Soda",
+        emoji: "🥤",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "You finish playing badminton. What should you eat to recover?",
+    options: [
+      {
+        id: "a",
+        text: "Banana and nuts",
+        emoji: "🍌",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Chips and cola",
+        emoji: "🍟",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Yogurt with berries",
+        emoji: "🫐",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Before morning sports practice, what should you eat?",
+    options: [
+      {
+        id: "a",
+        text: "Light snack like idli or banana",
+        emoji: "🍌",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Oats with milk",
+        emoji: "🥣",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Heavy meal like dosa with sambar",
+        emoji: "🍽️",
+        isCorrect: false
+      },
+      
+    ]
+  },
+  {
+    id: 4,
+    text: "During a long sports tournament, how often should you drink water?",
+    options: [
+      {
+        id: "b",
+        text: "Every 15–20 minutes",
+        emoji: "⏰",
+        isCorrect: true
+      },
+      {
+        id: "a",
+        text: "Only when you feel very thirsty",
+        emoji: "🥵",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Drink a lot only during breaks",
+        emoji: "🥤",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "After sports, which nutrient combination helps muscles recover best?",
+    options: [
+      {
+        id: "a",
+        text: "Healthy fats and vitamins",
+        emoji: "🥑",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Only vitamins",
+        emoji: "🍊",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Carbohydrates and protein",
+        emoji: "🥪",
+        isCorrect: true
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const newChoices = [...choices, { 

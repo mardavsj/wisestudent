@@ -38,21 +38,20 @@ const RoleplayGoodTeammate = () => {
           id: "help", 
           text: "Offer to help and work together to complete it", 
           emoji: "💪", 
-          description: "Helping teammates shows good teamwork",
+          
           isCorrect: true 
         },
         { 
           id: "complain", 
           text: "Complain that they're slowing the team", 
           emoji: "😠", 
-          description: "Complaining doesn't help the team",
+          
           isCorrect: false 
         },
         { 
           id: "ignore", 
           text: "Ignore them and focus only on your part", 
           emoji: "😶", 
-          description: "Ignoring teammates shows poor teamwork",
           isCorrect: false 
         }
       ]
@@ -66,21 +65,18 @@ const RoleplayGoodTeammate = () => {
           id: "join", 
           text: "Join in and interrupt too", 
           emoji: "🗣️", 
-          description: "Interrupting creates more chaos",
           isCorrect: false 
         },
         { 
           id: "remind", 
           text: "Calmly remind everyone to take turns and listen", 
           emoji: "👂", 
-          description: "Encouraging turn-taking shows good teamwork",
           isCorrect: true 
         },
         { 
           id: "silent", 
           text: "Stay silent and let the chaos continue", 
           emoji: "😶", 
-          description: "Staying silent doesn't help the team",
           isCorrect: false 
         }
       ]
@@ -94,21 +90,18 @@ const RoleplayGoodTeammate = () => {
           id: "blame", 
           text: "Say it's their fault", 
           emoji: "👆", 
-          description: "Blaming makes them feel worse",
           isCorrect: false 
         },
         { 
           id: "encourage", 
           text: "Encourage them and remind the team of effort and teamwork", 
           emoji: "💪", 
-          description: "Encouragement supports the team",
           isCorrect: true 
         },
         { 
           id: "quiet", 
           text: "Stay quiet to avoid drama", 
           emoji: "😶", 
-          description: "Staying quiet doesn't support teammates",
           isCorrect: false 
         }
       ]
@@ -122,21 +115,18 @@ const RoleplayGoodTeammate = () => {
           id: "listen", 
           text: "Listen to both sides and find a compromise", 
           emoji: "🤝", 
-          description: "Finding compromise shows good teamwork",
           isCorrect: true 
         },
         { 
           id: "pick", 
           text: "Pick one side to end the argument quickly", 
           emoji: "👆", 
-          description: "Picking sides doesn't resolve disagreements",
           isCorrect: false 
         },
         { 
           id: "stop", 
           text: "Tell them to stop arguing without hearing them", 
           emoji: "🚫", 
-          description: "Not listening doesn't solve problems",
           isCorrect: false 
         }
       ]
@@ -150,21 +140,18 @@ const RoleplayGoodTeammate = () => {
           id: "relax", 
           text: "Relax and scroll your phone", 
           emoji: "📱", 
-          description: "Good teammates help others finish",
           isCorrect: false 
         },
         { 
           id: "complain", 
           text: "Complain that others are too slow", 
           emoji: "😠", 
-          description: "Complaining doesn't help the team",
           isCorrect: false 
         },
         { 
           id: "help", 
           text: "Offer help to others so the team finishes together", 
           emoji: "🤝", 
-          description: "Helping others shows excellent teamwork",
           isCorrect: true 
         }
       ]

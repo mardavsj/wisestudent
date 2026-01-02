@@ -25,20 +25,20 @@ const PuzzleDuties = () => {
 
   // Duties and their responsible persons
   const leftItems = [
-    { id: 1, name: "Homework", emoji: "📚", description: "School assignments" },
-    { id: 2, name: "Cleaning Room", emoji: "🧹", description: "Keeping space tidy" },
-    { id: 3, name: "Feeding Dog", emoji: "🐶", description: "Caring for pets" },
-    { id: 4, name: "Watering Plants", emoji: "🌿", description: "Keeping plants healthy" },
-    { id: 5, name: "Helping Grandpa", emoji: "👴", description: "Assisting elders" }
+    { id: 1, name: "Homework", emoji: "📚",  },
+    { id: 2, name: "Cleaning Room", emoji: "🧹",  },
+    { id: 3, name: "Feeding Dog", emoji: "🐶",  },
+    { id: 4, name: "Watering Plants", emoji: "🌿",  },
+    { id: 5, name: "Helping Grandpa", emoji: "👴",  }
   ];
 
   // Responsible persons - reordered so correct matches are in different positions
   const rightItems = [
-    { id: 1, name: "Self", emoji: "🧑", description: "Own responsibility" },
-    { id: 2, name: "Family", emoji: "👪", description: "Family member's duty" },
-    { id: 3, name: "Student", emoji: "👩‍🎓", description: "Student's responsibility" },
-    { id: 4, name: "Owner", emoji: "🐕", description: "Pet owner's duty" },
-    { id: 5, name: "Gardener", emoji: "🪴", description: "Plant caretaker" }
+    { id: 1, name: "Self", emoji: "🧑",  },
+    { id: 2, name: "Family", emoji: "👪",  },
+    { id: 3, name: "Student", emoji: "👩‍🎓",  },
+    { id: 4, name: "Owner", emoji: "🐕",  },
+    { id: 5, name: "Gardener", emoji: "🪴",  }
   ];
 
   // Correct matches (with reordered right items)

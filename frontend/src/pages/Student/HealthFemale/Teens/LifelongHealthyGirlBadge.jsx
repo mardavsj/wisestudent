@@ -122,11 +122,7 @@ const LifelongHealthyGirlBadge = () => {
       title: "Stress Management",
       question: "How can stress be managed in a healthy way?",
       options: [
-        { 
-          text: "Through regular exercise and mindfulness", 
-          emoji: "🧘", 
-          isCorrect: false
-        },
+        
         { 
           text: "By avoiding all responsibilities", 
           emoji: "🌱", 
@@ -138,10 +134,15 @@ const LifelongHealthyGirlBadge = () => {
           isCorrect: false
         },
         { 
-          text: "Practicing relaxation techniques", 
-          emoji: "😌", 
+          text: "By using social media", 
+          emoji: "📱", 
+          isCorrect: false
+        },
+        { 
+          text: "Through regular exercise and mindfulness", 
+          emoji: "🧘", 
           isCorrect: true
-        }
+        },
       ],
       feedback: {
         correct: "Exactly! Relaxation techniques like deep breathing help manage stress effectively!",

@@ -25,20 +25,20 @@ const PuzzleOfDilemmas = () => {
 
   // Values and their outcomes
   const leftItems = [
-    { id: 1, name: "Honesty", emoji: "✨", description: "Being truthful always" },
-    { id: 2, name: "Cheating", emoji: "😏", description: "Breaking rules unfairly" },
-    { id: 3, name: "Helping", emoji: "🤝", description: "Assisting others" },
-    { id: 4, name: "Lying", emoji: "🤥", description: "Not telling truth" },
-    { id: 5, name: "Sharing", emoji: "🍎", description: "Giving to others" }
+    { id: 1, name: "Honesty", emoji: "✨",  },
+    { id: 2, name: "Cheating", emoji: "😏",  },
+    { id: 3, name: "Helping", emoji: "🤝",  },
+    { id: 4, name: "Lying", emoji: "🤥",  },
+    { id: 5, name: "Sharing", emoji: "🍎",  }
   ];
 
   // Outcomes - reordered so correct matches are in different positions
   const rightItems = [
-    { id: 3, name: "Kind", emoji: "💖", description: "Caring and helpful" },
-    { id: 4, name: "Bad", emoji: "❌", description: "Not acceptable" },
-    { id: 1, name: "Good", emoji: "🌟", description: "Right and positive" },
-    { id: 5, name: "Right", emoji: "✅", description: "Correct choice" },
-    { id: 2, name: "Wrong", emoji: "⚠️", description: "Bad and negative" }
+    { id: 3, name: "Kind", emoji: "💖",  },
+    { id: 4, name: "Bad", emoji: "❌",  },
+    { id: 1, name: "Good", emoji: "🌟",  },
+    { id: 5, name: "Right", emoji: "✅",  },
+    { id: 2, name: "Wrong", emoji: "⚠️",  }
   ];
 
   // Correct matches (with reordered right items)

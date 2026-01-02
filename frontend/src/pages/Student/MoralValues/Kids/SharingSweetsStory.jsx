@@ -31,21 +31,19 @@ const SharingSweetsStory = () => {
           id: "keep", 
           text: "Keep all for yourself", 
           emoji: "😋", 
-          description: "Don't share",
+          
           isCorrect: false
         },
         { 
           id: "share", 
           text: "Share some with your friend", 
           emoji: "🤝", 
-          description: "Give them some sweets",
           isCorrect: true
         },
         { 
           id: "one", 
           text: "Give only one and keep the rest", 
           emoji: "🍬", 
-          description: "Share a little",
           isCorrect: false
         }
       ]
@@ -58,21 +56,18 @@ const SharingSweetsStory = () => {
           id: "bad", 
           text: "Say 'Too bad!'", 
           emoji: "😅", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "hide", 
           text: "Hide your lunch", 
           emoji: "🙈", 
-          description: "Avoid sharing",
           isCorrect: false
         },
         { 
           id: "half", 
           text: "Share half of your lunch", 
           emoji: "🍔", 
-          description: "Share generously",
           isCorrect: true
         }
       ]
@@ -85,21 +80,18 @@ const SharingSweetsStory = () => {
           id: "alone", 
           text: "Play alone", 
           emoji: "🙅‍♂️", 
-          description: "Don't share",
           isCorrect: false
         },
         { 
           id: "turns", 
           text: "Let everyone take turns", 
           emoji: "🤝", 
-          description: "Share fairly",
           isCorrect: true
         },
         { 
           id: "best", 
           text: "Only allow your best friend", 
           emoji: "👫", 
-          description: "Share with one person",
           isCorrect: false
         }
       ]
@@ -112,21 +104,18 @@ const SharingSweetsStory = () => {
           id: "share_stickers", 
           text: "Share some stickers with your friend", 
           emoji: "⭐", 
-          description: "Give them some",
           isCorrect: true
         },
         { 
           id: "keep_all", 
           text: "Keep all stickers for yourself", 
           emoji: "😎", 
-          description: "Don't share",
           isCorrect: false
         },
         { 
           id: "show_only", 
           text: "Show them but don't give any", 
           emoji: "👀", 
-          description: "Just show off",
           isCorrect: false
         }
       ]
@@ -139,21 +128,18 @@ const SharingSweetsStory = () => {
           id: "give", 
           text: "Give one to your classmate", 
           emoji: "🎁", 
-          description: "Share generously",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore and keep them all", 
           emoji: "😐", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "lend", 
           text: "Lend one to your classmate", 
           emoji: "✏️", 
-          description: "Help them out",
           isCorrect: false
         }
       ]

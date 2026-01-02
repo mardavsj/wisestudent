@@ -25,20 +25,20 @@ const PuzzleOfCourage = () => {
 
   // Actions and their outcomes
   const leftItems = [
-    { id: 1, name: "Helping Friend", emoji: "🤝", description: "Assisting when friend needs help" },
-    { id: 2, name: "Teasing Someone", emoji: "😈", description: "Making fun of others" },
-    { id: 3, name: "Standing Up to Bully", emoji: "✊", description: "Defending others from harm" },
-    { id: 4, name: "Admitting Mistake", emoji: "🙋‍♂️", description: "Taking responsibility" },
-    { id: 5, name: "Telling Truth", emoji: "🗣️", description: "Being honest always" }
+    { id: 1, name: "Helping Friend", emoji: "🤝",  },
+    { id: 2, name: "Teasing Someone", emoji: "😈",  },
+    { id: 3, name: "Standing Up to Bully", emoji: "✊",  },
+    { id: 4, name: "Admitting Mistake", emoji: "🙋‍♂️",  },
+    { id: 5, name: "Telling Truth", emoji: "🗣️",  }
   ];
 
   // Outcomes - reordered so correct matches are in different positions
   const rightItems = [
-    { id: 1, name: "Weak", emoji: "😐", description: "Shows fear and cowardice" },
-    { id: 2, name: "Fearless", emoji: "⚔️", description: "No fear, full of courage" },
-    { id: 3, name: "Brave", emoji: "💪", description: "Shows courage and strength" },
-    { id: 4, name: "Heroic", emoji: "🛡️", description: "Acts of bravery and honor" },
-    { id: 5, name: "Honest", emoji: "💎", description: "Shows truth and integrity" }
+    { id: 1, name: "Weak", emoji: "😐",  },
+    { id: 2, name: "Fearless", emoji: "⚔️",  },
+    { id: 3, name: "Brave", emoji: "💪",  },
+    { id: 4, name: "Heroic", emoji: "🛡️",  },
+    { id: 5, name: "Honest", emoji: "💎",  }
   ];
 
   // Correct matches - rearranged so correct answers aren't always in the same position

@@ -35,22 +35,20 @@ const SleepHealthQuiz = () => {
         { 
           id: "a", 
           text: "No - screens before bed disrupt sleep", 
-          emoji: "❌", 
-          description: "Blue light from screens disrupts your sleep cycle and makes it harder to fall asleep",
+          emoji: "🙃", 
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Yes - it helps me relax", 
           emoji: "😴", 
-          description: "Screens before bed actually disrupt sleep, not help you relax",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Maybe - depends on the person", 
           emoji: "🤔", 
-          description: "Screens before bed disrupt sleep for everyone, regardless of individual differences",
           isCorrect: false
         }
       ]
@@ -63,21 +61,18 @@ const SleepHealthQuiz = () => {
           id: "a", 
           text: "Yes - it's fine", 
           emoji: "😐", 
-          description: "Using phones before bed disrupts sleep quality",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - blue light affects sleep quality", 
-          emoji: "❌", 
-          description: "Blue light from phones suppresses melatonin and disrupts your natural sleep cycle",
+          emoji: "📱", 
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Sometimes - not a big deal", 
           emoji: "🤷", 
-          description: "Even occasional phone use before bed can significantly disrupt sleep",
           isCorrect: false
         }
       ]
@@ -90,21 +85,18 @@ const SleepHealthQuiz = () => {
           id: "a", 
           text: "No - it doesn't matter", 
           emoji: "😑", 
-          description: "Screen time before bed significantly affects your sleep schedule",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Only if you use it for hours", 
           emoji: "🤔", 
-          description: "Even short screen time before bed can disrupt your sleep cycle",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Yes - it disrupts your sleep cycle", 
-          emoji: "✅", 
-          description: "Screen time before bed disrupts your circadian rhythm and sleep cycle",
+          emoji: "📱", 
           isCorrect: true
         }
       ]
@@ -116,22 +108,19 @@ const SleepHealthQuiz = () => {
         { 
           id: "a", 
           text: "No - it can keep you awake", 
-          emoji: "❌", 
-          description: "Notifications can trigger alertness and make it harder to fall asleep",
+          emoji: "😐", 
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Yes - to stay updated", 
           emoji: "📱", 
-          description: "Checking notifications before bed can keep you awake and disrupt sleep",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Only important ones", 
           emoji: "🤷", 
-          description: "Even checking important notifications can disrupt your sleep preparation",
           isCorrect: false
         }
       ]
@@ -144,21 +133,18 @@ const SleepHealthQuiz = () => {
           id: "a", 
           text: "Yes - it's comfortable", 
           emoji: "😴", 
-          description: "Using devices in bed disrupts the association between bed and sleep",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - bed should be for sleep only", 
-          emoji: "✅", 
-          description: "Bed should be reserved for sleep to maintain good sleep hygiene and better rest",
+          emoji: "🙂", 
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Sometimes - not harmful", 
           emoji: "😐", 
-          description: "Using devices in bed can harm sleep quality even if done occasionally",
           isCorrect: false
         }
       ]

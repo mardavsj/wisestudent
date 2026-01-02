@@ -32,8 +32,8 @@ const ReflexDutyCheck = () => {
       question: "You promised a friend to help them study. 📚",
       correctAnswer: "Keep Promise",
       options: [
-        { text: "Keep Promise", isCorrect: true, emoji: "✅" },
-        { text: "Break Promise", isCorrect: false, emoji: "❌" },
+        { text: "Keep Promise", isCorrect: true, emoji: "🫴" },
+        { text: "Break Promise", isCorrect: false, emoji: "😞" },
         { text: "Delay", isCorrect: false, emoji: "⏳" },
         { text: "Ignore", isCorrect: false, emoji: "🙄" }
       ]
@@ -43,8 +43,8 @@ const ReflexDutyCheck = () => {
       question: "You said you'd finish a group task on time. 📝",
       correctAnswer: "Keep Promise",
       options: [
-        { text: "Break Promise", isCorrect: false, emoji: "❌" },
-        { text: "Keep Promise", isCorrect: true, emoji: "✅" },
+        { text: "Break Promise", isCorrect: false, emoji: "😞" },
+        { text: "Keep Promise", isCorrect: true, emoji: "🫴" },
         { text: "Delay", isCorrect: false, emoji: "⏳" },
         { text: "Ignore", isCorrect: false, emoji: "🙄" }
       ]
@@ -56,8 +56,8 @@ const ReflexDutyCheck = () => {
       options: [
         { text: "Delay", isCorrect: false, emoji: "⏳" },
         { text: "Ignore", isCorrect: false, emoji: "🙄" },
-        { text: "Keep Promise", isCorrect: true, emoji: "✅" },
-        { text: "Break Promise", isCorrect: false, emoji: "❌" }
+        { text: "Keep Promise", isCorrect: true, emoji: "🫴" },
+        { text: "Break Promise", isCorrect: false, emoji: "😞" }
       ]
     },
     {
@@ -65,8 +65,8 @@ const ReflexDutyCheck = () => {
       question: "You promised to attend a community cleanup. 🌳",
       correctAnswer: "Keep Promise",
       options: [
-        { text: "Keep Promise", isCorrect: true, emoji: "✅" },
-        { text: "Break Promise", isCorrect: false, emoji: "❌" },
+        { text: "Keep Promise", isCorrect: true, emoji: "🫴" },
+        { text: "Break Promise", isCorrect: false, emoji: "😞" },
         { text: "Delay", isCorrect: false, emoji: "⏳" },
         { text: "Ignore", isCorrect: false, emoji: "🙄" }
       ]
@@ -78,8 +78,8 @@ const ReflexDutyCheck = () => {
       options: [
         { text: "Delay", isCorrect: false, emoji: "⏳" },
         { text: "Ignore", isCorrect: false, emoji: "🙄" },
-        { text: "Break Promise", isCorrect: false, emoji: "❌" },
-        { text: "Keep Promise", isCorrect: true, emoji: "✅" }
+        { text: "Break Promise", isCorrect: false, emoji: "😞" },
+        { text: "Keep Promise", isCorrect: true, emoji: "🫴" }
       ]
     }
   ];

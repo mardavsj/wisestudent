@@ -32,21 +32,20 @@ const ForwardMessageStory = () => {
           id: "a", 
           text: "Believe and Share", 
           emoji: "📤", 
-          description: "Believe it and share it with others",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Verify First", 
           emoji: "🕵️‍♀️", 
-          description: "Don't believe it, and verify before sharing",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Buy It", 
           emoji: "💸", 
-          description: "Buy it immediately",
           isCorrect: false
         }
       ]
@@ -59,7 +58,6 @@ const ForwardMessageStory = () => {
           id: "a", 
           text: "Click the Link", 
           emoji: "⚡", 
-          description: "Click the link quickly",
           isCorrect: false
         },
        
@@ -67,14 +65,12 @@ const ForwardMessageStory = () => {
           id: "c", 
           text: "Forward to Friends", 
           emoji: "📲", 
-          description: "Forward to friends",
           isCorrect: false
         },
          { 
           id: "b", 
           text: "Ignore and Warn", 
           emoji: "🚫", 
-          description: "Ignore and tell others it's fake",
           isCorrect: true
         },
       ]
@@ -87,21 +83,18 @@ const ForwardMessageStory = () => {
           id: "a", 
           text: "Panic and Share", 
           emoji: "😨", 
-          description: "Panic and share it with everyone",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Check Reliable News", 
           emoji: "📰", 
-          description: "Check reliable news or official sites first",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Believe Blindly", 
           emoji: "🙈", 
-          description: "Believe your friend's message blindly",
           isCorrect: false
         }
       ]
@@ -114,14 +107,12 @@ const ForwardMessageStory = () => {
           id: "b", 
           text: "Ignore It", 
           emoji: "😌", 
-          description: "Ignore and don't spread superstition",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Forward Quickly", 
           emoji: "😬", 
-          description: "Forward to everyone quickly",
           isCorrect: false
         },
         
@@ -129,7 +120,6 @@ const ForwardMessageStory = () => {
           id: "c", 
           text: "Post on Story", 
           emoji: "📸", 
-          description: "Post it on your story",
           isCorrect: false
         }
       ]
@@ -143,21 +133,18 @@ const ForwardMessageStory = () => {
           id: "b", 
           text: "Forward Fast", 
           emoji: "⏩", 
-          description: "Forward before it's old news",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Make a Meme", 
           emoji: "😂", 
-          description: "Make a meme about it",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Search to Confirm", 
           emoji: "🔍", 
-          description: "Search online to confirm",
           isCorrect: true
         },
       ]

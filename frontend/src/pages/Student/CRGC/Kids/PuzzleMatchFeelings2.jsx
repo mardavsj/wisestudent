@@ -19,20 +19,20 @@ const PuzzleMatchFeelings2 = () => {
 
   // Emotions (left side) - 5 items
   const emotions = [
-    { id: 1, name: "Sadness", emoji: "😢", description: "Feeling unhappy or sorrowful" },
-    { id: 2, name: "Anger", emoji: "😠", description: "Feeling mad or irritated" },
-    { id: 3, name: "Anxiety", emoji: "😰", description: "Feeling worried or nervous" },
-    { id: 4, name: "Joy", emoji: "😄", description: "Feeling happy and delighted" },
-    { id: 5, name: "Frustration", emoji: "😤", description: "Feeling annoyed or disappointed" }
+    { id: 1, name: "Sadness", emoji: "😢",  },
+    { id: 2, name: "Anger", emoji: "😠",  },
+    { id: 3, name: "Anxiety", emoji: "😰",  },
+    { id: 4, name: "Joy", emoji: "😄",  },
+    { id: 5, name: "Frustration", emoji: "😤",  }
   ];
 
   // Responses (right side) - 5 items
   const responses = [
-    { id: 1, name: "Talk to a friend", emoji: "💬", description: "Share your feelings with someone you trust" },
-    { id: 3, name: "Practice mindfulness", emoji: "🧘", description: "Stay present and aware of your thoughts" },
-    { id: 2, name: "Take deep breaths", emoji: "🌬️", description: "Use breathing exercises to calm down" },
-    { id: 5, name: "Take a break", emoji: "⏸️", description: "Pause and give yourself time to relax" },
-    { id: 4, name: "Share with others", emoji: "🤗", description: "Express positive feelings with people around you" },
+    { id: 1, name: "Talk to a friend", emoji: "💬" },
+    { id: 3, name: "Practice mindfulness", emoji: "🧘" },
+    { id: 2, name: "Take deep breaths", emoji: "🌬️" },
+    { id: 5, name: "Take a break", emoji: "⏸️" },
+    { id: 4, name: "Share with others", emoji: "🤗" },
   ];
 
   // Correct matches

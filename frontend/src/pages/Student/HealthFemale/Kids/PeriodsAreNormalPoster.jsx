@@ -99,7 +99,7 @@ const PeriodsAreNormalPoster = () => {
       showGameOver={showResult}
       onNext={handleNext}
       nextButtonText="Back to Games"
-      gameId="health-female-kids-36"
+      gameId="health-female-kids-96"
       gameType="health-female"
       totalLevels={stages.length}
       currentLevel={currentStage + 1}

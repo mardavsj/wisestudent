@@ -19,20 +19,20 @@ const PuzzlePeerSupport = () => {
 
   // Scenarios (left side) - 5 items
   const scenarios = [
-    { id: 1, name: "Friend Sad", emoji: "🤗", description: "Someone close to you is feeling down" },
-    { id: 2, name: "Cyberbully", emoji: "📱", description: "Someone harassing others online" },
-    { id: 3, name: "Bully Victim", emoji: "🛡️", description: "Someone being physically intimidated" },
-    { id: 4, name: "New Student", emoji: "👋", description: "Person joining your school or group" },
-    { id: 5, name: "Someone Excluded", emoji: "😢", description: "Person being left out by others" }
+    { id: 1, name: "Friend Sad", emoji: "🤗",  },
+    { id: 2, name: "Cyberbully", emoji: "📱",  },
+    { id: 3, name: "Bully Victim", emoji: "🛡️",  },
+    { id: 4, name: "New Student", emoji: "👋",  },
+    { id: 5, name: "Someone Excluded", emoji: "😢",  }
   ];
 
   // Actions (right side) - 5 items
   const actions = [
-    { id: 1, name: "Comfort", emoji: "🫂", description: "Provide emotional support and care" },
-    { id: 4, name: "Include", emoji: "🎉", description: "Make sure someone can participate" },
-    { id: 2, name: "Report", emoji: "📢", description: "Inform authorities about wrongdoing" },
-    { id: 3, name: "Defend", emoji: "⚔️", description: "Stand up for someone being mistreated" },
-    { id: 5, name: "Reach Out", emoji: "💌", description: "Initiate contact with someone isolated" }
+    { id: 1, name: "Comfort", emoji: "🫂",  },
+    { id: 4, name: "Include", emoji: "🎉",  },
+    { id: 2, name: "Report", emoji: "📢",  },
+    { id: 3, name: "Defend", emoji: "⚔️",  },
+    { id: 5, name: "Reach Out", emoji: "💌",  }
   ];
 
   // Correct matches

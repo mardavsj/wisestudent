@@ -32,8 +32,8 @@ const ReflexTimeManagement = () => {
       question: "Plan Study 📖",
       correctAnswer: "Correct Action",
       options: [
-        { text: "Correct Action", isCorrect: true, emoji: "✅" },
-        { text: "Wrong Action", isCorrect: false, emoji: "❌" },
+        { text: "Correct Action", isCorrect: true, emoji: "👍" },
+        { text: "Wrong Action", isCorrect: false, emoji: "👎" },
         { text: "Skip", isCorrect: false, emoji: "⏭️" },
         { text: "Delay", isCorrect: false, emoji: "⏰" }
       ]
@@ -43,8 +43,8 @@ const ReflexTimeManagement = () => {
       question: "Last-minute Panic 😱",
       correctAnswer: "Wrong Action",
       options: [
-        { text: "Correct Action", isCorrect: false, emoji: "✅" },
-        { text: "Wrong Action", isCorrect: true, emoji: "❌" },
+        { text: "Correct Action", isCorrect: false, emoji: "👍" },
+        { text: "Wrong Action", isCorrect: true, emoji: "👎" },
         { text: "Skip", isCorrect: false, emoji: "⏭️" },
         { text: "Delay", isCorrect: false, emoji: "⏰" }
       ]
@@ -56,8 +56,8 @@ const ReflexTimeManagement = () => {
       options: [
         { text: "Skip", isCorrect: false, emoji: "⏭️" },
         { text: "Delay", isCorrect: false, emoji: "⏰" },
-        { text: "Correct Action", isCorrect: true, emoji: "✅" },
-        { text: "Wrong Action", isCorrect: false, emoji: "❌" }
+        { text: "Correct Action", isCorrect: true, emoji: "👍" },
+        { text: "Wrong Action", isCorrect: false, emoji: "👎" }
       ]
     },
     {
@@ -65,8 +65,8 @@ const ReflexTimeManagement = () => {
       question: "Procrastinate 🛋️",
       correctAnswer: "Wrong Action",
       options: [
-        { text: "Wrong Action", isCorrect: true, emoji: "❌" },
-        { text: "Correct Action", isCorrect: false, emoji: "✅" },
+        { text: "Wrong Action", isCorrect: true, emoji: "👎" },
+        { text: "Correct Action", isCorrect: false, emoji: "👍" },
         { text: "Skip", isCorrect: false, emoji: "⏭️" },
         { text: "Delay", isCorrect: false, emoji: "⏰" }
       ]
@@ -78,8 +78,8 @@ const ReflexTimeManagement = () => {
       options: [
         { text: "Skip", isCorrect: false, emoji: "⏭️" },
         { text: "Delay", isCorrect: false, emoji: "⏰" },
-        { text: "Wrong Action", isCorrect: false, emoji: "❌" },
-        { text: "Correct Action", isCorrect: true, emoji: "✅" }
+        { text: "Wrong Action", isCorrect: false, emoji: "👎" },
+        { text: "Correct Action", isCorrect: true, emoji: "👍" }
       ]
     }
   ];

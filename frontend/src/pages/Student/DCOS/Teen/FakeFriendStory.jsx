@@ -55,7 +55,7 @@ const FakeFriendStory = () => {
         { 
           id: "accept", 
           text: "Accept - we have mutual friends", 
-          emoji: "✅", 
+          emoji: "👋", 
           isCorrect: false
         },
         { 
@@ -109,7 +109,7 @@ const FakeFriendStory = () => {
         { 
           id: "accept-school", 
           text: "Accept - they go to my school", 
-          emoji: "✅", 
+          emoji: "🤝", 
           isCorrect: false
         },
         { 

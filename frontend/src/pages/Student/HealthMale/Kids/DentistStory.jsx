@@ -56,7 +56,7 @@ const DentistStory = () => {
       options: [
         {
           id: "a",
-          text: "2 minutes, twice a day",
+          text: "minimum 4 –5 minutes /twice/daily ",
           emoji: "⏰",
           isCorrect: true
         },

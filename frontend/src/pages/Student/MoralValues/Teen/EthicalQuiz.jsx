@@ -35,21 +35,20 @@ const EthicalQuiz = () => {
           id: "a", 
           text: "No, it's still dishonest", 
           emoji: "🚫", 
-          description: "Copying is dishonest, even once",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Yes, if it's only one time", 
           emoji: "😅", 
-          description: "Even one time is still cheating",
+          
           isCorrect: false
         },
         { 
           id: "c", 
           text: "If the teacher won't notice, it's fine", 
           emoji: "🙈", 
-          description: "Ethics matter even when unseen",
           isCorrect: false
         }
       ]
@@ -62,21 +61,18 @@ const EthicalQuiz = () => {
           id: "a", 
           text: "Help them quietly", 
           emoji: "🤐", 
-          description: "Helping someone cheat is unethical",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Remind them it's wrong", 
           emoji: "🤝", 
-          description: "Encouraging honesty is the ethical choice",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ignore it—it's their choice", 
           emoji: "😶", 
-          description: "Ignoring unethical behavior isn't right",
           isCorrect: false
         }
       ]
@@ -89,21 +85,18 @@ const EthicalQuiz = () => {
           id: "a", 
           text: "Yes, if it benefits you", 
           emoji: "💰", 
-          description: "Breaking promises is wrong regardless",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Depends on situation", 
           emoji: "🤷‍♂️", 
-          description: "Promises should be kept",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "No, honesty matters even when unseen", 
           emoji: "💎", 
-          description: "Ethics apply even when no one is watching",
           isCorrect: true
         }
       ]
@@ -116,21 +109,18 @@ const EthicalQuiz = () => {
           id: "a", 
           text: "No, give credit fairly", 
           emoji: "🙌", 
-          description: "Fair credit shows ethical behavior",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Yes, if others won't speak up", 
           emoji: "😏", 
-          description: "Taking undeserved credit is unethical",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Sometimes it's okay", 
           emoji: "😬", 
-          description: "Credit should always be fair",
           isCorrect: false
         }
       ]
@@ -143,21 +133,18 @@ const EthicalQuiz = () => {
           id: "a", 
           text: "Yes, to protect them", 
           emoji: "❤️", 
-          description: "Lying doesn't truly protect them",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No, lying makes things worse", 
           emoji: "🧭", 
-          description: "Honesty is always the better path",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Maybe, if parents are angry", 
           emoji: "😰", 
-          description: "Lying increases problems",
           isCorrect: false
         }
       ]

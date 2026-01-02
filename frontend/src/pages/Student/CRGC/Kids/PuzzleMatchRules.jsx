@@ -19,20 +19,20 @@ const PuzzleMatchRules = () => {
 
   // Rules (left side) - 5 items
   const rules = [
-    { id: 1, name: "Seatbelt", emoji: "🚗", description: "Safety device worn in vehicles" },
-    { id: 2, name: "Helmet", emoji: "🚴", description: "Head protection for cycling" },
-    { id: 3, name: "Signal", emoji: "🚦", description: "Hand or light signal for direction" },
-    { id: 4, name: "Recycle", emoji: "♻️", description: "Process of reusing materials" },
-    { id: 5, name: "Queue", emoji: "👥", description: "Line of people waiting orderly" }
+    { id: 1, name: "Seatbelt", emoji: "🚗",  },
+    { id: 2, name: "Helmet", emoji: "🚴",  },
+    { id: 3, name: "Signal", emoji: "🚦",  },
+    { id: 4, name: "Recycle", emoji: "♻️",  },
+    { id: 5, name: "Queue", emoji: "👥",  }
   ];
 
   // Categories (right side) - 5 items
   const categories = [
-    { id: 2, name: "Bike Safety", emoji: "🛴", description: "Rules for bicycle safety" },
-    { id: 3, name: "Road Safety", emoji: "🛣️", description: "Rules for general road use" },
-    { id: 1, name: "Car Safety", emoji: "🛡️", description: "Rules for vehicle safety" },
-    { id: 5, name: "Social Rule", emoji: "🤝", description: "Rules for social interactions" },
-    { id: 4, name: "Environmental Rule", emoji: "🌱", description: "Rules for protecting environment" },
+    { id: 2, name: "Bike Safety", emoji: "🛴",  },
+    { id: 3, name: "Road Safety", emoji: "🛣️",  },
+    { id: 1, name: "Car Safety", emoji: "🛡️",  },
+    { id: 5, name: "Social Rule", emoji: "🤝",  },
+    { id: 4, name: "Environmental Rule", emoji: "🌱",  },
   ];
 
   // Correct matches

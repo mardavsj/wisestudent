@@ -29,30 +29,32 @@ const PuzzleOfTraps = () => {
 
   // Items (left side)
   const leftItems = [
-    { id: 1, name: "Phishing Email", emoji: "📧", description: "Suspicious email asking for info" },
-    { id: 2, name: "Official Bank Website", emoji: "🏦", description: "Verified financial institution" },
-    { id: 3, name: "Free Gift Link", emoji: "🎁", description: "Link promising free items" },
-    { id: 4, name: "Verified Payment App", emoji: "💳", description: "Trusted payment service" },
-    { id: 5, name: "Stranger's Message with Link", emoji: "🔗", description: "Unknown person sending link" }
+    { id: 1, name: "Phishing Email", emoji: "📧",  },
+    { id: 2, name: "Official Bank Website", emoji: "🏦" },
+    { id: 3, name: "Free Gift Link", emoji: "🎁" },
+    { id: 4, name: "Verified Payment App", emoji: "💳" },
+    { id: 5, name: "Stranger's Message with Link", emoji: "🔗" }
   ];
 
   // Categories (right side)
   const rightItems = [
-    { id: 1, name: "Scam", emoji: "⚠️", description: "Dangerous or fraudulent" },
-    { id: 2, name: "Safe", emoji: "✅", description: "Trusted and secure" },
-    { id: 3, name: "Scam", emoji: "⚠️", description: "Dangerous or fraudulent" },
-    { id: 4, name: "Safe", emoji: "✅", description: "Trusted and secure" },
-    { id: 5, name: "Scam", emoji: "⚠️", description: "Dangerous or fraudulent" }
-  ];
+    { id: 4, name: "Secure Payment", emoji: "💰" },
+    { id: 3, name: "Too Good to Be True", emoji: "🎭" },
+    { id: 2, name: "Trusted Source", emoji: "🔐" },
+    { id: 1, name: "Steals Information", emoji: "🕵️" },
+  { id: 5, name: "Unknown Sender", emoji: "❓" },
+];
+
 
   // Correct matches (mapped to different positions like PuzzleOfSavingGoals)
   const correctMatches = [
-    { leftId: 1, rightId: 3 }, // Phishing Email → Scam (id: 3)
-    { leftId: 2, rightId: 2 }, // Official Bank Website → Safe (id: 2)
-    { leftId: 3, rightId: 1 }, // Free Gift Link → Scam (id: 1)
-    { leftId: 4, rightId: 4 }, // Verified Payment App → Safe (id: 4)
-    { leftId: 5, rightId: 5 }  // Stranger's Message with Link → Scam (id: 5)
-  ];
+  { leftId: 1, rightId: 1 }, // Phishing Email → Steals Information
+  { leftId: 2, rightId: 2 }, // Official Bank Website → Trusted Source
+  { leftId: 3, rightId: 3 }, // Free Gift Link → Too Good to Be True
+  { leftId: 4, rightId: 4 }, // Verified Payment App → Secure Payment
+  { leftId: 5, rightId: 5 }  // Stranger's Message with Link → Unknown Sender
+];
+
 
   const handleLeftSelect = (item) => {
     if (showResult) return;

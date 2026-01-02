@@ -33,21 +33,19 @@ const WitnessStory = () => {
           id: "ignore", 
           text: "Ignore it and focus on your paper", 
           emoji: "😶", 
-          description: "Continue with your own test without getting involved",
+          
           isCorrect: false
         },
         { 
           id: "inform", 
           text: "Quietly inform the teacher later", 
           emoji: "📢", 
-          description: "Report the cheating after the test ends",
           isCorrect: true
         },
         { 
           id: "join", 
           text: "Join them and cheat too", 
           emoji: "😬", 
-          description: "Start cheating as well",
           isCorrect: false
         }
       ]
@@ -60,21 +58,18 @@ const WitnessStory = () => {
           id: "keep", 
           text: "Keep it for yourself", 
           emoji: "💸", 
-          description: "Take the wallet and its contents",
           isCorrect: false
         },
         { 
           id: "ask", 
           text: "Ask your friends if they want it", 
           emoji: "🤔", 
-          description: "Check with friends before deciding what to do",
           isCorrect: false
         },
         { 
           id: "give", 
           text: "Give it to a teacher or office", 
           emoji: "🏫", 
-          description: "Turn it in to school authorities",
           isCorrect: true
         }
       ]
@@ -87,21 +82,18 @@ const WitnessStory = () => {
           id: "nothing", 
           text: "Say nothing—it's already submitted", 
           emoji: "😐", 
-          description: "Leave it as is since it's too late",
           isCorrect: false
         },
         { 
           id: "tell", 
           text: "Tell the teacher to correct it", 
           emoji: "🗣️", 
-          description: "Ask the teacher to fix the oversight",
           isCorrect: true
         },
         { 
           id: "blame", 
           text: "Tell the student it's their fault", 
           emoji: "🙄", 
-          description: "Blame them for not reminding you",
           isCorrect: false
         }
       ]
@@ -114,21 +106,18 @@ const WitnessStory = () => {
           id: "help", 
           text: "Help them get their place back", 
           emoji: "🧍‍♀️", 
-          description: "Stand up for them and restore their position",
           isCorrect: true
         },
         { 
           id: "take", 
           text: "Take your food and ignore", 
           emoji: "😶", 
-          description: "Continue with your lunch without helping",
           isCorrect: false
         },
         { 
           id: "laugh", 
           text: "Laugh along with the others", 
           emoji: "😂", 
-          description: "Join in the laughter at their expense",
           isCorrect: false
         }
       ]
@@ -141,21 +130,18 @@ const WitnessStory = () => {
           id: "agree", 
           text: "Agree to help them", 
           emoji: "🤫", 
-          description: "Allow them to copy your answers",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore the rule—it's just one exam", 
           emoji: "😅", 
-          description: "Help them despite it being against the rules",
           isCorrect: false
         },
         { 
           id: "refuse", 
           text: "Refuse politely and stay honest", 
           emoji: "💬", 
-          description: "Politely decline and maintain your integrity",
           isCorrect: true
         }
       ]

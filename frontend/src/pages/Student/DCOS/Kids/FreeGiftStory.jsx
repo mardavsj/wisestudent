@@ -32,21 +32,20 @@ const FreeGiftStory = () => {
           id: "a", 
           text: "Click to Claim", 
           emoji: "🖱️", 
-          description: "Click to claim the gift",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Close Pop-up", 
           emoji: "🚫", 
-          description: "Close the pop-up immediately",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Share Link", 
           emoji: "📤", 
-          description: "Share link with friends",
           isCorrect: false
         }
       ]
@@ -59,21 +58,18 @@ const FreeGiftStory = () => {
           id: "a", 
           text: "Enter Card Details", 
           emoji: "💳", 
-          description: "Enter card details",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Try Once", 
           emoji: "😬", 
-          description: "Try it just once",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Tell Parent", 
           emoji: "👨‍👩‍👧", 
-          description: "Ignore and tell a parent",
           isCorrect: true
         }
       ]
@@ -86,21 +82,18 @@ const FreeGiftStory = () => {
           id: "a", 
           text: "Ask Parents First", 
           emoji: "👨‍👩‍👧", 
-          description: "Ask your parents before clicking",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Click and Track", 
           emoji: "🔗", 
-          description: "Click and track",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Download App", 
           emoji: "📲", 
-          description: "Download the tracking app",
           isCorrect: false
         }
       ]
@@ -113,21 +106,18 @@ const FreeGiftStory = () => {
           id: "a", 
           text: "Install Now", 
           emoji: "⬇️", 
-          description: "Install right now",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ask Friend", 
           emoji: "🤔", 
-          description: "Ask friend if it's real",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignore Link", 
           emoji: "🚫", 
-          description: "Ignore suspicious links",
           isCorrect: true
         }
       ]
@@ -140,21 +130,18 @@ const FreeGiftStory = () => {
           id: "a", 
           text: "Click to Claim", 
           emoji: "🖱️", 
-          description: "Click to claim prize",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Close and Report", 
           emoji: "🚨", 
-          description: "Close and report it",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Reply to Ask", 
           emoji: "💬", 
-          description: "Reply to ask more",
           isCorrect: false
         },
         

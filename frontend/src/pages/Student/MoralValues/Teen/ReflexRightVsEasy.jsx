@@ -44,7 +44,7 @@ const ReflexRightVsEasy = () => {
       correctAnswer: "Focus on your own test and report it to the teacher afterward",
       options: [
         { text: "Ignore it since it's not your problem", isCorrect: false, emoji: "🤷" },
-        { text: "Focus on your own test and report it to the teacher afterward", isCorrect: true, emoji: "✅" },
+        { text: "Focus on your own test and report it to the teacher afterward", isCorrect: true, emoji: "🙂" },
         { text: "Start cheating too to stay competitive", isCorrect: false, emoji: "📝" },
         { text: "Confront the cheater during the test", isCorrect: false, emoji: "⚔️" }
       ]

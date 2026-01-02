@@ -33,29 +33,30 @@ const ReflexTeenHygiene = () => {
       id: 1,
       question: "What's important during menstruation?",
       options: [
-        { text: "Keep Same Pad", emoji: "❌", isCorrect: false },
+        { text: "Keep Same Pad", emoji: "🙃", isCorrect: false },
         { text: "Change Pads Often", emoji: "🩹", isCorrect: true },
         { text: "Skip Shower", emoji: "🛏️", isCorrect: false },
         { text: "Skip Deodorant", emoji: "👕", isCorrect: false }
       ]
     },
     {
-      id: 2,
-      question: "Which practice prevents illness?",
-      options: [
-        { text: "Skip Hand Washing", emoji: "💧", isCorrect: false },
-        { text: "Wash Hands", emoji: "🧼", isCorrect: true },
-        { text: "Keep Same Pad", emoji: "❌", isCorrect: false },
-        { text: "Skip Shower", emoji: "🛏️", isCorrect: false }
-      ]
-    },
+  id: 2,
+  question: "Which habit helps prevent infections?",
+  options: [
+    { text: "Sharing personal towels", emoji: "🧻", isCorrect: false },
+    { text: "Keeping nails clean and trimmed", emoji: "✂️", isCorrect: true },
+    { text: "Wearing unwashed clothes", emoji: "👕", isCorrect: false },
+    { text: "Avoiding bathing", emoji: "🚫", isCorrect: false }
+  ]
+},
+
     {
       id: 3,
       question: "What helps control body odor?",
       options: [
         { text: "Use Deodorant", emoji: "🧴", isCorrect: true },
         { text: "Skip Deodorant", emoji: "👕", isCorrect: false },
-        { text: "Keep Same Pad", emoji: "❌", isCorrect: false },
+        { text: "Keep Same Pad", emoji: "🙃", isCorrect: false },
         { text: "Skip Hand Washing", emoji: "💧", isCorrect: false }
       ]
     },
@@ -66,7 +67,7 @@ const ReflexTeenHygiene = () => {
         { text: "Skip Shower", emoji: "🛏️", isCorrect: false },
         { text: "Shower Daily", emoji: "🚿", isCorrect: true },
         { text: "Skip Deodorant", emoji: "👕", isCorrect: false },
-        { text: "Keep Same Pad", emoji: "❌", isCorrect: false }
+        { text: "Keep Same Pad", emoji: "🙃", isCorrect: false }
       ]
     },
     {

@@ -33,21 +33,20 @@ const GroupPressureStory = () => {
           id: "join", 
           text: "Join in the teasing", 
           emoji: "😈", 
-          description: "Participate in making fun of the new student",
+          
           isCorrect: false
         },
         { 
           id: "stay", 
           text: "Stay silent and watch", 
           emoji: "😶", 
-          description: "Observe without saying anything",
+         
           isCorrect: false
         },
         { 
           id: "stop", 
           text: "Tell your friends to stop", 
           emoji: "🛑", 
-          description: "Stand up and tell them to stop teasing",
           isCorrect: true
         }
       ]
@@ -60,21 +59,18 @@ const GroupPressureStory = () => {
           id: "help", 
           text: "Help your friend cheat", 
           emoji: "🤫", 
-          description: "Share your answers during the test",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore and focus on your paper", 
           emoji: "🧠", 
-          description: "Focus on your own test and ignore the request",
           isCorrect: true
         },
         { 
           id: "complain", 
           text: "Complain loudly in the class", 
           emoji: "📢", 
-          description: "Announce the cheating to the whole class",
           isCorrect: false
         }
       ]
@@ -87,21 +83,18 @@ const GroupPressureStory = () => {
           id: "agree", 
           text: "Agree with them", 
           emoji: "😬", 
-          description: "Go along with skipping the duty",
           isCorrect: false
         },
         { 
           id: "remind", 
           text: "Remind them it's everyone's duty", 
           emoji: "🧹", 
-          description: "Remind the group about their responsibility",
           isCorrect: true
         },
         { 
           id: "quiet", 
           text: "Stay quiet", 
           emoji: "😐", 
-          description: "Don't voice your opinion",
           isCorrect: false
         }
       ]
@@ -114,21 +107,18 @@ const GroupPressureStory = () => {
           id: "encourage", 
           text: "Stop others and encourage your classmate", 
           emoji: "💪", 
-          description: "Defend them and show support",
           isCorrect: true
         },
         { 
           id: "laugh", 
           text: "Laugh along with your friends", 
           emoji: "😅", 
-          description: "Join in the laughter",
           isCorrect: false
         },
         { 
           id: "silent", 
           text: "Stay quiet and ignore", 
           emoji: "😶", 
-          description: "Don't react to the situation",
           isCorrect: false
         }
       ]
@@ -141,21 +131,18 @@ const GroupPressureStory = () => {
           id: "go", 
           text: "Go with them and skip practice", 
           emoji: "😎", 
-          description: "Join your friends and skip practice",
           isCorrect: false
         },
         { 
           id: "excuse", 
           text: "Make an excuse to the coach", 
           emoji: "🙄", 
-          description: "Lie to the coach about why you can't come",
           isCorrect: false
         },
         { 
           id: "show", 
           text: "Show up and practice alone", 
           emoji: "🏃‍♀️", 
-          description: "Honor your commitment and attend practice",
           isCorrect: true
         }
       ]

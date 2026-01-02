@@ -30,19 +30,19 @@ const ScamDebate = () => {
         { 
           id: "no-scams", 
           text: "No - many online offers are scams", 
-          description: "Many online offers are scams, always be cautious",
+          
           isCorrect: true
         },
         { 
           id: "yes-online", 
           text: "Yes - if it's online, it's safe", 
-          description: "Online offers are always safe",
+          
           isCorrect: false
         },
         { 
           id: "maybe", 
           text: "Maybe - depends on the website", 
-          description: "It depends on which website the offer is on",
+          
           isCorrect: false
         }
       ]
@@ -54,19 +54,17 @@ const ScamDebate = () => {
         { 
           id: "yes-deals", 
           text: "Yes - online deals are always good", 
-          description: "Online deals are always trustworthy",
+          
           isCorrect: false
         },
         { 
           id: "sometimes", 
           text: "Sometimes - if the price is good", 
-          description: "Trust deals if the price seems good",
           isCorrect: false
         },
         { 
           id: "no-verify", 
           text: "No - verify before trusting", 
-          description: "Always verify online deals before trusting them",
           isCorrect: true
         }
       ]
@@ -78,19 +76,16 @@ const ScamDebate = () => {
         { 
           id: "yes-links", 
           text: "Yes - links are usually safe", 
-          description: "Most online links are safe to click",
           isCorrect: false
         },
         { 
           id: "maybe", 
           text: "Maybe - if they look legitimate", 
-          description: "Click if the link looks legitimate",
           isCorrect: false
         },
         { 
           id: "no-scam-links", 
           text: "No - many links are scams", 
-          description: "Many links are scams, be very careful",
           isCorrect: true
         }
       ]
@@ -102,19 +97,16 @@ const ScamDebate = () => {
         { 
           id: "no-careful", 
           text: "No - be very careful with personal info", 
-          description: "Never share personal information for online offers",
           isCorrect: true
         },
         { 
           id: "yes-ask", 
           text: "Yes - if they ask, it's okay", 
-          description: "It's okay to share if they ask for it",
           isCorrect: false
         },
         { 
           id: "sometimes", 
           text: "Sometimes - if it's a trusted site", 
-          description: "Share only on trusted websites",
           isCorrect: false
         }
       ]
@@ -126,19 +118,17 @@ const ScamDebate = () => {
         { 
           id: "yes-jobs", 
           text: "Yes - online jobs are real", 
-          description: "All online job offers are legitimate",
+         
           isCorrect: false
         },
         { 
           id: "maybe", 
           text: "Maybe - if they pay well", 
-          description: "Trust if the pay seems good",
           isCorrect: false
         },
         { 
           id: "no-verify-jobs", 
           text: "No - many are scams, verify first", 
-          description: "Many online job offers are scams, always verify first",
           isCorrect: true
         }
       ]

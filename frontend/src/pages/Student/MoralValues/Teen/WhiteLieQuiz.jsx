@@ -35,21 +35,19 @@ const WhiteLieQuiz = () => {
           id: "a", 
           text: "No - truth is always safer and better", 
           emoji: "💎", 
-          description: "Truth builds trust and respect",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Yes - small lies don't hurt anyone", 
           emoji: "😊", 
-          description: "Even small lies can cause problems",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Sometimes it's okay to lie", 
           emoji: "🤷", 
-          description: "Lies can damage relationships",
           isCorrect: false
         }
       ]
@@ -62,21 +60,18 @@ const WhiteLieQuiz = () => {
           id: "a", 
           text: "Lie to protect their feelings", 
           emoji: "🙈", 
-          description: "Lying can make things worse",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Tell the truth kindly", 
           emoji: "❤️", 
-          description: "Kind honesty strengthens friendships",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ignore it completely", 
           emoji: "😶", 
-          description: "Avoiding the issue doesn't help",
           isCorrect: false
         }
       ]
@@ -89,21 +84,18 @@ const WhiteLieQuiz = () => {
           id: "a", 
           text: "You feel relieved forever", 
           emoji: "😅", 
-          description: "Relief is temporary",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Nothing changes", 
           emoji: "🤷", 
-          description: "Lies have consequences",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "You lose trust and feel guilty", 
           emoji: "😔", 
-          description: "Lies damage trust and cause guilt",
           isCorrect: true
         }
       ]
@@ -116,21 +108,18 @@ const WhiteLieQuiz = () => {
           id: "a", 
           text: "Even when it's hard", 
           emoji: "💪", 
-          description: "Honesty matters most when it's difficult",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Only when it's easy", 
           emoji: "🙂", 
-          description: "Honesty should always be practiced",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Never, honesty causes trouble", 
           emoji: "🙃", 
-          description: "Honesty builds character and trust",
           isCorrect: false
         }
       ]
@@ -143,21 +132,18 @@ const WhiteLieQuiz = () => {
           id: "a", 
           text: "Because people expect lies", 
           emoji: "😏", 
-          description: "People value honesty",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Because lies weaken trust", 
           emoji: "💔", 
-          description: "Lies damage trust and relationships",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Because it's fun sometimes", 
           emoji: "😜", 
-          description: "Lies are never fun in the long run",
           isCorrect: false
         }
       ]

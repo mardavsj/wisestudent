@@ -33,21 +33,20 @@ const FriendLieStory = () => {
           id: "refuse", 
           text: "Refuse to lie – tell the truth", 
           emoji: "🛡️", 
-          description: "Stand firm and be honest, even if it's difficult",
+          
           isCorrect: true
         },
         { 
           id: "lie", 
           text: "Lie for them – they're my friend", 
           emoji: "😞", 
-          description: "Cover for your friend even though it's dishonest",
+          
           isCorrect: false
         },
         { 
           id: "avoid", 
           text: "Avoid the teacher completely", 
           emoji: "🚶", 
-          description: "Stay away from the situation to avoid making a choice",
           isCorrect: false
         }
       ]
@@ -60,21 +59,18 @@ const FriendLieStory = () => {
           id: "ignore", 
           text: "Ignore them completely", 
           emoji: "🙄", 
-          description: "Pretend not to hear their request",
           isCorrect: false
         },
         { 
           id: "explain", 
           text: "Explain the topic and help them learn", 
           emoji: "💡", 
-          description: "Teach them so they can do it themselves",
           isCorrect: true
         },
         { 
           id: "copy", 
           text: "Let them copy it quickly", 
           emoji: "✏️", 
-          description: "Allow them to copy your work to help them out",
           isCorrect: false
         }
       ]
@@ -87,21 +83,18 @@ const FriendLieStory = () => {
           id: "silent", 
           text: "Stay silent to avoid conflict", 
           emoji: "😐", 
-          description: "Say nothing to keep the peace",
           isCorrect: false
         },
         { 
           id: "yell", 
           text: "Yell at your classmate", 
           emoji: "😡", 
-          description: "Confront them angrily in front of others",
           isCorrect: false
         },
         { 
           id: "calm", 
           text: "Calmly tell the teacher the truth", 
           emoji: "🗣️", 
-          description: "Address the situation professionally with the teacher",
           isCorrect: true
         }
       ]
@@ -114,21 +107,18 @@ const FriendLieStory = () => {
           id: "give", 
           text: "Give it to the teacher or office", 
           emoji: "🏫", 
-          description: "Turn it in to the school office so the owner can retrieve it",
           isCorrect: true
         },
         { 
           id: "take", 
           text: "Take the money and throw the wallet", 
           emoji: "💸", 
-          description: "Keep the money and dispose of the wallet",
           isCorrect: false
         },
         { 
           id: "hide", 
           text: "Keep it hidden for later", 
           emoji: "😶", 
-          description: "Hide it and decide what to do later",
           isCorrect: false
         }
       ]
@@ -141,21 +131,18 @@ const FriendLieStory = () => {
           id: "blame", 
           text: "Blame someone else", 
           emoji: "🚫", 
-          description: "Point fingers at another student to avoid getting in trouble",
           isCorrect: false
         },
         { 
           id: "silent2", 
           text: "Stay silent and hope no one notices", 
           emoji: "😬", 
-          description: "Keep quiet and hope the damage goes unnoticed",
           isCorrect: false
         },
         { 
           id: "admit", 
           text: "Admit it and say sorry", 
           emoji: "🙏", 
-          description: "Take responsibility and apologize for the accident",
           isCorrect: true
         }
       ]

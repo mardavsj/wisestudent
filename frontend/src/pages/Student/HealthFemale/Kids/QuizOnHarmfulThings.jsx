@@ -22,149 +22,135 @@ const QuizOnHarmfulThings = () => {
   const { showCorrectAnswerFeedback, resetFeedback, flashPoints } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Which of these is medicine?",
-      emoji: "💊",
-      options: [
-        {
-          id: "a",
-          text: "Candy",
-          emoji: "🍬",
-          // description: "Candy is a treat.",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Pills from the doctor",
-          emoji: "💊",
-          // description: "Correct! Only take if doctor says.",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Soda",
-          emoji: "🥤",
-          // description: "Soda is a drink.",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Is alcohol (beer/wine) for kids?",
-      emoji: "🍺",
-      options: [
-        {
-          id: "a",
-          text: "Yes, at parties",
-          emoji: "🎉",
-          // description: "No, never for kids.",
-          isCorrect: false
-        },
-        
-        {
-          id: "c",
-          text: "Maybe on Tuesdays",
-          emoji: "📅",
-          // description: "Not on any day.",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "No, it hurts growing bodies",
-          emoji: "🚫",
-          // description: "Yes! It is only for adults.",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "What if you see a needle on the ground?",
-      emoji: "💉",
-      options: [
-        {
-          id: "a",
-          text: "Pick it up",
-          emoji: "💉",
-          // description: "That is very dangerous.",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Don't touch and tell an adult",
-          emoji: "🛑",
-          // description: "Correct! Stay safe.",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Kick it",
-          emoji: "🦶",
-          // description: "Don't touch it at all.",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Are cleaning sprays (like bleach) safe to drink?",
-      emoji: "🧴",
-      options: [
-        {
-          id: "a",
-          text: "Yes, they clean you",
-          emoji: "🧴",
-          // description: "No! They are poison.",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "No! They are poison",
-          emoji: "☠️",
-          // description: "Yes! Never drink cleaners.",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Only if they smell like lemon",
-          emoji: "🍋",
-          // description: "Smell doesn't make it safe.",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What is 'Healthy' for your body?",
-      emoji: "🥗",
-      options: [
-        {
-          id: "a",
-          text: "Smoke and alcohol",
-          emoji: "🚬",
-          // description: "Those hurt your body.",
-          isCorrect: false
-        },
-        
-        {
-          id: "c",
-          text: "Eating rocks",
-          emoji: "🪨",
-          // description: "Rocks are not food.",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Water and good food",
-          emoji: "🥦",
-          // description: "Exactly! Fuel your body right.",
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which of these is medicine?",
+    emoji: "💊",
+    options: [
+      {
+        id: "a",
+        text: "Candy",
+        emoji: "🍬",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Pills from the doctor",
+        emoji: "💊",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Soda",
+        emoji: "🥤",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Are energy drinks (like Red Bull) safe for kids?",
+    emoji: "⚡",
+    options: [
+      {
+        id: "a",
+        text: "Yes, they give super energy",
+        emoji: "💥",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Only before sports",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "No, they harm growing bodies",
+        emoji: "🚫",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: "What if you see a needle on the ground?",
+    emoji: "💉",
+    options: [
+      {
+        id: "a",
+        text: "Pick it up",
+        emoji: "💉",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Do not touch and tell an adult",
+        emoji: "🛑",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Kick it",
+        emoji: "🦶",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Are cleaning sprays (like bleach) safe to drink?",
+    emoji: "🧴",
+    options: [
+      {
+        id: "b",
+        text: "No, they are poison",
+        emoji: "☠️",
+        isCorrect: true
+      },
+      {
+        id: "a",
+        text: "Yes, they clean you",
+        emoji: "🧴",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Only if they smell like lemon",
+        emoji: "🍋",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "What is healthy for your body?",
+    emoji: "🥗",
+    options: [
+      {
+        id: "a",
+        text: "Smoking and energy drinks",
+        emoji: "🚬",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Eating rocks",
+        emoji: "🪨",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Water and good food",
+        emoji: "🥦",
+        isCorrect: true
+      },
+    ]
+  }
+];
 
   const handleAnswer = (optionId) => {
     if (showFeedback || gameFinished) return;

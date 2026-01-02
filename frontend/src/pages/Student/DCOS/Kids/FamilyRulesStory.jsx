@@ -32,21 +32,19 @@ const FamilyRulesStory = () => {
           id: "a", 
           text: "Follow Mom's Rule", 
           emoji: "😊", 
-          description: "Turn off device and go to bed",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Keep Playing Secretly", 
           emoji: "😈", 
-          description: "Continue playing without telling",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Argue with Mom", 
           emoji: "😠", 
-          description: "Tell mom you want to keep playing",
           isCorrect: false
         }
       ]
@@ -59,21 +57,18 @@ const FamilyRulesStory = () => {
           id: "a", 
           text: "Check Message Secretly", 
           emoji: "😈", 
-          description: "Check your phone without telling",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Follow the Rule", 
           emoji: "😊", 
-          description: "Keep device away during dinner",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Argue About It", 
           emoji: "😠", 
-          description: "Tell dad you need to check it",
           isCorrect: false
         }
       ]
@@ -86,21 +81,18 @@ const FamilyRulesStory = () => {
           id: "a", 
           text: "Download Without Asking", 
           emoji: "😈", 
-          description: "Download the game immediately",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ask Parent First", 
           emoji: "😊", 
-          description: "Ask permission before downloading",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ignore the Rule", 
           emoji: "😔", 
-          description: "Don't follow the family rule",
           isCorrect: false
         }
       ]
@@ -113,21 +105,18 @@ const FamilyRulesStory = () => {
           id: "a", 
           text: "Follow the Rule", 
           emoji: "😊", 
-          description: "Put device away and do something else",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Watch Secretly", 
           emoji: "😈", 
-          description: "Watch video without telling anyone",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Complain Loudly", 
           emoji: "😠", 
-          description: "Tell parents the rule is unfair",
           isCorrect: false
         }
       ]
@@ -140,21 +129,18 @@ const FamilyRulesStory = () => {
           id: "a", 
           text: "Refuse to Share", 
           emoji: "😠", 
-          description: "Don't share passwords with parents",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Share with Parents", 
           emoji: "😊", 
-          description: "Share passwords as parents asked",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Give Fake Password", 
           emoji: "😈", 
-          description: "Give parents a wrong password",
           isCorrect: false
         }
       ]

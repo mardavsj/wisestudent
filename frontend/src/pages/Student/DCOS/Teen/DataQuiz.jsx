@@ -44,21 +44,19 @@ const DataQuiz = () => {
           id: "b", 
           text: "Hobby", 
           emoji: "🎨", 
-          description: "Hobbies are generally safe to share publicly",
+          
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Phone number", 
           emoji: "📱", 
-          description: "Phone numbers are private information that should be kept secure",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Favorite color", 
           emoji: "🌈", 
-          description: "Favorite colors are generally safe to share publicly",
           isCorrect: false
         }
       ]
@@ -71,21 +69,18 @@ const DataQuiz = () => {
           id: "b", 
           text: "Favorite food", 
           emoji: "🍕", 
-          description: "Favorite foods are generally safe to share publicly",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Favorite movie", 
           emoji: "🎬", 
-          description: "Favorite movies are generally safe to share publicly",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Home address", 
           emoji: "🏠", 
-          description: "Home addresses are private information that should never be shared publicly",
           isCorrect: true
         }
       ]
@@ -98,21 +93,18 @@ const DataQuiz = () => {
           id: "b", 
           text: "Favorite sport", 
           emoji: "⚽", 
-          description: "Favorite sports are generally safe to share publicly",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Bank account number", 
           emoji: "🏦", 
-          description: "Bank account numbers are highly sensitive and must be kept private",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Favorite music", 
           emoji: "🎵", 
-          description: "Favorite music is generally safe to share publicly",
           isCorrect: false
         }
       ]
@@ -125,21 +117,18 @@ const DataQuiz = () => {
           id: "a", 
           text: "Aadhaar number", 
           emoji: "🆔", 
-          description: "Aadhaar numbers are sensitive identification documents that must be kept private",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Favorite book", 
           emoji: "📚", 
-          description: "Favorite books are generally safe to share publicly",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Favorite game", 
           emoji: "🎮", 
-          description: "Favorite games are generally safe to share publicly",
           isCorrect: false
         }
       ]
@@ -152,21 +141,18 @@ const DataQuiz = () => {
           id: "b", 
           text: "Favorite subject", 
           emoji: "📖", 
-          description: "Favorite subjects are generally safe to share publicly",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Favorite animal", 
           emoji: "🐱", 
-          description: "Favorite animals are generally safe to share publicly",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Email password", 
           emoji: "🔐", 
-          description: "Email passwords are highly sensitive personal information that must be kept private",
           isCorrect: true
         }
       ]

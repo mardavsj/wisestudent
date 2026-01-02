@@ -55,20 +55,20 @@ const DigitalReputationPuzzle = () => {
 
   // Online behaviors
   const leftItems = [
-    { id: 1, name: "Positive Post", emoji: "✨", description: "Encouraging and kind content" },
-    { id: 2, name: "Rumors", emoji: "💬", description: "Unverified gossip or stories" },
-    { id: 3, name: "Respectful Comments", emoji: "💬", description: "Polite and considerate messages" },
-    { id: 4, name: "Insults", emoji: "😡", description: "Mean and hurtful words" },
-    { id: 5, name: "Encouraging Messages", emoji: "💪", description: "Supportive and uplifting content" }
+    { id: 1, name: "Positive Post", emoji: "✨",  },
+    { id: 2, name: "Rumors", emoji: "💬",  },
+    { id: 3, name: "Respectful Comments", emoji: "💬",  },
+    { id: 4, name: "Insults", emoji: "😡",  },
+    { id: 5, name: "Encouraging Messages", emoji: "💪",  }
   ];
 
   // Reputation impact - logical classifications with different outcomes
   const rightItems = [
-    { id: 1, name: "Relationship Building", emoji: "🤝", description: "Strengthens connections with others" },
-    { id: 2, name: "Trust Erosion", emoji: "💔", description: "Destroys confidence in your character" },
-    { id: 3, name: "Community Enhancement", emoji: "🏘️", description: "Improves group dynamics and morale" },
-    { id: 4, name: "Social Isolation", emoji: "😔", description: "Leads to exclusion and loneliness" },
-    { id: 5, name: "Leadership Recognition", emoji: "👑", description: "Earns respect and influence" }
+    { id: 1, name: "Relationship Building", emoji: "🤝",  },
+    { id: 2, name: "Trust Erosion", emoji: "💔",  },
+    { id: 3, name: "Community Enhancement", emoji: "🏘️",  },
+    { id: 4, name: "Social Isolation", emoji: "😔",  },
+    { id: 5, name: "Leadership Recognition", emoji: "👑",  }
   ];
 
   // Correct matches - logical pairings with varied positions

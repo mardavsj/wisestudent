@@ -61,7 +61,7 @@ const BiasStory = () => {
         { 
           id: "fair", 
           text: "Yes - it's based on data", 
-          emoji: "✅", 
+          emoji: "😐", 
           isCorrect: false
         },
         
@@ -80,7 +80,7 @@ const BiasStory = () => {
         { 
           id: "acceptable", 
           text: "Yes - it's common usage", 
-          emoji: "✅", 
+          emoji: "🤷", 
           isCorrect: false
         },
         { 

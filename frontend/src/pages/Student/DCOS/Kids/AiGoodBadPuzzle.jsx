@@ -29,39 +29,42 @@ const PuzzleAIGoodBad = () => {
 
   // AI uses (left side)
   const leftItems = [
-    { id: 1, name: "AI Translation App", emoji: "🌐", description: "Helps understand languages" },
-    { id: 2, name: "AI Cheating in Exams", emoji: "📚", description: "Using AI to cheat" },
-    { id: 3, name: "AI Helping Doctors", emoji: "🩺", description: "Medical assistance" },
-    { id: 4, name: "AI Making Fake News", emoji: "📰", description: "Creating false information" },
-    { id: 5, name: "AI Helping Kids Learn", emoji: "🎓", description: "Educational support" }
+    { id: 1, name: "AI Translation App", emoji: "🌐",  },
+    { id: 2, name: "AI Cheating in Exams", emoji: "📚",  },
+    { id: 3, name: "AI Helping Doctors", emoji: "🩺",  },
+    { id: 4, name: "AI Making Fake News", emoji: "📰",  },
+    { id: 5, name: "AI Helping Kids Learn", emoji: "🎓",  }
   ];
 
   // Categories (right side)
-  const rightItems = [
-    { id: 1, name: "Good Use", emoji: "✅", description: "Helpful and ethical" },
-    { id: 2, name: "Bad Use", emoji: "❌", description: "Harmful or dishonest" },
-    { id: 3, name: "Good Use", emoji: "✅", description: "Helpful and ethical" },
-    { id: 4, name: "Bad Use", emoji: "❌", description: "Harmful or dishonest" },
-    { id: 5, name: "Good Use", emoji: "✅", description: "Helpful and ethical" }
-  ];
+ const rightItems = [
+  { id: 1, name: "Supports Learning", emoji: "📖" },
+  { id: 2, name: "Unfair Practice", emoji: "🚫" },
+  { id: 3, name: "Saves Lives", emoji: "❤️" },
+  { id: 4, name: "Spreads Misinformation", emoji: "⚠️" },
+  { id: 5, name: "Helps Communication", emoji: "🗣️" }
+];
+
 
   // Correct matches
-  const correctMatches = [
-    { leftId: 1, rightId: 1 }, // AI Translation App → Good Use
-    { leftId: 2, rightId: 2 }, // AI Cheating in Exams → Bad Use
-    { leftId: 3, rightId: 3 }, // AI Helping Doctors → Good Use
-    { leftId: 4, rightId: 4 }, // AI Making Fake News → Bad Use
-    { leftId: 5, rightId: 5 }  // AI Helping Kids Learn → Good Use
-  ];
+ const correctMatches = [
+  { leftId: 1, rightId: 5 }, // AI Translation App → Helps Communication
+  { leftId: 2, rightId: 2 }, // AI Cheating in Exams → Unfair Practice
+  { leftId: 3, rightId: 3 }, // AI Helping Doctors → Saves Lives
+  { leftId: 4, rightId: 4 }, // AI Making Fake News → Spreads Misinformation
+  { leftId: 5, rightId: 1 }  // AI Helping Kids Learn → Supports Learning
+];
+
 
   // Shuffled right items for display (to split matches across positions)
-  const shuffledRightItems = [
-    rightItems[1], // Bad Use (id: 2) - position 1
-    rightItems[0], // Good Use (id: 1) - position 2
-    rightItems[4], // Good Use (id: 5) - position 3
-    rightItems[3], // Bad Use (id: 4) - position 4
-    rightItems[2]  // Good Use (id: 3) - position 5
-  ];
+ const shuffledRightItems = [
+  rightItems[3], // Spreads Misinformation
+  rightItems[0], // Supports Learning
+  rightItems[4], // Helps Communication
+  rightItems[1], // Unfair Practice
+  rightItems[2]  // Saves Lives
+];
+
 
   const handleLeftSelect = (item) => {
     if (showResult) return;

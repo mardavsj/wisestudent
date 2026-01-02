@@ -30,22 +30,22 @@ const FamilyRuleDebate = () => {
         { 
           id: "yes-healthy", 
           text: "Yes - limits are healthy", 
-          emoji: "✅", 
-          description: "Screen limits help maintain health and balance",
+          emoji: "🙂", 
+          
           isCorrect: true
         },
         { 
           id: "no-decide", 
           text: "No - I should decide", 
           emoji: "😤", 
-          description: "Teens should decide their own screen time",
+          
           isCorrect: false
         },
         { 
           id: "maybe", 
           text: "Maybe - depends on the rules", 
           emoji: "🤔", 
-          description: "It depends on how strict the rules are",
+          
           isCorrect: false
         }
       ]
@@ -58,21 +58,19 @@ const FamilyRuleDebate = () => {
           id: "sometimes", 
           text: "Sometimes - only when parents say", 
           emoji: "🤷", 
-          description: "Only when parents specifically ask",
+          
           isCorrect: false
         },
         { 
           id: "yes-meals-bed", 
           text: "Yes - like during meals and before bed", 
-          emoji: "✅", 
-          description: "Screen-free times during meals and before bed are healthy",
+          emoji: "🙂", 
           isCorrect: true
         },
         { 
           id: "no-always", 
           text: "No - I need my phone always", 
           emoji: "📱", 
-          description: "I need access to my phone at all times",
           isCorrect: false
         }
       ]
@@ -85,21 +83,18 @@ const FamilyRuleDebate = () => {
           id: "maybe", 
           text: "Maybe - depends on the method", 
           emoji: "🤔", 
-          description: "It depends on how they monitor",
           isCorrect: false
         },
         { 
           id: "no-privacy", 
           text: "No - it's my privacy", 
           emoji: "🔒", 
-          description: "Monitoring screen time violates privacy",
           isCorrect: false
         },
         { 
           id: "yes-care", 
           text: "Yes - they care about my wellbeing", 
-          emoji: "✅", 
-          description: "Parents monitor because they care about your health and safety",
+          emoji: "🙂", 
           isCorrect: true
         }
       ]
@@ -112,21 +107,18 @@ const FamilyRuleDebate = () => {
           id: "sometimes", 
           text: "Sometimes - for hard subjects", 
           emoji: "📚", 
-          description: "Only for difficult subjects",
           isCorrect: false
         },
         { 
           id: "no-multitask", 
           text: "No - I can multitask", 
           emoji: "😐", 
-          description: "I can do homework and use devices at the same time",
           isCorrect: false
         },
         { 
           id: "yes-focus", 
           text: "Yes - it helps focus", 
-          emoji: "✅", 
-          description: "Turning off devices helps you focus and learn better",
+          emoji: "🙃", 
           isCorrect: true
         }
       ]
@@ -139,21 +131,18 @@ const FamilyRuleDebate = () => {
           id: "maybe", 
           text: "Maybe - if they're reasonable", 
           emoji: "🤷", 
-          description: "Only if the rules are reasonable",
           isCorrect: false
         },
         { 
           id: "no-strict", 
           text: "No - they're too strict", 
           emoji: "😑", 
-          description: "Family screen rules are too restrictive",
           isCorrect: false
         },
         { 
           id: "yes-balance", 
           text: "Yes - they teach balance", 
-          emoji: "✅", 
-          description: "Family rules teach healthy balance and responsibility",
+          emoji: "🙂", 
           isCorrect: true
         }
       ]

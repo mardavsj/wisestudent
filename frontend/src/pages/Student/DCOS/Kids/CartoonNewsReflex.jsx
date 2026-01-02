@@ -34,7 +34,7 @@ const CartoonNewsReflex = () => {
       question: "Duck becomes mayor of a city 🦆🏛️ - Is this real or fake news?",
       correctAnswer: "Fake",
       options: [
-        { text: "Real", isCorrect: false, emoji: "✅" },
+        { text: "Real", isCorrect: false, emoji: "🙂" },
         { text: "Fake", isCorrect: true, emoji: "🚫" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
@@ -45,7 +45,7 @@ const CartoonNewsReflex = () => {
       question: "Kids plant trees to save local park 🌳 - Is this real or fake news?",
       correctAnswer: "Real",
       options: [
-        { text: "Real", isCorrect: true, emoji: "✅" },
+        { text: "Real", isCorrect: true, emoji: "🙂" },
         { text: "Fake", isCorrect: false, emoji: "🚫" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
@@ -56,7 +56,7 @@ const CartoonNewsReflex = () => {
       question: "Robot eats 100 pizzas in one hour 🤖🍕 - Is this real or fake news?",
       correctAnswer: "Fake",
       options: [
-        { text: "Real", isCorrect: false, emoji: "✅" },
+        { text: "Real", isCorrect: false, emoji: "🙂" },
         { text: "Fake", isCorrect: true, emoji: "🚫" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
@@ -67,7 +67,7 @@ const CartoonNewsReflex = () => {
       question: "School wins award for clean energy project ⚡ - Is this real or fake news?",
       correctAnswer: "Real",
       options: [
-        { text: "Real", isCorrect: true, emoji: "✅" },
+        { text: "Real", isCorrect: true, emoji: "🙂" },
         { text: "Fake", isCorrect: false, emoji: "🚫" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }
@@ -78,7 +78,7 @@ const CartoonNewsReflex = () => {
       question: "Fish learns to play video games 🎮🐠 - Is this real or fake news?",
       correctAnswer: "Fake",
       options: [
-        { text: "Real", isCorrect: false, emoji: "✅" },
+        { text: "Real", isCorrect: false, emoji: "🙂" },
         { text: "Fake", isCorrect: true, emoji: "🚫" },
         { text: "Not Sure", isCorrect: false, emoji: "🤔" },
         { text: "Maybe", isCorrect: false, emoji: "😐" }

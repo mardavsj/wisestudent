@@ -30,21 +30,19 @@ const QuizResponsibility = () => {
           id: "a", 
           text: "Child who cleans up toys", 
           emoji: "🧹", 
-          description: "Taking care of belongings and keeping things organized",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Child who throws toys everywhere", 
           emoji: "🙈", 
-          description: "Leaving messes and not taking care of belongings",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Child who ignores toys", 
           emoji: "😐", 
-          description: "Not paying attention to their belongings at all",
           isCorrect: false
         }
       ]
@@ -57,21 +55,18 @@ const QuizResponsibility = () => {
           id: "a", 
           text: "Leaves wrappers on the table", 
           emoji: "🗑️", 
-          description: "Not cleaning up after yourself",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Throws wrappers in the bin", 
           emoji: "♻️", 
-          description: "Properly disposing of trash and keeping things clean",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Forgets about wrappers", 
           emoji: "🤷", 
-          description: "Not paying attention to cleanup",
           isCorrect: false
         }
       ]
@@ -84,21 +79,18 @@ const QuizResponsibility = () => {
           id: "a", 
           text: "Loses books and pencils", 
           emoji: "😵", 
-          description: "Not keeping track of important items",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Forgets to bring supplies", 
           emoji: "🙄", 
-          description: "Not being prepared for school",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Keeps books and pencils organized", 
           emoji: "📖", 
-          description: "Taking good care of school supplies and staying organized",
           isCorrect: true
         }
       ]
@@ -111,21 +103,18 @@ const QuizResponsibility = () => {
           id: "a", 
           text: "Feeds and cares for the pet daily", 
           emoji: "❤️", 
-          description: "Taking consistent care and showing commitment",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Ignores feeding the pet", 
           emoji: "🙅‍♂️", 
-          description: "Not taking care of responsibilities",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Feeds the pet sometimes", 
           emoji: "🤷", 
-          description: "Being inconsistent with pet care",
           isCorrect: false
         }
       ]
@@ -138,21 +127,18 @@ const QuizResponsibility = () => {
           id: "a", 
           text: "Does not help and distracts others", 
           emoji: "😜", 
-          description: "Not contributing and causing problems",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Completes their tasks and helps others", 
           emoji: "💪", 
-          description: "Doing your part and supporting the team",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only does their own work", 
           emoji: "😐", 
-          description: "Not going beyond minimum requirements",
           isCorrect: false
         }
       ]

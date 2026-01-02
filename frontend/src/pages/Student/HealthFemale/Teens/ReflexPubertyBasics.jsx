@@ -33,8 +33,8 @@ const ReflexPubertyBasics = () => {
       id: 1,
       question: "How should you view normal puberty changes?",
       options: [
-        { text: "Shame", emoji: "❌", isCorrect: false },
-        { text: "Normal Changes", emoji: "✅", isCorrect: true },
+        { text: "Shame", emoji: "🫣", isCorrect: false },
+        { text: "Normal Changes", emoji: "🙂", isCorrect: true },
         { text: "Embarrassment", emoji: "😳", isCorrect: false },
         { text: "Weirdness", emoji: "👽", isCorrect: false }
       ]
@@ -44,7 +44,7 @@ const ReflexPubertyBasics = () => {
       question: "What's the best way to understand puberty?",
       options: [
         { text: "Embarrassment", emoji: "😳", isCorrect: false },
-        { text: "Shame", emoji: "❌", isCorrect: false },
+        { text: "Shame", emoji: "🫣", isCorrect: false },
         { text: "Natural Process", emoji: "🌱", isCorrect: true },
         { text: "Abnormality", emoji: "⚠️", isCorrect: false }
       ]
@@ -55,7 +55,7 @@ const ReflexPubertyBasics = () => {
       options: [
         { text: "Growth", emoji: "📏", isCorrect: true },
         { text: "Weirdness", emoji: "👽", isCorrect: false },
-        { text: "Shame", emoji: "❌", isCorrect: false },
+        { text: "Shame", emoji: "🫣", isCorrect: false },
         { text: "Embarrassment", emoji: "😳", isCorrect: false }
       ]
     },
@@ -65,7 +65,7 @@ const ReflexPubertyBasics = () => {
       options: [
         { text: "Abnormality", emoji: "⚠️", isCorrect: false },
         { text: "Development", emoji: "🦋", isCorrect: true },
-        { text: "Shame", emoji: "❌", isCorrect: false },
+        { text: "Shame", emoji: "🫣", isCorrect: false },
         { text: "Embarrassment", emoji: "😳", isCorrect: false }
       ]
     },
@@ -74,9 +74,9 @@ const ReflexPubertyBasics = () => {
       question: "Which attitude helps during puberty?",
       options: [
         { text: "Embarrassment", emoji: "😳", isCorrect: false },
-        { text: "Shame", emoji: "❌", isCorrect: false },
+        { text: "Shame", emoji: "🫣", isCorrect: false },
         { text: "Weirdness", emoji: "👽", isCorrect: false },
-        { text: "Natural Process", emoji: "🌱", isCorrect: true },
+        { text: "Self-confidence", emoji: "😇", isCorrect: true },
       ]
     }
   ];

@@ -84,7 +84,7 @@ import CigaretteStory from './CigaretteStory';
 import QuizOnHarmfulThings from './QuizOnHarmfulThings';
 import ReflexSafeChoice from './ReflexSafeChoice';
 import HealthyVsHarmfulPuzzle from './HealthyVsHarmfulPuzzle';
-import AlcoholStory from './AlcoholStory';
+import EnergyDrinksStory from './EnergyDrinksStory';
 import SayNoSubstancesPoster from './SayNoSubstancesPoster';
 import JournalOfRefusal from './JournalOfRefusal';
 import PeerStory from './PeerStory';
@@ -203,7 +203,7 @@ const kidHealthFemaleGames = {
   'quiz-harmful-things': QuizOnHarmfulThings,
   'reflex-safe-choice': ReflexSafeChoice,
   'healthy-vs-harmful-puzzle': HealthyVsHarmfulPuzzle,
-  'alcohol-story': AlcoholStory,
+  'energy-drinks-story': EnergyDrinksStory,
   'say-no-substances-poster': SayNoSubstancesPoster,
   'journal-of-refusal': JournalOfRefusal,
   'peer-story': PeerStory,

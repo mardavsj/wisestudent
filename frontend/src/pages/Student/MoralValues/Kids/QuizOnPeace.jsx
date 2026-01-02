@@ -30,21 +30,21 @@ const QuizOnPeace = () => {
           id: "b", 
           text: "Fighting", 
           emoji: "👊", 
-          description: "Causing conflict and harm",
+          
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Shouting", 
           emoji: "😡", 
-          description: "Using loud and aggressive behavior",
+          
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Sharing", 
           emoji: "🤝", 
-          description: "Working together and caring for others",
+          
           isCorrect: true
         }
       ]
@@ -57,21 +57,19 @@ const QuizOnPeace = () => {
           id: "a", 
           text: "Push them back", 
           emoji: "🤜", 
-          description: "Responding with aggression",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Stay calm and talk nicely", 
           emoji: "🕊️", 
-          description: "Resolving conflict through calm communication",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Complain loudly", 
           emoji: "📢", 
-          description: "Escalating the situation with complaints",
           isCorrect: false
         }
       ]
@@ -84,21 +82,18 @@ const QuizOnPeace = () => {
           id: "c", 
           text: "Help each other", 
           emoji: "🤗", 
-          description: "Supporting and caring for classmates",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Argue all day", 
           emoji: "😤", 
-          description: "Creating constant conflict",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Talk behind friends", 
           emoji: "🙊", 
-          description: "Spreading negativity and gossip",
           isCorrect: false
         }
       ]
@@ -111,21 +106,18 @@ const QuizOnPeace = () => {
           id: "b", 
           text: "Take sides", 
           emoji: "🫵", 
-          description: "Making conflicts worse by choosing sides",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignore them", 
           emoji: "🙈", 
-          description: "Not helping resolve conflicts",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Help them calm down", 
           emoji: "🤲", 
-          description: "Mediating conflicts and promoting peace",
           isCorrect: true
         }
       ]
@@ -138,21 +130,18 @@ const QuizOnPeace = () => {
           id: "a", 
           text: "Yell until you win", 
           emoji: "😠", 
-          description: "Using aggression to get your way",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Talk and listen", 
           emoji: "🗣️", 
-          description: "Communicating respectfully to find solutions",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Walk away angry", 
           emoji: "🚶‍♀️", 
-          description: "Avoiding problems instead of solving them",
           isCorrect: false
         }
       ]

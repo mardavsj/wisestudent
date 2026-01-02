@@ -12,7 +12,7 @@ const QuizOnPeriodBasics = () => {
     const totalCoins = location.state?.totalCoins || 5;
     const totalXp = location.state?.totalXp || 10;
     const maxScore = 5;
-    const gameId = "health-female-kids-32";
+    const gameId = "health-female-kids-92";
 
     const [coins, setCoins] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -209,7 +209,7 @@ const QuizOnPeriodBasics = () => {
             gameId={gameId}
             gameType="health-female"
             totalLevels={5}
-            currentLevel={99}
+            currentLevel={92}
             showConfetti={gameFinished}
             backPath="/games/health-female/kids"
             maxScore={maxScore}

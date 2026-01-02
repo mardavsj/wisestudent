@@ -31,21 +31,19 @@ const TeacherGreetingStory = () => {
           id: "greet", 
           text: "Stand up and greet the teacher", 
           emoji: "🙋", 
-          description: "Show respect immediately",
+          
           isCorrect: true
         },
         { 
           id: "talk", 
           text: "Keep talking with friends", 
           emoji: "💬", 
-          description: "Continue your conversation",
           isCorrect: false
         },
         { 
           id: "quiet", 
           text: "Look down and stay quiet", 
           emoji: "😐", 
-          description: "Avoid interaction",
           isCorrect: false
         }
       ]
@@ -59,21 +57,18 @@ const TeacherGreetingStory = () => {
           id: "excuse", 
           text: "Make an excuse", 
           emoji: "🙊", 
-          description: "Create a false reason",
           isCorrect: false
         },
         { 
           id: "honest", 
           text: "Be honest and apologize", 
           emoji: "🙏", 
-          description: "Tell the truth",
           isCorrect: true
         },
         { 
           id: "blame", 
           text: "Blame your friend", 
           emoji: "😬", 
-          description: "Shift responsibility",
           isCorrect: false
         }
       ]
@@ -87,21 +82,18 @@ const TeacherGreetingStory = () => {
           id: "interrupt", 
           text: "Interrupt to share your idea", 
           emoji: "💭", 
-          description: "Speak during explanation",
           isCorrect: false
         },
          { 
           id: "listen", 
           text: "Listen carefully until they finish", 
           emoji: "👂", 
-          description: "Pay attention fully",
           isCorrect: true
         },
         { 
           id: "talk", 
           text: "Talk to your friend", 
           emoji: "🗨️", 
-          description: "Have side conversation",
           isCorrect: false
         }
       ]
@@ -115,21 +107,18 @@ const TeacherGreetingStory = () => {
           id: "alone", 
           text: "Do all the work alone", 
           emoji: "😤", 
-          description: "Work by yourself",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore others' opinions", 
           emoji: "🙄", 
-          description: "Disregard teammates",
           isCorrect: false
         },
         { 
           id: "together", 
           text: "Work together and share ideas", 
           emoji: "💡", 
-          description: "Collaborate respectfully",
           isCorrect: true
         },
       ]
@@ -142,21 +131,18 @@ const TeacherGreetingStory = () => {
           id: "thank", 
           text: "Say 'Thank you, teacher!'", 
           emoji: "😊", 
-          description: "Express gratitude",
           isCorrect: true
         },
         { 
           id: "run", 
           text: "Run out of the classroom", 
           emoji: "🏃‍♀️", 
-          description: "Leave quickly",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore and pack your bag", 
           emoji: "🎒", 
-          description: "Don't acknowledge them",
           isCorrect: false
         }
       ]

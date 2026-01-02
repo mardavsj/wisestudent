@@ -17,162 +17,169 @@ const SimulationTeenStressDay = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const scenarios = [
-    {
-      id: 1,
-      title: "Morning Rush",
-      description: "You wake up late and have an important exam. What do you do?",
-      options: [
-        {
-          id: "a",
-          text: "Panic and rush without any preparation",
-          emoji: "😰",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Skip the exam and stay in bed",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Stay calm, get ready quickly, and review key points",
-          emoji: "⏰",
-          isCorrect: true
-        },
-        {
-          id: "d",
-          text: "Call a friend to help you get ready faster",
-          emoji: "📞",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Practice Session",
-      description: "During practice, you make several mistakes. How do you respond?",
-      options: [
-        {
-          id: "a",
-          text: "Get frustrated and give up",
-          emoji: "😤",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Learn from mistakes and practice more",
-          emoji: "📈",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Blame others for your mistakes",
-          emoji: "😠",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Take a short break and then continue practicing",
-          emoji: "⏸️",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Lunch Break",
-      description: "You're feeling overwhelmed with studies. What's your approach?",
-      options: [
-        {
-          id: "a",
-          text: "Skip lunch and continue studying",
-          emoji: "📚",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Eat junk food while multitasking",
-          emoji: "🍟",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Take a proper break, eat well, and relax",
-          emoji: "🍽️",
-          isCorrect: true
-        },
-        {
-          id: "d",
-          text: "Go for a walk to refresh your mind",
-          emoji: "🚶",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "After School",
-      description: "You have extra classes and homework. How do you manage?",
-      options: [
-        {
-          id: "a",
-          text: "Do everything last minute without planning",
-          emoji: "⏳",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Procrastinate and worry about tomorrow",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Ask classmates for help with difficult subjects",
-          emoji: "👥",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Prioritize tasks and allocate time wisely",
-          emoji: "📋",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Evening Wind-Down",
-      description: "After a stressful day, how do you end your day?",
-      options: [
-        {
-          id: "a",
-          text: "Worry about tomorrow and stay up late",
-          emoji: "🌙",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Binge entertainment to escape reality",
-          emoji: "📺",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Plan a fun activity for the next day",
-          emoji: "🎉",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Reflect positively, relax, and prepare for tomorrow",
-          emoji: "🧘",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Morning Rush",
+    description: "You wake up late and have an important exam. What do you do?",
+    options: [
+      {
+        id: "a",
+        text: "Panic and leave without thinking clearly",
+        emoji: "😰",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Skip the exam and go back to sleep",
+        emoji: "😴",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Stay calm, get ready quickly, and focus on key topics",
+        emoji: "⏰",
+        isCorrect: true
+      },
+      {
+        id: "d",
+        text: "Call a friend and waste time talking",
+        emoji: "📞",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 2,
+    title: "Practice Session",
+    description: "During practice, you make several mistakes. How do you respond?",
+    options: [
+      {
+        id: "a",
+        text: "Get upset and stop practicing completely",
+        emoji: "😤",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Blame others for your mistakes",
+        emoji: "😠",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Ignore the mistakes and continue without learning",
+        emoji: "🙈",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Take a short break and then practice with focus",
+        emoji: "⏸️",
+        isCorrect: true
+      }
+    ]
+  },
+
+  {
+    id: 3,
+    title: "Lunch Break",
+    description: "You're feeling overwhelmed with studies. What's your approach?",
+    options: [
+      {
+        id: "a",
+        text: "Skip lunch and keep studying nonstop",
+        emoji: "📚",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Take a proper break, eat well, and relax",
+        emoji: "🍽️",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Eat junk food while stressing about work",
+        emoji: "🍟",
+        isCorrect: false
+      },
+      
+      {
+        id: "d",
+        text: "Scroll on your phone without resting your mind",
+        emoji: "📱",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 4,
+    title: "After School",
+    description: "You have extra classes and homework. How do you manage?",
+    options: [
+      {
+        id: "a",
+        text: "Do everything at the last minute without planning",
+        emoji: "⏳",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Procrastinate and feel stressed later",
+        emoji: "😴",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Avoid homework and distract yourself",
+        emoji: "🎮",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Plan tasks and manage time wisely",
+        emoji: "📋",
+        isCorrect: true
+      }
+    ]
+  },
+
+  {
+    id: 5,
+    title: "Evening Wind-Down",
+    description: "After a stressful day, how do you end your day?",
+    options: [
+      {
+        id: "d",
+        text: "Relax, think positively, and sleep on time",
+        emoji: "🧘",
+        isCorrect: true
+      },
+      {
+        id: "a",
+        text: "Worry about tomorrow and sleep late",
+        emoji: "🌙",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Watch screens for hours without resting",
+        emoji: "📺",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Overplan the next day and feel anxious",
+        emoji: "📝",
+        isCorrect: false
+      },
+      
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const selectedOption = scenarios[currentScenario].options.find(opt => opt.id === optionId);

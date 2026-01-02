@@ -19,20 +19,20 @@ const PuzzleCommunityHelpers = () => {
 
   // Helpers (left side) - 5 items
   const helpers = [
-    { id: 1, name: "Doctor", emoji: "👨‍⚕️", description: "Medical professional who treats patients" },
-    { id: 2, name: "Firefighter", emoji: "👨‍🚒", description: "Emergency responder who fights fires" },
-    { id: 3, name: "Teacher", emoji: "👩‍🏫", description: "Educator who teaches students" },
-    { id: 4, name: "Police Officer", emoji: "👮", description: "Law enforcement officer who maintains order" },
-    { id: 5, name: "Volunteer", emoji: "👩‍🦳", description: "Person who helps others without payment" }
+    { id: 1, name: "Doctor", emoji: "👨‍⚕️",  },
+    { id: 2, name: "Firefighter", emoji: "👨‍🚒",  },
+    { id: 3, name: "Teacher", emoji: "👩‍🏫",  },
+    { id: 4, name: "Police Officer", emoji: "👮",  },
+    { id: 5, name: "Volunteer", emoji: "👩‍🦳",  }
   ];
 
   // Roles (right side) - 5 items
   const roles = [
-    { id: 2, name: "Safety", emoji: "🚒", description: "Protection from harm and danger" },
-    { id: 5, name: "Service", emoji: "❤️", description: "Act of helping others in need" },
-    { id: 1, name: "Health", emoji: "🩺", description: "Maintaining physical and mental well-being" },
-    { id: 3, name: "Education", emoji: "📚", description: "Process of gaining knowledge and skills" },
-    { id: 4, name: "Protection", emoji: "🚔", description: "Shielding from threats and crime" },
+    { id: 2, name: "Safety", emoji: "🚒",  },
+    { id: 5, name: "Service", emoji: "❤️",  },
+    { id: 1, name: "Health", emoji: "🩺",  },
+    { id: 3, name: "Education", emoji: "📚",  },
+    { id: 4, name: "Protection", emoji: "🚔",  },
   ];
 
   // Correct matches

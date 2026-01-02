@@ -33,21 +33,20 @@ const BullyStory2 = () => {
           id: "join", 
           text: "Join them and laugh", 
           emoji: "😏", 
-          description: "Participate in making fun of the new student",
+          
           isCorrect: false
         },
         { 
           id: "invite", 
           text: "Invite the student to join you", 
           emoji: "🤝", 
-          description: "Include them in your lunch group",
+          
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore it", 
           emoji: "😶", 
-          description: "Continue with your own lunch",
           isCorrect: false
         }
       ]
@@ -60,21 +59,18 @@ const BullyStory2 = () => {
           id: "like", 
           text: "Like and share it", 
           emoji: "😂", 
-          description: "Participate in spreading the mean content",
           isCorrect: false
         },
         { 
           id: "scroll", 
           text: "Scroll away silently", 
           emoji: "😶", 
-          description: "Ignore it and move on",
           isCorrect: false
         },
         { 
           id: "report", 
           text: "Report and tell them it's wrong", 
           emoji: "⚠️", 
-          description: "Report the post and speak against bullying",
           isCorrect: true
         }
       ]
@@ -87,21 +83,18 @@ const BullyStory2 = () => {
           id: "watch", 
           text: "Watch quietly", 
           emoji: "😐", 
-          description: "Observe without intervening",
           isCorrect: false
         },
         { 
           id: "tease", 
           text: "Join in the teasing", 
           emoji: "😈", 
-          description: "Participate in pushing the kid away",
           isCorrect: false
         },
         { 
           id: "stop", 
           text: "Tell them to stop and let the kid play", 
           emoji: "🗣️", 
-          description: "Stand up for the kid and stop the bullying",
           isCorrect: true
         }
       ]
@@ -114,21 +107,18 @@ const BullyStory2 = () => {
           id: "refuse", 
           text: "Refuse and defend the classmate", 
           emoji: "🛡️", 
-          description: "Refuse to spread rumors and stand up for them",
           isCorrect: true
         },
         { 
           id: "share", 
           text: "Share it quietly", 
           emoji: "📩", 
-          description: "Pass on the rumor to a few friends",
           isCorrect: false
         },
         { 
           id: "silent", 
           text: "Say nothing but don't stop it", 
           emoji: "🤐", 
-          description: "Don't spread it but don't defend them either",
           isCorrect: false
         }
       ]
@@ -141,21 +131,18 @@ const BullyStory2 = () => {
           id: "laugh", 
           text: "Laugh to stay friends", 
           emoji: "😬", 
-          description: "Go along with it to maintain friendship",
           isCorrect: false
         },
         { 
           id: "walk", 
           text: "Walk away silently", 
           emoji: "😶", 
-          description: "Leave the situation without saying anything",
           isCorrect: false
         },
         { 
           id: "stop2", 
           text: "Tell them it's wrong and stop it", 
           emoji: "🚫", 
-          description: "Stand up to your friend and stop the bullying",
           isCorrect: true
         }
       ]

@@ -31,19 +31,19 @@ const ConsentStory = () => {
         { 
           id: "ask-remove", 
           text: "Ask them to remove it", 
-          description: "Politely request them to take it down",
+          
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore it - it's just a photo", 
-          description: "Let it stay and don't say anything",
+          
           isCorrect: false
         },
         { 
           id: "post-theirs", 
           text: "Post their photo too", 
-          description: "Post their photo in retaliation",
+          
           isCorrect: false
         }
       ]
@@ -55,19 +55,16 @@ const ConsentStory = () => {
         { 
           id: "leave", 
           text: "Leave it as is", 
-          description: "Don't do anything about it",
           isCorrect: false
         },
         { 
           id: "tag-bad", 
           text: "Tag them in something bad", 
-          description: "Tag them in something negative in return",
           isCorrect: false
         },
         { 
           id: "ask-remove-tag", 
           text: "Ask them to remove the tag", 
-          description: "Request them to untag you",
           isCorrect: true
         }
       ]
@@ -79,19 +76,16 @@ const ConsentStory = () => {
         { 
           id: "okay-friend", 
           text: "It's okay, they're a friend", 
-          description: "Accept it since they're your friend",
           isCorrect: false
         },
         { 
           id: "share-theirs", 
           text: "Share their number too", 
-          description: "Share their phone number in response",
           isCorrect: false
         },
         { 
           id: "ask-remove-immediate", 
           text: "Ask them to remove it immediately", 
-          description: "Urgently request them to remove your phone number",
           isCorrect: true
         }
       ]
@@ -103,19 +97,16 @@ const ConsentStory = () => {
         { 
           id: "request-takedown", 
           text: "Request them to take it down", 
-          description: "Ask them to remove the video",
           isCorrect: true
         },
         { 
           id: "let-stay", 
           text: "Let it stay", 
-          description: "Allow the video to remain online",
           isCorrect: false
         },
         { 
           id: "report-without-ask", 
           text: "Report it without asking", 
-          description: "Report it to the platform immediately",
           isCorrect: false
         }
       ]
@@ -127,19 +118,16 @@ const ConsentStory = () => {
         { 
           id: "fine-share", 
           text: "It's fine, stories are meant to be shared", 
-          description: "Accept it as normal sharing",
           isCorrect: false
         },
         { 
           id: "share-theirs", 
           text: "Share their story too", 
-          description: "Share their personal story in return",
           isCorrect: false
         },
         { 
           id: "politely-remove", 
           text: "Politely ask them to remove it", 
-          description: "Kindly request them to take it down",
           isCorrect: true
         }
       ]

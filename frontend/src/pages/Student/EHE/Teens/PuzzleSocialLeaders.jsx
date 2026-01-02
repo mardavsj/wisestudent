@@ -19,20 +19,20 @@ const PuzzleSocialLeaders = () => {
 
   // Social Leaders (left side) - 5 items
   const leaders = [
-    { id: 1, name: "Muhammad Yunus",  description: "Bangladeshi economist and Nobel Peace Prize winner" },
-    { id: 2, name: "Bunker Roy",  description: "Indian educator and social activist" },
-    { id: 3, name: "Kiran Mazumdar",  description: "Indian entrepreneur in biotechnology" },
-    { id: 4, name: "Blake Mycoskie",  description: "American entrepreneur and philanthropist" },
-    { id: 5, name: "William Drayton",  description: "American social entrepreneur" }
+    { id: 1, name: "Muhammad Yunus",   },
+    { id: 2, name: "Bunker Roy",   },
+    { id: 3, name: "Kiran Mazumdar",   },
+    { id: 4, name: "Blake Mycoskie",   },
+    { id: 5, name: "William Drayton",   },
   ];
 
   // Contributions (right side) - 5 items
   const contributions = [
-    { id: 5, name: "Ashoka", emoji: "🏛️", description: "Global organization supporting social entrepreneurs" },
-    { id: 1, name: "Microfinance", emoji: "💰", description: "Providing small loans to impoverished individuals" },
-    { id: 4, name: "Toms Shoes", emoji: "👟", description: "One-for-one business model for shoes and essentials" },
-    { id: 2, name: "Barefoot College", emoji: "🏫", description: "Training rural communities in sustainable technologies" },
-    { id: 3, name: "Biotech", emoji: "🧬", description: "Leading India's biotechnology industry" },
+    { id: 5, name: "Ashoka",   },
+    { id: 1, name: "Microfinance",   },
+    { id: 4, name: "Toms Shoes",   },
+    { id: 2, name: "Barefoot College",   },
+    { id: 3, name: "Biotech",   },
   ];
 
   // Correct matches

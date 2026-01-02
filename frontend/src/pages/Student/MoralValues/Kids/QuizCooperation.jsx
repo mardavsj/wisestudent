@@ -29,22 +29,22 @@ const QuizCooperation = () => {
         { 
           id: "a", 
           text: "Sharing tasks", 
-          emoji: "✅", 
-          description: "Working together and dividing responsibilities",
+          emoji: "🙂", 
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Fighting", 
-          emoji: "❌", 
-          description: "Arguing and creating conflict",
+          emoji: "😠", 
+          
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Ignoring", 
-          emoji: "❌", 
-          description: "Not participating or helping",
+          emoji: "😔", 
+          
           isCorrect: false
         }
       ]
@@ -57,21 +57,18 @@ const QuizCooperation = () => {
           id: "a", 
           text: "Ignore them", 
           emoji: "🙈", 
-          description: "Not helping when someone needs support",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Help them", 
           emoji: "💪", 
-          description: "Supporting and assisting teammates in need",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Laugh at them", 
           emoji: "😏", 
-          description: "Making fun of someone who's struggling",
           isCorrect: false
         }
       ]
@@ -84,21 +81,18 @@ const QuizCooperation = () => {
           id: "a", 
           text: "Do nothing", 
           emoji: "😐", 
-          description: "Not contributing or helping the team",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Take their work", 
           emoji: "😈", 
-          description: "Taking credit for others' work",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Help others complete tasks", 
           emoji: "🤝", 
-          description: "Supporting teammates to finish together",
           isCorrect: true
         }
       ]
@@ -111,21 +105,18 @@ const QuizCooperation = () => {
           id: "a", 
           text: "Listen and discuss calmly", 
           emoji: "🫂", 
-          description: "Resolving conflicts through respectful communication",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Argue loudly", 
           emoji: "😡", 
-          description: "Escalating conflicts with anger",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Walk away", 
           emoji: "🚶", 
-          description: "Avoiding problems instead of solving them",
           isCorrect: false
         }
       ]
@@ -138,21 +129,18 @@ const QuizCooperation = () => {
           id: "a", 
           text: "Blame them", 
           emoji: "😠", 
-          description: "Criticizing instead of helping",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ignore it", 
           emoji: "🙈", 
-          description: "Not addressing problems that need fixing",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Help them fix it", 
           emoji: "🛠️", 
-          description: "Supporting teammates to correct mistakes together",
           isCorrect: true
         }
       ]

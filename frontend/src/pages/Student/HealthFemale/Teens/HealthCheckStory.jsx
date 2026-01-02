@@ -53,18 +53,19 @@ const HealthCheckStory = () => {
           emoji: "🤒",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "Once a year for preventive care",
-          emoji: "📅",
-          isCorrect: true
-        },
+        
         {
           id: "c",
           text: "Every month",
           emoji: "🔁",
           isCorrect: false
-        }
+        },
+        {
+          id: "b",
+          text: "Varies by individual",
+          emoji: "📅",
+          isCorrect: true
+        },
       ]
     },
     {
@@ -110,7 +111,7 @@ const HealthCheckStory = () => {
         {
           id: "c",
           text: "To get accurate diagnosis and treatment",
-          emoji: "✅",
+          emoji: "⚕️",
           isCorrect: true
         }
       ]
@@ -120,17 +121,18 @@ const HealthCheckStory = () => {
       text: "What should you do if you're nervous about a doctor visit?",
       options: [
         {
-          id: "a",
-          text: "Skip the appointment",
-          emoji: "🏃",
-          isCorrect: false
-        },
-        {
           id: "b",
           text: "Bring a parent or trusted adult for support",
           emoji: "👨‍👩‍👧",
           isCorrect: true
         },
+        {
+          id: "a",
+          text: "Skip the appointment",
+          emoji: "🏃",
+          isCorrect: false
+        },
+        
         {
           id: "c",
           text: "Lie about symptoms",

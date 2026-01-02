@@ -22,20 +22,20 @@ const PuzzleOfIntegrity = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const leftItems = [
-    { id: 1, name: "Integrity", emoji: "💎", description: "Core moral principle" },
-    { id: 2, name: "Lost Wallet", emoji: "👛", description: "Found someone's wallet" },
-    { id: 3, name: "Exam Honesty", emoji: "📝", description: "During a test" },
-    { id: 4, name: "Friend Blames", emoji: "👥", description: "Wrongfully accused" },
-    { id: 5, name: "True Quote", emoji: "💬", description: "About character" },
+    { id: 1, name: "Integrity", emoji: "💎",  },
+    { id: 2, name: "Lost Wallet", emoji: "👛",  },
+    { id: 3, name: "Exam Honesty", emoji: "📝",  },
+    { id: 4, name: "Friend Blames", emoji: "👥",  },
+    { id: 5, name: "True Quote", emoji: "💬",  },
   ];
 
   // Right items with correct matches in different positions: Q1: pos 1, Q2: pos 2, Q3: pos 3, Q4: pos 1, Q5: pos 2
   const rightItems = [
-    { id: 5, name: "'Character is who you are when no one's watching.'", emoji: "📜", description: "Inspirational quote" },
-    { id: 3, name: "Attempting honestly even if it's hard", emoji: "✊", description: "Right choice" },
-    { id: 2, name: "Return it to the owner or authorities", emoji: "🔙", description: "Honest action" },
-    { id: 1, name: "Doing right even when no one is watching", emoji: "👁️", description: "True integrity" },
-    { id: 4, name: "Speak honestly and explain what happened", emoji: "🗣️", description: "Truthful response" },
+    { id: 5, name: "'Character is who you are when no one's watching.'", emoji: "📜",  },
+    { id: 3, name: "Attempting honestly even if it's hard", emoji: "✊",  },
+    { id: 2, name: "Return it to the owner or authorities", emoji: "🔙",  },
+    { id: 1, name: "Doing right even when no one is watching", emoji: "👁️",  },
+    { id: 4, name: "Speak honestly and explain what happened", emoji: "🗣️",  },
   ];
 
   const correctMatches = [

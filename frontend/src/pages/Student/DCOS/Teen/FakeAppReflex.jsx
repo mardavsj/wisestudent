@@ -40,7 +40,7 @@ const FakeAppReflex = () => {
       correctAnswer: "Ignore Suspicious Request",
       options: [
         { text: "Ignore Suspicious Request", isCorrect: true, emoji: "🚫" },
-        { text: "Allow All Permissions", isCorrect: false, emoji: "✅" },
+        { text: "Allow All Permissions", isCorrect: false, emoji: "🙂" },
         { text: "Ask Friends First", isCorrect: false, emoji: "👥" },
         { text: "Allow Camera Only", isCorrect: false, emoji: "📷" }
       ]
@@ -61,7 +61,7 @@ const FakeAppReflex = () => {
       question: "A game app wants contacts & location. What should you do?",
       correctAnswer: "Deny Unnecessary Permissions",
       options: [
-        { text: "Allow All Permissions", isCorrect: false, emoji: "✅" },
+        { text: "Allow All Permissions", isCorrect: false, emoji: "🙂" },
         { text: "Share with Friends", isCorrect: false, emoji: "👥" },
         { text: "Deny Unnecessary Permissions", isCorrect: true, emoji: "🚫" },
         { text: "Allow Location Only", isCorrect: false, emoji: "📍" }
@@ -83,7 +83,7 @@ const FakeAppReflex = () => {
       question: "A calculator app requests contacts. What should you do?",
       correctAnswer: "Deny Unnecessary Permission",
       options: [
-        { text: "Allow Permission", isCorrect: false, emoji: "✅" },
+        { text: "Allow Permission", isCorrect: false, emoji: "🙂" },
         { text: "Ask Why First", isCorrect: false, emoji: "❓" },
         { text: "Allow Contacts Only", isCorrect: false, emoji: "👥" },
         { text: "Deny Unnecessary Permission", isCorrect: true, emoji: "🚫" }

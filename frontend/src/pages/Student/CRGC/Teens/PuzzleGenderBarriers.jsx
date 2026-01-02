@@ -19,20 +19,20 @@ const PuzzleGenderBarriers = () => {
 
   // Concepts (left side) - 5 items
   const concepts = [
-    { id: 1, name: "Equal Pay", emoji: "✅", description: "Same compensation for same work" },
-    { id: 2, name: "Girls Out of School", emoji: "❌", description: "Preventing education based on gender" },
-    { id: 3, name: "Women Leaders", emoji: "👍", description: "Female representation in leadership" },
-    { id: 4, name: "Career Limitations", emoji: "🚫", description: "Restrictions based on gender roles" },
-    { id: 5, name: "Shared Responsibilities", emoji: "🤝", description: "Equal distribution of duties" }
+    { id: 1, name: "Equal Pay", emoji: "✅",  },
+    { id: 2, name: "Girls Out of School", emoji: "❌",  },
+    { id: 3, name: "Women Leaders", emoji: "👍",  },
+    { id: 4, name: "Career Limitations", emoji: "🚫",  },
+    { id: 5, name: "Shared Responsibilities", emoji: "🤝",  }
   ];
 
   // Evaluations (right side) - 5 items
   const evaluations = [
-    { id: 2, name: "Wrong", emoji: "⚠️", description: "Morally incorrect action" },
-    { id: 3, name: "Positive", emoji: "🌟", description: "Constructive beneficial outcome" },
-    { id: 1, name: "Fair", emoji: "⚖️", description: "Just and equitable treatment" },
-    { id: 5, name: "Beneficial", emoji: "💚", description: "Producing good results" },
-    { id: 4, name: "Harmful", emoji: "💔", description: "Causing damage or injury" },
+    { id: 2, name: "Wrong", emoji: "⚠️",  },
+    { id: 3, name: "Positive", emoji: "🌟",  },
+    { id: 1, name: "Fair", emoji: "⚖️",  },
+    { id: 5, name: "Beneficial", emoji: "💚",  },
+    { id: 4, name: "Harmful", emoji: "💔",  },
   ];
 
   // Correct matches

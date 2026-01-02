@@ -25,20 +25,20 @@ const PuzzlePeaceMatch = () => {
 
   // Actions and their outcomes
   const leftItems = [
-    { id: 1, name: "Smile", emoji: "😊", description: "Showing happiness" },
-    { id: 2, name: "Angry Face", emoji: "😠", description: "Showing anger" },
-    { id: 3, name: "Help Others", emoji: "🤝", description: "Assisting people" },
-    { id: 4, name: "Shout", emoji: "📢", description: "Speaking loudly angrily" },
-    { id: 5, name: "Share Toys", emoji: "🧸", description: "Giving toys to others" }
+    { id: 1, name: "Smile", emoji: "😊",  },
+    { id: 2, name: "Angry Face", emoji: "😠",  },
+    { id: 3, name: "Help Others", emoji: "🤝",  },
+    { id: 4, name: "Shout", emoji: "📢",  },
+    { id: 5, name: "Share Toys", emoji: "🧸",  }
   ];
 
   // Outcomes - reordered so correct matches are in different positions
   const rightItems = [
-    { id: 1, name: "Fight", emoji: "⚔️", description: "Causes conflict" },
-    { id: 2, name: "Happiness", emoji: "🌈", description: "Spreads joy" },
-    { id: 3, name: "Friendship", emoji: "💞", description: "Builds strong bonds" },
-    { id: 4, name: "Peace", emoji: "☮️", description: "Brings calm and harmony" },
-    { id: 5, name: "Noise", emoji: "🔊", description: "Creates disturbance" }
+    { id: 1, name: "Fight", emoji: "⚔️",  },
+    { id: 2, name: "Happiness", emoji: "🌈",  },
+    { id: 3, name: "Friendship", emoji: "💞",  },
+    { id: 4, name: "Peace", emoji: "☮️",  },
+    { id: 5, name: "Noise", emoji: "🔊",  }
   ];
 
   // Correct matches (with reordered right items)

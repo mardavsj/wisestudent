@@ -35,21 +35,20 @@ const ProfileQuiz = () => {
           id: "a", 
           text: "Public – everyone can see", 
           emoji: "🌐", 
-          description: "Let everyone see your profile",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Private – only friends can see", 
           emoji: "🔒", 
-          description: "Keep your profile private and safe",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Half public, half private", 
           emoji: "⚖️", 
-          description: "Mix of public and private",
           isCorrect: false
         }
       ]
@@ -62,21 +61,18 @@ const ProfileQuiz = () => {
           id: "a", 
           text: "Only my friends", 
           emoji: "👥", 
-          description: "Only friends can see",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No one", 
           emoji: "🚫", 
-          description: "Nobody can see",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Anyone on the internet", 
           emoji: "🌐", 
-          description: "Everyone online can see",
           isCorrect: true
         }
       ]
@@ -89,21 +85,18 @@ const ProfileQuiz = () => {
           id: "a", 
           text: "No, only real friends", 
           emoji: "👥", 
-          description: "Only accept people you know",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Yes, more followers!", 
           emoji: "📈", 
-          description: "More followers is better",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Maybe if they look nice", 
           emoji: "🤔", 
-          description: "Accept if they seem friendly",
           isCorrect: false
         }
       ]
@@ -116,21 +109,18 @@ const ProfileQuiz = () => {
           id: "a", 
           text: "Share password with a friend", 
           emoji: "🔓", 
-          description: "Friends can help protect it",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ignore settings", 
           emoji: "🙈", 
-          description: "Don't worry about settings",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Keep it private and strong password", 
           emoji: "🔒", 
-          description: "Private profile and strong password",
           isCorrect: true
         }
       ]
@@ -143,21 +133,18 @@ const ProfileQuiz = () => {
           id: "a", 
           text: "Give it if they seem nice", 
           emoji: "😊", 
-          description: "Share if they're friendly",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ask why they need it", 
           emoji: "🤔", 
-          description: "Just ask them first",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Report or block them", 
           emoji: "🚨", 
-          description: "Report suspicious requests",
           isCorrect: true
         }
       ]

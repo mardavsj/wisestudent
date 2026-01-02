@@ -50,7 +50,7 @@ const ReflexFairAI = () => {
       question: "AI spreads fake news and misinformation online. What should you do?",
       correctAnswer: "Avoid Harmful AI",
       options: [
-        { text: "Use It", isCorrect: false, emoji: "✅" },
+        { text: "Use It", isCorrect: false, emoji: "🙂" },
         { text: "Avoid Harmful AI", isCorrect: true, emoji: "🚫" },
         { text: "Share It", isCorrect: false, emoji: "📤" },
         { text: "Like It", isCorrect: false, emoji: "👍" }
@@ -72,7 +72,7 @@ const ReflexFairAI = () => {
       question: "AI creates biased content that discriminates against people. What should you do?",
       correctAnswer: "Avoid Harmful AI",
       options: [
-        { text: "Use It", isCorrect: false, emoji: "✅" },
+        { text: "Use It", isCorrect: false, emoji: "🙂" },
         { text: "Avoid Harmful AI", isCorrect: true, emoji: "🚫" },
         { text: "Share It", isCorrect: false, emoji: "📤" },
         { text: "Like It", isCorrect: false, emoji: "👍" }

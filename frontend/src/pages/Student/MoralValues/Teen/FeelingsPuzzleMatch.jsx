@@ -22,20 +22,20 @@ const FeelingsPuzzleMatch = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const leftItems = [
-    { id: 1, name: "Grimace", emoji: "😬", description: "Pained expression" },
-    { id: 2, name: "Wiping tears", emoji: "😢", description: "Emotional release" },
-    { id: 3, name: "Scowl", emoji: "😠", description: "Intense disapproval" },
-    { id: 4, name: "Shivering", emoji: "😨", description: "Physical response to fear" },
-    { id: 5, name: "Belly laugh", emoji: "🤣", description: "Overwhelming joy" },
+    { id: 1, name: "Grimace", emoji: "😬",  },
+    { id: 2, name: "Wiping tears", emoji: "😢",  },
+    { id: 3, name: "Scowl", emoji: "😠",  },
+    { id: 4, name: "Shivering", emoji: "😨",  },
+    { id: 5, name: "Belly laugh", emoji: "🤣",  },
   ];
 
   // Right items with correct matches in different positions: manually shuffled to avoid direct positional matching
   const rightItems = [
-    { id: 10, name: "Euphoria", emoji: "😍", description: "Extreme happiness" },
-    { id: 6, name: "Embarrassment", emoji: "😰", description: "Self-conscious feeling" },
-    { id: 7, name: "Sorrow", emoji: "😔", description: "Deep sadness" },
-    { id: 8, name: "Fury", emoji: "😡", description: "Intense anger" },
-    { id: 9, name: "Anxiety", emoji: "😰", description: "Worried feeling" },
+    { id: 10, name: "Euphoria", emoji: "😍",  },
+    { id: 6, name: "Embarrassment", emoji: "😰",  },
+    { id: 7, name: "Sorrow", emoji: "😔",  },
+    { id: 8, name: "Fury", emoji: "😡",  },
+    { id: 9, name: "Anxiety", emoji: "😰",  },
   ];
 
   const correctMatches = [

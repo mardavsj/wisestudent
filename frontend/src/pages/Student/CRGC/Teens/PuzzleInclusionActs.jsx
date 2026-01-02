@@ -19,20 +19,20 @@ const PuzzleInclusionActs = () => {
 
   // Acts (left side) - 5 items
   const acts = [
-    { id: 1, name: "Invite", emoji: "🎒", description: "Ask someone to join an activity" },
-    { id: 2, name: "Listen", emoji: "👥", description: "Pay attention to others' ideas" },
-    { id: 3, name: "Share", emoji: "🤝", description: "Distribute resources fairly" },
-    { id: 4, name: "Include", emoji: "🎈", description: "Make sure everyone can participate" },
-    { id: 5, name: "Respect", emoji: "🙏", description: "Value different perspectives" }
+    { id: 1, name: "Invite", emoji: "🎒",  },
+    { id: 2, name: "Listen", emoji: "👥",  },
+    { id: 3, name: "Share", emoji: "🤝",  },
+    { id: 4, name: "Include", emoji: "🎈",  },
+    { id: 5, name: "Respect", emoji: "🙏",  }
   ];
 
   // Responses (right side) - 5 items
   const responses = [
-    { id: 2, name: "Everyone", emoji: "🌎", description: "All people in a group or community" },
-    { id: 4, name: "All Activities", emoji: "🎪", description: "Every event or program offered" },
-    { id: 1, name: "New Student", emoji: "🆕", description: "Person joining a school or group" },
-    { id: 3, name: "Team", emoji: "👨‍👩‍👧‍👦", description: "Group working together toward goals" },
-    { id: 5, name: "Different Views", emoji: "🌐", description: "Various opinions and perspectives" }
+    { id: 2, name: "Everyone", emoji: "🌎",  },
+    { id: 4, name: "All Activities", emoji: "🎪",  },
+    { id: 1, name: "New Student", emoji: "🆕",  },
+    { id: 3, name: "Team", emoji: "👨‍👩‍👧‍👦",  },
+    { id: 5, name: "Different Views", emoji: "🌐",  }
   ];
 
   // Correct matches

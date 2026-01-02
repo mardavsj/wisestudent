@@ -33,21 +33,19 @@ const GratitudeStory = () => {
           id: "thank", 
           text: "Thank them genuinely and offer to help back", 
           emoji: "🙏", 
-          description: "Express gratitude and show willingness to return the favor",
+          
           isCorrect: true
         },
         { 
           id: "use", 
           text: "Use them without saying anything", 
           emoji: "😐", 
-          description: "Take the notes without acknowledging their kindness",
           isCorrect: false
         },
         { 
           id: "okay", 
           text: "Just say 'okay' and move on", 
           emoji: "👍", 
-          description: "Give a brief response without showing appreciation",
           isCorrect: false
         }
       ]
@@ -60,21 +58,18 @@ const GratitudeStory = () => {
           id: "ignore", 
           text: "Ignore and eat quietly", 
           emoji: "😶", 
-          description: "Eat without acknowledging their generosity",
           isCorrect: false
         },
         { 
           id: "thank2", 
           text: "Say thank you and share your snacks next time", 
           emoji: "😊", 
-          description: "Express thanks and offer to reciprocate the kindness",
           isCorrect: true
         },
         { 
           id: "finally", 
           text: "Say 'finally!' and eat fast", 
           emoji: "😅", 
-          description: "Respond casually without showing proper gratitude",
           isCorrect: false
         }
       ]
@@ -87,21 +82,18 @@ const GratitudeStory = () => {
           id: "leave", 
           text: "Leave class without saying anything", 
           emoji: "😶", 
-          description: "Exit without acknowledging the extra help",
           isCorrect: false
         },
         { 
           id: "complain", 
           text: "Complain it was too long", 
           emoji: "🙄", 
-          description: "Show ingratitude by complaining about the time spent",
           isCorrect: false
         },
         { 
           id: "thank3", 
           text: "Thank them and promise to practice more", 
           emoji: "📚", 
-          description: "Show appreciation and commitment to improve",
           isCorrect: true
         }
       ]
@@ -114,21 +106,18 @@ const GratitudeStory = () => {
           id: "same", 
           text: "Say thanks and do the same when they need help", 
           emoji: "🤗", 
-          description: "Show gratitude and offer to help them in return",
           isCorrect: true
         },
         { 
           id: "had", 
           text: "Say 'you had to help anyway'", 
           emoji: "😏", 
-          description: "Dismiss their help as an obligation",
           isCorrect: false
         },
         { 
           id: "ignore2", 
           text: "Ignore it", 
           emoji: "😶", 
-          description: "Don't acknowledge their late-night assistance",
           isCorrect: false
         }
       ]
@@ -141,21 +130,18 @@ const GratitudeStory = () => {
           id: "walk", 
           text: "Walk past without noticing", 
           emoji: "😐", 
-          description: "Continue on without acknowledging their work",
           isCorrect: false
         },
         { 
           id: "laugh", 
           text: "Laugh with friends", 
           emoji: "🙃", 
-          description: "Make light of the situation without respect",
           isCorrect: false
         },
         { 
           id: "thank4", 
           text: "Say thank you for keeping it clean", 
           emoji: "🙂", 
-          description: "Acknowledge their hard work with gratitude",
           isCorrect: true
         }
       ]

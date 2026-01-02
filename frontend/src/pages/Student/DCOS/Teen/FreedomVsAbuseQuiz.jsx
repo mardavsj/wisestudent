@@ -44,21 +44,21 @@ const FreedomVsAbuseQuiz = () => {
           id: "a", 
           text: "Yes - free speech allows it", 
           emoji: "🗣️", 
-          description: "Calling names is harassment, not protected free speech",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - it's harassment and abuse", 
-          emoji: "❌", 
-          description: "Calling names is harassment and abuse, not protected by free speech",
+          emoji: "🙅", 
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Maybe - depends on context", 
           emoji: "🤔", 
-          description: "Calling names is always harassment, regardless of context",
+          
           isCorrect: false
         }
       ]
@@ -71,7 +71,6 @@ const FreedomVsAbuseQuiz = () => {
           id: "a", 
           text: "Yes - you can say anything", 
           emoji: "🗣️", 
-          description: "Spreading false rumors is defamation, not protected free speech",
           isCorrect: false
         },
         
@@ -79,14 +78,12 @@ const FreedomVsAbuseQuiz = () => {
           id: "c", 
           text: "Maybe - if it's true", 
           emoji: "🤔", 
-          description: "False rumors are always harmful, regardless of intent",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - it's defamation and harmful", 
-          emoji: "❌", 
-          description: "Spreading false rumors is defamation and causes real harm - not free speech",
+          emoji: "🙅", 
           isCorrect: true
         },
       ]
@@ -99,21 +96,18 @@ const FreedomVsAbuseQuiz = () => {
           id: "a", 
           text: "Yes - it's just words", 
           emoji: "🗣️", 
-          description: "Threats are illegal and not protected by free speech",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - threats are illegal", 
-          emoji: "❌", 
-          description: "Threatening someone is illegal and not protected by free speech",
+          emoji: "🙅", 
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Maybe - if it's a joke", 
           emoji: "😏", 
-          description: "Threats are illegal regardless of whether they're meant as jokes",
           isCorrect: false
         }
       ]
@@ -125,15 +119,13 @@ const FreedomVsAbuseQuiz = () => {
          { 
           id: "b", 
           text: "No - it causes real harm", 
-          emoji: "❌", 
-          description: "Cyberbullying causes real psychological harm and is not protected by free speech",
+          emoji: "🙅", 
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Yes - it's just online", 
           emoji: "🗣️", 
-          description: "Cyberbullying causes real harm and is not protected by free speech",
           isCorrect: false
         },
        
@@ -141,7 +133,6 @@ const FreedomVsAbuseQuiz = () => {
           id: "c", 
           text: "Maybe - depends on severity", 
           emoji: "🤔", 
-          description: "All cyberbullying is harmful, regardless of severity",
           isCorrect: false
         }
       ]
@@ -154,21 +145,18 @@ const FreedomVsAbuseQuiz = () => {
           id: "a", 
           text: "Yes - free speech protects everything", 
           emoji: "🗣️", 
-          description: "Hate speech causes real harm and is not protected by free speech",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - it causes harm and is not protected", 
-          emoji: "❌", 
-          description: "Hate speech causes real harm to individuals and communities - it's not protected free speech",
+          emoji: "🙅", 
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Maybe - if it's your opinion", 
           emoji: "🤔", 
-          description: "Hate speech is harmful regardless of whether it's someone's opinion",
           isCorrect: false
         }
       ]

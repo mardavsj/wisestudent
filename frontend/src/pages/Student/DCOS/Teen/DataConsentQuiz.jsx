@@ -36,21 +36,20 @@ const DataConsentQuiz = () => {
           id: "b", 
           text: "No - only grant necessary permissions", 
           emoji: "🛡️", 
-          description: "Only grant permissions that are necessary for the app's core function",
+          
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Yes - all apps need these permissions", 
-          emoji: "✓", 
-          description: "Not all apps need all permissions - only grant what's necessary",
+          emoji: "🙂", 
+          
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Yes - if it's a popular app", 
           emoji: "⭐", 
-          description: "Popularity doesn't guarantee safety - always review permissions",
           isCorrect: false
         }
       ]
@@ -63,21 +62,18 @@ const DataConsentQuiz = () => {
           id: "a", 
           text: "Yes - it might need contacts", 
           emoji: "📞", 
-          description: "Calculator apps don't need contacts - this is suspicious",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - calculator doesn't need contacts", 
           emoji: "🛡️", 
-          description: "Calculator apps don't need contacts - deny this permission",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Maybe - depends on the app", 
           emoji: "🤔", 
-          description: "There's no reason a calculator would need contacts",
           isCorrect: false
         }
       ]
@@ -90,21 +86,18 @@ const DataConsentQuiz = () => {
           id: "a", 
           text: "Yes - all apps need location", 
           emoji: "📍", 
-          description: "Not all apps need location - flashlight doesn't need it",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Yes - for better functionality", 
           emoji: "⚡", 
-          description: "Location doesn't improve flashlight functionality",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No - flashlight doesn't need location", 
           emoji: "🛡️", 
-          description: "Flashlight apps don't need location access - deny this permission",
           isCorrect: true
         }
       ]
@@ -117,21 +110,18 @@ const DataConsentQuiz = () => {
           id: "b", 
           text: "Only if it's a voice chat game", 
           emoji: "🛡️", 
-          description: "Only grant microphone access if the game requires voice chat",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Yes - games need microphone", 
           emoji: "🎤", 
-          description: "Not all games need microphone - only voice chat games do",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Yes - for better gaming", 
           emoji: "🎯", 
-          description: "Microphone isn't needed for most games",
           isCorrect: false
         }
       ]
@@ -144,21 +134,18 @@ const DataConsentQuiz = () => {
           id: "a", 
           text: "No - never allow photo access", 
           emoji: "🚫", 
-          description: "Photo editing apps legitimately need photo access to edit them",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Yes - it needs photos to edit them", 
           emoji: "🛡️", 
-          description: "Photo editing apps need photo access to function - this is legitimate",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Maybe - depends on the app", 
           emoji: "🤔", 
-          description: "Photo editing apps need photo access - this is necessary",
           isCorrect: false
         }
       ]

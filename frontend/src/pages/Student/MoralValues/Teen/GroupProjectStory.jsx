@@ -33,21 +33,19 @@ const GroupProjectStory = () => {
           id: "no", 
           text: "No, everyone's voice matters in teamwork", 
           emoji: "🤝", 
-          description: "Teamwork requires listening to everyone's input",
+          
           isCorrect: true
         },
         { 
           id: "yes", 
           text: "Yes, leaders should decide everything", 
           emoji: "😐", 
-          description: "Leaders make all decisions without input",
           isCorrect: false
         },
         { 
           id: "maybe", 
           text: "Maybe, if the leader is smart", 
           emoji: "🤔", 
-          description: "It depends on the leader's abilities",
           isCorrect: false
         }
       ]
@@ -60,21 +58,18 @@ const GroupProjectStory = () => {
           id: "complain", 
           text: "Complain about them to the teacher", 
           emoji: "😠", 
-          description: "Report their struggles to the teacher",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Offer help so the project succeeds together", 
           emoji: "🙌", 
-          description: "Assist them to ensure team success",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore them and finish your own work", 
           emoji: "🙅", 
-          description: "Focus only on your own responsibilities",
           isCorrect: false
         }
       ]
@@ -87,21 +82,18 @@ const GroupProjectStory = () => {
           id: "silent", 
           text: "Stay silent and feel upset", 
           emoji: "😞", 
-          description: "Say nothing but feel resentful",
           isCorrect: false
         },
         { 
           id: "yes2", 
           text: "Yes, because you worked the hardest", 
           emoji: "😤", 
-          description: "Claim all credit since you did most work",
           isCorrect: false
         },
         { 
           id: "share", 
           text: "No, teamwork means sharing credit equally", 
           emoji: "🤗", 
-          description: "Acknowledge everyone's contributions",
           isCorrect: true
         }
       ]
@@ -114,21 +106,18 @@ const GroupProjectStory = () => {
           id: "calm", 
           text: "Calmly listen and help them find a middle ground", 
           emoji: "🕊️", 
-          description: "Mediate and help resolve the conflict peacefully",
           isCorrect: true
         },
         { 
           id: "fight", 
           text: "Let them fight until someone wins", 
           emoji: "😬", 
-          description: "Allow them to argue until one gives up",
           isCorrect: false
         },
         { 
           id: "leave", 
           text: "Leave the group and work alone", 
           emoji: "🚶", 
-          description: "Abandon the team to avoid conflict",
           isCorrect: false
         }
       ]
@@ -141,21 +130,18 @@ const GroupProjectStory = () => {
           id: "nothing", 
           text: "Do nothing since it's not your part", 
           emoji: "😴", 
-          description: "Ignore it because it's not your responsibility",
           isCorrect: false
         },
         { 
           id: "finish", 
           text: "Finish it together to meet the goal", 
           emoji: "💪", 
-          description: "Work together to complete the remaining part",
           isCorrect: true
         },
         { 
           id: "blame", 
           text: "Blame others for being slow", 
           emoji: "😒", 
-          description: "Criticize teammates for not finishing",
           isCorrect: false
         }
       ]

@@ -31,21 +31,20 @@ const AnimalStoryy = () => {
           id: "give", 
           text: "Yes, give water", 
           emoji: "💧", 
-          description: "Help the puppy",
+          
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "No, ignore it", 
           emoji: "😐", 
-          description: "Don't help",
+          
           isCorrect: false
         },
         { 
           id: "wait", 
           text: "Wait for someone else", 
           emoji: "⏳", 
-          description: "Let others handle it",
           isCorrect: false
         }
       ]
@@ -58,21 +57,18 @@ const AnimalStoryy = () => {
           id: "wait", 
           text: "Wait for the owner", 
           emoji: "👤", 
-          description: "Let owner handle it",
           isCorrect: false
         },
         { 
           id: "feed", 
           text: "Feed it", 
           emoji: "🐟", 
-          description: "Provide food",
           isCorrect: true
         },
         { 
           id: "donot", 
           text: "Don't feed", 
           emoji: "🙁", 
-          description: "Ignore the need",
           isCorrect: false
         }
       ]
@@ -85,21 +81,18 @@ const AnimalStoryy = () => {
           id: "help", 
           text: "Yes, help it", 
           emoji: "🪹", 
-          description: "Rescue the bird",
           isCorrect: true
         },
         { 
           id: "leave", 
           text: "Leave it", 
           emoji: "😔", 
-          description: "Don't interfere",
           isCorrect: false
         },
         { 
           id: "call", 
           text: "Call someone else", 
           emoji: "📞", 
-          description: "Get help from others",
           isCorrect: false
         }
       ]
@@ -112,21 +105,18 @@ const AnimalStoryy = () => {
           id: "ignore", 
           text: "No, ignore", 
           emoji: "😐", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "water", 
           text: "Yes, give water", 
           emoji: "💧", 
-          description: "Provide water",
           isCorrect: true
         },
         { 
           id: "report", 
           text: "Report to farmer", 
           emoji: "👨‍🌾", 
-          description: "Tell the owner",
           isCorrect: false
         }
       ]
@@ -139,21 +129,18 @@ const AnimalStoryy = () => {
           id: "cover", 
           text: "Yes, cover it", 
           emoji: "🛏️", 
-          description: "Keep it warm",
           isCorrect: true
         },
         { 
           id: "leave", 
           text: "No, leave it", 
           emoji: "😢", 
-          description: "Ignore the dog",
           isCorrect: false
         },
         { 
           id: "shelter", 
           text: "Call animal shelter", 
           emoji: "🏠", 
-          description: "Get professional help",
           isCorrect: false
         }
       ]

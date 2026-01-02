@@ -25,20 +25,20 @@ const PuzzleServiceMatch = () => {
 
   // Service roles and their purposes
   const leftItems = [
-    { id: 1, name: "Volunteer", emoji: "🙋", description: "Helps others willingly" },
-    { id: 2, name: "Doctor", emoji: "🩺", description: "Provides medical care" },
-    { id: 3, name: "Soldier", emoji: "🪖", description: "Protects the country" },
-    { id: 4, name: "Teacher", emoji: "📚", description: "Educates children" },
-    { id: 5, name: "Firefighter", emoji: "🚒", description: "Saves lives from fire" }
+    { id: 1, name: "Volunteer", emoji: "🙋",  },
+    { id: 2, name: "Doctor", emoji: "🩺",  },
+    { id: 3, name: "Soldier", emoji: "🪖",  },
+    { id: 4, name: "Teacher", emoji: "📚",  },
+    { id: 5, name: "Firefighter", emoji: "🚒",  }
   ];
 
   // Purposes - reordered so correct matches are in different positions
   const rightItems = [
-    { id: 1, name: "Care", emoji: "❤️", description: "Provides medical attention" },
-    { id: 2, name: "Rescue", emoji: "🔥", description: "Saves from danger" },
-    { id: 3, name: "Help", emoji: "🤝", description: "Assists those in need" },
-    { id: 4, name: "Protect", emoji: "🛡️", description: "Keeps people safe" },
-    { id: 5, name: "Teach", emoji: "👩‍🏫", description: "Shares knowledge" }
+    { id: 1, name: "Care", emoji: "❤️",  },
+    { id: 2, name: "Rescue", emoji: "🔥",  },
+    { id: 3, name: "Help", emoji: "🤝",  },
+    { id: 4, name: "Protect", emoji: "🛡️",  },
+    { id: 5, name: "Teach", emoji: "👩‍🏫",  }
   ];
 
   // Correct matches (with reordered right items)

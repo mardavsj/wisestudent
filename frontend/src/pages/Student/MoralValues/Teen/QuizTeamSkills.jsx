@@ -35,21 +35,20 @@ const QuizTeamSkills = () => {
           id: "a", 
           text: "Listening", 
           emoji: "👂", 
-          description: "Listening helps teams understand each other",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Arguing", 
           emoji: "😠", 
-          description: "Arguing creates conflict in teams",
+          
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Blaming", 
           emoji: "☹️", 
-          description: "Blaming damages team relationships",
           isCorrect: false
         }
       ]
@@ -62,21 +61,18 @@ const QuizTeamSkills = () => {
           id: "a", 
           text: "Ignore it", 
           emoji: "🙉", 
-          description: "Ignoring ideas discourages participation",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Listen and discuss respectfully", 
           emoji: "🤗", 
-          description: "Respectful discussion builds strong teams",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Laugh at it", 
           emoji: "😂", 
-          description: "Laughing at ideas hurts team morale",
           isCorrect: false
         }
       ]
@@ -89,21 +85,18 @@ const QuizTeamSkills = () => {
           id: "a", 
           text: "Blame them", 
           emoji: "😤", 
-          description: "Blaming creates tension in teams",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Complain to others", 
           emoji: "🙄", 
-          description: "Complaining doesn't solve problems",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Help them fix it together", 
           emoji: "🙌", 
-          description: "Working together strengthens the team",
           isCorrect: true
         }
       ]
@@ -116,21 +109,18 @@ const QuizTeamSkills = () => {
           id: "a", 
           text: "Cooperation and planning", 
           emoji: "📋", 
-          description: "Cooperation and planning lead to success",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Everyone working separately", 
           emoji: "🤷‍♂️", 
-          description: "Working separately reduces efficiency",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Arguing over tasks", 
           emoji: "😡", 
-          description: "Arguing wastes time and energy",
           isCorrect: false
         }
       ]
@@ -143,21 +133,18 @@ const QuizTeamSkills = () => {
           id: "a", 
           text: "Interrupt and shout", 
           emoji: "🚫", 
-          description: "Shouting escalates conflicts",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Listen calmly and find a solution", 
           emoji: "🕊️", 
-          description: "Calm discussion finds better solutions",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Walk away angrily", 
           emoji: "😠", 
-          description: "Walking away avoids resolving issues",
           isCorrect: false
         }
       ]

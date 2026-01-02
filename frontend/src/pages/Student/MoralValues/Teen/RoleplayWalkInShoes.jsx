@@ -38,21 +38,20 @@ const RoleplayWalkInShoes = () => {
           id: "lonely", 
           text: "Lonely", 
           emoji: "😔", 
-          description: "Being ignored makes people feel isolated",
+          
           isCorrect: true 
         },
         { 
           id: "excited", 
           text: "Excited", 
           emoji: "😄", 
-          description: "Being ignored doesn't usually cause excitement",
+          
           isCorrect: false 
         },
         { 
           id: "angry", 
           text: "Angry", 
           emoji: "😠", 
-          description: "While possible, lonely is the more common feeling",
           isCorrect: false 
         }
       ]
@@ -66,21 +65,18 @@ const RoleplayWalkInShoes = () => {
           id: "happy", 
           text: "Happy", 
           emoji: "😄", 
-          description: "Losing something important doesn't make you happy",
           isCorrect: false 
         },
         { 
           id: "upset", 
           text: "Upset", 
           emoji: "😢", 
-          description: "Losing something important makes you feel upset",
           isCorrect: true 
         },
         { 
           id: "confused", 
           text: "Confused", 
           emoji: "🤔", 
-          description: "While possible, upset is the more common feeling",
           isCorrect: false 
         }
       ]
@@ -94,21 +90,18 @@ const RoleplayWalkInShoes = () => {
           id: "proud", 
           text: "Proud", 
           emoji: "😊", 
-          description: "Embarrassing moments don't make you proud",
           isCorrect: false 
         },
         { 
           id: "calm", 
           text: "Calm", 
           emoji: "😌", 
-          description: "Embarrassing moments usually don't make you calm",
           isCorrect: false 
         },
         { 
           id: "embarrassed", 
           text: "Embarrassed", 
           emoji: "😳", 
-          description: "Public mistakes make you feel embarrassed",
           isCorrect: true 
         }
       ]
@@ -122,21 +115,18 @@ const RoleplayWalkInShoes = () => {
           id: "worried", 
           text: "Worried", 
           emoji: "😟", 
-          description: "Forgetting homework makes you worried about consequences",
           isCorrect: true 
         },
         { 
           id: "relaxed", 
           text: "Relaxed", 
           emoji: "😌", 
-          description: "Forgetting homework doesn't usually make you relaxed",
           isCorrect: false 
         },
         { 
           id: "joyful", 
           text: "Joyful", 
           emoji: "😄", 
-          description: "Forgetting homework doesn't make you joyful",
           isCorrect: false 
         }
       ]
@@ -150,21 +140,18 @@ const RoleplayWalkInShoes = () => {
           id: "guilty", 
           text: "Guilty", 
           emoji: "😔", 
-          description: "Helping others doesn't make you feel guilty",
           isCorrect: false 
         },
         { 
           id: "angry", 
           text: "Angry", 
           emoji: "😠", 
-          description: "Helping others doesn't make you feel angry",
           isCorrect: false 
         },
         { 
           id: "kind", 
           text: "Kind", 
           emoji: "💖", 
-          description: "Helping others makes you feel kind and good",
           isCorrect: true 
         }
       ]

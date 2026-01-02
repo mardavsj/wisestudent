@@ -19,20 +19,20 @@ const PuzzleVolunteerAreas = () => {
 
   // Volunteer Areas (left side) - 5 items
   const areas = [
-    { id: 1, name: "Hospital", emoji: "🏥", description: "Medical facility providing healthcare" },
-    { id: 2, name: "School", emoji: "📚", description: "Educational institution for learning" },
-    { id: 3, name: "Nature", emoji: "🌳", description: "Natural environment and ecosystems" },
-    { id: 4, name: "Community Center", emoji: "🏘️", description: "Local hub for community activities" },
-    { id: 5, name: "Animal Shelter", emoji: "🐶", description: "Facility caring for homeless animals" }
+    { id: 1, name: "Hospital", emoji: "🏥",  },
+    { id: 2, name: "School", emoji: "📚",  },
+    { id: 3, name: "Nature", emoji: "🌳",  },
+    { id: 4, name: "Community Center", emoji: "🏘️",  },
+    { id: 5, name: "Animal Shelter", emoji: "🐶",  }
   ];
 
   // Volunteer Activities (right side) - 5 items
   const activities = [
-    { id: 1, name: "Support", emoji: "🤝", description: "Provide assistance and help to others" },
-    { id: 3, name: "Plant Trees", emoji: "🌱", description: "Contribute to environmental restoration" },
-    { id: 2, name: "Tutor", emoji: "📖", description: "Help students with their studies" },
-    { id: 5, name: "Care for Animals", emoji: "🐾", description: "Provide love and attention to pets" },
-    { id: 4, name: "Organize Events", emoji: "🎉", description: "Plan and coordinate community gatherings" },
+    { id: 1, name: "Support", emoji: "🤝",  },
+    { id: 3, name: "Plant Trees", emoji: "🌱",  },
+    { id: 2, name: "Tutor", emoji: "📖",  },
+    { id: 5, name: "Care for Animals", emoji: "🐾",  },
+    { id: 4, name: "Organize Events", emoji: "🎉",  },
   ];
 
   // Correct matches

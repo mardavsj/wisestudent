@@ -31,21 +31,19 @@ const PlaygroundFightStory = () => {
           id: "join", 
           text: "Join the fight", 
           emoji: "👊", 
-          description: "Make it worse",
+          
           isCorrect: false
         },
         { 
           id: "walk", 
           text: "Walk away ignoring them", 
           emoji: "🚶", 
-          description: "Avoid helping",
           isCorrect: false
         },
         { 
           id: "calm", 
           text: "Calm them and share the ball", 
           emoji: "🤝", 
-          description: "Bring peace",
           isCorrect: true
         }
       ]
@@ -58,21 +56,18 @@ const PlaygroundFightStory = () => {
           id: "shout", 
           text: "Shout and scold them", 
           emoji: "😠", 
-          description: "Be angry",
           isCorrect: false
         },
         { 
           id: "forgive", 
           text: "Forgive them kindly", 
           emoji: "💖", 
-          description: "Show kindness",
           isCorrect: true
         },
         { 
           id: "stop", 
           text: "Stop talking to them", 
           emoji: "🙅", 
-          description: "Hold a grudge",
           isCorrect: false
         }
       ]
@@ -85,21 +80,18 @@ const PlaygroundFightStory = () => {
           id: "invite", 
           text: "Invite them to sit with you", 
           emoji: "😊", 
-          description: "Be inclusive",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore them", 
           emoji: "🙈", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "laugh", 
           text: "Laugh with friends", 
           emoji: "😂", 
-          description: "Be unkind",
           isCorrect: false
         }
       ]
@@ -112,21 +104,18 @@ const PlaygroundFightStory = () => {
           id: "take", 
           text: "Take it quietly", 
           emoji: "🤫", 
-          description: "Keep it",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore it", 
           emoji: "🚶", 
-          description: "Don't bother",
           isCorrect: false
         },
         { 
           id: "ask", 
           text: "Ask whose pencil it is", 
           emoji: "🙋", 
-          description: "Try to return it",
           isCorrect: true
         }
       ]
@@ -139,21 +128,18 @@ const PlaygroundFightStory = () => {
           id: "eat", 
           text: "Eat secretly", 
           emoji: "😋", 
-          description: "Don't share",
           isCorrect: false
         },
         { 
           id: "share", 
           text: "Share your snacks with them", 
           emoji: "🤗", 
-          description: "Be generous",
           isCorrect: true
         },
         { 
           id: "tell", 
           text: "Tell them to bring next time", 
           emoji: "🙃", 
-          description: "Be unhelpful",
           isCorrect: false
         }
       ]

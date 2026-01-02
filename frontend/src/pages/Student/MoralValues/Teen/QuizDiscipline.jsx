@@ -34,22 +34,21 @@ const QuizDiscipline = () => {
         { 
           id: "a", 
           text: "Submit early", 
-          emoji: "✅", 
-          description: "Submitting early shows good time management",
+          emoji: "🙂", 
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Submit late", 
           emoji: "😅", 
-          description: "Late submission shows lack of discipline",
+          
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Don't submit at all", 
           emoji: "😶", 
-          description: "Not submitting shows poor responsibility",
           isCorrect: false
         }
       ]
@@ -62,21 +61,18 @@ const QuizDiscipline = () => {
           id: "a", 
           text: "Procrastinate and rush at the end", 
           emoji: "⏳", 
-          description: "Procrastination leads to stress",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Plan and complete on time", 
           emoji: "📌", 
-          description: "Planning helps you stay organized and disciplined",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Ignore tasks completely", 
           emoji: "😐", 
-          description: "Ignoring tasks shows lack of responsibility",
           isCorrect: false
         }
       ]
@@ -89,21 +85,18 @@ const QuizDiscipline = () => {
           id: "a", 
           text: "Arrive late regularly", 
           emoji: "😴", 
-          description: "Being late shows lack of discipline",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Skip work when tired", 
           emoji: "😶", 
-          description: "Skipping work shows poor commitment",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Arrive on time consistently", 
           emoji: "⏰", 
-          description: "Consistent punctuality shows strong discipline",
           isCorrect: true
         }
       ]
@@ -116,21 +109,18 @@ const QuizDiscipline = () => {
           id: "a", 
           text: "Revise regularly", 
           emoji: "🎯", 
-          description: "Regular revision shows discipline and commitment",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Cram at last minute", 
           emoji: "😬", 
-          description: "Cramming shows poor planning",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Never study", 
           emoji: "😶", 
-          description: "Not studying shows lack of discipline",
           isCorrect: false
         }
       ]
@@ -143,21 +133,18 @@ const QuizDiscipline = () => {
           id: "a", 
           text: "Ignore deadlines", 
           emoji: "🚫", 
-          description: "Ignoring deadlines shows lack of discipline",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Meet deadlines consistently", 
           emoji: "🏆", 
-          description: "Meeting deadlines shows strong discipline",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only meet deadlines when convenient", 
           emoji: "🤷", 
-          description: "Selective discipline is not true discipline",
           isCorrect: false
         }
       ]

@@ -108,25 +108,26 @@ const QuizOnHygieneNeeds = () => {
       emoji: "💇‍♀️",
       options: [
         {
+          id: "b",
+          text: "Oil and sweat increase, requiring more frequent washing",
+          emoji: "💇",
+          // description: "Hormonal changes increase oil production, making hair oilier",
+          isCorrect: true
+        },
+        {
           id: "a",
           text: "Hair grows faster and needs cleaning",
           emoji: "⏱️",
           // description: "Hair growth speed doesn't determine washing frequency",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "Oil and sweat increase, requiring more frequent washing",
-          emoji: "💇",
-          // description: "Hormonal changes increase oil production, making hair oilier",
-          isCorrect: false
-        },
+        
         {
           id: "c",
           text: "It's not necessary to wash hair more often",
           emoji: "❌",
           // description: "Regular washing prevents oil buildup and scalp issues",
-          isCorrect: true
+          isCorrect: false
         }
       ]
     },

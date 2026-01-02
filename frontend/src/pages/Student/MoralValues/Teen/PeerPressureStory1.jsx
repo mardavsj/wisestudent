@@ -33,21 +33,19 @@ const PeerPressureStory1 = () => {
           id: "refuse", 
           text: "Politely refuse and do your work", 
           emoji: "📝", 
-          description: "Decline and focus on completing your homework",
+          
           isCorrect: true
         },
         { 
           id: "agree", 
           text: "Agree and skip homework", 
           emoji: "🎮", 
-          description: "Join them and skip your homework",
           isCorrect: false
         },
         { 
           id: "pretend", 
           text: "Pretend to agree but don't do it", 
           emoji: "🤐", 
-          description: "Say yes but secretly do your homework",
           isCorrect: false
         }
       ]
@@ -60,21 +58,18 @@ const PeerPressureStory1 = () => {
           id: "cool", 
           text: "Join in to look cool", 
           emoji: "😎", 
-          description: "Participate to fit in with the group",
           isCorrect: false
         },
         { 
           id: "laugh", 
           text: "Laugh quietly but don't say anything", 
           emoji: "😐", 
-          description: "Laugh but don't actively participate",
           isCorrect: false
         },
         { 
           id: "defend", 
           text: "Say no and defend the classmate", 
           emoji: "🫶", 
-          description: "Refuse and stand up for the classmate",
           isCorrect: true
         }
       ]
@@ -87,21 +82,18 @@ const PeerPressureStory1 = () => {
           id: "copy", 
           text: "Copy quietly", 
           emoji: "🤫", 
-          description: "Accept the answers and use them",
           isCorrect: false
         },
         { 
           id: "warn", 
           text: "Warn others about teacher coming", 
           emoji: "👀", 
-          description: "Alert others about the teacher",
           isCorrect: false
         },
         { 
           id: "refuse2", 
           text: "Refuse to cheat and focus on your paper", 
           emoji: "💪", 
-          description: "Decline and complete the exam honestly",
           isCorrect: true
         }
       ]
@@ -114,21 +106,18 @@ const PeerPressureStory1 = () => {
           id: "say", 
           text: "Say no and remind them it's wrong", 
           emoji: "🙅‍♂️", 
-          description: "Refuse and explain why it's wrong",
           isCorrect: true
         },
         { 
           id: "follow", 
           text: "Follow them and sneak out", 
           emoji: "🚪", 
-          description: "Join them in leaving early",
           isCorrect: false
         },
         { 
           id: "wait", 
           text: "Wait to see if teachers notice", 
           emoji: "👀", 
-          description: "Observe and decide based on teachers' reaction",
           isCorrect: false
         }
       ]
@@ -141,21 +130,18 @@ const PeerPressureStory1 = () => {
           id: "let", 
           text: "Let them copy", 
           emoji: "✍️", 
-          description: "Allow them to copy your work",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore and walk away", 
           emoji: "🚶", 
-          description: "Leave without responding",
           isCorrect: false
         },
         { 
           id: "refuse3", 
           text: "Refuse and tell them to try it themselves", 
           emoji: "🧠", 
-          description: "Decline and encourage them to do it themselves",
           isCorrect: true
         }
       ]

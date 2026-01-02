@@ -43,22 +43,21 @@ const CancelCultureQuiz = () => {
         { 
           id: "a", 
           text: "Safe - it's old", 
-          emoji: "✅",
-          description: "Old posts can resurface at any time and cause serious problems",
+          emoji: "🛡️",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Risky - old posts can resurface and cause problems", 
           emoji: "⚠️",
-          description: "Old offensive posts are risky because they can resurface and damage your reputation",
+          
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Maybe - depends on context", 
           emoji: "❓",
-          description: "Old offensive posts are always risky regardless of context",
           isCorrect: false
         }
       ]
@@ -71,21 +70,18 @@ const CancelCultureQuiz = () => {
           id: "a", 
           text: "Safe - it's in the past", 
           emoji: "🕐",
-          description: "Old posts can resurface and damage your reputation even if they're from the past",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Risky - old posts can damage your reputation", 
           emoji: "⚠️",
-          description: "Old posts can resurface and damage your reputation, affecting opportunities",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only if it's bad", 
           emoji: "🤷",
-          description: "Even seemingly harmless old posts can be risky if they resurface",
           isCorrect: false
         }
       ]
@@ -98,7 +94,6 @@ const CancelCultureQuiz = () => {
           id: "a", 
           text: "Safe - people forget", 
           emoji: "😪",
-          description: "People don't forget - inappropriate comments can affect your opportunities",
           isCorrect: false
         },
        
@@ -106,14 +101,12 @@ const CancelCultureQuiz = () => {
           id: "c", 
           text: "Maybe - if it's not too bad", 
           emoji: "🤔",
-          description: "Any inappropriate comment can be risky if it resurfaces",
           isCorrect: false
         },
          { 
           id: "b", 
           text: "Risky - can affect your opportunities", 
           emoji: "⚠️",
-          description: "Inappropriate comments from the past can resurface and affect your opportunities",
           isCorrect: true
         },
       ]
@@ -126,21 +119,18 @@ const CancelCultureQuiz = () => {
           id: "a", 
           text: "Safe - you deleted it", 
           emoji: "🗑️",
-          description: "Deleted posts can still be found and shared by others who saved them",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Risky - deleted posts can still be found and shared", 
           emoji: "⚠️",
-          description: "Deleted posts are risky because others may have saved or shared them before deletion",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only if someone saved it", 
           emoji: "💾",
-          description: "Assume someone may have saved it - deleted posts are always risky",
           isCorrect: false
         }
       ]
@@ -153,14 +143,12 @@ const CancelCultureQuiz = () => {
           id: "b", 
           text: "Risky - can lead to serious consequences", 
           emoji: "⚠️",
-          description: "Offensive posts can lead to serious consequences including reputation damage and lost opportunities",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Safe - it's just one post", 
           emoji: "📝",
-          description: "Even one offensive post can lead to serious consequences if discovered",
           isCorrect: false
         },
         
@@ -168,7 +156,6 @@ const CancelCultureQuiz = () => {
           id: "c", 
           text: "Maybe - depends on who sees it", 
           emoji: "👀",
-          description: "Offensive posts are risky regardless of who sees them",
           isCorrect: false
         }
       ]

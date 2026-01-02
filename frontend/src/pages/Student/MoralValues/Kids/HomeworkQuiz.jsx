@@ -30,21 +30,19 @@ const HomeworkQuiz = () => {
           id: "a", 
           text: "No - lying is never okay", 
           emoji: "🛡️", 
-          description: "Telling the truth is always important, even about small things",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Yes - it's just a small lie", 
           emoji: "😊", 
-          description: "Believing that small lies are acceptable",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "It's okay sometimes", 
           emoji: "🤔", 
-          description: "Thinking that lying is acceptable in some situations",
           isCorrect: false
         }
       ]
@@ -57,21 +55,18 @@ const HomeworkQuiz = () => {
           id: "a", 
           text: "Pretend you didn't see", 
           emoji: "🙈", 
-          description: "Ignoring someone in need",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Share your food honestly", 
           emoji: "🤝", 
-          description: "Helping others with kindness and honesty",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Laugh about it", 
           emoji: "😂", 
-          description: "Making fun of someone's misfortune",
           isCorrect: false
         }
       ]
@@ -84,21 +79,18 @@ const HomeworkQuiz = () => {
           id: "a", 
           text: "Keep it for yourself", 
           emoji: "😅", 
-          description: "Taking something that doesn't belong to you",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Hide it somewhere", 
           emoji: "🙃", 
-          description: "Hiding lost items instead of returning them",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Give it to the teacher", 
           emoji: "👩‍🏫", 
-          description: "Returning lost items to help find the owner",
           isCorrect: true
         }
       ]
@@ -111,21 +103,18 @@ const HomeworkQuiz = () => {
           id: "a", 
           text: "Tell your parents the truth", 
           emoji: "👨‍👩‍👧", 
-          description: "Being honest about mistakes shows courage and builds trust",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Hide it so no one knows", 
           emoji: "🙈", 
-          description: "Hiding mistakes instead of being honest",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Blame your sibling", 
           emoji: "😬", 
-          description: "Lying and blaming others for your mistakes",
           isCorrect: false
         }
       ]
@@ -138,21 +127,18 @@ const HomeworkQuiz = () => {
           id: "a", 
           text: "Say nothing and take the credit", 
           emoji: "😎", 
-          description: "Accepting praise for work you didn't do",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Thank them quietly", 
           emoji: "🙊", 
-          description: "Staying silent when you know the truth",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Tell the truth that it wasn't yours", 
           emoji: "💬", 
-          description: "Speaking up honestly and giving credit where it's due",
           isCorrect: true
         }
       ]

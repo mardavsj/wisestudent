@@ -19,20 +19,20 @@ const PuzzleMatchLeaders = () => {
 
   // Leaders (left side) - 5 items
   const leaders = [
-    { id: 1, name: "Class Monitor", emoji: "📚", description: "Student who helps manage classroom" },
-    { id: 2, name: "Mayor", emoji: "🏙️", description: "Leader of a city or town" },
-    { id: 3, name: "Prime Minister", emoji: "🌄", description: "Head of government of a country" },
-    { id: 4, name: "Team Captain", emoji: "⚽", description: "Leader of a sports team" },
-    { id: 5, name: "Community Volunteer", emoji: "🤝", description: "Person who helps local community" }
+    { id: 1, name: "Class Monitor", emoji: "📚",  },
+    { id: 2, name: "Mayor", emoji: "🏙️",  },
+    { id: 3, name: "Prime Minister", emoji: "🌄",  },
+    { id: 4, name: "Team Captain", emoji: "⚽",  },
+    { id: 5, name: "Community Volunteer", emoji: "🤝",  }
   ];
 
   // Roles (right side) - 5 items
   const roles = [
-    { id: 3, name: "Country", emoji: "🏛️", description: "Nation with government and borders" },
-    { id: 2, name: "City", emoji: "🏢", description: "Urban area with buildings and people" },
-    { id: 5, name: "Neighborhood", emoji: "🏘️", description: "Local residential community area" },
-    { id: 4, name: "Sports Team", emoji: "🏅", description: "Group of athletes in competition" },
-    { id: 1, name: "Responsibility", emoji: "📋", description: "Duty to take care of tasks" },
+    { id: 3, name: "Country", emoji: "🏛️",  },
+    { id: 2, name: "City", emoji: "🏢",  },
+    { id: 5, name: "Neighborhood", emoji: "🏘️",  },
+    { id: 4, name: "Sports Team", emoji: "🏅",  },
+    { id: 1, name: "Responsibility", emoji: "📋",  },
   ];
 
   // Correct matches

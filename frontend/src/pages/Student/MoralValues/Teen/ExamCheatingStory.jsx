@@ -33,21 +33,19 @@ const ExamCheatingStory = () => {
           id: "honest", 
           text: "Do your own work honestly", 
           emoji: "💎", 
-          description: "Complete the exam using only your own knowledge",
+          
           isCorrect: true
         },
         { 
           id: "cheat", 
           text: "Cheat - no one will know", 
           emoji: "😈", 
-          description: "Copy answers from your friend's paper",
           isCorrect: false
         },
         { 
           id: "one", 
           text: "Copy just one answer", 
           emoji: "🤔", 
-          description: "Copy a single answer thinking it's not a big deal",
           isCorrect: false
         }
       ]
@@ -60,21 +58,18 @@ const ExamCheatingStory = () => {
           id: "copy", 
           text: "Let them copy yours", 
           emoji: "🤝", 
-          description: "Allow them to copy your completed homework",
           isCorrect: false
         },
         { 
           id: "explain", 
           text: "Explain answers instead of copying", 
           emoji: "💡", 
-          description: "Teach them the concepts so they can learn",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore them completely", 
           emoji: "🙄", 
-          description: "Pretend not to hear their request",
           isCorrect: false
         }
       ]
@@ -87,21 +82,18 @@ const ExamCheatingStory = () => {
           id: "search", 
           text: "Search answers online", 
           emoji: "🔍", 
-          description: "Look up answers during the test",
           isCorrect: false
         },
         { 
           id: "ai", 
           text: "Ask AI for direct answers", 
           emoji: "🤖", 
-          description: "Use AI to get the answers",
           isCorrect: false
         },
         { 
           id: "solve", 
           text: "Try solving yourself honestly", 
           emoji: "🧠", 
-          description: "Use only your knowledge to answer",
           isCorrect: true
         }
       ]
@@ -114,21 +106,18 @@ const ExamCheatingStory = () => {
           id: "acknowledge", 
           text: "Acknowledge everyone's effort", 
           emoji: "🌟", 
-          description: "Make sure everyone gets credit for their work",
           isCorrect: true
         },
         { 
           id: "quiet", 
           text: "Stay quiet and take all credit", 
           emoji: "😶", 
-          description: "Accept the praise without mentioning others",
           isCorrect: false
         },
         { 
           id: "private", 
           text: "Tell teacher later privately", 
           emoji: "🗣️", 
-          description: "Mention it to the teacher in private later",
           isCorrect: false
         }
       ]
@@ -141,21 +130,18 @@ const ExamCheatingStory = () => {
           id: "honest2", 
           text: "Show honestly and discuss", 
           emoji: "💬", 
-          description: "Present your actual grades and talk about improvement",
           isCorrect: true
         },
         { 
           id: "change", 
           text: "Change marks and show", 
           emoji: "✏️", 
-          description: "Alter the grades to look better",
           isCorrect: false
         },
         { 
           id: "hide", 
           text: "Hide report card", 
           emoji: "🙈", 
-          description: "Conceal the report card completely",
           isCorrect: false
         }
       ]

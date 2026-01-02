@@ -32,21 +32,19 @@ const ClassChatStory = () => {
           id: "a", 
           text: "Tell to Stop", 
           emoji: "🛑", 
-          description: "Tell them to stop — it's not nice",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Laugh Along", 
           emoji: "😂", 
-          description: "Laugh along with others",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Stay Silent", 
           emoji: "😶", 
-          description: "Ignore it and stay silent",
           isCorrect: false
         }
       ]
@@ -59,21 +57,18 @@ const ClassChatStory = () => {
           id: "a", 
           text: "Forward to Friends", 
           emoji: "📤", 
-          description: "Forward it to friends for fun",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Tell It's Mean", 
           emoji: "🗑️", 
-          description: "Tell them it's mean and delete it",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Keep It", 
           emoji: "🤷‍♀️", 
-          description: "Do nothing and keep it",
           isCorrect: false
         }
       ]
@@ -86,14 +81,12 @@ const ClassChatStory = () => {
           id: "b", 
           text: "Report and Tell", 
           emoji: "📢", 
-          description: "Report the post and tell your friend",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Join In", 
           emoji: "😈", 
-          description: "Join in and say worse things",
           isCorrect: false
         },
         
@@ -101,7 +94,6 @@ const ClassChatStory = () => {
           id: "c", 
           text: "Scroll Past", 
           emoji: "👀", 
-          description: "Just scroll past",
           isCorrect: false
         }
       ]
@@ -115,21 +107,18 @@ const ClassChatStory = () => {
           id: "b", 
           text: "Blame Someone", 
           emoji: "🙄", 
-          description: "Blame someone else",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Hope No One Saw", 
           emoji: "😬", 
-          description: "Ignore and hope no one saw it",
           isCorrect: false
         },
         { 
           id: "a", 
           text: "Apologize and Delete", 
           emoji: "🙏", 
-          description: "Apologize and delete it right away",
           isCorrect: true
         },
       ]
@@ -143,21 +132,18 @@ const ClassChatStory = () => {
           id: "b", 
           text: "Join Teasing", 
           emoji: "🤣", 
-          description: "Join the teasing for fun",
           isCorrect: false
         },
          { 
           id: "a", 
           text: "Say Stop", 
           emoji: "🗣️", 
-          description: "Say 'That's not kind — stop it.'",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Leave Group", 
           emoji: "🚪", 
-          description: "Say nothing and leave group",
           isCorrect: false
         }
       ]

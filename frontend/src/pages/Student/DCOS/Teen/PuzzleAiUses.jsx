@@ -55,20 +55,20 @@ const PuzzleAiUses = () => {
 
   // AI applications
   const leftItems = [
-    { id: 1, name: "AI Translation", emoji: "🌐", description: "Language translation tool" },
-    { id: 2, name: "AI Deepfake", emoji: "🎭", description: "Fake video generation" },
-    { id: 3, name: "AI Medical Diagnosis", emoji: "🏥", description: "Healthcare assistance" },
-    { id: 4, name: "AI Chatbot", emoji: "💬", description: "Customer service assistant" },
-    { id: 5, name: "AI Image Generator", emoji: "🎨", description: "Creative art creation" }
+    { id: 1, name: "AI Translation", emoji: "🌐",  },
+    { id: 2, name: "AI Deepfake", emoji: "🎭",  },
+    { id: 3, name: "AI Medical Diagnosis", emoji: "🏥",  },
+    { id: 4, name: "AI Chatbot", emoji: "💬",  },
+    { id: 5, name: "AI Image Generator", emoji: "🎨",  }
   ];
 
   // Uses - shuffled order to make it harder
   const rightItems = [
-    { id: 1, name: "Medical Help", emoji: "🏥", description: "Assists healthcare professionals" },
-    { id: 2, name: "Translate", emoji: "🌐", description: "Converts between languages" },
-    { id: 3, name: "Fake Video", emoji: "⚠️", description: "Creates deceptive content" },
-    { id: 4, name: "Customer Service", emoji: "💬", description: "Helps answer questions" },
-    { id: 5, name: "Creative Art", emoji: "🎨", description: "Generates artistic content" }
+    { id: 1, name: "Medical Help", emoji: "🏥",  },
+    { id: 2, name: "Translate", emoji: "🌐",  },
+    { id: 3, name: "Fake Video", emoji: "⚠️",  },
+    { id: 4, name: "Customer Service", emoji: "💬",  },
+    { id: 5, name: "Creative Art", emoji: "🎨",  }
   ];
 
   // Correct matches

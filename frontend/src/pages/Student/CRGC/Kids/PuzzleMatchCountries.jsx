@@ -19,20 +19,20 @@ const PuzzleMatchCountries = () => {
 
   // Countries (left side) - 5 items
   const countries = [
-    { id: 1, name: "Japan", flag: "🇯🇵", description: "Island nation in East Asia" },
-    { id: 2, name: "USA", flag: "🇺🇸", description: "North American superpower" },
-    { id: 3, name: "Italy", flag: "🇮🇹", description: "European country known for pasta" },
-    { id: 4, name: "Mexico", flag: "🇲🇽", description: "North American country with rich culture" },
-    { id: 5, name: "India", flag: "🇮🇳", description: "South Asian country with diverse traditions" }
+    { id: 1, name: "Japan", flag: "🇯🇵",  },
+    { id: 2, name: "USA", flag: "🇺🇸",  },
+    { id: 3, name: "Italy", flag: "🇮🇹",  },
+    { id: 4, name: "Mexico", flag: "🇲🇽",  },
+    { id: 5, name: "India", flag: "🇮🇳",  }
   ];
 
   // Foods (right side) - 5 items
   const foods = [
-    { id: 5, name: "Biryani", emoji: "🍛", description: "Spiced rice dish with meat or vegetables" },
-    { id: 3, name: "Pizza", emoji: "🍕", description: "Flatbread topped with sauce and cheese" },
-    { id: 2, name: "Burger", emoji: "🍔", description: "Ground meat patty in a bun" },
-    { id: 1, name: "Sushi", emoji: "🍣", description: "Vinegared rice with seafood or vegetables" },
-    { id: 4, name: "Tacos", emoji: "🌮", description: "Folded tortillas with various fillings" },
+    { id: 5, name: "Biryani", emoji: "🍛" },
+    { id: 3, name: "Pizza", emoji: "🍕" },
+    { id: 2, name: "Burger", emoji: "🍔" },
+    { id: 1, name: "Sushi", emoji: "🍣" },
+    { id: 4, name: "Tacos", emoji: "🌮" },
   ];
 
   // Correct matches

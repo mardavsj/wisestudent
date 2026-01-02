@@ -34,22 +34,20 @@ const JusticeQuiz = () => {
         { 
           id: "a", 
           text: "Punish the guilty", 
-          emoji: "✅", 
-          description: "Justice means holding the guilty accountable",
+          emoji: "🙂", 
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Punish the innocent", 
-          emoji: "❌", 
-          description: "Punishing innocent people is unjust",
+          emoji: "😞", 
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Punish both equally", 
           emoji: "⚖️", 
-          description: "Justice requires fairness, not equal punishment",
           isCorrect: false
         }
       ]
@@ -62,21 +60,18 @@ const JusticeQuiz = () => {
           id: "a", 
           text: "No, protect your friend", 
           emoji: "🙈", 
-          description: "Protecting friends from consequences is unfair",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Yes, they should be held accountable", 
           emoji: "⚖️", 
-          description: "Everyone should face fair consequences for their actions",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only if others find out", 
           emoji: "🤷", 
-          description: "Justice should apply regardless of who knows",
           isCorrect: false
         }
       ]
@@ -89,21 +84,18 @@ const JusticeQuiz = () => {
           id: "a", 
           text: "Yes, if it avoids trouble", 
           emoji: "🤷", 
-          description: "Blaming others is dishonest and unfair",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Only if they won't mind", 
           emoji: "😶", 
-          description: "Blaming others is never fair or just",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "No, honesty and justice must prevail", 
           emoji: "💎", 
-          description: "Taking responsibility shows justice and integrity",
           isCorrect: true
         }
       ]
@@ -116,21 +108,18 @@ const JusticeQuiz = () => {
           id: "a", 
           text: "Yes, consider intent and fairness", 
           emoji: "⚖️", 
-          description: "Fairness considers intent and circumstances",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "No, punishment should be the same always", 
-          emoji: "❌", 
-          description: "Justice considers context and intent",
+          emoji: "😐", 
           isCorrect: false
         },
         { 
           id: "c", 
           text: "No punishment for accidents", 
           emoji: "😶", 
-          description: "Accidents may still need appropriate responses",
           isCorrect: false
         }
       ]
@@ -143,21 +132,18 @@ const JusticeQuiz = () => {
           id: "a", 
           text: "Reward everyone equally", 
           emoji: "🤷", 
-          description: "Equal rewards regardless of actions is unfair",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Yes, fair actions deserve recognition", 
-          emoji: "✅", 
-          description: "Recognizing good actions promotes justice",
+          emoji: "🙂", 
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Never reward anyone", 
-          emoji: "❌", 
-          description: "Recognition encourages positive behavior",
+          emoji: "😞", 
           isCorrect: false
         }
       ]

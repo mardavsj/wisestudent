@@ -34,7 +34,7 @@ const GameInviteReflex = () => {
       question: "You receive a game invite from 'Unknown User' saying 'Play Super Game!' What should you do?",
       correctAnswer: "Decline the Invite",
       options: [
-        { text: "Accept the Invite", isCorrect: false, emoji: "✅" },
+        { text: "Accept the Invite", isCorrect: false, emoji: "😇" },
         { text: "Decline the Invite", isCorrect: true, emoji: "🚫" },
         { text: "Ask Who They Are", isCorrect: false, emoji: "❓" },
         { text: "Ignore It", isCorrect: false, emoji: "😶" }
@@ -45,7 +45,7 @@ const GameInviteReflex = () => {
       question: "Your friend Tom sends you a game invite saying 'Join my game!' What should you do?",
       correctAnswer: "Accept the Invite",
       options: [
-        { text: "Accept the Invite", isCorrect: true, emoji: "✅" },
+        { text: "Accept the Invite", isCorrect: true, emoji: "😇" },
         { text: "Decline the Invite", isCorrect: false, emoji: "🚫" },
         { text: "Ignore It", isCorrect: false, emoji: "😶" },
         { text: "Ask Parents First", isCorrect: false, emoji: "👨‍👩‍👧" }
@@ -67,7 +67,7 @@ const GameInviteReflex = () => {
       question: "Your classmate Sara invites you saying 'Want to play?' What should you do?",
       correctAnswer: "Accept the Invite",
       options: [
-        { text: "Accept the Invite", isCorrect: true, emoji: "✅" },
+        { text: "Accept the Invite", isCorrect: true, emoji: "😇" },
         { text: "Decline the Invite", isCorrect: false, emoji: "🚫" },
         { text: "Check with Parents First", isCorrect: false, emoji: "👨‍👩‍👧" },
         { text: "Ignore It", isCorrect: false, emoji: "😶" }

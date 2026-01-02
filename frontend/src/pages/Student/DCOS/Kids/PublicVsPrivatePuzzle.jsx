@@ -29,30 +29,32 @@ const PublicVsPrivatePuzzle = () => {
 
   // Information items (left side)
   const leftItems = [
-    { id: 1, name: "Home Address", emoji: "🏠", description: "Where you live" },
-    { id: 2, name: "Favorite Food", emoji: "🍕", description: "Food preference" },
-    { id: 3, name: "Phone Number", emoji: "📱", description: "Contact number" },
-    { id: 4, name: "Pet's Name", emoji: "🐶", description: "Pet's name" },
-    { id: 5, name: "School Name", emoji: "🏫", description: "School location" }
+    { id: 1, name: "Home Address", emoji: "🏠", },
+    { id: 2, name: "Favorite Food", emoji: "🍕", },
+    { id: 3, name: "Phone Number", emoji: "📱", },
+    { id: 4, name: "Pet's Name", emoji: "🐶", },
+    { id: 5, name: "School Name", emoji: "🏫", }
   ];
 
   // Categories (right side)
   const rightItems = [
-    { id: 1, name: "Private", emoji: "🔒", description: "Keep secret" },
-    { id: 2, name: "Public", emoji: "✅", description: "Safe to share" },
-    { id: 3, name: "Private", emoji: "🔒", description: "Keep secret" },
-    { id: 4, name: "Public", emoji: "✅", description: "Safe to share" },
-    { id: 5, name: "Private", emoji: "🔒", description: "Keep secret" }
-  ];
+  { id: 1, name: "Keep Secret", emoji: "🔐" },
+  { id: 3, name: "Personal Info", emoji: "🙅" },
+  { id: 4, name: "Safe to Tell Friends", emoji: "🗣️" },
+  { id: 2, name: "Okay to Share", emoji: "👍" },
+  { id: 5, name: "Sensitive Detail", emoji: "⚠️" }
+];
+
 
   // Correct matches (mapped to different positions like PuzzleOfSavingGoals)
-  const correctMatches = [
-    { leftId: 1, rightId: 3 }, // Home Address → Private (id: 3)
-    { leftId: 2, rightId: 2 }, // Favorite Food → Public (id: 2)
-    { leftId: 3, rightId: 1 }, // Phone Number → Private (id: 1)
-    { leftId: 4, rightId: 4 }, // Pet's Name → Public (id: 4)
-    { leftId: 5, rightId: 5 }  // School Name → Private (id: 5)
-  ];
+ const correctMatches = [
+  { leftId: 1, rightId: 5 }, // Home Address → Sensitive Detail
+  { leftId: 2, rightId: 2 }, // Favorite Food → Okay to Share
+  { leftId: 3, rightId: 1 }, // Phone Number → Keep Secret
+  { leftId: 4, rightId: 4 }, // Pet's Name → Safe to Tell Friends
+  { leftId: 5, rightId: 3 }  // School Name → Personal Info
+];
+
 
   const handleLeftSelect = (item) => {
     if (showResult) return;

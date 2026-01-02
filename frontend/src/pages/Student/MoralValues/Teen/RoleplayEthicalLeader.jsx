@@ -44,21 +44,19 @@ const RoleplayEthicalLeader = () => {
           id: "a", 
           text: "Remind them kindly that rules apply equally to everyone", 
           emoji: "⚖️", 
-          description: "Fair leaders ensure rules apply to everyone equally",
+          
           isCorrect: true 
         },
         { 
           id: "b", 
           text: "Ignore and let them skip—it's not your problem", 
           emoji: "😶", 
-          description: "Leaders should ensure fairness",
           isCorrect: false 
         },
         { 
           id: "c", 
           text: "Do all the work yourself silently", 
           emoji: "😶", 
-          description: "Doing others' work doesn't ensure fairness",
           isCorrect: false 
         }
       ]
@@ -71,21 +69,18 @@ const RoleplayEthicalLeader = () => {
           id: "a", 
           text: "Give them all the attention—they're talented", 
           emoji: "⭐", 
-          description: "Favoring talent over fairness is unethical",
           isCorrect: false 
         },
         { 
           id: "b", 
           text: "Balance opportunities for all, promoting teamwork", 
           emoji: "🤝", 
-          description: "Fair distribution shows ethical leadership",
           isCorrect: true 
         },
         { 
           id: "c", 
           text: "Exclude them to avoid drama", 
           emoji: "🚫", 
-          description: "Exclusion is unfair",
           isCorrect: false 
         }
       ]
@@ -98,21 +93,18 @@ const RoleplayEthicalLeader = () => {
           id: "a", 
           text: "Agree because they're your close friend", 
           emoji: "👥", 
-          description: "Favoring friends is unethical",
           isCorrect: false 
         },
         { 
           id: "b", 
           text: "Pretend to agree but don't actually help", 
           emoji: "😶", 
-          description: "Being dishonest is unethical",
           isCorrect: false 
         },
         { 
           id: "c", 
           text: "Politely refuse and explain fairness matters", 
           emoji: "💎", 
-          description: "Standing by fairness shows ethical leadership",
           isCorrect: true 
         }
       ]
@@ -125,21 +117,18 @@ const RoleplayEthicalLeader = () => {
           id: "a", 
           text: "Acknowledge the other group's idea publicly", 
           emoji: "🙏", 
-          description: "Giving credit where due shows ethics",
           isCorrect: true 
         },
         { 
           id: "b", 
           text: "Stay silent and take the credit", 
           emoji: "😶", 
-          description: "Taking undeserved credit is unethical",
           isCorrect: false 
         },
         { 
           id: "c", 
           text: "Blame the teacher for missing it", 
           emoji: "👆", 
-          description: "Blaming others is unethical",
           isCorrect: false 
         }
       ]
@@ -152,21 +141,18 @@ const RoleplayEthicalLeader = () => {
           id: "a", 
           text: "Hide it to protect the student", 
           emoji: "🙈", 
-          description: "Hiding mistakes isn't ethical",
           isCorrect: false 
         },
         { 
           id: "b", 
           text: "Tell others to stay quiet about it", 
           emoji: "🤫", 
-          description: "Encouraging silence isn't ethical",
           isCorrect: false 
         },
         { 
           id: "c", 
           text: "Encourage honesty and explain it calmly to the teacher", 
           emoji: "💎", 
-          description: "Encouraging honesty shows ethical leadership",
           isCorrect: true 
         }
       ]

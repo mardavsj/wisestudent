@@ -33,21 +33,19 @@ const BraveryStory = () => {
           id: "quiet", 
           text: "Stay quiet to avoid trouble", 
           emoji: "😶", 
-          description: "Don't get involved to stay safe",
+          
           isCorrect: false
         },
         { 
           id: "defend", 
           text: "Defend the innocent student", 
           emoji: "🗣️", 
-          description: "Speak up and tell the truth",
           isCorrect: true
         },
         { 
           id: "blame", 
           text: "Blame someone else", 
           emoji: "🙈", 
-          description: "Point fingers at another person",
           isCorrect: false
         }
       ]
@@ -60,21 +58,18 @@ const BraveryStory = () => {
           id: "take", 
           text: "Take the money and leave the wallet", 
           emoji: "💸", 
-          description: "Keep the money for yourself",
           isCorrect: false
         },
         { 
           id: "return", 
           text: "Return it immediately", 
           emoji: "🙋", 
-          description: "Give it back to your teacher right away",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore it and walk away", 
           emoji: "🚶", 
-          description: "Leave it where you found it",
           isCorrect: false
         }
       ]
@@ -87,21 +82,18 @@ const BraveryStory = () => {
           id: "tell", 
           text: "Tell a teacher or intervene safely", 
           emoji: "🧑‍🏫", 
-          description: "Get help from an adult or safely stop the bullying",
           isCorrect: true
         },
         { 
           id: "laugh", 
           text: "Laugh with others to fit in", 
           emoji: "😅", 
-          description: "Join in to avoid being targeted yourself",
           isCorrect: false
         },
         { 
           id: "walk", 
           text: "Walk away and pretend not to see", 
           emoji: "🚶‍♀️", 
-          description: "Ignore the situation completely",
           isCorrect: false
         }
       ]
@@ -114,21 +106,18 @@ const BraveryStory = () => {
           id: "say", 
           text: "Say no and explain it's wrong", 
           emoji: "🙅", 
-          description: "Refuse and explain why cheating is wrong",
           isCorrect: true
         },
         { 
           id: "help", 
           text: "Help them because they're your friend", 
           emoji: "🤝", 
-          description: "Help them cheat to maintain friendship",
           isCorrect: false
         },
         { 
           id: "ignore2", 
           text: "Ignore the message and hope they stop", 
           emoji: "📱", 
-          description: "Don't respond and hope they give up",
           isCorrect: false
         }
       ]
@@ -141,21 +130,18 @@ const BraveryStory = () => {
           id: "silent2", 
           text: "Stay silent to avoid being teased", 
           emoji: "😶", 
-          description: "Don't speak up to protect yourself",
           isCorrect: false
         },
         { 
           id: "join", 
           text: "Join in to fit with the group", 
           emoji: "🙊", 
-          description: "Laugh along to be part of the group",
           isCorrect: false
         },
         { 
           id: "tell2", 
           text: "Tell everyone to stop and be kind", 
           emoji: "🗣️", 
-          description: "Speak up and stop the mean behavior",
           isCorrect: true
         }
       ]

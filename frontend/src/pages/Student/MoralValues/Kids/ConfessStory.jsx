@@ -31,21 +31,19 @@ const ConfessStory = () => {
           id: "hide", 
           text: "Hide it", 
           emoji: "🙈", 
-          description: "Try to hide it",
+          
           isCorrect: false
         },
         { 
           id: "confess", 
           text: "Confess", 
           emoji: "🙋‍♂️", 
-          description: "Tell the truth",
           isCorrect: true
         },
         { 
           id: "blame", 
           text: "Blame someone else", 
           emoji: "👆", 
-          description: "Shift the blame",
           isCorrect: false
         }
       ]
@@ -58,21 +56,18 @@ const ConfessStory = () => {
           id: "secret", 
           text: "Keep it secret", 
           emoji: "🤫", 
-          description: "Don't tell",
           isCorrect: false
         },
         { 
           id: "lie", 
           text: "Say you don't know", 
           emoji: "🤷", 
-          description: "Deny knowledge",
           isCorrect: false
         },
         { 
           id: "truth", 
           text: "Tell the truth", 
           emoji: "🗣️", 
-          description: "Be honest",
           isCorrect: true
         }
       ]
@@ -85,21 +80,18 @@ const ConfessStory = () => {
           id: "admit", 
           text: "Admit you forgot", 
           emoji: "🙇", 
-          description: "Tell the truth",
           isCorrect: true
         },
         { 
           id: "lie", 
           text: "Lie and say it's done", 
           emoji: "😅", 
-          description: "Make up a story",
           isCorrect: false
         },
         { 
           id: "blame", 
           text: "Blame the dog", 
           emoji: "🐶", 
-          description: "Make excuses",
           isCorrect: false
         }
       ]
@@ -112,21 +104,18 @@ const ConfessStory = () => {
           id: "hide", 
           text: "Hide it", 
           emoji: "🙊", 
-          description: "Cover it up",
           isCorrect: false
         },
         { 
           id: "ignore", 
           text: "Ignore it", 
           emoji: "😐", 
-          description: "Don't mention it",
           isCorrect: false
         },
         { 
           id: "confess", 
           text: "Confess", 
           emoji: "🙋‍♀️", 
-          description: "Tell about it",
           isCorrect: true
         }
       ]
@@ -139,21 +128,18 @@ const ConfessStory = () => {
           id: "blame", 
           text: "Blame someone else", 
           emoji: "🤥", 
-          description: "Shift responsibility",
           isCorrect: false
         },
         { 
           id: "apologize", 
           text: "Confess and apologize", 
           emoji: "🙏", 
-          description: "Be honest and sorry",
           isCorrect: true
         },
         { 
           id: "hide", 
           text: "Hide the broken toy", 
           emoji: "🗑️", 
-          description: "Throw it away",
           isCorrect: false
         }
       ]

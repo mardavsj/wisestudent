@@ -19,20 +19,20 @@ const PuzzleMatchFeelings = () => {
 
   // Feelings (left side) - 5 items
   const feelings = [
-    { id: 1, name: "Happy", emoji: "😊", description: "Feeling joyful and pleased" },
-    { id: 2, name: "Sad", emoji: "😢", description: "Feeling unhappy or sorrowful" },
-    { id: 3, name: "Angry", emoji: "😠", description: "Feeling mad or irritated" },
-    { id: 4, name: "Surprised", emoji: "😲", description: "Feeling astonished or amazed" },
-    { id: 5, name: "Scared", emoji: "😨", description: "Feeling afraid or frightened" }
+    { id: 1, name: "Happy", emoji: "😊",  },
+    { id: 2, name: "Sad", emoji: "😢",  },
+    { id: 3, name: "Angry", emoji: "😠",  },
+    { id: 4, name: "Surprised", emoji: "😲",  },
+    { id: 5, name: "Scared", emoji: "😨",  }
   ];
 
   // Expressions (right side) - 5 items
   const expressions = [
-    { id: 2, name: "Cry", emoji: "💧", description: "Shedding tears when sad" },
-    { id: 1, name: "Smile", emoji: "😄", description: "Facial expression showing happiness" },
-    { id: 3, name: "Frown", emoji: "😡", description: "Facial expression showing anger" },
-    { id: 5, name: "Tremble", emoji: "😰", description: "Body shaking when scared" },
-    { id: 4, name: "Wide Eyes", emoji: "😱", description: "Eyes opened wide in surprise" },
+    { id: 2, name: "Cry", emoji: "💧" },
+    { id: 1, name: "Smile", emoji: "😄" },
+    { id: 3, name: "Frown", emoji: "😡" },
+    { id: 5, name: "Tremble", emoji: "😰" },
+    { id: 4, name: "Wide Eyes", emoji: "😱" },
   ];
 
   // Correct matches

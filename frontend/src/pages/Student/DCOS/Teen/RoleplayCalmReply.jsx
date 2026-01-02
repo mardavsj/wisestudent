@@ -46,21 +46,19 @@ const RoleplayCalmReply = () => {
           id: "a", 
           text: "Reply with an angry comment back", 
           emoji: "😠",
-          description: "Replying with anger will escalate the situation and make it worse",
+          
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Reply calmly or ignore it", 
           emoji: "😌",
-          description: "Replying calmly or ignoring the comment prevents escalation",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Delete your post", 
-          emoji: "❌",
-          description: "Deleting your post gives the troll power over your content",
+          emoji: "🗑️",
           isCorrect: false
         }
       ]
@@ -73,14 +71,12 @@ const RoleplayCalmReply = () => {
           id: "b", 
           text: "Reply calmly or ignore", 
           emoji: "😌",
-          description: "Replying calmly or ignoring keeps the peace and shows maturity",
           isCorrect: true
         },
         { 
           id: "a", 
           text: "Argue back aggressively", 
           emoji: "😠",
-          description: "Arguing aggressively will create more conflict and negativity",
           isCorrect: false
         },
         
@@ -88,7 +84,6 @@ const RoleplayCalmReply = () => {
           id: "c", 
           text: "Block them immediately", 
           emoji: "🚫",
-          description: "Blocking immediately might be too hasty for a simple disagreement",
           isCorrect: false
         }
       ]
@@ -101,21 +96,18 @@ const RoleplayCalmReply = () => {
           id: "a", 
           text: "Post mean comments about them", 
           emoji: "😠",
-          description: "Responding with meanness escalates the situation and makes you part of the problem",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Reply calmly or ignore it", 
           emoji: "😌",
-          description: "Replying calmly or ignoring prevents the situation from getting worse",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Delete all your photos", 
-          emoji: "❌",
-          description: "Deleting all photos lets the bully win and affects your own content",
+          emoji: "🗑️",
           isCorrect: false
         }
       ]
@@ -128,7 +120,6 @@ const RoleplayCalmReply = () => {
           id: "a", 
           text: "Engage in a heated argument", 
           emoji: "😠",
-          description: "Engaging with trolls is exactly what they want and fuels the negativity",
           isCorrect: false
         },
         
@@ -136,14 +127,12 @@ const RoleplayCalmReply = () => {
           id: "c", 
           text: "Report and block immediately", 
           emoji: "🚫",
-          description: "While reporting can be appropriate, sometimes it's better to just ignore first",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Reply calmly or ignore", 
           emoji: "😌",
-          description: "Replying calmly or ignoring the troll is the best approach",
           isCorrect: true
         },
       ]
@@ -156,21 +145,18 @@ const RoleplayCalmReply = () => {
           id: "a", 
           text: "Respond with insults", 
           emoji: "😠",
-          description: "Responding with insults degrades the conversation and your own dignity",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Reply calmly or ignore", 
           emoji: "😌",
-          description: "Replying calmly or ignoring shows maturity and doesn't feed negativity",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Delete the achievement post", 
-          emoji: "❌",
-          description: "Deleting your achievement post lets the negative comment win and removes your success",
+          emoji: "🗑️",
           isCorrect: false
         }
       ]

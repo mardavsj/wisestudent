@@ -36,7 +36,7 @@ const ScamAwareBadge = () => {
         
         { 
           text: "Accept it immediately", 
-          emoji: "✅", 
+          emoji: "👍", 
           isCorrect: false
         },
         { 

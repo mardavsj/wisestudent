@@ -19,20 +19,20 @@ const PuzzleCareerMatch = () => {
 
   // Careers (left side) - 5 items
   const careers = [
-    { id: 1, name: "Scientist", emoji: "🔬", description: "Conducts research and experiments to advance knowledge" },
-    { id: 2, name: "Chef", emoji: "👨‍🍳", description: "Prepares and cooks food in restaurants or other establishments" },
-    { id: 3, name: "Pilot", emoji: "✈️", description: "Operates aircraft to transport passengers and cargo" },
-    { id: 4, name: "Teacher", emoji: "👩‍🏫", description: "Educates students and helps them develop knowledge and skills" },
-    { id: 5, name: "Doctor", emoji: "👨‍⚕️", description: "Diagnoses and treats illnesses and injuries" }
+    { id: 1, name: "Scientist", emoji: "🔬",  },
+    { id: 2, name: "Chef", emoji: "👨‍🍳",  },
+    { id: 3, name: "Pilot", emoji: "✈️",  },
+    { id: 4, name: "Teacher", emoji: "👩‍🏫",  },
+    { id: 5, name: "Doctor", emoji: "👨‍⚕️",  }
   ];
 
   // Activities (right side) - 5 items
   const activities = [
-    { id: 1, name: "Research", emoji: "📚", description: "Systematic investigation to establish facts and principles" },
-    { id: 3, name: "Flying", emoji: "🛩️", description: "Operating aircraft for transportation or recreation" },
-    { id: 2, name: "Cooking", emoji: "🍲", description: "Preparing food by combining ingredients and applying heat" },
-    { id: 5, name: "Healing", emoji: "💊", description: "Restoring health and treating medical conditions" },
-    { id: 4, name: "Teaching", emoji: "📖", description: "Imparting knowledge and skills to students" },
+    { id: 1, name: "Research", emoji: "📚",  },
+    { id: 3, name: "Flying", emoji: "🛩️",  },
+    { id: 2, name: "Cooking", emoji: "🍲",  },
+    { id: 5, name: "Healing", emoji: "💊",  },
+    { id: 4, name: "Teaching", emoji: "📖",  },
   ];
 
   // Correct matches

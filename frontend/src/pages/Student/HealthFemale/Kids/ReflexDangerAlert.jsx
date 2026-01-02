@@ -41,11 +41,11 @@ const ReflexDangerAlert = () => {
     {
       id: 2,
       question: "Which one is DANGEROUS?",
-      correctAnswer: "Cigarette",
+      correctAnswer: "Red Bull",
       options: [
         { text: "Apple", isCorrect: false, emoji: "🍎" },
         { text: "Carrot", isCorrect: false, emoji: "🥕" },
-        { text: "Cigarette", isCorrect: true, emoji: "🚬" },
+        { text: "Red Bull", isCorrect: true, emoji: "🥤" },
         { text: "Bread", isCorrect: false, emoji: "🍞" }
       ]
     },
@@ -62,7 +62,7 @@ const ReflexDangerAlert = () => {
     },
     {
       id: 4,
-      question: "Is alcohol for kids?",
+      question: "Is Energy drinks for kids?",
       correctAnswer: "No",
       options: [
         { text: "Yes", isCorrect: false, emoji: "👍" },

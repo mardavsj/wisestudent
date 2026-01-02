@@ -19,20 +19,20 @@ const PuzzleMatchTraits = () => {
 
   // Traits (left side) - 5 items
   const traits = [
-    { id: 1, name: "Leader", emoji: "👑", description: "Someone who guides and directs others toward goals" },
-    { id: 2, name: "Risk-Taker", emoji: "🎲", description: "Someone who is willing to take chances for potential rewards" },
-    { id: 3, name: "Innovator", emoji: "💡", description: "Someone who creates new ideas and solutions" },
-    { id: 4, name: "Entrepreneur", emoji: "🚀", description: "Someone who starts and runs business ventures" },
-    { id: 5, name: "Team Player", emoji: "🤝", description: "Someone who works effectively with others" }
+    { id: 1, name: "Leader", emoji: "👑",  },
+    { id: 2, name: "Risk-Taker", emoji: "🎲",  },
+    { id: 3, name: "Innovator", emoji: "💡",  },
+    { id: 4, name: "Entrepreneur", emoji: "🚀",  },
+    { id: 5, name: "Team Player", emoji: "🤝",  }
   ];
 
   // Actions (right side) - 5 items
   const actions = [
-    { id: 5, name: "Collaborate", emoji: "👥", description: "Work together with others toward a common goal" },
-    { id: 4, name: "Solve Problems", emoji: "🧩", description: "Find solutions to challenges and obstacles" },
-    { id: 1, name: "Inspire", emoji: "✨", description: "Motivate and encourage others to achieve their best" },
-    { id: 3, name: "Create", emoji: "🛠️", description: "Develop something original and valuable" },
-    { id: 2, name: "Try New", emoji: "🆕", description: "Attempt novel approaches and experiences" },
+    { id: 5, name: "Collaborate", emoji: "👥",  },
+    { id: 4, name: "Solve Problems", emoji: "🧩",  },
+    { id: 1, name: "Inspire", emoji: "✨",  },
+    { id: 3, name: "Create", emoji: "🛠️",  },
+    { id: 2, name: "Try New", emoji: "🆕",  },
   ];
 
   // Correct matches

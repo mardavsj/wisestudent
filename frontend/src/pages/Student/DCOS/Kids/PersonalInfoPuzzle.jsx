@@ -29,20 +29,20 @@ const PersonalInfoPuzzle = () => {
 
   // Personal information items (left side)
   const leftItems = [
-    { id: 1, name: "Your full name", emoji: "👤", description: "Complete name" },
-    { id: 2, name: "Your home address", emoji: "🏠", description: "Where you live" },
-    { id: 3, name: "Your password", emoji: "🔐", description: "Account password" },
-    { id: 4, name: "Your favorite color", emoji: "🎨", description: "Color preference" },
-    { id: 5, name: "Your phone number", emoji: "📱", description: "Contact number" }
+    { id: 1, name: "Your full name", emoji: "👤",  },
+    { id: 2, name: "Your home address", emoji: "🏠",  },
+    { id: 3, name: "Your password", emoji: "🔐",  },
+    { id: 4, name: "Your favorite color", emoji: "🎨",  },
+    { id: 5, name: "Your phone number", emoji: "📱",  }
   ];
 
   // Privacy categories (right side) - varied and logical options for kids
   const rightItems = [
-    { id: 1, name: "Never Share Online", emoji: "🔒", description: "Keep completely private" },
-    { id: 2, name: "Safe to Share", emoji: "✅", description: "Okay to share publicly" },
-    { id: 3, name: "Keep Private", emoji: "🛡️", description: "Never share with strangers" },
-    { id: 4, name: "Very Private", emoji: "🔐", description: "Keep secret always" },
-    { id: 5, name: "Never Share Online", emoji: "🔒", description: "Keep completely private" }
+    { id: 1, name: "Never Share Online", emoji: "🔒",  },
+    { id: 2, name: "Safe to Share", emoji: "✅",  },
+    { id: 3, name: "Keep Private", emoji: "🛡️",  },
+    { id: 4, name: "Very Private", emoji: "🔐",  },
+    { id: 5, name: "Never Share Online", emoji: "🔒",  }
   ];
 
   // Correct matches - varied positions for correct answers (no shuffling logic)

@@ -31,21 +31,20 @@ const AnimalCareStory = () => {
           id: "ignore", 
           text: "Ignore it and walk away", 
           emoji: "🙈", 
-          description: "Don't help",
+          
           isCorrect: false
         },
         { 
           id: "chase", 
           text: "Chase it away", 
           emoji: "🚫", 
-          description: "Be mean",
+          
           isCorrect: false
         },
         { 
           id: "food", 
           text: "Give it some food", 
           emoji: "🍖", 
-          description: "Help the dog",
           isCorrect: true
         }
       ]
@@ -58,21 +57,18 @@ const AnimalCareStory = () => {
           id: "ignore", 
           text: "Ignore it", 
           emoji: "🙈", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "water", 
           text: "Give it water", 
           emoji: "💧", 
-          description: "Help the cat",
           isCorrect: true
         },
         { 
           id: "scare", 
           text: "Scare it away", 
           emoji: "🚫", 
-          description: "Be unkind",
           isCorrect: false
         }
       ]
@@ -85,21 +81,18 @@ const AnimalCareStory = () => {
           id: "vet", 
           text: "Take it to a vet or help center", 
           emoji: "🏥", 
-          description: "Get professional help",
           isCorrect: true
         },
         { 
           id: "leave", 
           text: "Leave it there", 
           emoji: "🙈", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "play", 
           text: "Try to play with it", 
           emoji: "🎮", 
-          description: "Treat it as a toy",
           isCorrect: false
         }
       ]
@@ -112,21 +105,18 @@ const AnimalCareStory = () => {
           id: "ignore", 
           text: "Ignore it", 
           emoji: "🙈", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "shout", 
           text: "Shout at it", 
           emoji: "📢", 
-          description: "Be mean",
           isCorrect: false
         },
         { 
           id: "care", 
           text: "Take it home and care for it", 
           emoji: "🏠", 
-          description: "Help the puppy",
           isCorrect: true
         }
       ]
@@ -139,21 +129,18 @@ const AnimalCareStory = () => {
           id: "ignore", 
           text: "Ignore it", 
           emoji: "🙈", 
-          description: "Don't help",
           isCorrect: false
         },
         { 
           id: "food", 
           text: "Give it proper food", 
           emoji: "🥕", 
-          description: "Help the goat",
           isCorrect: true
         },
         { 
           id: "chase", 
           text: "Chase it away", 
           emoji: "🚫", 
-          description: "Be unkind",
           isCorrect: false
         }
       ]

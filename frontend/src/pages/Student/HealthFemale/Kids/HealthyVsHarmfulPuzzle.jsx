@@ -23,7 +23,7 @@ const HealthyVsHarmfulPuzzle = () => {
   // Items (left side) - 5 items
   const items = [
     { id: 1, name: "Fresh Fruit", emoji: "🍎",  },
-    { id: 2, name: "Alcohol", emoji: "🍺",  },
+    { id: 2, name: "Energy Drink (Red Bull)", emoji: "⚡",  },
     { id: 3, name: "Vegetables", emoji: "🥦",  },
     { id: 4, name: "Rotten Food", emoji: "🤢",  },
     { id: 5, name: "Water", emoji: "💧",  }
@@ -41,7 +41,7 @@ const HealthyVsHarmfulPuzzle = () => {
   // Correct matches
   const correctMatches = [
     { itemId: 1, categoryId: 1 }, // Fresh Fruit → Healthy Choice
-    { itemId: 2, categoryId: 2 }, // Alcohol → Harmful to Body
+    { itemId: 2, categoryId: 2 }, // Energy Drink → Harmful to Body
     { itemId: 3, categoryId: 3 }, // Vegetables → Promotes Growth
     { itemId: 4, categoryId: 4 }, // Rotten Food → Causes Illness
     { itemId: 5, categoryId: 5 }  // Water → Essential for Life

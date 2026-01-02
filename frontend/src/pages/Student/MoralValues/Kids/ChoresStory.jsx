@@ -31,21 +31,19 @@ const ChoresStory = () => {
           id: "later", 
           text: "Say 'I'll do it later'", 
           emoji: "😴", 
-          description: "Postpone it",
+          
           isCorrect: false
         },
         { 
           id: "rightaway", 
           text: "Do it right away to help", 
           emoji: "💪", 
-          description: "Help immediately",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore and keep playing", 
           emoji: "🎮", 
-          description: "Don't help",
           isCorrect: false
         }
       ]
@@ -58,21 +56,18 @@ const ChoresStory = () => {
           id: "wait", 
           text: "Wait for mom to remind you", 
           emoji: "🕒", 
-          description: "Need reminders",
           isCorrect: false
         },
         { 
           id: "forget", 
           text: "Forget and go out to play", 
           emoji: "🏃", 
-          description: "Neglect responsibility",
           isCorrect: false
         },
         { 
           id: "immediately", 
           text: "Feed your pet immediately", 
           emoji: "🥣", 
-          description: "Take care of pet",
           isCorrect: true
         }
       ]
@@ -85,21 +80,18 @@ const ChoresStory = () => {
           id: "clean", 
           text: "Clean up all the toys neatly", 
           emoji: "🧹", 
-          description: "Keep it tidy",
           isCorrect: true
         },
         { 
           id: "leave", 
           text: "Leave them and walk away", 
           emoji: "🚶", 
-          description: "Don't clean",
           isCorrect: false
         },
         { 
           id: "ask", 
           text: "Ask someone else to clean", 
           emoji: "🙋", 
-          description: "Make others do it",
           isCorrect: false
         }
       ]
@@ -112,21 +104,18 @@ const ChoresStory = () => {
           id: "tv", 
           text: "Watch TV first and then maybe do it", 
           emoji: "📺", 
-          description: "Prioritize entertainment",
           isCorrect: false
         },
         { 
           id: "first", 
           text: "Finish homework first", 
           emoji: "✏️", 
-          description: "Keep your promise",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore homework completely", 
           emoji: "🙈", 
-          description: "Break the promise",
           isCorrect: false
         }
       ]
@@ -139,21 +128,18 @@ const ChoresStory = () => {
           id: "laugh", 
           text: "Laugh and walk away", 
           emoji: "😅", 
-          description: "Find it funny",
           isCorrect: false
         },
         { 
           id: "call", 
           text: "Call mom to do it", 
           emoji: "📞", 
-          description: "Get someone else",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Help pick them up", 
           emoji: "🤝", 
-          description: "Assist them",
           isCorrect: true
         }
       ]

@@ -19,20 +19,20 @@ const PuzzleMatchSkills = () => {
 
   // Skills (left side) - 5 items
   const skills = [
-    { id: 1, name: "Leader", emoji: "👑", description: "Guides and inspires others toward a common goal" },
-    { id: 2, name: "Innovator", emoji: "🔧", description: "Creates new ideas, products, or solutions" },
-    { id: 3, name: "Team Player", emoji: "🤝", description: "Works well with others and supports teammates" },
-    { id: 4, name: "Problem Solver", emoji: "🧩", description: "Finds solutions to challenges and obstacles" },
-    { id: 5, name: "Communicator", emoji: "💬", description: "Shares ideas and information clearly with others" }
+    { id: 1, name: "Leader", emoji: "👑",  },
+    { id: 2, name: "Innovator", emoji: "🔧",  },
+    { id: 3, name: "Team Player", emoji: "🤝",  },
+    { id: 4, name: "Problem Solver", emoji: "🧩",  },
+    { id: 5, name: "Communicator", emoji: "💬",  }
   ];
 
   // Meanings (right side) - 5 items
   const meanings = [
-    { id: 5, name: "Share", emoji: "📤", description: "Distribute or communicate with others" },
-    { id: 1, name: "Guide", emoji: "🧭", description: "Direct someone on the right path" },
-    { id: 2, name: "Invent", emoji: "💡", description: "Create something new or original" },
-    { id: 4, name: "Fix", emoji: "🔧", description: "Repair or mend something" },
-    { id: 3, name: "Support", emoji: "🤲", description: "Help or encourage someone" },
+    { id: 5, name: "Share", emoji: "📤",  },
+    { id: 1, name: "Guide", emoji: "🧭",  },
+    { id: 2, name: "Invent", emoji: "💡",  },
+    { id: 4, name: "Fix", emoji: "🔧",  },
+    { id: 3, name: "Support", emoji: "🤲",  },
   ];
 
   // Correct matches

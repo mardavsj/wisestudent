@@ -19,134 +19,135 @@ const QuizOnPuberty = () => {
   const { flashPoints, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Which is a puberty sign in girls?",
-      emoji: "👩‍🦱",
-      options: [
-        {
-          id: "a",
-          text: "Menstruation",
-          emoji: "🩸",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Breast development",
-          emoji: "🤱",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Voice deepening",
-          emoji: "🎤",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "At what age does puberty typically begin for girls?",
-      emoji: "📅",
-      options: [
-        {
-          id: "a",
-          text: "8-13 years",
-          emoji: "📅",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "14-16 years",
-          emoji: "⏰",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "5-7 years",
-          emoji: "👶",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What hormone triggers puberty in girls?",
-      emoji: "💊",
-      options: [
-       
-        {
-          id: "b",
-          text: "Testosterone",
-          emoji: "🧪",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Insulin",
-          emoji: "💉",
-          isCorrect: false
-        },
-         {
-          id: "a",
-          text: "Estrogen",
-          emoji: "💊",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "Which physical change happens last during female puberty?",
-      emoji: "📏",
-      options: [
-       
-        {
-          id: "b",
-          text: "Breast development",
-          emoji: "🤱",
-          isCorrect: false
-        },
-         {
-          id: "a",
-          text: "Menstruation",
-          emoji: "🩸",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Height growth spurt",
-          emoji: "📏",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "How long does female puberty typically last?",
-      emoji: "⏳",
-      options: [
-        {
-          id: "a",
-          text: "2-3 years",
-          emoji: "⏱️",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "6-8 years",
-          emoji: "⏳",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "4-5 years",
-          emoji: "📅",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which is a puberty sign in girls?",
+    emoji: "👩‍🦱",
+    options: [
+      
+      {
+        id: "b",
+        text: "Breast development",
+        emoji: "🤱",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Menstruation",
+        emoji: "🩸",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Voice deepening",
+        emoji: "🎤",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "At what age does puberty typically begin for girls?",
+    emoji: "📅",
+    options: [
+      {
+        id: "c",
+        text: "It varies from person to person",
+        emoji: "🌈",
+        isCorrect: true
+      },
+      {
+        id: "a",
+        text: "8–13 years",
+        emoji: "📅",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "14–16 years",
+        emoji: "⏰",
+        isCorrect: false
+      },
+      
+    ]
+  },
+  {
+    id: 3,
+    text: "What hormone triggers puberty in girls?",
+    emoji: "💊",
+    options: [
+      {
+        id: "a",
+        text: "Testosterone",
+        emoji: "🧪",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Insulin",
+        emoji: "💉",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Estrogen",
+        emoji: "💊",
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Which physical change happens last during female puberty?",
+    emoji: "📏",
+    options: [
+      
+      {
+        id: "b",
+        text: "Menstruation",
+        emoji: "🩸",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Breast development",
+        emoji: "🤱",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Height growth spurt",
+        emoji: "📏",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "How long does female puberty typically last?",
+    emoji: "⏳",
+    options: [
+      {
+        id: "a",
+        text: "2–3 years",
+        emoji: "⏱️",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "4–5 years",
+        emoji: "📅",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "It varies from person to person",
+        emoji: "🌸",
+        isCorrect: true
+      }
+    ]
+  }
+];
 
   const handleAnswer = (optionId) => {
     const isCorrect = questions[currentQuestion].options.find(opt => opt.id === optionId)?.isCorrect;

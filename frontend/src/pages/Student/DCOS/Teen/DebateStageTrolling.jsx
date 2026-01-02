@@ -31,21 +31,19 @@ const DebateStageTrolling = () => {
           id: "no-hurts", 
           text: "No - it hurts people and causes harm", 
           emoji: "💔", 
-          description: "Trolling causes real psychological harm to victims",
+          
           isCorrect: true
         },
         { 
           id: "yes-harmless", 
           text: "Yes - it's just harmless fun", 
           emoji: "😂", 
-          description: "Trolling is just a joke and harmless",
           isCorrect: false
         },
         { 
           id: "sometimes", 
           text: "Sometimes - depends on the joke", 
           emoji: "🤔", 
-          description: "It depends on whether it's a good joke",
           isCorrect: false
         }
       ]
@@ -58,21 +56,18 @@ const DebateStageTrolling = () => {
           id: "no-just-online", 
           text: "No - it's just online", 
           emoji: "😐", 
-          description: "It's just online, not real life",
           isCorrect: false
         },
         { 
           id: "yes-real-harm", 
           text: "Yes - it causes real harm", 
           emoji: "🛡️", 
-          description: "Cyberbullying causes real psychological and emotional harm",
           isCorrect: true
         },
         { 
           id: "maybe", 
           text: "Maybe - depends on the situation", 
           emoji: "🤷", 
-          description: "It depends on how serious it is",
           isCorrect: false
         }
       ]
@@ -85,21 +80,18 @@ const DebateStageTrolling = () => {
           id: "yes-gossip", 
           text: "Yes - it's just gossip", 
           emoji: "😏", 
-          description: "Spreading rumors is just harmless gossip",
           isCorrect: false
         },
         { 
           id: "sometimes", 
           text: "Sometimes - if it's true", 
           emoji: "🤔", 
-          description: "It's okay if the rumor is true",
           isCorrect: false
         },
         { 
           id: "no-destroys", 
           text: "No - it destroys reputations", 
           emoji: "🚫", 
-          description: "Spreading rumors can destroy people's reputations and lives",
           isCorrect: true
         }
       ]
@@ -112,21 +104,18 @@ const DebateStageTrolling = () => {
           id: "yes-ignore", 
           text: "Yes - just ignore it", 
           emoji: "😑", 
-          description: "Just ignore hateful comments",
           isCorrect: false
         },
         { 
           id: "no-report", 
           text: "No - report and stand up", 
           emoji: "💪", 
-          description: "Report hateful content and stand up against it",
           isCorrect: true
         },
         { 
           id: "maybe", 
           text: "Maybe - depends on the comment", 
           emoji: "🤷", 
-          description: "It depends on how hateful it is",
           isCorrect: false
         }
       ]
@@ -139,21 +128,18 @@ const DebateStageTrolling = () => {
           id: "yes-fit-in", 
           text: "Yes - to fit in", 
           emoji: "😞", 
-          description: "It's okay to bully if it helps you fit in",
           isCorrect: false
         },
         { 
           id: "no-stand-up", 
           text: "No - stand up for what's right", 
           emoji: "🛡️", 
-          description: "Always stand up for what's right, even under peer pressure",
           isCorrect: true
         },
         { 
           id: "sometimes", 
           text: "Sometimes - if everyone is doing it", 
           emoji: "👥", 
-          description: "It's okay if everyone else is doing it",
           isCorrect: false
         }
       ]

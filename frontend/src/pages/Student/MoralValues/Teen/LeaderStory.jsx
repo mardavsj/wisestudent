@@ -33,21 +33,20 @@ const LeaderStory = () => {
           id: "no", 
           text: "No, a leader should wait and support the team", 
           emoji: "🤝", 
-          description: "Leaders should wait and support their team",
+          
           isCorrect: true
         },
         { 
           id: "yes", 
           text: "Yes, they deserve rest first", 
           emoji: "😴", 
-          description: "Leaders deserve to rest before others",
+          
           isCorrect: false
         },
         { 
           id: "depends", 
           text: "Depends on how much they worked", 
           emoji: "🤷", 
-          description: "It depends on the leader's effort",
           isCorrect: false
         }
       ]
@@ -60,21 +59,18 @@ const LeaderStory = () => {
           id: "silent", 
           text: "Let it go silently", 
           emoji: "😶", 
-          description: "Say nothing and accept it",
           isCorrect: false
         },
         { 
           id: "talk", 
           text: "Talk politely and remind them of teamwork", 
           emoji: "💬", 
-          description: "Address it politely and emphasize teamwork",
           isCorrect: true
         },
         { 
           id: "angry", 
           text: "Get angry and confront them publicly", 
           emoji: "😠", 
-          description: "Confront them angrily in front of others",
           isCorrect: false
         }
       ]
@@ -87,21 +83,18 @@ const LeaderStory = () => {
           id: "ignore", 
           text: "Ignore it — everyone has to manage", 
           emoji: "🙅", 
-          description: "Let them handle it on their own",
           isCorrect: false
         },
         { 
           id: "replace", 
           text: "Replace them immediately", 
           emoji: "🚫", 
-          description: "Find someone else to do the work",
           isCorrect: false
         },
         { 
           id: "help", 
           text: "Offer help and guide them patiently", 
           emoji: "🤗", 
-          description: "Provide support and guidance",
           isCorrect: true
         }
       ]
@@ -114,21 +107,18 @@ const LeaderStory = () => {
           id: "fair", 
           text: "No, leaders must stay fair to all", 
           emoji: "⚖️", 
-          description: "Leaders should be fair to everyone",
           isCorrect: true
         },
         { 
           id: "friends", 
           text: "Yes, friends deserve support", 
           emoji: "👯", 
-          description: "It's okay to support friends",
           isCorrect: false
         },
         { 
           id: "neutral", 
           text: "Stay neutral and don't pick sides", 
           emoji: "🤐", 
-          description: "Avoid getting involved in the argument",
           isCorrect: false
         }
       ]
@@ -141,21 +131,18 @@ const LeaderStory = () => {
           id: "ignore2", 
           text: "Ignore them — they'll talk later", 
           emoji: "😐", 
-          description: "Wait for them to speak up on their own",
           isCorrect: false
         },
         { 
           id: "force", 
           text: "Force them to speak", 
           emoji: "📢", 
-          description: "Make them speak even if uncomfortable",
           isCorrect: false
         },
         { 
           id: "encourage", 
           text: "Encourage them gently to share ideas", 
           emoji: "🌟", 
-          description: "Support and encourage them to participate",
           isCorrect: true
         }
       ]

@@ -36,7 +36,7 @@ const DebateStage2 = () => {
         { 
           id: "no-banned", 
           text: "No - hate speech should be banned", 
-          emoji: "❌", 
+          emoji: "🔒", 
           isCorrect: true
         },
         { 
@@ -67,7 +67,7 @@ const DebateStage2 = () => {
                 { 
           id: "no-harmful", 
           text: "No - it causes real harm", 
-          emoji: "❌", 
+          emoji: "🚫", 
           isCorrect: true
         },
       ]
@@ -79,7 +79,7 @@ const DebateStage2 = () => {
         { 
           id: "no-moderation", 
           text: "No - platforms should moderate", 
-          emoji: "❌", 
+          emoji: "🔒", 
           isCorrect: true
         },
         { 
@@ -117,7 +117,7 @@ const DebateStage2 = () => {
         { 
           id: "yes-serious", 
           text: "Yes - it has serious consequences", 
-          emoji: "❌", 
+          emoji: "🔒", 
           isCorrect: true
         },
       ]
@@ -135,7 +135,7 @@ const DebateStage2 = () => {
         { 
           id: "yes-report", 
           text: "Yes - always report hate speech", 
-          emoji: "❌", 
+          emoji: "🔒", 
           isCorrect: true
         },
         { 

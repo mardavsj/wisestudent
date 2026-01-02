@@ -36,21 +36,20 @@ const EncourageRoleplay = () => {
           id: "a", 
           text: "Encourage her and report the bullying", 
           emoji: "🤗", 
-          description: "Supporting victims and reporting bullying helps them feel less alone and stops the harassment",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Ignore it - not my business", 
           emoji: "😑", 
-          description: "Ignoring bullying allows it to continue and can harm the victim",
+          
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Tell her to just delete social media", 
           emoji: "📱", 
-          description: "While this may provide temporary relief, it doesn't address the bullying or support the victim",
           isCorrect: false
         }
       ]
@@ -63,21 +62,18 @@ const EncourageRoleplay = () => {
           id: "a", 
           text: "Stay out of it", 
           emoji: "🚶", 
-          description: "Avoiding the situation leaves your friend without support when they need it most",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Support them and report the trolling", 
           emoji: "🤗", 
-          description: "Supporting victims and reporting harassment provides emotional help and addresses the problem",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Tell them to ignore it", 
           emoji: "🔇", 
-          description: "Ignoring serious harassment doesn't help the victim cope with the emotional impact",
           isCorrect: false
         }
       ]
@@ -90,21 +86,18 @@ const EncourageRoleplay = () => {
           id: "a", 
           text: "Don't get involved", 
           emoji: "🚫", 
-          description: "Not getting involved allows the bullying to continue and can make the victim feel isolated",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Just watch", 
           emoji: "👁️", 
-          description: "Being a passive observer doesn't help the victim and can make the situation worse",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Include them and report the bullying", 
           emoji: "🤗", 
-          description: "Inclusion helps the victim feel supported, and reporting stops the harassment",
           isCorrect: true
         }
       ]
@@ -117,21 +110,18 @@ const EncourageRoleplay = () => {
           id: "a", 
           text: "Encourage them and report harassment", 
           emoji: "🤗", 
-          description: "Encouragement provides emotional support, and reporting helps stop the harassment",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "It's not my problem", 
           emoji: "🤷", 
-          description: "Bullying affects the whole community, and helping others creates a safer environment for all",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Tell them to block everyone", 
           emoji: "🚫", 
-          description: "Blocking may provide temporary relief but doesn't address the root problem or support the victim",
           isCorrect: false
         }
       ]
@@ -144,21 +134,18 @@ const EncourageRoleplay = () => {
           id: "a", 
           text: "Ignore the situation", 
           emoji: "🙈", 
-          description: "Ignoring the situation allows the bullying to continue and can damage your friendship",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Support them and report the bullying", 
           emoji: "🤗", 
-          description: "Support helps rebuild confidence, and reporting addresses the source of the problem",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Tell them to toughen up", 
           emoji: "💪", 
-          description: "Telling someone to toughen up dismisses their pain and doesn't address the bullying",
           isCorrect: false
         }
       ]

@@ -35,21 +35,19 @@ const DeviceSharingQuiz = () => {
           id: "a", 
           text: "No, Never Share", 
           emoji: "🛡️", 
-          description: "Never share devices with strangers",
+          
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Yes, It's Okay", 
           emoji: "👍", 
-          description: "It's safe to share with strangers",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Only If They Ask Nicely", 
           emoji: "😊", 
-          description: "Share if they ask politely",
           isCorrect: false
         }
       ]
@@ -62,21 +60,18 @@ const DeviceSharingQuiz = () => {
           id: "a", 
           text: "Yes, Classmates Are Safe", 
           emoji: "👍", 
-          description: "Classmates can use it anytime",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "Ask Parent First", 
           emoji: "🛡️", 
-          description: "Always ask parents before sharing",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only for a Minute", 
           emoji: "⏰", 
-          description: "Share for just a short time",
           isCorrect: false
         }
       ]
@@ -89,21 +84,18 @@ const DeviceSharingQuiz = () => {
           id: "a", 
           text: "No, Passwords Are Private", 
           emoji: "🔒", 
-          description: "Never share passwords with anyone",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Yes, Friends Are Safe", 
           emoji: "👍", 
-          description: "Friends can know your password",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Only Best Friends", 
           emoji: "👫", 
-          description: "Share only with close friends",
           isCorrect: false
         }
       ]
@@ -116,21 +108,18 @@ const DeviceSharingQuiz = () => {
           id: "a", 
           text: "Yes, If They Seem Nice", 
           emoji: "😊", 
-          description: "Share if they look friendly",
           isCorrect: false
         },
         { 
           id: "b", 
           text: "No, Never Share", 
           emoji: "🛡️", 
-          description: "Don't share with people you don't know well",
           isCorrect: true
         },
         { 
           id: "c", 
           text: "Only for Games", 
           emoji: "🎮", 
-          description: "Share only to play games together",
           isCorrect: false
         }
       ]
@@ -143,21 +132,18 @@ const DeviceSharingQuiz = () => {
           id: "a", 
           text: "Always Lock Device", 
           emoji: "🔒", 
-          description: "Always lock your device for safety",
           isCorrect: true
         },
         { 
           id: "b", 
           text: "Yes, It's Fine", 
           emoji: "👍", 
-          description: "Leaving it unlocked is okay",
           isCorrect: false
         },
         { 
           id: "c", 
           text: "Only at Home", 
           emoji: "🏠", 
-          description: "Unlocked is fine at home only",
           isCorrect: false
         }
       ]

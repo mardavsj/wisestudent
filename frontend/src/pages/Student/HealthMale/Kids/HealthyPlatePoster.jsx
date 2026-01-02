@@ -145,12 +145,12 @@ const HealthyPlatePoster = () => {
         },
         {
           id: 2,
-          title: "Taste the Rainbow",
-          emoji: "🌈",
+          title: "Taste a Variety of Foods",
+          emoji: "😋",
           isCorrect: true
         },
       ],
-      correctFeedback: "Taste the Rainbow is the best advice!",
+      correctFeedback: "Taste a variety of foods is the best advice!",
       explanation: "Eating a variety of colorful foods ensures you get many different vitamins!"
     }
   ];

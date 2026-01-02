@@ -31,21 +31,19 @@ const LostPencilStory = () => {
           id: "keep", 
           text: "Keep it - finders keepers!", 
           emoji: "😊", 
-          description: "Take it for yourself",
+          
           isCorrect: false
         },
         { 
           id: "return", 
           text: "Return it to the teacher or owner", 
           emoji: "🙋", 
-          description: "Find the person who lost it",
           isCorrect: true
         },
         { 
           id: "give", 
           text: "Give it to your best friend", 
           emoji: "👥", 
-          description: "Share it with a friend",
           isCorrect: false
         }
       ]
@@ -58,21 +56,18 @@ const LostPencilStory = () => {
           id: "share", 
           text: "Share all your answers", 
           emoji: "📄", 
-          description: "Give them the answers",
           isCorrect: false
         },
         { 
           id: "explain", 
           text: "Explain how to solve it", 
           emoji: "💬", 
-          description: "Help them understand",
           isCorrect: true
         },
         { 
           id: "ignore", 
           text: "Ignore them", 
           emoji: "🙈", 
-          description: "Don't help at all",
           isCorrect: false
         }
       ]
@@ -85,21 +80,18 @@ const LostPencilStory = () => {
           id: "tell", 
           text: "Tell the teacher about it", 
           emoji: "👩‍🏫", 
-          description: "Report it to an adult",
           isCorrect: true
         },
         { 
           id: "eat", 
           text: "Eat it because you're hungry", 
           emoji: "😋", 
-          description: "Take it for yourself",
           isCorrect: false
         },
         { 
           id: "leave", 
           text: "Leave it there", 
           emoji: "🚶", 
-          description: "Do nothing about it",
           isCorrect: false
         }
       ]
@@ -112,21 +104,18 @@ const LostPencilStory = () => {
           id: "wait", 
           text: "Wait for your turn patiently", 
           emoji: "😊", 
-          description: "Be patient and fair",
           isCorrect: true
         },
         { 
           id: "push", 
           text: "Push others to go first", 
           emoji: "😠", 
-          description: "Force your way ahead",
           isCorrect: false
         },
         { 
           id: "complain", 
           text: "Complain loudly", 
           emoji: "📢", 
-          description: "Make a big fuss",
           isCorrect: false
         }
       ]
@@ -139,21 +128,18 @@ const LostPencilStory = () => {
           id: "ignore", 
           text: "Ignore it—it's not mine", 
           emoji: "🙄", 
-          description: "Not my problem",
           isCorrect: false
         },
         { 
           id: "pick", 
           text: "Pick it up and throw it in the bin", 
           emoji: "👍", 
-          description: "Help keep it clean",
           isCorrect: true
         },
         { 
           id: "tell", 
           text: "Tell others to clean it", 
           emoji: "🗣️", 
-          description: "Ask others to do it",
           isCorrect: false
         }
       ]
