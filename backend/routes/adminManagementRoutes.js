@@ -15,7 +15,8 @@ import {
   getUsersStats,
   getRedemptionsStats,
   getAnalyticsData,
-  getStatsData
+  getStatsData,
+  createUserWithPlan
 } from '../controllers/adminManagementController.js';
 import { requireAuth } from '../middlewares/requireAuth.js';
 import { checkAdmin } from '../middlewares/checkRole.js';
@@ -57,6 +58,9 @@ router.put('/settings', updateAdminSettings);
 // Stats endpoints
 router.get('/redemptions/stats', getRedemptionsStats);
 router.get('/all-redemptions/stats', getRedemptionsStats);
+
+// Create user with subscription plan (bypassing payment) - For testing
+router.post('/users/create-with-plan', createUserWithPlan);
 
 export default router;
 

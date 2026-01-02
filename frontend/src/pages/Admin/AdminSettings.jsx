@@ -3,7 +3,7 @@ import { motion as Motion } from 'framer-motion';
 import {
   Settings, Save, Globe, Shield, Bell, Database, Server, Lock,
   Mail, Phone, MapPin, CheckCircle, AlertCircle, RefreshCw,
-  MessageSquare
+  MessageSquare, UserPlus, Calendar, User
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../utils/api';
@@ -22,6 +22,19 @@ const AdminSettings = () => {
   const [passwordError, setPasswordError] = useState('');
   const passwordInputRef = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
+  const [creatingUser, setCreatingUser] = useState(false);
+  const [userForm, setUserForm] = useState({
+    email: '',
+    password: '',
+    fullName: '',
+    dateOfBirth: '',
+    gender: 'male',
+    role: 'student',
+    selectedPlan: 'free',
+    parentId: '',
+    organization: '',
+    childLinkCode: '',
+  });
   const [settings, setSettings] = useState({
     general: {
       platformName: 'Wise Student',
@@ -134,6 +147,39 @@ const AdminSettings = () => {
     }
   };
 
+  const handleCreateUser = async (e) => {
+    e.preventDefault();
+    try {
+      setCreatingUser(true);
+
+      const response = await api.post('/api/admin/users/create-with-plan', userForm);
+
+      if (response.data.success) {
+        toast.success(response.data.message || 'User created successfully!');
+        // Reset form
+        setUserForm({
+          email: '',
+          password: '',
+          fullName: '',
+          dateOfBirth: '',
+          gender: 'male',
+          role: 'student',
+          selectedPlan: 'free',
+          parentId: '',
+          organization: '',
+          childLinkCode: '',
+        });
+      } else {
+        toast.error(response.data.message || 'Failed to create user');
+      }
+    } catch (error) {
+      console.error('Error creating user:', error);
+      toast.error(error.response?.data?.message || 'Failed to create user. Please try again.');
+    } finally {
+      setCreatingUser(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
@@ -165,7 +211,7 @@ const AdminSettings = () => {
         {/* Tabs Navigation */}
         <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-4 mb-6">
           <div className="flex flex-wrap gap-2">
-            {['general', 'security', 'notifications', 'system', 'positions'].map(tab => (
+            {['general', 'security', 'notifications', 'system', 'positions', 'addUser'].map(tab => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -175,7 +221,7 @@ const AdminSettings = () => {
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
               >
-                <span className="capitalize">{tab}</span>
+                <span>{tab === 'addUser' ? 'Add User' : tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
               </button>
             ))}
           </div>
@@ -325,6 +371,241 @@ const AdminSettings = () => {
                 <div className="space-y-6">
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">Career Positions</h2>
                   <AdminJobPositions />
+                </div>
+              )}
+
+              {/* Add User */}
+              {activeTab === 'addUser' && (
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="p-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl">
+                      <UserPlus className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl font-bold text-gray-900">Add User for Testing</h2>
+                      <p className="text-sm text-gray-600">Create users with subscription plans bypassing payment</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-200 rounded-xl p-4 mb-6">
+                    <div className="flex items-start gap-3">
+                      <AlertCircle className="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-yellow-900 mb-1">Testing Mode</p>
+                        <p className="text-sm text-yellow-800">
+                          This feature allows super admins to create test users with any subscription plan without payment processing. 
+                          Use this only for testing purposes.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <form onSubmit={handleCreateUser} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {/* Full Name */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Full Name <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          value={userForm.fullName}
+                          onChange={(e) => setUserForm({ ...userForm, fullName: e.target.value })}
+                          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          placeholder="John Doe"
+                          required
+                        />
+                      </div>
+
+                      {/* Email */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Email <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          value={userForm.email}
+                          onChange={(e) => setUserForm({ ...userForm, email: e.target.value })}
+                          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          placeholder="john.doe@example.com"
+                          required
+                        />
+                      </div>
+
+                      {/* Password */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Password <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="password"
+                          value={userForm.password}
+                          onChange={(e) => setUserForm({ ...userForm, password: e.target.value })}
+                          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          placeholder="Minimum 8 characters"
+                          minLength={8}
+                          required
+                        />
+                      </div>
+
+                      {/* Date of Birth - Only for Student */}
+                      {userForm.role === 'student' && (
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Date of Birth <span className="text-red-500">*</span>
+                          </label>
+                          <input
+                            type="date"
+                            value={userForm.dateOfBirth}
+                            onChange={(e) => setUserForm({ ...userForm, dateOfBirth: e.target.value })}
+                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            required
+                          />
+                        </div>
+                      )}
+
+                      {/* Gender - Only for Student */}
+                      {userForm.role === 'student' && (
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Gender <span className="text-red-500">*</span>
+                          </label>
+                          <select
+                            value={userForm.gender}
+                            onChange={(e) => setUserForm({ ...userForm, gender: e.target.value })}
+                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            required
+                          >
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="non_binary">Non-binary</option>
+                            <option value="prefer_not_to_say">Prefer not to say</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                      )}
+
+                      {/* Role */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Role <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                          value={userForm.role}
+                          onChange={(e) => {
+                            const newRole = e.target.value;
+                            setUserForm({ 
+                              ...userForm, 
+                              role: newRole,
+                              // Reset role-specific fields when role changes
+                              dateOfBirth: newRole === 'student' ? userForm.dateOfBirth : '',
+                              gender: newRole === 'student' ? userForm.gender : 'male',
+                              selectedPlan: newRole === 'student' ? userForm.selectedPlan : 'free',
+                              organization: newRole === 'csr' ? userForm.organization : '',
+                              childLinkCode: (newRole === 'parent' || newRole === 'csr') ? userForm.childLinkCode : '',
+                            });
+                          }}
+                          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          required
+                        >
+                          <option value="student">Student</option>
+                          <option value="parent">Parent</option>
+                          <option value="csr">CSR</option>
+                        </select>
+                      </div>
+
+                      {/* Subscription Plan - Only for Student */}
+                      {userForm.role === 'student' && (
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Subscription Plan <span className="text-red-500">*</span>
+                          </label>
+                          <select
+                            value={userForm.selectedPlan}
+                            onChange={(e) => setUserForm({ ...userForm, selectedPlan: e.target.value })}
+                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            required
+                          >
+                            <option value="free">Free Plan</option>
+                            <option value="student_premium">Student Premium (₹4,499)</option>
+                            <option value="student_parent_premium_pro">Student + Parent Premium Pro (₹4,999)</option>
+                          </select>
+                        </div>
+                      )}
+
+                      {/* Organization - Only for CSR */}
+                      {userForm.role === 'csr' && (
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Organization <span className="text-red-500">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            value={userForm.organization}
+                            onChange={(e) => setUserForm({ ...userForm, organization: e.target.value })}
+                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            placeholder="Organization Name"
+                            required
+                          />
+                        </div>
+                      )}
+
+                      {/* Parent ID (Optional, for linking student to parent) */}
+                      {userForm.role === 'student' && (
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Parent ID (Optional)
+                          </label>
+                          <input
+                            type="text"
+                            value={userForm.parentId}
+                            onChange={(e) => setUserForm({ ...userForm, parentId: e.target.value })}
+                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            placeholder="Parent user ID to link"
+                          />
+                          <p className="text-xs text-gray-500 mt-1">Leave empty if creating standalone student</p>
+                        </div>
+                      )}
+
+                      {/* Student/Child Link Code (Optional, for linking parent/CSR to child) */}
+                      {(userForm.role === 'parent' || userForm.role === 'csr') && (
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Student/Child Link Code (Optional)
+                          </label>
+                          <input
+                            type="text"
+                            value={userForm.childLinkCode}
+                            onChange={(e) => setUserForm({ ...userForm, childLinkCode: e.target.value })}
+                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            placeholder="Enter student/child linking code"
+                          />
+                          <p className="text-xs text-gray-500 mt-1">Link this account to an existing student/child</p>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Submit Button */}
+                    <div className="pt-4 border-t border-gray-200">
+                      <button
+                        type="submit"
+                        disabled={creatingUser}
+                        className="w-full px-6 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-bold hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {creatingUser ? (
+                          <>
+                            <RefreshCw className="w-5 h-5 animate-spin" />
+                            Creating User...
+                          </>
+                        ) : (
+                          <>
+                            <UserPlus className="w-5 h-5" />
+                            Create User
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </form>
                 </div>
               )}
 

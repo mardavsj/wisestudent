@@ -2,6 +2,9 @@ import User from '../models/User.js';
 import Redemption from '../models/Redemption.js';
 import Organization from '../models/Organization.js';
 import ActivityLog from '../models/ActivityLog.js';
+import UserSubscription from '../models/UserSubscription.js';
+import bcrypt from 'bcrypt';
+import { generateAvatar } from '../utils/avatarGenerator.js';
 
 // Admin Panel Data
 export const getAdminPanel = async (req, res) => {
@@ -602,4 +605,336 @@ export const getAnalyticsData = getAdminAnalytics;
 
 // Get Stats Data (alias)
 export const getStatsData = getAdminStatsPanel;
+
+// Plan features constants
+const FREE_PLAN_FEATURES = {
+  fullAccess: false,
+  parentDashboard: false,
+  advancedAnalytics: false,
+  certificates: false,
+  wiseClubAccess: false,
+  inavoraAccess: false,
+  gamesPerPillar: 5,
+  totalGames: 50,
+};
+
+const STUDENT_PREMIUM_FEATURES = {
+  fullAccess: true,
+  parentDashboard: false,
+  advancedAnalytics: true,
+  certificates: true,
+  wiseClubAccess: true,
+  inavoraAccess: true,
+  gamesPerPillar: -1,
+  totalGames: 2200,
+};
+
+const STUDENT_PARENT_PREMIUM_PRO_FEATURES = {
+  fullAccess: true,
+  parentDashboard: true,
+  advancedAnalytics: true,
+  certificates: true,
+  wiseClubAccess: true,
+  inavoraAccess: true,
+  gamesPerPillar: -1,
+  totalGames: 2200,
+};
+
+// Create user with subscription plan (bypassing payment) - For testing purposes
+export const createUserWithPlan = async (req, res) => {
+  try {
+    const {
+      email,
+      password,
+      fullName,
+      dateOfBirth,
+      gender,
+      role = 'student',
+      selectedPlan = 'free',
+      parentId,
+      organization,
+      childLinkCode,
+    } = req.body;
+
+    // Validation - Common fields
+    if (!email || !password || !fullName) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email, password, and full name are required',
+      });
+    }
+
+    // Role-specific validation
+    if (role === 'student') {
+      if (!dateOfBirth || !gender) {
+        return res.status(400).json({
+          success: false,
+          message: 'Date of birth and gender are required for student role',
+        });
+      }
+    }
+
+    if (role === 'csr') {
+      if (!organization) {
+        return res.status(400).json({
+          success: false,
+          message: 'Organization is required for CSR role',
+        });
+      }
+    }
+
+    // Validate gender (only for students)
+    let normalizedGender = 'male'; // Default
+    if (role === 'student') {
+      const allowedGenders = ['male', 'female', 'non_binary', 'prefer_not_to_say', 'other'];
+      normalizedGender = String(gender).trim().toLowerCase();
+      if (!allowedGenders.includes(normalizedGender)) {
+        return res.status(400).json({
+          success: false,
+          message: `Invalid gender. Must be one of: ${allowedGenders.join(', ')}`,
+        });
+      }
+    }
+
+    // Validate plan (only for students)
+    if (role === 'student') {
+      const allowedPlans = ['free', 'student_premium', 'student_parent_premium_pro'];
+      if (!allowedPlans.includes(selectedPlan)) {
+        return res.status(400).json({
+          success: false,
+          message: `Invalid plan. Must be one of: ${allowedPlans.join(', ')}`,
+        });
+      }
+    }
+
+    // Validate role
+    const allowedRoles = ['student', 'parent', 'csr'];
+    if (!allowedRoles.includes(role)) {
+      return res.status(400).json({
+        success: false,
+        message: `Invalid role. Must be one of: ${allowedRoles.join(', ')}`,
+      });
+    }
+
+    // Check if user already exists
+    const normalizedEmail = email.toLowerCase().trim();
+    const existingUser = await User.findOne({ email: normalizedEmail });
+    if (existingUser) {
+      return res.status(400).json({
+        success: false,
+        message: 'User with this email already exists',
+      });
+    }
+
+    // Validate date of birth (only for students)
+    let parsedDob = null;
+    if (role === 'student') {
+      parsedDob = new Date(dateOfBirth);
+      if (isNaN(parsedDob.getTime())) {
+        return res.status(400).json({
+          success: false,
+          message: 'Invalid date of birth format',
+        });
+      }
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Generate avatar
+    const avatarData = generateAvatar({
+      name: fullName,
+      email: normalizedEmail,
+      role,
+    });
+
+    // Create user
+    const userData = {
+      name: fullName.trim(),
+      fullName: fullName.trim(),
+      email: normalizedEmail,
+      password: hashedPassword,
+      role,
+      isVerified: true, // Pre-verified for admin-created users
+      approvalStatus: ['parent', 'csr'].includes(role) ? 'pending' : 'approved',
+      avatar: avatarData.url,
+      avatarData: {
+        type: 'generated',
+        ...avatarData,
+      },
+    };
+
+    // Add role-specific fields
+    if (role === 'student') {
+      userData.dateOfBirth = parsedDob;
+      userData.dob = parsedDob.toISOString();
+      userData.gender = normalizedGender;
+    }
+
+    if (role === 'csr' && organization) {
+      userData.organization = organization.trim();
+    }
+
+    // Add linking code for students
+    if (role === 'student') {
+      userData.linkingCode = await User.generateUniqueLinkingCode('ST');
+      userData.linkingCodeIssuedAt = new Date();
+    }
+
+    // Link parent if provided
+    if (parentId && role === 'student') {
+      const parent = await User.findById(parentId);
+      if (!parent) {
+        return res.status(400).json({
+          success: false,
+          message: 'Parent not found',
+        });
+      }
+      userData.linkedIds = {
+        parentIds: [parentId],
+      };
+    }
+
+    const newUser = await User.create(userData);
+
+    // Link student to parent if parentId provided
+    if (parentId && role === 'student') {
+      await User.updateOne(
+        { _id: parentId },
+        {
+          $addToSet: { 'linkedIds.childIds': newUser._id },
+          $addToSet: { childEmail: normalizedEmail },
+        }
+      );
+    }
+
+    // Link parent/CSR to child if childLinkCode provided
+    if (childLinkCode && (role === 'parent' || role === 'csr')) {
+      const normalizedLinkCode = childLinkCode.trim().toUpperCase();
+      const child = await User.findOne({ 
+        linkingCode: normalizedLinkCode,
+        role: { $in: ['student', 'school_student'] }
+      });
+
+      if (!child) {
+        // Don't fail the user creation, just log a warning
+        console.warn(`Child with linking code ${normalizedLinkCode} not found. User created but not linked.`);
+      } else {
+        // Link parent/CSR to child
+        await User.updateOne(
+          { _id: newUser._id },
+          {
+            $addToSet: { 'linkedIds.childIds': child._id },
+            $addToSet: { childEmail: child.email },
+          }
+        );
+
+        // Also update child to link back to parent/CSR
+        if (role === 'parent') {
+          await User.updateOne(
+            { _id: child._id },
+            {
+              $addToSet: { 'linkedIds.parentIds': newUser._id },
+            }
+          );
+        }
+      }
+    }
+
+    // Create subscription (only for students)
+    if (role === 'student') {
+      const planFeatures = {
+        free: FREE_PLAN_FEATURES,
+        student_premium: STUDENT_PREMIUM_FEATURES,
+        student_parent_premium_pro: STUDENT_PARENT_PREMIUM_PRO_FEATURES,
+      };
+
+      const planAmounts = {
+        free: 0,
+        student_premium: 4499,
+        student_parent_premium_pro: 4999,
+      };
+
+      const planNames = {
+        free: 'Free Plan',
+        student_premium: 'Students Premium Plan',
+        student_parent_premium_pro: 'Student + Parent Premium Pro Plan',
+      };
+
+      await UserSubscription.create({
+      userId: newUser._id,
+      planType: selectedPlan,
+      planName: planNames[selectedPlan],
+      amount: planAmounts[selectedPlan],
+      firstYearAmount: planAmounts[selectedPlan],
+      renewalAmount: selectedPlan === 'student_premium' ? 999 : selectedPlan === 'student_parent_premium_pro' ? 1499 : 0,
+      isFirstYear: true,
+      status: 'active',
+      startDate: new Date(),
+      endDate: selectedPlan !== 'free' ? new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) : undefined, // 1 year for paid plans
+      features: planFeatures[selectedPlan],
+      transactions: selectedPlan !== 'free' ? [
+        {
+          transactionId: `admin_test_${Date.now()}_${Math.random().toString(36).substring(7)}`,
+          amount: planAmounts[selectedPlan],
+          currency: 'INR',
+          status: 'completed',
+          paymentDate: new Date(),
+          paymentMethod: 'admin_bypass',
+          metadata: {
+            createdBy: 'admin',
+            bypassPayment: true,
+            purpose: 'testing',
+          },
+        },
+      ] : [],
+        metadata: {
+          createdBy: 'admin',
+          bypassPayment: true,
+          purpose: 'testing',
+          adminCreated: true,
+        },
+      });
+    }
+
+    const responseData = {
+      success: true,
+      message: `${role.charAt(0).toUpperCase() + role.slice(1)} created successfully`,
+      data: {
+        user: {
+          id: newUser._id,
+          name: newUser.name,
+          email: newUser.email,
+          role: newUser.role,
+          isVerified: newUser.isVerified,
+          approvalStatus: newUser.approvalStatus,
+          linkingCode: newUser.linkingCode,
+        },
+      },
+    };
+
+    // Add subscription info only for students
+    if (role === 'student') {
+      const planNames = {
+        free: 'Free Plan',
+        student_premium: 'Students Premium Plan',
+        student_parent_premium_pro: 'Student + Parent Premium Pro Plan',
+      };
+      responseData.message = `${role.charAt(0).toUpperCase() + role.slice(1)} created successfully with ${planNames[selectedPlan]}`;
+      responseData.data.subscription = {
+        planType: selectedPlan,
+        planName: planNames[selectedPlan],
+        status: 'active',
+      };
+    }
+
+    res.status(201).json(responseData);
+  } catch (error) {
+    console.error('Error creating user with plan:', error);
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to create user',
+    });
+  }
+};
 
