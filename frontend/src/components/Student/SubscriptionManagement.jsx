@@ -41,14 +41,13 @@ const PLANS = {
     },
     student_premium: {
       name: 'Students Premium Plan',
-      firstYearPrice: 4499,
-      renewalPrice: 999,
+      price: 4499,
       features: [
         'Full Access to All 10 Pillars',
         '2200+ Gaming Micro Lessons',
         'Advanced Analytics',
-        'Badges and Achievements',
-        'WiseClub Community Access',
+        'Certificates, Badges & Achievements',
+        'WiseClub Community Access (Coming Soon)',
         'Presentation Tool',
       ],
       color: 'from-blue-500 to-cyan-500',
@@ -56,8 +55,7 @@ const PLANS = {
     },
     student_parent_premium_pro: {
       name: 'Student + Parent Premium Pro Plan',
-      firstYearPrice: 4999,
-      renewalPrice: 1499,
+      price: 4999,
       features: [
         'Everything in Students Premium',
         'Parent Dashboard',
@@ -70,13 +68,12 @@ const PLANS = {
     },
     educational_institutions_premium: {
       name: 'Educational Institutions Premium Plan',
-      firstYearPrice: 0,
-      renewalPrice: 0,
+      price: 0,
       features: [
         'Unlimited Academics Access',
         'Advanced Teacher & Admin Dashboards',
         'Comprehensive Analytics & Insights',
-        'Badges and Achievements',
+        'Certificates, Badges & Achievements',
         'WiseClub & Inavora Access',
         'Institution-wide Seat Management',
       ],
@@ -192,18 +189,14 @@ const SubscriptionManagement = ({ onUpgradingChange, onPlanChange }) => {
       return;
     }
 
-    // Determine if it's first year or renewal
-    const isFirstYear = !subscription || subscription.planType === 'free';
-    const amount = isFirstYear
-      ? plan.firstYearPrice || plan.renewalPrice || 0
-      : plan.renewalPrice || plan.firstYearPrice || 0;
+    // Use the plan price (same for all purchases)
+    const amount = plan.price || 0;
 
     // Set the upgrading plan info for the parent component
     setCurrentUpgradingPlan({
       planType,
       planName: plan.name,
       amount,
-      isFirstYear,
     });
 
     // For free plan, activate immediately
@@ -509,10 +502,10 @@ const SubscriptionManagement = ({ onUpgradingChange, onPlanChange }) => {
               {subscription?.planType !== 'free' && (
                 <div className="text-right">
                   <div className="text-3xl font-bold">
-                    ₹{subscription?.isFirstYear ? (currentPlan.firstYearPrice || currentPlan.renewalPrice).toLocaleString() : (currentPlan.renewalPrice || currentPlan.firstYearPrice).toLocaleString()}
+                    ₹{(currentPlan.price || 0).toLocaleString()}
                   </div>
                   <div className="text-sm opacity-90">
-                    {subscription?.isFirstYear ? 'First Year' : 'Renewal'}
+                    /year
                   </div>
                 </div>
               )}
@@ -529,8 +522,8 @@ const SubscriptionManagement = ({ onUpgradingChange, onPlanChange }) => {
                     fullAccess: 'Full Access to All Pillars',
                     parentDashboard: 'Parent Dashboard',
                     advancedAnalytics: 'Advanced Analytics',
-                    certificates: 'Badges and Achievements',
-                    wiseClubAccess: 'WiseClub Community Access',
+                    certificates: 'Certificates, Badges & Achievements',
+                    wiseClubAccess: 'WiseClub Community Access (Coming Soon)',
                     inavoraAccess: 'Presentation Tool',
                   };
                   features = Object.entries(subscription.features)
@@ -664,8 +657,8 @@ const SubscriptionManagement = ({ onUpgradingChange, onPlanChange }) => {
                   { feature: 'Total Games Access', free: '50 games', premium: '2200+ games', pro: '2200+ games' },
                   { feature: 'Full Access to All 10 Pillars', free: false, premium: true, pro: true },
                   { feature: 'Advanced Analytics', free: false, premium: true, pro: true },
-                  { feature: 'Badges and Achievements', free: false, premium: true, pro: true },
-                  { feature: 'WiseClub Community Access', free: false, premium: true, pro: true },
+                  { feature: 'Certificates, Badges & Achievements', free: false, premium: true, pro: true },
+                  { feature: 'WiseClub Community Access', free: false, premium: 'coming_soon', pro: 'coming_soon' },
                   { feature: 'Presentation Tool', free: false, premium: true, pro: true },
                   { feature: 'Parent Dashboard', free: false, premium: false, pro: true },
                   { feature: 'Family Progress Tracking', free: false, premium: false, pro: true },
@@ -689,7 +682,9 @@ const SubscriptionManagement = ({ onUpgradingChange, onPlanChange }) => {
                         ? 'bg-gradient-to-r from-blue-50/50 to-cyan-50/50 border-l-4 border-blue-400' 
                         : ''
                     }`}>
-                      {typeof row.premium === 'boolean' ? (
+                      {row.premium === 'coming_soon' ? (
+                        <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full font-semibold italic">Coming Soon</span>
+                      ) : typeof row.premium === 'boolean' ? (
                         row.premium ? <CheckCircle className="w-5 h-5 text-green-600 mx-auto" /> : <span className="text-gray-400">—</span>
                       ) : (
                         <span className={`text-gray-700 ${currentPlanType === 'student_premium' ? 'font-semibold' : 'font-semibold'}`}>{row.premium}</span>
@@ -700,7 +695,9 @@ const SubscriptionManagement = ({ onUpgradingChange, onPlanChange }) => {
                         ? 'bg-gradient-to-r from-purple-50/50 to-pink-50/50 border-l-4 border-purple-400' 
                         : ''
                     }`}>
-                      {typeof row.pro === 'boolean' ? (
+                      {row.pro === 'coming_soon' ? (
+                        <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full font-semibold italic">Coming Soon</span>
+                      ) : typeof row.pro === 'boolean' ? (
                         row.pro ? <CheckCircle className="w-5 h-5 text-green-600 mx-auto" /> : <span className="text-gray-400">—</span>
                       ) : (
                         <span className={`text-gray-700 ${currentPlanType === 'student_parent_premium_pro' ? 'font-semibold' : 'font-semibold'}`}>{row.pro}</span>
@@ -737,10 +734,9 @@ const SubscriptionManagement = ({ onUpgradingChange, onPlanChange }) => {
                       <h4 className="font-black text-xl mb-3">{plans.student_premium.name}</h4>
                       <div className="mb-4">
                         <div className="flex items-baseline gap-2">
-                          <span className="text-4xl font-black">₹{plans.student_premium.firstYearPrice.toLocaleString()}</span>
+                          <span className="text-4xl font-black">₹{plans.student_premium.price.toLocaleString()}</span>
                           <span className="text-sm opacity-90">/year</span>
                         </div>
-                        <div className="text-xs opacity-75 mt-1">Renewal: ₹{plans.student_premium.renewalPrice.toLocaleString()}/year</div>
                       </div>
                       <div className="space-y-2 mb-4">
                         {plans.student_premium.features.slice(0, 3).map((feature, idx) => (
@@ -776,10 +772,9 @@ const SubscriptionManagement = ({ onUpgradingChange, onPlanChange }) => {
                       <h4 className="font-black text-xl mb-3">{plans.student_parent_premium_pro.name}</h4>
                       <div className="mb-4">
                         <div className="flex items-baseline gap-2">
-                          <span className="text-4xl font-black">₹{plans.student_parent_premium_pro.firstYearPrice.toLocaleString()}</span>
+                          <span className="text-4xl font-black">₹{plans.student_parent_premium_pro.price.toLocaleString()}</span>
                           <span className="text-sm opacity-90">/year</span>
                         </div>
-                        <div className="text-xs opacity-75 mt-1">Renewal: ₹{plans.student_parent_premium_pro.renewalPrice.toLocaleString()}/year</div>
                       </div>
                       <div className="space-y-2 mb-4">
                         {plans.student_parent_premium_pro.features.slice(0, 3).map((feature, idx) => (
@@ -819,12 +814,9 @@ const SubscriptionManagement = ({ onUpgradingChange, onPlanChange }) => {
                     <div className="mb-4">
                       <div className="flex items-baseline gap-2">
                         <span className="text-4xl font-black">
-                          ₹{(subscription?.isFirstYear ? plans.student_parent_premium_pro.firstYearPrice : plans.student_parent_premium_pro.renewalPrice).toLocaleString()}
+                          ₹{plans.student_parent_premium_pro.price.toLocaleString()}
                         </span>
                         <span className="text-sm opacity-90">/year</span>
-                      </div>
-                      <div className="text-xs opacity-75 mt-1">
-                        {subscription?.isFirstYear ? 'First year pricing' : 'Renewal pricing'}
                       </div>
                     </div>
                     <div className="space-y-2 mb-4">

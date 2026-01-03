@@ -125,8 +125,6 @@ const PLAN_CONFIGS = {
   free: {
     name: 'Free Plan',
     amount: 0,
-    firstYearAmount: 0,
-    renewalAmount: 0,
     features: {
       fullAccess: false,
       parentDashboard: false,
@@ -140,8 +138,7 @@ const PLAN_CONFIGS = {
   },
   student_premium: {
     name: 'Students Premium Plan',
-    firstYearAmount: 4499,
-    renewalAmount: 999,
+    amount: 4499,
     features: {
       fullAccess: true,
       parentDashboard: false,
@@ -155,8 +152,7 @@ const PLAN_CONFIGS = {
   },
   student_parent_premium_pro: {
     name: 'Student + Parent Premium Pro Plan',
-    firstYearAmount: 4999,
-    renewalAmount: 1499,
+    amount: 4999,
     features: {
       fullAccess: true,
       parentDashboard: true,
@@ -170,8 +166,7 @@ const PLAN_CONFIGS = {
   },
   educational_institutions_premium: {
     name: 'Educational Institutions Premium Plan',
-    firstYearAmount: 0,
-    renewalAmount: 0,
+    amount: 0,
     features: {
       fullAccess: true,
       parentDashboard: true,
@@ -238,7 +233,6 @@ export const createSubscriptionPayment = async (req, res) => {
     );
 
     const isRenewalFlow = mode === 'renewal' || hasCompletedPlanBefore;
-    const isFirstYear = !hasCompletedPlanBefore;
 
     if (existingActiveSubscription && existingActiveSubscription.planType === planType) {
       if (!isRenewalFlow) {
@@ -249,8 +243,8 @@ export const createSubscriptionPayment = async (req, res) => {
       }
     }
 
-    // Use custom amount if provided, otherwise calculate from plan config
-    const amount = customAmount !== undefined ? customAmount : (isFirstYear ? planConfig.firstYearAmount : planConfig.renewalAmount);
+    // Use custom amount if provided, otherwise use plan config amount (same price for all purchases)
+    const amount = customAmount !== undefined ? customAmount : planConfig.amount;
 
     if (amount === 0) {
       // Free plan - activate immediately
@@ -259,9 +253,6 @@ export const createSubscriptionPayment = async (req, res) => {
         planType,
         planName: planConfig.name,
         amount: 0,
-        firstYearAmount: planConfig.firstYearAmount,
-        renewalAmount: planConfig.renewalAmount,
-        isFirstYear: true,
         status: 'active',
         startDate: new Date(),
         endDate: new Date(Date.now() + YEAR_IN_MS),
@@ -326,7 +317,6 @@ export const createSubscriptionPayment = async (req, res) => {
       notes: {
         userId: userId.toString(),
         planType,
-        isFirstYear: isFirstYear.toString(),
         mode,
         context,
         initiatedByRole: user.role,
@@ -362,14 +352,11 @@ export const createSubscriptionPayment = async (req, res) => {
         planType,
         planName: planConfig.name,
         amount,
-        firstYearAmount: planConfig.firstYearAmount,
-        renewalAmount: planConfig.renewalAmount,
-        isFirstYear,
         status: 'pending',
         startDate: new Date(),
         endDate: new Date(Date.now() + YEAR_IN_MS),
         features: planConfig.features,
-        purchasedBy: isFirstYear ? { ...initiator, purchasedAt: new Date() } : undefined,
+        purchasedBy: { ...initiator, purchasedAt: new Date() },
         renewalCount: 0,
         transactions: [transactionPayload],
       });
@@ -383,7 +370,6 @@ export const createSubscriptionPayment = async (req, res) => {
       amount,
       currency: 'INR',
       mode,
-      isFirstYear,
     });
   } catch (error) {
     console.error('Create subscription payment error:', error);
@@ -732,7 +718,7 @@ export const getSubscriptionHistory = async (req, res) => {
     const formattedSubscriptions = subscriptions.map(sub => ({
       ...sub,
       planName: sub.planName || PLAN_CONFIGS[sub.planType]?.name || 'Unknown Plan',
-      amount: sub.amount || (sub.isFirstYear ? PLAN_CONFIGS[sub.planType]?.firstYearAmount : PLAN_CONFIGS[sub.planType]?.renewalAmount) || 0,
+      amount: sub.amount || PLAN_CONFIGS[sub.planType]?.amount || 0,
     }));
 
     res.status(200).json({

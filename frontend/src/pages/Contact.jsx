@@ -62,15 +62,9 @@ const Contact = () => {
       description: "We'll respond within 24 hours"
     },
     {
-      icon: <Phone className="w-6 h-6" />,
-      title: "Call Us",
-      content: "+91 9043411110",
-      description: "Mon-Fri from 9 AM to 6 PM"
-    },
-    {
       icon: <MapPin className="w-6 h-6" />,
       title: "Visit Us",
-      content: "Chennai, India",
+      content: "Chennai | Bangalore, India",
       description: "Our headquarters and innovation center"
     },
     {
@@ -266,7 +260,7 @@ const Contact = () => {
         </div>
 
         {/* Map Section - Full Width */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -285,7 +279,7 @@ const Contact = () => {
               className="w-full h-full"
             ></iframe>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* FAQ Section */}

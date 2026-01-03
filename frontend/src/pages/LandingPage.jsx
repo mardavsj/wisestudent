@@ -6,7 +6,6 @@ import NationalAlignments from "../components/NationalAlignments";
 import CheckoutModal from "../components/Payment/CheckoutModal";
 import InstallPWA from "../components/InstallPWA";
 import { useAuth } from "../context/AuthUtils";
-import api from "../utils/api";
 import { toast } from "react-hot-toast";
 import { motion } from "framer-motion"; // eslint-disable-line no-unused-vars
 import {
@@ -703,7 +702,7 @@ const LandingPage = () => {
   };
 
   // Handle plan selection
-  const handlePlanSelect = async (planType, planName, firstYearAmount, isFirstYear) => {
+  const handlePlanSelect = (planType, planName, amount) => {
     // Always open the modal - let it handle auth internally
     // For free plan, open modal that will handle activation
     if (planType === 'free') {
@@ -711,63 +710,18 @@ const LandingPage = () => {
         planType,
         planName,
         amount: 0,
-        isFirstYear: true,
       });
       setShowCheckout(true);
       return;
     }
 
-    // For paid plans, open checkout modal
-    // Try to check existing subscription to determine if it's first year
-    // But don't block if user is not logged in
-    const token = localStorage.getItem("finmen_token");
-    
-    if (token) {
-      try {
-        const subResponse = await api.get('/api/subscription/current');
-        const currentSub = subResponse.data.subscription;
-        
-        let amount = firstYearAmount;
-        let isFirstYearPayment = isFirstYear;
-        
-        // If user has a previous subscription, use renewal amount
-        if (currentSub && currentSub.planType !== 'free') {
-          const renewalAmounts = {
-            student_premium: 999,
-            student_parent_premium_pro: 1499,
-          };
-          amount = renewalAmounts[planType] || firstYearAmount;
-          isFirstYearPayment = false;
-        }
-
-        setSelectedPlan({
-          planType,
-          planName,
-          amount,
-          isFirstYear: isFirstYearPayment,
-        });
-        setShowCheckout(true);
-      } catch {
-        // If error (including auth), assume first year and proceed
-        // The modal will handle auth check
-        setSelectedPlan({
-          planType,
-          planName,
-          amount: firstYearAmount,
-          isFirstYear: true,
-        });
-        setShowCheckout(true);
-      }
-    } else {
-      // No token, but still open modal - it will prompt for login
-      setSelectedPlan({
-        planType,
-        planName,
-        amount: firstYearAmount,
-        isFirstYear: true,
-      });
-      setShowCheckout(true);
-    }
+    // For paid plans, always use the same price regardless of subscription status
+    setSelectedPlan({
+      planType,
+      planName,
+      amount,
+    });
+    setShowCheckout(true);
   };
 
   // Check for pending subscription after login redirect
@@ -801,8 +755,7 @@ const LandingPage = () => {
         toast.success('Welcome back! Completing your subscription...');
         const planType = pendingSubscription.planType;
         const planName = pendingSubscription.planName;
-        const firstYearAmount = pendingSubscription.firstYearAmount || pendingSubscription.amount || 0;
-        const isFirstYear = pendingSubscription.isFirstYear !== false;
+        const amount = pendingSubscription.amount || pendingSubscription.firstYearAmount || 0;
         
         // For free plan, open modal that will handle activation
         if (planType === 'free') {
@@ -810,61 +763,18 @@ const LandingPage = () => {
             planType,
             planName,
             amount: 0,
-            isFirstYear: true,
           });
           setShowCheckout(true);
           return;
         }
 
-        // For paid plans, open checkout modal
-        const token = localStorage.getItem("finmen_token");
-        
-        if (token) {
-          api.get('/api/subscription/current')
-            .then(subResponse => {
-              const currentSub = subResponse.data.subscription;
-              
-              let amount = firstYearAmount;
-              let isFirstYearPayment = isFirstYear;
-              
-              // If user has a previous subscription, use renewal amount
-              if (currentSub && currentSub.planType !== 'free') {
-                const renewalAmounts = {
-                  student_premium: 999,
-            student_parent_premium_pro: 1499,
-                };
-                amount = renewalAmounts[planType] || firstYearAmount;
-                isFirstYearPayment = false;
-              }
-
-              setSelectedPlan({
-                planType,
-                planName,
-                amount,
-                isFirstYear: isFirstYearPayment,
-              });
-              setShowCheckout(true);
-            })
-            .catch(() => {
-              // If error, assume first year and proceed
-              setSelectedPlan({
-                planType,
-                planName,
-                amount: firstYearAmount,
-                isFirstYear: true,
-              });
-              setShowCheckout(true);
-            });
-        } else {
-          // No token, but still open modal - it will prompt for login
-          setSelectedPlan({
-            planType,
-            planName,
-            amount: firstYearAmount,
-            isFirstYear: true,
-          });
-          setShowCheckout(true);
-        }
+        // For paid plans, always use the same price
+        setSelectedPlan({
+          planType,
+          planName,
+          amount,
+        });
+        setShowCheckout(true);
       }, 800);
     }
   }, [user, location.state]);
@@ -1243,7 +1153,7 @@ const LandingPage = () => {
               <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-br from-emerald-400 to-green-400 rounded-full opacity-5 group-hover:opacity-15 transition-opacity duration-500"></div>
 
               <div className="relative z-10 flex flex-col h-full">
-                <div className="flex justify-between items-start mb-6 min-h-[180px] sm:min-h-[192px]">
+                <div className="flex justify-between items-start mb-3 min-h-[180px] sm:min-h-[192px]">
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">Free Plan</h3>
                     <p className="text-sm text-gray-600 mb-6">Start your WiseStudent journey free — 5 games in every pillar, full growth unlocked when you're ready.</p>
@@ -1251,7 +1161,7 @@ const LandingPage = () => {
                       <span className="text-3xl font-bold text-green-600">₹0</span>
                     </div>
                   </div>
-                  <div className="p-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white text-green-500 shadow-lg">
+                  <div className="p-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white shadow-lg">
                     <Star className="w-6 h-6" />
                   </div>
                 </div>
@@ -1286,15 +1196,11 @@ const LandingPage = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 text-sm">Presentation Tool Access</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 text-sm">Daily Reflection Prompts (Trial)</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 text-sm">WiseClub Access (Restricted)</span>
+                    <span className="text-gray-700 text-sm">WiseClub Access — <span className="italic text-gray-500">Coming Soon</span></span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -1321,28 +1227,22 @@ const LandingPage = () => {
               <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full opacity-5 group-hover:opacity-15 transition-opacity duration-500"></div>
 
               <div className="relative z-10 flex flex-col h-full">
-                <div className="flex justify-between items-start mb-6 min-h-[180px] sm:min-h-[192px]">
+                <div className="flex justify-between items-start mb-3 min-h-[180px] sm:min-h-[192px]">
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">Students Premium Plan</h3>
                     <p className="text-sm text-gray-600 mb-5">Perfect for self-driven students who aspire to grow emotionally, mentally, ethically as well as academically.</p>
-                    <div className="flex items-baseline">
-                      <span className="text-3xl font-bold text-blue-400">₹4,499</span>
-                      <span className="text-gray-500 ml-1 sm:ml-2">•</span>
-                      <span className="text-sm text-gray-500 ml-1 sm:ml-2">For 1st Year Only</span>
-                    </div>
-                    <div className="flex items-baseline">
-                      <span className="text-2xl font-bold text-blue-700">₹999</span>
-                      <span className="text-gray-500 ml-1 sm:ml-2">•</span>
-                      <span className="text-sm text-gray-500 ml-1 sm:ml-2">From 2nd Year onwards</span>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-3xl font-bold text-blue-600">₹4,499</span>
+                      <span className="text-sm text-gray-600">/year</span>
                     </div>
                   </div>
-                  <div className=" bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-blue-500 p-2 shadow-lg">
+                  <div className=" bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white p-2 shadow-lg">
                     <GraduationCap className="w-6 h-6" />
                   </div>
                 </div>
 
                 <button 
-                  onClick={() => handlePlanSelect('student_premium', 'Students Premium Plan', 4499, true)}
+                  onClick={() => handlePlanSelect('student_premium', 'Students Premium Plan', 4499)}
                   className="w-full sm:mb-6 mb-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white sm:py-3 py-2 sm:rounded-2xl rounded-xl sm:font-semibold font-medium hover:shadow-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                   Get Students Premium Plan
@@ -1363,10 +1263,6 @@ const LandingPage = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 text-sm">Full access to inavora presentation tool</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 text-sm">Earn Heal Coins, save them, share them, and spend them</span>
                   </div>
                   <div className="flex items-start gap-3">
@@ -1375,7 +1271,7 @@ const LandingPage = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 text-sm">WiseClub Community Access (peer learning and group missions)</span>
+        <span className="text-gray-700 text-sm">WiseClub Community Access (peer learning and group missions) — <span className="italic text-gray-500">Coming Soon</span></span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
@@ -1387,7 +1283,7 @@ const LandingPage = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 text-sm">Certificates & Achievements — issued automatically each term</span>
+            <span className="text-gray-700 text-sm">Certificates, Badges & Achievements— issued automatically each term</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
@@ -1410,28 +1306,22 @@ const LandingPage = () => {
               <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full opacity-5 group-hover:opacity-15 transition-opacity duration-500"></div>
 
               <div className="relative z-10 flex flex-col h-full">
-                <div className="flex justify-between items-start mb-6 min-h-[180px] sm:min-h-[192px]">
+                <div className="flex justify-between items-start mb-3 min-h-[180px] sm:min-h-[192px]">
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">Student + Parent Premium Pro Plan</h3>
                     <p className="text-sm text-gray-600 mb-3">For families who want a complete emotional and value-based learning ecosystem.</p>
-                    <div className="flex items-baseline">
-                      <span className="text-3xl font-bold text-purple-400">₹4,999</span>
-                      <span className="text-gray-500 ml-1 sm:ml-2">•</span>
-                      <span className="text-sm text-gray-500 ml-1 sm:ml-2">For 1st Year Only</span>
-                    </div>
-                    <div className="flex items-baseline">
-                      <span className="text-2xl font-bold text-purple-700">₹1,499</span>
-                      <span className="text-gray-500 ml-1 sm:ml-2">•</span>
-                      <span className="text-sm text-gray-500 ml-1 sm:ml-2">From 2nd Year onwards</span>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-3xl font-bold text-purple-600">₹4,999</span>
+                      <span className="text-sm text-gray-600">/year</span>
                     </div>
                   </div>
-                  <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-purple-500 shadow-lg">
+                  <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white shadow-lg">
                     <Users className="w-6 h-6" />
                   </div>
                 </div>
 
                 <button 
-                  onClick={() => handlePlanSelect('student_parent_premium_pro', 'Student + Parent Premium Pro Plan', 4999, true)}
+                  onClick={() => handlePlanSelect('student_parent_premium_pro', 'Student + Parent Premium Pro Plan', 4999)}
                   className="w-full sm:mb-6 mb-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white sm:py-3 py-2 sm:rounded-2xl rounded-xl sm:font-semibold font-medium hover:shadow-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                   Get Student + Parent Premium Pro Plan
@@ -1454,7 +1344,7 @@ const LandingPage = () => {
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 text-sm">Parents' Mental Health care (stress care, emotional well-being, family harmony)</span>
+                      <span className="text-gray-700 text-sm">Parents' Mental Health care (stress care, emotional well-being, family harmony) - <span className="italic">Aligned with Schools</span></span>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
@@ -1525,7 +1415,6 @@ const LandingPage = () => {
           planType={selectedPlan.planType}
           planName={selectedPlan.planName}
           amount={selectedPlan.amount}
-          isFirstYear={selectedPlan.isFirstYear}
         />
       )}
     </div>

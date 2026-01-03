@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -8,18 +9,11 @@ import {
   ArrowUp,
   Zap,
 } from "lucide-react";
-import { globalStatsService } from "../services/globalStatsService";
 
 const MainFooter = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [email, setEmail] = React.useState("");
   const [isVisible, setIsVisible] = React.useState(false);
-  const [globalStats, setGlobalStats] = React.useState({
-    totalSchools: 0,
-    totalStudents: 0,
-    loading: true
-  });
 
   // Remove unused services array
 
@@ -102,72 +96,11 @@ const MainFooter = () => {
     // },
   // ];
 
-  const handleSubscribe = () => {
-    if (email) {
-      // Only log in development (never expose email in production)
-      if (import.meta.env.DEV) {
-        console.log("Subscribing email");
-      }
-      setEmail("");
-    }
-  };
 
   const handleBackToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Format large numbers (e.g., 1000 -> 1K, 1000000 -> 1M)
-  const formatNumber = (num) => {
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(1) + 'M';
-    } else if (num >= 1000) {
-      return (num / 1000).toFixed(1) + 'K';
-    }
-    return num.toString();
-  };
-
-  // Fetch global stats on component mount
-  React.useEffect(() => {
-    const fetchGlobalStats = async () => {
-      try {
-        const response = await globalStatsService.getCachedGlobalStats();
-        
-        if (response.success) {
-          setGlobalStats({
-            totalSchools: response.data.totalSchools,
-            totalStudents: response.data.totalStudents,
-            loading: false
-          });
-        } else {
-          // Fallback to regular stats if cached fails
-          const fallbackResponse = await globalStatsService.getGlobalStats();
-          
-          if (fallbackResponse.success) {
-            setGlobalStats({
-              totalSchools: fallbackResponse.data.totalSchools,
-              totalStudents: fallbackResponse.data.totalStudents,
-              loading: false
-            });
-          } else {
-            setGlobalStats({
-              totalSchools: 0,
-              totalStudents: 0,
-              loading: false
-            });
-          }
-        }
-      } catch (error) {
-        console.error('MainFooter: Error fetching global stats:', error);
-        setGlobalStats({
-          totalSchools: 0,
-          totalStudents: 0,
-          loading: false
-        });
-      }
-    };
-
-    fetchGlobalStats();
-  }, []);
 
   React.useEffect(() => {
     const toggleVisibility = () => {
@@ -291,27 +224,13 @@ const MainFooter = () => {
                     </p>
                   </div>
                 </a>
-
-                <a
-                  href="tel:+919043411110"
-                  className="flex items-start gap-3 text-gray-600 hover:text-blue-600 transition-all duration-300 group"
-                >
-                  <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center group-hover:bg-purple-500 transition-all duration-300 flex-shrink-0">
-                    <Phone className="w-5 h-5 text-purple-600 group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 mb-1 font-medium">Phone</p>
-                    <p className="text-sm font-medium">+91 9043411110</p>
-                  </div>
-                </a>
-
                 <div className="flex items-start gap-3 text-gray-600 group">
                   <div className="w-10 h-10 bg-pink-100 rounded-xl flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-pink-600" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-500 mb-1 font-medium">Location</p>
-                    <p className="text-sm font-medium">Chennai</p>
+            <p className="text-sm font-medium">Chennai | Bangalore</p>
                   </div>
                 </div>
               </div>

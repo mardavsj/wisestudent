@@ -16,7 +16,8 @@ import {
   getRedemptionsStats,
   getAnalyticsData,
   getStatsData,
-  createUserWithPlan
+  createUserWithPlan,
+  getUsersCreatedByAdmin
 } from '../controllers/adminManagementController.js';
 import { requireAuth } from '../middlewares/requireAuth.js';
 import { checkAdmin } from '../middlewares/checkRole.js';
@@ -61,6 +62,9 @@ router.get('/all-redemptions/stats', getRedemptionsStats);
 
 // Create user with subscription plan (bypassing payment) - For testing
 router.post('/users/create-with-plan', createUserWithPlan);
+
+// Get users created by the current admin
+router.get('/users/created-by-me', getUsersCreatedByAdmin);
 
 export default router;
 

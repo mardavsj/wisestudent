@@ -52,8 +52,6 @@ export const assignUserSubscription = async ({
     subscription.planType = planType;
     subscription.planName = planName;
     subscription.amount = amount || subscription.amount || 0;
-    subscription.firstYearAmount = subscription.firstYearAmount ?? amount ?? 0;
-    subscription.renewalAmount = subscription.renewalAmount ?? amount ?? 0;
     subscription.status = 'active';
     subscription.startDate = subscription.startDate || startDate;
     subscription.endDate = targetEndDate;
@@ -90,9 +88,6 @@ export const assignUserSubscription = async ({
     planType,
     planName,
     amount: amount || 0,
-    firstYearAmount: amount || 0,
-    renewalAmount: amount || 0,
-    isFirstYear: true,
     status: 'active',
     startDate,
     endDate: targetEndDate,

@@ -3,7 +3,7 @@ import { motion as Motion } from 'framer-motion';
 import {
   Settings, Save, Globe, Shield, Bell, Database, Server, Lock,
   Mail, Phone, MapPin, CheckCircle, AlertCircle, RefreshCw,
-  MessageSquare, UserPlus, Calendar, User
+  MessageSquare, UserPlus, Calendar, User, Users, Search, Eye
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../utils/api';
@@ -23,6 +23,12 @@ const AdminSettings = () => {
   const passwordInputRef = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
   const [creatingUser, setCreatingUser] = useState(false);
+  const [createdUsers, setCreatedUsers] = useState([]);
+  const [loadingUsers, setLoadingUsers] = useState(false);
+  const [usersPage, setUsersPage] = useState(1);
+  const [usersTotal, setUsersTotal] = useState(0);
+  const [usersSearch, setUsersSearch] = useState('');
+  const [usersRoleFilter, setUsersRoleFilter] = useState('all');
   const [userForm, setUserForm] = useState({
     email: '',
     password: '',
@@ -83,6 +89,43 @@ const AdminSettings = () => {
     loadSettings();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (activeTab === 'addUser') {
+      fetchCreatedUsers();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeTab, usersPage, usersSearch, usersRoleFilter]);
+
+  const fetchCreatedUsers = async () => {
+    try {
+      setLoadingUsers(true);
+      const params = new URLSearchParams({
+        page: usersPage.toString(),
+        limit: '10',
+      });
+      if (usersSearch) params.append('search', usersSearch);
+      if (usersRoleFilter !== 'all') params.append('role', usersRoleFilter);
+
+      const response = await api.get(`/api/admin/users/created-by-me?${params.toString()}`);
+      console.log('Fetched created users response:', response.data);
+      
+      if (response.data.success) {
+        setCreatedUsers(response.data.data.users || []);
+        setUsersTotal(response.data.data.pagination?.total || 0);
+        console.log('Set users:', response.data.data.users?.length || 0, 'Total:', response.data.data.pagination?.total || 0);
+      } else {
+        console.error('API returned unsuccessful response:', response.data);
+        toast.error(response.data.message || 'Failed to load created users');
+      }
+    } catch (error) {
+      console.error('Error fetching created users:', error);
+      console.error('Error details:', error.response?.data);
+      toast.error(error.response?.data?.message || 'Failed to load created users');
+    } finally {
+      setLoadingUsers(false);
+    }
+  };
 
   const handleSave = async () => {
     try {
@@ -169,6 +212,8 @@ const AdminSettings = () => {
           organization: '',
           childLinkCode: '',
         });
+        // Refresh the users list
+        fetchCreatedUsers();
       } else {
         toast.error(response.data.message || 'Failed to create user');
       }
@@ -606,6 +651,148 @@ const AdminSettings = () => {
                       </button>
                     </div>
                   </form>
+
+                  {/* Users Created by Me Section */}
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg">
+                          <Users className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-gray-900">Users Created by Me</h3>
+                          <p className="text-sm text-gray-600">View all test users you've created</p>
+                        </div>
+                      </div>
+                      <div className="text-sm text-gray-500">
+                        Total: <span className="font-semibold text-indigo-600">{usersTotal}</span>
+                      </div>
+                    </div>
+
+                    {/* Search and Filter */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                      <div className="relative">
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        <input
+                          type="text"
+                          value={usersSearch}
+                          onChange={(e) => {
+                            setUsersSearch(e.target.value);
+                            setUsersPage(1);
+                          }}
+                          placeholder="Search by name or email..."
+                          className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        />
+                      </div>
+                      <select
+                        value={usersRoleFilter}
+                        onChange={(e) => {
+                          setUsersRoleFilter(e.target.value);
+                          setUsersPage(1);
+                        }}
+                        className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      >
+                        <option value="all">All Roles</option>
+                        <option value="student">Student</option>
+                        <option value="parent">Parent</option>
+                        <option value="csr">CSR</option>
+                      </select>
+                    </div>
+
+                    {/* Users List */}
+                    {loadingUsers ? (
+                      <div className="flex items-center justify-center py-12">
+                        <RefreshCw className="w-6 h-6 animate-spin text-indigo-600" />
+                      </div>
+                    ) : createdUsers.length === 0 ? (
+                      <div className="text-center py-12 text-gray-500">
+                        <Users className="w-12 h-12 mx-auto mb-3 text-gray-300" />
+                        <p className="text-lg font-medium">No users created yet</p>
+                        <p className="text-sm">Create your first test user above</p>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="space-y-3">
+                          {createdUsers.map((user) => (
+                            <div
+                              key={user._id || user.id}
+                              className="bg-gray-50 rounded-xl p-4 border border-gray-200 hover:border-indigo-300 transition-all"
+                            >
+                              <div className="flex items-start justify-between">
+                                <div className="flex-1">
+                                  <div className="flex items-center gap-3 mb-2">
+                                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold">
+                                      {user.name?.charAt(0)?.toUpperCase() || user.fullName?.charAt(0)?.toUpperCase() || 'U'}
+                                    </div>
+                                    <div>
+                                      <h4 className="font-semibold text-gray-900">
+                                        {user.name || user.fullName || 'Unknown'}
+                                      </h4>
+                                      <p className="text-sm text-gray-600">{user.email}</p>
+                                    </div>
+                                  </div>
+                                  <div className="flex flex-wrap items-center gap-3 mt-2">
+                                    <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold capitalize">
+                                      {user.role}
+                                    </span>
+                                    {user.role === 'student' && user.subscription && (
+                                      <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">
+                                        {user.subscription.planName || user.subscription.planType}
+                                      </span>
+                                    )}
+                                    {user.linkingCode && (
+                                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-mono">
+                                        Code: {user.linkingCode}
+                                      </span>
+                                    )}
+                                    {user.isLegacy && (
+                                      <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold">
+                                        Created Before Tracking
+                                      </span>
+                                    )}
+                                    <span className="text-xs text-gray-500">
+                                      Created: {new Date(user.createdAt).toLocaleDateString()}
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  {user.isVerified && (
+                                    <CheckCircle className="w-5 h-5 text-green-500" title="Verified" />
+                                  )}
+                                  {user.approvalStatus === 'approved' && (
+                                    <CheckCircle className="w-5 h-5 text-blue-500" title="Approved" />
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Pagination */}
+                        {usersTotal > 10 && (
+                          <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-200">
+                            <button
+                              onClick={() => setUsersPage((p) => Math.max(1, p - 1))}
+                              disabled={usersPage === 1}
+                              className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                              Previous
+                            </button>
+                            <span className="text-sm text-gray-600">
+                              Page {usersPage} of {Math.ceil(usersTotal / 10)}
+                            </span>
+                            <button
+                              onClick={() => setUsersPage((p) => p + 1)}
+                              disabled={usersPage >= Math.ceil(usersTotal / 10)}
+                              className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                              Next
+                            </button>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
                 </div>
               )}
 

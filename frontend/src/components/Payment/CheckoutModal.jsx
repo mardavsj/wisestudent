@@ -29,7 +29,7 @@ const loadRazorpay = () => {
   });
 };
 
-const CheckoutModal = ({ isOpen, onClose, planType, planName, amount, isFirstYear }) => {
+const CheckoutModal = ({ isOpen, onClose, planType, planName, amount }) => {
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState('init'); // init, register, payment, success, error
   const [paymentError, setPaymentError] = useState(null);
@@ -334,11 +334,6 @@ const CheckoutModal = ({ isOpen, onClose, planType, planName, amount, isFirstYea
               >
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="font-black text-lg text-gray-900">{planName}</h3>
-                  {amount > 0 && (
-                    <span className="text-xs bg-purple-600 text-white px-2 py-1 rounded-full font-bold">
-                      {isFirstYear ? 'First Year' : 'Renewal'}
-                    </span>
-                  )}
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span className="text-4xl font-black text-purple-600">₹{amount.toLocaleString()}</span>
@@ -373,7 +368,7 @@ const CheckoutModal = ({ isOpen, onClose, planType, planName, amount, isFirstYea
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <button
                         onClick={() => {
-                          localStorage.setItem('pending_subscription', JSON.stringify({ planType, planName, amount, isFirstYear }));
+                          localStorage.setItem('pending_subscription', JSON.stringify({ planType, planName, amount }));
                           navigate('/register', { state: { from: 'pricing', planType } });
                         }}
                         className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
@@ -383,7 +378,7 @@ const CheckoutModal = ({ isOpen, onClose, planType, planName, amount, isFirstYea
                       </button>
                       <button
                         onClick={() => {
-                          localStorage.setItem('pending_subscription', JSON.stringify({ planType, planName, amount, isFirstYear }));
+                          localStorage.setItem('pending_subscription', JSON.stringify({ planType, planName, amount }));
                           navigate('/register-parent', { state: { from: 'pricing', planType } });
                         }}
                         className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
@@ -404,7 +399,7 @@ const CheckoutModal = ({ isOpen, onClose, planType, planName, amount, isFirstYea
                   <div className="space-y-3">
                     <button
                       onClick={() => {
-                        localStorage.setItem('pending_subscription', JSON.stringify({ planType, planName, amount, isFirstYear }));
+                        localStorage.setItem('pending_subscription', JSON.stringify({ planType, planName, amount }));
                         navigate('/register', { state: { from: 'pricing', planType } });
                       }}
                       className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"

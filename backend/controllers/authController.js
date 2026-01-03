@@ -789,9 +789,6 @@ export const googleLogin = async (req, res) => {
           planType: 'free',
           planName: 'Free Plan',
           amount: 0,
-          firstYearAmount: 0,
-          renewalAmount: 0,
-          isFirstYear: true,
           status: 'active',
           startDate: new Date(),
           features: {

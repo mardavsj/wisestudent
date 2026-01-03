@@ -3,7 +3,8 @@ import Redemption from '../models/Redemption.js';
 import Organization from '../models/Organization.js';
 import ActivityLog from '../models/ActivityLog.js';
 import UserSubscription from '../models/UserSubscription.js';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
+import mongoose from 'mongoose';
 import { generateAvatar } from '../utils/avatarGenerator.js';
 
 // Admin Panel Data
@@ -748,6 +749,27 @@ export const createUserWithPlan = async (req, res) => {
       role,
     });
 
+    // Get the admin who is creating this user
+    const createdByAdminId = req.user?._id;
+    if (!createdByAdminId) {
+      return res.status(401).json({
+        success: false,
+        message: 'Admin authentication required',
+      });
+    }
+
+    // Ensure it's an ObjectId
+    const adminObjectId = mongoose.Types.ObjectId.isValid(createdByAdminId) 
+      ? new mongoose.Types.ObjectId(createdByAdminId) 
+      : createdByAdminId;
+
+    console.log('Creating user by admin:', {
+      adminId: adminObjectId.toString(),
+      adminEmail: req.user?.email,
+      adminRole: req.user?.role,
+      adminIdType: typeof adminObjectId
+    });
+
     // Create user
     const userData = {
       name: fullName.trim(),
@@ -756,12 +778,13 @@ export const createUserWithPlan = async (req, res) => {
       password: hashedPassword,
       role,
       isVerified: true, // Pre-verified for admin-created users
-      approvalStatus: ['parent', 'csr'].includes(role) ? 'pending' : 'approved',
+      approvalStatus: 'approved', // All admin-created users are automatically approved
       avatar: avatarData.url,
       avatarData: {
         type: 'generated',
         ...avatarData,
       },
+      createdByAdmin: adminObjectId, // Track which admin created this user
     };
 
     // Add role-specific fields
@@ -796,6 +819,19 @@ export const createUserWithPlan = async (req, res) => {
     }
 
     const newUser = await User.create(userData);
+    
+    // Verify the createdByAdmin was saved correctly
+    const savedUser = await User.findById(newUser._id).select('createdByAdmin email name role');
+    console.log('User created and saved:', {
+      userId: newUser._id.toString(),
+      email: newUser.email,
+      name: newUser.name,
+      role: newUser.role,
+      createdByAdmin: savedUser?.createdByAdmin?.toString(),
+      createdByAdminType: savedUser?.createdByAdmin ? savedUser.createdByAdmin.constructor.name : 'null',
+      expectedAdminId: adminObjectId.toString(),
+      match: savedUser?.createdByAdmin?.toString() === adminObjectId.toString()
+    });
 
     // Link student to parent if parentId provided
     if (parentId && role === 'student') {
@@ -866,9 +902,6 @@ export const createUserWithPlan = async (req, res) => {
       planType: selectedPlan,
       planName: planNames[selectedPlan],
       amount: planAmounts[selectedPlan],
-      firstYearAmount: planAmounts[selectedPlan],
-      renewalAmount: selectedPlan === 'student_premium' ? 999 : selectedPlan === 'student_parent_premium_pro' ? 1499 : 0,
-      isFirstYear: true,
       status: 'active',
       startDate: new Date(),
       endDate: selectedPlan !== 'free' ? new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) : undefined, // 1 year for paid plans
@@ -934,6 +967,157 @@ export const createUserWithPlan = async (req, res) => {
     res.status(500).json({
       success: false,
       message: error.message || 'Failed to create user',
+    });
+  }
+};
+
+// Get users created by the current admin
+export const getUsersCreatedByAdmin = async (req, res) => {
+  try {
+    const adminId = req.user?._id;
+    console.log('Fetching users created by admin:', {
+      adminId,
+      adminIdType: typeof adminId,
+      adminEmail: req.user?.email
+    });
+
+    if (!adminId) {
+      return res.status(401).json({
+        success: false,
+        message: 'Unauthorized',
+      });
+    }
+
+    const { page = 1, limit = 20, role, search, includeLegacy = 'true' } = req.query;
+    const skip = (parseInt(page) - 1) * parseInt(limit);
+
+    // Ensure adminId is properly formatted as ObjectId for query
+    let adminObjectId;
+    try {
+      if (mongoose.Types.ObjectId.isValid(adminId)) {
+        adminObjectId = adminId instanceof mongoose.Types.ObjectId 
+          ? adminId 
+          : new mongoose.Types.ObjectId(adminId);
+      } else {
+        adminObjectId = adminId;
+      }
+    } catch (e) {
+      console.error('Error converting adminId to ObjectId:', e);
+      adminObjectId = adminId;
+    }
+
+    // Build query - only show users created by this specific admin
+    const query = {
+      createdByAdmin: adminObjectId,
+      role: { $ne: 'admin' } // Exclude admin users
+    };
+
+    // Add role filter if specified
+    if (role && role !== 'all') {
+      query.role = role;
+    }
+
+    // Add search filter if specified
+    if (search) {
+      // Use $and to combine createdByAdmin with search
+      const searchConditions = {
+        $or: [
+          { name: { $regex: search, $options: 'i' } },
+          { email: { $regex: search, $options: 'i' } },
+          { fullName: { $regex: search, $options: 'i' } },
+        ]
+      };
+      
+      // If we already have a role filter, we need to use $and
+      if (role && role !== 'all') {
+        query.$and = [
+          { createdByAdmin: adminObjectId },
+          { role: role },
+          searchConditions
+        ];
+        delete query.role;
+      } else {
+        query.$and = [
+          { createdByAdmin: adminObjectId },
+          { role: { $ne: 'admin' } },
+          searchConditions
+        ];
+        delete query.role;
+      }
+    }
+
+    console.log('Query for users created by admin:', {
+      adminId: adminId?.toString(),
+      adminObjectId: adminObjectId?.toString(),
+      adminEmail: req.user?.email,
+      queryCreatedByAdmin: query.createdByAdmin?.toString(),
+      queryStructure: JSON.stringify(query, null, 2)
+    });
+
+    const users = await User.find(query)
+      .select('name fullName email role isVerified approvalStatus createdAt linkingCode createdByAdmin')
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(parseInt(limit));
+
+    const total = await User.countDocuments(query);
+
+    // Also check totals for debugging
+    const totalWithCreatedByAdmin = await User.countDocuments({ createdByAdmin: { $exists: true, $ne: null } });
+    const totalByThisAdmin = await User.countDocuments({ createdByAdmin: adminObjectId });
+    const totalLegacy = await User.countDocuments({ 
+      createdByAdmin: { $exists: false },
+      role: { $ne: 'admin' }
+    });
+
+    console.log('Found users:', {
+      count: users.length,
+      total,
+      totalWithCreatedByAdmin,
+      totalByThisAdmin,
+      totalLegacy,
+      queryAdminId: adminObjectId.toString(),
+      users: users.map(u => ({
+        email: u.email,
+        createdByAdmin: u.createdByAdmin?.toString() || 'legacy',
+        createdByAdminType: u.createdByAdmin ? typeof u.createdByAdmin : 'legacy'
+      }))
+    });
+
+    // Get subscription info for students and mark legacy users
+    const usersWithSubscriptions = await Promise.all(
+      users.map(async (user) => {
+        const userObj = user.toObject();
+        // Mark as legacy if createdByAdmin doesn't exist
+        userObj.isLegacy = !user.createdByAdmin;
+        if (user.role === 'student') {
+          const subscription = await UserSubscription.findOne({
+            userId: user._id,
+            status: 'active',
+          }).select('planType planName');
+          userObj.subscription = subscription || null;
+        }
+        return userObj;
+      })
+    );
+
+    res.json({
+      success: true,
+      data: {
+        users: usersWithSubscriptions,
+        pagination: {
+          page: parseInt(page),
+          limit: parseInt(limit),
+          total,
+          pages: Math.ceil(total / parseInt(limit)),
+        },
+      },
+    });
+  } catch (error) {
+    console.error('Error fetching users created by admin:', error);
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to fetch users',
     });
   }
 };

@@ -667,9 +667,6 @@ export const completeGoogleUserProfile = async (req, res) => {
           planType: 'free',
           planName: 'Free Plan',
           amount: 0,
-          firstYearAmount: 0,
-          renewalAmount: 0,
-          isFirstYear: true,
           status: 'active',
           startDate: new Date(),
           features: {
@@ -905,9 +902,6 @@ export const completeGoogleUserProfile = async (req, res) => {
             planType === 'student_parent_premium_pro' ? 'Student + Parent Premium Pro Plan' :
             'Educational Institutions Premium Plan',
           amount: 0,
-          firstYearAmount: 0,
-          renewalAmount: 0,
-          isFirstYear: true,
           status: 'active',
           startDate: new Date(),
           endDate: planEndDate || undefined,

@@ -235,6 +235,10 @@ const userSchema = new mongoose.Schema(
     approvedAt: {
       type: Date,
     },
+    createdByAdmin: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
     rejectedAt: {
       type: Date,
     },

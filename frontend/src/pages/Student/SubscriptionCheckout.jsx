@@ -44,27 +44,24 @@ const loadRazorpay = () => {
 const PLAN_CONFIG = {
   free: {
     name: 'Free Plan',
-    firstYearPrice: 0,
-    renewalPrice: 0,
+    price: 0,
     features: ['5 Games per Pillar', 'Basic Dashboard', 'HealCoins Rewards'],
   },
   student_premium: {
     name: 'Students Premium Plan',
-    firstYearPrice: 4499,
-    renewalPrice: 999,
+    price: 4499,
     features: [
       'Full access to all 10 Pillars',
       '2200+ Gaming Micro Lessons',
       'Advanced Analytics & Reports',
-      'Certificates & Achievements',
-      'WiseClub Community Access',
+      'Certificates, Badges & Achievements',
+      'WiseClub Community Access (Coming Soon)',
       'Presentation Tool',
     ],
   },
   student_parent_premium_pro: {
     name: 'Student + Parent Premium Pro Plan',
-    firstYearPrice: 4999,
-    renewalPrice: 1499,
+    price: 4999,
     features: [
       'Everything in Students Premium',
       'Dedicated Parent Dashboard',
@@ -125,11 +122,8 @@ const SubscriptionCheckout = () => {
       return planState.amount;
     }
     const config = PLAN_CONFIG[planType] || PLAN_CONFIG.student_premium;
-    if (checkoutMode === 'renew') {
-      return config.renewalPrice;
-    }
-    return isFirstYear ? config.firstYearPrice : config.renewalPrice;
-  }, [planType, isFirstYear, checkoutMode, initialPlanType, planState.amount]);
+    return config.price || 0;
+  }, [planType, checkoutMode, initialPlanType, planState.amount]);
 
   const availablePlanKeys = useMemo(() => {
     if (isParentContext) {
@@ -355,12 +349,9 @@ const SubscriptionCheckout = () => {
             )}
             <h3 className="text-lg font-black text-gray-900 mb-2">{config.name}</h3>
             <div className="flex items-baseline gap-2 mb-3">
-              <span className="text-3xl font-black text-purple-600">₹{config.firstYearPrice.toLocaleString()}</span>
-              <span className="text-sm text-gray-500">/ first year</span>
+              <span className="text-3xl font-black text-purple-600">₹{config.price.toLocaleString()}</span>
+              <span className="text-sm text-gray-500">/year</span>
             </div>
-            {config.renewalPrice > 0 && (
-              <p className="text-xs text-gray-500 mb-3">Renewal: ₹{config.renewalPrice.toLocaleString()}/year</p>
-            )}
             <ul className="space-y-1 text-sm text-gray-600">
               {config.features.slice(0, 3).map((feature, index) => (
                 <li key={index} className="flex items-center gap-2">

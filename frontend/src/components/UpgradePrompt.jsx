@@ -31,11 +31,11 @@ const UpgradePrompt = ({
     }
     
     if (feature === 'wiseClub') {
-      return 'WiseClub Community Access is available in premium plans. Upgrade to join the community!';
+      return 'WiseClub Community Access is coming soon in premium plans. Upgrade now to be among the first to access it when it launches!';
     }
     
     if (feature === 'certificates') {
-      return 'Certificates & Achievements are available in premium plans. Upgrade to earn certificates!';
+      return 'Certificates, Badges & Achievements are available in premium plans. Upgrade to earn certificates!';
     }
     
     if (feature === 'analytics') {
