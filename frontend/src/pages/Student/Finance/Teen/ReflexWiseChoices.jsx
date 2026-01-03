@@ -238,13 +238,7 @@ const ReflexWiseChoices = () => {
                   <span className="text-yellow-400">{score}/{TOTAL_ROUNDS}</span>
                 </div>
               </div>
-              {/* Progress Bar */}
-              <div className="mt-3 w-full bg-white/20 rounded-full h-2">
-                <div 
-                  className={`h-2 rounded-full transition-all ${getTimerColor()}`}
-                  style={{ width: `${(timeLeft / ROUND_TIME) * 100}%` }}
-                ></div>
-              </div>
+
             </div>
 
             {/* Question */}

@@ -31,7 +31,7 @@ const AskClearlyStory = () => {
         { 
           id: "a", 
           text: "Can you help me please?", 
-          emoji: "🧩", 
+          emoji: "😐", 
          
           isCorrect: true
         },
@@ -62,7 +62,7 @@ const AskClearlyStory = () => {
         { 
           id: "a", 
           text: "May I borrow your toy?", 
-          emoji: "🧸", 
+          emoji: "🙂", 
           isCorrect: true
         },
         { 
@@ -92,7 +92,7 @@ const AskClearlyStory = () => {
         { 
           id: "a", 
           text: "Can I have water please?", 
-          emoji: "💧", 
+          emoji: "☺️", 
           isCorrect: true
         }
       ]
@@ -110,7 +110,7 @@ const AskClearlyStory = () => {
         { 
           id: "a", 
           text: "Can you explain again?", 
-          emoji: "📖", 
+          emoji: "😕", 
           isCorrect: true
         },
         { 
@@ -140,7 +140,7 @@ const AskClearlyStory = () => {
         { 
           id: "a", 
           text: "May we play outside?", 
-          emoji: "🌳", 
+          emoji: "🙂", 
           isCorrect: true
         }
       ]

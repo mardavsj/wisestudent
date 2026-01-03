@@ -22,171 +22,169 @@ const SimulationMonthlyAllowance = () => {
   const [answered, setAnswered] = useState(false);
 
   const scenarios = [
-    {
-      id: 1,
-      title: "Monthly Allowance Budget",
-      description: "You receive ₹1000 as monthly allowance. What's the best approach?",
-      amount: 1000,
-      options: [
-              
-        { 
-          id: "spend-all", 
-          text: "Spend all on wants", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-         { 
-          id: "balanced", 
-          text: "Balanced 40-30-20-10 plan", 
-          emoji: "📊", 
-          isCorrect: true
-        },
-        { 
-          id: "save-all", 
-          text: "Save everything", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "random", 
-          text: "Spend randomly", 
-          emoji: "🎲", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Part-time Job Earnings",
-      description: "You earn ₹1500 from a part-time job. How should you use it?",
-      amount: 1500,
-      options: [
-        { 
-          id: "smart-plan", 
-          text: "Smart allocation plan", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-        { 
-          id: "luxury", 
-          text: "All luxury items", 
-          emoji: "💎", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore and forget", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          id: "invest-all", 
-          text: "Invest everything", 
-          emoji: "📈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Scholarship Money",
-      description: "You receive ₹2000 as scholarship. What's the wisest choice?",
-      amount: 2000,
-      options: [
-       
-        { 
-          id: "vacation", 
-          text: "Fun vacation trip", 
-          emoji: "✈️", 
-          isCorrect: false
-        },
-        { 
-          id: "hoard", 
-          text: "Hide under mattress", 
-          emoji: "🛏️", 
-          isCorrect: false
-        },
-        { 
-          id: "donate", 
-          text: "Donate to charity", 
-          emoji: "💝", 
-          isCorrect: false
-        },
-         { 
-          id: "invest-in-self", 
-          text: "Invest in education first", 
-          emoji: "🎓", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      title: "Birthday Gift Money",
-      description: "You get ₹800 as birthday gift. What should you do?",
-      amount: 800,
-      options: [
-        
-        { 
-          id: "instant-gratification", 
-          text: "Instant gratification", 
-          emoji: "🎁", 
-          isCorrect: false
-        },
-        { 
-          id: "random", 
-          text: "Random spending", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        { 
-          id: "plan-ahead", 
-          text: "Plan for future needs", 
-          emoji: "📅", 
-          isCorrect: true
-        },
-        { 
-          id: "share", 
-          text: "Share with friends", 
-          emoji: "🤝", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Summer Job Income",
-      description: "You earn ₹2500 from summer job. What's the best strategy?",
-      amount: 2500,
-      options: [
-        
-        { 
-          id: "debt", 
-          text: "Pay off debts", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "strategy", 
-          text: "Balanced strategy", 
-          emoji: "📈", 
-          isCorrect: true
-        },
-        { 
-          id: "impulse", 
-          text: "Impulse buying", 
-          emoji: "🛒", 
-          isCorrect: false
-        },
-        { 
-          id: "save-all2", 
-          text: "Save all earnings", 
-          emoji: "💰", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Monthly Allowance Choices",
+    description: "You get ₹1000 as allowance. How can you use it wisely?",
+    amount: 1000,
+    options: [
+      { 
+        id: "splurge", 
+        text: "Buy only trending items", 
+        emoji: "🛍️", 
+        isCorrect: false
+      },
+      { 
+        id: "budget-smart", 
+        text: "Set aside for essentials, fun, and saving", 
+        emoji: "📊", 
+        isCorrect: true
+      },
+      { 
+        id: "hide", 
+        text: "Keep all cash hidden at home", 
+        emoji: "🛏️", 
+        isCorrect: false
+      },
+      { 
+        id: "random-spending", 
+        text: "Spend without thinking", 
+        emoji: "🎲", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Part-time Job Earnings",
+    description: "You earn ₹1500 from a weekend job. What's a smart approach?",
+    amount: 1500,
+    options: [
+      { 
+        id: "plan-smart", 
+        text: "Divide for goals, needs, and fun", 
+        emoji: "🎯", 
+        isCorrect: true
+      },
+      { 
+        id: "luxury-only", 
+        text: "Spend only on gadgets or clothes", 
+        emoji: "💎", 
+        isCorrect: false
+      },
+      { 
+        id: "forget", 
+        text: "Forget it exists", 
+        emoji: "😴", 
+        isCorrect: false
+      },
+      { 
+        id: "invest-all", 
+        text: "Invest without research", 
+        emoji: "📈", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Scholarship Bonus",
+    description: "You receive ₹2000 scholarship. What’s the smartest way to use it?",
+    amount: 2000,
+    options: [
+      { 
+        id: "trip", 
+        text: "Go on a luxury trip", 
+        emoji: "✈️", 
+        isCorrect: false
+      },
+      { 
+        id: "hide-money", 
+        text: "Hide it at home", 
+        emoji: "🛏️", 
+        isCorrect: false
+      },
+      { 
+        id: "donate", 
+        text: "Donate it all immediately", 
+        emoji: "💝", 
+        isCorrect: false
+      },
+      { 
+        id: "self-invest", 
+        text: "Buy books, courses, or tools for learning", 
+        emoji: "🎓", 
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Birthday Gift Money",
+    description: "You get ₹800 as birthday money. What's a thoughtful choice?",
+    amount: 800,
+    options: [
+      { 
+        id: "impulse-buy", 
+        text: "Spend on instant fun only", 
+        emoji: "🎁", 
+        isCorrect: false
+      },
+      { 
+        id: "random", 
+        text: "Buy whatever looks fun", 
+        emoji: "🎲", 
+        isCorrect: false
+      },
+      { 
+        id: "plan-future", 
+        text: "Save for a bigger goal or need", 
+        emoji: "📅", 
+        isCorrect: true
+      },
+      { 
+        id: "share-friends", 
+        text: "Give it all to friends", 
+        emoji: "🤝", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Summer Job Windfall",
+    description: "You earn ₹2500 from a summer job. How to maximize benefits?",
+    amount: 2500,
+    options: [
+       { 
+        id: "balanced-plan", 
+        text: "Split for saving, learning, and small treats", 
+        emoji: "📈", 
+        isCorrect: true
+      },
+      { 
+        id: "debt-payment", 
+        text: "Rush to pay debts you don’t fully understand", 
+        emoji: "💳", 
+        isCorrect: false
+      },
+     
+      { 
+        id: "impulse-buying", 
+        text: "Spend on impulse purchases", 
+        emoji: "🛒", 
+        isCorrect: false
+      },
+      { 
+        id: "save-all", 
+        text: "Save all without any plan", 
+        emoji: "💰", 
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered) return;

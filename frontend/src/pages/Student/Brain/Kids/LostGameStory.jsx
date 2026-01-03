@@ -107,7 +107,7 @@ const LostGameStory = () => {
         { 
           id: "smile", 
           text: "Smile and clap", 
-          emoji: "😊👏", 
+          emoji: "😊", 
           isCorrect: true
         },
         { 
@@ -132,21 +132,21 @@ const LostGameStory = () => {
           id: "kick", 
           text: "Kick ball away", 
           emoji: "⚽", 
-          description: "Express anger by kicking",
+          
           isCorrect: false
         },
         { 
           id: "yell", 
           text: "Yell", 
           emoji: "😡", 
-          description: "Shout in frustration",
+          
           isCorrect: false
         },
         { 
           id: "support", 
           text: "Support teammates", 
           emoji: "🤝", 
-          description: "Encourage your team",
+          
           isCorrect: true
         }
       ]

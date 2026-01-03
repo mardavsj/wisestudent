@@ -24,162 +24,83 @@ const BadgeBudgetKid = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   const challenges = [
-    {
-      id: 1,
-      title: "Budget Basics",
-      question: "What is a budget?",
-      options: [
-        { 
-          text: "A plan for how to spend your money", 
-          emoji: "📝", 
-          isCorrect: true
-        },
-        { 
-          text: "A type of savings account", 
-          emoji: "🏦", 
-          isCorrect: false
-        },
-        { 
-          text: "Money you get from parents", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          text: "A shopping list", 
-          emoji: "📋", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Excellent! A budget helps you plan your spending wisely!",
-        wrong: "A budget is a plan for how to spend your money!"
-      }
-    },
-    {
-      id: 2,
-      title: "Budget Benefits",
-      question: "Why is it important to make a budget?",
-      options: [
-        { 
-          text: "To spend all your money quickly", 
-          emoji: "💨", 
-          isCorrect: false
-        },
-        { 
-          text: "To track your money and avoid overspending", 
-          emoji: "📊", 
-          isCorrect: true
-        },
-        { 
-          text: "To buy expensive things", 
-          emoji: "🛒", 
-          isCorrect: false
-        },
-        { 
-          text: "To hide money from parents", 
-          emoji: "🔒", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Perfect! Budgeting helps you manage money smartly!",
-        wrong: "Budgeting helps you track money and avoid overspending!"
-      }
-    },
-    {
-      id: 3,
-      title: "Money Math",
-      question: "If you have ₹100 and want to save ₹30, how much can you spend?",
-      options: [
-        { 
-          text: "₹100", 
-          emoji: "1️⃣", 
-          isCorrect: false
-        },
-        { 
-          text: "₹130", 
-          emoji: "3️⃣", 
-          isCorrect: false
-        },
-        { 
-          text: "₹30", 
-          emoji: "3️⃣", 
-          isCorrect: false
-        },
-        { 
-          text: "₹70", 
-          emoji: "7️⃣", 
-          isCorrect: true
-        }
-      ],
-      feedback: {
-        correct: "Great math! ₹100 - ₹30 = ₹70 to spend!",
-        wrong: "Subtract savings from total: ₹100 - ₹30 = ₹70!"
-      }
-    },
-    {
-      id: 4,
-      title: "Budget Planning",
-      question: "What should you do first when making a budget?",
-      options: [
-        { 
-          text: "Spend all your money", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          text: "Buy everything you want", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          text: "List your income and expenses", 
-          emoji: "📋", 
-          isCorrect: true
-        },
-        { 
-          text: "Ask for more money", 
-          emoji: "🤝", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Smart! Knowing your income and expenses is the first step!",
-        wrong: "First, list what money you have (income) and what you need to spend (expenses)!"
-      }
-    },
-    {
-      id: 5,
-      title: "Budget Success",
-      question: "What is the best way to stick to your budget?",
-      options: [
-        { 
-          text: "Track your spending and adjust when needed", 
-          emoji: "🔍", 
-          isCorrect: true
-        },
-        { 
-          text: "Ignore it and spend freely", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          text: "Spend more than planned", 
-          emoji: "📈", 
-          isCorrect: false
-        },
-        { 
-          text: "Never save money", 
-          emoji: "❌", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Perfect! Tracking helps you stay on budget!",
-        wrong: "Track your spending regularly and adjust your budget when needed!"
-      }
+  {
+    id: 1,
+    title: "Smart Choice Badge",
+    question: "You get ₹100 as pocket money for a week. What is the smartest first step?",
+    options: [
+      { text: "Decide how much to save and spend", emoji: "🧠", isCorrect: true },
+      { text: "Spend it on the first day", emoji: "⚡", isCorrect: false },
+      { text: "Buy snacks every day", emoji: "🍭", isCorrect: false },
+      { text: "Forget how much you have", emoji: "😵", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Excellent! Thinking before spending earns you a smart badge!",
+      wrong: "Planning how to save and spend helps you use money wisely!"
     }
-  ];
+  },
+  {
+    id: 2,
+    title: "Needs vs Wants",
+    question: "You see a notebook you need and a toy you want. You can buy only one. What do you choose?",
+    options: [
+      { text: "Buy the toy", emoji: "🧸", isCorrect: false },
+      { text: "Buy nothing and leave", emoji: "🚪", isCorrect: false },
+      { text: "Buy the notebook first", emoji: "📘", isCorrect: true },
+      { text: "Ask someone else to pay", emoji: "🤷", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Great choice! Needs always come before wants!",
+      wrong: "Buying what you need first is a smart money habit!"
+    }
+  },
+  {
+    id: 3,
+    title: "Saving Power",
+    question: "You save ₹10 every day. How much do you save in 5 days?",
+    options: [
+      { text: "₹50", emoji: "💰", isCorrect: true },
+      { text: "₹10", emoji: "1️⃣", isCorrect: false },
+      { text: "₹100", emoji: "💯", isCorrect: false },
+      { text: "₹5", emoji: "5️⃣", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Awesome math! Small savings grow fast!",
+      wrong: "₹10 saved for 5 days becomes ₹50!"
+    }
+  },
+  {
+    id: 4,
+    title: "Spending Control",
+    question: "You plan to buy snacks for ₹20 but see a bigger pack for ₹40. What is the best move?",
+    options: [
+      { text: "Buy the bigger pack", emoji: "📦", isCorrect: false },
+      { text: "Spend without thinking", emoji: "😋", isCorrect: false },
+      { text: "Borrow extra money", emoji: "💳", isCorrect: false },
+      { text: "Stick to your plan", emoji: "🧭", isCorrect: true },
+    ],
+    feedback: {
+      correct: "Well done! Following your plan shows great control!",
+      wrong: "Sticking to your plan keeps your budget safe!"
+    }
+  },
+  {
+    id: 5,
+    title: "Goal Achiever",
+    question: "You want to buy a book next month. What helps you reach this goal?",
+    options: [
+      { text: "Spending daily on treats", emoji: "🍬", isCorrect: false },
+      { text: "Saving a little every week", emoji: "🎯", isCorrect: true },
+      { text: "Waiting for someone else to buy it", emoji: "⏳", isCorrect: false },
+      { text: "Forgetting about the goal", emoji: "🙃", isCorrect: false }
+    ],
+    feedback: {
+      correct: "Fantastic! Saving regularly helps you reach goals!",
+      wrong: "Small weekly savings help you buy things you plan for!"
+    }
+  }
+];
+
 
   const handleAnswer = (isCorrect, optionIndex) => {
     if (answered) return;

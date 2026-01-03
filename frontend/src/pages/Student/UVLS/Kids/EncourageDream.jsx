@@ -30,7 +30,7 @@ const EncourageDream = () => {
         { 
           id: "a", 
           text: "You can do it!", 
-          emoji: "✈️", 
+          emoji: "🙂", 
           
           isCorrect: true 
         },
@@ -62,7 +62,7 @@ const EncourageDream = () => {
         { 
           id: "a", 
           text: "Great idea, go for it!", 
-          emoji: "👩‍🍳", 
+          emoji: "👩", 
           isCorrect: true 
         },
         { 
@@ -92,7 +92,7 @@ const EncourageDream = () => {
         { 
           id: "a", 
           text: "Awesome, build cool things!", 
-          emoji: "🛠️", 
+          emoji: "😐", 
           isCorrect: true 
         }
       ]
@@ -116,7 +116,7 @@ const EncourageDream = () => {
         { 
           id: "a", 
           text: "You'll be amazing!", 
-          emoji: "👩‍🏫", 
+          emoji: "�", 
           isCorrect: true 
         }
       ]
@@ -128,7 +128,7 @@ const EncourageDream = () => {
         { 
           id: "a", 
           text: "Create beautiful art!", 
-          emoji: "🎨", 
+          emoji: "☺️", 
           isCorrect: true 
         },
         { 

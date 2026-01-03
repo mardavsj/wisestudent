@@ -28,130 +28,132 @@ const SpotFallacy = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which reasoning is wrong?",
-      options: [
-        { 
-          id: "a", 
-          text: "Birds fly, so cats fly.", 
-          emoji: "🐱", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Eat veggies to grow.", 
-          emoji: "🥦", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Toys never sleep.", 
-          emoji: "🧸", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which reasoning is wrong?",
-      options: [
-        { 
-          id: "a", 
-          text: "Rain makes puddles.", 
-          emoji: "🌧️", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "c", 
-          text: "Dogs talk.", 
-          emoji: "🐕", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Sun is cheese.", 
-          emoji: "🧀", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "Which reasoning is wrong?",
-      options: [
-        { 
-          id: "a", 
-          text: "Study to learn.", 
-          emoji: "📚", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Moon is banana.", 
-          emoji: "🍌", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Cars don't sleep.", 
-          emoji: "🚗", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which reasoning is wrong?",
-      options: [
-        { 
-          id: "b", 
-          text: "Trees dance.", 
-          emoji: "🌳", 
-          isCorrect: true
-        },
-        { 
-          id: "a", 
-          text: "Sleep to rest.", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "c", 
-          text: "Books to read.", 
-          emoji: "📖", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which reasoning is wrong?",
-      options: [
-        { 
-          id: "a", 
-          text: "Play to have fun.", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "c", 
-          text: "Clouds are condensation.", 
-          emoji: "☁️", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Houses swim.", 
-          emoji: "🏠", 
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which sentence does not make logical sense?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Washing hands keeps germs away.",
+        emoji: "🧼",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Shoes protect feet.",
+        emoji: "👟",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Fish live in water, so all water animals are fish.",
+        emoji: "🐟",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "Which idea uses faulty thinking?",
+    options: [
+     
+      {
+        id: "b",
+        text: "Practicing improves skills.",
+        emoji: "🎯",
+        isCorrect: false
+      },
+       {
+        id: "a",
+        text: "One fast runner wins one race, so they win every race.",
+        emoji: "🏃",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Food gives energy.",
+        emoji: "🍎",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Which statement shows incorrect reasoning?",
+    options: [
+      {
+        id: "a",
+        text: "This pencil works, so every pencil works forever.",
+        emoji: "✏️",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Plants need sunlight to grow.",
+        emoji: "🌱",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Rest helps the body recover.",
+        emoji: "😴",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Which thought jumps to the wrong conclusion?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Rain helps plants grow.",
+        emoji: "🌼",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Umbrellas keep people dry.",
+        emoji: "☂️",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "One rainy day ruins the whole month.",
+        emoji: "🌧️",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "Which sentence shows a thinking mistake?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Honesty builds trust.",
+        emoji: "🤝",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "One friend lies once, so no one can be trusted.",
+        emoji: "🤥",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Listening helps solve problems.",
+        emoji: "👂",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

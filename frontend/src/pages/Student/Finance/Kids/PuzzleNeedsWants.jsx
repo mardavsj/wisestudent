@@ -82,6 +82,7 @@ const PuzzleNeedsWants = () => {
     { itemId: 4, categoryId: 8 }, // Pocket Money → Save
     { itemId: 5, categoryId: 9 }  // Financial Knowledge → Invest
   ];
+  
   const handleItemSelect = (item) => {
     if (gameFinished) return;
     setSelectedItem(item);
@@ -191,7 +192,7 @@ const PuzzleNeedsWants = () => {
                       <div className="text-2xl mr-3">{item.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{item.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {item.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

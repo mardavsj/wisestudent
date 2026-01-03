@@ -27,145 +27,63 @@ const MatchFaces = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "How is this person feeling?",
-      emoji: "😊",
-      correct: "Happy",
-      options: [
-        { 
-          id: "happy", 
-          text: "Happy", 
-        
-          // description: "Feeling joyful and cheerful",
-          isCorrect: true 
-        },
-        { 
-          id: "sad", 
-          text: "Sad", 
-       
-          // description: "Feeling down or upset",
-          isCorrect: false 
-        },
-        { 
-          id: "angry", 
-          text: "Angry", 
-        
-          // description: "Feeling mad or frustrated",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "How is this person feeling?",
-      emoji: "😢",
-      correct: "Sad",
-      options: [
-        { 
-          id: "excited", 
-          text: "Excited", 
-         
-          // description: "Feeling thrilled and energetic",
-          isCorrect: false 
-        },
-        { 
-          id: "sad", 
-          text: "Sad", 
-          
-          // description: "Feeling down or upset",
-          isCorrect: true 
-        },
-        { 
-          id: "sleepy", 
-          text: "Sleepy", 
-        
-          // description: "Feeling tired and drowsy",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How is this person feeling?",
-      emoji: "😡",
-      correct: "Angry",
-      options: [
-        { 
-          id: "angry", 
-          text: "Angry", 
-          
-          // description: "Feeling mad or frustrated",
-          isCorrect: true 
-        },
-        { 
-          id: "happy", 
-          text: "Happy", 
-          // description: "Feeling joyful and cheerful",
-          isCorrect: false 
-        },
-        { 
-          id: "scared", 
-          text: "Scared", 
-          // description: "Feeling afraid or worried",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How is this person feeling?",
-      emoji: "😨",
-      correct: "Scared",
-      options: [
-        { 
-          id: "bored", 
-          text: "Bored", 
-          // description: "Feeling uninterested",
-          isCorrect: false 
-        },
-        { 
-          id: "happy", 
-          text: "Happy", 
-            // description: "Feeling joyful and cheerful",
-          isCorrect: false 
-        },
-        { 
-          id: "scared", 
-          text: "Scared", 
-         
-          // description: "Feeling afraid or worried",
-          isCorrect: true 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "How is this person feeling?",
-      emoji: "😴",
-      correct: "Sleepy",
-      options: [
-        { 
-          id: "sleepy", 
-          text: "Sleepy", 
-          // description: "Feeling tired and drowsy",
-          isCorrect: true 
-        },
-        { 
-          id: "angry", 
-          text: "Angry", 
-          // description: "Feeling mad or frustrated",
-          isCorrect: false 
-        },
-        { 
-          id: "excited", 
-          text: "Excited", 
-          // description: "Feeling thrilled and energetic",
-          isCorrect: false 
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "How is this person feeling after sharing toys with a friend?",
+    emoji: "😊",
+    correct: "Kind",
+    options: [
+      { id: "jealous", text: "Jealous", isCorrect: false },
+      { id: "angry", text: "Angry", isCorrect: false },
+      { id: "kind", text: "Kind", isCorrect: true },
+    ]
+  },
+  {
+    id: 2,
+    text: "How is this person feeling when their drawing won a contest?",
+    emoji: "😃",
+    correct: "Proud",
+    options: [
+      { id: "sad", text: "Sad", isCorrect: false },
+      { id: "proud", text: "Proud", isCorrect: true },
+      { id: "bored", text: "Bored", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "How is this person feeling after breaking a friend’s toy accidentally?",
+    emoji: "😟",
+    correct: "Sorry",
+    options: [
+      { id: "sorry", text: "Sorry", isCorrect: true },
+      { id: "happy", text: "Happy", isCorrect: false },
+      { id: "excited", text: "Excited", isCorrect: false },
+    ]
+  },
+  {
+    id: 4,
+    text: "How is this person feeling before giving a speech in front of the class?",
+    emoji: "😰",
+    correct: "Nervous",
+    options: [
+      { id: "angry", text: "Angry", isCorrect: false },
+      { id: "sleepy", text: "Sleepy", isCorrect: false },
+      { id: "nervous", text: "Nervous", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    text: "How is this person feeling after helping a friend solve homework?",
+    emoji: "😄",
+    correct: "Helpful",
+    options: [
+      { id: "jealous", text: "Jealous", isCorrect: false },
+      { id: "helpful", text: "Helpful", isCorrect: true },
+      { id: "bored", text: "Bored", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;

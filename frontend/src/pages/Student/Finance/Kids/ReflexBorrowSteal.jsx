@@ -115,7 +115,7 @@ const ReflexBorrowSteal = () => {
     }, 1000);
   }, []);
 
-  // Timer effect - countdown from 5 seconds for each question
+  // Timer effect - countdown from 10 seconds for each question
   useEffect(() => {
     if (gameState !== "playing") {
       if (timerRef.current) {
@@ -160,7 +160,7 @@ const ReflexBorrowSteal = () => {
         timerRef.current = null;
       }
     };
-  }, [gameState, handleTimeUp]);
+  }, [gameState, currentRound, handleTimeUp]);
 
   const startGame = () => {
     setGameState("playing");

@@ -169,7 +169,7 @@ const ServiceDesignPuzzle = () => {
                       <div className="text-2xl mr-3">{factor.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{factor.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {factor.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

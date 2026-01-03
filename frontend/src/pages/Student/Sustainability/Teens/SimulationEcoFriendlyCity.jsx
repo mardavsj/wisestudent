@@ -85,7 +85,7 @@ const SimulationEcoFriendlyCity = () => {
         { id: "c", text: "Public transport", emoji: "🚌", isCorrect: true },
         { id: "a", text: "Private cars only", emoji: "🚗", isCorrect: false },
         { id: "b", text: "More airports", emoji: "✈️", isCorrect: false },
-        { id: "d", text: "trains and rockets", emoji: "🚴", isCorrect: false }
+        { id: "d", text: "trains and rockets", emoji: "🚀", isCorrect: false }
       ]
     },
     {

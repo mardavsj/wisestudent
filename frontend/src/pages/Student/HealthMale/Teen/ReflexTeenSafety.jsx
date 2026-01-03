@@ -50,9 +50,9 @@ const ReflexTeenSafety = () => {
   {
     id: 3,
     question: "You are prescribed two medicines by different doctors. What is the safest step?",
-    correctAnswer: "Check for Interactions",
+    correctAnswer: "Check for Instructions",
     options: [
-      { text: "Check for Interactions", isCorrect: true, emoji: "🔍" },
+      { text: "Check for Instructions", isCorrect: true, emoji: "🔍" },
       { text: "Take Both Immediately", isCorrect: false, emoji: "💊" },
       { text: "Alternate Days Yourself", isCorrect: false, emoji: "🔁" },
       { text: "Stop One Without Telling", isCorrect: false, emoji: "🤐" }

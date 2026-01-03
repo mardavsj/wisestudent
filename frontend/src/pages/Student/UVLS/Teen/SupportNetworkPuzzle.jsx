@@ -169,7 +169,7 @@ const SupportNetworkPuzzle = () => {
                       <div className="text-2xl mr-3">{supporter.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{supporter.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {supporter.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

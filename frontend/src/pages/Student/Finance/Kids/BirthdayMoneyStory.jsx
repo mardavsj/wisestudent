@@ -24,128 +24,135 @@ const BirthdayMoneyStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "It's your birthday and you received ₹50 from your relatives. What would you like to do?",
-      options: [
-        { 
-          id: "save", 
-          text: "Save Some", 
-          emoji: "🏦", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "spend", 
-          text: "Spend All", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          id: "give", 
-          text: "Give to Parents", 
-          emoji: "👨‍👩‍👧", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You saved ₹30 from your birthday money. A friend invites you to a movie that costs ₹25. What do you do?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Go to Movie", 
-          emoji: "🎬", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Keep Saving", 
-          emoji: "💰", 
-          isCorrect: true
-        },
-        { 
-          id: "borrow", 
-          text: "Ask for More", 
-          emoji: "💳", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "After 3 months, you have ₹90 saved. You see a toy you want for ₹80. What's the best choice?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Buy the Toy", 
-          emoji: "🧸", 
-          isCorrect: false
-        },
-        { 
-          id: "split", 
-          text: "Buy Half", 
-          emoji: "🤝", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Save More", 
-          emoji: "📈", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Your friend wants to borrow ₹20 from your savings. What should you do?",
-      options: [
-        { 
-          id: "save", 
-          text: "Keep Your Savings", 
-          emoji: "🔒", 
-          isCorrect: true
-        },
-        { 
-          id: "lend", 
-          text: "Lend the Money", 
-          emoji: "🤲", 
-          isCorrect: false
-        },
-        { 
-          id: "ask", 
-          text: "Ask Parents", 
-          emoji: "👨‍👩‍👧", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You've saved ₹100! Your parents offer to match it if you save for 2 more months. What do you do?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Spend Now", 
-          emoji: "🛒", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Keep Saving", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-        { 
-          id: "half", 
-          text: "Spend Half", 
-          emoji: "⚖️", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You receive birthday money and want to use it wisely. What is the best first step?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Spend it immediately without thinking",
+        emoji: "🛍️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Hide the money and forget about it",
+        emoji: "🙈",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Decide how much to save and spend",
+        emoji: "🧠",
+        isCorrect: true
+      },
+    ]
+  },
+
+  {
+    id: 2,
+    text: "You want to buy a gift for your sibling using your birthday money. What does this show?",
+    options: [
+      {
+        id: "a",
+        text: "Sharing and caring for others",
+        emoji: "🎁",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Wasting money on others",
+        emoji: "❌",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Forgetting your own needs",
+        emoji: "🤷",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 3,
+    text: "You see a toy you like, but you also want to save for something bigger later. What should you do?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Buy the toy without thinking",
+        emoji: "🧸",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Compare needs before making a choice",
+        emoji: "⚖️",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Ask friends what to buy",
+        emoji: "👥",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 4,
+    text: "Your parents suggest keeping your birthday money in a piggy bank. Why is this helpful?",
+    options: [
+      {
+        id: "a",
+        text: "It helps build a saving habit",
+        emoji: "💰",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "It makes money difficult to use",
+        emoji: "🔒",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "It stops you from enjoying money",
+        emoji: "😕",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 5,
+    text: "After saving your birthday money, you feel proud of your effort. What skill are you learning?",
+    options: [
+     
+      {
+        id: "b",
+        text: "Avoiding fun completely",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Spending only on toys",
+        emoji: "🎮",
+        isCorrect: false
+      },
+       {
+        id: "a",
+        text: "Financial responsibility",
+        emoji: "📘",
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

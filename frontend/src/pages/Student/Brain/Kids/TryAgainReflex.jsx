@@ -35,161 +35,58 @@ const TryAgainReflex = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which is a resilient action?",
-      options: [
-        { 
-          id: "retry", 
-          text: "Retry", 
-          emoji: "🔄", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "quit", 
-          text: "Quit", 
-          emoji: "🏳️", 
-          isCorrect: false
-        },
-        { 
-          id: "give-up", 
-          text: "Give Up", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          id: "stop", 
-          text: "Stop", 
-          emoji: "🛑", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which is a resilient action?",
-      options: [
-        
-        { 
-          id: "give-up", 
-          text: "Give Up", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          id: "try-again", 
-          text: "Try Again", 
-          emoji: "💪", 
-          isCorrect: true
-        },
-        { 
-          id: "walk-away", 
-          text: "Walk Away", 
-          emoji: "🚶", 
-          isCorrect: false
-        },
-        { 
-          id: "avoid", 
-          text: "Avoid", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which is a resilient action?",
-      options: [
-        
-        { 
-          id: "surrender", 
-          text: "Surrender", 
-          emoji: "🏳️", 
-          isCorrect: false
-        },
-        { 
-          id: "stop-trying", 
-          text: "Stop Trying", 
-          emoji: "✋", 
-          isCorrect: false
-        },
-        { 
-          id: "give-in", 
-          text: "Give In", 
-          emoji: "😔", 
-          isCorrect: false
-        },
-        { 
-          id: "keep-going", 
-          text: "Keep Going", 
-          emoji: "🚀", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "Which is a resilient action?",
-      options: [
-        
-        { 
-          id: "quit-now", 
-          text: "Quit Now", 
-          emoji: "❌", 
-          isCorrect: false
-        },
-        { 
-          id: "fail", 
-          text: "Fail", 
-          emoji: "💥", 
-          isCorrect: false
-        },
-        { 
-          id: "persist", 
-          text: "Persist", 
-          emoji: "🔥", 
-          isCorrect: true
-        },
-        { 
-          id: "abandon", 
-          text: "Abandon", 
-          emoji: "⛵", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which is a resilient action?",
-      options: [
-        { 
-          id: "never-give-up", 
-          text: "Never Give Up", 
-          emoji: "🌟", 
-          isCorrect: true
-        },
-        { 
-          id: "give-up", 
-          text: "Give Up", 
-          emoji: "😔", 
-          isCorrect: false
-        },
-        { 
-          id: "retreat", 
-          text: "Retreat", 
-          emoji: "🔙", 
-          isCorrect: false
-        },
-        { 
-          id: "run-away", 
-          text: "Run Away", 
-          emoji: "🏃", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A young bakery helper accidentally drops the cake batter. What should they do?",
+    options: [
+      { id: "a", text: "Start Over", emoji: "🍰", isCorrect: true },
+      { id: "b", text: "Leave it", emoji: "🛑", isCorrect: false },
+      { id: "c", text: "Blame someone else", emoji: "👀", isCorrect: false },
+      { id: "d", text: "Ignore and go play", emoji: "⚽", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "A junior gardener’s first plant dies. What shows resilience?",
+    options: [
+      { id: "b", text: "Leave the garden", emoji: "🚪", isCorrect: false },
+      { id: "c", text: "Sit and sulk", emoji: "😞", isCorrect: false },
+      { id: "d", text: "Blame the sun", emoji: "☀️", isCorrect: false },
+      { id: "a", text: "Try planting again", emoji: "🌱", isCorrect: true },
+    ]
+  },
+  {
+    id: 3,
+    text: "A young coder’s program fails. What is the resilient choice?",
+    options: [
+      { id: "b", text: "Delete the whole file", emoji: "🗑️", isCorrect: false },
+      { id: "a", text: "Keep debugging", emoji: "💻", isCorrect: true },
+      { id: "c", text: "Walk away frustrated", emoji: "🚶", isCorrect: false },
+      { id: "d", text: "Copy from someone else", emoji: "📄", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "A young athlete misses a goal in practice. What should they do?",
+    options: [
+      { id: "b", text: "Give up", emoji: "❌", isCorrect: false },
+      { id: "c", text: "Complain about the coach", emoji: "🗣️", isCorrect: false },
+      { id: "a", text: "Practice again", emoji: "🏀", isCorrect: true },
+      { id: "d", text: "Take a long break", emoji: "🛌", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "A young painter spills paint on their artwork. How do they show resilience?",
+    options: [
+      { id: "a", text: "Paint again and fix it", emoji: "🎨", isCorrect: true },
+      { id: "b", text: "Throw the painting away", emoji: "🗑️", isCorrect: false },
+      { id: "c", text: "Cry and leave", emoji: "😭", isCorrect: false },
+      { id: "d", text: "Blame the brush", emoji: "🖌️", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

@@ -27,128 +27,131 @@ const RepetitionStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Kid revises daily. Does memory improve?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "📖", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "😮‍💨", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You repeat a song many times. Do you remember it better?",
-      options: [
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "🕵️‍♀️", 
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "🔍", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Practicing math every day. Improves skills?",
-      options: [
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "🛐", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "🏆", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Reading the same story again. Does it help you remember?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "🧾", 
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "📑", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Repeating words helps you learn them. True or false?",
-      options: [
-        { 
-          id: "false", 
-          text: "False", 
-          emoji: "🏫", 
-          isCorrect: false
-        },
-        { 
-          id: "true", 
-          text: "True", 
-          emoji: "🧑‍🏫", 
-          isCorrect: true
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A child wants to remember spellings better. What should they do?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Only read spellings once",
+        emoji: "👀",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Avoid practicing at all",
+        emoji: "🙅",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Practice a few spellings every day",
+        emoji: "✏️",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "You want to remember a new song. What helps most?",
+    options: [
+      {
+        id: "a",
+        text: "Listening and singing it again",
+        emoji: "🎶",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Hearing it once and stopping",
+        emoji: "🔇",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Ignoring the song",
+        emoji: "😶",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "To get better at math, which habit is best?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Only watch others solve",
+        emoji: "👀",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Solve a few questions daily",
+        emoji: "➗",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Stop practicing after mistakes",
+        emoji: "❌",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You read a story and want to remember it well. What can you do?",
+    options: [
+      {
+        id: "a",
+        text: "Read again and talk about the story",
+        emoji: "📖",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Close the book immediately",
+        emoji: "📕",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Forget the story on purpose",
+        emoji: "🤷",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Which habit helps learning last longer?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Study only once a month",
+        emoji: "📆",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Never revise anything",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Practice a little every day",
+        emoji: "🌱",
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

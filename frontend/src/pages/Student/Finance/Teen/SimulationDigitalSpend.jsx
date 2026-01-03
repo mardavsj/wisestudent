@@ -27,170 +27,166 @@ const SimulationDigitalSpend = () => {
   const [answered, setAnswered] = useState(false);
 
   const scenarios = [
-    {
-      id: 1,
-      title: "Digital Spending Budget",
-      description: "You have ₹1000 in your digital wallet. What's the smart approach?",
-      amount: 1000,
-      options: [
-        { 
-          id: "track", 
-          text: "Track all digital expenses", 
-          emoji: "📊", 
-          isCorrect: true
-        },
-        { 
-          id: "spend", 
-          text: "Spend without tracking", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore digital spending", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          id: "limit", 
-          text: "Set spending limits", 
-          emoji: "📏", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Online Shopping Budget",
-      description: "You have ₹1500. What should you prioritize?",
-      amount: 1500,
-      options: [
-        
-        { 
-          id: "impulse", 
-          text: "Impulse buying", 
-          emoji: "🛒", 
-          isCorrect: false
-        },
-        { 
-          id: "overspend", 
-          text: "Overspend on wants", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Save all money instead", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "needs", 
-          text: "Prioritize needs over wants", 
-          emoji: "✅", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      title: "Monthly Digital Budget",
-      description: "You have ₹2000. What's the key?",
-      amount: 2000,
-      options: [
-        
-        { 
-          id: "spend-all", 
-          text: "Spend everything on wants", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          id: "save-none", 
-          text: "Save nothing", 
-          emoji: "📭", 
-          isCorrect: false
-        },
-        { 
-          id: "balance", 
-          text: "Balance needs, wants, savings", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          id: "invest", 
-          text: "Invest all money", 
-          emoji: "📈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Weekend Spending",
-      description: "You have ₹800. What's the best practice?",
-      amount: 800,
-      options: [
-        { 
-          id: "plan", 
-          text: "Plan weekend expenses", 
-          emoji: "📝", 
-          isCorrect: true
-        },
-        { 
-          id: "random", 
-          text: "Spend randomly", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        { 
-          id: "exceed", 
-          text: "Exceed budget regularly", 
-          emoji: "⚠️", 
-          isCorrect: false
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow for extra spending", 
-          emoji: "💳", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "School Expenses Budget",
-      description: "You have ₹1200. What should you do?",
-      amount: 1200,
-      options: [
-       
-        { 
-          id: "luxury", 
-          text: "Spend on luxuries first", 
-          emoji: "💎", 
-          isCorrect: false
-        },
-         { 
-          id: "allocate", 
-          text: "Allocate for essentials first", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-        { 
-          id: "no-plan", 
-          text: "No expense planning", 
-          emoji: "📋", 
-          isCorrect: false
-        },
-        { 
-          id: "share", 
-          text: "Share expenses with friends", 
-          emoji: "🤝", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Subscription Trap",
+    description: "You have ₹1000. Multiple apps offer free trials then ₹300/month. What’s smart?",
+    options: [
+      { 
+        id: "all-trials", 
+        text: "Sign up for all trials blindly", 
+        emoji: "📱", 
+        isCorrect: false
+      },
+      { 
+        id: "plan-trials", 
+        text: "Check app value, subscribe only if useful", 
+        emoji: "🧠", 
+        isCorrect: true
+      },
+      { 
+        id: "ignore", 
+        text: "Avoid all digital services", 
+        emoji: "🙈", 
+        isCorrect: false
+      },
+      { 
+        id: "auto-renew", 
+        text: "Auto-renew all trials to avoid missing benefits", 
+        emoji: "🔄", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Impulse Purchase Challenge",
+    description: "You see a cool gadget online for ₹700, wallet has ₹1000. What’s smart?",
+    options: [
+      { 
+        id: "review", 
+        text: "Review need vs budget, wait 24 hrs", 
+        emoji: "⏳", 
+        isCorrect: true
+      },
+      { 
+        id: "buy-now", 
+        text: "Buy immediately for fun", 
+        emoji: "🛒", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "borrow", 
+        text: "Borrow extra money to buy it", 
+        emoji: "💳", 
+        isCorrect: false
+      },
+      { 
+        id: "ignore-forever", 
+        text: "Ignore it completely, even if useful later", 
+        emoji: "🚫", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Digital Gift Dilemma",
+    description: "Friend asks for ₹500 gift via an app. Wallet has ₹800. What’s smart?",
+    options: [
+      { 
+        id: "send-all", 
+        text: "Send without thinking, just to please", 
+        emoji: "🎁", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "ignore-friend", 
+        text: "Ignore request completely", 
+        emoji: "🙅", 
+        isCorrect: false
+      },
+      { 
+        id: "borrow-money", 
+        text: "Borrow to give more than wallet", 
+        emoji: "💳", 
+        isCorrect: false
+      },
+      { 
+        id: "check-budget", 
+        text: "Check budget, balance social kindness & savings", 
+        emoji: "⚖️", 
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 4,
+    title: "Online Game Coins",
+    description: "Game offers ₹100 coins pack for ₹200. Wallet ₹1000. How to act wisely?",
+    options: [
+      { 
+        id: "buy-many", 
+        text: "Buy as many as possible", 
+        emoji: "🎮", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "ignore-entirely", 
+        text: "Avoid games completely", 
+        emoji: "🚫", 
+        isCorrect: false
+      },
+      { 
+        id: "limit-purchase", 
+        text: "Set limit, buy only if fun + affordable", 
+        emoji: "📊", 
+        isCorrect: true
+      },
+      { 
+        id: "borrow", 
+        text: "Borrow money to buy more coins", 
+        emoji: "💳", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Digital Privacy Spending",
+    description: "App wants ₹500 for premium feature but requires all personal data. Wallet ₹1200. Decision?",
+    options: [
+      { 
+        id: "pay", 
+        text: "Pay without reading terms", 
+        emoji: "💸", 
+        isCorrect: false
+      },
+      { 
+        id: "research", 
+        text: "Check privacy, decide if worth it", 
+        emoji: "🔍", 
+        isCorrect: true
+      },
+      { 
+        id: "ignore", 
+        text: "Never pay for anything digital", 
+        emoji: "🙈", 
+        isCorrect: false
+      },
+      { 
+        id: "share-data", 
+        text: "Share unnecessary data for convenience", 
+        emoji: "📲", 
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered) return;

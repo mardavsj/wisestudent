@@ -169,7 +169,7 @@ const AccessibilityPuzzle = () => {
                       <div className="text-2xl mr-3">{impairment.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{impairment.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {impairment.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

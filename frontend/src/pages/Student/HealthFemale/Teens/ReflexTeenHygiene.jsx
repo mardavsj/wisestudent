@@ -43,8 +43,8 @@ const ReflexTeenHygiene = () => {
   id: 2,
   question: "Which habit helps prevent infections?",
   options: [
-    { text: "Sharing personal towels", emoji: "🧻", isCorrect: false },
     { text: "Keeping nails clean and trimmed", emoji: "✂️", isCorrect: true },
+    { text: "Sharing personal towels", emoji: "🧻", isCorrect: false },
     { text: "Wearing unwashed clothes", emoji: "👕", isCorrect: false },
     { text: "Avoiding bathing", emoji: "🚫", isCorrect: false }
   ]
@@ -54,10 +54,10 @@ const ReflexTeenHygiene = () => {
       id: 3,
       question: "What helps control body odor?",
       options: [
-        { text: "Use Deodorant", emoji: "🧴", isCorrect: true },
         { text: "Skip Deodorant", emoji: "👕", isCorrect: false },
         { text: "Keep Same Pad", emoji: "🙃", isCorrect: false },
-        { text: "Skip Hand Washing", emoji: "💧", isCorrect: false }
+        { text: "Skip Hand Washing", emoji: "💧", isCorrect: false },
+        { text: "Use Deodorant", emoji: "🧴", isCorrect: true },
       ]
     },
     {
@@ -65,8 +65,8 @@ const ReflexTeenHygiene = () => {
       question: "Which habit maintains cleanliness?",
       options: [
         { text: "Skip Shower", emoji: "🛏️", isCorrect: false },
-        { text: "Shower Daily", emoji: "🚿", isCorrect: true },
         { text: "Skip Deodorant", emoji: "👕", isCorrect: false },
+        { text: "Shower Daily", emoji: "🚿", isCorrect: true },
         { text: "Keep Same Pad", emoji: "🙃", isCorrect: false }
       ]
     },

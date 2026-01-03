@@ -169,7 +169,7 @@ const PublicBudgetPuzzle = () => {
                       <div className="text-2xl mr-3">{need.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{need.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {need.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

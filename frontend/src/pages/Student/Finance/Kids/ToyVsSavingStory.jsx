@@ -23,130 +23,131 @@ const ToyVsSavingStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Buy toy today or save for a bicycle later?",
-      options: [
-        { 
-          id: "save", 
-          text: "Save for Bicycle", 
-          emoji: "🚴", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "toy", 
-          text: "Buy Toy", 
-          emoji: "🧸", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore Decision", 
-          emoji: "😴", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You get gift money. What's smarter?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Spend Now", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        {
-          id: "goal",
-          text: "Save for Goal",
-          emoji: "🎯",
-          isCorrect: true
-        },
-        { 
-          id: "waste", 
-          text: "Waste Money", 
-          emoji: "🔥", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You want a gadget. What's the plan?",
-      options: [
-        { 
-          id: "build", 
-          text: "Build Savings", 
-          emoji: "💰", 
-          isCorrect: true
-        },
-        { 
-          id: "gadget", 
-          text: "Buy Gadget", 
-          emoji: "📱", 
-          isCorrect: false
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow Money", 
-          emoji: "🤲", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You get allowance. What do you do?",
-      options: [
-        { 
-          id: "candy", 
-          text: "Buy Candy", 
-          emoji: "🍬", 
-          isCorrect: false
-        },
-        { 
-          id: "lose", 
-          text: "Lose It", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        {
-          id: "save",
-          text: "Save Allowance",
-          emoji: "💾",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "You see a cool toy. What's best?",
-      options: [
-        { 
-          id: "long", 
-          text: "Long-Term Save", 
-          emoji: "📈", 
-          isCorrect: true
-        },
-        { 
-          id: "quick", 
-          text: "Quick Spend", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "forget", 
-          text: "Forget About It", 
-          emoji: "🤷", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Your favorite toy breaks after one week. What does this teach you?",
+    options: [
+      
+      {
+        id: "buy",
+        text: "Buy more toys quickly",
+        emoji: "🛍️",
+        isCorrect: false
+      },
+      {
+        id: "ignore",
+        text: "Money choices don't matter",
+        emoji: "🙈",
+        isCorrect: false
+      },
+      {
+        id: "value",
+        text: "Think before spending money",
+        emoji: "🧠",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "You save coins every week and see the amount grow. What do you learn?",
+    options: [
+      {
+        id: "patience",
+        text: "Saving needs patience",
+        emoji: "⏳",
+        isCorrect: true
+      },
+      {
+        id: "boring",
+        text: "Saving is boring",
+        emoji: "😐",
+        isCorrect: false
+      },
+      {
+        id: "waste",
+        text: "Coins are useless",
+        emoji: "🪙",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "You want something expensive in the future. What is the best habit?",
+    options: [
+      
+      {
+        id: "rush",
+        text: "Buy anything you see",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      {
+        id: "plan",
+        text: "Plan and save slowly",
+        emoji: "📊",
+        isCorrect: true
+      },
+      {
+        id: "borrow",
+        text: "Always borrow money",
+        emoji: "🤝",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You compare prices before buying. What skill are you using?",
+    options: [
+     
+      {
+        id: "slow",
+        text: "Being too slow",
+        emoji: "🐢",
+        isCorrect: false
+      },
+      {
+        id: "lazy",
+        text: "Avoiding shopping",
+        emoji: "😴",
+        isCorrect: false
+      },
+       {
+        id: "smart",
+        text: "Smart money thinking",
+        emoji: "💡",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "You choose to save instead of buying every toy. What does this build?",
+    options: [
+      {
+        id: "habit",
+        text: "Good saving habits",
+        emoji: "🏦",
+        isCorrect: true
+      },
+      {
+        id: "sad",
+        text: "No fun at all",
+        emoji: "😢",
+        isCorrect: false
+      },
+      {
+        id: "fear",
+        text: "Fear of spending",
+        emoji: "😨",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

@@ -19,163 +19,166 @@ const SimulationExamPrep = () => {
   const [coins, setCoins] = useState(0); // Add coins state
 
   const scenarios = [
-    {
-      id: 1,
-      title: "Study vs Sleep Decision",
-      description: "You have an exam tomorrow. Should you study till 3 AM or get sleep and study the next day?",
-      options: [
-        {
-          id: "a",
-          text: "Study till 3 AM - Sacrifice sleep for study",
-          emoji: "🌙",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Sleep 8 hrs + study next day - Prioritize rest, then study",
-          emoji: "😴",
-          isCorrect: true
-        },
-        {
-          id: "c",
-          text: "Skip both sleep and study - Avoid responsibilities",
-          emoji: "😶",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Cram all night before exam - Last-minute studying",
-          emoji: "🤯",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Best Preparation Strategy",
-      description: "You have an exam tomorrow. What's the best preparation strategy?",
-      options: [
-        {
-          id: "a",
-          text: "Stay up all night studying - Exhausting approach",
-          emoji: "🌙",
-          isCorrect: false
-        },
-       
-        {
-          id: "c",
-          text: "Panic and study continuously - Stressful approach",
-          emoji: "😰",
-          isCorrect: false
-        },
-         {
-          id: "b",
-          text: "Study during the day, sleep 8-10 hours - Balanced approach",
-          emoji: "📊",
-          isCorrect: true
-        },
-        {
-          id: "d",
-          text: "Ignore the exam completely - Avoidance approach",
-          emoji: "🙄",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Study-Sleep Balance",
-      description: "How should you balance study time and sleep before an exam?",
-      options: [
-        {
-          id: "a",
-          text: "Cram the night before, skip sleep - Short-term approach",
-          emoji: "🤯",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Study constantly, minimal sleep - Exhausting approach",
-          emoji: "💨",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Procrastinate, then panic study - Ineffective approach",
-          emoji: "⏰",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Study in advance, maintain sleep schedule - Long-term preparation",
-          emoji: "📅",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Sleep Impact on Performance",
-      description: "What's the impact of sleep on exam performance?",
-      options: [
-        {
-          id: "a",
-          text: "Adequate sleep improves memory and focus - Enhances performance",
-          emoji: "🧠",
-          isCorrect: true
-        },
-        {
-          id: "b",
-          text: "Sleep reduces study time - Misconception",
-          emoji: "⏰",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Sleep has no effect on exams - Incorrect belief",
-          emoji: "🤔",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "More sleep means less study time - False trade-off",
-          emoji: "⚖️",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Best Exam Preparation",
-      description: "What's the best approach for exam preparation?",
-      options: [
-        {
-          id: "a",
-          text: "Last-minute all-night study sessions - Ineffective approach",
-          emoji: "🤯",
-          isCorrect: false
-        },
-        {
-          id: "b",
-          text: "Sacrifice sleep for extra study hours - Counterproductive",
-          emoji: "😴",
-          isCorrect: false
-        },
-        {
-          id: "c",
-          text: "Random study times, irregular sleep - Unpredictable approach",
-          emoji: "🎲",
-          isCorrect: false
-        },
-        {
-          id: "d",
-          text: "Regular study schedule with consistent sleep - Sustainable approach",
-          emoji: "📅",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Time Allocation Crisis",
+    description: "Two days before the exam, you realize one subject is weak while others are fine. What is the smartest move?",
+    options: [
+      {
+        id: "a",
+        text: "Ignore the weak subject and revise only strong ones",
+        emoji: "🙈",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Divide time strategically, prioritizing weak areas first",
+        emoji: "🧩",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Study everything randomly without a plan",
+        emoji: "🎲",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Panic and keep switching subjects every hour",
+        emoji: "😵",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Digital Distraction Test",
+    description: "While studying, your phone keeps buzzing with messages and reels. What choice best protects your preparation?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Reply instantly to stay socially active",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Mute notifications but keep scrolling anyway",
+        emoji: "👀",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Study with phone beside you for motivation",
+        emoji: "🤳",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Check messages during short, planned breaks only",
+        emoji: "⏳",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    title: "Mock Test Reality Check",
+    description: "Your mock test score is much lower than expected. The real exam is close. What should you do?",
+    options: [
+      {
+        id: "a",
+        text: "Avoid mock tests to protect confidence",
+        emoji: "🙃",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Analyze mistakes and adjust revision strategy",
+        emoji: "📊",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Assume the real exam will be easier",
+        emoji: "😌",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Memorize answers without understanding concepts",
+        emoji: "🧠",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Peer Pressure Scenario",
+    description: "Friends suggest skipping revision to relax before the exam. How should you respond?",
+    options: [
+      {
+        id: "a",
+        text: "Skip studying to avoid feeling left out",
+        emoji: "👥",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Cancel all breaks and isolate completely",
+        emoji: "🚪",
+        isCorrect: false
+      },
+      {
+        id: "b",
+        text: "Study first, then relax briefly if time allows",
+        emoji: "⚖️",
+        isCorrect: true
+      },
+      {
+        id: "d",
+        text: "Relax the whole day and hope for luck",
+        emoji: "🍀",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Exam Morning Simulation",
+    description: "On exam day, you feel nervous and forget a formula you revised yesterday. What action helps most?",
+    options: [
+      {
+        id: "b",
+        text: "Take deep breaths and recall concepts calmly",
+        emoji: "🧘",
+        isCorrect: true
+      },
+      {
+        id: "a",
+        text: "Panic and assume the exam is ruined",
+        emoji: "😨",
+        isCorrect: false
+      },
+      
+      {
+        id: "c",
+        text: "Rush to learn new topics minutes before exam",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      {
+        id: "d",
+        text: "Compare preparation with others",
+        emoji: "👀",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (optionId) => {
     const selectedOption = scenarios[currentScenario].options.find(opt => opt.id === optionId);

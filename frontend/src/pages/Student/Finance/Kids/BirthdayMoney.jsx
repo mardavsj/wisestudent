@@ -31,7 +31,7 @@ const BirthdayMoney = () => {
         { 
           id: "spend", 
           text: "Spend all on toys and candies", 
-          emoji: "🎮🍬", 
+          emoji: "🍬", 
           
           isCorrect: false
         },
@@ -44,7 +44,7 @@ const BirthdayMoney = () => {
         { 
           id: "split", 
           text: "Split it: some for fun, some for saving", 
-          emoji: "💡🏦", 
+          emoji: "💡", 
           isCorrect: true
         }
       ]
@@ -134,7 +134,7 @@ const BirthdayMoney = () => {
         {
           id: "enjoy",
           text: "Enjoy a treat and save the rest",
-          emoji: "🧁🏦",
+          emoji: "🧁",
           isCorrect: true
         },
         { 

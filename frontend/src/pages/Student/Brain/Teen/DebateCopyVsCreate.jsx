@@ -56,7 +56,7 @@ const DebateCopyVsCreate = () => {
   const questions = [
     {
       id: 1,
-      text: "Is it better to copy success or create new? → Create new.",
+      text: "Is it better to copy success or create new?",
       choices: [
         { id: 'a', text: 'Create new solutions' },
         { id: 'b', text: 'Always copy success' },

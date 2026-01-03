@@ -29,62 +29,62 @@ const ReflexMoneyPlan = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "Before buying something, what should you do first?",
-      correctAnswer: "Plan & Budget",
-      options: [
-        { text: "Buy Immediately", isCorrect: false, emoji: "💸" },
-        { text: "Plan & Budget", isCorrect: true, emoji: "📋" },
-        { text: "Ask Friends", isCorrect: false, emoji: "👥" },
-        { text: "Wait Randomly", isCorrect: false, emoji: "⏳" }
-      ]
-    },
-    {
-      id: 2,
-      question: "You want a toy that costs ₹200, but you only have ₹150. What should you do?",
-      correctAnswer: "Save More First",
-      options: [
-        { text: "Borrow Money", isCorrect: false, emoji: "💳" },
-        { text: "Forget About It", isCorrect: false, emoji: "😔" },
-        { text: "Save More First", isCorrect: true, emoji: "💰" },
-        { text: "Buy Anyway", isCorrect: false, emoji: "🛒" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What helps you know where your money goes?",
-      correctAnswer: "Track Expenses",
-      options: [
-        { text: "Ignore Spending", isCorrect: false, emoji: "🙈" },
-        { text: "Track Expenses", isCorrect: true, emoji: "📊" },
-        { text: "Spend Randomly", isCorrect: false, emoji: "🎲" },
-        { text: "Hide Receipts", isCorrect: false, emoji: "📄" }
-      ]
-    },
-    {
-      id: 4,
-      question: "You get ₹100. What's the smart way to use it?",
-      correctAnswer: "Save Some, Spend Some",
-      options: [
-        { text: "Save Some, Spend Some", isCorrect: true, emoji: "⚖️" },
-        { text: "Spend Everything", isCorrect: false, emoji: "🛍️" },
-        { text: "Save Nothing", isCorrect: false, emoji: "📭" },
-        { text: "Lose It", isCorrect: false, emoji: "💸" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What should you do to reach a big money goal?",
-      correctAnswer: "Set a Savings Plan",
-      options: [
-        { text: "Spend on Small Things", isCorrect: false, emoji: "🍬" },
-        { text: "Hope for Luck", isCorrect: false, emoji: "🍀" },
-        { text: "Ask for Money", isCorrect: false, emoji: "🙏" },
-        { text: "Set a Savings Plan", isCorrect: true, emoji: "🎯" },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You see a new pencil box at the shop. What do you think before buying it?",
+    correctAnswer: "Check if you really need it",
+    options: [
+      { text: "Buy it because it looks nice", isCorrect: false, emoji: "✨" },
+      { text: "Check if you really need it", isCorrect: true, emoji: "🤔" },
+      { text: "Buy two of them", isCorrect: false, emoji: "🛒" },
+      { text: "Ignore the price", isCorrect: false, emoji: "🙈" }
+    ]
+  },
+  {
+    id: 2,
+    question: "You receive pocket money every week. What is a good habit?",
+    correctAnswer: "Keep some money aside",
+    options: [
+      { text: "Keep some money aside", isCorrect: true, emoji: "🏦" },
+      { text: "Spend it on the same day", isCorrect: false, emoji: "💸" },
+      { text: "Lose track of it", isCorrect: false, emoji: "😵" },
+      { text: "Give it all away", isCorrect: false, emoji: "🎁" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You want to buy something expensive next month. What helps most?",
+    correctAnswer: "Plan your spending",
+    options: [
+      { text: "Buy small things daily", isCorrect: false, emoji: "🍭" },
+      { text: "Ask others to buy it", isCorrect: false, emoji: "🧍" },
+      { text: "Forget about saving", isCorrect: false, emoji: "❌" },
+      { text: "Plan your spending", isCorrect: true, emoji: "📝" },
+    ]
+  },
+  {
+    id: 4,
+    question: "You write down what you spend money on. What does this help with?",
+    correctAnswer: "Understanding your spending",
+    options: [
+      { text: "Spending more money", isCorrect: false, emoji: "🛍️" },
+      { text: "Hiding mistakes", isCorrect: false, emoji: "🙈" },
+      { text: "Understanding your spending", isCorrect: true, emoji: "📊" },
+      { text: "Buying faster", isCorrect: false, emoji: "⚡" }
+    ]
+  },
+  {
+    id: 5,
+    question: "You want to be careful with money every day. What should you do?",
+    correctAnswer: "Think before spending",
+    options: [
+      { text: "Spend without thinking", isCorrect: false, emoji: "🎲" },
+      { text: "Think before spending", isCorrect: true, emoji: "🧠" },
+      { text: "Copy friends’ spending", isCorrect: false, emoji: "👥" },
+      { text: "Use money quickly", isCorrect: false, emoji: "⏩" }
+    ]
+  }
+];
 
   // Update ref when currentRound changes
   useEffect(() => {

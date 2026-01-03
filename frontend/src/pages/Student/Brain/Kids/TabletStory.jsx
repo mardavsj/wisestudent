@@ -27,128 +27,130 @@ const TabletStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Kid plays tablet for 5 hours and skips homework. Healthy?",
-      options: [
-        { 
-          id: "no", 
-          text: "No, it's not healthy", 
-          emoji: "👎", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's healthy", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Kid games on phone all day, no play outside. Good?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, it's good", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, it's not good", 
-          emoji: "🏸", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Kid watches videos 6 hrs, skips reading. Smart?",
-      options: [
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, it's not smart", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's smart", 
-          emoji: "🤓", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Kid scrolls social media, forgets chores. Healthy?",
-      options: [
-        { 
-          id: "no", 
-          text: "No, it's not healthy", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's healthy", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Kid plays games late, tired at school. Good?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, it's good", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔  ", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, it's not good", 
-          emoji: "😴", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "After school, Aarav starts using his tablet and time passes quickly. By evening, his homework is still untouched. What choice helps him manage both play and work?",
+    options: [
+      
+      {
+        id: "continue",
+        text: "Keep playing and finish homework later",
+        emoji: "⏳",
+        isCorrect: false
+      },
+      {
+        id: "rush",
+        text: "Play freely and rush homework at night",
+        emoji: "🌙",
+        isCorrect: false
+      },
+      {
+        id: "schedule",
+        text: "Set a clear order: work first, then screen time",
+        emoji: "🗂️",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "During the weekend, Mehul spends most of the day on his tablet indoors. By night, his body feels restless. What supports both fun and movement?",
+    options: [
+      {
+        id: "mix",
+        text: "Balance screen time with outdoor activity",
+        emoji: "⚽",
+        isCorrect: true
+      },
+      {
+        id: "stayinside",
+        text: "Continue indoor gaming all day",
+        emoji: "🏠",
+        isCorrect: false
+      },
+      {
+        id: "ignorebody",
+        text: "Ignore the restless feeling",
+        emoji: "🫥",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Nina enjoys watching videos and realizes she hasn’t read anything in days. What helps her brain stay active in different ways?",
+    options: [
+      
+      {
+        id: "binge",
+        text: "Watch more to finish the series",
+        emoji: "📺",
+        isCorrect: false
+      },
+      {
+        id: "variety",
+        text: "Switch between videos, reading, and creative play",
+        emoji: "🎨",
+        isCorrect: true
+      },
+      {
+        id: "delay",
+        text: "Plan reading for another week",
+        emoji: "🗓️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "While scrolling on a tablet, Karan forgets his daily chores. What strategy helps him stay responsible?",
+    options: [
+      
+      {
+        id: "multitask",
+        text: "Try to do chores while watching",
+        emoji: "🔀",
+        isCorrect: false
+      },
+      {
+        id: "skip",
+        text: "Skip chores for the day",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "reminder",
+        text: "Finish chores before starting screen time",
+        emoji: "🙂",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "Late-night gaming feels exciting, but mornings feel heavy at school. What choice helps keep energy steady?",
+    options: [
+      {
+        id: "cutoff",
+        text: "Stop screen use earlier to protect sleep",
+        emoji: "🌙",
+        isCorrect: true
+      },
+      {
+        id: "continue",
+        text: "Play longer and sleep when tired",
+        emoji: "🎮",
+        isCorrect: false
+      },
+      {
+        id: "catchup",
+        text: "Stay up and wake later if possible",
+        emoji: "⏰",
+        isCorrect: false
+      }
+    ]
+  }
+];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

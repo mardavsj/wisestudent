@@ -27,168 +27,68 @@ const Simulation1000Choice = () => {
   const [answered, setAnswered] = useState(false);
 
   const scenarios = [
-    {
-      id: 1,
-      title: "₹1000 Investment Choice",
-      description: "You have ₹1000. What's the best option?",
-      amount: 1000,
-      options: [
-        { 
-          id: "fd", 
-          text: "Fixed Deposit", 
-          emoji: "🏦", 
-          isCorrect: false
-        },
-        { 
-          id: "stocks", 
-          text: "Stocks", 
-          emoji: "📈", 
-          isCorrect: false
-        },
-        { 
-          id: "mix", 
-          text: "Mix FD + Stocks", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          id: "crypto", 
-          text: "All in Crypto", 
-          emoji: "🪙", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "₹1000 Investment Strategy",
-      description: "You have ₹1000. What's the smartest choice?",
-      amount: 1000,
-      options: [
-        { 
-          id: "spend", 
-          text: "Spend all", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "mix2", 
-          text: "Mix FD + Stocks", 
-          emoji: "📊", 
-          isCorrect: true
-        },
-        { 
-          id: "save", 
-          text: "Save only", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "invest-all", 
-          text: "Invest everything", 
-          emoji: "📈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "₹1000 Allocation",
-      description: "You have ₹1000. How should you allocate it?",
-      amount: 1000,
-      options: [
-        { 
-          id: "mix3", 
-          text: "Mix FD + Stocks", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          id: "all-stocks", 
-          text: "All in stocks", 
-          emoji: "📈", 
-          isCorrect: false
-        },
-        { 
-          id: "all-fd", 
-          text: "All in FD", 
-          emoji: "🛡️", 
-          isCorrect: false
-        },
-        { 
-          id: "mutual", 
-          text: "Mutual Funds only", 
-          emoji: "📊", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "₹1000 Investment Plan",
-      description: "You have ₹1000. What's the best plan?",
-      amount: 1000,
-      options: [
-        { 
-          id: "waste", 
-          text: "Spend on wants", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "hide", 
-          text: "Hide at home", 
-          emoji: "🏠", 
-          isCorrect: false
-        },
-        { 
-          id: "bonds", 
-          text: "Bonds only", 
-          emoji: "📜", 
-          isCorrect: false
-        },
-        { 
-          id: "mix4", 
-          text: "Mix FD + Stocks", 
-          emoji: "📊", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      title: "₹1000 Decision",
-      description: "You have ₹1000. What should you do?",
-      amount: 1000,
-      options: [
-        { 
-          id: "mix5", 
-          text: "Mix FD + Stocks", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          id: "gamble", 
-          text: "Gamble it", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore it", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          id: "crypto-only", 
-          text: "Crypto only", 
-          emoji: "🪙", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "₹1000 & Inflation Reality",
+    description: "You keep ₹1000 in cash for one year while prices rise. What is the smartest move?",
+    amount: 1000,
+    options: [
+      { id: "cash", text: "Keep cash at home", emoji: "💵", isCorrect: false },
+      { id: "spend", text: "Spend immediately", emoji: "🛍️", isCorrect: false },
+      { id: "savings", text: "Savings account only", emoji: "🏦", isCorrect: false },
+      { id: "invest", text: "Invest where returns beat inflation", emoji: "📈", isCorrect: true }
+    ]
+  },
+  {
+    id: 2,
+    title: "Risk vs Safety Choice",
+    description: "You may need this ₹1000 in 3 months. What’s the best option?",
+    amount: 1000,
+    options: [
+      { id: "fd", text: "Short-term safe savings", emoji: "🛡️", isCorrect: true },
+      { id: "stocks", text: "High-risk stocks", emoji: "📉", isCorrect: false },
+      { id: "crypto", text: "Crypto trading", emoji: "🪙", isCorrect: false },
+      { id: "lock", text: "Long-term locked investment", emoji: "🔒", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    title: "Delayed Reward Scenario",
+    description: "You can either enjoy ₹1000 today or grow it slowly. What builds wealth?",
+    amount: 1000,
+    options: [
+      { id: "enjoy", text: "Spend for instant happiness", emoji: "🎮", isCorrect: false },
+      { id: "compound", text: "Invest and let it compound", emoji: "🌱", isCorrect: true },
+      { id: "loan", text: "Lend to friends", emoji: "🤝", isCorrect: false },
+      { id: "idle", text: "Keep idle for safety", emoji: "😐", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    title: "Diversification Test",
+    description: "One investment fails. How do you protect your ₹1000?",
+    amount: 1000,
+    options: [
+      { id: "allone", text: "Put all money in one place", emoji: "🎯", isCorrect: false },
+      { id: "fear", text: "Avoid investing completely", emoji: "🙈", isCorrect: false },
+      { id: "gamble", text: "Increase risk to recover fast", emoji: "🎲", isCorrect: false },
+      { id: "diversify", text: "Split across different assets", emoji: "⚖️", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    title: "Smart Teen Decision",
+    description: "You earn ₹1000 as pocket money. What shows financial maturity?",
+    amount: 1000,
+    options: [
+      { id: "spendall", text: "Spend all on trends", emoji: "🛍️", isCorrect: false },
+      { id: "saveall", text: "Save without learning investing", emoji: "💰", isCorrect: false },
+      { id: "plan", text: "Split: save, invest, learn", emoji: "📊", isCorrect: true },
+      { id: "ignore", text: "Do nothing with money", emoji: "😴", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered) return;

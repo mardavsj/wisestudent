@@ -15,6 +15,11 @@ const ReflexOptimism = () => {
   const gameId = "brain-teens-53";
   const gameData = getGameDataById(gameId);
   
+  // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
+  const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
+  const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
+  const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
@@ -26,57 +31,58 @@ const ReflexOptimism = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Tap for 'Gratitude,' avoid 'Jealousy.'",
-      options: [
-        { id: "gratitude", text: "Gratitude", emoji: "🙏",  isCorrect: true },
-        { id: "jealousy", text: "Jealousy", emoji: "😤",  isCorrect: false },
-        { id: "envy", text: "Envy", emoji: "😒",  isCorrect: false },
-        { id: "resentment", text: "Resentment", emoji: "😠",  isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which mindset promotes optimism?",
-      options: [
-        { id: "fixed", text: "Fixed Mindset", emoji: "🔒",  isCorrect: false },
-        { id: "growth", text: "Growth Mindset", emoji: "🌱",  isCorrect: true },
-        { id: "defeatist", text: "Defeatist", emoji: "😔",  isCorrect: false },
-        { id: "pessimistic", text: "Pessimistic", emoji: "☁️",  isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      text: "What helps maintain optimism during tough times?",
-      options: [
-        { id: "despair", text: "Despair", emoji: "😰",  isCorrect: false },
-        { id: "denial", text: "Denial", emoji: "🙈",  isCorrect: false },
-        { id: "cynicism", text: "Cynicism", emoji: "😏",  isCorrect: false },
-        { id: "hope", text: "Hope & Persistence", emoji: "🌟",  isCorrect: true }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which action builds optimism?",
-      options: [
-        { id: "celebrate", text: "Celebrate Small Wins", emoji: "🎉",  isCorrect: true },
-        { id: "dismiss", text: "Dismiss Achievements", emoji: "🤷",  isCorrect: false },
-        { id: "compare", text: "Compare Negatively", emoji: "📉",  isCorrect: false },
-        { id: "minimize", text: "Minimize Success", emoji: "😐",  isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      text: "What's the optimistic view of setbacks?",
-      options: [
-        { id: "failure", text: "Complete Failure", emoji: "❌",  isCorrect: false },
-        { id: "proof", text: "Proof of Inability", emoji: "🚫",  isCorrect: false },
-        { id: "waste", text: "Waste of Time", emoji: "⏰",  isCorrect: false },
-        { id: "learning", text: "Learning Opportunity", emoji: "📚",  isCorrect: true }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Someone else achieves something you wanted. Which reaction best reflects an optimistic mindset?",
+    options: [
+      { id: "acknowledge", text: "Feel inspired and refocus on your goals", emoji: "🎯", isCorrect: true },
+      { id: "compare", text: "Compare yourself constantly", emoji: "📊", isCorrect: false },
+      { id: "resent", text: "Feel bitter about their success", emoji: "😠", isCorrect: false },
+      { id: "withdraw", text: "Lose motivation completely", emoji: "🚪", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Which thinking pattern most supports long-term optimism?",
+    options: [
+      { id: "talent", text: "Believing ability is fixed", emoji: "🔒", isCorrect: false },
+      { id: "effort", text: "Believing effort changes outcomes", emoji: "💪", isCorrect: true },
+      { id: "luck", text: "Relying mostly on luck", emoji: "🎲", isCorrect: false },
+      { id: "avoid", text: "Avoiding challenges", emoji: "🏃", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "During a difficult phase, which response helps optimism stay realistic—not fake?",
+    options: [
+      { id: "deny", text: "Pretend nothing is wrong", emoji: "🙈", isCorrect: false },
+      { id: "cynic", text: "Assume things won’t improve", emoji: "☁️", isCorrect: false },
+      { id: "escape", text: "Distract yourself constantly", emoji: "📱", isCorrect: false },
+      { id: "plan", text: "Focus on what you can control next", emoji: "🧩", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    text: "Which habit quietly strengthens optimism over time?",
+    options: [
+      { id: "dismiss", text: "Ignoring achievements until perfection", emoji: "🚫", isCorrect: false },
+      { id: "compare", text: "Measuring yourself against everyone", emoji: "📉", isCorrect: false },
+      { id: "progress", text: "Noticing small progress regularly", emoji: "📈", isCorrect: true },
+      { id: "rush", text: "Expecting instant success", emoji: "⏳", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "An optimistic interpretation of a setback focuses on:",
+    options: [
+      { id: "label", text: "Labeling yourself as incapable", emoji: "❌", isCorrect: false },
+      { id: "adjust", text: "Adjusting strategy for next time", emoji: "🔄", isCorrect: true },
+      { id: "quit", text: "Stopping future attempts", emoji: "🛑", isCorrect: false },
+      { id: "regret", text: "Replaying what went wrong repeatedly", emoji: "🔁", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

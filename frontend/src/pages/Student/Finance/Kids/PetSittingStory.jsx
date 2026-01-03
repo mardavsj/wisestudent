@@ -24,130 +24,131 @@ const PetSittingStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "You care for a neighbor's pet. Is this work?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, it's work", 
-          emoji: "🐶", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "fun", 
-          text: "No, it's just fun", 
-          emoji: "😺", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "favor", 
-          text: "It's a favor", 
-          emoji: "🎁", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You earn ₹20 pet sitting. What's smart?",
-      options: [
-        { 
-          id: "candy", 
-          text: "Spend all on candy", 
-          emoji: "🍬", 
-          isCorrect: false
-        },
-        {
-          id: "save",
-          text: "Save half for supplies",
-          emoji: "💰",
-          isCorrect: true
-        },
-        { 
-          id: "give", 
-          text: "Give it away", 
-          emoji: "🎉", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You forget to feed the pet. What do you do?",
-      options: [
-        { 
-          id: "tell", 
-          text: "Tell the owner honestly", 
-          emoji: "🗣️", 
-          isCorrect: true
-        },
-        { 
-          id: "hide", 
-          text: "Hide it", 
-          emoji: "🤫", 
-          isCorrect: false
-        },
-        { 
-          id: "blame", 
-          text: "Blame someone else", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You're paid ₹10 extra by mistake. What's right?",
-      options: [
-        { 
-          id: "keep", 
-          text: "Keep it quietly", 
-          emoji: "😶", 
-          isCorrect: false
-        },
-        { 
-          id: "toys", 
-          text: "Spend it on toys", 
-          emoji: "🧸", 
-          isCorrect: false
-        },
-        {
-          id: "return",
-          text: "Return the extra ₹10",
-          emoji: "💸",
-          
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "Why is pet sitting a good way to earn money?",
-      options: [
-        { 
-          id: "responsibility", 
-          text: "Teaches responsibility", 
-          emoji: "🐾", 
-          isCorrect: true
-        },
-        { 
-          id: "pets", 
-          text: "Gets you more pets", 
-          emoji: "🐱", 
-          isCorrect: false
-        },
-        { 
-          id: "spend", 
-          text: "Makes you spend more", 
-          emoji: "🛍️", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You make a daily routine for feeding and walking a pet. What skill are you practicing?",
+    options: [
+      
+      {
+        id: "playing",
+        text: "Only playing with animals",
+        emoji: "🎾",
+        isCorrect: false
+      },
+      {
+        id: "luck",
+        text: "Depending on luck",
+        emoji: "🍀",
+        isCorrect: false
+      },
+      {
+        id: "planning",
+        text: "Planning and organization",
+        emoji: "📋",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "You earn money from pet sitting over time. What is a wise next step?",
+    options: [
+      {
+        id: "track",
+        text: "Track how much you earn",
+        emoji: "📊",
+        isCorrect: true
+      },
+      {
+        id: "spend",
+        text: "Spend it immediately",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "forget",
+        text: "Forget about it",
+        emoji: "🤷",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "The pet seems unwell while under your care. What should you do first?",
+    options: [
+      
+      {
+        id: "wait",
+        text: "Wait and hope it improves",
+        emoji: "⏳",
+        isCorrect: false
+      },
+      {
+        id: "inform",
+        text: "Inform the owner quickly",
+        emoji: "📞",
+        isCorrect: true
+      },
+      {
+        id: "ignore",
+        text: "Ignore the signs",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You finish pet sitting successfully. What helps you get trusted again?",
+    options: [
+      
+      {
+        id: "ask",
+        text: "Asking for more money",
+        emoji: "💸",
+        isCorrect: false
+      },
+      {
+        id: "rush",
+        text: "Rushing through tasks",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      {
+        id: "reliable",
+        text: "Being reliable and careful",
+        emoji: "⭐",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "Pet sitting teaches you that earning money also means?",
+    options: [
+      {
+        id: "care",
+        text: "Caring for others responsibly",
+        emoji: "❤️",
+        isCorrect: true
+      },
+      {
+        id: "fun",
+        text: "Only having fun",
+        emoji: "😄",
+        isCorrect: false
+      },
+      {
+        id: "spending",
+        text: "Spending more money",
+        emoji: "🛍️",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

@@ -92,12 +92,7 @@ const SportsStory = () => {
       id: 2,
       text: "After losing, what helps you improve?",
       options: [
-        { 
-          id: "practice", 
-          text: "Practice and learn from mistakes", 
-          emoji: "📚", 
-          isCorrect: true
-        },
+       
         { 
           id: "blame", 
           text: "Blame others", 
@@ -109,7 +104,13 @@ const SportsStory = () => {
           text: "Ignore the loss", 
           emoji: "🙈", 
           isCorrect: false
-        }
+        },
+         { 
+          id: "practice", 
+          text: "Practice and learn from mistakes", 
+          emoji: "📚", 
+          isCorrect: true
+        },
       ]
     },
     {

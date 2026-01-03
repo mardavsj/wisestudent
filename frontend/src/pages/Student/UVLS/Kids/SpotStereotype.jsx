@@ -27,147 +27,136 @@ const SpotStereotype = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which statement is a stereotype?",
-      emoji: "🔍",
-      options: [
-        { 
-          id: "stereotype1", 
-          text: "Girls can't play football.", 
-          emoji: "🚫", 
-          // description: "Unfair assumption about girls",
-          isCorrect: true 
-        },
-        { 
-          id: "fact1", 
-          text: "Everyone likes ice cream.", 
-          emoji: "🍦", 
-          // description: "General preference, not a stereotype",
-          isCorrect: false 
-        },
-        { 
-          id: "fact2", 
-          text: "Kids go to school.", 
-          emoji: "📚", 
-          // description: "A fact, not a stereotype",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which statement is a stereotype?",
-      emoji: "🔍",
-      options: [
-        { 
-          id: "fact3", 
-          text: "Friends help each other.", 
-          emoji: "🤝", 
-          // description: "A positive fact, not a stereotype",
-          isCorrect: false 
-        },
-        { 
-          id: "stereotype2", 
-          text: "Moms cook, dads work.", 
-          emoji: "👨‍👩‍👧", 
-          // description: "Gender role stereotype",
-          isCorrect: true 
-        },
-        { 
-          id: "fact4", 
-          text: "We all need food.", 
-          emoji: "🍎", 
-          // description: "A fact, not a stereotype",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which statement is a stereotype?",
-      emoji: "🔍",
-      options: [
-        { 
-          id: "stereotype3", 
-          text: "Boys are strong, girls are weak.", 
-          emoji: "💪", 
-          // description: "Unfair gender stereotype",
-          isCorrect: true 
-        },
-        { 
-          id: "fact5", 
-          text: "Playtime is fun.", 
-          emoji: "🎮", 
-          // description: "A fact, not a stereotype",
-          isCorrect: false 
-        },
-        { 
-          id: "fact6", 
-          text: "We should be kind to others.", 
-          emoji: "❤️", 
-          // description: "A value, not a stereotype",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which statement is a stereotype?",
-      emoji: "🔍",
-      options: [
-        { 
-          id: "fact7", 
-          text: "Everyone deserves respect.", 
-          emoji: "🙏", 
-          // description: "A value, not a stereotype",
-          isCorrect: false 
-        },
-        { 
-          id: "fact8", 
-          text: "Learning is important.", 
-          emoji: "📖", 
-          // description: "A fact, not a stereotype",
-          isCorrect: false 
-        },
-        { 
-          id: "stereotype4", 
-          text: "Doctors are men.", 
-          emoji: "👨‍⚕️", 
-          // description: "Gender career stereotype",
-          isCorrect: true 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which statement is a stereotype?",
-      emoji: "🔍",
-      options: [
-        { 
-          id: "stereotype5", 
-          text: "Girls like dolls, boys like cars.", 
-          emoji: "🧸", 
-          // description: "Gender toy stereotype",
-          isCorrect: true 
-        },
-        { 
-          id: "fact9", 
-          text: "Sharing is caring.", 
-          emoji: "💝", 
-          // description: "A value, not a stereotype",
-          isCorrect: false 
-        },
-        { 
-          id: "fact10", 
-          text: "Exercise is good for health.", 
-          emoji: "🏃", 
-          // description: "A fact, not a stereotype",
-          isCorrect: false 
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which sentence shows a stereotype?",
+    emoji: "🔍",
+    options: [
+     
+      {
+        id: "f1",
+        text: "Practice helps us learn.",
+        emoji: "📘",
+        isCorrect: false
+      },
+       {
+        id: "s1",
+        text: "Only boys are good at math.",
+        emoji: "➗",
+        isCorrect: true
+      },
+      {
+        id: "f2",
+        text: "Everyone learns at a different speed.",
+        emoji: "⏱️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Which sentence is an unfair stereotype?",
+    emoji: "🔍",
+    options: [
+      {
+        id: "f3",
+        text: "People enjoy different hobbies.",
+        emoji: "🎨",
+        isCorrect: false
+      },
+     
+      {
+        id: "f4",
+        text: "Curiosity helps learning.",
+        emoji: "💡",
+        isCorrect: false
+      },
+       {
+        id: "s2",
+        text: "Girls are bad at science.",
+        emoji: "🔬",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: "Which statement puts people into one box?",
+    emoji: "🔍",
+    options: [
+      {
+        id: "s3",
+        text: "Quiet kids are not good leaders.",
+        emoji: "📢",
+        isCorrect: true
+      },
+      {
+        id: "f5",
+        text: "Leaders listen to others.",
+        emoji: "👂",
+        isCorrect: false
+      },
+      {
+        id: "f6",
+        text: "Teamwork helps everyone.",
+        emoji: "🤝",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Which sentence is a stereotype about jobs?",
+    emoji: "🔍",
+    options: [
+      {
+        id: "f7",
+        text: "People choose jobs they enjoy.",
+        emoji: "😊",
+        isCorrect: false
+      },
+      {
+        id: "s4",
+        text: "Only men can be engineers.",
+        emoji: "🛠️",
+        isCorrect: true
+      },
+      {
+        id: "f8",
+        text: "Skills grow with practice.",
+        emoji: "📈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Which sentence is a stereotype about emotions?",
+    emoji: "🔍",
+    options: [
+      
+      {
+        id: "f9",
+        text: "Feelings help us understand ourselves.",
+        emoji: "❤️",
+        isCorrect: false
+      },
+      {
+        id: "f10",
+        text: "Talking helps solve problems.",
+        emoji: "💬",
+        isCorrect: false
+      },
+      {
+        id: "s5",
+        text: "Boys do not cry.",
+        emoji: "😢",
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

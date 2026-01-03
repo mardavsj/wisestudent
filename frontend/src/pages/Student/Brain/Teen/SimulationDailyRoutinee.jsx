@@ -54,67 +54,68 @@ const SimulationDailyRoutinee = () => {
   const [levelCompleted, setLevelCompleted] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "4 hrs free. What's the best way to spend it?",
-      options: [
-        { id: 'balance', text: 'Sports + study + 1 hr screen',  isCorrect: true },
-        { id: 'screen', text: 'All screen time',  isCorrect: false },
-        { id: 'ignore', text: 'Ignore free time',  isCorrect: false },
-        { id: 'random', text: 'Random activities',  isCorrect: false }
-      ],
-      correct: 'balance',
-      explanation: 'A balanced approach with sports, study, and limited screen time promotes physical health, learning, and entertainment!'
-    },
-    {
-      id: 2,
-      text: "You have 3 hours free. What's the best way to spend it?",
-      options: [
-        { id: 'only', text: 'Only screen time',  isCorrect: false },
-        { id: 'mix', text: 'Mix of exercise, study, and relaxation',  isCorrect: true },
-        { id: 'nothing', text: 'Do nothing',  isCorrect: false },
-        { id: 'stress', text: 'Stress about time',  isCorrect: false }
-      ],
-      correct: 'mix',
-      explanation: 'A mix of physical activity, mental stimulation, and relaxation creates a healthy, balanced routine!'
-    },
-    {
-      id: 3,
-      text: "How should you balance screen time with other activities?",
-      options: [
-        { id: 'all', text: 'Screen time all the time',  isCorrect: false },
-        { id: 'avoid', text: 'Avoid all activities',  isCorrect: false },
-        { id: 'random', text: 'No plan or structure',  isCorrect: false },
-        { id: 'limit', text: 'Set limits and include other activities',  isCorrect: true }
-      ],
-      correct: 'limit',
-      explanation: 'Setting screen time limits and including physical activity, study, and social time creates a healthy daily routine!'
-    },
-    {
-      id: 4,
-      text: "What's the benefit of a balanced daily routine?",
-      options: [
-        { id: 'benefits', text: 'Better health, learning, and well-being',  isCorrect: true },
-        { id: 'none', text: 'No benefits',  isCorrect: false },
-        { id: 'stress', text: 'More stress',  isCorrect: false },
-        { id: 'boring', text: 'Makes life boring',  isCorrect: false }
-      ],
-      correct: 'benefits',
-      explanation: 'A balanced routine improves physical health, enhances learning, reduces stress, and promotes overall well-being!'
-    },
-    {
-      id: 5,
-      text: "What makes a daily routine effective?",
-      options: [
-        { id: 'only', text: 'Only one type of activity', isCorrect: false },
-        { id: 'no', text: 'No structure at all', isCorrect: false },
-        { id: 'extreme', text: 'Extreme focus on one thing', isCorrect: false },
-        { id: 'effective', text: 'Balance of work, play, and rest', isCorrect: true }
-      ],
-      correct: 'effective',
-      explanation: 'An effective routine balances work (studies), play (entertainment), and rest (sleep/relaxation) for optimal well-being!'
-    }
-  ];
+  {
+    id: 1,
+    text: "You wake up late on a school day and have only 30 minutes before leaving. What should you prioritize?",
+    options: [
+      { id: "a", text: "Skip breakfast and scroll social media", isCorrect: false },
+      { id: "c", text: "Go back to sleep", isCorrect: false },
+      { id: "b", text: "Quick hygiene + light breakfast", isCorrect: true },
+      { id: "d", text: "Rush without preparation", isCorrect: false }
+    ],
+    correct: "b",
+    explanation: "Basic hygiene and nutrition support energy, focus, and confidence throughout the day."
+  },
+  {
+    id: 2,
+    text: "After school, you feel mentally tired but still have homework. What routine works best?",
+    options: [
+      { id: "a", text: "Start homework immediately without rest", isCorrect: false },
+      { id: "b", text: "Take a short break, then begin focused study", isCorrect: true },
+      { id: "c", text: "Postpone work until late night", isCorrect: false },
+      { id: "d", text: "Avoid homework completely", isCorrect: false }
+    ],
+    correct: "b",
+    explanation: "Short breaks refresh the mind and improve focus when returning to study."
+  },
+  {
+    id: 3,
+    text: "You have free time in the evening. Which choice best supports long-term growth?",
+    options: [
+      { id: "b", text: "Skill practice or hobby + limited screen time", isCorrect: true },
+      { id: "a", text: "Endless gaming until sleep time", isCorrect: false },
+      { id: "c", text: "Switch randomly between apps", isCorrect: false },
+      { id: "d", text: "Do nothing to avoid effort", isCorrect: false }
+    ],
+    correct: "b",
+    explanation: "Combining hobbies with controlled screen time builds skills while avoiding burnout."
+  },
+  {
+    id: 4,
+    text: "Your friends are active online late at night, but you have school tomorrow. What should you do?",
+    options: [
+      { id: "a", text: "Stay online to avoid missing out", isCorrect: false },
+      { id: "c", text: "Chat secretly after lights off", isCorrect: false },
+      { id: "d", text: "Sleep randomly whenever tired", isCorrect: false },
+      { id: "b", text: "Set a sleep time and disconnect", isCorrect: true },
+    ],
+    correct: "b",
+    explanation: "Consistent sleep routines improve concentration, mood, and academic performance."
+  },
+  {
+    id: 5,
+    text: "By the end of the week, you feel exhausted despite being busy. What adjustment improves your routine?",
+    options: [
+      { id: "a", text: "Add more activities to stay productive", isCorrect: false },
+      { id: "b", text: "Remove rest time to finish tasks", isCorrect: false },
+      { id: "c", text: "Rebalance schedule to include rest and priorities", isCorrect: true },
+      { id: "d", text: "Ignore exhaustion and continue", isCorrect: false }
+    ],
+    correct: "c",
+    explanation: "An effective routine balances productivity with rest to prevent burnout and maintain consistency."
+  }
+];
+
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || levelCompleted) return;

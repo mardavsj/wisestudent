@@ -191,7 +191,7 @@ const PuzzleSaveOrSpend = () => {
                       <div className="text-2xl mr-3">{item.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{item.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {item.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

@@ -27,164 +27,167 @@ const SimulationCharityChoice = () => {
   const [answered, setAnswered] = useState(false);
 
   const scenarios = [
-    {
-      id: 1,
-      title: "Charity Choice: ₹1000 Budget",
-      description: "You have ₹1000. Spend all on gadgets or donate ₹200 + save ₹300 + spend ₹500?",
-      options: [
-        { 
-          id: "all-gadgets", 
-          text: "Spend all on gadgets", 
-          emoji: "📱", 
-          isCorrect: false
-        },
-        { 
-          id: "balanced", 
-          text: "Donate ₹200 + Save ₹300 + Spend ₹500", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          id: "save-all", 
-          text: "Save all ₹1000", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "invest", 
-          text: "Invest all ₹1000", 
-          emoji: "📈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Charity Choice: ₹500 Budget",
-      description: "You have ₹500. Options: Spend all, or Donate ₹100 + Save ₹200 + Spend ₹200?",
-      options: [
-        { 
-          id: "balanced2", 
-          text: "Donate ₹100 + Save ₹200 + Spend ₹200", 
-          emoji: "✨", 
-          isCorrect: true
-        },
-        { 
-          id: "spend-all2", 
-          text: "Spend all ₹500", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "donate-all", 
-          text: "Donate all ₹500", 
-          emoji: "💝", 
-          isCorrect: false
-        },
-        { 
-          id: "hoard", 
-          text: "Hoard all money", 
-          emoji: "🪙", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Charity Choice: ₹2000 Budget",
-      description: "You have ₹2000. Spend all on wants or Donate ₹400 + Save ₹600 + Spend ₹1000?",
-      options: [
-        { 
-          id: "spend-all3", 
-          text: "Spend all on wants", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "save-all2", 
-          text: "Save all ₹2000", 
-          emoji: "🏦", 
-          isCorrect: false
-        },
-        { 
-          id: "luxury", 
-          text: "Spend on luxury items", 
-          emoji: "💎", 
-          isCorrect: false
-        },
-        { 
-          id: "balanced3", 
-          text: "Donate ₹400 + Save ₹600 + Spend ₹1000", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      title: "Charity Choice: ₹800 Budget",
-      description: "You have ₹800. Options: All on entertainment or Donate ₹150 + Save ₹250 + Spend ₹400?",
-      options: [
-        { 
-          id: "balanced4", 
-          text: "Donate ₹150 + Save ₹250 + Spend ₹400", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          id: "entertainment", 
-          text: "All on entertainment", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          id: "no-donate", 
-          text: "No donation, save all", 
-          emoji: "💾", 
-          isCorrect: false
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow money to spend more", 
-          emoji: "💳", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Charity Choice: ₹1500 Budget",
-      description: "You have ₹1500. Spend all on shopping or Donate ₹300 + Save ₹450 + Spend ₹750?",
-      options: [
-        { 
-          id: "shopping", 
-          text: "Spend all on shopping", 
-          emoji: "🛒", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "only-donate", 
-          text: "Donate all ₹1500", 
-          emoji: "❤️", 
-          isCorrect: false
-        },
-        { 
-          id: "balanced5", 
-          text: "Donate ₹300 + Save ₹450 + Spend ₹750", 
-          emoji: "🌟", 
-          isCorrect: true
-        },
-        { 
-          id: "crypto", 
-          text: "Invest in crypto", 
-          emoji: "🪙", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Impact vs Emotion",
+    description: "You want to donate ₹1000. Which choice creates the most real impact?",
+    options: [
+      {
+        id: "street",
+        text: "Give cash randomly on the street",
+        emoji: "🤲",
+        isCorrect: false
+      },
+      {
+        id: "trusted",
+        text: "Donate to a verified charity with clear reports",
+        emoji: "📋",
+        isCorrect: true
+      },
+      {
+        id: "viral",
+        text: "Donate to trending online campaigns",
+        emoji: "🔥",
+        isCorrect: false
+      },
+      {
+        id: "delay",
+        text: "Wait forever for the perfect moment",
+        emoji: "⏳",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Short-Term Help vs Long-Term Change",
+    description: "A charity can either provide meals today or education support for months. What’s smarter?",
+    options: [
+      {
+        id: "education",
+        text: "Support education & skill-building",
+        emoji: "🎓",
+        isCorrect: true
+      },
+      {
+        id: "meals",
+        text: "One-time food distribution",
+        emoji: "🍱",
+        isCorrect: false
+      },
+      
+      {
+        id: "split",
+        text: "Randomly split money",
+        emoji: "🎲",
+        isCorrect: false
+      },
+      {
+        id: "none",
+        text: "Avoid donating",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Transparency Check",
+    description: "Before donating, what should you check first?",
+    options: [
+      {
+        id: "celebrity",
+        text: "Celebrity endorsement",
+        emoji: "🌟",
+        isCorrect: false
+      },
+      {
+        id: "emotional",
+        text: "Emotional stories only",
+        emoji: "😢",
+        isCorrect: false
+      },
+      
+      {
+        id: "pressure",
+        text: "Social pressure",
+        emoji: "👥",
+        isCorrect: false
+      },
+      {
+        id: "reports",
+        text: "Financial transparency & impact reports",
+        emoji: "📊",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 4,
+    title: "Charity vs Personal Growth",
+    description: "You have limited money. What builds both empathy and financial sense?",
+    options: [
+      {
+        id: "donate-blind",
+        text: "Donate without understanding",
+        emoji: "🙃",
+        isCorrect: false
+      },
+      
+      {
+        id: "spend",
+        text: "Spend everything on yourself",
+        emoji: "🛍️",
+        isCorrect: false
+      },
+      {
+        id: "learn",
+        text: "Learn about causes, then donate mindfully",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "avoid",
+        text: "Avoid charity completely",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Sustainable Giving",
+    description: "Which habit makes charity effective over a lifetime?",
+    options: [
+      {
+        id: "big-once",
+        text: "One big donation once",
+        emoji: "💥",
+        isCorrect: false
+      },
+       {
+        id: "consistent",
+        text: "Small, regular, planned giving",
+        emoji: "📅",
+        isCorrect: true
+      },
+      {
+        id: "guilt",
+        text: "Donate only when feeling guilty",
+        emoji: "😬",
+        isCorrect: false
+      },
+     
+      {
+        id: "impulse",
+        text: "Impulse donations",
+        emoji: "⚡",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered) return;

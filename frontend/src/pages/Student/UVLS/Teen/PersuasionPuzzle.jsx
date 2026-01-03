@@ -169,7 +169,7 @@ const PersuasionPuzzle = () => {
                       <div className="text-2xl mr-3">{request.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{request.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {request.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

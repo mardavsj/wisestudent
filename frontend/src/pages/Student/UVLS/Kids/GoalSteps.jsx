@@ -19,52 +19,53 @@ const GoalSteps = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      goal: "Read 10 books.",
-      monthly: [
-        { id: "a", text: "1 book/month", emoji: "📖", isCorrect: true },
-        { id: "b", text: "10 at once", emoji: "😵", isCorrect: false },
-        { id: "c", text: "No reading", emoji: "🚫", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      goal: "Save 20 coins.",
-      monthly: [
-        { id: "b", text: "Spend all", emoji: "💸", isCorrect: false },
-        { id: "a", text: "2 coins/month", emoji: "🪙", isCorrect: true },
-        { id: "c", text: "20 one day", emoji: "😰", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      goal: "Learn bike.",
-      monthly: [
-        { id: "b", text: "Never try", emoji: "😔", isCorrect: false },
-        { id: "c", text: "One long day", emoji: "🏃", isCorrect: false },
-        { id: "a", text: "Practice weekly", emoji: "🚲", isCorrect: true }
-      ]
-    },
-    {
-      id: 4,
-      goal: "Plant garden.",
-      monthly: [
-        { id: "b", text: "Forget water", emoji: "🥀", isCorrect: false },
-        { id: "a", text: "Seed then water", emoji: "🌱", isCorrect: true },
-        { id: "c", text: "All at end", emoji: "😩", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      goal: "Draw 5 pictures.",
-      monthly: [
-        { id: "b", text: "5 last day", emoji: "😓", isCorrect: false },
-        { id: "c", text: "No draw", emoji: "🚫", isCorrect: false },
-        { id: "a", text: "1 per week", emoji: "🎨", isCorrect: true }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    goal: "Finish a puzzle with 50 pieces.",
+    monthly: [
+      { id: "b", text: "Do all at once", emoji: "😵", isCorrect: false },
+      { id: "c", text: "Never try", emoji: "🚫", isCorrect: false },
+      { id: "a", text: "Solve 10 pieces/day", emoji: "☺️", isCorrect: true },
+    ]
+  },
+  {
+    id: 2,
+    goal: "Collect 12 stickers.",
+    monthly: [
+      { id: "b", text: "Get 12 in one day", emoji: "😰", isCorrect: false },
+      { id: "a", text: "1 sticker/week", emoji: "⭐", isCorrect: true },
+      { id: "c", text: "Give away all stickers", emoji: "💨", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    goal: "Learn a new song on the piano.",
+    monthly: [
+      { id: "a", text: "Practice daily for 10 minutes", emoji: "👍", isCorrect: true },
+      { id: "b", text: "Play once at night", emoji: "🌙", isCorrect: false },
+      { id: "c", text: "Never play piano", emoji: "🚫", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    goal: "Clean your room.",
+    monthly: [
+      { id: "b", text: "Leave mess for a week", emoji: "🛏️", isCorrect: false },
+      { id: "c", text: "Do all in one hour at night", emoji: "⏰", isCorrect: false },
+      { id: "a", text: "Tidy a little each day", emoji: "🙂", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    goal: "Practice drawing animals.",
+    monthly: [
+      { id: "b", text: "Draw all 30 in one day", emoji: "😵", isCorrect: false },
+      { id: "a", text: "Draw one animal/day", emoji: "🤔", isCorrect: true },
+      { id: "c", text: "Never practice", emoji: "🚫", isCorrect: false }
+    ]
+  }
+];
+
 
   const [answered, setAnswered] = useState(false);
 

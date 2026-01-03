@@ -103,9 +103,9 @@ const FriendBetrayalStory = () => {
       id: 5,
       text: "Can you rebuild trust after betrayal?",
       choices: [
+        { id: 'a', text: 'Yes, with time, honesty, and consistent actions' },
         { id: 'b', text: 'No, trust can never be rebuilt' },
         { id: 'c', text: 'Only if you pretend it never happened' },
-        { id: 'a', text: 'Yes, with time, honesty, and consistent actions' }
       ],
       correct: 'a',
       explanation: 'Trust can be rebuilt through genuine effort, honesty, and consistent positive actions over time!'

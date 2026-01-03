@@ -34,8 +34,8 @@ const QuizNutritionTeen = () => {
       },
       {
         id: "b",
-        text: "Each color gives different nutrients",
-        emoji: "🌈",
+        text: "Each food gives different nutrients",
+        emoji: "🍇",
         isCorrect: true
       },
       {

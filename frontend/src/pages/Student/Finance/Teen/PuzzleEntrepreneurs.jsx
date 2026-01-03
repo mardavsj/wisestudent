@@ -193,7 +193,7 @@ const PuzzleEntrepreneurs = () => {
                       <div className="text-2xl mr-3">{entrepreneur.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{entrepreneur.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {entrepreneur.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

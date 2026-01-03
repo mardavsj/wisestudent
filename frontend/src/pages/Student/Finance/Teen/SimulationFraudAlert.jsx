@@ -27,164 +27,167 @@ const SimulationFraudAlert = () => {
   const [answered, setAnswered] = useState(false);
 
   const scenarios = [
-    {
-      id: 1,
-      title: "Fraud Alert: Win Message",
-      description: "Message: 'Win ₹1 lakh, click link.' What should you do?",
-      options: [
-        { 
-          id: "click", 
-          text: "Click the link", 
-          emoji: "🔗", 
-          isCorrect: false
-        },
-       
-        { 
-          id: "forward", 
-          text: "Forward to friends", 
-          emoji: "📤", 
-          isCorrect: false
-        },
-        { 
-          id: "report", 
-          text: "Report as spam", 
-          emoji: "⚠️", 
-          isCorrect: false
-        },
-         { 
-          id: "delete", 
-          text: "Delete the message", 
-          emoji: "🗑️", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      title: "Fraud Alert: Bank Call",
-      description: "Caller says your account is locked. Asks for OTP. What do you do?",
-      options: [
-        { 
-          id: "give-otp", 
-          text: "Give OTP", 
-          emoji: "🔢", 
-          isCorrect: false
-        },
-        { 
-          id: "hang-up", 
-          text: "Hang up and call bank", 
-          emoji: "📞", 
-          isCorrect: true
-        },
-        { 
-          id: "trust", 
-          text: "Trust the caller", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        { 
-          id: "verify", 
-          text: "Verify with bank directly", 
-          emoji: "🔍", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Fraud Alert: Free Offer",
-      description: "Website offers free phone for ₹50. What's your action?",
-      options: [
-        { 
-          id: "refuse", 
-          text: "Refuse, it's a scam", 
-          emoji: "🚫", 
-          isCorrect: true
-        },
-        { 
-          id: "pay", 
-          text: "Pay ₹50", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "check", 
-          text: "Check website first", 
-          emoji: "🔍", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore and continue browsing", 
-          emoji: "🔇", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Fraud Alert: Urgent Email",
-      description: "Email says 'Act now or lose account.' Asks for password. What do you do?",
-      options: [
-       
-        { 
-          id: "reply", 
-          text: "Reply with password", 
-          emoji: "📧", 
-          isCorrect: false
-        },
-        { 
-          id: "forward-email", 
-          text: "Forward email", 
-          emoji: "📤", 
-          isCorrect: false
-        },
-         { 
-          id: "ignore", 
-          text: "Ignore and delete", 
-          emoji: "🗑️", 
-          isCorrect: true
-        },
-        { 
-          id: "spam", 
-          text: "Mark as spam", 
-          emoji: "⚠️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Fraud Alert: Investment Offer",
-      description: "Someone offers 100% return in one day. What's your response?",
-      options: [
-        { 
-          id: "invest", 
-          text: "Invest immediately", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "refuse2", 
-          text: "Refuse, report scam", 
-          emoji: "🚫", 
-          isCorrect: true
-        },
-        { 
-          id: "think", 
-          text: "Think about it", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "consult", 
-          text: "Consult with family", 
-          emoji: "👨‍👩‍👧", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Suspicious App Request",
+    description: "A new app asks for your bank OTP to 'verify account'. Wallet ₹500. What’s smart?",
+    options: [
+      { 
+        id: "share-otp", 
+        text: "Share OTP immediately", 
+        emoji: "🔢", 
+        isCorrect: false
+      },
+     
+      { 
+        id: "check-forum", 
+        text: "Check app reviews & forums before deciding", 
+        emoji: "🧐", 
+        isCorrect: false
+      },
+      { 
+        id: "install-anyway", 
+        text: "Install and see if it works", 
+        emoji: "📱", 
+        isCorrect: false
+      },
+       { 
+        id: "ignore-app", 
+        text: "Ignore app and uninstall it", 
+        emoji: "📴", 
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    title: "Fake Scholarship Email",
+    description: "Email claims 'Scholarship ₹50,000, click to register.' What’s safe?",
+    options: [
+      { 
+        id: "click-link", 
+        text: "Click link to register fast", 
+        emoji: "🔗", 
+        isCorrect: false
+      },
+      { 
+        id: "verify-university", 
+        text: "Verify email with official university site", 
+        emoji: "🏫", 
+        isCorrect: true
+      },
+      { 
+        id: "share-email", 
+        text: "Share email with friends", 
+        emoji: "📤", 
+        isCorrect: false
+      },
+      { 
+        id: "ignore-and-forget", 
+        text: "Ignore it completely without checking", 
+        emoji: "🙈", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Fake Friend Request",
+    description: "Someone unknown sends friend request offering 'free game points'. Safe choice?",
+    options: [
+      { 
+        id: "accept", 
+        text: "Accept to get points", 
+        emoji: "🎮", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "share-data", 
+        text: "Send your game credentials for points", 
+        emoji: "🔑", 
+        isCorrect: false
+      },
+      { 
+        id: "block-report", 
+        text: "Block and report account", 
+        emoji: "🚫", 
+        isCorrect: true
+      },
+      { 
+        id: "ignore-only", 
+        text: "Ignore without reporting", 
+        emoji: "🙅", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Online Store Scam",
+    description: "Website offers phone at 90% discount. Payment via UPI only. Teen decision?",
+    options: [
+      { 
+        id: "research-store", 
+        text: "Check website legitimacy & reviews before any payment", 
+        emoji: "🧐", 
+        isCorrect: true
+      },
+      { 
+        id: "pay-now", 
+        text: "Pay immediately, deal is too good to miss", 
+        emoji: "💳", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "borrow-money", 
+        text: "Borrow extra to buy faster", 
+        emoji: "💰", 
+        isCorrect: false
+      },
+      { 
+        id: "share-link", 
+        text: "Share deal with friends", 
+        emoji: "📤", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Social Media Investment Scam",
+    description: "Influencer promises 200% return in a week, asks for ₹500 via Paytm. What’s correct?",
+    options: [
+      { 
+        id: "invest-quick", 
+        text: "Send money quickly", 
+        emoji: "💸", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "consult-unknown", 
+        text: "Ask unknown friend to verify", 
+        emoji: "👤", 
+        isCorrect: false
+      },
+      { 
+        id: "verify-source", 
+        text: "Verify legitimacy, research before investing", 
+        emoji: "🔍", 
+        isCorrect: true
+      },
+      { 
+        id: "share-link", 
+        text: "Forward link to others", 
+        emoji: "📤", 
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered) return;

@@ -23,128 +23,130 @@ const TreeStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "You plant a seed. Save or waste your money?",
-      options: [
-        { 
-          id: "save", 
-          text: "Save", 
-          emoji: "🌱", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "waste", 
-          text: "Waste", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Your money can grow. What do you do?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Spend Fast", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "hide", 
-          text: "Hide It", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        {
-          id: "grow",
-          text: "Grow Money",
-          emoji: "📈",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "You have extra cash. What's smarter?",
-      options: [
-        { 
-          id: "invest", 
-          text: "Invest", 
-          emoji: "💰", 
-          isCorrect: true
-        },
-        { 
-          id: "lose", 
-          text: "Lose", 
-          emoji: "📉", 
-          isCorrect: false
-        },
-        { 
-          id: "forget", 
-          text: "Forget About It", 
-          emoji: "🤷", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You want wealth. What's the plan?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Spend All", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          id: "wait", 
-          text: "Wait Forever", 
-          emoji: "⏳", 
-          isCorrect: false
-        },
-        {
-          id: "build",
-          text: "Build Wealth",
-          emoji: "🏗️",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "Your savings are a seed. What now?",
-      options: [
-        { 
-          id: "burn", 
-          text: "Burn Cash", 
-          emoji: "🔥", 
-          isCorrect: false
-        },
-        {
-          id: "plant",
-          text: "Plant Savings",
-          emoji: "🌳",
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore Savings", 
-          emoji: "😑", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You plant a small tree today. What helps it grow strong over time?",
+    options: [
+      {
+        id: "care",
+        text: "Water and take care regularly",
+        emoji: "💧",
+        isCorrect: true
+      },
+      {
+        id: "rush",
+        text: "Pull it to grow faster",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "ignore",
+        text: "Leave it and forget",
+        emoji: "😴",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Money is like a tree. What makes it grow slowly and safely?",
+    options: [
+      
+      {
+        id: "spend",
+        text: "Spending everything quickly",
+        emoji: "💸",
+        isCorrect: false
+      },
+      {
+        id: "hide",
+        text: "Hiding it and never using it",
+        emoji: "🙈",
+        isCorrect: false
+      },
+      {
+        id: "plan",
+        text: "Using it wisely over time",
+        emoji: "📊",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: "You get extra pocket money. What is the smart tree-style choice?",
+    options: [
+      
+      {
+        id: "waste",
+        text: "Spend it without thinking",
+        emoji: "🔥",
+        isCorrect: false
+      },
+      {
+        id: "grow",
+        text: "Save part so it grows later",
+        emoji: "🌱",
+        isCorrect: true
+      },
+      {
+        id: "lose",
+        text: "Keep it carelessly",
+        emoji: "📉",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "A fruit tree gives fruits every year. What does this teach about money?",
+    options: [
+      
+      {
+        id: "fast",
+        text: "Money should be used only once",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "luck",
+        text: "Only luck matters",
+        emoji: "🍀",
+        isCorrect: false
+      },
+      {
+        id: "return",
+        text: "Good choices give rewards again and again",
+        emoji: "🍎",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "If you cut a tree too early, what happens?",
+    options: [
+      {
+        id: "loss",
+        text: "You lose future benefits",
+        emoji: "📉",
+        isCorrect: true
+      },
+      {
+        id: "gain",
+        text: "You always gain more",
+        emoji: "💰",
+        isCorrect: false
+      },
+      {
+        id: "nothing",
+        text: "Nothing changes",
+        emoji: "😐",
+        isCorrect: false
+      }
+    ]
+  }
+];
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

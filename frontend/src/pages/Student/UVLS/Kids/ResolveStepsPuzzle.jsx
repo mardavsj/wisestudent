@@ -169,7 +169,7 @@ const ResolveStepsPuzzle = () => {
                       <div className="text-2xl mr-3">{step.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{step.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {step.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

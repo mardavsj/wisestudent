@@ -34,62 +34,63 @@ const ReportNeedReflex = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "What should you report if you see it?",
-      correctAnswer: "Broken bench",
-      options: [
-        { text: "Broken bench", isCorrect: true, emoji: "🪑" },
-        { text: "Green grass", isCorrect: false, emoji: "🌱" },
-        { text: "Blue sky", isCorrect: false, emoji: "☀️" },
-        { text: "Nice weather", isCorrect: false, emoji: "🌈" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What should you report to keep safe?",
-      correctAnswer: "Dirty water",
-      options: [
-        { text: "Blue sky", isCorrect: false, emoji: "☀️" },
-        { text: "Dirty water", isCorrect: true, emoji: "💧" },
-        { text: "Nice flowers", isCorrect: false, emoji: "🌸" },
-        { text: "Sunny day", isCorrect: false, emoji: "☀️" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What should you report that needs fixing?",
-      correctAnswer: "Cracked sidewalk",
-      options: [
-        { text: "Cracked sidewalk", isCorrect: true, emoji: "🛤️" },
-        { text: "Nice flower", isCorrect: false, emoji: "🌸" },
-        { text: "Beautiful tree", isCorrect: false, emoji: "🌳" },
-        { text: "Pretty bird", isCorrect: false, emoji: "🐦" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What should you report that's a problem?",
-      correctAnswer: "Leaky faucet",
-      options: [
-        { text: "Sunny day", isCorrect: false, emoji: "☀️" },
-        { text: "Leaky faucet", isCorrect: true, emoji: "🚰" },
-        { text: "Nice weather", isCorrect: false, emoji: "🌈" },
-        { text: "Happy people", isCorrect: false, emoji: "😊" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What should you report that needs attention?",
-      correctAnswer: "Dark light",
-      options: [
-        { text: "Dark light", isCorrect: true, emoji: "💡" },
-        { text: "Bird singing", isCorrect: false, emoji: "🐦" },
-        { text: "Nice day", isCorrect: false, emoji: "☀️" },
-        { text: "Happy moment", isCorrect: false, emoji: "😊" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "What should you report at school to prevent accidents?",
+    correctAnswer: "Loose classroom wire",
+    options: [
+      { text: "Clean floor", isCorrect: false, emoji: "✨" },
+      { text: "Open window", isCorrect: false, emoji: "🪟" },
+      { text: "Quiet room", isCorrect: false, emoji: "🤫" },
+      { text: "Loose classroom wire", isCorrect: true, emoji: "🔌" },
+    ]
+  },
+  {
+    id: 2,
+    question: "What should you report in the playground?",
+    correctAnswer: "Broken swing chain",
+    options: [
+      { text: "Green slide", isCorrect: false, emoji: "🛝" },
+      { text: "Broken swing chain", isCorrect: true, emoji: "⛓️" },
+      { text: "Soft sand", isCorrect: false, emoji: "🏖️" },
+      { text: "Tall trees", isCorrect: false, emoji: "🌳" }
+    ]
+  },
+  {
+    id: 3,
+    question: "What should you report to keep everyone healthy?",
+    correctAnswer: "Spoiled food smell",
+    options: [
+      { text: "Fresh fruit", isCorrect: false, emoji: "🍎" },
+      { text: "Clean plates", isCorrect: false, emoji: "🍽️" },
+      { text: "Spoiled food smell", isCorrect: true, emoji: "🗑️" },
+      { text: "Cold water", isCorrect: false, emoji: "💧" }
+    ]
+  },
+  {
+    id: 4,
+    question: "What should you report in your neighborhood?",
+    correctAnswer: "Open drain cover",
+    options: [
+      { text: "Open drain cover", isCorrect: true, emoji: "⚠️" },
+      { text: "Street lights on", isCorrect: false, emoji: "💡" },
+      { text: "Clean road", isCorrect: false, emoji: "🛣️" },
+      { text: "Park benches", isCorrect: false, emoji: "🪑" }
+    ]
+  },
+  {
+    id: 5,
+    question: "What should you report at home for safety?",
+    correctAnswer: "Overheating plug",
+    options: [
+      { text: "Closed door", isCorrect: false, emoji: "🚪" },
+      { text: "Folded clothes", isCorrect: false, emoji: "👕" },
+      { text: "Quiet room", isCorrect: false, emoji: "😌" },
+      { text: "Overheating plug", isCorrect: true, emoji: "🔥" },
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

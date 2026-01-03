@@ -169,7 +169,7 @@ const WorkplacePuzzle = () => {
                       <div className="text-2xl mr-3">{issue.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{issue.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {issue.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

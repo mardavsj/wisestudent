@@ -88,18 +88,19 @@ const DebateMultitaskVsFocus = () => {
           emoji: "🎵", 
           isCorrect: false
         },
+         { 
+          id: "silence", 
+          text: "Silence is better for focus", 
+          emoji: "🔇", 
+          isCorrect: true
+        },
         { 
           id: "depends", 
           text: "Depends on the type of music", 
           emoji: "🎧", 
-          isCorrect: true
-        },
-        { 
-          id: "silence", 
-          text: "Silence is better for focus", 
-          emoji: "🔇", 
           isCorrect: false
-        }
+        },
+       
       ]
     },
     {

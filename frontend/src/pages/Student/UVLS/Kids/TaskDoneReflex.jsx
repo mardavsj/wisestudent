@@ -79,16 +79,17 @@ const TaskDoneReflex = () => {
       ]
     },
     {
-      id: 5,
-      question: "What should you do before bed?",
-      correctAnswer: "Sleep early",
-      options: [
-        { text: "Play games late", isCorrect: false, emoji: "🎮" },
-        { text: "Watch all night", isCorrect: false, emoji: "📺" },
-        { text: "Sleep early", isCorrect: true, emoji: "😴" },
-        { text: "Stay up late", isCorrect: false, emoji: "🌙" }
-      ]
-    }
+  id: 5,
+  question: "Before going to bed, which habit helps you stay productive the next day?",
+  correctAnswer: "Plan tasks for tomorrow",
+  options: [
+    { text: "Play games late", isCorrect: false, emoji: "🎮" },
+    { text: "Scroll social media", isCorrect: false, emoji: "📱" },
+    { text: "Plan tasks for tomorrow", isCorrect: true, emoji: "📝" },
+    { text: "Stay up watching TV", isCorrect: false, emoji: "📺" }
+  ]
+}
+  
   ];
 
   useEffect(() => {

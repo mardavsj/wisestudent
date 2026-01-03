@@ -28,47 +28,48 @@ const StayPositivePoster = () => {
   const [answered, setAnswered] = useState(false);
 
   const stages = [
-    {
-      question: 'Which poster best shows "Think Positive, Live Happy"?',
-      choices: [
-        { text: "Poster showing positive thoughts lead to happiness", correct: true, emoji: "😊" },
-        { text: "Poster showing only negative thoughts", correct: false, emoji: "😢" },
-        { text: "Poster showing only problems", correct: false, emoji: "😰" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Stay Positive"?',
-      choices: [
-        { text: "Poster showing only complaints", correct: false, emoji: "😤" },
-        { text: "Poster showing positive mindset and bright outlook", correct: true, emoji: "🌟" },
-        { text: "Poster showing only worries", correct: false, emoji: "😰" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Positive Mind, Happy Life"?',
-      choices: [
-        { text: "Poster showing positive thinking brings joy", correct: true, emoji: "🧠" },
-        { text: "Poster showing only sadness", correct: false, emoji: "😢" },
-        { text: "Poster showing only anger", correct: false, emoji: "😠" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Choose Happiness"?',
-      choices: [
-        { text: "Poster showing only negative choices", correct: false, emoji: "❌" },
-        { text: "Poster showing only problems", correct: false, emoji: "😰" },
-        { text: "Poster showing choosing positive thoughts", correct: true, emoji: "😊" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Positive Vibes Only"?',
-      choices: [
-        { text: "Poster showing only negative energy", correct: false, emoji: "😤" },
-        { text: "Poster showing spreading positive energy", correct: true, emoji: "💫" },
-        { text: "Poster showing only complaints", correct: false, emoji: "😑" }
-      ]
-    }
-  ];
+  {
+    question: 'Which poster inspires someone feeling down to keep going?',
+    choices: [
+      { text: "Focus on what went wrong", correct: false, emoji: "⚡" },
+      { text: "Think everything is hopeless", correct: false, emoji: "🌧️" },
+      { text: "Take small steps each day", correct: true, emoji: "🌱" },
+    ]
+  },
+  {
+    question: 'Which poster encourages a positive mindset during challenges?',
+    choices: [
+      { text: "Look for solutions and keep trying", correct: true, emoji: "🔍" },
+      { text: "Complain about problems", correct: false, emoji: "😤" },
+      { text: "Worry and give up easily", correct: false, emoji: "😰" }
+    ]
+  },
+  {
+    question: 'Which poster helps someone focus on happy moments?',
+    choices: [
+      { text: "Remember only sad events", correct: false, emoji: "😢" },
+      { text: "Notice small joys in daily life", correct: true, emoji: "☀️" },
+      { text: "Keep thinking about mistakes", correct: false, emoji: "⚡" }
+    ]
+  },
+  {
+    question: 'Which poster inspires choosing optimism in tough situations?',
+    choices: [
+      { text: "Look for the silver lining", correct: true, emoji: "🌈" },
+      { text: "Focus on complaints", correct: false, emoji: "😑" },
+      { text: "Give up immediately", correct: false, emoji: "🏳️" }
+    ]
+  },
+  {
+    question: 'Which poster encourages spreading good energy to friends?',
+    choices: [
+      { text: "Ignore friends who are sad", correct: false, emoji: "🙈" },
+      { text: "Point out everyone’s mistakes", correct: false, emoji: "⚡" },
+      { text: "Smile and help others", correct: true, emoji: "💛" },
+    ]
+  }
+];
+
 
   const handleSelect = (isCorrect) => {
     if (answered || showResult) return;

@@ -76,7 +76,7 @@ const WaterTapStory = () => {
       options: [
         { id: "tell", text: "Tell an adult", emoji: "👨‍👩‍👧", isCorrect: true },
         { id: "ignore", text: "Ignore it", emoji: "😶", isCorrect: false },
-        { id: "close", text: "Try to close it", emoji: "🔧", isCorrect: false }
+        { id: "fix", text: "Fix the pipe yourself", emoji: "🔧", isCorrect: false }
       ]
     },
     {
@@ -93,16 +93,16 @@ const WaterTapStory = () => {
       text: "How can you save water?",
       options: [
         { id: "leaveon", text: "Leave tap running", emoji: "💧", isCorrect: false },
-        { id: "turnoff", text: "Turn off tap when brushing", emoji: "🚰", isCorrect: false },
-        { id: "short", text: "Take shorter showers", emoji: "🚿", isCorrect: true }
+        { id: "short", text: "Take shorter showers", emoji: "🚿", isCorrect: false },
+        { id: "turnoff", text: "Turn off tap when brushing", emoji: "🚰", isCorrect: true },
       ]
     },
     {
       id: 4,
       text: "What should you do after using the tap?",
       options: [
-        { id: "run", text: "Leave it running", emoji: "💧", isCorrect: false },
         { id: "check", text: "Check it's fully closed", emoji: "😓", isCorrect: true },
+        { id: "run", text: "Leave it running", emoji: "💧", isCorrect: false },
         { id: "play", text: "Play with the water", emoji: "💦", isCorrect: false }
       ]
     },

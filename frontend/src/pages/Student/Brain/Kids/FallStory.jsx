@@ -65,6 +65,13 @@ const FallStory = () => {
           
           isCorrect: false
         },
+        
+        { 
+          id: "blame", 
+          text: "Blame the paper", 
+          emoji: "👆", 
+          isCorrect: false
+        },
         { 
           id: "practice", 
           text: "Practice and try again", 
@@ -72,12 +79,6 @@ const FallStory = () => {
           
           isCorrect: true
         },
-        { 
-          id: "blame", 
-          text: "Blame the paper", 
-          emoji: "👆", 
-          isCorrect: false
-        }
       ]
     },
     {
@@ -108,12 +109,7 @@ const FallStory = () => {
       id: 4,
       text: "Kid loses a game. What's the right response?",
       options: [
-        { 
-          id: "learn", 
-          text: "Learn from it and try again", 
-          emoji: "🎮", 
-          isCorrect: true
-        },
+       
         { 
           id: "angry", 
           text: "Get angry and quit", 
@@ -125,7 +121,13 @@ const FallStory = () => {
           text: "Blame the game", 
           emoji: "👆", 
           isCorrect: false
-        }
+        },
+         { 
+          id: "learn", 
+          text: "Learn from it and try again", 
+          emoji: "🎮", 
+          isCorrect: true
+        },
       ]
     },
     {

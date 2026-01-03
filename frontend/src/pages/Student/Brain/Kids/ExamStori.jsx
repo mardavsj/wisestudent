@@ -58,132 +58,131 @@ const ExamStori = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Kid studies till midnight, sleepy in class. Smart?",
-      options: [
-        { 
-          id: "no", 
-          text: "No, it's not smart", 
-          emoji: "👎", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's smart", 
-          emoji: "🤓", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Kid stays up late gaming, tired for test. Good?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, it's good", 
-          emoji: "👍", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, it's not good", 
-          emoji: "👎", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Kid watches TV till 1 AM, sleepy at school. Wise?",
-      options: [
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, it's not wise", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's wise", 
-          emoji: "🤓", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Kid texts friends late, yawns in class. Smart?",
-      options: [
-        { 
-          id: "no", 
-          text: "No, it's not smart", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's smart", 
-          emoji: "😎", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Kid skips sleep for project, exhausted. Good idea?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, it's a good idea", 
-          emoji: "💡", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, it's not a good idea", 
-          emoji: "👎", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Two days before the exam, Aditya plans his study time. By midnight, he feels his focus fading but the chapter isn’t finished. What choice best supports his exam performance?",
+    options: [
+      
+      {
+        id: "push",
+        text: "Push through while rereading without focus",
+        emoji: "📖",
+        isCorrect: false
+      },
+      {
+        id: "memorize",
+        text: "Memorize quickly without understanding",
+        emoji: "🧩",
+        isCorrect: false
+      },
+      {
+        id: "prioritize",
+        text: "Stop, rest well, and continue with a fresh mind",
+        emoji: "🌙",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "The night before a test, Kabir finishes revision early and opens a game to relax. Time passes faster than expected. What decision would help him the next morning?",
+    options: [
+      {
+        id: "limit",
+        text: "Set a clear stop time and protect sleep",
+        emoji: "⏱️",
+        isCorrect: true
+      },
+      {
+        id: "continue",
+        text: "Keep playing until feeling sleepy",
+        emoji: "🎮",
+        isCorrect: false
+      },
+      {
+        id: "balance",
+        text: "Play more and wake up earlier to revise",
+        emoji: "⏰",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "While studying late, Nisha notices she keeps reading the same line again and again. What does this signal about her learning state?",
+    options: [
+      
+      {
+        id: "difficulty",
+        text: "The topic is impossible to understand",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "fatigue",
+        text: "Her brain needs rest to work effectively",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "failure",
+        text: "She is not capable of doing well",
+        emoji: "❌",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Late at night, messages keep arriving on Aarav’s phone while he prepares for an exam. What choice supports steady focus?",
+    options: [
+      {
+        id: "silence",
+        text: "Silence notifications until study is complete",
+        emoji: "🔕",
+        isCorrect: true
+      },
+      {
+        id: "reply",
+        text: "Reply quickly to avoid missing out",
+        emoji: "💬",
+        isCorrect: false
+      },
+      {
+        id: "multitask",
+        text: "Switch between messages and notes",
+        emoji: "🔀",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "The project deadline and exam date fall close together. Riya feels pressure to finish everything in one night. What strategy helps her most?",
+    options: [
+      
+      {
+        id: "overnight",
+        text: "Complete everything in one long stretch",
+        emoji: "🌌",
+        isCorrect: false
+      },
+      {
+        id: "ignore",
+        text: "Focus only on one task and forget the other",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "plan",
+        text: "Break work across days with rest in between",
+        emoji: "🗓️",
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (option) => {
     if (answered) return;

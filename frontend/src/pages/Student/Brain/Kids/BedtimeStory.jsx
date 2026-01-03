@@ -27,131 +27,131 @@ const BedtimeStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Kid sleeps at 9 PM and wakes up fresh. Is this good?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, it's good", 
-          emoji: "😴", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No, it's bad", 
-          emoji: "😫", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Kid sleeps early, feels energetic. Good habit?",
-      options: [
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's good", 
-          emoji: "⚡", 
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No, it's bad", 
-          emoji: "👎", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Kid has bedtime routine, sleeps well. Smart?",
-      options: [
-        { 
-          id: "no", 
-          text: "No, routines are bad", 
-          emoji: "🙅‍♂️", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, doesn't matter", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's smart", 
-          emoji: "😎", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Kid sleeps by 10 PM, ready for school. Good?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, it's good", 
-          emoji: "🏫", 
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No, it's bad", 
-          emoji: "🤦", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, doesn't help", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Kid avoids screens before bed, rests well. Good?",
-      options: [
-        { 
-          id: "no", 
-          text: "No, screens are fine", 
-          emoji: "📱", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, doesn't matter", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's good", 
-          emoji: "😴", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "After a long day, Neel feels tired but his mind keeps jumping from one thought to another. What helps his body slow down naturally?",
+    options: [
+      {
+        id: "winddown",
+        text: "Follow a quiet wind-down routine before sleeping",
+        emoji: "🌙",
+        isCorrect: true
+      },
+      {
+        id: "lateplay",
+        text: "Start a new exciting game to feel sleepy",
+        emoji: "🎮",
+        isCorrect: false
+      },
+      {
+        id: "overthink",
+        text: "Lie in bed and think about tomorrow",
+        emoji: "💭",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Meera goes to bed at different times each night. Some mornings feel easy, others feel heavy. What could help her mornings feel steadier?",
+    options: [
+      
+      {
+        id: "catchup",
+        text: "Sleeping very late and waking suddenly",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "schedule",
+        text: "Keeping a regular sleep and wake time",
+        emoji: "⏰",
+        isCorrect: true
+      },
+      {
+        id: "random",
+        text: "Sleeping whenever she feels bored",
+        emoji: "🔀",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Just before bed, Aarav watches bright videos and then struggles to fall asleep. What supports his brain’s night mode?",
+    options: [
+      {
+        id: "dim",
+        text: "Choose calmer activities with softer lights",
+        emoji: "🕯️",
+        isCorrect: true
+      },
+      {
+        id: "scroll",
+        text: "Keep scrolling until sleep comes",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "snack",
+        text: "Eat sugary snacks to feel relaxed",
+        emoji: "🍬",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Before sleeping, Riya reads a few pages of her favorite book. Her eyes feel heavy soon after. What is happening?",
+    options: [
+      
+      {
+        id: "bored",
+        text: "She is forcing herself to feel bored",
+        emoji: "😑",
+        isCorrect: false
+      },
+      {
+        id: "avoid",
+        text: "She is avoiding sleep without knowing",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "signal",
+        text: "Her body is getting a clear signal to rest",
+        emoji: "📖",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "Kunal stops using screens some time before bed and wakes up feeling calm. What supports this change?",
+    options: [
+      
+      {
+        id: "luck",
+        text: "Feeling lucky that night",
+        emoji: "🍀",
+        isCorrect: false
+      },
+      {
+        id: "brainrest",
+        text: "Giving the brain time to relax before sleep",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "tired",
+        text: "Being extra tired from the day",
+        emoji: "🥱",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

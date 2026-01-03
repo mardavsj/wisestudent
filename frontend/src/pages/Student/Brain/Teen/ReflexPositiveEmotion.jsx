@@ -15,6 +15,11 @@ const ReflexPositiveEmotion = () => {
   const gameId = "brain-teens-49";
   const gameData = getGameDataById(gameId);
   
+  // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
+  const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
+  const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
+  const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
@@ -26,57 +31,57 @@ const ReflexPositiveEmotion = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which action shows empathy and positive emotion?",
-      options: [
-        { id: "empathy", text: "Empathy", emoji: "❤️",  isCorrect: true },
-        { id: "bullying", text: "Bullying", emoji: "😠",  isCorrect: false },
-        { id: "ignore", text: "Ignore", emoji: "🙈",  isCorrect: false },
-        { id: "mock", text: "Mock", emoji: "😏",  isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which action spreads positive emotions?",
-      options: [
-        { id: "criticize", text: "Criticize", emoji: "👎",  isCorrect: false },
-        { id: "compliment", text: "Compliment", emoji: "👍",  isCorrect: true },
-        { id: "gossip", text: "Gossip", emoji: "🗣️",  isCorrect: false },
-        { id: "judge", text: "Judge", emoji: "⚖️",  isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      text: "What's the positive way to handle a loss?",
-      options: [
-        { id: "blame", text: "Blame Others", emoji: "👉😡",  isCorrect: false },
-        { id: "excuse", text: "Make Excuses", emoji: "🤷",  isCorrect: false },
-        { id: "grace", text: "Graceful Acceptance", emoji: "😌🏆",  isCorrect: true },
-        { id: "quit", text: "Give Up", emoji: "🚫",  isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      text: "How should you celebrate a team win?",
-      options: [
-        { id: "together", text: "Celebrate Together", emoji: "🎉👥",  isCorrect: true },
-        { id: "credit", text: "Take All Credit", emoji: "👑",  isCorrect: false },
-        { id: "boast", text: "Boast", emoji: "😎",  isCorrect: false },
-        { id: "exclude", text: "Exclude Others", emoji: "🚪",  isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      text: "What helps you see good in bad situations?",
-      options: [
-        { id: "dwell", text: "Dwell on Negative", emoji: "😔",  isCorrect: false },
-        { id: "lesson", text: "Find the Lesson", emoji: "💡",  isCorrect: true },
-        { id: "complain", text: "Complain", emoji: "😤",  isCorrect: false },
-        { id: "blame", text: "Blame Circumstances", emoji: "🌪️",  isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A friend opens up about a tough day. Which response best reflects positive emotional intelligence?",
+    options: [
+      { id: "listen", text: "Listen actively without interrupting", emoji: "👂", isCorrect: true },
+      { id: "fix", text: "Immediately offer solutions", emoji: "🛠️", isCorrect: false },
+      { id: "dismiss", text: "Say it’s not a big deal", emoji: "🙄", isCorrect: false },
+      { id: "compare", text: "Share your worse experience", emoji: "📉", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Which behavior most effectively spreads positive emotions in a group?",
+    options: [
+      { id: "joke", text: "Making jokes at someone’s expense", emoji: "😏", isCorrect: false },
+      { id: "criticize", text: "Pointing out flaws publicly", emoji: "👎", isCorrect: false },
+      { id: "acknowledge", text: "Acknowledging others’ efforts", emoji: "🌟", isCorrect: true },
+      { id: "gossip", text: "Sharing unverified opinions", emoji: "🗣️", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "After losing a competition, which response reflects positive emotional strength?",
+    options: [
+      { id: "blame", text: "Blame teammates or rules", emoji: "👉😠", isCorrect: false },
+      { id: "reflect", text: "Reflect on feedback and improvement", emoji: "📈", isCorrect: true },
+      { id: "quit", text: "Lose motivation entirely", emoji: "🚪", isCorrect: false },
+      { id: "deny", text: "Pretend it didn’t matter", emoji: "🙃", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "What response builds positive emotions after a shared success?",
+    options: [
+      { id: "spotlight", text: "Highlighting only your role", emoji: "🔦", isCorrect: false },
+      { id: "mock", text: "Mocking competitors", emoji: "😎", isCorrect: false },
+      { id: "dismiss", text: "Downplaying others’ contributions", emoji: "🙈", isCorrect: false },
+      { id: "credit", text: "Sharing credit with the team", emoji: "🤝", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    text: "Which mindset helps maintain positive emotions during setbacks?",
+    options: [
+      { id: "reframe", text: "Reframing challenges as learning moments", emoji: "🔄", isCorrect: true },
+      { id: "complain", text: "Focusing on unfairness", emoji: "😤", isCorrect: false },
+      { id: "ruminate", text: "Replaying negative thoughts", emoji: "🔁", isCorrect: false },
+      { id: "avoid", text: "Avoiding similar situations", emoji: "🏃", isCorrect: false }
+    ]
+  }
+];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

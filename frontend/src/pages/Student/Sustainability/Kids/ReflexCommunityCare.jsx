@@ -6,7 +6,7 @@ import { getGameDataById } from "../../../../utils/getGameData";
 import { getSustainabilityKidsGames } from "../../../../pages/Games/GameCategories/Sustainability/kidGamesData";
 
 const TOTAL_ROUNDS = 5;
-const ROUND_TIME = 8;
+const ROUND_TIME = 10;
 
 const ReflexCommunityCare = () => {
   const navigate = useNavigate();

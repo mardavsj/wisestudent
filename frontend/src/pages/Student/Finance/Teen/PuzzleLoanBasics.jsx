@@ -193,7 +193,7 @@ const PuzzleLoanBasics = () => {
                       <div className="text-2xl mr-3">{term.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{term.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {term.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

@@ -123,16 +123,17 @@ const BadgeOptimistHero = () => {
       color: "bg-blue-500",
       question: "Facing a difficult challenge, what's the positive mindset?",
       options: [
+         { 
+          text: "This is an opportunity to grow", 
+          emoji: "🌟", 
+          isCorrect: true
+        },
         { 
           text: "This will definitely fail", 
           emoji: "❌", 
           isCorrect: false
         },
-        { 
-          text: "This is an opportunity to grow", 
-          emoji: "🌟", 
-          isCorrect: true
-        },
+       
         { 
           text: "I'm not capable of this", 
           emoji: "😰", 
@@ -193,16 +194,17 @@ const BadgeOptimistHero = () => {
           emoji: "😞", 
           isCorrect: false
         },
+          { 
+          text: "I can learn and improve with practice", 
+          emoji: "🎯", 
+          isCorrect: true
+        },
         { 
           text: "I should stop trying", 
           emoji: "🚫", 
           isCorrect: false
         },
-        { 
-          text: "I can learn and improve with practice", 
-          emoji: "🎯", 
-          isCorrect: true
-        }
+      
       ]
     }
   ];

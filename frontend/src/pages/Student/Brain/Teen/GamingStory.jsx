@@ -92,8 +92,8 @@ const GamingStory = () => {
       text: "What's the impact of excessive gaming on sleep?",
       choices: [
         { id: 'b', text: 'Improves sleep patterns' },
+        { id: 'a', text: 'Reduces sleep quality and quantity' },
         { id: 'c', text: 'Has no effect on sleep' },
-        { id: 'a', text: 'Reduces sleep quality and quantity' }
       ],
       correct: 'a',
       explanation: 'Excessive gaming, especially before bed, reduces sleep quality and quantity, leading to fatigue and poor performance!'
@@ -102,9 +102,9 @@ const GamingStory = () => {
       id: 5,
       text: "How should gaming be balanced with other activities?",
       choices: [
+        { id: 'a', text: 'Set limits and prioritize studies, sleep, and exercise' },
         { id: 'b', text: 'Gaming should come first' },
         { id: 'c', text: 'Ignore other responsibilities' },
-        { id: 'a', text: 'Set limits and prioritize studies, sleep, and exercise' }
       ],
       correct: 'a',
       explanation: 'Gaming should be balanced by setting time limits and prioritizing studies, sleep, exercise, and social activities!'

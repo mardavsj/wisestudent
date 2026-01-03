@@ -24,130 +24,53 @@ const IceCreamVsBookStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "You have ₹20. Buy ice cream or a book for class?",
-      options: [
-        { 
-          id: "icecream", 
-          text: "Buy ice cream", 
-          emoji: "🍦", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "book", 
-          text: "Buy a book", 
-          emoji: "📚", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "toys", 
-          text: "Spend on toys", 
-          emoji: "🧸", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "A book costs ₹15, ice cream ₹10. You have ₹12. What's smart?",
-      options: [
-        { 
-          id: "save", 
-          text: "Save ₹3 more for the book", 
-          emoji: "💰", 
-          isCorrect: true
-        },
-        { 
-          id: "icecream", 
-          text: "Buy ice cream now", 
-          emoji: "🍦", 
-          isCorrect: false
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow ₹3", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You saved ₹20. A sale offers books for ₹18. Can you buy one?",
-      options: [
-        { 
-          id: "no", 
-          text: "No, need ₹2 more", 
-          emoji: "📉", 
-          isCorrect: false
-        },
-        { 
-          id: "icecream", 
-          text: "Buy ice cream instead", 
-          emoji: "🍦", 
-          isCorrect: false
-        },
-        {
-          id: "yes",
-          text: "Yes, and have ₹2 left",
-          emoji: "📚",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "Your friend wants ice cream but you need a book. What do you do?",
-      options: [
-        { 
-          id: "stick", 
-          text: "Stick to buying the book", 
-          emoji: "✅", 
-          isCorrect: true
-        },
-        { 
-          id: "split", 
-          text: "Split money for ice cream", 
-          emoji: "🎉", 
-          isCorrect: false
-        },
-        { 
-          id: "give", 
-          text: "Give money to friend", 
-          emoji: "🎁", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why is choosing a book over ice cream smart?",
-      options: [
-        { 
-          id: "taste", 
-          text: "Tastes better than ice cream", 
-          emoji: "🍦", 
-          isCorrect: false
-        },
-        {
-          id: "learn",
-          text: "Helps you learn and grow",
-          emoji: "🧠",
-          isCorrect: true
-        },
-        { 
-          id: "friends", 
-          text: "Gets you more friends", 
-          emoji: "👥", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You finish school and feel hungry, but you also need a workbook. What is the best choice?",
+    options: [
+      { id: "icecream", text: "Buy ice cream for now", emoji: "🍦", isCorrect: false },
+      { id: "book", text: "Buy the workbook", emoji: "📘", isCorrect: true },
+      { id: "wait", text: "Buy nothing and leave", emoji: "🚶", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "You eat ice cream today and have no money left for a book tomorrow. What do you learn?",
+    options: [
+      { id: "lesson", text: "Planning money is important", emoji: "🧠", isCorrect: true },
+      { id: "sad", text: "Ice cream is always best", emoji: "🍨", isCorrect: false },
+      { id: "borrow", text: "Borrow money next time", emoji: "💳", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "A book helps in exams, and ice cream melts quickly. What lasts longer?",
+    options: [
+      { id: "icecream", text: "Ice cream happiness", emoji: "🍦", isCorrect: false },
+      { id: "book", text: "Knowledge from a book", emoji: "📚", isCorrect: true },
+      { id: "both", text: "Both last the same", emoji: "⚖️", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "You decide to buy a book today and enjoy ice cream another day. What skill do you show?",
+    options: [
+      { id: "luck", text: "Good luck", emoji: "🍀", isCorrect: false },
+      { id: "speed", text: "Fast decision-making", emoji: "⚡", isCorrect: false },
+      { id: "patience", text: "Self-control", emoji: "⏳", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    text: "Your parents smile when you choose a book. Why do they feel happy?",
+    options: [
+      { id: "cheap", text: "Books are cheaper", emoji: "💸", isCorrect: false },
+      { id: "smart", text: "You make a responsible choice", emoji: "⭐", isCorrect: true },
+      { id: "friends", text: "Friends like books", emoji: "👫", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

@@ -175,7 +175,7 @@ const PolicyCasePuzzle = () => {
                       <div className="text-2xl mr-3">{challenge.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{challenge.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {challenge.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

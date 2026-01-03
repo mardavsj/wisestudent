@@ -47,41 +47,42 @@ const BudgetItemsPuzzle = () => {
 
   // Items (left side) - 5 items
   const items = [
-    { id: 1, name: "Food", emoji: "🍎",  },
-    { id: 2, name: "Toys", emoji: "🧸",  },
-    { id: 3, name: "Books", emoji: "📚",  },
-    { id: 4, name: "Games", emoji: "🎮",  },
-    { id: 5, name: "Clothing", emoji: "👕",  },
-  ];
+  { id: 1, name: "Groceries", emoji: "🍎" },        // Everyday food items
+  { id: 2, name: "Birthday Gift", emoji: "🎁" },    // Fun or special purchase
+  { id: 3, name: "School Supplies", emoji: "✏️" },  // Needed for learning
+  { id: 4, name: "Video Game Console", emoji: "🎮" }, // Expensive luxury item
+  { id: 5, name: "Extra Snacks", emoji: "🍪" }       // Non-essential treat
+];
+
 
   // Categories (right side) - 5 items
   const categories = [
-    { id: 6, name: "Need", emoji: "😊",  },
-    { id: 7, name: "Want", emoji: "✨",  },
-    { id: 8, name: "Essential", emoji: "⚡",  },
-    { id: 9, name: "Luxury", emoji: "💎",  },
-    { id: 10, name: "Optional", emoji: "🎯",  },
-  ];
+  { id: 6, name: "Essential", emoji: "⚡" },      // Must-have for daily life
+  { id: 7, name: "Non-Essential", emoji: "🎯" }, // Optional, not required
+  { id: 8, name: "Necessary for School", emoji: "📚" }, // Needed for learning
+  { id: 9, name: "Luxury", emoji: "💎" },        // Nice-to-have, expensive
+  { id: 10, name: "Optional Treat", emoji: "✨" } // Small fun expense
+];
 
-  // Manually rearrange positions to prevent positional matching
-  // Original order was [6,7,8,9,10], rearranged to [8,10,7,6,9]
+
   const rearrangedCategories = [
-    categories[2], // Essential (id: 8)
-    categories[4], // Optional (id: 10)
-    categories[1], // Want (id: 7)
-    categories[0], // Need (id: 6)
-    categories[3]  // Luxury (id: 9)
-  ];
+  categories[3], // Necessary for School (id: 8)
+  categories[2], // Optional Treat (id: 10)
+  categories[1], // Non-Essential (id: 7)
+  categories[4], // Essential (id: 6)
+  categories[0]  // Luxury (id: 9)
+];
+
 
   // Correct matches using proper IDs, not positional order
-  // Each item has a unique correct match for true one-to-one mapping
   const correctMatches = [
-    { itemId: 1, categoryId: 6 }, // Food → Need
-    { itemId: 2, categoryId: 7 }, // Toys → Want
-    { itemId: 3, categoryId: 8 }, // Books → Essential
-    { itemId: 4, categoryId: 9 }, // Games → Luxury
-    { itemId: 5, categoryId: 10 }  // Clothing → Optional
-  ];
+  { itemId: 1, categoryId: 6 },  // Groceries → Essential
+  { itemId: 2, categoryId: 10 }, // Birthday Gift → Optional Treat
+  { itemId: 3, categoryId: 8 },  // School Supplies → Necessary for School
+  { itemId: 4, categoryId: 9 },  // Video Game Console → Luxury
+  { itemId: 5, categoryId: 7 }   // Extra Snacks → Non-Essential
+];
+
 
   const handleItemSelect = (item) => {
     if (gameFinished) return;
@@ -192,7 +193,7 @@ const BudgetItemsPuzzle = () => {
                       <div className="text-2xl mr-3">{item.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{item.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {item.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

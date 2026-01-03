@@ -27,168 +27,172 @@ const SimulationMiniStartup = () => {
   const [answered, setAnswered] = useState(false);
 
   const scenarios = [
-    {
-      id: 1,
-      title: "Mini Startup: Snack Stall",
-      description: "You have ₹500. What's the best approach?",
-      amount: 500,
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, smart investment", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, too risky", 
-          emoji: "⚠️", 
-          isCorrect: false
-        },
-        { 
-          id: "other", 
-          text: "Choose other business", 
-          emoji: "🔄", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Mini Startup: Craft Business",
-      description: "You have ₹400. What should you do?",
-      amount: 400,
-      options: [
-        { 
-          id: "no2", 
-          text: "No, not worth it", 
-          emoji: "😕", 
-          isCorrect: false
-        },
-        { 
-          id: "yes2", 
-          text: "Yes, 60% profit", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-        { 
-          id: "maybe2", 
-          text: "Maybe, if repeatable", 
-          emoji: "🤷", 
-          isCorrect: false
-        },
-        { 
-          id: "wait", 
-          text: "Wait for better opportunity", 
-          emoji: "⏳", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Mini Startup: Lemonade Stand",
-      description: "You have ₹300. What's the smart choice?",
-      amount: 300,
-      options: [
-        { 
-          id: "no3", 
-          text: "No, too small", 
-          emoji: "😕", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe3", 
-          text: "Maybe, if fun", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        { 
-          id: "yes3", 
-          text: "Yes, 67% profit", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-        { 
-          id: "save", 
-          text: "Save money instead", 
-          emoji: "💰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Mini Startup: Book Resale",
-      description: "You have ₹600. What's the right decision?",
-      amount: 600,
-      options: [
-        { 
-          id: "yes4", 
-          text: "Yes, 50% profit", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-        { 
-          id: "no4", 
-          text: "No, too slow", 
-          emoji: "⏳", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe4", 
-          text: "Maybe, if easy", 
-          emoji: "🤷", 
-          isCorrect: false
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow more money", 
-          emoji: "💳", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Mini Startup: Tutoring Service",
-      description: "You have ₹500. What should you choose?",
-      amount: 500,
-      options: [
-        { 
-          id: "no5", 
-          text: "No, too much work", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "maybe5", 
-          text: "Maybe, if skilled", 
-          emoji: "🎓", 
-          isCorrect: false
-        },
-        { 
-          id: "hire", 
-          text: "Hire someone else", 
-          emoji: "👥", 
-          isCorrect: false
-        },
-        { 
-          id: "yes5", 
-          text: "Yes, 150% profit", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Mini Startup: Online Snack Delivery",
+    description: "You have ₹500. Which strategy maximizes profit safely?",
+    amount: 500,
+    options: [
+      { 
+        id: "invest-all", 
+        text: "Invest entire ₹500 in ingredients without market check", 
+        emoji: "💸", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "borrow-more", 
+        text: "Borrow extra ₹500 to buy more stock", 
+        emoji: "💳", 
+        isCorrect: false
+      },
+      { 
+        id: "wait", 
+        text: "Wait and save more before starting", 
+        emoji: "⏳", 
+        isCorrect: false
+      },
+      { 
+        id: "market-test", 
+        text: "Test small batch, learn demand, then expand", 
+        emoji: "📊", 
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    title: "Mini Startup: Handmade Crafts",
+    description: "You have ₹400. What's the smart approach?",
+    amount: 400,
+    options: [
+      { 
+        id: "overspend", 
+        text: "Spend all ₹400 on materials without profit estimate", 
+        emoji: "🎨", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "scale-fast", 
+        text: "Produce large quantity hoping to sell quickly", 
+        emoji: "⚡", 
+        isCorrect: false
+      },
+      { 
+        id: "calculate-profit", 
+        text: "Estimate cost vs selling price, start small batch", 
+        emoji: "🧮", 
+        isCorrect: true
+      },
+      { 
+        id: "delay", 
+        text: "Wait for trend to become popular", 
+        emoji: "⏳", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Mini Startup: Lemonade Stand",
+    description: "You have ₹300. What's the most strategic move?",
+    amount: 300,
+    options: [
+      { 
+        id: "random-location", 
+        text: "Set up anywhere without checking foot traffic", 
+        emoji: "📍", 
+        isCorrect: false
+      },
+      { 
+        id: "smart-location", 
+        text: "Choose high foot-traffic area, budget ingredients wisely", 
+        emoji: "🛒", 
+        isCorrect: true
+      },
+      { 
+        id: "borrow-extra", 
+        text: "Borrow ₹500 more to expand immediately", 
+        emoji: "💳", 
+        isCorrect: false
+      },
+      { 
+        id: "save-instead", 
+        text: "Save ₹300 instead of starting", 
+        emoji: "💰", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Mini Startup: Book Resale",
+    description: "You have ₹600. How do you minimize risk?",
+    amount: 600,
+    options: [
+      { 
+        id: "bulk-buy", 
+        text: "Buy all books from seller without quality check", 
+        emoji: "📚", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "borrow-more", 
+        text: "Borrow extra ₹400 to stock quickly", 
+        emoji: "💳", 
+        isCorrect: false
+      },
+      { 
+        id: "wait", 
+        text: "Wait for better deal later", 
+        emoji: "⏳", 
+        isCorrect: false
+      },
+      { 
+        id: "inspect-sample", 
+        text: "Inspect sample books, estimate demand, buy accordingly", 
+        emoji: "🔍", 
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    title: "Mini Startup: Tutoring Service",
+    description: "You have ₹500. How do you maximize success?",
+    amount: 500,
+    options: [
+      { 
+        id: "targeted-plan", 
+        text: "Create a skill-focused plan, target audience, advertise smartly", 
+        emoji: "🎯", 
+        isCorrect: true
+      },
+      { 
+        id: "random-ad", 
+        text: "Spend all on random ads without targeting", 
+        emoji: "📢", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "hire-random", 
+        text: "Hire someone without checking skills", 
+        emoji: "👥", 
+        isCorrect: false
+      },
+      { 
+        id: "save", 
+        text: "Save money instead of starting business", 
+        emoji: "💰", 
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered) return;

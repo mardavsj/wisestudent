@@ -23,128 +23,130 @@ const QuizOnNeeds = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Which one is a need?",
-      options: [
-        { 
-          id: "toy", 
-          text: "Fancy toy", 
-          emoji: "🧸", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "chocolate", 
-          text: "Chocolates", 
-          emoji: "🍫", 
-          isCorrect: false
-        },
-        {
-          id: "food",
-          text: "Food",
-          emoji: "🍎",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "What's a need for school?",
-      options: [
-        { 
-          id: "books", 
-          text: "Books", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          id: "games", 
-          text: "Video games", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          id: "candy", 
-          text: "Candy", 
-          emoji: "🍬", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What's a need to stay healthy?",
-      options: [
-        { 
-          id: "soda", 
-          text: "Soda", 
-          emoji: "🥤", 
-          isCorrect: false
-        },
-        {
-          id: "water",
-          text: "Water",
-          emoji: "💧",
-          isCorrect: true
-        },
-        { 
-          id: "icecream", 
-          text: "Ice cream", 
-          emoji: "🍦", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What's a need for safety?",
-      options: [
-        { 
-          id: "clothes", 
-          text: "Clothes", 
-          emoji: "👕", 
-          isCorrect: true
-        },
-        { 
-          id: "toys", 
-          text: "Toys", 
-          emoji: "🧸", 
-          isCorrect: false
-        },
-        { 
-          id: "movies", 
-          text: "Movies", 
-          emoji: "🎬", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why prioritize needs over wants?",
-      options: [
-        { 
-          id: "toys", 
-          text: "Gets you more toys", 
-          emoji: "🧸", 
-          isCorrect: false
-        },
-        { 
-          id: "happy", 
-          text: "Makes you happy", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        {
-          id: "survival",
-          text: "Ensures survival",
-          emoji: "🛡️",
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which item helps your body work every day?",
+    options: [
+      {
+        id: "snack",
+        text: "Chips",
+        emoji: "🍟",
+        isCorrect: false
+      },
+      {
+        id: "water",
+        text: "Clean drinking water",
+        emoji: "🚰",
+        isCorrect: true
+      },
+      {
+        id: "toy",
+        text: "Remote control car",
+        emoji: "🚗",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "What do you need to learn properly in school?",
+    options: [
+      {
+        id: "bag",
+        text: "School bag and books",
+        emoji: "🎒",
+        isCorrect: true
+      },
+      {
+        id: "game",
+        text: "Mobile games",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "cartoon",
+        text: "Cartoon videos",
+        emoji: "📺",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Which choice helps you stay safe from heat and cold?",
+    options: [
+      
+      {
+        id: "cap",
+        text: "Fashion cap",
+        emoji: "🧢",
+        isCorrect: false
+      },
+      {
+        id: "shoes",
+        text: "Party shoes",
+        emoji: "👟",
+        isCorrect: false
+      },
+      {
+        id: "clothes",
+        text: "Proper clothes",
+        emoji: "🧥",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 4,
+    text: "Which place is a basic need for resting and living?",
+    options: [
+      {
+        id: "house",
+        text: "A safe home",
+        emoji: "🏠",
+        isCorrect: true
+      },
+      {
+        id: "mall",
+        text: "Shopping mall",
+        emoji: "🏬",
+        isCorrect: false
+      },
+      {
+        id: "park",
+        text: "Playground",
+        emoji: "🌳",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Why do people choose needs before wants?",
+    options: [
+      
+      {
+        id: "fun",
+        text: "Wants are more fun",
+        emoji: "🎉",
+        isCorrect: false
+      },
+      {
+        id: "important",
+        text: "Needs are necessary for daily life",
+        emoji: "⭐",
+        isCorrect: true
+      },
+      {
+        id: "friends",
+        text: "Friends like wants",
+        emoji: "👫",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (option) => {
     if (answered) return; // Prevent multiple clicks

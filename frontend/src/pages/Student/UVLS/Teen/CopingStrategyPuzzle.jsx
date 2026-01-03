@@ -169,7 +169,7 @@ const CopingStrategyPuzzle = () => {
                       <div className="text-2xl mr-3">{stressor.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{stressor.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {stressor.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

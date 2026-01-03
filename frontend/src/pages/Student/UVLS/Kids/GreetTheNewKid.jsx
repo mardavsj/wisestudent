@@ -33,7 +33,7 @@ const GreetTheNewKid = () => {
       options: [
         { 
           id: "friendly", 
-          text: "Hi! I'm [your name]. Want to sit with me?", 
+          text: "Hi! I'm [name]. Want to sit with me?", 
           emoji: "😊", 
           // description: "Welcome them warmly",
           isCorrect: true 

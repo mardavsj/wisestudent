@@ -85,7 +85,7 @@ const SportsNutritionStory = () => {
         },
         {
           id: "a",
-          text: "Water or Sports Drink",
+          text: "Water",
           emoji: "💧",
           isCorrect: true
         }

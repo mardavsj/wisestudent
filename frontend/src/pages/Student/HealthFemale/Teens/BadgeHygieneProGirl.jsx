@@ -36,7 +36,7 @@ const BadgeHygieneProGirl = () => {
           isCorrect: false
         },
         { 
-          text: "Daily or every other day", 
+          text: "Daily ", 
           emoji: "🚿", 
           isCorrect: true
         },

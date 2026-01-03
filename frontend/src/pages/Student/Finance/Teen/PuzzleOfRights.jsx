@@ -193,7 +193,7 @@ const PuzzleOfRights = () => {
                       <div className="text-2xl mr-3">{right.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{right.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {right.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

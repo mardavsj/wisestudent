@@ -56,7 +56,7 @@ const DebateTechGoodOrBad = () => {
   const questions = [
     {
       id: 1,
-      text: "Is technology harmful? → No, harmful only if overused.",
+      text: "Is technology harmful?",
       choices: [
         { id: 'a', text: 'No, harmful only if overused' },
         { id: 'b', text: 'Yes, technology is always harmful' },
@@ -92,8 +92,8 @@ const DebateTechGoodOrBad = () => {
       text: "How can technology be used positively?",
       choices: [
         { id: 'b', text: 'Use it constantly without limits' },
+        { id: 'a', text: 'Set limits, use for learning and connection' },
         { id: 'c', text: 'Avoid technology completely' },
-        { id: 'a', text: 'Set limits, use for learning and connection' }
       ],
       correct: 'a',
       explanation: 'Technology is positive when used with limits, for learning, staying connected with family and friends, and enhancing productivity!'
@@ -102,9 +102,9 @@ const DebateTechGoodOrBad = () => {
       id: 5,
       text: "What's the key to healthy technology use?",
       choices: [
+        { id: 'a', text: 'Balance, limits, and prioritizing real-life activities' },
         { id: 'b', text: 'Using technology all the time' },
         { id: 'c', text: 'Never using technology' },
-        { id: 'a', text: 'Balance, limits, and prioritizing real-life activities' }
       ],
       correct: 'a',
       explanation: 'The key is balance - setting time limits, prioritizing studies, sleep, exercise, and real-life relationships over screen time!'

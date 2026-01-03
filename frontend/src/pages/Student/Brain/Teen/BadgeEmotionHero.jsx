@@ -65,7 +65,7 @@ const BadgeEmotionHero = () => {
       options: [
         { 
           text: "Report & stay strong", 
-          emoji: "🚨💪", 
+          emoji: "💪", 
           isCorrect: true
         },
         { 
@@ -100,7 +100,7 @@ const BadgeEmotionHero = () => {
         },
         { 
           text: "Congratulate opponent", 
-          emoji: "🏆👍", 
+          emoji: "🏆", 
           isCorrect: true
         },
         { 
@@ -140,7 +140,7 @@ const BadgeEmotionHero = () => {
         },
         { 
           text: "Talk to a loved one", 
-          emoji: "💬❤️", 
+          emoji: "❤️", 
           isCorrect: true
         }
       ]
@@ -155,7 +155,7 @@ const BadgeEmotionHero = () => {
       options: [
         { 
           text: "Keep it to yourself only", 
-          emoji: "🔒😊", 
+          emoji: "😊", 
           isCorrect: false
         },
         { 
@@ -170,7 +170,7 @@ const BadgeEmotionHero = () => {
         },
         { 
           text: "Share with others and include them", 
-          emoji: "🎉👥", 
+          emoji: "👥", 
           isCorrect: true
         }
       ]
@@ -185,7 +185,7 @@ const BadgeEmotionHero = () => {
       options: [
         { 
           text: "Win at all costs", 
-          emoji: "🏆⚔️", 
+          emoji: "🏆", 
           isCorrect: false
         },
         { 
@@ -200,7 +200,7 @@ const BadgeEmotionHero = () => {
         },
         { 
           text: "Listen & compromise", 
-          emoji: "👂🤝", 
+          emoji: "👂", 
           isCorrect: true
         }
       ]

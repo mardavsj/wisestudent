@@ -169,7 +169,7 @@ const PolicyPuzzle = () => {
                       <div className="text-2xl mr-3">{policy.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{policy.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {policy.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

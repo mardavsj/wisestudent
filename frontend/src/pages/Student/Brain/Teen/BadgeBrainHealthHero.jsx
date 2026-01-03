@@ -93,11 +93,7 @@ const BadgeBrainHealthHero = () => {
       color: "bg-pink-500",
       question: "Which activity supports mental wellness?",
       options: [
-        { 
-          text: "Regular exercise and social connection", 
-          emoji: "🤝", 
-          isCorrect: true
-        },
+        
         { 
           text: "Isolating yourself completely", 
           emoji: "🚪", 
@@ -112,7 +108,12 @@ const BadgeBrainHealthHero = () => {
           text: "Ignoring your emotions", 
           emoji: "🙈", 
           isCorrect: false
-        }
+        },
+        { 
+          text: "Regular exercise and social connection", 
+          emoji: "🤝", 
+          isCorrect: true
+        },
       ]
     },
     {
@@ -194,15 +195,16 @@ const BadgeBrainHealthHero = () => {
           isCorrect: false
         },
         { 
+          text: "Practicing consistent brain-healthy habits", 
+          emoji: "🌟", 
+          isCorrect: true
+        },
+        { 
           text: "Avoiding all challenges", 
           emoji: "😰", 
           isCorrect: false
         },
-        { 
-          text: "Practicing consistent brain-healthy habits", 
-          emoji: "🌟", 
-          isCorrect: true
-        }
+        
       ]
     }
   ];

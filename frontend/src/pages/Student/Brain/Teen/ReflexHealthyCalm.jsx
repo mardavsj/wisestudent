@@ -15,6 +15,11 @@ const ReflexHealthyCalm = () => {
   const gameId = "brain-teens-39";
   const gameData = getGameDataById(gameId);
   
+  // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
+  const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
+  const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
+  const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
@@ -26,57 +31,58 @@ const ReflexHealthyCalm = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Tap for 'Exercise,' avoid 'Avoid Work.'",
-      options: [
-        { id: "exercise", text: "Exercise", emoji: "🏃",  isCorrect: true },
-        { id: "avoid", text: "Avoid Work", emoji: "🛋️",  isCorrect: false },
-        { id: "procrastinate", text: "Procrastinate", emoji: "⏰",  isCorrect: false },
-        { id: "ignore", text: "Ignore Tasks", emoji: "🙈",  isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which action promotes healthy calm?",
-      options: [
-        { id: "energy", text: "Energy Drinks", emoji: "⚡🥤",  isCorrect: false },
-        { id: "tea", text: "Tea Time", emoji: "🍵",  isCorrect: true },
-        { id: "caffeine", text: "Excess Caffeine", emoji: "☕",  isCorrect: false },
-        { id: "sugar", text: "Sugar Rush", emoji: "🍬",  isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      text: "What helps maintain calm?",
-      options: [
-        { id: "rush", text: "Rush Around", emoji: "🏃‍♂️💨",  isCorrect: false },
-        { id: "panic", text: "Panic", emoji: "😱",  isCorrect: false },
-        { id: "worry", text: "Worry Constantly", emoji: "😟",  isCorrect: false },
-        { id: "mindful", text: "Mindful Walk", emoji: "🚶🧠",  isCorrect: true }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which supports healthy calm?",
-      options: [
-        { id: "diet", text: "Balanced Diet", emoji: "🥗",  isCorrect: true },
-        { id: "skip", text: "Skip Meals", emoji: "🚫🍽️",  isCorrect: false },
-        { id: "junk", text: "Junk Food Only", emoji: "🍔",  isCorrect: false },
-        { id: "fast", text: "Fast All Day", emoji: "⏰",  isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      text: "What promotes calm habits?",
-      options: [
-        { id: "late", text: "Late Nights", emoji: "🌙",  isCorrect: false },
-        { id: "irregular", text: "Irregular Sleep", emoji: "😴",  isCorrect: false },
-        { id: "skip", text: "Skip Sleep", emoji: "🚫",  isCorrect: false },
-        { id: "sleep", text: "Routine Sleep", emoji: "🛌",  isCorrect: true }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "After a mentally exhausting day, which response helps restore calm AND focus?",
+    options: [
+      { id: "bed-scroll", text: "Lying down and scrolling", emoji: "📱", isCorrect: false },
+      { id: "light-movement", text: "Light physical movement", emoji: "🚶‍♂️", isCorrect: true },
+      { id: "avoidance", text: "Avoiding responsibilities", emoji: "🛋️", isCorrect: false },
+      { id: "delay", text: "Pushing tasks endlessly", emoji: "⏳", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Which drink choice best supports a calm, steady nervous system?",
+    options: [
+      { id: "herbal", text: "Low-caffeine or herbal tea", emoji: "🍵", isCorrect: true },
+      { id: "energy", text: "Energy drink boost", emoji: "⚡", isCorrect: false },
+      { id: "double-coffee", text: "Extra strong coffee", emoji: "☕", isCorrect: false },
+      { id: "soda", text: "Sugary soda", emoji: "🥤", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "Which habit helps the brain stay calm during busy schedules?",
+    options: [
+      { id: "multitask", text: "Doing everything at once", emoji: "🔀", isCorrect: false },
+      { id: "rush", text: "Rushing between tasks", emoji: "🏃‍♂️", isCorrect: false },
+      { id: "worry", text: "Constant mental replay", emoji: "🔁", isCorrect: false },
+      { id: "mindful-walk", text: "Short mindful breaks or walks", emoji: "🚶", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    text: "Which eating pattern best supports emotional balance?",
+    options: [
+      { id: "skip", text: "Skipping meals to stay busy", emoji: "🍽️", isCorrect: false },
+      { id: "junk", text: "High-sugar, high-fat snacks", emoji: "🍟", isCorrect: false },
+      { id: "balanced", text: "Balanced meals at regular times", emoji: "🥗", isCorrect: true },
+      { id: "fast", text: "Long gaps without food", emoji: "⏰", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "Which sleep pattern most strongly supports calm mood regulation?",
+    options: [
+      { id: "late", text: "Sleeping late on most nights", emoji: "🌙", isCorrect: false },
+      { id: "routine", text: "Consistent sleep-wake schedule", emoji: "🛌", isCorrect: true },
+      { id: "irregular", text: "Different sleep times daily", emoji: "🔀", isCorrect: false },
+      { id: "skip", text: "Reducing sleep for productivity", emoji: "😴", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

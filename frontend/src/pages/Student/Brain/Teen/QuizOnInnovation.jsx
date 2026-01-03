@@ -54,62 +54,63 @@ const QuizOnInnovation = () => {
   const [levelCompleted, setLevelCompleted] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Who is an innovator?",
-      choices: [
-        { id: 'a', text: 'Creates new ideas' },
-        { id: 'b', text: 'Copies others' },
-        { id: 'c', text: 'Quits when challenged' }
-      ],
-      correct: 'a',
-      explanation: 'An innovator creates new ideas, solves problems creatively, and brings fresh perspectives to challenges!'
-    },
-    {
-      id: 2,
-      text: "What makes someone innovative?",
-      choices: [
-        { id: 'a', text: 'Always copying others' },
-        { id: 'b', text: 'Creative thinking and problem-solving' },
-        { id: 'c', text: 'Avoiding new challenges' }
-      ],
-      correct: 'b',
-      explanation: 'Innovation comes from creative thinking, problem-solving skills, and the courage to try new approaches!'
-    },
-    {
-      id: 3,
-      text: "How do innovators approach problems?",
-      choices: [
-        { id: 'a', text: 'By always doing the same thing' },
-        { id: 'b', text: 'By avoiding problems' },
-        { id: 'c', text: 'With creative solutions and new perspectives' }
-      ],
-      correct: 'c',
-      explanation: 'Innovators approach problems with creativity, explore new perspectives, and develop unique solutions!'
-    },
-    {
-      id: 4,
-      text: "What's the difference between innovation and copying?",
-      choices: [
-        { id: 'a', text: 'Innovation creates new solutions, copying repeats existing ones' },
-        { id: 'b', text: 'They are the same thing' },
-        { id: 'c', text: 'Copying is better than innovation' }
-      ],
-      correct: 'a',
-      explanation: 'Innovation involves creating new solutions and ideas, while copying simply repeats what already exists!'
-    },
-    {
-      id: 5,
-      text: "Why is innovation important?",
-      choices: [
-        { id: 'a', text: 'It has no value' },
-        { id: 'b', text: 'It drives progress and solves new problems' },
-        { id: 'c', text: 'It only causes problems' }
-      ],
-      correct: 'b',
-      explanation: 'Innovation drives progress, solves new problems, improves lives, and creates opportunities for growth!'
-    }
-  ];
+  {
+    id: 1,
+    text: "A student designs a new app to help classmates organize homework. What does this show?",
+    choices: [
+      { id: 'b', text: "Just copying an app from the internet" },
+      { id: 'a', text: "Innovation by creating a new solution" },
+      { id: 'c', text: "Giving up because the problem is hard" }
+    ],
+    correct: 'a',
+    explanation: "Creating a new app to solve a problem demonstrates innovation, not copying or quitting."
+  },
+  {
+    id: 2,
+    text: "Which behavior shows an innovative mindset at school?",
+    choices: [
+      { id: 'a', text: "Trying different ways to explain a science project" },
+      { id: 'b', text: "Repeating the same experiment without change" },
+      { id: 'c', text: "Ignoring feedback from teachers or classmates" }
+    ],
+    correct: 'a',
+    explanation: "Innovation involves experimenting with new approaches and learning from feedback."
+  },
+  {
+    id: 3,
+    text: "A teen redesigns a school garden to save water and grow more vegetables. This is an example of:",
+    choices: [
+      { id: 'b', text: "Following instructions without thinking" },
+      { id: 'c', text: "Avoiding challenges by doing nothing" },
+      { id: 'a', text: "Creative problem-solving and practical innovation" },
+    ],
+    correct: 'a',
+    explanation: "Innovators use creativity to solve real-world problems in practical ways."
+  },
+  {
+    id: 4,
+    text: "What's the key difference between an innovator and someone who just imitates?",
+    choices: [
+      { id: 'b', text: "There is no difference" },
+      { id: 'a', text: "Innovators create new ideas; imitators repeat existing solutions" },
+      { id: 'c', text: "Imitators are always better than innovators" }
+    ],
+    correct: 'a',
+    explanation: "Innovators bring original ideas and solutions, while imitators replicate what already exists."
+  },
+  {
+    id: 5,
+    text: "Why might taking risks be important in innovation?",
+    choices: [
+      { id: 'a', text: "It helps discover unique solutions even if some attempts fail" },
+      { id: 'b', text: "It is always dangerous and pointless" },
+      { id: 'c', text: "It guarantees instant success without effort" }
+    ],
+    correct: 'a',
+    explanation: "Innovation often requires trying new approaches and learning from failures, which can lead to unique solutions."
+  }
+];
+
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || levelCompleted) return;

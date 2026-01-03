@@ -169,7 +169,7 @@ const HabitChainPuzzle = () => {
                       <div className="text-2xl mr-3">{habit.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{habit.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {habit.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

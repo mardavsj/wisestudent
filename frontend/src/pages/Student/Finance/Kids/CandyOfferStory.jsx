@@ -24,129 +24,135 @@ const CandyOfferStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "A shop offers 'Buy 1, Get 1 Free' candy. You don't really need more candy. What should you do?",
-      options: [
-        { 
-          id: "want", 
-          text: "Buy anyway", 
-          emoji: "🙋", 
-          
-          isCorrect: false
-        },
-        {
-          id: "need",
-          text: "Don't buy",
-          emoji: "🙅",
-          
-          isCorrect: true
-        },
-        { 
-          id: "share", 
-          text: "Buy and share", 
-          emoji: "🤝", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "A 'Buy 2, Get 1 Free' offer on toys. You already have many toys. What's smart?",
-      options: [
-        { 
-          id: "need", 
-          text: "Skip the offer", 
-          emoji: "⏭️", 
-          isCorrect: true
-        },
-        { 
-          id: "want", 
-          text: "Take the deal", 
-          emoji: "🛒", 
-          isCorrect: false
-        },
-        { 
-          id: "gift", 
-          text: "Buy as gifts", 
-          emoji: "🎁", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "A '3 for the price of 2' deal on snacks. You just bought snacks yesterday. What should you do?",
-      options: [
-        { 
-          id: "want", 
-          text: "Buy now", 
-          emoji: "😋", 
-          isCorrect: false
-        },
-        { 
-          id: "donate", 
-          text: "Buy for donation", 
-          emoji: "💝", 
-          isCorrect: false
-        },
-        {
-          id: "need",
-          text: "Wait until needed",
-          emoji: "⏳",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "A 'Buy 1, Get 1 Half Off' deal on books. You need one book for school. What's wise?",
-      options: [
-        { 
-          id: "want", 
-          text: "Buy two", 
-          emoji: "📖", 
-          isCorrect: false
-        },
-        {
-          id: "need",
-          text: "Buy just one",
-          emoji: "📚",
-          isCorrect: true
-        },
-        { 
-          id: "library", 
-          text: "Check library first", 
-          emoji: "🏛️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "A 'Buy 3, Get 50% Off' deal on clothes. You have enough clothes. What should you choose?",
-      options: [
-        { 
-          id: "want", 
-          text: "Take advantage", 
-          emoji: "👗", 
-          isCorrect: false
-        },
-        { 
-          id: "charity", 
-          text: "Buy for charity", 
-          emoji: "🤲", 
-          isCorrect: false
-        },
-        {
-          id: "need",
-          text: "Pass on deal",
-          emoji: "🚫",
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You see a big candy discount at a shop, but you already feel full. What is the best choice?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Buy candy because it is cheap",
+        emoji: "🍬",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Think about your health and skip buying candy",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Buy candy just because others are buying it",
+        emoji: "👥",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 2,
+    text: "A store offers extra candy if you buy more. What should you check before deciding?",
+    options: [
+      {
+        id: "a",
+        text: "Whether you really need it or not",
+        emoji: "🤔",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "How colorful the packet looks",
+        emoji: "🎨",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "How many ads promote it",
+        emoji: "📢",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 3,
+    text: "You want candy, but you also want to save money for a school trip. What is a smart decision?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Spend money now and worry later",
+        emoji: "💸",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Ask someone else to pay for candy",
+        emoji: "🙋",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Save money for something important",
+        emoji: "🎒",
+        isCorrect: true
+      },
+    ]
+  },
+
+  {
+    id: 4,
+    text: "You notice a candy offer near the checkout counter. Why do shops place it there?",
+    options: [
+      
+      {
+        id: "b",
+        text: "To help customers save money",
+        emoji: "💰",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "To encourage quick and unplanned buying",
+        emoji: "⚡",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "To replace healthy food options",
+        emoji: "🥦",
+        isCorrect: false
+      }
+    ]
+  },
+
+  {
+    id: 5,
+    text: "You decide not to buy candy during an offer. What skill are you practicing?",
+    options: [
+      {
+        id: "a",
+        text: "Self-control and smart decision-making",
+        emoji: "🎯",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Missing out on fun",
+        emoji: "😞",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Ignoring all treats forever",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

@@ -27,168 +27,167 @@ const SimulationLoanRepayment = () => {
   const [answered, setAnswered] = useState(false);
 
   const scenarios = [
-    {
-      id: 1,
-      title: "Loan Repayment Calculation",
-      description: "You have ₹1000. What's the best approach to loan repayment?",
-      amount: 1000,
-      options: [
-        { 
-          id: "ignore", 
-          text: "Borrow without planning", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "delay", 
-          text: "Delay repayment", 
-          emoji: "⏳", 
-          isCorrect: false
-        },
-        { 
-          id: "calculate", 
-          text: "Calculate before borrowing", 
-          emoji: "🧮", 
-          isCorrect: true
-        },
-        { 
-          id: "invest", 
-          text: "Invest borrowed money", 
-          emoji: "📈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Education Loan Repayment",
-      description: "You have ₹2000. What should you prioritize?",
-      amount: 2000,
-      options: [
-        { 
-          id: "commitment", 
-          text: "Commit to repayment schedule", 
-          emoji: "✅", 
-          isCorrect: true
-        },
-        { 
-          id: "skip", 
-          text: "Skip payments sometimes", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          id: "extra", 
-          text: "Borrow more unnecessarily", 
-          emoji: "➕", 
-          isCorrect: false
-        },
-        { 
-          id: "reduce", 
-          text: "Reduce loan amount", 
-          emoji: "📉", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Phone Loan Repayment",
-      description: "You have ₹1500. What's the smart choice?",
-      amount: 1500,
-      options: [
-        { 
-          id: "want", 
-          text: "Borrow for all wants", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          id: "multiple", 
-          text: "Multiple loans at once", 
-          emoji: "🔢", 
-          isCorrect: false
-        },
-        { 
-          id: "need", 
-          text: "Only borrow for needs", 
-          emoji: "📱", 
-          isCorrect: true
-        },
-        { 
-          id: "save", 
-          text: "Save instead of borrowing", 
-          emoji: "💰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Bike Loan Repayment",
-      description: "You have ₹3000. What's the key principle?",
-      amount: 3000,
-      options: [
-        { 
-          id: "strain", 
-          text: "Payments that strain budget", 
-          emoji: "😣", 
-          isCorrect: false
-        },
-        { 
-          id: "affordable", 
-          text: "Ensure affordable payments", 
-          emoji: "🚴", 
-          isCorrect: true
-        },
-        { 
-          id: "luxury", 
-          text: "Luxury over necessities", 
-          emoji: "💎", 
-          isCorrect: false
-        },
-        { 
-          id: "negotiate", 
-          text: "Negotiate payment terms", 
-          emoji: "🤝", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Emergency Loan Repayment",
-      description: "You have ₹1200. What should you do?",
-      amount: 1200,
-      options: [
-        
-        { 
-          id: "regular", 
-          text: "Regular expense loans", 
-          emoji: "🔁", 
-          isCorrect: false
-        },
-        { 
-          id: "avoid", 
-          text: "Avoid all borrowing", 
-          emoji: "🙅", 
-          isCorrect: false
-        },
-        { 
-          id: "credit", 
-          text: "Use credit cards instead", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "emergency-only", 
-          text: "Use loans for emergencies", 
-          emoji: "🚑", 
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Smart Borrowing Decision",
+    description: "You need ₹1000 for a laptop. What's the smartest loan approach?",
+    options: [
+      { 
+        id: "borrow-all", 
+        text: "Borrow full amount without checking interest", 
+        emoji: "💸", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "multiple-loans", 
+        text: "Take multiple small loans from different lenders", 
+        emoji: "🔢", 
+        isCorrect: false
+      },
+      { 
+        id: "wait", 
+        text: "Wait indefinitely without plan", 
+        emoji: "⏳", 
+        isCorrect: false
+      },
+      { 
+        id: "calculate-interest", 
+        text: "Calculate interest, compare options, borrow wisely", 
+        emoji: "🧮", 
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    title: "Prioritizing Loan Repayment",
+    description: "You have 2 loans: ₹500 at 5% interest, ₹1000 at 12%. What should you repay first?",
+    options: [
+      { 
+        id: "small-first", 
+        text: "Repay smaller loan first", 
+        emoji: "📏", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "equal", 
+        text: "Split equally between both", 
+        emoji: "⚖️", 
+        isCorrect: false
+      },
+      { 
+        id: "high-interest", 
+        text: "Repay high-interest loan first", 
+        emoji: "🔥", 
+        isCorrect: true
+      },
+      { 
+        id: "ignore", 
+        text: "Ignore and pay randomly", 
+        emoji: "🤷", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Impulse vs Planned Loan",
+    description: "A friend suggests a loan to buy the latest phone. What’s wise?",
+    options: [
+      { 
+        id: "impulse", 
+        text: "Take loan impulsively to buy immediately", 
+        emoji: "📱", 
+        isCorrect: false
+      },
+      { 
+        id: "planned", 
+        text: "Plan repayment, assess need vs want, borrow if essential", 
+        emoji: "📝", 
+        isCorrect: true
+      },
+      { 
+        id: "borrow-more", 
+        text: "Borrow more than needed for extra perks", 
+        emoji: "💎", 
+        isCorrect: false
+      },
+      { 
+        id: "skip-loan", 
+        text: "Skip loan and risk missing opportunity", 
+        emoji: "⏰", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Loan for Non-Essentials",
+    description: "You want a bike worth ₹5000 but have only ₹1000 saved. Smart loan strategy?",
+    options: [
+      { 
+        id: "save-then-borrow", 
+        text: "Save part amount, borrow remaining with manageable EMI", 
+        emoji: "💳", 
+        isCorrect: true
+      },
+      { 
+        id: "borrow-all", 
+        text: "Borrow full ₹5000 immediately", 
+        emoji: "🏍️", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "multiple-lenders", 
+        text: "Borrow small from multiple sources to buy fast", 
+        emoji: "🔢", 
+        isCorrect: false
+      },
+      { 
+        id: "delay", 
+        text: "Wait without plan until you have full cash", 
+        emoji: "⏳", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Emergency Loan Use",
+    description: "You need ₹1200 for medical emergency. What’s safe borrowing advice?",
+    options: [
+      { 
+        id: "use-loan-for-wants", 
+        text: "Use emergency loan for non-essential wants", 
+        emoji: "🎮", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "borrow-large", 
+        text: "Borrow more than needed for safety buffer", 
+        emoji: "💰", 
+        isCorrect: false
+      },
+      { 
+        id: "emergency-only", 
+        text: "Use loans only for genuine emergencies", 
+        emoji: "🚑", 
+        isCorrect: true
+      },
+      { 
+        id: "ignore-loan", 
+        text: "Avoid loan even in emergency", 
+        emoji: "🙅", 
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered) return;

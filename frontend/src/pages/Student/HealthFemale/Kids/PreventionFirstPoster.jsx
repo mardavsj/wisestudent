@@ -20,7 +20,7 @@ const PreventionFirstPoster = () => {
     {
       question: 'Which poster would best show "Prevention is Power"?',
       choices: [
-        { text: "Poster showing prevention is power! 💪", correct: true },
+         { text: "Poster showing handwashing, masks, and safety shields 🛡️", correct: true },
         { text: "Poster showing never wash hands! 🦠", correct: false },
         { text: "Poster showing eat dirt! 🌱", correct: false },
       ],

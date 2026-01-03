@@ -172,11 +172,7 @@ const HygieneProGirlBadge = () => {
           emoji: "✨", 
           isCorrect: false
         },
-         { 
-          text: "Use gentle cleanser and avoid picking", 
-          emoji: "🫧", 
-          isCorrect: true
-        },
+         
       ],
       feedback: {
         correct: "Great choice! Consistent healthy habits build lasting confidence more than temporary fixes!",

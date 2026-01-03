@@ -29,62 +29,62 @@ const ReflexBudget = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "What should you do before spending money?",
-      correctAnswer: "Plan Before Spending",
-      options: [
-        { text: "Spend Instantly", isCorrect: false, emoji: "💸" },
-        { text: "Plan Before Spending", isCorrect: true, emoji: "📋" },
-        { text: "Buy Everything", isCorrect: false, emoji: "🛍️" },
-        { text: "Ignore Planning", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What is the smart way to handle money?",
-      correctAnswer: "Save First",
-      options: [
-        { text: "Save First", isCorrect: true, emoji: "💰" },
-        { text: "Buy Now", isCorrect: false, emoji: "🛒" },
-        { text: "Spend All", isCorrect: false, emoji: "💸" },
-        { text: "Waste Money", isCorrect: false, emoji: "🔥" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What helps you know where your money goes?",
-      correctAnswer: "Track Expenses",
-      options: [
-        { text: "Ignore Costs", isCorrect: false, emoji: "🙈" },
-        { text: "Forget Spending", isCorrect: false, emoji: "😴" },
-        { text: "Track Expenses", isCorrect: true, emoji: "📊" },
-        { text: "Don't Check", isCorrect: false, emoji: "🚫" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What helps you stay focused on saving?",
-      correctAnswer: "Set Goals",
-      options: [
-        { text: "Set Goals", isCorrect: true, emoji: "🎯" },
-        { text: "Spend Freely", isCorrect: false, emoji: "💸" },
-        { text: "No Planning", isCorrect: false, emoji: "😴" },
-        { text: "Buy Randomly", isCorrect: false, emoji: "🎲" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What is the best way to manage your money?",
-      correctAnswer: "Budget Wisely",
-      options: [
-        { text: "Overspend", isCorrect: false, emoji: "💸" },
-        { text: "Ignore Budget", isCorrect: false, emoji: "🙈" },
-        { text: "Spend Carelessly", isCorrect: false, emoji: "😴" },
-        { text: "Budget Wisely", isCorrect: true, emoji: "💡" },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You get pocket money for the week. What is the first smart step?",
+    options: [
+      { text: "Spend it all on the first day", emoji: "💸", isCorrect: false },
+      { text: "Buy whatever friends buy", emoji: "👥", isCorrect: false },
+      { text: "Decide how much to save and spend", emoji: "📋", isCorrect: true },
+      { text: "Forget how much money you have", emoji: "🙈", isCorrect: false }
+    ]
+  },
+
+  {
+    id: 2,
+    question: "You see two toys you like, but you can afford only one. What should you do?",
+    options: [
+      { text: "Compare prices and choose one", emoji: "⚖️", isCorrect: true },
+      { text: "Buy both and worry later", emoji: "😬", isCorrect: false },
+      { text: "Ask someone else to pay", emoji: "🙋", isCorrect: false },
+      { text: "Close your eyes and pick randomly", emoji: "🎲", isCorrect: false }
+    ]
+  },
+
+  {
+    id: 3,
+    question: "You want snacks every day, but your money finishes quickly. What helps?",
+    options: [
+      { text: "Spend more without thinking", emoji: "🔥", isCorrect: false },
+      { text: "Stop counting money", emoji: "😴", isCorrect: false },
+      { text: "Buy snacks for everyone", emoji: "🍿", isCorrect: false },
+      { text: "Limit spending on snacks", emoji: "🥨", isCorrect: true },
+    ]
+  },
+
+  {
+    id: 4,
+    question: "You save money for a book, but a sale tempts you to buy a game. What shows good budgeting?",
+    options: [
+      { text: "Change plans because of the sale", emoji: "🛍️", isCorrect: false },
+      { text: "Stick to your original goal", emoji: "🎯", isCorrect: true },
+      { text: "Spend without checking balance", emoji: "💳", isCorrect: false },
+      { text: "Forget why you were saving", emoji: "🙈", isCorrect: false }
+    ]
+  },
+
+  {
+    id: 5,
+    question: "At the end of the month, what helps you improve money habits?",
+    options: [
+      { text: "Ignore past spending", emoji: "😴", isCorrect: false },
+      { text: "Feel bad and stop saving", emoji: "😞", isCorrect: false },
+      { text: "Review where your money went", emoji: "📊", isCorrect: true },
+      { text: "Spend more next time", emoji: "💸", isCorrect: false }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

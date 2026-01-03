@@ -20,9 +20,9 @@ const GrowingUpPoster = () => {
     {
       question: 'Which poster would best show "Growing is Amazing"?',
       choices: [
-        { text: "Poster showing growing is amazing! 🌟", correct: true },
-        { text: "Poster showing stay small forever 👶", correct: false },
-        { text: "Poster showing growing is bad 👎", correct: false },
+       { text: "Poster with stars and a child reaching higher 🌟", correct: true },
+      { text: "Poster of a baby saying ‘Never change’ 👶", correct: false },
+      { text: "Poster with crossed arms and a sad face 🙅‍♂️", correct: false },
       ],
     },
     {

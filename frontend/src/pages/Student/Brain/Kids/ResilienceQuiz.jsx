@@ -57,17 +57,18 @@ const ResilienceQuiz = () => {
       text: "What does it mean to be resilient?",
       options: [
         { 
-          id: "quit", 
-          text: "Quit when things are hard", 
-          emoji: "🚶", 
-          isCorrect: false
-        },
-        { 
           id: "persist", 
           text: "Keep trying after setbacks", 
           emoji: "💪", 
           isCorrect: true
         },
+        { 
+          id: "quit", 
+          text: "Quit when things are hard", 
+          emoji: "🚶", 
+          isCorrect: false
+        },
+        
         { 
           id: "blame", 
           text: "Blame others", 
@@ -104,12 +105,7 @@ const ResilienceQuiz = () => {
       id: 4,
       text: "What is a sign of resilience?",
       options: [
-        { 
-          id: "try", 
-          text: "Trying again after falling", 
-          emoji: "🔄", 
-          isCorrect: true
-        },
+        
         { 
           id: "avoid", 
           text: "Avoiding challenges", 
@@ -121,7 +117,13 @@ const ResilienceQuiz = () => {
           text: "Panicking at problems", 
           emoji: "😰", 
           isCorrect: false
-        }
+        },
+        { 
+          id: "try", 
+          text: "Trying again after falling", 
+          emoji: "🔄", 
+          isCorrect: true
+        },
       ]
     },
     {

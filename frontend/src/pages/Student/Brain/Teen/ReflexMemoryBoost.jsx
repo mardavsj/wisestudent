@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import GameShell from '../../Finance/GameShell';
 import useGameFeedback from '../../../../hooks/useGameFeedback';
 import { getGameDataById } from '../../../../utils/getGameData';
@@ -9,12 +9,16 @@ const TOTAL_ROUNDS = 5;
 const ROUND_TIME = 10;
 
 const ReflexMemoryBoost = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   
   // Get game data from game category folder (source of truth)
   const gameId = "brain-teens-23";
   const gameData = getGameDataById(gameId);
+  
+  // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
+  const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
+  const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
+  const totalXp = gameData?.xp || location.state?.totalXp || 10;
   
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
@@ -27,158 +31,58 @@ const ReflexMemoryBoost = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which action boosts memory?",
-      options: [
-        { 
-          id: "revision", 
-          text: "Revision", 
-          emoji: "🔄", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "forget", 
-          text: "Forget", 
-          emoji: "🗑️", 
-          isCorrect: false
-        },
-        { 
-          id: "sleep", 
-          text: "Sleep Well", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          id: "skip", 
-          text: "Skip Meals", 
-          emoji: "🍽️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What helps memory recall?",
-      options: [
-        { 
-          id: "cram", 
-          text: "Cramming", 
-          emoji: "📖", 
-          isCorrect: false
-        },
-        { 
-          id: "exercise", 
-          text: "Exercise", 
-          emoji: "🏃", 
-          isCorrect: true
-        },
-        { 
-          id: "mnemonics", 
-          text: "Mnemonics", 
-          emoji: "🧠", 
-          isCorrect: false
-        },
-        { 
-          id: "distraction", 
-          text: "Distractions", 
-          emoji: "📱", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which supports memory?",
-      options: [
-        { 
-          id: "dehydration", 
-          text: "Dehydration", 
-          emoji: "🏜️", 
-          isCorrect: false
-        },
-        { 
-          id: "hydration", 
-          text: "Hydration", 
-          emoji: "💧", 
-          isCorrect: true
-        },
-        { 
-          id: "nutrition", 
-          text: "Healthy Nutrition", 
-          emoji: "🥗", 
-          isCorrect: false
-        },
-        { 
-          id: "junk", 
-          text: "Junk Food", 
-          emoji: "🍔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What boosts memory power?",
-      options: [
-        { 
-          id: "cram", 
-          text: "Last-Minute Cramming", 
-          emoji: "📚", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignoring Information", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          id: "spaced", 
-          text: "Spaced Repetition", 
-          emoji: "⏰", 
-          isCorrect: true
-        },
-        { 
-          id: "visualization", 
-          text: "Visualization", 
-          emoji: "🖼️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which helps memory retention?",
-      options: [
-        { 
-          id: "passive", 
-          text: "Passive Reading", 
-          emoji: "📄", 
-          isCorrect: false
-        },
-        { 
-          id: "forgetting", 
-          text: "Forgetting", 
-          emoji: "❌", 
-          isCorrect: false
-        },
-        { 
-          id: "active", 
-          text: "Active Recall", 
-          emoji: "🧠", 
-          isCorrect: true
-        },
-        { 
-          id: "association", 
-          text: "Association", 
-          emoji: "🔗", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You want to remember what you studied yesterday. What helps the most?",
+    options: [
+      { id: "revision", text: "Reviewing notes regularly", emoji: "🔄", isCorrect: true },
+      { id: "forget", text: "Ignoring your notes", emoji: "🗑️", isCorrect: false },
+      { id: "distraction", text: "Checking phone constantly", emoji: "📱", isCorrect: false },
+      { id: "skip-study", text: "Skipping study sessions", emoji: "📖", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Which technique is best for recalling information quickly?",
+    options: [
+      { id: "cram", text: "Cramming all night", emoji: "📖", isCorrect: false },
+      { id: "exercise", text: "Going for a run", emoji: "🏃", isCorrect: false },
+      { id: "mnemonics", text: "Using mnemonic devices", emoji: "🧠", isCorrect: true },
+      { id: "distraction", text: "Scrolling social media", emoji: "📱", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "Your brain works best when it is well-fueled. Which habit helps the most?",
+    options: [
+      { id: "dehydration", text: "Skipping water", emoji: "🏜️", isCorrect: false },
+      { id: "hydration", text: "Drinking enough water", emoji: "💧", isCorrect: true },
+      { id: "junk", text: "Eating only junk food", emoji: "🍔", isCorrect: false },
+      { id: "oversleep", text: "Oversleeping all day", emoji: "😴", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "You want to remember new vocabulary for a month. Which strategy works best?",
+    options: [
+      { id: "cram", text: "Last-minute cramming", emoji: "📚", isCorrect: false },
+      { id: "ignore", text: "Ignoring the words", emoji: "🙈", isCorrect: false },
+      { id: "all-at-once", text: "Memorizing everything at once", emoji: "📝", isCorrect: false },
+      { id: "spaced", text: "Reviewing regularly over time", emoji: "⏰", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    text: "Which technique helps you remember information for exams?",
+    options: [
+      { id: "passive", text: "Just reading notes once", emoji: "📄", isCorrect: false },
+      { id: "forgetting", text: "Letting information fade", emoji: "❌", isCorrect: false },
+      { id: "active", text: "Testing yourself regularly", emoji: "🧠", isCorrect: true },
+      { id: "highlighting", text: "Only highlighting text", emoji: "🖍️", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

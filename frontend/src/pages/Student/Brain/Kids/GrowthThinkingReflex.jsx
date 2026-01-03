@@ -52,7 +52,7 @@ const GrowthThinkingReflex = () => {
       correctAnswer: "Practicing to improve skills",
       options: [
         { text: "Staying at beginner level", isCorrect: false, emoji: "👶" },
-        { text: "Making excuses for poor performance", isCorrect: false, emoji: "-excuse" },
+        { text: "Making excuses for poor performance", isCorrect: false, emoji: "🙂" },
         { text: "Comparing yourself to others", isCorrect: false, emoji: "👥" },
         { text: "Practicing to improve skills", isCorrect: true, emoji: "💪" },
       ]

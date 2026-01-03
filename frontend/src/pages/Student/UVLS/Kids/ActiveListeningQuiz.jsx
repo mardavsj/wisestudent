@@ -22,142 +22,131 @@ const ActiveListeningQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Your friend is talking, but you look away. Is this good listening?",
-      options: [
-        { 
-          id: "a", 
-          text: "Good listening", 
-          emoji: "👂", 
-          // description: "You should look at them",
-          isCorrect: false 
-        },
-        { 
-          id: "b", 
-          text: "Bad listening", 
-          emoji: "🙉", 
-          // description: "Looking away shows you're not paying attention",
-          isCorrect: true 
-        },
-        { 
-          id: "c", 
-          text: "Okay", 
-          emoji: "🤷", 
-          // description: "Eye contact is important",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You repeat back what your friend said. Is this active listening?",
-      options: [
-        { 
-          id: "b", 
-          text: "Ignoring", 
-          emoji: "🙈", 
-          // description: "Repeating means you're listening",
-          isCorrect: false 
-        },
-        { 
-          id: "a", 
-          text: "Active listening", 
-          emoji: "🗣️", 
-          // description: "Repeating shows you understood",
-          isCorrect: true 
-        },
-        { 
-          id: "c", 
-          text: "Yelling", 
-          emoji: "😠", 
-          // description: "Repeating calmly is listening",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You play on your phone while someone is talking. Is this good?",
-      options: [
-        { 
-          id: "b", 
-          text: "Good", 
-          emoji: "👍", 
-          // description: "You should focus on the speaker",
-          isCorrect: false 
-        },
-        { 
-          id: "c", 
-          text: "Fun", 
-          emoji: "😄", 
-          // description: "Listening is more important",
-          isCorrect: false 
-        },
-        { 
-          id: "a", 
-          text: "Bad", 
-          emoji: "📱", 
-          // description: "Phones distract from listening",
-          isCorrect: true 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You nod and make eye contact while listening. Is this active listening?",
-      options: [
-        { 
-          id: "b", 
-          text: "Sleeping", 
-          emoji: "😴", 
-          // description: "Nodding shows you're awake and listening",
-          isCorrect: false 
-        },
-        { 
-          id: "a", 
-          text: "Active listening", 
-          emoji: "👀", 
-          // description: "Nodding and eye contact show you're engaged",
-          isCorrect: true 
-        },
-        { 
-          id: "c", 
-          text: "Running", 
-          emoji: "🏃", 
-          // description: "You're staying still and focused",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You interrupt someone while they're talking. Is this good listening?",
-      options: [
-        { 
-          id: "b", 
-          text: "Helpful", 
-          emoji: "🤝", 
-          // description: "Wait for them to finish",
-          isCorrect: false 
-        },
-        { 
-          id: "c", 
-          text: "Quiet", 
-          emoji: "🤫", 
-          // description: "Interrupting is not quiet",
-          isCorrect: false 
-        },
-        { 
-          id: "a", 
-          text: "Poor listening", 
-          emoji: "🛑", 
-          // description: "Interrupting shows you're not listening well",
-          isCorrect: true 
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Your classmate shares a story and you wait until they finish before responding. What does this show?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Rushing",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Daydreaming",
+        emoji: "💭",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Active listening",
+        emoji: "⏳",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "Someone explains a problem and you ask a kind question to understand better. What skill is this?",
+    options: [
+      {
+        id: "a",
+        text: "Active listening",
+        emoji: "❓",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Arguing",
+        emoji: "⚔️",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Guessing",
+        emoji: "🎲",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Your friend feels sad and you listen without laughing or judging. What are you practicing?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Teasing",
+        emoji: "😜",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Empathetic listening",
+        emoji: "💙",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Ignoring feelings",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "While listening, you stay quiet and think about what the speaker says. What habit is this?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Pretending",
+        emoji: "🎭",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Distracting yourself",
+        emoji: "🔀",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Focused listening",
+        emoji: "🎯",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "After listening, you respond calmly and respectfully. What does this show?",
+    options: [
+      {
+        id: "a",
+        text: "Good communication",
+        emoji: "🗨️",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Impatience",
+        emoji: "⌛",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Confusion",
+        emoji: "😕",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;

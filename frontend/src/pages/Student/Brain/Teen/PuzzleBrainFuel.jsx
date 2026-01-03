@@ -55,10 +55,10 @@ const PuzzleBrainFuel = () => {
 
   // Brain fuels (left side)
   const leftItems = [
-    { id: 1, name: 'Omega-3', emoji: '🐟',  },
-    { id: 2, name: 'Exercise', emoji: '🏃',  },
-    { id: 3, name: 'Antioxidants', emoji: '🫐',  },
-    { id: 4, name: 'Caffeine', emoji: '☕',  },
+    { id: 1, name: 'Omega-3', emoji: '😅',  },
+    { id: 2, name: 'Exercise', emoji: '🙂',  },
+    { id: 3, name: 'Antioxidants', emoji: '😐',  },
+    { id: 4, name: 'Caffeine', emoji: '🤔',  },
     { id: 5, name: 'Sleep', emoji: '😴',  },
   ];
 

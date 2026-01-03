@@ -169,7 +169,7 @@ const BuildToolboxPuzzle = () => {
                       <div className="text-2xl mr-3">{emotion.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{emotion.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {emotion.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

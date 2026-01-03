@@ -175,7 +175,7 @@ const CaseResponsePuzzle = () => {
                       <div className="text-2xl mr-3">{scenario.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{scenario.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {scenario.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

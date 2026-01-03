@@ -57,11 +57,11 @@ const DebateOptimismVsRealism = () => {
   const questions = [
     {
       id: 1,
-      text: "Is it better to be optimistic or realistic? → Balanced optimism.",
+      text: "Is it better to be optimistic or realistic? ",
       choices: [
-        { id: 'a', text: 'Balanced optimism - hope with realistic planning' },
-        { id: 'b', text: 'Pure optimism - ignore all challenges' },
-        { id: 'c', text: 'Pure realism - expect the worst always' }
+        { id: 'a', text: ' hope with realistic planning' },
+        { id: 'b', text: ' ignore all challenges' },
+        { id: 'c', text: ' expect the worst always' }
       ],
       correct: 'a',
       explanation: 'Balanced optimism combines positive thinking with realistic planning, leading to better outcomes!'

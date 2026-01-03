@@ -155,7 +155,7 @@ const FamilySimulation = () => {
         
         { 
           text: "Only spend time when forced - Only be together when necessary", 
-          emoji: " reluctant", 
+          emoji: "😔", 
           isCorrect: false
         },
         { 
@@ -192,7 +192,7 @@ const FamilySimulation = () => {
         },
         { 
           text: "Avoid discussing problems - Pretend everything is fine", 
-          emoji: "鸵鸟", 
+          emoji: "🙂", 
           isCorrect: false
         }
       ]

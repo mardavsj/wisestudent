@@ -36,18 +36,18 @@ const TrueFalseReflex = () => {
   const questions = [
     {
       id: 1,
-      question: "Is this true or false: The sun is hot.",
-      correctAnswer: "True",
+      question: "Is this true or false: Lying always solves problems.",
+      correctAnswer: "False",
       options: [
-        { text: "False", isCorrect: false, emoji: "👎" },
+        { text: "False", isCorrect: true, emoji: "👎" },
         { text: "Maybe", isCorrect: false, emoji: "🤔" },
-        { text: "True", isCorrect: true, emoji: "👍" },
+        { text: "True", isCorrect: false, emoji: "👍" },
         { text: "I don't know", isCorrect: false, emoji: "🙈" }
       ]
     },
     {
       id: 2,
-      question: "Is this true or false: Water is wet.",
+      question: "Is this true or false: Sharing toys helps build friendships.",
       correctAnswer: "True",
       options: [
         { text: "False", isCorrect: false, emoji: "👎" },
@@ -58,7 +58,7 @@ const TrueFalseReflex = () => {
     },
     {
       id: 3,
-      question: "Is this true or false: Dogs can fly.",
+      question: "Is this true or false: Everyone learns at the same speed.",
       correctAnswer: "False",
       options: [
         { text: "True", isCorrect: false, emoji: "👍" },
@@ -69,7 +69,7 @@ const TrueFalseReflex = () => {
     },
     {
       id: 4,
-      question: "Is this true or false: Earth is round.",
+      question: "Is this true or false: Reading books improves learning.",
       correctAnswer: "True",
       options: [
         { text: "True", isCorrect: true, emoji: "👍" },
@@ -80,7 +80,7 @@ const TrueFalseReflex = () => {
     },
     {
       id: 5,
-      question: "Is this true or false: Stars shine.",
+      question: "Is this true or false: Being kind makes others feel safe.",
       correctAnswer: "True",
       options: [
         { text: "False", isCorrect: false, emoji: "👎" },

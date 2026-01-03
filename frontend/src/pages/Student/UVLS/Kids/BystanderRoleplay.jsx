@@ -23,142 +23,131 @@ const BystanderRoleplay = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "You see teasing happening in the playground. What should you do?",
-      options: [
-        { 
-          id: "a", 
-          text: "Say 'Stop, that's not nice!'", 
-          emoji: "🛑", 
-          // description: "Stand up for the person",
-          isCorrect: true 
-        },
-        { 
-          id: "b", 
-          text: "Fight the bully", 
-          emoji: "👊", 
-          // description: "Violence makes it worse",
-          isCorrect: false 
-        },
-        { 
-          id: "c", 
-          text: "Watch silently", 
-          emoji: "👀", 
-          // description: "Not helping",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You see someone being excluded from a game. What should you do?",
-      options: [
-        { 
-          id: "b", 
-          text: "Yell at the group", 
-          emoji: "😠", 
-          // description: "Aggressive response",
-          isCorrect: false 
-        },
-        { 
-          id: "a", 
-          text: "Invite the excluded person to join", 
-          emoji: "👋", 
-          // description: "Include them",
-          isCorrect: true 
-        },
-        { 
-          id: "c", 
-          text: "Leave the game", 
-          emoji: "🚶", 
-          // description: "Not helping",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You hear name-calling in class. What should you do?",
-      options: [
-        { 
-          id: "b", 
-          text: "Name-call back", 
-          emoji: "🗣️", 
-          // description: "This makes it worse",
-          isCorrect: false 
-        },
-        { 
-          id: "c", 
-          text: "Ignore it", 
-          emoji: "🙈", 
-          // description: "Not helping",
-          isCorrect: false 
-        },
-        { 
-          id: "a", 
-          text: "Tell the teacher quietly", 
-          emoji: "🧑‍🏫", 
-          // description: "Get help from an adult",
-          isCorrect: true 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You see a mean comment online. What should you do?",
-      options: [
-        { 
-          id: "b", 
-          text: "Comment meanly too", 
-          emoji: "😈", 
-          // description: "This makes it worse",
-          isCorrect: false 
-        },
-        { 
-          id: "a", 
-          text: "Support the victim online", 
-          emoji: "❤️", 
-          // description: "Show support",
-          isCorrect: true 
-        },
-        { 
-          id: "c", 
-          text: "Scroll past", 
-          emoji: "📱", 
-          // description: "Not helping",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You see someone being pushed in line. What should you do?",
-      options: [
-        { 
-          id: "a", 
-          text: "Get an adult to help", 
-          emoji: "🆘", 
-          // description: "Get help from an adult",
-          isCorrect: true 
-        },
-        { 
-          id: "b", 
-          text: "Push back", 
-          emoji: "🤜", 
-          // description: "Violence makes it worse",
-          isCorrect: false 
-        },
-        { 
-          id: "c", 
-          text: "Do nothing", 
-          emoji: "🫥", 
-          // description: "Not helping",
-          isCorrect: false 
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You see a child drop their lunch and others laugh. What should you do?",
+    options: [
+    
+      {
+        id: "b",
+        text: "Laugh with the group",
+        emoji: "😂",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Walk away quickly",
+        emoji: "🚶",
+        isCorrect: false
+      },
+        {
+        id: "a",
+        text: "Help pick it up and check on them",
+        emoji: "🤝",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "You notice a younger student looks lost in school. What should you do?",
+    options: [
+      {
+        id: "a",
+        text: "Guide them to a teacher",
+        emoji: "🧭",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Ignore them",
+        emoji: "🙈",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Tell them to find help alone",
+        emoji: "❌",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "You hear a rumor spreading about a classmate. What should you do?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Repeat it quietly",
+        emoji: "🗣️",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Stop the rumor and suggest telling the truth",
+        emoji: "🛑",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Add more details",
+        emoji: "➕",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You see someone being left out during group work. What should you do?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Finish your work alone",
+        emoji: "📄",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Tell them it is not your problem",
+        emoji: "🙅",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Ask them to join your group",
+        emoji: "👥",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "You notice a classmate looks scared after being yelled at. What should you do?",
+    options: [
+      {
+        id: "a",
+        text: "Stay with them and get adult help",
+        emoji: "🆘",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Pretend nothing happens",
+        emoji: "😐",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Tell them to be brave",
+        emoji: "💪",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;

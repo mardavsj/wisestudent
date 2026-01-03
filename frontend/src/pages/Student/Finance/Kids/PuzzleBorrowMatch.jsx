@@ -45,43 +45,41 @@ const PuzzleBorrowMatch = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Borrowed Items (left side) - 5 items
   const items = [
-    { id: 1, name: "Book", emoji: "📚",  },
-    { id: 2, name: "Toy", emoji: "🧸",  },
-    { id: 3, name: "Pencil", emoji: "✏️",  },
-    { id: 4, name: "Money", emoji: "💵",  },
-    { id: 5, name: "Lunch", emoji: "🍱",  }
-  ];
+  { id: 1, name: "Notebook", emoji: "📓" },       // Something you borrow to study
+  { id: 2, name: "Board Game", emoji: "🎲" },     // Something fun to share
+  { id: 3, name: "Eraser", emoji: "🩹" },         // Small school item to lend
+  { id: 4, name: "Pocket Money", emoji: "💰" },   // Money borrowed and returned
+  { id: 5, name: "Lunchbox", emoji: "🥪" }        // Borrowed food
+];
 
-  // Actions (right side) - 5 items
-  const actions = [
-    { id: 6, name: "Return", emoji: "↩️",  },
-    { id: 7, name: "Share", emoji: "🤝",  },
-    { id: 8, name: "Repay", emoji: "💳",  },
-    { id: 9, name: "Thank", emoji: "🙏",  },
-    { id: 10, name: "Lend", emoji: "🤝",  }
-  ];
 
-  // Manually rearrange positions to prevent positional matching
-  // Original order was [6,7,8,9,10], rearranged to [8,10,7,6,9]
+ const actions = [
+  { id: 6, name: "Give Back", emoji: "↩️" },      // Return borrowed item
+  { id: 7, name: "Share with Friend", emoji: "🤝" }, // Share borrowed fun items
+  { id: 8, name: "Repay Money", emoji: "💳" },    // Pay back borrowed money
+  { id: 9, name: "Say Thank You", emoji: "🙏" },  // Show gratitude
+  { id: 10, name: "Lend Carefully", emoji: "🛡️" } // Lend items responsibly
+];
+
+
   const rearrangedActions = [
-    actions[2], // Repay (id: 8)
-    actions[4], // Lend (id: 10)
-    actions[1], // Share (id: 7)
-    actions[0], // Return (id: 6)
-    actions[3]  // Thank (id: 9)
-  ];
+  actions[2], // Repay Money (id: 8)
+  actions[0], // Lend Carefully (id: 10)
+  actions[3], // Share with Friend (id: 7)
+  actions[4], // Give Back (id: 6)
+  actions[1]  // Say Thank You (id: 9)
+];
 
-  // Correct matches using proper IDs, not positional order
-  // Each item has a unique correct match for true one-to-one mapping
-  const correctMatches = [
-    { itemId: 1, actionId: 6 }, // Book → Return
-    { itemId: 2, actionId: 7 }, // Toy → Share
-    { itemId: 3, actionId: 10 }, // Pencil → Lend
-    { itemId: 4, actionId: 8 }, // Money → Repay
-    { itemId: 5, actionId: 9 }  // Lunch → Thank
-  ];
+
+ const correctMatches = [
+  { itemId: 1, actionId: 6 },  // Notebook → Give Back
+  { itemId: 2, actionId: 7 },  // Board Game → Share with Friend
+  { itemId: 3, actionId: 10 }, // Eraser → Lend Carefully
+  { itemId: 4, actionId: 8 },  // Pocket Money → Repay Money
+  { itemId: 5, actionId: 9 }   // Lunchbox → Say Thank You
+];
+
 
   const handleItemSelect = (item) => {
     if (gameFinished) return;
@@ -192,7 +190,7 @@ const PuzzleBorrowMatch = () => {
                       <div className="text-2xl mr-3">{item.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{item.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {item.hint}</p>
+                       
                       </div>
                     </div>
                   </button>

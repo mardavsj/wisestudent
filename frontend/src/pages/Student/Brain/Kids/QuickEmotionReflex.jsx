@@ -36,158 +36,58 @@ const QuickEmotionReflex = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which word is an emotion?",
-      options: [
-        { 
-          id: "joy", 
-          text: "Joy", 
-          emoji: "😊", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "desk", 
-          text: "Desk", 
-          emoji: "🪑", 
-          isCorrect: false
-        },
-        { 
-          id: "phone", 
-          text: "Phone", 
-          emoji: "📱", 
-          isCorrect: false
-        },
-        { 
-          id: "book", 
-          text: "Book", 
-          emoji: "📚", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which word is an emotion?",
-      options: [
-        { 
-          id: "table", 
-          text: "Table", 
-          emoji: "🪑", 
-          isCorrect: false
-        },
-        { 
-          id: "love", 
-          text: "Love", 
-          emoji: "❤️", 
-          isCorrect: true
-        },
-        { 
-          id: "chair", 
-          text: "Chair", 
-          emoji: "🪑", 
-          isCorrect: false
-        },
-        { 
-          id: "lamp", 
-          text: "Lamp", 
-          emoji: "💡", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which word is an emotion?",
-      options: [
-        { 
-          id: "window", 
-          text: "Window", 
-          emoji: "🪟", 
-          isCorrect: false
-        },
-        { 
-          id: "door", 
-          text: "Door", 
-          emoji: "🚪", 
-          isCorrect: false
-        },
-        { 
-          id: "excitement", 
-          text: "Excitement", 
-          emoji: "🎉", 
-          isCorrect: true
-        },
-        { 
-          id: "bike", 
-          text: "Bike", 
-          emoji: "🚲", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which word is an emotion?",
-      options: [
-        { 
-          id: "fear", 
-          text: "Fear", 
-          emoji: "😨", 
-          isCorrect: true
-        },
-        { 
-          id: "car", 
-          text: "Car", 
-          emoji: "🚗", 
-          isCorrect: false
-        },
-        { 
-          id: "tree", 
-          text: "Tree", 
-          emoji: "🌳", 
-          isCorrect: false
-        },
-        { 
-          id: "ball", 
-          text: "Ball", 
-          emoji: "⚽", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which word is an emotion?",
-      options: [
-        { 
-          id: "cup", 
-          text: "Cup", 
-          emoji: "☕", 
-          isCorrect: false
-        },
-        { 
-          id: "sun", 
-          text: "Sun", 
-          emoji: "☀️", 
-          isCorrect: false
-        },
-        { 
-          id: "pencil", 
-          text: "Pencil", 
-          emoji: "✏️", 
-          isCorrect: false
-        },
-        { 
-          id: "anger", 
-          text: "Anger", 
-          emoji: "😡", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A baker sees customers smiling after tasting fresh bread. What feeling fits best?",
+    options: [
+      { id: "a", text: "Pride", emoji: "🏆", isCorrect: true },
+      { id: "b", text: "Confusion", emoji: "😅", isCorrect: false },
+      { id: "c", text: "Fear", emoji: "😱", isCorrect: false },
+      { id: "d", text: "Boredom", emoji: "🙄", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "A pilot hears strange noise but follows training calmly. What emotion is shown?",
+    options: [
+      { id: "a", text: "Joy", emoji: "🥳", isCorrect: false },
+      { id: "b", text: "Anger", emoji: "😠", isCorrect: false },
+      { id: "c", text: "Shyness", emoji: "😳", isCorrect: false },
+      { id: "d", text: "Confidence", emoji: "💪", isCorrect: true }
+    ]
+  },
+  {
+    id: 3,
+    text: "A gardener sees the first flower bloom after many days. What feeling appears?",
+    options: [
+      { id: "a", text: "Sleepiness", emoji: "😴", isCorrect: false },
+      { id: "b", text: "Worry", emoji: "🤔", isCorrect: false },
+      { id: "c", text: "Happiness", emoji: "😊", isCorrect: true },
+      { id: "d", text: "Jealousy", emoji: "😔", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "A doctor must give a shot and speaks softly to help the child relax. What emotion is shown?",
+    options: [
+      { id: "a", text: "Excitement", emoji: "🤩", isCorrect: false },
+      { id: "b", text: "Care", emoji: "🤗", isCorrect: true },
+      { id: "c", text: "Fear", emoji: "😨", isCorrect: false },
+      { id: "d", text: "Panic", emoji: "⚠️", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "A shopkeeper finds money left behind and waits to return it. What feeling guides this?",
+    options: [
+      { id: "a", text: "Honesty", emoji: "🤗", isCorrect: true },
+      { id: "b", text: "Greed", emoji: "💰", isCorrect: false },
+      { id: "c", text: "Surprise", emoji: "😮", isCorrect: false },
+      { id: "d", text: "Anger", emoji: "😠", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;
@@ -327,7 +227,7 @@ const QuickEmotionReflex = () => {
       
             <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 text-center">
               <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">
-                {currentQuestion.question}
+                {currentQuestion.text}
               </h3>
                     
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

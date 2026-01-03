@@ -59,145 +59,146 @@ const TimeBudgetSimulation = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const challenges = [
-    {
-      id: 1,
-      title: "Time Before Bed",
-      question: "You have 2 hours (120 minutes) before bedtime. How should you spend your time?",
-      options: [
-        { 
-          text: "Study for 1 hour, have fun for 30 minutes, prepare for sleep for 30 minutes - Good balance of learning and rest", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          text: "Spend all time playing games - Fun is more important than rest", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          text: "Sleep immediately without any activities - Skip all other activities", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Study for the entire time - Learning is the only priority", 
-          emoji: "📖", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Afternoon Planning",
-      question: "You have 3 hours (180 minutes) in the afternoon. How should you plan your time?",
-      options: [
-        
-        { 
-          text: "Play for the entire time - Afternoon is for fun only", 
-          emoji: "⚽", 
-          isCorrect: false
-        },
-        { 
-          text: "Do chores for the entire time - Help family all afternoon", 
-          emoji: "🧹", 
-          isCorrect: false
-        },
-        { 
-          text: "Do homework for 1 hour, play for 1 hour, help with chores for 1 hour - Balanced approach", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          text: "Avoid all activities - Just relax without doing anything", 
-          emoji: "🛋️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Evening Balance",
-      question: "You have 1 hour (60 minutes) in the evening. How should you use your time?",
-      options: [
-        { 
-          text: "Read for 20 min, exercise for 20 min, rest for 20 min - Good variety and balance", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          text: "Read for the entire hour - Focus only on learning", 
-          emoji: "📖", 
-          isCorrect: false
-        },
-        { 
-          text: "Exercise for the entire hour - Physical activity is most important", 
-          emoji: "🏃", 
-          isCorrect: false
-        },
-        { 
-          text: "Rest for the entire hour - Relax without other activities", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Weekend Planning",
-      question: "You have 4 hours (240 minutes) on the weekend. How should you structure your day?",
-      options: [
-        
-        { 
-          text: "Focus only on hobbies - Spend all time on personal interests", 
-          emoji: "🎨", 
-          isCorrect: false
-        },
-        { 
-          text: "Spend time with family, work on hobbies, study a bit, and have fun - Well-rounded day", 
-          emoji: "👨‍👩‍👧", 
-          isCorrect: true
-        },
-        { 
-          text: "Study for the entire time - Use weekend for learning", 
-          emoji: "📝", 
-          isCorrect: false
-        },
-        { 
-          text: "Just have fun the whole time - Weekend is for entertainment only", 
-          emoji: "🎉", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "After School Time",
-      question: "You have 2.5 hours (150 minutes) after school. How should you use this time?",
-      options: [
-        
-        { 
-          text: "Watch TV for the entire time - Relax after school", 
-          emoji: "📺", 
-          isCorrect: false
-        },
-        { 
-          text: "Help at home for the entire time - Focus only on chores", 
-          emoji: "🧹", 
-          isCorrect: false
-        },
-        { 
-          text: "Just prepare for tomorrow - Focus only on school work", 
-          emoji: "📋", 
-          isCorrect: false
-        },
-        { 
-          text: "Help at home, relax by watching TV, prepare for tomorrow - Good balance of responsibilities", 
-          emoji: "🏠", 
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Morning Prep",
+    question: "You wake up with 90 minutes before school. How should you spend your time?",
+    options: [
+      
+      { 
+        text: "Play video games immediately - Skip morning hygiene", 
+        emoji: "🎮", 
+        isCorrect: false
+      },
+      { 
+        text: "Sleep more - Ignore school prep", 
+        emoji: "😴", 
+        isCorrect: false
+      },
+      { 
+        text: "Just pack bag - Skip breakfast and hygiene", 
+        emoji: "🎒", 
+        isCorrect: false
+      },
+      { 
+        text: "Brush teeth, wash face, eat breakfast, pack bag - Good start for a productive day", 
+        emoji: "🧼", 
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    title: "Homework Planning",
+    question: "You have 1.5 hours to do homework. What’s the best plan?",
+    options: [
+      { 
+        text: "Finish hardest subjects first, take short breaks, then do easy subjects - Balanced and focused", 
+        emoji: "📚", 
+        isCorrect: true
+      },
+      { 
+        text: "Do all subjects at random without breaks - Confusing and tiring", 
+        emoji: "🌀", 
+        isCorrect: false
+      },
+      { 
+        text: "Play first, then do all homework in last 10 minutes - Stressful and rushed", 
+        emoji: "⏳", 
+        isCorrect: false
+      },
+      { 
+        text: "Skip homework - Relax instead", 
+        emoji: "😎", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "After School Snack",
+    question: "You have 30 minutes after school. How can you spend it wisely?",
+    options: [
+      
+      { 
+        text: "Skip snack and watch TV - Might feel hungry and tired", 
+        emoji: "📺", 
+        isCorrect: false
+      },
+      { 
+        text: "Play outside without eating - Risk low energy", 
+        emoji: "⚽", 
+        isCorrect: false
+      },
+      { 
+        text: "Have a healthy snack, wash hands, relax for a few minutes - Good self-care", 
+        emoji: "🍎", 
+        isCorrect: true
+      },
+      { 
+        text: "Sleep immediately - Miss opportunity to recharge properly", 
+        emoji: "😴", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Weekend Chores",
+    question: "You have 2 hours to help at home. How can you manage time smartly?",
+    options: [
+      
+      { 
+        text: "Play first, then ignore chores - Leaves tasks unfinished", 
+        emoji: "🎮", 
+        isCorrect: false
+      },
+      { 
+        text: "Do chores first, then play and rest - Complete responsibilities before fun", 
+        emoji: "🧹", 
+        isCorrect: true
+      },
+      { 
+        text: "Do chores slowly and take long breaks - Not efficient", 
+        emoji: "🐢", 
+        isCorrect: false
+      },
+      { 
+        text: "Skip chores - Relax all the time", 
+        emoji: "🛋️", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Evening Routine",
+    question: "You have 1 hour before bedtime. How can you spend your time wisely?",
+    options: [
+      { 
+        text: "Read a book, prepare school bag, wash up - Balanced learning and rest", 
+        emoji: "📖", 
+        isCorrect: true
+      },
+      { 
+        text: "Watch TV or phone all the time - Skip rest and preparation", 
+        emoji: "📱", 
+        isCorrect: false
+      },
+      { 
+        text: "Skip washing up and sleep - Poor hygiene", 
+        emoji: "🛁", 
+        isCorrect: false
+      },
+      { 
+        text: "Play games until bedtime - Disturbs sleep schedule", 
+        emoji: "🎮", 
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

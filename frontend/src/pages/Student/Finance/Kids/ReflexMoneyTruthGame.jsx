@@ -29,62 +29,65 @@ const ReflexMoneyTruthGame = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "What should you be with money?",
-      correctAnswer: "Be Fair",
-      options: [
-        { text: "Be Greedy", isCorrect: false, emoji: "💰" },
-        { text: "Be Selfish", isCorrect: false, emoji: "😈" },
-        { text: "Be Fair", isCorrect: true, emoji: "⚖️" },
-        { text: "Be Unfair", isCorrect: false, emoji: "❌" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What should you always do with money?",
-      correctAnswer: "Tell Truth",
-      options: [
-        { text: "Tell Truth", isCorrect: true, emoji: "✅" },
-        { text: "Lie", isCorrect: false, emoji: "🤥" },
-        { text: "Deceive", isCorrect: false, emoji: "😈" },
-        { text: "Cheat", isCorrect: false, emoji: "🎭" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What should you do with your money?",
-      correctAnswer: "Share",
-      options: [
-        { text: "Hoard", isCorrect: false, emoji: "🐉" },
-        { text: "Keep All", isCorrect: false, emoji: "🔒" },
-        { text: "Never Give", isCorrect: false, emoji: "🚫" },
-        { text: "Share", isCorrect: true, emoji: "🤝" },
-      ]
-    },
-    {
-      id: 4,
-      question: "How should you make financial deals?",
-      correctAnswer: "Honest Deal",
-      options: [
-        { text: "Cheat", isCorrect: false, emoji: "🎭" },
-        { text: "Honest Deal", isCorrect: true, emoji: "💯" },
-        { text: "Trick", isCorrect: false, emoji: "🃏" },
-        { text: "Deceive", isCorrect: false, emoji: "😈" }
-      ]
-    },
-    {
-      id: 5,
-      question: "How should you behave with money?",
-      correctAnswer: "Be Ethical",
-      options: [
-        { text: "Be Ethical", isCorrect: true, emoji: "🌟" },
-        { text: "Be Dishonest", isCorrect: false, emoji: "🚫" },
-        { text: "Be Unfair", isCorrect: false, emoji: "❌" },
-        { text: "Be Corrupt", isCorrect: false, emoji: "💸" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You find a coin on the school floor. What is the right first action?",
+    correctAnswer: "Ask if someone lost it",
+    options: [
+      { text: "Keep it quickly", isCorrect: false, emoji: "🏃" },
+      { text: "Ask if someone lost it", isCorrect: true, emoji: "🙋" },
+      { text: "Buy snacks", isCorrect: false, emoji: "🍿" },
+      { text: "Hide it", isCorrect: false, emoji: "🙈" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Someone gives you money for a task you didn’t finish. What should you do?",
+    correctAnswer: "Explain the truth",
+    options: [
+      { text: "Explain the truth", isCorrect: true, emoji: "🗣️" },
+      { text: "Say nothing", isCorrect: false, emoji: "🤫" },
+      
+      { text: "Blame others", isCorrect: false, emoji: "👉" },
+      { text: "Walk away", isCorrect: false, emoji: "🚶" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You and your friend earned money together. What helps avoid problems?",
+    correctAnswer: "Agree on sharing early",
+    options: [
+      { text: "Take more yourself", isCorrect: false, emoji: "🤑" },
+      { text: "Wait and argue later", isCorrect: false, emoji: "💢" },
+      
+      { text: "Let luck decide", isCorrect: false, emoji: "🎲" },
+      { text: "Agree on sharing early", isCorrect: true, emoji: "🤝" },
+    ]
+  },
+  {
+    id: 4,
+    question: "You promise to return borrowed money but forget. What fixes it best?",
+    correctAnswer: "Apologize and return it",
+    options: [
+       { text: "Apologize and return it", isCorrect: true, emoji: "🙏" },
+      { text: "Avoid the person", isCorrect: false, emoji: "🙄" },
+      { text: "Pretend you paid", isCorrect: false, emoji: "🎭" },
+     
+      { text: "Laugh it off", isCorrect: false, emoji: "😅" }
+    ]
+  },
+  {
+    id: 5,
+    question: "What makes people trust you with money again?",
+    correctAnswer: "Keeping promises",
+    options: [
+      { text: "Talking loudly", isCorrect: false, emoji: "📢" },
+      { text: "Making excuses", isCorrect: false, emoji: "🌀" },
+      { text: "Keeping promises", isCorrect: true, emoji: "📌" },
+      { text: "Asking for more", isCorrect: false, emoji: "💸" }
+    ]
+  }
+];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;
@@ -193,7 +196,7 @@ const ReflexMoneyTruthGame = () => {
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-            <div className="text-5xl mb-6">✅</div>
+            <div className="text-5xl mb-6">🤑</div>
             <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
             <p className="text-white/90 text-lg mb-6">
               Answer questions about being fair and truthful with money!<br />
@@ -225,14 +228,7 @@ const ReflexMoneyTruthGame = () => {
               </div>
             </div>
 
-            {/* Progress bar */}
-            <div className="w-full bg-white/20 rounded-full h-2">
-              <div
-                className={`h-2 rounded-full transition-all duration-300 ${timeLeft <= 2 ? 'bg-red-500' : timeLeft <= 3 ? 'bg-yellow-500' : 'bg-green-500'
-                  }`}
-                style={{ width: `${(timeLeft / ROUND_TIME) * 100}%` }}
-              />
-            </div>
+
 
             <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 text-center">
               <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">

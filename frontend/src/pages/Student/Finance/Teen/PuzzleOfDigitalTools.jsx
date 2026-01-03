@@ -193,7 +193,7 @@ const PuzzleOfDigitalTools = () => {
                       <div className="text-2xl mr-3">{tool.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{tool.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {tool.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

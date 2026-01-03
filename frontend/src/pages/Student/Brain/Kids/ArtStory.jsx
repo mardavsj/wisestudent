@@ -27,129 +27,53 @@ const ArtStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Kid makes toy from waste. Is this creativity?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "🖼️", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "🥱", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Kid draws original picture. Is this creative?",
-      options: [
-        { 
-          id: "no2", 
-          text: "No", 
-          emoji: "😒", 
-          isCorrect: false
-        },
-        { 
-          id: "yes2", 
-          text: "Yes", 
-          emoji: "🎨", 
-          isCorrect: true
-        },
-        { 
-          id: "maybe2", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Kid builds fort from boxes. Is this creative?",
-      options: [
-        { 
-          id: "maybe3", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no3", 
-          text: "No", 
-          emoji: "😔", 
-          isCorrect: false
-        },
-        { 
-          id: "yes3", 
-          text: "Yes", 
-          emoji: "🆕", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Kid writes original story. Is this creative?",
-      options: [
-        { 
-          id: "yes4", 
-          text: "Yes", 
-          emoji: "✍️", 
-          isCorrect: true
-        },
-        { 
-          id: "maybe4", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no4", 
-          text: "No", 
-          emoji: "😲", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Kid makes music with objects. Is this creative?",
-      options: [
-        { 
-          id: "maybe5", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no5", 
-          text: "No", 
-          emoji: "😔", 
-          isCorrect: false
-        },
-        { 
-          id: "yes5", 
-          text: "Yes", 
-          emoji: "🎵", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Riya finds old newspapers and bottle caps at home. She plans to use them to create something for her school display. What choice best shows creative thinking?",
+    options: [
+      { id: "a1", text: "Throw them away and buy new craft items", emoji: "🗑️", isCorrect: false },
+      { id: "b1", text: "Use the waste items to design a new art piece", emoji: "♻️", isCorrect: true },
+      { id: "c1", text: "Wait for someone else to tell her what to make", emoji: "⏳", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Ayaan wants to draw a picture for his art story. He has seen many similar drawings before. What would make his artwork truly creative?",
+    options: [
+      { id: "a2", text: "Copying a picture exactly from a book", emoji: "📘", isCorrect: false },
+      { id: "c2", text: "Leaving the page blank to avoid mistakes", emoji: "📄", isCorrect: false },
+      { id: "b2", text: "Adding his own ideas and colors to the drawing", emoji: "🎨", isCorrect: true },
+    ]
+  },
+  {
+    id: 3,
+    text: "Two friends are building a play fort using boxes. One follows instructions, the other changes the design to solve problems. Which action shows creativity in the story?",
+    options: [
+      { id: "a3", text: "Stopping when the boxes don’t fit", emoji: "🚫", isCorrect: false },
+      { id: "b3", text: "Changing the design to make the fort stronger", emoji: "🏰", isCorrect: true },
+      { id: "c3", text: "Waiting for an adult to build it instead", emoji: "🙋", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "Meera writes an art story about a talking tree. How can she make the story more creative?",
+    options: [
+      { id: "a4", text: "Using only one sentence again and again", emoji: "🔁", isCorrect: false },
+      { id: "b4", text: "Giving the tree feelings and a unique problem", emoji: "🌳", isCorrect: true },
+      { id: "c4", text: "Ending the story without any ideas", emoji: "❌", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "During art time, a child taps different objects to make sounds for a story scene. What makes this activity creative?",
+    options: [
+      { id: "b5", text: "Exploring new sounds to match the story mood", emoji: "🎶", isCorrect: true },
+      { id: "a5", text: "Using objects only for their normal purpose", emoji: "📦", isCorrect: false },
+      { id: "c5", text: "Stopping because instruments are not available", emoji: "🛑", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

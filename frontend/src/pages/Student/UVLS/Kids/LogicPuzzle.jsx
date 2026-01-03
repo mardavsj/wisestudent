@@ -170,7 +170,7 @@ const LogicPuzzle = () => {
                       <div className="text-2xl mr-3">{pattern.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{pattern.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {pattern.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

@@ -137,7 +137,7 @@ const QuizOnBrainFood = () => {
         { 
           id: "b", 
           text: "They have vitamins and minerals", 
-          emoji: "🥬", 
+          emoji: "Ⓜ️", 
           isCorrect: true
         },
         { 

@@ -27,128 +27,131 @@ const FeelingsQuizz = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Which is an emotion?",
-      options: [
-        { 
-          id: "happiness", 
-          text: "Happiness", 
-          emoji: "😊", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "shoes", 
-          text: "Shoes", 
-          emoji: "👟", 
-          isCorrect: false
-        },
-        { 
-          id: "pen", 
-          text: "Pen", 
-          emoji: "✏️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What's a feeling?",
-      options: [
-        { 
-          id: "table", 
-          text: "Table", 
-          emoji: "🪑", 
-          isCorrect: false
-        },
-        { 
-          id: "sadness", 
-          text: "Sadness", 
-          emoji: "😢", 
-          isCorrect: true
-        },
-        { 
-          id: "book", 
-          text: "Book", 
-          emoji: "📚", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which is an emotion?",
-      options: [
-        { 
-          id: "car", 
-          text: "Car", 
-          emoji: "🚗", 
-          isCorrect: false
-        },
-        { 
-          id: "pencil", 
-          text: "Pencil", 
-          emoji: "✏️", 
-          isCorrect: false
-        },
-        { 
-          id: "anger", 
-          text: "Anger", 
-          emoji: "😠", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What's a feeling?",
-      options: [
-        { 
-          id: "excitement", 
-          text: "Excitement", 
-          emoji: "🎉", 
-          isCorrect: true
-        },
-        { 
-          id: "clock", 
-          text: "Clock", 
-          emoji: "🕐", 
-          isCorrect: false
-        },
-        { 
-          id: "chair", 
-          text: "Chair", 
-          emoji: "🪑", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which is an emotion?",
-      options: [
-        { 
-          id: "lamp", 
-          text: "Lamp", 
-          emoji: "💡", 
-          isCorrect: false
-        },
-        { 
-          id: "fear", 
-          text: "Fear", 
-          emoji: "😨", 
-          isCorrect: true
-        },
-        { 
-          id: "ball", 
-          text: "Ball", 
-          emoji: "⚽", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You studied hard but still didn’t do well in a test. How might you feel?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Sleepy",
+        emoji: "😴",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Disappointed",
+        emoji: "😞",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Hungry",
+        emoji: "🍔",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Your friend surprises you with a birthday gift. What feeling fits best?",
+    options: [
+      {
+        id: "a",
+        text: "Excited",
+        emoji: "🤩",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Tired",
+        emoji: "🥱",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Cold",
+        emoji: "🧊",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Someone takes your things without asking. How are you likely to feel?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Bored",
+        emoji: "😐",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Sleepy",
+        emoji: "😴",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Angry",
+        emoji: "😠",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 4,
+    text: "You are about to speak on stage for the first time. What feeling is common?",
+    options: [
+      {
+        id: "a",
+        text: "Nervous",
+        emoji: "😬",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Hungry",
+        emoji: "🍕",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Dirty",
+        emoji: "🧼",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "You help someone and they thank you warmly. How do you feel inside?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Thirsty",
+        emoji: "🥤",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Proud",
+        emoji: "😊",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Noisy",
+        emoji: "🔊",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

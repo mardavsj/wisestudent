@@ -169,7 +169,7 @@ const CommunityRolesPuzzle = () => {
                       <div className="text-2xl mr-3">{helper.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{helper.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {helper.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

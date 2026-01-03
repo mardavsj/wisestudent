@@ -27,41 +27,41 @@ const MatchFeelingsPuzzle = () => {
   const [showResult, setShowResult] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Left side - expressions/actions
-  const leftItems = [
-    { id: 1, name: "Smile",   },
-    { id: 2, name: "Tears",  },
-    { id: 3, name: "Frown",   },
-    { id: 4, name: "Jump",   },
-    { id: 5, name: "Shake",   },
-  ];
+  // Left side – story actions / body clues (not direct)
+const leftItems = [
+  { id: 1, name: "Quiet grin", emoji: "🌤️" },
+  { id: 2, name: "Eyes feel heavy", emoji: "💧" },
+  { id: 3, name: "Tight eyebrows", emoji: "🧩" },
+  { id: 4, name: "Can’t stay still", emoji: "⚡" },
+  { id: 5, name: "Body feels shaky", emoji: "🍃" },
+];
 
-  // Right side - emotions
-  const rightItems = [
-    { id: 1, name: "Happy",   },
-    { id: 2, name: "Sad",   },
-    { id: 3, name: "Angry",   },
-    { id: 4, name: "Excited",   },
-    { id: 5, name: "Scared",   },
-  ];
+ // Right side – inner feelings (concept-based)
+const rightItems = [
+  { id: 1, name: "Joyful inside", emoji: "🎈" },
+  { id: 2, name: "Feeling low", emoji: "🌧️" },
+  { id: 3, name: "Upset energy", emoji: "🔥" },
+  { id: 4, name: "Burst of excitement", emoji: "🎉" },
+  { id: 5, name: "Feeling unsafe", emoji: "🛑" },
+];
 
-  // Correct matches
-  const correctMatches = [
-    { leftId: 1, rightId: 1 }, // Smile → Happy
-    { leftId: 2, rightId: 2 }, // Tears → Sad
-    { leftId: 3, rightId: 3 }, // Frown → Angry
-    { leftId: 4, rightId: 4 }, // Jump → Excited
-    { leftId: 5, rightId: 5 }  // Shake → Scared
-  ];
+ // Correct matches (logic-based, not emoji-based)
+const correctMatches = [
+  { leftId: 1, rightId: 1 }, // Quiet grin → Joyful inside
+  { leftId: 2, rightId: 2 }, // Eyes feel heavy → Feeling low
+  { leftId: 3, rightId: 3 }, // Tight eyebrows → Upset energy
+  { leftId: 4, rightId: 4 }, // Can’t stay still → Burst of excitement
+  { leftId: 5, rightId: 5 }, // Body feels shaky → Feeling unsafe
+];
 
-  // Shuffled right items for display (to split matches across positions)
-  const shuffledRightItems = [
-    rightItems[2], // Angry (id: 3) - position 1
-    rightItems[4], // Scared (id: 5) - position 2
-    rightItems[0], // Happy (id: 1) - position 3
-    rightItems[3], // Excited (id: 4) - position 4
-    rightItems[1]  // Sad (id: 2) - position 5
-  ];
+ // Shuffled right items for display
+const shuffledRightItems = [
+  rightItems[3], // Burst of excitement
+  rightItems[4], // Feeling low
+  rightItems[1], // Feeling unsafe
+  rightItems[0], // Joyful inside
+  rightItems[2], // Upset energy
+];
 
   const handleLeftSelect = (item) => {
     if (showResult) return;

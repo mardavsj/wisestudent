@@ -24,129 +24,132 @@ const SchoolFairStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "You have ₹50 for the fair. What do you do?",
-      options: [
-        {
-          id: "toys",
-          text: "Spend on Toys",
-          emoji: "🧸",
-          
-          isCorrect: false
-        },
-        {
-          id: "plan",
-          text: "Plan for Both",
-          emoji: "🎯",
-          
-          isCorrect: true
-        },
-        {
-          id: "food",
-          text: "Buy Only Food",
-          emoji: "🍔",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You want snacks and games. What's smarter?",
-      options: [
-        {
-          id: "games",
-          text: "Buy Games",
-          emoji: "🎮",
-          isCorrect: false
-        },
-        {
-          id: "snacks",
-          text: "Buy Only Snacks",
-          emoji: "🍿",
-          isCorrect: false
-        },
-        {
-          id: "budget",
-          text: "Budget Food",
-          emoji: "🍕",
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You get ₹30 more. What now?",
-      options: [
-        {
-          id: "save",
-          text: "Save Some",
-          emoji: "💰",
-          isCorrect: true
-        },
-        {
-          id: "spend",
-          text: "Spend All",
-          emoji: "🛍️",
-          isCorrect: false
-        },
-        {
-          id: "gamble",
-          text: "Gamble It",
-          emoji: "🎲",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Your friend has no money. What do you do?",
-      options: [
-        {
-          id: "keep",
-          text: "Keep All",
-          emoji: "👤",
-          isCorrect: false
-        },
-        {
-          id: "share",
-          text: "Share with Friend",
-          emoji: "🤝",
-          isCorrect: true
-        },
-        {
-          id: "lend",
-          text: "Lend Money",
-          emoji: "💸",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You see cool toys. What's the best choice?",
-      options: [
-        {
-          id: "many",
-          text: "Buy Many",
-          emoji: "🛒",
-          isCorrect: false
-        },
-        {
-          id: "none",
-          text: "Buy None",
-          emoji: "❌",
-          isCorrect: false
-        },
-        {
-          id: "one",
-          text: "Buy One Toy",
-          emoji: "🎁",
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "The fair starts soon and you feel excited. What do you do first?",
+    options: [
+      {
+        id: "run",
+        text: "Run to the first stall",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      
+      {
+        id: "shout",
+        text: "Shout with excitement",
+        emoji: "📣",
+        isCorrect: false
+      },
+      {
+        id: "look",
+        text: "Look around the fair",
+        emoji: "👀",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "You see a long line for a popular game. What is the right choice?",
+    options: [
+      {
+        id: "push",
+        text: "Push to the front",
+        emoji: "😠",
+        isCorrect: false
+      },
+      {
+        id: "wait",
+        text: "Wait for your turn",
+        emoji: "⏳",
+        isCorrect: true
+      },
+      {
+        id: "leave",
+        text: "Leave angrily",
+        emoji: "🚶",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "A shopkeeper gives you extra change by mistake. What do you do?",
+    options: [
+      {
+        id: "return",
+        text: "Return the extra money",
+        emoji: "🤝",
+        isCorrect: true
+      },
+      {
+        id: "keep",
+        text: "Keep the extra money",
+        emoji: "🪙",
+        isCorrect: false
+      },
+      
+      {
+        id: "ignore",
+        text: "Walk away quietly",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "You want to try many rides but feel tired. What is a smart action?",
+    options: [
+     
+      {
+        id: "force",
+        text: "Force yourself to ride",
+        emoji: "😵",
+        isCorrect: false
+      },
+      {
+        id: "skip",
+        text: "Skip everything",
+        emoji: "😞",
+        isCorrect: false
+      },
+       {
+        id: "rest",
+        text: "Take a short rest",
+        emoji: "🪑",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "The fair is ending and you have one ticket left. What do you choose?",
+    options: [
+      {
+        id: "favorite",
+        text: "Choose your favorite activity",
+        emoji: "⭐",
+        isCorrect: true
+      },
+      {
+        id: "random",
+        text: "Use it randomly",
+        emoji: "🎲",
+        isCorrect: false
+      },
+      
+      {
+        id: "waste",
+        text: "Throw it away",
+        emoji: "🗑️",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

@@ -169,7 +169,7 @@ const TradeOffsPuzzle = () => {
                       <div className="text-2xl mr-3">{dilemma.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{dilemma.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {dilemma.hint}</p>
+                       
                       </div>
                     </div>
                   </button>

@@ -36,8 +36,8 @@ const TeenDaySimulation = () => {
         },
         {
           id: "c",
-          text: "Wake up 30 minutes early to have time for full routine",
-          emoji: "🌅",
+          text: "Wake up early but scroll phone instead",
+          emoji: "📱",
           isCorrect: false
         },
         {
@@ -73,8 +73,8 @@ const TeenDaySimulation = () => {
         },
         {
           id: "c",
-          text: "Drink water and have a small healthy snack from home",
-          emoji: "💧",
+          text: "Energy drink only",
+          emoji: "🥤",
           isCorrect: false
         },
        
@@ -105,7 +105,7 @@ const TeenDaySimulation = () => {
         },
         {
           id: "c",
-          text: "Pack a homemade lunch with balanced nutrition",
+          text: "Eat only snacks instead of a meal",
           emoji: "🍱",
           isCorrect: false
         },
@@ -137,8 +137,8 @@ const TeenDaySimulation = () => {
         },
         {
           id: "c",
-          text: "Listen to calming music and do deep breathing exercises",
-          emoji: "🎵",
+          text: "Scroll social media for hours",
+          emoji: "📱",
           isCorrect: false
         },
        
@@ -163,7 +163,7 @@ const TeenDaySimulation = () => {
         },
         {
           id: "c",
-          text: "Set phone aside 30 minutes before bed for better sleep",
+          text: "Snack late at night and sleep immediately",
           emoji: "📵",
           isCorrect: false
         },

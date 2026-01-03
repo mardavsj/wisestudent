@@ -169,7 +169,7 @@ const TriggerMapPuzzle = () => {
                       <div className="text-2xl mr-3">{trigger.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{trigger.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {trigger.hint}</p>
+                       
                       </div>
                     </div>
                   </button>

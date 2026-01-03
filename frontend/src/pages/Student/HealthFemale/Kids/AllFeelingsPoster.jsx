@@ -20,7 +20,7 @@ const AllFeelingsPoster = () => {
     {
       question: 'Which poster would best show "All Feelings Are Okay"?',
       choices: [
-        { text: "Poster showing all feelings are okay! 🌈", correct: true },
+        { text: "Poster with many faces—happy, sad, angry, excited 🌈", correct: true },
         { text: "Poster showing robots have no feelings 🤖", correct: false },
         { text: "Poster showing only smiles allowed 🙂", correct: false },
       ],

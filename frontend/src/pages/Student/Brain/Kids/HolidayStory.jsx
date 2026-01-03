@@ -27,128 +27,132 @@ const HolidayStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Kid plays all night, tired next day. Good habit?",
-      options: [
-        { 
-          id: "no", 
-          text: "No, it's not good", 
-          emoji: "📛", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's good", 
-          emoji: "👍", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Kid stays up late on holiday, sleepy. Smart?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, it's smart", 
-          emoji: "😎", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, it's not smart", 
-          emoji: "👎", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Kid games till 2 AM on break, exhausted. Good?",
-      options: [
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, it's not good", 
-          emoji: "👎", 
-          isCorrect: true
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's good", 
-          emoji: "🤓", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Kid watches movies all night, tired. Wise?",
-      options: [
-        { 
-          id: "no", 
-          text: "No, it's not wise", 
-          emoji: "😕", 
-          isCorrect: true
-        },
-        { 
-          id: "yes", 
-          text: "Yes, it's wise", 
-          emoji: "🦉", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Kid chats till midnight, yawns all day. Good?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, it's good", 
-          emoji: "💬", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, it's not good", 
-          emoji: "😴", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "On the first night of holidays, Rohan wants to play until very late because there is no school tomorrow. What choice helps him enjoy the next day too?",
+    options: [
+      
+      {
+        id: "allnight",
+        text: "Play until he feels completely exhausted",
+        emoji: "🌌",
+        isCorrect: false
+      },
+      {
+        id: "random",
+        text: "Decide based on how tired he feels later",
+        emoji: "🎲",
+        isCorrect: false
+      },
+      {
+        id: "balanced",
+        text: "Set a play limit and save energy for tomorrow",
+        emoji: "⚖️",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "During holidays, Meera shifts her sleep time every night and feels confused in the mornings. What helps her days feel smoother?",
+    options: [
+     
+      {
+        id: "catchup",
+        text: "Sleep very late and wake suddenly",
+        emoji: "⚡",
+        isCorrect: false
+      },
+       {
+        id: "anchor",
+        text: "Keep a loose but regular sleep rhythm",
+        emoji: "⏰",
+        isCorrect: true
+      },
+      {
+        id: "ignoreclock",
+        text: "Stop caring about time completely",
+        emoji: "🕰️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Arjun plans gaming, movies, and outings all in one day. By evening, he feels drained. What would help him enjoy activities longer?",
+    options: [
+      {
+        id: "pace",
+        text: "Space activities with rest in between",
+        emoji: "🌿",
+        isCorrect: true
+      },
+      {
+        id: "stack",
+        text: "Do everything back-to-back",
+        emoji: "📚",
+        isCorrect: false
+      },
+      {
+        id: "skiprest",
+        text: "Ignore tiredness and continue",
+        emoji: "🔥",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Late-night movies feel exciting, but the next morning feels slow. What explains this change?",
+    options: [
+      
+      {
+        id: "boredom",
+        text: "Movies suddenly became less fun",
+        emoji: "🎬",
+        isCorrect: false
+      },
+      {
+        id: "weather",
+        text: "The weather affected energy",
+        emoji: "🌤️",
+        isCorrect: false
+      },
+      {
+        id: "bodyclock",
+        text: "The body clock needs consistency to recharge",
+        emoji: "🧠",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "At night, messages keep coming while Aman is on holiday. He enjoys chatting but feels tired the whole day after. What helps him keep energy?",
+    options: [
+      
+      {
+        id: "replyall",
+        text: "Reply to every message immediately",
+        emoji: "💬",
+        isCorrect: false
+      },
+      {
+        id: "boundary",
+        text: "Create a clear stop time for chatting",
+        emoji: "🚦",
+        isCorrect: true
+      },
+      {
+        id: "latewake",
+        text: "Stay up and wake later to adjust",
+        emoji: "🌙",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

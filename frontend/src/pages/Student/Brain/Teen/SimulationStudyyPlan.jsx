@@ -64,7 +64,7 @@ const SimulationStudyyPlan = () => {
         {
           id: "b",
           text: "Ignore difficult topics - Avoid challenges",
-          emoji: "鸵",
+          emoji: "🤔",
           isCorrect: false
         },
         {

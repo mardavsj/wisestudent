@@ -24,163 +24,163 @@ const SimulationMonthlyMoney = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const scenarios = [
-    {
-      id: 1,
-      title: "Allowance Management",
-      description: "You receive ₹500 as monthly allowance. How should you manage it?",
-      choices: [
-        { 
-          id: "save", 
-          text: "Save half (₹250)", 
-          emoji: "💰", 
-          isCorrect: true
-        },
-        { 
-          id: "spend", 
-          text: "Spend all", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          id: "lend", 
-          text: "Lend risky", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        { 
-          id: "invest", 
-          text: "Invest all", 
-          emoji: "📈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Unexpected Expense",
-      description: "Your phone breaks and needs ₹300 repair. You have ₹200 saved. What do you do?",
-      choices: [
-        { 
-          id: "spend", 
-          text: "Borrow from parents", 
-          emoji: "👨‍👩‍👧‍👦", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Use savings + earn more", 
-          emoji: "🏦", 
-          isCorrect: true
-        },
-        { 
-          id: "lend", 
-          text: "Use credit", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore and wait", 
-          emoji: "⏰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Bonus Opportunity",
-      description: "You get ₹200 bonus for good grades. How should you use it?",
-      choices: [
-        { 
-          id: "spend", 
-          text: "Spend all on treats", 
-          emoji: "🎉", 
-          isCorrect: false
-        },
-        { 
-          id: "lend", 
-          text: "Lend to friends", 
-          emoji: "👥", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Save most, small treat", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-        { 
-          id: "donate", 
-          text: "Donate all", 
-          emoji: "💝", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Part-time Job",
-      description: "You earn ₹1000 from a part-time job. What's the best approach?",
-      choices: [
-        { 
-          id: "spend", 
-          text: "Spend on lifestyle", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Save 50%, use 50%", 
-          emoji: "📈", 
-          isCorrect: true
-        },
-        { 
-          id: "lend", 
-          text: "Invest risky", 
-          emoji: "🎰", 
-          isCorrect: false
-        },
-        { 
-          id: "crypto", 
-          text: "All in crypto", 
-          emoji: "🪙", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Wants vs Needs",
-      description: "You want ₹800 shoes but need ₹500 textbooks. What do you prioritize?",
-      choices: [
-        { 
-          id: "lend", 
-          text: "Buy both on credit", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "spend", 
-          text: "Buy shoes first", 
-          emoji: "👟", 
-          isCorrect: false
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow money", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Buy textbooks first", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Smart Allowance Allocation",
+    description: "You get ₹500 monthly allowance. How should you manage it to balance fun and savings?",
+    choices: [
+      { 
+        id: "save-half", 
+        text: "Save ₹250, spend ₹250 on wants", 
+        emoji: "💰", 
+        isCorrect: true
+      },
+      { 
+        id: "spend-all", 
+        text: "Spend all immediately on treats", 
+        emoji: "🛍️", 
+        isCorrect: false
+      },
+      { 
+        id: "lend-friends", 
+        text: "Lend to friends without plan", 
+        emoji: "👥", 
+        isCorrect: false
+      },
+      { 
+        id: "invest-all", 
+        text: "Invest full amount in risky scheme", 
+        emoji: "📈", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Handling Unexpected Costs",
+    description: "Your headphones break, repair costs ₹300. You have ₹200 saved. What’s the smart move?",
+    choices: [
+      { 
+        id: "borrow", 
+        text: "Borrow remaining from parents immediately", 
+        emoji: "👨‍👩‍👧‍👦", 
+        isCorrect: false
+      },
+      { 
+        id: "save-plus-earn", 
+        text: "Use savings and earn remaining to cover cost", 
+        emoji: "🏦", 
+        isCorrect: true
+      },
+      { 
+        id: "credit-use", 
+        text: "Use credit card without plan", 
+        emoji: "💳", 
+        isCorrect: false
+      },
+      { 
+        id: "ignore", 
+        text: "Ignore the problem and wait", 
+        emoji: "⏰", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Bonus Money Strategy",
+    description: "You get ₹200 bonus for high grades. How should you use it?",
+    choices: [
+      { 
+        id: "spend-all", 
+        text: "Spend everything on snacks and games", 
+        emoji: "🎉", 
+        isCorrect: false
+      },
+      { 
+        id: "lend-friends", 
+        text: "Lend it to friends for fun", 
+        emoji: "👥", 
+        isCorrect: false
+      },
+      { 
+        id: "save-treat", 
+        text: "Save most, use small portion for treat", 
+        emoji: "🎯", 
+        isCorrect: true
+      },
+      { 
+        id: "donate-all", 
+        text: "Donate entire bonus", 
+        emoji: "💝", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Part-Time Job Earnings",
+    description: "You earn ₹1000 from part-time work. How can you use it wisely for the month?",
+    choices: [
+      { 
+        id: "spend-lifestyle", 
+        text: "Spend all on lifestyle without plan", 
+        emoji: "🛍️", 
+        isCorrect: false
+      },
+      { 
+        id: "split-save-spend", 
+        text: "Save 50%, spend 50% strategically", 
+        emoji: "📈", 
+        isCorrect: true
+      },
+      { 
+        id: "invest-risky", 
+        text: "Invest in risky schemes entirely", 
+        emoji: "🎰", 
+        isCorrect: false
+      },
+      { 
+        id: "crypto-only", 
+        text: "Put everything in crypto", 
+        emoji: "🪙", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Balancing Wants and Needs",
+    description: "You want ₹800 shoes but need ₹500 textbooks. What’s the financially smart choice?",
+    choices: [
+      { 
+        id: "credit-both", 
+        text: "Buy both on credit immediately", 
+        emoji: "💸", 
+        isCorrect: false
+      },
+      { 
+        id: "buy-wants-first", 
+        text: "Buy shoes first, textbooks later", 
+        emoji: "👟", 
+        isCorrect: false
+      },
+      { 
+        id: "borrow-money", 
+        text: "Borrow extra money for both", 
+        emoji: "💳", 
+        isCorrect: false
+      },
+      { 
+        id: "buy-needs-first", 
+        text: "Buy textbooks first, save or plan for shoes later", 
+        emoji: "📚", 
+        isCorrect: true
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     const newChoices = [...choices, { 

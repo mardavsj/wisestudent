@@ -27,136 +27,134 @@ const ChallengeStereotypes = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which statement challenges stereotypes?",
-      emoji: "🛡️",
-      options: [
-        { 
-          id: "challenge2", 
-          text: "Boys can be nurses.", 
-          emoji: "👨‍⚕️", 
-          
-          isCorrect: true 
-        },
-        { 
-          id: "challenge1", 
-          text: "Girls can't be strong.", 
-          emoji: "🚫", 
-          
-          isCorrect: false 
-        },
-        
-        { 
-          id: "fact1", 
-          text: "Pink is for girls.", 
-          emoji: "💗", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which statement challenges stereotypes?",
-      emoji: "🛡️",
-      options: [
-        { 
-          id: "stereotype1", 
-          text: "Boys don't play with dolls.", 
-          emoji: "🚫", 
-            isCorrect: false 
-        },
-        { 
-          id: "challenge3", 
-          text: "Girls can be leaders.", 
-          emoji: "👩‍💼", 
-          isCorrect: true 
-        },
-        { 
-          id: "stereotype2", 
-          text: "Only boys can be strong.", 
-          emoji: "💪", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which statement challenges stereotypes?",
-      emoji: "🛡️",
-      options: [
-        { 
-          id: "stereotype3", 
-          text: "Moms must cook.", 
-          emoji: "🚫", 
-          isCorrect: false 
-        },
-        
-        { 
-          id: "stereotype4", 
-          text: "Boys like blue only.", 
-          emoji: "🔵", 
-          isCorrect: false 
-        },
-        {   
-          id: "challenge4", 
-          text: "Kids can choose toys freely.", 
-          emoji: "🧸", 
-          isCorrect: true 
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "Which statement challenges stereotypes?",
-      emoji: "🛡️",
-      options: [
-        { 
-          id: "challenge5", 
-          text: "Engineers can be women.", 
-          emoji: "👩‍🔧", 
-          isCorrect: true 
-        },
-        { 
-          id: "stereotype5", 
-          text: "Girls are weak.", 
-          emoji: "🚫",  
-          isCorrect: false 
-        },
-        { 
-          id: "stereotype6", 
-          text: "Only men can be doctors.", 
-          emoji: "👨‍⚕️", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which statement challenges stereotypes?",
-      emoji: "🛡️",
-      options: [
-        { 
-          id: "stereotype7", 
-          text: "Boys can't sew.", 
-          emoji: "🚫", 
-          isCorrect: false 
-        },
-        { 
-          id: "stereotype8", 
-          text: "Girls don't like cars.", 
-          emoji: "🚗", 
-          isCorrect: false 
-        },
-        { 
-          id: "challenge6", 
-          text: "Anyone can dance.", 
-          emoji: "💃", 
-          isCorrect: true 
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which sentence shows that abilities are not decided by gender?",
+    emoji: "🛡️",
+    options: [
+      
+      {
+        id: "s1",
+        text: "Only boys enjoy building things.",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "s2",
+        text: "Girls should not use tools.",
+        emoji: "❌",
+        isCorrect: false
+      },
+      {
+        id: "c1",
+        text: "Anyone can learn to fix machines.",
+        emoji: "🛠️",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "Which statement supports fairness and equal chances?",
+    emoji: "🛡️",
+    options: [
+      {
+        id: "s3",
+        text: "Leaders must always be loud.",
+        emoji: "📢",
+        isCorrect: false
+      },
+      {
+        id: "c2",
+        text: "Good leaders listen and care.",
+        emoji: "👂",
+        isCorrect: true
+      },
+      {
+        id: "s4",
+        text: "Quiet kids cannot lead.",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Which sentence challenges ideas about emotions?",
+    emoji: "🛡️",
+    options: [
+      {
+        id: "c3",
+        text: "Everyone feels sad or happy sometimes.",
+        emoji: "❤️",
+        isCorrect: true
+      },
+      {
+        id: "s5",
+        text: "Crying is only for girls.",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "s6",
+        text: "Boys should hide feelings.",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Which sentence breaks stereotypes about learning?",
+    emoji: "🛡️",
+    options: [
+      {
+        id: "s7",
+        text: "Math is only for smart kids.",
+        emoji: "❌",
+        isCorrect: false
+      },
+      {
+        id: "c4",
+        text: "Practice helps everyone improve.",
+        emoji: "📈",
+        isCorrect: true
+      },
+      {
+        id: "s8",
+        text: "Some kids can never learn math.",
+        emoji: "🚫",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Which statement supports freedom of choice?",
+    emoji: "🛡️",
+    options: [
+      {
+        id: "s9",
+        text: "Sports are only for boys.",
+        emoji: "🚫",
+        isCorrect: false
+      },
+      {
+        id: "s10",
+        text: "Art is only for girls.",
+        emoji: "🎨",
+        isCorrect: false
+      },
+      {
+        id: "c5",
+        text: "Kids choose activities they enjoy.",
+        emoji: "🌟",
+        isCorrect: true
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

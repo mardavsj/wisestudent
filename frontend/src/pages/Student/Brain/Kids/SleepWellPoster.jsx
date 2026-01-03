@@ -28,47 +28,48 @@ const SleepWellPoster = () => {
   const [answered, setAnswered] = useState(false);
 
   const stages = [
-    {
-      question: 'Which poster best shows "Sleep = Brain Fuel"?',
-      choices: [
-        { text: "Poster: 'Sleep = Brain Fuel' with moon and brain", correct: true, emoji: "🌙" },
-        { text: "Poster: 'Stay Up All Night' with clock", correct: false, emoji: "⏰" },
-        { text: "Poster: 'No Sleep Needed' with energy drink", correct: false, emoji: "⚡" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Rest to Shine"?',
-      choices: [
-        { text: "Poster: 'Never Rest' with running person", correct: false, emoji: "🏃" },
-        { text: "Poster: 'Rest to Shine' with moon and star", correct: true, emoji: "⭐" },
-        { text: "Poster: 'Skip Sleep' with coffee cup", correct: false, emoji: "☕" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Sleep Smart"?',
-      choices: [
-        { text: "Poster: 'Sleep Smart' with bed and clock", correct: true, emoji: "🛏️" },
-        { text: "Poster: 'Stay Awake' with light bulb", correct: false, emoji: "💡" },
-        { text: "Poster: 'No Bedtime' with party hat", correct: false, emoji: "🎉" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Power of Rest"?',
-      choices: [
-        { text: "Poster: 'Work All Night' with computer", correct: false, emoji: "💻" },
-        { text: "Poster: 'No Rest' with tired face", correct: false, emoji: "😴" },
-        { text: "Poster: 'Power of Rest' with moon and battery", correct: true, emoji: "🔋" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Sleep for Success"?',
-      choices: [
-        { text: "Poster: 'Sleep for Success' with trophy and bed", correct: true, emoji: "🏆" },
-        { text: "Poster: 'Skip Sleep' with books", correct: false, emoji: "📚" },
-        { text: "Poster: 'Stay Up' with gaming controller", correct: false, emoji: "🎮" }
-      ]
-    }
-  ];
+  {
+    question: 'Which poster shows how sleep helps your brain stay sharp?',
+    choices: [
+      { text: "Keep studying all night", correct: false, emoji: "📚" },
+      { text: "Recharge your mind while you rest", correct: true, emoji: "🧠" },
+      { text: "Stay awake with energy drinks", correct: false, emoji: "⚡" }
+    ]
+  },
+  {
+    question: 'Which poster encourages resting to feel energetic?',
+    choices: [
+      { text: "Take a short break to recharge", correct: true, emoji: "🌙" },
+      { text: "Work nonstop without sleeping", correct: false, emoji: "🏃" },
+      { text: "Drink coffee instead of sleeping", correct: false, emoji: "☕" }
+    ]
+  },
+  {
+    question: 'Which poster reminds you to sleep wisely for better health?',
+    choices: [
+      { text: "Stay awake and party late", correct: false, emoji: "🎉" },
+      { text: "Turn on lights and play games", correct: false, emoji: "💡" },
+      { text: "Stick to bedtime and get good rest", correct: true, emoji: "🛏️" },
+    ]
+  },
+  {
+    question: 'Which poster shows that resting gives you energy for the day?',
+    choices: [
+      { text: "Work late and feel tired", correct: false, emoji: "💻" },
+      { text: "Sleep well to refill your energy", correct: true, emoji: "🔋" },
+      { text: "Ignore rest and push yourself", correct: false, emoji: "😴" }
+    ]
+  },
+  {
+    question: 'Which poster shows that good sleep helps you do better in tasks?',
+    choices: [
+      { text: "Get rest to perform at your best", correct: true, emoji: "🏆" },
+      { text: "Skip sleep to study more", correct: false, emoji: "📚" },
+      { text: "Play games all night and skip bed", correct: false, emoji: "🎮" }
+    ]
+  }
+];
+
 
   const handleSelect = (isCorrect) => {
     if (answered || showResult) return;

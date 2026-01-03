@@ -24,129 +24,131 @@ const LostCoinStoryGame = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "You find ₹5 on the floor. What do you do?",
-      options: [
-        { 
-          id: "keep", 
-          text: "Keep it", 
-          emoji: "🤫", 
-          
-          isCorrect: false
-        },
-        {
-          id: "teacher",
-          text: "Give to teacher",
-          emoji: "🧑‍🏫",
-          
-          isCorrect: true
-        },
-        { 
-          id: "candy", 
-          text: "Spend it on candy", 
-          emoji: "🍬", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You find ₹10 in a book. What's the honest choice?",
-      options: [
-        { 
-          id: "return", 
-          text: "Return it to the owner", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          id: "snacks", 
-          text: "Buy snacks", 
-          emoji: "🍟", 
-          isCorrect: false
-        },
-        { 
-          id: "hide", 
-          text: "Hide it in your bag", 
-          emoji: "🎒", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "A shopkeeper gives ₹5 extra change. What do you do?",
-      options: [
-        { 
-          id: "return", 
-          text: "Return the extra change", 
-          emoji: "💸", 
-          isCorrect: true
-        },
-        { 
-          id: "keep", 
-          text: "Keep it quietly", 
-          emoji: "😶", 
-          isCorrect: false
-        },
-        { 
-          id: "toys", 
-          text: "Spend it on toys", 
-          emoji: "🧸", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You see ₹20 on the street. What's best?",
-      options: [
-        { 
-          id: "home", 
-          text: "Take it home", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "icecream", 
-          text: "Buy ice cream", 
-          emoji: "🍦", 
-          isCorrect: false
-        },
-        {
-          id: "find",
-          text: "Ask around to find the owner",
-          emoji: "🕵️",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "Why is it good to be honest with found money?",
-      options: [
-        { 
-          id: "money", 
-          text: "Gets you more money", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        {
-          id: "trust",
-          text: "Builds trust and respect",
-          emoji: "😊",
-          isCorrect: true
-        },
-        { 
-          id: "things", 
-          text: "Lets you buy more things", 
-          emoji: "🛍️", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You find a shiny coin near the playground. What is the right thing to do?",
+    options: [
+      { 
+        id: "keep", 
+        text: "Keep it for yourself", 
+        emoji: "🤫", 
+        isCorrect: false
+      },
+      {
+        id: "ask_teacher",
+        text: "Give it to the teacher",
+        emoji: "🧑‍🏫",
+        isCorrect: true
+      },
+      { 
+        id: "ignore", 
+        text: "Leave it on the ground", 
+        emoji: "🍂", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "You find ₹15 in the library. No one is around. What should you do?",
+    options: [
+      {
+        id: "return",
+        text: "Give it to the librarian",
+        emoji: "📚",
+        isCorrect: true
+      },
+      { 
+        id: "hide", 
+        text: "Hide it in your bag", 
+        emoji: "🎒", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "spend", 
+        text: "Buy snacks immediately", 
+        emoji: "🍿", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "A friend finds ₹20 and wants to keep it. What do you suggest?",
+    options: [
+      { 
+        id: "keep", 
+        text: "Keep it quietly", 
+        emoji: "😶", 
+        isCorrect: false
+      },
+     
+      { 
+        id: "spend", 
+        text: "Spend it on games", 
+        emoji: "🎮", 
+        isCorrect: false
+      },
+       { 
+        id: "return", 
+        text: "Try to find the owner together", 
+        emoji: "🕵️‍♂️", 
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 4,
+    text: "You receive extra change by mistake at a shop. What is the honest choice?",
+    options: [
+      { 
+        id: "keep", 
+        text: "Keep the extra money", 
+        emoji: "🤑", 
+        isCorrect: false
+      },
+      { 
+        id: "return", 
+        text: "Return it to the shopkeeper", 
+        emoji: "💵", 
+        isCorrect: true
+      },
+      { 
+        id: "gift", 
+        text: "Give it to a friend", 
+        emoji: "🎁", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Why should you act honestly with found money?",
+    options: [
+      {
+        id: "respect",
+        text: "It builds trust and shows responsibility",
+        emoji: "🤝",
+        isCorrect: true
+      },
+      { 
+        id: "buy_more", 
+        text: "You can buy more things", 
+        emoji: "🛍️", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "luck", 
+        text: "It brings instant luck", 
+        emoji: "🍀", 
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

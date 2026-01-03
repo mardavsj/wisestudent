@@ -54,62 +54,63 @@ const ExamFailureStory = () => {
   const [levelCompleted, setLevelCompleted] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Teen fails exam. Best choice?",
-      choices: [
-        { id: 'a', text: 'Learn from mistakes, try again' },
-        { id: 'b', text: 'Give up completely' },
-        { id: 'c', text: 'Blame the teacher' }
-      ],
-      correct: 'a',
-      explanation: 'Learning from mistakes and trying again shows resilience, growth mindset, and leads to improvement!'
-    },
-    {
-      id: 2,
-      text: "What should you do after failing an exam?",
-      choices: [
-        { id: 'a', text: 'Quit studying' },
-        { id: 'b', text: 'Analyze mistakes and study harder' },
-        { id: 'c', text: 'Ignore the failure' }
-      ],
-      correct: 'b',
-      explanation: 'Analyzing mistakes, understanding what went wrong, and studying harder leads to better results next time!'
-    },
-    {
-      id: 3,
-      text: "How does failure help you grow?",
-      choices: [
-        { id: 'a', text: 'Makes you weaker' },
-        { id: 'b', text: 'Has no benefits' },
-        { id: 'c', text: 'Teaches lessons and shows areas to improve' }
-      ],
-      correct: 'c',
-      explanation: 'Failure teaches valuable lessons, highlights areas for improvement, and builds resilience for future challenges!'
-    },
-    {
-      id: 4,
-      text: "What's the best response to exam failure?",
-      choices: [
-        { id: 'a', text: 'Learn from it and prepare better next time' },
-        { id: 'b', text: 'Never try again' },
-        { id: 'c', text: 'Blame external factors only' }
-      ],
-      correct: 'a',
-      explanation: 'Learning from failure, identifying weaknesses, and preparing better for the next attempt leads to success!'
-    },
-    {
-      id: 5,
-      text: "Why is it important to try again after failure?",
-      choices: [
-        { id: 'a', text: 'It wastes time' },
-        { id: 'b', text: 'It builds resilience and leads to improvement' },
-        { id: 'c', text: 'It has no value' }
-      ],
-      correct: 'b',
-      explanation: 'Trying again after failure builds resilience, demonstrates growth mindset, and eventually leads to success!'
-    }
-  ];
+  {
+    id: 1,
+    text: "After failing a major exam, the teen notices they studied hard but focused on the wrong topics . What should they do next?",
+    choices: [
+      { id: 'a', text: 'Review the exam pattern and adjust the study plan 🔍' },
+      { id: 'b', text: 'Assume they are bad at the subject 😐' },
+      { id: 'c', text: 'Memorize everything without strategy 🧠' }
+    ],
+    correct: 'a',
+    explanation: 'Understanding the exam pattern and fixing strategy is smarter than working blindly.'
+  },
+  {
+    id: 2,
+    text: "Friends tease the teen about failing, affecting confidence . What response shows emotional strength?",
+    choices: [
+      { id: 'a', text: 'Isolate completely and avoid everyone 🚪' },
+      { id: 'b', text: 'React with anger and insults 🔥' },
+      { id: 'c', text: 'Focus on self-improvement and ignore negativity 🎯' }
+    ],
+    correct: 'c',
+    explanation: 'Staying focused on growth instead of others’ opinions builds mental strength.'
+  },
+  {
+    id: 3,
+    text: "The teen realizes anxiety caused mistakes during the exam . What is the most effective preparation step now?",
+    choices: [
+      { id: 'b', text: 'Study only theory again 📖' },
+      { id: 'a', text: 'Practice mock tests under timed conditions ⏳' },
+      { id: 'c', text: 'Avoid exams whenever possible 🙈' }
+    ],
+    correct: 'a',
+    explanation: 'Timed practice improves confidence, speed, and stress control.'
+  },
+  {
+    id: 4,
+    text: "A chance to cheat appears in the re-exam . What choice reflects true long-term success?",
+    choices: [
+      { id: 'b', text: 'Rely on honest preparation and accept the result ⚖️' },
+      { id: 'a', text: 'Cheat to avoid failing again 🎭' },
+      { id: 'c', text: 'Leave the exam halfway 🚶' }
+    ],
+    correct: 'b',
+    explanation: 'Integrity builds real confidence and skills that last beyond one exam.'
+  },
+  {
+    id: 5,
+    text: "Even after improving, the teen scores only average . What mindset helps most going forward?",
+    choices: [
+      { id: 'b', text: 'Decide effort is pointless 🛑' },
+      { id: 'c', text: 'Compare scores constantly with others 👀' },
+      { id: 'a', text: 'Recognize progress and continue refining strategies 📈' },
+    ],
+    correct: 'a',
+    explanation: 'Progress matters more than perfection; steady improvement leads to long-term success.'
+  }
+];
+
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || levelCompleted) return;

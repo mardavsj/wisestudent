@@ -28,142 +28,131 @@ const BreatheWithMe = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which breathing technique is best for calming down?",
-      options: [
-        { 
-          id: "a", 
-          text: "Breathe in for 4, hold 4, out 4.", 
-          emoji: "😮‍💨", 
-          // description: "4-4-4 breathing helps calm your nervous system",
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Breathe as fast as you can", 
-          emoji: "💨", 
-          // description: "Fast breathing can make you feel dizzy",
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Hold your breath for 30 seconds", 
-          emoji: "😰", 
-          // description: "Holding breath for too long is not helpful",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What is the best way to breathe when stressed?",
-      options: [
-        { 
-          id: "a", 
-          text: "Inhale slowly, exhale longer.", 
-          emoji: "😌", 
-          // description: "Longer exhales activate your body's relaxation response",
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Take short, quick breaths", 
-          emoji: "😮", 
-          // description: "Quick breaths can increase anxiety",
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Breathe only through your mouth", 
-          emoji: "😮", 
-          // description: "Nose breathing is more calming",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How should you breathe using belly breathing?",
-      options: [
-        { 
-          id: "a", 
-          text: "Breathe like a balloon expanding in your belly", 
-          emoji: "🎈", 
-          // description: "Feel your belly rise and fall with each breath",
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Keep your chest moving only", 
-          emoji: "👕", 
-          // description: "Chest breathing is shallow and less effective",
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Don't move your belly at all", 
-          emoji: "😴", 
-          // description: "Belly movement shows proper deep breathing",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How can you focus on your breathing?",
-      options: [
-        { 
-          id: "a", 
-          text: "Count breaths to 5", 
-          emoji: "5️⃣", 
-          // description: "Counting helps maintain focus and rhythm",
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Count to 100 quickly", 
-          emoji: "1️⃣0️⃣0️⃣", 
-          // description: "This is too distracting and long",
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Don't count anything", 
-          emoji: "0️⃣", 
-          // description: "Counting helps maintain focus on breathing",
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "How can you enhance your breathing exercise?",
-      options: [
-        { 
-          id: "a", 
-          text: "Imagine a calm place while breathing", 
-          emoji: "🌊", 
-          // description: "Visualization helps deepen relaxation",
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Think about your problems", 
-          emoji: "🤯", 
-          // description: "This increases stress instead of relaxation",
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Listen to loud music", 
-          emoji: "🔊", 
-          // description: "Quiet environment is better for breathing exercises",
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You feel nervous before speaking in class. What breathing helps you feel steady?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Hold your breath tightly",
+        emoji: "😣",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Slowly breathe in through your nose and out through your mouth",
+        emoji: "🌬️",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Breathe very fast",
+        emoji: "💨",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Your heart beats fast after running. What breathing helps it slow down?",
+    options: [
+      {
+        id: "a",
+        text: "Take slow breaths and feel your body relax",
+        emoji: "🫶",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Sit without breathing",
+        emoji: "😵",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Talk loudly while breathing",
+        emoji: "🗣️",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "You feel angry after a disagreement. What breathing choice helps you calm?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Clench your fists and stop breathing",
+        emoji: "✊",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Breathe loudly through your mouth",
+        emoji: "😤",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Breathe in slowly and release the air gently",
+        emoji: "🍃",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 4,
+    text: "You cannot fall asleep easily. What breathing helps your body rest?",
+    options: [
+      
+      {
+        id: "b",
+        text: "Breathe fast to feel tired",
+        emoji: "⚡",
+        isCorrect: false
+      },
+      {
+        id: "a",
+        text: "Breathe slowly and imagine your body getting heavier",
+        emoji: "🌙",
+        isCorrect: true
+      },
+      {
+        id: "c",
+        text: "Hold your breath under the blanket",
+        emoji: "🛌",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "You feel overwhelmed with many thoughts. What breathing helps you focus?",
+    options: [
+      {
+        id: "a",
+        text: "Breathe slowly and pay attention to each breath",
+        emoji: "🧠",
+        isCorrect: true
+      },
+      {
+        id: "b",
+        text: "Ignore breathing and think faster",
+        emoji: "🔁",
+        isCorrect: false
+      },
+      {
+        id: "c",
+        text: "Breathe randomly without noticing",
+        emoji: "❓",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

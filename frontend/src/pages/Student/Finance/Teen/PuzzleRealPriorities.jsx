@@ -45,43 +45,39 @@ const PuzzleRealPriorities = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Needs/Wants Items (left side) - 5 items
   const items = [
-    { id: 1, name: "Shelter", emoji: "🏠",  },
-    { id: 2, name: "Food", emoji: "🍎",  },
-    { id: 3, name: "School Fees", emoji: "🎓",  },
-    { id: 4, name: "Medicine", emoji: "💊",  },
-    { id: 5, name: "Transport", emoji: "🚌",  }
-  ];
+  { id: 1, name: "Healthy Breakfast", emoji: "🍳" },        // Important for starting the day
+  { id: 2, name: "Stationery Kit", emoji: "✏️" },           // Needed for school
+  { id: 3, name: "After-School Classes", emoji: "📚" },    // Extra learning activity
+  { id: 4, name: "Vitamin Supplements", emoji: "💊" },     // Health-related priority
+  { id: 5, name: "Bus Pass", emoji: "🚌" }                 // Travel to school
+];
 
-  // Categories (right side) - 5 items
-  const categories = [
-    { id: 6, name: "Need", emoji: "✅",  },
-    { id: 7, name: "Want", emoji: "🎁",  },
-    { id: 8, name: "Save", emoji: "💰",  },
-    { id: 9, name: "Invest", emoji: "📈",  },
-    { id: 10, name: "Share", emoji: "🤲",  }
-  ];
+const categories = [
+  { id: 6, name: "Daily Need", emoji: "😅" },       // Must-have for everyday life
+  { id: 7, name: "Optional Activity", emoji: "🎯" }, // Extra, not mandatory
+  { id: 8, name: "Smart Spending", emoji: "💰" },  // Worth saving for
+  { id: 9, name: "Health Priority", emoji: "❤️" }, // Keeps you healthy
+  { id: 10, name: "Transport Expense", emoji: "🚌" } // Travel-related cost
+];
 
-  // Manually rearrange positions to prevent positional matching
-  // Original order was [6,7,8,9,10], rearranged to [8,10,7,6,9]
+
   const rearrangedCategories = [
-    categories[2], // Save (id: 8)
-    categories[4], // Share (id: 10)
-    categories[1], // Want (id: 7)
-    categories[0], // Need (id: 6)
-    categories[3]  // Invest (id: 9)
-  ];
+  categories[2], // Smart Spending (id: 8)
+  categories[4], // Transport Expense (id: 10)
+  categories[1], // Optional Activity (id: 7)
+  categories[0], // Daily Need (id: 6)
+  categories[3]  // Health Priority (id: 9)
+];
 
-  // Correct matches using proper IDs, not positional order
-  // Each item has a unique correct match for true one-to-one mapping
-  const correctMatches = [
-    { itemId: 1, categoryId: 6 }, // Shelter → Need
-    { itemId: 2, categoryId: 7 }, // Food → Want
-    { itemId: 3, categoryId: 8 }, // School Fees → Save
-    { itemId: 4, categoryId: 9 }, // Medicine → Invest
-    { itemId: 5, categoryId: 10 } // Transport → Share
-  ];
+const correctMatches = [
+  { itemId: 1, categoryId: 6 },  // Healthy Breakfast → Daily Need
+  { itemId: 2, categoryId: 8 },  // Stationery Kit → Smart Spending
+  { itemId: 3, categoryId: 7 },  // After-School Classes → Optional Activity
+  { itemId: 4, categoryId: 9 },  // Vitamin Supplements → Health Priority
+  { itemId: 5, categoryId: 10 }  // Bus Pass → Transport Expense
+];
+
   const handleItemSelect = (item) => {
     if (gameFinished) return;
     setSelectedItem(item);
@@ -192,7 +188,7 @@ const PuzzleRealPriorities = () => {
                       <div className="text-2xl mr-3">{item.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{item.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {item.hint}</p>
+                       
                       </div>
                     </div>
                   </button>

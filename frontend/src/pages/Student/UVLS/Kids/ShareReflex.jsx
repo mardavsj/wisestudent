@@ -33,63 +33,63 @@ const ShareReflex = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      question: "What should you do with your snack?",
-      correctAnswer: "Share snack",
-      options: [
-        { text: "Share snack", isCorrect: true, emoji: "🍪" },
-        { text: "Hog the snack", isCorrect: false, emoji: "😠" },
-        { text: "Eat it alone", isCorrect: false, emoji: "🙈" },
-        { text: "Throw it away", isCorrect: false, emoji: "🗑️" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What should you do with your pencil?",
-      correctAnswer: "Lend pencil",
-      options: [
-        { text: "Keep it hidden", isCorrect: false, emoji: "🙈" },
-        { text: "Lend pencil", isCorrect: true, emoji: "✏️" },
-        { text: "Break it", isCorrect: false, emoji: "💔" },
-        { text: "Ignore requests", isCorrect: false, emoji: "🚫" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What should you do with your books?",
-      correctAnswer: "Share books",
-      options: [
-        { text: "Refuse to share", isCorrect: false, emoji: "🙅" },
-        { text: "Keep all to yourself", isCorrect: false, emoji: "😤" },
-        { text: "Share books", isCorrect: true, emoji: "📚" },
-        { text: "Hide them", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What should you do with your crayons?",
-      correctAnswer: "Share crayons",
-      options: [
-        { text: "Share crayons", isCorrect: true, emoji: "🖍️" },
-        { text: "Keep all crayons", isCorrect: false, emoji: "😠" },
-        { text: "Throw them away", isCorrect: false, emoji: "🗑️" },
-        { text: "Ignore friend's need", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What should you do when playing?",
-      correctAnswer: "Invite to play",
-      options: [
-        { text: "Exclude others", isCorrect: false, emoji: "🚫" },
-        { text: "Play alone", isCorrect: false, emoji: "😐" },
-        { text: "Be mean", isCorrect: false, emoji: "😠" },
-        { text: "Invite to play", isCorrect: true, emoji: "⚽" }
-      ]
-    }
-  ];
+ const questions = [
+  {
+    id: 1,
+    question: "You have extra cookies at lunch. What do you do?",
+    correctAnswer: "Share cookies",
+    options: [
+      { text: "Eat all yourself", isCorrect: false, emoji: "😋" },
+      { text: "Hide them in your bag", isCorrect: false, emoji: "🎒" },
+      { text: "Share cookies", isCorrect: true, emoji: "🍪" },
+      { text: "Throw them away", isCorrect: false, emoji: "🗑️" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Your friend forgets a crayon. How do you help?",
+    correctAnswer: "Give a crayon",
+    options: [
+      { text: "Give a crayon", isCorrect: true, emoji: "🖍️" },
+      { text: "Keep all crayons", isCorrect: false, emoji: "😠" },
+      { text: "Take their crayon", isCorrect: false, emoji: "😤" },
+      { text: "Ignore them", isCorrect: false, emoji: "🙈" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You have a new storybook. What is the kind thing to do?",
+    correctAnswer: "Read together",
+    options: [
+      { text: "Read alone quietly", isCorrect: false, emoji: "😶" },
+      { text: "Hide the book", isCorrect: false, emoji: "🙈" },
+      { text: "Tear pages", isCorrect: false, emoji: "💔" },
+      { text: "Read together", isCorrect: true, emoji: "📖" },
+    ]
+  },
+  {
+    id: 4,
+    question: "Your friend wants to play with your toy train. What do you do?",
+    correctAnswer: "Share toy",
+    options: [
+      { text: "Keep it to yourself", isCorrect: false, emoji: "🙅" },
+      { text: "Share toy", isCorrect: true, emoji: "🚂" },
+      { text: "Take it away", isCorrect: false, emoji: "✋" },
+      { text: "Say no and walk away", isCorrect: false, emoji: "🚶" }
+    ]
+  },
+  {
+    id: 5,
+    question: "You have a ball and see kids playing outside. What do you do?",
+    correctAnswer: "Invite them to play",
+    options: [
+      { text: "Invite them to play", isCorrect: true, emoji: "⚽" },
+      { text: "Play alone", isCorrect: false, emoji: "😐" },
+      { text: "Hide the ball", isCorrect: false, emoji: "🎒" },
+      { text: "Kick the ball away", isCorrect: false, emoji: "🛑" }
+    ]
+  }
+];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

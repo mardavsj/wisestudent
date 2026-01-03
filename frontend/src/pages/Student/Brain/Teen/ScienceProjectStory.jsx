@@ -54,62 +54,62 @@ const ScienceProjectStory = () => {
   const [levelCompleted, setLevelCompleted] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Teen's project fails. What should they do?",
-      choices: [
-        { id: 'a', text: 'Improve & retry' },
-        { id: 'b', text: 'Give up completely' },
-        { id: 'c', text: 'Blame others' }
-      ],
-      correct: 'a',
-      explanation: 'Improving and retrying shows resilience and problem-solving skills, leading to better outcomes!'
-    },
-    {
-      id: 2,
-      text: "What's the best approach when a project doesn't work?",
-      choices: [
-        { id: 'a', text: 'Quit immediately' },
-        { id: 'b', text: 'Analyze what went wrong and improve' },
-        { id: 'c', text: 'Ignore the failure' }
-      ],
-      correct: 'b',
-      explanation: 'Analyzing failures, learning from mistakes, and making improvements is the path to success!'
-    },
-    {
-      id: 3,
-      text: "How does learning from failure help?",
-      choices: [
-        { id: 'a', text: 'Makes you weaker' },
-        { id: 'b', text: 'Has no benefits' },
-        { id: 'c', text: 'Builds resilience and improves future projects' }
-      ],
-      correct: 'c',
-      explanation: 'Learning from failure builds resilience, teaches valuable lessons, and improves future project outcomes!'
-    },
-    {
-      id: 4,
-      text: "What should you do after a project fails?",
-      choices: [
-        { id: 'a', text: 'Reflect, learn, and try again with improvements' },
-        { id: 'b', text: 'Never try again' },
-        { id: 'c', text: 'Blame external factors only' }
-      ],
-      correct: 'a',
-      explanation: 'Reflecting on what went wrong, learning from it, and trying again with improvements leads to success!'
-    },
-    {
-      id: 5,
-      text: "Why is persistence important in projects?",
-      choices: [
-        { id: 'a', text: 'It wastes time' },
-        { id: 'b', text: 'It leads to learning and eventual success' },
-        { id: 'c', text: 'It has no value' }
-      ],
-      correct: 'b',
-      explanation: 'Persistence through failures teaches valuable lessons, builds skills, and eventually leads to success!'
-    }
-  ];
+  {
+    id: 1,
+    text: "Two days before the science fair, the experiment gives unexpected results . What should the teen do first?",
+    choices: [
+      { id: 'b', text: 'Panic and abandon the project 😰' },
+      { id: 'a', text: 'Recheck data and review the method calmly 🔍' },
+      { id: 'c', text: 'Submit it without understanding the issue 📄' }
+    ],
+    correct: 'a',
+    explanation: 'Reviewing data and methods helps identify errors and can even lead to stronger conclusions.'
+  },
+  {
+    id: 2,
+    text: "A teammate disagrees with the hypothesis during final preparation . What is the smartest response?",
+    choices: [
+      { id: 'b', text: 'Discuss evidence and refine the idea together 🧠' },
+      { id: 'a', text: 'Ignore their opinion completely 🚫' },
+      { id: 'c', text: 'Argue until someone gives up 😠' }
+    ],
+    correct: 'b',
+    explanation: 'Healthy discussion and evidence-based thinking improve teamwork and project quality.'
+  },
+  {
+    id: 3,
+    text: "The project works, but the results don’t match the expected outcome . What should the teen present?",
+    choices: [
+      { id: 'a', text: 'Only the expected theory, not the real result 📘' },
+      { id: 'b', text: 'Fake results to look successful 🎭' },
+      { id: 'c', text: 'Explain actual results and possible reasons 🔬' }
+    ],
+    correct: 'c',
+    explanation: 'Science values honesty and analysis over perfect results.'
+  },
+  {
+    id: 4,
+    text: "Judges ask a question the teen cannot answer confidently . What should they do?",
+    choices: [
+      { id: 'a', text: 'Guess the answer quickly 🎲' },
+      { id: 'b', text: 'Admit uncertainty and explain what they would test next 🧪' },
+      { id: 'c', text: 'Change the topic immediately 🔄' }
+    ],
+    correct: 'b',
+    explanation: 'Admitting limits and showing curiosity reflects true scientific thinking.'
+  },
+  {
+    id: 5,
+    text: "After the fair, the project scores lower than expected . What mindset helps most for future projects?",
+    choices: [
+      { id: 'a', text: 'Reflect on feedback and plan improvements 📈' },
+      { id: 'b', text: 'Decide science isn’t worth trying again 🚪' },
+      { id: 'c', text: 'Blame judges for being unfair ⚖️' }
+    ],
+    correct: 'a',
+    explanation: 'Using feedback constructively leads to growth and better future performance.'
+  }
+];
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || levelCompleted) return;

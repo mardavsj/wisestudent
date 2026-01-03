@@ -38,6 +38,13 @@ const FakeCallStory = () => {
           
           isCorrect: false
         },
+        
+        { 
+          id: "maybe", 
+          text: "Maybe, if they sound official", 
+          emoji: "🤔", 
+          isCorrect: false
+        },
         { 
           id: "refuse", 
           text: "Refuse, never share", 
@@ -45,12 +52,6 @@ const FakeCallStory = () => {
          
           isCorrect: true
         },
-        { 
-          id: "maybe", 
-          text: "Maybe, if they sound official", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
       ]
     },
     {
@@ -129,12 +130,7 @@ const FakeCallStory = () => {
       id: 5,
       text: "What's the safest response to suspicious calls?",
       options: [
-        { 
-          id: "hang-up", 
-          text: "Hang up and report", 
-          emoji: "📞", 
-          isCorrect: true
-        },
+      
         { 
           id: "engage", 
           text: "Keep talking", 
@@ -146,7 +142,13 @@ const FakeCallStory = () => {
           text: "Share some info", 
           emoji: "📝", 
           isCorrect: false
-        }
+        },
+          { 
+          id: "hang-up", 
+          text: "Hang up and report", 
+          emoji: "📞", 
+          isCorrect: true
+        },
       ]
     }
   ];

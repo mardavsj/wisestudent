@@ -59,57 +59,58 @@ const ReflexInnovatorsChoice = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which action shows innovation?",
-      options: [
-        { id: "original", text: "Original", emoji: "💡",  isCorrect: true },
-        { id: "plagiarize", text: "Plagiarize", emoji: "📋",  isCorrect: false },
-        { id: "copy", text: "Copy Exactly", emoji: "📄",  isCorrect: false },
-        { id: "steal", text: "Steal Ideas", emoji: "🚫",  isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      text: "What's the best approach to creating work?",
-      options: [
-        { id: "copy", text: "Copy Others' Work", emoji: "📋",  isCorrect: false },
-        { id: "create", text: "Create Original Content", emoji: "✨",  isCorrect: true },
-        { id: "plagiarize", text: "Plagiarize", emoji: "🚫",  isCorrect: false },
-        { id: "steal", text: "Steal Ideas", emoji: "😠",  isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      text: "How should you approach new projects?",
-      options: [
-        { id: "copy", text: "Copy Existing Work", emoji: "📋",  isCorrect: false },
-        { id: "plagiarize", text: "Plagiarize", emoji: "🚫",  isCorrect: false },
-        { id: "innovate", text: "Think Creatively", emoji: "🎨",  isCorrect: true },
-        { id: "avoid", text: "Avoid Creating", emoji: "🙈",  isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      text: "What demonstrates true innovation?",
-      options: [
-        { id: "original", text: "Original Ideas", emoji: "💡",  isCorrect: true },
-        { id: "copy", text: "Copying Others", emoji: "📋",  isCorrect: false },
-        { id: "plagiarize", text: "Plagiarizing", emoji: "🚫",  isCorrect: false },
-        { id: "steal", text: "Stealing", emoji: "😠",  isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which mindset leads to innovation?",
-      options: [
-        { id: "create", text: "Create and Innovate", emoji: "✨",  isCorrect: true },
-        { id: "copy", text: "Copy Only", emoji: "📋",  isCorrect: false },
-        { id: "plagiarize", text: "Plagiarize", emoji: "🚫",  isCorrect: false },
-        { id: "avoid", text: "Avoid Creating", emoji: "🙈",  isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You’re given a common problem that already has solutions. What choice best reflects an innovator’s instinct?",
+    options: [
+      { id: "reframe", text: "Question the problem and rethink it", emoji: "🔍", isCorrect: true },
+      { id: "reuse", text: "Use the same solution again", emoji: "🔁", isCorrect: false },
+      { id: "wait", text: "Wait for instructions", emoji: "⏳", isCorrect: false },
+      { id: "follow", text: "Follow the safest known method", emoji: "🛡️", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "While working on a project, something fails. What response supports innovation?",
+    options: [
+      { id: "abandon", text: "Drop the idea immediately", emoji: "🛑", isCorrect: false },
+      { id: "iterate", text: "Test changes and improve the idea", emoji: "🧪", isCorrect: true },
+      { id: "repeat", text: "Repeat the same approach", emoji: "🔄", isCorrect: false },
+      { id: "blame", text: "Blame external factors", emoji: "👉", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "Which behavior most often leads to breakthrough ideas?",
+    options: [
+      { id: "comfortable", text: "Sticking only to comfort zones", emoji: "🛋️", isCorrect: false },
+      { id: "approved", text: "Seeking approval before trying", emoji: "✔️", isCorrect: false },
+      { id: "routine", text: "Following routine without change", emoji: "📅", isCorrect: false },
+      { id: "curious", text: "Exploring unfamiliar perspectives", emoji: "🌍", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    text: "An innovator is most likely to value which type of feedback?",
+    options: [
+      { id: "safe", text: "Only positive feedback", emoji: "😊", isCorrect: false },
+      { id: "ignore", text: "No feedback at all", emoji: "🙈", isCorrect: false },
+      { id: "critical", text: "Feedback that challenges assumptions", emoji: "🧠", isCorrect: true },
+      { id: "status", text: "Feedback from authority only", emoji: "🏛️", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "Which decision style best supports innovative thinking?",
+    options: [
+      { id: "experiment", text: "Experiment, then adapt", emoji: "⚙️", isCorrect: true },
+      { id: "perfect", text: "Wait for perfect conditions", emoji: "⏱️", isCorrect: false },
+      { id: "predict", text: "Avoid risk completely", emoji: "🚧", isCorrect: false },
+      { id: "imitate", text: "Imitate what already works", emoji: "📋", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

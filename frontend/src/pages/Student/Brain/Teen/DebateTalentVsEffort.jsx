@@ -56,7 +56,7 @@ const DebateTalentVsEffort = () => {
   const questions = [
     {
       id: 1,
-      text: "What matters more for success — talent or effort? → Effort.",
+      text: "What matters more for success — talent or effort? ",
       choices: [
         { id: 'a', text: 'Effort leads to improvement and success' },
         { id: 'b', text: 'Talent alone is enough' },

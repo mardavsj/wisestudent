@@ -22,9 +22,10 @@ const DebateApologyStrength = () => {
       id: 1,
       text: "Is saying sorry a weakness or strength?",
       options: [
-        { id: "a", text: "Weakness - It shows you lost the argument" },
-        { id: "b", text: "Strength - It shows emotional maturity and courage" },
-        { id: "c", text: "Neither - It's just a social convention" }
+        { id: "a", text: "Weakness - It shows you lost the argument", emoji: "😞" },
+        
+        { id: "c", text: "Neither - It's just a social convention", emoji: "🤷" },
+        { id: "b", text: "Strength - It shows emotional maturity and courage", emoji: "💪" },
       ],
       correctAnswer: "b",
       explanation: "Apologizing takes courage and shows emotional maturity. It's a strength that helps maintain healthy relationships."
@@ -33,9 +34,9 @@ const DebateApologyStrength = () => {
       id: 2,
       text: "What is the main benefit of apologizing when you've hurt someone?",
       options: [
-        { id: "a", text: "It prevents the other person from getting revenge" },
-        { id: "b", text: "It helps repair relationships and shows accountability" },
-        { id: "c", text: "It makes you look better to others" }
+        { id: "a", text: "It prevents the other person from getting revenge", emoji: "⚔️" },
+        { id: "b", text: "It helps repair relationships and shows accountability", emoji: "🤝" },
+        { id: "c", text: "It makes you look better to others", emoji: "🎭" }
       ],
       correctAnswer: "b",
       explanation: "Apologizing helps repair damaged relationships and shows that you take responsibility for your actions."
@@ -44,9 +45,9 @@ const DebateApologyStrength = () => {
       id: 3,
       text: "When is the best time to apologize after a conflict?",
       options: [
-        { id: "b", text: "After cooling down and reflecting on what happened" },
-        { id: "a", text: "Immediately, even if emotions are still high" },
-        { id: "c", text: "Only if the other person apologizes first" }
+        { id: "b", text: "After cooling down and reflecting on what happened", emoji: "🧘" },
+        { id: "a", text: "Immediately, even if emotions are still high", emoji: "🔥" },
+        { id: "c", text: "Only if the other person apologizes first", emoji: "⏸️" }
       ],
       correctAnswer: "b",
       explanation: "Taking time to cool down and reflect ensures that your apology is sincere and thoughtful rather than reactive."
@@ -55,9 +56,9 @@ const DebateApologyStrength = () => {
       id: 4,
       text: "What should a good apology include?",
       options: [
-        { id: "a", text: "An explanation of why you were right" },
-        { id: "c", text: "A promise that it will never happen again" },
-        { id: "b", text: "Acknowledgment of hurt caused and commitment to change" },
+        { id: "a", text: "An explanation of why you were right", emoji: "🗣️" },
+        { id: "c", text: "A promise that it will never happen again", emoji: "📜" },
+        { id: "b", text: "Acknowledgment of hurt caused and commitment to change", emoji: "💔" },
       ],
       correctAnswer: "b",
       explanation: "A meaningful apology acknowledges the harm caused and shows commitment to improving, which builds trust."
@@ -66,9 +67,9 @@ const DebateApologyStrength = () => {
       id: 5,
       text: "How does apologizing affect your self-respect?",
       options: [
-        { id: "a", text: "It decreases because you admit fault" },
-        { id: "b", text: "It increases because you act with integrity" },
-        { id: "c", text: "It has no effect either way" }
+        { id: "a", text: "It decreases because you admit fault", emoji: "📉" },
+        { id: "b", text: "It increases because you act with integrity", emoji: "📈" },
+        { id: "c", text: "It has no effect either way", emoji: "➡️" }
       ],
       correctAnswer: "b",
       explanation: "Acting with integrity by apologizing when appropriate actually increases self-respect because you're being honest and responsible."
@@ -192,13 +193,6 @@ const DebateApologyStrength = () => {
               const showCorrect = showFeedback && isCorrect;
               const showIncorrect = showFeedback && isSelected && !isCorrect;
               
-              // Add emojis for each option like in the reference game
-              const optionEmojis = {
-                a: "✅",
-                b: "❌",
-                c: "⚠️"
-              };
-              
               return (
                 <button
                   key={option.id}
@@ -209,7 +203,7 @@ const DebateApologyStrength = () => {
                   }`}
                 >
                   <div className="flex items-center">
-                    <div className="text-2xl mr-4">{optionEmojis[option.id] || '❓'}</div>
+                    <div className="text-2xl mr-4">{option.emoji || '❓'}</div>
                     <div>
                       <h3 className="font-bold text-xl mb-1">{option.text}</h3>
                     </div>

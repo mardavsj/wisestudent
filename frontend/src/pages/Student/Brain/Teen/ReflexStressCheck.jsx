@@ -15,6 +15,11 @@ const ReflexStressCheck = () => {
   const gameId = "brain-teens-33";
   const gameData = getGameDataById(gameId);
   
+  // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
+  const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
+  const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
+  const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
@@ -26,57 +31,58 @@ const ReflexStressCheck = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Tap for 'Meditate,' avoid 'Overthink.'",
-      options: [
-        { id: "meditate", text: "Meditate", emoji: "🧘",  isCorrect: true },
-        { id: "overthink", text: "Overthink", emoji: "🤯",  isCorrect: false },
-        { id: "worry", text: "Worry More", emoji: "😟",  isCorrect: false },
-        { id: "panic", text: "Panic", emoji: "😱",  isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which action helps reduce stress quickly?",
-      options: [
-        { id: "ignore", text: "Ignore Feelings", emoji: "🙈",  isCorrect: false },
-        { id: "breathe", text: "Deep Breathing", emoji: "🌬️",  isCorrect: true },
-        { id: "complain", text: "Complain", emoji: "😠",  isCorrect: false },
-        { id: "isolate", text: "Isolate Yourself", emoji: "🚶",  isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      text: "What helps manage stress effectively?",
-      options: [
-        { id: "clench", text: "Clench Fists", emoji: "✊",  isCorrect: false },
-        { id: "tense", text: "Tense Up", emoji: "💪",  isCorrect: false },
-        { id: "stretch", text: "Stretch", emoji: "🤸",  isCorrect: true },
-        { id: "freeze", text: "Freeze", emoji: "❄️",  isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which activity reduces stress?",
-      options: [
-        { id: "frown", text: "Frown", emoji: "😠",  isCorrect: false },
-        { id: "cry", text: "Cry Alone", emoji: "😢",  isCorrect: false },
-        { id: "sulk", text: "Sulk", emoji: "😔",  isCorrect: false },
-        { id: "laugh", text: "Laugh", emoji: "😂",  isCorrect: true }
-      ]
-    },
-    {
-      id: 5,
-      text: "What supports stress relief?",
-      options: [
-        { id: "hydrate", text: "Hydrate", emoji: "💧",  isCorrect: true },
-        { id: "dehydrate", text: "Dehydrate", emoji: "🏜️",  isCorrect: false },
-        { id: "skip", text: "Skip Water", emoji: "🚫",  isCorrect: false },
-        { id: "ignore", text: "Ignore Thirst", emoji: "🙈",  isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Your heart rate spikes before an exam. Which response helps calm your nervous system?",
+    options: [
+      { id: "box-breathing", text: "Slow, controlled breathing", emoji: "🌬️", isCorrect: true },
+      { id: "overthink", text: "Replaying worst outcomes", emoji: "🤯", isCorrect: false },
+      { id: "panic", text: "Rushing thoughts and panic", emoji: "😱", isCorrect: false },
+      { id: "avoid", text: "Avoiding the situation", emoji: "🚪", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Which habit reduces stress hormones over time?",
+    options: [
+      { id: "doomscroll", text: "Endless scrolling at night", emoji: "📱", isCorrect: false },
+      { id: "complain", text: "Constant complaining", emoji: "😠", isCorrect: false },
+      { id: "isolate", text: "Withdrawing from others", emoji: "🚶", isCorrect: false },
+      { id: "exercise", text: "Regular physical activity", emoji: "🏃", isCorrect: true },
+    ]
+  },
+  {
+    id: 3,
+    text: "When stress builds in your body, what helps release physical tension?",
+    options: [
+      { id: "clench", text: "Clenching muscles tighter", emoji: "✊", isCorrect: false },
+      { id: "stretch", text: "Stretching and movement", emoji: "🤸", isCorrect: true },
+      { id: "freeze", text: "Staying completely still", emoji: "❄️", isCorrect: false },
+      { id: "ignore", text: "Ignoring body signals", emoji: "🙈", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "Which reaction helps the brain reframe stress?",
+    options: [
+      { id: "ruminate", text: "Replaying mistakes", emoji: "🔁", isCorrect: false },
+      { id: "suppress", text: "Suppressing emotions", emoji: "🧱", isCorrect: false },
+      { id: "reframe", text: "Finding humor or perspective", emoji: "😄", isCorrect: true },
+      { id: "explode", text: "Sudden emotional outburst", emoji: "💥", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "Which basic habit supports stress regulation and focus?",
+    options: [
+      { id: "hydrate", text: "Staying properly hydrated", emoji: "💧", isCorrect: true },
+      { id: "skip", text: "Skipping water during the day", emoji: "🚫", isCorrect: false },
+      { id: "caffeine", text: "Excessive caffeine intake", emoji: "☕", isCorrect: false },
+      { id: "ignore", text: "Ignoring fatigue signals", emoji: "😵", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

@@ -55,62 +55,62 @@ const EmotionQuiz = () => {
   const [answers, setAnswers] = useState({});
 
   const questions = [
-    {
-      id: 1,
-      text: "What is empathy?",
-      choices: [
-        { id: 'a', text: 'Feeling others\' feelings' },
-        { id: 'b', text: 'Ignoring them' },
-        { id: 'c', text: 'Pretending to care' }
-      ],
-      correct: 'a',
-      explanation: 'Empathy is the ability to understand and share the feelings of others, which helps build stronger relationships!'
-    },
-    {
-      id: 2,
-      text: "What emotion is 'joy'?",
-      choices: [
-        { id: 'a', text: 'Sadness' },
-        { id: 'b', text: 'Happiness and delight' },
-        { id: 'c', text: 'Anger' }
-      ],
-      correct: 'b',
-      explanation: 'Joy is a positive emotion characterized by happiness, delight, and contentment!'
-    },
-    {
-      id: 3,
-      text: "What's a healthy response to sadness?",
-      choices: [
-        { id: 'a', text: 'Pretend to be happy' },
-        { id: 'b', text: 'Ignore the feeling completely' },
-        { id: 'c', text: 'Cry or talk to someone' }
-      ],
-      correct: 'c',
-      explanation: 'Expressing sadness through crying or talking helps process the emotion and promotes emotional healing!'
-    },
-    {
-      id: 4,
-      text: "How does fear help us?",
-      choices: [
-        { id: 'a', text: 'Helps us relax' },
-        { id: 'b', text: 'Activates survival instincts' },
-        { id: 'c', text: 'Makes us stronger physically' },
-      ],
-      correct: 'b',
-      explanation: 'Fear triggers the fight-or-flight response, preparing our body to respond to danger and protect ourselves!'
-    },
-    {
-      id: 5,
-      text: "What does emotional intelligence include?",
-      choices: [
-        { id: 'a', text: 'Self-awareness and managing emotions' },
-        { id: 'b', text: 'Avoiding all feelings' },
-        { id: 'c', text: 'Only showing positive emotions' },
-      ],
-      correct: 'a',
-      explanation: 'Emotional intelligence includes recognizing, understanding, and managing your own emotions and those of others!'
-    }
-  ];
+  {
+    id: 1,
+    text: "A friend failed an important test. What shows true empathy?",
+    choices: [
+      { id: 'b', text: "Ignore it and hope they move on" },
+      { id: 'c', text: "Tease them to make them laugh" },
+      { id: 'a', text: "Comfort them and try to understand how they feel" },
+    ],
+    correct: 'a',
+    explanation: "Empathy means understanding and sharing someone else's feelings, not dismissing or making fun of them."
+  },
+  {
+    id: 2,
+    text: "You feel excited about a new opportunity but also nervous. What is this?",
+    choices: [
+      { id: 'a', text: "Mixed emotions" },
+      { id: 'b', text: "Pure happiness" },
+      { id: 'c', text: "Fear" }
+    ],
+    correct: 'a',
+    explanation: "Mixed emotions occur when you feel more than one emotion at the same time, like excitement and anxiety together."
+  },
+  {
+    id: 3,
+    text: "Which response best helps manage anger in a conflict?",
+    choices: [
+      { id: 'a', text: "Yell back immediately" },
+      { id: 'b', text: "Take deep breaths and calmly explain your feelings" },
+      { id: 'c', text: "Ignore the other person completely forever" }
+    ],
+    correct: 'b',
+    explanation: "Managing anger involves controlling your reaction and expressing yourself calmly, not reacting impulsively or suppressing feelings."
+  },
+  {
+    id: 4,
+    text: "Someone shares a sad story with you. Which is the healthiest reaction?",
+    choices: [
+      { id: 'a', text: "Listen actively and offer support" },
+      { id: 'b', text: "Change the topic to something funny" },
+      { id: 'c', text: "Tell them everyone has worse problems" }
+    ],
+    correct: 'a',
+    explanation: "Active listening and support show understanding and emotional care, while the other options dismiss their feelings."
+  },
+  {
+    id: 5,
+    text: "Emotional intelligence can help you:",
+    choices: [
+      { id: 'b', text: "Hide your feelings to avoid conflict" },
+      { id: 'c', text: "Make everyone else happy while ignoring your emotions" },
+      { id: 'a', text: "Recognize your own feelings and manage them wisely" },
+    ],
+    correct: 'a',
+    explanation: "Emotional intelligence is about awareness and regulation of your own emotions, not suppressing them or prioritizing only others."
+  }
+];
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || levelCompleted) return;

@@ -192,7 +192,7 @@ const PuzzleOfJobs = () => {
                       <div className="text-2xl mr-3">{job.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{job.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {job.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

@@ -27,128 +27,131 @@ const ToyBrokenStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Kid's toy breaks and they feel sad. Is this normal?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, it's normal", 
-          emoji: "😢", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No, not normal", 
-          emoji: "😔", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Lost favorite book, feels upset. Is this normal?",
-      options: [
-        { 
-          id: "no2", 
-          text: "No, not normal", 
-          emoji: "😔", 
-          isCorrect: false
-        },
-        { 
-          id: "yes2", 
-          text: "Yes, it's normal", 
-          emoji: "😐", 
-          isCorrect: true
-        },
-        { 
-          id: "maybe2", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Pet is sick, kid feels worried. Is this okay?",
-      options: [
-        { 
-          id: "maybe3", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no3", 
-          text: "No, not okay", 
-          emoji: "😔", 
-          isCorrect: false
-        },
-        { 
-          id: "yes3", 
-          text: "Yes, it's okay", 
-          emoji: "🤗", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Friend moves away, kid feels lonely. Is this normal?",
-      options: [
-        { 
-          id: "yes4", 
-          text: "Yes, it's normal", 
-          emoji: "😔", 
-          isCorrect: true
-        },
-        { 
-          id: "maybe4", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no4", 
-          text: "No, not normal", 
-          emoji: "🙃", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Missed a party, feels disappointed. Is this okay?",
-      options: [
-        { 
-          id: "maybe5", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "no5", 
-          text: "No, not okay", 
-          emoji: "🙁", 
-          isCorrect: false
-        },
-        { 
-          id: "yes5", 
-          text: "Yes, it's okay", 
-          emoji: "😞", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Arjun’s favorite toy stops working during playtime. He feels a heavy feeling in his chest. What choice helps him handle the moment best?",
+    options: [
+      {
+        id: "repair",
+        text: "Take a break and see if the toy can be fixed later",
+        emoji: "🛠️",
+        isCorrect: true
+      },
+      {
+        id: "throw",
+        text: "Throw the toy away immediately",
+        emoji: "🗑️",
+        isCorrect: false
+      },
+      {
+        id: "blame",
+        text: "Get angry and blame himself",
+        emoji: "😠",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Maya cannot find the storybook she reads every night. Her mind keeps thinking about it. What would help her settle her thoughts?",
+    options: [
+      
+      {
+        id: "panicsearch",
+        text: "Search everywhere in a hurry",
+        emoji: "🏃",
+        isCorrect: false
+      },
+      {
+        id: "giveup",
+        text: "Decide she will never read again",
+        emoji: "📕",
+        isCorrect: false
+      },
+      {
+        id: "searchplan",
+        text: "Make a calm plan to look for it step by step",
+        emoji: "📋",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: "When Rohan hears that his pet is unwell, he keeps thinking about many ‘what ifs’. What supports his thinking best?",
+    options: [
+      
+      {
+        id: "imagineworst",
+        text: "Imagine only the worst outcomes",
+        emoji: "🌪️",
+        isCorrect: false
+      },
+      {
+        id: "talkadult",
+        text: "Talk to a trusted adult and learn what can be done",
+        emoji: "🗣️",
+        isCorrect: true
+      },
+      {
+        id: "ignore",
+        text: "Pretend nothing is happening",
+        emoji: "🙈",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Anaya’s close friend moves to another city. After school, she feels the house is too quiet. What helps her feel supported?",
+    options: [
+      {
+        id: "connect",
+        text: "Stay connected while building new routines",
+        emoji: "📞",
+        isCorrect: true
+      },
+      {
+        id: "isolate",
+        text: "Stay alone and avoid others",
+        emoji: "🚪",
+        isCorrect: false
+      },
+      {
+        id: "pretend",
+        text: "Pretend she does not care",
+        emoji: "🎭",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Dev misses a birthday party he was excited about. The feeling stays for some time. What choice helps him move forward?",
+    options: [
+      
+      {
+        id: "compare",
+        text: "Compare himself with others who went",
+        emoji: "📱",
+        isCorrect: false
+      },
+      {
+        id: "selfblame",
+        text: "Keep blaming himself all day",
+        emoji: "🔄",
+        isCorrect: false
+      },
+      {
+        id: "express",
+        text: "Share his feelings and plan something fun later",
+        emoji: "🎨",
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

@@ -193,7 +193,7 @@ const PuzzleRightVsWrong = () => {
                       <div className="text-2xl mr-3">{action.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{action.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {action.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

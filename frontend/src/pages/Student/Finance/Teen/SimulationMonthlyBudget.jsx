@@ -27,172 +27,170 @@ const SimulationMonthlyBudget = () => {
   const [answered, setAnswered] = useState(false);
 
   const scenarios = [
-    {
-      id: 1,
-      title: "Monthly Budget Allocation",
-      description: "You have ₹2000 allowance. What's the best budgeting approach?",
-      amount: 2000,
-      options: [
-        
-        { 
-          id: "wants-first", 
-          text: "Spend on wants first", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          id: "needs-first", 
-          text: "60% needs, 40% wants", 
-          emoji: "📊", 
-          isCorrect: true
-        },
-        { 
-          id: "save-all", 
-          text: "Save everything", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "random", 
-          text: "Spend randomly", 
-          emoji: "🎲", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Part-time Job Income",
-      description: "You earn ₹2500 from a part-time job. How should you allocate it?",
-      amount: 2500,
-      options: [
-        
-        { 
-          id: "spend-all", 
-          text: "Spend everything immediately", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "invest-all", 
-          text: "Invest all without needs", 
-          emoji: "📈", 
-          isCorrect: false
-        },
-        { 
-          id: "balanced", 
-          text: "Prioritize needs, then wants", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          id: "hoard", 
-          text: "Hoarding without spending", 
-          emoji: "📦", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Scholarship Money",
-      description: "You receive ₹1800 as scholarship. What's the smartest plan?",
-      amount: 1800,
-      options: [
-        { 
-          id: "smart-plan", 
-          text: "Cover needs first, some wants", 
-          emoji: "🎓", 
-          isCorrect: true
-        },
-        { 
-          id: "luxury", 
-          text: "All luxury items", 
-          emoji: "💎", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore and forget", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          id: "invest", 
-          text: "Invest everything", 
-          emoji: "📈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Birthday Gift Money",
-      description: "You get ₹3000 as birthday gift. What should you do?",
-      amount: 3000,
-      options: [
-        
-        { 
-          id: "instant-gratification", 
-          text: "Instant gratification", 
-          emoji: "🎁", 
-          isCorrect: false
-        },
-       
-        { 
-          id: "hoard", 
-          text: "Hoarding without purpose", 
-          emoji: "📦", 
-          isCorrect: false
-        },
-        { 
-          id: "share", 
-          text: "Share with friends", 
-          emoji: "🤝", 
-          isCorrect: false
-        },
-         { 
-          id: "plan-ahead", 
-          text: "Plan needs, wants, savings", 
-          emoji: "📝", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      title: "Summer Job Earnings",
-      description: "You earn ₹2200 from summer job. What's the best strategy?",
-      amount: 2200,
-      options: [
-       
-        { 
-          id: "random", 
-          text: "Random spending", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        { 
-          id: "debt", 
-          text: "Pay off debts", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-         { 
-          id: "strategy", 
-          text: "Strategic allocation", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-        { 
-          id: "save-all2", 
-          text: "Save all earnings", 
-          emoji: "💰", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Monthly Allowance Planning",
+    description: "You get ₹2000 as monthly allowance. How should you plan it to cover essentials and still enjoy life?",
+    amount: 2000,
+    options: [
+      { 
+        id: "spend-wants", 
+        text: "Spend mostly on wants without tracking", 
+        emoji: "🛍️", 
+        isCorrect: false
+      },
+      { 
+        id: "budgeted-split", 
+        text: "Allocate 50% needs, 30% savings, 20% wants", 
+        emoji: "📊", 
+        isCorrect: true
+      },
+      { 
+        id: "save-all", 
+        text: "Save the entire allowance, skip wants", 
+        emoji: "💰", 
+        isCorrect: false
+      },
+      { 
+        id: "random", 
+        text: "Spend randomly without a plan", 
+        emoji: "🎲", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Part-Time Job Earnings",
+    description: "You earn ₹2500 from a part-time job. Which approach ensures financial stability and fun?",
+    amount: 2500,
+    options: [
+     
+      { 
+        id: "spend-all", 
+        text: "Spend all immediately on desires", 
+        emoji: "💸", 
+        isCorrect: false
+      },
+      { 
+        id: "invest-only", 
+        text: "Invest everything, ignore monthly needs", 
+        emoji: "📈", 
+        isCorrect: false
+      },
+       { 
+        id: "balanced-approach", 
+        text: "Cover essentials first, allocate for fun and save remainder", 
+        emoji: "⚖️", 
+        isCorrect: true
+      },
+      { 
+        id: "hoard", 
+        text: "Keep cash unused without purpose", 
+        emoji: "📦", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Scholarship Budgeting",
+    description: "You receive ₹1800 as scholarship. How do you make it last the month efficiently?",
+    amount: 1800,
+    options: [
+      { 
+        id: "needs-first", 
+        text: "Cover essentials first, allocate small amount for fun", 
+        emoji: "🎓", 
+        isCorrect: true
+      },
+      { 
+        id: "luxury-spending", 
+        text: "Spend all on luxury items", 
+        emoji: "💎", 
+        isCorrect: false
+      },
+      { 
+        id: "ignore-budget", 
+        text: "Ignore budgeting, spend randomly", 
+        emoji: "😴", 
+        isCorrect: false
+      },
+      { 
+        id: "invest-all", 
+        text: "Invest full amount in risky assets", 
+        emoji: "📈", 
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Gift Money Management",
+    description: "You get ₹3000 as a gift. What is the smart monthly budget strategy?",
+    amount: 3000,
+    options: [
+      { 
+        id: "instant-gratification", 
+        text: "Spend it all at once for instant pleasure", 
+        emoji: "🎁", 
+        isCorrect: false
+      },
+      { 
+        id: "save-unplanned", 
+        text: "Hoard it without planning", 
+        emoji: "📦", 
+        isCorrect: false
+      },
+      { 
+        id: "share-entirely", 
+        text: "Give all to friends or charity immediately", 
+        emoji: "🤝", 
+        isCorrect: false
+      },
+      { 
+        id: "strategic-plan", 
+        text: "Allocate for needs, savings, and some fun", 
+        emoji: "📝", 
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Seasonal Earnings Budget",
+    description: "You earn ₹2200 from a summer job. Which plan maximizes benefits while avoiding waste?",
+    amount: 2200,
+    options: [
+      { 
+        id: "random-spending", 
+        text: "Spend randomly without thinking", 
+        emoji: "🎲", 
+        isCorrect: false
+      },
+      { 
+        id: "structured-plan", 
+        text: "Plan for essentials, savings, and treat yourself wisely", 
+        emoji: "🎯", 
+        isCorrect: true
+      },
+      { 
+        id: "debt-repayment", 
+        text: "Use it to pay off debt only", 
+        emoji: "💳", 
+        isCorrect: false
+      },
+      
+      { 
+        id: "save-all", 
+        text: "Save entire earnings without spending", 
+        emoji: "💰", 
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleAnswer = (optionId) => {
     if (answered) return;

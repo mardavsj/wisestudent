@@ -52,143 +52,146 @@ const StayCoolPoster = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Create/select poster: 'Stay Calm Under Pressure.'",
-      options: [
-        { 
-          id: "stay-calm", 
-          text: "Stay Calm", 
-          emoji: "🧘", 
-          
-          icon: <Wind className="w-6 h-6" />,
-          isCorrect: true
-        },
-        { 
-          id: "relax-now", 
-          text: "Relax Now", 
-          emoji: "🌸", 
-          icon: <Flower className="w-6 h-6" />,
-          isCorrect: false
-        },
-        { 
-          id: "stress-out", 
-          text: "Stress Out", 
-          emoji: "😰", 
-          icon: <Music className="w-6 h-6" />,
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which poster helps you stay cool under pressure?",
-      options: [
-        { 
-          id: "peaceful-mind", 
-          text: "Peaceful Mind", 
-          emoji: "🎵", 
-          icon: <Music className="w-6 h-6" />,
-          isCorrect: false
-        },
-        { 
-          id: "cool-pressure", 
-          text: "Cool Under Pressure", 
-          emoji: "🌊", 
-          icon: <Waves className="w-6 h-6" />,
-          isCorrect: true
-        },
-        { 
-          id: "panic-mode", 
-          text: "Panic Mode", 
-          emoji: "😱", 
-          icon: <Wind className="w-6 h-6" />,
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Select the best poster for staying calm.",
-      options: [
-        { 
-          id: "be-calm", 
-          text: "Be Calm", 
-          emoji: "💨", 
-          icon: <Wind className="w-6 h-6" />,
-          isCorrect: false
-        },
-        { 
-          id: "anxious-poster", 
-          text: "Anxious Poster", 
-          emoji: "😟", 
-          icon: <Flower className="w-6 h-6" />,
-          isCorrect: false
-        },
-        { 
-          id: "stay-cool", 
-          text: "Stay Cool", 
-          emoji: "🌺", 
-          icon: <Flower className="w-6 h-6" />,
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which poster promotes calm vibes?",
-      options: [
-        { 
-          id: "calm-vibes", 
-          text: "Calm Vibes", 
-          emoji: "🌿", 
-          icon: <Flower className="w-6 h-6" />,
-          isCorrect: true
-        },
-        { 
-          id: "relax-zone", 
-          text: "Relax Zone", 
-          emoji: "🌊", 
-          icon: <Waves className="w-6 h-6" />,
-          isCorrect: false
-        },
-        { 
-          id: "chaos-poster", 
-          text: "Chaos Poster", 
-          emoji: "🌀", 
-          icon: <Music className="w-6 h-6" />,
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Choose the poster that helps you stay cool and calm.",
-      options: [
-        { 
-          id: "cool-calm", 
-          text: "Cool Calm", 
-          emoji: "🌸", 
-          icon: <Flower className="w-6 h-6" />,
-          isCorrect: false
-        },
-        { 
-          id: "peace-poster", 
-          text: "Peace Poster", 
-          emoji: "💨", 
-          icon: <Wind className="w-6 h-6" />,
-          isCorrect: true
-        },
-        { 
-          id: "tension-poster", 
-          text: "Tension Poster", 
-          emoji: "😤", 
-          icon: <Waves className="w-6 h-6" />,
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Create/select a poster for someone who feels nervous before a performance.",
+    options: [
+      
+      { 
+        id: "rush-fast", 
+        text: "Rush through quickly", 
+        emoji: "🏃‍♂️", 
+        icon: <Waves className="w-6 h-6" />,
+        isCorrect: false
+      },
+      { 
+        id: "panic-loud", 
+        text: "Shout and panic", 
+        emoji: "😱", 
+        icon: <Music className="w-6 h-6" />,
+        isCorrect: false
+      },
+      { 
+        id: "deep-breaths", 
+        text: "Take deep breaths", 
+        emoji: "💨", 
+        icon: <Wind className="w-6 h-6" />,
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "Choose a poster for staying relaxed during homework stress.",
+    options: [
+      { 
+        id: "tiny-steps", 
+        text: "Handle one step at a time", 
+        emoji: "📄", 
+        icon: <Flower className="w-6 h-6" />,
+        isCorrect: true
+      },
+      { 
+        id: "rush-all", 
+        text: "Finish everything at once", 
+        emoji: "⚡", 
+        icon: <Wind className="w-6 h-6" />,
+        isCorrect: false
+      },
+      { 
+        id: "ignore-work", 
+        text: "Leave homework for later", 
+        emoji: "🕐", 
+        icon: <Music className="w-6 h-6" />,
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Pick the poster idea for calming down before a sports match.",
+    options: [
+      
+      { 
+        id: "rush-aggressive", 
+        text: "Play as fast as possible", 
+        emoji: "🏃‍♂️", 
+        icon: <Waves className="w-6 h-6" />,
+        isCorrect: false
+      },
+      { 
+        id: "complain-loud", 
+        text: "Argue with teammates", 
+        emoji: "🗣️", 
+        icon: <Music className="w-6 h-6" />,
+        isCorrect: false
+      },
+      { 
+        id: "visualize-success", 
+        text: "Imagine winning calmly", 
+        emoji: "🏅", 
+        icon: <Wind className="w-6 h-6" />,
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 4,
+    text: "Select a poster for staying peaceful during a noisy day at school.",
+    options: [
+      
+      { 
+        id: "yell-back", 
+        text: "Shout back at everyone", 
+        emoji: "😤", 
+        icon: <Waves className="w-6 h-6" />,
+        isCorrect: false
+      },
+      { 
+        id: "mindful-breaks", 
+        text: "Take short mindful breaks", 
+        emoji: "🧘", 
+        icon: <Flower className="w-6 h-6" />,
+        isCorrect: true
+      },
+      { 
+        id: "ignore-friends", 
+        text: "Ignore everyone", 
+        emoji: "🙈", 
+        icon: <Music className="w-6 h-6" />,
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Pick a poster for staying cool while waiting for a turn in a game.",
+    options: [
+      { 
+        id: "slow-count", 
+        text: "Count slowly and breathe", 
+        emoji: "🌿", 
+        icon: <Flower className="w-6 h-6" />,
+        isCorrect: true
+      },
+      { 
+        id: "rush-others", 
+        text: "Push to go first", 
+        emoji: "🏃‍♂️", 
+        icon: <Waves className="w-6 h-6" />,
+        isCorrect: false
+      },
+      { 
+        id: "complain-loud", 
+        text: "Complain loudly", 
+        emoji: "📢", 
+        icon: <Music className="w-6 h-6" />,
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

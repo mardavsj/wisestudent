@@ -34,62 +34,63 @@ const IdentifyNeedsReflex = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "Which is a need, not a want?",
-      correctAnswer: "I'm hungry",
-      options: [
-        { text: "I'm hungry", isCorrect: true, emoji: "🍎" },
-        { text: "Nice weather", isCorrect: false, emoji: "☀️" },
-        { text: "I want a toy", isCorrect: false, emoji: "🧸" },
-        { text: "Fun game", isCorrect: false, emoji: "🎮" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Which is a basic need?",
-      correctAnswer: "Thirsty now",
-      options: [
-        { text: "Fun game", isCorrect: false, emoji: "🎮" },
-        { text: "Thirsty now", isCorrect: true, emoji: "💧" },
-        { text: "I want candy", isCorrect: false, emoji: "🍬" },
-        { text: "Cool toy", isCorrect: false, emoji: "🚗" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Which is a need?",
-      correctAnswer: "Tired sleep",
-      options: [
-        { text: "Tired sleep", isCorrect: true, emoji: "😴" },
-        { text: "Blue sky", isCorrect: false, emoji: "☀️" },
-        { text: "I want pizza", isCorrect: false, emoji: "🍕" },
-        { text: "Play time", isCorrect: false, emoji: "⚽" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Which is a need?",
-      correctAnswer: "Hurt knee",
-      options: [
-        { text: "Big tree", isCorrect: false, emoji: "🌳" },
-        { text: "Hurt knee", isCorrect: true, emoji: "🩹" },
-        { text: "I want ice cream", isCorrect: false, emoji: "🍦" },
-        { text: "Red ball", isCorrect: false, emoji: "🔴" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Which is a need?",
-      correctAnswer: "Bathroom now",
-      options: [
-        { text: "Red ball", isCorrect: false, emoji: "🔴" },
-        { text: "I want a game", isCorrect: false, emoji: "🎮" },
-        { text: "Bathroom now", isCorrect: true, emoji: "🚽" },
-        { text: "Nice day", isCorrect: false, emoji: "☀️" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "Which situation shows a real need?",
+    correctAnswer: "Feeling very cold",
+    options: [
+      { text: "Wanting a new jacket", isCorrect: false, emoji: "🛍️" },
+      { text: "Seeing snow", isCorrect: false, emoji: "❄️" },
+      { text: "Feeling very cold", isCorrect: true, emoji: "🧥" },
+      { text: "Liking winter", isCorrect: false, emoji: "😊" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Which one is a need for learning?",
+    correctAnswer: "Unable to see the board clearly",
+    options: [
+      { text: "New school bag", isCorrect: false, emoji: "🎒" },
+      { text: "Unable to see the board clearly", isCorrect: true, emoji: "👓" },
+      { text: "Colorful notebook", isCorrect: false, emoji: "📓" },
+      { text: "Cute pencil", isCorrect: false, emoji: "✏️" }
+    ]
+  },
+  {
+    id: 3,
+    question: "Which situation needs immediate attention?",
+    correctAnswer: "Feeling unsafe on the road",
+    options: [
+      { text: "Feeling unsafe on the road", isCorrect: true, emoji: "🚦" },
+      { text: "Wanting to ride fast", isCorrect: false, emoji: "🏍️" },
+      { text: "Seeing a big bus", isCorrect: false, emoji: "🚌" },
+      { text: "Going for fun", isCorrect: false, emoji: "😄" }
+    ]
+  },
+  {
+    id: 4,
+    question: "Which one is a health need?",
+    correctAnswer: "Having a fever",
+    options: [
+      { text: "Wanting chocolate", isCorrect: false, emoji: "🍫" },
+      { text: "Watching cartoons", isCorrect: false, emoji: "📺" },
+      { text: "Playing indoors", isCorrect: false, emoji: "🏠" },
+      { text: "Having a fever", isCorrect: true, emoji: "🤒" },
+    ]
+  },
+  {
+    id: 5,
+    question: "Which situation shows a need for help?",
+    correctAnswer: "Feeling lost in a crowd",
+    options: [
+      { text: "Wanting a balloon", isCorrect: false, emoji: "🎈" },
+      { text: "Seeing many people", isCorrect: false, emoji: "👥" },
+      { text: "Feeling lost in a crowd", isCorrect: true, emoji: "🆘" },
+      { text: "Going to a fair", isCorrect: false, emoji: "🎡" }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

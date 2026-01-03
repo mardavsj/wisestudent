@@ -35,161 +35,57 @@ const ScreenAlertReflex = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which is a balanced screen choice?",
-      options: [
-        
-        { 
-          id: "keep-scrolling", 
-          text: "Keep Scrolling", 
-          emoji: "📱", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "log-off", 
-          text: "Log Off", 
-          emoji: "🔌", 
-          isCorrect: true
-        },
-        { 
-          id: "game-all-day", 
-          text: "Game All Day", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          id: "watch-all-night", 
-          text: "Watch all night", 
-          emoji: "📺", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which is a balanced screen choice?",
-      options: [
-        { 
-          id: "screen-break", 
-          text: "Take a screen break", 
-          emoji: "⏸️", 
-          isCorrect: true
-        },
-        { 
-          id: "non-stop-gaming", 
-          text: "Non-stop gaming", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          id: "marathon-watch", 
-          text: "Marathon watching", 
-          emoji: "📺", 
-          isCorrect: false
-        },
-        { 
-          id: "late-phone", 
-          text: "Use phone until late", 
-          emoji: "📱", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which is a balanced screen choice?",
-      options: [
-        
-        { 
-          id: "stare-screen", 
-          text: "Stare at screen continuously", 
-          emoji: "👀", 
-          isCorrect: false
-        },
-        { 
-          id: "no-breaks", 
-          text: "No breaks while using screens", 
-          emoji: "⏰", 
-          isCorrect: false
-        },
-        { 
-          id: "all-day-scrolling", 
-          text: "Scroll all day", 
-          emoji: "📱", 
-          isCorrect: false
-        },
-        { 
-          id: "rest-eyes", 
-          text: "Rest your eyes", 
-          emoji: "😴", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "Which is a balanced screen choice?",
-      options: [
-        
-        { 
-          id: "ignore-time", 
-          text: "Ignore time limits", 
-          emoji: "⏱️", 
-          isCorrect: false
-        },
-        { 
-          id: "excessive-use", 
-          text: "Excessive screen use", 
-          emoji: "💻", 
-          isCorrect: false
-        },
-        { 
-          id: "limit-time", 
-          text: "Limit screen time", 
-          emoji: "⏰", 
-          isCorrect: true
-        },
-        { 
-          id: "no-timeout", 
-          text: "No timeout breaks", 
-          emoji: "📱", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which is a balanced screen choice?",
-      options: [
-        { 
-          id: "balanced-schedule", 
-          text: "Follow a balanced screen schedule", 
-          emoji: "📅", 
-          isCorrect: true
-        },
-        { 
-          id: "random-time", 
-          text: "Random screen time", 
-          emoji: "🔄", 
-          isCorrect: false
-        },
-        { 
-          id: "all-screens", 
-          text: "Use all screens at once", 
-          emoji: "💻📱📺", 
-          isCorrect: false
-        },
-        { 
-          id: "no-limits", 
-          text: "No screen limits", 
-          emoji: "🔓", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A young news reporter needs to stay focused for a live morning segment. Which evening habit helps alertness?",
+    options: [
+      { id: "b", text: "Watch one more episode before bed", emoji: "🎬", isCorrect: false },
+      { id: "c", text: "Scroll social media endlessly", emoji: "📱", isCorrect: false },
+      { id: "a", text: "Log off from games an hour early", emoji: "🕹️", isCorrect: true },
+      { id: "d", text: "Keep phone under pillow", emoji: "📳", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "A junior astronaut trainee wants to practice star charts in the morning. What screen habit helps?",
+    options: [
+      { id: "b", text: "Play games nonstop at night", emoji: "🎮", isCorrect: false },
+      { id: "c", text: "Leave tablet on all night", emoji: "💻", isCorrect: false },
+      { id: "d", text: "Watch long videos before sleeping", emoji: "📺", isCorrect: false },
+      { id: "a", text: "Take short breaks from screen while practicing", emoji: "⏸️", isCorrect: true },
+    ]
+  },
+  {
+    id: 3,
+    text: "A forest guide-in-training needs to identify bird sounds in the morning. What night habit keeps eyes fresh?",
+    options: [
+      { id: "a", text: "Staring at bright screen continuously", emoji: "👀", isCorrect: false },
+      { id: "b", text: "Rest your eyes and stretch after screen time", emoji: "😴", isCorrect: true },
+      { id: "c", text: "No breaks during tablet games", emoji: "⏱️", isCorrect: false },
+      { id: "d", text: "Scroll videos until sleepy", emoji: "📱", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "A classroom helper wants to stay cheerful and attentive. What is a balanced screen choice?",
+    options: [
+      { id: "a", text: "Limit screen time to short sessions", emoji: "⏰", isCorrect: true },
+      { id: "b", text: "Ignore screen limits and continue playing", emoji: "🔓", isCorrect: false },
+      { id: "c", text: "Combine TV, tablet, and phone use at once", emoji: "📺💻📱", isCorrect: false },
+      { id: "d", text: "Use tablet until very late", emoji: "🌙", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "A young game designer needs energy and focus tomorrow. Which habit is best tonight?",
+    options: [
+      { id: "b", text: "Random screen times whenever bored", emoji: "🔄", isCorrect: false },
+      { id: "c", text: "Play on all devices at once", emoji: "💻📱📺", isCorrect: false },
+      { id: "a", text: "Follow a regular screen schedule", emoji: "📅", isCorrect: true },
+      { id: "d", text: "Skip breaks completely", emoji: "⏱️", isCorrect: false }
+    ]
+  }
+];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

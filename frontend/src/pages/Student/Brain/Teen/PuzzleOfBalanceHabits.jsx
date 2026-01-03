@@ -196,11 +196,7 @@ const PuzzleOfBalanceHabits = () => {
             
             {/* Middle - Match Button */}
             <div className="flex justify-center">
-              <div className="bg-white/20 rounded-xl p-4 md:p-6 border border-white/30">
-                <div className="text-white text-center font-bold text-lg md:text-xl">
-                  Match!
-                </div>
-              </div>
+             
             </div>
             
             {/* Right Column - Effects */}

@@ -193,7 +193,7 @@ const PuzzleOfInvestmentTypes = () => {
                       <div className="text-2xl mr-3">{investment.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{investment.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {investment.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

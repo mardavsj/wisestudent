@@ -27,142 +27,53 @@ const BullyingQuiz = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Someone accidentally bumps into you. Is this bullying?",
-      options: [
-        { 
-          id: "a", 
-          text: "Bullying", 
-          emoji: "🚫", 
-          // description: "Repeated harmful behavior",
-          isCorrect: false 
-        },
-        { 
-          id: "b", 
-          text: "Accident", 
-          emoji: "🤕", 
-          // description: "Unintentional mistake",
-          isCorrect: true 
-        },
-        { 
-          id: "c", 
-          text: "Joke", 
-          emoji: "😄", 
-          // description: "Playful behavior",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Friend teases you once playfully. Is this bullying?",
-      options: [
-        { 
-          id: "a", 
-          text: "Bullying", 
-          emoji: "🚫", 
-          // description: "Repeated harmful behavior",
-          isCorrect: false 
-        },
-        { 
-          id: "b", 
-          text: "Joke", 
-          emoji: "😄", 
-          // description: "Playful teasing",
-          isCorrect: true 
-        },
-        { 
-          id: "c", 
-          text: "Accident", 
-          emoji: "🤕", 
-          // description: "Unintentional mistake",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Repeated name-calling that hurts. Is this bullying?",
-      options: [
-        { 
-          id: "a", 
-          text: "Bullying", 
-          emoji: "🚫", 
-          // description: "Repeated harmful behavior",
-          isCorrect: true 
-        },
-        { 
-          id: "b", 
-          text: "Joke", 
-          emoji: "😄", 
-          // description: "Playful behavior",
-          isCorrect: false 
-        },
-        { 
-          id: "c", 
-          text: "Accident", 
-          emoji: "🤕", 
-          // description: "Unintentional mistake",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Tripping someone on purpose every day. Is this bullying?",
-      options: [
-        { 
-          id: "a", 
-          text: "Bullying", 
-          emoji: "🚫", 
-          // description: "Repeated harmful behavior",
-          isCorrect: true 
-        },
-        { 
-          id: "b", 
-          text: "Accident", 
-          emoji: "🤕", 
-          // description: "Unintentional mistake",
-          isCorrect: false 
-        },
-        { 
-          id: "c", 
-          text: "Joke", 
-          emoji: "😄", 
-          // description: "Playful behavior",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Laughing at a funny story together. Is this bullying?",
-      options: [
-        { 
-          id: "a", 
-          text: "Bullying", 
-          emoji: "🚫", 
-          // description: "Repeated harmful behavior",
-          isCorrect: false 
-        },
-        { 
-          id: "b", 
-          text: "Joke", 
-          emoji: "😄", 
-          // description: "Shared fun moment",
-          isCorrect: true 
-        },
-        { 
-          id: "c", 
-          text: "Accident", 
-          emoji: "🤕", 
-          // description: "Unintentional mistake",
-          isCorrect: false 
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A classmate spreads the same mean rumor about you every day. What is this?",
+    options: [
+      { id: "b", text: "One-time mistake", emoji: "🤕", isCorrect: false },
+      { id: "c", text: "Friendly fun", emoji: "😄", isCorrect: false },
+      { id: "a", text: "Hurtful behavior repeated", emoji: "🚫", isCorrect: true },
+    ]
+  },
+  {
+    id: 2,
+    text: "Someone forgets to include you in a game once. What is this?",
+    options: [
+      { id: "a", text: "Intentional harm", emoji: "🚫", isCorrect: false },
+      { id: "b", text: "Unplanned situation", emoji: "🤷", isCorrect: true },
+      { id: "c", text: "Mean teasing", emoji: "😠", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "A student mocks your voice again and again to embarrass you. What is this?",
+    options: [
+      { id: "a", text: "Bullying behavior", emoji: "🚫", isCorrect: true },
+      { id: "b", text: "Playful joke", emoji: "😂", isCorrect: false },
+      { id: "c", text: "Small accident", emoji: "🤕", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "Your friend laughs with you when everyone enjoys the same funny moment. What is this?",
+    options: [
+      { id: "b", text: "Mean behavior", emoji: "🚫", isCorrect: false },
+      { id: "c", text: "Physical harm", emoji: "🤕", isCorrect: false },
+      { id: "a", text: "Shared happiness", emoji: "😊", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    text: "Someone sends unkind messages online to scare you many times. What is this?",
+    options: [
+      { id: "b", text: "Friendly chatting", emoji: "💬", isCorrect: false },
+      { id: "a", text: "Online bullying", emoji: "📱", isCorrect: true },
+      { id: "c", text: "Accidental message", emoji: "❓", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;

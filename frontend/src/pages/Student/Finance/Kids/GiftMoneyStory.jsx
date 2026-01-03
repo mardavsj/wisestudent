@@ -24,129 +24,133 @@ const GiftMoneyStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "You got ₹100 as gift money. What's the first thing to do?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Spend it all on toys", 
-          emoji: "🎮", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Save some for later", 
-          emoji: "🏦", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "snacks", 
-          text: "Buy snacks", 
-          emoji: "🍟", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You want new shoes for ₹80. You have ₹50. What's smart?",
-      options: [
-        { 
-          id: "save", 
-          text: "Save ₹30 more", 
-          emoji: "💰", 
-          isCorrect: true
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow ₹30", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          id: "toy", 
-          text: "Buy a toy instead", 
-          emoji: "🧸", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You saved ₹20. A sale offers shoes for ₹70. Can you buy them?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, I have enough", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        { 
-          id: "discount", 
-          text: "Ask for a discount", 
-          emoji: "🎟️", 
-          isCorrect: false
-        },
-        {
-          id: "no",
-          text: "No, need ₹50 more",
-          emoji: "📉",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "Your friend suggests spending all your gift money. What do you say?",
-      options: [
-        { 
-          id: "okay", 
-          text: "Okay, let's spend it", 
-          emoji: "🎉", 
-          isCorrect: false
-        },
-        {
-          id: "no",
-          text: "No, I'll save some",
-          emoji: "😓",
-          isCorrect: true
-        },
-        { 
-          id: "give", 
-          text: "I'll give it to you", 
-          emoji: "🎁", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why is saving gift money a good idea?",
-      options: [
-        { 
-          id: "bigger", 
-          text: "Helps buy bigger things later", 
-          emoji: "🚀", 
-          isCorrect: true
-        },
-        { 
-          id: "more", 
-          text: "Lets you spend more now", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          id: "candy", 
-          text: "Makes you buy candy", 
-          emoji: "🍬", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "You receive gift money on your birthday. What is a smart first step?",
+    options: [
+      
+      {
+        id: "spend",
+        text: "Spend it immediately",
+        emoji: "💸",
+        isCorrect: false
+      },
+      {
+        id: "show",
+        text: "Show it to friends",
+        emoji: "👀",
+        isCorrect: false
+      },
+      {
+        id: "think",
+        text: "Think about needs and goals",
+        emoji: "🤔",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "You want a backpack that costs more than your gift money. What is a wise choice?",
+    options: [
+      
+      {
+        id: "borrow",
+        text: "Borrow money from friends",
+        emoji: "💳",
+        isCorrect: false
+      },
+      {
+        id: "wait",
+        text: "Wait and save more money",
+        emoji: "⏳",
+        isCorrect: true
+      },
+      {
+        id: "change",
+        text: "Buy something random instead",
+        emoji: "🎲",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "You see a small toy and a useful item. What helps you decide?",
+    options: [
+      {
+        id: "use",
+        text: "Choose the item you need more",
+        emoji: "⭐",
+        isCorrect: true
+      },
+      {
+        id: "fun",
+        text: "Choose what looks fun",
+        emoji: "🎉",
+        isCorrect: false
+      },
+      {
+        id: "cheap",
+        text: "Choose the cheapest thing",
+        emoji: "💲",
+        isCorrect: false
+      },
+      
+    ]
+  },
+  {
+    id: 4,
+    text: "Your parents suggest saving part of your gift money. What do you do?",
+    options: [
+      
+      {
+        id: "refuse",
+        text: "Refuse and spend all",
+        emoji: "🙅",
+        isCorrect: false
+      },
+      {
+        id: "agree",
+        text: "Save a part and plan the rest",
+        emoji: "📊",
+        isCorrect: true
+      },
+      {
+        id: "forget",
+        text: "Forget about the money",
+        emoji: "😴",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "What does gift money teach you?",
+    options: [
+      
+      {
+        id: "showoff",
+        text: "How to show off purchases",
+        emoji: "😎",
+        isCorrect: false
+      },
+      {
+        id: "spend",
+        text: "How to spend without thinking",
+        emoji: "🔥",
+        isCorrect: false
+      },
+      {
+        id: "manage",
+        text: "How to manage money responsibly",
+        emoji: "🎯",
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

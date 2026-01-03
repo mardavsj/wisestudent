@@ -57,9 +57,9 @@ const DebateSleepVsStudy = () => {
   const questions = [
     {
       id: 1,
-      text: "Is it better to sleep or study late? → Balanced, sleep first.",
+      text: "Is it better to sleep or study late? ",
       choices: [
-        { id: 'a', text: 'Balanced approach - sleep first, then study' },
+        { id: 'a', text: 'sleep first, then study' },
         { id: 'b', text: 'Study all night, skip sleep' },
         { id: 'c', text: 'Sleep all the time, never study' }
       ],

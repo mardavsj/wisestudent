@@ -96,7 +96,7 @@ const QuizOnEntrepreneurship = () => {
           id: "idea", 
           text: "Good idea and hard work", 
           emoji: "💪", 
-          description: "Creative idea and effort", 
+           
           isCorrect: true 
         }
       ]

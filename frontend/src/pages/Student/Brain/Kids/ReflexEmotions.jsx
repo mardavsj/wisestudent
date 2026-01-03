@@ -64,158 +64,58 @@ const ReflexEmotions = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which word is an emotion?",
-      options: [
-        { 
-          id: "happy", 
-          text: "Happy", 
-          emoji: "😊", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "book", 
-          text: "Book", 
-          emoji: "📚", 
-          isCorrect: false
-        },
-        { 
-          id: "table", 
-          text: "Table", 
-          emoji: "🪑", 
-          isCorrect: false
-        },
-        { 
-          id: "pencil", 
-          text: "Pencil", 
-          emoji: "✏️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which word is an emotion?",
-      options: [
-        { 
-          id: "car", 
-          text: "Car", 
-          emoji: "🚗", 
-          isCorrect: false
-        },
-        { 
-          id: "sad", 
-          text: "Sad", 
-          emoji: "😢", 
-          isCorrect: true
-        },
-        { 
-          id: "ball", 
-          text: "Ball", 
-          emoji: "⚽", 
-          isCorrect: false
-        },
-        { 
-          id: "chair", 
-          text: "Chair", 
-          emoji: "🪑", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which word is an emotion?",
-      options: [
-        { 
-          id: "tree", 
-          text: "Tree", 
-          emoji: "🌳", 
-          isCorrect: false
-        },
-        { 
-          id: "sun", 
-          text: "Sun", 
-          emoji: "☀️", 
-          isCorrect: false
-        },
-        { 
-          id: "angry", 
-          text: "Angry", 
-          emoji: "😡", 
-          isCorrect: true
-        },
-        { 
-          id: "cup", 
-          text: "Cup", 
-          emoji: "☕", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which word is an emotion?",
-      options: [
-        { 
-          id: "excited", 
-          text: "Excited", 
-          emoji: "🎉", 
-          isCorrect: true
-        },
-        { 
-          id: "phone", 
-          text: "Phone", 
-          emoji: "📱", 
-          isCorrect: false
-        },
-        { 
-          id: "door", 
-          text: "Door", 
-          emoji: "🚪", 
-          isCorrect: false
-        },
-        { 
-          id: "lamp", 
-          text: "Lamp", 
-          emoji: "💡", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which word is an emotion?",
-      options: [
-        { 
-          id: "scared", 
-          text: "Scared", 
-          emoji: "😨", 
-          isCorrect: true
-        },
-        { 
-          id: "window", 
-          text: "Window", 
-          emoji: "🪟", 
-          isCorrect: false
-        },
-        { 
-          id: "bike", 
-          text: "Bike", 
-          emoji: "🚲", 
-          isCorrect: false
-        },
-        { 
-          id: "clock", 
-          text: "Clock", 
-          emoji: "🕐", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A young chef burns the first pancake but tries again with a smile. What feeling fits best?",
+    options: [
+      { id: "a", text: "Confused", emoji: "🧩", isCorrect: false },
+      { id: "b", text: "Sleepy", emoji: "🌙", isCorrect: false },
+      { id: "c", text: "Hopeful", emoji: "🌱", isCorrect: true },
+      { id: "d", text: "Bored", emoji: "🪵", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "A firefighter hears the alarm and runs quickly to help others. What emotion is shown?",
+    options: [
+      { id: "a", text: "Playful", emoji: "🎲", isCorrect: false },
+      { id: "b", text: "Lazy", emoji: "🛋️", isCorrect: false },
+      { id: "c", text: "Proud", emoji: "🏅", isCorrect: false },
+      { id: "d", text: "Alert", emoji: "🚨", isCorrect: true }
+    ]
+  },
+  {
+    id: 3,
+    text: "An artist tears a drawing by mistake and feels heavy inside. What emotion matches?",
+    options: [
+      { id: "a", text: "Excited", emoji: "🎉", isCorrect: false },
+      { id: "b", text: "Disappointed", emoji: "🌧️", isCorrect: true },
+      { id: "c", text: "Brave", emoji: "🛡️", isCorrect: false },
+      { id: "d", text: "Curious", emoji: "🔍", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "A doctor helps a child feel better and walks out smiling quietly. What emotion fits?",
+    options: [
+      { id: "a", text: "Satisfied", emoji: "🌼", isCorrect: true },
+      { id: "b", text: "Angry", emoji: "🔥", isCorrect: false },
+      { id: "c", text: "Scared", emoji: "🍃", isCorrect: false },
+      { id: "d", text: "Jealous", emoji: "🪞", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "A teacher enters a noisy classroom but takes a deep breath before speaking. What emotion is shown?",
+    options: [
+      { id: "a", text: "Surprised", emoji: "🎁", isCorrect: false },
+      { id: "b", text: "Excited", emoji: "⚡", isCorrect: false },
+      { id: "c", text: "Shy", emoji: "🐚", isCorrect: false },
+      { id: "d", text: "Calm", emoji: "🪷", isCorrect: true }
+    ]
+  }
+];
+
 
   // Update ref when currentRound changes
   useEffect(() => {

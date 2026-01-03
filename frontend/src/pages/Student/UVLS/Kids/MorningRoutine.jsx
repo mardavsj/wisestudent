@@ -28,131 +28,53 @@ const MorningRoutine = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "What is the correct order for a morning routine?",
-      options: [
-       
-        { 
-          id: "b", 
-          text: "Brush teeth, Pack bag, Eat breakfast, Wash face", 
-          emoji: "🦷", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Pack bag, Eat breakfast, Wash face, Brush teeth", 
-          emoji: "🎒", 
-          isCorrect: false
-        },
-         { 
-          id: "a", 
-          text: "Wash face, Brush teeth, Eat breakfast, Pack bag", 
-          emoji: "🧼", 
-          
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "What is the correct order for a morning routine?",
-      options: [
-        { 
-          id: "a", 
-          text: "Wake up, Dress, Comb hair, Eat breakfast", 
-          emoji: "🌅", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Eat breakfast, Wake up, Dress, Comb hair", 
-          emoji: "🍳", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Comb hair, Eat breakfast, Wake up, Dress", 
-          emoji: "💇", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What is the correct order for a morning routine?",
-      options: [
-        
-        { 
-          id: "b", 
-          text: "Wash face, Pack bag, Say bye, Put shoes", 
-          emoji: "🎒", 
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: "Wash face, Put shoes, Pack bag, Say bye", 
-          emoji: "🧼", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Say bye, Wash face, Put shoes, Pack bag", 
-          emoji: "👋", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What is the correct order for a morning routine?",
-      options: [
-        { 
-          id: "a", 
-          text: "Make bed, Brush teeth, Check time, Go school", 
-          emoji: "🛏️", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Check time, Go school, Make bed, Brush teeth", 
-          emoji: "⏰", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Go school, Brush teeth, Check time, Make bed", 
-          emoji: "🏫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What is the correct order for a morning routine?",
-      options: [
-        
-        { 
-          id: "b", 
-          text: "Plan day, Shower, Exercise, Drink water", 
-          emoji: "📝", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Drink water, Plan day, Shower, Exercise", 
-          emoji: "💧", 
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: "Shower, Exercise, Drink water, Plan day", 
-          emoji: "🚿", 
-            isCorrect: true
-        },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which is the best order to start your morning after waking up?",
+    options: [
+      { id: "b", text: "Eat breakfast, Brush teeth, Wash hands, Drink water", emoji: "🍳", isCorrect: false },
+      { id: "a", text: "Wash hands, Drink water, Brush teeth, Eat breakfast", emoji: "💧", isCorrect: true },
+      { id: "c", text: "Brush teeth, Eat breakfast, Drink water, Wash hands", emoji: "🦷", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "What is the correct order for getting ready for school?",
+    options: [
+      { id: "a", text: "Dress up, Brush hair, Pack school bag, Wear shoes", emoji: "👕", isCorrect: true },
+      { id: "b", text: "Wear shoes, Dress up, Pack bag, Brush hair", emoji: "👟", isCorrect: false },
+      { id: "c", text: "Pack bag, Brush hair, Dress up, Wear shoes", emoji: "🎒", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "Which order helps you have a healthy morning?",
+    options: [
+      { id: "b", text: "Eat breakfast, Stretch, Wash face, Drink water", emoji: "🍽️", isCorrect: false },
+      { id: "c", text: "Wash face, Eat breakfast, Drink water, Stretch", emoji: "🧼", isCorrect: false },
+      { id: "a", text: "Stretch, Drink water, Eat breakfast, Wash face", emoji: "🤸", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    text: "What is the best order to finish your morning chores before school?",
+    options: [
+      { id: "b", text: "Pack bag, Eat breakfast, Make bed, Wash hands", emoji: "🎒", isCorrect: false },
+      { id: "a", text: "Make bed, Wash hands, Eat breakfast, Pack bag", emoji: "🛏️", isCorrect: true },
+      { id: "c", text: "Eat breakfast, Wash hands, Pack bag, Make bed", emoji: "🍴", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "Which order keeps your body active and ready for the day?",
+    options: [
+      { id: "a", text: "Exercise, Shower, Eat breakfast, Drink water", emoji: "🏃", isCorrect: true },
+      { id: "b", text: "Eat breakfast, Exercise, Drink water, Shower", emoji: "🍳", isCorrect: false },
+      { id: "c", text: "Drink water, Eat breakfast, Shower, Exercise", emoji: "💧", isCorrect: false }
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

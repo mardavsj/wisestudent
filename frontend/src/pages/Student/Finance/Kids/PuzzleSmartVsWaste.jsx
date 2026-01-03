@@ -45,43 +45,40 @@ const PuzzleSmartVsWaste = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Spending Items (left side) - 5 items
   const items = [
-    { id: 1, name: "Notebook", emoji: "📚",  },
-    { id: 2, name: "School Uniform", emoji: "👕",  },
-    { id: 3, name: "Extra Candy", emoji: "🍬",  },
-    { id: 4, name: "Medicine", emoji: "💊",  },
-    { id: 5, name: "Healthy Food", emoji: "🍎",  }
-  ];
+  { id: 1, name: "Library Books", emoji: "📖" },        // Important for learning
+  { id: 2, name: "Reusable Water Bottle", emoji: "🥤" }, // Smart daily purchase
+  { id: 3, name: "Candy Pack", emoji: "🍬" },           // Fun but unnecessary
+  { id: 4, name: "Bandages & First Aid", emoji: "🩹" }, // Health safety item
+  { id: 5, name: "Fruit Basket", emoji: "🍇" }          // Nutritious food
+];
 
-  // Categories (right side) - 5 items
-  const categories = [
-    { id: 6, name: "Need", emoji: "✅",  },
-    { id: 7, name: "Want", emoji: "🎁",  },
-    { id: 8, name: "Save", emoji: "💰",  },
-    { id: 9, name: "Share", emoji: "🤲",  },
-    { id: 10, name: "Invest", emoji: "📈",  }
-  ];
+const categories = [
+  { id: 6, name: "Smart Buy", emoji: "💡" },       // Wise spending
+  { id: 7, name: "Wasteful Purchase", emoji: "🗑️" }, // Not needed or frivolous
+  { id: 8, name: "Save Money", emoji: "💰" },      // Good for future
+  { id: 9, name: "Health Priority", emoji: "❤️" }, // Must-have for wellbeing
+  { id: 10, name: "Nutritious Choice", emoji: "🍏" } // Healthy & beneficial
+];
 
-  // Manually rearrange positions to prevent positional matching
-  // Original order was [6,7,8,9,10], rearranged to [8,10,7,6,9]
+
   const rearrangedCategories = [
-    categories[2], // Save (id: 8)
-    categories[4], // Invest (id: 10)
-    categories[1], // Want (id: 7)
-    categories[0], // Need (id: 6)
-    categories[3]  // Share (id: 9)
-  ];
+  categories[0], // Save Money (id: 8)
+  categories[4], // Nutritious Choice (id: 10)
+  categories[3], // Wasteful Purchase (id: 7)
+  categories[2], // Smart Buy (id: 6)
+  categories[1]  // Health Priority (id: 9)
+];
 
-  // Correct matches using proper IDs, not positional order
-  // Each item has a unique correct match for true one-to-one mapping
+
   const correctMatches = [
-    { itemId: 1, categoryId: 6 }, // Notebook → Need
-    { itemId: 2, categoryId: 8 }, // School Uniform → Save
-    { itemId: 3, categoryId: 7 }, // Extra Candy → Want
-    { itemId: 4, categoryId: 9 }, // Medicine → Share
-    { itemId: 5, categoryId: 10 }  // Healthy Food → Invest
-  ];
+  { itemId: 1, categoryId: 8 },  // Library Books → Save Money
+  { itemId: 2, categoryId: 6 },  // Reusable Water Bottle → Smart Buy
+  { itemId: 3, categoryId: 7 },  // Candy Pack → Wasteful Purchase
+  { itemId: 4, categoryId: 9 },  // Bandages & First Aid → Health Priority
+  { itemId: 5, categoryId: 10 }  // Fruit Basket → Nutritious Choice
+];
+
 
   const handleItemSelect = (item) => {
     if (gameFinished) return;
@@ -192,7 +189,7 @@ const PuzzleSmartVsWaste = () => {
                       <div className="text-2xl mr-3">{item.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{item.name}</h4>
-                        <p className="text-white/80 text-sm">Hint: {item.hint}</p>
+                        
                       </div>
                     </div>
                   </button>

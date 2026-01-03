@@ -24,130 +24,131 @@ const FriendsMoneyStoryGame = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Your friend drops ₹10. What do you do?",
-      options: [
-        { 
-          id: "return", 
-          text: "Return it to your friend", 
-          emoji: "🤝", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "keep", 
-          text: "Keep it for yourself", 
-          emoji: "💸", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "snacks", 
-          text: "Spend it on snacks", 
-          emoji: "🍟", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Your friend needs ₹5 for lunch. You have ₹10. What do you do?",
-      options: [
-        { 
-          id: "give", 
-          text: "Give all ₹10 away", 
-          emoji: "🎁", 
-          isCorrect: false
-        },
-        {
-          id: "lend",
-          text: "Lend ₹5 and ask for it later",
-          emoji: "🤲",
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "Say no and keep it", 
-          emoji: "😐", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You find ₹20 in class. No one claims it. What's next?",
-      options: [
-        { 
-          id: "candy", 
-          text: "Buy candy for everyone", 
-          emoji: "🍬", 
-          isCorrect: false
-        },
-        {
-          id: "teacher",
-          text: "Give it to the teacher",
-          emoji: "🧑‍🏫",
-          isCorrect: true
-        },
-        { 
-          id: "hide", 
-          text: "Keep it quietly", 
-          emoji: "🤫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Your friend owes you ₹5. They offer candy instead. What do you do?",
-      options: [
-        { 
-          id: "ask", 
-          text: "Politely ask for money", 
-          emoji: "💬", 
-          isCorrect: true
-        },
-        { 
-          id: "take", 
-          text: "Take the candy", 
-          emoji: "🍭", 
-          isCorrect: false
-        },
-        { 
-          id: "forget", 
-          text: "Forget about it", 
-          emoji: "😌", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why is being honest with money important?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Lets you spend more", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        {
-          id: "trust",
-          text: "Builds trust with friends",
-          emoji: "😊",
-          isCorrect: true
-        },
-        { 
-          id: "candy", 
-          text: "Gets you more candy", 
-          emoji: "🍫", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Your friend is saving money for a toy. They ask for advice. What do you suggest?",
+    options: [
+      
+      {
+        id: "spend",
+        text: "Spend all your money together",
+        emoji: "💸",
+        isCorrect: false
+      },
+      {
+        id: "ignore",
+        text: "Ignore their request",
+        emoji: "🙈",
+        isCorrect: false
+      },
+      {
+        id: "save",
+        text: "Help them plan their savings",
+        emoji: "📋",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 2,
+    text: "Your friend wants to buy a snack but has no money. How can you help responsibly?",
+    options: [
+      {
+        id: "share",
+        text: "Share small change and teach saving",
+        emoji: "🪙",
+        isCorrect: true
+      },
+      {
+        id: "lend",
+        text: "Give all your money",
+        emoji: "💰",
+        isCorrect: false
+      },
+      {
+        id: "buy",
+        text: "Buy snack for them every day",
+        emoji: "🍿",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "You and a friend found coins on the playground. What is fair?",
+    options: [
+      
+      {
+        id: "take",
+        text: "Keep all for yourself",
+        emoji: "🤑",
+        isCorrect: false
+      },
+      {
+        id: "split",
+        text: "Split the money equally",
+        emoji: "⚖️",
+        isCorrect: true
+      },
+      {
+        id: "ignore",
+        text: "Leave the coins there",
+        emoji: "🍂",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Your friend asks to borrow money for a project. You only have a little. What is wise?",
+    options: [
+      {
+        id: "share_part",
+        text: "Lend a small part and explain your limit",
+        emoji: "🤲",
+        isCorrect: true
+      },
+      {
+        id: "refuse",
+        text: "Say no rudely",
+        emoji: "😠",
+        isCorrect: false
+      },
+      {
+        id: "give_all",
+        text: "Give all your money",
+        emoji: "💸",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "Why is handling money honestly with friends important?",
+    options: [
+      
+      {
+        id: "fun",
+        text: "It makes games more fun",
+        emoji: "🎲",
+        isCorrect: false
+      },
+      {
+        id: "snacks",
+        text: "It helps get more snacks",
+        emoji: "🍬",
+        isCorrect: false
+      },
+      {
+        id: "trust",
+        text: "It builds trust and respect",
+        emoji: "🤝",
+        isCorrect: true
+      },
+    ]
+  }
+];
+
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

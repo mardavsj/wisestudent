@@ -34,62 +34,63 @@ const ReportReflex = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      question: "What should you do if you see bullying?",
-      correctAnswer: "Report to an adult",
-      options: [
-        { text: "Report to an adult", isCorrect: true, emoji: "📢" },
-        { text: "Ignore it", isCorrect: false, emoji: "🙈" },
-        { text: "Join in", isCorrect: false, emoji: "😠" },
-        { text: "Laugh about it", isCorrect: false, emoji: "😂" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What should you do if someone is being hurt?",
-      correctAnswer: "Tell a teacher",
-      options: [
-        { text: "Watch silently", isCorrect: false, emoji: "👀" },
-        { text: "Tell a teacher", isCorrect: true, emoji: "👩‍🏫" },
-        { text: "Do nothing", isCorrect: false, emoji: "🚫" },
-        { text: "Record it", isCorrect: false, emoji: "📹" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What should you do if you see name-calling?",
-      correctAnswer: "Report it",
-      options: [
-        { text: "Report it", isCorrect: true, emoji: "📢" },
-        { text: "Join in", isCorrect: false, emoji: "😏" },
-        { text: "Ignore it", isCorrect: false, emoji: "🙈" },
-        { text: "Laugh", isCorrect: false, emoji: "😂" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What should you do if someone is being excluded?",
-      correctAnswer: "Tell an adult",
-      options: [
-        { text: "Do nothing", isCorrect: false, emoji: "🚫" },
-        { text: "Exclude them more", isCorrect: false, emoji: "😤" },
-        { text: "Tell an adult", isCorrect: true, emoji: "👨‍🏫" },
-        { text: "Ignore it", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What should you do if you see cyberbullying?",
-      correctAnswer: "Report it",
-      options: [
-        { text: "Report it", isCorrect: true, emoji: "📢" },
-        { text: "Share it", isCorrect: false, emoji: "📤" },
-        { text: "Ignore it", isCorrect: false, emoji: "🙈" },
-        { text: "Join in", isCorrect: false, emoji: "😠" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    question: "You notice a student pushing another child again and again. What is the best action?",
+    correctAnswer: "Seek help from a trusted adult",
+    options: [
+      { text: "Walk away quietly", isCorrect: false, emoji: "🚶" },
+      { text: "Cheer loudly", isCorrect: false, emoji: "📣" },
+      { text: "Seek help from a trusted adult", isCorrect: true, emoji: "🧑‍🏫" },
+      { text: "Copy the behavior", isCorrect: false, emoji: "😠" }
+    ]
+  },
+  {
+    id: 2,
+    question: "A classmate looks scared after receiving mean messages online. What should you do?",
+    correctAnswer: "Show the messages to an adult",
+    options: [
+      { text: "Forward the messages", isCorrect: false, emoji: "📤" },
+      { text: "Show the messages to an adult", isCorrect: true, emoji: "📱" },
+      { text: "Delete everything", isCorrect: false, emoji: "🗑️" },
+      { text: "Laugh it off", isCorrect: false, emoji: "😂" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You hear someone threatening another child during recess. What is the safest choice?",
+    correctAnswer: "Inform school staff immediately",
+    options: [
+      { text: "Inform school staff immediately", isCorrect: true, emoji: "🚨" },
+      { text: "Handle it alone", isCorrect: false, emoji: "💪" },
+      { text: "Pretend not to hear", isCorrect: false, emoji: "🙉" },
+      { text: "Repeat the threat", isCorrect: false, emoji: "🔁" }
+    ]
+  },
+  {
+    id: 4,
+    question: "A friend tells you they feel unsafe because of repeated teasing. What should you encourage?",
+    correctAnswer: "Ask them to talk to a trusted adult",
+    options: [
+      { text: "Tell them to stay quiet", isCorrect: false, emoji: "🤐" },
+      { text: "Tell them to fight back", isCorrect: false, emoji: "🥊" },
+      { text: "Say it is not serious", isCorrect: false, emoji: "😐" },
+      { text: "Ask them to talk to a trusted adult", isCorrect: true, emoji: "🤝" },
+    ]
+  },
+  {
+    id: 5,
+    question: "You see hurtful comments posted in a class group chat. What is the responsible step?",
+    correctAnswer: "Save proof and report safely",
+    options: [
+      { text: "Add more comments", isCorrect: false, emoji: "💬" },
+      { text: "Save proof and report safely", isCorrect: true, emoji: "🛡️" },
+      { text: "Send it to everyone", isCorrect: false, emoji: "📨" },
+      { text: "Leave the group silently", isCorrect: false, emoji: "🚪" }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

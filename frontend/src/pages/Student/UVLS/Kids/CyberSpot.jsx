@@ -28,148 +28,134 @@ const CyberSpot = () => {
   const [answered, setAnswered] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which post is harmful and should be reported?",
-      emoji: "💻",
-      options: [
-        { 
-          id: "malicious1", 
-          text: "You're ugly!", 
-          emoji: "😠", 
-          // description: "Mean and hurtful comment",
-          isCorrect: true 
-        },
-        { 
-          id: "nice1", 
-          text: "Nice pic!", 
-          emoji: "👍", 
-          // description: "Friendly and positive",
-          isCorrect: false 
-        },
-        { 
-          id: "neutral1", 
-          text: "Have a great day!", 
-          emoji: "😊", 
-          // description: "Kind and supportive",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which post is harmful and should be reported?",
-      emoji: "💻",
-      options: [
-        { 
-          id: "nice2", 
-          text: "Happy birthday!", 
-          emoji: "🎂", 
-          // description: "Friendly and positive",
-          isCorrect: false 
-        },
-        { 
-          id: "malicious2", 
-          text: "Fake news about you.", 
-          emoji: "⚠️", 
-          // description: "Spreading false information",
-          isCorrect: true 
-        },
-        { 
-          id: "neutral2", 
-          text: "Thanks for sharing!", 
-          emoji: "🙏", 
-          // description: "Polite and kind",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which post is harmful and should be reported?",
-      emoji: "💻",
-      options: [
-        { 
-          id: "nice3", 
-          text: "Sharing fun meme.", 
-          emoji: "😄", 
-          // description: "Fun and harmless",
-          isCorrect: false 
-        },
-        { 
-          id: "neutral3", 
-          text: "Great job!", 
-          emoji: "👏", 
-          // description: "Encouraging and positive",
-          isCorrect: false 
-        },
-        { 
-          id: "malicious3", 
-          text: "Spreading rumors online.", 
-          emoji: "🗣️", 
-          // description: "Harmful and false information",
-          isCorrect: true 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which post is harmful and should be reported?",
-      emoji: "💻",
-      options: [
-        { 
-          id: "malicious4", 
-          text: "Doxing personal info.", 
-          emoji: "🔓", 
-          // description: "Sharing private information without consent",
-          isCorrect: true 
-        },
-        { 
-          id: "nice4", 
-          text: "Compliment on post.", 
-          emoji: "💝", 
-          // description: "Kind and positive",
-          isCorrect: false 
-        },
-        { 
-          id: "neutral4", 
-          text: "Keep it up!", 
-          emoji: "💪", 
-          // description: "Encouraging and supportive",
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which post is harmful and should be reported?",
-      emoji: "💻",
-      options: [
-        { 
-          id: "nice5", 
-          text: "Friendly invite.", 
-          emoji: "👋", 
-          // description: "Welcoming and kind",
-          isCorrect: false 
-        },
-        
-        { 
-          id: "neutral5", 
-          text: "Hope you're well!", 
-          emoji: "❤️", 
-          // description: "Caring and friendly",
-          isCorrect: false 
-        },
-        { 
-          id: "malicious5", 
-          text: "Harassing emails.", 
-          emoji: "📧", 
-          // description: "Repeated unwanted contact",
-          isCorrect: true 
-        },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Which online message is unsafe and needs attention?",
+    emoji: "🌐",
+    options: [
+      { 
+        id: "unsafe1", 
+        text: "I will hurt you if you reply.", 
+        emoji: "⚠️", 
+        isCorrect: true 
+      },
+      { 
+        id: "safe1", 
+        text: "Good luck for your test!", 
+        emoji: "🍀", 
+        isCorrect: false 
+      },
+      { 
+        id: "safe2", 
+        text: "That game looks fun.", 
+        emoji: "🎮", 
+        isCorrect: false 
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Which post is not okay to share online?",
+    emoji: "📱",
+    options: [
+      { 
+        id: "safe3", 
+        text: "My favorite cartoon character.", 
+        emoji: "📺", 
+        isCorrect: false 
+      },
+      { 
+        id: "unsafe2", 
+        text: "Posting someone’s phone number.", 
+        emoji: "📞", 
+        isCorrect: true 
+      },
+      { 
+        id: "safe4", 
+        text: "A picture of my drawing.", 
+        emoji: "🎨", 
+        isCorrect: false 
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "Which message shows online bullying?",
+    emoji: "💬",
+    options: [
+      { 
+        id: "unsafe3", 
+        text: "Everyone should stop being your friend.", 
+        emoji: "🚫", 
+        isCorrect: true 
+      },
+      { 
+        id: "safe5", 
+        text: "Let’s play after school.", 
+        emoji: "⚽", 
+        isCorrect: false 
+      },
+      { 
+        id: "safe6", 
+        text: "Nice teamwork today!", 
+        emoji: "👏", 
+        isCorrect: false 
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Which online action is risky?",
+    emoji: "🔐",
+    options: [
+      { 
+        id: "safe7", 
+        text: "Logging out after using a device.", 
+        emoji: "🚪", 
+        isCorrect: false 
+      },
+      
+      { 
+        id: "safe8", 
+        text: "Using strong passwords.", 
+        emoji: "🛡️", 
+        isCorrect: false 
+      },
+      { 
+        id: "unsafe4", 
+        text: "Sharing passwords with friends.", 
+        emoji: "🔑", 
+        isCorrect: true 
+      },
+    ]
+  },
+  {
+    id: 5,
+    text: "Which message should be reported online?",
+    emoji: "🚨",
+    options: [
+      { 
+        id: "safe9", 
+        text: "Thanks for helping me.", 
+        emoji: "🙏", 
+        isCorrect: false 
+      },
+      { 
+        id: "unsafe5", 
+        text: "Send me your address now.", 
+        emoji: "📍", 
+        isCorrect: true 
+      },
+      { 
+        id: "safe10", 
+        text: "See you tomorrow!", 
+        emoji: "👋", 
+        isCorrect: false 
+      }
+    ]
+  }
+];
+
 
   const currentQuestionData = questions[currentQuestion];
 

@@ -58,7 +58,7 @@ const PosterPlanFirst = () => {
     {
       question: "Which poster would best show the benefit of planning before making purchases?",
       choices: [
-        { text: "You can make thoughtful purchases ✅", correct: true },
+        { text: "You can make thoughtful purchases 🤔", correct: true },
         { text: "You can spend more money overall 💸", correct: false },
         { text: "You will never enjoy anything 🙁", correct: false },
       ],

@@ -146,7 +146,7 @@ const RightsMatch = () => {
         { 
           id: "voice", 
           text: "Voice", 
-          emoji: "🗣️", 
+          emoji: "📞", 
           isCorrect: true 
         },
         { 

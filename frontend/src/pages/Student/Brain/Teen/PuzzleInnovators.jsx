@@ -54,11 +54,11 @@ const PuzzleInnovators = () => {
 
   // Left items (innovators)
   const leftItems = [
-    { id: 1, text: "Wright Brothers", emoji: "✈️" },
-    { id: 2, text: "Thomas Edison", emoji: "💡" },
-    { id: 3, text: "Marie Curie", emoji: "🔬" },
-    { id: 4, text: "Steve Jobs", emoji: "📱" },
-    { id: 5, text: "Einstein", emoji: "🧠" }
+    { id: 1, text: "Wright Brothers", emoji: "🙂" },
+    { id: 2, text: "Thomas Edison", emoji: "🤔" },
+    { id: 3, text: "Marie Curie", emoji: "😄" },
+    { id: 4, text: "Steve Jobs", emoji: "☺️" },
+    { id: 5, text: "Einstein", emoji: "🤔" }
   ];
 
   // Right items (innovations) - manually ordered for varied correct positions
@@ -196,11 +196,8 @@ const PuzzleInnovators = () => {
             
             {/* Middle - Match Button */}
             <div className="flex justify-center">
-              <div className="bg-white/20 rounded-xl p-4 md:p-6 border border-white/30">
-                <div className="text-white text-center font-bold text-lg md:text-xl">
-                  Match!
-                </div>
-              </div>
+              
+             
             </div>
             
             {/* Right Column - Innovations */}

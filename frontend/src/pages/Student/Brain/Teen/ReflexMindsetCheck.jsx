@@ -33,13 +33,13 @@ const ReflexMindsetCheck = () => {
   const questions = [
     {
       id: 1,
-      text: "Tap for 'Growth,' avoid 'Give Up.'",
-      options: [
-        { id: "growth", text: "Growth Mindset", emoji: "🌱",  isCorrect: true },
-        { id: "giveup", text: "Give Up", emoji: "🚫",  isCorrect: false },
-        { id: "fixed", text: "Fixed Mindset", emoji: "🔒",  isCorrect: false },
-        { id: "blame", text: "Blame Others", emoji: "👉",  isCorrect: false }
-      ]
+     text: "You get a low score on a test. Which mindset should you show?",
+    options: [
+      { id: "growth", text: "Analyze mistakes & improve", emoji: "🌱",  isCorrect: true },
+      { id: "giveup", text: "Give up immediately", emoji: "🚫",  isCorrect: false },
+      { id: "fixed", text: "Think you’re just not smart enough", emoji: "🔒",  isCorrect: false },
+      { id: "blame", text: "Blame the teacher or test", emoji: "👉",  isCorrect: false }
+    ]
     },
     {
       id: 2,

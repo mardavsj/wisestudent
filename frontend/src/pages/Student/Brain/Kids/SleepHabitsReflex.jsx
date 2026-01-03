@@ -36,158 +36,58 @@ const SleepHabitsReflex = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which is a good sleep habit?",
-      options: [
-        { 
-          id: "bedtime", 
-          text: "Going to bed at bedtime", 
-          emoji: "🌙", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "late-gaming", 
-          text: "Playing games late at night", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          id: "all-night", 
-          text: "Staying up all night", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          id: "screens", 
-          text: "Watching screens before bed", 
-          emoji: "📱", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which is a good sleep habit?",
-      options: [
-        { 
-          id: "caffeine", 
-          text: "Drinking coffee before bed", 
-          emoji: "☕", 
-          isCorrect: false
-        },
-        { 
-          id: "quiet-time", 
-          text: "Having quiet time before bed", 
-          emoji: "🧘", 
-          isCorrect: true
-        },
-        { 
-          id: "loud-music", 
-          text: "Listening to loud music", 
-          emoji: "🔊", 
-          isCorrect: false
-        },
-        { 
-          id: "exercise", 
-          text: "Intense exercise right before bed", 
-          emoji: "🏃", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which is a good sleep habit?",
-      options: [
-        { 
-          id: "irregular", 
-          text: "Irregular sleep schedule", 
-          emoji: "🔄", 
-          isCorrect: false
-        },
-        { 
-          id: "skipping", 
-          text: "Skipping sleep", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "early-sleep", 
-          text: "Going to sleep early", 
-          emoji: "😴", 
-          isCorrect: true
-        },
-        { 
-          id: "oversleeping", 
-          text: "Oversleeping every day", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which is a good sleep habit?",
-      options: [
-        { 
-          id: "dark-room", 
-          text: "Sleeping in a dark room", 
-          emoji: "🌑", 
-          isCorrect: true
-        },
-        { 
-          id: "bright-lights", 
-          text: "Sleeping with bright lights on", 
-          emoji: "💡", 
-          isCorrect: false
-        },
-        { 
-          id: "noise", 
-          text: "Sleeping with loud noise", 
-          emoji: "🔊", 
-          isCorrect: false
-        },
-        { 
-          id: "messy", 
-          text: "Sleeping in a messy room", 
-          emoji: "📦", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which is a good sleep habit?",
-      options: [
-        { 
-          id: "random", 
-          text: "Random sleep times", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        { 
-          id: "stress", 
-          text: "Going to bed stressed", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "eating", 
-          text: "Eating heavy meals before bed", 
-          emoji: "🍔", 
-          isCorrect: false
-        },
-        { 
-          id: "routine", 
-          text: "Following a bedtime routine", 
-          emoji: "📅", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "A young news reporter wakes up fresh and focused before school because of last night’s choice. What likely helped?",
+    options: [
+      { id: "a", text: "Packing tomorrow’s bag early", emoji: "🎒", isCorrect: false },
+      { id: "b", text: "Stopping games before bedtime", emoji: "🧩", isCorrect: true },
+      { id: "c", text: "Eating spicy snacks late", emoji: "🌶️", isCorrect: false },
+      { id: "d", text: "Watching funny clips in bed", emoji: "📺", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "A trainee chef needs steady hands in the morning class. What evening action supports this?",
+    options: [
+      { id: "c", text: "Taking quiet time to relax", emoji: "🌿", isCorrect: true },
+      { id: "a", text: "Drinking fizzy drinks at night", emoji: "🥤", isCorrect: false },
+      { id: "b", text: "Practicing dance moves before sleep", emoji: "💃", isCorrect: false },
+      { id: "d", text: "Keeping bright lights on", emoji: "💡", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "A student astronaut dreams of space and wakes up energetic daily. What habit makes this easier?",
+    options: [
+      { id: "a", text: "Sleeping at different times daily", emoji: "🔄", isCorrect: false },
+      { id: "b", text: "Skipping sleep for shows", emoji: "🎬", isCorrect: false },
+      { id: "c", text: "Keeping a regular sleep time", emoji: "⏳", isCorrect: true },
+      { id: "d", text: "Napping very late at night", emoji: "🛋️", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    text: "A young wildlife photographer needs sharp eyes at sunrise. What night setup helps most?",
+    options: [
+      { id: "a", text: "Sleeping with music blasting", emoji: "🎵", isCorrect: false },
+      { id: "c", text: "Leaving toys scattered around", emoji: "🧸", isCorrect: false },
+      { id: "d", text: "Scrolling messages in bed", emoji: "💬", isCorrect: false },
+      { id: "b", text: "Keeping the room calm and dim", emoji: "🌌", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    text: "A future scientist wants her brain to feel clear every morning. What night habit supports this?",
+    options: [
+      { id: "a", text: "Following the same wind-down steps nightly", emoji: "🧠", isCorrect: true },
+      { id: "b", text: "Eating heavy food very late", emoji: "🍕", isCorrect: false },
+      { id: "c", text: "Sleeping at random hours", emoji: "🎲", isCorrect: false },
+      { id: "d", text: "Going to bed while worried", emoji: "☁️", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

@@ -54,62 +54,62 @@ const GrowthMindsetQuiz = () => {
   const [levelCompleted, setLevelCompleted] = useState(false);
 
   const questions = [
-    {
-      id: 1,
-      text: "Which is growth mindset? ",
-      choices: [
-        { id: 'a', text: '"I\'ll improve"' },
-        { id: 'b', text: '"I can\'t do it"' },
-        { id: 'c', text: '"I\'m not good at this"' }
-      ],
-      correct: 'a',
-      explanation: 'A growth mindset believes in improvement and learning, saying "I\'ll improve" shows you believe you can get better!'
-    },
-    {
-      id: 2,
-      text: "What's the difference between fixed and growth mindset?",
-      choices: [
-        { id: 'a', text: 'Fixed mindset is always better' },
-        { id: 'b', text: 'Growth mindset believes in learning and improvement' },
-        { id: 'c', text: 'They are the same thing' }
-      ],
-      correct: 'b',
-      explanation: 'Growth mindset believes abilities can be developed through effort and learning, while fixed mindset believes abilities are fixed!'
-    },
-    {
-      id: 3,
-      text: "How does growth mindset help you?",
-      choices: [
-        { id: 'a', text: 'Makes you give up easily' },
-        { id: 'b', text: 'Has no benefits' },
-        { id: 'c', text: 'Encourages learning and resilience' }
-      ],
-      correct: 'c',
-      explanation: 'Growth mindset encourages learning, builds resilience, helps you embrace challenges, and leads to better outcomes!'
-    },
-    {
-      id: 4,
-      text: "What should you say when facing a challenge?",
-      choices: [
-        { id: 'a', text: '"I can learn and improve"' },
-        { id: 'b', text: '"I\'m not good at this"' },
-        { id: 'c', text: '"I\'ll never be able to do this"' }
-      ],
-      correct: 'a',
-      explanation: 'Saying "I can learn and improve" shows growth mindset and helps you approach challenges with confidence and determination!'
-    },
-    {
-      id: 5,
-      text: "Why is growth mindset important?",
-      choices: [
-        { id: 'a', text: 'It has no value' },
-        { id: 'b', text: 'It leads to learning, improvement, and success' },
-        { id: 'c', text: 'It only causes problems' }
-      ],
-      correct: 'b',
-      explanation: 'Growth mindset leads to continuous learning, improvement, resilience, and ultimately greater success in life!'
-    }
-  ];
+  {
+    id: 1,
+    text: "You failed a science project but decide to revise your approach and try again. What mindset is this?",
+    choices: [
+      { id: 'b', text: " believing failure defines you" },
+      { id: 'a', text: " learning from mistakes" },
+      { id: 'c', text: " giving up immediately" }
+    ],
+    correct: 'a',
+    explanation: "A growth mindset embraces challenges and sees failure as a chance to improve."
+  },
+  {
+    id: 2,
+    text: "A teen avoids joining a new sports team because they think they are 'just not athletic.' This shows:",
+    choices: [
+      { id: 'a', text: " believing abilities are unchangeable" },
+      { id: 'b', text: " willing to learn and improve skills" },
+      { id: 'c', text: " experimenting with new things" }
+    ],
+    correct: 'a',
+    explanation: "A fixed mindset assumes abilities are static and avoids challenges instead of trying to improve."
+  },
+  {
+    id: 3,
+    text: "You struggle with math homework but decide to ask for help and practice more. What does this demonstrate?",
+    choices: [
+      { id: 'b', text: " believing only natural talent matters" },
+      { id: 'c', text: " ignoring problems" },
+      { id: 'a', text: " effort leads to mastery" },
+    ],
+    correct: 'a',
+    explanation: "Growth mindset values effort, persistence, and learning from resources to improve skills."
+  },
+  {
+    id: 4,
+    text: "During a debate, someone criticizes your argument. You listen carefully and adjust your points next time. This is:",
+    choices: [
+      { id: 'b', text: " ignoring feedback" },
+      { id: 'a', text: " using feedback to improve" },
+      { id: 'c', text: " believing criticism is a personal attack" }
+    ],
+    correct: 'a',
+    explanation: "Growth mindset involves learning from feedback rather than taking it personally or ignoring it."
+  },
+  {
+    id: 5,
+    text: "Why might teens with a growth mindset try new hobbies even if they aren't immediately good at them?",
+    choices: [
+      { id: 'a', text: "They believe effort and practice can improve their skills" },
+      { id: 'b', text: "They think they will succeed instantly without learning" },
+      { id: 'c', text: "They avoid challenges to prevent failure" }
+    ],
+    correct: 'a',
+    explanation: "Growth mindset encourages embracing challenges and believing that abilities can be developed through effort."
+  }
+];
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || levelCompleted) return;

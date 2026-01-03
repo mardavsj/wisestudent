@@ -27,129 +27,131 @@ const RainyDayStory = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const questions = [
-    {
-      id: 1,
-      text: "Picnic cancelled due to rain. Kid feels sad. Best thought?",
-      options: [
-        { 
-          id: "indoor", 
-          text: "We can play indoor games!", 
-          emoji: "🎮", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "ruined", 
-          text: "It's ruined forever", 
-          emoji: "😢", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "hate", 
-          text: "Hate rain", 
-          emoji: "😠", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Trip delayed by traffic. Best positive thought?",
-      options: [
-        { 
-          id: "worst", 
-          text: "This is the worst", 
-          emoji: "😤", 
-          isCorrect: false
-        },
-        { 
-          id: "enjoy", 
-          text: "Enjoy the ride and chat", 
-          emoji: "💬", 
-          isCorrect: true
-        },
-        { 
-          id: "blame", 
-          text: "Blame driver", 
-          emoji: "👆", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Forgot lunch at home. What to think?",
-      options: [
-        { 
-          id: "share", 
-          text: "Share with friends!", 
-          emoji: "🤝", 
-          isCorrect: true
-        },
-        { 
-          id: "starve", 
-          text: "Starve all day", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "angry", 
-          text: "Be angry", 
-          emoji: "😠", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Power outage during movie. Best thought?",
-      options: [
-        { 
-          id: "boring", 
-          text: "Boring now", 
-          emoji: "😑", 
-          isCorrect: false
-        },
-        { 
-          id: "complain", 
-          text: "Complain", 
-          emoji: "😤", 
-          isCorrect: false
-        },
-        { 
-          id: "stories", 
-          text: "Tell stories in dark!", 
-          emoji: "📖", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Missed bus to school. Positive thought?",
-      options: [
-        { 
-          id: "late", 
-          text: "Late forever", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "hate", 
-          text: "Hate buses", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          id: "walk", 
-          text: "Walk and enjoy morning!", 
-          emoji: "🚶", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "Dark clouds gather and the picnic plan changes at the last minute. Everyone goes indoors. What helps the day still feel meaningful?",
+    options: [
+      {
+        id: "adapt",
+        text: "Adjust plans and create a new kind of fun",
+        emoji: "🔄",
+        isCorrect: true
+      },
+      {
+        id: "wait",
+        text: "Sit and wait for the rain to stop",
+        emoji: "⏳",
+        isCorrect: false
+      },
+      {
+        id: "regret",
+        text: "Keep thinking about what was missed",
+        emoji: "💭",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: "Heavy rain slows the journey, and the bus barely moves. What choice supports calm thinking during the delay?",
+    options: [
+      
+      {
+        id: "checktime",
+        text: "Keep checking the clock again and again",
+        emoji: "⏱️",
+        isCorrect: false
+      },
+      {
+        id: "frustration",
+        text: "Build frustration by thinking of delays",
+        emoji: "🌧️",
+        isCorrect: false
+      },
+      {
+        id: "notice",
+        text: "Notice surroundings and pass time mindfully",
+        emoji: "👀",
+        isCorrect: true
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: "Rain pours during lunch break, and a student realizes their food is missing. What response helps the body and mood?",
+    options: [
+      
+      {
+        id: "worry",
+        text: "Spend the break worrying about hunger",
+        emoji: "😟",
+        isCorrect: false
+      },
+      {
+        id: "solution",
+        text: "Look for a safe and helpful solution nearby",
+        emoji: "🧩",
+        isCorrect: true
+      },
+      {
+        id: "silent",
+        text: "Stay silent even if help is possible",
+        emoji: "🤐",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: "Thunder cuts the power while a family is watching a movie. The room turns quiet. What keeps the moment comfortable?",
+    options: [
+      {
+        id: "connect",
+        text: "Turn the pause into shared conversation",
+        emoji: "🗣️",
+        isCorrect: true
+      },
+      {
+        id: "complaint",
+        text: "Focus on the inconvenience",
+        emoji: "📢",
+        isCorrect: false
+      },
+      {
+        id: "withdraw",
+        text: "Separate and wait alone",
+        emoji: "🚪",
+        isCorrect: false
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: "After rain, the usual ride is missed and plans shift. What mindset helps the start of the day feel steady?",
+    options: [
+      
+      {
+        id: "rush",
+        text: "Rush while feeling stressed",
+        emoji: "🏃‍♂️",
+        isCorrect: false
+      },
+      {
+        id: "accept",
+        text: "Accept the change and move at a calm pace",
+        emoji: "🌱",
+        isCorrect: true
+      },
+      {
+        id: "blame",
+        text: "Look for someone to blame",
+        emoji: "👉",
+        isCorrect: false
+      }
+    ]
+  }
+];
+
 
   const handleChoice = (isCorrect) => {
     if (answered) return;

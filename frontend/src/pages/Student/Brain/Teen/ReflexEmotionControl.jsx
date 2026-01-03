@@ -15,6 +15,11 @@ const ReflexEmotionControl = () => {
   const gameId = "brain-teens-43";
   const gameData = getGameDataById(gameId);
   
+  // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
+  const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
+  const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
+  const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
@@ -26,57 +31,58 @@ const ReflexEmotionControl = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      text: "Tap for 'Talk Calmly,' avoid 'Shout.'",
-      options: [
-        { id: "talk", text: "Talk Calmly", emoji: "💬😌",  isCorrect: true },
-        { id: "shout", text: "Shout", emoji: "🗣️😠",  isCorrect: false },
-        { id: "ignore", text: "Ignore", emoji: "🙈",  isCorrect: false },
-        { id: "yell", text: "Yell Back", emoji: "😡",  isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which action helps control emotions?",
-      options: [
-        { id: "isolate", text: "Isolate Yourself", emoji: "🚶",  isCorrect: false },
-        { id: "breathe", text: "Deep Breathing", emoji: "🌬️",  isCorrect: true },
-        { id: "panic", text: "Panic", emoji: "😱",  isCorrect: false },
-        { id: "freeze", text: "Freeze", emoji: "❄️",  isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      text: "What helps manage strong emotions?",
-      options: [
-        { id: "impulse", text: "Act Impulsively", emoji: "⚡",  isCorrect: false },
-        { id: "react", text: "React Immediately", emoji: "🔥",  isCorrect: false },
-        { id: "rush", text: "Rush Into Action", emoji: "🏃",  isCorrect: false },
-        { id: "pause", text: "Pause & Reflect", emoji: "⏸️🧠",  isCorrect: true }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which technique helps with negative emotions?",
-      options: [
-        { id: "gratitude", text: "Focus on Gratitude", emoji: "🙏",  isCorrect: true },
-        { id: "compare", text: "Compare More", emoji: "📊",  isCorrect: false },
-        { id: "dwell", text: "Dwell on Negatives", emoji: "😔",  isCorrect: false },
-        { id: "blame", text: "Blame Others", emoji: "👉",  isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      text: "What helps when feeling anxious?",
-      options: [
-        { id: "worry", text: "Worry Loop", emoji: "🔄😟",  isCorrect: false },
-        { id: "avoid", text: "Avoid Everything", emoji: "🏃",  isCorrect: false },
-        { id: "panic", text: "Panic", emoji: "😱",  isCorrect: false },
-        { id: "grounding", text: "Grounding Exercise", emoji: "🌍",  isCorrect: true }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    text: "During an argument, which response best prevents emotional escalation?",
+    options: [
+      { id: "match-energy", text: "Matching the other person’s intensity", emoji: "🔥", isCorrect: false },
+      { id: "silent-treatment", text: "Completely shutting down", emoji: "🙈", isCorrect: false },
+      { id: "calm-response", text: "Lowering your tone and slowing speech", emoji: "😌", isCorrect: true },
+      { id: "defensive", text: "Defending every point immediately", emoji: "🛡️", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    text: "Which strategy helps regain control when emotions spike suddenly?",
+    options: [
+      { id: "breathe", text: "Slow, controlled breathing", emoji: "🌬️", isCorrect: true },
+      { id: "escape", text: "Avoiding the situation instantly", emoji: "🏃", isCorrect: false },
+      { id: "suppress", text: "Suppressing emotions forcefully", emoji: "❄️", isCorrect: false },
+      { id: "panic", text: "Letting the reaction take over", emoji: "😱", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    text: "What is the most effective first step before reacting emotionally?",
+    options: [
+      { id: "react", text: "Responding immediately", emoji: "⚡", isCorrect: false },
+      { id: "vent", text: "Venting without thinking", emoji: "🗣️", isCorrect: false },
+      { id: "overthink", text: "Overanalyzing every detail", emoji: "🔁", isCorrect: false },
+      { id: "pause", text: "Pausing to label the emotion", emoji: "⏸️", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    text: "Which habit strengthens long-term emotional control?",
+    options: [
+      { id: "compare", text: "Comparing yourself to others", emoji: "📊", isCorrect: false },
+      { id: "reframe", text: "Reframing negative thoughts", emoji: "🔄", isCorrect: true },
+      { id: "ruminate", text: "Replaying negative events", emoji: "😔", isCorrect: false },
+      { id: "blame", text: "Blaming external factors", emoji: "👉", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    text: "When anxiety rises, which response helps bring emotions back to the present?",
+    options: [
+      { id: "avoid", text: "Avoiding all triggers", emoji: "🏃‍♂️", isCorrect: false },
+      { id: "worry-loop", text: "Mentally rehearsing worst outcomes", emoji: "😟", isCorrect: false },
+      { id: "grounding", text: "Grounding through senses", emoji: "🌍", isCorrect: true },
+      { id: "panic", text: "Letting fear drive decisions", emoji: "😱", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

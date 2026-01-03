@@ -67,7 +67,7 @@ const PuzzleOfGrowth = () => {
     { id: 3, text: "Improvement", emoji: "📈" }, // Matches with "Practice" (position 2)
     { id: 4, text: "Growth", emoji: "🌱" }, // Matches with "Learning" (position 3)
     { id: 5, text: "Achievement", emoji: "🏆" }, // Matches with "Persistence" (position 4)
-    { id: 1, text: "Success", emoji: "✅" } // Matches with "Effort" (position 5)
+    { id: 1, text: "Success", emoji: "☺️" } // Matches with "Effort" (position 5)
   ];
 
   const correctPairs = {
@@ -196,11 +196,7 @@ const PuzzleOfGrowth = () => {
             
             {/* Middle - Match Button */}
             <div className="flex justify-center">
-              <div className="bg-white/20 rounded-xl p-4 md:p-6 border border-white/30">
-                <div className="text-white text-center font-bold text-lg md:text-xl">
-                  Match!
-                </div>
-              </div>
+              
             </div>
             
             {/* Right Column - Outcomes */}
