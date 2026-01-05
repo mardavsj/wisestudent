@@ -73,36 +73,36 @@ const CampaignList = ({ onViewCampaign, onCreateCampaign, onEditCampaign }) => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-2xl font-bold text-gray-800">Campaign Management</h2>
-          <p className="text-gray-600">Manage and track all CSR campaigns</p>
+          <h2 className="text-lg font-bold text-gray-900">Campaign Management</h2>
+          <p className="text-xs text-gray-600">Manage and track all CSR campaigns</p>
         </div>
         <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
           onClick={onCreateCampaign}
-          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-xl flex items-center gap-2 hover:shadow-lg transition-all"
+          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:shadow-md transition-all text-sm font-semibold"
         >
-          <Plus className="w-5 h-5" />
+          <Plus className="w-4 h-4" />
           Create Campaign
         </motion.button>
       </div>
 
       {/* Filters and Search */}
-      <div className="bg-white rounded-2xl p-6 shadow-lg">
-        <div className="flex flex-wrap gap-4 items-center">
+      <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
+        <div className="flex flex-wrap gap-3 items-center">
           <div className="flex-1 min-w-64">
             <div className="relative">
-              <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search campaigns..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full pl-9 pr-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300/50 focus:border-purple-400"
               />
             </div>
           </div>
@@ -110,7 +110,7 @@ const CampaignList = ({ onViewCampaign, onCreateCampaign, onEditCampaign }) => {
           <select
             value={filters.status}
             onChange={(e) => setFilters({ ...filters, status: e.target.value, page: 1 })}
-            className="px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300/50 focus:border-purple-400"
           >
             <option value="">All Status</option>
             <option value="draft">Draft</option>
@@ -124,7 +124,7 @@ const CampaignList = ({ onViewCampaign, onCreateCampaign, onEditCampaign }) => {
           <select
             value={filters.type}
             onChange={(e) => setFilters({ ...filters, type: e.target.value, page: 1 })}
-            className="px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300/50 focus:border-purple-400"
           >
             <option value="">All Types</option>
             <option value="wellness">Wellness</option>
@@ -134,9 +134,9 @@ const CampaignList = ({ onViewCampaign, onCreateCampaign, onEditCampaign }) => {
           </select>
 
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gray-100 text-gray-600 px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-gray-200 transition-colors"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="bg-gray-100 text-gray-600 px-3 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-200 transition-colors text-sm font-medium"
           >
             <Filter className="w-4 h-4" />
             More Filters
@@ -145,10 +145,10 @@ const CampaignList = ({ onViewCampaign, onCreateCampaign, onEditCampaign }) => {
       </div>
 
       {/* Campaign List */}
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
         {loading ? (
           <div className="flex items-center justify-center h-64">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-600"></div>
+            <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-purple-600"></div>
           </div>
         ) : (
           <div className="divide-y divide-gray-200">
@@ -162,79 +162,79 @@ const CampaignList = ({ onViewCampaign, onCreateCampaign, onEditCampaign }) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="p-6 hover:bg-gray-50 transition-colors"
+                  className="p-4 hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
-                      <div className="flex items-center gap-4 mb-3">
-                        <h3 className="text-lg font-semibold text-gray-800">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h3 className="text-sm font-semibold text-gray-900">
                           {campaign.title}
                         </h3>
-                        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium bg-${statusInfo.color}-100 text-${statusInfo.color}-800`}>
-                          <StatusIcon className="w-4 h-4" />
+                        <div className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-xs font-medium bg-${statusInfo.color}-100 text-${statusInfo.color}-800`}>
+                          <StatusIcon className="w-3 h-3" />
                           {statusInfo.label}
                         </div>
                       </div>
                       
-                      <p className="text-gray-600 mb-4">{campaign.description}</p>
+                      <p className="text-xs text-gray-600 mb-3">{campaign.description}</p>
                       
-                      <div className="flex flex-wrap gap-6 text-sm text-gray-500">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" />
+                      <div className="flex flex-wrap gap-4 text-xs text-gray-500">
+                        <div className="flex items-center gap-1.5">
+                          <Calendar className="w-3.5 h-3.5" />
                           <span>{formatDate(campaign.timeline?.startDate)} - {formatDate(campaign.timeline?.endDate)}</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <Clock className="w-4 h-4" />
+                        <div className="flex items-center gap-1.5">
+                          <Clock className="w-3.5 h-3.5" />
                           <span>{getCampaignDuration(campaign.timeline?.startDate, campaign.timeline?.endDate)}</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <Users className="w-4 h-4" />
+                        <div className="flex items-center gap-1.5">
+                          <Users className="w-3.5 h-3.5" />
                           <span>{campaign.quickMetrics?.totalParticipants || 0} participants</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <Target className="w-4 h-4" />
+                        <div className="flex items-center gap-1.5">
+                          <Target className="w-3.5 h-3.5" />
                           <span>{campaign.quickMetrics?.completionRate?.toFixed(1) || 0}% completion</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 ml-6">
+                    <div className="flex items-center gap-1.5 ml-4">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => onViewCampaign(campaign)}
-                        className="p-2 text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors"
+                        className="p-1.5 text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-md transition-colors"
                         title="View Details"
                       >
-                        <Eye className="w-5 h-5" />
+                        <Eye className="w-4 h-4" />
                       </motion.button>
                       
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => onEditCampaign(campaign)}
-                        className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        className="p-1.5 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors"
                         title="Edit Campaign"
                       >
-                        <Edit className="w-5 h-5" />
+                        <Edit className="w-4 h-4" />
                       </motion.button>
                       
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+                        className="p-1.5 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors"
                         title="View Metrics"
                       >
-                        <BarChart3 className="w-5 h-5" />
+                        <BarChart3 className="w-4 h-4" />
                       </motion.button>
 
                       <div className="relative">
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="p-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors"
+                          className="p-1.5 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-md transition-colors"
                         >
-                          <MoreVertical className="w-5 h-5" />
+                          <MoreVertical className="w-4 h-4" />
                         </motion.button>
                       </div>
                     </div>
@@ -242,8 +242,8 @@ const CampaignList = ({ onViewCampaign, onCreateCampaign, onEditCampaign }) => {
 
                   {/* Progress Bar */}
                   {campaign.quickMetrics && (
-                    <div className="mt-4">
-                      <div className="flex justify-between text-sm text-gray-600 mb-1">
+                    <div className="mt-3">
+                      <div className="flex justify-between text-xs text-gray-600 mb-1">
                         <span>Progress</span>
                         <span>{campaign.quickMetrics.completionRate?.toFixed(1) || 0}%</span>
                       </div>
@@ -263,9 +263,9 @@ const CampaignList = ({ onViewCampaign, onCreateCampaign, onEditCampaign }) => {
 
         {/* Pagination */}
         {pagination.totalPages > 1 && (
-          <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+          <div className="px-4 py-3 bg-gray-50 border-t border-gray-200">
             <div className="flex items-center justify-between">
-              <div className="text-sm text-gray-600">
+              <div className="text-xs text-gray-600">
                 Showing {((pagination.currentPage - 1) * pagination.itemsPerPage) + 1} to {Math.min(pagination.currentPage * pagination.itemsPerPage, pagination.totalItems)} of {pagination.totalItems} campaigns
               </div>
               
@@ -273,7 +273,7 @@ const CampaignList = ({ onViewCampaign, onCreateCampaign, onEditCampaign }) => {
                 <button
                   onClick={() => setFilters({ ...filters, page: pagination.currentPage - 1 })}
                   disabled={pagination.currentPage === 1}
-                  className="px-3 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-2.5 py-1.5 text-xs border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Previous
                 </button>
@@ -284,7 +284,7 @@ const CampaignList = ({ onViewCampaign, onCreateCampaign, onEditCampaign }) => {
                     <button
                       key={page}
                       onClick={() => setFilters({ ...filters, page })}
-                      className={`px-3 py-2 text-sm rounded-lg ${
+                      className={`px-2.5 py-1.5 text-xs rounded-md ${
                         pagination.currentPage === page
                           ? 'bg-purple-500 text-white'
                           : 'border border-gray-300 hover:bg-gray-50'
@@ -298,7 +298,7 @@ const CampaignList = ({ onViewCampaign, onCreateCampaign, onEditCampaign }) => {
                 <button
                   onClick={() => setFilters({ ...filters, page: pagination.currentPage + 1 })}
                   disabled={pagination.currentPage === pagination.totalPages}
-                  className="px-3 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-2.5 py-1.5 text-xs border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Next
                 </button>

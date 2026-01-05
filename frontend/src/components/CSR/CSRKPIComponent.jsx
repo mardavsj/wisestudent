@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import {
   Users, School, Target, TrendingUp, DollarSign, Award,
@@ -44,9 +44,9 @@ const CSRKPIComponent = ({ filters = {} }) => {
   const [loading, setLoading] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const [selectedMetric, setSelectedMetric] = useState('overview');
-
-  // Load KPI data
-  const loadKPIData = async () => {
+  
+  // Load KPI data - memoized with useCallback
+  const loadKPIData = useCallback(async () => {
     setLoading(true);
     try {
       const response = await csrKPIService.getKPIs(filters);
@@ -57,17 +57,17 @@ const CSRKPIComponent = ({ filters = {} }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [filters]);
 
-  // Load trends data
-  const loadTrendsData = async () => {
+  // Load trends data - memoized with useCallback
+  const loadTrendsData = useCallback(async () => {
     try {
       const response = await csrKPIService.getKPITrends(filters);
       setTrendsData(response.data);
     } catch (error) {
       console.error('Error loading trends data:', error);
     }
-  };
+  }, [filters]);
 
   // Refresh KPIs
   const handleRefreshKPIs = async () => {
@@ -95,10 +95,14 @@ const CSRKPIComponent = ({ filters = {} }) => {
     }
   };
 
+  // Use stringified filters for dependency comparison
+  const filtersKey = JSON.stringify(filters);
+  
   useEffect(() => {
     loadKPIData();
     loadTrendsData();
-  }, [filters]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filtersKey]); // Only trigger when filters actually change
 
   if (loading && !kpiData) {
     return (
@@ -178,162 +182,192 @@ const CSRKPIComponent = ({ filters = {} }) => {
 
   return (
     <div className="space-y-6">
-      {/* KPI Header with Actions */}
-      <div className="flex justify-between items-center">
-        <div>
-          <h2 className="text-2xl font-bold text-gray-800">CSR Key Performance Indicators</h2>
-          <p className="text-gray-600">Comprehensive metrics for social impact measurement</p>
-        </div>
-        <div className="flex gap-3">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={handleRefreshKPIs}
-            disabled={refreshing}
-            className="bg-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2 hover:shadow-lg transition-all disabled:opacity-50"
-          >
-            <RefreshCw className={`w-4 h-4 ${refreshing ? 'animate-spin' : ''}`} />
-            Refresh
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => handleExportKPIs('csv')}
-            className="bg-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2 hover:shadow-lg transition-all"
-          >
-            <Download className="w-4 h-4" />
-            Export CSV
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => handleExportKPIs('json')}
-            className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2 hover:shadow-lg transition-all"
-          >
-            <FileText className="w-4 h-4" />
-            Export JSON
-          </motion.button>
+      {/* KPI Header */}
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="p-1.5 bg-indigo-100 rounded-lg">
+              <BarChart3 className="w-4 h-4 text-indigo-600" />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold text-gray-900">CSR Key Performance Indicators</h2>
+              <p className="text-xs text-gray-600">Comprehensive metrics for social impact measurement</p>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={handleRefreshKPIs}
+              disabled={refreshing}
+              className="px-3 py-1.5 bg-purple-600 text-white rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-purple-700 hover:shadow-md transition-all disabled:opacity-50"
+            >
+              <RefreshCw className={`w-3.5 h-3.5 ${refreshing ? 'animate-spin' : ''}`} />
+              Refresh
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => handleExportKPIs('csv')}
+              className="px-3 py-1.5 bg-white border border-blue-200 rounded-lg text-sm font-semibold text-blue-600 flex items-center gap-2 hover:bg-blue-50 hover:shadow-sm transition-all"
+            >
+              <Download className="w-3.5 h-3.5" />
+              CSV
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => handleExportKPIs('json')}
+              className="px-3 py-1.5 bg-white border border-indigo-200 rounded-lg text-sm font-semibold text-indigo-600 flex items-center gap-2 hover:bg-indigo-50 hover:shadow-sm transition-all"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              JSON
+            </motion.button>
+          </div>
         </div>
       </div>
 
       {/* Main KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-        {/* Schools & Students Reached */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        {/* Students Impacted */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500"
+          whileHover={{ y: -2, scale: 1.01 }}
+          className="bg-blue-50 border border-gray-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300"
         >
-          <div className="flex items-center justify-between mb-4">
-            <School className="w-8 h-8 text-blue-500" />
-            <div className="text-sm text-blue-600 font-medium">Coverage</div>
+          <div className="flex items-start justify-between mb-3">
+            <div className="p-2 bg-blue-500 rounded-lg shadow-sm">
+              <Users className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 rounded-md text-xs font-semibold">
+              <TrendingUp className="w-3 h-3" />
+              {kpiData.studentsReached?.growth ? `+${kpiData.studentsReached.growth.toFixed(1)}%` : '+0.0%'}
+            </div>
           </div>
-          <div className="text-3xl font-bold text-blue-600 mb-2">
-            {kpiData.schoolsReached?.totalSchools || 0}
-          </div>
-          <div className="text-gray-600 text-sm">Schools Reached</div>
-          <div className="mt-2 text-sm text-gray-500">
-            {kpiData.studentsReached?.totalStudents || 0} students
+          <div className="space-y-0.5">
+            <h3 className="text-3xl font-bold text-gray-900">
+              {kpiData.studentsReached?.totalStudents?.toLocaleString() || '0'}
+            </h3>
+            <p className="text-xs font-semibold text-gray-700">Students Impacted</p>
           </div>
         </motion.div>
 
-        {/* Campaign Completion Rate */}
+        {/* Schools Reached */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.05 }}
+          whileHover={{ y: -2, scale: 1.01 }}
+          className="bg-green-50 border border-gray-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300"
+        >
+          <div className="flex items-start justify-between mb-3">
+            <div className="p-2 bg-green-500 rounded-lg shadow-sm">
+              <School className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 rounded-md text-xs font-semibold">
+              <TrendingUp className="w-3 h-3" />
+              {kpiData.schoolsReached?.growth ? `+${kpiData.schoolsReached.growth.toFixed(1)}%` : '+0.0%'}
+            </div>
+          </div>
+          <div className="space-y-0.5">
+            <h3 className="text-3xl font-bold text-gray-900">
+              {kpiData.schoolsReached?.totalSchools?.toLocaleString() || '0'}
+            </h3>
+            <p className="text-xs font-semibold text-gray-700">Schools Reached</p>
+          </div>
+        </motion.div>
+
+        {/* Total Value Funded */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500"
+          whileHover={{ y: -2, scale: 1.01 }}
+          className="bg-purple-50 border border-gray-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300"
         >
-          <div className="flex items-center justify-between mb-4">
-            <Target className="w-8 h-8 text-green-500" />
-            <div className="text-sm text-green-600 font-medium">Completion</div>
+          <div className="flex items-start justify-between mb-3">
+            <div className="p-2 bg-purple-500 rounded-lg shadow-sm">
+              <DollarSign className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 rounded-md text-xs font-semibold">
+              <TrendingUp className="w-3 h-3" />
+              {kpiData.budgetMetrics?.growth ? `+${kpiData.budgetMetrics.growth.toFixed(1)}%` : '+0.0%'}
+            </div>
           </div>
-          <div className="text-3xl font-bold text-green-600 mb-2">
-            {kpiData.campaigns?.length > 0 ? 
-              Math.round(kpiData.campaigns.reduce((sum, c) => sum + c.completionRate, 0) / kpiData.campaigns.length) : 0}%
-          </div>
-          <div className="text-gray-600 text-sm">Avg Completion Rate</div>
-          <div className="mt-2 text-sm text-gray-500">
-            {kpiData.campaigns?.length || 0} campaigns
+          <div className="space-y-0.5">
+            <h3 className="text-3xl font-bold text-gray-900">
+              ₹{((kpiData.budgetMetrics?.totalBudget || 0) / 100000).toFixed(1)}L
+            </h3>
+            <p className="text-xs font-semibold text-gray-700">Total Value Funded</p>
           </div>
         </motion.div>
 
-        {/* Engagement Lift */}
+        {/* Items Distributed */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+          whileHover={{ y: -2, scale: 1.01 }}
+          className="bg-orange-50 border border-gray-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300"
+        >
+          <div className="flex items-start justify-between mb-3">
+            <div className="p-2 bg-orange-500 rounded-lg shadow-sm">
+              <Award className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 rounded-md text-xs font-semibold">
+              <TrendingUp className="w-3 h-3" />
+              {kpiData.certificates?.growth ? `+${kpiData.certificates.growth.toFixed(1)}%` : '+0.0%'}
+            </div>
+          </div>
+          <div className="space-y-0.5">
+            <h3 className="text-3xl font-bold text-gray-900">
+              {kpiData.certificates?.totalIssued?.toLocaleString() || '0'}
+            </h3>
+            <p className="text-xs font-semibold text-gray-700">Items Distributed</p>
+          </div>
+        </motion.div>
+
+        {/* Completion Rate */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-purple-500"
+          whileHover={{ y: -2, scale: 1.01 }}
+          className="bg-cyan-50 border border-gray-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300"
         >
-          <div className="flex items-center justify-between mb-4">
-            <TrendingUp className="w-8 h-8 text-purple-500" />
-            <div className="text-sm text-purple-600 font-medium flex items-center gap-1">
-              {kpiData.engagementMetrics?.engagementLift >= 0 ? (
-                <ArrowUp className="w-3 h-3" />
-              ) : (
-                <ArrowDown className="w-3 h-3" />
-              )}
-              Lift
+          <div className="flex items-start justify-between mb-3">
+            <div className="p-2 bg-cyan-500 rounded-lg shadow-sm">
+              <Target className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 rounded-md text-xs font-semibold">
+              <TrendingUp className="w-3 h-3" />
+              {kpiData.campaigns?.length > 0 ? 
+                `+${((kpiData.campaigns.reduce((sum, c) => sum + (c.completionRate || 0), 0) / kpiData.campaigns.length) - 50).toFixed(1)}%` : '+0.0%'}
             </div>
           </div>
-          <div className="text-3xl font-bold text-purple-600 mb-2">
-            {kpiData.engagementMetrics?.engagementLift?.toFixed(1) || 0}%
-          </div>
-          <div className="text-gray-600 text-sm">Engagement Lift</div>
-          <div className="mt-2 text-sm text-gray-500">
-            vs baseline
-          </div>
-        </motion.div>
-
-        {/* Budget Spent */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-orange-500"
-        >
-          <div className="flex items-center justify-between mb-4">
-            <DollarSign className="w-8 h-8 text-orange-500" />
-            <div className="text-sm text-orange-600 font-medium">Budget</div>
-          </div>
-          <div className="text-3xl font-bold text-orange-600 mb-2">
-            ₹{((kpiData.budgetMetrics?.rewardsSpent || 0) + (kpiData.budgetMetrics?.adminFees || 0) / 100000).toFixed(1)}L
-          </div>
-          <div className="text-gray-600 text-sm">Total Spent</div>
-          <div className="mt-2 text-sm text-gray-500">
-            ₹{(kpiData.budgetMetrics?.remainingBudget / 100000 || 0).toFixed(1)}L remaining
-          </div>
-        </motion.div>
-
-        {/* Certificates & NEP */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-red-500"
-        >
-          <div className="flex items-center justify-between mb-4">
-            <Award className="w-8 h-8 text-red-500" />
-            <div className="text-sm text-red-600 font-medium">Impact</div>
-          </div>
-          <div className="text-3xl font-bold text-red-600 mb-2">
-            {kpiData.certificates?.totalIssued || 0}
-          </div>
-          <div className="text-gray-600 text-sm">Certificates Issued</div>
-          <div className="mt-2 text-sm text-gray-500">
-            {kpiData.nepCompetencies?.coveragePercentage?.toFixed(1) || 0}% NEP coverage
+          <div className="space-y-0.5">
+            <h3 className="text-3xl font-bold text-gray-900">
+              {kpiData.campaigns?.length > 0 ? 
+                Math.round(kpiData.campaigns.reduce((sum, c) => sum + (c.completionRate || 0), 0) / kpiData.campaigns.length) : 0}%
+            </h3>
+            <p className="text-xs font-semibold text-gray-700">Avg Completion Rate</p>
           </div>
         </motion.div>
       </div>
 
       {/* Detailed Charts Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Campaign Completion Rates */}
-        <div className="bg-white rounded-2xl p-6 shadow-lg">
-          <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-            <Target className="w-5 h-5 text-green-500" />
-            Campaign Completion Rates
-          </h3>
+        <div className="bg-white rounded-xl shadow-md border border-gray-100 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="p-1.5 bg-green-100 rounded-lg">
+              <Target className="w-4 h-4 text-green-600" />
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-gray-900">Campaign Completion Rates</h3>
+            </div>
+          </div>
           <div className="h-64">
             <Doughnut
               data={campaignCompletionChart}
@@ -341,7 +375,7 @@ const CSRKPIComponent = ({ filters = {} }) => {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                  legend: { position: 'bottom' }
+                  legend: { position: 'bottom', labels: { padding: 10, font: { size: 11 } } }
                 }
               }}
             />
@@ -349,11 +383,15 @@ const CSRKPIComponent = ({ filters = {} }) => {
         </div>
 
         {/* Budget Breakdown */}
-        <div className="bg-white rounded-2xl p-6 shadow-lg">
-          <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-            <DollarSign className="w-5 h-5 text-orange-500" />
-            Budget Breakdown
-          </h3>
+        <div className="bg-white rounded-xl shadow-md border border-gray-100 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="p-1.5 bg-orange-100 rounded-lg">
+              <DollarSign className="w-4 h-4 text-orange-600" />
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-gray-900">Budget Breakdown</h3>
+            </div>
+          </div>
           <div className="h-64">
             <Doughnut
               data={budgetBreakdownChart}
@@ -361,7 +399,7 @@ const CSRKPIComponent = ({ filters = {} }) => {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                  legend: { position: 'bottom' }
+                  legend: { position: 'bottom', labels: { padding: 10, font: { size: 11 } } }
                 }
               }}
             />
@@ -369,11 +407,15 @@ const CSRKPIComponent = ({ filters = {} }) => {
         </div>
 
         {/* Monthly Spending Trend */}
-        <div className="bg-white rounded-2xl p-6 shadow-lg">
-          <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-            <BarChart3 className="w-5 h-5 text-blue-500" />
-            Monthly Spending Trend
-          </h3>
+        <div className="bg-white rounded-xl shadow-md border border-gray-100 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="p-1.5 bg-blue-100 rounded-lg">
+              <BarChart3 className="w-4 h-4 text-blue-600" />
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-gray-900">Monthly Spending Trend</h3>
+            </div>
+          </div>
           <div className="h-64">
             <Bar
               data={monthlySpendingChart}
@@ -381,7 +423,7 @@ const CSRKPIComponent = ({ filters = {} }) => {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                  legend: { position: 'bottom' }
+                  legend: { position: 'bottom', labels: { padding: 10, font: { size: 11 } } }
                 },
                 scales: {
                   y: { beginAtZero: true }
@@ -392,11 +434,15 @@ const CSRKPIComponent = ({ filters = {} }) => {
         </div>
 
         {/* NEP Competencies Coverage */}
-        <div className="bg-white rounded-2xl p-6 shadow-lg">
-          <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-purple-500" />
-            NEP Competencies Coverage
-          </h3>
+        <div className="bg-white rounded-xl shadow-md border border-gray-100 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="p-1.5 bg-purple-100 rounded-lg">
+              <BookOpen className="w-4 h-4 text-purple-600" />
+            </div>
+            <div>
+              <h3 className="text-base font-bold text-gray-900">NEP Competencies Coverage</h3>
+            </div>
+          </div>
           <div className="h-64">
             <Radar
               data={nepCompetenciesChart}
@@ -421,52 +467,54 @@ const CSRKPIComponent = ({ filters = {} }) => {
       </div>
 
       {/* Campaign Details Table */}
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div className="p-6 border-b border-gray-200">
-          <h3 className="text-xl font-bold flex items-center gap-2">
-            <Activity className="w-5 h-5 text-green-500" />
-            Campaign Performance Details
-          </h3>
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
+        <div className="p-4 border-b border-gray-200">
+          <div className="flex items-center gap-2">
+            <div className="p-1.5 bg-green-100 rounded-lg">
+              <Activity className="w-4 h-4 text-green-600" />
+            </div>
+            <h3 className="text-base font-bold text-gray-900">Campaign Performance Details</h3>
+          </div>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Campaign</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Participants</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Completed</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Completion Rate</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Status</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">Period</th>
+                <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Campaign</th>
+                <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Participants</th>
+                <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Completed</th>
+                <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Completion Rate</th>
+                <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Status</th>
+                <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Period</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               {kpiData.campaigns?.map((campaign, index) => (
-                <tr key={index} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 font-medium">{campaign.campaignName}</td>
-                  <td className="px-6 py-4">{campaign.totalParticipants}</td>
-                  <td className="px-6 py-4">{campaign.completedParticipants}</td>
-                  <td className="px-6 py-4">
+                <tr key={index} className="hover:bg-gray-50 transition-colors">
+                  <td className="px-4 py-3 text-sm font-medium text-gray-900">{campaign.campaignName}</td>
+                  <td className="px-4 py-3 text-sm text-gray-600">{campaign.totalParticipants}</td>
+                  <td className="px-4 py-3 text-sm text-gray-600">{campaign.completedParticipants}</td>
+                  <td className="px-4 py-3">
                     <div className="flex items-center gap-2">
-                      <div className="w-16 bg-gray-200 rounded-full h-2">
+                      <div className="w-12 bg-gray-200 rounded-full h-2">
                         <div
                           className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full"
                           style={{ width: `${campaign.completionRate}%` }}
                         />
                       </div>
-                      <span className="text-sm font-medium">{campaign.completionRate.toFixed(1)}%</span>
+                      <span className="text-xs font-semibold text-gray-700">{campaign.completionRate.toFixed(1)}%</span>
                     </div>
                   </td>
-                  <td className="px-6 py-4">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      campaign.status === 'completed' ? 'bg-green-100 text-green-800' :
-                      campaign.status === 'active' ? 'bg-blue-100 text-blue-800' :
-                      'bg-yellow-100 text-yellow-800'
+                  <td className="px-4 py-3">
+                    <span className={`px-2 py-0.5 rounded-md text-xs font-semibold ${
+                      campaign.status === 'completed' ? 'bg-green-100 text-green-700' :
+                      campaign.status === 'active' ? 'bg-blue-100 text-blue-700' :
+                      'bg-yellow-100 text-yellow-700'
                     }`}>
                       {campaign.status}
                     </span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-gray-500">
+                  <td className="px-4 py-3 text-xs text-gray-600">
                     {campaign.startDate && new Date(campaign.startDate).toLocaleDateString()} - 
                     {campaign.endDate && new Date(campaign.endDate).toLocaleDateString()}
                   </td>

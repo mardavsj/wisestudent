@@ -41,42 +41,39 @@ const CSRApprovals = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <div className="bg-gradient-to-r from-indigo-50/95 via-purple-50/95 to-pink-50/95 backdrop-blur-xl border-b border-indigo-200/60 sticky top-0 z-40 shadow-md">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 md:py-4">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="p-1.5 sm:p-2 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg shadow-md shadow-indigo-500/30 flex-shrink-0">
+              <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 truncate">
+                Campaign Approvals
+              </h1>
+              <p className="text-gray-600 text-xs sm:text-sm mt-0.5 hidden sm:block">
+                Manage campaign approval workflows and school consent processes
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
+          className="mb-6"
         >
-          <div className="flex justify-between items-center mb-6">
-            <div>
-              <motion.h1 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-5xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent"
-              >
-                Campaign Approvals
-              </motion.h1>
-              <motion.p 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-gray-600 mt-2 flex items-center gap-2"
-              >
-                <CheckCircle className="w-5 h-5 text-indigo-500" />
-                Manage campaign approval workflows and school consent processes
-              </motion.p>
-            </div>
-          </div>
 
           {/* Approval Stats */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"
           >
             {[
               {
@@ -123,19 +120,19 @@ const CSRApprovals = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className={`bg-gradient-to-br ${stat.bgColor} border-2 ${stat.borderColor} rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300`}
+                  whileHover={{ y: -2, scale: 1.01 }}
+                  className={`bg-gradient-to-br ${stat.bgColor} border border-gray-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300`}
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`p-3 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg`}>
-                      <Icon className="w-6 h-6 text-white" />
+                  <div className="flex items-center justify-between mb-3">
+                    <div className={`p-2 rounded-lg bg-gradient-to-r ${stat.color} shadow-sm`}>
+                      <Icon className="w-5 h-5 text-white" />
                     </div>
-                    <span className={`text-sm font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${stat.color} text-white`}>
+                    <span className={`text-xs font-semibold px-2 py-0.5 rounded-md bg-gradient-to-r ${stat.color} text-white`}>
                       {stat.change}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-1">{stat.value}</h3>
-                  <p className="text-gray-600 font-medium">{stat.title}</p>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-0.5">{stat.value}</h3>
+                  <p className="text-xs font-semibold text-gray-600">{stat.title}</p>
                 </motion.div>
               );
             })}
@@ -147,13 +144,13 @@ const CSRApprovals = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20 mb-8"
+          className="bg-white rounded-xl p-5 shadow-md border border-gray-100 mb-6"
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-            <Target className="w-8 h-8 text-purple-500" />
+          <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <Target className="w-5 h-5 text-purple-500" />
             Approval Workflow Process
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               {
                 step: '1',
@@ -187,19 +184,19 @@ const CSRApprovals = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 + index * 0.1 }}
-                  className="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border-2 border-gray-200 hover:shadow-lg transition-all duration-300"
+                  className="p-4 bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200 hover:shadow-md transition-all duration-300"
                 >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className={`p-3 rounded-xl bg-gradient-to-r ${workflow.color} text-white font-bold text-lg`}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className={`p-2 rounded-lg bg-gradient-to-r ${workflow.color} text-white font-bold text-sm`}>
                       {workflow.step}
                     </div>
-                    <div className={`p-2 rounded-xl bg-gradient-to-r ${workflow.color}`}>
-                      <Icon className="w-6 h-6 text-white" />
+                    <div className={`p-1.5 rounded-lg bg-gradient-to-r ${workflow.color}`}>
+                      <Icon className="w-4 h-4 text-white" />
                     </div>
                   </div>
-                  <h4 className="text-lg font-bold text-gray-800 mb-2">{workflow.title}</h4>
-                  <p className="text-gray-600 text-sm mb-3">{workflow.description}</p>
-                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                  <h4 className="text-sm font-bold text-gray-900 mb-1.5">{workflow.title}</h4>
+                  <p className="text-xs text-gray-600 mb-2.5">{workflow.description}</p>
+                  <span className={`px-2 py-0.5 rounded-md text-xs font-semibold ${
                     workflow.status === 'Completed' 
                       ? 'bg-green-100 text-green-800'
                       : workflow.status === 'In Progress'

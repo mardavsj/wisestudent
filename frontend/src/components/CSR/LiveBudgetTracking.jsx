@@ -110,12 +110,12 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
 
   const getBudgetStatusIcon = (status) => {
     switch (status) {
-      case 'healthy': return <CheckCircle className="w-5 h-5 text-green-500" />;
-      case 'moderate': return <Clock className="w-5 h-5 text-yellow-500" />;
-      case 'warning': return <AlertTriangle className="w-5 h-5 text-orange-500" />;
-      case 'critical': return <AlertTriangle className="w-5 h-5 text-red-500" />;
-      case 'exceeded': return <AlertTriangle className="w-5 h-5 text-red-600" />;
-      default: return <Clock className="w-5 h-5 text-gray-500" />;
+      case 'healthy': return <CheckCircle className="w-4 h-4 text-green-500" />;
+      case 'moderate': return <Clock className="w-4 h-4 text-yellow-500" />;
+      case 'warning': return <AlertTriangle className="w-4 h-4 text-orange-500" />;
+      case 'critical': return <AlertTriangle className="w-4 h-4 text-red-500" />;
+      case 'exceeded': return <AlertTriangle className="w-4 h-4 text-red-600" />;
+      default: return <Clock className="w-4 h-4 text-gray-500" />;
     }
   };
 
@@ -162,17 +162,34 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
 
   const chartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top',
+        position: 'bottom',
+        labels: {
+          padding: 10,
+          font: {
+            size: 11
+          }
+        }
       },
     },
     scales: {
       y: {
         beginAtZero: true,
         ticks: {
+          font: {
+            size: 10
+          },
           callback: function(value) {
             return '₹' + value.toLocaleString();
+          }
+        }
+      },
+      x: {
+        ticks: {
+          font: {
+            size: 10
           }
         }
       }
@@ -180,18 +197,18 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-800">Live Budget Tracking</h2>
-          <p className="text-gray-600">Real-time budget monitoring with threshold warnings</p>
+          <h2 className="text-lg font-bold text-gray-900">Live Budget Tracking</h2>
+          <p className="text-xs text-gray-600">Real-time budget monitoring with threshold warnings</p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <select
             value={selectedCampaign}
             onChange={(e) => setSelectedCampaign(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            className="px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300/50 focus:border-purple-400"
           >
             <option value="all">All Campaigns</option>
             {campaigns.map(campaign => (
@@ -211,19 +228,19 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
       </div>
 
       {/* Overall Budget Summary */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+          className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Total Budget</p>
-              <p className="text-2xl font-bold text-gray-800">₹{totalBudget?.toLocaleString() || 0}</p>
+              <p className="text-xs font-semibold text-gray-600">Total Budget</p>
+              <p className="text-xl font-bold text-gray-900">₹{totalBudget?.toLocaleString() || 0}</p>
             </div>
-            <div className="p-3 bg-blue-100 rounded-lg">
-              <DollarSign className="w-6 h-6 text-blue-600" />
+            <div className="p-2 bg-blue-100 rounded-lg">
+              <DollarSign className="w-5 h-5 text-blue-600" />
             </div>
           </div>
         </motion.div>
@@ -232,15 +249,15 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+          className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Total Spent</p>
-              <p className="text-2xl font-bold text-red-600">₹{totalSpent?.toLocaleString() || 0}</p>
+              <p className="text-xs font-semibold text-gray-600">Total Spent</p>
+              <p className="text-xl font-bold text-red-600">₹{totalSpent?.toLocaleString() || 0}</p>
             </div>
-            <div className="p-3 bg-red-100 rounded-lg">
-              <TrendingDown className="w-6 h-6 text-red-600" />
+            <div className="p-2 bg-red-100 rounded-lg">
+              <TrendingDown className="w-5 h-5 text-red-600" />
             </div>
           </div>
         </motion.div>
@@ -249,15 +266,15 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+          className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Remaining</p>
-              <p className="text-2xl font-bold text-green-600">₹{totalRemaining?.toLocaleString() || 0}</p>
+              <p className="text-xs font-semibold text-gray-600">Remaining</p>
+              <p className="text-xl font-bold text-green-600">₹{totalRemaining?.toLocaleString() || 0}</p>
             </div>
-            <div className="p-3 bg-green-100 rounded-lg">
-              <TrendingUp className="w-6 h-6 text-green-600" />
+            <div className="p-2 bg-green-100 rounded-lg">
+              <TrendingUp className="w-5 h-5 text-green-600" />
             </div>
           </div>
         </motion.div>
@@ -266,12 +283,12 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+          className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Spend %</p>
-              <p className={`text-2xl font-bold ${getBudgetStatusColor(
+              <p className="text-xs font-semibold text-gray-600">Spend %</p>
+              <p className={`text-xl font-bold ${getBudgetStatusColor(
                 overallSpendPercentage >= 100 ? 'exceeded' :
                 overallSpendPercentage >= 95 ? 'critical' :
                 overallSpendPercentage >= 80 ? 'warning' :
@@ -280,8 +297,8 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
                 {Math.round(overallSpendPercentage || 0)}%
               </p>
             </div>
-            <div className="p-3 bg-purple-100 rounded-lg">
-              <BarChart3 className="w-6 h-6 text-purple-600" />
+            <div className="p-2 bg-purple-100 rounded-lg">
+              <BarChart3 className="w-5 h-5 text-purple-600" />
             </div>
           </div>
         </motion.div>
@@ -292,33 +309,33 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-xl shadow-sm border border-gray-200"
+          className="bg-white rounded-xl shadow-md border border-gray-100"
         >
-          <div className="p-6 border-b border-gray-200">
+          <div className="p-4 border-b border-gray-200">
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-gray-800">Budget Alerts</h3>
-              <span className="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">
+              <h3 className="text-sm font-semibold text-gray-900">Budget Alerts</h3>
+              <span className="px-2 py-0.5 bg-red-100 text-red-800 rounded-md text-xs font-semibold">
                 {alerts.length} Active
               </span>
             </div>
           </div>
-          <div className="p-6 space-y-4">
+          <div className="p-4 space-y-3">
             {alerts.slice(0, 5).map((alert) => (
-              <div key={alert._id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <Bell className="w-5 h-5 text-red-500" />
+              <div key={alert._id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <Bell className="w-4 h-4 text-red-500" />
                   <div>
-                    <h4 className="font-medium text-gray-800">{alert.alertDetails.title}</h4>
-                    <p className="text-sm text-gray-600">{alert.alertDetails.message}</p>
+                    <h4 className="font-semibold text-xs text-gray-900">{alert.alertDetails.title}</h4>
+                    <p className="text-xs text-gray-600">{alert.alertDetails.message}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${getAlertSeverityColor(alert.alertDetails.severity)}`}>
+                  <span className={`px-2 py-0.5 rounded-md text-xs font-medium ${getAlertSeverityColor(alert.alertDetails.severity)}`}>
                     {alert.alertDetails.severity.toUpperCase()}
                   </span>
                   <button
                     onClick={() => handleAcknowledgeAlert(alert._id)}
-                    className="px-3 py-1 bg-blue-500 text-white rounded text-sm hover:bg-blue-600 transition-colors"
+                    className="px-2.5 py-1 bg-blue-500 text-white rounded text-xs hover:bg-blue-600 transition-colors font-semibold"
                   >
                     Acknowledge
                   </button>
@@ -330,44 +347,44 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
       )}
 
       {/* Campaign Budget Details */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Campaign List */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-xl shadow-sm border border-gray-200"
+          className="bg-white rounded-xl shadow-md border border-gray-100"
         >
-          <div className="p-6 border-b border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-800">Campaign Budgets</h3>
+          <div className="p-4 border-b border-gray-200">
+            <h3 className="text-sm font-semibold text-gray-900">Campaign Budgets</h3>
           </div>
-          <div className="p-6 space-y-4">
+          <div className="p-4 space-y-3">
             {campaigns.map((campaign) => (
-              <div key={campaign.campaignId} className="p-4 border border-gray-200 rounded-lg">
-                <div className="flex items-center justify-between mb-3">
-                  <h4 className="font-medium text-gray-800">{campaign.campaignName}</h4>
-                  <div className="flex items-center gap-2">
+              <div key={campaign.campaignId} className="p-3 border border-gray-200 rounded-lg">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-semibold text-xs text-gray-900">{campaign.campaignName}</h4>
+                  <div className="flex items-center gap-1.5">
                     {getBudgetStatusIcon(campaign.status)}
-                    <span className={`text-sm font-medium ${getBudgetStatusColor(campaign.status)}`}>
+                    <span className={`text-xs font-medium ${getBudgetStatusColor(campaign.status)}`}>
                       {campaign.status.toUpperCase()}
                     </span>
                   </div>
                 </div>
                 
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                <div className="space-y-1.5">
+                  <div className="flex justify-between text-xs">
                     <span className="text-gray-600">Budget</span>
-                    <span className="font-medium">₹{campaign.budget.total.toLocaleString()}</span>
+                    <span className="font-semibold">₹{campaign.budget.total.toLocaleString()}</span>
                   </div>
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-xs">
                     <span className="text-gray-600">Spent</span>
-                    <span className="font-medium text-red-600">₹{campaign.budget.spent.toLocaleString()}</span>
+                    <span className="font-semibold text-red-600">₹{campaign.budget.spent.toLocaleString()}</span>
                   </div>
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-xs">
                     <span className="text-gray-600">Remaining</span>
-                    <span className="font-medium text-green-600">₹{campaign.budget.remaining.toLocaleString()}</span>
+                    <span className="font-semibold text-green-600">₹{campaign.budget.remaining.toLocaleString()}</span>
                   </div>
                   
-                  <div className="mt-3">
+                  <div className="mt-2">
                     <div className="flex justify-between text-xs text-gray-600 mb-1">
                       <span>Spend Progress</span>
                       <span>{campaign.budget.spendPercentage}%</span>
@@ -395,13 +412,15 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-white rounded-xl shadow-sm border border-gray-200"
+          className="bg-white rounded-xl shadow-md border border-gray-100"
         >
-          <div className="p-6 border-b border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-800">Spending Overview</h3>
+          <div className="p-4 border-b border-gray-200">
+            <h3 className="text-sm font-semibold text-gray-900">Spending Overview</h3>
           </div>
-          <div className="p-6">
-            <Bar data={spendingChartData} options={chartOptions} />
+          <div className="p-4">
+            <div className="h-48">
+              <Bar data={spendingChartData} options={{...chartOptions, maintainAspectRatio: false}} />
+            </div>
           </div>
         </motion.div>
       </div>
@@ -411,25 +430,25 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="bg-white rounded-xl shadow-sm border border-gray-200"
+        className="bg-white rounded-xl shadow-md border border-gray-100"
       >
-        <div className="p-6 border-b border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-800">Recent Transactions</h3>
+        <div className="p-4 border-b border-gray-200">
+          <h3 className="text-sm font-semibold text-gray-900">Recent Transactions</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Campaign
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Description
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Amount
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Date
                 </th>
               </tr>
@@ -438,16 +457,16 @@ const LiveBudgetTracking = ({ onShowBudgetAlert }) => {
               {campaigns.flatMap(campaign => 
                 campaign.recentTransactions?.map((transaction, index) => (
                   <tr key={`${campaign.campaignId}-${index}`}>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-4 py-3 whitespace-nowrap text-xs text-gray-900">
                       {campaign.campaignName}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="px-4 py-3 whitespace-nowrap text-xs text-gray-900">
                       {transaction.description}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-red-600">
+                    <td className="px-4 py-3 whitespace-nowrap text-xs text-red-600">
                       -₹{transaction.amount.toLocaleString()}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-4 py-3 whitespace-nowrap text-xs text-gray-500">
                       {new Date(transaction.createdAt).toLocaleDateString()}
                     </td>
                   </tr>

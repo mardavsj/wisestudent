@@ -1,13 +1,12 @@
 import express from 'express';
 import csrOverviewController from '../controllers/csrOverviewController.js';
-// import requireAuth from '../middlewares/requireAuth.js';
-// import requireCSR from '../middlewares/checkRole.js';
+import { requireAuth, requireCSR } from '../middlewares/requireAuth.js';
 
 const router = express.Router();
 
-// Temporarily disable authentication for testing
-// router.use(requireAuth);
-// router.use(requireCSR);
+// Enable authentication and authorization
+router.use(requireAuth);
+router.use(requireCSR);
 
 // Get comprehensive overview data
 router.get('/data', csrOverviewController.getOverviewData);

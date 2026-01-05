@@ -122,26 +122,33 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
 
   const chartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top',
+        position: 'bottom',
+        labels: {
+          padding: 10,
+          font: {
+            size: 11
+          }
+        }
       },
     }
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-800">Financial Dashboard</h2>
-          <p className="text-gray-600">Manage payments, track spending, and generate invoices</p>
+          <h2 className="text-lg font-bold text-gray-900">Financial Dashboard</h2>
+          <p className="text-xs text-gray-600">Manage payments, track spending, and generate invoices</p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <select
             value={timeRange}
             onChange={(e) => setTimeRange(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            className="px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300/50 focus:border-purple-400"
           >
             <option value="7d">Last 7 Days</option>
             <option value="30d">Last 30 Days</option>
@@ -156,7 +163,7 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
           </button>
           <button
             onClick={onShowPaymentModal}
-            className="flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+            className="flex items-center gap-2 px-3 py-2 text-sm bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors font-semibold"
           >
             <Plus className="w-4 h-4" />
             New Payment
@@ -165,19 +172,19 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
       </div>
 
       {/* Key Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+          className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Current Balance</p>
-              <p className="text-2xl font-bold text-green-600">₹{balance?.balance?.toLocaleString() || 0}</p>
+              <p className="text-xs font-semibold text-gray-600">Current Balance</p>
+              <p className="text-xl font-bold text-green-600">₹{balance?.balance?.toLocaleString() || 0}</p>
             </div>
-            <div className="p-3 bg-green-100 rounded-lg">
-              <DollarSign className="w-6 h-6 text-green-600" />
+            <div className="p-2 bg-green-100 rounded-lg">
+              <DollarSign className="w-5 h-5 text-green-600" />
             </div>
           </div>
         </motion.div>
@@ -186,15 +193,15 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+          className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">HealCoins Balance</p>
-              <p className="text-2xl font-bold text-purple-600">{balance?.healCoinsBalance?.toLocaleString() || 0}</p>
+              <p className="text-xs font-semibold text-gray-600">HealCoins Balance</p>
+              <p className="text-xl font-bold text-purple-600">{balance?.healCoinsBalance?.toLocaleString() || 0}</p>
             </div>
-            <div className="p-3 bg-purple-100 rounded-lg">
-              <CreditCard className="w-6 h-6 text-purple-600" />
+            <div className="p-2 bg-purple-100 rounded-lg">
+              <CreditCard className="w-5 h-5 text-purple-600" />
             </div>
           </div>
         </motion.div>
@@ -203,17 +210,17 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+          className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Total Spent</p>
-              <p className="text-2xl font-bold text-red-600">
+              <p className="text-xs font-semibold text-gray-600">Total Spent</p>
+              <p className="text-xl font-bold text-red-600">
                 ₹{spendSummary?.reduce((sum, item) => sum + item.totalAmount, 0)?.toLocaleString() || 0}
               </p>
             </div>
-            <div className="p-3 bg-red-100 rounded-lg">
-              <TrendingDown className="w-6 h-6 text-red-600" />
+            <div className="p-2 bg-red-100 rounded-lg">
+              <TrendingDown className="w-5 h-5 text-red-600" />
             </div>
           </div>
         </motion.div>
@@ -222,33 +229,35 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+          className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Active Payments</p>
-              <p className="text-2xl font-bold text-blue-600">
+              <p className="text-xs font-semibold text-gray-600">Active Payments</p>
+              <p className="text-xl font-bold text-blue-600">
                 {paymentStats?.find(p => p._id === 'processing')?.count || 0}
               </p>
             </div>
-            <div className="p-3 bg-blue-100 rounded-lg">
-              <Clock className="w-6 h-6 text-blue-600" />
+            <div className="p-2 bg-blue-100 rounded-lg">
+              <Clock className="w-5 h-5 text-blue-600" />
             </div>
           </div>
         </motion.div>
       </div>
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Spend by Category */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+          className="bg-white p-5 rounded-xl shadow-md border border-gray-100"
         >
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Spending by Category</h3>
-          <Doughnut data={spendChartData} options={chartOptions} />
+          <h3 className="text-sm font-semibold text-gray-900 mb-3">Spending by Category</h3>
+          <div className="h-48">
+            <Doughnut data={spendChartData} options={chartOptions} />
+          </div>
         </motion.div>
 
         {/* Payment Status */}
@@ -256,10 +265,12 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+          className="bg-white p-5 rounded-xl shadow-md border border-gray-100"
         >
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Payment Status</h3>
-          <Bar data={paymentStatusData} options={chartOptions} />
+          <h3 className="text-sm font-semibold text-gray-900 mb-3">Payment Status</h3>
+          <div className="h-48">
+            <Bar data={paymentStatusData} options={chartOptions} />
+          </div>
         </motion.div>
       </div>
 
@@ -268,16 +279,16 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
-        className="bg-white rounded-xl shadow-sm border border-gray-200"
+        className="bg-white rounded-xl shadow-md border border-gray-100"
       >
-        <div className="p-6 border-b border-gray-200">
+        <div className="p-4 border-b border-gray-200">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-semibold text-gray-800">Spend Ledger</h3>
-            <div className="flex items-center gap-3">
+            <h3 className="text-sm font-semibold text-gray-900">Spend Ledger</h3>
+            <div className="flex items-center gap-2">
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300/50 focus:border-purple-400"
               >
                 <option value="all">All Categories</option>
                 <option value="campaign_funding">Campaign Funding</option>
@@ -288,7 +299,7 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
               </select>
               <button
                 onClick={onShowInvoiceModal}
-                className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                className="flex items-center gap-2 px-3 py-2 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-semibold"
               >
                 <Receipt className="w-4 h-4" />
                 View Invoices
@@ -301,25 +312,25 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Date
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Description
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Category
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Amount
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   HealCoins
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Status
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
@@ -327,31 +338,31 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
             <tbody className="bg-white divide-y divide-gray-200">
               {spendLedger.map((transaction, index) => (
                 <tr key={index}>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-4 py-3 whitespace-nowrap text-xs text-gray-900">
                     {new Date(transaction.createdAt).toLocaleDateString()}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-4 py-3 whitespace-nowrap text-xs text-gray-900">
                     {transaction.description}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">
+                  <td className="px-4 py-3 whitespace-nowrap text-xs text-gray-500">
+                    <span className="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-md text-xs">
                       {transaction.category.replace('_', ' ').toUpperCase()}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-4 py-3 whitespace-nowrap text-xs text-gray-900">
                     <span className={transaction.direction === 'inbound' ? 'text-green-600' : 'text-red-600'}>
                       {transaction.direction === 'inbound' ? '+' : '-'}₹{transaction.amount.toLocaleString()}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-4 py-3 whitespace-nowrap text-xs text-gray-900">
                     {transaction.healCoinsAmount > 0 && (
                       <span className={transaction.direction === 'inbound' ? 'text-green-600' : 'text-red-600'}>
                         {transaction.direction === 'inbound' ? '+' : '-'}{transaction.healCoinsAmount}
                       </span>
                     )}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                  <td className="px-4 py-3 whitespace-nowrap">
+                    <span className={`px-2 py-0.5 rounded-md text-xs font-medium ${
                       transaction.status === 'completed' ? 'bg-green-100 text-green-800' :
                       transaction.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
                       transaction.status === 'failed' ? 'bg-red-100 text-red-800' :
@@ -360,13 +371,13 @@ const CSRFinancialDashboard = ({ onShowPaymentModal, onShowInvoiceModal }) => {
                       {transaction.status.toUpperCase()}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <div className="flex items-center gap-2">
+                  <td className="px-4 py-3 whitespace-nowrap text-xs text-gray-500">
+                    <div className="flex items-center gap-1.5">
                       <button className="p-1 text-blue-500 hover:bg-blue-50 rounded">
-                        <Eye className="w-4 h-4" />
+                        <Eye className="w-3.5 h-3.5" />
                       </button>
                       <button className="p-1 text-gray-500 hover:bg-gray-50 rounded">
-                        <Download className="w-4 h-4" />
+                        <Download className="w-3.5 h-3.5" />
                       </button>
                     </div>
                   </td>

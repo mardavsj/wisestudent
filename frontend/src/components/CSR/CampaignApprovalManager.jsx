@@ -96,16 +96,16 @@ const CampaignApprovalManager = ({ onShowApprovalModal, onShowPilotResults }) =>
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-gray-800">Campaign Approvals</h2>
-          <p className="text-gray-600">Manage pilot mode approvals and school consent</p>
+          <h2 className="text-lg font-bold text-gray-900">Campaign Approvals</h2>
+          <p className="text-xs text-gray-600">Manage pilot mode approvals and school consent</p>
         </div>
         <button
           onClick={onShowApprovalModal}
-          className="flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+          className="flex items-center gap-2 px-3 py-2 text-sm bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors font-semibold"
         >
           <Plus className="w-4 h-4" />
           New Approval Request
@@ -114,30 +114,30 @@ const CampaignApprovalManager = ({ onShowApprovalModal, onShowPilotResults }) =>
 
       {/* Statistics Cards */}
       {statsLoading ? (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <div key={i} className="bg-white p-4 rounded-xl shadow-md border border-gray-100">
               <div className="animate-pulse">
-                <div className="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
-                <div className="h-8 bg-gray-200 rounded w-1/3"></div>
+                <div className="h-3 bg-gray-200 rounded w-1/2 mb-2"></div>
+                <div className="h-6 bg-gray-200 rounded w-1/3"></div>
               </div>
             </div>
           ))}
         </div>
       ) : stats && (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+            className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
           >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Total Approvals</p>
-                <p className="text-2xl font-bold text-gray-800">{stats.totalApprovals || 0}</p>
+                <p className="text-xs font-semibold text-gray-600">Total Approvals</p>
+                <p className="text-xl font-bold text-gray-900">{stats.totalApprovals || 0}</p>
               </div>
-              <div className="p-3 bg-blue-100 rounded-lg">
-                <FileText className="w-6 h-6 text-blue-600" />
+              <div className="p-2 bg-blue-100 rounded-lg">
+                <FileText className="w-5 h-5 text-blue-600" />
               </div>
             </div>
           </motion.div>
@@ -146,17 +146,17 @@ const CampaignApprovalManager = ({ onShowApprovalModal, onShowPilotResults }) =>
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+            className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
           >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Pending</p>
-                <p className="text-2xl font-bold text-yellow-600">
+                <p className="text-xs font-semibold text-gray-600">Pending</p>
+                <p className="text-xl font-bold text-yellow-600">
                   {stats.statusBreakdown?.find(s => s._id === 'pending')?.count || 0}
                 </p>
               </div>
-              <div className="p-3 bg-yellow-100 rounded-lg">
-                <Clock className="w-6 h-6 text-yellow-600" />
+              <div className="p-2 bg-yellow-100 rounded-lg">
+                <Clock className="w-5 h-5 text-yellow-600" />
               </div>
             </div>
           </motion.div>
@@ -165,17 +165,17 @@ const CampaignApprovalManager = ({ onShowApprovalModal, onShowPilotResults }) =>
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+            className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
           >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Approved</p>
-                <p className="text-2xl font-bold text-green-600">
+                <p className="text-xs font-semibold text-gray-600">Approved</p>
+                <p className="text-xl font-bold text-green-600">
                   {stats.statusBreakdown?.find(s => s._id === 'approved')?.count || 0}
                 </p>
               </div>
-              <div className="p-3 bg-green-100 rounded-lg">
-                <CheckCircle className="w-6 h-6 text-green-600" />
+              <div className="p-2 bg-green-100 rounded-lg">
+                <CheckCircle className="w-5 h-5 text-green-600" />
               </div>
             </div>
           </motion.div>
@@ -184,17 +184,17 @@ const CampaignApprovalManager = ({ onShowApprovalModal, onShowPilotResults }) =>
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white p-6 rounded-xl shadow-sm border border-gray-200"
+            className="bg-white p-4 rounded-xl shadow-md border border-gray-100"
           >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Pilot Mode</p>
-                <p className="text-2xl font-bold text-blue-600">
+                <p className="text-xs font-semibold text-gray-600">Pilot Mode</p>
+                <p className="text-xl font-bold text-blue-600">
                   {stats.approvalTypes?.find(t => t._id === 'pilot')?.count || 0}
                 </p>
               </div>
-              <div className="p-3 bg-blue-100 rounded-lg">
-                <Target className="w-6 h-6 text-blue-600" />
+              <div className="p-2 bg-blue-100 rounded-lg">
+                <Target className="w-5 h-5 text-blue-600" />
               </div>
             </div>
           </motion.div>
@@ -202,17 +202,17 @@ const CampaignApprovalManager = ({ onShowApprovalModal, onShowPilotResults }) =>
       )}
 
       {/* Filters */}
-      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-        <div className="flex flex-wrap items-center gap-4">
+      <div className="bg-white p-4 rounded-xl shadow-md border border-gray-100">
+        <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2">
             <Filter className="w-4 h-4 text-gray-500" />
-            <span className="text-sm font-medium text-gray-700">Filters:</span>
+            <span className="text-xs font-medium text-gray-700">Filters:</span>
           </div>
 
           <select
             value={filters.status}
             onChange={(e) => setFilters({ ...filters, status: e.target.value })}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            className="px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300/50 focus:border-purple-400"
           >
             <option value="all">All Status</option>
             <option value="pending">Pending</option>
@@ -224,7 +224,7 @@ const CampaignApprovalManager = ({ onShowApprovalModal, onShowPilotResults }) =>
           <select
             value={filters.approvalType}
             onChange={(e) => setFilters({ ...filters, approvalType: e.target.value })}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            className="px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300/50 focus:border-purple-400"
           >
             <option value="all">All Types</option>
             <option value="pilot">Pilot</option>
@@ -239,41 +239,41 @@ const CampaignApprovalManager = ({ onShowApprovalModal, onShowPilotResults }) =>
               placeholder="Search campaigns or schools..."
               value={filters.search}
               onChange={(e) => setFilters({ ...filters, search: e.target.value })}
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="flex-1 px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300/50 focus:border-purple-400"
             />
           </div>
         </div>
       </div>
 
       {/* Approvals List */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200">
-        <div className="p-6 border-b border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-800">Approval Requests</h3>
+      <div className="bg-white rounded-xl shadow-md border border-gray-100">
+        <div className="p-4 border-b border-gray-200">
+          <h3 className="text-sm font-semibold text-gray-900">Approval Requests</h3>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Campaign
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   School
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Type
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Status
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Progress
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Created
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
@@ -281,72 +281,72 @@ const CampaignApprovalManager = ({ onShowApprovalModal, onShowPilotResults }) =>
             <tbody className="bg-white divide-y divide-gray-200">
               {approvals && approvals.length > 0 ? approvals.map((approval) => (
                 <tr key={approval._id} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-4 py-3 whitespace-nowrap">
                     <div>
-                      <div className="text-sm font-medium text-gray-900">
+                      <div className="text-xs font-semibold text-gray-900">
                         {approval.campaignId?.title || 'N/A'}
                       </div>
-                      <div className="text-sm text-gray-500">
+                      <div className="text-xs text-gray-500">
                         {approval.campaignDetails?.targetStudents || 0} students
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-4 py-3 whitespace-nowrap">
                     <div className="flex items-center">
-                      <Building className="w-4 h-4 text-gray-400 mr-2" />
+                      <Building className="w-3.5 h-3.5 text-gray-400 mr-1.5" />
                       <div>
-                        <div className="text-sm font-medium text-gray-900">
+                        <div className="text-xs font-semibold text-gray-900">
                           {approval.schoolName}
                         </div>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-xs text-gray-500">
                           {approval.schoolType}
                         </div>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getApprovalTypeColor(approval.approvalType)}`}>
+                  <td className="px-4 py-3 whitespace-nowrap">
+                    <span className={`px-2 py-0.5 rounded-md text-xs font-medium ${getApprovalTypeColor(approval.approvalType)}`}>
                       {approval.approvalType.replace('_', ' ').toUpperCase()}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-4 py-3 whitespace-nowrap">
                     <div className="flex items-center">
                       {getStatusIcon(approval.status)}
-                      <span className={`ml-2 px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(approval.status)}`}>
+                      <span className={`ml-1.5 px-2 py-0.5 rounded-md text-xs font-medium ${getStatusColor(approval.status)}`}>
                         {approval.status.toUpperCase()}
                       </span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-4 py-3 whitespace-nowrap">
                     <div className="flex items-center">
-                      <div className="w-16 bg-gray-200 rounded-full h-2 mr-2">
+                      <div className="w-12 bg-gray-200 rounded-full h-2 mr-2">
                         <div 
                           className="bg-purple-500 h-2 rounded-full" 
                           style={{ width: `${approval.approvalProgress || 0}%` }}
                         ></div>
                       </div>
-                      <span className="text-sm text-gray-600">
+                      <span className="text-xs text-gray-600">
                         {approval.approvalProgress || 0}%
                       </span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <td className="px-4 py-3 whitespace-nowrap text-xs text-gray-500">
                     {new Date(approval.createdAt).toLocaleDateString()}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <div className="flex items-center gap-2">
+                  <td className="px-4 py-3 whitespace-nowrap text-xs text-gray-500">
+                    <div className="flex items-center gap-1.5">
                       <button className="p-1 text-blue-500 hover:bg-blue-50 rounded">
-                        <Eye className="w-4 h-4" />
+                        <Eye className="w-3.5 h-3.5" />
                       </button>
                       <button className="p-1 text-green-500 hover:bg-green-50 rounded">
-                        <Edit className="w-4 h-4" />
+                        <Edit className="w-3.5 h-3.5" />
                       </button>
                       {approval.approvalType === 'pilot' && approval.status === 'approved' && (
                         <button 
                           onClick={() => onShowPilotResults(approval)}
                           className="p-1 text-purple-500 hover:bg-purple-50 rounded"
                         >
-                          <Target className="w-4 h-4" />
+                          <Target className="w-3.5 h-3.5" />
                         </button>
                       )}
                     </div>
@@ -354,10 +354,10 @@ const CampaignApprovalManager = ({ onShowApprovalModal, onShowPilotResults }) =>
                 </tr>
               )) : (
                 <tr>
-                  <td colSpan="7" className="px-6 py-12 text-center">
-                    <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold text-gray-600 mb-2">No Approval Requests</h3>
-                    <p className="text-gray-500">Create your first approval request to get started</p>
+                  <td colSpan="7" className="px-4 py-8 text-center">
+                    <FileText className="w-12 h-12 text-gray-400 mx-auto mb-3" />
+                    <h3 className="text-sm font-semibold text-gray-600 mb-1">No Approval Requests</h3>
+                    <p className="text-xs text-gray-500">Create your first approval request to get started</p>
                   </td>
                 </tr>
               )}

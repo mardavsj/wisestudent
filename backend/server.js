@@ -1,6 +1,7 @@
 import { scheduleSubscriptionReminders } from './cronJobs/subscriptionReminders.js';
 import { scheduleSubscriptionExpirationNotifications } from './cronJobs/subscriptionExpirationNotifications.js';
 import { scheduleExpiredSubscriptionSync } from './cronJobs/syncExpiredSubscriptions.js';
+import { scheduleCSRAlertChecker } from './cronJobs/csrAlertChecker.js';
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -136,6 +137,10 @@ import csrReportRoutes from "./routes/csrReportRoutes.js";
 import campaignApprovalRoutes from "./routes/campaignApprovalRoutes.js";
 import budgetTrackingRoutes from "./routes/budgetTrackingRoutes.js";
 import csrOverviewRoutes from "./routes/csrOverviewRoutes.js";
+import csrGoalRoutes from "./routes/csrGoalRoutes.js";
+import csrComplianceRoutes from "./routes/csrComplianceRoutes.js";
+import csrROIRoutes from "./routes/csrROIRoutes.js";
+import csrAlertRoutes from "./routes/csrAlertRoutes.js";
 import avatarRoutes from "./routes/avatarRoutes.js";
 import announcementRoutes from "./routes/announcementRoutes.js";
 import assignmentAttemptRoutes from "./routes/assignmentAttemptRoutes.js";
@@ -313,6 +318,10 @@ app.use('/api/csr-reports', csrReportRoutes);
 app.use('/api/campaign-approvals', campaignApprovalRoutes);
 app.use('/api/budget-tracking', budgetTrackingRoutes);
 app.use('/api/csr-overview', csrOverviewRoutes);
+app.use('/api/csr-goals', csrGoalRoutes);
+app.use('/api/csr-compliance', csrComplianceRoutes);
+app.use('/api/csr-roi', csrROIRoutes);
+app.use('/api/csr-alerts', csrAlertRoutes);
 app.use('/api/avatar', avatarRoutes);
 app.use('/api/announcements', announcementRoutes);
 app.use('/api/assignment-attempts', assignmentAttemptRoutes);
@@ -390,6 +399,9 @@ server.listen(PORT, () => {
   
   // Schedule comprehensive subscription expiration notifications
   scheduleSubscriptionExpirationNotifications(io);
+  
+  // Schedule CSR alert checker
+  scheduleCSRAlertChecker(io);
   
   // Schedule periodic sync of expired subscriptions (syncs students/teachers when school plan expires)
   scheduleExpiredSubscriptionSync(io);

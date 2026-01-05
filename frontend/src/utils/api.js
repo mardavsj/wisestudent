@@ -27,8 +27,15 @@ api.interceptors.response.use(
       const currentPath = window.location.pathname;
       const publicPaths = ['/', '/institution-type', '/individual-account', '/register-stakeholder', '/register-parent', '/register-seller', '/register-teacher', '/school-registration', '/choose-account-type'];
       
-      // Only redirect if not already on login/register page and not on public paths
-      if (!currentPath.includes('/login') && !currentPath.includes('/register') && !publicPaths.includes(currentPath)) {
+      // Only logout/redirect for auth endpoint failures, not data endpoint failures
+      // Data endpoints might return 401 for missing permissions, which shouldn't trigger logout
+      const isAuthEndpoint = error.config?.url?.includes('/api/auth/');
+      
+      // Only redirect if:
+      // 1. It's an auth endpoint failure (like /api/auth/me)
+      // 2. Not already on login/register page
+      // 3. Not on public paths
+      if (isAuthEndpoint && !currentPath.includes('/login') && !currentPath.includes('/register') && !publicPaths.includes(currentPath)) {
         console.warn("🔐 Authentication failed. Clearing token and redirecting to login.");
         
         // Clear invalid token
@@ -50,6 +57,10 @@ api.interceptors.response.use(
         setTimeout(() => {
           window.location.href = '/login';
         }, 100);
+      } else if (!isAuthEndpoint) {
+        // For non-auth endpoints, just log the error but don't logout
+        // This allows CSR dashboard to handle the error gracefully
+        console.warn("⚠️ API request failed (401):", error.config?.url);
       } else {
         // On public/auth pages, just clear token without redirecting
         localStorage.removeItem("finmen_token");

@@ -31,47 +31,49 @@ const CSRCampaignWizard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
-        >
-          <div className="flex justify-between items-center mb-6">
-            <div>
-              <motion.h1 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-5xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent"
-              >
-                Campaign Wizard
-              </motion.h1>
-              <motion.p 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-gray-600 mt-2 flex items-center gap-2"
-              >
-                <Zap className="w-5 h-5 text-yellow-500" />
-                Create and manage comprehensive CSR campaigns with advanced analytics
-              </motion.p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <div className="bg-gradient-to-r from-indigo-50/95 via-purple-50/95 to-pink-50/95 backdrop-blur-xl border-b border-indigo-200/60 sticky top-0 z-40 shadow-md">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 md:py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="p-1.5 sm:p-2 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg shadow-md shadow-indigo-500/30 flex-shrink-0">
+                  <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 truncate">
+                    Campaign Wizard
+                  </h1>
+                  <p className="text-gray-600 text-xs sm:text-sm mt-0.5 hidden sm:block">
+                    Create and manage comprehensive CSR campaigns with advanced analytics
+                  </p>
+                </div>
+              </div>
             </div>
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4 }}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => setShowWizard(true)}
-              className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-2xl hover:shadow-2xl transition-all font-semibold text-lg"
+              className="flex items-center justify-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-lg hover:shadow-md transition-all font-semibold text-xs sm:text-sm flex-shrink-0"
             >
-              <Zap className="w-6 h-6" />
-              Create New Campaign
+              <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">Create New Campaign</span>
+              <span className="sm:hidden">Create</span>
             </motion.button>
           </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-6"
+        >
         </motion.div>
 
         {/* Features Grid */}
@@ -79,7 +81,7 @@ const CSRCampaignWizard = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6"
         >
           {[
             {
@@ -117,19 +119,19 @@ const CSRCampaignWizard = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className={`p-8 bg-gradient-to-br ${feature.bgColor} border-2 ${feature.borderColor} rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300`}
+                whileHover={{ y: -2, scale: 1.01 }}
+                className={`p-5 bg-gradient-to-br ${feature.bgColor} border border-gray-100 rounded-xl shadow-md hover:shadow-lg transition-all duration-300`}
               >
-                <div className={`p-4 rounded-2xl bg-gradient-to-r ${feature.color} w-fit mb-6`}>
-                  <Icon className="w-8 h-8 text-white" />
+                <div className={`p-2 rounded-lg bg-gradient-to-r ${feature.color} w-fit mb-4`}>
+                  <Icon className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">{feature.title}</h3>
-                <p className="text-gray-600 font-medium mb-6">{feature.description}</p>
-                <div className="space-y-2">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-xs text-gray-600 mb-4">{feature.description}</p>
+                <div className="space-y-1.5">
                   {feature.features.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-gray-700">
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-gray-400 to-gray-600" />
-                      <span className="text-sm font-medium">{item}</span>
+                    <div key={idx} className="flex items-center gap-2 text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-gray-400 to-gray-600" />
+                      <span className="text-xs font-medium">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -143,13 +145,13 @@ const CSRCampaignWizard = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20 mb-8"
+          className="bg-white rounded-xl p-5 shadow-md border border-gray-100 mb-6"
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-            <Target className="w-8 h-8 text-indigo-500" />
+          <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <Target className="w-5 h-5 text-indigo-500" />
             Campaign Types
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               {
                 title: 'Financial Literacy',
@@ -191,15 +193,15 @@ const CSRCampaignWizard = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.9 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border-2 border-gray-200 hover:shadow-lg transition-all duration-300"
+                  whileHover={{ y: -2, scale: 1.01 }}
+                  className="p-4 bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200 hover:shadow-md transition-all duration-300"
                 >
-                  <div className={`p-3 rounded-xl bg-gradient-to-r ${type.color} w-fit mb-4`}>
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className={`p-2 rounded-lg bg-gradient-to-r ${type.color} w-fit mb-3`}>
+                    <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <h4 className="text-lg font-bold text-gray-800 mb-2">{type.title}</h4>
-                  <p className="text-gray-600 text-sm mb-4">{type.description}</p>
-                  <div className="flex justify-between text-sm">
+                  <h4 className="text-sm font-bold text-gray-900 mb-1.5">{type.title}</h4>
+                  <p className="text-xs text-gray-600 mb-3">{type.description}</p>
+                  <div className="flex justify-between text-xs">
                     <span className="text-gray-500">Students: <span className="font-semibold text-gray-800">{type.students}</span></span>
                     <span className="text-gray-500">Completion: <span className="font-semibold text-gray-800">{type.completion}</span></span>
                   </div>
@@ -214,17 +216,17 @@ const CSRCampaignWizard = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0 }}
-          className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20"
+          className="bg-white rounded-xl p-5 shadow-md border border-gray-100"
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-            <Calendar className="w-8 h-8 text-green-500" />
+          <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <Calendar className="w-5 h-5 text-green-500" />
             Recent Campaigns
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {loading ? (
-              <div className="text-center py-8">
-                <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-                <p className="text-gray-500">Loading recent campaigns...</p>
+              <div className="text-center py-6">
+                <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-indigo-600 mx-auto mb-3"></div>
+                <p className="text-xs text-gray-500">Loading recent campaigns...</p>
               </div>
             ) : recentCampaigns.length > 0 ? recentCampaigns.map((campaign, index) => {
               const getStatusColor = (status) => {
@@ -251,22 +253,22 @@ const CSRCampaignWizard = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1.1 + index * 0.1 }}
-                  className="flex items-center gap-6 p-6 bg-gradient-to-r from-gray-50 to-white rounded-2xl hover:shadow-lg transition-all"
+                  className="flex items-center gap-4 p-4 bg-gradient-to-r from-gray-50 to-white rounded-lg hover:shadow-md transition-all"
                 >
-                  <div className={`w-4 h-4 rounded-full bg-${getStatusColor(campaign.status)}-500`} />
+                  <div className={`w-3 h-3 rounded-full bg-${getStatusColor(campaign.status)}-500`} />
                   <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-gray-800">{campaign.name || campaign.title}</h4>
-                    <p className="text-sm text-gray-600">
+                    <h4 className="text-sm font-semibold text-gray-900">{campaign.name || campaign.title}</h4>
+                    <p className="text-xs text-gray-600">
                       {campaign.participants?.length || 0} students • 
                       {campaign.startDate ? new Date(campaign.startDate).toLocaleDateString() : 'TBD'} - 
                       {campaign.endDate ? new Date(campaign.endDate).toLocaleDateString() : 'TBD'}
                     </p>
                   </div>
                   <div className="text-right">
-                    <span className={`px-3 py-1 rounded-full text-sm font-semibold bg-${getStatusColor(campaign.status)}-100 text-${getStatusColor(campaign.status)}-800`}>
+                    <span className={`px-2 py-0.5 rounded-md text-xs font-semibold bg-${getStatusColor(campaign.status)}-100 text-${getStatusColor(campaign.status)}-800`}>
                       {campaign.status}
                     </span>
-                    <div className="mt-2 w-32 bg-gray-200 rounded-full h-2">
+                    <div className="mt-2 w-24 bg-gray-200 rounded-full h-2">
                       <div 
                         className={`h-2 rounded-full bg-gradient-to-r from-${getStatusColor(campaign.status)}-500 to-${getStatusColor(campaign.status)}-600`}
                         style={{ width: `${getProgress(campaign)}%` }}
@@ -277,10 +279,10 @@ const CSRCampaignWizard = () => {
                 </motion.div>
               );
             }) : (
-              <div className="text-center py-8">
-                <Calendar className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-600 mb-2">No Recent Campaigns</h3>
-                <p className="text-gray-500">Create your first campaign to get started</p>
+              <div className="text-center py-6">
+                <Calendar className="w-12 h-12 text-gray-400 mx-auto mb-3" />
+                <h3 className="text-sm font-semibold text-gray-600 mb-1">No Recent Campaigns</h3>
+                <p className="text-xs text-gray-500">Create your first campaign to get started</p>
               </div>
             )}
           </div>

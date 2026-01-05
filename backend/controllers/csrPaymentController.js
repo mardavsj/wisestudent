@@ -31,20 +31,34 @@ export const createPayment = async (req, res) => {
       });
     }
 
-    // Get organization details
-    const organization = await Organization.findById(req.user?.organizationId || '507f1f77bcf86cd799439011');
-    if (!organization) {
-      return res.status(404).json({
+    // Validate user
+    if (!req.user) {
+      return res.status(401).json({
         success: false,
-        message: 'Organization not found'
+        message: 'Authentication required.'
       });
+    }
+
+    // Use orgId if available, otherwise use user's _id as fallback
+    const organizationId = req.user.orgId ? req.user.orgId.toString() : req.user._id.toString();
+    
+    // Get organization details (if orgId exists)
+    let organization = null;
+    if (req.user.orgId) {
+      organization = await Organization.findById(req.user.orgId);
+      if (!organization) {
+        return res.status(404).json({
+          success: false,
+          message: 'Organization not found'
+        });
+      }
     }
 
     // Create payment record
     const payment = new CSRPayment({
       paymentType,
-      organizationId: req.user?.organizationId || '507f1f77bcf86cd799439011',
-      organizationName: organization.name,
+      organizationId: organizationId,
+      organizationName: organization?.name || 'CSR User',
       csrContactId: req.user._id,
       campaignId: campaignId || null,
       amount,
@@ -69,11 +83,12 @@ export const createPayment = async (req, res) => {
       null,
       payment.toObject()
     );
+    await payment.save(); // Save again to persist audit entry
 
     // Create spend ledger entry
     const ledgerEntry = new SpendLedger({
       transactionType: paymentType === 'healcoins_pool' ? 'healcoins_fund' : 'payment',
-      organizationId: req.user?.organizationId || '507f1f77bcf86cd799439011',
+      organizationId: organizationId,
       campaignId: campaignId || null,
       amount,
       currency: currency || 'INR',
@@ -89,6 +104,12 @@ export const createPayment = async (req, res) => {
 
     await ledgerEntry.updateBalances();
     await ledgerEntry.save();
+
+    // Emit socket event for real-time updates
+    const io = req.app?.get('io');
+    if (io && organizationId) {
+      io.to(organizationId.toString()).emit('csr:overview:update');
+    }
 
     res.status(201).json({
       success: true,
@@ -230,6 +251,13 @@ export const updatePaymentStatus = async (req, res) => {
       oldStatus,
       status
     );
+    await payment.save(); // Save again to persist audit entry
+
+    // Emit socket event for real-time updates
+    const io = req.app?.get('io');
+    if (io && payment.organizationId) {
+      io.to(payment.organizationId.toString()).emit('csr:overview:update');
+    }
 
     res.json({
       success: true,
@@ -282,6 +310,13 @@ export const approvePayment = async (req, res) => {
       'pending_approval',
       payment.approvalStatus
     );
+    await payment.save(); // Save again to persist audit entry
+
+    // Emit socket event for real-time updates
+    const io = req.app?.get('io');
+    if (io && payment.organizationId) {
+      io.to(payment.organizationId.toString()).emit('csr:overview:update');
+    }
 
     res.json({
       success: true,
@@ -333,6 +368,12 @@ export const processPayment = async (req, res) => {
     }
 
     await payment.save();
+
+    // Emit socket event for real-time updates
+    const io = req.app?.get('io');
+    if (io && payment.organizationId) {
+      io.to(payment.organizationId.toString()).emit('csr:overview:update');
+    }
 
     res.json({
       success: true,

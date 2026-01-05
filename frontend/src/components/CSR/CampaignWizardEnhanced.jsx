@@ -3,13 +3,29 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   ChevronLeft, ChevronRight, Save, Send, CheckCircle, AlertCircle,
   School, Users, Target, DollarSign, Shield, Rocket, BarChart3,
-  Plus, X, Upload, Download, Eye, Edit, Trash2, Clock
+  Plus, X, Upload, Download, Eye, Edit, Trash2, Clock, Zap
 } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 import campaignWizardService from '../../services/campaignWizardService';
 
 const CampaignWizardEnhanced = ({ onClose, onSuccess }) => {
   const [currentStep, setCurrentStep] = useState(1);
+  
+  // Add scrollbar hide styles
+  React.useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    `;
+    document.head.appendChild(style);
+    return () => document.head.removeChild(style);
+  }, []);
   const [campaignData, setCampaignData] = useState({
     // Step 1: Scope
     title: '',
@@ -150,63 +166,109 @@ const CampaignWizardEnhanced = ({ onClose, onSuccess }) => {
     }
   };
 
+  const progressPercentage = ((currentStep - 1) / steps.length) * 100;
+
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-6">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-4">
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.9 }}
-        className="bg-white rounded-3xl shadow-2xl w-full max-w-7xl h-[95vh] flex flex-col overflow-hidden"
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl h-[92vh] flex flex-col overflow-hidden border border-gray-100"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-8 border-b border-gray-200 bg-white">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Create New Campaign</h2>
-            <p className="text-gray-600 text-lg">Step {currentStep} of {steps.length}: {steps[currentStep - 1].title}</p>
+        <div className="relative flex items-center justify-between px-6 py-4 border-b border-gray-200/80 bg-gradient-to-r from-indigo-50/98 via-purple-50/98 to-pink-50/98 backdrop-blur-sm">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-3 mb-1">
+              <div className="p-2 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg shadow-sm">
+                <Zap className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Create New Campaign
+              </h2>
+            </div>
+            <div className="flex items-center gap-3 ml-12">
+              <p className="text-gray-600 text-sm font-medium">
+                Step {currentStep} of {steps.length}: <span className="text-indigo-600 font-semibold">{steps[currentStep - 1].title}</span>
+              </p>
+              <div className="h-1 w-24 bg-gray-200 rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: `${progressPercentage}%` }}
+                  transition={{ duration: 0.3 }}
+                  className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+                />
+              </div>
+              <span className="text-xs text-gray-500 font-medium">{Math.round(progressPercentage)}%</span>
+            </div>
           </div>
           <button
             onClick={onClose}
-            className="p-3 hover:bg-gray-100 rounded-lg transition-all duration-200 hover:scale-105"
+            className="p-2 hover:bg-gray-100 rounded-lg transition-all duration-200 hover:scale-105 flex-shrink-0 ml-4 group"
+            aria-label="Close modal"
           >
-            <X className="w-6 h-6 text-gray-500" />
+            <X className="w-5 h-5 text-gray-500 group-hover:text-gray-700" />
           </button>
         </div>
 
         {/* Progress Bar */}
-        <div className="px-8 py-6 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100">
-          <div className="overflow-x-auto">
-            <div className="flex items-center justify-between min-w-max space-x-12">
+        <div className="px-6 py-4 border-b border-gray-200/80 bg-white/50 backdrop-blur-sm">
+          <div className="overflow-x-auto scrollbar-hide">
+            <div className="flex items-center justify-between min-w-max space-x-3">
               {steps.map((step, index) => {
                 const StepIcon = step.icon;
                 const isCompleted = index < currentStep - 1;
                 const isCurrent = index === currentStep - 1;
+                const stepColors = [
+                  'from-blue-500 to-cyan-500',
+                  'from-purple-500 to-pink-500',
+                  'from-green-500 to-emerald-500',
+                  'from-amber-500 to-orange-500',
+                  'from-indigo-500 to-purple-500',
+                  'from-rose-500 to-pink-500',
+                  'from-violet-500 to-purple-500'
+                ];
+                const stepColor = stepColors[index] || 'from-gray-500 to-gray-600';
                 
                 return (
-                  <div key={step.id} className="flex items-center flex-shrink-0">
-                    <div className={`flex items-center justify-center w-14 h-14 rounded-full border-2 transition-all duration-300 ${
-                      isCompleted ? 'bg-green-500 border-green-500 text-white shadow-lg shadow-green-200' :
-                      isCurrent ? 'bg-purple-500 border-purple-500 text-white shadow-lg shadow-purple-200 scale-110' :
-                      'border-gray-300 text-gray-400 hover:border-gray-400 hover:bg-gray-50'
-                    }`}>
-                      {isCompleted ? (
-                        <CheckCircle className="w-7 h-7" />
-                      ) : (
-                        <StepIcon className="w-7 h-7" />
-                      )}
-                    </div>
-                    <div className="ml-4 min-w-0">
-                      <p className={`text-sm font-bold transition-colors duration-300 ${
-                        isCurrent ? 'text-purple-600' : isCompleted ? 'text-green-600' : 'text-gray-500'
-                      }`}>
-                        {step.title}
-                      </p>
-                      <p className="text-xs text-gray-500 mt-1 leading-tight max-w-36">
-                        {step.description}
-                      </p>
+                  <div key={step.id} className="flex items-center flex-shrink-0 group">
+                    <div className="flex flex-col items-center">
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        className={`relative flex items-center justify-center w-11 h-11 rounded-full border-2 transition-all duration-300 ${
+                          isCompleted ? `bg-gradient-to-br ${stepColor} border-transparent text-white shadow-lg` :
+                          isCurrent ? `bg-gradient-to-br ${stepColor} border-transparent text-white shadow-lg shadow-purple-200 ring-4 ring-purple-100` :
+                          'border-gray-300 bg-white text-gray-400 group-hover:border-indigo-300 group-hover:bg-indigo-50'
+                        }`}>
+                        {isCompleted ? (
+                          <CheckCircle className="w-5 h-5" />
+                        ) : (
+                          <StepIcon className="w-5 h-5" />
+                        )}
+                        {isCurrent && (
+                          <motion.div
+                            className="absolute inset-0 rounded-full border-2 border-purple-300"
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                          />
+                        )}
+                      </motion.div>
+                      <div className="mt-2 text-center min-w-[80px]">
+                        <p className={`text-xs font-bold transition-colors duration-300 ${
+                          isCurrent ? `bg-gradient-to-r ${stepColor} bg-clip-text text-transparent` : 
+                          isCompleted ? 'text-green-600' : 'text-gray-500'
+                        }`}>
+                          {step.title}
+                        </p>
+                        <p className="text-[10px] text-gray-500 mt-0.5 leading-tight">
+                          {step.description}
+                        </p>
+                      </div>
                     </div>
                     {index < steps.length - 1 && (
-                      <div className={`w-20 h-1 mx-8 transition-colors duration-300 rounded-full ${
-                        isCompleted ? 'bg-green-500' : 'bg-gray-300'
+                      <div className={`w-16 h-0.5 mx-3 transition-all duration-500 rounded-full ${
+                        isCompleted ? `bg-gradient-to-r ${stepColor}` : 'bg-gray-200'
                       }`} />
                     )}
                   </div>
@@ -217,15 +279,15 @@ const CampaignWizardEnhanced = ({ onClose, onSuccess }) => {
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto">
-          <div className="p-8">
+        <div className="flex-1 overflow-y-auto bg-gray-50/30">
+          <div className="p-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentStep}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
                 className="max-w-5xl mx-auto"
               >
                 {renderStepContent()}
@@ -235,43 +297,47 @@ const CampaignWizardEnhanced = ({ onClose, onSuccess }) => {
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between p-8 border-t border-gray-200 bg-gray-50">
+        <div className="flex items-center justify-between gap-4 px-6 py-4 border-t border-gray-200/80 bg-white/80 backdrop-blur-sm">
           <button
             onClick={handlePrevious}
             disabled={currentStep === 1}
-            className="flex items-center gap-3 px-6 py-3 text-gray-600 hover:text-gray-800 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg hover:bg-gray-100 transition-all duration-200"
+            className="flex items-center gap-2 px-5 py-2.5 text-gray-700 hover:text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed rounded-lg hover:bg-gray-100 transition-all duration-200 font-medium text-sm border border-gray-200 bg-white"
           >
-            <ChevronLeft className="w-5 h-5" />
-            <span className="font-medium">Previous</span>
+            <ChevronLeft className="w-4 h-4" />
+            <span>Previous</span>
           </button>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <button
               onClick={handleSave}
               disabled={loading}
-              className="flex items-center gap-2 px-6 py-3 bg-white text-gray-700 rounded-lg hover:bg-gray-50 transition-all duration-200 disabled:opacity-50 border border-gray-200 shadow-sm"
+              className="flex items-center gap-2 px-5 py-2.5 bg-white text-gray-700 rounded-lg hover:bg-gray-50 transition-all duration-200 disabled:opacity-50 border border-gray-300 shadow-sm text-sm font-semibold hover:shadow-md"
             >
-              <Save className="w-5 h-5" />
-              <span className="font-medium">Save Draft</span>
+              <Save className="w-4 h-4" />
+              <span>Save Draft</span>
             </button>
 
             {currentStep === steps.length ? (
-              <button
+              <motion.button
                 onClick={handleSubmit}
                 disabled={loading}
-                className="flex items-center gap-2 px-6 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors disabled:opacity-50"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all disabled:opacity-50 text-sm font-semibold shadow-md"
               >
                 <Send className="w-4 h-4" />
-                Create Campaign
-              </button>
+                <span>Create Campaign</span>
+              </motion.button>
             ) : (
-              <button
+              <motion.button
                 onClick={handleNext}
-                className="flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all text-sm font-semibold shadow-md"
               >
-                Next
+                <span>Next</span>
                 <ChevronRight className="w-4 h-4" />
-              </button>
+              </motion.button>
             )}
           </div>
         </div>
@@ -296,142 +362,197 @@ const ScopeStep = ({ data, updateData }) => {
   };
 
   return (
-    <div className="space-y-8">
-      <div className="text-center">
-        <h3 className="text-2xl font-bold text-gray-800 mb-3">Define Campaign Scope</h3>
-        <p className="text-gray-600 text-lg">Set the scope and target audience for your campaign.</p>
+    <div className="space-y-6">
+      <div className="text-center pb-2">
+        <div className="inline-flex items-center justify-center p-2.5 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl shadow-lg shadow-blue-500/30 mb-3">
+          <Target className="w-6 h-6 text-white" />
+        </div>
+        <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-2">
+          Define Campaign Scope
+        </h3>
+        <p className="text-gray-600 text-sm max-w-2xl mx-auto">
+          Set the scope and target audience for your campaign. This information will help us tailor the campaign to your specific needs.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="space-y-6">
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-3">Campaign Title</label>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="space-y-5">
+          <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+            <label className="block text-xs font-semibold text-gray-700 mb-2 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+              Campaign Title
+              <span className="text-red-500 ml-1">*</span>
+            </label>
             <input
               type="text"
               value={data.title}
               onChange={(e) => updateData({ title: e.target.value })}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-              placeholder="Enter campaign title"
+              className="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 bg-gray-50/50"
+              placeholder="Enter a descriptive campaign title"
+              required
             />
+            <p className="text-xs text-gray-500 mt-1.5">Choose a clear, descriptive name for your campaign</p>
           </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-3">Description</label>
+          <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+            <label className="block text-xs font-semibold text-gray-700 mb-2 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+              Description
+              <span className="text-red-500 ml-1">*</span>
+            </label>
             <textarea
               value={data.description}
               onChange={(e) => updateData({ description: e.target.value })}
-              rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 resize-none"
-              placeholder="Describe the campaign objectives and goals"
+              rows={5}
+              className="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all duration-200 resize-none bg-gray-50/50"
+              placeholder="Describe the campaign objectives, goals, and expected outcomes..."
+              required
             />
+            <p className="text-xs text-gray-500 mt-1.5">{data.description.length}/500 characters</p>
           </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-3">Scope Type</label>
+          <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+            <label className="block text-xs font-semibold text-gray-700 mb-2 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+              Scope Type
+            </label>
             <select
               value={data.scopeType}
               onChange={(e) => updateData({ scopeType: e.target.value })}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+              className="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-all duration-200 bg-gray-50/50"
             >
               <option value="single_school">Single School</option>
               <option value="multi_school">Multiple Schools</option>
               <option value="district">District-wide</option>
             </select>
+            <p className="text-xs text-gray-500 mt-1.5">Select the geographic scope of your campaign</p>
           </div>
         </div>
 
-        <div className="space-y-6">
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-3">Grade Levels</label>
-            <div className="flex flex-wrap gap-3">
+        <div className="space-y-5">
+          <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+            <label className="block text-xs font-semibold text-gray-700 mb-2 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              Grade Levels
+            </label>
+            <div className="flex flex-wrap gap-2.5">
               {['6', '7', '8', '9', '10', '11', '12'].map(grade => (
-                <button
+                <motion.button
                   key={grade}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => {
                     const updated = data.gradeLevels.includes(grade)
                       ? data.gradeLevels.filter(g => g !== grade)
                       : [...data.gradeLevels, grade];
                     updateData({ gradeLevels: updated });
                   }}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
                     data.gradeLevels.includes(grade)
-                      ? 'bg-purple-500 text-white shadow-md'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
+                      ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md'
+                      : 'bg-gray-50 text-gray-700 hover:bg-amber-50 border border-gray-300 hover:border-amber-300'
                   }`}
                 >
                   Grade {grade}
-                </button>
+                </motion.button>
               ))}
             </div>
+            <p className="text-xs text-gray-500 mt-2">
+              {data.gradeLevels.length > 0 ? `${data.gradeLevels.length} grade level(s) selected` : 'Select target grade levels'}
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-3">Min Participants</label>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+              <label className="block text-xs font-semibold text-gray-700 mb-2">Min Participants</label>
               <input
                 type="number"
                 value={data.minParticipants}
-                onChange={(e) => updateData({ minParticipants: parseInt(e.target.value) })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                onChange={(e) => updateData({ minParticipants: parseInt(e.target.value) || 0 })}
+                min="1"
+                className="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 bg-gray-50/50"
               />
             </div>
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-3">Max Participants</label>
+            <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+              <label className="block text-xs font-semibold text-gray-700 mb-2">Max Participants</label>
               <input
                 type="number"
                 value={data.maxParticipants}
-                onChange={(e) => updateData({ maxParticipants: parseInt(e.target.value) })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                onChange={(e) => updateData({ maxParticipants: parseInt(e.target.value) || 0 })}
+                min={data.minParticipants}
+                className="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500 transition-all duration-200 bg-gray-50/50"
               />
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-3">Priority</label>
+          <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+            <label className="block text-xs font-semibold text-gray-700 mb-2 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+              Priority Level
+            </label>
             <select
               value={data.priority}
               onChange={(e) => updateData({ priority: e.target.value })}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+              className="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 transition-all duration-200 bg-gray-50/50"
             >
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
-              <option value="urgent">Urgent</option>
+              <option value="low">Low - Standard processing</option>
+              <option value="medium">Medium - Normal priority</option>
+              <option value="high">High - Expedited processing</option>
+              <option value="urgent">Urgent - Immediate attention</option>
             </select>
+            <p className="text-xs text-gray-500 mt-1.5">Priority affects resource allocation and processing time</p>
           </div>
         </div>
       </div>
 
-      <div className="mt-8">
-        <label className="block text-lg font-semibold text-gray-800 mb-4">Campaign Objectives</label>
-        <div className="space-y-4">
-          {data.objectives.map((objective, index) => (
-            <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
-              <span className="flex-1 text-sm font-medium text-gray-800">{objective}</span>
-              <button
-                onClick={() => removeObjective(index)}
-                className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors duration-200"
+      <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm">
+        <label className="block text-sm font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <div className="p-1.5 bg-gradient-to-br from-violet-500 to-purple-500 rounded-lg shadow-sm">
+            <Target className="w-4 h-4 text-white" />
+          </div>
+          Campaign Objectives
+          <span className="text-xs font-normal text-gray-500 ml-2">({data.objectives.length} added)</span>
+        </label>
+        <div className="space-y-2.5">
+          {data.objectives.length > 0 ? (
+            data.objectives.map((objective, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="flex items-center gap-3 p-3 bg-gradient-to-r from-violet-50 to-purple-50 rounded-lg border border-violet-200"
               >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-          ))}
-          <div className="flex gap-3">
+                <div className="flex-1 text-sm font-medium text-gray-800">{objective}</div>
+                <button
+                  onClick={() => removeObjective(index)}
+                  className="p-1.5 text-red-500 hover:bg-red-100 rounded-lg transition-colors duration-200"
+                  aria-label="Remove objective"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </motion.div>
+            ))
+          ) : (
+            <p className="text-xs text-gray-500 italic py-2">No objectives added yet. Add your first objective below.</p>
+          )}
+          <div className="flex gap-2 pt-2">
             <input
               type="text"
               value={newObjective}
               onChange={(e) => setNewObjective(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && addObjective()}
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-              placeholder="Add objective"
+              className="flex-1 px-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all duration-200 bg-gray-50/50"
+              placeholder="Enter a campaign objective..."
             />
-            <button
+            <motion.button
               onClick={addObjective}
-              className="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-all duration-200 flex items-center gap-2 font-medium"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-5 py-2.5 bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-lg hover:shadow-md transition-all duration-200 flex items-center gap-2 font-semibold text-sm shadow-sm"
             >
               <Plus className="w-4 h-4" />
               Add
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>

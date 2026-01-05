@@ -1,253 +1,301 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
 import {
-  BarChart3, Target, Zap, DollarSign, FileText, CheckCircle,
-  TrendingUp, CreditCard, Users, ArrowRight, Star, Activity,
-  Globe, Award, Building, Heart, Brain, BookOpen, RefreshCw,
-  Calendar, MapPin, Clock, ChevronRight, Sparkles, Trophy
+  Users, Activity, MapPin, Clock, DollarSign, Target, TrendingUp,
+  Bell, Calendar, AlertTriangle, ArrowRight, BarChart3, Sparkles, Zap
 } from 'lucide-react';
 import { csrOverviewService } from '../../services/csrOverviewService';
+import csrGoalService from '../../services/csrGoalService';
+import csrComplianceService from '../../services/csrComplianceService';
+import csrAlertService from '../../services/csrAlertService';
+import { useSocket } from '../../context/SocketContext';
 
 const CSRDashboard = () => {
-  const location = useLocation();
+  const socketContext = useSocket();
+  const socket = socketContext?.socket || null;
   const [loading, setLoading] = useState(true);
-  const [refreshing, setRefreshing] = useState(false);
+  const [timeRange, setTimeRange] = useState('month');
   const [overviewData, setOverviewData] = useState(null);
-  const [realTimeMetrics, setRealTimeMetrics] = useState(null);
   const [recentActivity, setRecentActivity] = useState([]);
   const [liveStats, setLiveStats] = useState(null);
+  const [goalsSummary, setGoalsSummary] = useState(null);
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
+  const [unreadAlertsCount, setUnreadAlertsCount] = useState(0);
+  const [activeGoals, setActiveGoals] = useState([]);
   const [error, setError] = useState(null);
 
   // Fetch all dashboard data
-  const fetchDashboardData = async (isRefresh = false) => {
+  const fetchDashboardData = useCallback(async () => {
     try {
-      if (isRefresh) {
-        setRefreshing(true);
-      } else {
-        setLoading(true);
-      }
       setError(null);
 
-      console.log('🔄 Fetching CSR dashboard data...');
-
-      // Fetch all data in parallel
-      const [overviewResponse, realTimeResponse, activityResponse, liveStatsResponse] = await Promise.all([
-        csrOverviewService.getOverviewData({ period: 'month' }),
-        csrOverviewService.getRealTimeMetrics(),
+      const [
+        overviewResponse,
+        activityResponse,
+        liveStatsResponse,
+        goalsProgressResponse,
+        upcomingEventsResponse,
+        unreadAlertsResponse,
+        goalsResponse
+      ] = await Promise.all([
+        csrOverviewService.getOverviewData({ period: timeRange }),
         csrOverviewService.getRecentActivity(10),
-        csrOverviewService.getLiveStats()
+        csrOverviewService.getLiveStats(),
+        csrGoalService.getGoalProgress().catch(() => ({ data: null })),
+        csrComplianceService.getUpcomingEvents().catch(() => ({ data: [] })),
+        csrAlertService.getUnreadAlertsCount().catch(() => ({ count: 0 })),
+        csrGoalService.getGoals({ status: 'active' }).catch(() => ({ data: [] }))
       ]);
 
-      console.log('📊 Overview data:', overviewResponse.data);
-      console.log('⚡ Real-time metrics:', realTimeResponse.data);
-      console.log('📈 Activity data:', activityResponse.data);
-      console.log('📊 Live stats:', liveStatsResponse.data);
-
       setOverviewData(overviewResponse.data);
-      setRealTimeMetrics(realTimeResponse.data);
       setRecentActivity(activityResponse.data);
       setLiveStats(liveStatsResponse.data);
-
-      console.log('✅ Dashboard data updated successfully');
+      setGoalsSummary(goalsProgressResponse?.data || null);
+      setUpcomingEvents(upcomingEventsResponse?.data || []);
+      setUnreadAlertsCount(unreadAlertsResponse?.count || 0);
+      setActiveGoals((goalsResponse?.data || []).slice(0, 3));
     } catch (err) {
       console.error('❌ Error fetching dashboard data:', err);
-      setError(err.message || 'Failed to fetch dashboard data');
+      
+      if (err.response?.status === 401) {
+        return;
+      }
+      
+      setError(err.response?.data?.message || err.message || 'Failed to fetch dashboard data');
     } finally {
       setLoading(false);
-      setRefreshing(false);
     }
-  };
+  }, [timeRange]);
 
-  // Initial data fetch
+  // Initial data fetch and when time range changes
   useEffect(() => {
+    setLoading(true);
     fetchDashboardData();
-  }, []);
+  }, [fetchDashboardData]);
 
-  // Auto-refresh every 30 seconds
+  // Real-time updates via Socket.IO
   useEffect(() => {
+    if (!socket) return;
+
+    // Listen for CSR dashboard updates
+    const handleDashboardUpdate = (data) => {
+      if (data.overviewData) setOverviewData(data.overviewData);
+      if (data.liveStats) setLiveStats(data.liveStats);
+      if (data.recentActivity) setRecentActivity(data.recentActivity);
+    };
+
+    // Listen for goals updates
+    const handleGoalsUpdate = async () => {
+      try {
+        const [goalsProgressResponse, goalsResponse] = await Promise.all([
+          csrGoalService.getGoalProgress().catch(() => ({ data: null })),
+          csrGoalService.getGoals({ status: 'active' }).catch(() => ({ data: [] }))
+        ]);
+        setGoalsSummary(goalsProgressResponse?.data || null);
+        setActiveGoals((goalsResponse?.data || []).slice(0, 3));
+      } catch (error) {
+        console.error('Error updating goals:', error);
+      }
+    };
+
+    // Listen for compliance events updates
+    const handleComplianceUpdate = async () => {
+      try {
+        const response = await csrComplianceService.getUpcomingEvents().catch(() => ({ data: [] }));
+        setUpcomingEvents(response?.data || []);
+      } catch (error) {
+        console.error('Error updating compliance events:', error);
+      }
+    };
+
+    // Listen for alerts updates
+    const handleAlertsUpdate = async () => {
+      try {
+        const response = await csrAlertService.getUnreadAlertsCount().catch(() => ({ count: 0 }));
+        setUnreadAlertsCount(response?.count || 0);
+      } catch (error) {
+        console.error('Error updating alerts:', error);
+      }
+    };
+
+    // Handle new activity events
+    const handleNewActivity = (activity) => {
+      setRecentActivity(prev => [activity, ...prev].slice(0, 10));
+    };
+
+    // Subscribe to real-time events
+    socket.on('csr:dashboard:update', handleDashboardUpdate);
+    socket.on('csr:goals:update', handleGoalsUpdate);
+    socket.on('csr:compliance:update', handleComplianceUpdate);
+    socket.on('csr:alerts:update', handleAlertsUpdate);
+    socket.on('csr:activity:new', handleNewActivity);
+
+    // Cleanup listeners
+    return () => {
+      socket.off('csr:dashboard:update', handleDashboardUpdate);
+      socket.off('csr:goals:update', handleGoalsUpdate);
+      socket.off('csr:compliance:update', handleComplianceUpdate);
+      socket.off('csr:alerts:update', handleAlertsUpdate);
+      socket.off('csr:activity:new', handleNewActivity);
+    };
+  }, [socket]);
+
+  // Fallback polling for real-time updates (every 30 seconds if socket not available)
+  useEffect(() => {
+    if (socket) return; // Don't poll if socket is available
+
     const interval = setInterval(() => {
-      fetchDashboardData(true);
-    }, 30000);
+      fetchDashboardData();
+    }, 30000); // 30 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [socket, fetchDashboardData]);
 
-  // Dynamic dashboard sections with real data
-  const dashboardSections = [
-    {
-      id: 'overview',
-      title: 'Overview',
-      description: 'Comprehensive view of CSR impact and performance metrics',
-      icon: BarChart3,
-      color: 'from-blue-500 to-cyan-500',
-      bgColor: 'from-blue-50 to-cyan-50',
-      borderColor: 'border-blue-200',
-      path: '/csr/overview',
-      stats: { 
-        value: overviewData?.studentsImpacted?.toLocaleString() || '0', 
-        label: 'Students Impacted' 
-      }
-    },
-    {
-      id: 'campaigns',
-      title: 'Campaigns',
-      description: 'Manage and monitor all CSR campaigns and initiatives',
-      icon: Target,
-      color: 'from-green-500 to-emerald-500',
-      bgColor: 'from-green-50 to-emerald-50',
-      borderColor: 'border-green-200',
-      path: '/csr/campaigns',
-      stats: { 
-        value: liveStats?.activeCampaigns?.toString() || '0', 
-        label: 'Active Campaigns' 
-      }
-    },
-    {
-      id: 'campaign-wizard',
-      title: 'Campaign Wizard',
-      description: 'Create and manage comprehensive CSR campaigns with advanced analytics',
-      icon: Zap,
-      color: 'from-yellow-500 to-orange-500',
-      bgColor: 'from-yellow-50 to-orange-50',
-      borderColor: 'border-yellow-200',
-      path: '/csr/campaign-wizard',
-      stats: { value: '7', label: 'Step Process' }
-    },
-    {
-      id: 'financial',
-      title: 'Financial Management',
-      description: 'Manage CSR payments, budgets, and financial analytics',
-      icon: DollarSign,
-      color: 'from-emerald-500 to-teal-500',
-      bgColor: 'from-emerald-50 to-teal-50',
-      borderColor: 'border-emerald-200',
-      path: '/csr/financial',
-      stats: { 
-        value: overviewData?.totalValueFunded ? `₹${(overviewData.totalValueFunded / 100000).toFixed(1)}L` : '₹0L', 
-        label: 'Total Budget' 
-      }
-    },
-    {
-      id: 'reports',
-      title: 'CSR Reports',
-      description: 'Generate comprehensive branded PDF reports with all CSR metrics',
-      icon: FileText,
-      color: 'from-purple-500 to-pink-500',
-      bgColor: 'from-purple-50 to-pink-50',
-      borderColor: 'border-purple-200',
-      path: '/csr/reports',
-      stats: { 
-        value: overviewData?.itemsDistributed?.toString() || '0', 
-        label: 'Items Distributed' 
-      }
-    },
-    {
-      id: 'approvals',
-      title: 'Campaign Approvals',
-      description: 'Manage campaign approval workflows and school consent processes',
-      icon: CheckCircle,
-      color: 'from-indigo-500 to-blue-500',
-      bgColor: 'from-indigo-50 to-blue-50',
-      borderColor: 'border-indigo-200',
-      path: '/csr/approvals',
-      stats: { 
-        value: liveStats?.pendingApprovals?.toString() || '0', 
-        label: 'Pending Approvals' 
-      }
-    },
-    {
-      id: 'budget-tracking',
-      title: 'Live Budget Tracking',
-      description: 'Real-time budget monitoring with spend vs remaining and threshold warnings',
-      icon: TrendingUp,
-      color: 'from-rose-500 to-pink-500',
-      bgColor: 'from-rose-50 to-pink-50',
-      borderColor: 'border-rose-200',
-      path: '/csr/budget-tracking',
-      stats: { 
-        value: overviewData?.monthlyGrowth ? `+${overviewData.monthlyGrowth.toFixed(1)}%` : '+0%', 
-        label: 'Monthly Growth' 
-      }
-    },
-    {
-      id: 'budget',
-      title: 'Budget & Transactions',
-      description: 'Track HealCoins funding, spending, and financial transactions',
-      icon: CreditCard,
-      color: 'from-violet-500 to-purple-500',
-      bgColor: 'from-violet-50 to-purple-50',
-      borderColor: 'border-violet-200',
-      path: '/csr/budget',
-      stats: { 
-        value: recentActivity?.length?.toString() || '0', 
-        label: 'Recent Activities' 
-      }
-    },
-    {
-      id: 'cobranding',
-      title: 'Co-branding & Legal',
-      description: 'Manage co-branding assets, legal documents, and partnership agreements',
-      icon: Users,
-      color: 'from-amber-500 to-yellow-500',
-      bgColor: 'from-amber-50 to-yellow-50',
-      borderColor: 'border-amber-200',
-      path: '/csr/cobranding',
-      stats: { 
-        value: overviewData?.regionsActive?.toString() || '0', 
-        label: 'Active Regions' 
-      }
-    }
-  ];
-
-  // Dynamic quick stats based on real data
+  // Quick stats with colorful gradients
   const quickStats = [
     {
       title: 'Students Impacted',
       value: overviewData?.studentsImpacted?.toLocaleString() || '0',
-      change: overviewData?.monthlyGrowth ? `+${overviewData.monthlyGrowth.toFixed(1)}%` : '+0%',
+      change: overviewData?.studentsGrowth ? `+${overviewData.studentsGrowth.toFixed(1)}%` : '+0%',
+      changeType: 'positive',
       icon: Users,
-      color: 'from-blue-500 to-cyan-500'
+      gradient: 'from-blue-500 via-cyan-400 to-blue-600',
+      bgGradient: 'from-blue-50 via-cyan-50 to-blue-50',
+      iconBg: 'bg-gradient-to-br from-blue-500 to-cyan-500',
+      iconColor: 'text-white',
+      shadowColor: 'shadow-blue-500/20'
     },
     {
       title: 'Schools Reached',
       value: overviewData?.schoolsReached?.toString() || '0',
-      change: '+12.3%',
-      icon: Building,
-      color: 'from-green-500 to-emerald-500'
+      change: overviewData?.schoolsGrowth ? `+${overviewData.schoolsGrowth.toFixed(1)}%` : 'N/A',
+      changeType: 'positive',
+      icon: Target,
+      gradient: 'from-green-500 via-emerald-400 to-green-600',
+      bgGradient: 'from-green-50 via-emerald-50 to-green-50',
+      iconBg: 'bg-gradient-to-br from-green-500 to-emerald-500',
+      iconColor: 'text-white',
+      shadowColor: 'shadow-green-500/20'
     },
     {
       title: 'Total Value Funded',
       value: overviewData?.totalValueFunded ? `₹${(overviewData.totalValueFunded / 100000).toFixed(1)}L` : '₹0L',
-      change: '+15.7%',
+      change: overviewData?.valueFundedGrowth ? `+${overviewData.valueFundedGrowth.toFixed(1)}%` : 'N/A',
+      changeType: 'positive',
       icon: DollarSign,
-      color: 'from-purple-500 to-pink-500'
+      gradient: 'from-purple-500 via-pink-400 to-purple-600',
+      bgGradient: 'from-purple-50 via-pink-50 to-purple-50',
+      iconBg: 'bg-gradient-to-br from-purple-500 to-pink-500',
+      iconColor: 'text-white',
+      shadowColor: 'shadow-purple-500/20'
     },
     {
       title: 'Active Users',
       value: liveStats?.activeUsers?.toString() || '0',
-      change: '+8.2%',
+      change: liveStats?.usersGrowth ? `+${liveStats.usersGrowth.toFixed(1)}%` : 'N/A',
+      changeType: 'positive',
       icon: Activity,
-      color: 'from-orange-500 to-red-500'
+      gradient: 'from-orange-500 via-red-400 to-orange-600',
+      bgGradient: 'from-orange-50 via-red-50 to-orange-50',
+      iconBg: 'bg-gradient-to-br from-orange-500 to-red-500',
+      iconColor: 'text-white',
+      shadowColor: 'shadow-orange-500/20'
     }
   ];
+
+  // Quick summary cards with colors
+  const summaryCards = [
+    {
+      title: 'Active Goals',
+      value: goalsSummary?.totalActive || 0,
+      subtitle: `${goalsSummary?.completed || 0} completed`,
+      icon: Target,
+      gradient: 'from-blue-500 to-indigo-600',
+      bgGradient: 'from-blue-50 to-indigo-50',
+      iconBg: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      iconColor: 'text-white',
+      link: '/csr/goals',
+      shadowColor: 'shadow-blue-500/20'
+    },
+    {
+      title: 'Upcoming Events',
+      value: upcomingEvents.length || 0,
+      subtitle: 'Compliance deadlines',
+      icon: Calendar,
+      gradient: 'from-green-500 to-teal-600',
+      bgGradient: 'from-green-50 to-teal-50',
+      iconBg: 'bg-gradient-to-br from-green-500 to-teal-600',
+      iconColor: 'text-white',
+      link: '/csr/compliance',
+      shadowColor: 'shadow-green-500/20'
+    },
+    {
+      title: 'Unread Alerts',
+      value: unreadAlertsCount || 0,
+      subtitle: unreadAlertsCount > 0 ? 'Requires attention' : 'All clear',
+      icon: Bell,
+      gradient: unreadAlertsCount > 0 ? 'from-red-500 to-rose-600' : 'from-gray-400 to-gray-600',
+      bgGradient: unreadAlertsCount > 0 ? 'from-red-50 to-rose-50' : 'from-gray-50 to-slate-50',
+      iconBg: unreadAlertsCount > 0 ? 'bg-gradient-to-br from-red-500 to-rose-600' : 'bg-gradient-to-br from-gray-400 to-gray-600',
+      iconColor: 'text-white',
+      link: '/csr/alerts',
+      badge: unreadAlertsCount > 0,
+      shadowColor: unreadAlertsCount > 0 ? 'shadow-red-500/20' : 'shadow-gray-400/20'
+    }
+  ];
+
+  // Calculate progress percentage
+  const getGoalProgress = (goal) => {
+    if (!goal.targetValue || goal.targetValue === 0) return 0;
+    const current = goal.currentValue || 0;
+    return Math.min((current / goal.targetValue) * 100, 100);
+  };
+
+  // Get progress color based on percentage
+  const getProgressColor = (progress) => {
+    if (progress >= 80) return 'from-green-500 via-emerald-400 to-green-600';
+    if (progress >= 50) return 'from-blue-500 via-cyan-400 to-blue-600';
+    if (progress >= 30) return 'from-yellow-500 via-orange-400 to-yellow-600';
+    return 'from-red-500 via-rose-400 to-red-600';
+  };
+
+  // Format date for display
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  };
+
+  // Get days until event
+  const getDaysUntil = (dateString) => {
+    if (!dateString) return 0;
+    const eventDate = new Date(dateString);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    eventDate.setHours(0, 0, 0, 0);
+    const diffTime = eventDate - today;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays;
+  };
 
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex items-center justify-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           className="text-center"
         >
           <motion.div
             animate={{ rotate: 360 }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            className="w-16 h-16 border-4 border-purple-200 border-t-purple-600 rounded-full mx-auto mb-4"
+            transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+            className="w-16 h-16 border-4 border-purple-200 border-t-purple-600 rounded-full mx-auto mb-6"
           />
-          <h2 className="text-2xl font-bold text-gray-700 mb-2">Loading Dashboard</h2>
-          <p className="text-gray-500">Fetching your CSR impact data...</p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Loading Dashboard</h2>
+          <p className="text-gray-600">Fetching your CSR impact data...</p>
         </motion.div>
       </div>
     );
@@ -256,22 +304,25 @@ const CSRDashboard = () => {
   // Error state
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center p-6">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex items-center justify-center p-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center max-w-md"
+          className="text-center max-w-md bg-white rounded-2xl p-8 shadow-xl border border-red-200"
         >
           <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Activity className="w-8 h-8 text-red-600" />
+            <AlertTriangle className="w-8 h-8 text-red-600" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-700 mb-2">Oops! Something went wrong</h2>
-          <p className="text-gray-500 mb-6">{error}</p>
+          <h2 className="text-xl font-bold text-gray-900 mb-2">Something went wrong</h2>
+          <p className="text-gray-600 mb-6">{error}</p>
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => fetchDashboardData()}
-            className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => {
+              setLoading(true);
+              fetchDashboardData();
+            }}
+            className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
           >
             Try Again
           </motion.button>
@@ -281,260 +332,163 @@ const CSRDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      {/* Header Section */}
+      <div className="bg-gradient-to-r from-indigo-50/95 via-purple-50/95 to-pink-50/95 backdrop-blur-xl border-b border-indigo-200/60 sticky top-0 z-40 shadow-md">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 md:py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="p-1.5 sm:p-2 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg shadow-md shadow-indigo-500/30 flex-shrink-0">
+                  <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 truncate">
+                    CSR Impact Dashboard
+                  </h1>
+                  <p className="text-gray-600 text-xs sm:text-sm mt-0.5 hidden sm:block">
+                    Comprehensive overview of your corporate social responsibility initiatives
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+              <select
+                value={timeRange}
+                onChange={(e) => setTimeRange(e.target.value)}
+                className="px-2 sm:px-3 py-1.5 sm:py-2 bg-white border border-purple-200 rounded-lg text-xs sm:text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-300/50 focus:border-purple-400 transition-all cursor-pointer"
+              >
+                <option value="week">Last 7 Days</option>
+                <option value="month">Last 30 Days</option>
+                <option value="quarter">Last Quarter</option>
+                <option value="year">Last Year</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-6">
+        {/* Status Bar */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
+          className="mb-6 bg-white rounded-xl shadow-md border border-gray-100 px-4 py-3"
         >
-          <div className="flex items-center justify-between mb-8">
-            <div className="text-center flex-1">
-              <motion.h1 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-6xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4"
-              >
-                CSR Impact Dashboard
-              </motion.h1>
-              <motion.p 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-xl text-gray-600 max-w-3xl mx-auto"
-              >
-                Comprehensive CSR management platform for measuring social impact of wellness and financial literacy initiatives
-              </motion.p>
-            </div>
-            
-            {/* Refresh Button */}
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => fetchDashboardData(true)}
-              disabled={refreshing}
-              className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20"
-            >
-              <motion.div
-                animate={refreshing ? { rotate: 360 } : {}}
-                transition={refreshing ? { duration: 1, repeat: Infinity, ease: "linear" } : {}}
-              >
-                <RefreshCw className={`w-5 h-5 ${refreshing ? 'text-purple-600' : 'text-gray-600'}`} />
-              </motion.div>
-              <span className="text-sm font-semibold text-gray-700">
-                {refreshing ? 'Refreshing...' : 'Refresh'}
-              </span>
-            </motion.button>
-          </div>
-
-          {/* Live Status Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex items-center justify-center gap-8 mb-8"
-          >
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span>Live Data</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Clock className="w-4 h-4" />
-              <span>Last updated: {overviewData?.lastUpdated ? new Date(overviewData.lastUpdated).toLocaleTimeString() : new Date().toLocaleTimeString()}</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <MapPin className="w-4 h-4" />
-              <span>{overviewData?.regionsActive || 0} Active Regions</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Activity className="w-4 h-4" />
-              <span>{liveStats?.activeUsers || 0} Active Users</span>
-            </div>
-          </motion.div>
-
-          {/* Quick Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12"
-          >
-            {quickStats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div
-                  key={stat.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`p-4 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg`}>
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-                    <span className={`text-sm font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${stat.color} text-white`}>
-                      {stat.change}
-                    </span>
-                  </div>
-                  <h3 className="text-3xl font-bold text-gray-800 mb-2">{stat.value}</h3>
-                  <p className="text-gray-600 font-medium">{stat.title}</p>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </motion.div>
-
-        {/* Real-time Activity Feed */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="mb-12"
-        >
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl border border-white/20">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-3">
-                <Sparkles className="w-6 h-6 text-purple-600" />
-                Live Activity Feed
-              </h3>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span>Real-time</span>
+          <div className="flex flex-wrap items-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
               </div>
+              <span className="font-bold text-gray-900">Live Data</span>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <AnimatePresence>
-                {recentActivity.slice(0, 6).map((activity, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 20 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-4 border border-gray-200 hover:shadow-lg transition-all duration-300"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className={`w-3 h-3 rounded-full ${
-                        activity.color === 'blue' ? 'bg-blue-500' :
-                        activity.color === 'green' ? 'bg-green-500' :
-                        activity.color === 'orange' ? 'bg-orange-500' :
-                        activity.color === 'purple' ? 'bg-purple-500' : 'bg-gray-500'
-                      }`} />
-                      <div className="flex-1">
-                        <p className="text-sm font-medium text-gray-800">{activity.action}</p>
-                        <p className="text-xs text-gray-500">{activity.location}</p>
-                        <p className="text-xs text-gray-400">{activity.time}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
+            <div className="flex items-center gap-2 text-gray-600">
+              <Clock className="w-4 h-4 text-purple-500" />
+              <span className="font-medium">Last updated: {overviewData?.lastUpdated ? new Date(overviewData.lastUpdated).toLocaleTimeString() : new Date().toLocaleTimeString()}</span>
             </div>
+            <div className="flex items-center gap-2 text-gray-600">
+              <MapPin className="w-4 h-4 text-blue-500" />
+              <span className="font-medium">{overviewData?.regionsActive || 0} Active Regions</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-600">
+              <Activity className="w-4 h-4 text-orange-500" />
+              <span className="font-medium">{liveStats?.activeUsers || 0} Active Users</span>
+            </div>
+            {socket && (
+              <div className="flex items-center gap-2 ml-auto">
+                <div className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                </div>
+                <span className="text-xs text-blue-600 font-bold">Real-time enabled</span>
+              </div>
+            )}
           </div>
         </motion.div>
 
-        {/* Dashboard Sections */}
+        {/* Key Metrics */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"
         >
-          {dashboardSections.map((section, index) => {
-            const Icon = section.icon;
-            const isActive = location.pathname === section.path;
-            
+          {quickStats.map((stat, index) => {
+            const Icon = stat.icon;
             return (
               <motion.div
-                key={section.id}
+                key={stat.title}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.0 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -8 }}
-                className="group"
+                transition={{ delay: 0.1 + index * 0.05 }}
+                whileHover={{ y: -2, scale: 1.01 }}
+                className={`relative overflow-hidden bg-white rounded-xl shadow-md border border-gray-100 ${stat.bgGradient ? `bg-gradient-to-br ${stat.bgGradient}` : ''}`}
               >
-                <Link to={section.path}>
-                  <div className={`relative bg-gradient-to-br ${section.bgColor} border-2 ${section.borderColor} rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 h-full overflow-hidden ${
-                    isActive ? 'ring-4 ring-purple-300 ring-opacity-50' : ''
-                  }`}>
-                    {/* Animated Background Pattern */}
-                    <div className="absolute inset-0 opacity-5">
-                      <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        className="w-full h-full"
-                        style={{
-                          background: `radial-gradient(circle at 20% 80%, ${section.color.split(' ')[1]} 0%, transparent 50%), radial-gradient(circle at 80% 20%, ${section.color.split(' ')[3]} 0%, transparent 50%)`
-                        }}
-                      />
+                <div className="relative p-4">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className={`p-2 ${stat.iconBg} rounded-lg shadow-sm`}>
+                      <Icon className={`w-5 h-5 ${stat.iconColor}`} />
                     </div>
-
-                    {/* Icon and Stats */}
-                    <div className="flex items-center justify-between mb-6 relative z-10">
-                      <motion.div 
-                        className={`p-4 rounded-2xl bg-gradient-to-r ${section.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}
-                        whileHover={{ rotate: 5 }}
-                      >
-                        <Icon className="w-8 h-8 text-white" />
-                      </motion.div>
-                      <div className="text-right">
-                        <motion.div 
-                          className="text-2xl font-bold text-gray-800"
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{ delay: 1.2 + index * 0.1 }}
-                        >
-                          {section.stats.value}
-                        </motion.div>
-                        <div className="text-sm text-gray-600">{section.stats.label}</div>
+                    {stat.change !== 'N/A' && (
+                      <div className="flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 rounded-md text-xs font-semibold">
+                        <TrendingUp className="w-3 h-3" />
+                        <span>{stat.change}</span>
                       </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="mb-6 relative z-10">
-                      <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors duration-300">
-                        {section.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        {section.description}
-                      </p>
-                    </div>
-
-                    {/* Arrow */}
-                    <div className="flex items-center justify-between relative z-10">
-                      <span className="text-sm font-semibold text-gray-500 group-hover:text-purple-600 transition-colors duration-300">
-                        Explore Section
-                      </span>
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                      >
-                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-purple-600 transition-all duration-300" />
-                      </motion.div>
-                    </div>
-
-                    {/* Active Indicator */}
-                    {isActive && (
-                      <motion.div 
-                        className="absolute top-4 right-4"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                      >
-                        <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse" />
-                      </motion.div>
                     )}
+                  </div>
+                  
+                  <div className="space-y-0.5">
+                    <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
+                    <p className="text-xs font-semibold text-gray-600">{stat.title}</p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
 
-                    {/* Hover Effect Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+        {/* Quick Summary Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6"
+        >
+          {summaryCards.map((card, index) => {
+            const Icon = card.icon;
+            return (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35 + index * 0.05 }}
+                whileHover={{ y: -2, scale: 1.01 }}
+              >
+                <Link
+                  to={card.link}
+                  className={`block group relative overflow-hidden bg-white rounded-xl shadow-md border border-gray-100 ${card.bgGradient ? `bg-gradient-to-br ${card.bgGradient}` : ''}`}
+                >
+                  <div className="relative p-4">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className={`p-2 ${card.iconBg} rounded-lg shadow-sm`}>
+                        <Icon className={`w-5 h-5 ${card.iconColor}`} />
+                      </div>
+                      {card.badge && (
+                        <div className="relative flex h-3 w-3">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="mb-3">
+                      <p className="text-3xl font-bold text-gray-900 mb-1">{card.value}</p>
+                      <p className="text-xs font-semibold text-gray-700">{card.title}</p>
+                      <p className="text-xs text-gray-600 mt-1 font-medium">{card.subtitle}</p>
+                    </div>
+                    <div className="flex items-center gap-1 text-xs font-semibold text-blue-600 group-hover:text-blue-700 transition-colors">
+                      <span>View all</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </div>
                   </div>
                 </Link>
               </motion.div>
@@ -542,108 +496,199 @@ const CSRDashboard = () => {
           })}
         </motion.div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5 }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 relative overflow-hidden">
-            {/* Background Animation */}
-            <div className="absolute inset-0 opacity-10">
-              <motion.div
-                animate={{ 
-                  backgroundPosition: ["0% 0%", "100% 100%"],
-                }}
-                transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
-                className="w-full h-full"
-                style={{
-                  background: "linear-gradient(45deg, #8b5cf6, #ec4899, #06b6d4, #10b981)",
-                  backgroundSize: "400% 400%"
-                }}
-              />
-            </div>
-
-            <div className="relative z-10">
-              <motion.h3 
-                className="text-3xl font-bold text-gray-800 mb-4 flex items-center justify-center gap-3"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.6 }}
-              >
-                <motion.div
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
+        {/* Active Goals & Upcoming Events Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+          {/* Active Goals Overview */}
+          {activeGoals.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+              className="bg-white rounded-xl shadow-md border border-gray-100 p-5"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <div className="p-1.5 bg-blue-100 rounded-lg">
+                    <Target className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-bold text-gray-900">Active Goals</h2>
+                    <p className="text-xs text-gray-600">Track your progress</p>
+                  </div>
+                </div>
+                <Link
+                  to="/csr/goals"
+                  className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1 transition-colors"
                 >
-                  <Trophy className="w-8 h-8 text-yellow-500" />
-                </motion.div>
-                Ready to Make an Impact?
-              </motion.h3>
+                  View all
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
               
-              <motion.p 
-                className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.7 }}
-              >
-                Transform lives through comprehensive CSR initiatives. Start your journey with powerful analytics and seamless campaign management.
-              </motion.p>
+              <div className="space-y-3">
+                {activeGoals.slice(0, 3).map((goal, index) => {
+                  const progress = getGoalProgress(goal);
+                  const progressColor = getProgressColor(progress);
+                  return (
+                    <motion.div
+                      key={goal._id || index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.45 + index * 0.1 }}
+                      className="pb-3 border-b border-gray-200 last:border-0 last:pb-0"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="text-xs font-semibold text-gray-900 truncate flex-1">{goal.goalName || goal.name}</p>
+                        <span className="text-sm font-bold text-gray-900 ml-3">{progress.toFixed(0)}%</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${progress}%` }}
+                          transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
+                          className={`h-full bg-gradient-to-r ${progressColor} rounded-full`}
+                        />
+                      </div>
+                      <div className="flex items-center justify-between text-xs font-medium">
+                        <span className="text-gray-600">{goal.currentValue || 0} / {goal.targetValue || 0} {goal.unit || ''}</span>
+                        {goal.endDate && (
+                          <span className="text-gray-600">Due {formatDate(goal.endDate)}</span>
+                        )}
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
 
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.8 }}
-              >
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link
-                    to="/csr/campaign-wizard"
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl font-semibold hover:shadow-xl transition-all duration-300"
-                  >
-                    <Zap className="w-5 h-5" />
-                    Create Campaign
-                  </Link>
-                </motion.div>
-                
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link
-                    to="/csr/overview"
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-2xl font-semibold hover:shadow-xl transition-all duration-300"
-                  >
-                    <BarChart3 className="w-5 h-5" />
-                    View Analytics
-                  </Link>
-                </motion.div>
-              </motion.div>
+          {/* Upcoming Compliance Events */}
+          {upcomingEvents.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.45 }}
+              className="bg-white rounded-xl shadow-md border border-gray-100 p-5"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <div className="p-1.5 bg-green-100 rounded-lg">
+                    <Calendar className="w-4 h-4 text-green-600" />
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-bold text-gray-900">Upcoming Events</h2>
+                    <p className="text-xs text-gray-600">Compliance deadlines</p>
+                  </div>
+                </div>
+                <Link
+                  to="/csr/compliance"
+                  className="text-xs font-semibold text-green-600 hover:text-green-700 flex items-center gap-1 transition-colors"
+                >
+                  View all
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
+              
+              <div className="space-y-3">
+                {upcomingEvents.slice(0, 5).map((event, index) => {
+                  const daysUntil = getDaysUntil(event.dueDate);
+                  const isOverdue = daysUntil < 0;
+                  const isUrgent = daysUntil >= 0 && daysUntil <= 7;
+                  
+                  return (
+                    <motion.div
+                      key={event._id || index}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5 + index * 0.05 }}
+                      className="pb-3 border-b border-gray-200 last:border-0 last:pb-0"
+                    >
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-semibold text-gray-900 truncate mb-1">{event.eventName || event.name}</p>
+                          <p className="text-xs text-gray-600">{event.description || event.category}</p>
+                        </div>
+                        {isOverdue && (
+                          <div className="ml-3 flex items-center gap-1 px-2 py-0.5 bg-red-100 text-red-700 rounded-md text-xs font-semibold">
+                            <AlertTriangle className="w-3 h-3" />
+                            <span>Overdue</span>
+                          </div>
+                        )}
+                        {!isOverdue && isUrgent && (
+                          <div className="ml-3 flex items-center gap-1 px-2 py-0.5 bg-orange-100 text-orange-700 rounded-md text-xs font-semibold">
+                            <span>Urgent</span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between text-xs font-medium">
+                        <span className="text-gray-600">{formatDate(event.dueDate)}</span>
+                        <span className={isOverdue ? 'text-red-600 font-bold' : isUrgent ? 'text-orange-600 font-bold' : 'text-gray-600'}>
+                          {isOverdue ? `${Math.abs(daysUntil)} days overdue` : daysUntil === 0 ? 'Today' : daysUntil === 1 ? 'Tomorrow' : `${daysUntil} days`}
+                        </span>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+        </div>
 
-              {/* Success Metrics */}
-              <motion.div 
-                className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.9 }}
-              >
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-purple-600">{overviewData?.studentsImpacted?.toLocaleString() || '0'}</div>
-                  <div className="text-sm text-gray-500">Students Impacted</div>
+        {/* Recent Activity Feed */}
+        {recentActivity && recentActivity.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="bg-white rounded-xl shadow-md border border-gray-100 p-5"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <div className="p-1.5 bg-purple-100 rounded-lg">
+                  <Activity className="w-4 h-4 text-purple-600" />
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600">{overviewData?.schoolsReached || '0'}</div>
-                  <div className="text-sm text-gray-500">Schools Reached</div>
+                <div>
+                  <h2 className="text-lg font-bold text-gray-900">Recent Activity</h2>
+                  <p className="text-xs text-gray-600">Live updates</p>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">{overviewData?.itemsDistributed || '0'}</div>
-                  <div className="text-sm text-gray-500">Items Distributed</div>
+              </div>
+              <div className="flex items-center gap-2 text-xs font-semibold">
+                <div className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-600">{overviewData?.regionsActive || '0'}</div>
-                  <div className="text-sm text-gray-500">Active Regions</div>
-                </div>
-              </motion.div>
+                <span className="text-green-600">Live</span>
+              </div>
             </div>
-          </div>
-        </motion.div>
+            
+            <div className="space-y-2">
+              {recentActivity.slice(0, 8).map((activity, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.55 + index * 0.05 }}
+                  className="flex items-start gap-3 p-2.5 rounded-lg border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all cursor-pointer group"
+                >
+                  <div className={`w-2.5 h-2.5 rounded-full mt-1.5 flex-shrink-0 ${
+                    activity.color === 'blue' ? 'bg-blue-500' :
+                    activity.color === 'green' ? 'bg-green-500' :
+                    activity.color === 'orange' ? 'bg-orange-500' :
+                    activity.color === 'purple' ? 'bg-purple-500' : 'bg-gray-400'
+                  }`} />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-semibold text-gray-900 group-hover:text-purple-700 transition-colors mb-0.5">{activity.action}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-xs text-gray-600">{activity.location}</p>
+                      <span className="text-xs text-gray-400">•</span>
+                      <p className="text-xs text-gray-500">{activity.time}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </div>
   );

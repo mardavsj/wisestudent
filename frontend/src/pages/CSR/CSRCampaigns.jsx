@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Target, Plus, Eye, Edit, Calendar, Users, DollarSign, TrendingUp } from 'lucide-react';
 import CampaignList from '../../components/CSR/CampaignList';
+import CampaignWizardEnhanced from '../../components/CSR/CampaignWizardEnhanced';
 import campaignService from '../../services/campaignService';
 
 const CSRCampaigns = () => {
@@ -12,6 +13,7 @@ const CSRCampaigns = () => {
     successRate: 0
   });
   const [loading, setLoading] = useState(true);
+  const [showWizard, setShowWizard] = useState(false);
 
   // Load campaign statistics
   const loadStats = async () => {
@@ -54,42 +56,39 @@ const CSRCampaigns = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <div className="bg-gradient-to-r from-indigo-50/95 via-purple-50/95 to-pink-50/95 backdrop-blur-xl border-b border-indigo-200/60 sticky top-0 z-40 shadow-md">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 md:py-4">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="p-1.5 sm:p-2 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg shadow-md shadow-indigo-500/30 flex-shrink-0">
+              <Target className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 truncate">
+                CSR Campaigns
+              </h1>
+              <p className="text-gray-600 text-xs sm:text-sm mt-0.5 hidden sm:block">
+                Manage and monitor all CSR campaigns and initiatives
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
+          className="mb-6"
         >
-          <div className="flex justify-between items-center mb-6">
-            <div>
-              <motion.h1 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-5xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent"
-              >
-                CSR Campaigns
-              </motion.h1>
-              <motion.p 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-gray-600 mt-2 flex items-center gap-2"
-              >
-                <Target className="w-5 h-5 text-green-500" />
-                Manage and monitor all CSR campaigns and initiatives
-              </motion.p>
-            </div>
-          </div>
 
           {/* Quick Stats */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"
           >
             {[
               {
@@ -136,19 +135,19 @@ const CSRCampaigns = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className={`bg-gradient-to-br ${stat.bgColor} border-2 ${stat.borderColor} rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300`}
+                  whileHover={{ y: -2, scale: 1.01 }}
+                  className={`bg-gradient-to-br ${stat.bgColor} border border-gray-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300`}
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`p-3 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg`}>
-                      <Icon className="w-6 h-6 text-white" />
+                  <div className="flex items-center justify-between mb-3">
+                    <div className={`p-2 rounded-lg bg-gradient-to-r ${stat.color} shadow-sm`}>
+                      <Icon className="w-5 h-5 text-white" />
                     </div>
-                    <span className={`text-sm font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${stat.color} text-white`}>
+                    <span className={`text-xs font-semibold px-2 py-0.5 rounded-md bg-gradient-to-r ${stat.color} text-white`}>
                       {stat.change}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-1">{stat.value}</h3>
-                  <p className="text-gray-600 font-medium">{stat.title}</p>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-0.5">{stat.value}</h3>
+                  <p className="text-xs font-semibold text-gray-600">{stat.title}</p>
                 </motion.div>
               );
             })}
@@ -162,18 +161,31 @@ const CSRCampaigns = () => {
           transition={{ delay: 0.6 }}
         >
           <CampaignList
-            onViewCampaign={() => {
+            onViewCampaign={(campaign) => {
               // Handle view campaign logic
+              console.log('View campaign:', campaign);
             }}
             onCreateCampaign={() => {
-              // Handle create campaign logic
+              setShowWizard(true);
             }}
-            onEditCampaign={() => {
+            onEditCampaign={(campaign) => {
               // Handle edit campaign logic
+              console.log('Edit campaign:', campaign);
             }}
           />
         </motion.div>
       </div>
+
+      {/* Campaign Wizard Modal */}
+      {showWizard && (
+        <CampaignWizardEnhanced
+          onClose={() => setShowWizard(false)}
+          onSuccess={() => {
+            setShowWizard(false);
+            loadStats(); // Refresh stats after creating campaign
+          }}
+        />
+      )}
     </div>
   );
 };
