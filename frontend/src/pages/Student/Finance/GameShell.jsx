@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import gameCompletionService from "../../../services/gameCompletionService";
+import { getGameDataById } from "../../../utils/getGameData";
 import { toast } from "react-toastify";
 
 /* --------------------- Floating Background Particles --------------------- */
@@ -210,6 +211,23 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
   const questionCount = totalLevels || location.state?.totalLevels || 5; // default to 5 questions if not provided
   const displayTotal = questionCount;
   const isFullCompletion = true; // Game over modal always represents a full completion attempt
+  const resolvedPointsPerCorrect =
+    totalCoins && questionCount
+      ? Math.max(1, Math.round(totalCoins / questionCount))
+      : 1;
+  const scoreAsCoins =
+    totalCoins && questionCount
+      ? score <= questionCount
+        ? score * resolvedPointsPerCorrect
+        : score
+      : score;
+  const normalizedCorrectCount =
+    resolvedPointsPerCorrect > 0 && questionCount
+      ? Math.min(
+          questionCount,
+          Math.max(0, Math.round((scoreAsCoins || 0) / resolvedPointsPerCorrect))
+        )
+      : score || 0;
 
   useEffect(() => {
     const submitGameCompletion = async () => {
@@ -230,9 +248,10 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
         const resolvedMaxScore = maxScore || totalCoins || questionCount;
         // Scale performance to coin target so limited-question games still satisfy higher coin rewards
         const performanceTarget = totalCoins || questionCount || resolvedMaxScore || 0;
-        const performanceScore = performanceTarget > 0 && questionCount > 0
-          ? Math.min(performanceTarget, Math.round((score / questionCount) * performanceTarget))
-          : score;
+        const performanceScore =
+          performanceTarget > 0 && questionCount > 0
+            ? Math.min(performanceTarget, normalizedCorrectCount * resolvedPointsPerCorrect)
+            : scoreAsCoins;
         const result = await gameCompletionService.completeGame({
           gameId,
           gameType,
@@ -254,7 +273,7 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
           setWasReplay(result.isReplay === true);
           // Check allAnswersCorrect from result, or calculate from coins performance vs totalCoins
           // score represents coins performance (number of correct answers/coins earned)
-          const calculatedAllCorrect = questionCount ? score >= questionCount : (totalCoins ? performanceScore >= performanceTarget : false);
+          const calculatedAllCorrect = questionCount ? normalizedCorrectCount >= questionCount : (totalCoins ? performanceScore >= performanceTarget : false);
           setAllAnswersCorrect(result.allAnswersCorrect === true || calculatedAllCorrect);
           setSubmissionComplete(true);
 
@@ -274,8 +293,8 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
             fullyCompleted: fullyCompleted,
             resultFullyCompleted: result.fullyCompleted,
             isFullCompletion,
-            score,
-            totalCoins
+            score: scoreAsCoins,
+            totalCoins,
           });
 
           // ALWAYS dispatch event if:
@@ -336,7 +355,7 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
     };
 
     submitGameCompletion();
-  }, [gameId, gameType, score, totalLevels, maxScore, coinsPerLevel, totalCoins, totalXp, isReplay, submissionComplete]);
+  }, [gameId, gameType, scoreAsCoins, normalizedCorrectCount, totalLevels, maxScore, coinsPerLevel, totalCoins, totalXp, isReplay, submissionComplete]);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -348,7 +367,7 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
         </h2>
         <p className="text-gray-600 text-lg mb-4">
           You finished the game with{" "}
-          <span className="font-bold text-gray-900">{score}</span> out of{" "}
+          <span className="font-bold text-gray-900">{normalizedCorrectCount}</span> out of{" "}
           <span className="font-bold text-gray-900">{displayTotal}</span> correct answers! ⭐
         </p>
         {allAnswersCorrect && submissionComplete && (
@@ -569,11 +588,34 @@ const GameShell = ({
   const location = useLocation();
   const [confettiKey, setConfettiKey] = useState(0);
   const prevShowConfettiRef = useRef(false);
-  const questionCount = totalLevels || location.state?.totalLevels || 5; // default to 5 questions if not provided
+
+  // Fallback to game data if navigation state is missing (e.g., deep link)
+  const fallbackGameData = gameId ? getGameDataById(gameId) : null;
+  const questionCount =
+    totalLevels ||
+    location.state?.totalLevels ||
+    fallbackGameData?.totalLevels ||
+    5; // default to 5 questions if not provided
 
   // Get totalCoins and totalXp from location.state if not provided as props
-  const resolvedTotalCoins = totalCoins || location.state?.totalCoins || null;
-  const resolvedTotalXp = totalXp || location.state?.totalXp || null;
+  const resolvedTotalCoins = (() => {
+    const candidates = [
+      totalCoins,
+      location.state?.totalCoins,
+      fallbackGameData?.coins,
+    ].filter(v => v !== null && v !== undefined);
+    if (candidates.length === 0) return null;
+    return Math.max(...candidates);
+  })();
+  const resolvedTotalXp = (() => {
+    const candidates = [
+      totalXp,
+      location.state?.totalXp,
+      fallbackGameData?.xp,
+    ].filter(v => v !== null && v !== undefined);
+    if (candidates.length === 0) return null;
+    return Math.max(...candidates);
+  })();
   // Note: maxScore is kept for backward compatibility, but performance is now measured by coins
   // The score prop represents coins performance (number of correct answers/coins earned)
   const resolvedMaxScore = maxScore || location.state?.maxScore || resolvedTotalCoins || questionCount;
@@ -582,12 +624,38 @@ const GameShell = ({
       ? Math.max(1, Math.round(resolvedTotalCoins / questionCount))
       : 1;
 
+  // Normalize raw score into coin-equivalent (treat small scores as correct-counts)
+  const rawScore = score || 0;
+  const scoreAsCoins =
+    resolvedTotalCoins && questionCount
+      ? rawScore <= questionCount
+        ? rawScore * pointsPerCorrect
+        : rawScore
+      : rawScore;
+
+  // Normalize raw score into correct-answer count and coin display
+  const correctCount =
+    pointsPerCorrect > 0 && questionCount
+      ? Math.min(
+          questionCount,
+          Math.max(0, Math.round(scoreAsCoins / pointsPerCorrect))
+        )
+      : rawScore;
+  const displayCoins = Math.min(
+    resolvedTotalCoins ?? Number.MAX_SAFE_INTEGER,
+    scoreAsCoins
+  );
+
   // Share points-per-correct globally for flash animations
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.__flashPointsMultiplier = pointsPerCorrect;
+      window.__flashTotalCoins = resolvedTotalCoins || null;
+      window.__flashQuestionCount = questionCount;
       return () => {
         window.__flashPointsMultiplier = 1;
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
       };
     }
   }, [pointsPerCorrect]);
@@ -686,7 +754,7 @@ const GameShell = ({
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">
             <span className="text-white font-medium">
-              Coins: {Math.min(resolvedTotalCoins ?? Number.MAX_SAFE_INTEGER, Math.round((score || 0) * pointsPerCorrect))}
+              Coins: {displayCoins}
             </span>
           </div>
 
@@ -735,7 +803,7 @@ const GameShell = ({
 
       {showGameOver && (
         <GameOverModal
-          score={score}
+          score={scoreAsCoins}
           gameId={gameId}
           gameType={gameType}
           totalLevels={totalLevels}

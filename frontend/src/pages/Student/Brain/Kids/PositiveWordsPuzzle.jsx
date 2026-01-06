@@ -125,8 +125,8 @@ const PositiveWordsPuzzle = () => {
       title="Puzzle of Positive Words"
       subtitle={!showResult ? `Match ${matches.length}/${leftItems.length}` : "Puzzle Complete!"}
       score={score}
-      currentLevel={1}
-      totalLevels={1}
+      currentLevel={matches.length + 1}
+      totalLevels={leftItems.length}
       coinsPerLevel={coinsPerLevel}
       showGameOver={showResult}
       maxScore={leftItems.length}

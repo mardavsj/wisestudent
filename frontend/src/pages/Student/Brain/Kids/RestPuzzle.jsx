@@ -120,8 +120,8 @@ const RestPuzzle = () => {
       title="Puzzle of Rest"
       subtitle={!showResult ? `Match ${matches.length}/${leftItems.length} pairs` : "Puzzle Complete!"}
       score={score}
-      currentLevel={1}
-      totalLevels={1}
+      currentLevel={matches.length + 1}
+      totalLevels={leftItems.length}
       coinsPerLevel={coinsPerLevel}
       showGameOver={showResult}
       maxScore={leftItems.length}
