@@ -205,7 +205,9 @@ const ReflexBankSymbols = () => {
       maxScore={5}
       showConfetti={gameState === "finished" && score === 5}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/finance/kids/badge-bank-explorer"
+      nextGameIdProp="finance-kids-50">
       <div className="space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">

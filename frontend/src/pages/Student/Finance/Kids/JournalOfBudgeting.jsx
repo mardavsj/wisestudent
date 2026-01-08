@@ -92,7 +92,9 @@ const JournalOfBudgeting = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === 5}
+      nextGamePathProp="/student/finance/kids/School-Fair-Story"
+      nextGameIdProp="finance-kids-28">
       <div className="text-center text-white space-y-8">
         {!showResult && stages[currentStage] && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">

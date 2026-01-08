@@ -77,7 +77,7 @@ const ShopStory2 = () => {
     },
     {
       id: 3,
-      text: "You're buying snacks for a party. Brand A costs ₹200 and Brand B costs ₹120. Both have the same amount. Which?",
+      text: "You're buying snacks for a party. Brand A costs ₹200 and Brand B costs ₹120. Both have the same taste. Which?",
       options: [
         { 
           id: "costly", 
@@ -220,6 +220,8 @@ const ShopStory2 = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/kids/poster-smart-shopping"
+      nextGameIdProp="finance-kids-16"
       showConfetti={showResult && finalScore === 5}>
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (

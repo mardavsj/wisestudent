@@ -102,7 +102,9 @@ const CandyStory = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/finance/kids/Budgeting-Quiz"
+      nextGameIdProp="finance-kids-22">
       <div className="space-y-8">
         {!showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center text-white">

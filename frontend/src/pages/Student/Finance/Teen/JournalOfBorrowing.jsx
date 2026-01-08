@@ -84,6 +84,8 @@ const JournalOfBorrowing = () => {
       showAnswerConfetti={showAnswerConfetti}
       gameId={gameId}
       gameType="finance"
+      nextGamePathProp="/student/finance/kids/toy-story"
+      nextGameIdProp="finance-kids-58"
     >
       <div className="space-y-8">
         {!showResult && stages[currentStage] ? (

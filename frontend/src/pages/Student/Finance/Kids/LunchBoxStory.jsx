@@ -218,7 +218,9 @@ const LunchBoxStory = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === 5}
+      nextGamePathProp="/student/finance/kids/poster-return-borrow"
+      nextGameIdProp="finance-kids-56">
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">

@@ -87,6 +87,8 @@ const JournalOfSaving = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/kids/shop-story"
+      nextGameIdProp="finance-kids-8"
       showConfetti={showResult && finalScore === 5}>
       <div className="text-center text-white space-y-8">
         {!showResult && stages[currentStage] && (

@@ -219,7 +219,9 @@ const HelpingParentsStory = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === 5}
+      nextGamePathProp="/student/finance/kids/poster-work-to-earn"
+      nextGameIdProp="finance-kids-76">
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">

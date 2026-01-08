@@ -114,64 +114,62 @@ const ReflexNeverQuit = () => {
   };
 
   const questions = [
-    {
-      id: 1,
-      question: "Which action shows persistence?",
-      correctAnswer: "Keep Going",
-      options: [
-        { text: "Keep Going", isCorrect: true, emoji: "💪" },
-        { text: "Stop Forever", isCorrect: false, emoji: "🚫" },
-        { text: "Quit", isCorrect: false, emoji: "🏃" },
-        { text: "Avoid", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What's the best response to difficulty?",
-      correctAnswer: "Keep Going",
-      options: [
-        { text: "Stop Forever", isCorrect: false, emoji: "🚫" },
-        { text: "Keep Going", isCorrect: true, emoji: "💪" },
-        { text: "Quit", isCorrect: false, emoji: "🏃" },
-        { text: "Avoid", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 3,
-      question: "How should you handle challenges?",
-      correctAnswer: "Keep Going",
-      options: [
-        { text: "Stop Forever", isCorrect: false, emoji: "🚫" },
-        { text: "Quit", isCorrect: false, emoji: "🏃" },
-        { text: "Avoid", isCorrect: false, emoji: "🙈" },
-        { text: "Keep Going", isCorrect: true, emoji: "🔥" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What demonstrates never giving up?",
-      correctAnswer: "Keep Going",
-      options: [
-        { text: "Keep Going", isCorrect: true, emoji: "💪" },
-        { text: "Stop Forever", isCorrect: false, emoji: "🚫" },
-        { text: "Quit", isCorrect: false, emoji: "🏃" },
-        { text: "Avoid", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Which mindset leads to success?",
-      correctAnswer: "Keep Going",
-      options: [
-        { text: "Stop Forever", isCorrect: false, emoji: "🚫" },
-        { text: "Quit", isCorrect: false, emoji: "🏃" },
-        { text: "Avoid", isCorrect: false, emoji: "🙈" },
-        { text: "Keep Going", isCorrect: true, emoji: "💪" }
-      ]
-    }
-  ];
-
-
+  {
+    id: 1,
+    question: "You fail an important mock test even after preparing seriously. What response best reflects a never-quit mindset?",
+    correctAnswer: "Analyze mistakes and adjust the study strategy",
+    options: [
+      { text: "Blame the test for being unfair", isCorrect: false, emoji: "😤" },
+      { text: "Decide the subject is not for you", isCorrect: false, emoji: "🚪" },
+      { text: "Avoid discussing the result", isCorrect: false, emoji: "🙈" },
+      { text: "Analyze mistakes and adjust the study strategy", isCorrect: true, emoji: "🧠" },
+    ]
+  },
+  {
+    id: 2,
+    question: "Your team project receives strong criticism during review. What is the strongest persistence-based reaction?",
+    correctAnswer: "Use the feedback to improve the next version",
+    options: [
+      { text: "Argue that the reviewers are wrong", isCorrect: false, emoji: "🗯️" },
+      { text: "Lose motivation to continue", isCorrect: false, emoji: "😞" },
+      { text: "Use the feedback to improve the next version", isCorrect: true, emoji: "🔁" },
+      { text: "Withdraw from the team", isCorrect: false, emoji: "🏃" }
+    ]
+  },
+  {
+    id: 3,
+    question: "You are learning a new skill and progress feels extremely slow. What choice shows mental endurance?",
+    correctAnswer: "Commit to consistent practice despite slow results",
+    options: [
+      { text: "Switch to something easier immediately", isCorrect: false, emoji: "🔀" },
+      { text: "Commit to consistent practice despite slow results", isCorrect: true, emoji: "⏳" },
+      { text: "Compare yourself constantly with others", isCorrect: false, emoji: "📊" },
+      { text: "Stop until motivation magically returns", isCorrect: false, emoji: "🛑" }
+    ]
+  },
+  {
+    id: 4,
+    question: "You face repeated rejection while applying for opportunities. What reflects the ‘never quit’ reflex?",
+    correctAnswer: "Refine your approach and continue applying",
+    options: [
+      { text: "Refine your approach and continue applying", isCorrect: true, emoji: "📈" },
+      { text: "Assume rejection defines your ability", isCorrect: false, emoji: "❌" },
+      { text: "Give up after multiple attempts", isCorrect: false, emoji: "🏳️" },
+      { text: "Wait for luck to change everything", isCorrect: false, emoji: "🍀" }
+    ]
+  },
+  {
+    id: 5,
+    question: "A long-term goal feels overwhelming and exhausting. What action best supports sustained perseverance?",
+    correctAnswer: "Break the goal into manageable steps and continue",
+    options: [
+      { text: "Ignore the goal until pressure forces action", isCorrect: false, emoji: "⌛" },
+      { text: "Lower standards to finish quickly", isCorrect: false, emoji: "📉" },
+      { text: "Break the goal into manageable steps and continue", isCorrect: true, emoji: "🧩" },
+      { text: "Abandon the goal for short-term comfort", isCorrect: false, emoji: "🛋️" }
+    ]
+  }
+];
 
   const finalScore = score;
 
@@ -194,6 +192,8 @@ const ReflexNeverQuit = () => {
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/teen/badge-growth-champion"
+      nextGameIdProp="brain-teens-100"
     >
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (

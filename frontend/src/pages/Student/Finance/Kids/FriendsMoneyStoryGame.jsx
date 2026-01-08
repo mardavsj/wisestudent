@@ -191,7 +191,7 @@ const FriendsMoneyStoryGame = () => {
   };
 
   const handleNext = () => {
-    navigate("/games/financial-literacy/kids");
+    navigate("/student/finance/kids/honesty-poster-game");
   };
 
   const getCurrentQuestion = () => {
@@ -221,7 +221,9 @@ const FriendsMoneyStoryGame = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === 5}
+      nextGamePathProp="/student/finance/kids/honesty-poster-game"
+      nextGameIdProp="finance-kids-96">
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">

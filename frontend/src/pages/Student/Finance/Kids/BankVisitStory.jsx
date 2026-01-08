@@ -218,7 +218,9 @@ const BankVisitStory = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === 5}
+      nextGamePathProp="/student/finance/kids/quiz-banks"
+      nextGameIdProp="finance-kids-42">
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">

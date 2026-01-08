@@ -93,8 +93,8 @@ const DebateOptimismVsRealism = () => {
       text: "What's the risk of being too optimistic?",
       choices: [
         { id: 'b', text: 'Always succeeds in everything' },
+        { id: 'a', text: 'May overlook potential problems without planning' },
         { id: 'c', text: 'Never faces any challenges' },
-        { id: 'a', text: 'May overlook potential problems without planning' }
       ],
       correct: 'a',
       explanation: 'Excessive optimism without realistic planning can lead to unpreparedness for challenges!'
@@ -103,9 +103,9 @@ const DebateOptimismVsRealism = () => {
       id: 5,
       text: "What's the best approach to life's challenges?",
       choices: [
+        { id: 'a', text: 'Hope for the best, prepare for challenges' },
         { id: 'b', text: 'Only expect the worst' },
         { id: 'c', text: 'Only expect the best with no preparation' },
-        { id: 'a', text: 'Hope for the best, prepare for challenges' }
       ],
       correct: 'a',
       explanation: 'Balanced optimism - hoping for the best while preparing for challenges - leads to the best outcomes!'
