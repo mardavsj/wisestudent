@@ -55,11 +55,11 @@ const PuzzleMnemonicMatch = () => {
 
   // Mnemonics (left side)
   const leftItems = [
-    { id: 1, name: 'VIBGYOR', emoji: '🌈',  },
+    { id: 1, name: 'VIBGYOR', emoji: '🙂',  },
     { id: 2, name: 'BODMAS', emoji: '🧮',  },
     { id: 3, name: 'PEMDAS', emoji: '📐',  },
-    { id: 4, name: 'ROYGBIV', emoji: '🎨',  },
-    { id: 5, name: 'HOMES', emoji: '🌊',  }
+    { id: 4, name: 'ROYGBIV', emoji: '🤔',  },
+    { id: 5, name: 'HOMES', emoji: '🏠',  }
   ];
 
   // Meanings (right side) - manually arranged to vary correct answer positions

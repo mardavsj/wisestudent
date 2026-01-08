@@ -222,6 +222,8 @@ const SimulationStudyPlan = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/teen/reflex-distraction-alert"
+      nextGameIdProp="brain-teens-19"
     >
       <div className="space-y-8">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

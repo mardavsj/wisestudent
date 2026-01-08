@@ -85,7 +85,9 @@ const JournalOfSmartBuy = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/finance/kids/candy-offer-story"
+      nextGameIdProp="finance-kids-18">
       <div className="space-y-8 max-w-3xl mx-auto">
         {!showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">

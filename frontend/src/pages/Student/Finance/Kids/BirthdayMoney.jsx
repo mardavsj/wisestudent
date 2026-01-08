@@ -218,7 +218,9 @@ const BirthdayMoney = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === 5}
+      nextGamePathProp="/student/finance/kids/Poster-Plan-First"
+      nextGameIdProp="finance-kids-26">
       <div className="space-y-8 text-white">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">

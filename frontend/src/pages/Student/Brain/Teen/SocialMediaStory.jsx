@@ -255,8 +255,8 @@ const SocialMediaStory = () => {
       showConfetti={showResult && finalScore >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
-      nextGamePath={nextGamePath}
-      nextGameId={nextGameId}
+      nextGamePathProp="/student/brain/teen/debate-multitask-vs-focus"
+      nextGameIdProp="brain-teens-16"
     >
       <div className="min-h-[calc(100vh-200px)] flex flex-col justify-center max-w-4xl mx-auto px-4 py-4">
         {!showResult ? (

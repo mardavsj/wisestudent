@@ -67,7 +67,7 @@ const FakeJobScamStory = () => {
         { 
           id: "scam-ignore", 
           text: "It's a scam - ignore it", 
-          emoji: "🚫", 
+          emoji: "🙂", 
           isCorrect: true
         }
       ]
@@ -79,7 +79,7 @@ const FakeJobScamStory = () => {
          { 
           id: "scam-fee", 
           text: "It's a scam - real jobs don't charge fees", 
-          emoji: "🚫", 
+          emoji: "🤔", 
           isCorrect: true
         },
         { 
@@ -110,7 +110,7 @@ const FakeJobScamStory = () => {
         { 
           id: "scam-guaranteed", 
           text: "It's a scam - no job is guaranteed", 
-          emoji: "🚫", 
+          emoji: "🙅", 
           isCorrect: true
         },
         { 
@@ -140,7 +140,7 @@ const FakeJobScamStory = () => {
         { 
           id: "scam-pay", 
           text: "It's a scam - real jobs pay you, not the other way", 
-          emoji: "🚫", 
+          emoji: "🤦", 
           isCorrect: true
         }
       ]

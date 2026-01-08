@@ -61,7 +61,7 @@ const ScreenLogStory = () => {
         { 
           id: "set-limit", 
           text: "Set a time limit and do something offline", 
-          emoji: "⏰", 
+          emoji: "🙂", 
           isCorrect: true
         },
         { 
@@ -91,7 +91,7 @@ const ScreenLogStory = () => {
         { 
           id: "stop-rest", 
           text: "Stop and get proper rest", 
-          emoji: "⏰", 
+          emoji: "😴", 
           isCorrect: true
         }
       ]
@@ -103,7 +103,7 @@ const ScreenLogStory = () => {
         { 
           id: "put-away", 
           text: "Put phone away and focus on studying", 
-          emoji: "⏰", 
+          emoji: "🤨", 
           isCorrect: true
         },
         { 
@@ -140,7 +140,7 @@ const ScreenLogStory = () => {
          { 
           id: "limit-activity", 
           text: "Limit screen time and do physical activity", 
-          emoji: "⏰", 
+          emoji: "🤔", 
           isCorrect: true
         },
       ]

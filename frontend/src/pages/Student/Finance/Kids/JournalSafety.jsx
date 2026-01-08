@@ -87,7 +87,9 @@ const JournalSafety = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === 5}
+      nextGamePathProp="/student/finance/kids/toy-shop-story"
+      nextGameIdProp="finance-kids-88">
       <div className="text-center text-white space-y-8">
         {!showResult && stages[currentStage] && (
           <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">

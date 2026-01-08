@@ -223,7 +223,9 @@ const ReflexBudget = () => {
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/finance/kids/Budget-Items-Puzzle"
+      nextGameIdProp="finance-kids-24">
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">

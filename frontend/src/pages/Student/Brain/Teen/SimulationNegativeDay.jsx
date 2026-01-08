@@ -223,6 +223,8 @@ const SimulationNegativeDay = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/teen/reflex-mindset-check"
+      nextGameIdProp="brain-teens-59"
     >
       <div className="space-y-8">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

@@ -219,7 +219,7 @@ const BirthdayMoneyStory = () => {
       title="Birthday Money Story"
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       currentLevel={5}
-      totalLevels={10}
+      totalLevels={questions.length}
       coinsPerLevel={coinsPerLevel}
       onNext={handleNext}
       nextEnabled={showResult && finalScore >= 3}
@@ -232,6 +232,8 @@ const BirthdayMoneyStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/kids/poster-saving-habit"
+      nextGameIdProp="finance-kids-6"
       showConfetti={showResult && finalScore >= 3}>
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (

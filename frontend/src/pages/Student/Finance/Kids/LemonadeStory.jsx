@@ -44,7 +44,7 @@ const LemonadeStory = () => {
         {
           id: "save",
           text: "Save half for supplies",
-          emoji: "🍋",
+          emoji: "💰",
           isCorrect: true
         },
       ]
@@ -56,7 +56,7 @@ const LemonadeStory = () => {
         { 
           id: "save", 
           text: "Save ₹5 more", 
-          emoji: "💰", 
+          emoji: "🙂", 
           isCorrect: true
         },
         { 
@@ -104,7 +104,7 @@ const LemonadeStory = () => {
         { 
           id: "no", 
           text: "No, save for next stand", 
-          emoji: "✅", 
+          emoji: "🙅", 
           isCorrect: true
         },
         { 
@@ -134,7 +134,7 @@ const LemonadeStory = () => {
         {
           id: "running",
           text: "Keeps your stand running",
-          emoji: "🍋",
+          emoji: "☀️",
           isCorrect: true
         },
         { 
@@ -218,7 +218,9 @@ const LemonadeStory = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === 5}
+      nextGamePathProp="/student/finance/kids/quiz-on-earning"
+      nextGameIdProp="finance-kids-72">
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">

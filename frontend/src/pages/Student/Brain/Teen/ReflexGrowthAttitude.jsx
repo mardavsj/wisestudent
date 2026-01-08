@@ -192,6 +192,8 @@ const ReflexGrowthAttitude = () => {
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/teen/puzzle-of-growth"
+      nextGameIdProp="brain-teens-94"
     >
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (

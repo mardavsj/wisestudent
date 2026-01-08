@@ -272,8 +272,8 @@ const BadgeBrainHealthHero = () => {
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
-      nextGamePath={nextGamePath}
-      nextGameId={nextGameId}
+      nextGamePathProp="/student/brain/teen/exam-story"
+      nextGameIdProp="brain-teens-11"
     >
       <div className="min-h-[calc(100vh-200px)] flex flex-col justify-center max-w-4xl mx-auto px-4 py-4">
         {!showResult && currentChallenge ? (

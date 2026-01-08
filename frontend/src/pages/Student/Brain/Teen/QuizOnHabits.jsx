@@ -196,6 +196,8 @@ const QuizOnHabits = () => {
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
+      nextGamePathProp="/student/brain/teen/reflex-mind-check"
+      nextGameIdProp="brain-teens-3"
     >
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (

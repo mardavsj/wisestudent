@@ -222,6 +222,8 @@ const QuizOnSaving = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/kids/reflex-savings"
+      nextGameIdProp="finance-kids-3"
       showConfetti={showResult && finalScore === 5}>
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (

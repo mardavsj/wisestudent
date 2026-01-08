@@ -219,6 +219,8 @@ const IceCreamStory = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/kids/quiz-on-spending"
+      nextGameIdProp="finance-kids-12"
       showConfetti={showResult && finalScore === 5}>
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (

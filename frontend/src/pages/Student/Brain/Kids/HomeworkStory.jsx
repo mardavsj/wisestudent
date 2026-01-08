@@ -58,13 +58,7 @@ const HomeworkStory = () => {
       id: 2,
       text: "What's the best place to do homework?",
       options: [
-        { 
-          id: "quiet", 
-          text: "A quiet desk or table", 
-          emoji: "📚", 
-          
-          isCorrect: true
-        },
+        
         { 
           id: "bed", 
           text: "In bed", 
@@ -76,7 +70,14 @@ const HomeworkStory = () => {
           text: "On the floor", 
           emoji: "📄", 
           isCorrect: false
-        }
+        },
+        { 
+          id: "quiet", 
+          text: "A quiet desk or table", 
+          emoji: "📚", 
+          
+          isCorrect: true
+        },
       ]
     },
     {
@@ -108,17 +109,18 @@ const HomeworkStory = () => {
       text: "How should you organize your homework time?",
       options: [
         { 
-          id: "random", 
-          text: "Do whatever you feel like", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        { 
           id: "plan", 
           text: "Plan which subjects first", 
           emoji: "📋", 
           isCorrect: true
         },
+        { 
+          id: "random", 
+          text: "Do whatever you feel like", 
+          emoji: "🎲", 
+          isCorrect: false
+        },
+        
         { 
           id: "skip", 
           text: "Skip some subjects", 
@@ -137,18 +139,19 @@ const HomeworkStory = () => {
           emoji: "👀", 
           isCorrect: false
         },
+        
+        { 
+          id: "skip", 
+          text: "Skip it", 
+          emoji: "⏭️", 
+          isCorrect: false
+        },
         { 
           id: "ask", 
           text: "Ask teacher or parent for help", 
           emoji: "🙋", 
           isCorrect: true
         },
-        { 
-          id: "skip", 
-          text: "Skip it", 
-          emoji: "⏭️", 
-          isCorrect: false
-        }
       ]
     }
   ];

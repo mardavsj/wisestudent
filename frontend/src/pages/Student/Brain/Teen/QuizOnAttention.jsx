@@ -196,6 +196,8 @@ const QuizOnAttention = () => {
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
+      nextGamePathProp="/student/brain/teen/reflex-concentration"
+      nextGameIdProp="brain-teens-13"
     >
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (

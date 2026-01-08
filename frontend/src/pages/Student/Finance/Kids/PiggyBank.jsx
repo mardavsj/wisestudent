@@ -218,7 +218,9 @@ const PiggyBank = () => {
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === 5}
+      nextGamePathProp="/student/finance/kids/poster-grow-your-money"
+      nextGameIdProp="finance-kids-66">
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">

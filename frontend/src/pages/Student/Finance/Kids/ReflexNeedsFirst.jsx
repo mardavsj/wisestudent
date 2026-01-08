@@ -231,6 +231,8 @@ const ReflexNeedsFirst = () => {
       showConfetti={gameState === "finished" && finalScore === 5}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
+      nextGamePathProp="/student/finance/kids/badge-smart-spender-kid"
+      nextGameIdProp="finance-kids-20"
     >
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (
