@@ -11,6 +11,7 @@ import MoodLog from "../models/MoodLog.js";
 import ActivityLog from "../models/ActivityLog.js";
 import Notification from "../models/Notification.js";
 import SchoolStudent from "../models/School/SchoolStudent.js";
+import { getAllPillarGameCounts } from "../utils/gameCountUtils.js";
 
 const router = express.Router();
 
@@ -1128,15 +1129,15 @@ router.get("/child/:childId/analytics", async (req, res) => {
         ? [req.user.childEmail]
         : [];
     
-    const child = await User.findOne({
-      _id: childId,
-      $or: [
-        ...(childEmailArray.length > 0 ? [{ email: { $in: childEmailArray } }] : []),
-        { _id: { $in: req.user.linkedIds?.childIds || [] } },
-        { guardianEmail: req.user.email }
-      ],
-      role: { $in: ['student', 'school_student'] }
-    }).select('name email avatar dob institution academic tenantId orgId').populate('linkedIds.teacherIds', 'name email phone');
+      const child = await User.findOne({
+        _id: childId,
+        $or: [
+          ...(childEmailArray.length > 0 ? [{ email: { $in: childEmailArray } }] : []),
+          { _id: { $in: req.user.linkedIds?.childIds || [] } },
+          { guardianEmail: req.user.email }
+        ],
+        role: { $in: ['student', 'school_student'] }
+      }).select('name email avatar dob institution academic tenantId orgId gender').populate('linkedIds.teacherIds', 'name email phone');
 
     // For school_student children, get school information and date of birth from SchoolStudent model
     let schoolInfo = null;
@@ -1251,25 +1252,214 @@ router.get("/child/:childId/analytics", async (req, res) => {
       }).sort({ createdAt: -1 }).limit(10)
     ]);
 
+    let legacyProgress = [];
+    if (!gameProgress || gameProgress.length === 0) {
+      legacyProgress = await GameProgress.find({ userId: childId }).lean();
+    }
+
     // 1. Calculate Overall Mastery % & Trend
-    const pillarsData = {};
-    const pillarNames = [
-      'Financial Literacy', 'Brain Health', 'UVLS', 
-      'Digital Citizenship', 'Moral Values', 'AI for All',
-      'Health - Male', 'Health - Female', 'Entrepreneurship', 
-      'Civic Responsibility'
-    ];
+      const mapGameTypeToPillar = (gameType) => {
+        switch (gameType) {
+          case 'finance':
+          case 'financial':
+            return 'Financial Literacy';
+          case 'brain':
+          case 'mental':
+            return 'Brain Health';
+        case 'uvls':
+          return 'UVLS';
+        case 'dcos':
+          return 'Digital Citizenship & Online Safety';
+        case 'moral':
+          return 'Moral Values';
+        case 'ai':
+          return 'AI for All';
+        case 'health-male':
+          return 'Health - Male';
+        case 'health-female':
+          return 'Health - Female';
+        case 'ehe':
+          return 'Entrepreneurship & Higher Education';
+        case 'crgc':
+        case 'civic-responsibility':
+        case 'sustainability':
+          return 'Civic Responsibility & Global Citizenship';
+        case 'educational':
+          return 'General Education';
+          default:
+            return gameType || 'General';
+        }
+      };
+      const mapGameTypeToPillarKey = (gameType) => {
+        switch (gameType) {
+          case 'finance':
+          case 'financial':
+            return 'finance';
+          case 'brain':
+          case 'mental':
+            return 'brain';
+          case 'uvls':
+            return 'uvls';
+          case 'dcos':
+            return 'dcos';
+          case 'moral':
+            return 'moral';
+          case 'ai':
+            return 'ai';
+          case 'health-male':
+            return 'health-male';
+          case 'health-female':
+            return 'health-female';
+          case 'ehe':
+            return 'ehe';
+          case 'crgc':
+          case 'civic-responsibility':
+          case 'sustainability':
+            return 'crgc';
+          case 'educational':
+            return 'educational';
+          default:
+            return gameType || 'general';
+        }
+      };
+      const mapPillarKeyToLabel = (pillarKey) => {
+        switch (pillarKey) {
+          case 'finance':
+            return 'Financial Literacy';
+          case 'brain':
+            return 'Brain Health';
+          case 'uvls':
+            return 'UVLS';
+          case 'dcos':
+            return 'Digital Citizenship & Online Safety';
+          case 'moral':
+            return 'Moral Values';
+          case 'ai':
+            return 'AI for All';
+          case 'health-male':
+            return 'Health - Male';
+          case 'health-female':
+            return 'Health - Female';
+          case 'ehe':
+            return 'Entrepreneurship & Higher Education';
+          case 'crgc':
+            return 'Civic Responsibility & Global Citizenship';
+          case 'sustainability':
+            return 'Sustainability';
+          case 'educational':
+            return 'General Education';
+          default:
+            return pillarKey || 'General';
+        }
+      };
 
-    pillarNames.forEach(pillar => {
-      const pillarGames = gameProgress.filter(g => g.category === pillar);
-      if (pillarGames.length > 0) {
-        const totalProgress = pillarGames.reduce((sum, g) => sum + (g.progress || 0), 0);
-        pillarsData[pillar] = Math.round(totalProgress / pillarGames.length);
+    const getProgressPercent = (game) => {
+      if (game?.fullyCompleted) return 100;
+      if (game?.totalLevels > 0) {
+        return Math.round(((game.levelsCompleted || 0) / game.totalLevels) * 100);
       }
-    });
+      if (game?.maxScore > 0) {
+        return Math.round(((game.highestScore || 0) / game.maxScore) * 100);
+      }
+      return 0;
+    };
 
-    const overallMastery = Object.keys(pillarsData).length > 0
-      ? Math.round(Object.values(pillarsData).reduce((a, b) => a + b, 0) / Object.keys(pillarsData).length)
+    const getLegacyProgressPercent = (progress, game) => {
+      if (game?.maxScore > 0) {
+        return Math.round(((progress?.score || 0) / game.maxScore) * 100);
+      }
+      if (game?.totalLevels > 0) {
+        return Math.round(((progress?.level || 0) / game.totalLevels) * 100);
+      }
+      return progress?.level ? Math.min(progress.level * 10, 100) : 0;
+    };
+
+    const isUnifiedGameCompleted = (game) => {
+      if (game?.fullyCompleted || game?.completed) return true;
+      return getProgressPercent(game) >= 100;
+    };
+
+    const isLegacyGameCompleted = (progress) => {
+      const game = legacyGameMap.get(progress.gameId?.toString());
+      return getLegacyProgressPercent(progress, game) >= 100;
+    };
+
+    let legacyGameMap = new Map();
+    if (legacyProgress.length > 0) {
+      const legacyGameIds = legacyProgress.map((entry) => entry.gameId).filter(Boolean);
+      const legacyGames = await Game.find({ _id: { $in: legacyGameIds } })
+        .select("type maxScore totalLevels")
+        .lean();
+      legacyGameMap = new Map(legacyGames.map((game) => [game._id.toString(), game]));
+    }
+
+    const gamesCompletedCount = (gameProgress && gameProgress.length > 0)
+      ? (gameProgress || []).filter((game) => isUnifiedGameCompleted(game)).length
+      : (legacyProgress || []).filter((progress) => isLegacyGameCompleted(progress)).length;
+
+      const pillarsData = {};
+      const playedGamesByPillar = {};
+      const addPlayedGame = (pillarKey, gameId) => {
+        if (!pillarKey || !gameId) return;
+        if (!playedGamesByPillar[pillarKey]) {
+          playedGamesByPillar[pillarKey] = new Set();
+        }
+        playedGamesByPillar[pillarKey].add(String(gameId));
+      };
+      if (gameProgress && gameProgress.length > 0) {
+        (gameProgress || []).forEach((game) => {
+          const pillar = mapGameTypeToPillar(game.gameType);
+          const progress = getProgressPercent(game);
+          if (!pillarsData[pillar]) {
+            pillarsData[pillar] = [];
+          }
+          pillarsData[pillar].push(progress);
+          addPlayedGame(mapGameTypeToPillarKey(game.gameType), game.gameId);
+        });
+      } else if (legacyProgress.length > 0) {
+        legacyProgress.forEach((progress) => {
+          const game = legacyGameMap.get(progress.gameId?.toString());
+          const pillar = mapGameTypeToPillar(game?.type);
+          const percent = getLegacyProgressPercent(progress, game);
+          if (!pillarsData[pillar]) {
+            pillarsData[pillar] = [];
+          }
+          pillarsData[pillar].push(percent);
+          addPlayedGame(mapGameTypeToPillarKey(game?.type), progress.gameId);
+        });
+      }
+
+      const pillarPercentages = Object.entries(pillarsData).reduce((acc, [pillar, values]) => {
+        if (!values.length) return acc;
+        const avg = Math.round(values.reduce((sum, value) => sum + value, 0) / values.length);
+        acc[pillar] = avg;
+        return acc;
+      }, {});
+      const pillarGameCounts = await getAllPillarGameCounts(UnifiedGameProgress);
+      const pillarPlayedPercentages = Object.keys(pillarGameCounts).reduce((acc, pillarKey) => {
+        const totalGames = pillarGameCounts[pillarKey] || 0;
+        const playedCount = playedGamesByPillar[pillarKey]?.size || 0;
+        const percent = totalGames > 0 ? Math.round((playedCount / totalGames) * 100) : 0;
+        acc[mapPillarKeyToLabel(pillarKey)] = percent;
+        return acc;
+      }, {});
+      const childGender = (child.gender || schoolStudent?.personalInfo?.gender || '').toString().toLowerCase();
+      const skillsDistributionByPillar = Object.entries(pillarPlayedPercentages)
+        .filter(([pillar]) => {
+          if (childGender === 'male') return pillar !== 'Health - Female';
+          if (childGender === 'female') return pillar !== 'Health - Male';
+          return true;
+        })
+        .reduce((acc, [pillar, percent]) => {
+          acc[pillar] = percent;
+          return acc;
+        }, {});
+
+    const overallMastery = Object.keys(pillarPercentages).length > 0
+      ? Math.round(
+          Object.values(pillarPercentages).reduce((sum, value) => sum + value, 0) /
+            Object.keys(pillarPercentages).length
+        )
       : 0;
 
     // Get trend data (last 30 days)
@@ -1277,12 +1467,13 @@ router.get("/child/:childId/analytics", async (req, res) => {
     for (let i = 29; i >= 0; i--) {
       const date = new Date();
       date.setDate(date.getDate() - i);
-      const dayProgress = gameProgress.filter(g => {
-        const lastPlayed = new Date(g.lastPlayed);
+      const dayProgress = (gameProgress || []).filter((g) => {
+        if (!g.lastPlayedAt) return false;
+        const lastPlayed = new Date(g.lastPlayedAt);
         return lastPlayed <= date;
       });
       const dayMastery = dayProgress.length > 0
-        ? Math.round(dayProgress.reduce((sum, g) => sum + (g.progress || 0), 0) / dayProgress.length)
+        ? Math.round(dayProgress.reduce((sum, g) => sum + getProgressPercent(g), 0) / dayProgress.length)
         : overallMastery;
       masteryTrend.push({ date: date.toISOString().split('T')[0], mastery: dayMastery });
     }
@@ -1309,6 +1500,38 @@ router.get("/child/:childId/analytics", async (req, res) => {
         weeklyEngagement.lessonSessions++;
       }
     });
+    
+    const engagementStart = dateFilter.createdAt?.$gte || sevenDaysAgo;
+    const engagementEnd = dateFilter.createdAt?.$lte || new Date();
+
+    if (weeklyEngagement.gameSessions === 0) {
+      let progressSessions = [];
+      if (gameProgress && gameProgress.length > 0) {
+        progressSessions = gameProgress.filter((g) => {
+          if (!g.lastPlayedAt) return false;
+          const lastPlayed = new Date(g.lastPlayedAt);
+          return lastPlayed >= engagementStart && lastPlayed <= engagementEnd;
+        });
+        weeklyEngagement.gameSessions = progressSessions.length;
+        weeklyEngagement.gamesMinutes = Math.round(
+          progressSessions.reduce((sum, g) => sum + (g.totalTimePlayed || 0), 0) / 60
+        );
+      } else if (legacyProgress.length > 0) {
+        progressSessions = legacyProgress.filter((g) => {
+          if (!g.lastPlayed) return false;
+          const lastPlayed = new Date(g.lastPlayed);
+          return lastPlayed >= engagementStart && lastPlayed <= engagementEnd;
+        });
+        weeklyEngagement.gameSessions = progressSessions.length;
+        weeklyEngagement.gamesMinutes = Math.round(
+          progressSessions.reduce((sum, g) => sum + (g.timePlayed || 0), 0) / 60
+        );
+      }
+    }
+
+    if (weeklyEngagement.totalMinutes === 0) {
+      weeklyEngagement.totalMinutes = weeklyEngagement.gamesMinutes + weeklyEngagement.lessonsMinutes;
+    }
 
     // 3. Last 7 Mood Entries Summary & Alerts
     const moodSummary = {
@@ -1452,7 +1675,7 @@ router.get("/child/:childId/analytics", async (req, res) => {
       const [weakestPillar, percentage] = weakPillars[0];
       homeSupportPlan.push({
         title: `Practice ${weakestPillar}`,
-        description: `Current mastery: ${percentage}%. Spend 15 minutes daily on ${weakestPillar} activities.`,
+        description: `Spend 15 minutes daily on ${weakestPillar} activities.`,
         priority: 'high',
         pillar: weakestPillar,
         actionable: `Encourage ${child.name} to complete 2-3 ${weakestPillar} games this week`
@@ -1517,8 +1740,10 @@ router.get("/child/:childId/analytics", async (req, res) => {
     }));
 
     // 10. Snapshot KPIs
+    const gamesDoneCount = gamesCompletedCount;
+
     const snapshotKPIs = {
-      totalGamesCompleted: (gameProgress || []).filter(g => g.completed).length,
+      totalGamesCompleted: gamesDoneCount,
       totalTimeSpent: weeklyEngagement.totalMinutes,
       averageDailyEngagement: Math.round(weeklyEngagement.totalMinutes / 7),
       achievementsUnlocked: recentAchievements.length,
@@ -1565,26 +1790,60 @@ router.get("/child/:childId/analytics", async (req, res) => {
     console.log('School student classId:', schoolStudent?.classId);
 
     // 12. Detailed Progress Report Data
-    const weeklyCoins = (transactions || [])
+    const weeklyCoinsFromTransactions = (transactions || [])
       .filter(t => t.type === 'earned' && new Date(t.createdAt) >= sevenDaysAgo)
       .reduce((sum, t) => sum + (t.amount || 0), 0);
 
-    const monthlyCoins = (transactions || [])
+    const monthlyCoinsFromTransactions = (transactions || [])
       .filter(t => t.type === 'earned' && new Date(t.createdAt) >= thirtyDaysAgo)
       .reduce((sum, t) => sum + (t.amount || 0), 0);
 
+    const weeklyCoinsFromProgress = (gameProgress || []).reduce((sum, game) => {
+      if (!game?.coinsEarnedHistory?.length) return sum;
+      const earned = game.coinsEarnedHistory
+        .filter((entry) => entry?.earnedAt && new Date(entry.earnedAt) >= sevenDaysAgo)
+        .reduce((entrySum, entry) => entrySum + (entry.amount || 0), 0);
+      return sum + earned;
+    }, 0);
+
+    const monthlyCoinsFromProgress = (gameProgress || []).reduce((sum, game) => {
+      if (!game?.coinsEarnedHistory?.length) return sum;
+      const earned = game.coinsEarnedHistory
+        .filter((entry) => entry?.earnedAt && new Date(entry.earnedAt) >= thirtyDaysAgo)
+        .reduce((entrySum, entry) => entrySum + (entry.amount || 0), 0);
+      return sum + earned;
+    }, 0);
+
+    const weeklyCoins = weeklyCoinsFromTransactions || weeklyCoinsFromProgress;
+    const monthlyCoins = monthlyCoinsFromTransactions || monthlyCoinsFromProgress;
+
     const totalTimeMinutes = weeklyEngagement.totalMinutes;
+    const totalCoinsEarnedFromProgress = (gameProgress && gameProgress.length > 0)
+      ? (gameProgress || []).reduce((sum, game) => sum + (game.totalCoinsEarned || 0), 0)
+      : (legacyProgress || []).reduce((sum, progress) => sum + (progress.coinsEarned || 0), 0);
+    const totalCoinsEarned = totalCoinsEarnedFromProgress || (weeklyCoins + monthlyCoins);
+
+    const gamesCompleted = gamesCompletedCount;
 
     // Games completed per pillar
     const gamesPerPillar = {};
-    pillarNames.forEach(pillar => {
-      gamesPerPillar[pillar] = (gameProgress || []).filter(g => 
-        g.completed && g.category === pillar
-      ).length;
-    });
+    if (gameProgress && gameProgress.length > 0) {
+      (gameProgress || []).forEach((game) => {
+        if (!game.fullyCompleted) return;
+        const pillar = mapGameTypeToPillar(game.gameType);
+        gamesPerPillar[pillar] = (gamesPerPillar[pillar] || 0) + 1;
+      });
+    } else if (legacyProgress.length > 0) {
+      legacyProgress.forEach((progress) => {
+        const game = legacyGameMap.get(progress.gameId?.toString());
+        if (!progress?.score && !progress?.level && !progress?.timePlayed) return;
+        const pillar = mapGameTypeToPillar(game?.type);
+        gamesPerPillar[pillar] = (gamesPerPillar[pillar] || 0) + 1;
+      });
+    }
 
     // Strengths and Needs Support (AI-based analysis)
-    const pillarEntries = Object.entries(pillarsData);
+    const pillarEntries = Object.entries(pillarPercentages);
     const sortedPillars = pillarEntries.sort((a, b) => b[1] - a[1]);
     
     const strengths = sortedPillars
@@ -1639,15 +1898,19 @@ router.get("/child/:childId/analytics", async (req, res) => {
       .filter(r => new Date(r.date) >= thirtyDaysAgo)
       .reduce((sum, r) => sum + r.value, 0);
 
-    const detailedProgressReport = {
-      weeklyCoins,
-      monthlyCoins,
-      totalTimeMinutes,
-      dayStreak: userProgress?.streak || 0,
-      gamesPerPillar,
-      strengths,
-      needsSupport
-    };
+      const detailedProgressReport = {
+        weeklyCoins,
+        monthlyCoins,
+        totalTimeMinutes,
+        timeSpent: totalTimeMinutes,
+        dayStreak: userProgress?.streak || 0,
+        totalCoinsEarned,
+        gamesCompleted,
+        gamesPerPillar,
+        strengths,
+        needsSupport,
+        childGender
+      };
 
     const walletRewards = {
       currentHealCoins: healCoins?.currentBalance || 0,
@@ -1844,12 +2107,10 @@ router.get("/child/:childId/analytics", async (req, res) => {
 
     const totalCompleted = Object.values(categoryCounts).reduce((sum, count) => sum + count, 0);
     
-    const skillsDistribution = {
-      finance: totalCompleted > 0 ? Math.round((categoryCounts['Finance'] || 0) / totalCompleted * 100) : 32,
-      mentalWellness: totalCompleted > 0 ? Math.round((categoryCounts['Mental Wellness'] || 0) / totalCompleted * 100) : 28,
-      values: totalCompleted > 0 ? Math.round((categoryCounts['Values'] || 0) / totalCompleted * 100) : 22,
-      aiSkills: totalCompleted > 0 ? Math.round((categoryCounts['AI Skills'] || 0) / totalCompleted * 100) : 18
-    };
+      const skillsDistribution = {
+        byPillar: skillsDistributionByPillar,
+        childGender
+      };
 
     res.json({
       childCard,
@@ -1858,11 +2119,11 @@ router.get("/child/:childId/analytics", async (req, res) => {
       walletRewards,
       subscriptionAndNotifications,
       childName: child.name,
-      overallMastery: {
-        percentage: overallMastery,
-        trend: masteryTrend,
-        byPillar: pillarsData
-      },
+        overallMastery: {
+          percentage: overallMastery,
+          trend: masteryTrend,
+          byPillar: pillarPlayedPercentages
+        },
       digitalTwinData,
       skillsDistribution,
       weeklyEngagement,
@@ -2346,81 +2607,6 @@ router.delete("/child/:childId/unlink", async (req, res) => {
   } catch (error) {
     console.error("Error unlinking child:", error);
     res.status(500).json({ message: "Failed to unlink child" });
-  }
-});
-
-// Get parent messages
-router.get("/messages", async (req, res) => {
-  try {
-    const parentId = req.user._id;
-
-    const notifications = await Notification.find({
-      userId: parentId,
-      type: { $in: ['message', 'announcement', 'alert'] }
-    })
-      .sort({ createdAt: -1 })
-      .limit(20)
-      .lean();
-
-    const messages = notifications.map(n => ({
-      _id: n._id,
-      subject: n.title || 'New Message',
-      message: n.message,
-      sender: n.metadata?.senderName || 'School',
-      time: formatTimeAgo(n.createdAt),
-      read: n.read || false,
-      type: 'notification'
-    }));
-
-    res.json({ messages });
-  } catch (error) {
-    console.error("Error fetching messages:", error);
-    res.status(500).json({ message: "Server error", error: error.message });
-  }
-});
-
-// Send a message
-router.post("/messages", async (req, res) => {
-  try {
-    const parentId = req.user._id;
-    const { subject, message, recipient } = req.body;
-
-    // Create notification for the recipient (school admin, teacher, etc.)
-    const notification = await Notification.create({
-      userId: parentId, // Store for parent's sent items
-      type: 'message',
-      title: subject,
-      message: message,
-      metadata: {
-        senderName: req.user.name,
-        recipient: recipient,
-        sentAt: new Date()
-      }
-    });
-
-    res.status(201).json({ 
-      message: "Message sent successfully",
-      notification 
-    });
-  } catch (error) {
-    console.error("Error sending message:", error);
-    res.status(500).json({ message: "Failed to send message" });
-  }
-});
-
-// Mark message as read
-router.put("/messages/:messageId/read", async (req, res) => {
-  try {
-    const notification = await Notification.findByIdAndUpdate(
-      req.params.messageId,
-      { read: true },
-      { new: true }
-    );
-
-    res.json({ success: true, notification });
-  } catch (error) {
-    console.error("Error marking message as read:", error);
-    res.status(500).json({ message: "Server error" });
   }
 });
 

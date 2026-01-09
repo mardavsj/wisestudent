@@ -97,7 +97,6 @@ import ParentChildAnalytics from "./pages/Parent/ParentChildAnalytics";
 import ChildProgress from "./pages/Parent/ChildProgress";
 import ChildMoodWellbeing from "./pages/Parent/ChildMoodWellbeing";
 import ChildWalletRewards from "./pages/Parent/ChildWalletRewards";
-import ParentMessages from "./pages/Parent/ParentMessages";
 import ParentSettings from "./pages/Parent/ParentSettings";
 import ParentUpgrade from "./pages/Parent/ParentUpgrade";
 import ParentProfile from "./pages/Parent/ParentProfile";
@@ -367,7 +366,6 @@ const App = () => {
       if (pathname === "/parent/dashboard") return "Parent Dashboard";
       if (pathname === "/parent/announcements") return "Announcements";
       if (pathname === "/parent/children") return "My Children";
-      if (pathname === "/parent/messages") return "Messages";
       if (pathname === "/parent/settings") return "Parent Settings";
       if (pathname === "/parent/upgrade") return "Upgrade";
       if (pathname.startsWith("/parent/child/")) {
@@ -1530,14 +1528,6 @@ const App = () => {
             element={
               <ProtectedRoute roles={["parent"]} requireApproved={true}>
                 <ParentChildren />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/parent/messages"
-            element={
-              <ProtectedRoute roles={["parent"]} requireApproved={true}>
-                <ParentMessages />
               </ProtectedRoute>
             }
           />

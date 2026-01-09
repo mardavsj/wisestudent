@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion"; //eslint-disable-line
 import ParentGameShell from "../../ParentGameShell";
 import { getParentEducationGameById } from "../data/gameData";
 
@@ -18,7 +18,6 @@ const CompassionMeter = () => {
   const [currentDay, setCurrentDay] = useState(0);
   const [dailyRatings, setDailyRatings] = useState({});
   const [showTrend, setShowTrend] = useState(false);
-  const [score, setScore] = useState(0);
   const [showGameOver, setShowGameOver] = useState(false);
 
   // Day scenarios with context
@@ -61,19 +60,6 @@ const CompassionMeter = () => {
     if (ratings.length === 0) return 0;
     const sum = ratings.reduce((acc, day) => acc + (day[metric] || 0), 0);
     return (sum / ratings.length).toFixed(1);
-  };
-
-  // Calculate overall score for the game (average of all metrics across all days)
-  const calculateOverallScore = () => {
-    const allRatings = Object.values(dailyRatings);
-    if (allRatings.length === 0) return 0;
-    let total = 0;
-    let count = 0;
-    allRatings.forEach(day => {
-      total += (day.patience || 0) + (day.tone || 0) + (day.understanding || 0);
-      count += 3;
-    });
-    return Math.round((total / count) * 10); // Scale to 10
   };
 
   // Get reflection suggestion based on trends
@@ -149,9 +135,7 @@ const CompassionMeter = () => {
       setCurrentDay(prev => prev + 1);
       setShowTrend(false);
     } else {
-      // Calculate final score based on ratings
-      const finalScore = calculateOverallScore();
-      setScore(finalScore);
+      // Show results after completing all days
       setShowTrend(true);
       setShowGameOver(true);
     }
@@ -161,15 +145,15 @@ const CompassionMeter = () => {
     setCurrentDay(0);
     setDailyRatings({});
     setShowTrend(false);
-    setScore(0);
     setShowGameOver(false);
   };
 
   const currentDayData = days[currentDay];
   const currentRatings = dailyRatings[currentDay] || {};
+  const completedDaysCount = Object.values(dailyRatings).filter(
+    (day) => day.patience && day.tone && day.understanding
+  ).length;
   const progress = ((currentDay + 1) / totalLevels) * 100;
-  const allDaysCompleted = Object.keys(dailyRatings).length === totalLevels && 
-    Object.values(dailyRatings).every(day => day.patience && day.tone && day.understanding);
 
   // Simple trend chart component
   const TrendChart = () => {
@@ -588,7 +572,7 @@ const CompassionMeter = () => {
       totalCoins={totalCoins}
       totalLevels={totalLevels}
       currentLevel={currentDay + 1}
-      score={score}
+      score={completedDaysCount}
       showGameOver={showGameOver}
       onRestart={handleRestart}
       progress={progress}

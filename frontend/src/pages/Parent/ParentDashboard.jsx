@@ -619,7 +619,7 @@ const AnalyticsView = ({ analytics }) => {
 
       {/* Digital Twin Growth & Skills Distribution */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <DigitalTwinGrowthCard digitalTwinData={digitalTwinData} />
+          <DigitalTwinGrowthCard digitalTwinData={digitalTwinData} skillsDistribution={skillsDistribution} />
         <SkillsDistributionCard skillsDistribution={skillsDistribution} />
       </div>
 
@@ -681,58 +681,85 @@ const QuickStatCard = ({ icon: Icon, label, value, suffix = '', gradient }) => {
 };
 
 // Digital Twin Growth Card Component
-export const DigitalTwinGrowthCard = ({ digitalTwinData }) => {
-  const [selectedPeriod, setSelectedPeriod] = useState('This Month');
-
-  const chartData = {
-    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-    datasets: [
-      {
-        label: 'Finance',
-        data: digitalTwinData?.finance || [65, 68, 72, 75],
-        borderColor: '#22c55e',
-        backgroundColor: 'rgba(34, 197, 94, 0.1)',
-        fill: true,
-        tension: 0.4,
-        pointRadius: 4,
-        pointHoverRadius: 6,
-        borderWidth: 3
-      },
-      {
-        label: 'Mental Wellness',
-        data: digitalTwinData?.mentalWellness || [70, 75, 80, 85],
-        borderColor: '#8b5cf6',
-        backgroundColor: 'rgba(139, 92, 246, 0.1)',
-        fill: true,
-        tension: 0.4,
-        pointRadius: 4,
-        pointHoverRadius: 6,
-        borderWidth: 3
-      },
-      {
-        label: 'Values',
-        data: digitalTwinData?.values || [50, 52, 55, 60],
-        borderColor: '#f97316',
-        backgroundColor: 'rgba(249, 115, 22, 0.1)',
-        fill: true,
-        tension: 0.4,
-        pointRadius: 4,
-        pointHoverRadius: 6,
-        borderWidth: 3
-      },
-      {
-        label: 'AI Skills',
-        data: digitalTwinData?.aiSkills || [30, 35, 40, 45],
-        borderColor: '#ef4444',
-        backgroundColor: 'rgba(239, 68, 68, 0.1)',
-        fill: true,
-        tension: 0.4,
-        pointRadius: 4,
-        pointHoverRadius: 6,
-        borderWidth: 3
-      }
-    ]
-  };
+export const DigitalTwinGrowthCard = ({ digitalTwinData, skillsDistribution }) => {
+    const pillarColors = {
+      'Financial Literacy': '#22c55e',
+      'Brain Health': '#3b82f6',
+      'UVLS': '#a855f7',
+      'Digital Citizenship & Online Safety': '#f97316',
+      'Moral Values': '#6366f1',
+      'AI for All': '#ec4899',
+      'Health - Male': '#14b8a6',
+      'Health - Female': '#f43f5e',
+      'Entrepreneurship & Higher Education': '#f59e0b',
+      'Civic Responsibility & Global Citizenship': '#8b5cf6',
+      'Sustainability': '#10b981'
+    };
+    const pillarOrder = [
+      'Financial Literacy',
+      'Brain Health',
+      'UVLS',
+      'Digital Citizenship & Online Safety',
+      'Moral Values',
+      'AI for All',
+      'Health - Male',
+      'Health - Female',
+      'Entrepreneurship & Higher Education',
+      'Civic Responsibility & Global Citizenship',
+      'Sustainability'
+    ];
+    const childGender = (skillsDistribution?.childGender || '').toLowerCase();
+    const filteredOrder = pillarOrder.filter((pillar) => {
+      if (childGender === 'male') return pillar !== 'Health - Female';
+      if (childGender === 'female') return pillar !== 'Health - Male';
+      return true;
+    });
+    const byPillar = skillsDistribution?.byPillar || null;
+    const entries = byPillar
+      ? filteredOrder.map((pillar) => ({
+          label: pillar,
+          value: Number(byPillar[pillar]) || 0,
+          color: pillarColors[pillar] || '#94a3b8'
+        }))
+      : [
+          {
+            label: 'Finance',
+            data: digitalTwinData?.finance || [65, 68, 72, 75],
+            color: '#22c55e'
+          },
+          {
+            label: 'Mental Wellness',
+            data: digitalTwinData?.mentalWellness || [70, 75, 80, 85],
+            color: '#8b5cf6'
+          },
+          {
+            label: 'Values',
+            data: digitalTwinData?.values || [50, 52, 55, 60],
+            color: '#f97316'
+          },
+          {
+            label: 'AI Skills',
+            data: digitalTwinData?.aiSkills || [30, 35, 40, 45],
+            color: '#ef4444'
+          }
+        ];
+    const chartData = {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: entries.map((entry) => {
+        const data = byPillar ? [entry.value, entry.value, entry.value, entry.value] : entry.data;
+        return {
+          label: entry.label,
+          data,
+          borderColor: entry.color,
+          backgroundColor: `${entry.color}1A`,
+          fill: true,
+          tension: 0.4,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          borderWidth: 3
+        };
+      })
+    };
 
   const chartOptions = {
     responsive: true,
@@ -781,16 +808,7 @@ export const DigitalTwinGrowthCard = ({ digitalTwinData }) => {
           <TrendingUp className="w-6 h-6 text-purple-600" />
           Child Growth Mastery
         </h3>
-        <select 
-          value={selectedPeriod}
-          onChange={(e) => setSelectedPeriod(e.target.value)}
-          className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
-        >
-          <option value="This Week">This Week</option>
-          <option value="This Month">This Month</option>
-          <option value="Last 3 Months">Last 3 Months</option>
-        </select>
-      </div>
+        </div>
 
       {/* Growth Chart */}
       <div className="h-80">
@@ -802,27 +820,63 @@ export const DigitalTwinGrowthCard = ({ digitalTwinData }) => {
 
 // Skills Distribution Card Component
 export const SkillsDistributionCard = ({ skillsDistribution }) => {
-  const chartData = {
-    labels: ['Finance', 'Mental Wellness', 'Values', 'AI Skills'],
-    datasets: [
-      {
-        data: [
-          skillsDistribution?.finance || 32,
-          skillsDistribution?.mentalWellness || 28,
-          skillsDistribution?.values || 22,
-          skillsDistribution?.aiSkills || 18
-        ],
-        backgroundColor: [
-          '#22c55e',
-          '#8b5cf6',
-          '#f97316',
-          '#ef4444'
-        ],
-        borderWidth: 0,
-        cutout: '60%'
-      }
-    ]
-  };
+    const pillarColors = {
+      'Financial Literacy': '#22c55e',
+      'Brain Health': '#3b82f6',
+      'UVLS': '#a855f7',
+      'Digital Citizenship & Online Safety': '#f97316',
+      'Moral Values': '#6366f1',
+      'AI for All': '#ec4899',
+      'Health - Male': '#14b8a6',
+      'Health - Female': '#f43f5e',
+      'Entrepreneurship & Higher Education': '#f59e0b',
+      'Civic Responsibility & Global Citizenship': '#8b5cf6',
+      'Sustainability': '#10b981',
+      'General Education': '#94a3b8'
+    };
+    const pillarOrder = [
+      'Financial Literacy',
+      'Brain Health',
+      'UVLS',
+      'Digital Citizenship & Online Safety',
+      'Moral Values',
+      'AI for All',
+      'Health - Male',
+      'Health - Female',
+      'Entrepreneurship & Higher Education',
+      'Civic Responsibility & Global Citizenship',
+      'Sustainability'
+    ];
+    const byPillar = skillsDistribution?.byPillar || null;
+    const legacyMap = {
+      'Financial Literacy': skillsDistribution?.finance,
+      'Brain Health': skillsDistribution?.mentalWellness,
+      'UVLS': skillsDistribution?.values,
+      'AI for All': skillsDistribution?.aiSkills
+    };
+    const rawPillars = byPillar || legacyMap;
+    const childGender = (skillsDistribution?.childGender || '').toLowerCase();
+    const filteredOrder = pillarOrder.filter((pillar) => {
+      if (childGender === 'male') return pillar !== 'Health - Female';
+      if (childGender === 'female') return pillar !== 'Health - Male';
+      return true;
+    });
+    const entries = filteredOrder.map((pillar) => ({
+      label: pillar,
+      value: Number(rawPillars?.[pillar]) || 0,
+      color: pillarColors[pillar] || '#94a3b8'
+    }));
+    const chartData = {
+      labels: entries.map((entry) => entry.label),
+      datasets: [
+        {
+          data: entries.map((entry) => entry.value),
+          backgroundColor: entries.map((entry) => entry.color),
+          borderWidth: 0,
+          cutout: '60%'
+        }
+      ]
+    };
 
   const chartOptions = {
     responsive: true,
@@ -1761,41 +1815,54 @@ const PermissionToggle = ({ label, checked, onChange, description }) => {
 export const DetailedProgressReportCard = ({ progressReport }) => {
   if (!progressReport) return null;
 
-  const { 
-    weeklyCoins = 0, 
-    monthlyCoins = 0, 
-    totalTimeMinutes = 0, 
-    dayStreak = 0, 
-    gamesPerPillar = {}, 
-    strengths = [], 
-    needsSupport = [] 
-  } = progressReport;
+    const { 
+      weeklyCoins = 0, 
+      monthlyCoins = 0, 
+      totalTimeMinutes = 0, 
+      dayStreak = 0, 
+      gamesPerPillar = {}, 
+      strengths = [], 
+      needsSupport = [],
+      childGender = ''
+    } = progressReport;
 
-  const pillarColors = {
-    'Financial Literacy': 'from-green-500 to-emerald-600',
-    'Brain Health': 'from-blue-500 to-cyan-600',
-    'UVLS': 'from-purple-500 to-pink-600',
-    'Digital Citizenship & Online Safety': 'from-orange-500 to-red-600',
-    'Moral Values': 'from-indigo-500 to-blue-600',
-    'AI for All': 'from-pink-500 to-rose-600',
-    'Health - Male': 'from-teal-500 to-cyan-600',
-    'Health - Female': 'from-rose-500 to-pink-600',
-    'Entrepreneurship & Higher Education': 'from-amber-500 to-orange-600',
-    'Civic Responsibility & Global Citizenship': 'from-violet-500 to-purple-600'
-  };
+    const pillarColors = {
+      'Financial Literacy': 'from-green-500 to-emerald-600',
+      'Brain Health': 'from-blue-500 to-cyan-600',
+      'UVLS': 'from-purple-500 to-pink-600',
+      'Digital Citizenship & Online Safety': 'from-orange-500 to-red-600',
+      'Moral Values': 'from-indigo-500 to-blue-600',
+      'AI for All': 'from-pink-500 to-rose-600',
+      'Health - Male': 'from-teal-500 to-cyan-600',
+      'Health - Female': 'from-rose-500 to-pink-600',
+      'Entrepreneurship & Higher Education': 'from-amber-500 to-orange-600',
+      'Civic Responsibility & Global Citizenship': 'from-violet-500 to-purple-600',
+      'General Education': 'from-slate-500 to-gray-600'
+    };
 
-  const pillarLabels = {
-    'Financial Literacy': 'Finance',
-    'Brain Health': 'Mental',
-    'UVLS': 'Values',
-    'Digital Citizenship & Online Safety': 'Digital',
-    'Moral Values': 'Values',
-    'AI for All': 'AI',
-    'Health - Male': 'Health',
-    'Health - Female': 'Health',
-    'Entrepreneurship & Higher Education': 'Business',
-    'Civic Responsibility & Global Citizenship': 'Civic'
-  };
+      const pillarLabels = {
+        'Financial Literacy': 'Financial Literacy',
+        'Brain Health': 'Brain Health',
+        'UVLS': 'UVLS',
+        'Digital Citizenship & Online Safety': 'Digital Citizenship & Online Safety',
+        'Moral Values': 'Moral Values',
+        'AI for All': 'AI for All',
+        'Health - Male': 'Health - Male',
+        'Health - Female': 'Health - Female',
+        'Entrepreneurship & Higher Education': 'Entrepreneurship & Higher Education',
+        'Civic Responsibility & Global Citizenship': 'Civic Responsibility & Global Citizenship',
+        'General Education': 'General Education'
+      };
+    const pillarList = (() => {
+      const list = Object.keys(pillarColors);
+      if (childGender === 'male') {
+        return list.filter((pillar) => pillar !== 'Health - Female');
+      }
+      if (childGender === 'female') {
+        return list.filter((pillar) => pillar !== 'Health - Male');
+      }
+      return list;
+    })();
 
   return (
         <motion.div
@@ -1808,38 +1875,25 @@ export const DetailedProgressReportCard = ({ progressReport }) => {
               Detailed Progress Report
             </h3>
             
-      {/* Top Metrics Row */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-100"
-        >
+        {/* Top Metrics Row */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-100"
+          >
           <div className="flex items-center gap-2 mb-2">
             <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
               <Coins className="w-4 h-4 text-white" />
               </div>
             <span className="text-sm font-semibold text-gray-600">Weekly Coins</span>
-              </div>
-          <p className="text-3xl font-black text-green-600">{weeklyCoins}</p>
-        </motion.div>
+            </div>
+            <p className="text-3xl font-black text-green-600">{weeklyCoins}</p>
+          </motion.div>
 
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-4 border border-blue-100"
-        >
-          <div className="flex items-center gap-2 mb-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
-              <Coins className="w-4 h-4 text-white" />
-                </div>
-            <span className="text-sm font-semibold text-gray-600">Monthly Coins</span>
-              </div>
-          <p className="text-3xl font-black text-blue-600">{monthlyCoins}</p>
-        </motion.div>
-
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 border border-purple-100"
-        >
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 border border-purple-100"
+          >
           <div className="flex items-center gap-2 mb-2">
             <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
               <Clock className="w-4 h-4 text-white" />
@@ -1866,21 +1920,21 @@ export const DetailedProgressReportCard = ({ progressReport }) => {
       {/* Games Completed per Pillar */}
       <div className="mb-6">
         <h4 className="text-lg font-bold text-gray-800 mb-3">Games Completed per Pillar</h4>
-        <div className="grid grid-cols-2 gap-3">
-          {Object.entries(gamesPerPillar).slice(0, 4).map(([pillar, count], idx) => (
-            <motion.div
-              key={pillar}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: idx * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className={`bg-gradient-to-br ${pillarColors[pillar] || 'from-gray-500 to-slate-600'} rounded-xl p-4 text-white shadow-lg`}
-            >
-              <p className="text-2xl font-black">{count}</p>
-              <p className="text-sm font-semibold opacity-90">{pillarLabels[pillar] || pillar}</p>
-            </motion.div>
-                ))}
-              </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            {pillarList.map((pillar, idx) => (
+              <motion.div
+                key={pillar}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: idx * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className={`bg-gradient-to-br ${pillarColors[pillar] || 'from-gray-500 to-slate-600'} rounded-xl p-4 text-white shadow-lg`}
+              >
+                <p className="text-2xl font-black">{gamesPerPillar[pillar] || 0}</p>
+                <p className="text-sm font-semibold opacity-90">{pillarLabels[pillar] || pillar}</p>
+              </motion.div>
+            ))}
+          </div>
             </div>
             
       {/* Strengths and Needs Support */}
@@ -2248,4 +2302,5 @@ export const RecentNotificationsCard = ({ notificationsData }) => {
 };
 
 export default ParentDashboard;
+
 

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { useNavigate, useParams } from 'react-router-dom';
 import { 
   ArrowLeft, BarChart3, BookOpen, Heart, Wallet,
-  TrendingUp, Activity, Target, Award, Zap, 
+  TrendingUp, Activity, Target, Award, Zap,
   Coins, Flame, Brain, Gamepad2, ArrowRight,
-  Eye, Trophy, RefreshCw, Download, Filter,
+  Eye, Trophy, RefreshCw, Download,
   Lightbulb, AlertCircle, CheckCircle, X
 } from 'lucide-react';
 import api from '../../utils/api';
@@ -19,7 +19,6 @@ const ParentChildAnalytics = () => {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [exporting, setExporting] = useState(false);
-  const [showFilters, setShowFilters] = useState(false);
   const [dateRange, setDateRange] = useState({
     startDate: '',
     endDate: ''
@@ -97,9 +96,6 @@ const ParentChildAnalytics = () => {
     }
   };
 
-  const clearFilters = () => {
-    setDateRange({ startDate: '', endDate: '' });
-  };
 
   useEffect(() => {
     if (childId) {
@@ -205,13 +201,6 @@ const ParentChildAnalytics = () => {
               </div>
               <div className="flex items-center gap-2">
                 <button
-                  onClick={() => setShowFilters(!showFilters)}
-                  className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                  title="Filters"
-                >
-                  <Filter className="w-4 h-4" />
-                </button>
-                <button
                   onClick={handleRefresh}
                   disabled={refreshing || loading}
                   className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors disabled:opacity-50"
@@ -231,46 +220,6 @@ const ParentChildAnalytics = () => {
             </div>
           </div>
 
-          {/* Filters */}
-          {showFilters && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="px-6 py-4 bg-slate-50 border-t border-slate-200"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-semibold text-slate-700">Date Range Filter</h3>
-                <button
-                  onClick={clearFilters}
-                  className="text-xs text-slate-600 hover:text-slate-900 flex items-center gap-1"
-                >
-                  <X className="w-3 h-3" />
-                  Clear
-                </button>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-xs font-medium text-slate-700 mb-1">Start Date</label>
-                  <input
-                    type="date"
-                    value={dateRange.startDate}
-                    onChange={(e) => setDateRange(prev => ({ ...prev, startDate: e.target.value }))}
-                    className="w-full px-3 py-1.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-medium text-slate-700 mb-1">End Date</label>
-                  <input
-                    type="date"
-                    value={dateRange.endDate}
-                    onChange={(e) => setDateRange(prev => ({ ...prev, endDate: e.target.value }))}
-                    className="w-full px-3 py-1.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          )}
         </motion.div>
         {/* Child Info Card */}
         <motion.div
@@ -296,55 +245,6 @@ const ParentChildAnalytics = () => {
             healCoins={typeof healCoins === 'object' ? healCoins?.currentBalance : healCoins}
           />
         </motion.div>
-
-        {/* Actionable Insights */}
-        {analytics?.homeSupportPlan && analytics.homeSupportPlan.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 mb-6"
-          >
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                <Lightbulb className="w-5 h-5 text-amber-600" />
-                Actionable Insights & Recommendations
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {analytics.homeSupportPlan.slice(0, 3).map((insight, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.05 }}
-                  className={`p-4 rounded-lg border ${
-                    insight.priority === 'high'
-                      ? 'bg-rose-50 border-rose-200'
-                      : insight.priority === 'medium'
-                      ? 'bg-amber-50 border-amber-200'
-                      : 'bg-blue-50 border-blue-200'
-                  }`}
-                >
-                  <div className="flex items-start gap-2 mb-2">
-                    {insight.priority === 'high' ? (
-                      <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                    ) : (
-                      <CheckCircle className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                    )}
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-sm text-slate-900 mb-1">{insight.title}</h3>
-                      <p className="text-xs text-slate-600 mb-2">{insight.description}</p>
-                      <p className="text-xs font-medium text-slate-700 bg-white/50 rounded px-2 py-1 inline-block">
-                        {insight.actionable}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        )}
 
         {/* Quick Access Navigation Cards */}
         <motion.div
@@ -393,8 +293,8 @@ const ParentChildAnalytics = () => {
             <TrendingUp className="w-5 h-5 text-indigo-600" />
             Growth & Development Charts
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <DigitalTwinGrowthCard digitalTwinData={digitalTwinData} />
+            <div className="grid grid-cols-1 gap-4">
+          <DigitalTwinGrowthCard digitalTwinData={digitalTwinData} skillsDistribution={skillsDistribution} />
             <SkillsDistributionCard skillsDistribution={skillsDistribution} />
           </div>
         </motion.div>
@@ -410,18 +310,11 @@ const ParentChildAnalytics = () => {
             <Activity className="w-5 h-5 text-indigo-600" />
             Weekly Engagement Summary
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
               <Gamepad2 className="w-6 h-6 text-blue-600 mb-2" />
               <p className="text-xs font-medium text-slate-700 mb-1">Games Played</p>
               <p className="text-2xl font-bold text-blue-600">{weeklyEngagement?.gameSessions || 0}</p>
-              <p className="text-xs text-slate-600 mt-1">{weeklyEngagement?.gamesMinutes || 0} minutes</p>
-            </div>
-            <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4">
-              <BookOpen className="w-6 h-6 text-emerald-600 mb-2" />
-              <p className="text-xs font-medium text-slate-700 mb-1">Lessons Completed</p>
-              <p className="text-2xl font-bold text-emerald-600">{weeklyEngagement?.lessonSessions || 0}</p>
-              <p className="text-xs text-slate-600 mt-1">{weeklyEngagement?.lessonsMinutes || 0} minutes</p>
             </div>
             <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-4">
               <Activity className="w-6 h-6 text-indigo-600 mb-2" />

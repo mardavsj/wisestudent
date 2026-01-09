@@ -26,7 +26,14 @@ export const ParentGameOverModal = ({
   }, [gameId]);
 
   const resolvedTotalCoins = totalCoins || location.state?.totalCoins || 5;
-  const allCorrect = score === totalLevels;
+  const normalizedScore = (() => {
+    const rawScore = Number.isFinite(score) ? score : parseInt(score, 10) || 0;
+    if (!totalLevels) return rawScore;
+    if (rawScore <= totalLevels) return rawScore;
+    const capped = Math.min(rawScore, 100);
+    return Math.max(0, Math.min(totalLevels, Math.round((capped / 100) * totalLevels)));
+  })();
+  const allCorrect = normalizedScore === totalLevels;
 
   useEffect(() => {
     const submitGameCompletion = async () => {
@@ -39,7 +46,7 @@ export const ParentGameOverModal = ({
           gameId,
           gameType,
           gameIndex,
-          score,
+          score: normalizedScore,
           totalLevels,
           totalCoins: resolvedTotalCoins,
           isReplay: isReplay || false,
@@ -61,7 +68,7 @@ export const ParentGameOverModal = ({
     };
 
     submitGameCompletion();
-  }, [gameId, gameType, gameIndex, score, totalLevels, resolvedTotalCoins, isReplay, submissionComplete, allCorrect]);
+  }, [gameId, gameType, gameIndex, normalizedScore, totalLevels, resolvedTotalCoins, isReplay, submissionComplete, allCorrect]);
 
   const resolvedBackPath = useMemo(() => {
     if (location.state?.returnPath) {
@@ -84,7 +91,7 @@ export const ParentGameOverModal = ({
           {allAnswersCorrect && submissionComplete ? '🎉 Great Job!' : '👍 Good Try!'}
         </h2>
         <p className="text-gray-600 text-lg mb-4">
-          You got <span className="font-bold text-gray-900">{score}</span> out of{" "}
+          You got <span className="font-bold text-gray-900">{normalizedScore}</span> out of{" "}
           <span className="font-bold text-gray-900">{totalLevels}</span> questions correct
         </p>
         {allAnswersCorrect && submissionComplete && (
@@ -94,7 +101,7 @@ export const ParentGameOverModal = ({
         )}
         {!allAnswersCorrect && submissionComplete && (
           <p className="text-orange-600 font-semibold mb-4">
-            Answer all {totalLevels} questions correctly to earn CalmCoins! 💪
+            Answer all {totalLevels} questions correctly to earn Healcoins! 💪
           </p>
         )}
 
@@ -107,25 +114,25 @@ export const ParentGameOverModal = ({
           <div className="mb-6">
             {calmCoinsEarned > 0 && (
               <div className="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-2xl p-4 mb-4">
-                <h3 className="text-xl font-bold text-blue-700 mb-2">💰 CalmCoins Earned!</h3>
+                <h3 className="text-xl font-bold text-blue-700 mb-2">💰 Healcoins Earned!</h3>
                 <p className="text-3xl font-black text-blue-600">+{calmCoinsEarned}</p>
               </div>
             )}
             {calmCoinsEarned === 0 && submissionComplete && !allAnswersCorrect && (
               <div className="bg-gradient-to-r from-orange-100 to-yellow-100 rounded-2xl p-4 mb-4">
-                <h3 className="text-xl font-bold text-orange-700 mb-2">💰 CalmCoins Earned</h3>
+                <h3 className="text-xl font-bold text-orange-700 mb-2">💰 Healcoins Earned</h3>
                 <p className="text-3xl font-black text-orange-600">+{calmCoinsEarned}</p>
                 <p className="text-sm text-orange-700 mt-2 font-semibold">
-                  Answer all questions correctly to earn CalmCoins!
+                  Answer all questions correctly to earn Healcoins!
                 </p>
               </div>
             )}
             {calmCoinsEarned === 0 && submissionComplete && allAnswersCorrect && (
               <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl p-4 mb-4">
-                <h3 className="text-xl font-bold text-gray-700 mb-2">💰 CalmCoins Earned</h3>
+                <h3 className="text-xl font-bold text-gray-700 mb-2">💰 Healcoins Earned</h3>
                 <p className="text-3xl font-black text-gray-600">+{calmCoinsEarned}</p>
                 <p className="text-sm text-gray-600 mt-2">
-                  You've already earned all CalmCoins for this game.
+                  You've already earned all Healcoins for this game.
                 </p>
               </div>
             )}
@@ -239,7 +246,7 @@ const ParentGameShell = ({
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2 bg-blue-50 backdrop-blur-md px-4 py-2 rounded-lg border border-blue-200">
             <span className="text-blue-700 font-semibold">
-              CalmCoins: {wallet?.balance || 0}
+              Healcoins: {wallet?.balance || 0}
             </span>
           </div>
         </div>
