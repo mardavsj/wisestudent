@@ -234,6 +234,8 @@ const TrainWithSounds = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/overfitting-storyy"
+      nextGameIdProp="ai-teen-55"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

@@ -227,6 +227,8 @@ const BiasInDataQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/robot-confusion-storyy"
+      nextGameIdProp="ai-teen-63"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

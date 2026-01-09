@@ -223,6 +223,8 @@ const BadgeTruthfulKid = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/respect-elders-story"
+      nextGameIdProp="moral-kids-11"
       gameType="moral"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}
@@ -336,3 +338,4 @@ const BadgeTruthfulKid = () => {
 };
 
 export default BadgeTruthfulKid;
+

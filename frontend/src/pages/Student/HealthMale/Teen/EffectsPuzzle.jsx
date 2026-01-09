@@ -119,6 +119,8 @@ const EffectsPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-84"
+      nextGamePathProp="/student/health-male/teens/substance-story"
+      nextGameIdProp="health-male-teen-85"
       gameType="health-male"
       totalLevels={activities.length}
       currentLevel={matches.length + 1}
@@ -256,3 +258,4 @@ const EffectsPuzzle = () => {
 };
 
 export default EffectsPuzzle;
+

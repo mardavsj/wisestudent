@@ -180,6 +180,8 @@ const DoctorFearDebate = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-76"
+      nextGamePathProp="/student/health-male/teens/journal-of-doctor-visits"
+      nextGameIdProp="health-male-teen-77"
       gameType="health-male"
       maxScore={questions.length}
       coinsPerLevel={coinsPerLevel}
@@ -262,3 +264,4 @@ const DoctorFearDebate = () => {
 };
 
 export default DoctorFearDebate;
+

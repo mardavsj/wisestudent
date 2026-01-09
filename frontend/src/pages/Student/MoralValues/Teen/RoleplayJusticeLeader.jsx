@@ -212,6 +212,8 @@ const RoleplayJusticeLeader = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/reflex-stand-up"
+      nextGameIdProp="moral-teen-49"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -320,3 +322,4 @@ const RoleplayJusticeLeader = () => {
 };
 
 export default RoleplayJusticeLeader;
+

@@ -183,6 +183,8 @@ const SchoolTeamReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/poster-task3"
+      nextGameIdProp="dcos-kids-86"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const SchoolTeamReflex = () => {
 };
 
 export default SchoolTeamReflex;
+

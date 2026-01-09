@@ -198,6 +198,8 @@ const AirportScannerStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/smart-farming-quiz"
+      nextGameIdProp="ai-kids-42"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,5 @@ const AirportScannerStory = () => {
 };
 
 export default AirportScannerStory;
+
+

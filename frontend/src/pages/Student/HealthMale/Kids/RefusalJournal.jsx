@@ -100,6 +100,8 @@ const RefusalJournal = () => {
       maxScore={journalPrompts.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/health-male/kids/peer-story"
+      nextGameIdProp="health-male-kids-88"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -169,3 +171,4 @@ const RefusalJournal = () => {
 };
 
 export default RefusalJournal;
+

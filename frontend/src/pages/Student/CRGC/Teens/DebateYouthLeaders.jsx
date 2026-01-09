@@ -131,7 +131,9 @@ const DebateYouthLeaders = () => {
         totalCoins={totalCoins}
         totalXp={totalXp}
         flashPoints={flashPoints}
-        showAnswerConfetti={showAnswerConfetti}>
+        showAnswerConfetti={showAnswerConfetti}
+        nextGamePathProp="/student/civic-responsibility/teens/journal-of-leadership"
+        nextGameIdProp="civic-responsibility-teens-97">
         <div className="text-center p-8">
           <div className="text-6xl mb-6">🏆</div>
           <h2 className="text-2xl font-bold mb-4">Excellent Debate!</h2>

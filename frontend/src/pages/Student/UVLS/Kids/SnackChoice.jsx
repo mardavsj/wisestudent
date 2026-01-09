@@ -209,6 +209,8 @@ const SnackChoice = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/cause-effect-quiz"
+      nextGameIdProp="uvls-kids-52"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -296,3 +298,4 @@ const SnackChoice = () => {
 };
 
 export default SnackChoice;
+

@@ -109,6 +109,8 @@ const PosterBrainHealth = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/journal-of-habits"
+      nextGameIdProp="brain-kids-7"
       gameType="brain"
       maxScore={stages.length}
       totalCoins={totalCoins}
@@ -153,3 +155,4 @@ const PosterBrainHealth = () => {
 };
 
 export default PosterBrainHealth;
+

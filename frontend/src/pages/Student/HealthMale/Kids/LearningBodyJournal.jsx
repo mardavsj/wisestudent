@@ -105,6 +105,8 @@ const LearningBodyJournal = () => {
       maxScore={prompts.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/health-male/kids/growth-story"
+      nextGameIdProp="health-male-kids-38"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -174,3 +176,4 @@ const LearningBodyJournal = () => {
 };
 
 export default LearningBodyJournal;
+

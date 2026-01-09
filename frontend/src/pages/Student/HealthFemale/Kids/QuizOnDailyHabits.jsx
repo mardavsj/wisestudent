@@ -127,7 +127,9 @@ const QuizOnDailyHabits = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
-    >
+    
+      nextGamePathProp="/student/health-female/kids/reflex-habit-alert"
+      nextGameIdProp="health-female-kids-33">
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         {!gameFinished && currentQuestionData ? (
           <div className="space-y-6">

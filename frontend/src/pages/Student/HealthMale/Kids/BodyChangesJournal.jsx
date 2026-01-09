@@ -105,6 +105,8 @@ const BodyChangesJournal = () => {
       maxScore={prompts.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/health-male/kids/hair-growth-story"
+      nextGameIdProp="health-male-kids-28"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -174,3 +176,4 @@ const BodyChangesJournal = () => {
 };
 
 export default BodyChangesJournal;
+

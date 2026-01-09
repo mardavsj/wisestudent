@@ -199,6 +199,8 @@ const BreakfastStory = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/poster-brain-health"
+      nextGameIdProp="brain-kids-6"
       gameType="brain"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -243,3 +245,4 @@ const BreakfastStory = () => {
 };
 
 export default BreakfastStory;
+

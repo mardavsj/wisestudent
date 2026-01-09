@@ -203,6 +203,8 @@ const AIJobsStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/fake-news-detector"
+      nextGameIdProp="ai-kids-83"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

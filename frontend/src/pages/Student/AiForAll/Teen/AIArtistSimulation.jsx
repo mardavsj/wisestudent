@@ -228,6 +228,8 @@ const AIArtistSimulation = () => {
       subtitle={showResult ? "Simulation Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
       nextEnabled={showResult}
+      nextGamePathProp="/student/ai-for-all/teen/online-safety-quiz"
+      nextGameIdProp="ai-teen-42"
       showGameOver={showResult && finalScore >= 3}
       score={coins}
       gameId="ai-teen-41"

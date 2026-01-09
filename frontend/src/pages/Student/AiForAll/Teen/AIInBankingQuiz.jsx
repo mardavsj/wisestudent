@@ -227,6 +227,8 @@ const AIInBankingQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/news-recommendation-game"
+      nextGameIdProp="ai-teen-37"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

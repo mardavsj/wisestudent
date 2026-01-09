@@ -182,6 +182,8 @@ const ClarifyReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/teen/interview-simulation"
+      nextGameIdProp="uvls-teen-64"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const ClarifyReflex = () => {
 };
 
 export default ClarifyReflex;
+

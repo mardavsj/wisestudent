@@ -188,6 +188,8 @@ const RepetitionStory = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/poster-strong-memory"
+      nextGameIdProp="brain-kids-26"
       gameType="brain"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -232,3 +234,4 @@ const RepetitionStory = () => {
 };
 
 export default RepetitionStory;
+

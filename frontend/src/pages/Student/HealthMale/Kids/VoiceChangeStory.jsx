@@ -194,6 +194,8 @@ const VoiceChangeStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/growing-up-poster"
+      nextGameIdProp="health-male-kids-26"
       gameType="health-male"
       totalLevels={5}
       currentLevel={25}
@@ -239,3 +241,4 @@ const VoiceChangeStory = () => {
 };
 
 export default VoiceChangeStory;
+

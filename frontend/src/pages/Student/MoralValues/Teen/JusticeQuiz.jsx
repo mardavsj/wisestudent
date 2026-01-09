@@ -185,6 +185,8 @@ const JusticeQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/reflex-justice-symbols"
+      nextGameIdProp="moral-teen-43"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -229,3 +231,4 @@ const JusticeQuiz = () => {
 };
 
 export default JusticeQuiz;
+

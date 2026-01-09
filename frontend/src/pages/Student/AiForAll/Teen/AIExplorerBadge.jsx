@@ -228,6 +228,8 @@ const AIExplorerBadge = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/data-labeling-gamee"
+      nextGameIdProp="ai-teen-51"
       gameType="ai"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}

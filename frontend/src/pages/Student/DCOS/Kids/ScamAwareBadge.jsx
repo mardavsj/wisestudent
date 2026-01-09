@@ -204,6 +204,8 @@ const ScamAwareBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/password-privacy-story"
+      nextGameIdProp="dcos-kids-51"
       gameType="dcos"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -261,3 +263,4 @@ const ScamAwareBadge = () => {
 };
 
 export default ScamAwareBadge;
+

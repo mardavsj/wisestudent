@@ -203,6 +203,8 @@ const TruthBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/free-gift-story"
+      nextGameIdProp="dcos-kids-41"
       gameType="dcos"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -260,3 +262,4 @@ const TruthBadge = () => {
 };
 
 export default TruthBadge;
+

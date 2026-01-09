@@ -131,6 +131,8 @@ const PolicyPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-59"
+      nextGamePathProp="/student/uvls/teen/decision-master-badge"
+      nextGameIdProp="uvls-teen-60"
       gameType="uvls"
       totalLevels={policies.length}
       currentLevel={matches.length + 1}

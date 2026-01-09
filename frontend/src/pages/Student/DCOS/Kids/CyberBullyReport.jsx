@@ -214,6 +214,8 @@ const CyberBullyReport = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-16"
+      nextGamePathProp="/student/dcos/kids/role-swap"
+      nextGameIdProp="dcos-kids-17"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -256,3 +258,4 @@ const CyberBullyReport = () => {
 };
 
 export default CyberBullyReport;
+

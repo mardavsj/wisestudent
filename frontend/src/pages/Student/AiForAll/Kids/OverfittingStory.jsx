@@ -196,6 +196,8 @@ const OverfittingStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/data-labeling-game"
+      nextGameIdProp="ai-kids-56"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const OverfittingStory = () => {
 };
 
 export default OverfittingStory;
+
+

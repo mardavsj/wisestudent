@@ -169,6 +169,8 @@ const ReproductiveHealthDebateTeen = () => {
       showGameOver={gameFinished}
       score={0}
       gameId="health-male-teen-36"
+      nextGamePathProp="/student/health-male/teens/teen-hygiene-journal"
+      nextGameIdProp="health-male-teen-37"
       gameType="health-male"
       maxScore={questions.length}
       coinsPerLevel={1}
@@ -275,3 +277,4 @@ const ReproductiveHealthDebateTeen = () => {
 };
 
 export default ReproductiveHealthDebateTeen;
+

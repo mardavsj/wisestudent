@@ -213,6 +213,8 @@ const ReflexDangerAlert = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/safe-kid-badge"
+      nextGameIdProp="health-male-kids-90"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -279,3 +281,4 @@ const ReflexDangerAlert = () => {
 };
 
 export default ReflexDangerAlert;
+

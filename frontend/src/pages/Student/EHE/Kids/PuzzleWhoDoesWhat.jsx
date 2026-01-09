@@ -138,7 +138,9 @@ const PuzzleWhoDoesWhat = () => {
       maxScore={workers.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/ehe/kids/dream-job-story"
+      nextGameIdProp="ehe-kids-5">
       <div className="space-y-8 max-w-4xl mx-auto">
         {!gameFinished ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

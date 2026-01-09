@@ -203,6 +203,8 @@ const FootprintBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/smart-robot-story"
+      nextGameIdProp="dcos-kids-71"
       gameType="dcos"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -260,3 +262,4 @@ const FootprintBadge = () => {
 };
 
 export default FootprintBadge;
+

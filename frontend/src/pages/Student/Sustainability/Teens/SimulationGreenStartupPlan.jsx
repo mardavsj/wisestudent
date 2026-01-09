@@ -116,7 +116,9 @@ const SimulationGreenStartupPlan = () => {
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/reflex-innovation-solutions"
+      nextGameIdProp="sustainability-teens-94">
       <div className="space-y-8">
         {!gameFinished && currentQuestionData && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

@@ -187,6 +187,8 @@ const DeviceSharingQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/online-friend-reflex"
+      nextGameIdProp="dcos-kids-9"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -231,3 +233,4 @@ const DeviceSharingQuiz = () => {
 };
 
 export default DeviceSharingQuiz;
+

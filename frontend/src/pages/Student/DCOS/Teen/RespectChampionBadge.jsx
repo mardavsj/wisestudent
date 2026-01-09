@@ -209,6 +209,8 @@ const RespectChampionBadge = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/teens/entrepreneur-story"
+      nextGameIdProp="dcos-teen-91"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -301,3 +303,4 @@ const RespectChampionBadge = () => {
 };
 
 export default RespectChampionBadge;
+

@@ -186,6 +186,8 @@ const QuizTeamSkills = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/reflex-collaboration"
+      nextGameIdProp="moral-teen-63"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -230,3 +232,4 @@ const QuizTeamSkills = () => {
 };
 
 export default QuizTeamSkills;
+

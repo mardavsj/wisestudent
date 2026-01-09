@@ -268,7 +268,9 @@ const PosterCommunityAction = () => {
       showAnswerConfetti={showAnswerConfetti}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/journal-of-community-help"
+      nextGameIdProp="sustainability-kids-92">
       <div className="space-y-8">
         {!showResult ? (
           <div className="space-y-6">

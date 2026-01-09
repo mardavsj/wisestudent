@@ -135,6 +135,8 @@ const StartupIdeaStoryy = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/brain/teen/debate-copy-vs-create"
+      nextGameIdProp="brain-teens-86"
       gameType="brain"
       showGameOver={levelCompleted}
       onNext={handleNext}

@@ -136,6 +136,8 @@ const PuzzleOfFocus = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/homework-story"
+      nextGameIdProp="brain-kids-15"
       gameType="brain"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -271,3 +273,4 @@ const PuzzleOfFocus = () => {
 };
 
 export default PuzzleOfFocus;
+

@@ -203,6 +203,8 @@ const NightSweatStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/hygiene-confidence-debate-46"
+      nextGameIdProp="health-male-teen-46"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -288,3 +290,4 @@ const NightSweatStory = () => {
 };
 
 export default NightSweatStory;
+

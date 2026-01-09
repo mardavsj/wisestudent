@@ -179,6 +179,8 @@ const FakeLinkReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/game-coin-scam-quiz"
+      nextGameIdProp="dcos-kids-43"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -244,3 +246,4 @@ const FakeLinkReflex = () => {
 };
 
 export default FakeLinkReflex;
+

@@ -189,6 +189,8 @@ const RobotLearningBar = () => {
       score={score}
       subtitle={`Training Task ${currentTask + 1} of ${tasks.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-mistake-quiz"
+      nextGameIdProp="ai-kids-69"
       nextEnabled={showResult && accuracy >= 70}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

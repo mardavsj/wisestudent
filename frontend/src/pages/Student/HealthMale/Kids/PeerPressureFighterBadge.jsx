@@ -233,6 +233,8 @@ const PeerPressureFighterBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/vaccine-story"
+      nextGameIdProp="health-male-kids-71"
       gameType="health-male"
       totalLevels={5}
       currentLevel={70}

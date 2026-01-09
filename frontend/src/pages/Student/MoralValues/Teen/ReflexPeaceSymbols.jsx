@@ -178,6 +178,8 @@ const ReflexPeaceSymbols = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/puzzle-of-resolution"
+      nextGameIdProp="moral-teen-84"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexPeaceSymbols = () => {
 };
 
 export default ReflexPeaceSymbols;
+

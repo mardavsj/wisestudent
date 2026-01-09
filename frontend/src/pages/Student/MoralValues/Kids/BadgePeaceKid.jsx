@@ -223,6 +223,8 @@ const BadgePeaceKid = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/candy-dilemma-story"
+      nextGameIdProp="moral-kids-91"
       gameType="moral"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}
@@ -336,3 +338,4 @@ const BadgePeaceKid = () => {
 };
 
 export default BadgePeaceKid;
+

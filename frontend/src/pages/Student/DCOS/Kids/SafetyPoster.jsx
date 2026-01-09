@@ -106,6 +106,8 @@ const SafetyPoster = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/family-rules-story"
+      nextGameIdProp="dcos-kids-7"
       gameType="dcos"
       totalLevels={stages.length}
       currentLevel={currentStage + 1}
@@ -148,3 +150,4 @@ const SafetyPoster = () => {
 };
 
 export default SafetyPoster;
+

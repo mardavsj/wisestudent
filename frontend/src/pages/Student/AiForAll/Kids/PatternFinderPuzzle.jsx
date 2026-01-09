@@ -145,6 +145,8 @@ const PatternFinderPuzzle = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/kids/robot-helper-story"
+      nextGameIdProp="ai-kids-8"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"
@@ -297,3 +299,5 @@ const PatternFinderPuzzle = () => {
 };
 
 export default PatternFinderPuzzle;
+
+

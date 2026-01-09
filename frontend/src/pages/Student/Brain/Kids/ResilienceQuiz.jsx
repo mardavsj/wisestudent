@@ -189,6 +189,8 @@ const ResilienceQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/reflex-try-again"
+      nextGameIdProp="brain-kids-93"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -231,3 +233,4 @@ const ResilienceQuiz = () => {
 };
 
 export default ResilienceQuiz;
+

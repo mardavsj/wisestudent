@@ -204,6 +204,8 @@ const CauseEffectQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/true-false-reflex"
+      nextGameIdProp="uvls-kids-53"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -291,3 +293,4 @@ const CauseEffectQuiz = () => {
 };
 
 export default CauseEffectQuiz;
+

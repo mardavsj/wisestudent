@@ -233,6 +233,8 @@ const CleanKidBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/fruit-vs-candy-story"
+      nextGameIdProp="health-male-kids-11"
       gameType="health-male"
       totalLevels={5}
       currentLevel={10}
@@ -370,3 +372,4 @@ const CleanKidBadge = () => {
 };
 
 export default CleanKidBadge;
+

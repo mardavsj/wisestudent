@@ -198,6 +198,8 @@ const SportsHygieneStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-5"
+      nextGamePathProp="/student/health-male/teens/hygiene-confidence-debate"
+      nextGameIdProp="health-male-teen-6"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -283,3 +285,4 @@ const SportsHygieneStory = () => {
 };
 
 export default SportsHygieneStory;
+

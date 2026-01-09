@@ -80,6 +80,8 @@ const JournalOfEmpathy1 = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/helping-hand-story"
+      nextGameIdProp="moral-teen-28"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -123,3 +125,4 @@ const JournalOfEmpathy1 = () => {
 };
 
 export default JournalOfEmpathy1;
+

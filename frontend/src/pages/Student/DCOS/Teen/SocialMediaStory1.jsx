@@ -197,6 +197,8 @@ const SocialMediaStory1 = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/reflex-smart-screen"
+      nextGameIdProp="dcos-teen-98"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -282,3 +284,4 @@ const SocialMediaStory1 = () => {
 };
 
 export default SocialMediaStory1;
+

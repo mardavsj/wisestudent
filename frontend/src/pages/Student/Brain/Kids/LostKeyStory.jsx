@@ -187,6 +187,8 @@ const LostKeyStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/quiz-creativity"
+      nextGameIdProp="brain-kids-82"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -229,3 +231,4 @@ const LostKeyStory = () => {
 };
 
 export default LostKeyStory;
+

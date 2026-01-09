@@ -201,6 +201,8 @@ const BadgeIntegrityHero = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/debate-obey-or-question"
+      nextGameIdProp="moral-teen-11"
       gameType="moral"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const BadgeIntegrityHero = () => {
 };
 
 export default BadgeIntegrityHero;
+

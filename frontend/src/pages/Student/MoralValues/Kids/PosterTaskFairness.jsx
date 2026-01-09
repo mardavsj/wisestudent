@@ -88,6 +88,8 @@ const PosterTaskFairness = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/journal-justice"
+      nextGameIdProp="moral-kids-47"
       gameType="moral"
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -131,3 +133,4 @@ const PosterTaskFairness = () => {
 };
 
 export default PosterTaskFairness;
+

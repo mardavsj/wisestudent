@@ -82,6 +82,8 @@ const JournalAiRule = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/copyright-story"
+      nextGameIdProp="dcos-teen-78"
       gameType="dcos"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalAiRule = () => {
 };
 
 export default JournalAiRule;
+

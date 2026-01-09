@@ -266,7 +266,9 @@ const GardenStory = () => {
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
       backPath="/games/sustainability/kids"
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/poster-reduce-food-waste"
+      nextGameIdProp="sustainability-kids-41">
       <div className="min-h-[calc(100vh-200px)] flex flex-col justify-center max-w-4xl mx-auto px-4 py-4">
         {!showResult ? (
           <div className="space-y-4 md:space-y-6">

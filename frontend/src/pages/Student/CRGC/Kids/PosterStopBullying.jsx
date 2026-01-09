@@ -108,7 +108,9 @@ const PosterStopBullying = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/civic-responsibility/kids"
-    >
+    
+      nextGamePathProp="/student/civic-responsibility/kids/journal-of-courage"
+      nextGameIdProp="civic-responsibility-kids-37">
       <div className="space-y-8">
         {!showResult && currentStageData ? (
           <div className="space-y-6">

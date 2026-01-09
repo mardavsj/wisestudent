@@ -209,6 +209,8 @@ const ComfortRoleplay = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/share-reflex"
+      nextGameIdProp="uvls-kids-9"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -253,3 +255,4 @@ const ComfortRoleplay = () => {
 };
 
 export default ComfortRoleplay;
+

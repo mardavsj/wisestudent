@@ -238,7 +238,9 @@ const BadgeCollegeDreamer = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/ehe/kids"
-    >
+    
+      nextGamePathProp="/student/ehe/kids/robot-helper-story"
+      nextGameIdProp="ehe-kids-71">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

@@ -191,6 +191,8 @@ const QuizPeerPressure = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-peer-check"
+      nextGameIdProp="health-male-kids-63"
       gameType="health-male"
       totalLevels={5}
       currentLevel={62}
@@ -266,3 +268,4 @@ const QuizPeerPressure = () => {
 };
 
 export default QuizPeerPressure;
+

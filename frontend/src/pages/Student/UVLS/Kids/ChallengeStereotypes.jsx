@@ -193,6 +193,8 @@ const ChallengeStereotypes = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/equality-ally-badge"
+      nextGameIdProp="uvls-kids-30"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -237,3 +239,4 @@ const ChallengeStereotypes = () => {
 };
 
 export default ChallengeStereotypes;
+

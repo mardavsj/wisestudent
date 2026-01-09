@@ -183,6 +183,8 @@ const ReflexLearningTools = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/puzzle-good-vs-waste-apps"
+      nextGameIdProp="dcos-kids-93"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const ReflexLearningTools = () => {
 };
 
 export default ReflexLearningTools;
+

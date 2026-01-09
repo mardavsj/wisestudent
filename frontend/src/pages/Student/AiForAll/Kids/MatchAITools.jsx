@@ -125,6 +125,8 @@ const MatchAITools = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Item ${currentItem + 1} of ${items.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/pattern-music-game"
+      nextGameIdProp="ai-kids-13"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

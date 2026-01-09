@@ -148,7 +148,9 @@ const SimulationClimatePolicyProposal = () => {
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/reflex-policy-solutions"
+      nextGameIdProp="sustainability-teens-74">
       <div className="space-y-8">
         {!gameFinished && currentQuestionData && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

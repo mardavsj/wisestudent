@@ -102,7 +102,9 @@ const PosterThinkDifferent = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/ehe/kids"
-    >
+    
+      nextGamePathProp="/student/ehe/kids/journal-of-ideas"
+      nextGameIdProp="ehe-kids-37">
       <div className="space-y-8">
         {!showResult && currentStageData ? (
           <div className="space-y-6">

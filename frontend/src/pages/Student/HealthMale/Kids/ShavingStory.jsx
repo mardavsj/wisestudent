@@ -195,6 +195,8 @@ const ShavingStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/stay-fresh-poster-advanced"
+      nextGameIdProp="health-male-kids-46"
       gameType="health-male"
       totalLevels={5}
       currentLevel={45}
@@ -240,3 +242,4 @@ const ShavingStory = () => {
 };
 
 export default ShavingStory;
+

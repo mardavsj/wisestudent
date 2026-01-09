@@ -241,7 +241,9 @@ const PeerPressureFighterBadge = () => {
       maxScore={challenges.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/health-female/kids/clean-girl-badge"
+      nextGameIdProp="health-female-kids-71">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

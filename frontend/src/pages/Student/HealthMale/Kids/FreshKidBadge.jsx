@@ -230,6 +230,8 @@ const FreshKidBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/feelings-story"
+      nextGameIdProp="health-male-kids-51"
       gameType="health-male"
       totalLevels={5}
       currentLevel={50}
@@ -367,3 +369,4 @@ const FreshKidBadge = () => {
 };
 
 export default FreshKidBadge;
+

@@ -185,6 +185,8 @@ const QuizOnBrainFood = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/reflex-brain-boost"
+      nextGameIdProp="brain-kids-3"
       gameType="brain"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -229,3 +231,4 @@ const QuizOnBrainFood = () => {
 };
 
 export default QuizOnBrainFood;
+

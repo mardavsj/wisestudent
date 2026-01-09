@@ -189,6 +189,8 @@ const TabletStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/quiz-screens"
+      nextGameIdProp="brain-kids-72"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -231,3 +233,4 @@ const TabletStory = () => {
 };
 
 export default TabletStory;
+

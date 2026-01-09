@@ -200,6 +200,8 @@ const AIBiasStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/safe-ai-quiz"
+      nextGameIdProp="ai-kids-80"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -286,3 +288,5 @@ const AIBiasStory = () => {
 };
 
 export default AIBiasStory;
+
+

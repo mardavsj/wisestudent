@@ -198,6 +198,8 @@ const FactCheckSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/meme-truth-puzzle"
+      nextGameIdProp="dcos-teen-35"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -291,3 +293,4 @@ const FactCheckSimulation = () => {
 };
 
 export default FactCheckSimulation;
+

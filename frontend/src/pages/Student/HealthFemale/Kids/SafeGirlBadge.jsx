@@ -241,7 +241,9 @@ const SafeGirlBadge = () => {
       maxScore={challenges.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/health-female/kids/first-period-story"
+      nextGameIdProp="health-female-kids-91">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

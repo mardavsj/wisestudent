@@ -188,6 +188,8 @@ const ReflexRecruiter = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/identity-badge"
+      nextGameIdProp="dcos-teen-70"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const ReflexRecruiter = () => {
 };
 
 export default ReflexRecruiter;
+

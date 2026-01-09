@@ -215,7 +215,9 @@ const BadgeLittleVolunteer = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/civic-responsibility/kids"
-    >
+    
+      nextGamePathProp="/student/civic-responsibility/kids/playground-story-3"
+      nextGameIdProp="civic-responsibility-kids-61">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

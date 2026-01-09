@@ -196,6 +196,8 @@ const NocturnalEmissionStoryTeen = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-35"
+      nextGamePathProp="/student/health-male/teens/shaving-debate-teen"
+      nextGameIdProp="health-male-teen-36"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -281,3 +283,4 @@ const NocturnalEmissionStoryTeen = () => {
 };
 
 export default NocturnalEmissionStoryTeen;
+

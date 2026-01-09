@@ -232,6 +232,8 @@ const AIInFarmingStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-in-banking-quiz"
+      nextGameIdProp="ai-teen-36"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

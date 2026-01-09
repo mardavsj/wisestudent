@@ -186,6 +186,8 @@ const EthicalQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/reflex-right-vs-easy"
+      nextGameIdProp="moral-teen-93"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -230,3 +232,4 @@ const EthicalQuiz = () => {
 };
 
 export default EthicalQuiz;
+

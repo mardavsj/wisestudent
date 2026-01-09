@@ -193,6 +193,8 @@ const FallStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/quiz-resilience"
+      nextGameIdProp="brain-kids-92"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -235,3 +237,4 @@ const FallStory = () => {
 };
 
 export default FallStory;
+

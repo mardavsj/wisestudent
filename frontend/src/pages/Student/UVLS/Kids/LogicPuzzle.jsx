@@ -132,6 +132,8 @@ const LogicPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-kids-54"
+      nextGamePathProp="/student/uvls/kids/risky-offer"
+      nextGameIdProp="uvls-kids-55"
       gameType="uvls"
       totalLevels={patterns.length}
       currentLevel={matches.length + 1}

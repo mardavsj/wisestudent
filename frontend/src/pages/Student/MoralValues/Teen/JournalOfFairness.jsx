@@ -80,6 +80,8 @@ const JournalOfFairness = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/roleplay-justice-leader"
+      nextGameIdProp="moral-teen-48"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -123,3 +125,4 @@ const JournalOfFairness = () => {
 };
 
 export default JournalOfFairness;
+

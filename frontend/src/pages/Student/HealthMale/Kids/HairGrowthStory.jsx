@@ -193,6 +193,8 @@ const HairGrowthStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-growth-alert"
+      nextGameIdProp="health-male-kids-29"
       gameType="health-male"
       totalLevels={5}
       currentLevel={28}
@@ -238,3 +240,4 @@ const HairGrowthStory = () => {
 };
 
 export default HairGrowthStory;
+

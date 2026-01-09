@@ -185,6 +185,8 @@ const QuizOnFocus = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/reflex-attention"
+      nextGameIdProp="brain-kids-13"
       gameType="brain"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -229,3 +231,4 @@ const QuizOnFocus = () => {
 };
 
 export default QuizOnFocus;
+

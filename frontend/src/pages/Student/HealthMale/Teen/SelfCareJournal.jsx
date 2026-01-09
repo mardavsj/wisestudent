@@ -79,6 +79,8 @@ const SelfCareJournal = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/daily-routine-simulation"
+      nextGameIdProp="health-male-teen-8"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -127,3 +129,4 @@ const SelfCareJournal = () => {
 };
 
 export default SelfCareJournal;
+

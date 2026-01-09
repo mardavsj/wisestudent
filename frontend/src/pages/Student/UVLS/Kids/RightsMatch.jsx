@@ -206,6 +206,8 @@ const RightsMatch = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/encourage-dream"
+      nextGameIdProp="uvls-kids-25"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

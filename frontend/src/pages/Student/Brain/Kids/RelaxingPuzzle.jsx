@@ -132,6 +132,8 @@ const RelaxingPuzzle = () => {
       maxScore={leftItems.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/exam-storyy"
+      nextGameIdProp="brain-kids-35"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -230,3 +232,4 @@ const RelaxingPuzzle = () => {
 };
 
 export default RelaxingPuzzle;
+

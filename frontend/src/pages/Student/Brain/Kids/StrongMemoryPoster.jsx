@@ -104,6 +104,8 @@ const StrongMemoryPoster = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/journal-of-recall"
+      nextGameIdProp="brain-kids-27"
       gameType="brain"
       totalLevels={stages.length}
       currentLevel={currentStage + 1}
@@ -146,3 +148,4 @@ const StrongMemoryPoster = () => {
 };
 
 export default StrongMemoryPoster;
+

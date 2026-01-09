@@ -211,6 +211,8 @@ const ReflexDietCheck = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/nutrient-match-puzzle"
+      nextGameIdProp="health-male-teen-14"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -282,3 +284,4 @@ const ReflexDietCheck = () => {
 };
 
 export default ReflexDietCheck;
+

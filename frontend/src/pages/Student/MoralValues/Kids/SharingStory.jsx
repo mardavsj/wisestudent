@@ -214,6 +214,8 @@ const SharingStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/kind-or-rude-quiz"
+      nextGameIdProp="moral-kids-22"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -256,3 +258,4 @@ const SharingStory = () => {
 };
 
 export default SharingStory;
+

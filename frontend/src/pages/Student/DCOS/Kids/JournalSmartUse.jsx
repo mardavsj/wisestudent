@@ -108,6 +108,8 @@ const JournalOfSmartUse = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/kids/reflex-reading"
+      nextGameIdProp="dcos-kids-99"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -175,3 +177,4 @@ const JournalOfSmartUse = () => {
 };
 
 export default JournalOfSmartUse;
+

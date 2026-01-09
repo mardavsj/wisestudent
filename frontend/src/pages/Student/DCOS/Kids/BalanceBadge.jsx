@@ -204,6 +204,8 @@ const BalanceBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/spot-the-truth-quiz"
+      nextGameIdProp="dcos-kids-31"
       gameType="dcos"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -261,3 +263,4 @@ const BalanceBadge = () => {
 };
 
 export default BalanceBadge;
+

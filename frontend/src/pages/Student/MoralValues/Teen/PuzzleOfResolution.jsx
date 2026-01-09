@@ -117,6 +117,8 @@ const PuzzleOfResolution = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/friend-group-story"
+      nextGameIdProp="moral-teen-85"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -256,3 +258,4 @@ const PuzzleOfResolution = () => {
 };
 
 export default PuzzleOfResolution;
+

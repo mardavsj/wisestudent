@@ -178,6 +178,8 @@ const ReflexPoliteness = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/puzzle-of-gratitude"
+      nextGameIdProp="moral-teen-14"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexPoliteness = () => {
 };
 
 export default ReflexPoliteness;
+

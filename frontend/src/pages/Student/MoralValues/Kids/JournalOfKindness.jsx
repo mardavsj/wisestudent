@@ -82,6 +82,8 @@ const JournalOfKindness = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/lost-ball-story"
+      nextGameIdProp="moral-kids-28"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalOfKindness = () => {
 };
 
 export default JournalOfKindness;
+

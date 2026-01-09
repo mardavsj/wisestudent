@@ -210,6 +210,8 @@ const GreetTheNewKid = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/polite-words-quiz"
+      nextGameIdProp="uvls-kids-12"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -297,3 +299,4 @@ const GreetTheNewKid = () => {
 };
 
 export default GreetTheNewKid;
+

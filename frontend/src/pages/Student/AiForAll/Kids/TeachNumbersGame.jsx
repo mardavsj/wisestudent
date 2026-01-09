@@ -205,6 +205,8 @@ const TeachNumbersGame = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/robot-confusion-story"
+      nextGameIdProp="ai-kids-62"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

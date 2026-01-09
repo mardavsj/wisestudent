@@ -108,6 +108,8 @@ const RestJournal = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/holiday-story"
+      nextGameIdProp="brain-kids-68"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -166,3 +168,4 @@ const RestJournal = () => {
 };
 
 export default RestJournal;
+

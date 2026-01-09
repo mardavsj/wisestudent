@@ -132,6 +132,8 @@ const SolutionsPuzzle = () => {
       maxScore={leftItems.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/group-story"
+      nextGameIdProp="brain-kids-85"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -230,3 +232,4 @@ const SolutionsPuzzle = () => {
 };
 
 export default SolutionsPuzzle;
+

@@ -82,6 +82,8 @@ const JournalOfDuty = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/playground-rules-story"
+      nextGameIdProp="moral-kids-38"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalOfDuty = () => {
 };
 
 export default JournalOfDuty;
+

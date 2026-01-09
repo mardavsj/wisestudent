@@ -230,6 +230,8 @@ const HealthyKidBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/growing-taller-story"
+      nextGameIdProp="health-male-kids-21"
       gameType="health-male"
       totalLevels={5}
       currentLevel={20}
@@ -367,3 +369,4 @@ const HealthyKidBadge = () => {
 };
 
 export default HealthyKidBadge;
+

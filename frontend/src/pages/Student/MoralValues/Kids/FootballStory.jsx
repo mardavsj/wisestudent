@@ -213,6 +213,8 @@ const FootballStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/quiz-cooperation"
+      nextGameIdProp="moral-kids-62"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -255,3 +257,4 @@ const FootballStory = () => {
 };
 
 export default FootballStory;
+

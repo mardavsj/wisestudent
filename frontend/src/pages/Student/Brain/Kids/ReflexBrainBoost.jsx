@@ -214,6 +214,8 @@ const ReflexBrainBoost = () => {
       totalXp={totalXp}
       showGameOver={gameState === "finished"}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/puzzle-of-brain-care"
+      nextGameIdProp="brain-kids-4"
       gameType="brain"
       totalLevels={TOTAL_ROUNDS}
       currentLevel={currentRound}
@@ -301,3 +303,4 @@ const ReflexBrainBoost = () => {
 };
 
 export default ReflexBrainBoost;
+

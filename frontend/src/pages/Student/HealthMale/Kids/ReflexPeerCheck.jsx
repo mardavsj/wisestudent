@@ -209,6 +209,8 @@ const ReflexPeerCheck = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/peer-scenarios-puzzle"
+      nextGameIdProp="health-male-kids-64"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

@@ -108,6 +108,8 @@ const StayPositivePoster = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/journal-of-good-things"
+      nextGameIdProp="brain-kids-57"
       gameType="brain"
       maxScore={stages.length}
       totalCoins={totalCoins}
@@ -152,3 +154,4 @@ const StayPositivePoster = () => {
 };
 
 export default StayPositivePoster;
+

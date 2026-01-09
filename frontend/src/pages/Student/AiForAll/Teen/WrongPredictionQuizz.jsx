@@ -236,6 +236,8 @@ const WrongPredictionQuizz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/pattern-vs-noise-game"
+      nextGameIdProp="ai-teen-70"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

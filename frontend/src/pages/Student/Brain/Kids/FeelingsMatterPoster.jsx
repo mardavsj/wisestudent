@@ -107,6 +107,8 @@ const FeelingsMatterPoster = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/journal-of-feelings"
+      nextGameIdProp="brain-kids-47"
       gameType="brain"
       maxScore={stages.length}
       totalCoins={totalCoins}
@@ -151,3 +153,4 @@ const FeelingsMatterPoster = () => {
 };
 
 export default FeelingsMatterPoster;
+

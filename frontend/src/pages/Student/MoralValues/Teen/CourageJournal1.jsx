@@ -80,6 +80,8 @@ const CourageJournal1 = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/bravery-story"
+      nextGameIdProp="moral-teen-58"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -123,3 +125,4 @@ const CourageJournal1 = () => {
 };
 
 export default CourageJournal1;
+

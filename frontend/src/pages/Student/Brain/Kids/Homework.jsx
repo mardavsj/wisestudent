@@ -185,6 +185,8 @@ const Homework = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/quiz-on-calmness"
+      nextGameIdProp="brain-kids-32"
       gameType="brain"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -229,3 +231,4 @@ const Homework = () => {
 };
 
 export default Homework;
+

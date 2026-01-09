@@ -248,7 +248,9 @@ const ReflexWasteChoice = () => {
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/badge-eco-helper-kid"
+      nextGameIdProp="sustainability-kids-10">
       <div className="space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">

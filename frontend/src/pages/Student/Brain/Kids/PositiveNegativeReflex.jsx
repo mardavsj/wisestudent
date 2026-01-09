@@ -290,6 +290,8 @@ const PositiveNegativeReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/badge-positive-kid"
+      nextGameIdProp="brain-kids-60"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -355,3 +357,4 @@ const PositiveNegativeReflex = () => {
 };
 
 export default PositiveNegativeReflex;
+

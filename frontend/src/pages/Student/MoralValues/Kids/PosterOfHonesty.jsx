@@ -88,6 +88,8 @@ const PosterOfHonesty = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/journal-of-truth"
+      nextGameIdProp="moral-kids-7"
       gameType="moral"
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -131,3 +133,4 @@ const PosterOfHonesty = () => {
 };
 
 export default PosterOfHonesty;
+

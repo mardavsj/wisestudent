@@ -188,6 +188,8 @@ const AntiBullyReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/upstander-simulation"
+      nextGameIdProp="dcos-teen-19"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const AntiBullyReflex = () => {
 };
 
 export default AntiBullyReflex;
+

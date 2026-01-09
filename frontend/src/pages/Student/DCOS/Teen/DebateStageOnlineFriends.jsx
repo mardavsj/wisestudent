@@ -188,6 +188,8 @@ const DebateStageOnlineFriends = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/online-safety-badge"
+      nextGameIdProp="dcos-teen-10"
       gameType="dcos"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -230,3 +232,4 @@ const DebateStageOnlineFriends = () => {
 };
 
 export default DebateStageOnlineFriends;
+

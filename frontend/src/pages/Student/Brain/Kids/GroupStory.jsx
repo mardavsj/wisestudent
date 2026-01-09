@@ -189,6 +189,8 @@ const GroupStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/poster-be-creative"
+      nextGameIdProp="brain-kids-86"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -231,3 +233,4 @@ const GroupStory = () => {
 };
 
 export default GroupStory;
+

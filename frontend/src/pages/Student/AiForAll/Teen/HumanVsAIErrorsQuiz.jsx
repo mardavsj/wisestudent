@@ -230,6 +230,8 @@ const HumanVsAIErrorsQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/balanced-data-story"
+      nextGameIdProp="ai-teen-74"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

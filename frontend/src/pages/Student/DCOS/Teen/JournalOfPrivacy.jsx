@@ -82,6 +82,8 @@ const JournalOfPrivacy = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/content-ownership-quiz"
+      nextGameIdProp="dcos-teen-59"
       gameType="dcos"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalOfPrivacy = () => {
 };
 
 export default JournalOfPrivacy;
+

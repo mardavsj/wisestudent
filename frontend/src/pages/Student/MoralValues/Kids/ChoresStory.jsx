@@ -211,6 +211,8 @@ const ChoresStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/poster-discipline"
+      nextGameIdProp="moral-kids-36"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -253,3 +255,4 @@ const ChoresStory = () => {
 };
 
 export default ChoresStory;
+

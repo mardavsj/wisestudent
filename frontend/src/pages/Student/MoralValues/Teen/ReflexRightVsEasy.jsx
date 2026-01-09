@@ -178,6 +178,8 @@ const ReflexRightVsEasy = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/puzzle-of-ethics"
+      nextGameIdProp="moral-teen-94"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexRightVsEasy = () => {
 };
 
 export default ReflexRightVsEasy;
+

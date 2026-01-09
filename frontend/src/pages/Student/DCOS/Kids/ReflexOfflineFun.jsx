@@ -215,6 +215,8 @@ const ReflexOfflineFun = () => {
       showGameOver={gameState === "finished"}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/poster-task4"
+      nextGameIdProp="dcos-kids-96"
       gameType="dcos"
       totalLevels={TOTAL_ROUNDS}
       currentLevel={currentRound}
@@ -322,3 +324,4 @@ const ReflexOfflineFun = () => {
 };
 
 export default ReflexOfflineFun;
+

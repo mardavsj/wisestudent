@@ -108,6 +108,8 @@ const IdeasJournal = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/art-story"
+      nextGameIdProp="brain-kids-88"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -169,3 +171,4 @@ const IdeasJournal = () => {
 };
 
 export default IdeasJournal;
+

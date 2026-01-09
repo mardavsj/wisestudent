@@ -211,6 +211,8 @@ const ChatTrickStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-48"
+      nextGamePathProp="/student/dcos/kids/reflex-block-game"
+      nextGameIdProp="dcos-kids-49"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -252,3 +254,4 @@ const ChatTrickStory = () => {
 };
 
 export default ChatTrickStory;
+

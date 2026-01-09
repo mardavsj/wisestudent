@@ -197,6 +197,8 @@ const SupportFriend = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/anti-bullying-poster"
+      nextGameIdProp="uvls-kids-36"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -286,3 +288,4 @@ const SupportFriend = () => {
 };
 
 export default SupportFriend;
+

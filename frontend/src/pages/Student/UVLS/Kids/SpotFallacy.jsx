@@ -198,6 +198,8 @@ const SpotFallacy = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/critical-thinker-badge"
+      nextGameIdProp="uvls-kids-60"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

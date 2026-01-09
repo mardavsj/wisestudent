@@ -108,6 +108,8 @@ const JournalMyBalance = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/kids/balance-badge"
+      nextGameIdProp="dcos-kids-30"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -175,3 +177,4 @@ const JournalMyBalance = () => {
 };
 
 export default JournalMyBalance;
+

@@ -100,6 +100,8 @@ const HabitsJournal = () => {
       maxScore={journalPrompts.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/health-male/kids/reading-story"
+      nextGameIdProp="health-male-kids-98"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -169,3 +171,4 @@ const HabitsJournal = () => {
 };
 
 export default HabitsJournal;
+

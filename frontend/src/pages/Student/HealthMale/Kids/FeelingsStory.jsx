@@ -196,6 +196,8 @@ const FeelingsStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/quiz-emotions"
+      nextGameIdProp="health-male-kids-52"
       gameType="health-male"
       totalLevels={5}
       currentLevel={50}
@@ -241,3 +243,4 @@ const FeelingsStory = () => {
 };
 
 export default FeelingsStory;
+

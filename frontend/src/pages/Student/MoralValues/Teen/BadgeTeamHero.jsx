@@ -201,6 +201,8 @@ const BadgeTeamHero = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/leader-story"
+      nextGameIdProp="moral-teen-71"
       gameType="moral"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const BadgeTeamHero = () => {
 };
 
 export default BadgeTeamHero;
+

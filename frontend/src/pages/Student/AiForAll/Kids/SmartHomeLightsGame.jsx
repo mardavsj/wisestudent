@@ -208,6 +208,8 @@ const SmartHomeLightsGame = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-daily-life-badge"
+      nextGameIdProp="ai-kids-50"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

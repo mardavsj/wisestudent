@@ -154,6 +154,8 @@ const HygieneProBadge50 = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/stress-story"
+      nextGameIdProp="health-male-teen-51"
       gameType="health-male"
       totalLevels={5}
       currentLevel={10}
@@ -291,3 +293,4 @@ const HygieneProBadge50 = () => {
 };
 
 export default HygieneProBadge50;
+

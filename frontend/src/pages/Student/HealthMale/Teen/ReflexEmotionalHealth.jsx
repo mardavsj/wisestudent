@@ -211,6 +211,8 @@ const ReflexEmotionalHealth = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/emotion-smart-teen-badge"
+      nextGameIdProp="health-male-teen-60"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -282,3 +284,4 @@ const ReflexEmotionalHealth = () => {
 };
 
 export default ReflexEmotionalHealth;
+

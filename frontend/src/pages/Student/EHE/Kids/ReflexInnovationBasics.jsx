@@ -193,7 +193,9 @@ const ReflexInnovationBasics = () => {
       maxScore={TOTAL_ROUNDS} // Max score is total number of questions (all correct)
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/ehe/kids/puzzle-match-innovators"
+      nextGameIdProp="ehe-kids-34">
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">

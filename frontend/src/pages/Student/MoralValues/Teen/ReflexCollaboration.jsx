@@ -178,6 +178,8 @@ const ReflexCollaboration = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/puzzle-great-teams"
+      nextGameIdProp="moral-teen-64"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexCollaboration = () => {
 };
 
 export default ReflexCollaboration;
+

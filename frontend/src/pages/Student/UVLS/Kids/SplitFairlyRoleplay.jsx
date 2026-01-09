@@ -191,6 +191,8 @@ const SplitFairlyRoleplay = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/mediation-poster"
+      nextGameIdProp="uvls-kids-76"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -278,3 +280,4 @@ const SplitFairlyRoleplay = () => {
 };
 
 export default SplitFairlyRoleplay;
+

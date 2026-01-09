@@ -191,6 +191,8 @@ const ShoppingListStory = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/quiz-on-memory"
+      nextGameIdProp="brain-kids-22"
       gameType="brain"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -235,3 +237,4 @@ const ShoppingListStory = () => {
 };
 
 export default ShoppingListStory;
+

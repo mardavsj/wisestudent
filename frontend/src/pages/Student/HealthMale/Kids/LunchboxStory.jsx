@@ -194,6 +194,8 @@ const LunchboxStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/healthy-plate-poster"
+      nextGameIdProp="health-male-kids-16"
       gameType="health-male"
       totalLevels={5}
       currentLevel={currentQuestion + 1}

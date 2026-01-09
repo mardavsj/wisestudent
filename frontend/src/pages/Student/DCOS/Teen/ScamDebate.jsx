@@ -178,6 +178,8 @@ const ScamDebate = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/banking-safety-puzzle"
+      nextGameIdProp="dcos-teen-47"
       gameType="dcos"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -220,3 +222,4 @@ const ScamDebate = () => {
 };
 
 export default ScamDebate;
+

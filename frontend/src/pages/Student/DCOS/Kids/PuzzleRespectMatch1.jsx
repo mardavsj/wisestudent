@@ -146,6 +146,8 @@ const PuzzleRespectMatch1 = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/school-team-reflex"
+      nextGameIdProp="dcos-kids-85"
       gameType="dcos"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -271,3 +273,4 @@ const PuzzleRespectMatch1 = () => {
 };
 
 export default PuzzleRespectMatch1;
+

@@ -162,7 +162,9 @@ const QuizSavingEnergy = () => {
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
       flashPoints={flashPoints}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/reflex-energy-saver"
+      nextGameIdProp="sustainability-kids-13">
       {!showResult ? (
         <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         <div className="space-y-6">

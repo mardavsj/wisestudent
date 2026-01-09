@@ -196,6 +196,8 @@ const StressStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-51"
+      nextGamePathProp="/student/health-male/teens/quiz-stress-relief"
+      nextGameIdProp="health-male-teen-52"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -281,3 +283,4 @@ const StressStory = () => {
 };
 
 export default StressStory;
+

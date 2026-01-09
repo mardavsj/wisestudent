@@ -120,6 +120,8 @@ const HygieneItemsPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-kids-4"
+      nextGamePathProp="/student/health-male/kids/bath-time-story"
+      nextGameIdProp="health-male-kids-5"
       gameType="health-male"
       totalLevels={items.length}
       currentLevel={matches.length + 1}
@@ -257,3 +259,4 @@ const HygieneItemsPuzzle = () => {
 };
 
 export default HygieneItemsPuzzle;
+

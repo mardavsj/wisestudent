@@ -215,6 +215,8 @@ const FamilyRulesStory1 = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-23"
+      nextGamePathProp="/student/dcos/kids/eye-strain-reflex"
+      nextGameIdProp="dcos-kids-24"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -257,3 +259,4 @@ const FamilyRulesStory1 = () => {
 };
 
 export default FamilyRulesStory1;
+

@@ -217,6 +217,8 @@ const SleepChampBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/tablet-story"
+      nextGameIdProp="brain-kids-71"
       gameType="brain"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -285,3 +287,4 @@ const SleepChampBadge = () => {
 };
 
 export default SleepChampBadge;
+

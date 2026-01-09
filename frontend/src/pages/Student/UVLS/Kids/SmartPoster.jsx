@@ -107,6 +107,8 @@ const SmartPoster = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/weekly-plan-journal"
+      nextGameIdProp="uvls-kids-97"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -138,3 +140,4 @@ const SmartPoster = () => {
 };
 
 export default SmartPoster;
+

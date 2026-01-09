@@ -132,6 +132,8 @@ const PatternPredictionPuzzle = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/image-classifier-game"
+      nextGameIdProp="ai-teen-3"
       gameType="ai"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -274,4 +276,5 @@ const PatternPredictionPuzzle = () => {
 };
 
 export default PatternPredictionPuzzle;
+
 

@@ -82,6 +82,8 @@ const TruthJournal2 = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/news-reflex"
+      nextGameIdProp="dcos-teen-39"
       gameType="dcos"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const TruthJournal2 = () => {
 };
 
 export default TruthJournal2;
+

@@ -214,6 +214,8 @@ const FamilyTalkStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-36"
+      nextGamePathProp="/student/dcos/kids/fact-check-poster-task"
+      nextGameIdProp="dcos-kids-37"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -256,3 +258,4 @@ const FamilyTalkStory = () => {
 };
 
 export default FamilyTalkStory;
+

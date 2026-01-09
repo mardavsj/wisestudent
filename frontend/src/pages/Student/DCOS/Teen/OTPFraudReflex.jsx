@@ -188,6 +188,8 @@ const OTPFraudReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/profile-picture-simulation"
+      nextGameIdProp="dcos-teen-4"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const OTPFraudReflex = () => {
 };
 
 export default OTPFraudReflex;
+

@@ -184,6 +184,8 @@ const FeedbackLoopReflex = () => {
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
       showGameOver={gameState === "finished"}
+      nextGamePathProp="/student/ai-for-all/teen/small-vs-big-data-story"
+      nextGameIdProp="ai-teen-65"
       showConfetti={gameState === "finished" && accuracy >= 70}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

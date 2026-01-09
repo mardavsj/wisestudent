@@ -125,6 +125,8 @@ const EmotionMatchPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/sharing-story"
+      nextGameIdProp="health-male-kids-55"
       gameType="health-male"
       totalLevels={emotions.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const EmotionMatchPuzzle = () => {
 };
 
 export default EmotionMatchPuzzle;
+

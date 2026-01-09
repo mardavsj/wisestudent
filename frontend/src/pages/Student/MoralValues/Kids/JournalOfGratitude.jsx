@@ -82,6 +82,8 @@ const JournalOfGratitude = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/playground-respect-story"
+      nextGameIdProp="moral-kids-18"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalOfGratitude = () => {
 };
 
 export default JournalOfGratitude;
+

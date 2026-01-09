@@ -186,6 +186,8 @@ const QuickEmotionReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/badge-emotion-kid"
+      nextGameIdProp="brain-kids-50"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -251,3 +253,4 @@ const QuickEmotionReflex = () => {
 };
 
 export default QuickEmotionReflex;
+

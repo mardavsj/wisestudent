@@ -205,6 +205,8 @@ const MemoryMatchPuzzle = () => {
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
       gameId="brain-kids-44"
+      nextGamePathProp="/student/brain/kids/sharing-story"
+      nextGameIdProp="brain-kids-45"
       gameType="brain-health"
       showGameOver={levelCompleted}
       backPath="/games/brain-health/kids"

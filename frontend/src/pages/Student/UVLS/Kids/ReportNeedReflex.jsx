@@ -189,6 +189,8 @@ const ReportNeedReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/community-helper-badge"
+      nextGameIdProp="uvls-kids-90"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -254,3 +256,4 @@ const ReportNeedReflex = () => {
 };
 
 export default ReportNeedReflex;
+

@@ -109,6 +109,8 @@ const TeenRoutineSimulation = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/reflex-healthy-teen"
+      nextGameIdProp="health-male-teen-29"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -155,3 +157,4 @@ const TeenRoutineSimulation = () => {
 };
 
 export default TeenRoutineSimulation;
+

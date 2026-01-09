@@ -185,6 +185,8 @@ const StoryOfPositivity = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/reflex-recruiter"
+      nextGameIdProp="dcos-teen-69"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -268,3 +270,4 @@ const StoryOfPositivity = () => {
 };
 
 export default StoryOfPositivity;
+

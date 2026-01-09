@@ -159,7 +159,9 @@ const PuzzleSustainableSolutions = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/renewable-energy-story"
+      nextGameIdProp="sustainability-teens-5">
       <div className="space-y-8 max-w-4xl mx-auto">
         {!gameFinished ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

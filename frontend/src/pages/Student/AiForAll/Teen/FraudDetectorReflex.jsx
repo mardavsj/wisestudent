@@ -184,6 +184,8 @@ const FraudDetectorReflex = () => {
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
       showGameOver={gameState === "finished"}
+      nextGamePathProp="/student/ai-for-all/teen/ai-in-movies-quiz"
+      nextGameIdProp="ai-teen-45"
       showConfetti={gameState === "finished" && accuracy >= 70}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

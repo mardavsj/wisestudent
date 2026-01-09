@@ -213,6 +213,8 @@ const StrangerRequestStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-55"
+      nextGamePathProp="/student/dcos/kids/device-privacy-reflex"
+      nextGameIdProp="dcos-kids-56"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -255,3 +257,4 @@ const StrangerRequestStory = () => {
 };
 
 export default StrangerRequestStory;
+

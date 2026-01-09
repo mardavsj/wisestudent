@@ -135,6 +135,8 @@ const RecommendationGame = () => {
       title="Recommendation Game"
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-or-not-quiz"
+      nextGameIdProp="ai-kids-21"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       score={coins}

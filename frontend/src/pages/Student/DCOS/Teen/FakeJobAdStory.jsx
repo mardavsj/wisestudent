@@ -199,6 +199,8 @@ const FakeJobAdStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/phishing-email-quiz"
+      nextGameIdProp="dcos-teen-42"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -283,3 +285,4 @@ const FakeJobAdStory = () => {
 };
 
 export default FakeJobAdStory;
+

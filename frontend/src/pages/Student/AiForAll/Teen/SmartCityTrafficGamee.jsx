@@ -154,6 +154,8 @@ const SmartCityTrafficGamee = () => {
       title="Smart City Traffic Game"
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/teen/ai-artist-simulation"
+      nextGameIdProp="ai-teen-41"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       score={coins}
@@ -242,3 +244,4 @@ const SmartCityTrafficGamee = () => {
 };
 
 export default SmartCityTrafficGamee;
+

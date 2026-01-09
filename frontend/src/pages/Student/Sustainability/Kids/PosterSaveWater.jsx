@@ -238,7 +238,9 @@ const PosterSaveWater = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/journal-green-habits"
+      nextGameIdProp="sustainability-kids-17">
       <div className="space-y-8">
         {!showResult ? (
           <div className="space-y-6">

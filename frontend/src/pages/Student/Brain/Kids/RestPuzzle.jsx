@@ -127,6 +127,8 @@ const RestPuzzle = () => {
       maxScore={leftItems.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/exam-stori"
+      nextGameIdProp="brain-kids-65"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -238,3 +240,4 @@ const RestPuzzle = () => {
 };
 
 export default RestPuzzle;
+

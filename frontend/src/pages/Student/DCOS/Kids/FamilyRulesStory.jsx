@@ -137,6 +137,8 @@ const FamilyRulesStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-7"
+      nextGamePathProp="/student/dcos/kids/device-sharing-quiz"
+      nextGameIdProp="dcos-kids-8"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -179,3 +181,4 @@ const FamilyRulesStory = () => {
 };
 
 export default FamilyRulesStory;
+

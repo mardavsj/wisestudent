@@ -125,6 +125,8 @@ const TeachRobotColors = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Item ${currentItem + 1} of ${items.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/robot-mistake-story"
+      nextGameIdProp="ai-kids-52"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -207,3 +209,5 @@ const TeachRobotColors = () => {
 };
 
 export default TeachRobotColors;
+
+

@@ -227,6 +227,8 @@ const AIVsToolsQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/future-of-ai-reflection"
+      nextGameIdProp="ai-teen-24"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

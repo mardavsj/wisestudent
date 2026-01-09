@@ -131,6 +131,8 @@ const PerspectivePuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-3"
+      nextGamePathProp="/student/uvls/teen/walk-in-shoes"
+      nextGameIdProp="uvls-teen-4"
       gameType="uvls"
       totalLevels={situations.length}
       currentLevel={matches.length + 1}

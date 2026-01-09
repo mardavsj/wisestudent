@@ -135,6 +135,8 @@ const PuzzleOfGrowthh = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/brain/teen/career-story"
+      nextGameIdProp="brain-teens-95"
       gameType="brain"
       showGameOver={levelCompleted}
       onNext={handleNext}

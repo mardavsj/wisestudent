@@ -188,6 +188,8 @@ const KindReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/match-faces"
+      nextGameIdProp="uvls-kids-4"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const KindReflex = () => {
 };
 
 export default KindReflex;
+

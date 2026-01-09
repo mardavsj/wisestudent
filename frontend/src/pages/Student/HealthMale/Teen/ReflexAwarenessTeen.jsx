@@ -202,6 +202,8 @@ const ReflexAwarenessTeen = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId="health-male-teen-33"
+      nextGamePathProp="/student/health-male/teens/puberty-health-puzzle-teen"
+      nextGameIdProp="health-male-teen-34"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

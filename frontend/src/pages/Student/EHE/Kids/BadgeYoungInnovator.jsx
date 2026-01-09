@@ -237,7 +237,9 @@ const BadgeYoungInnovator = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/ehe/kids"
-    >
+    
+      nextGamePathProp="/student/ehe/kids/lemonade-stand-story"
+      nextGameIdProp="ehe-kids-21">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

@@ -240,7 +240,9 @@ const EmotionExplorerBadge = () => {
       maxScore={maxScore}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/health-female/kids/friends-dare-story"
+      nextGameIdProp="health-female-kids-61">
       <div className="space-y-8">
         {!gameFinished ? (
           <div className="space-y-6">

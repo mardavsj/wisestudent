@@ -131,6 +131,8 @@ const BuildToolboxPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-49"
+      nextGamePathProp="/student/uvls/teen/emotional-responder-badge"
+      nextGameIdProp="uvls-teen-50"
       gameType="uvls"
       totalLevels={emotions.length}
       currentLevel={matches.length + 1}

@@ -194,6 +194,8 @@ const BodySystemStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/quiz-body-functions"
+      nextGameIdProp="health-male-kids-32"
       gameType="health-male"
       totalLevels={5}
       currentLevel={31}
@@ -239,3 +241,4 @@ const BodySystemStory = () => {
 };
 
 export default BodySystemStory;
+

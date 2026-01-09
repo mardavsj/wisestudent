@@ -154,6 +154,8 @@ const TrainingAccuracyGame = () => {
       title="Training Accuracy Game"
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/teen/label-error-puzzle"
+      nextGameIdProp="ai-teen-59"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       score={coins}

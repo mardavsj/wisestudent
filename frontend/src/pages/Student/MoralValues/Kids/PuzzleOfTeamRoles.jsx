@@ -119,6 +119,8 @@ const PuzzleOfTeamRoles = () => {
       title="Puzzle of Team Roles"
       score={coins}
       subtitle={showResult ? "Game Complete!" : "Match roles to their actions"}
+      nextGamePathProp="/student/moral-values/kids/classroom-story1"
+      nextGameIdProp="moral-kids-65"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -270,3 +272,4 @@ const PuzzleOfTeamRoles = () => {
 };
 
 export default PuzzleOfTeamRoles;
+

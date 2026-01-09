@@ -125,6 +125,8 @@ const HygieneMatchPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/shaving-story"
+      nextGameIdProp="health-male-kids-45"
       gameType="health-male"
       totalLevels={items.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const HygieneMatchPuzzle = () => {
 };
 
 export default HygieneMatchPuzzle;
+

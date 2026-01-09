@@ -87,6 +87,8 @@ const RoleModelJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/support-roleplay"
+      nextGameIdProp="uvls-kids-28"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -130,3 +132,4 @@ const RoleModelJournal = () => {
 };
 
 export default RoleModelJournal;
+

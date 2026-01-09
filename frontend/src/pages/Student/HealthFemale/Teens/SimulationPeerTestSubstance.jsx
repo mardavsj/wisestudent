@@ -219,7 +219,9 @@ const SimulationPeerTestSubstance = () => {
       flashPoints={flashPoints}
       backPath="/games/health-female/teens"
       showAnswerConfetti={showAnswerConfetti}
-    >
+    
+      nextGamePathProp="/student/health-female/teens/reflex-teen-safety"
+      nextGameIdProp="health-female-teen-89">
       <div className="space-y-8">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
           <div className="flex justify-between items-center mb-4">

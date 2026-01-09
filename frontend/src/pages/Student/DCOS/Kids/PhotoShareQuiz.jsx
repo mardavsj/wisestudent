@@ -184,6 +184,8 @@ const PhotoShareQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/personal-info-puzzle"
+      nextGameIdProp="dcos-kids-4"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -227,3 +229,4 @@ const PhotoShareQuiz = () => {
 };
 
 export default PhotoShareQuiz;
+

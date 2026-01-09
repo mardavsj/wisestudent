@@ -201,6 +201,8 @@ const SafeUserBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/spot-bully-quiz"
+      nextGameIdProp="dcos-kids-11"
       gameType="dcos"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const SafeUserBadge = () => {
 };
 
 export default SafeUserBadge;
+

@@ -184,6 +184,8 @@ const EmojiReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/truth-badge"
+      nextGameIdProp="dcos-kids-40"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -249,3 +251,4 @@ const EmojiReflex = () => {
 };
 
 export default EmojiReflex;
+

@@ -154,6 +154,8 @@ const RobotHonestyGame = () => {
       title="Robot Honesty Reflex"
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/teen/ai-for-good-story"
+      nextGameIdProp="ai-teen-89"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       score={coins}

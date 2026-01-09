@@ -181,6 +181,8 @@ const ReflexCalmAction = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/badge-peace-hero"
+      nextGameIdProp="moral-teen-90"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={gameState === "ready" ? 0 : currentQuestion + 1}
@@ -293,3 +295,4 @@ const ReflexCalmAction = () => {
 };
 
 export default ReflexCalmAction;
+

@@ -215,6 +215,8 @@ const ReflexBlockGame = () => {
       showGameOver={gameState === "finished"}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/scam-aware-badge"
+      nextGameIdProp="dcos-kids-50"
       gameType="dcos"
       totalLevels={TOTAL_ROUNDS}
       currentLevel={currentRound}
@@ -322,3 +324,4 @@ const ReflexBlockGame = () => {
 };
 
 export default ReflexBlockGame;
+

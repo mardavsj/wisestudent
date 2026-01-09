@@ -207,6 +207,8 @@ const InclusionMatch = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/invite-to-play"
+      nextGameIdProp="uvls-kids-15"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -295,3 +297,4 @@ const InclusionMatch = () => {
 };
 
 export default InclusionMatch;
+

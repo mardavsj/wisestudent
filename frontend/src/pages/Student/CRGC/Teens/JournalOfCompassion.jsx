@@ -96,7 +96,9 @@ const JournalOfCompassion = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       showConfetti={showResult && finalScore === stages.length}
-      backPath="/games/civic-responsibility/teens">
+      backPath="/games/civic-responsibility/teens"
+      nextGamePathProp="/student/civic-responsibility/teens/simulation-hospital-visit"
+      nextGameIdProp="civic-responsibility-teens-8">
       <div className="min-h-[calc(100vh-200px)] flex flex-col justify-center text-center text-white space-y-6 md:space-y-8 max-w-4xl mx-auto px-4 py-4">
         {!showResult && stages[currentStage] && (
           <div className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-xl md:rounded-2xl border border-white/20">

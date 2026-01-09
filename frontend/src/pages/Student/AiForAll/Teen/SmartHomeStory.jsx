@@ -262,6 +262,8 @@ const SmartHomeStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/recommendation-simulation"
+      nextGameIdProp="ai-teen-19"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

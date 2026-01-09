@@ -210,6 +210,8 @@ const AIDoctorSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/kids/robot-vacuum-game"
+      nextGameIdProp="ai-kids-36"
       gameType="ai"
       totalLevels={scenarios.length}
       currentLevel={currentQuestion + 1}

@@ -192,6 +192,8 @@ const DebateStageTrolling = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/diversity-quiz"
+      nextGameIdProp="dcos-teen-15"
       gameType="dcos"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -235,3 +237,4 @@ const DebateStageTrolling = () => {
 };
 
 export default DebateStageTrolling;
+

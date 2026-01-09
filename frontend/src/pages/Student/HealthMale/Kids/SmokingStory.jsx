@@ -203,6 +203,8 @@ const SmokingStory = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/quiz-substances"
+      nextGameIdProp="health-male-kids-82"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -248,3 +250,4 @@ const SmokingStory = () => {
 };
 
 export default SmokingStory;
+

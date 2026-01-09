@@ -131,6 +131,8 @@ const PlanYourDayPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-kids-94"
+      nextGamePathProp="/student/uvls/kids/goal-steps"
+      nextGameIdProp="uvls-kids-95"
       gameType="uvls"
       totalLevels={activities.length}
       currentLevel={matches.length + 1}

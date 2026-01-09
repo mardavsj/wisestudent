@@ -117,6 +117,8 @@ const PuzzleOfSelfControl = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/late-night-party-story"
+      nextGameIdProp="moral-teen-35"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -256,3 +258,4 @@ const PuzzleOfSelfControl = () => {
 };
 
 export default PuzzleOfSelfControl;
+

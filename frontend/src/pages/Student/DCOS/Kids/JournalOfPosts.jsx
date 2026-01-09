@@ -108,6 +108,8 @@ const JournalOfPosts = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/kids/reflex-share-safe"
+      nextGameIdProp="dcos-kids-69"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -175,3 +177,4 @@ const JournalOfPosts = () => {
 };
 
 export default JournalOfPosts;
+

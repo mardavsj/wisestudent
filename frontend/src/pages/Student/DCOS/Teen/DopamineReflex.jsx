@@ -188,6 +188,8 @@ const DopamineReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/digital-detox-simulation"
+      nextGameIdProp="dcos-teen-24"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const DopamineReflex = () => {
 };
 
 export default DopamineReflex;
+

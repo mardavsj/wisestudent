@@ -261,6 +261,8 @@ const SmartwatchHealthStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/smart-city-traffic-gamee"
+      nextGameIdProp="ai-teen-40"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

@@ -83,7 +83,9 @@ const JournalOfInnovation = () => {
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
       backPath="/games/sustainability/teens"
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/simulation-green-startup-plan"
+      nextGameIdProp="sustainability-teens-93">
       <div className="min-h-[calc(100vh-200px)] flex flex-col justify-center max-w-4xl mx-auto px-4 py-4">
         {!showResult ? (
           <div className="space-y-6">

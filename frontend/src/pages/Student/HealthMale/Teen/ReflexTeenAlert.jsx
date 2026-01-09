@@ -169,6 +169,8 @@ const ReflexTeenAlert = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId="health-male-teen-99"
+      nextGamePathProp="/student/health-male/teens/lifelong-healthy-man-badge"
+      nextGameIdProp="health-male-teen-100"
       gameType="health-male"
       totalLevels={TOTAL_ROUNDS}
       maxScore={TOTAL_ROUNDS}
@@ -244,3 +246,4 @@ const ReflexTeenAlert = () => {
 };
 
 export default ReflexTeenAlert;
+

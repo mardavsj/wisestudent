@@ -111,6 +111,8 @@ const SupportRoleplay = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/challenge-stereotypes"
+      nextGameIdProp="uvls-kids-29"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

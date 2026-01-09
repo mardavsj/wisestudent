@@ -183,6 +183,8 @@ const GameInviteReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/safety-poster"
+      nextGameIdProp="dcos-kids-6"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const GameInviteReflex = () => {
 };
 
 export default GameInviteReflex;
+

@@ -200,6 +200,8 @@ const CommunityStory = () => {
       score={coins}
       subtitle={showResult ? "Activity Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/moral-values/teen/debate-boss-vs-leader"
+      nextGameIdProp="moral-teen-76"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -285,3 +287,4 @@ const CommunityStory = () => {
 };
 
 export default CommunityStory;
+

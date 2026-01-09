@@ -222,7 +222,9 @@ const SimulationTeenCitizen = () => {
       maxScore={scenarios.length} // Max score is total number of questions (all correct)
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/civic-responsibility/teens/reflex-teen-duty"
+      nextGameIdProp="civic-responsibility-teens-79">
       <div className="space-y-8">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
           <div className="flex justify-between items-center mb-4">

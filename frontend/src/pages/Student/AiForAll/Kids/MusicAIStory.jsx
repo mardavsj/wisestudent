@@ -196,6 +196,8 @@ const MusicAIStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-in-banking-quiz"
+      nextGameIdProp="ai-kids-45"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const MusicAIStory = () => {
 };
 
 export default MusicAIStory;
+
+

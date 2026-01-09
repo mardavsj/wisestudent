@@ -125,6 +125,8 @@ const SelfDrivingCar = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Scenario ${currentSignal + 1} of ${signals.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/pattern-finder-puzzle"
+      nextGameIdProp="ai-kids-7"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -207,4 +209,6 @@ const SelfDrivingCar = () => {
 };
 
 export default SelfDrivingCar;
+
+
 

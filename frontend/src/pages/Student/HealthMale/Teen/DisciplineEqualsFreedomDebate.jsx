@@ -117,6 +117,8 @@ const DisciplineEqualsFreedomDebate = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-96"
+      nextGamePathProp="/student/health-male/teens/journal-of-teen-habits"
+      nextGameIdProp="health-male-teen-97"
       gameType="health-male"
       maxScore={questions.length}
       coinsPerLevel={coinsPerLevel}
@@ -199,3 +201,4 @@ const DisciplineEqualsFreedomDebate = () => {
 };
 
 export default DisciplineEqualsFreedomDebate;
+

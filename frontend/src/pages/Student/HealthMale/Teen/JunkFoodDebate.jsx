@@ -185,6 +185,8 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/diet-change-journal"
+      nextGameIdProp="health-male-teen-17"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -283,3 +285,4 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
 };
 
 export default JunkFoodDebate;
+

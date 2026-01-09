@@ -201,6 +201,8 @@ const BadgeEmpathyHero = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/responsibility-story"
+      nextGameIdProp="moral-teen-31"
       gameType="moral"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const BadgeEmpathyHero = () => {
 };
 
 export default BadgeEmpathyHero;
+

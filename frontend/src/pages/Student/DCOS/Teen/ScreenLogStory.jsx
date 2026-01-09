@@ -197,6 +197,8 @@ const ScreenLogStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/sleep-health-quiz"
+      nextGameIdProp="dcos-teen-22"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,4 @@ const ScreenLogStory = () => {
 };
 
 export default ScreenLogStory;
+

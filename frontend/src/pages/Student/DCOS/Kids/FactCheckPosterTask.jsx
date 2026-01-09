@@ -104,6 +104,8 @@ const FactCheckPosterTask = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/journal-of-truth1"
+      nextGameIdProp="dcos-kids-38"
       gameType="dcos"
       totalLevels={stages.length}
       currentLevel={currentStage + 1}
@@ -146,3 +148,4 @@ const FactCheckPosterTask = () => {
 };
 
 export default FactCheckPosterTask;
+

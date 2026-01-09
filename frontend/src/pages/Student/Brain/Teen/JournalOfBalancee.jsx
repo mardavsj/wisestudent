@@ -135,6 +135,8 @@ const JournalOfBalancee = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/brain/teen/simulation-daily-routinee"
+      nextGameIdProp="brain-teens-78"
       gameType="brain"
       showGameOver={levelCompleted}
       onNext={handleNext}

@@ -80,6 +80,8 @@ const JournalOfResolution = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/roleplay-mediator"
+      nextGameIdProp="moral-teen-88"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -123,3 +125,4 @@ const JournalOfResolution = () => {
 };
 
 export default JournalOfResolution;
+

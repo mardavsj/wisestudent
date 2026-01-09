@@ -197,6 +197,8 @@ const SleepHealthQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/dopamine-reflex"
+      nextGameIdProp="dcos-teen-23"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -241,3 +243,4 @@ const SleepHealthQuiz = () => {
 };
 
 export default SleepHealthQuiz;
+

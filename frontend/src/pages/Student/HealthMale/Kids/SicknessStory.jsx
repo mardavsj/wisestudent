@@ -186,6 +186,8 @@ const SicknessStory = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/prevention-first-poster"
+      nextGameIdProp="health-male-kids-76"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -230,3 +232,4 @@ const SicknessStory = () => {
 };
 
 export default SicknessStory;
+

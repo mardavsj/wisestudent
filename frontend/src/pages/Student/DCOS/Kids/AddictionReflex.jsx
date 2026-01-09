@@ -183,6 +183,8 @@ const AddictionReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/journal-my-balance"
+      nextGameIdProp="dcos-kids-29"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const AddictionReflex = () => {
 };
 
 export default AddictionReflex;
+

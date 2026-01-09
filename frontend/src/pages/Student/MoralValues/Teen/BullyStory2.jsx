@@ -199,6 +199,8 @@ const BullyStory2 = () => {
       score={coins}
       subtitle={showResult ? "Activity Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/moral-values/teen/debate-equal-vs-fair"
+      nextGameIdProp="moral-teen-46"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,4 @@ const BullyStory2 = () => {
 };
 
 export default BullyStory2;
+

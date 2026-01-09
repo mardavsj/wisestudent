@@ -223,6 +223,8 @@ const TeenShavingSimulation = () => {
             showGameOver={gameFinished}
             score={coins}
             gameId={gameId}
+            nextGamePathProp="/student/health-male/teens/reflex-shaving-teen"
+            nextGameIdProp="health-male-teen-39"
             gameType="health-male"
             flashPoints={flashPoints}
             showAnswerConfetti={showAnswerConfetti}
@@ -269,3 +271,4 @@ const TeenShavingSimulation = () => {
 };
 
 export default TeenShavingSimulation;
+

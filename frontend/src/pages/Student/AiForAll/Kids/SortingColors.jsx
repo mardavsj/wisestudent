@@ -125,6 +125,8 @@ const SortingColors = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Item ${currentItem + 1} of ${items.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/true-false-ai-quiz"
+      nextGameIdProp="ai-kids-4"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -205,4 +207,6 @@ const SortingColors = () => {
 };
 
 export default SortingColors;
+
+
 

@@ -183,6 +183,8 @@ const PatternMusicReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/computer-vision-basics"
+      nextGameIdProp="ai-teen-12"
       gameType="ai"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}

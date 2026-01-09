@@ -117,6 +117,8 @@ const PuzzleOfGreatTeams = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/leadership-story"
+      nextGameIdProp="moral-teen-65"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -256,3 +258,4 @@ const PuzzleOfGreatTeams = () => {
 };
 
 export default PuzzleOfGreatTeams;
+

@@ -188,6 +188,8 @@ const PeerStory = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-danger-alert"
+      nextGameIdProp="health-male-kids-89"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -233,3 +235,4 @@ const PeerStory = () => {
 };
 
 export default PeerStory;
+

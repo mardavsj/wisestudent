@@ -183,6 +183,8 @@ const ReflexShareSafe = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/footprint-badge"
+      nextGameIdProp="dcos-kids-70"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}

@@ -183,6 +183,8 @@ const ScreenAlertReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/badge-balanced-kid"
+      nextGameIdProp="brain-kids-80"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const ScreenAlertReflex = () => {
 };
 
 export default ScreenAlertReflex;
+

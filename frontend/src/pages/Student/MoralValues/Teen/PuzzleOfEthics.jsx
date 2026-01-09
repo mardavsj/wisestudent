@@ -117,6 +117,8 @@ const PuzzleOfEthics = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/peer-pressure-story1"
+      nextGameIdProp="moral-teen-95"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -256,3 +258,4 @@ const PuzzleOfEthics = () => {
 };
 
 export default PuzzleOfEthics;
+

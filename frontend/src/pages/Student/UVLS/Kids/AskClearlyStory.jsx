@@ -212,6 +212,8 @@ const AskClearlyStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/communication-poster"
+      nextGameIdProp="uvls-kids-66"
       gameType="uvls"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const AskClearlyStory = () => {
 };
 
 export default AskClearlyStory;
+

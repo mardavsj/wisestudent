@@ -87,6 +87,8 @@ const MoodJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/calm-choice"
+      nextGameIdProp="uvls-kids-45"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -130,3 +132,4 @@ const MoodJournal = () => {
 };
 
 export default MoodJournal;
+

@@ -188,6 +188,8 @@ const CalmReflexx = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/resolve-steps-puzzle"
+      nextGameIdProp="uvls-kids-74"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const CalmReflexx = () => {
 };
 
 export default CalmReflexx;
+

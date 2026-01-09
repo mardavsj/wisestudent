@@ -194,6 +194,8 @@ const QuizBodyFunctions = () => {
       showGameOver={gameFinished}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-body-basics"
+      nextGameIdProp="health-male-kids-33"
       gameType="health-male"
       totalLevels={5}
       currentLevel={32}
@@ -269,3 +271,4 @@ const QuizBodyFunctions = () => {
 };
 
 export default QuizBodyFunctions;
+

@@ -240,7 +240,9 @@ const PosterSaveEnergy = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/journal-of-transport"
+      nextGameIdProp="sustainability-kids-52">
       <div className="space-y-8">
         {!showResult ? (
           <div className="space-y-6">

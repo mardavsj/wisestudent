@@ -231,6 +231,8 @@ const PowerOfNoPoster = () => {
       showGameOver={showResult && isLastStage && isCorrect}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/pressure-journal"
+      nextGameIdProp="health-male-kids-67"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -307,3 +309,4 @@ const PowerOfNoPoster = () => {
 };
 
 export default PowerOfNoPoster;
+

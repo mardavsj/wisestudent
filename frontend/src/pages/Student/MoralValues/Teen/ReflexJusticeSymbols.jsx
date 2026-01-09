@@ -181,6 +181,8 @@ const ReflexJusticeSymbols = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/puzzle-fairness1"
+      nextGameIdProp="moral-teen-44"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -269,3 +271,4 @@ const ReflexJusticeSymbols = () => {
 };
 
 export default ReflexJusticeSymbols;
+

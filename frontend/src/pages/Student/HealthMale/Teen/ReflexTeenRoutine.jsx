@@ -173,6 +173,8 @@ const ReflexTeenRoutine = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId="health-male-teen-93"
+      nextGamePathProp="/student/health-male/teens/habit-builder-puzzle"
+      nextGameIdProp="health-male-teen-94"
       gameType="health-male"
       totalLevels={TOTAL_ROUNDS}
       maxScore={TOTAL_ROUNDS}
@@ -248,3 +250,4 @@ const ReflexTeenRoutine = () => {
 };
 
 export default ReflexTeenRoutine;
+

@@ -137,6 +137,8 @@ const PuzzleOnlineForever = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/good-vs-bad-post-quiz"
+      nextGameIdProp="dcos-kids-64"
       gameType="dcos"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const PuzzleOnlineForever = () => {
 };
 
 export default PuzzleOnlineForever;
+

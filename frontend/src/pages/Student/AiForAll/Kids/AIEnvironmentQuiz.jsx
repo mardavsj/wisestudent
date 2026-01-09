@@ -196,6 +196,8 @@ const AIEnvironmentQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/fair-ai-story"
+      nextGameIdProp="ai-kids-93"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const AIEnvironmentQuiz = () => {
 };
 
 export default AIEnvironmentQuiz;
+
+

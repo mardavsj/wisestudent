@@ -188,6 +188,8 @@ const ReflexAIResponsibility = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/ai-leader-badge"
+      nextGameIdProp="dcos-teen-80"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const ReflexAIResponsibility = () => {
 };
 
 export default ReflexAIResponsibility;
+

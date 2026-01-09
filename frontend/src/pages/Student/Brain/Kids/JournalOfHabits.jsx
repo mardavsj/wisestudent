@@ -108,6 +108,8 @@ const JournalOfHabits = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/sports-story"
+      nextGameIdProp="brain-kids-8"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -175,3 +177,4 @@ const JournalOfHabits = () => {
 };
 
 export default JournalOfHabits;
+

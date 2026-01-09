@@ -202,6 +202,8 @@ const ReflexHealthChoiceTeen = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId="health-male-teen-39"
+      nextGamePathProp="/student/health-male/teens/shaving-pro-badge-teen"
+      nextGameIdProp="health-male-teen-40"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

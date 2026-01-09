@@ -101,6 +101,8 @@ const JournalOfFocus = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/game-story"
+      nextGameIdProp="brain-kids-18"
       gameType="brain"
       totalLevels={journalPrompts.length}
       currentLevel={currentStage + 1}
@@ -169,3 +171,4 @@ const JournalOfFocus = () => {
 };
 
 export default JournalOfFocus;
+

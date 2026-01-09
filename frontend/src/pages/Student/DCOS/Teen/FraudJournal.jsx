@@ -82,6 +82,8 @@ const FraudJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/reflex-ad-trap"
+      nextGameIdProp="dcos-teen-49"
       gameType="dcos"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const FraudJournal = () => {
 };
 
 export default FraudJournal;
+

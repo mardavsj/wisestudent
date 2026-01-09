@@ -119,6 +119,8 @@ const DoctorToolsPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-74"
+      nextGamePathProp="/student/health-male/teens/specialist-story"
+      nextGameIdProp="health-male-teen-75"
       gameType="health-male"
       totalLevels={tools.length}
       currentLevel={matches.length + 1}
@@ -256,3 +258,4 @@ const DoctorToolsPuzzle = () => {
 };
 
 export default DoctorToolsPuzzle;
+

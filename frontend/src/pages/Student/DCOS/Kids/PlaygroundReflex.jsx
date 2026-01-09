@@ -215,6 +215,8 @@ const PlaygroundReflex = () => {
       showGameOver={gameState === "finished"}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/respect-hero-badge"
+      nextGameIdProp="dcos-kids-90"
       gameType="dcos"
       totalLevels={TOTAL_ROUNDS}
       currentLevel={currentRound}
@@ -322,3 +324,4 @@ const PlaygroundReflex = () => {
 };
 
 export default PlaygroundReflex;
+

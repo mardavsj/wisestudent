@@ -190,6 +190,8 @@ const RobotPracticeGame = () => {
       score={score}
       subtitle={`Task ${currentTask + 1} of ${tasks.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/data-collector-simulation"
+      nextGameIdProp="ai-kids-74"
       nextEnabled={showResult && accuracy >= 70}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

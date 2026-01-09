@@ -186,6 +186,8 @@ const FriendsDareStory = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/quiz-peer-pressure"
+      nextGameIdProp="health-male-kids-62"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -231,3 +233,4 @@ const FriendsDareStory = () => {
 };
 
 export default FriendsDareStory;
+

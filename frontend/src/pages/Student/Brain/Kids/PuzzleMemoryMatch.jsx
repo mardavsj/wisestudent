@@ -135,6 +135,8 @@ const PuzzleMemoryMatch = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/story-of-repetition"
+      nextGameIdProp="brain-kids-25"
       gameType="brain"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -270,4 +272,5 @@ const PuzzleMemoryMatch = () => {
 };
 
 export default PuzzleMemoryMatch;
+
 

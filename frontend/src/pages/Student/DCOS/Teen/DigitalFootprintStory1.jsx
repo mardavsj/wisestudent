@@ -181,6 +181,8 @@ const DigitalFootprintStory1 = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/journal-of-privacy"
+      nextGameIdProp="dcos-teen-58"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -264,3 +266,4 @@ const DigitalFootprintStory1 = () => {
 };
 
 export default DigitalFootprintStory1;
+

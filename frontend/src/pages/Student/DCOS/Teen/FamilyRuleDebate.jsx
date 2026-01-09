@@ -192,6 +192,8 @@ const FamilyRuleDebate = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/sleep-hygiene-reflex"
+      nextGameIdProp="dcos-teen-28"
       gameType="dcos"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -235,3 +237,4 @@ const FamilyRuleDebate = () => {
 };
 
 export default FamilyRuleDebate;
+

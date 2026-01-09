@@ -88,6 +88,8 @@ const PosterHelpingHands = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/journal-service"
+      nextGameIdProp="moral-kids-77"
       gameType="moral"
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -131,3 +133,4 @@ const PosterHelpingHands = () => {
 };
 
 export default PosterHelpingHands;
+

@@ -184,6 +184,8 @@ const RestAlertReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/badge-sleep-champ"
+      nextGameIdProp="brain-kids-70"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -249,3 +251,4 @@ const RestAlertReflex = () => {
 };
 
 export default RestAlertReflex;
+

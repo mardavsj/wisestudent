@@ -203,6 +203,8 @@ const MemoryKidBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/homework-calm-story"
+      nextGameIdProp="brain-kids-31"
       gameType="brain"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -260,3 +262,4 @@ const MemoryKidBadge = () => {
 };
 
 export default MemoryKidBadge;
+

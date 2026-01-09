@@ -92,6 +92,8 @@ const JournalOfDoctorVisits = () => {
       showGameOver={gameFinished}
       score={responses.length}
       gameId="health-male-teen-77"
+      nextGamePathProp="/student/health-male/teens/clinic-visit-simulation"
+      nextGameIdProp="health-male-teen-78"
       gameType="health-male"
       maxScore={prompts.length}
       coinsPerLevel={coinsPerLevel}
@@ -144,3 +146,4 @@ const JournalOfDoctorVisits = () => {
 };
 
 export default JournalOfDoctorVisits;
+

@@ -125,6 +125,8 @@ const solutions = [
             showGameOver={gameFinished}
             score={score}
             gameId={gameId}
+            nextGamePathProp="/student/health-male/teens/shaving-story-teen"
+            nextGameIdProp="health-male-teen-35"
             gameType="health-male"
             totalLevels={topics.length}
             currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const solutions = [
 };
 
 export default PubertyHealthPuzzleTeen;
+

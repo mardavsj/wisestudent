@@ -131,6 +131,8 @@ const CaseResponsePuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-8"
+      nextGamePathProp="/student/uvls/teen/spot-distress-reflex"
+      nextGameIdProp="uvls-teen-9"
       gameType="uvls"
       totalLevels={scenarios.length}
       currentLevel={matches.length + 1}

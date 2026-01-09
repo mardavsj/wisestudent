@@ -100,6 +100,8 @@ const PressureJournal = () => {
       maxScore={journalPrompts.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/health-male/kids/gaming-pressure-story"
+      nextGameIdProp="health-male-kids-68"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -169,3 +171,4 @@ const PressureJournal = () => {
 };
 
 export default PressureJournal;
+

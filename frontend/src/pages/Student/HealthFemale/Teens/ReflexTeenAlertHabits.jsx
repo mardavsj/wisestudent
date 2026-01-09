@@ -200,7 +200,9 @@ const ReflexTeenAlertHabits = () => {
       onNext={handleNext}
       showConfetti={gameState === "finished" && score === maxScore}
       backPath="/games/health-female/teens"
-    >
+    
+      nextGamePathProp="/student/health-female/teens/lifelong-healthy-girl-badge"
+      nextGameIdProp="health-female-teen-100">
       <div className="space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">

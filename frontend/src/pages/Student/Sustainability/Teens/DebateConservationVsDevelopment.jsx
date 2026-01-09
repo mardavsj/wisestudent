@@ -227,7 +227,9 @@ const DebateConservationVsDevelopment = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/sustainability/teens"
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/journal-of-nature-connection"
+      nextGameIdProp="sustainability-teens-62">
       <div className="space-y-8">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
             <div className="text-center mb-8">

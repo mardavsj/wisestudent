@@ -228,6 +228,8 @@ const AIInSmartphonesQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/prediction-story"
+      nextGameIdProp="ai-teen-14"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

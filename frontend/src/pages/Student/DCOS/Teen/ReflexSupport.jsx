@@ -188,6 +188,8 @@ const ReflexSupport = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/group-chat-simulation"
+      nextGameIdProp="dcos-teen-84"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const ReflexSupport = () => {
 };
 
 export default ReflexSupport;
+

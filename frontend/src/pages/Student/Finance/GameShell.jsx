@@ -619,8 +619,10 @@ const GameShell = ({
   flashPoints = null,
   showAnswerConfetti = false,
   backPath: backPathProp,
-  nextGamePath: nextGamePathProp = null, // Optional next game path prop to override location.state
-  nextGameId: nextGameIdProp = null, // Optional next game ID prop to override location.state
+  nextGamePath: nextGamePathFromProp = null, // Optional next game path prop to override location.state
+  nextGameId: nextGameIdFromProp = null, // Optional next game ID prop to override location.state
+  nextGamePathProp = null, // Backward-compatible prop name
+  nextGameIdProp = null, // Backward-compatible prop name
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -870,8 +872,18 @@ const GameShell = ({
           isBadgeGame={resolvedIsBadgeGame}
           isReplay={location?.state?.isReplay || false}
           onClose={handleGameOverClose}
-          nextGamePath={nextGamePathProp || location?.state?.nextGamePath || null}
-          nextGameId={nextGameIdProp || location?.state?.nextGameId || null}
+          nextGamePath={
+            nextGamePathFromProp ||
+            nextGamePathProp ||
+            location?.state?.nextGamePath ||
+            null
+          }
+          nextGameId={
+            nextGameIdFromProp ||
+            nextGameIdProp ||
+            location?.state?.nextGameId ||
+            null
+          }
         />
       )}
 

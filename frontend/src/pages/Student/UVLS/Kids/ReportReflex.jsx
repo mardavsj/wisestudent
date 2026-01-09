@@ -189,6 +189,8 @@ const ReportReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/types-match"
+      nextGameIdProp="uvls-kids-34"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -254,3 +256,4 @@ const ReportReflex = () => {
 };
 
 export default ReportReflex;
+

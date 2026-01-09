@@ -201,6 +201,8 @@ const BadgeCourageHero = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/group-project-story"
+      nextGameIdProp="moral-teen-61"
       gameType="moral"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const BadgeCourageHero = () => {
 };
 
 export default BadgeCourageHero;
+

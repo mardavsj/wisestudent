@@ -130,6 +130,8 @@ const GoodDataVSBadDataPuzzle = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-jobs-debate"
+      nextGameIdProp="ai-teen-86"
       gameType="ai"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}

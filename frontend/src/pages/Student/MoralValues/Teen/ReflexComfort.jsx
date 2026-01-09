@@ -178,6 +178,8 @@ const ReflexComfort = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/badge-empathy-hero"
+      nextGameIdProp="moral-teen-30"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexComfort = () => {
 };
 
 export default ReflexComfort;
+

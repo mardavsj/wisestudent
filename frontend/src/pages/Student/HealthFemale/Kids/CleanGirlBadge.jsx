@@ -243,7 +243,9 @@ const CleanGirlBadge = () => {
       maxScore={maxScore}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/health-female/kids/quiz-prevention"
+      nextGameIdProp="health-female-kids-72">
       <div className="space-y-8">
         {!gameFinished ? (
           <div className="space-y-6">

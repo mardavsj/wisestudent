@@ -230,6 +230,8 @@ const HealthyPlatePoster = () => {
       showGameOver={showResult && isLastStage && isCorrect}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/food-habits-journal"
+      nextGameIdProp="health-male-kids-17"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -306,3 +308,4 @@ const HealthyPlatePoster = () => {
 };
 
 export default HealthyPlatePoster;
+

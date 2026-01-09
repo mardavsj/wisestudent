@@ -202,6 +202,8 @@ const EqualityQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/spot-stereotype"
+      nextGameIdProp="uvls-kids-23"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -291,3 +293,4 @@ const EqualityQuiz = () => {
 };
 
 export default EqualityQuiz;
+

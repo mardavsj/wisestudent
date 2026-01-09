@@ -131,6 +131,8 @@ const WorkplacePuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-24"
+      nextGamePathProp="/student/uvls/teen/program-design-simulation"
+      nextGameIdProp="uvls-teen-25"
       gameType="uvls"
       totalLevels={issues.length}
       currentLevel={matches.length + 1}

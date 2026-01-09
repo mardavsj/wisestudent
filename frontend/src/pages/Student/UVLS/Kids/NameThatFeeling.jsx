@@ -211,6 +211,8 @@ const NameThatFeeling = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/breathe-with-me"
+      nextGameIdProp="uvls-kids-42"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -298,3 +300,4 @@ const NameThatFeeling = () => {
 };
 
 export default NameThatFeeling;
+

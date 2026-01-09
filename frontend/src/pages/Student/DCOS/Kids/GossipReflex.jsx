@@ -184,6 +184,8 @@ const GossipReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/family-talk-story"
+      nextGameIdProp="dcos-kids-36"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -249,3 +251,4 @@ const GossipReflex = () => {
 };
 
 export default GossipReflex;
+

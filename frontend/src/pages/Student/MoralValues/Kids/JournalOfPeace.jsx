@@ -82,6 +82,8 @@ const JournalOfPeace = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/name-calling-story"
+      nextGameIdProp="moral-kids-88"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalOfPeace = () => {
 };
 
 export default JournalOfPeace;
+

@@ -183,6 +183,8 @@ const StrongPasswordReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/stranger-chat-story"
+      nextGameIdProp="dcos-kids-2"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const StrongPasswordReflex = () => {
 };
 
 export default StrongPasswordReflex;
+

@@ -106,6 +106,8 @@ const SleepWellPoster = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/journal-rest"
+      nextGameIdProp="brain-kids-67"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -150,3 +152,4 @@ const SleepWellPoster = () => {
 };
 
 export default SleepWellPoster;
+

@@ -107,6 +107,8 @@ const BeCreativePoster = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/journal-ideas"
+      nextGameIdProp="brain-kids-87"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -148,3 +150,4 @@ const BeCreativePoster = () => {
 };
 
 export default BeCreativePoster;
+

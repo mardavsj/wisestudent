@@ -125,6 +125,8 @@ const PeerScenariosPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/bully-story"
+      nextGameIdProp="health-male-kids-65"
       gameType="health-male"
       totalLevels={scenarios.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const PeerScenariosPuzzle = () => {
 };
 
 export default PeerScenariosPuzzle;
+

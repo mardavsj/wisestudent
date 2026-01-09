@@ -189,6 +189,8 @@ const ReflexProductivity = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/debate-stage3"
+      nextGameIdProp="dcos-teen-93"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -254,3 +256,4 @@ const ReflexProductivity = () => {
 };
 
 export default ReflexProductivity;
+

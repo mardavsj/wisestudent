@@ -211,6 +211,8 @@ const SharingSweetsStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-equal-share"
+      nextGameIdProp="moral-kids-49"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -253,3 +255,4 @@ const SharingSweetsStory = () => {
 };
 
 export default SharingSweetsStory;
+

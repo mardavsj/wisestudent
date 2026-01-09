@@ -131,6 +131,8 @@ const SimpleAlgorithmPuzzle = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/smart-home-story"
+      nextGameIdProp="ai-teen-18"
       gameType="ai"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -273,4 +275,5 @@ const SimpleAlgorithmPuzzle = () => {
 };
 
 export default SimpleAlgorithmPuzzle;
+
 

@@ -218,6 +218,8 @@ const QuickCalmReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/badge-sleep-champ"
+      nextGameIdProp="brain-kids-70"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}

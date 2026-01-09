@@ -131,6 +131,8 @@ const ServiceDesignPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-87"
+      nextGamePathProp="/student/uvls/teen/coalition-simulation"
+      nextGameIdProp="uvls-teen-88"
       gameType="uvls"
       totalLevels={factors.length}
       currentLevel={matches.length + 1}

@@ -227,6 +227,8 @@ const EthicsBadge = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-human-roles-story"
+      nextGameIdProp="ai-teen-92"
       gameType="ai"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}

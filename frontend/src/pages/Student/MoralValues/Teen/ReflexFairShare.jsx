@@ -178,6 +178,8 @@ const ReflexFairShare = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/badge-team-hero"
+      nextGameIdProp="moral-teen-70"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexFairShare = () => {
 };
 
 export default ReflexFairShare;
+

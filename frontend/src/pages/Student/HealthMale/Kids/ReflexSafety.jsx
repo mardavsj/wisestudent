@@ -209,6 +209,8 @@ const ReflexSafety = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/safety-match-puzzle"
+      nextGameIdProp="health-male-kids-74"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

@@ -130,6 +130,8 @@ const SpamVsNotSpam = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Email ${currentEmail + 1} of ${emails.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/siri-alexa-quiz"
+      nextGameIdProp="ai-kids-10"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

@@ -189,6 +189,8 @@ const IdentifyNeedsReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/mediator-badge"
+      nextGameIdProp="uvls-kids-80"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -254,3 +256,4 @@ const IdentifyNeedsReflex = () => {
 };
 
 export default IdentifyNeedsReflex;
+

@@ -190,6 +190,8 @@ const ToyBrokenStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/quiz-on-feelings"
+      nextGameIdProp="brain-kids-42"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -232,3 +234,4 @@ const ToyBrokenStory = () => {
 };
 
 export default ToyBrokenStory;
+

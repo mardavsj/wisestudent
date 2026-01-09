@@ -204,7 +204,9 @@ const BadgeFoodSaverKid = () => {
       showConfetti={showResult && finalScore >= 4}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/bike-story"
+      nextGameIdProp="sustainability-kids-46">
       <div className="text-center text-white space-y-6">
         {!showResult && currentLevelData && (
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">

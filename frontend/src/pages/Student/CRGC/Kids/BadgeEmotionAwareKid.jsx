@@ -217,7 +217,9 @@ const BadgeEmotionAwareKid = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/civic-responsibility/kids"
-    >
+    
+      nextGamePathProp="/student/civic-responsibility/kids/clean-park-story"
+      nextGameIdProp="civic-responsibility-kids-51">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

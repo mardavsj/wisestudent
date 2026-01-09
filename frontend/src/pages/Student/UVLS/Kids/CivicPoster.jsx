@@ -107,6 +107,8 @@ const CivicPoster = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/contribution-journal"
+      nextGameIdProp="uvls-kids-87"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -138,3 +140,4 @@ const CivicPoster = () => {
 };
 
 export default CivicPoster;
+

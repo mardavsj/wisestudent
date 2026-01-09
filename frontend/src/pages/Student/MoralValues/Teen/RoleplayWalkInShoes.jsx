@@ -213,6 +213,8 @@ const RoleplayWalkInShoes = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/debate-kindness-strength"
+      nextGameIdProp="moral-teen-26"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -321,3 +323,4 @@ const RoleplayWalkInShoes = () => {
 };
 
 export default RoleplayWalkInShoes;
+

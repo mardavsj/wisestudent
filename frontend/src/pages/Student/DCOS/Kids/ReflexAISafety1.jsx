@@ -183,6 +183,8 @@ const ReflexAISafety1 = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/puzzle-ai-good-bad"
+      nextGameIdProp="dcos-kids-73"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const ReflexAISafety1 = () => {
 };
 
 export default ReflexAISafety1;
+

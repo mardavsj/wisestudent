@@ -145,6 +145,8 @@ const MissingDataPuzzle = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/kids/train-ai-with-sounds"
+      nextGameIdProp="ai-kids-64"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"
@@ -297,3 +299,5 @@ const MissingDataPuzzle = () => {
 };
 
 export default MissingDataPuzzle;
+
+

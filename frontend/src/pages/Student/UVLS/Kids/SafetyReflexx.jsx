@@ -188,6 +188,8 @@ const SafetyReflexx = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/life-skills-starter-badge"
+      nextGameIdProp="uvls-kids-100"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const SafetyReflexx = () => {
 };
 
 export default SafetyReflexx;
+

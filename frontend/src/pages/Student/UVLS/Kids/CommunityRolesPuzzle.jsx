@@ -131,6 +131,8 @@ const CommunityRolesPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-kids-84"
+      nextGamePathProp="/student/uvls/kids/fundraiser-story"
+      nextGameIdProp="uvls-kids-85"
       gameType="uvls"
       totalLevels={helpers.length}
       currentLevel={matches.length + 1}

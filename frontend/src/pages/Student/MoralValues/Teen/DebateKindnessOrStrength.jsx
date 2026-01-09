@@ -109,6 +109,8 @@ const DebateKindnessOrStrength = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/journal-empathy1"
+      nextGameIdProp="moral-teen-27"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -209,3 +211,4 @@ const DebateKindnessOrStrength = () => {
 };
 
 export default DebateKindnessOrStrength;
+

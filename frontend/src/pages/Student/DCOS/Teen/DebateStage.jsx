@@ -191,6 +191,8 @@ const DebateStage = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/digital-footprint-story1"
+      nextGameIdProp="dcos-teen-57"
       gameType="dcos"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -232,3 +234,4 @@ const DebateStage = () => {
 };
 
 export default DebateStage;
+

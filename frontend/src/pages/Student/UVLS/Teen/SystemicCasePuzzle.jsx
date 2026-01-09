@@ -131,6 +131,8 @@ const SystemicCasePuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-39"
+      nextGamePathProp="/student/uvls/teen/anti-bullying-champion-badge"
+      nextGameIdProp="uvls-teen-40"
       gameType="uvls"
       totalLevels={components.length}
       currentLevel={matches.length + 1}

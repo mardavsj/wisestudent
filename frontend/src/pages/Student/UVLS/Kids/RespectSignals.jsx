@@ -206,6 +206,8 @@ const RespectSignals = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/inclusive-kid-badge"
+      nextGameIdProp="uvls-kids-20"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -250,3 +252,4 @@ const RespectSignals = () => {
 };
 
 export default RespectSignals;
+

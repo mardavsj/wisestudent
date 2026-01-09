@@ -125,6 +125,8 @@ const CatOrDogGame = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Image ${currentImage + 1} of ${images.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/sorting-colors"
+      nextGameIdProp="ai-kids-3"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -205,4 +207,6 @@ const CatOrDogGame = () => {
 };
 
 export default CatOrDogGame;
+
+
 

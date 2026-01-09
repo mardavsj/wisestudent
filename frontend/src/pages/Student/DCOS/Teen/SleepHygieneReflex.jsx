@@ -188,6 +188,8 @@ const SleepHygieneReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/success-story-simulation"
+      nextGameIdProp="dcos-teen-29"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const SleepHygieneReflex = () => {
 };
 
 export default SleepHygieneReflex;
+

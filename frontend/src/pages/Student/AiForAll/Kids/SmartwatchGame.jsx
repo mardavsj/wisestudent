@@ -193,6 +193,8 @@ const SmartwatchGame = () => {
       score={score}
       subtitle={`Alert ${currentAlert + 1} of ${alerts.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/online-shopping-ai"
+      nextGameIdProp="ai-kids-40"
       nextEnabled={showResult && accuracy >= 70}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

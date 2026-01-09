@@ -229,6 +229,8 @@ const RobotVisionMistake = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-vs-tools-quiz"
+      nextGameIdProp="ai-teen-23"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

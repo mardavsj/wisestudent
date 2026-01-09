@@ -108,7 +108,9 @@ const PosterEqualRights = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/civic-responsibility/kids"
-    >
+    
+      nextGamePathProp="/student/civic-responsibility/kids/journal-of-equality"
+      nextGameIdProp="civic-responsibility-kids-27">
       <div className="space-y-8">
         {!showResult && currentStageData ? (
           <div className="space-y-6">

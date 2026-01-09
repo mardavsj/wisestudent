@@ -190,6 +190,8 @@ const LostGameStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/reflex-quick-emotion"
+      nextGameIdProp="brain-kids-49"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -232,3 +234,4 @@ const LostGameStory = () => {
 };
 
 export default LostGameStory;
+

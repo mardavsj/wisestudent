@@ -247,6 +247,8 @@ const PrivacyProtectionStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/ai-bias-roleplayy"
+      nextGameIdProp="ai-teen-78"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

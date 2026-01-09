@@ -188,6 +188,8 @@ const ReflexFlag1 = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/respect-champion-badge"
+      nextGameIdProp="dcos-teen-90"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const ReflexFlag1 = () => {
 };
 
 export default ReflexFlag1;
+

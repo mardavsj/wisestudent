@@ -211,6 +211,8 @@ const ReflexPreventiveHealth = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/doctor-tools-puzzle"
+      nextGameIdProp="health-male-teen-74"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -282,3 +284,4 @@ const ReflexPreventiveHealth = () => {
 };
 
 export default ReflexPreventiveHealth;
+

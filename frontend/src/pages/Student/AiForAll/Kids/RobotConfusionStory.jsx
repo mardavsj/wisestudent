@@ -196,6 +196,8 @@ const RobotConfusionStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/missing-data-puzzle"
+      nextGameIdProp="ai-kids-63"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const RobotConfusionStory = () => {
 };
 
 export default RobotConfusionStory;
+
+

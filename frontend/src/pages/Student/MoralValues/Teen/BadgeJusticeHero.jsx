@@ -201,6 +201,8 @@ const BadgeJusticeHero = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/witness-story"
+      nextGameIdProp="moral-teen-51"
       gameType="moral"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const BadgeJusticeHero = () => {
 };
 
 export default BadgeJusticeHero;
+

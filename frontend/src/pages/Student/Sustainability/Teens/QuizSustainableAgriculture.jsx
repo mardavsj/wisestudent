@@ -159,7 +159,9 @@ const QuizSustainableAgriculture = () => {
       showAnswerConfetti={showAnswerConfetti}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/reflex-ocean-protector"
+      nextGameIdProp="sustainability-teens-23">
       <div className="space-y-8">
         {!showResult && currentQuestionData && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

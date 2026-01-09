@@ -230,6 +230,8 @@ const FutureOfAIQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ethics-badge"
+      nextGameIdProp="ai-teen-91"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

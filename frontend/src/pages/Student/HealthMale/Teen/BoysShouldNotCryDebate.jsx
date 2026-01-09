@@ -117,6 +117,8 @@ const BoysShouldNotCryDebate = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-56"
+      nextGamePathProp="/student/health-male/teens/journal-of-stress"
+      nextGameIdProp="health-male-teen-57"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -217,3 +219,4 @@ const BoysShouldNotCryDebate = () => {
 };
 
 export default BoysShouldNotCryDebate;
+

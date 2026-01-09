@@ -178,6 +178,8 @@ const ReflexGratitude = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/badge-gratitude-hero"
+      nextGameIdProp="moral-teen-20"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexGratitude = () => {
 };
 
 export default ReflexGratitude;
+

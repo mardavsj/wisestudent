@@ -236,7 +236,9 @@ const PosterReduceFoodWaste = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/journal-of-food-habits"
+      nextGameIdProp="sustainability-kids-42">
       <div className="space-y-8">
         {!showResult ? (
           <div className="space-y-6">

@@ -248,6 +248,8 @@ const RobotConfusionStoryy = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/feedback-loop-reflex"
+      nextGameIdProp="ai-teen-64"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

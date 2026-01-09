@@ -214,6 +214,8 @@ const HandwashHero = () => {
       showGameOver={showResult}
       score={coins}
       gameId="health-male-kids-1"
+      nextGamePathProp="/student/health-male/kids/quiz-cleanliness"
+      nextGameIdProp="health-male-kids-2"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -256,3 +258,4 @@ const HandwashHero = () => {
 };
 
 export default HandwashHero;
+

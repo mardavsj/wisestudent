@@ -107,6 +107,8 @@ const EqualityPoster = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/role-model-journal"
+      nextGameIdProp="uvls-kids-27"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -138,3 +140,4 @@ const EqualityPoster = () => {
 };
 
 export default EqualityPoster;
+

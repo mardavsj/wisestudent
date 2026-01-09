@@ -196,6 +196,8 @@ const FakeFriendStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/safety-reflex"
+      nextGameIdProp="dcos-teen-8"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -280,3 +282,4 @@ const FakeFriendStory = () => {
 };
 
 export default FakeFriendStory;
+

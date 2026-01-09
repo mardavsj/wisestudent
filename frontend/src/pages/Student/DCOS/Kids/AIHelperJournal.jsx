@@ -108,6 +108,8 @@ const AIHelperJournal = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/kids/classroom-story3"
+      nextGameIdProp="dcos-kids-79"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -175,3 +177,4 @@ const AIHelperJournal = () => {
 };
 
 export default AIHelperJournal;
+

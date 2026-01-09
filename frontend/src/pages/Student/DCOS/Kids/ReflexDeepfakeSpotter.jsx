@@ -183,6 +183,8 @@ const ReflexDeepfakeSpotter = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/poster-task2"
+      nextGameIdProp="dcos-kids-77"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const ReflexDeepfakeSpotter = () => {
 };
 
 export default ReflexDeepfakeSpotter;
+

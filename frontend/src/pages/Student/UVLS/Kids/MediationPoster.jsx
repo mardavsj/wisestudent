@@ -107,6 +107,8 @@ const MediationPoster = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/resolution-journal"
+      nextGameIdProp="uvls-kids-77"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -138,3 +140,4 @@ const MediationPoster = () => {
 };
 
 export default MediationPoster;
+

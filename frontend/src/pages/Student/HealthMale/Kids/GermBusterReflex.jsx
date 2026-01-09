@@ -205,6 +205,8 @@ const GermBusterReflex = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/clean-kid-badge"
+      nextGameIdProp="health-male-kids-10"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -276,3 +278,4 @@ const GermBusterReflex = () => {
 };
 
 export default GermBusterReflex;
+

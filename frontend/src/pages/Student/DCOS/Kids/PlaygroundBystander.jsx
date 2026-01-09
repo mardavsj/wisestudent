@@ -188,6 +188,8 @@ const PlaygroundBystander = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/cyberbully-report"
+      nextGameIdProp="dcos-kids-16"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -232,3 +234,4 @@ const PlaygroundBystander = () => {
 };
 
 export default PlaygroundBystander;
+

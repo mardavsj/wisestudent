@@ -102,7 +102,9 @@ const PosterJobsOfTomorrow = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/ehe/kids"
-    >
+    
+      nextGamePathProp="/student/ehe/kids/journal-of-dream-future-job"
+      nextGameIdProp="ehe-kids-77">
       <div className="space-y-8">
         {!showResult && currentStageData ? (
           <div className="space-y-6">

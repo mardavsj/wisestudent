@@ -125,6 +125,8 @@ const AcneStoryTeen = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/puberty-awkward-debate-teen"
+      nextGameIdProp="health-male-teen-26"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -210,3 +212,4 @@ const AcneStoryTeen = () => {
 };
 
 export default AcneStoryTeen;
+

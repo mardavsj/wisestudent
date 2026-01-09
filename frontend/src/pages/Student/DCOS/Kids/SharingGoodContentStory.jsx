@@ -211,6 +211,8 @@ const SharingGoodContentStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-97"
+      nextGamePathProp="/student/dcos/kids/journal-of-smart-use"
+      nextGameIdProp="dcos-kids-98"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -252,3 +254,4 @@ const SharingGoodContentStory = () => {
 };
 
 export default SharingGoodContentStory;
+

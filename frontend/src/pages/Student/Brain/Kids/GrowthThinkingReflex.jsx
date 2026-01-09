@@ -203,6 +203,8 @@ const GrowthThinkingReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/badge-bounce-back-kid"
+      nextGameIdProp="brain-kids-100"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -268,3 +270,4 @@ const GrowthThinkingReflex = () => {
 };
 
 export default GrowthThinkingReflex;
+

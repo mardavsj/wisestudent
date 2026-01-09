@@ -201,6 +201,8 @@ const BadgeBrainCareKid = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/classroom-story"
+      nextGameIdProp="brain-kids-11"
       gameType="brain"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const BadgeBrainCareKid = () => {
 };
 
 export default BadgeBrainCareKid;
+

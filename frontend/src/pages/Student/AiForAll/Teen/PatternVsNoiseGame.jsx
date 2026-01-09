@@ -153,6 +153,8 @@ const PatternVsNoiseGame = () => {
       title="Pattern vs Noise Game"
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/teen/teach-ai-emotions"
+      nextGameIdProp="ai-teen-71"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       score={coins}

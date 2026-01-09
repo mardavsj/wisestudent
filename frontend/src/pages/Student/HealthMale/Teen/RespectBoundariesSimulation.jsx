@@ -209,6 +209,8 @@ const RespectBoundariesSimulation = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId="health-male-teen-38"
+      nextGamePathProp="/student/health-male/teens/reflex-shaving-teen"
+      nextGameIdProp="health-male-teen-39"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -257,3 +259,4 @@ const RespectBoundariesSimulation = () => {
 };
 
 export default RespectBoundariesSimulation;
+

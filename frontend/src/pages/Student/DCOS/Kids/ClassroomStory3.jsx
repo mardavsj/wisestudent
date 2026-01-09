@@ -216,6 +216,8 @@ const ClassroomStory3 = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-79"
+      nextGamePathProp="/student/dcos/kids/ai-ethics-badge"
+      nextGameIdProp="dcos-kids-80"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -258,3 +260,4 @@ const ClassroomStory3 = () => {
 };
 
 export default ClassroomStory3;
+

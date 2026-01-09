@@ -252,7 +252,9 @@ const ReflexEarthGuardian = () => {
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/puzzle-earth-solutions"
+      nextGameIdProp="sustainability-kids-99">
       <div className="space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">

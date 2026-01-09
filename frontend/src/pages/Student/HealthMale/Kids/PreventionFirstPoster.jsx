@@ -193,6 +193,8 @@ const PreventionFirstPoster = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/safety-journal"
+      nextGameIdProp="health-male-kids-77"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -233,3 +235,4 @@ const PreventionFirstPoster = () => {
 };
 
 export default PreventionFirstPoster;
+

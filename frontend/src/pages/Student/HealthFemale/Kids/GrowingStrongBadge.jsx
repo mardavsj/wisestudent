@@ -240,7 +240,9 @@ const GrowingStrongBadge = () => {
       maxScore={maxScore}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/health-female/kids/morning-routine-story"
+      nextGameIdProp="health-female-kids-31">
       <div className="space-y-8">
         {!gameFinished ? (
           <div className="space-y-6">

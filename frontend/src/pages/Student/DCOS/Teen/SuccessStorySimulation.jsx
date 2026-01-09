@@ -221,6 +221,8 @@ const SuccessStorySimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/wellbeing-badge"
+      nextGameIdProp="dcos-teen-30"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -314,3 +316,4 @@ const SuccessStorySimulation = () => {
 };
 
 export default SuccessStorySimulation;
+

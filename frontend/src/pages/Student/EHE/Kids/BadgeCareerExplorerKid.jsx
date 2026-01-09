@@ -238,7 +238,9 @@ const BadgeCareerExplorerKid = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/ehe/kids"
-    >
+    
+      nextGamePathProp="/student/ehe/kids/idea-story"
+      nextGameIdProp="ehe-kids-11">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

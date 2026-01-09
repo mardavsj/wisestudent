@@ -179,6 +179,8 @@ const CartoonNewsReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/forward-message-story"
+      nextGameIdProp="dcos-kids-33"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -244,3 +246,4 @@ const CartoonNewsReflex = () => {
 };
 
 export default CartoonNewsReflex;
+

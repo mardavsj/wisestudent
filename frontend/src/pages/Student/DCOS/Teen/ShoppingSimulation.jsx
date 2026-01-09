@@ -198,6 +198,8 @@ const ShoppingSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/loan-trap-story"
+      nextGameIdProp="dcos-teen-45"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -291,3 +293,4 @@ const ShoppingSimulation = () => {
 };
 
 export default ShoppingSimulation;
+

@@ -196,6 +196,8 @@ const RobotSpyStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-and-environment-quiz"
+      nextGameIdProp="ai-kids-92"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const RobotSpyStory = () => {
 };
 
 export default RobotSpyStory;
+
+

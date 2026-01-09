@@ -229,6 +229,8 @@ const AIBasicsBadge = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/kids/traffic-light-ai"
+      nextGameIdProp="ai-kids-26"
       gameType="ai"
       showGameOver={showResult}
       maxScore={challenges.length}
@@ -303,3 +305,5 @@ const AIBasicsBadge = () => {
 };
 
 export default AIBasicsBadge;
+
+

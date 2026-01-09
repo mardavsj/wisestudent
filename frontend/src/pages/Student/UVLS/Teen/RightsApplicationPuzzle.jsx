@@ -131,6 +131,8 @@ const RightsApplicationPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-29"
+      nextGamePathProp="/student/uvls/teen/gender-justice-leader-badge"
+      nextGameIdProp="uvls-teen-30"
       gameType="uvls"
       totalLevels={rights.length}
       currentLevel={matches.length + 1}

@@ -188,6 +188,8 @@ const EmpathicTap = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/good-communicator-badge"
+      nextGameIdProp="uvls-kids-70"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -304,3 +306,4 @@ const EmpathicTap = () => {
 };
 
 export default EmpathicTap;
+

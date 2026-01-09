@@ -196,6 +196,8 @@ const RobotExamStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/correct-the-robot-reflex"
+      nextGameIdProp="ai-kids-66"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const RobotExamStory = () => {
 };
 
 export default RobotExamStory;
+
+

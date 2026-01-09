@@ -179,6 +179,8 @@ const ReflexRespect1 = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/class-chat-story"
+      nextGameIdProp="dcos-kids-83"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -244,3 +246,4 @@ const ReflexRespect1 = () => {
 };
 
 export default ReflexRespect1;
+

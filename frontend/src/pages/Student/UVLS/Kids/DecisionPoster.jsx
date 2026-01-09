@@ -107,6 +107,8 @@ const DecisionPoster = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/decision-journal"
+      nextGameIdProp="uvls-kids-57"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -138,3 +140,4 @@ const DecisionPoster = () => {
 };
 
 export default DecisionPoster;
+

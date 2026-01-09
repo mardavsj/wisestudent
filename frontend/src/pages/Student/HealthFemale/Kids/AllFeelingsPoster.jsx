@@ -108,7 +108,9 @@ const AllFeelingsPoster = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/health-female/kids"
-    >
+    
+      nextGamePathProp="/student/health-female/kids/feelings-journal"
+      nextGameIdProp="health-female-kids-57">
       <div className="space-y-8">
         {!showResult && currentStageData ? (
           <div className="space-y-6">

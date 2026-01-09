@@ -190,6 +190,8 @@ const ExamStoryy = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/poster-stay-cool"
+      nextGameIdProp="brain-kids-36"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -232,3 +234,4 @@ const ExamStoryy = () => {
 };
 
 export default ExamStoryy;
+

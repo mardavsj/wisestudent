@@ -133,6 +133,8 @@ const ReproHealthAwareTeenBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-40"
+      nextGamePathProp="/student/health-male/teens/sweat-control-story"
+      nextGameIdProp="health-male-teen-41"
       gameType="health-male"
       totalLevels={5}
       currentLevel={10}
@@ -311,3 +313,4 @@ const ReproHealthAwareTeenBadge = () => {
 };
 
 export default ReproHealthAwareTeenBadge;
+

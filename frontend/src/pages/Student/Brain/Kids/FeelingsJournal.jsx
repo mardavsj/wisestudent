@@ -108,6 +108,8 @@ const FeelingsJournal = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/lost-game-story"
+      nextGameIdProp="brain-kids-48"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -166,3 +168,4 @@ const FeelingsJournal = () => {
 };
 
 export default FeelingsJournal;
+

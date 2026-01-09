@@ -80,6 +80,8 @@ const JournalOfCooperation = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/roleplay-good-teammate"
+      nextGameIdProp="moral-teen-68"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -123,3 +125,4 @@ const JournalOfCooperation = () => {
 };
 
 export default JournalOfCooperation;
+

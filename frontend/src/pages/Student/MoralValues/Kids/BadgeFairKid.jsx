@@ -223,6 +223,8 @@ const BadgeFairKid = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/dark-room-story"
+      nextGameIdProp="moral-kids-51"
       gameType="moral"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}
@@ -336,3 +338,4 @@ const BadgeFairKid = () => {
 };
 
 export default BadgeFairKid;
+

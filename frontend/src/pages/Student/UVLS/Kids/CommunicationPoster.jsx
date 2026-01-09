@@ -107,6 +107,8 @@ const CommunicationPoster = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/feedback-journal"
+      nextGameIdProp="uvls-kids-67"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -138,3 +140,4 @@ const CommunicationPoster = () => {
 };
 
 export default CommunicationPoster;
+

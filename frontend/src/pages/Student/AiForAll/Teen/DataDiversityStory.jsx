@@ -247,6 +247,8 @@ const DataDiversityStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/training-accuracy-game"
+      nextGameIdProp="ai-teen-58"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

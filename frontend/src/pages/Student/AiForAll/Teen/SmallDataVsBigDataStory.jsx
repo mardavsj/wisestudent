@@ -248,6 +248,8 @@ const SmallDataVsBigDataStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/robot-exam-game"
+      nextGameIdProp="ai-teen-66"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

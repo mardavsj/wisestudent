@@ -118,6 +118,8 @@ const GossipChainSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/debate-stage-trolling"
+      nextGameIdProp="dcos-teen-14"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -211,3 +213,4 @@ const GossipChainSimulation = () => {
 };
 
 export default GossipChainSimulation;
+

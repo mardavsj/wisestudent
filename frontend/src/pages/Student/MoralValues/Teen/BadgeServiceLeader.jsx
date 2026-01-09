@@ -201,6 +201,8 @@ const BadgeServiceLeader = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/class-argument-story"
+      nextGameIdProp="moral-teen-81"
       gameType="moral"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const BadgeServiceLeader = () => {
 };
 
 export default BadgeServiceLeader;
+

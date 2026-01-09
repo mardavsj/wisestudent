@@ -187,6 +187,8 @@ const OutdoorStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/reflex-screen-alert"
+      nextGameIdProp="brain-kids-79"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -229,3 +231,4 @@ const OutdoorStory = () => {
 };
 
 export default OutdoorStory;
+

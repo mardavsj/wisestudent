@@ -249,6 +249,8 @@ const AISpaceStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/ai-creativity-simulation"
+      nextGameIdProp="ai-teen-96"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

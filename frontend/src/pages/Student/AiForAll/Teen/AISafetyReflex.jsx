@@ -184,6 +184,8 @@ const AISafetyReflex = () => {
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
       showGameOver={gameState === "finished"}
+      nextGamePathProp="/student/ai-for-all/teen/cyberbullying-storyy"
+      nextGameIdProp="ai-teen-81"
       showConfetti={gameState === "finished" && accuracy >= 70}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

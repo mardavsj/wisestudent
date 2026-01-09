@@ -212,6 +212,8 @@ const AnimalStoryy = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/poster-kindness"
+      nextGameIdProp="moral-kids-26"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const AnimalStoryy = () => {
 };
 
 export default AnimalStoryy;
+

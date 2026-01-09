@@ -131,6 +131,8 @@ const TriggerMapPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-kids-49"
+      nextGamePathProp="/student/uvls/kids/self-aware-badge"
+      nextGameIdProp="uvls-kids-50"
       gameType="uvls"
       totalLevels={triggers.length}
       currentLevel={matches.length + 1}

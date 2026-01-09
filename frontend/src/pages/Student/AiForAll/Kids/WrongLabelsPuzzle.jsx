@@ -146,6 +146,8 @@ const WrongLabelsPuzzle = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/kids/robot-practice-game"
+      nextGameIdProp="ai-kids-73"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

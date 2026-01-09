@@ -108,6 +108,8 @@ const JournalMyWords = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/kids/playground-reflex"
+      nextGameIdProp="dcos-kids-89"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -175,3 +177,4 @@ const JournalMyWords = () => {
 };
 
 export default JournalMyWords;
+

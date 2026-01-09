@@ -125,6 +125,8 @@ const RobotVisionGame = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Image ${currentImage + 1} of ${images.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/smart-home-story"
+      nextGameIdProp="ai-kids-15"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

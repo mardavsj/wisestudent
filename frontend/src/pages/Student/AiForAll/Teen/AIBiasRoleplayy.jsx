@@ -231,6 +231,8 @@ const AIBiasRoleplayy = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/fake-news-detector-game"
+      nextGameIdProp="ai-teen-79"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

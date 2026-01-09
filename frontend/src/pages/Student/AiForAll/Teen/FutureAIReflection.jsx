@@ -230,6 +230,8 @@ const FutureAIReflection = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-basics-badge"
+      nextGameIdProp="ai-teen-25"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

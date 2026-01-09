@@ -214,6 +214,8 @@ const LostBallStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-help-fast"
+      nextGameIdProp="moral-kids-29"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -256,3 +258,4 @@ const LostBallStory = () => {
 };
 
 export default LostBallStory;
+

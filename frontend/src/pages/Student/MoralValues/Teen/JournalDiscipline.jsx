@@ -80,6 +80,8 @@ const JournalDiscipline = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/roleplay-group-leader"
+      nextGameIdProp="moral-teen-38"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -123,3 +125,4 @@ const JournalDiscipline = () => {
 };
 
 export default JournalDiscipline;
+

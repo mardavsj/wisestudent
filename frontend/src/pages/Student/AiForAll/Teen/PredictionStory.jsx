@@ -250,6 +250,8 @@ const PredictionStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/machine-vs-human-reflex"
+      nextGameIdProp="ai-teen-15"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

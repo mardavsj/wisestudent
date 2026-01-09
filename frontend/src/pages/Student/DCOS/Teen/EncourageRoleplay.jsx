@@ -187,6 +187,8 @@ const EncourageRoleplay = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/empathy-journal"
+      nextGameIdProp="dcos-teen-17"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -231,3 +233,4 @@ const EncourageRoleplay = () => {
 };
 
 export default EncourageRoleplay;
+

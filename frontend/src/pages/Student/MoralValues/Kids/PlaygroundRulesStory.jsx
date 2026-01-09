@@ -213,6 +213,8 @@ const PlaygroundRulesStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-daily-habits"
+      nextGameIdProp="moral-kids-39"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -255,3 +257,4 @@ const PlaygroundRulesStory = () => {
 };
 
 export default PlaygroundRulesStory;
+

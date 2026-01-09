@@ -154,6 +154,8 @@ const SocialMediaRecommendationGame = () => {
       title="Social Media Recommendation"
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/teen/face-unlock-simulation"
+      nextGameIdProp="ai-teen-29"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       score={coins}
@@ -242,3 +244,4 @@ const SocialMediaRecommendationGame = () => {
 };
 
 export default SocialMediaRecommendationGame;
+

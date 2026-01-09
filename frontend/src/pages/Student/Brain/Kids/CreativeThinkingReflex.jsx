@@ -232,6 +232,8 @@ const CreativeThinkingReflex = () => {
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/badge-creative-kid"
+      nextGameIdProp="brain-kids-90"
       showConfetti={gameState === "finished" && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -317,3 +319,4 @@ const CreativeThinkingReflex = () => {
 };
 
 export default CreativeThinkingReflex;
+

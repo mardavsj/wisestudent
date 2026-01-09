@@ -88,6 +88,8 @@ const PosterTeamSpirit = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/journal-teamwork"
+      nextGameIdProp="moral-kids-67"
       gameType="moral"
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -131,3 +133,4 @@ const PosterTeamSpirit = () => {
 };
 
 export default PosterTeamSpirit;
+

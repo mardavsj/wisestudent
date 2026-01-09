@@ -132,6 +132,8 @@ const shuffledRightItems = [
       maxScore={leftItems.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/sharing-story"
+      nextGameIdProp="brain-kids-45"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -230,3 +232,4 @@ const shuffledRightItems = [
 };
 
 export default MatchFeelingsPuzzle;
+

@@ -189,6 +189,8 @@ const ReflexPositiveIdentity = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/college-application-simulation"
+      nextGameIdProp="dcos-teen-64"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -254,3 +256,4 @@ const ReflexPositiveIdentity = () => {
 };
 
 export default ReflexPositiveIdentity;
+

@@ -196,6 +196,8 @@ const SmartFridgeStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/chatbot-friend"
+      nextGameIdProp="ai-kids-31"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const SmartFridgeStory = () => {
 };
 
 export default SmartFridgeStory;
+
+

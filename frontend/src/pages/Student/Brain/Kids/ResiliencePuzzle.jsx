@@ -132,6 +132,8 @@ const ResiliencePuzzle = () => {
       maxScore={leftItems.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/test-story"
+      nextGameIdProp="brain-kids-95"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -230,3 +232,4 @@ const ResiliencePuzzle = () => {
 };
 
 export default ResiliencePuzzle;
+

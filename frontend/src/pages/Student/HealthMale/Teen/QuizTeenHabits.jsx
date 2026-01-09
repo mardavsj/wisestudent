@@ -112,6 +112,8 @@ const QuizTeenHabits = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-92"
+      nextGamePathProp="/student/health-male/teens/reflex-teen-routine"
+      nextGameIdProp="health-male-teen-93"
       gameType="health-male"
       totalLevels={5}
       currentLevel={92}
@@ -181,3 +183,4 @@ const QuizTeenHabits = () => {
 };
 
 export default QuizTeenHabits;
+

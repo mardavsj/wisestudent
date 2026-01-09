@@ -196,6 +196,8 @@ const SmartSpeakerStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-doctor-simulation"
+      nextGameIdProp="ai-kids-35"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const SmartSpeakerStory = () => {
 };
 
 export default SmartSpeakerStory;
+
+

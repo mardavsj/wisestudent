@@ -205,6 +205,8 @@ const ReflexPubertyCheckTeen = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/puberty-signs-puzzle-teen"
+      nextGameIdProp="health-male-teen-24"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -276,3 +278,4 @@ const ReflexPubertyCheckTeen = () => {
 };
 
 export default ReflexPubertyCheckTeen;
+

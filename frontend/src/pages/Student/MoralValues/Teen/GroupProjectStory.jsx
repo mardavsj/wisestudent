@@ -198,6 +198,8 @@ const GroupProjectStory = () => {
       score={coins}
       subtitle={showResult ? "Activity Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/moral-values/teen/quiz-team-skills"
+      nextGameIdProp="moral-teen-62"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -283,3 +285,4 @@ const GroupProjectStory = () => {
 };
 
 export default GroupProjectStory;
+

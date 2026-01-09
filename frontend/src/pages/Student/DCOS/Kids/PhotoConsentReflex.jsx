@@ -183,6 +183,8 @@ const PhotoConsentReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/puzzle-public-private"
+      nextGameIdProp="dcos-kids-54"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const PhotoConsentReflex = () => {
 };
 
 export default PhotoConsentReflex;
+

@@ -211,6 +211,8 @@ const CheatingOfferStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-honesty"
+      nextGameIdProp="moral-kids-99"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -253,3 +255,4 @@ const CheatingOfferStory = () => {
 };
 
 export default CheatingOfferStory;
+

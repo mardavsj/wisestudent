@@ -214,6 +214,8 @@ const CheatingStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/poster-of-honesty"
+      nextGameIdProp="moral-kids-6"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -256,3 +258,4 @@ const CheatingStory = () => {
 };
 
 export default CheatingStory;
+

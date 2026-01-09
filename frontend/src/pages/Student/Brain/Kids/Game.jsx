@@ -185,6 +185,8 @@ const Game = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/reflex-sequence"
+      nextGameIdProp="brain-kids-29"
       gameType="brain"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -229,3 +231,4 @@ const Game = () => {
 };
 
 export default Game;
+

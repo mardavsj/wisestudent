@@ -214,6 +214,8 @@ const PlaygroundRespectStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-help"
+      nextGameIdProp="moral-kids-19"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -256,3 +258,4 @@ const PlaygroundRespectStory = () => {
 };
 
 export default PlaygroundRespectStory;
+

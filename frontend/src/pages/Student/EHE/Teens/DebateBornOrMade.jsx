@@ -200,7 +200,9 @@ const DebateBornOrMade = () => {
       flashPoints={flashPoints}
       backPath="/games/ehe/teens"
       showAnswerConfetti={showAnswerConfetti}
-    >
+    
+      nextGamePathProp="/student/ehe/teens/journal-of-strengths"
+      nextGameIdProp="ehe-teen-17">
       <div className="space-y-8">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
           <div className="flex justify-between items-center mb-4">

@@ -196,6 +196,8 @@ const FutureAiQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-in-space-story"
+      nextGameIdProp="ai-kids-88"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const FutureAiQuiz = () => {
 };
 
 export default FutureAiQuiz;
+
+

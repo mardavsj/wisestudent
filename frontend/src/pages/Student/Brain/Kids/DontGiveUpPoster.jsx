@@ -107,6 +107,8 @@ const DontGiveUpPoster = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/journal-bounce-back"
+      nextGameIdProp="brain-kids-97"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -148,3 +150,4 @@ const DontGiveUpPoster = () => {
 };
 
 export default DontGiveUpPoster;
+

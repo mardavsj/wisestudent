@@ -186,6 +186,8 @@ const QuizOfFeelings = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/reflex-empathy"
+      nextGameIdProp="moral-teen-23"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -230,3 +232,4 @@ const QuizOfFeelings = () => {
 };
 
 export default QuizOfFeelings;
+

@@ -92,6 +92,8 @@ const JournalOfMasculinity = () => {
       showGameOver={gameFinished}
       score={responses.length}
       gameId="health-male-teen-67"
+      nextGamePathProp="/student/health-male/teens/respect-women-simulation"
+      nextGameIdProp="health-male-teen-68"
       gameType="health-male"
       totalLevels={prompts.length}
       currentLevel={currentPrompt + 1}
@@ -142,3 +144,4 @@ const JournalOfMasculinity = () => {
 };
 
 export default JournalOfMasculinity;
+

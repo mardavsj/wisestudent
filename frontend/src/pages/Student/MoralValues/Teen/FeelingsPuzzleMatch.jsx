@@ -118,6 +118,8 @@ const FeelingsPuzzleMatch = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/roleplay-walk-in-shoes"
+      nextGameIdProp="moral-teen-25"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -257,3 +259,4 @@ const FeelingsPuzzleMatch = () => {
 };
 
 export default FeelingsPuzzleMatch;
+

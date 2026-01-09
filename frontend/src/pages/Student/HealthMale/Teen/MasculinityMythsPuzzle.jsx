@@ -120,6 +120,8 @@ const correctMatches = [
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-64"
+      nextGamePathProp="/student/health-male/teens/violence-story"
+      nextGameIdProp="health-male-teen-65"
       gameType="health-male"
       totalLevels={myths.length}
       currentLevel={matches.length + 1}
@@ -257,3 +259,4 @@ const correctMatches = [
 };
 
 export default MasculinityMythsPuzzle;
+

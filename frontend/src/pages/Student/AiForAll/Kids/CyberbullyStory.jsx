@@ -198,6 +198,8 @@ const CyberbullyStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-rights-puzzle"
+      nextGameIdProp="ai-kids-85"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -283,3 +285,5 @@ const CyberbullyStory = () => {
 };
 
 export default CyberbullyStory;
+
+

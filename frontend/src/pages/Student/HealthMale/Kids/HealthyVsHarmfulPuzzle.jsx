@@ -125,6 +125,8 @@ const HealthyVsHarmfulPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/alcohol-story"
+      nextGameIdProp="health-male-kids-85"
       gameType="health-male"
       totalLevels={healthyItems.length}
       currentLevel={matches.length + 1}
@@ -260,3 +262,4 @@ const HealthyVsHarmfulPuzzle = () => {
 };
 
 export default HealthyVsHarmfulPuzzle;
+

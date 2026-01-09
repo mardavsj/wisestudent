@@ -192,6 +192,8 @@ const QuizSubstances = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-safe-choice"
+      nextGameIdProp="health-male-kids-83"
       gameType="health-male"
       totalLevels={5}
       currentLevel={82}
@@ -268,3 +270,4 @@ const QuizSubstances = () => {
 };
 
 export default QuizSubstances;
+

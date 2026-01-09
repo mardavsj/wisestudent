@@ -207,6 +207,8 @@ const CourageBadge = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/teens/screen-log-story"
+      nextGameIdProp="dcos-teen-21"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -299,3 +301,4 @@ const CourageBadge = () => {
 };
 
 export default CourageBadge;
+

@@ -213,6 +213,8 @@ const SchoolReputationStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-66"
+      nextGamePathProp="/student/dcos/kids/poster-task1"
+      nextGameIdProp="dcos-kids-67"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const SchoolReputationStory = () => {
 };
 
 export default SchoolReputationStory;
+

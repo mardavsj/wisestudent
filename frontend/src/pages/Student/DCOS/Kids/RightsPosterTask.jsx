@@ -104,6 +104,8 @@ const RightsPosterTask = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/journal-private-info"
+      nextGameIdProp="dcos-kids-58"
       gameType="dcos"
       totalLevels={stages.length}
       currentLevel={currentStage + 1}
@@ -146,3 +148,4 @@ const RightsPosterTask = () => {
 };
 
 export default RightsPosterTask;
+

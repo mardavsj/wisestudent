@@ -189,6 +189,8 @@ const SharingStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/poster-feelings-matter"
+      nextGameIdProp="brain-kids-46"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -231,3 +233,4 @@ const SharingStory = () => {
 };
 
 export default SharingStory;
+

@@ -198,6 +198,8 @@ const AINewsStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-doctor-quiz"
+      nextGameIdProp="ai-kids-48"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,5 @@ const AINewsStory = () => {
 };
 
 export default AINewsStory;
+
+

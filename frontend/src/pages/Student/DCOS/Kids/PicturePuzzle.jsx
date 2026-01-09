@@ -137,6 +137,8 @@ const PicturePuzzle = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/gossip-reflex"
+      nextGameIdProp="dcos-kids-35"
       gameType="dcos"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const PicturePuzzle = () => {
 };
 
 export default PicturePuzzle;
+

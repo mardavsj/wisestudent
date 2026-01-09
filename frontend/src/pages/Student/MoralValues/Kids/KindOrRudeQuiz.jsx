@@ -188,6 +188,8 @@ const KindOrRudeQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-kindnesss"
+      nextGameIdProp="moral-kids-23"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -271,3 +273,4 @@ const KindOrRudeQuiz = () => {
 };
 
 export default KindOrRudeQuiz;
+

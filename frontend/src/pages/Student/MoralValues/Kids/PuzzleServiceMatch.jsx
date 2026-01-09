@@ -119,6 +119,8 @@ const PuzzleServiceMatch = () => {
       title="Puzzle: Service Match"
       score={coins}
       subtitle={showResult ? "Game Complete!" : "Match service roles to their purposes"}
+      nextGamePathProp="/student/moral-values/kids/school-cleanup-story"
+      nextGameIdProp="moral-kids-75"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -270,3 +272,4 @@ const PuzzleServiceMatch = () => {
 };
 
 export default PuzzleServiceMatch;
+

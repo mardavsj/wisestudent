@@ -247,6 +247,8 @@ const AIInGamesStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/fraud-detector-reflex"
+      nextGameIdProp="ai-teen-44"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

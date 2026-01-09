@@ -178,6 +178,8 @@ const ReflexTrueHero = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/badge-ethical-hero"
+      nextGameIdProp="moral-teen-100"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexTrueHero = () => {
 };
 
 export default ReflexTrueHero;
+

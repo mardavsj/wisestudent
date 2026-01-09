@@ -195,6 +195,8 @@ const QuizCleanliness = () => {
       showGameOver={gameFinished}
       score={finalScore}
       gameId="health-male-kids-2"
+      nextGamePathProp="/student/health-male/kids/reflex-hygiene"
+      nextGameIdProp="health-male-kids-3"
       gameType="health-male"
       totalLevels={5}
       currentLevel={2}
@@ -272,3 +274,4 @@ const QuizCleanliness = () => {
 };
 
 export default QuizCleanliness;
+

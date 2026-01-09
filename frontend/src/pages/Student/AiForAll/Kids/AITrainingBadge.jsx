@@ -226,6 +226,8 @@ const AITrainingBadge = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/kids/teach-numbers-game"
+      nextGameIdProp="ai-kids-61"
       gameType="ai"
       showGameOver={showResult}
       maxScore={challenges.length}
@@ -300,3 +302,5 @@ const AITrainingBadge = () => {
 };
 
 export default AITrainingBadge;
+
+

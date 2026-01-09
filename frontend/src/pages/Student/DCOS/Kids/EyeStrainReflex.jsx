@@ -183,6 +183,8 @@ const EyeStrainReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/sleep-quiz"
+      nextGameIdProp="dcos-kids-25"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const EyeStrainReflex = () => {
 };
 
 export default EyeStrainReflex;
+

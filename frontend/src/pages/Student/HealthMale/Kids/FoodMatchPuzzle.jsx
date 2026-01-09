@@ -125,6 +125,8 @@ const FoodMatchPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/lunchbox-story"
+      nextGameIdProp="health-male-kids-15"
       gameType="health-male"
       totalLevels={foods.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const FoodMatchPuzzle = () => {
 };
 
 export default FoodMatchPuzzle;
+

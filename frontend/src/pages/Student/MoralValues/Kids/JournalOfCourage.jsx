@@ -82,6 +82,8 @@ const JournalOfCourage = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/bully-story1"
+      nextGameIdProp="moral-kids-58"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalOfCourage = () => {
 };
 
 export default JournalOfCourage;
+

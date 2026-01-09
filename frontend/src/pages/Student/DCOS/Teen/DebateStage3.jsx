@@ -189,6 +189,8 @@ const DebateStage3 = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/online-course-simulation"
+      nextGameIdProp="dcos-teen-94"
       gameType="dcos"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -232,3 +234,4 @@ const DebateStage3 = () => {
 };
 
 export default DebateStage3;
+

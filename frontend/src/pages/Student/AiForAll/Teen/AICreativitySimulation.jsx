@@ -231,6 +231,8 @@ const AICreativitySimulation = () => {
       subtitle={showResult ? "Simulation Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
       nextEnabled={showResult}
+      nextGamePathProp="/student/ai-for-all/teen/empathy-ai-roleplay"
+      nextGameIdProp="ai-teen-97"
       showGameOver={showResult && finalScore >= 3}
       score={coins}
       gameId="ai-teen-96"

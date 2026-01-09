@@ -186,6 +186,8 @@ const BullyStory = () => {
       showGameOver={showResult}
       score={score}
       gameId="health-male-kids-65"
+      nextGamePathProp="/student/health-male/kids/power-of-no-poster"
+      nextGameIdProp="health-male-kids-66"
       gameType="health-male"
       totalLevels={70}
       currentLevel={65}
@@ -234,3 +236,4 @@ const BullyStory = () => {
 };
 
 export default BullyStory;
+

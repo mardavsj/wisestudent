@@ -108,7 +108,9 @@ const PosterBeKindAlways = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/civic-responsibility/kids"
-    >
+    
+      nextGamePathProp="/student/civic-responsibility/kids/journal-of-empathy"
+      nextGameIdProp="civic-responsibility-kids-7">
       <div className="space-y-8">
         {!showResult && currentStageData ? (
           <div className="space-y-6">

@@ -218,7 +218,9 @@ const BadgeInclusionLeader = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/civic-responsibility/teens"
-    >
+    
+      nextGamePathProp="/student/civic-responsibility/teens/education-story"
+      nextGameIdProp="civic-responsibility-teens-21">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

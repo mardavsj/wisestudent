@@ -82,6 +82,8 @@ const JournalOfDecisions = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/cheating-offer-story"
+      nextGameIdProp="moral-kids-98"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalOfDecisions = () => {
 };
 
 export default JournalOfDecisions;
+

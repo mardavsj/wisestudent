@@ -188,6 +188,8 @@ const QuizPreventiveHealth = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId="health-male-teen-72"
+      nextGamePathProp="/student/health-male/teens/reflex-preventive-health"
+      nextGameIdProp="health-male-teen-73"
       gameType="health-male"
       totalLevels={5}
       currentLevel={72}
@@ -257,3 +259,4 @@ const QuizPreventiveHealth = () => {
 };
 
 export default QuizPreventiveHealth;
+

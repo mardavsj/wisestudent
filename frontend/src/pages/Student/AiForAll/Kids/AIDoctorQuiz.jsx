@@ -198,6 +198,8 @@ const AIDoctorQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/smart-home-lights-game"
+      nextGameIdProp="ai-kids-49"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -283,3 +285,5 @@ const AIDoctorQuiz = () => {
 };
 
 export default AIDoctorQuiz;
+
+

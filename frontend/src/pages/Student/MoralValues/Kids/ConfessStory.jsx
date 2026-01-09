@@ -211,6 +211,8 @@ const ConfessStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/poster-courage"
+      nextGameIdProp="moral-kids-56"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -253,3 +255,4 @@ const ConfessStory = () => {
 };
 
 export default ConfessStory;
+

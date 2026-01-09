@@ -101,6 +101,8 @@ const RecallJournal = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/game"
+      nextGameIdProp="brain-kids-28"
       gameType="brain"
       totalLevels={journalPrompts.length}
       currentLevel={currentStage + 1}
@@ -169,3 +171,4 @@ const RecallJournal = () => {
 };
 
 export default RecallJournal;
+

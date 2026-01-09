@@ -188,6 +188,8 @@ const ShareReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/little-empath-badge"
+      nextGameIdProp="uvls-kids-10"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -304,3 +306,4 @@ const ShareReflex = () => {
 };
 
 export default ShareReflex;
+

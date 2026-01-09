@@ -269,7 +269,9 @@ const QuizOnSocialImpact = () => {
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
       showConfetti={levelCompleted && finalScore >= 3}
-    >
+    
+      nextGamePathProp="/student/ehe/kids/reflex-social-basics"
+      nextGameIdProp="ehe-kids-83">
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         {!levelCompleted && currentQuestionData ? (
           <div className="space-y-6">

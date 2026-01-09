@@ -107,6 +107,8 @@ const ToolboxPoster = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/ask-for-help-roleplay"
+      nextGameIdProp="uvls-kids-47"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -138,3 +140,4 @@ const ToolboxPoster = () => {
 };
 
 export default ToolboxPoster;
+

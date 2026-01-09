@@ -204,6 +204,8 @@ const PriorityQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/task-done-reflex"
+      nextGameIdProp="uvls-kids-93"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -291,3 +293,4 @@ const PriorityQuiz = () => {
 };
 
 export default PriorityQuiz;
+

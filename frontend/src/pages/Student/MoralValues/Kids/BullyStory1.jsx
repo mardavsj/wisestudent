@@ -212,6 +212,8 @@ const BullyStory1 = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-brave-symbol"
+      nextGameIdProp="moral-kids-59"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const BullyStory1 = () => {
 };
 
 export default BullyStory1;
+

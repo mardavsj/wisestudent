@@ -212,6 +212,8 @@ const PasswordPrivacyStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-51"
+      nextGamePathProp="/student/dcos/kids/profile-quiz"
+      nextGameIdProp="dcos-kids-52"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const PasswordPrivacyStory = () => {
 };
 
 export default PasswordPrivacyStory;
+

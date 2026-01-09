@@ -231,6 +231,8 @@ const SustainabilityQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/robot-honesty-game"
+      nextGameIdProp="ai-teen-88"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

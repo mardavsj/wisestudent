@@ -189,6 +189,8 @@ const KindVsMeanQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/reflex-respect1"
+      nextGameIdProp="dcos-kids-82"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -233,3 +235,4 @@ const KindVsMeanQuiz = () => {
 };
 
 export default KindVsMeanQuiz;
+

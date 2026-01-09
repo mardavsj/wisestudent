@@ -195,6 +195,8 @@ const GoodHabitsPoster = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/habits-journal"
+      nextGameIdProp="health-male-kids-97"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -235,3 +237,4 @@ const GoodHabitsPoster = () => {
 };
 
 export default GoodHabitsPoster;
+

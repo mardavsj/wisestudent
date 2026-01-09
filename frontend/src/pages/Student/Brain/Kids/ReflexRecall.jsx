@@ -241,6 +241,8 @@ const ReflexRecall = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/memory-match"
+      nextGameIdProp="brain-kids-24"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -306,3 +308,4 @@ const ReflexRecall = () => {
 };
 
 export default ReflexRecall;
+

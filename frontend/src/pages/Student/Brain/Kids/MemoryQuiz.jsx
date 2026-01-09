@@ -119,6 +119,8 @@ const MemoryQuiz = () => {
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
       gameId="brain-kids-42"
+      nextGamePathProp="/student/brain/kids/reflex-emotions"
+      nextGameIdProp="brain-kids-43"
       gameType="brain-health"
       showGameOver={levelCompleted}
       backPath="/games/brain-health/kids"

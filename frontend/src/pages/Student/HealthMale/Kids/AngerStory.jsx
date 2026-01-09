@@ -185,6 +185,8 @@ const AngerStory = () => {
       showGameOver={showResult}
       score={score}
       gameId="health-male-kids-58"
+      nextGamePathProp="/student/health-male/kids/reflex-emotion-alert"
+      nextGameIdProp="health-male-kids-59"
       gameType="health-male"
       totalLevels={60}
       currentLevel={58}
@@ -233,3 +235,4 @@ const AngerStory = () => {
 };
 
 export default AngerStory;
+

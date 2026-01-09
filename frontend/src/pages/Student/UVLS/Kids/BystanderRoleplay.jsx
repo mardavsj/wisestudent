@@ -198,6 +198,8 @@ const BystanderRoleplay = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/cyber-spot"
+      nextGameIdProp="uvls-kids-39"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -287,3 +289,4 @@ const BystanderRoleplay = () => {
 };
 
 export default BystanderRoleplay;
+

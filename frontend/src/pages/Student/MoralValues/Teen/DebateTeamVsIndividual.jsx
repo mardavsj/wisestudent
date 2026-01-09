@@ -109,6 +109,8 @@ const DebateTeamVsIndividual = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/journal-cooperation"
+      nextGameIdProp="moral-teen-67"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -209,3 +211,4 @@ const DebateTeamVsIndividual = () => {
 };
 
 export default DebateTeamVsIndividual;
+

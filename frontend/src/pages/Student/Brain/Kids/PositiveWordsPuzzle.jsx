@@ -132,6 +132,8 @@ const PositiveWordsPuzzle = () => {
       maxScore={leftItems.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/lost-match-story"
+      nextGameIdProp="brain-kids-55"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -230,3 +232,4 @@ const PositiveWordsPuzzle = () => {
 };
 
 export default PositiveWordsPuzzle;
+

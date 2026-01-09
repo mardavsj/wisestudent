@@ -211,6 +211,8 @@ const LostPencilStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/homework-quiz"
+      nextGameIdProp="moral-kids-2"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -253,3 +255,4 @@ const LostPencilStory = () => {
 };
 
 export default LostPencilStory;
+

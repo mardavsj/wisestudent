@@ -148,7 +148,9 @@ const SimulationWaterConservationPlan = () => {
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/reflex-water-solutions"
+      nextGameIdProp="sustainability-teens-54">
       <div className="space-y-8">
         {!gameFinished && currentQuestionData && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

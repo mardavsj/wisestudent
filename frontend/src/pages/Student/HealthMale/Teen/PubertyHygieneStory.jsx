@@ -197,6 +197,8 @@ const PubertyHygieneStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-1"
+      nextGamePathProp="/student/health-male/teens/quiz-hygiene-changes"
+      nextGameIdProp="health-male-teen-2"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -282,3 +284,4 @@ const PubertyHygieneStory = () => {
 };
 
 export default PubertyHygieneStory;
+

@@ -202,6 +202,8 @@ const GroupChatSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/debate-stage2"
+      nextGameIdProp="dcos-teen-85"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -295,3 +297,4 @@ const GroupChatSimulation = () => {
 };
 
 export default GroupChatSimulation;
+

@@ -82,6 +82,8 @@ const JournalOfService = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/animal-care-story"
+      nextGameIdProp="moral-kids-78"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalOfService = () => {
 };
 
 export default JournalOfService;
+

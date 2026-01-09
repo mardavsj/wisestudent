@@ -248,6 +248,8 @@ const ECommerceAIStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/ai-doctor-quizz"
+      nextGameIdProp="ai-teen-31"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

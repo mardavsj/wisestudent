@@ -212,6 +212,8 @@ const DailyRoutineSimulation48 = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/reflex-hygiene-alert-49"
+      nextGameIdProp="health-male-teen-49"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -258,3 +260,4 @@ const DailyRoutineSimulation48 = () => {
 };
 
 export default DailyRoutineSimulation48;
+

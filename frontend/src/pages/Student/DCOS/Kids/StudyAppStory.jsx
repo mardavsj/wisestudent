@@ -137,6 +137,8 @@ const StudyAppStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-91"
+      nextGamePathProp="/student/dcos/kids/reflex-learning-tools"
+      nextGameIdProp="dcos-kids-92"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -178,3 +180,4 @@ const StudyAppStory = () => {
 };
 
 export default StudyAppStory;
+

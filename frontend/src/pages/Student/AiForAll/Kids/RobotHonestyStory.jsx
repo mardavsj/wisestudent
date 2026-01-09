@@ -199,6 +199,8 @@ const RobotHonestyStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/privacy-puzzle"
+      nextGameIdProp="ai-kids-78"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,5 @@ const RobotHonestyStory = () => {
 };
 
 export default RobotHonestyStory;
+
+

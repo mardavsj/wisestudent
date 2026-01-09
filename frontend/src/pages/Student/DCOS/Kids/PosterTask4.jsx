@@ -105,6 +105,8 @@ const stages = [
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/sharing-good-content-story"
+      nextGameIdProp="dcos-kids-97"
       gameType="dcos"
       totalLevels={stages.length}
       currentLevel={currentStage + 1}
@@ -147,3 +149,4 @@ const stages = [
 };
 
 export default PosterTask4;
+

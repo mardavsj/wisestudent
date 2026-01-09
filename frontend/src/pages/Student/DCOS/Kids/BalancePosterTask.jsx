@@ -104,6 +104,8 @@ const BalancePosterTask = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/outdoor-fun-story"
+      nextGameIdProp="dcos-kids-27"
       gameType="dcos"
       totalLevels={stages.length}
       currentLevel={currentStage + 1}
@@ -146,3 +148,4 @@ const BalancePosterTask = () => {
 };
 
 export default BalancePosterTask;
+

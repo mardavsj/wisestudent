@@ -88,6 +88,8 @@ const GratitudePoster = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/journal-of-gratitude"
+      nextGameIdProp="moral-kids-17"
       gameType="moral"
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -131,3 +133,4 @@ const GratitudePoster = () => {
 };
 
 export default GratitudePoster;
+

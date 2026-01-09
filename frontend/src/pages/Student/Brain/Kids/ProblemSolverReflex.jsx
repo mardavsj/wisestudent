@@ -217,6 +217,8 @@ const ProblemSolverReflex = () => {
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/puzzle-solutions"
+      nextGameIdProp="brain-kids-84"
       showConfetti={gameState === "finished" && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -302,3 +304,4 @@ const ProblemSolverReflex = () => {
 };
 
 export default ProblemSolverReflex;
+

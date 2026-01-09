@@ -207,6 +207,8 @@ const CitizenDutiesQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/volunteer-reflex"
+      nextGameIdProp="uvls-kids-83"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -294,3 +296,4 @@ const CitizenDutiesQuiz = () => {
 };
 
 export default CitizenDutiesQuiz;
+

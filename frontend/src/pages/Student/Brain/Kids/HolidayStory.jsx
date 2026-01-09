@@ -191,6 +191,8 @@ const HolidayStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/reflex-rest-alert"
+      nextGameIdProp="brain-kids-69"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -233,3 +235,4 @@ const HolidayStory = () => {
 };
 
 export default HolidayStory;
+

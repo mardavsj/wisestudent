@@ -109,6 +109,8 @@ const DebateFearVsCourage = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/courage-journal1"
+      nextGameIdProp="moral-teen-57"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -209,3 +211,4 @@ const DebateFearVsCourage = () => {
 };
 
 export default DebateFearVsCourage;
+

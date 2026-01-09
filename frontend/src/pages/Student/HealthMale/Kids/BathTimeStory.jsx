@@ -223,6 +223,8 @@ const BathTimeStory = () => {
       showGameOver={showResult}
       score={score}
       gameId="health-male-kids-5"
+      nextGamePathProp="/student/health-male/kids/stay-fresh-poster"
+      nextGameIdProp="health-male-kids-6"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -266,3 +268,4 @@ const BathTimeStory = () => {
 };
 
 export default BathTimeStory;
+

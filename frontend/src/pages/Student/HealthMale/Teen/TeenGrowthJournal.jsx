@@ -77,6 +77,8 @@ const TeenGrowthJournal = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/teen-routine-simulation"
+      nextGameIdProp="health-male-teen-28"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -125,3 +127,4 @@ const TeenGrowthJournal = () => {
 };
 
 export default TeenGrowthJournal;
+

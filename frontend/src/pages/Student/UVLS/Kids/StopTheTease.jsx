@@ -209,6 +209,8 @@ const StopTheTease = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/bullying-quiz"
+      nextGameIdProp="uvls-kids-32"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -296,3 +298,4 @@ const StopTheTease = () => {
 };
 
 export default StopTheTease;
+

@@ -228,6 +228,8 @@ const PredictNextWord = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/self-driving-car-reflex"
+      nextGameIdProp="ai-teen-6"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

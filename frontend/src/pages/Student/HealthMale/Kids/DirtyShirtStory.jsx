@@ -214,6 +214,8 @@ const DirtyShirtStory = () => {
       showGameOver={showResult}
       score={score}
       gameId="health-male-kids-8"
+      nextGamePathProp="/student/health-male/kids/germ-buster-reflex"
+      nextGameIdProp="health-male-kids-9"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -257,3 +259,4 @@ const DirtyShirtStory = () => {
 };
 
 export default DirtyShirtStory;
+

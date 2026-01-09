@@ -109,6 +109,8 @@ const DebateEqualVsFair = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/journal-fairness"
+      nextGameIdProp="moral-teen-47"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -209,3 +211,4 @@ const DebateEqualVsFair = () => {
 };
 
 export default DebateEqualVsFair;
+

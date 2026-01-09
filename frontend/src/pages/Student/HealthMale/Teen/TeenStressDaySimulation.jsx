@@ -105,6 +105,8 @@ const TeenStressDaySimulation = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId="health-male-teen-58"
+      nextGamePathProp="/student/health-male/teens/reflex-emotional-health"
+      nextGameIdProp="health-male-teen-59"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -168,3 +170,4 @@ const TeenStressDaySimulation = () => {
 };
 
 export default TeenStressDaySimulation;
+

@@ -205,6 +205,8 @@ const DataCollectorSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/kids/training-hero-badge"
+      nextGameIdProp="ai-kids-75"
       gameType="ai"
       totalLevels={scenarios.length}
       currentLevel={currentQuestion + 1}
@@ -298,3 +300,5 @@ const DataCollectorSimulation = () => {
 };
 
 export default DataCollectorSimulation;
+
+

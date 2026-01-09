@@ -185,6 +185,8 @@ const QuizLeadership = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/reflex-leadership-traits"
+      nextGameIdProp="moral-teen-73"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -229,3 +231,4 @@ const QuizLeadership = () => {
 };
 
 export default QuizLeadership;
+

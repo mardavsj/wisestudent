@@ -196,6 +196,8 @@ const TrueFalseAIQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/emoji-classifier"
+      nextGameIdProp="ai-kids-5"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const TrueFalseAIQuiz = () => {
 };
 
 export default TrueFalseAIQuiz;
+
+

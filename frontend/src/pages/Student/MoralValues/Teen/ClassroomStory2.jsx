@@ -201,6 +201,8 @@ const ClassroomStory2 = () => {
       score={coins}
       subtitle={showResult ? "Activity Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/moral-values/teen/justice-quiz"
+      nextGameIdProp="moral-teen-42"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -286,3 +288,4 @@ const ClassroomStory2 = () => {
 };
 
 export default ClassroomStory2;
+

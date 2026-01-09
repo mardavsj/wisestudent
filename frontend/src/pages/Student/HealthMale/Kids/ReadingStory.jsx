@@ -185,6 +185,8 @@ const ReadingStory = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-habit-alert"
+      nextGameIdProp="health-male-kids-99"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -230,3 +232,4 @@ const ReadingStory = () => {
 };
 
 export default ReadingStory;
+

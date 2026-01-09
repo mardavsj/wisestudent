@@ -185,6 +185,8 @@ const ShavingDebateTeen = () => {
             showGameOver={gameFinished}
             score={coins}
             gameId={gameId}
+            nextGamePathProp="/student/health-male/teens/teen-hygiene-journal"
+            nextGameIdProp="health-male-teen-37"
             gameType="health-male"
             flashPoints={flashPoints}
             showAnswerConfetti={showAnswerConfetti}
@@ -236,3 +238,4 @@ const ShavingDebateTeen = () => {
 };
 
 export default ShavingDebateTeen;
+

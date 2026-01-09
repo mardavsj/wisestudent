@@ -212,6 +212,8 @@ const RoleplayCourageousLeader = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/badge-courage-hero"
+      nextGameIdProp="moral-teen-60"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -320,3 +322,4 @@ const RoleplayCourageousLeader = () => {
 };
 
 export default RoleplayCourageousLeader;
+

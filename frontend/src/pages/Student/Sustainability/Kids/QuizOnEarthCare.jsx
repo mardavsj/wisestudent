@@ -251,7 +251,9 @@ const QuizOnEarthCare = () => {
       showAnswerConfetti={showAnswerConfetti}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/reflex-earth-guardian"
+      nextGameIdProp="sustainability-kids-98">
       {flashPoints}
       {!showResult ? (
         <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">

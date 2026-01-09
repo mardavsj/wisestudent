@@ -196,6 +196,8 @@ const DentistStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-healthy-steps"
+      nextGameIdProp="health-male-kids-79"
       gameType="health-male"
       totalLevels={5}
       currentLevel={78}
@@ -241,3 +243,4 @@ const DentistStory = () => {
 };
 
 export default DentistStory;
+

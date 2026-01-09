@@ -196,6 +196,8 @@ const EncourageDream = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/equality-poster"
+      nextGameIdProp="uvls-kids-26"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -285,3 +287,4 @@ const EncourageDream = () => {
 };
 
 export default EncourageDream;
+

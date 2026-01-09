@@ -182,6 +182,8 @@ const BiasDetectionReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/teen/evidence-journal"
+      nextGameIdProp="uvls-teen-57"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const BiasDetectionReflex = () => {
 };
 
 export default BiasDetectionReflex;
+

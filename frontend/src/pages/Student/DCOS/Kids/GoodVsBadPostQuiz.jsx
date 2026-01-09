@@ -188,6 +188,8 @@ const GoodVsBadPostQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/emoji-reflex1"
+      nextGameIdProp="dcos-kids-65"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -232,3 +234,4 @@ const GoodVsBadPostQuiz = () => {
 };
 
 export default GoodVsBadPostQuiz;
+

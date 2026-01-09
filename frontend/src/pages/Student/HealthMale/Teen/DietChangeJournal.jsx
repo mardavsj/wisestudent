@@ -78,6 +78,8 @@ const DietChangeJournal = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/weekly-meals-simulation"
+      nextGameIdProp="health-male-teen-18"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -126,3 +128,4 @@ const DietChangeJournal = () => {
 };
 
 export default DietChangeJournal;
+

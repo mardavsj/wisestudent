@@ -213,6 +213,8 @@ const SmartRobotStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-71"
+      nextGamePathProp="/student/dcos/kids/reflex-ai-safety1"
+      nextGameIdProp="dcos-kids-72"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const SmartRobotStory = () => {
 };
 
 export default SmartRobotStory;
+

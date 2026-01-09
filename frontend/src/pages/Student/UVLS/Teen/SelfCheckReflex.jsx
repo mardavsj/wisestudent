@@ -182,6 +182,8 @@ const SelfCheckReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/teen/build-toolbox-puzzle"
+      nextGameIdProp="uvls-teen-49"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const SelfCheckReflex = () => {
 };
 
 export default SelfCheckReflex;
+

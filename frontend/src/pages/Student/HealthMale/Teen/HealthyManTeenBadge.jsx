@@ -234,6 +234,8 @@ const HealthyManTeenBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/checkup-story"
+      nextGameIdProp="health-male-teen-71"
       gameType="health-male"
       totalLevels={5}
       currentLevel={70}
@@ -371,3 +373,4 @@ const HealthyManTeenBadge = () => {
 };
 
 export default HealthyManTeenBadge;
+

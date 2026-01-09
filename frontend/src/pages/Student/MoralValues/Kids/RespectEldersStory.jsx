@@ -215,6 +215,8 @@ const RespectEldersStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/polite-words-quiz2"
+      nextGameIdProp="moral-kids-12"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -257,3 +259,4 @@ const RespectEldersStory = () => {
 };
 
 export default RespectEldersStory;
+

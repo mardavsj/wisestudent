@@ -127,6 +127,8 @@ const BalancePuzzle = () => {
       maxScore={leftItems.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/homework-balance-story"
+      nextGameIdProp="brain-kids-75"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -227,3 +229,4 @@ const BalancePuzzle = () => {
 };
 
 export default BalancePuzzle;
+

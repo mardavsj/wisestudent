@@ -182,6 +182,8 @@ const TrainingAIReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/kids/overfitting-story"
+      nextGameIdProp="ai-kids-55"
       gameType="ai"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -247,3 +249,5 @@ const TrainingAIReflex = () => {
 };
 
 export default TrainingAIReflex;
+
+

@@ -211,6 +211,8 @@ const CandyDilemmaStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/quiz-right-choice"
+      nextGameIdProp="moral-kids-92"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -253,3 +255,4 @@ const CandyDilemmaStory = () => {
 };
 
 export default CandyDilemmaStory;
+

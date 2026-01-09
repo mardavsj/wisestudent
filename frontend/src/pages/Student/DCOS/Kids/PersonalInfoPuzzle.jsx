@@ -138,6 +138,8 @@ const PersonalInfoPuzzle = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/game-invite-reflex"
+      nextGameIdProp="dcos-kids-5"
       gameType="dcos"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -263,3 +265,4 @@ const PersonalInfoPuzzle = () => {
 };
 
 export default PersonalInfoPuzzle;
+

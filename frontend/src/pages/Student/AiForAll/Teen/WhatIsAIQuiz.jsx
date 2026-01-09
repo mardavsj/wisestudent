@@ -222,6 +222,8 @@ const WhatIsAIQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/pattern-prediction-puzzle"
+      nextGameIdProp="ai-teen-2"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

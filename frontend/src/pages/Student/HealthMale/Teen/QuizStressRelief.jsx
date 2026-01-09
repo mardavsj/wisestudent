@@ -112,6 +112,8 @@ const QuizStressRelief = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-52"
+      nextGamePathProp="/student/health-male/teens/reflex-stress-check"
+      nextGameIdProp="health-male-teen-53"
       gameType="health-male"
       totalLevels={5}
       currentLevel={52}
@@ -199,3 +201,4 @@ const QuizStressRelief = () => {
 };
 
 export default QuizStressRelief;
+

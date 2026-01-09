@@ -198,6 +198,8 @@ const PeerPressureStory1 = () => {
       score={coins}
       subtitle={showResult ? "Activity Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/moral-values/teen/debate-right-vs-popular"
+      nextGameIdProp="moral-teen-96"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -283,3 +285,4 @@ const PeerPressureStory1 = () => {
 };
 
 export default PeerPressureStory1;
+

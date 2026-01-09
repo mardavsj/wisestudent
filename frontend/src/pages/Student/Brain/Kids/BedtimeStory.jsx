@@ -190,6 +190,8 @@ const BedtimeStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/quiz-sleep"
+      nextGameIdProp="brain-kids-62"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -232,3 +234,4 @@ const BedtimeStory = () => {
 };
 
 export default BedtimeStory;
+

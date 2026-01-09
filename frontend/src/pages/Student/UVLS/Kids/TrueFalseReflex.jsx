@@ -188,6 +188,8 @@ const TrueFalseReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/logic-puzzle"
+      nextGameIdProp="uvls-kids-54"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const TrueFalseReflex = () => {
 };
 
 export default TrueFalseReflex;
+

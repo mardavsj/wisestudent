@@ -125,6 +125,8 @@ const BodyMatchPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/respect-story"
+      nextGameIdProp="health-male-kids-35"
       gameType="health-male"
       totalLevels={organs.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const BodyMatchPuzzle = () => {
 };
 
 export default BodyMatchPuzzle;
+

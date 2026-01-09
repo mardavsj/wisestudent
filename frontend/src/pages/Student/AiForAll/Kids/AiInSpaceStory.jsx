@@ -196,6 +196,8 @@ const AiInSpaceStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/good-data-vs-bad-data-game"
+      nextGameIdProp="ai-kids-89"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const AiInSpaceStory = () => {
 };
 
 export default AiInSpaceStory;
+
+

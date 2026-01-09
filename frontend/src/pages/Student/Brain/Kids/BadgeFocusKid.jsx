@@ -201,6 +201,8 @@ const BadgeFocusKid = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/shopping-list-story"
+      nextGameIdProp="brain-kids-21"
       gameType="brain"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const BadgeFocusKid = () => {
 };
 
 export default BadgeFocusKid;
+

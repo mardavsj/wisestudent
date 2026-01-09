@@ -239,7 +239,9 @@ const BadgeYoungBusinessExplorer = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/ehe/kids"
-    >
+    
+      nextGamePathProp="/student/ehe/kids/college-story"
+      nextGameIdProp="ehe-kids-51">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

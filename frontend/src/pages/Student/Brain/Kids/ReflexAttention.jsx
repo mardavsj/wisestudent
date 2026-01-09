@@ -214,6 +214,8 @@ const ReflexAttention = () => {
       totalXp={totalXp}
       showGameOver={gameState === "finished"}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/puzzle-of-focus"
+      nextGameIdProp="brain-kids-14"
       gameType="brain"
       totalLevels={TOTAL_ROUNDS}
       currentLevel={currentRound}
@@ -301,3 +303,4 @@ const ReflexAttention = () => {
 };
 
 export default ReflexAttention;
+

@@ -119,6 +119,8 @@ const PuzzleRespectMatch = () => {
       title="Puzzle: Respect Match"
       score={coins}
       subtitle={showResult ? "Game Complete!" : "Match actions to their outcomes"}
+      nextGamePathProp="/student/moral-values/kids/teacher-greeting-story"
+      nextGameIdProp="moral-kids-15"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -270,3 +272,4 @@ const PuzzleRespectMatch = () => {
 };
 
 export default PuzzleRespectMatch;
+

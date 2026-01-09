@@ -228,6 +228,8 @@ const TrainingHeroBadgee = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/good-ai-vs-bad-ai-quiz"
+      nextGameIdProp="ai-teen-76"
       gameType="ai"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}

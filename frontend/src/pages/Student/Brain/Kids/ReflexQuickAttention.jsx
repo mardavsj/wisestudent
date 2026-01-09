@@ -225,6 +225,8 @@ const ReflexQuickAttention = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/badge-focus-kid"
+      nextGameIdProp="brain-kids-20"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -290,3 +292,4 @@ const ReflexQuickAttention = () => {
 };
 
 export default ReflexQuickAttention;
+

@@ -229,6 +229,8 @@ const AIJobsDebate = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/sustainability-quiz"
+      nextGameIdProp="ai-teen-87"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

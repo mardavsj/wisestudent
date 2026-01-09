@@ -184,6 +184,8 @@ const KindWordsReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/smile-story"
+      nextGameIdProp="dcos-kids-13"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -249,3 +251,4 @@ const KindWordsReflex = () => {
 };
 
 export default KindWordsReflex;
+

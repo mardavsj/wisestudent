@@ -183,6 +183,8 @@ const ReflexSpotFake = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/puzzle-of-integrity"
+      nextGameIdProp="moral-teen-4"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const ReflexSpotFake = () => {
 };
 
 export default ReflexSpotFake;
+

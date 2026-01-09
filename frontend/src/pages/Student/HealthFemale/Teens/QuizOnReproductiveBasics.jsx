@@ -192,7 +192,9 @@ const QuizOnReproductiveBasics = () => {
       showConfetti={gameFinished}
       flashPoints={flashPoints}
       backPath="/games/health-female/teens"
-    >
+    
+      nextGamePathProp="/student/health-female/teens/reflex-teen-awareness"
+      nextGameIdProp="health-female-teen-33">
       <div className="space-y-8">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
           <div className="flex justify-between items-center mb-4">

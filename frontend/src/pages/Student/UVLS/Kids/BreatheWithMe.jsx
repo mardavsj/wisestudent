@@ -191,6 +191,8 @@ const BreatheWithMe = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/mood-match"
+      nextGameIdProp="uvls-kids-43"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

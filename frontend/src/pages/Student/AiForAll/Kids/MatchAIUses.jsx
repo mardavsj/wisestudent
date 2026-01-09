@@ -90,6 +90,8 @@ const MatchAIUses = () => {
       score={coins}
       subtitle={`Match ${matches.length} of ${items.length}`} // Show number of completed matches out of total
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/sorting-animals"
+      nextGameIdProp="ai-kids-24"
       nextEnabled={showResult && score >= 4}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

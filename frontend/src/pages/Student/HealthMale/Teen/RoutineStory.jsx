@@ -197,6 +197,8 @@ const RoutineStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-91"
+      nextGamePathProp="/student/health-male/teens/quiz-teen-habits"
+      nextGameIdProp="health-male-teen-92"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -282,3 +284,4 @@ const RoutineStory = () => {
 };
 
 export default RoutineStory;
+

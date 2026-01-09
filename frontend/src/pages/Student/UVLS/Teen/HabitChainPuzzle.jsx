@@ -131,6 +131,8 @@ const HabitChainPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-97"
+      nextGamePathProp="/student/uvls/teen/habit-change-journal"
+      nextGameIdProp="uvls-teen-98"
       gameType="uvls"
       totalLevels={habits.length}
       currentLevel={matches.length + 1}

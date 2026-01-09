@@ -80,6 +80,8 @@ const JournalOfEthics = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/roleplay-ethical-leader"
+      nextGameIdProp="moral-teen-98"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -123,3 +125,4 @@ const JournalOfEthics = () => {
 };
 
 export default JournalOfEthics;
+

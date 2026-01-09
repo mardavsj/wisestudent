@@ -112,6 +112,8 @@ const ArtStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/reflex-creative-thinking"
+      nextGameIdProp="brain-kids-89"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -154,3 +156,4 @@ const ArtStory = () => {
 };
 
 export default ArtStory;
+

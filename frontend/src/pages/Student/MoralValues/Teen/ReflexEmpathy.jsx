@@ -178,6 +178,8 @@ const ReflexEmpathy = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/feelings-puzzle"
+      nextGameIdProp="moral-teen-24"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexEmpathy = () => {
 };
 
 export default ReflexEmpathy;
+

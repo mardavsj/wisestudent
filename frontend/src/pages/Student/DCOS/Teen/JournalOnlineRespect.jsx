@@ -82,6 +82,8 @@ const JournalOnlineRespect = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/roleplay-calm-reply"
+      nextGameIdProp="dcos-teen-88"
       gameType="dcos"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalOnlineRespect = () => {
 };
 
 export default JournalOnlineRespect;
+

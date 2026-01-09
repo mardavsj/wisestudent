@@ -108,6 +108,8 @@ const BounceBackJournal = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/sports-story-resilience"
+      nextGameIdProp="brain-kids-98"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -169,3 +171,4 @@ const BounceBackJournal = () => {
 };
 
 export default BounceBackJournal;
+

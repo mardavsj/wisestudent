@@ -87,6 +87,8 @@ const ResolutionJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/family-simulation"
+      nextGameIdProp="uvls-kids-78"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -130,3 +132,4 @@ const ResolutionJournal = () => {
 };
 
 export default ResolutionJournal;
+

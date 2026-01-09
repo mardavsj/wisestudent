@@ -199,6 +199,8 @@ const ResponsibilityStory = () => {
       score={coins}
       subtitle={showResult ? "Activity Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/moral-values/teen/quiz-discipline"
+      nextGameIdProp="moral-teen-32"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,4 @@ const ResponsibilityStory = () => {
 };
 
 export default ResponsibilityStory;
+

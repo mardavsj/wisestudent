@@ -203,6 +203,8 @@ const AIEthicsBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/kind-vs-mean-quiz"
+      nextGameIdProp="dcos-kids-81"
       gameType="dcos"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -260,3 +262,4 @@ const AIEthicsBadge = () => {
 };
 
 export default AIEthicsBadge;
+

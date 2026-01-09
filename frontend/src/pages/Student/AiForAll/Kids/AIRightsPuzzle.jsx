@@ -145,6 +145,8 @@ const AIRightsPuzzle = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/kids/robot-friend-story"
+      nextGameIdProp="ai-kids-86"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"
@@ -297,3 +299,5 @@ const AIRightsPuzzle = () => {
 };
 
 export default AIRightsPuzzle;
+
+

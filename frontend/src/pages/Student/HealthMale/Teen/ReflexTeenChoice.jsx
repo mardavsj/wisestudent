@@ -180,6 +180,8 @@ const ReflexTeenChoice = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId="health-male-teen-83"
+      nextGamePathProp="/student/health-male/teens/effects-puzzle"
+      nextGameIdProp="health-male-teen-84"
       gameType="health-male"
       totalLevels={TOTAL_ROUNDS}
       maxScore={TOTAL_ROUNDS}
@@ -258,3 +260,4 @@ const ReflexTeenChoice = () => {
 };
 
 export default ReflexTeenChoice;
+

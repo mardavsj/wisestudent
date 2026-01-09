@@ -227,6 +227,8 @@ const AiDoctorQuizz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/music-playlist-ai"
+      nextGameIdProp="ai-teen-32"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

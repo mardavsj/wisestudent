@@ -203,6 +203,8 @@ const LateNightPartyStory = () => {
       score={coins}
       subtitle={showResult ? "Activity Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/moral-values/teen/debate-rules-vs-freedom"
+      nextGameIdProp="moral-teen-36"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -288,3 +290,4 @@ const LateNightPartyStory = () => {
 };
 
 export default LateNightPartyStory;
+

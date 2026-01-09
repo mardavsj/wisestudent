@@ -227,6 +227,8 @@ const GoodAIVSBadAIQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/privacy-protection-story"
+      nextGameIdProp="ai-teen-77"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

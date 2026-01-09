@@ -231,6 +231,8 @@ const EthicsInAIQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/human-plus-ai-story"
+      nextGameIdProp="ai-teen-83"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

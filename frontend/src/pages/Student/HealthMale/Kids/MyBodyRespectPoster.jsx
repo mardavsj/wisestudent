@@ -228,6 +228,8 @@ const MyBodyRespectPoster = () => {
       showGameOver={showResult && isLastStage && isCorrect}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/learning-body-journal"
+      nextGameIdProp="health-male-kids-37"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -304,3 +306,4 @@ const MyBodyRespectPoster = () => {
 };
 
 export default MyBodyRespectPoster;
+

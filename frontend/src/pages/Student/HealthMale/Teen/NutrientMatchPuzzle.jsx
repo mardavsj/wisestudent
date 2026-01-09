@@ -125,6 +125,8 @@ const NutrientMatchPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/sports-nutrition-story"
+      nextGameIdProp="health-male-teen-15"
       gameType="health-male"
       totalLevels={nutrients.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const NutrientMatchPuzzle = () => {
 };
 
 export default NutrientMatchPuzzle;
+

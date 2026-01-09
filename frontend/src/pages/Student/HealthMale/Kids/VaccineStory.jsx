@@ -190,6 +190,8 @@ const VaccineStory = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/quiz-safety"
+      nextGameIdProp="health-male-kids-72"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -235,3 +237,4 @@ const VaccineStory = () => {
 };
 
 export default VaccineStory;
+

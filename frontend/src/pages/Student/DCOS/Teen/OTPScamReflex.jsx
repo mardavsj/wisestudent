@@ -188,6 +188,8 @@ const OTPScamReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/shopping-simulation"
+      nextGameIdProp="dcos-teen-44"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const OTPScamReflex = () => {
 };
 
 export default OTPScamReflex;
+

@@ -90,6 +90,8 @@ const FutureImaginationJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/kids/ai-explorer-hero-badge"
+      nextGameIdProp="ai-kids-100"
       gameType="ai"
       maxScore={stages.length}
       totalCoins={totalCoins}
@@ -134,3 +136,5 @@ const FutureImaginationJournal = () => {
 };
 
 export default FutureImaginationJournal;
+
+

@@ -203,6 +203,8 @@ const PublicSpeakingPrep = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/teen/listening-vs-speaking-debate"
+      nextGameIdProp="uvls-teen-69"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -247,3 +249,4 @@ const PublicSpeakingPrep = () => {
 };
 
 export default PublicSpeakingPrep;
+

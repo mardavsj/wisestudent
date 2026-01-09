@@ -93,6 +93,8 @@ const JournalOfTeenHabits = () => {
       showGameOver={gameFinished}
       score={responses.length}
       gameId="health-male-teen-97"
+      nextGamePathProp="/student/health-male/teens/time-management-simulation"
+      nextGameIdProp="health-male-teen-98"
       gameType="health-male"
       maxScore={TOTAL_LEVELS}
       coinsPerLevel={coinsPerLevel}
@@ -145,3 +147,4 @@ const JournalOfTeenHabits = () => {
 };
 
 export default JournalOfTeenHabits;
+

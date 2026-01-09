@@ -188,6 +188,8 @@ const FakeAppReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/sharing-rights-simulation"
+      nextGameIdProp="dcos-teen-54"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const FakeAppReflex = () => {
 };
 
 export default FakeAppReflex;
+

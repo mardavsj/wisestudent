@@ -113,7 +113,9 @@ const AppBuilderStory = () => {
       onNext={handleNext}
       nextEnabled={showResult}
       backPath="/games/ehe/teens"
-    >
+    
+      nextGamePathProp="/student/ehe/teens/quiz-teen-entrepreneurs"
+      nextGameIdProp="ehe-teen-42">
       <div className="min-h-[calc(100vh-200px)] flex flex-col justify-center max-w-4xl mx-auto px-4 py-4">
         {!showResult ? (
           <div className="space-y-4 md:space-y-6">

@@ -196,6 +196,8 @@ const WrongPredictionQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/garbage-in-garbage-out-story"
+      nextGameIdProp="ai-kids-59"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const WrongPredictionQuiz = () => {
 };
 
 export default WrongPredictionQuiz;
+
+

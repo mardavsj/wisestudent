@@ -206,6 +206,8 @@ const InviteRoleplay = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/respect-signals"
+      nextGameIdProp="uvls-kids-19"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -250,3 +252,4 @@ const InviteRoleplay = () => {
 };
 
 export default InviteRoleplay;
+

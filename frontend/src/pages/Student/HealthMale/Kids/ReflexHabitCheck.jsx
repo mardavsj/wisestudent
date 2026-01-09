@@ -210,6 +210,8 @@ const ReflexHabitCheck = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/daily-match-puzzle"
+      nextGameIdProp="health-male-kids-94"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

@@ -197,6 +197,8 @@ const CheckupStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-71"
+      nextGamePathProp="/student/health-male/teens/quiz-preventive-health"
+      nextGameIdProp="health-male-teen-72"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -282,3 +284,4 @@ const CheckupStory = () => {
 };
 
 export default CheckupStory;
+

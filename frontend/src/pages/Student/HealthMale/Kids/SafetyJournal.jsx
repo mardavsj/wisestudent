@@ -100,6 +100,8 @@ const SafetyJournal = () => {
       maxScore={journalPrompts.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/health-male/kids/dentist-story"
+      nextGameIdProp="health-male-kids-78"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -169,3 +171,4 @@ const SafetyJournal = () => {
 };
 
 export default SafetyJournal;
+

@@ -182,6 +182,8 @@ const CivicReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/teen/citizen-leader-badge"
+      nextGameIdProp="uvls-teen-90"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const CivicReflex = () => {
 };
 
 export default CivicReflex;
+

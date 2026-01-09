@@ -177,6 +177,8 @@ const DebateStage1 = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/digital-reputation-puzzle"
+      nextGameIdProp="dcos-teen-66"
       gameType="dcos"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -218,3 +220,4 @@ const DebateStage1 = () => {
 };
 
 export default DebateStage1;
+

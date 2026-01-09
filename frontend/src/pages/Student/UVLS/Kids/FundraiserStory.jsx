@@ -227,6 +227,8 @@ const FundraiserStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/civic-poster"
+      nextGameIdProp="uvls-kids-86"
       gameType="uvls"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -269,3 +271,4 @@ const FundraiserStory = () => {
 };
 
 export default FundraiserStory;
+

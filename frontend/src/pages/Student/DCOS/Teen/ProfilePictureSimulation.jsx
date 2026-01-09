@@ -202,6 +202,8 @@ const ProfilePictureSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/social-media-journal"
+      nextGameIdProp="dcos-teen-5"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -295,3 +297,4 @@ const ProfilePictureSimulation = () => {
 };
 
 export default ProfilePictureSimulation;
+

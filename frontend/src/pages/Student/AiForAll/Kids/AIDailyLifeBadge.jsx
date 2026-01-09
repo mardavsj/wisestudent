@@ -226,6 +226,8 @@ const AIDailyLifeBadge = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/kids/teach-robot-colors"
+      nextGameIdProp="ai-kids-51"
       gameType="ai"
       showGameOver={showResult}
       maxScore={challenges.length}
@@ -300,3 +302,5 @@ const AIDailyLifeBadge = () => {
 };
 
 export default AIDailyLifeBadge;
+
+

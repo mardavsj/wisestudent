@@ -196,6 +196,8 @@ const AITranslatorQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/weather-prediction-story"
+      nextGameIdProp="ai-kids-38"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const AITranslatorQuiz = () => {
 };
 
 export default AITranslatorQuiz;
+
+

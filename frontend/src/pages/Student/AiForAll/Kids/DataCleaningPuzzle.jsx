@@ -145,6 +145,8 @@ const DataCleaningPuzzle = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/kids/training-ai-reflex"
+      nextGameIdProp="ai-kids-54"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"
@@ -297,3 +299,5 @@ const DataCleaningPuzzle = () => {
 };
 
 export default DataCleaningPuzzle;
+
+

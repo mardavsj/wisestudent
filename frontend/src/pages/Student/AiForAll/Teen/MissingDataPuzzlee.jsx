@@ -131,6 +131,8 @@ const MissingDataPuzzlee = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/train-with-sounds"
+      nextGameIdProp="ai-teen-54"
       gameType="ai"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -273,3 +275,4 @@ const MissingDataPuzzlee = () => {
 };
 
 export default MissingDataPuzzlee;
+

@@ -196,6 +196,8 @@ const AIMapsStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/voice-assistant-quiz"
+      nextGameIdProp="ai-kids-28"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const AIMapsStory = () => {
 };
 
 export default AIMapsStory;
+
+

@@ -127,6 +127,8 @@ const RobotHelperOrVillain = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Scenario ${currentScenario + 1} of ${actions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-and-jobs-story"
+      nextGameIdProp="ai-kids-82"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -211,3 +213,5 @@ const RobotHelperOrVillain = () => {
 };
 
 export default RobotHelperOrVillain;
+
+

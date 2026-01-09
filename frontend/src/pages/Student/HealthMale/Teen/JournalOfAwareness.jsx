@@ -92,6 +92,8 @@ const JournalOfAwareness = () => {
       showGameOver={gameFinished}
       score={responses.length}
       gameId="health-male-teen-87"
+      nextGamePathProp="/student/health-male/teens/peer-pressure-simulation"
+      nextGameIdProp="health-male-teen-88"
       gameType="health-male"
       maxScore={prompts.length}
       coinsPerLevel={coinsPerLevel}
@@ -144,3 +146,4 @@ const JournalOfAwareness = () => {
 };
 
 export default JournalOfAwareness;
+

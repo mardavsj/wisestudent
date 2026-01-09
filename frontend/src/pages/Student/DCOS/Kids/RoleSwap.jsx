@@ -197,6 +197,8 @@ const RoleSwap = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/kindness-journal"
+      nextGameIdProp="dcos-kids-18"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -253,3 +255,4 @@ const RoleSwap = () => {
 };
 
 export default RoleSwap;
+

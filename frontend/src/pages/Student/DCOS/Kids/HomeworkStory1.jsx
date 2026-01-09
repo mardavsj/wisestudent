@@ -211,6 +211,8 @@ const HomeworkStory1 = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-94"
+      nextGamePathProp="/student/dcos/kids/reflex-offline-fun"
+      nextGameIdProp="dcos-kids-95"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -252,3 +254,4 @@ const HomeworkStory1 = () => {
 };
 
 export default HomeworkStory1;
+

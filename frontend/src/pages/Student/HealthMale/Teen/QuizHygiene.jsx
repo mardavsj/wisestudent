@@ -192,6 +192,8 @@ const QuizHygiene = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/reflex-smart-hygiene-43"
+      nextGameIdProp="health-male-teen-43"
       gameType="health-male"
       totalLevels={5}
       currentLevel={42}
@@ -269,3 +271,4 @@ const QuizHygiene = () => {
 };
 
 export default QuizHygiene;
+

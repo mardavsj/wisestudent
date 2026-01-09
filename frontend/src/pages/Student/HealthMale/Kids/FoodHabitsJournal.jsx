@@ -105,6 +105,8 @@ const FoodHabitsJournal = () => {
       maxScore={prompts.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/health-male/kids/junk-food-story"
+      nextGameIdProp="health-male-kids-18"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -174,3 +176,4 @@ const FoodHabitsJournal = () => {
 };
 
 export default FoodHabitsJournal;
+

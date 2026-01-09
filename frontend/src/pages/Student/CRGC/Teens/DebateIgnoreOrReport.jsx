@@ -127,7 +127,9 @@ const DebateIgnoreOrReport = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       flashPoints={flashPoints}
-      showAnswerConfetti={showAnswerConfetti}>
+      showAnswerConfetti={showAnswerConfetti}
+      nextGamePathProp="/student/civic-responsibility/teens/journal-of-peer-support"
+      nextGameIdProp="civic-responsibility-teens-37">
       <div className="space-y-8">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
           <div className="flex justify-between items-center mb-4">

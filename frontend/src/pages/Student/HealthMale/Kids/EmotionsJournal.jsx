@@ -105,6 +105,8 @@ const EmotionsJournal = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/health-male/kids/anger-story"
+      nextGameIdProp="health-male-kids-58"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -174,3 +176,4 @@ const EmotionsJournal = () => {
 };
 
 export default EmotionsJournal;
+

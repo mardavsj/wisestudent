@@ -198,6 +198,8 @@ const AIorHumanQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/smart-speaker-story"
+      nextGameIdProp="ai-kids-34"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -283,3 +285,5 @@ const AIorHumanQuiz = () => {
 };
 
 export default AIorHumanQuiz;
+
+

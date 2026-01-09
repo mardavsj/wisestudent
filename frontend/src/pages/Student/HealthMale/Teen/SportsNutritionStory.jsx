@@ -196,6 +196,8 @@ const SportsNutritionStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-15"
+      nextGamePathProp="/student/health-male/teens/junk-food-debate"
+      nextGameIdProp="health-male-teen-16"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -281,3 +283,4 @@ const SportsNutritionStory = () => {
 };
 
 export default SportsNutritionStory;
+

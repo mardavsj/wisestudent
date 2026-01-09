@@ -138,6 +138,8 @@ const PuzzleAIGoodBad = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/fairness-quiz1"
+      nextGameIdProp="dcos-kids-74"
       gameType="dcos"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -263,3 +265,4 @@ const PuzzleAIGoodBad = () => {
 };
 
 export default PuzzleAIGoodBad;
+

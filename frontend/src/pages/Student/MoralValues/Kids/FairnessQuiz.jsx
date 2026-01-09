@@ -188,6 +188,8 @@ const FairnessQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-fair-play"
+      nextGameIdProp="moral-kids-43"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -271,3 +273,4 @@ const FairnessQuiz = () => {
 };
 
 export default FairnessQuiz;
+

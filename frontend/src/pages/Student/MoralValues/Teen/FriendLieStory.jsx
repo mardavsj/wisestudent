@@ -199,6 +199,8 @@ const FriendLieStory = () => {
       score={coins}
       subtitle={showResult ? "Activity Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/moral-values/teen/white-lie-quiz"
+      nextGameIdProp="moral-teen-2"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,4 @@ const FriendLieStory = () => {
 };
 
 export default FriendLieStory;
+

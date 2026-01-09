@@ -87,6 +87,8 @@ const FeedbackJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/difficult-talk-roleplay"
+      nextGameIdProp="uvls-kids-68"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -130,3 +132,4 @@ const FeedbackJournal = () => {
 };
 
 export default FeedbackJournal;
+

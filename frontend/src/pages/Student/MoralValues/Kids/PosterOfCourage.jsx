@@ -88,6 +88,8 @@ const PosterOfCourage = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/journal-courage"
+      nextGameIdProp="moral-kids-57"
       gameType="moral"
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -131,3 +133,4 @@ const PosterOfCourage = () => {
 };
 
 export default PosterOfCourage;
+

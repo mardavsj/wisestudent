@@ -197,6 +197,8 @@ const EntrepreneurStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/reflex-productivity"
+      nextGameIdProp="dcos-teen-92"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -282,3 +284,4 @@ const EntrepreneurStory = () => {
 };
 
 export default EntrepreneurStory;
+

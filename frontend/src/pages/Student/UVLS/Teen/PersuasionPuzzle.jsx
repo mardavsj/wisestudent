@@ -131,6 +131,8 @@ const PersuasionPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-66"
+      nextGamePathProp="/student/uvls/teen/communication-journal"
+      nextGameIdProp="uvls-teen-67"
       gameType="uvls"
       totalLevels={requests.length}
       currentLevel={matches.length + 1}

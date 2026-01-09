@@ -180,6 +180,8 @@ const ReflexTeenSafety = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId="health-male-teen-79"
+      nextGamePathProp="/student/health-male/teens/preventive-health-teen-badge"
+      nextGameIdProp="health-male-teen-80"
       gameType="health-male"
       totalLevels={TOTAL_ROUNDS}
       maxScore={TOTAL_ROUNDS}
@@ -258,3 +260,4 @@ const ReflexTeenSafety = () => {
 };
 
 export default ReflexTeenSafety;
+

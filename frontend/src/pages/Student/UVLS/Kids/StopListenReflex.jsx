@@ -188,6 +188,8 @@ const StopListenReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/tone-match"
+      nextGameIdProp="uvls-kids-64"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const StopListenReflex = () => {
 };
 
 export default StopListenReflex;
+

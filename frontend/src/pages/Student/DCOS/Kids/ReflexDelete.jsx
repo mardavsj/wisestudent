@@ -184,6 +184,8 @@ const ReflexDelete = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/puzzle-online-forever"
+      nextGameIdProp="dcos-kids-63"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -249,3 +251,4 @@ const ReflexDelete = () => {
 };
 
 export default ReflexDelete;
+

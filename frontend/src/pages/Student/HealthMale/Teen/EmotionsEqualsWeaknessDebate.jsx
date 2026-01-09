@@ -180,6 +180,8 @@ const EmotionsEqualsWeaknessDebate = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-66"
+      nextGamePathProp="/student/health-male/teens/journal-of-masculinity"
+      nextGameIdProp="health-male-teen-67"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -282,3 +284,4 @@ const EmotionsEqualsWeaknessDebate = () => {
 };
 
 export default EmotionsEqualsWeaknessDebate;
+

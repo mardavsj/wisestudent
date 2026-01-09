@@ -204,6 +204,8 @@ const ToyDispute = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/win-win-quiz"
+      nextGameIdProp="uvls-kids-72"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -291,3 +293,4 @@ const ToyDispute = () => {
 };
 
 export default ToyDispute;
+

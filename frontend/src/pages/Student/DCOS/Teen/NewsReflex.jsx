@@ -188,6 +188,8 @@ const NewsReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/fact-check-badge"
+      nextGameIdProp="dcos-teen-40"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const NewsReflex = () => {
 };
 
 export default NewsReflex;
+

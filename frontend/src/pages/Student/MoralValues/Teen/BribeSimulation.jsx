@@ -197,6 +197,8 @@ const BribeSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/debate-lying-for-friend"
+      nextGameIdProp="moral-teen-6"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -302,3 +304,4 @@ const BribeSimulation = () => {
 };
 
 export default BribeSimulation;
+

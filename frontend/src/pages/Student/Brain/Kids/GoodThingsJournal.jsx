@@ -108,6 +108,8 @@ const GoodThingsJournal = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/homework-positive-story"
+      nextGameIdProp="brain-kids-58"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -166,3 +168,4 @@ const GoodThingsJournal = () => {
 };
 
 export default GoodThingsJournal;
+

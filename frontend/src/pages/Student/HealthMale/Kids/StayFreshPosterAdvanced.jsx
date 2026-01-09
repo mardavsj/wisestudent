@@ -232,6 +232,8 @@ const StayFreshPosterAdvanced = () => {
             showGameOver={showResult && isLastStage && isCorrect}
             score={coins}
             gameId={gameId}
+            nextGamePathProp="/student/health-male/kids/hygiene-habits-journal"
+            nextGameIdProp="health-male-kids-47"
             gameType="health-male"
             flashPoints={flashPoints}
             showAnswerConfetti={showAnswerConfetti}
@@ -308,3 +310,4 @@ const StayFreshPosterAdvanced = () => {
 };
 
 export default StayFreshPosterAdvanced;
+

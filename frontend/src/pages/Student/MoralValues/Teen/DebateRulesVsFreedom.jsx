@@ -109,6 +109,8 @@ const DebateRulesVsFreedom = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/journal-discipline"
+      nextGameIdProp="moral-teen-37"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -209,3 +211,4 @@ const DebateRulesVsFreedom = () => {
 };
 
 export default DebateRulesVsFreedom;
+

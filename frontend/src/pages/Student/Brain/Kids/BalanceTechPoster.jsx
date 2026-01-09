@@ -105,6 +105,8 @@ const BalanceTechPoster = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/journal-screen-use"
+      nextGameIdProp="brain-kids-77"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -149,3 +151,4 @@ const BalanceTechPoster = () => {
 };
 
 export default BalanceTechPoster;
+

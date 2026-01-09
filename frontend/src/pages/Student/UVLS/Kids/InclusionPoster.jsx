@@ -107,6 +107,8 @@ const InclusionPoster = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/inclusion-journal"
+      nextGameIdProp="uvls-kids-17"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -138,3 +140,4 @@ const InclusionPoster = () => {
 };
 
 export default InclusionPoster;
+

@@ -211,6 +211,8 @@ const StrangerChatStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-2"
+      nextGamePathProp="/student/dcos/kids/photo-share-quiz"
+      nextGameIdProp="dcos-kids-3"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -252,3 +254,4 @@ const StrangerChatStory = () => {
 };
 
 export default StrangerChatStory;
+

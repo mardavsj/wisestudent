@@ -189,6 +189,8 @@ const FraudFighterBadge = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/teens/consent-story"
+      nextGameIdProp="dcos-teen-51"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -280,3 +282,4 @@ const FraudFighterBadge = () => {
 };
 
 export default FraudFighterBadge;
+

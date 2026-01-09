@@ -125,7 +125,9 @@ const PuzzleTechnologyImpact = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/startup-story"
+      nextGameIdProp="sustainability-teens-90">
       <div className="space-y-8 max-w-6xl mx-auto">
         {!gameFinished ? (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

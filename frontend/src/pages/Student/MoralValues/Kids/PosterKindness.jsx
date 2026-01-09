@@ -88,6 +88,8 @@ const PosterKindness = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/journal-of-kindness"
+      nextGameIdProp="moral-kids-27"
       gameType="moral"
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -131,3 +133,4 @@ const PosterKindness = () => {
 };
 
 export default PosterKindness;
+

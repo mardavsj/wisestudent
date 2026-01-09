@@ -112,6 +112,8 @@ const CleanUpStory = () => {
       score={coins}
       subtitle={!showResult ? `Question ${currentLevel + 1} of ${questions.length}` : "Quiz Complete!"}
       onNext={handleNext}
+      nextGamePathProp="/student/uvls/kids/citizen-duties-quiz"
+      nextGameIdProp="uvls-kids-82"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -206,3 +208,4 @@ const CleanUpStory = () => {
 };
 
 export default CleanUpStory;
+

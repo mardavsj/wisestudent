@@ -191,6 +191,8 @@ const AIJobsDebate1 = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/puzzle-ai-uses"
+      nextGameIdProp="dcos-teen-76"
       gameType="dcos"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -233,3 +235,4 @@ const AIJobsDebate1 = () => {
 };
 
 export default AIJobsDebate1;
+

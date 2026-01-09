@@ -182,6 +182,8 @@ const CorrectRobotReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/kids/bias-in-data-story"
+      nextGameIdProp="ai-kids-67"
       gameType="ai"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -247,3 +249,5 @@ const CorrectRobotReflex = () => {
 };
 
 export default CorrectRobotReflex;
+
+

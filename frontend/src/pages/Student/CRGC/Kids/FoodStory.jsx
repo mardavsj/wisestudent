@@ -14,6 +14,8 @@ const GameShell = (props) => {
       {...props}
       // We're not actually changing the GameShell here since the issue is internal
       // The real fix would require modifying GameShell.jsx, but we'll try a different approach
+      nextGamePathProp="/student/civic-responsibility/kids/poster-helping-hands"
+      nextGameIdProp="civic-responsibility-kids-56"
     />
   );
 };

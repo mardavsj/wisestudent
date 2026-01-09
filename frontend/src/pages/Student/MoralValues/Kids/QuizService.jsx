@@ -188,6 +188,8 @@ const QuizService = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-service"
+      nextGameIdProp="moral-kids-73"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -271,3 +273,4 @@ const QuizService = () => {
 };
 
 export default QuizService;
+

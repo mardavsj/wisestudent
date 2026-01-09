@@ -230,6 +230,8 @@ const SafeKidBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/morning-routine-story"
+      nextGameIdProp="health-male-kids-91"
       gameType="health-male"
       totalLevels={5}
       currentLevel={90}
@@ -367,3 +369,4 @@ const SafeKidBadge = () => {
 };
 
 export default SafeKidBadge;
+

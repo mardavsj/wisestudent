@@ -125,6 +125,8 @@ const SafetyMatchPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/sickness-story"
+      nextGameIdProp="health-male-kids-75"
       gameType="health-male"
       totalLevels={scenarios.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const SafetyMatchPuzzle = () => {
 };
 
 export default SafetyMatchPuzzle;
+

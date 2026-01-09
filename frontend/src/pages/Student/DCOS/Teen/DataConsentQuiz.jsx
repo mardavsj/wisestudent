@@ -195,6 +195,8 @@ const DataConsentQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/fake-friend-story"
+      nextGameIdProp="dcos-teen-7"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -239,3 +241,4 @@ const DataConsentQuiz = () => {
 };
 
 export default DataConsentQuiz;
+

@@ -187,6 +187,8 @@ const GamingPressureStory = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-respect"
+      nextGameIdProp="health-male-kids-69"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -232,3 +234,4 @@ const GamingPressureStory = () => {
 };
 
 export default GamingPressureStory;
+

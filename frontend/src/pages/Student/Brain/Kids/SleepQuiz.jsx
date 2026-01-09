@@ -187,6 +187,8 @@ const SleepQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/reflex-sleep-habits"
+      nextGameIdProp="brain-kids-63"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -229,3 +231,4 @@ const SleepQuiz = () => {
 };
 
 export default SleepQuiz;
+

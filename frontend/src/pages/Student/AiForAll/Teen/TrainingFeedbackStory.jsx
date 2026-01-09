@@ -261,6 +261,8 @@ const TrainingFeedbackStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/human-vs-ai-errors-quiz"
+      nextGameIdProp="ai-teen-73"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

@@ -213,6 +213,8 @@ const LostWalletStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/poster-fairness"
+      nextGameIdProp="moral-kids-46"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -255,3 +257,4 @@ const LostWalletStory = () => {
 };
 
 export default LostWalletStory;
+

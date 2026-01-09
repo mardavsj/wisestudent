@@ -108,7 +108,9 @@ const StayFreshPoster = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/health-female/kids"
-    >
+    
+      nextGamePathProp="/student/health-female/kids/hygiene-habits-journal"
+      nextGameIdProp="health-female-kids-47">
       <div className="space-y-8">
         {!showResult && currentStageData ? (
           <div className="space-y-6">

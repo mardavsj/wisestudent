@@ -219,6 +219,8 @@ const ReflexDailyHabit = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/badge-brain-care-kid"
+      nextGameIdProp="brain-kids-10"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -283,3 +285,4 @@ const ReflexDailyHabit = () => {
 };
 
 export default ReflexDailyHabit;
+

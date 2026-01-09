@@ -144,6 +144,8 @@ const PuzzleOfBrainCare = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/breakfast-story"
+      nextGameIdProp="brain-kids-5"
       gameType="brain"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -269,3 +271,4 @@ const PuzzleOfBrainCare = () => {
 };
 
 export default PuzzleOfBrainCare;
+

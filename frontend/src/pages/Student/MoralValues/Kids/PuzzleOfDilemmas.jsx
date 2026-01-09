@@ -119,6 +119,8 @@ const PuzzleOfDilemmas = () => {
       title="Puzzle of Dilemmas"
       score={showResult ? finalScore : coins}
       subtitle={showResult ? "Game Complete!" : "Match values to their outcomes"}
+      nextGamePathProp="/student/moral-values/kids/friends-secret-story"
+      nextGameIdProp="moral-kids-95"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -270,3 +272,4 @@ const PuzzleOfDilemmas = () => {
 };
 
 export default PuzzleOfDilemmas;
+

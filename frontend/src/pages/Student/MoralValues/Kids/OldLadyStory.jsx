@@ -212,6 +212,8 @@ const OldLadyStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/quiz-service"
+      nextGameIdProp="moral-kids-72"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const OldLadyStory = () => {
 };
 
 export default OldLadyStory;
+

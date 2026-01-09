@@ -190,6 +190,8 @@ const RainyDayStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/quiz-on-positivity"
+      nextGameIdProp="brain-kids-52"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -232,3 +234,4 @@ const RainyDayStory = () => {
 };
 
 export default RainyDayStory;
+

@@ -136,6 +136,8 @@ const EmojiClassifier = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Emoji ${currentEmoji + 1} of ${emojis.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/self-driving-car"
+      nextGameIdProp="ai-kids-6"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -215,4 +217,6 @@ const EmojiClassifier = () => {
 };
 
 export default EmojiClassifier;
+
+
 

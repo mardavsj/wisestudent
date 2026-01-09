@@ -209,6 +209,8 @@ const ReflexGrowthBasics = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/growth-helpers-puzzle"
+      nextGameIdProp="health-male-kids-24"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -275,3 +277,4 @@ const ReflexGrowthBasics = () => {
 };
 
 export default ReflexGrowthBasics;
+

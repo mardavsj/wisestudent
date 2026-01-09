@@ -116,6 +116,8 @@ const GoalSteps = () => {
       score={coins}
       subtitle={!showResult ? `Question ${currentLevel + 1} of ${questions.length}` : "Quiz Complete!"}
       onNext={handleNext}
+      nextGamePathProp="/student/uvls/kids/smart-poster"
+      nextGameIdProp="uvls-kids-96"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

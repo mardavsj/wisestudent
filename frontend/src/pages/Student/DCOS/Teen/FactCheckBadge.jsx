@@ -207,6 +207,8 @@ const FactCheckBadge = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/teens/fake-job-ad-story"
+      nextGameIdProp="dcos-teen-41"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -299,3 +301,4 @@ const FactCheckBadge = () => {
 };
 
 export default FactCheckBadge;
+

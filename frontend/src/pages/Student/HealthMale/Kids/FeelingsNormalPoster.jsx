@@ -228,6 +228,8 @@ const FeelingsNormalPoster = () => {
       showGameOver={showResult && isLastStage && isCorrect}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/emotions-journal"
+      nextGameIdProp="health-male-kids-57"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -305,3 +307,4 @@ const FeelingsNormalPoster = () => {
 };
 
 export default FeelingsNormalPoster;
+

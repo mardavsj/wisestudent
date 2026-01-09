@@ -116,6 +116,8 @@ const CoolOrFoolDebate = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-86"
+      nextGamePathProp="/student/health-male/teens/journal-of-awareness"
+      nextGameIdProp="health-male-teen-87"
       gameType="health-male"
       maxScore={questions.length}
       coinsPerLevel={coinsPerLevel}
@@ -198,3 +200,4 @@ const CoolOrFoolDebate = () => {
 };
 
 export default CoolOrFoolDebate;
+

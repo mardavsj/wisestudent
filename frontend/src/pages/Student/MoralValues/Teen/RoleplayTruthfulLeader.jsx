@@ -212,6 +212,8 @@ const RoleplayTruthfulLeader = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/badge-integrity-hero"
+      nextGameIdProp="moral-teen-10"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -320,3 +322,4 @@ const RoleplayTruthfulLeader = () => {
 };
 
 export default RoleplayTruthfulLeader;
+

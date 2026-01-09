@@ -214,6 +214,8 @@ const RoleplayGroupLeader = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/reflex-duty-check"
+      nextGameIdProp="moral-teen-39"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -322,3 +324,4 @@ const RoleplayGroupLeader = () => {
 };
 
 export default RoleplayGroupLeader;
+

@@ -227,6 +227,8 @@ const LanguageAIQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/simple-algorithm-puzzle"
+      nextGameIdProp="ai-teen-17"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

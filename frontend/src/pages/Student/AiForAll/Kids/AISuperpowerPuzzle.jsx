@@ -145,6 +145,8 @@ const AISuperpowerPuzzle = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/kids/robot-spy-story"
+      nextGameIdProp="ai-kids-91"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"
@@ -297,3 +299,5 @@ const AISuperpowerPuzzle = () => {
 };
 
 export default AISuperpowerPuzzle;
+
+

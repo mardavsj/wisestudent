@@ -233,6 +233,8 @@ const GrowingStrongBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/body-system-story"
+      nextGameIdProp="health-male-kids-31"
       gameType="health-male"
       totalLevels={5}
       currentLevel={30}
@@ -370,3 +372,4 @@ const GrowingStrongBadge = () => {
 };
 
 export default GrowingStrongBadge;
+

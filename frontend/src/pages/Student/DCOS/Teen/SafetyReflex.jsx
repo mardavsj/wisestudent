@@ -188,6 +188,8 @@ const SafetyReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/debate-stage-online-friends"
+      nextGameIdProp="dcos-teen-9"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const SafetyReflex = () => {
 };
 
 export default SafetyReflex;
+

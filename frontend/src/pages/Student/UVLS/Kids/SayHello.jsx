@@ -204,6 +204,8 @@ const SayHello = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/active-listening-quiz"
+      nextGameIdProp="uvls-kids-62"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -291,3 +293,4 @@ const SayHello = () => {
 };
 
 export default SayHello;
+

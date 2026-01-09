@@ -196,6 +196,8 @@ const FeedbackMattersStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/wrong-labels-puzzle"
+      nextGameIdProp="ai-kids-72"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const FeedbackMattersStory = () => {
 };
 
 export default FeedbackMattersStory;
+
+

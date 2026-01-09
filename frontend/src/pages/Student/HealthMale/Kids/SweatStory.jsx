@@ -195,6 +195,8 @@ const SweatStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/quiz-hygiene-advanced"
+      nextGameIdProp="health-male-kids-42"
       gameType="health-male"
       totalLevels={5}
       currentLevel={41}
@@ -240,3 +242,4 @@ const SweatStory = () => {
 };
 
 export default SweatStory;
+

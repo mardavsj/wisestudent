@@ -215,7 +215,9 @@ const BadgeRuleFollowerKid = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/civic-responsibility/kids"
-    >
+    
+      nextGamePathProp="/student/civic-responsibility/kids/food-story-2"
+      nextGameIdProp="civic-responsibility-kids-81">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

@@ -119,6 +119,8 @@ const correctMatches = [
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-94"
+      nextGamePathProp="/student/health-male/teens/discipline-story"
+      nextGameIdProp="health-male-teen-95"
       gameType="health-male"
       totalLevels={habits.length}
       currentLevel={matches.length + 1}
@@ -256,3 +258,4 @@ const correctMatches = [
 };
 
 export default HabitBuilderPuzzle;
+

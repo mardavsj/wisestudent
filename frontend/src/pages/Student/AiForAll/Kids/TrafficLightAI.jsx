@@ -133,6 +133,8 @@ const TrafficLightAI = () => {
       title="Traffic Light AI"
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-in-maps-story"
+      nextGameIdProp="ai-kids-27"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       score={coins}

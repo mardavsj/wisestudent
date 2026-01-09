@@ -194,6 +194,8 @@ const FruitVsCandyStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/quiz-food-groups"
+      nextGameIdProp="health-male-kids-12"
       gameType="health-male"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -239,3 +241,4 @@ const FruitVsCandyStory = () => {
 };
 
 export default FruitVsCandyStory;
+

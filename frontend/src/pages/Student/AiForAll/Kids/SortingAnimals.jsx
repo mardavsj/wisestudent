@@ -138,6 +138,8 @@ const SortingAnimals = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Item ${currentItem + 1} of ${items.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-basics-badge"
+      nextGameIdProp="ai-kids-25"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

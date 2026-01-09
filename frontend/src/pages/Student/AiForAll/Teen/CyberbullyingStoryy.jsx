@@ -247,6 +247,8 @@ const CyberbullyingStoryy = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/ethics-in-ai-quiz"
+      nextGameIdProp="ai-teen-82"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

@@ -188,6 +188,8 @@ const SharingStory = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/feelings-normal-poster"
+      nextGameIdProp="health-male-kids-56"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -234,3 +236,4 @@ const SharingStory = () => {
 };
 
 export default SharingStory;
+

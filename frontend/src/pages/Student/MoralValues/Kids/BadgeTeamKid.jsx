@@ -223,6 +223,8 @@ const BadgeTeamKid = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/old-lady-story"
+      nextGameIdProp="moral-kids-71"
       gameType="moral"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}
@@ -336,3 +338,4 @@ const BadgeTeamKid = () => {
 };
 
 export default BadgeTeamKid;
+

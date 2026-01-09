@@ -211,6 +211,8 @@ const ReflexHealthyTeen = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/puberty-smart-teen-badge"
+      nextGameIdProp="health-male-teen-30"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -282,3 +284,4 @@ const ReflexHealthyTeen = () => {
 };
 
 export default ReflexHealthyTeen;
+

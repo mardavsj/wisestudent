@@ -183,6 +183,8 @@ const ViralPostStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/deepfake-video-quiz"
+      nextGameIdProp="dcos-teen-32"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -267,3 +269,4 @@ const ViralPostStory = () => {
 };
 
 export default ViralPostStory;
+

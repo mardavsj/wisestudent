@@ -239,7 +239,9 @@ const BadgeTeenpreneur = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/ehe/teens"
-    >
+    
+      nextGamePathProp="/student/ehe/teens/higher-education-story"
+      nextGameIdProp="ehe-teen-51">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

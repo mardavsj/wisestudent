@@ -213,6 +213,8 @@ const ClassroomStory1 = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/poster-team-spirit"
+      nextGameIdProp="moral-kids-66"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -255,3 +257,4 @@ const ClassroomStory1 = () => {
 };
 
 export default ClassroomStory1;
+

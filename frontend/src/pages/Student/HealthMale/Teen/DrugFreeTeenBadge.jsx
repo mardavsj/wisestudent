@@ -156,6 +156,8 @@ const DrugFreeTeenBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/routine-story"
+      nextGameIdProp="health-male-teen-91"
       gameType="health-male"
       totalLevels={5}
       currentLevel={90}
@@ -297,3 +299,4 @@ const DrugFreeTeenBadge = () => {
 };
 
 export default DrugFreeTeenBadge;
+

@@ -211,6 +211,8 @@ const DarkRoomStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/courage-quiz"
+      nextGameIdProp="moral-kids-52"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -253,3 +255,4 @@ const DarkRoomStory = () => {
 };
 
 export default DarkRoomStory;
+

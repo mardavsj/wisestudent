@@ -131,6 +131,8 @@ const SupportNetworkPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-33"
+      nextGamePathProp="/student/uvls/teen/intervention-simulation"
+      nextGameIdProp="uvls-teen-34"
       gameType="uvls"
       totalLevels={supporters.length}
       currentLevel={matches.length + 1}

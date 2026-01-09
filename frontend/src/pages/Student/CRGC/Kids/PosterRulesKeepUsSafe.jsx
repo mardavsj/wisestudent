@@ -108,7 +108,9 @@ const PosterRulesKeepUsSafe = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/civic-responsibility/kids"
-    >
+    
+      nextGamePathProp="/student/civic-responsibility/kids/journal-of-duties"
+      nextGameIdProp="civic-responsibility-kids-77">
       <div className="space-y-8">
         {!showResult && currentStageData ? (
           <div className="space-y-6">

@@ -186,6 +186,8 @@ const QuizDiscipline = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/reflex-time-management"
+      nextGameIdProp="moral-teen-33"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -230,3 +232,4 @@ const QuizDiscipline = () => {
 };
 
 export default QuizDiscipline;
+

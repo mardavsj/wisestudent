@@ -184,6 +184,8 @@ const SleepStory = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/good-habits-poster"
+      nextGameIdProp="health-male-kids-96"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -229,3 +231,4 @@ const SleepStory = () => {
 };
 
 export default SleepStory;
+

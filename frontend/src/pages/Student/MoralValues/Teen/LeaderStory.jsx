@@ -199,6 +199,8 @@ const LeaderStory = () => {
       score={coins}
       subtitle={showResult ? "Activity Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/moral-values/teen/quiz-leadership"
+      nextGameIdProp="moral-teen-72"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,4 @@ const LeaderStory = () => {
 };
 
 export default LeaderStory;
+

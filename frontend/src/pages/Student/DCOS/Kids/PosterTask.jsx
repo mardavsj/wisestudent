@@ -104,6 +104,8 @@ const PosterTask = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/chat-trick-story"
+      nextGameIdProp="dcos-kids-48"
       gameType="dcos"
       totalLevels={stages.length}
       currentLevel={currentStage + 1}
@@ -146,3 +148,4 @@ const PosterTask = () => {
 };
 
 export default PosterTask;
+

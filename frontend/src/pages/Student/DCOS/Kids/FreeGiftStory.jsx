@@ -214,6 +214,8 @@ const FreeGiftStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-41"
+      nextGamePathProp="/student/dcos/kids/fake-link-reflex"
+      nextGameIdProp="dcos-kids-42"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -256,3 +258,4 @@ const FreeGiftStory = () => {
 };
 
 export default FreeGiftStory;
+

@@ -188,6 +188,8 @@ const FakeNewsDetector = () => {
       score={score}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/cyberbully-story"
+      nextGameIdProp="ai-kids-84"
       nextEnabled={showResult && accuracy >= 70}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

@@ -82,6 +82,8 @@ const JournalMyIdentity = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/story-of-positivity"
+      nextGameIdProp="dcos-teen-68"
       gameType="dcos"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalMyIdentity = () => {
 };
 
 export default JournalMyIdentity;
+

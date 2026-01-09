@@ -180,6 +180,8 @@ const ReflexTeamFirst = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/badge-service-leader"
+      nextGameIdProp="moral-teen-80"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -267,3 +269,4 @@ const ReflexTeamFirst = () => {
 };
 
 export default ReflexTeamFirst;
+

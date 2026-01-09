@@ -211,6 +211,8 @@ const PlaygroundGameStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/fairness-quiz"
+      nextGameIdProp="moral-kids-42"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -253,3 +255,4 @@ const PlaygroundGameStory = () => {
 };
 
 export default PlaygroundGameStory;
+

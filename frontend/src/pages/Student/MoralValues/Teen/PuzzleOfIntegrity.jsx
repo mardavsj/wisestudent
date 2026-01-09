@@ -117,6 +117,8 @@ const PuzzleOfIntegrity = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/bribe-simulation"
+      nextGameIdProp="moral-teen-5"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -256,3 +258,4 @@ const PuzzleOfIntegrity = () => {
 };
 
 export default PuzzleOfIntegrity;
+

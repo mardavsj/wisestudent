@@ -108,6 +108,8 @@ const JournalOfTruth1 = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/kids/emoji-reflex"
+      nextGameIdProp="dcos-kids-39"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -175,3 +177,4 @@ const JournalOfTruth1 = () => {
 };
 
 export default JournalOfTruth1;
+

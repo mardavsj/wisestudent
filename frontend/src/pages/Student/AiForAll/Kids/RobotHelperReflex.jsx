@@ -182,6 +182,8 @@ const RobotHelperReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/kids/match-ai-uses"
+      nextGameIdProp="ai-kids-23"
       gameType="ai"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -247,3 +249,5 @@ const RobotHelperReflex = () => {
 };
 
 export default RobotHelperReflex;
+
+

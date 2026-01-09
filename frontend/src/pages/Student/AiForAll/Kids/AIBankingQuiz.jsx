@@ -196,6 +196,8 @@ const AIBankingQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/smart-city-traffic-game"
+      nextGameIdProp="ai-kids-46"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const AIBankingQuiz = () => {
 };
 
 export default AIBankingQuiz;
+
+

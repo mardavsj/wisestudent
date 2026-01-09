@@ -107,6 +107,8 @@ const AntiBullyingPoster = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/witness-journal"
+      nextGameIdProp="uvls-kids-37"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -138,3 +140,4 @@ const AntiBullyingPoster = () => {
 };
 
 export default AntiBullyingPoster;
+

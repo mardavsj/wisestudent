@@ -194,6 +194,8 @@ const AcneStory = () => {
             totalCoins={totalCoins}
             totalXp={totalXp}
             gameId={gameId}
+            nextGamePathProp="/student/health-male/kids/reflex-freshness"
+            nextGameIdProp="health-male-kids-49"
             gameType="health-male"
             totalLevels={5}
             currentLevel={47}
@@ -239,3 +241,4 @@ const AcneStory = () => {
 };
 
 export default AcneStory;
+

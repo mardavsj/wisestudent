@@ -211,6 +211,8 @@ const WeeklyMealsSimulation = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/reflex-smart-drink"
+      nextGameIdProp="health-male-teen-19"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -274,3 +276,4 @@ const WeeklyMealsSimulation = () => {
 };
 
 export default WeeklyMealsSimulation;
+

@@ -187,6 +187,8 @@ const QuizMasculinityMyths = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId="health-male-teen-62"
+      nextGamePathProp="/student/health-male/teens/reflex-masculinity-check"
+      nextGameIdProp="health-male-teen-63"
       gameType="health-male"
       totalLevels={5}
       currentLevel={62}
@@ -256,3 +258,4 @@ const QuizMasculinityMyths = () => {
 };
 
 export default QuizMasculinityMyths;
+

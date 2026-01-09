@@ -232,6 +232,8 @@ const AirportSecurityStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-translator-reflex"
+      nextGameIdProp="ai-teen-34"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

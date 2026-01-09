@@ -108,7 +108,9 @@ const PosterHelpingHands = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/civic-responsibility/kids"
-    >
+    
+      nextGamePathProp="/student/civic-responsibility/kids/journal-of-service"
+      nextGameIdProp="civic-responsibility-kids-57">
       <div className="space-y-8">
         {!showResult && currentStageData ? (
           <div className="space-y-6">

@@ -130,6 +130,8 @@ const AIArtistGame = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Question ${currentIndex + 1} of ${quizQuestions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/music-ai-story"
+      nextGameIdProp="ai-kids-44"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

@@ -131,6 +131,8 @@ const LabelErrorPuzzle = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-training-badgee"
+      nextGameIdProp="ai-teen-60"
       gameType="ai"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}

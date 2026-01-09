@@ -100,6 +100,8 @@ const PubertyAwarenessJournal = () => {
       showGameOver={gameFinished}
       score={entries.length}
       gameId="health-male-teen-37"
+      nextGamePathProp="/student/health-male/teens/teen-shaving-simulation"
+      nextGameIdProp="health-male-teen-38"
       gameType="health-male"
       totalLevels={prompts.length}
       currentLevel={currentPrompt + 1}
@@ -150,3 +152,4 @@ const PubertyAwarenessJournal = () => {
 };
 
 export default PubertyAwarenessJournal;
+

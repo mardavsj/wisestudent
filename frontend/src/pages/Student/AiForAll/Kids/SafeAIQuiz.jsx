@@ -199,6 +199,8 @@ const SafeAIQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/robot-helper-or-villain"
+      nextGameIdProp="ai-kids-81"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -285,3 +287,5 @@ const SafeAIQuiz = () => {
 };
 
 export default SafeAIQuiz;
+
+

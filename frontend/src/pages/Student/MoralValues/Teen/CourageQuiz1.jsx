@@ -185,6 +185,8 @@ const CourageQuiz1 = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/reflex-moral-courage"
+      nextGameIdProp="moral-teen-53"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -229,3 +231,4 @@ const CourageQuiz1 = () => {
 };
 
 export default CourageQuiz1;
+

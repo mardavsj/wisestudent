@@ -265,7 +265,9 @@ const PosterProtectWildlife = () => {
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/journal-nature-care"
+      nextGameIdProp="sustainability-kids-62">
       <div className="space-y-8">
         {!showResult ? (
           <div className="space-y-6">

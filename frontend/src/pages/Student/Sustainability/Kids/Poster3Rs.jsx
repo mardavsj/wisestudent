@@ -225,7 +225,9 @@ const Poster3Rs = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/journal-recycling"
+      nextGameIdProp="sustainability-kids-7">
       <div className="space-y-8">
         {!showResult ? (
           <div className="space-y-6">

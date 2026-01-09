@@ -227,6 +227,8 @@ const AiBasicsBadge = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/smart-maps-story"
+      nextGameIdProp="ai-teen-26"
       gameType="ai"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}

@@ -65,6 +65,8 @@ const SpotThePattern = () => {
       score={score}
       subtitle={`Pattern ${currentPattern + 1} of ${patterns.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/cat-or-dog-game"
+      nextGameIdProp="ai-kids-2"
       nextEnabled={showResult && accuracy >= 70}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -139,4 +141,6 @@ const SpotThePattern = () => {
 };
 
 export default SpotThePattern;
+
+
 

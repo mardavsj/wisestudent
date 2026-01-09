@@ -117,6 +117,8 @@ const PuzzleOfLeaders = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/community-story"
+      nextGameIdProp="moral-teen-75"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -256,3 +258,4 @@ const PuzzleOfLeaders = () => {
 };
 
 export default PuzzleOfLeaders;
+

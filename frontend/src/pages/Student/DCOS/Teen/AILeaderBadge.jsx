@@ -208,6 +208,8 @@ const AILeaderBadge = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/teens/hate-comment-story"
+      nextGameIdProp="dcos-teen-81"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -300,3 +302,4 @@ const AILeaderBadge = () => {
 };
 
 export default AILeaderBadge;
+

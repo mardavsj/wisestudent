@@ -208,6 +208,8 @@ const ClinicVisitSimulation = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId="health-male-teen-78"
+      nextGamePathProp="/student/health-male/teens/reflex-teen-safety"
+      nextGameIdProp="health-male-teen-79"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -250,3 +252,4 @@ const ClinicVisitSimulation = () => {
 };
 
 export default ClinicVisitSimulation;
+

@@ -193,6 +193,8 @@ const ActiveListeningQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/stop-listen-reflex"
+      nextGameIdProp="uvls-kids-63"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -280,3 +282,4 @@ const ActiveListeningQuiz = () => {
 };
 
 export default ActiveListeningQuiz;
+

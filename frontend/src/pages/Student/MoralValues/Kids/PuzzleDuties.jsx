@@ -119,6 +119,8 @@ const PuzzleDuties = () => {
       title="Puzzle: Duties Match"
       score={coins}
       subtitle={showResult ? "Game Complete!" : "Match duties to responsible persons"}
+      nextGamePathProp="/student/moral-values/kids/chores-story"
+      nextGameIdProp="moral-kids-35"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -270,3 +272,4 @@ const PuzzleDuties = () => {
 };
 
 export default PuzzleDuties;
+

@@ -87,6 +87,8 @@ const InclusionJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/invite-roleplay"
+      nextGameIdProp="uvls-kids-18"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -130,3 +132,4 @@ const InclusionJournal = () => {
 };
 
 export default InclusionJournal;
+

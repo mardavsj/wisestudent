@@ -192,6 +192,8 @@ const QuizPubertyHealthTeen = () => {
             showGameOver={gameFinished}
             score={coins}
             gameId={gameId}
+            nextGamePathProp="/student/health-male/teens/reflex-puberty-health-teen"
+            nextGameIdProp="health-male-teen-33"
             gameType="health-male"
             totalLevels={5}
             currentLevel={32}
@@ -261,3 +263,4 @@ const QuizPubertyHealthTeen = () => {
 };
 
 export default QuizPubertyHealthTeen;
+

@@ -125,6 +125,8 @@ const GrowthHelpersPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/voice-change-story"
+      nextGameIdProp="health-male-kids-25"
       gameType="health-male"
       totalLevels={helpers.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const GrowthHelpersPuzzle = () => {
 };
 
 export default GrowthHelpersPuzzle;
+

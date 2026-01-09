@@ -200,6 +200,8 @@ const QuizHygieneAdvanced = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-hygiene-check"
+      nextGameIdProp="health-male-kids-43"
       gameType="health-male"
       totalLevels={5}
       currentLevel={42}

@@ -82,6 +82,8 @@ const EmpathyJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/anti-bully-reflex"
+      nextGameIdProp="dcos-teen-18"
       gameType="dcos"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const EmpathyJournal = () => {
 };
 
 export default EmpathyJournal;
+

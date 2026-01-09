@@ -203,6 +203,8 @@ const PrivacyHeroBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/digital-footprint-story"
+      nextGameIdProp="dcos-kids-61"
       gameType="dcos"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -260,3 +262,4 @@ const PrivacyHeroBadge = () => {
 };
 
 export default PrivacyHeroBadge;
+

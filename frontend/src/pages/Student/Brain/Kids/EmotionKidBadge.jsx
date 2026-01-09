@@ -212,6 +212,8 @@ const EmotionKidBadge = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/rainy-day-story"
+      nextGameIdProp="brain-kids-51"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -307,3 +309,4 @@ const EmotionKidBadge = () => {
 };
 
 export default EmotionKidBadge;
+

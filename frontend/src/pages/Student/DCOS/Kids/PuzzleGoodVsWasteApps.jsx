@@ -147,6 +147,8 @@ const PuzzleGoodVsWasteApps = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/homework-story1"
+      nextGameIdProp="dcos-kids-94"
       gameType="dcos"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -272,3 +274,4 @@ const PuzzleGoodVsWasteApps = () => {
 };
 
 export default PuzzleGoodVsWasteApps;
+

@@ -131,6 +131,8 @@ const PolicyCasePuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-19"
+      nextGamePathProp="/student/uvls/teen/respect-leader-badge"
+      nextGameIdProp="uvls-teen-20"
       gameType="uvls"
       totalLevels={challenges.length}
       currentLevel={matches.length + 1}

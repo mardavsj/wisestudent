@@ -248,6 +248,8 @@ const AIHumanRolesStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/cyber-safety-reflex"
+      nextGameIdProp="ai-teen-93"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

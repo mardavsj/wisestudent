@@ -198,6 +198,8 @@ const BiasInDataStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/robot-learning-bar"
+      nextGameIdProp="ai-kids-68"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,5 @@ const BiasInDataStory = () => {
 };
 
 export default BiasInDataStory;
+
+

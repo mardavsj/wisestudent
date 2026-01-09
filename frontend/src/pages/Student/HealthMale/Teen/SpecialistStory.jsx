@@ -199,6 +199,8 @@ const SpecialistStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-75"
+      nextGamePathProp="/student/health-male/teens/doctor-fear-debate"
+      nextGameIdProp="health-male-teen-76"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -284,3 +286,4 @@ const SpecialistStory = () => {
 };
 
 export default SpecialistStory;
+

@@ -215,7 +215,9 @@ const BadgeEqualityKid = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/civic-responsibility/kids"
-    >
+    
+      nextGamePathProp="/student/civic-responsibility/kids/playground-story"
+      nextGameIdProp="civic-responsibility-kids-31">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

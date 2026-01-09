@@ -80,6 +80,8 @@ const RespectJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/debate-respect-teachers"
+      nextGameIdProp="moral-teen-17"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -123,3 +125,4 @@ const RespectJournal = () => {
 };
 
 export default RespectJournal;
+

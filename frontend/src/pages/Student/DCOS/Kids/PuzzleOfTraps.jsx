@@ -137,6 +137,8 @@ const PuzzleOfTraps = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/poster-task"
+      nextGameIdProp="dcos-kids-47"
       gameType="dcos"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const PuzzleOfTraps = () => {
 };
 
 export default PuzzleOfTraps;
+

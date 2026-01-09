@@ -230,6 +230,8 @@ const MusicPlaylistAI = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/airport-security-story"
+      nextGameIdProp="ai-teen-33"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

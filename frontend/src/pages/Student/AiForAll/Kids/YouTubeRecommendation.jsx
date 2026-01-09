@@ -121,6 +121,8 @@ const YouTubeRecommendation = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/smart-fridge-story"
+      nextGameIdProp="ai-kids-30"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}

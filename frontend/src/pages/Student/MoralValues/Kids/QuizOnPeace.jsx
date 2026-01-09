@@ -191,6 +191,8 @@ const QuizOnPeace = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-peace-acts"
+      nextGameIdProp="moral-kids-83"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -274,3 +276,4 @@ const QuizOnPeace = () => {
 };
 
 export default QuizOnPeace;
+

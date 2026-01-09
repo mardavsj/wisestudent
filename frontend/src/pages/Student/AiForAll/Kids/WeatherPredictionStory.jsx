@@ -196,6 +196,8 @@ const WeatherPredictionStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/smartwatch-game"
+      nextGameIdProp="ai-kids-39"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const WeatherPredictionStory = () => {
 };
 
 export default WeatherPredictionStory;
+
+

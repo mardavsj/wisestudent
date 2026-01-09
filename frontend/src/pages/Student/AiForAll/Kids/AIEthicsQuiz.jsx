@@ -196,6 +196,8 @@ const AIEthicsQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/good-ai-badge"
+      nextGameIdProp="ai-kids-98"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const AIEthicsQuiz = () => {
 };
 
 export default AIEthicsQuiz;
+
+

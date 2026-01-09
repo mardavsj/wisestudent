@@ -232,6 +232,8 @@ const EmotionExplorerBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/friends-dare-story"
+      nextGameIdProp="health-male-kids-61"
       gameType="health-male"
       totalLevels={5}
       currentLevel={60}
@@ -369,3 +371,4 @@ const EmotionExplorerBadge = () => {
 };
 
 export default EmotionExplorerBadge;
+

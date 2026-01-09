@@ -195,6 +195,8 @@ const GrowingTallerStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/quiz-growth"
+      nextGameIdProp="health-male-kids-22"
       gameType="health-male"
       totalLevels={5}
       currentLevel={21}
@@ -240,3 +242,4 @@ const GrowingTallerStory = () => {
 };
 
 export default GrowingTallerStory;
+

@@ -223,6 +223,8 @@ const BadgeResponsibleKidd = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/playground-game-story"
+      nextGameIdProp="moral-kids-41"
       gameType="moral"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}
@@ -336,3 +338,4 @@ const BadgeResponsibleKidd = () => {
 };
 
 export default BadgeResponsibleKidd;
+

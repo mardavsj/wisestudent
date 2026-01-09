@@ -194,6 +194,8 @@ const DiversityQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/encourage-roleplay"
+      nextGameIdProp="dcos-teen-16"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -238,3 +240,4 @@ const DiversityQuiz = () => {
 };
 
 export default DiversityQuiz;
+

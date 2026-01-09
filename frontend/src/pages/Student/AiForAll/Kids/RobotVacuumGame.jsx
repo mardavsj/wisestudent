@@ -120,6 +120,8 @@ const RobotVacuumGame = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Obstacle ${currentObstacle + 1} of ${obstacles.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-translator-quiz"
+      nextGameIdProp="ai-kids-37"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

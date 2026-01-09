@@ -190,6 +190,8 @@ const EthicsRoleplay = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/spot-fallacy"
+      nextGameIdProp="uvls-kids-59"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -277,3 +279,4 @@ const EthicsRoleplay = () => {
 };
 
 export default EthicsRoleplay;
+

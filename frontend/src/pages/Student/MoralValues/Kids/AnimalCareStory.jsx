@@ -212,6 +212,8 @@ const AnimalCareStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-quick-help"
+      nextGameIdProp="moral-kids-79"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const AnimalCareStory = () => {
 };
 
 export default AnimalCareStory;
+

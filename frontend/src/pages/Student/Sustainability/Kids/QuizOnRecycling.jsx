@@ -253,7 +253,9 @@ const QuizOnRecycling = () => {
       showAnswerConfetti={showAnswerConfetti}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/reflex-recycle"
+      nextGameIdProp="sustainability-kids-3">
       {flashPoints}
       {!showResult ? (
         <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">

@@ -196,6 +196,8 @@ const RespectStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/my-body-respect-poster"
+      nextGameIdProp="health-male-kids-36"
       gameType="health-male"
       totalLevels={5}
       currentLevel={35}

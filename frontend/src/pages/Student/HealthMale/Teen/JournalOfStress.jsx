@@ -92,6 +92,8 @@ const JournalOfStress = () => {
       showGameOver={gameFinished}
       score={responses.length}
       gameId="health-male-teen-57"
+      nextGamePathProp="/student/health-male/teens/teen-stress-day-simulation"
+      nextGameIdProp="health-male-teen-58"
       gameType="health-male"
       totalLevels={prompts.length}
       currentLevel={currentPrompt + 1}
@@ -142,3 +144,4 @@ const JournalOfStress = () => {
 };
 
 export default JournalOfStress;
+

@@ -174,6 +174,8 @@ const QuizMaleReproductiveBasicsTeen = () => {
       onNext={handleNext}
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
+      nextGamePathProp="/student/health-male/teens/reflex-puberty-health-teen"
+      nextGameIdProp="health-male-teen-33"
       score={choices.filter(c => c.isCorrect).length * 3}
       gameId="health-male-teen-32"
       gameType="health-male"
@@ -227,3 +229,4 @@ const QuizMaleReproductiveBasicsTeen = () => {
 };
 
 export default QuizMaleReproductiveBasicsTeen;
+

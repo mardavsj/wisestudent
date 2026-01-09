@@ -249,6 +249,8 @@ const AITeacherStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/cybersecurity-ai-quiz"
+      nextGameIdProp="ai-teen-48"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

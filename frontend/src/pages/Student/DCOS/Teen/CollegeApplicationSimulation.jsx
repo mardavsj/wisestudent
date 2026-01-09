@@ -199,6 +199,8 @@ const CollegeApplicationSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/debate-stage1"
+      nextGameIdProp="dcos-teen-65"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -292,3 +294,4 @@ const CollegeApplicationSimulation = () => {
 };
 
 export default CollegeApplicationSimulation;
+

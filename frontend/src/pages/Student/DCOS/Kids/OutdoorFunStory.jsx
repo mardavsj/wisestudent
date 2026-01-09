@@ -215,6 +215,8 @@ const OutdoorFunStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-27"
+      nextGamePathProp="/student/dcos/kids/addiction-reflex"
+      nextGameIdProp="dcos-kids-28"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -257,3 +259,4 @@ const OutdoorFunStory = () => {
 };
 
 export default OutdoorFunStory;
+

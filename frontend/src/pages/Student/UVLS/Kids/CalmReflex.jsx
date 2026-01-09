@@ -188,6 +188,8 @@ const CalmReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/trigger-map-puzzle"
+      nextGameIdProp="uvls-kids-49"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -292,3 +294,4 @@ const CalmReflex = () => {
 };
 
 export default CalmReflex;
+

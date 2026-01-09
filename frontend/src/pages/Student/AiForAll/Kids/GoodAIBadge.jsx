@@ -226,6 +226,8 @@ const GoodAIBadge = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/kids/future-imagination-journal"
+      nextGameIdProp="ai-kids-99"
       gameType="ai"
       showGameOver={showResult}
       maxScore={challenges.length}
@@ -300,3 +302,5 @@ const GoodAIBadge = () => {
 };
 
 export default GoodAIBadge;
+
+

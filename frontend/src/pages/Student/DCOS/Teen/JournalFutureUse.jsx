@@ -82,6 +82,8 @@ const JournalFutureUse = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/social-media-story1"
+      nextGameIdProp="dcos-teen-97"
       gameType="dcos"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalFutureUse = () => {
 };
 
 export default JournalFutureUse;
+

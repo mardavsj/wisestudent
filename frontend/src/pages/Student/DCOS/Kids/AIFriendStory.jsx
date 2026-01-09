@@ -213,6 +213,8 @@ const AIFriendStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-75"
+      nextGamePathProp="/student/dcos/kids/reflex-deepfake-spotter"
+      nextGameIdProp="dcos-kids-76"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const AIFriendStory = () => {
 };
 
 export default AIFriendStory;
+

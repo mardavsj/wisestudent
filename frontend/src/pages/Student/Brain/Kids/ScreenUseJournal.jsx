@@ -108,6 +108,8 @@ const ScreenUseJournal = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/outdoor-story"
+      nextGameIdProp="brain-kids-78"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -166,3 +168,4 @@ const ScreenUseJournal = () => {
 };
 
 export default ScreenUseJournal;
+

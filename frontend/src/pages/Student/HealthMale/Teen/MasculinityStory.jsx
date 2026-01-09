@@ -197,6 +197,8 @@ const MasculinityStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-61"
+      nextGamePathProp="/student/health-male/teens/quiz-masculinity-myths"
+      nextGameIdProp="health-male-teen-62"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -282,3 +284,4 @@ const MasculinityStory = () => {
 };
 
 export default MasculinityStory;
+

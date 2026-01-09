@@ -227,6 +227,8 @@ const TeachAIEmotions = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/training-feedback-story"
+      nextGameIdProp="ai-teen-72"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

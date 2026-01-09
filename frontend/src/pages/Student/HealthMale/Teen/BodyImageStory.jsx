@@ -196,6 +196,8 @@ const BodyImageStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-55"
+      nextGamePathProp="/student/health-male/teens/boys-should-not-cry-debate"
+      nextGameIdProp="health-male-teen-56"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -281,3 +283,4 @@ const BodyImageStory = () => {
 };
 
 export default BodyImageStory;
+

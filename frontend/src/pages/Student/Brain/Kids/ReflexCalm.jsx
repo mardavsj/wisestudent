@@ -320,6 +320,8 @@ const ReflexCalm = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/puzzle-of-relaxing"
+      nextGameIdProp="brain-kids-34"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -385,3 +387,4 @@ const ReflexCalm = () => {
 };
 
 export default ReflexCalm;
+

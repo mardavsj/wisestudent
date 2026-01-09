@@ -191,6 +191,8 @@ const DifficultTalkRoleplay = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/empathic-tap"
+      nextGameIdProp="uvls-kids-69"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -278,3 +280,4 @@ const DifficultTalkRoleplay = () => {
 };
 
 export default DifficultTalkRoleplay;
+

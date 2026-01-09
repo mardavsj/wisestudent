@@ -121,6 +121,8 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/teen-growth-journal"
+      nextGameIdProp="health-male-teen-27"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -219,3 +221,4 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
 };
 
 export default PubertyAwkwardDebateTeen;
+

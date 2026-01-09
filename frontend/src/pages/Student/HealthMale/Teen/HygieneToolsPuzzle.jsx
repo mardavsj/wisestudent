@@ -125,6 +125,8 @@ const HygieneToolsPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/sports-hygiene-story"
+      nextGameIdProp="health-male-teen-5"
       gameType="health-male"
       totalLevels={tools.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const HygieneToolsPuzzle = () => {
 };
 
 export default HygieneToolsPuzzle;
+

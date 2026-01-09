@@ -150,6 +150,8 @@ const ShavingProBadgeTeen = () => {
             showGameOver={showResult}
             score={score}
             gameId={gameId}
+            nextGamePathProp="/student/health-male/teens/sweat-control-story"
+            nextGameIdProp="health-male-teen-41"
             gameType="health-male"
             flashPoints={flashPoints}
             showAnswerConfetti={showAnswerConfetti}
@@ -290,3 +292,4 @@ const ShavingProBadgeTeen = () => {
 };
 
 export default ShavingProBadgeTeen;
+

@@ -131,6 +131,8 @@ const BATNAPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-74"
+      nextGamePathProp="/student/uvls/teen/tough-bargain-roleplay"
+      nextGameIdProp="uvls-teen-75"
       gameType="uvls"
       totalLevels={situations.length}
       currentLevel={matches.length + 1}

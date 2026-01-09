@@ -126,6 +126,8 @@ const PuzzleOfTrust = () => {
       title="Puzzle of Trust"
       score={coins}
       subtitle={showResult ? "Game Complete!" : "Match actions to their outcomes"}
+      nextGamePathProp="/student/moral-values/kids/cheating-story"
+      nextGameIdProp="moral-kids-5"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -280,3 +282,4 @@ const PuzzleOfTrust = () => {
 };
 
 export default PuzzleOfTrust;
+

@@ -109,6 +109,8 @@ const DebatePeaceVsRevenge = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/journal-of-resolution"
+      nextGameIdProp="moral-teen-87"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -209,3 +211,4 @@ const DebatePeaceVsRevenge = () => {
 };
 
 export default DebatePeaceVsRevenge;
+

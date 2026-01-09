@@ -131,6 +131,8 @@ const PublicBudgetPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-84"
+      nextGamePathProp="/student/uvls/teen/advocacy-roleplay"
+      nextGameIdProp="uvls-teen-85"
       gameType="uvls"
       totalLevels={needs.length}
       currentLevel={matches.length + 1}

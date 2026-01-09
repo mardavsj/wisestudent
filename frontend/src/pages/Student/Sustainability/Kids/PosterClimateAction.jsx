@@ -232,7 +232,9 @@ const PosterClimateAction = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/journal-of-green-choices"
+      nextGameIdProp="sustainability-kids-82">
       <div className="space-y-8">
         {!showResult ? (
           <div className="space-y-6">

@@ -199,6 +199,8 @@ const TryAgainReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/puzzle-resilience"
+      nextGameIdProp="brain-kids-94"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -264,3 +266,4 @@ const TryAgainReflex = () => {
 };
 
 export default TryAgainReflex;
+

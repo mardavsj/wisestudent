@@ -266,7 +266,9 @@ const QuizOnSkills = () => {
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
       showConfetti={levelCompleted && finalScore >= 3}
-    >
+    
+      nextGamePathProp="/student/ehe/kids/reflex-skill-check"
+      nextGameIdProp="ehe-kids-13">
       <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">
         {!levelCompleted && currentQuestionData ? (
           <div className="space-y-6">

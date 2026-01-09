@@ -184,6 +184,8 @@ const OnlineFriendReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/safe-user-badge"
+      nextGameIdProp="dcos-kids-10"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -249,3 +251,4 @@ const OnlineFriendReflex = () => {
 };
 
 export default OnlineFriendReflex;
+

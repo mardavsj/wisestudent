@@ -191,6 +191,8 @@ const TestStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/poster-dont-give-up"
+      nextGameIdProp="brain-kids-96"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -233,3 +235,4 @@ const TestStory = () => {
 };
 
 export default TestStory;
+

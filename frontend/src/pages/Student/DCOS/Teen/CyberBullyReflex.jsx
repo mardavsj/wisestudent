@@ -188,6 +188,8 @@ const CyberBullyReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/peer-pressure-story"
+      nextGameIdProp="dcos-teen-12"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const CyberBullyReflex = () => {
 };
 
 export default CyberBullyReflex;
+

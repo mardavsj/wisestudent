@@ -169,7 +169,9 @@ const DebateQualityVsQuantity = () => {
       showAnswerConfetti={showAnswerConfetti}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/journal-of-consumption"
+      nextGameIdProp="sustainability-teens-32">
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">

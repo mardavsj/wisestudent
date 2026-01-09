@@ -119,6 +119,8 @@ const PuzzlePeaceMatch = () => {
       title="Puzzle: Peace Match"
       score={coins}
       subtitle={showResult ? "Game Complete!" : "Match actions to peaceful outcomes"}
+      nextGamePathProp="/student/moral-values/kids/broken-toy-story"
+      nextGameIdProp="moral-kids-85"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -270,3 +272,4 @@ const PuzzlePeaceMatch = () => {
 };
 
 export default PuzzlePeaceMatch;
+

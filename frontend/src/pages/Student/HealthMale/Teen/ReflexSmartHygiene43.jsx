@@ -212,6 +212,8 @@ const ReflexSmartHygiene43 = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/hygiene-tools-puzzle-44"
+      nextGameIdProp="health-male-teen-44"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -283,3 +285,4 @@ const ReflexSmartHygiene43 = () => {
 };
 
 export default ReflexSmartHygiene43;
+

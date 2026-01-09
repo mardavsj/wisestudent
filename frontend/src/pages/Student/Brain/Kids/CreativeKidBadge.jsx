@@ -203,6 +203,8 @@ const CreativeKidBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/fall-story"
+      nextGameIdProp="brain-kids-91"
       gameType="brain"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -260,3 +262,4 @@ const CreativeKidBadge = () => {
 };
 
 export default CreativeKidBadge;
+

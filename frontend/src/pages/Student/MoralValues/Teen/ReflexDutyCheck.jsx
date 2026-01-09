@@ -178,6 +178,8 @@ const ReflexDutyCheck = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/badge-discipline-hero"
+      nextGameIdProp="moral-teen-40"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexDutyCheck = () => {
 };
 
 export default ReflexDutyCheck;
+

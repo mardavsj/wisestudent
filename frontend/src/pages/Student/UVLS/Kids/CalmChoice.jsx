@@ -190,6 +190,8 @@ const CalmChoice = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/toolbox-poster"
+      nextGameIdProp="uvls-kids-46"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -277,3 +279,4 @@ const CalmChoice = () => {
 };
 
 export default CalmChoice;
+

@@ -119,6 +119,8 @@ const MindBodyMatchPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="health-male-teen-54"
+      nextGamePathProp="/student/health-male/teens/body-image-story"
+      nextGameIdProp="health-male-teen-55"
       gameType="health-male"
       totalLevels={activities.length}
       currentLevel={matches.length + 1}
@@ -256,3 +258,4 @@ const MindBodyMatchPuzzle = () => {
 };
 
 export default MindBodyMatchPuzzle;
+

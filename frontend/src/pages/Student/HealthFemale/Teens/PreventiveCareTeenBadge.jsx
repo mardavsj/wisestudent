@@ -240,7 +240,9 @@ const PreventiveCareTeenBadge = () => {
       maxScore={challenges.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/health-female/teens/peer-pressure-story"
+      nextGameIdProp="health-female-teen-81">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

@@ -189,6 +189,8 @@ const CreativityQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/reflex-problem-solver"
+      nextGameIdProp="brain-kids-83"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -231,3 +233,4 @@ const CreativityQuiz = () => {
 };
 
 export default CreativityQuiz;
+

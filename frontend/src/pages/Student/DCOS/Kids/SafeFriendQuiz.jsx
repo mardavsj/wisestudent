@@ -187,6 +187,8 @@ const SafeFriendQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/privacy-hero-badge"
+      nextGameIdProp="dcos-kids-60"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -231,3 +233,4 @@ const SafeFriendQuiz = () => {
 };
 
 export default SafeFriendQuiz;
+

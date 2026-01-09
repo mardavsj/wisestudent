@@ -88,6 +88,8 @@ const PosterDiscipline = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/journal-duty"
+      nextGameIdProp="moral-kids-37"
       gameType="moral"
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -131,3 +133,4 @@ const PosterDiscipline = () => {
 };
 
 export default PosterDiscipline;
+

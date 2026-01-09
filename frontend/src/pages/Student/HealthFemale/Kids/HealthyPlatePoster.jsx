@@ -108,7 +108,9 @@ const HealthyPlatePoster = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/health-female/kids"
-    >
+    
+      nextGamePathProp="/student/health-female/kids/healthy-food-journal"
+      nextGameIdProp="health-female-kids-17">
       <div className="space-y-8">
         {!showResult && currentStageData ? (
           <div className="space-y-6">

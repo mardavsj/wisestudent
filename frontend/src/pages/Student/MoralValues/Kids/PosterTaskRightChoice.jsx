@@ -88,6 +88,8 @@ const PosterTaskRightChoice = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/journal-decisions"
+      nextGameIdProp="moral-kids-97"
       gameType="moral"
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -131,3 +133,4 @@ const PosterTaskRightChoice = () => {
 };
 
 export default PosterTaskRightChoice;
+

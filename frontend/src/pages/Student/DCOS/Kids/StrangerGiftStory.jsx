@@ -213,6 +213,8 @@ const StrangerGiftStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-44"
+      nextGamePathProp="/student/dcos/kids/otp-reflex"
+      nextGameIdProp="dcos-kids-45"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const StrangerGiftStory = () => {
 };
 
 export default StrangerGiftStory;
+

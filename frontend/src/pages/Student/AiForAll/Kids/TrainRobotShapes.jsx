@@ -138,6 +138,8 @@ const TrainRobotShapes = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Item ${currentItem + 1} of ${items.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/feedback-matters-story"
+      nextGameIdProp="ai-kids-71"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

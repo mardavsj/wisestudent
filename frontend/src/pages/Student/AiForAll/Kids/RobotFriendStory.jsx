@@ -196,6 +196,8 @@ const RobotFriendStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/future-of-ai-quiz"
+      nextGameIdProp="ai-kids-87"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const RobotFriendStory = () => {
 };
 
 export default RobotFriendStory;
+
+

@@ -184,6 +184,8 @@ const SmartFarmingReflex = () => {
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
       showGameOver={gameState === "finished"}
+      nextGamePathProp="/student/ai-for-all/teen/ai-teacher-story"
+      nextGameIdProp="ai-teen-47"
       showConfetti={gameState === "finished" && accuracy >= 70}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

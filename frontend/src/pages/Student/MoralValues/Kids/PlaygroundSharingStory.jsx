@@ -211,6 +211,8 @@ const PlaygroundSharingStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-cooperation"
+      nextGameIdProp="moral-kids-69"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -253,3 +255,4 @@ const PlaygroundSharingStory = () => {
 };
 
 export default PlaygroundSharingStory;
+

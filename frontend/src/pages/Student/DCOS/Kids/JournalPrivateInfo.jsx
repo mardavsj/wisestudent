@@ -108,6 +108,8 @@ const JournalPrivateInfo = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/kids/safe-friend-quiz"
+      nextGameIdProp="dcos-kids-59"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -175,3 +177,4 @@ const JournalPrivateInfo = () => {
 };
 
 export default JournalPrivateInfo;
+

@@ -123,6 +123,8 @@ const ReproductiveMatchPuzzleTeen = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/shaving-story-teen"
+      nextGameIdProp="health-male-teen-35"
       gameType="health-male"
       totalLevels={organs.length}
       currentLevel={matches.length + 1}
@@ -260,3 +262,4 @@ const ReproductiveMatchPuzzleTeen = () => {
 };
 
 export default ReproductiveMatchPuzzleTeen;
+

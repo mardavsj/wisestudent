@@ -230,6 +230,8 @@ const GlobalFairnessQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-space-story"
+      nextGameIdProp="ai-teen-95"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

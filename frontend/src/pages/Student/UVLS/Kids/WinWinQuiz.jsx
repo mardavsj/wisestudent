@@ -204,6 +204,8 @@ const WinWinQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/calm-reflexx"
+      nextGameIdProp="uvls-kids-73"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -291,3 +293,4 @@ const WinWinQuiz = () => {
 };
 
 export default WinWinQuiz;
+

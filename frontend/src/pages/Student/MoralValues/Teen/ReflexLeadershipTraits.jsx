@@ -178,6 +178,8 @@ const ReflexLeadershipTraits = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/puzzle-of-leaders"
+      nextGameIdProp="moral-teen-74"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexLeadershipTraits = () => {
 };
 
 export default ReflexLeadershipTraits;
+

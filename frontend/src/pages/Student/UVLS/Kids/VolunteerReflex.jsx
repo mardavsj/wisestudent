@@ -188,6 +188,8 @@ const VolunteerReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/community-roles-puzzle"
+      nextGameIdProp="uvls-kids-84"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const VolunteerReflex = () => {
 };
 
 export default VolunteerReflex;
+

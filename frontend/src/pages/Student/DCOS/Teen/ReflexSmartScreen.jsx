@@ -189,6 +189,8 @@ const ReflexSmartScreen = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/role-model-task"
+      nextGameIdProp="dcos-teen-99"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -254,3 +256,4 @@ const ReflexSmartScreen = () => {
 };
 
 export default ReflexSmartScreen;
+

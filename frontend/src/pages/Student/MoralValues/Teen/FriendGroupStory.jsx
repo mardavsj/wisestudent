@@ -199,6 +199,8 @@ const FriendGroupStory = () => {
       score={coins}
       subtitle={showResult ? "Activity Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/moral-values/teen/debate-peace-vs-revenge"
+      nextGameIdProp="moral-teen-86"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,4 @@ const FriendGroupStory = () => {
 };
 
 export default FriendGroupStory;
+

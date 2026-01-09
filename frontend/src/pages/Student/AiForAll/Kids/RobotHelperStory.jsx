@@ -198,6 +198,8 @@ const RobotHelperStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/spam-vs-not-spam"
+      nextGameIdProp="ai-kids-9"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,5 @@ const RobotHelperStory = () => {
 };
 
 export default RobotHelperStory;
+
+

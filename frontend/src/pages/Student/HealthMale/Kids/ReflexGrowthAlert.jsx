@@ -209,6 +209,8 @@ const ReflexGrowthAlert = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/growing-strong-badge"
+      nextGameIdProp="health-male-kids-30"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -275,3 +277,4 @@ const ReflexGrowthAlert = () => {
 };
 
 export default ReflexGrowthAlert;
+

@@ -199,6 +199,8 @@ const BiasStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/deepfake-quiz"
+      nextGameIdProp="dcos-teen-72"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -283,3 +285,4 @@ const BiasStory = () => {
 };
 
 export default BiasStory;
+

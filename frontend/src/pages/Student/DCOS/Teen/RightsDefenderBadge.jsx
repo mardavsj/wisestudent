@@ -209,6 +209,8 @@ const RightsDefenderBadge = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/teens/future-job-story"
+      nextGameIdProp="dcos-teen-61"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -301,3 +303,4 @@ const RightsDefenderBadge = () => {
 };
 
 export default RightsDefenderBadge;
+

@@ -186,6 +186,8 @@ const AlcoholStory = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/say-no-poster"
+      nextGameIdProp="health-male-kids-86"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -231,3 +233,4 @@ const AlcoholStory = () => {
 };
 
 export default AlcoholStory;
+

@@ -198,6 +198,8 @@ const UpstanderSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/courage-badge"
+      nextGameIdProp="dcos-teen-20"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -291,3 +293,4 @@ const UpstanderSimulation = () => {
 };
 
 export default UpstanderSimulation;
+

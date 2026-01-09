@@ -226,6 +226,8 @@ const FaceUnlockSimulation = () => {
       subtitle={showResult ? "Simulation Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
       nextEnabled={showResult}
+      nextGamePathProp="/student/ai-for-all/teen/e-commerce-ai-story"
+      nextGameIdProp="ai-teen-30"
       showGameOver={showResult && finalScore >= 3}
       score={coins}
       gameId="ai-teen-29"

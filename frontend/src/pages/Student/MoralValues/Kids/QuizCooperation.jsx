@@ -190,6 +190,8 @@ const QuizCooperation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-team-acts"
+      nextGameIdProp="moral-kids-63"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -273,3 +275,4 @@ const QuizCooperation = () => {
 };
 
 export default QuizCooperation;
+

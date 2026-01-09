@@ -191,6 +191,8 @@ const SleepQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/balance-poster-task"
+      nextGameIdProp="dcos-kids-26"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -235,3 +237,4 @@ const SleepQuiz = () => {
 };
 
 export default SleepQuiz;
+

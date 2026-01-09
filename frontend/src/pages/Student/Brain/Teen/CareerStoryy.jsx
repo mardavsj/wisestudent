@@ -135,6 +135,8 @@ const CareerStoryy = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/brain/teen/debate-talent-vs-effort"
+      nextGameIdProp="brain-teens-96"
       gameType="brain"
       showGameOver={levelCompleted}
       onNext={handleNext}

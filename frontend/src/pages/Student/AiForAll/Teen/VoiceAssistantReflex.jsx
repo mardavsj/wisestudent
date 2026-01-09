@@ -184,6 +184,8 @@ const VoiceAssistantReflex = () => {
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
       showGameOver={gameState === "finished"}
+      nextGamePathProp="/student/ai-for-all/teen/social-media-recommendation-game"
+      nextGameIdProp="ai-teen-28"
       showConfetti={gameState === "finished" && accuracy >= 70}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

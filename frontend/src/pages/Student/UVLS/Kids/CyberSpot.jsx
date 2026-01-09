@@ -194,6 +194,8 @@ const CyberSpot = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/peer-protector-badge"
+      nextGameIdProp="uvls-kids-40"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -238,3 +240,4 @@ const CyberSpot = () => {
 };
 
 export default CyberSpot;
+

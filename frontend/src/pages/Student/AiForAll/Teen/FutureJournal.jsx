@@ -94,6 +94,8 @@ const FutureJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-explorer-hero-badgee"
+      nextGameIdProp="ai-teen-100"
       gameType="ai"
       maxScore={5}
       totalCoins={totalCoins}

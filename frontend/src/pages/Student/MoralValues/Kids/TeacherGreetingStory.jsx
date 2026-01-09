@@ -214,6 +214,8 @@ const TeacherGreetingStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/gratitude-poster"
+      nextGameIdProp="moral-kids-16"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -256,3 +258,4 @@ const TeacherGreetingStory = () => {
 };
 
 export default TeacherGreetingStory;
+

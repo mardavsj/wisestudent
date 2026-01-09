@@ -209,6 +209,8 @@ const ReflexRespect = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/peer-pressure-fighter-badge"
+      nextGameIdProp="health-male-kids-70"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

@@ -245,6 +245,8 @@ const AIInGamingStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/pattern-music-reflex"
+      nextGameIdProp="ai-teen-11"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

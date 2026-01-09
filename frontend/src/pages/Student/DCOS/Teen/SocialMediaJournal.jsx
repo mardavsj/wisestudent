@@ -82,6 +82,8 @@ const SocialMediaJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/data-consent-quiz"
+      nextGameIdProp="dcos-teen-6"
       gameType="dcos"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const SocialMediaJournal = () => {
 };
 
 export default SocialMediaJournal;
+

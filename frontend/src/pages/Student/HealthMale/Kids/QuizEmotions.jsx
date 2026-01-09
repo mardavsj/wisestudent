@@ -200,6 +200,8 @@ const QuizEmotions = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-emotion-check"
+      nextGameIdProp="health-male-kids-53"
       gameType="health-male"
       totalLevels={5}
       currentLevel={52}
@@ -275,3 +277,4 @@ const QuizEmotions = () => {
 };
 
 export default QuizEmotions;
+

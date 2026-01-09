@@ -227,6 +227,8 @@ const AIInMoviesQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/smart-farming-reflex"
+      nextGameIdProp="ai-teen-46"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

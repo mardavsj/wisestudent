@@ -135,6 +135,8 @@ const JournalOfGrowthh = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/brain/teen/simulation-life-choices"
+      nextGameIdProp="brain-teens-98"
       gameType="brain"
       showGameOver={levelCompleted}
       onNext={handleNext}

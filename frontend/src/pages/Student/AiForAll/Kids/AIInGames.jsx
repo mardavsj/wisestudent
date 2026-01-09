@@ -136,6 +136,8 @@ const AIInGames = () => {
       title="AI in Games"
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/match-ai-tools"
+      nextGameIdProp="ai-kids-12"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       score={coins}

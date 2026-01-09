@@ -227,6 +227,8 @@ const TrueFalseAIQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/chatbot-simulation"
+      nextGameIdProp="ai-teen-9"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

@@ -194,6 +194,8 @@ const QuizFoodGroups = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-healthy-choice"
+      nextGameIdProp="health-male-kids-13"
       gameType="health-male"
       totalLevels={5}
       currentLevel={12}
@@ -271,3 +273,4 @@ const QuizFoodGroups = () => {
 };
 
 export default QuizFoodGroups;
+

@@ -225,6 +225,8 @@ const ChatbotSimulation = () => {
     <GameShell
       title="Chatbot Simulation"
       subtitle={showResult ? "Simulation Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
+      nextGamePathProp="/student/ai-for-all/teen/ai-in-gaming-story"
+      nextGameIdProp="ai-teen-10"
       onNext={() => navigate("/student/ai-for-all/teen/ai-in-gaming-story")}
       nextEnabled={showResult}
       showGameOver={showResult && finalScore >= 3}

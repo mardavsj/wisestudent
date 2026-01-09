@@ -184,6 +184,8 @@ const ConsentStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/data-quiz"
+      nextGameIdProp="dcos-teen-52"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -268,3 +270,4 @@ const ConsentStory = () => {
 };
 
 export default ConsentStory;
+

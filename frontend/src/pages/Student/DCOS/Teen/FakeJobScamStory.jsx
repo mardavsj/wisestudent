@@ -197,6 +197,8 @@ const FakeJobScamStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/truth-journal2"
+      nextGameIdProp="dcos-teen-38"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,4 @@ const FakeJobScamStory = () => {
 };
 
 export default FakeJobScamStory;
+

@@ -201,6 +201,8 @@ const BadgeGratitudeHero = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/empathy-story"
+      nextGameIdProp="moral-teen-21"
       gameType="moral"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const BadgeGratitudeHero = () => {
 };
 
 export default BadgeGratitudeHero;
+

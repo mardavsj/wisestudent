@@ -226,6 +226,8 @@ const TrainingHeroBadge = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/kids/good-ai-vs-bad-ai-quiz"
+      nextGameIdProp="ai-kids-76"
       gameType="ai"
       showGameOver={showResult}
       maxScore={challenges.length}
@@ -300,3 +302,5 @@ const TrainingHeroBadge = () => {
 };
 
 export default TrainingHeroBadge;
+
+

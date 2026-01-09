@@ -245,7 +245,9 @@ const BadgeConfidentTeenGirl = () => {
       maxScore={challenges.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/health-female/teens/health-check-story"
+      nextGameIdProp="health-female-teen-71">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

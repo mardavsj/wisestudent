@@ -138,6 +138,8 @@ const PrivacyPuzzle = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/kids/ai-bias-story"
+      nextGameIdProp="ai-kids-79"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"
@@ -290,3 +292,5 @@ const PrivacyPuzzle = () => {
 };
 
 export default PrivacyPuzzle;
+
+

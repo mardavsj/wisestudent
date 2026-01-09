@@ -201,7 +201,9 @@ const BadgeFoodSystemChampion = () => {
       showConfetti={showResult && score >= 4}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/eco-innovation-story"
+      nextGameIdProp="sustainability-teens-86">
       <div className="text-center text-white space-y-6">
         {!showResult && currentLevelData && (
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">

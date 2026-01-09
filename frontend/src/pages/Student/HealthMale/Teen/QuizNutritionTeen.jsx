@@ -193,6 +193,8 @@ const QuizNutritionTeen = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/reflex-diet-check"
+      nextGameIdProp="health-male-teen-13"
       gameType="health-male"
       totalLevels={5}
       currentLevel={12}
@@ -262,3 +264,4 @@ const QuizNutritionTeen = () => {
 };
 
 export default QuizNutritionTeen;
+

@@ -240,7 +240,9 @@ const NutritionProGirlBadge = () => {
       maxScore={challenges.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/health-female/teens/puberty-story"
+      nextGameIdProp="health-female-teen-21">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

@@ -204,6 +204,8 @@ const HelpElderRoleplay = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/report-need-reflex"
+      nextGameIdProp="uvls-kids-89"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -291,3 +293,4 @@ const HelpElderRoleplay = () => {
 };
 
 export default HelpElderRoleplay;
+

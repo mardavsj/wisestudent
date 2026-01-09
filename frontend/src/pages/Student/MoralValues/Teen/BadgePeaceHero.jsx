@@ -201,6 +201,8 @@ const BadgePeaceHero = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/money-found-story"
+      nextGameIdProp="moral-teen-91"
       gameType="moral"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const BadgePeaceHero = () => {
 };
 
 export default BadgePeaceHero;
+

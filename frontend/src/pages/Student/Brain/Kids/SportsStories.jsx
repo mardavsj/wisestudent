@@ -190,6 +190,8 @@ const SportsStories = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/reflex-growth-thinking"
+      nextGameIdProp="brain-kids-99"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -232,3 +234,4 @@ const SportsStories = () => {
 };
 
 export default SportsStories;
+

@@ -228,6 +228,8 @@ const AITrainingBadgee = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/dataset-builder-simulation"
+      nextGameIdProp="ai-teen-61"
       gameType="ai"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}

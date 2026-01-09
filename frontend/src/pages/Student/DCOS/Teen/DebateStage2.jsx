@@ -192,6 +192,8 @@ const DebateStage2 = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/puzzle-respect-vs-hate"
+      nextGameIdProp="dcos-teen-86"
       gameType="dcos"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -234,3 +236,4 @@ const DebateStage2 = () => {
 };
 
 export default DebateStage2;
+

@@ -125,6 +125,8 @@ const PatternMusicGame = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Pattern ${currentPattern + 1} of ${patterns.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/robot-vision-game"
+      nextGameIdProp="ai-kids-14"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

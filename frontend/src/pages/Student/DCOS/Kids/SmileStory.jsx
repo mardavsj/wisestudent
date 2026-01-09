@@ -215,6 +215,8 @@ const SmileStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-13"
+      nextGamePathProp="/student/dcos/kids/gossip-puzzle"
+      nextGameIdProp="dcos-kids-14"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -257,3 +259,4 @@ const SmileStory = () => {
 };
 
 export default SmileStory;
+

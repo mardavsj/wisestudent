@@ -87,6 +87,8 @@ const WeeklyPlanJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/time-budget-simulation"
+      nextGameIdProp="uvls-kids-98"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -130,3 +132,4 @@ const WeeklyPlanJournal = () => {
 };
 
 export default WeeklyPlanJournal;
+

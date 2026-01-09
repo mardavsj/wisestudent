@@ -105,6 +105,8 @@ const PosterTask2 = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/ai-helper-journal"
+      nextGameIdProp="dcos-kids-78"
       gameType="dcos"
       totalLevels={stages.length}
       currentLevel={currentStage + 1}
@@ -147,3 +149,4 @@ const PosterTask2 = () => {
 };
 
 export default PosterTask2;
+

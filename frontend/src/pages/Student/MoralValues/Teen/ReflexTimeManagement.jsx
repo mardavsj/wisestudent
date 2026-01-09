@@ -178,6 +178,8 @@ const ReflexTimeManagement = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/puzzle-of-self-control"
+      nextGameIdProp="moral-teen-34"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexTimeManagement = () => {
 };
 
 export default ReflexTimeManagement;
+

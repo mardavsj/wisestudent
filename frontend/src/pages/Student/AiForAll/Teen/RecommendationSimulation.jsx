@@ -230,6 +230,8 @@ const RecommendationSimulation = () => {
       subtitle={showResult ? "Simulation Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleFinish}
       nextEnabled={showResult}
+      nextGamePathProp="/student/ai-for-all/teen/ai-everywhere-quiz"
+      nextGameIdProp="ai-teen-20"
       showGameOver={showResult && finalScore >= 3}
       score={coins}
       gameId="ai-teen-19"

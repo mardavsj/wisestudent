@@ -139,7 +139,9 @@ const PuzzleHabitBuilder = () => {
       maxScore={habits.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/health-female/teens/chores-story"
+      nextGameIdProp="health-female-teen-95">
       <div className="space-y-8 max-w-4xl mx-auto">
         {!gameFinished ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

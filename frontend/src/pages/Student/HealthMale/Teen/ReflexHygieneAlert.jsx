@@ -217,6 +217,8 @@ const ReflexHygieneAlert = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/hygiene-pro-badge"
+      nextGameIdProp="health-male-teen-10"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -288,3 +290,4 @@ const ReflexHygieneAlert = () => {
 };
 
 export default ReflexHygieneAlert;
+

@@ -87,6 +87,8 @@ const WitnessJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/bystander-roleplay"
+      nextGameIdProp="uvls-kids-38"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -130,3 +132,4 @@ const WitnessJournal = () => {
 };
 
 export default WitnessJournal;
+

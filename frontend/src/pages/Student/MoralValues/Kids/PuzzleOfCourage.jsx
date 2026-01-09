@@ -119,6 +119,8 @@ const PuzzleOfCourage = () => {
       title="Puzzle of Courage"
       score={showResult ? finalScore : coins}
       subtitle={showResult ? "Game Complete!" : "Match actions to their outcomes"}
+      nextGamePathProp="/student/moral-values/kids/confess-story"
+      nextGameIdProp="moral-kids-55"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -270,3 +272,4 @@ const PuzzleOfCourage = () => {
 };
 
 export default PuzzleOfCourage;
+

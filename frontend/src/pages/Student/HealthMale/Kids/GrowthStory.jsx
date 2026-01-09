@@ -195,6 +195,8 @@ const GrowthStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-safe-body"
+      nextGameIdProp="health-male-kids-39"
       gameType="health-male"
       totalLevels={5}
       currentLevel={38}
@@ -240,3 +242,4 @@ const GrowthStory = () => {
 };
 
 export default GrowthStory;
+

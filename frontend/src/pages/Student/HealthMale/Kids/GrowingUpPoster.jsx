@@ -232,6 +232,8 @@ const GrowingUpPoster = () => {
       showGameOver={showResult && isLastStage && isCorrect}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/body-changes-journal"
+      nextGameIdProp="health-male-kids-27"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -308,3 +310,4 @@ const GrowingUpPoster = () => {
 };
 
 export default GrowingUpPoster;
+

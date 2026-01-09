@@ -188,6 +188,8 @@ const ReflexFairAI = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/ai-in-exams"
+      nextGameIdProp="dcos-teen-74"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const ReflexFairAI = () => {
 };
 
 export default ReflexFairAI;
+

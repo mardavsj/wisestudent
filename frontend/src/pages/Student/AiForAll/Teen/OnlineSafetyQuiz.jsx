@@ -229,6 +229,8 @@ const OnlineSafetyQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-in-games-story"
+      nextGameIdProp="ai-teen-43"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

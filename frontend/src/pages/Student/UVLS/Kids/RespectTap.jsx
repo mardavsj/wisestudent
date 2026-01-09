@@ -188,6 +188,8 @@ const RespectTap = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/inclusion-match"
+      nextGameIdProp="uvls-kids-14"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -304,3 +306,4 @@ const RespectTap = () => {
 };
 
 export default RespectTap;
+

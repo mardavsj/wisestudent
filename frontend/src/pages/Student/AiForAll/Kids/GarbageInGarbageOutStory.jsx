@@ -198,6 +198,8 @@ const GarbageInGarbageOutStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-training-badge"
+      nextGameIdProp="ai-kids-60"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,5 @@ const GarbageInGarbageOutStory = () => {
 };
 
 export default GarbageInGarbageOutStory;
+
+

@@ -197,6 +197,8 @@ const InviteToPlay = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/inclusion-poster"
+      nextGameIdProp="uvls-kids-16"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -284,3 +286,4 @@ const InviteToPlay = () => {
 };
 
 export default InviteToPlay;
+

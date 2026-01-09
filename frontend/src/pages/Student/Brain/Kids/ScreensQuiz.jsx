@@ -187,6 +187,8 @@ const ScreensQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/reflex-digital-choice"
+      nextGameIdProp="brain-kids-73"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -229,3 +231,4 @@ const ScreensQuiz = () => {
 };
 
 export default ScreensQuiz;
+

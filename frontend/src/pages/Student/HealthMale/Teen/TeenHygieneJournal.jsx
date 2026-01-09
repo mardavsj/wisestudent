@@ -77,6 +77,8 @@ const TeenHygieneJournal = () => {
             showGameOver={gameFinished}
             score={coins}
             gameId={gameId}
+            nextGamePathProp="/student/health-male/teens/teen-shaving-simulation"
+            nextGameIdProp="health-male-teen-38"
             gameType="health-male"
             flashPoints={flashPoints}
             showAnswerConfetti={showAnswerConfetti}
@@ -125,3 +127,4 @@ const TeenHygieneJournal = () => {
 };
 
 export default TeenHygieneJournal;
+

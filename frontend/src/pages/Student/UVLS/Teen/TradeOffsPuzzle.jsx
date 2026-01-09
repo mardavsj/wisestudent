@@ -131,6 +131,8 @@ const TradeOffsPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-53"
+      nextGamePathProp="/student/uvls/teen/scenario-simulation"
+      nextGameIdProp="uvls-teen-54"
       gameType="uvls"
       totalLevels={dilemmas.length}
       currentLevel={matches.length + 1}

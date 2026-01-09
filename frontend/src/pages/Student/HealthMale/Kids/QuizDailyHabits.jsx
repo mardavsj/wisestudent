@@ -192,6 +192,8 @@ const QuizDailyHabits = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-habit-check"
+      nextGameIdProp="health-male-kids-93"
       gameType="health-male"
       totalLevels={5}
       currentLevel={92}
@@ -268,3 +270,4 @@ const QuizDailyHabits = () => {
 };
 
 export default QuizDailyHabits;
+

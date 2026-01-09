@@ -109,6 +109,8 @@ const DebateRespectTeachers = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/roleplay-respect-leader"
+      nextGameIdProp="moral-teen-18"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -209,3 +211,4 @@ const DebateRespectTeachers = () => {
 };
 
 export default DebateRespectTeachers;
+

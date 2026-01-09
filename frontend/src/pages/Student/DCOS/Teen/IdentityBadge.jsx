@@ -188,6 +188,8 @@ const IdentityBadge = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/teens/bias-story"
+      nextGameIdProp="dcos-teen-71"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -279,3 +281,4 @@ const IdentityBadge = () => {
 };
 
 export default IdentityBadge;
+

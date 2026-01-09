@@ -189,6 +189,8 @@ const OnlineShoppingAI = () => {
       score={score}
       subtitle={`Question ${currentItem + 1} of ${items.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/airport-scanner-story"
+      nextGameIdProp="ai-kids-41"
       nextEnabled={showResult && accuracy >= 70}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

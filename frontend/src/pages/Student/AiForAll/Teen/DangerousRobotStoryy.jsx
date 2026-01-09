@@ -248,6 +248,8 @@ const DangerousRobotStoryy = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/good-vs-bad-data-puzzle"
+      nextGameIdProp="ai-teen-85"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

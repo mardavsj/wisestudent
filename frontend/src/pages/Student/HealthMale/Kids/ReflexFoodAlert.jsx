@@ -209,6 +209,8 @@ const ReflexFoodAlert = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/healthy-kid-badge"
+      nextGameIdProp="health-male-kids-20"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -275,3 +277,4 @@ const ReflexFoodAlert = () => {
 };
 
 export default ReflexFoodAlert;
+

@@ -201,6 +201,8 @@ const BadgeDisciplineHero = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/classroom-story2"
+      nextGameIdProp="moral-teen-41"
       gameType="moral"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const BadgeDisciplineHero = () => {
 };
 
 export default BadgeDisciplineHero;
+

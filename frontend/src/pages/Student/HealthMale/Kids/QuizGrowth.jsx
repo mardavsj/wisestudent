@@ -196,6 +196,8 @@ const QuizGrowth = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-growth-basics"
+      nextGameIdProp="health-male-kids-23"
       gameType="health-male"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -253,3 +255,4 @@ const QuizGrowth = () => {
 };
 
 export default QuizGrowth;
+

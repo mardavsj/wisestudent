@@ -211,6 +211,8 @@ const FriendSecretStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/poster-right-choice"
+      nextGameIdProp="moral-kids-96"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -253,3 +255,4 @@ const FriendSecretStory = () => {
 };
 
 export default FriendSecretStory;
+

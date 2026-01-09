@@ -204,6 +204,8 @@ const RiskyOffer = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/decision-poster"
+      nextGameIdProp="uvls-kids-56"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -291,3 +293,4 @@ const RiskyOffer = () => {
 };
 
 export default RiskyOffer;
+

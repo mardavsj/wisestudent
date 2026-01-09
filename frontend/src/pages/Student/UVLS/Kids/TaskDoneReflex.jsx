@@ -189,6 +189,8 @@ const TaskDoneReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/plan-your-day-puzzle"
+      nextGameIdProp="uvls-kids-94"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -254,3 +256,4 @@ const TaskDoneReflex = () => {
 };
 
 export default TaskDoneReflex;
+

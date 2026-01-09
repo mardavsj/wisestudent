@@ -203,7 +203,9 @@ const ReflexDangerAlert = () => {
       onNext={handleNext}
       showConfetti={gameState === "finished" && score === maxScore}
       backPath="/games/health-female/kids"
-    >
+    
+      nextGamePathProp="/student/health-female/kids/safe-girl-badge"
+      nextGameIdProp="health-female-kids-90">
       <div className="space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">

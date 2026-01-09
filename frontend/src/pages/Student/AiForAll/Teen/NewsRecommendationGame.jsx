@@ -154,6 +154,8 @@ const NewsRecommendationGame = () => {
       title="News Recommendation Game"
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/teen/self-driving-car-reflexx"
+      nextGameIdProp="ai-teen-38"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       score={coins}
@@ -242,3 +244,4 @@ const NewsRecommendationGame = () => {
 };
 
 export default NewsRecommendationGame;
+

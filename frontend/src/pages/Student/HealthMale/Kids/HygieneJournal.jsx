@@ -99,6 +99,8 @@ const HygieneJournal = () => {
       showGameOver={showResult}
       score={score}
       gameId="health-male-kids-7"
+      nextGamePathProp="/student/health-male/kids/dirty-shirt-story"
+      nextGameIdProp="health-male-kids-8"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -168,3 +170,4 @@ const HygieneJournal = () => {
 };
 
 export default HygieneJournal;
+

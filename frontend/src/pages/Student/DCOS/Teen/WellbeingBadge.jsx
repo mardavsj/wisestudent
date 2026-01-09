@@ -207,6 +207,8 @@ const WellbeingBadge = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/teens/viral-post-story"
+      nextGameIdProp="dcos-teen-31"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -299,3 +301,4 @@ const WellbeingBadge = () => {
 };
 
 export default WellbeingBadge;
+

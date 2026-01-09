@@ -185,6 +185,8 @@ const SpotBullyQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/kind-words-reflex"
+      nextGameIdProp="dcos-kids-12"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -229,3 +231,4 @@ const SpotBullyQuiz = () => {
 };
 
 export default SpotBullyQuiz;
+

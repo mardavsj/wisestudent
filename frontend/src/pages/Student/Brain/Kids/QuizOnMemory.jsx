@@ -189,6 +189,8 @@ const QuizOnMemory = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/reflex-recall"
+      nextGameIdProp="brain-kids-23"
       gameType="brain"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -233,4 +235,5 @@ const QuizOnMemory = () => {
 };
 
 export default QuizOnMemory;
+
 

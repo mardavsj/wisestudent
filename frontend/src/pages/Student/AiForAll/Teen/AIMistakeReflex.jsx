@@ -184,6 +184,8 @@ const AIMistakeReflex = () => {
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
       showGameOver={gameState === "finished"}
+      nextGamePathProp="/student/ai-for-all/teen/data-diversity-story"
+      nextGameIdProp="ai-teen-57"
       showConfetti={gameState === "finished" && accuracy >= 60}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

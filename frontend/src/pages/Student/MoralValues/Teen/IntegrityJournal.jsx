@@ -80,6 +80,8 @@ const IntegrityJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/exam-cheating-story"
+      nextGameIdProp="moral-teen-8"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -123,3 +125,4 @@ const IntegrityJournal = () => {
 };
 
 export default IntegrityJournal;
+

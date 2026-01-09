@@ -131,6 +131,8 @@ const CopingStrategyPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-44"
+      nextGamePathProp="/student/uvls/teen/de-escalation-roleplay"
+      nextGameIdProp="uvls-teen-45"
       gameType="uvls"
       totalLevels={stressors.length}
       currentLevel={matches.length + 1}

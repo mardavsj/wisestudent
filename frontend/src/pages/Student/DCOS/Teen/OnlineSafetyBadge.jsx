@@ -207,6 +207,8 @@ const OnlineSafetyBadge = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/teens/cyberbully-reflex"
+      nextGameIdProp="dcos-teen-11"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -299,3 +301,4 @@ const OnlineSafetyBadge = () => {
 };
 
 export default OnlineSafetyBadge;
+

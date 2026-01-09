@@ -137,6 +137,8 @@ const PublicVsPrivatePuzzle = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/stranger-request-story"
+      nextGameIdProp="dcos-kids-55"
       gameType="dcos"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const PublicVsPrivatePuzzle = () => {
 };
 
 export default PublicVsPrivatePuzzle;
+

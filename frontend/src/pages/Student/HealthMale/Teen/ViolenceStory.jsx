@@ -200,6 +200,8 @@ const ViolenceStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-65"
+      nextGamePathProp="/student/health-male/teens/emotions-equals-weakness-debate"
+      nextGameIdProp="health-male-teen-66"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -285,3 +287,4 @@ const ViolenceStory = () => {
 };
 
 export default ViolenceStory;
+

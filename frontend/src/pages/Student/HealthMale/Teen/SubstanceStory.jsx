@@ -122,6 +122,8 @@ const SubstanceStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-85"
+      nextGamePathProp="/student/health-male/teens/cool-or-fool-debate"
+      nextGameIdProp="health-male-teen-86"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -207,3 +209,4 @@ const SubstanceStory = () => {
 };
 
 export default SubstanceStory;
+

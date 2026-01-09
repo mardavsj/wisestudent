@@ -213,6 +213,8 @@ const StoryOfDifference = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-87"
+      nextGamePathProp="/student/dcos/kids/journal-my-words"
+      nextGameIdProp="dcos-kids-88"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const StoryOfDifference = () => {
 };
 
 export default StoryOfDifference;
+

@@ -212,6 +212,8 @@ const RoleplayRespectLeader = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/reflex-gratitude"
+      nextGameIdProp="moral-teen-19"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -320,3 +322,4 @@ const RoleplayRespectLeader = () => {
 };
 
 export default RoleplayRespectLeader;
+

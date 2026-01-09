@@ -183,6 +183,8 @@ const DevicePrivacyReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/rights-poster-task"
+      nextGameIdProp="dcos-kids-57"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const DevicePrivacyReflex = () => {
 };
 
 export default DevicePrivacyReflex;
+

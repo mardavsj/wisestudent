@@ -287,6 +287,8 @@ const HappyThoughtsReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/puzzle-of-positive-words"
+      nextGameIdProp="brain-kids-54"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -352,3 +354,4 @@ const HappyThoughtsReflex = () => {
 };
 
 export default HappyThoughtsReflex;
+

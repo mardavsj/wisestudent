@@ -188,6 +188,8 @@ const ReflexAdTrap = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/fraud-fighter-badge"
+      nextGameIdProp="dcos-teen-50"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const ReflexAdTrap = () => {
 };
 
 export default ReflexAdTrap;
+

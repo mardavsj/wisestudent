@@ -196,6 +196,8 @@ const AIMistakeQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/train-robot-shapes"
+      nextGameIdProp="ai-kids-70"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const AIMistakeQuiz = () => {
 };
 
 export default AIMistakeQuiz;
+
+

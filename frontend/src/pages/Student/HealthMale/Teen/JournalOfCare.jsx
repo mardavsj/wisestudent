@@ -77,6 +77,8 @@ const JournalOfCare = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/daily-routine-simulation-48"
+      nextGameIdProp="health-male-teen-48"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -125,3 +127,4 @@ const JournalOfCare = () => {
 };
 
 export default JournalOfCare;
+

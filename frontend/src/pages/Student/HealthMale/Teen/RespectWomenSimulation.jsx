@@ -204,6 +204,8 @@ const RespectWomenSimulation = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId="health-male-teen-68"
+      nextGamePathProp="/student/health-male/teens/reflex-respect-check"
+      nextGameIdProp="health-male-teen-69"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -248,3 +250,4 @@ const RespectWomenSimulation = () => {
 };
 
 export default RespectWomenSimulation;
+

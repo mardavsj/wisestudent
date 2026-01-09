@@ -82,6 +82,8 @@ const JournalOfJustice = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/sharing-sweets-story"
+      nextGameIdProp="moral-kids-48"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalOfJustice = () => {
 };
 
 export default JournalOfJustice;
+

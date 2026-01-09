@@ -128,6 +128,8 @@ const PreventiveHealthTeenBadge = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/health-male/teens/peer-pressure-story"
+      nextGameIdProp="health-male-teen-81"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -221,3 +223,4 @@ const PreventiveHealthTeenBadge = () => {
 };
 
 export default PreventiveHealthTeenBadge;
+

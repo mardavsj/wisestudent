@@ -230,6 +230,8 @@ const EmpathyAIRoleplay = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-career-quiz"
+      nextGameIdProp="ai-teen-98"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

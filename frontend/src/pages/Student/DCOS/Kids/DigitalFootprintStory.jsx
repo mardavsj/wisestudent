@@ -212,6 +212,8 @@ const DigitalFootprintStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-61"
+      nextGamePathProp="/student/dcos/kids/reflex-delete"
+      nextGameIdProp="dcos-kids-62"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const DigitalFootprintStory = () => {
 };
 
 export default DigitalFootprintStory;
+

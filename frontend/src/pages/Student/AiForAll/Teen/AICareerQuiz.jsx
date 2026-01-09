@@ -227,6 +227,8 @@ const AICareerQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/future-journal"
+      nextGameIdProp="ai-teen-99"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

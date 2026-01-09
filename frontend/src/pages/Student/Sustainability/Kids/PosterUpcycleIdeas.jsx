@@ -264,7 +264,9 @@ const PosterUpcycleIdeas = () => {
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/kids/journal-of-reuse"
+      nextGameIdProp="sustainability-kids-72">
       <div className="space-y-8">
         {!showResult ? (
           <div className="space-y-6">

@@ -187,6 +187,8 @@ const PositivityQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/reflex-happy-thoughts"
+      nextGameIdProp="brain-kids-53"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -229,3 +231,4 @@ const PositivityQuiz = () => {
 };
 
 export default PositivityQuiz;
+

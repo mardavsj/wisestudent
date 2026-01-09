@@ -175,6 +175,8 @@ const WhatsAppDebate = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/fake-job-scam-story"
+      nextGameIdProp="dcos-teen-37"
       gameType="dcos"
       totalLevels={5}
       currentLevel={currentQuestion + 1}
@@ -217,3 +219,4 @@ const WhatsAppDebate = () => {
 };
 
 export default WhatsAppDebate;
+

@@ -184,6 +184,8 @@ const FriendshipReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/kind-friend-badge"
+      nextGameIdProp="dcos-kids-20"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -249,3 +251,4 @@ const FriendshipReflex = () => {
 };
 
 export default FriendshipReflex;
+

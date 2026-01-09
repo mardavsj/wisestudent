@@ -182,6 +182,8 @@ const WalkAwayReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/teen/workplace-conflict-sim"
+      nextGameIdProp="uvls-teen-79"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const WalkAwayReflex = () => {
 };
 
 export default WalkAwayReflex;
+

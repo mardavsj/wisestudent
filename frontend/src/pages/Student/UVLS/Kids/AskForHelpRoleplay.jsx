@@ -204,6 +204,8 @@ const AskForHelpRoleplay = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/calm-reflex"
+      nextGameIdProp="uvls-kids-48"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -291,3 +293,4 @@ const AskForHelpRoleplay = () => {
 };
 
 export default AskForHelpRoleplay;
+

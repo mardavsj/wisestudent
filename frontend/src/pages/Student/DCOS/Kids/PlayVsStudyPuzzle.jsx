@@ -144,6 +144,8 @@ const PlayVsStudyPuzzle = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/family-rules-story1"
+      nextGameIdProp="dcos-kids-23"
       gameType="dcos"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -269,3 +271,4 @@ const PlayVsStudyPuzzle = () => {
 };
 
 export default PlayVsStudyPuzzle;
+

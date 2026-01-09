@@ -109,6 +109,8 @@ const DebateRightVsPopular = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/journal-of-ethics"
+      nextGameIdProp="moral-teen-97"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -209,3 +211,4 @@ const DebateRightVsPopular = () => {
 };
 
 export default DebateRightVsPopular;
+

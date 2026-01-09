@@ -218,7 +218,9 @@ const BadgePeaceMakerTeen = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/civic-responsibility/teens"
-    >
+    
+      nextGamePathProp="/student/civic-responsibility/teens/blood-donation-camp-story"
+      nextGameIdProp="civic-responsibility-teens-51">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

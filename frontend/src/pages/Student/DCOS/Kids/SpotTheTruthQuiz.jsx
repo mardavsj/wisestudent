@@ -187,6 +187,8 @@ const SpotTheTruthQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/cartoon-news-reflex"
+      nextGameIdProp="dcos-kids-32"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -230,3 +232,4 @@ const SpotTheTruthQuiz = () => {
 };
 
 export default SpotTheTruthQuiz;
+

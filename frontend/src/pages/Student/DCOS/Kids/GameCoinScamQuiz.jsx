@@ -189,6 +189,8 @@ const GameCoinScamQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/stranger-gift-story"
+      nextGameIdProp="dcos-kids-44"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -233,3 +235,4 @@ const GameCoinScamQuiz = () => {
 };
 
 export default GameCoinScamQuiz;
+

@@ -203,6 +203,8 @@ const RespectHeroBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/study-app-story"
+      nextGameIdProp="dcos-kids-91"
       gameType="dcos"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -260,3 +262,4 @@ const RespectHeroBadge = () => {
 };
 
 export default RespectHeroBadge;
+

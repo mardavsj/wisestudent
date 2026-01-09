@@ -119,6 +119,8 @@ const MorningRoutine = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/priority-quiz"
+      nextGameIdProp="uvls-kids-92"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

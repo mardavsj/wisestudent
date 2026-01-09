@@ -250,6 +250,8 @@ const AIForGoodStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/future-of-ai-quiz"
+      nextGameIdProp="ai-teen-90"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

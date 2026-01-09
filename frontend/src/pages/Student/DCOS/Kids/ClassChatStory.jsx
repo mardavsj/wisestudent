@@ -215,6 +215,8 @@ const ClassChatStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-83"
+      nextGamePathProp="/student/dcos/kids/puzzle-respect-match1"
+      nextGameIdProp="dcos-kids-84"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -257,3 +259,4 @@ const ClassChatStory = () => {
 };
 
 export default ClassChatStory;
+

@@ -229,6 +229,8 @@ const CybersecurityAIQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/smart-home-simulation"
+      nextGameIdProp="ai-teen-49"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

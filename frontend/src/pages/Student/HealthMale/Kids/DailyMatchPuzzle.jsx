@@ -125,6 +125,8 @@ const DailyMatchPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/sleep-story"
+      nextGameIdProp="health-male-kids-95"
       gameType="health-male"
       totalLevels={activities.length}
       currentLevel={matches.length + 1}
@@ -262,3 +264,4 @@ const DailyMatchPuzzle = () => {
 };
 
 export default DailyMatchPuzzle;
+

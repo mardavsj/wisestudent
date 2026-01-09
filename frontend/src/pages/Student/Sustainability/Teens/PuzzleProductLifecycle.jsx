@@ -195,7 +195,9 @@ const PuzzleProductLifecycle = () => {
       showAnswerConfetti={showAnswerConfetti}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/minimalism-story"
+      nextGameIdProp="sustainability-teens-30">
       <div className="space-y-8">
         {!showResult ? (
           <div className="space-y-8 max-w-6xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">

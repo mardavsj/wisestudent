@@ -188,6 +188,8 @@ const SelfDrivingCarReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/sorting-emotions-game"
+      nextGameIdProp="ai-teen-7"
       gameType="ai"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}

@@ -185,6 +185,8 @@ const QuizOnConflict = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/reflex-peace-symbols"
+      nextGameIdProp="moral-teen-83"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -229,3 +231,4 @@ const QuizOnConflict = () => {
 };
 
 export default QuizOnConflict;
+

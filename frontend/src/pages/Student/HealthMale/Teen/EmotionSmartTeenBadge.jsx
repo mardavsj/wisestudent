@@ -157,6 +157,8 @@ const EmotionSmartTeenBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/masculinity-story"
+      nextGameIdProp="health-male-teen-61"
       gameType="health-male"
       totalLevels={5}
       currentLevel={60}
@@ -298,3 +300,4 @@ const EmotionSmartTeenBadge = () => {
 };
 
 export default EmotionSmartTeenBadge;
+

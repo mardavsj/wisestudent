@@ -232,6 +232,8 @@ const HumanVsAIQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/predict-next-word"
+      nextGameIdProp="ai-teen-5"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

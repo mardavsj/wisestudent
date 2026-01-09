@@ -188,6 +188,8 @@ const EthicsDecisionGame = () => {
       score={score}
       subtitle={`Scenario ${currentScenario + 1} of ${scenarios.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-in-medicine-story"
+      nextGameIdProp="ai-kids-95"
       nextEnabled={showResult && accuracy >= 70}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

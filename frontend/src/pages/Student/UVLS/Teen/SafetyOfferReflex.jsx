@@ -182,6 +182,8 @@ const SafetyOfferReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/teen/habit-chain-puzzle"
+      nextGameIdProp="uvls-teen-97"
       gameType="uvls"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const SafetyOfferReflex = () => {
 };
 
 export default SafetyOfferReflex;
+

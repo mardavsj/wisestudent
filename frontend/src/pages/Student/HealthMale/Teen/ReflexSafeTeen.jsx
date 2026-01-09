@@ -179,6 +179,8 @@ const ReflexSafeTeen = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId="health-male-teen-89"
+      nextGamePathProp="/student/health-male/teens/drug-free-teen-badge"
+      nextGameIdProp="health-male-teen-90"
       gameType="health-male"
       totalLevels={TOTAL_ROUNDS}
       maxScore={TOTAL_ROUNDS}
@@ -257,3 +259,4 @@ const ReflexSafeTeen = () => {
 };
 
 export default ReflexSafeTeen;
+

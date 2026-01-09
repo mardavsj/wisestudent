@@ -102,6 +102,8 @@ const PeerPressureSimulation = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId="health-male-teen-88"
+      nextGamePathProp="/student/health-male/teens/reflex-safe-teen"
+      nextGameIdProp="health-male-teen-89"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -144,3 +146,4 @@ const PeerPressureSimulation = () => {
 };
 
 export default PeerPressureSimulation;
+

@@ -186,6 +186,8 @@ const ProfileQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/photo-consent-reflex"
+      nextGameIdProp="dcos-kids-53"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -230,3 +232,4 @@ const ProfileQuiz = () => {
 };
 
 export default ProfileQuiz;
+

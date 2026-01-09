@@ -156,6 +156,8 @@ const HygieneProBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/balanced-diet-story"
+      nextGameIdProp="health-male-teen-11"
       gameType="health-male"
       totalLevels={5}
       currentLevel={10}
@@ -293,3 +295,4 @@ const HygieneProBadge = () => {
 };
 
 export default HygieneProBadge;
+

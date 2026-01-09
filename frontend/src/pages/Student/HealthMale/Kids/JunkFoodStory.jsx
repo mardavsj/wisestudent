@@ -194,6 +194,8 @@ const JunkFoodStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/reflex-food-alert"
+      nextGameIdProp="health-male-kids-19"
       gameType="health-male"
       totalLevels={5}
       currentLevel={18}
@@ -239,3 +241,4 @@ const JunkFoodStory = () => {
 };
 
 export default JunkFoodStory;
+

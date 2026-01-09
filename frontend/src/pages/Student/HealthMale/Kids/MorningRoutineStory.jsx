@@ -185,6 +185,8 @@ const MorningRoutineStory = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/quiz-daily-habits"
+      nextGameIdProp="health-male-kids-92"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -230,3 +232,4 @@ const MorningRoutineStory = () => {
 };
 
 export default MorningRoutineStory;
+

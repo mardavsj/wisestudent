@@ -190,6 +190,8 @@ const FeelingsQuizz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/reflex-emotions"
+      nextGameIdProp="brain-kids-43"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -232,3 +234,4 @@ const FeelingsQuizz = () => {
 };
 
 export default FeelingsQuizz;
+

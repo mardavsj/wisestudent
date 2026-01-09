@@ -214,6 +214,8 @@ const HomeworkStoryy = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/quiz-responsibility"
+      nextGameIdProp="moral-kids-32"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -256,3 +258,4 @@ const HomeworkStoryy = () => {
 };
 
 export default HomeworkStoryy;
+

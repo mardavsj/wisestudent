@@ -183,6 +183,8 @@ const OTPReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/puzzle-of-traps"
+      nextGameIdProp="dcos-kids-46"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const OTPReflex = () => {
 };
 
 export default OTPReflex;
+

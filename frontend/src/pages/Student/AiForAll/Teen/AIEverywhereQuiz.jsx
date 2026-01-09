@@ -230,6 +230,8 @@ const AIEverywhereQuiz = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/spam-filter-reflex"
+      nextGameIdProp="ai-teen-21"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

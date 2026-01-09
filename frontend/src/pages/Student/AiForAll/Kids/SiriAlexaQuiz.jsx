@@ -121,6 +121,8 @@ const SiriAlexaQuiz = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-in-games"
+      nextGameIdProp="ai-kids-11"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

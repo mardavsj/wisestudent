@@ -200,6 +200,8 @@ const SweatControlStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-41"
+      nextGamePathProp="/student/health-male/teens/quiz-hygiene"
+      nextGameIdProp="health-male-teen-42"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -285,3 +287,4 @@ const SweatControlStory = () => {
 };
 
 export default SweatControlStory;
+

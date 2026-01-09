@@ -201,6 +201,8 @@ const KindFriendBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/screen-timer-reflex"
+      nextGameIdProp="dcos-kids-21"
       gameType="dcos"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -258,3 +260,4 @@ const KindFriendBadge = () => {
 };
 
 export default KindFriendBadge;
+

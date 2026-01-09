@@ -148,7 +148,9 @@ const SimulationSustainableShopping = () => {
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/reflex-ethical-buyer"
+      nextGameIdProp="sustainability-teens-34">
       <div className="space-y-8">
         {!gameFinished && currentQuestionData && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

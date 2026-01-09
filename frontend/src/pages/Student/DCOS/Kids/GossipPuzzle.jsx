@@ -138,6 +138,8 @@ const GossipPuzzle = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/playground-bystander"
+      nextGameIdProp="dcos-kids-15"
       gameType="dcos"
       totalLevels={leftItems.length}
       currentLevel={matches.length + 1}
@@ -263,3 +265,4 @@ const GossipPuzzle = () => {
 };
 
 export default GossipPuzzle;
+

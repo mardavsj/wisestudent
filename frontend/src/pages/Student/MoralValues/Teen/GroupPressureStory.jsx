@@ -199,6 +199,8 @@ const GroupPressureStory = () => {
       score={coins}
       subtitle={showResult ? "Activity Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/moral-values/teen/debate-fear-vs-courage"
+      nextGameIdProp="moral-teen-56"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -284,3 +286,4 @@ const GroupPressureStory = () => {
 };
 
 export default GroupPressureStory;
+

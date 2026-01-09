@@ -230,6 +230,8 @@ const BodyBasicsBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/sweat-story"
+      nextGameIdProp="health-male-kids-41"
       gameType="health-male"
       totalLevels={5}
       currentLevel={40}
@@ -367,3 +369,4 @@ const BodyBasicsBadge = () => {
 };
 
 export default BodyBasicsBadge;
+

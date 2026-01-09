@@ -122,6 +122,8 @@ const DisciplineStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-95"
+      nextGamePathProp="/student/health-male/teens/discipline-equals-freedom-debate"
+      nextGameIdProp="health-male-teen-96"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -207,3 +209,4 @@ const DisciplineStory = () => {
 };
 
 export default DisciplineStory;
+

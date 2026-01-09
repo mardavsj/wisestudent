@@ -195,6 +195,8 @@ const SpotStereotype = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/rights-match"
+      nextGameIdProp="uvls-kids-24"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -239,3 +241,4 @@ const SpotStereotype = () => {
 };
 
 export default SpotStereotype;
+

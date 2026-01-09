@@ -176,7 +176,9 @@ const ReflexChangeLeader = () => {
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/simulation-community-sustainability-plan"
+      nextGameIdProp="sustainability-teens-99">
       <div className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)] max-w-4xl mx-auto px-4 py-4">
         {gameState === "ready" && (
           <div className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 w-full max-w-2xl">

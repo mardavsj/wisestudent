@@ -105,6 +105,8 @@ const PosterTask3 = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/story-of-difference"
+      nextGameIdProp="dcos-kids-87"
       gameType="dcos"
       totalLevels={stages.length}
       currentLevel={currentStage + 1}
@@ -147,3 +149,4 @@ const PosterTask3 = () => {
 };
 
 export default PosterTask3;
+

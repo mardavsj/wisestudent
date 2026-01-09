@@ -212,6 +212,8 @@ const BrokenToyStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/poster-choose-peace"
+      nextGameIdProp="moral-kids-86"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -254,3 +256,4 @@ const BrokenToyStory = () => {
 };
 
 export default BrokenToyStory;
+

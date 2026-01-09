@@ -117,6 +117,8 @@ const PuzzleOfGratitude = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/service-story"
+      nextGameIdProp="moral-teen-15"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -256,3 +258,4 @@ const PuzzleOfGratitude = () => {
 };
 
 export default PuzzleOfGratitude;
+

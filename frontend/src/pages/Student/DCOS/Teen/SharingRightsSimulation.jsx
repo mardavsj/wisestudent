@@ -199,6 +199,8 @@ const SharingRightsSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/privacy-laws-puzzle"
+      nextGameIdProp="dcos-teen-55"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -292,3 +294,4 @@ const SharingRightsSimulation = () => {
 };
 
 export default SharingRightsSimulation;
+

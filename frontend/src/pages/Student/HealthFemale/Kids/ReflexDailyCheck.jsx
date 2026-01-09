@@ -143,7 +143,9 @@ const ReflexDailyCheck = () => {
         coinsPerLevel={coinsPerLevel}
         totalCoins={totalCoins}
         totalXp={totalXp}
-      >
+      
+        nextGamePathProp="/student/health-female/kids/healthy-routine-kid-badge"
+        nextGameIdProp="health-female-kids-40">
         <div className="text-center p-8 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
           <div className="text-6xl mb-6">🏆</div>
           <h2 className="text-3xl font-bold mb-4">Daily Check Complete!</h2>

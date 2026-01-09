@@ -196,6 +196,8 @@ const SmartHomeStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/train-the-robot"
+      nextGameIdProp="ai-kids-16"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const SmartHomeStory = () => {
 };
 
 export default SmartHomeStory;
+
+

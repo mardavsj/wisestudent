@@ -217,6 +217,8 @@ const DigitalChoiceReflex = () => {
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/puzzle-balance"
+      nextGameIdProp="brain-kids-74"
       showConfetti={gameState === "finished" && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -302,3 +304,4 @@ const DigitalChoiceReflex = () => {
 };
 
 export default DigitalChoiceReflex;
+

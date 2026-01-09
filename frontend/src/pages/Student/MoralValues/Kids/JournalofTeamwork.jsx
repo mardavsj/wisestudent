@@ -82,6 +82,8 @@ const JournalofTeamwork = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/playground-sharing-story"
+      nextGameIdProp="moral-kids-68"
       gameType="moral"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalofTeamwork = () => {
 };
 
 export default JournalofTeamwork;
+

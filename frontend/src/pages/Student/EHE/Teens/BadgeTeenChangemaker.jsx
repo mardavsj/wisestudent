@@ -238,7 +238,9 @@ const BadgeTeenChangemaker = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/ehe/teens"
-    >
+    
+      nextGamePathProp="/student/ehe/teens/skill-upgrade-story"
+      nextGameIdProp="ehe-teen-91">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

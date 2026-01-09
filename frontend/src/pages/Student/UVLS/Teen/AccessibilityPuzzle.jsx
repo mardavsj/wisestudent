@@ -131,6 +131,8 @@ const AccessibilityPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-teen-13"
+      nextGamePathProp="/student/uvls/teen/inclusive-class-simulation"
+      nextGameIdProp="uvls-teen-14"
       gameType="uvls"
       totalLevels={impairments.length}
       currentLevel={matches.length + 1}

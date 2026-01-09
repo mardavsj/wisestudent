@@ -130,6 +130,8 @@ const MatchFaces = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/spot-help"
+      nextGameIdProp="uvls-kids-5"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -218,3 +220,4 @@ const MatchFaces = () => {
 };
 
 export default MatchFaces;
+

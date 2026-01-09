@@ -116,7 +116,9 @@ const SimulationCommunitySustainabilityPlan = () => {
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/badge-master-sustainability-leader"
+      nextGameIdProp="sustainability-teens-100">
       <div className="space-y-8">
         {!gameFinished && currentQuestionData && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">

@@ -188,6 +188,8 @@ const CourageQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-brave-scared"
+      nextGameIdProp="moral-kids-53"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -271,3 +273,4 @@ const CourageQuiz = () => {
 };
 
 export default CourageQuiz;
+

@@ -196,6 +196,8 @@ const VoiceAssistantQuiz = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/youtube-recommendation-game"
+      nextGameIdProp="ai-kids-29"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -281,3 +283,5 @@ const VoiceAssistantQuiz = () => {
 };
 
 export default VoiceAssistantQuiz;
+
+

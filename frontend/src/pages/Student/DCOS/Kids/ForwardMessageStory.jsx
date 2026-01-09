@@ -216,6 +216,8 @@ const ForwardMessageStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="dcos-kids-33"
+      nextGamePathProp="/student/dcos/kids/picture-puzzle"
+      nextGameIdProp="dcos-kids-34"
       gameType="dcos"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -258,3 +260,4 @@ const ForwardMessageStory = () => {
 };
 
 export default ForwardMessageStory;
+

@@ -232,6 +232,8 @@ const SafetySmartKidBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/smoking-story"
+      nextGameIdProp="health-male-kids-81"
       gameType="health-male"
       totalLevels={5}
       currentLevel={80}
@@ -369,3 +371,4 @@ const SafetySmartKidBadge = () => {
 };
 
 export default SafetySmartKidBadge;
+

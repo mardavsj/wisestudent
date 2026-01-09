@@ -229,6 +229,8 @@ const ComputerVisionBasics = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/ai-in-smartphones-quiz"
+      nextGameIdProp="ai-teen-13"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

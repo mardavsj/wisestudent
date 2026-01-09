@@ -189,6 +189,8 @@ const PoliteWordsQuiz2 = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-respect"
+      nextGameIdProp="moral-kids-13"
       gameType="moral"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -272,3 +274,4 @@ const PoliteWordsQuiz2 = () => {
 };
 
 export default PoliteWordsQuiz2;
+

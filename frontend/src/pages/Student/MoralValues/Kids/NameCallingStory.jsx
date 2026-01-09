@@ -213,6 +213,8 @@ const NameCallingStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/reflex-stop-fight"
+      nextGameIdProp="moral-kids-89"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -255,3 +257,4 @@ const NameCallingStory = () => {
 };
 
 export default NameCallingStory;
+

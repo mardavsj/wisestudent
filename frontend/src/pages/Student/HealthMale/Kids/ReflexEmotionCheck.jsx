@@ -211,6 +211,8 @@ const ReflexEmotionCheck = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/emotion-match-puzzle"
+      nextGameIdProp="health-male-kids-54"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -277,3 +279,4 @@ const ReflexEmotionCheck = () => {
 };
 
 export default ReflexEmotionCheck;
+

@@ -209,6 +209,8 @@ const ShareYourToy = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/feelings-quiz"
+      nextGameIdProp="uvls-kids-2"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -296,3 +298,4 @@ const ShareYourToy = () => {
 };
 
 export default ShareYourToy;
+

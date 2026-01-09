@@ -154,6 +154,8 @@ const ImageClassifierGame = () => {
       title="Image Classifier Game"
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/teen/human-vs-ai-quiz"
+      nextGameIdProp="ai-teen-4"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       score={coins}
@@ -242,4 +244,5 @@ const ImageClassifierGame = () => {
 };
 
 export default ImageClassifierGame;
+
 

@@ -201,7 +201,9 @@ const ReflexFoodCheck = () => {
       onNext={handleNext}
       showConfetti={gameState === "finished" && score === maxScore}
       backPath="/games/health-female/teens"
-    >
+    
+      nextGamePathProp="/student/health-female/teens/nutrients-match-puzzle"
+      nextGameIdProp="health-female-teen-14">
       <div className="space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">

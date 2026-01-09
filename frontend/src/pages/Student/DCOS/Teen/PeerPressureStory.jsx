@@ -197,6 +197,8 @@ const PeerPressureStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/gossip-chain-simulation"
+      nextGameIdProp="dcos-teen-13"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -282,3 +284,4 @@ const PeerPressureStory = () => {
 };
 
 export default PeerPressureStory;
+

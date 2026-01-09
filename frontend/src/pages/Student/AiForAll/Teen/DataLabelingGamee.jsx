@@ -154,6 +154,8 @@ const DataLabelingGamee = () => {
       title="Data Labeling Game"
       subtitle={showResult ? "Game Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/teen/bad-data-story"
+      nextGameIdProp="ai-teen-52"
       nextEnabled={showResult && finalScore >= 3}
       showGameOver={showResult && finalScore >= 3}
       score={coins}
@@ -242,3 +244,4 @@ const DataLabelingGamee = () => {
 };
 
 export default DataLabelingGamee;
+

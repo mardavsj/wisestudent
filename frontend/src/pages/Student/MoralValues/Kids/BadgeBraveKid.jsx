@@ -223,6 +223,8 @@ const BadgeBraveKid = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/football-story"
+      nextGameIdProp="moral-kids-61"
       gameType="moral"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}
@@ -336,3 +338,4 @@ const BadgeBraveKid = () => {
 };
 
 export default BadgeBraveKid;
+

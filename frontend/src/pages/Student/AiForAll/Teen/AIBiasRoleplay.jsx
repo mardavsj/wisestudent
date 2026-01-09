@@ -230,6 +230,8 @@ const AIBiasRoleplay = () => {
       totalCoins={totalCoins}
       totalXp={totalXp}
       gameId={gameId}
+      nextGamePathProp="/student/ai-for-all/teen/wrong-prediction-quizz"
+      nextGameIdProp="ai-teen-69"
       gameType="ai"
       showGameOver={levelCompleted}
       maxScore={questions.length}

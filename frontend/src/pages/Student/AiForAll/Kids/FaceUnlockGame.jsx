@@ -126,6 +126,8 @@ const FaceUnlockGame = () => {
       score={score}
       subtitle={showResult ? "Game Complete!" : `Face ${currentFace + 1} of ${faces.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/ai-for-all/kids/ai-or-human-quiz"
+      nextGameIdProp="ai-kids-33"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

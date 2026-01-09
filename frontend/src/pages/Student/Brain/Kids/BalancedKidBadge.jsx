@@ -217,6 +217,8 @@ const BalancedKidBadge = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/lost-key-story"
+      nextGameIdProp="brain-kids-81"
       gameType="brain"
       totalLevels={challenges.length}
       currentLevel={challenge + 1}
@@ -285,3 +287,4 @@ const BalancedKidBadge = () => {
 };
 
 export default BalancedKidBadge;
+

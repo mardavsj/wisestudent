@@ -124,6 +124,8 @@ const correctMatches = [
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/acne-story-teen"
+      nextGameIdProp="health-male-teen-25"
       gameType="health-male"
       totalLevels={signs.length}
       currentLevel={matches.length + 1}
@@ -261,3 +263,4 @@ const correctMatches = [
 };
 
 export default PubertySignsPuzzleTeen;
+

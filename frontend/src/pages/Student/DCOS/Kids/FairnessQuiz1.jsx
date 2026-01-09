@@ -189,6 +189,8 @@ const FairnessQuiz1 = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/ai-friend-story"
+      nextGameIdProp="dcos-kids-75"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -233,3 +235,4 @@ const FairnessQuiz1 = () => {
 };
 
 export default FairnessQuiz1;
+

@@ -198,6 +198,8 @@ const OnlineCourseSimulation = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/career-puzzle"
+      nextGameIdProp="dcos-teen-95"
       gameType="dcos"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -291,3 +293,4 @@ const OnlineCourseSimulation = () => {
 };
 
 export default OnlineCourseSimulation;
+

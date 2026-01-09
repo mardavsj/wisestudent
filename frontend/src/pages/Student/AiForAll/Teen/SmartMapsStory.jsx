@@ -264,6 +264,8 @@ const SmartMapsStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/voice-assistant-reflex"
+      nextGameIdProp="ai-teen-27"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

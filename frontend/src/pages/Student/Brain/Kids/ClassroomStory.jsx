@@ -189,6 +189,8 @@ const ClassroomStory = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/quiz-on-focus"
+      nextGameIdProp="brain-kids-12"
       gameType="brain"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -233,3 +235,4 @@ const ClassroomStory = () => {
 };
 
 export default ClassroomStory;
+

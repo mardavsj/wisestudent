@@ -120,6 +120,8 @@ const BullyingQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/report-reflex"
+      nextGameIdProp="uvls-kids-33"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -207,3 +209,4 @@ const BullyingQuiz = () => {
 };
 
 export default BullyingQuiz;
+

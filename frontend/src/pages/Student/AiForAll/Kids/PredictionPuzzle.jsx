@@ -145,6 +145,8 @@ const PredictionPuzzle = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/kids/friendly-ai-quiz"
+      nextGameIdProp="ai-kids-18"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"
@@ -297,3 +299,5 @@ const PredictionPuzzle = () => {
 };
 
 export default PredictionPuzzle;
+
+

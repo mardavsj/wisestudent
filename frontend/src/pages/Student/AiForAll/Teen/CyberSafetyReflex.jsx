@@ -189,6 +189,8 @@ const CyberSafetyReflex = () => {
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
       showGameOver={gameState === "finished"}
+      nextGamePathProp="/student/ai-for-all/teen/global-fairness-quiz"
+      nextGameIdProp="ai-teen-94"
       showConfetti={gameState === "finished" && accuracy >= 80}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

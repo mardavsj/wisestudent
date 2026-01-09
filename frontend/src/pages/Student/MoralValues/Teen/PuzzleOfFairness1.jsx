@@ -126,6 +126,8 @@ const PuzzleOfFairness1 = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/bully-story2"
+      nextGameIdProp="moral-teen-45"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="moral"
@@ -266,3 +268,4 @@ const PuzzleOfFairness1 = () => {
 };
 
 export default PuzzleOfFairness1;
+

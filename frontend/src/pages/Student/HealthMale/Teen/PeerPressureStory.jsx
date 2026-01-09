@@ -122,6 +122,8 @@ const PeerPressureStory = () => {
       subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
       showGameOver={showResult}
       gameId="health-male-teen-81"
+      nextGamePathProp="/student/health-male/teens/quiz-on-dangers"
+      nextGameIdProp="health-male-teen-82"
       gameType="health-male"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -207,3 +209,4 @@ const PeerPressureStory = () => {
 };
 
 export default PeerPressureStory;
+

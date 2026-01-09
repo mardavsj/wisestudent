@@ -109,6 +109,8 @@ const DebateObeyOrQuestion = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/moral-values/teen/gratitude-story"
+      nextGameIdProp="moral-teen-12"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -209,3 +211,4 @@ const DebateObeyOrQuestion = () => {
 };
 
 export default DebateObeyOrQuestion;
+

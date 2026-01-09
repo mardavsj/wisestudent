@@ -108,6 +108,8 @@ const KindnessJournal = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/dcos/kids/friendship-reflex"
+      nextGameIdProp="dcos-kids-19"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -175,3 +177,4 @@ const KindnessJournal = () => {
 };
 
 export default KindnessJournal;
+

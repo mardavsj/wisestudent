@@ -107,6 +107,8 @@ const KindPoster = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/mini-journal"
+      nextGameIdProp="uvls-kids-7"
       gameType="uvls"
       maxScore={5}
       totalCoins={totalCoins}
@@ -138,3 +140,4 @@ const KindPoster = () => {
 };
 
 export default KindPoster;
+

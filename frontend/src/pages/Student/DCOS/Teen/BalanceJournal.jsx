@@ -82,6 +82,8 @@ const BalanceJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/productivity-puzzle"
+      nextGameIdProp="dcos-teen-26"
       gameType="dcos"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const BalanceJournal = () => {
 };
 
 export default BalanceJournal;
+

@@ -247,6 +247,8 @@ const BalancedDataStory = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/ai-for-all/teen/training-hero-badgee"
+      nextGameIdProp="ai-teen-75"
       showGameOver={showResult && finalScore >= 3}
       gameId={gameId}
       gameType="ai"

@@ -204,6 +204,8 @@ const ReflexHygiene = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/hygiene-items-puzzle"
+      nextGameIdProp="health-male-kids-4"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

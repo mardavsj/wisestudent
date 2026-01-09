@@ -187,6 +187,8 @@ const HomeworkStories = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/brain/kids/poster-balance-tech"
+      nextGameIdProp="brain-kids-76"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -229,3 +231,4 @@ const HomeworkStories = () => {
 };
 
 export default HomeworkStories;
+

@@ -209,6 +209,8 @@ const SpotHelp = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/uvls/kids/kind-poster"
+      nextGameIdProp="uvls-kids-6"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -296,3 +298,4 @@ const SpotHelp = () => {
 };
 
 export default SpotHelp;
+

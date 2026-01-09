@@ -211,6 +211,8 @@ const SchoolCleanUpStory = () => {
       showGameOver={showResult}
       score={showResult ? finalScore : coins}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/kids/poster-helping-hands"
+      nextGameIdProp="moral-kids-76"
       gameType="moral"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -253,3 +255,4 @@ const SchoolCleanUpStory = () => {
 };
 
 export default SchoolCleanUpStory;
+

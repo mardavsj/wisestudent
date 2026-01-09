@@ -131,6 +131,8 @@ const ResolveStepsPuzzle = () => {
       showGameOver={gameFinished}
       score={score}
       gameId="uvls-kids-74"
+      nextGamePathProp="/student/uvls/kids/split-fairly-roleplay"
+      nextGameIdProp="uvls-kids-75"
       gameType="uvls"
       totalLevels={steps.length}
       currentLevel={matches.length + 1}

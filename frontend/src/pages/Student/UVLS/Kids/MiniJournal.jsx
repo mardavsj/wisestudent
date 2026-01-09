@@ -95,6 +95,8 @@ const MiniJournal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/comfort-roleplay"
+      nextGameIdProp="uvls-kids-8"
       gameType="uvls"
       maxScore={stages.length}
       totalCoins={totalCoins}
@@ -175,3 +177,4 @@ const MiniJournal = () => {
 };
 
 export default MiniJournal;
+

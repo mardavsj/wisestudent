@@ -241,7 +241,9 @@ const SafetySmartGirlBadge = () => {
       maxScore={challenges.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      nextGamePathProp="/student/health-female/kids/cigarette-story"
+      nextGameIdProp="health-female-kids-81">
       <div className="space-y-8">
         {!showResult && currentChallenge ? (
           <div className="space-y-6">

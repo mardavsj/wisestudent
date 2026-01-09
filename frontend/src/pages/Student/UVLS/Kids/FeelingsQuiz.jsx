@@ -209,6 +209,8 @@ const FeelingsQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/kind-reflex"
+      nextGameIdProp="uvls-kids-3"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -298,4 +300,5 @@ const FeelingsQuiz = () => {
 };
 
 export default FeelingsQuiz;
+
 

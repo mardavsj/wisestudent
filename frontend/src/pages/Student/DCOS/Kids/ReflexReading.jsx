@@ -183,6 +183,8 @@ const ReflexReading = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/kids/smart-user-badge"
+      nextGameIdProp="dcos-kids-100"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const ReflexReading = () => {
 };
 
 export default ReflexReading;
+

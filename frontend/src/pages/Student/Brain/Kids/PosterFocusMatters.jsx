@@ -104,6 +104,8 @@ const PosterFocusMatters = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/brain/kids/journal-of-focus"
+      nextGameIdProp="brain-kids-17"
       gameType="brain"
       totalLevels={stages.length}
       currentLevel={currentStage + 1}
@@ -146,3 +148,4 @@ const PosterFocusMatters = () => {
 };
 
 export default PosterFocusMatters;
+

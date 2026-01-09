@@ -108,7 +108,9 @@ const SayNoSubstancesPoster = () => {
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       backPath="/games/health-female/kids"
-    >
+    
+      nextGamePathProp="/student/health-female/kids/journal-of-refusal"
+      nextGameIdProp="health-female-kids-87">
       <div className="space-y-8">
         {!showResult && currentStageData ? (
           <div className="space-y-6">

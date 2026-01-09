@@ -192,6 +192,8 @@ const SayNoPoster = () => {
       showGameOver={gameFinished}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/kids/refusal-journal"
+      nextGameIdProp="health-male-kids-87"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -232,3 +234,4 @@ const SayNoPoster = () => {
 };
 
 export default SayNoPoster;
+

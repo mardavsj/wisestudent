@@ -181,6 +181,8 @@ const LoanTrapStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/dcos/teens/scam-debate"
+      nextGameIdProp="dcos-teen-46"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
@@ -264,3 +266,4 @@ const LoanTrapStory = () => {
 };
 
 export default LoanTrapStory;
+

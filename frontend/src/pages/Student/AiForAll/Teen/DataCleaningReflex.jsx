@@ -184,6 +184,8 @@ const DataCleaningReflex = () => {
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
       showGameOver={gameState === "finished"}
+      nextGamePathProp="/student/ai-for-all/teen/ai-bias-roleplay"
+      nextGameIdProp="ai-teen-68"
       showConfetti={gameState === "finished" && accuracy >= 60}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

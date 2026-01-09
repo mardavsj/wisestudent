@@ -206,6 +206,8 @@ const ShareChores = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/uvls/kids/equality-quiz"
+      nextGameIdProp="uvls-kids-22"
       gameType="uvls"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -250,3 +252,4 @@ const ShareChores = () => {
 };
 
 export default ShareChores;
+

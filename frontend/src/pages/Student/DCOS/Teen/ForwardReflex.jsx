@@ -188,6 +188,8 @@ const ForwardReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/dcos/teens/fact-check-simulation"
+      nextGameIdProp="dcos-teen-34"
       gameType="dcos"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -253,3 +255,4 @@ const ForwardReflex = () => {
 };
 
 export default ForwardReflex;
+

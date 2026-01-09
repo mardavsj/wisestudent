@@ -176,7 +176,9 @@ const QuizOnSustainabilityLeadership = () => {
       showAnswerConfetti={showAnswerConfetti}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
-    >
+    
+      nextGamePathProp="/student/sustainability/teens/reflex-change-leader"
+      nextGameIdProp="sustainability-teens-98">
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-8 max-w-4xl mx-auto px-4 min-h-[calc(100vh-200px)] flex flex-col justify-center">

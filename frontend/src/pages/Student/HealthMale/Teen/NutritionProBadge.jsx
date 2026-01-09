@@ -152,6 +152,8 @@ const NutritionProBadge = () => {
       showGameOver={gameFinished}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/health-male/teens/puberty-story-teen"
+      nextGameIdProp="health-male-teen-21"
       gameType="health-male"
       totalLevels={5}
       currentLevel={10}
@@ -289,3 +291,4 @@ const NutritionProBadge = () => {
 };
 
 export default NutritionProBadge;
+

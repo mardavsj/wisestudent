@@ -178,6 +178,8 @@ const ReflexStandUp = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/moral-values/teen/badge-justice-hero"
+      nextGameIdProp="moral-teen-50"
       gameType="moral"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -243,3 +245,4 @@ const ReflexStandUp = () => {
 };
 
 export default ReflexStandUp;
+
