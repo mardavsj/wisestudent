@@ -20,7 +20,7 @@ const ParentGamesHub = () => {
       hoverGradient: 'from-purple-400 via-pink-400 to-rose-400',
       bgGradient: 'from-purple-50 via-pink-50 to-rose-50',
       borderColor: 'border-purple-200',
-      gamesCount: 10,
+      gamesCount: 100,
       emoji: '🧠'
     },
     // Future categories can be added here
@@ -48,7 +48,7 @@ const ParentGamesHub = () => {
                   </motion.div>
             <div>
                     <h1 className="text-4xl font-black text-white mb-1">
-                      Parent Games
+                      Parent Module
                     </h1>
                     <p className="text-white/90 text-lg font-medium">
                       Welcome back, {user?.name?.split(" ")[0] || "Parent"}! 👋 Learn and grow with interactive educational games
@@ -62,7 +62,7 @@ const ParentGamesHub = () => {
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-white" />
                     <span className="text-white font-bold text-lg">
-                      {wallet?.balance || 0} CalmCoins
+                      {wallet?.balance || 0} Healcoins
               </span>
                   </div>
                 </motion.div>
@@ -129,29 +129,29 @@ const ParentGamesHub = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${category.hoverGradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Additional Info Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="mt-8 bg-white/80 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/50"
-        >
-          <div className="flex items-start gap-4">
-            <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl shadow-md">
-              <Heart className="w-6 h-6 text-white" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: gameCategories.length * 0.1 }}
+            className="relative overflow-hidden lg:col-span-2 rounded-3xl border border-indigo-200/70 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 px-6 py-5"
+          >
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white to-transparent rounded-full blur-2xl"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-white to-transparent rounded-full blur-xl"></div>
             </div>
-            <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Why Play These Games?
-              </h3>
+            <div className="relative h-full flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
+                  <Heart className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Why Play These Games?</h3>
+              </div>
               <p className="text-gray-700 leading-relaxed">
-                These interactive games help you develop emotional intelligence, manage stress, and create a more positive home environment. 
-                Earn CalmCoins by completing games and improve your parenting practice while taking care of your mental wellbeing.
+                These interactive games help you develop emotional intelligence, manage stress, and create a more positive home environment.
+                Earn Healcoins by completing games and improve your parenting practice while taking care of your mental wellbeing.
               </p>
             </div>
-        </div>
+          </motion.div>
         </motion.div>
       </div>
     </div>

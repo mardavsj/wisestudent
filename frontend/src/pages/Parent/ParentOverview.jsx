@@ -7,7 +7,6 @@ import {
   Heart,
   Trophy,
   AlertTriangle,
-  Mail,
   ArrowRight,
   Activity,
   Coins,
@@ -916,7 +915,7 @@ const ParentOverview = () => {
           </div>
         </motion.div>
         {/* Key Metrics */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           <StatCard
             title="Total Children"
             value={stats.totalChildren || 0}
@@ -934,12 +933,6 @@ const ParentOverview = () => {
             value={stats.totalCoins || 0}
             icon={Coins}
             trend="+8%"
-          />
-          <StatCard
-            title="Avg Progress"
-            value={`${stats.avgProgress || 0}%`}
-            icon={Target}
-            trend="+5%"
           />
         </div>
 
@@ -1013,7 +1006,7 @@ const ParentOverview = () => {
                         <p className="text-xs text-emerald-600">Coins</p>
                       </div>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex flex-col gap-2">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
@@ -1033,7 +1026,7 @@ const ParentOverview = () => {
                         title="Chat with teacher"
                       >
                         <MessageSquare className="w-3.5 h-3.5" />
-                        <span className="hidden sm:inline">Chat</span>
+                        <span className="hidden sm:inline">Chat with Teacher</span>
                       </button>
                     </div>
                   </motion.div>
@@ -1114,19 +1107,6 @@ const ParentOverview = () => {
                 <motion.button
                   whileHover={{ x: 2 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => navigate("/parent/messages")}
-                  className="w-full flex items-center gap-3 p-3 bg-slate-50 rounded-lg hover:bg-slate-100 transition border border-slate-200"
-                >
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <Mail className="w-4 h-4 text-blue-600" />
-                  </div>
-                  <span className="font-medium text-slate-900 text-sm">
-                    Messages
-                  </span>
-                </motion.button>
-                <motion.button
-                  whileHover={{ x: 2 }}
-                  whileTap={{ scale: 0.98 }}
                   onClick={() => navigate("/parent/settings")}
                   className="w-full flex items-center gap-3 p-3 bg-slate-50 rounded-lg hover:bg-slate-100 transition border border-slate-200"
                 >
@@ -1154,24 +1134,13 @@ const ParentOverview = () => {
               <div className="space-y-2">
                 <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-200">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-medium text-slate-700">
-                      Active Today
-                    </span>
+                      <span className="text-xs font-medium text-slate-700">
+                        Active Children Today
+                      </span>
                     <CheckCircle className="w-4 h-4 text-emerald-600" />
                   </div>
                   <p className="text-xl font-bold text-emerald-600">
                     {children.filter((c) => c.lastActive).length}/{children.length}
-                  </p>
-                </div>
-                <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-medium text-slate-700">
-                      Avg Engagement
-                    </span>
-                    <Activity className="w-4 h-4 text-blue-600" />
-                  </div>
-                  <p className="text-xl font-bold text-blue-600">
-                    {Math.round(stats.avgProgress || 0)}%
                   </p>
                 </div>
                 <div className="p-3 bg-indigo-50 rounded-lg border border-indigo-200">

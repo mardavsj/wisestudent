@@ -94,7 +94,7 @@ const SchoolRegistration = () => {
     "WiseImpact CSR Dashboard — visualize your institution’s overall contribution to student growth.",
     "Parent Integration — optional dashboards for emotional and academic visibility.",
     "NEP 2020 & CBSE Life-Skills Ready — mapped to well-being and value education guidelines.",
-    "Inavora-Powered Insights — predictive patterns for engagement and learning readiness.",
+    "AI-Powered Insights — predictive patterns for engagement and learning readiness.",
     "Dedicated Onboarding & Support — training and launch assistance for partner schools."
   ];
 

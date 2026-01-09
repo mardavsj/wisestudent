@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
+import { toast } from "react-hot-toast";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "../context/AuthUtils";
@@ -62,21 +63,41 @@ const Navbar = () => {
         navigate(paths[user.role] || paths.student);
     };
 
+    const hasSchoolAccess = Boolean(
+        user?.role === "school_student" ||
+        user?.school ||
+        user?.schoolDetails ||
+        user?.schoolId ||
+        user?.orgId ||
+        (typeof user?.tenantId === "string" && user.tenantId.startsWith("school_"))
+    );
+    const isIndividualStudent = user?.role === "student" && !hasSchoolAccess;
+
+    const handleDisabledNavClick = (label) => {
+        if ((user?.role === "school_student" || (user?.role === "student" && hasSchoolAccess)) && label === "Upgrade") {
+            toast("School accounts can only upgrade through your school.");
+            return;
+        }
+        if (!isIndividualStudent) return;
+        const itemName = label ? `${label} ` : "";
+        toast(`${itemName}is available after you link to a school.`);
+    };
+
     const navigationItems = user?.role === "student" ? [
-        { icon: <Bell className="w-5 h-5" />, label: "Announcements", onClick: () => navigate("/student/announcements") },
-        { icon: <Activity className="w-5 h-5" />, label: "Activity", onClick: () => navigate("/student/activity") },
-        { icon: <CreditCard className="w-5 h-5" />, label: "Upgrade", onClick: () => navigate("/student/payment") },
-        { icon: <Presentation className="w-5 h-5" />, label: "Presentation", onClick: () => navigate("/student/presentation") }
+        { icon: <Bell className="w-5 h-5" />, label: "Announcements", onClick: () => navigate("/student/announcements"), disabled: isIndividualStudent },
+        { icon: <Activity className="w-5 h-5" />, label: "Activity", onClick: () => navigate("/student/activity"), disabled: isIndividualStudent },
+        { icon: <CreditCard className="w-5 h-5" />, label: "Upgrade", onClick: () => navigate("/student/payment"), disabled: !isIndividualStudent },
+        { icon: <Presentation className="w-5 h-5" />, label: "Presentation", onClick: () => navigate("/student/presentation"), disabled: isIndividualStudent }
     ] : user?.role === "school_student" ? [
         { icon: <Bell className="w-5 h-5" />, label: "Announcements", onClick: () => navigate("/school-student/announcements") },
         { icon: <Activity className="w-5 h-5" />, label: "Activity", onClick: () => navigate("/student/activity") },
         { icon: <MessageSquare className="w-5 h-5" />, label: "Chat", onClick: () => navigate("/school-student/chat") },
+        { icon: <CreditCard className="w-5 h-5" />, label: "Upgrade", onClick: () => navigate("/student/payment"), disabled: true },
         { icon: <Presentation className="w-5 h-5" />, label: "Presentation", onClick: () => navigate("/student/presentation") }
     ] : user?.role === "parent" ? [
         { icon: <Users className="w-5 h-5" />, label: "Children", onClick: () => navigate("/parent/children") },
-        { icon: <Gamepad2 className="w-5 h-5" />, label: "Games", onClick: () => navigate("/parent/games") },
+        { icon: <Gamepad2 className="w-5 h-5" />, label: "Module", onClick: () => navigate("/parent/games") },
         { icon: <Bell className="w-5 h-5" />, label: "Announcements", onClick: () => navigate("/parent/announcements") },
-        { icon: <Mail className="w-5 h-5" />, label: "Messages", onClick: () => navigate("/parent/messages") },
         { icon: <CreditCard className="w-5 h-5" />, label: "Upgrade", onClick: () => navigate("/parent/upgrade") }
     ] : user?.role === "admin" ? [
         { icon: <CheckCircle className="w-5 h-5" />, label: "Approvals", onClick: () => navigate("/admin/approvals") },
@@ -278,12 +299,24 @@ const Navbar = () => {
                             {navigationItems.map((item, index) => (
                                 <motion.button
                                     key={index}
-                                    onClick={item.onClick}
-                                    className="flex items-center gap-2 px-3 xl:px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 bg-white hover:bg-gradient-to-r hover:from-indigo-50 hover:via-purple-50 hover:to-pink-50 border border-slate-200 hover:border-indigo-300 duration-200 shadow-sm hover:shadow-md cursor-pointer whitespace-nowrap flex-shrink-0 transition-all"
-                                    whileHover={{ scale: 1.05, y: -2 }}
-                                    whileTap={{ scale: 0.98 }}
+                                    type="button"
+                                    onClick={() => {
+                                        if (item.disabled) {
+                                            handleDisabledNavClick(item.label);
+                                            return;
+                                        }
+                                        item.onClick();
+                                    }}
+                                    aria-disabled={item.disabled ? "true" : "false"}
+                                    className={`flex items-center gap-2 px-3 xl:px-4 py-2.5 rounded-lg text-sm font-semibold whitespace-nowrap flex-shrink-0 transition-all ${
+                                        item.disabled
+                                            ? "text-slate-400 bg-slate-100 border border-slate-200 shadow-none cursor-pointer"
+                                            : "text-slate-700 bg-white hover:bg-gradient-to-r hover:from-indigo-50 hover:via-purple-50 hover:to-pink-50 border border-slate-200 hover:border-indigo-300 duration-200 shadow-sm hover:shadow-md cursor-pointer"
+                                    }`}
+                                    whileHover={item.disabled ? undefined : { scale: 1.05, y: -2 }}
+                                    whileTap={item.disabled ? undefined : { scale: 0.98 }}
                                 >
-                                    <div className="w-4 h-4 text-indigo-600">{item.icon}</div>
+                                    <div className={item.disabled ? "w-4 h-4 text-slate-400" : "w-4 h-4 text-indigo-600"}>{item.icon}</div>
                                     <span className="whitespace-nowrap">{item.label}</span>
                                 </motion.button>
                             ))}
@@ -294,12 +327,24 @@ const Navbar = () => {
                             {navigationItems.slice(0, 6).map((item, index) => (
                                 <motion.button
                                     key={index}
-                                    onClick={item.onClick}
-                                    className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-xs font-semibold text-slate-700 bg-white hover:bg-gradient-to-r hover:from-indigo-50 hover:via-purple-50 hover:to-pink-50 border border-slate-200 hover:border-indigo-300 duration-200 shadow-sm hover:shadow-md cursor-pointer whitespace-nowrap flex-shrink-0 transition-all"
-                                    whileHover={{ scale: 1.05, y: -2 }}
-                                    whileTap={{ scale: 0.98 }}
+                                    type="button"
+                                    onClick={() => {
+                                        if (item.disabled) {
+                                            handleDisabledNavClick(item.label);
+                                            return;
+                                        }
+                                        item.onClick();
+                                    }}
+                                    aria-disabled={item.disabled ? "true" : "false"}
+                                    className={`flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-xs font-semibold whitespace-nowrap flex-shrink-0 transition-all ${
+                                        item.disabled
+                                            ? "text-slate-400 bg-slate-100 border border-slate-200 shadow-none cursor-pointer"
+                                            : "text-slate-700 bg-white hover:bg-gradient-to-r hover:from-indigo-50 hover:via-purple-50 hover:to-pink-50 border border-slate-200 hover:border-indigo-300 duration-200 shadow-sm hover:shadow-md cursor-pointer"
+                                    }`}
+                                    whileHover={item.disabled ? undefined : { scale: 1.05, y: -2 }}
+                                    whileTap={item.disabled ? undefined : { scale: 0.98 }}
                                 >
-                                    <div className="w-3.5 h-3.5 text-indigo-600">{item.icon}</div>
+                                    <div className={item.disabled ? "w-3.5 h-3.5 text-slate-400" : "w-3.5 h-3.5 text-indigo-600"}>{item.icon}</div>
                                     <span className="whitespace-nowrap">{item.label}</span>
                                 </motion.button>
                             ))}
@@ -566,17 +611,27 @@ const Navbar = () => {
                                         {navigationItems.map((item, index) => (
                                             <motion.button
                                                 key={index}
+                                                type="button"
                                                 onClick={() => {
+                                                    if (item.disabled) {
+                                                        handleDisabledNavClick(item.label);
+                                                        return;
+                                                    }
                                                     item.onClick();
                                                     setShowMobileMenu(false);
                                                 }}
-                                                className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors font-medium text-left"
-                                                whileTap={{ scale: 0.98 }}
+                                                aria-disabled={item.disabled ? "true" : "false"}
+                                                className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors font-medium text-left ${
+                                                    item.disabled
+                                                        ? "text-slate-400 bg-slate-100 cursor-pointer"
+                                                        : "text-gray-700 hover:bg-gray-100"
+                                                }`}
+                                                whileTap={item.disabled ? undefined : { scale: 0.98 }}
                                                 initial={{ opacity: 0, x: -20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ delay: index * 0.05 }}
                                             >
-                                                <div className="w-5 h-5 text-gray-600">{item.icon}</div>
+                                                <div className={item.disabled ? "w-5 h-5 text-slate-400" : "w-5 h-5 text-gray-600"}>{item.icon}</div>
                                                 <span>{item.label}</span>
                                             </motion.button>
                                         ))}

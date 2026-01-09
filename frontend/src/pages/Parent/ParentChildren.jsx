@@ -7,6 +7,7 @@ import {
   Plus,
   Eye,
   Trash2,
+  MessageSquare,
   Filter,
   Grid,
   List,
@@ -555,20 +556,32 @@ const ParentChildren = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => navigate(`/parent/child/${child._id}/analytics`)}
-                    className="flex-1 px-3 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition text-sm flex items-center justify-center gap-1.5"
-                  >
-                    <Eye className="w-3.5 h-3.5" />
-                    View Progress
-                  </motion.button>
+                  <div className="flex-1 flex flex-col gap-2">
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => navigate(`/parent/child/${child._id}/analytics`)}
+                      className="w-full px-3 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition text-sm flex items-center justify-center gap-1.5"
+                    >
+                      <Eye className="w-3.5 h-3.5" />
+                      View Progress
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => navigate(`/parent/child/${child._id}/chat`)}
+                      className="w-full px-3 py-2 bg-slate-600 text-white rounded-lg font-medium hover:bg-slate-700 transition text-sm flex items-center justify-center gap-1.5"
+                      title="Chat with teacher"
+                    >
+                      <MessageSquare className="w-3.5 h-3.5" />
+                      Chat with Teacher
+                    </motion.button>
+                  </div>
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleRemoveChild(child._id, child.name)}
-                    className="px-3 py-2 bg-red-50 text-red-600 rounded-lg font-medium hover:bg-red-100 transition border border-red-200"
+                    className="px-3 py-2 bg-red-50 text-red-600 rounded-lg font-medium hover:bg-red-100 transition border border-red-200 self-start"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </motion.button>

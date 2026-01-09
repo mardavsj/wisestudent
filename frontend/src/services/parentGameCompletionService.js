@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 /**
  * Parent Game Completion Service
- * Handles CalmCoins for parent games (no XP/Level system)
+ * Handles Healcoins for parent games (no XP/Level system)
  */
 class ParentGameCompletionService {
   constructor() {
@@ -11,16 +11,16 @@ class ParentGameCompletionService {
   }
 
   /**
-   * Complete a parent game and award CalmCoins
+   * Complete a parent game and award Healcoins
    * @param {Object} gameData - Game completion data
    * @param {string} gameData.gameId - Unique game identifier
    * @param {string} gameData.gameType - Game category ('parent-education')
    * @param {number} gameData.gameIndex - 1-based game index
    * @param {number} gameData.score - Number of correct answers (0-5)
    * @param {number} gameData.totalLevels - Total questions (always 5 for parent games)
-   * @param {number} gameData.totalCoins - CalmCoins for this game (5/10/15/20)
+   * @param {number} gameData.totalCoins - Healcoins for this game (5/10/15/20)
    * @param {boolean} gameData.isReplay - Whether this is a replay attempt
-   * @returns {Promise<Object>} - Completion result with CalmCoins earned
+   * @returns {Promise<Object>} - Completion result with Healcoins earned
    */
   async completeGame(gameData) {
     try {
@@ -147,7 +147,7 @@ class ParentGameCompletionService {
       const response = await api.post(`/api/parent/game/unlock-replay/${gameId}`);
       
       if (response.data.success) {
-        toast.success(`Replay unlocked! ${response.data.replayCost} CalmCoins deducted.`);
+        toast.success(`Replay unlocked! ${response.data.replayCost} Healcoins deducted.`);
       }
       
       return response.data;

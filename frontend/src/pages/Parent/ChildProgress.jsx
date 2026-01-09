@@ -320,40 +320,54 @@ const ChildProgress = () => {
             <Target className="w-5 h-5 text-indigo-600" />
             Overall Mastery by Pillar
           </h2>
-          <div className="space-y-3">
-            {analytics?.overallMastery?.byPillar && Object.entries(analytics.overallMastery.byPillar).map(([pillar, percentage], idx) => {
-              const colorClasses = [
-                'bg-blue-600',
-                'bg-emerald-600',
-                'bg-indigo-600',
-                'bg-amber-600',
-                'bg-rose-600',
-                'bg-purple-600'
-              ];
-              return (
-                <motion.div
-                  key={pillar}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.03 }}
-                >
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-sm font-semibold text-slate-700 capitalize">{pillar}</span>
-                    <span className="text-base font-bold text-slate-900">
-                      {percentage}%
-                    </span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${percentage}%` }}
-                      transition={{ duration: 0.8, delay: idx * 0.03 + 0.2 }}
-                      className={`${colorClasses[idx % colorClasses.length]} h-2 rounded-full`}
-                    />
-                  </div>
-                </motion.div>
-              );
-            })}
+            <div className="space-y-3">
+              {analytics?.overallMastery?.byPillar && (() => {
+                const gender = (analytics?.detailedProgressReport?.childGender || '').toLowerCase();
+                return Object.entries(analytics.overallMastery.byPillar).filter(([pillar]) => {
+                  if (gender === 'male') return pillar !== 'Health - Female';
+                  if (gender === 'female') return pillar !== 'Health - Male';
+                  return true;
+                });
+              })().map(([pillar, percentage], idx) => {
+                const colorClasses = [
+                  'from-blue-500 to-indigo-600',
+                  'from-emerald-500 to-teal-600',
+                  'from-purple-500 to-pink-600',
+                  'from-amber-500 to-orange-600',
+                  'from-rose-500 to-red-600',
+                  'from-cyan-500 to-sky-600'
+                ];
+                const mastery = (() => {
+                  if (Array.isArray(percentage)) {
+                    const values = percentage.map(Number).filter((value) => Number.isFinite(value));
+                    if (values.length === 0) return 0;
+                    return Math.round(values.reduce((sum, value) => sum + value, 0) / values.length);
+                  }
+                  const value = Number(percentage);
+                  return Number.isFinite(value) ? value : 0;
+                })();
+                const clampedMastery = Math.max(0, Math.min(100, mastery));
+                return (
+                  <motion.div
+                    key={pillar}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.03 }}
+                  >
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-sm font-semibold text-slate-700 capitalize">{pillar}</span>
+                    </div>
+                    <div className="w-full bg-slate-200 rounded-full h-2">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${clampedMastery}%` }}
+                        transition={{ duration: 0.8, delay: idx * 0.03 + 0.2 }}
+                        className={`bg-gradient-to-r ${colorClasses[idx % colorClasses.length]} h-2 rounded-full`}
+                      />
+                    </div>
+                  </motion.div>
+                );
+              })}
           </div>
         </motion.div>
 
@@ -379,15 +393,6 @@ const ChildProgress = () => {
           </motion.div>
         )}
 
-        {/* Activity Timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <ActivityTimelineCard activityTimeline={getFilteredActivities()} />
-        </motion.div>
-
         {/* Progress Summary Stats */}
         {analytics?.detailedProgressReport && (
           <motion.div
@@ -400,7 +405,7 @@ const ChildProgress = () => {
               <TrendingUp className="w-5 h-5 text-indigo-600" />
               Progress Summary
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
                 <Gamepad2 className="w-6 h-6 text-blue-600 mb-2" />
                 <p className="text-xs font-medium text-slate-700 mb-1">Games Completed</p>
@@ -409,17 +414,16 @@ const ChildProgress = () => {
               <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4">
                 <Zap className="w-6 h-6 text-emerald-600 mb-2" />
                 <p className="text-xs font-medium text-slate-700 mb-1">HealCoins Earned</p>
-                <p className="text-2xl font-bold text-emerald-600">{(analytics.detailedProgressReport.weeklyCoins || 0) + (analytics.detailedProgressReport.monthlyCoins || 0)}</p>
+                <p className="text-2xl font-bold text-emerald-600">
+                  {analytics?.detailedProgressReport?.totalCoinsEarned
+                    ?? ((analytics?.detailedProgressReport?.weeklyCoins || 0)
+                      + (analytics?.detailedProgressReport?.monthlyCoins || 0))}
+                </p>
               </div>
               <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
                 <Clock className="w-6 h-6 text-amber-600 mb-2" />
                 <p className="text-xs font-medium text-slate-700 mb-1">Time Spent</p>
                 <p className="text-2xl font-bold text-amber-600">{analytics.detailedProgressReport.timeSpent || 0}m</p>
-              </div>
-              <div className="rounded-lg border border-purple-200 bg-purple-50 p-4">
-                <Target className="w-6 h-6 text-purple-600 mb-2" />
-                <p className="text-xs font-medium text-slate-700 mb-1">Overall Mastery</p>
-                <p className="text-2xl font-bold text-purple-600">{analytics?.overallMastery?.percentage || 0}%</p>
               </div>
             </div>
           </motion.div>
