@@ -60,8 +60,8 @@ export const completeParentGame = async (req, res) => {
     }
 
     // Calculate CalmCoins from gameIndex (if not provided)
-    const calculatedCalmCoins = gameIndex ? getCalmCoinsForGame(gameIndex) : (totalCoins || 5);
-    const calmCoinsToAward = totalCoins || calculatedCalmCoins;
+    const calculatedCalmCoins = gameIndex ? getCalmCoinsForGame(gameIndex) : (totalCoins ?? 5);
+    const calmCoinsToAward = (totalCoins ?? calculatedCalmCoins);
 
     // Find or create game progress
     let gameProgress = await UnifiedGameProgress.findOne({

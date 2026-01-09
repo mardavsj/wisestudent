@@ -128,6 +128,20 @@ const PresentParentBadgeCollector = () => {
             badge: result.badge
           }
         }));
+        try {
+          await parentGameCompletionService.completeGame({
+            gameId,
+            gameType: 'parent-education',
+            gameIndex: gameData?.gameIndex || null,
+            score: 5,
+            totalLevels: 5,
+            totalCoins: 0,
+            isReplay: false
+          });
+        } catch (error) {
+          console.error('Failed to mark badge game completed:', error);
+        }
+
       } else {
         toast.error(result.error || 'Failed to collect badge');
       }

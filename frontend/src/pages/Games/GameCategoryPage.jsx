@@ -1349,6 +1349,40 @@ const GameCategoryPage = () => {
   }, [games, gameCompletionStatus, category, ageGroup, getCurrentlyOpenGameIndex]);
 
   useEffect(() => {
+    const replayTargetId = location.state?.openReplayUnlockGameId;
+    if (!replayTargetId) return;
+    if (games.length === 0) return;
+
+    const targetGame = games.find((game) => game.id === replayTargetId);
+    if (!targetGame) return;
+
+    const progress = gameProgressData[replayTargetId];
+    if (progress?.replayUnlocked === true) {
+      navigate(location.pathname, { replace: true, state: {} });
+      return;
+    }
+
+    hasScrolledToCurrentGame.current = true;
+
+    const scrollTimer = setTimeout(() => {
+      const gameCardElement = gameCardRefs.current[replayTargetId];
+      if (gameCardElement) {
+        gameCardElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+          inline: 'nearest'
+        });
+      }
+    }, 300);
+
+    setSelectedGameForReplay(targetGame);
+    setShowReplayConfirmModal(true);
+    navigate(location.pathname, { replace: true, state: {} });
+
+    return () => clearTimeout(scrollTimer);
+  }, [games, gameProgressData, location.state, location.pathname, navigate]);
+
+  useEffect(() => {
     if (user?.dateOfBirth) {
       const age = calculateUserAge(user.dateOfBirth);
       setUserAge(age);

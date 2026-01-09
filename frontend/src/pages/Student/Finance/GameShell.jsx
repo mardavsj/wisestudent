@@ -3,6 +3,10 @@ import { useNavigate, useLocation } from "react-router-dom";
 import gameCompletionService from "../../../services/gameCompletionService";
 import { getGameDataById } from "../../../utils/getGameData";
 import { toast } from "react-toastify";
+import { RefreshCw, X, AlertCircle, Loader2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion"; //eslint-disable-line
+import { useWallet } from "../../../context/WalletContext";
+import api from "../../../utils/api";
 
 /* --------------------- Floating Background Particles --------------------- */
 const FloatingParticles = () => (
@@ -210,8 +214,12 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
   const [submissionComplete, setSubmissionComplete] = useState(false);
   const [wasReplay, setWasReplay] = useState(false);
   const [allAnswersCorrect, setAllAnswersCorrect] = useState(false);
+  const [showReplayUnlockModal, setShowReplayUnlockModal] = useState(false);
+  const [replayUnlockTarget, setReplayUnlockTarget] = useState(null);
+  const [isUnlockingReplay, setIsUnlockingReplay] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { wallet, refreshWallet, setWallet } = useWallet();
   const questionCount = totalLevels || location.state?.totalLevels || 5; // default to 5 questions if not provided
   const displayTotal = questionCount;
   const isFullCompletion = true; // Game over modal always represents a full completion attempt
@@ -370,6 +378,93 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
   }, [gameId, gameType, scoreAsCoins, normalizedCorrectCount, totalLevels, maxScore, coinsPerLevel, totalCoins, totalXp, isReplay, submissionComplete, isBadgeGameResolved, resolvedBadgeName, resolvedBadgeImage]);
 
   const showBadgeReward = isBadgeGameResolved && (badgeEarned || badgeAlreadyEarned);
+  const getGameIndexFromId = (id) => {
+    if (!id) return null;
+    const parts = id.split("-");
+    const parsed = parseInt(parts[parts.length - 1], 10);
+    return Number.isNaN(parsed) ? null : parsed;
+  };
+  const getReplayCostForGameId = (id) => {
+    const index = getGameIndexFromId(id);
+    if (!index) return 2;
+    if (index <= 25) return 2;
+    if (index <= 50) return 4;
+    if (index <= 75) return 6;
+    return 8;
+  };
+  const openReplayUnlockModal = (id, path) => {
+    const gameData = id ? getGameDataById(id) : null;
+    setReplayUnlockTarget({
+      id,
+      path,
+      title: gameData?.title || "this game",
+    });
+    setShowReplayUnlockModal(true);
+  };
+  const handleCancelReplayUnlock = () => {
+    if (isUnlockingReplay) return;
+    setShowReplayUnlockModal(false);
+    setReplayUnlockTarget(null);
+  };
+  const handleUnlockReplay = async () => {
+    if (!replayUnlockTarget?.id || isUnlockingReplay) return;
+    const replayCost = getReplayCostForGameId(replayUnlockTarget.id);
+
+    if (!wallet || wallet.balance < replayCost) {
+      toast.error(
+        `Insufficient balance! You need ${replayCost} HealCoins to unlock replay.`,
+        {
+          duration: 4000,
+          position: "bottom-center",
+        }
+      );
+      return;
+    }
+
+    setIsUnlockingReplay(true);
+    try {
+      const response = await api.post(`/api/game/unlock-replay/${replayUnlockTarget.id}`);
+      if (response.data?.replayUnlocked) {
+        const nextBalance = response.data.balance ?? response.data.newBalance;
+        if (nextBalance !== undefined && setWallet) {
+          setWallet((prev) => (prev ? { ...prev, balance: nextBalance } : { balance: nextBalance }));
+        }
+        if (refreshWallet) {
+          refreshWallet();
+        }
+        toast.success(response.data.message || "Replay unlocked! Opening game...", {
+          duration: 2000,
+          position: "bottom-center",
+        });
+        const returnPath = location.state?.returnPath || "/games";
+        navigate(replayUnlockTarget.path, {
+          state: {
+            returnPath: returnPath,
+            coinsPerLevel: location.state?.coinsPerLevel || null,
+            totalCoins: location.state?.totalCoins || null,
+            totalXp: location.state?.totalXp || null,
+            maxScore: location.state?.maxScore || null,
+            isReplay: true,
+          }
+        });
+      } else {
+        toast.error("Failed to unlock replay. Please try again.", {
+          duration: 4000,
+          position: "bottom-center",
+        });
+      }
+    } catch (error) {
+      const errorMessage = error.response?.data?.error || error.message || "Failed to unlock replay. Please try again.";
+      toast.error(errorMessage, {
+        duration: 5000,
+        position: "bottom-center",
+      });
+    } finally {
+      setIsUnlockingReplay(false);
+      setShowReplayUnlockModal(false);
+      setReplayUnlockTarget(null);
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -525,16 +620,7 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
                       // Check if replay is unlocked
                       if (!nextGameProgress?.replayUnlocked) {
                         // Game is completed but replay not unlocked
-                        toast.error(
-                          "You've already collected all HealCoins for this game. Unlock replay to play again!",
-                          {
-                            duration: 4000,
-                            position: "bottom-center",
-                            icon: "🔒",
-                          }
-                        );
-                        // Don't navigate - close modal instead
-                        onClose();
+                        openReplayUnlockModal(resolvedNextGameId, resolvedNextGamePath);
                         return;
                       }
                       // Replay is unlocked - allow navigation (will be treated as replay)
@@ -580,6 +666,93 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
           )}
         </div>
       </div>
+
+      <AnimatePresence>
+        {showReplayUnlockModal && replayUnlockTarget && (
+          <div
+            className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+            onClick={handleCancelReplayUnlock}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-md w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full flex items-center justify-center">
+                    <RefreshCw className="w-6 h-6 text-white" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-gray-900">Unlock Replay</h2>
+                </div>
+                <button
+                  onClick={handleCancelReplayUnlock}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                >
+                  <X className="w-5 h-5 text-gray-500" />
+                </button>
+              </div>
+
+              <div className="mb-6">
+                <p className="text-gray-700 mb-4">
+                  Unlock replay for <span className="font-semibold text-gray-900">"{replayUnlockTarget.title}"</span>?
+                </p>
+
+                <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl p-4 mb-4 border border-yellow-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-gray-700 font-medium">Cost:</span>
+                    <span className="text-2xl font-bold text-amber-600">{getReplayCostForGameId(replayUnlockTarget.id)} HealCoins</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700 font-medium">Your Balance:</span>
+                    <span className="text-lg font-semibold text-gray-900">{wallet?.balance || 0} HealCoins</span>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+                  <div className="flex items-start gap-2">
+                    <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-blue-800">
+                      <span className="font-semibold">Note:</span> You won't earn coins when replaying this game. The game will be locked again after you complete the replay.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <button
+                  onClick={handleCancelReplayUnlock}
+                  disabled={isUnlockingReplay}
+                  className="flex-1 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleUnlockReplay}
+                  disabled={isUnlockingReplay}
+                  className="flex-1 px-4 py-3 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  {isUnlockingReplay ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Processing...</span>
+                    </>
+                  ) : (
+                    <>
+                      <RefreshCw className="w-4 h-4" />
+                      <span>Unlock Replay</span>
+                    </>
+                  )}
+                </button>
+              </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* Animations */}
       <style>{`
