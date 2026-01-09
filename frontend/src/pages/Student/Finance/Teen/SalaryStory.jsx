@@ -191,6 +191,8 @@ const SalaryStory = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/debate-save-vs-spend"
+      nextGameIdProp="finance-teens-6"
       gameType="finance"
       totalLevels={5}
       currentLevel={currentQuestion + 1}

@@ -177,6 +177,8 @@ const ReflexBudgetSmarts = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/badge-budget-hero"
+      nextGameIdProp="finance-teens-30"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}

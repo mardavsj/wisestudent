@@ -232,6 +232,8 @@ const SimulationFraudAlert = () => {
       maxScore={scenarios.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-scam-check"
+      nextGameIdProp="finance-teens-89"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -282,3 +284,4 @@ const SimulationFraudAlert = () => {
 };
 
 export default SimulationFraudAlert;
+

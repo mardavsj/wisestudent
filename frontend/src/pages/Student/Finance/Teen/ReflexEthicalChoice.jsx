@@ -220,6 +220,8 @@ const ReflexEthicalChoice = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/puzzle-right-vs-wrong"
+      nextGameIdProp="finance-teens-94"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -303,3 +305,4 @@ const ReflexEthicalChoice = () => {
 };
 
 export default ReflexEthicalChoice;
+

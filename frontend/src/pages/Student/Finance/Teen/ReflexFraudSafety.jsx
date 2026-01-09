@@ -220,6 +220,8 @@ const ReflexFraudSafety = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/puzzle-of-rights"
+      nextGameIdProp="finance-teens-84"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -303,3 +305,4 @@ const ReflexFraudSafety = () => {
 };
 
 export default ReflexFraudSafety;
+

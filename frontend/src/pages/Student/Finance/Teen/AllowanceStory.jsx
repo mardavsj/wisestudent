@@ -193,6 +193,8 @@ const AllowanceStory = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/budget-quiz"
+      nextGameIdProp="finance-teens-22"
       gameType="finance"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

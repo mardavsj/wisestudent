@@ -195,6 +195,8 @@ const MovieVsBusFareStory = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/needs-vs-wants-quiz"
+      nextGameIdProp="finance-teens-32"
       gameType="finance"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

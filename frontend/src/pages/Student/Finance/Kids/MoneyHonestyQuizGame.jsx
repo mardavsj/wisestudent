@@ -213,6 +213,8 @@ const MoneyHonestyQuizGame = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-92"
+      nextGamePathProp="/student/finance/kids/reflex-ethics-game"
+      nextGameIdProp="finance-kids-93"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -255,3 +257,4 @@ const MoneyHonestyQuizGame = () => {
 };
 
 export default MoneyHonestyQuizGame;
+

@@ -222,6 +222,8 @@ const BudgetingQuiz = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-22"
+      nextGamePathProp="/student/finance/kids/Reflex-Budget"
+      nextGameIdProp="finance-kids-23"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -269,3 +271,4 @@ const BudgetingQuiz = () => {
 };
 
 export default BudgetingQuiz;
+

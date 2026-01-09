@@ -237,6 +237,8 @@ const SimulationMonthlyAllowance = () => {
       maxScore={scenarios.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-budget-smarts"
+      nextGameIdProp="finance-teens-29"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

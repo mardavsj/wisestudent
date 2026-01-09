@@ -193,6 +193,8 @@ const ExamPrepStory = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/debate-wants-matter-too"
+      nextGameIdProp="finance-teens-36"
       gameType="finance"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

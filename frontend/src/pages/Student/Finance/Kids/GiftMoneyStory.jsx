@@ -217,6 +217,8 @@ const GiftMoneyStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-38"
+      nextGamePathProp="/student/finance/kids/reflex-smart-pick"
+      nextGameIdProp="finance-kids-39"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

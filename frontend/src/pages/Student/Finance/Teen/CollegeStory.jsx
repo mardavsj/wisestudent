@@ -190,6 +190,8 @@ const CollegeStory = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/debate-budget-freedom"
+      nextGameIdProp="finance-teens-26"
       gameType="finance"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

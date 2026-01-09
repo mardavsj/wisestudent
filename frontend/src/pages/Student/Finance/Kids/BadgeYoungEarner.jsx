@@ -228,6 +228,8 @@ const BadgeYoungEarner = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/candy-shop-storyy"
+      nextGameIdProp="finance-kids-81"
       gameType="finance"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}
@@ -341,3 +343,4 @@ const BadgeYoungEarner = () => {
 };
 
 export default BadgeYoungEarner;
+

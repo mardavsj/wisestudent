@@ -93,6 +93,8 @@ const PosterBanksHelp = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/journal-first-bank"
+      nextGameIdProp="finance-kids-47"
       gameType="finance"
       maxScore={5}
       totalCoins={totalCoins}

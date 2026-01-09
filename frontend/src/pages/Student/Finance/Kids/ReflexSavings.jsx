@@ -217,6 +217,8 @@ const ReflexSavings = () => {
       showGameOver={gameState === "finished"}
       score={finalScore}
       gameId="finance-kids-3"
+      nextGamePathProp="/student/finance/kids/puzzle-save-or-spend"
+      nextGameIdProp="finance-kids-4"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

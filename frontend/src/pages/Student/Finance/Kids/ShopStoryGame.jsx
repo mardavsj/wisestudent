@@ -205,6 +205,8 @@ const ShopStoryGame = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/reflex-money-truth-game"
+      nextGameIdProp="finance-kids-99"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -247,3 +249,4 @@ const ShopStoryGame = () => {
 };
 
 export default ShopStoryGame;
+

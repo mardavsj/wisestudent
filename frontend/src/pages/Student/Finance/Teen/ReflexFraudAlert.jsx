@@ -220,6 +220,8 @@ const ReflexFraudAlert = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/badge-digital-money-smart"
+      nextGameIdProp="finance-teens-50"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -303,3 +305,4 @@ const ReflexFraudAlert = () => {
 };
 
 export default ReflexFraudAlert;
+

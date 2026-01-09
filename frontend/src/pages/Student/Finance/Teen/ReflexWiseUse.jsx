@@ -180,6 +180,8 @@ const ReflexWiseUse = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/badge-smart-saver"
+      nextGameIdProp="finance-teens-10"
       gameType="finance"
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}

@@ -212,6 +212,8 @@ const BadgeDebtSmart = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/savings-account-story"
+      nextGameIdProp="finance-teens-61"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -304,3 +306,4 @@ const BadgeDebtSmart = () => {
 };
 
 export default BadgeDebtSmart;
+

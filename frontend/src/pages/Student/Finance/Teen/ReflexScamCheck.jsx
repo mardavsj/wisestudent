@@ -233,6 +233,8 @@ const ReflexScamCheck = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/badge-consumer-protector"
+      nextGameIdProp="finance-teens-90"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -316,3 +318,4 @@ const ReflexScamCheck = () => {
 };
 
 export default ReflexScamCheck;
+

@@ -220,6 +220,8 @@ const ReflexControl = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/badge-smart-spender-teen"
+      nextGameIdProp="finance-teens-20"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}

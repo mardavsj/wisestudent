@@ -118,6 +118,8 @@ const DebateWantsMatter = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/journal-of-balance"
+      nextGameIdProp="finance-teens-37"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

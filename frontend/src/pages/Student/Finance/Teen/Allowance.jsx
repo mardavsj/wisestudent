@@ -115,6 +115,8 @@ const Allowance = () => {
       totalLevels={stages.length}
       coinsPerLevel={coinsPerLevel}
       onNext={showResult ? handleNext : null}
+      nextGamePathProp="/student/finance/teen/debt-quiz"
+      nextGameIdProp="finance-teens-52"
       nextEnabled={showResult && finalScore>= 3}
       maxScore={stages.length} // Max score is total number of questions (all correct)
       totalCoins={totalCoins}

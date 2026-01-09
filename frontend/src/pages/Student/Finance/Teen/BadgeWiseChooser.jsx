@@ -215,6 +215,8 @@ const BadgeWiseChooser = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/online-payment-story"
+      nextGameIdProp="finance-teens-41"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -307,3 +309,4 @@ const BadgeWiseChooser = () => {
 };
 
 export default BadgeWiseChooser;
+

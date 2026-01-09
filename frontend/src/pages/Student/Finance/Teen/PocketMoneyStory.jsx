@@ -199,6 +199,8 @@ const PocketMoneyStory = () => {
       score={coins}
       subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/finance/teen/quiz-on-savings-rate"
+      nextGameIdProp="finance-teens-2"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}

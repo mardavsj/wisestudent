@@ -86,6 +86,8 @@ const JournalOfConsumerRights = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/simulation-fraud-alert"
+      nextGameIdProp="finance-teens-88"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -149,4 +151,5 @@ const JournalOfConsumerRights = () => {
 };
 
 export default JournalOfConsumerRights;
+
 

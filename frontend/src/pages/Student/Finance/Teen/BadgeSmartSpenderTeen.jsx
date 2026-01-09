@@ -223,6 +223,8 @@ const BadgeSmartSpenderTeen = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/allowance-story"
+      nextGameIdProp="finance-teens-21"
       gameType="finance"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}

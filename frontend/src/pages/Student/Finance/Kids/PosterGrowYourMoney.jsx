@@ -93,6 +93,8 @@ const PosterGrowYourMoney = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/journal-of-growth"
+      nextGameIdProp="finance-kids-67"
       gameType="finance"
       maxScore={5}
       totalCoins={totalCoins}

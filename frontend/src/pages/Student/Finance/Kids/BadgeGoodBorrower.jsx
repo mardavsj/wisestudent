@@ -227,6 +227,8 @@ const BadgeGoodBorrower = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/tree-story"
+      nextGameIdProp="finance-kids-61"
       gameType="finance"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}

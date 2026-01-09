@@ -204,6 +204,8 @@ const BusinessRiskStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/debate-job-vs-business"
+      nextGameIdProp="finance-teens-76"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -291,3 +293,4 @@ const BusinessRiskStory = () => {
 };
 
 export default BusinessRiskStory;
+

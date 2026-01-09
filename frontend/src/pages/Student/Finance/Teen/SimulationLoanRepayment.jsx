@@ -240,6 +240,8 @@ const SimulationLoanRepayment = () => {
       maxScore={scenarios.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-debt-control"
+      nextGameIdProp="finance-teens-59"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -329,3 +331,4 @@ const SimulationLoanRepayment = () => {
 };
 
 export default SimulationLoanRepayment;
+

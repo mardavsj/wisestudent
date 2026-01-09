@@ -224,6 +224,8 @@ const BadgeBankExplorer = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/pencil-story"
+      nextGameIdProp="finance-kids-51"
       gameType="finance"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}
@@ -337,3 +339,4 @@ const BadgeBankExplorer = () => {
 };
 
 export default BadgeBankExplorer;
+

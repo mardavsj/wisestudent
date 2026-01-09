@@ -117,6 +117,8 @@ const NeedsVsWantsQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/reflex-decision"
+      nextGameIdProp="finance-teens-33"
       gameType="finance"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

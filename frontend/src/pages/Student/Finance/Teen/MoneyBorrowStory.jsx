@@ -195,6 +195,8 @@ const MoneyBorrowStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/debt-quiz"
+      nextGameIdProp="finance-teens-52"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -282,3 +284,4 @@ const MoneyBorrowStory = () => {
 };
 
 export default MoneyBorrowStory;
+

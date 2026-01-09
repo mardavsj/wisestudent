@@ -93,6 +93,8 @@ const PosterWorkToEarn = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/journal-of-earning"
+      nextGameIdProp="finance-kids-77"
       gameType="finance"
       maxScore={5}
       totalCoins={totalCoins}

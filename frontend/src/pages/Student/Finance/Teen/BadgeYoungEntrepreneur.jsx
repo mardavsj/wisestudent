@@ -212,6 +212,8 @@ const BadgeYoungEntrepreneur = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/fake-online-offer-story"
+      nextGameIdProp="finance-teens-81"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -304,3 +306,4 @@ const BadgeYoungEntrepreneur = () => {
 };
 
 export default BadgeYoungEntrepreneur;
+

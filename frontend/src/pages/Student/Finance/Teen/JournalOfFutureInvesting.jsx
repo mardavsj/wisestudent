@@ -79,6 +79,8 @@ const JournalOfFutureInvesting = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/simulation-1000-choice"
+      nextGameIdProp="finance-teens-68"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -186,4 +188,5 @@ const JournalOfFutureInvesting = () => {
 };
 
 export default JournalOfFutureInvesting;
+
 

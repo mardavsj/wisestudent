@@ -214,6 +214,8 @@ const BadgeDigitalMoneySmart = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/money-borrow-story"
+      nextGameIdProp="finance-teens-51"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -306,3 +308,4 @@ const BadgeDigitalMoneySmart = () => {
 };
 
 export default BadgeDigitalMoneySmart;
+

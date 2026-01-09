@@ -202,6 +202,8 @@ const SavingsAccountStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/investment-quiz"
+      nextGameIdProp="finance-teens-62"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -289,3 +291,4 @@ const SavingsAccountStory = () => {
 };
 
 export default SavingsAccountStory;
+

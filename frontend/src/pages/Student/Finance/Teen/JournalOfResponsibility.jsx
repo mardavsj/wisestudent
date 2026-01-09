@@ -86,6 +86,8 @@ const JournalOfResponsibility = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/simulation-charity-choice"
+      nextGameIdProp="finance-teens-98"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -149,3 +151,4 @@ const JournalOfResponsibility = () => {
 };
 
 export default JournalOfResponsibility;
+

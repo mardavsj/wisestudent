@@ -234,6 +234,8 @@ const ReflexSmartSpend = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/badge-wise-chooser"
+      nextGameIdProp="finance-teens-40"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -317,3 +319,4 @@ const ReflexSmartSpend = () => {
 };
 
 export default ReflexSmartSpend;
+

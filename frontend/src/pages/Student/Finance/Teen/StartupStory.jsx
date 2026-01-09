@@ -201,6 +201,8 @@ const StartupStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/debate-save-vs-invest"
+      nextGameIdProp="finance-teens-66"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -288,3 +290,4 @@ const StartupStory = () => {
 };
 
 export default StartupStory;
+

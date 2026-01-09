@@ -202,6 +202,8 @@ const DebateMoneyAndMorals = () => {
       maxScore={rounds.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/journal-responsibility"
+      nextGameIdProp="finance-teens-97"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -252,3 +254,4 @@ const DebateMoneyAndMorals = () => {
 };
 
 export default DebateMoneyAndMorals;
+

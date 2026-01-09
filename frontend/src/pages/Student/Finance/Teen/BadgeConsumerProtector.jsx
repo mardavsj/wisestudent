@@ -212,6 +212,8 @@ const BadgeConsumerProtector = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/scholarship-story"
+      nextGameIdProp="finance-teens-91"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -267,3 +269,4 @@ const BadgeConsumerProtector = () => {
 };
 
 export default BadgeConsumerProtector;
+

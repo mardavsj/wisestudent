@@ -201,6 +201,8 @@ const ConsumerQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-fraud-safety"
+      nextGameIdProp="finance-teens-83"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -288,3 +290,4 @@ const ConsumerQuiz = () => {
 };
 
 export default ConsumerQuiz;
+

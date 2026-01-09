@@ -213,6 +213,8 @@ const MoneyBankStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-1"
+      nextGamePathProp="/student/finance/kids/quiz-on-saving"
+      nextGameIdProp="finance-kids-2"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -255,3 +257,4 @@ const MoneyBankStory = () => {
 };
 
 export default MoneyBankStory;
+

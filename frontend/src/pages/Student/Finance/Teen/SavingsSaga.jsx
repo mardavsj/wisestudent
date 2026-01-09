@@ -198,6 +198,8 @@ const SavingsSaga = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/spending-quiz"
+      nextGameIdProp="finance-teens-12"
       gameType="finance"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}
@@ -281,4 +283,5 @@ const SavingsSaga = () => {
 };
 
 export default SavingsSaga;
+
 

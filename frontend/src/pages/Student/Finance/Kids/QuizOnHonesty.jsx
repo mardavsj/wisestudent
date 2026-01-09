@@ -214,6 +214,8 @@ const QuizOnHonesty = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-82"
+      nextGamePathProp="/student/finance/kids/reflex-scam-alert"
+      nextGameIdProp="finance-kids-83"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

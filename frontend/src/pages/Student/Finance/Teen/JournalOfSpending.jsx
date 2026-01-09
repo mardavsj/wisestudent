@@ -82,6 +82,8 @@ const JournalOfSpending = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/simulation-shopping-mall"
+      nextGameIdProp="finance-teens-18"
       gameType="finance"
       maxScore={5}
       totalCoins={totalCoins}

@@ -86,6 +86,8 @@ const JournalOfEntrepreneurDream = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/simulation-mini-startup"
+      nextGameIdProp="finance-teens-78"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -149,4 +151,5 @@ const JournalOfEntrepreneurDream = () => {
 };
 
 export default JournalOfEntrepreneurDream;
+
 

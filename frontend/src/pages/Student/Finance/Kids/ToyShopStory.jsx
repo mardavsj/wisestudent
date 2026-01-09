@@ -205,6 +205,8 @@ const ToyShopStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/reflex-check-first"
+      nextGameIdProp="finance-kids-89"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -247,3 +249,4 @@ const ToyShopStory = () => {
 };
 
 export default ToyShopStory;
+

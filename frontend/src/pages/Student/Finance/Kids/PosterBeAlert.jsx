@@ -93,6 +93,8 @@ const PosterBeAlert = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/journal-safety"
+      nextGameIdProp="finance-kids-87"
       gameType="finance"
       maxScore={5}
       totalCoins={totalCoins}

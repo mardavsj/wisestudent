@@ -220,6 +220,8 @@ const ReflexDecision = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/puzzle-real-priorities"
+      nextGameIdProp="finance-teens-34"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}

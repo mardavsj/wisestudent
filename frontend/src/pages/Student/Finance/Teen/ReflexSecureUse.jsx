@@ -232,6 +232,8 @@ const ReflexSecureUse = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/puzzle-of-digital-tools"
+      nextGameIdProp="finance-teens-44"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -315,3 +317,4 @@ const ReflexSecureUse = () => {
 };
 
 export default ReflexSecureUse;
+

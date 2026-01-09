@@ -220,6 +220,8 @@ const ReflexDebtControl = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/badge-debt-smart"
+      nextGameIdProp="finance-teens-60"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -303,3 +305,4 @@ const ReflexDebtControl = () => {
 };
 
 export default ReflexDebtControl;
+

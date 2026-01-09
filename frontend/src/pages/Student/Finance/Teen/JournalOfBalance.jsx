@@ -79,6 +79,8 @@ const JournalOfBalance = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/simulation-monthly-budget"
+      nextGameIdProp="finance-teens-38"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -186,3 +188,4 @@ const JournalOfBalance = () => {
 };
 
 export default JournalOfBalance;
+

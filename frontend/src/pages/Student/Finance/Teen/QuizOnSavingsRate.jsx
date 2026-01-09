@@ -199,6 +199,8 @@ const QuizOnSavingsRate = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-smart-saver"
+      nextGameIdProp="finance-teens-3"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

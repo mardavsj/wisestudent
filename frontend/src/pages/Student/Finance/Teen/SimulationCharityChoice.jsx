@@ -232,6 +232,8 @@ const SimulationCharityChoice = () => {
       maxScore={scenarios.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-fairness"
+      nextGameIdProp="finance-teens-99"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -283,3 +285,4 @@ const SimulationCharityChoice = () => {
 };
 
 export default SimulationCharityChoice;
+

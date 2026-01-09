@@ -239,6 +239,8 @@ const SimulationDigitalSpend = () => {
       maxScore={scenarios.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-fraud-alert"
+      nextGameIdProp="finance-teens-49"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -328,3 +330,4 @@ const SimulationDigitalSpend = () => {
 };
 
 export default SimulationDigitalSpend;
+

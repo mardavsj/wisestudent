@@ -197,6 +197,8 @@ const DebateCashVsOnlineSafety = () => {
       maxScore={rounds.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/journal-consumer-rights"
+      nextGameIdProp="finance-teens-87"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -247,3 +249,4 @@ const DebateCashVsOnlineSafety = () => {
 };
 
 export default DebateCashVsOnlineSafety;
+

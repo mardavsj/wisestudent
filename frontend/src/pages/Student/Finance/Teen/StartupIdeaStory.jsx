@@ -203,6 +203,8 @@ const StartupIdeaStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/quiz-on-entrepreneurship"
+      nextGameIdProp="finance-teens-72"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -290,3 +292,4 @@ const StartupIdeaStory = () => {
 };
 
 export default StartupIdeaStory;
+

@@ -201,6 +201,8 @@ const FakeOnlineOfferStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/consumer-quiz"
+      nextGameIdProp="finance-teens-82"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -288,3 +290,4 @@ const FakeOnlineOfferStory = () => {
 };
 
 export default FakeOnlineOfferStory;
+

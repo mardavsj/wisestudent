@@ -228,6 +228,8 @@ const BadgeScamSpotterKid = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/lost-coin-story-game"
+      nextGameIdProp="finance-kids-91"
       gameType="finance"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}
@@ -341,3 +343,4 @@ const BadgeScamSpotterKid = () => {
 };
 
 export default BadgeScamSpotterKid;
+

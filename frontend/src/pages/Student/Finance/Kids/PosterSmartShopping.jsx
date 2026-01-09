@@ -93,6 +93,8 @@ const PosterSmartShopping = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId="finance-kids-16"
+      nextGamePathProp="/student/finance/kids/journal-of-smart-buy"
+      nextGameIdProp="finance-kids-17"
       gameType="finance"
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}

@@ -195,6 +195,8 @@ const OnlinePaymentStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/quiz-on-digital-money"
+      nextGameIdProp="finance-teens-42"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -282,3 +284,4 @@ const OnlinePaymentStory = () => {
 };
 
 export default OnlinePaymentStory;
+

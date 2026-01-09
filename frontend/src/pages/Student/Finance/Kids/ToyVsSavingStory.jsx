@@ -209,6 +209,8 @@ const ToyVsSavingStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/reflex-growth-check"
+      nextGameIdProp="finance-kids-69"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

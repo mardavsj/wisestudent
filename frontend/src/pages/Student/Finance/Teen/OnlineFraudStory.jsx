@@ -197,6 +197,8 @@ const OnlineFraudStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/debate-cash-vs-digital"
+      nextGameIdProp="finance-teens-46"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -284,3 +286,4 @@ const OnlineFraudStory = () => {
 };
 
 export default OnlineFraudStory;
+

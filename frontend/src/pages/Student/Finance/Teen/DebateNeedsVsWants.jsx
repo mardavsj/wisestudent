@@ -179,6 +179,8 @@ const DebateNeedsVsWants = () => {
       title="Debate: Needs vs Wants"
       subtitle={isGameComplete ? "Debate Complete!" : `Scenario ${currentRound + 1} of ${debateTopics.length}`}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/journal-of-spending"
+      nextGameIdProp="finance-teens-17"
       gameType="finance"
       totalLevels={debateTopics.length}
       currentLevel={currentRound + 1}

@@ -201,6 +201,8 @@ const BorrowingStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/debate-borrow-good-or-bad"
+      nextGameIdProp="finance-teens-56"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -288,3 +290,4 @@ const BorrowingStory = () => {
 };
 
 export default BorrowingStory;
+

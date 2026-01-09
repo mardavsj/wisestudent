@@ -213,6 +213,8 @@ const ATMStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-48"
+      nextGamePathProp="/student/finance/kids/reflex-bank-symbols"
+      nextGameIdProp="finance-kids-49"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -255,3 +257,4 @@ const ATMStory = () => {
 };
 
 export default ATMStory;
+

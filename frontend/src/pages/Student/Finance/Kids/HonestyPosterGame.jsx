@@ -94,6 +94,8 @@ const HonestyPosterGame = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/ethics-journal-game"
+      nextGameIdProp="finance-kids-97"
       gameType="finance"
       maxScore={5}
       totalCoins={totalCoins}
@@ -123,3 +125,4 @@ const HonestyPosterGame = () => {
 };
 
 export default HonestyPosterGame;
+

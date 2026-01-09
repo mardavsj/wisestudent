@@ -216,6 +216,8 @@ const SchoolFairStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-28"
+      nextGamePathProp="/student/finance/kids/Reflex-Money-Plan"
+      nextGameIdProp="finance-kids-29"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

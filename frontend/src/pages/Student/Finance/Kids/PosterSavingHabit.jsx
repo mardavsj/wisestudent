@@ -224,6 +224,8 @@ const PosterSavingHabit = () => {
       showGameOver={showResult && isLastStage && isCorrect}
       score={coins}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/journal-of-saving"
+      nextGameIdProp="finance-kids-7"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

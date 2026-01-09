@@ -196,6 +196,8 @@ const FakeCallStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/debate-cash-vs-online-safety"
+      nextGameIdProp="finance-teens-86"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -246,3 +248,4 @@ const FakeCallStory = () => {
 };
 
 export default FakeCallStory;
+

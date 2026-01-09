@@ -212,6 +212,8 @@ const BadgeSmartInvestor = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/startup-idea-story"
+      nextGameIdProp="finance-teens-71"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -304,3 +306,4 @@ const BadgeSmartInvestor = () => {
 };
 
 export default BadgeSmartInvestor;
+

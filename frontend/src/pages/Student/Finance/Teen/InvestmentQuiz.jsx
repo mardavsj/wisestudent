@@ -206,6 +206,8 @@ const InvestmentQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-investor-smartness"
+      nextGameIdProp="finance-teens-63"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -293,3 +295,4 @@ const InvestmentQuiz = () => {
 };
 
 export default InvestmentQuiz;
+

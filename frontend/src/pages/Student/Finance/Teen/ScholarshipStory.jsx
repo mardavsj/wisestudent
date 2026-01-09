@@ -195,6 +195,8 @@ const ScholarshipStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/ethics-quiz"
+      nextGameIdProp="finance-teens-92"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -245,3 +247,4 @@ const ScholarshipStory = () => {
 };
 
 export default ScholarshipStory;
+

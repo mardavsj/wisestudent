@@ -211,6 +211,8 @@ const QuizOnNeeds = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/reflex-need-vs-want"
+      nextGameIdProp="finance-kids-33"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

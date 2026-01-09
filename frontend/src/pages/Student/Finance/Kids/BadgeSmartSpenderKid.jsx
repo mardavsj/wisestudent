@@ -227,6 +227,8 @@ const BadgeSmartSpenderKid = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/Candy-Story"
+      nextGameIdProp="finance-kids-21"
       gameType="finance"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}

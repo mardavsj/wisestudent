@@ -226,6 +226,8 @@ const BadgeSmartSaver = () => {
       showGameOver={showResult}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/savings-saga"
+      nextGameIdProp="finance-teens-11"
       gameType="finance"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}

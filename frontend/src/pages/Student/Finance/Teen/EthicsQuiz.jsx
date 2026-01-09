@@ -195,6 +195,8 @@ const EthicsQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-ethical-choice"
+      nextGameIdProp="finance-teens-93"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -245,3 +247,4 @@ const EthicsQuiz = () => {
 };
 
 export default EthicsQuiz;
+

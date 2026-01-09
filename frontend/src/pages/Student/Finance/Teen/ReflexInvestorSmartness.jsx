@@ -229,6 +229,8 @@ const ReflexInvestorSmartness = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/puzzle-investment-types"
+      nextGameIdProp="finance-teens-64"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -312,3 +314,4 @@ const ReflexInvestorSmartness = () => {
 };
 
 export default ReflexInvestorSmartness;
+

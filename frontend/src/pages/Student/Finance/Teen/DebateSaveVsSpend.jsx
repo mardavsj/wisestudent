@@ -190,6 +190,8 @@ const DebateSaveVsSpend = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/journal-of-saving-goal"
+      nextGameIdProp="finance-teens-7"
       gameType="finance"
       totalLevels={5}
       currentLevel={currentQuestion + 1}

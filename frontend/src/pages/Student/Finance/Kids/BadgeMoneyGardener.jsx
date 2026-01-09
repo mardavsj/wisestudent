@@ -228,6 +228,8 @@ const BadgeMoneyGardener = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/lemonade-story"
+      nextGameIdProp="finance-kids-71"
       gameType="finance"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}
@@ -341,3 +343,4 @@ const BadgeMoneyGardener = () => {
 };
 
 export default BadgeMoneyGardener;
+

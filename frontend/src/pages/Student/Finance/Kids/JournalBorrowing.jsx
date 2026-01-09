@@ -85,6 +85,8 @@ const JournalBorrowing = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/toy-story"
+      nextGameIdProp="finance-kids-58"
       gameType="finance"
       maxScore={5}
       totalCoins={totalCoins}

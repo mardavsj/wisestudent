@@ -204,6 +204,8 @@ const QuizOnEntrepreneurship = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-entrepreneur-traits"
+      nextGameIdProp="finance-teens-73"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -291,4 +293,5 @@ const QuizOnEntrepreneurship = () => {
 };
 
 export default QuizOnEntrepreneurship;
+
 

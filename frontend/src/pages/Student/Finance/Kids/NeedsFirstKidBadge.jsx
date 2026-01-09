@@ -226,6 +226,8 @@ const NeedsFirstKidBadge = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/bank-visit-story"
+      nextGameIdProp="finance-kids-41"
       gameType="finance"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}

@@ -220,6 +220,8 @@ const ReflexFairness = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/badge-ethical-financier"
+      nextGameIdProp="finance-teens-100"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -303,3 +305,4 @@ const ReflexFairness = () => {
 };
 
 export default ReflexFairness;
+

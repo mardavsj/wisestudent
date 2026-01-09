@@ -213,6 +213,8 @@ const QuizBanks = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-42"
+      nextGamePathProp="/student/finance/kids/reflex-bank"
+      nextGameIdProp="finance-kids-43"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

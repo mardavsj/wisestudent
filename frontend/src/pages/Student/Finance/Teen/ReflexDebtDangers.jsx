@@ -220,6 +220,8 @@ const ReflexDebtDangers = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/puzzle-loan-basics"
+      nextGameIdProp="finance-teens-54"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -303,3 +305,4 @@ const ReflexDebtDangers = () => {
 };
 
 export default ReflexDebtDangers;
+

@@ -199,6 +199,8 @@ const DebtQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-debt-dangers"
+      nextGameIdProp="finance-teens-53"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -286,3 +288,4 @@ const DebtQuiz = () => {
 };
 
 export default DebtQuiz;
+

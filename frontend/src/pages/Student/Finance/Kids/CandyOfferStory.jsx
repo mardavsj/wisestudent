@@ -219,6 +219,8 @@ const CandyOfferStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-18"
+      nextGamePathProp="/student/finance/kids/reflex-needs-first"
+      nextGameIdProp="finance-kids-19"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

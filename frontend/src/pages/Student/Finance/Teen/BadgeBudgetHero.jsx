@@ -210,6 +210,8 @@ const BadgeBudgetHero = () => {
       maxScore={challenges.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/movie-vs-bus-fare-story"
+      nextGameIdProp="finance-teens-31"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

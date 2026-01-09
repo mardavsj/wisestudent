@@ -245,6 +245,8 @@ const SimulationMiniStartup = () => {
       maxScore={scenarios.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-smart-entrepreneur"
+      nextGameIdProp="finance-teens-79"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -339,3 +341,4 @@ const SimulationMiniStartup = () => {
 };
 
 export default SimulationMiniStartup;
+

@@ -82,6 +82,8 @@ const JournalOfSavingGoal = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/simulation-monthly-money"
+      nextGameIdProp="finance-teens-8"
       gameType="finance"
       maxScore={5}
       totalCoins={totalCoins}
@@ -125,3 +127,4 @@ const JournalOfSavingGoal = () => {
 };
 
 export default JournalOfSavingGoal;
+

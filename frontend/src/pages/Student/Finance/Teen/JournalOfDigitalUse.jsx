@@ -79,6 +79,8 @@ const JournalOfDigitalUse = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/simulation-digital-spend"
+      nextGameIdProp="finance-teens-48"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -186,3 +188,4 @@ const JournalOfDigitalUse = () => {
 };
 
 export default JournalOfDigitalUse;
+

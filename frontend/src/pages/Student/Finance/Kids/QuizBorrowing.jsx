@@ -213,6 +213,8 @@ const QuizBorrowing = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-52"
+      nextGamePathProp="/student/finance/kids/reflex-borrow-steal"
+      nextGameIdProp="finance-kids-53"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

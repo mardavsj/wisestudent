@@ -141,6 +141,8 @@ const Simulation1000Choice = () => {
       maxScore={scenarios.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-smart-growth"
+      nextGameIdProp="finance-teens-69"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -235,4 +237,5 @@ const Simulation1000Choice = () => {
 };
 
 export default Simulation1000Choice;
+
 

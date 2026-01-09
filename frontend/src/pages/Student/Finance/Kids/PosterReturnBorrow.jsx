@@ -92,6 +92,8 @@ const PosterReturnBorrow = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/journal-borrowing"
+      nextGameIdProp="finance-kids-57"
       gameType="finance"
       maxScore={5}
       totalCoins={totalCoins}

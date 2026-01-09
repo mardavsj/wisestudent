@@ -183,6 +183,8 @@ const ReflexSmartSaver = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/puzzle-of-saving-goals"
+      nextGameIdProp="finance-teens-4"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -248,3 +250,4 @@ const ReflexSmartSaver = () => {
 };
 
 export default ReflexSmartSaver;
+

@@ -185,6 +185,8 @@ const BudgetQuiz = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/reflex-budget-check"
+      nextGameIdProp="finance-teens-23"
       gameType="finance"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

@@ -191,6 +191,8 @@ const PartyStory = () => {
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/debate-needs-vs-wants"
+      nextGameIdProp="finance-teens-16"
       gameType="finance"
       totalLevels={questions.length}
       currentLevel={currentQuestion + 1}

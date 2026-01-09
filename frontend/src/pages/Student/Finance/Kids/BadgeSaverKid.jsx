@@ -228,6 +228,8 @@ const BadgeSaverKid = () => {
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/ice-cream-story"
+      nextGameIdProp="finance-kids-11"
       gameType="finance"
       totalLevels={challenges.length}
       coinsPerLevel={coinsPerLevel}
@@ -341,3 +343,4 @@ const BadgeSaverKid = () => {
 };
 
 export default BadgeSaverKid;
+

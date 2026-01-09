@@ -180,6 +180,8 @@ const ReflexWiseChoices = () => {
       showGameOver={gameState === "finished"}
       score={score}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/puzzle-smart-spending"
+      nextGameIdProp="finance-teens-14"
       gameType="finance"
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}

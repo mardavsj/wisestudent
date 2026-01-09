@@ -130,6 +130,8 @@ const DebateJobVsBusiness = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/journal-entrepreneur-dream"
+      nextGameIdProp="finance-teens-77"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -223,3 +225,4 @@ const DebateJobVsBusiness = () => {
 };
 
 export default DebateJobVsBusiness;
+

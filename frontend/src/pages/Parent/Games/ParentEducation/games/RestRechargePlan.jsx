@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"; //eslint-disable-line
 import ParentGameShell from "../../ParentGameShell";
 import { getParentEducationGameById } from "../data/gameData";
 import { Moon, Calendar, Gift, Save, Bell, CheckCircle, Sparkles, Download, Clock } from "lucide-react";
 
 const RestRechargePlan = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "parent-education-97";
   const gameData = getParentEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 1;
-  
+
   const [restPlan, setRestPlan] = useState({
     dailyBreaks: [],
     weeklyReset: "",
@@ -94,9 +94,9 @@ const RestRechargePlan = () => {
   };
 
   const isPlanComplete = () => {
-    return restPlan.dailyBreaks.length >= 2 && 
-           restPlan.weeklyReset.trim().length >= 10 && 
-           restPlan.monthlyReward.trim().length >= 10;
+    return restPlan.dailyBreaks.length >= 2 &&
+      restPlan.weeklyReset.trim().length >= 10 &&
+      restPlan.monthlyReward.trim().length >= 10;
   };
 
   const handleSavePlan = () => {
@@ -332,7 +332,7 @@ Remember: Protect rest like an appointment — without guilt or apology.
           {/* Daily Mini-Breaks */}
           <div className={`bg-gradient-to-br ${categories[0].bgColor} rounded-xl p-6 border-2 ${categories[0].borderColor} mb-6`}>
             <div className="flex items-center gap-3 mb-4">
-              <categories[0].icon className="w-8 h-8 text-blue-600" />
+              {React.createElement(categories[0].icon, { className: "w-8 h-8 text-blue-600" })}
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-800">{categories[0].label}</h3>
                 <p className="text-sm text-gray-600">{categories[0].description}</p>
@@ -402,7 +402,7 @@ Remember: Protect rest like an appointment — without guilt or apology.
           {/* Weekly Reset */}
           <div className={`bg-gradient-to-br ${categories[1].bgColor} rounded-xl p-6 border-2 ${categories[1].borderColor} mb-6`}>
             <div className="flex items-center gap-3 mb-4">
-              <categories[1].icon className="w-8 h-8 text-purple-600" />
+              {React.createElement(categories[1].icon, { className: "w-8 h-8 text-purple-600" })}
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-800">{categories[1].label}</h3>
                 <p className="text-sm text-gray-600">{categories[1].description}</p>
@@ -437,7 +437,7 @@ Remember: Protect rest like an appointment — without guilt or apology.
           {/* Monthly Reward */}
           <div className={`bg-gradient-to-br ${categories[2].bgColor} rounded-xl p-6 border-2 ${categories[2].borderColor} mb-6`}>
             <div className="flex items-center gap-3 mb-4">
-              <categories[2].icon className="w-8 h-8 text-amber-600" />
+              {React.createElement(categories[2].icon, { className: "w-8 h-8 text-amber-600" })}
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-800">{categories[2].label}</h3>
                 <p className="text-sm text-gray-600">{categories[2].description}</p>
@@ -481,7 +481,7 @@ Remember: Protect rest like an appointment — without guilt or apology.
               <Save className="w-5 h-5" />
               {planSaved ? 'Plan Saved!' : 'Save Plan'}
             </motion.button>
-            
+
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -527,4 +527,3 @@ Remember: Protect rest like an appointment — without guilt or apology.
 };
 
 export default RestRechargePlan;
-

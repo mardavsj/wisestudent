@@ -198,6 +198,8 @@ const QuizOnDigitalMoney = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/reflex-secure-use"
+      nextGameIdProp="finance-teens-43"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -285,3 +287,4 @@ const QuizOnDigitalMoney = () => {
 };
 
 export default QuizOnDigitalMoney;
+

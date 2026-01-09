@@ -130,6 +130,8 @@ const DebateCashVsDigital = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/journal-of-digital-use"
+      nextGameIdProp="finance-teens-47"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -223,3 +225,4 @@ const DebateCashVsDigital = () => {
 };
 
 export default DebateCashVsDigital;
+

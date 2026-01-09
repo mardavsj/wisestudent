@@ -220,6 +220,8 @@ const ReflexEntrepreneurTraits = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/teen/puzzle-of-entrepreneurs"
+      nextGameIdProp="finance-teens-74"
       gameType="finance"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
@@ -303,3 +305,4 @@ const ReflexEntrepreneurTraits = () => {
 };
 
 export default ReflexEntrepreneurTraits;
+

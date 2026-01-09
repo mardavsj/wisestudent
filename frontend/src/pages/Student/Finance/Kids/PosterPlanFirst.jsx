@@ -93,6 +93,8 @@ const PosterPlanFirst = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
+      nextGamePathProp="/student/finance/kids/Journal-Of-Budgeting"
+      nextGameIdProp="finance-kids-27"
       gameType="finance"
       maxScore={5}
       totalCoins={totalCoins}

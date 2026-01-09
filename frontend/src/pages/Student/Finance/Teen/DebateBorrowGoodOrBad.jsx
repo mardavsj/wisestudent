@@ -130,6 +130,8 @@ const DebateBorrowGoodOrBad = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/journal-of-borrowing"
+      nextGameIdProp="finance-teens-57"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -223,3 +225,4 @@ const DebateBorrowGoodOrBad = () => {
 };
 
 export default DebateBorrowGoodOrBad;
+

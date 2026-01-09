@@ -212,6 +212,8 @@ const QuizOnGrowth = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-62"
+      nextGamePathProp="/student/finance/kids/reflex-investment-basics"
+      nextGameIdProp="finance-kids-63"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

@@ -195,6 +195,8 @@ const BriberyStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/debate-money-morals"
+      nextGameIdProp="finance-teens-96"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -245,3 +247,4 @@ const BriberyStory = () => {
 };
 
 export default BriberyStory;
+

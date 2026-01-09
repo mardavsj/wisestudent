@@ -130,6 +130,8 @@ const DebateSaveVsInvest = () => {
       maxScore={debateTopics.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      nextGamePathProp="/student/finance/teen/journal-future-investing"
+      nextGameIdProp="finance-teens-67"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -223,3 +225,4 @@ const DebateSaveVsInvest = () => {
 };
 
 export default DebateSaveVsInvest;
+

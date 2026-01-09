@@ -215,6 +215,8 @@ const PetSittingStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-78"
+      nextGamePathProp="/student/finance/kids/reflex-small-business"
+      nextGameIdProp="finance-kids-79"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}

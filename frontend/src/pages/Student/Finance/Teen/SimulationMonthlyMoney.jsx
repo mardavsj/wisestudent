@@ -232,6 +232,8 @@ const SimulationMonthlyMoney = () => {
       score={coins}
       subtitle={`Scenario ${currentScenario + 1} of ${scenarios.length}`}
       onNext={handleNext}
+      nextGamePathProp="/student/finance/teen/reflex-wise-use"
+      nextGameIdProp="finance-teens-9"
       nextEnabled={showResult && finalScore >= 3}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
