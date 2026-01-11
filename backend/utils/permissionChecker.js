@@ -163,7 +163,12 @@ export const requirePermission = (requiredPermissions, options = {}) => {
       }
 
       const tenantId = req.tenantId || req.user.tenantId;
-      const rolePermission = await getUserRolePermissions(req.user._id, tenantId);
+      let rolePermission = await getUserRolePermissions(req.user._id, tenantId);
+
+      // Allow school admins even if role permissions are not configured yet.
+      if (!rolePermission && req.user?.role === 'school_admin') {
+        rolePermission = { roleType: 'school_admin', permissions: {} };
+      }
 
       if (!rolePermission) {
         return res.status(403).json({

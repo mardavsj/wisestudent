@@ -60,17 +60,41 @@ const SchoolAdminClasses = () => {
       if (filterGrade !== 'all') params.append('grade', filterGrade);
       if (filterStream !== 'all') params.append('stream', filterStream);
 
-      const [classesRes, teachersRes, studentsRes, statsRes] = await Promise.all([
+      const [classesRes, teachersRes, studentsRes, statsRes] = await Promise.allSettled([
         api.get(`/api/school/admin/classes?${params}`),
         api.get('/api/school/admin/teachers'),
         api.get('/api/school/admin/students'),
         api.get('/api/school/admin/classes/stats')
       ]);
 
-      setClasses(classesRes.data.classes || []);
-      setTeachers(teachersRes.data.teachers || []);
-      setStudents(studentsRes.data.students || []);
-      setStats(statsRes.data || {});
+      if (classesRes.status === 'fulfilled') {
+        setClasses(classesRes.value.data.classes || classesRes.value.data || []);
+      } else {
+        console.error('Error fetching classes:', classesRes.reason);
+        setClasses([]);
+        toast.error('Failed to load classes');
+      }
+
+      if (teachersRes.status === 'fulfilled') {
+        setTeachers(teachersRes.value.data.teachers || []);
+      } else {
+        console.error('Error fetching teachers:', teachersRes.reason);
+        setTeachers([]);
+      }
+
+      if (studentsRes.status === 'fulfilled') {
+        setStudents(studentsRes.value.data.students || []);
+      } else {
+        console.error('Error fetching students:', studentsRes.reason);
+        setStudents([]);
+      }
+
+      if (statsRes.status === 'fulfilled') {
+        setStats(statsRes.value.data || {});
+      } else {
+        console.error('Error fetching class stats:', statsRes.reason);
+        setStats({});
+      }
     } catch (error) {
       console.error('Error fetching data:', error);
       toast.error('Failed to load data');

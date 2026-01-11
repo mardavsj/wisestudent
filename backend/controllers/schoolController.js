@@ -13900,7 +13900,7 @@ export const exportAnalyticsReport = async (req, res) => {
     const { tenantId } = req;
     const { campusId, grade, timeRange, format = 'csv' } = req.query;
 
-    const filter = { tenantId, isActive: true };
+    const filter = { tenantId, isActive: { $ne: false } };
     if (campusId && campusId !== 'all') filter.campusId = campusId;
     let gradeClassIds = null;
     if (grade && grade !== 'all') {
