@@ -385,6 +385,62 @@ export const getSchoolTeachers = async (req, res) => {
       .lean();
 
     const teacherIds = teachers.map((teacher) => teacher._id);
+
+    const [classAssignments, studentCounts] = teacherIds.length > 0 ? await Promise.all([
+      SchoolClass.aggregate([
+        { $match: { tenantId, 'sections.classTeacher': { $in: teacherIds } } },
+        { $unwind: '$sections' },
+        { $match: { 'sections.classTeacher': { $in: teacherIds } } },
+        {
+          $group: {
+            _id: '$sections.classTeacher',
+            classIds: { $addToSet: '$_id' },
+            sections: {
+              $addToSet: { classId: '$_id', section: '$sections.name' }
+            }
+          }
+        },
+        { $project: { totalClasses: { $size: '$classIds' }, sections: 1 } }
+      ]),
+      SchoolStudent.aggregate([
+        { $match: { tenantId } },
+        {
+          $lookup: {
+            from: 'schoolclasses',
+            localField: 'classId',
+            foreignField: '_id',
+            as: 'classInfo'
+          }
+        },
+        { $unwind: '$classInfo' },
+        { $unwind: '$classInfo.sections' },
+        {
+          $match: {
+            $expr: {
+              $and: [
+                { $eq: ['$section', '$classInfo.sections.name'] },
+                { $in: ['$classInfo.sections.classTeacher', teacherIds] }
+              ]
+            }
+          }
+        },
+        { $group: { _id: '$classInfo.sections.classTeacher', totalStudents: { $sum: 1 } } }
+      ])
+    ]) : [[], []];
+
+    const classAssignmentsMap = new Map();
+    classAssignments.forEach((entry) => {
+      classAssignmentsMap.set(entry._id.toString(), {
+        totalClasses: entry.totalClasses || 0,
+        sections: entry.sections || []
+      });
+    });
+
+    const studentCountMap = new Map();
+    studentCounts.forEach((entry) => {
+      studentCountMap.set(entry._id.toString(), entry.totalStudents || 0);
+    });
+
     const recentActivity = teacherIds.length > 0 ? await ActivityLog.aggregate([
       { $match: { userId: { $in: teacherIds }, createdAt: { $gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) } } },
       { $group: { _id: '$userId' } }
@@ -392,17 +448,10 @@ export const getSchoolTeachers = async (req, res) => {
     const activeSet = new Set(recentActivity.map((row) => row._id?.toString()).filter(Boolean));
     const activeThreshold = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
 
-    const enhancedTeachers = await Promise.all(teachers.map(async (teacher) => {
-      const [totalClasses, totalStudents] = await Promise.all([
-        SchoolClass.countDocuments({
-          tenantId,
-          'sections.classTeacher': teacher._id
-        }),
-        SchoolStudent.countDocuments({
-          tenantId,
-          classId: { $in: teacher.assignedClasses || [] }
-        })
-      ]);
+    const enhancedTeachers = teachers.map((teacher) => {
+      const teacherKey = teacher._id.toString();
+      const classStats = classAssignmentsMap.get(teacherKey) || { totalClasses: 0 };
+      const totalStudents = studentCountMap.get(teacherKey) || 0;
 
       const isActive = (teacher.lastActive && teacher.lastActive >= activeThreshold)
         || activeSet.has(teacher._id.toString());
@@ -410,13 +459,13 @@ export const getSchoolTeachers = async (req, res) => {
       return {
         ...teacher,
         isActive,
-        totalClasses,
+        totalClasses: classStats.totalClasses || 0,
         totalStudents,
         experience: teacher.metadata?.experience || 0,
         qualification: teacher.metadata?.qualification || 'N/A',
         joiningDate: teacher.metadata?.joiningDate || teacher.createdAt
       };
-    }));
+    });
 
     const filteredTeachers = status === 'active'
       ? enhancedTeachers.filter((teacher) => teacher.isActive)
@@ -565,10 +614,14 @@ export const getTeacherDetailsById = async (req, res) => {
         section.classTeacher && section.classTeacher.toString() === teacher._id.toString()
       );
 
-      const studentCount = await SchoolStudent.countDocuments({
-        tenantId,
-        classId: cls._id
-      });
+      const sectionNames = teacherSections.map(section => section.name).filter(Boolean);
+      const studentCount = sectionNames.length > 0
+        ? await SchoolStudent.countDocuments({
+            tenantId,
+            classId: cls._id,
+            section: { $in: sectionNames }
+          })
+        : 0;
 
       return {
         _id: cls._id,
@@ -580,11 +633,7 @@ export const getTeacherDetailsById = async (req, res) => {
       };
     }));
 
-    // Get total students under this teacher
-    const totalStudents = await SchoolStudent.countDocuments({
-      tenantId,
-      classId: { $in: assignedClasses.map(c => c._id) }
-    });
+    const totalStudents = classesWithStudents.reduce((sum, cls) => sum + (cls.students || 0), 0);
 
     const teacherData = {
       ...teacher,
