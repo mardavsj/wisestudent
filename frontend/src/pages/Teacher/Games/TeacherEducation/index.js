@@ -52,6 +52,53 @@ import MindfulMasteryBadge from './games/MindfulMasteryBadge';
 import TheBounceBackQuiz from './games/TheBounceBackQuiz';
 import GrowthMindsetPuzzle from './games/GrowthMindsetPuzzle';
 import ToughDaySimulation from './games/ToughDaySimulation';
+import PositiveRecallGame from './games/PositiveRecallGame';
+import ResilienceRoleplay from './games/ResilienceRoleplay';
+import ChallengeJournal from './games/ChallengeJournal';
+import EmotionalRecoveryToolkit from './games/EmotionalRecoveryToolkit';
+import TheReframeReflex from './games/TheReframeReflex';
+import GratitudeLadder from './games/GratitudeLadder';
+import ResilientEducatorBadge from './games/ResilientEducatorBadge';
+import TheRespectfulNo from './games/TheRespectfulNo';
+import ActiveListeningQuiz from './games/ActiveListeningQuiz';
+import BoundaryBuilderPuzzle from './games/BoundaryBuilderPuzzle';
+import ConflictToneSimulation from './games/ConflictToneSimulation';
+import AssertivenessLadder from './games/AssertivenessLadder';
+import CommunicationMirror from './games/CommunicationMirror';
+import ProfessionalBoundariesJournal from './games/ProfessionalBoundariesJournal';
+import EmpatheticDialogueRoleplay from './games/EmpatheticDialogueRoleplay';
+import CommunicationReflex from './games/CommunicationReflex';
+import ClearCommunicatorBadge from './games/ClearCommunicatorBadge';
+import TheSupportCircle from './games/TheSupportCircle';
+import EmpathyChainGame from './games/EmpathyChainGame';
+import AskForHelpSimulation from './games/AskForHelpSimulation';
+import TeamGratitudeWall from './games/TeamGratitudeWall';
+import ListeningPartnerPractice from './games/ListeningPartnerPractice';
+import EncourageAColleagueChallenge from './games/EncourageAColleagueChallenge';
+import MentorMemoryJournal from './games/MentorMemoryJournal';
+import StaffroomConnectionMap from './games/StaffroomConnectionMap';
+import TeamHarmonySimulation from './games/TeamHarmonySimulation';
+import ConnectedTeacherBadge from './games/ConnectedTeacherBadge';
+import WhyITeach from './games/WhyITeach';
+import TheRippleEffect from './games/TheRippleEffect';
+import LegacyLadder from './games/LegacyLadder';
+import LifeMapPuzzle from './games/LifeMapPuzzle';
+import MeaningInTheMoment from './games/MeaningInTheMoment';
+import FulfillmentJournal from './games/FulfillmentJournal';
+import ImpactVisualization from './games/ImpactVisualization';
+import MentorGratitudeChallenge from './games/MentorGratitudeChallenge';
+import InnerAlignmentQuiz from './games/InnerAlignmentQuiz';
+import PurposefulTeacherBadge from './games/PurposefulTeacherBadge';
+import ScreenTimeMirror from './games/ScreenTimeMirror';
+import DigitalBoundariesQuiz from './games/DigitalBoundariesQuiz';
+import EveningLogOffRitual from './games/EveningLogOffRitual';
+import SocialMediaReflection from './games/SocialMediaReflection';
+import MorningNourishRoutine from './games/MorningNourishRoutine';
+import NatureReconnectChallenge from './games/NatureReconnectChallenge';
+import SelfCareInventory from './games/SelfCareInventory';
+import RestRecoveryPlan from './games/RestRecoveryPlan';
+import SilenceStillnessPractice from './games/SilenceStillnessPractice';
+import SelfCareChampionBadge from './games/SelfCareChampionBadge';
 
 /**
  * Teacher Education Games Registry
@@ -164,6 +211,100 @@ const teacherEducationGames = {
   'teacher-education-52': GrowthMindsetPuzzle, // Alias for game ID
   'tough-day-simulation': ToughDaySimulation,
   'teacher-education-53': ToughDaySimulation, // Alias for game ID
+  'positive-recall-game': PositiveRecallGame,
+  'teacher-education-54': PositiveRecallGame, // Alias for game ID
+  'resilience-roleplay': ResilienceRoleplay,
+  'teacher-education-55': ResilienceRoleplay, // Alias for game ID
+  'challenge-journal': ChallengeJournal,
+  'teacher-education-56': ChallengeJournal, // Alias for game ID
+  'emotional-recovery-toolkit': EmotionalRecoveryToolkit,
+  'teacher-education-57': EmotionalRecoveryToolkit, // Alias for game ID
+  'the-reframe-reflex': TheReframeReflex,
+  'teacher-education-58': TheReframeReflex, // Alias for game ID
+  'gratitude-ladder': GratitudeLadder,
+  'teacher-education-59': GratitudeLadder, // Alias for game ID
+  'resilient-educator-badge': ResilientEducatorBadge,
+  'teacher-education-60': ResilientEducatorBadge, // Alias for game ID
+  'the-respectful-no': TheRespectfulNo,
+  'teacher-education-61': TheRespectfulNo, // Alias for game ID
+  'active-listening-quiz': ActiveListeningQuiz,
+  'teacher-education-62': ActiveListeningQuiz, // Alias for game ID
+  'boundary-builder-puzzle': BoundaryBuilderPuzzle,
+  'teacher-education-63': BoundaryBuilderPuzzle, // Alias for game ID
+  'conflict-tone-simulation': ConflictToneSimulation,
+  'teacher-education-64': ConflictToneSimulation, // Alias for game ID
+  'assertiveness-ladder': AssertivenessLadder,
+  'teacher-education-65': AssertivenessLadder, // Alias for game ID
+  'communication-mirror': CommunicationMirror,
+  'teacher-education-66': CommunicationMirror, // Alias for game ID
+  'professional-boundaries-journal': ProfessionalBoundariesJournal,
+  'teacher-education-67': ProfessionalBoundariesJournal, // Alias for game ID
+  'empathetic-dialogue-roleplay': EmpatheticDialogueRoleplay,
+  'teacher-education-68': EmpatheticDialogueRoleplay, // Alias for game ID
+  'communication-reflex': CommunicationReflex,
+  'teacher-education-69': CommunicationReflex, // Alias for game ID
+  'clear-communicator-badge': ClearCommunicatorBadge,
+  'teacher-education-70': ClearCommunicatorBadge, // Alias for game ID
+  'the-support-circle': TheSupportCircle,
+  'teacher-education-71': TheSupportCircle, // Alias for game ID
+  'empathy-chain-game': EmpathyChainGame,
+  'teacher-education-72': EmpathyChainGame, // Alias for game ID
+  'ask-for-help-simulation': AskForHelpSimulation,
+  'teacher-education-73': AskForHelpSimulation, // Alias for game ID
+  'team-gratitude-wall': TeamGratitudeWall,
+  'teacher-education-74': TeamGratitudeWall, // Alias for game ID
+  'listening-partner-practice': ListeningPartnerPractice,
+  'teacher-education-75': ListeningPartnerPractice, // Alias for game ID
+  'encourage-a-colleague-challenge': EncourageAColleagueChallenge,
+  'teacher-education-76': EncourageAColleagueChallenge, // Alias for game ID
+  'mentor-memory-journal': MentorMemoryJournal,
+  'teacher-education-77': MentorMemoryJournal, // Alias for game ID
+  'staffroom-connection-map': StaffroomConnectionMap,
+  'teacher-education-78': StaffroomConnectionMap, // Alias for game ID
+  'team-harmony-simulation': TeamHarmonySimulation,
+  'teacher-education-79': TeamHarmonySimulation, // Alias for game ID
+  'connected-teacher-badge': ConnectedTeacherBadge,
+  'teacher-education-80': ConnectedTeacherBadge, // Alias for game ID
+  'why-i-teach': WhyITeach,
+  'teacher-education-81': WhyITeach, // Alias for game ID
+  'the-ripple-effect': TheRippleEffect,
+  'teacher-education-82': TheRippleEffect, // Alias for game ID
+  'legacy-ladder': LegacyLadder,
+  'teacher-education-83': LegacyLadder, // Alias for game ID
+  'life-map-puzzle': LifeMapPuzzle,
+  'teacher-education-84': LifeMapPuzzle, // Alias for game ID
+  'meaning-in-the-moment': MeaningInTheMoment,
+  'teacher-education-85': MeaningInTheMoment, // Alias for game ID
+  'fulfillment-journal': FulfillmentJournal,
+  'teacher-education-86': FulfillmentJournal, // Alias for game ID
+  'impact-visualization': ImpactVisualization,
+  'teacher-education-87': ImpactVisualization, // Alias for game ID
+  'mentor-gratitude-challenge': MentorGratitudeChallenge,
+  'teacher-education-88': MentorGratitudeChallenge, // Alias for game ID
+  'inner-alignment-quiz': InnerAlignmentQuiz,
+  'teacher-education-89': InnerAlignmentQuiz, // Alias for game ID
+  'purposeful-teacher-badge': PurposefulTeacherBadge,
+  'teacher-education-90': PurposefulTeacherBadge, // Alias for game ID
+  'screen-time-mirror': ScreenTimeMirror,
+  'teacher-education-91': ScreenTimeMirror, // Alias for game ID
+  'digital-boundaries-quiz': DigitalBoundariesQuiz,
+  'teacher-education-92': DigitalBoundariesQuiz, // Alias for game ID
+  'evening-log-off-ritual': EveningLogOffRitual,
+  'teacher-education-93': EveningLogOffRitual, // Alias for game ID
+  'social-media-reflection': SocialMediaReflection,
+  'teacher-education-94': SocialMediaReflection, // Alias for game ID
+  'morning-nourish-routine': MorningNourishRoutine,
+  'teacher-education-95': MorningNourishRoutine, // Alias for game ID
+  'nature-reconnect-challenge': NatureReconnectChallenge,
+  'teacher-education-96': NatureReconnectChallenge, // Alias for game ID
+  'self-care-inventory': SelfCareInventory,
+  'teacher-education-97': SelfCareInventory, // Alias for game ID
+  'rest-recovery-plan': RestRecoveryPlan,
+  'teacher-education-98': RestRecoveryPlan, // Alias for game ID
+  'silence-stillness-practice': SilenceStillnessPractice,
+  'teacher-education-99': SilenceStillnessPractice, // Alias for game ID
+  'self-care-champion-badge': SelfCareChampionBadge,
+  'teacher-education-100': SelfCareChampionBadge, // Alias for game ID
   // More games will be added here later
 };
 
@@ -234,6 +375,53 @@ export const getTeacherEducationGame = (gameId) => {
     'teacher-education-51': 'the-bounce-back-quiz',
     'teacher-education-52': 'growth-mindset-puzzle',
     'teacher-education-53': 'tough-day-simulation',
+    'teacher-education-54': 'positive-recall-game',
+    'teacher-education-55': 'resilience-roleplay',
+    'teacher-education-56': 'challenge-journal',
+    'teacher-education-57': 'emotional-recovery-toolkit',
+    'teacher-education-58': 'the-reframe-reflex',
+    'teacher-education-59': 'gratitude-ladder',
+    'teacher-education-60': 'resilient-educator-badge',
+    'teacher-education-61': 'the-respectful-no',
+    'teacher-education-62': 'active-listening-quiz',
+    'teacher-education-63': 'boundary-builder-puzzle',
+    'teacher-education-64': 'conflict-tone-simulation',
+    'teacher-education-65': 'assertiveness-ladder',
+    'teacher-education-66': 'communication-mirror',
+    'teacher-education-67': 'professional-boundaries-journal',
+    'teacher-education-68': 'empathetic-dialogue-roleplay',
+    'teacher-education-69': 'communication-reflex',
+    'teacher-education-70': 'clear-communicator-badge',
+    'teacher-education-71': 'the-support-circle',
+    'teacher-education-72': 'empathy-chain-game',
+    'teacher-education-73': 'ask-for-help-simulation',
+    'teacher-education-74': 'team-gratitude-wall',
+    'teacher-education-75': 'listening-partner-practice',
+    'teacher-education-76': 'encourage-a-colleague-challenge',
+    'teacher-education-77': 'mentor-memory-journal',
+    'teacher-education-78': 'staffroom-connection-map',
+    'teacher-education-79': 'team-harmony-simulation',
+    'teacher-education-80': 'connected-teacher-badge',
+    'teacher-education-81': 'why-i-teach',
+    'teacher-education-82': 'the-ripple-effect',
+    'teacher-education-83': 'legacy-ladder',
+    'teacher-education-84': 'life-map-puzzle',
+    'teacher-education-85': 'meaning-in-the-moment',
+    'teacher-education-86': 'fulfillment-journal',
+    'teacher-education-87': 'impact-visualization',
+    'teacher-education-88': 'mentor-gratitude-challenge',
+    'teacher-education-89': 'inner-alignment-quiz',
+    'teacher-education-90': 'purposeful-teacher-badge',
+    'teacher-education-91': 'screen-time-mirror',
+    'teacher-education-92': 'digital-boundaries-quiz',
+    'teacher-education-93': 'evening-log-off-ritual',
+    'teacher-education-94': 'social-media-reflection',
+    'teacher-education-95': 'morning-nourish-routine',
+    'teacher-education-96': 'nature-reconnect-challenge',
+    'teacher-education-97': 'self-care-inventory',
+    'teacher-education-98': 'rest-recovery-plan',
+    'teacher-education-99': 'silence-stillness-practice',
+    'teacher-education-100': 'self-care-champion-badge',
   };
   
   // If gameId matches a mapped ID, use the slug

@@ -666,6 +666,11 @@ export const getTeacherBadges = async (req, res) => {
     const compassionBalanceBadgeStatus = await checkCompassionBalanceBadgeStatus(userId);
     const balancedLifeBadgeStatus = await checkBalancedLifeBadgeStatus(userId);
     const mindfulMasteryBadgeStatus = await checkMindfulMasteryBadgeStatus(userId);
+    const resilientEducatorBadgeStatus = await checkResilientEducatorBadgeStatus(userId);
+    const clearCommunicatorBadgeStatus = await checkClearCommunicatorBadgeStatus(userId);
+    const connectedTeacherBadgeStatus = await checkConnectedTeacherBadgeStatus(userId);
+    const purposefulTeacherBadgeStatus = await checkPurposefulTeacherBadgeStatus(userId);
+    const selfCareChampionBadgeStatus = await checkSelfCareChampionBadgeStatus(userId);
 
     res.json({
       success: true,
@@ -674,7 +679,12 @@ export const getTeacherBadges = async (req, res) => {
       calmBadge: calmBadgeStatus,
       compassionBalanceBadge: compassionBalanceBadgeStatus,
       balancedLifeBadge: balancedLifeBadgeStatus,
-      mindfulMasteryBadge: mindfulMasteryBadgeStatus
+      mindfulMasteryBadge: mindfulMasteryBadgeStatus,
+      resilientEducatorBadge: resilientEducatorBadgeStatus,
+      clearCommunicatorBadge: clearCommunicatorBadgeStatus,
+      connectedTeacherBadge: connectedTeacherBadgeStatus,
+      purposefulTeacherBadge: purposefulTeacherBadgeStatus,
+      selfCareChampionBadge: selfCareChampionBadgeStatus
     });
   } catch (error) {
     console.error('Error getting teacher badges:', error);
@@ -1001,6 +1011,463 @@ export const collectMindfulMasteryBadge = async (userId) => {
 };
 
 /**
+ * Check if all required games for Resilient Educator Badge are completed
+ */
+export const checkRequiredResilientEducatorGamesCompleted = async (userId) => {
+  try {
+    const requiredGameIds = [
+      'teacher-education-51',  // The Bounce-Back Quiz
+      'teacher-education-52',  // Growth Mindset Puzzle
+      'teacher-education-53',  // Tough Day Simulation
+      'teacher-education-56',  // Challenge Journal
+      'teacher-education-59'   // Gratitude Ladder
+    ];
+
+    const completedGames = await UnifiedGameProgress.find({
+      userId,
+      gameId: { $in: requiredGameIds },
+      gameType: 'teacher-education',
+      fullyCompleted: true,
+      userRole: 'school_teacher'
+    });
+
+    const completedGameIds = new Set(completedGames.map(g => g.gameId));
+    const allCompleted = requiredGameIds.every(id => completedGameIds.has(id));
+
+    return {
+      allCompleted,
+      completedCount: completedGameIds.size,
+      totalRequired: requiredGameIds.length,
+      completedGameIds: Array.from(completedGameIds),
+      missingGameIds: requiredGameIds.filter(id => !completedGameIds.has(id))
+    };
+  } catch (error) {
+    console.error('Error checking required Resilient Educator games:', error);
+    return {
+      allCompleted: false,
+      completedCount: 0,
+      totalRequired: 5,
+      completedGameIds: [],
+      missingGameIds: []
+    };
+  }
+};
+
+/**
+ * Check Resilient Educator Badge Status
+ */
+export const checkResilientEducatorBadgeStatus = async (userId) => {
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return { hasBadge: false, newlyEarned: false, error: 'User not found' };
+    }
+
+    // Check games completion status
+    const gamesStatus = await checkRequiredResilientEducatorGamesCompleted(userId);
+
+    // Check if user has the badge
+    const hasBadge = user.badges?.some(
+      badge => badge.name === 'Resilient Educator' || badge.badgeId === 'resilient-educator'
+    ) || false;
+
+    return {
+      hasBadge,
+      newlyEarned: false,
+      ...gamesStatus
+    };
+  } catch (error) {
+    console.error('Error checking Resilient Educator Badge status:', error);
+    return { hasBadge: false, newlyEarned: false, error: error.message };
+  }
+};
+
+/**
+ * Collect/Award Resilient Educator Badge
+ */
+export const collectResilientEducatorBadge = async (userId) => {
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return { success: false, error: 'User not found' };
+    }
+
+    // Check if badge already exists
+    const existingBadge = user.badges?.find(
+      badge => badge.name === 'Resilient Educator' || badge.badgeId === 'resilient-educator'
+    );
+
+    if (existingBadge) {
+      return {
+        success: true,
+        badgeEarned: false,
+        alreadyEarned: true,
+        badge: existingBadge,
+        message: 'Badge already collected'
+      };
+    }
+
+    // Verify all required games are completed
+    const gamesStatus = await checkRequiredResilientEducatorGamesCompleted(userId);
+
+    if (!gamesStatus.allCompleted) {
+      return {
+        success: false,
+        badgeEarned: false,
+        error: 'All 5 resilience activities must be completed before collecting the badge',
+        gamesStatus
+      };
+    }
+
+    // Award the badge
+    if (!user.badges) {
+      user.badges = [];
+    }
+
+    const badgeData = {
+      badgeId: 'resilient-educator',
+      name: 'Resilient Educator',
+      description: 'Display consistent bounce-back behaviors.',
+      earnedAt: new Date(),
+      category: 'teacher-education',
+      icon: '🏆',
+      message: 'Your strength lifts others.'
+    };
+
+    user.badges.push(badgeData);
+    await user.save();
+
+    // Create notification
+    await Notification.create({
+      userId,
+      type: 'achievement',
+      title: '🏆 Resilient Educator Badge Collected!',
+      message: 'Congratulations! You\'ve successfully completed all resilience activities and collected your badge. Your strength lifts others.',
+      metadata: {
+        badgeId: 'resilient-educator',
+        badgeName: 'Resilient Educator',
+        gamesCompleted: gamesStatus.completedCount
+      }
+    });
+
+    return {
+      success: true,
+      badgeEarned: true,
+      alreadyEarned: false,
+      badge: badgeData,
+      gamesStatus,
+      message: 'Badge collected successfully!'
+    };
+  } catch (error) {
+    console.error('Error collecting Resilient Educator Badge:', error);
+    return {
+      success: false,
+      badgeEarned: false,
+      error: error.message
+    };
+  }
+};
+
+/**
+ * GET /api/school/teacher/badge/resilient-educator
+ * Get Resilient Educator Badge status
+ */
+export const getResilientEducatorBadgeStatus = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Validate teacher role
+    if (req.user.role !== 'school_teacher') {
+      return res.status(403).json({
+        success: false,
+        error: 'Only teachers can access teacher badges'
+      });
+    }
+
+    const result = await checkResilientEducatorBadgeStatus(userId);
+
+    res.json({
+      success: true,
+      ...result
+    });
+  } catch (error) {
+    console.error('Error getting Resilient Educator Badge status:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to get badge status',
+      message: error.message
+    });
+  }
+};
+
+/**
+ * POST /api/school/teacher/badge/resilient-educator/collect
+ * Collect Resilient Educator Badge
+ */
+export const collectResilientEducatorBadgeEndpoint = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Validate teacher role
+    if (req.user.role !== 'school_teacher') {
+      return res.status(403).json({
+        success: false,
+        error: 'Only teachers can collect teacher badges'
+      });
+    }
+
+    const result = await collectResilientEducatorBadge(userId);
+
+    if (result.success) {
+      res.json({
+        success: true,
+        ...result
+      });
+    } else {
+      res.status(400).json({
+        success: false,
+        ...result
+      });
+    }
+  } catch (error) {
+    console.error('Error collecting Resilient Educator Badge:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to collect badge',
+      message: error.message
+    });
+  }
+};
+
+/**
+ * Check if all required Clear Communicator games are completed
+ */
+export const checkRequiredClearCommunicatorGamesCompleted = async (userId) => {
+  try {
+    const requiredGameIds = [
+      'teacher-education-61',  // Communication game 1
+      'teacher-education-62',  // Communication game 2
+      'teacher-education-63',  // Communication game 3
+      'teacher-education-64',  // Communication game 4
+      'teacher-education-65'   // Communication game 5
+    ];
+
+    const completedGames = await UnifiedGameProgress.find({
+      userId,
+      gameId: { $in: requiredGameIds },
+      gameType: 'teacher-education',
+      fullyCompleted: true,
+      userRole: 'school_teacher'
+    });
+
+    const completedGameIds = new Set(completedGames.map(g => g.gameId));
+    const allCompleted = requiredGameIds.every(id => completedGameIds.has(id));
+
+    return {
+      allCompleted,
+      completedCount: completedGameIds.size,
+      totalRequired: requiredGameIds.length,
+      completedGameIds: Array.from(completedGameIds),
+      missingGameIds: requiredGameIds.filter(id => !completedGameIds.has(id))
+    };
+  } catch (error) {
+    console.error('Error checking required Clear Communicator games:', error);
+    return {
+      allCompleted: false,
+      completedCount: 0,
+      totalRequired: 5,
+      completedGameIds: [],
+      missingGameIds: []
+    };
+  }
+};
+
+/**
+ * Check Clear Communicator Badge status
+ */
+export const checkClearCommunicatorBadgeStatus = async (userId) => {
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return { hasBadge: false, newlyEarned: false, error: 'User not found' };
+    }
+
+    const gamesStatus = await checkRequiredClearCommunicatorGamesCompleted(userId);
+
+    // Check if user has the badge
+    const hasBadge = user.badges?.some(
+      badge => badge.name === 'Clear Communicator' || badge.badgeId === 'clear-communicator'
+    ) || false;
+
+    return {
+      hasBadge,
+      newlyEarned: false,
+      ...gamesStatus
+    };
+  } catch (error) {
+    console.error('Error checking Clear Communicator Badge status:', error);
+    return { hasBadge: false, newlyEarned: false, error: error.message };
+  }
+};
+
+/**
+ * Collect/Award Clear Communicator Badge
+ */
+export const collectClearCommunicatorBadge = async (userId) => {
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return { success: false, error: 'User not found' };
+    }
+
+    // Check if badge already exists
+    const existingBadge = user.badges?.find(
+      badge => badge.name === 'Clear Communicator' || badge.badgeId === 'clear-communicator'
+    );
+
+    if (existingBadge) {
+      return {
+        success: true,
+        badgeEarned: false,
+        alreadyEarned: true,
+        badge: existingBadge,
+        message: 'Badge already collected'
+      };
+    }
+
+    // Verify all required games are completed
+    const gamesStatus = await checkRequiredClearCommunicatorGamesCompleted(userId);
+
+    if (!gamesStatus.allCompleted) {
+      return {
+        success: false,
+        badgeEarned: false,
+        error: 'All 5 communication activities must be completed before collecting the badge',
+        gamesStatus
+      };
+    }
+
+    // Award the badge
+    if (!user.badges) {
+      user.badges = [];
+    }
+
+    const badgeData = {
+      badgeId: 'clear-communicator',
+      name: 'Clear Communicator',
+      description: 'Practice clear and compassionate communication.',
+      earnedAt: new Date(),
+      category: 'teacher-education',
+      icon: '💬',
+      message: 'Clear words create calm connections.'
+    };
+
+    user.badges.push(badgeData);
+    await user.save();
+
+    // Create notification
+    await Notification.create({
+      userId,
+      type: 'achievement',
+      title: '🏆 Clear Communicator Badge Collected!',
+      message: 'Congratulations! You\'ve successfully completed all communication activities and collected your badge. Clear words create calm connections.',
+      metadata: {
+        badgeId: 'clear-communicator',
+        badgeName: 'Clear Communicator',
+        gamesCompleted: gamesStatus.completedCount
+      }
+    });
+
+    return {
+      success: true,
+      badgeEarned: true,
+      alreadyEarned: false,
+      badge: badgeData,
+      gamesStatus,
+      message: 'Badge collected successfully!'
+    };
+  } catch (error) {
+    console.error('Error collecting Clear Communicator Badge:', error);
+    return {
+      success: false,
+      badgeEarned: false,
+      error: error.message
+    };
+  }
+};
+
+/**
+ * GET /api/school/teacher/badge/clear-communicator
+ * Get Clear Communicator Badge status
+ */
+export const getClearCommunicatorBadgeStatus = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Validate teacher role
+    if (req.user.role !== 'school_teacher') {
+      return res.status(403).json({
+        success: false,
+        error: 'Only teachers can access teacher badges'
+      });
+    }
+
+    const result = await checkClearCommunicatorBadgeStatus(userId);
+
+    res.json({
+      success: true,
+      ...result
+    });
+  } catch (error) {
+    console.error('Error getting Clear Communicator Badge status:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to get badge status',
+      message: error.message
+    });
+  }
+};
+
+/**
+ * POST /api/school/teacher/badge/clear-communicator/collect
+ * Collect Clear Communicator Badge
+ */
+export const collectClearCommunicatorBadgeEndpoint = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Validate teacher role
+    if (req.user.role !== 'school_teacher') {
+      return res.status(403).json({
+        success: false,
+        error: 'Only teachers can collect teacher badges'
+      });
+    }
+
+    const result = await collectClearCommunicatorBadge(userId);
+
+    if (result.success) {
+      res.json({
+        success: true,
+        ...result
+      });
+    } else {
+      res.status(400).json({
+        success: false,
+        ...result
+      });
+    }
+  } catch (error) {
+    console.error('Error collecting Clear Communicator Badge:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to collect badge',
+      message: error.message
+    });
+  }
+};
+
+/**
  * GET /api/school/teacher/badge/mindful-mastery
  * Get Mindful Mastery Badge status
  */
@@ -1134,6 +1601,756 @@ export const collectCalmTeacherBadgeEndpoint = async (req, res) => {
     }
   } catch (error) {
     console.error('Error collecting Calm Teacher Badge:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to collect badge',
+      message: error.message
+    });
+  }
+};
+
+/**
+ * Check if all required Connected Teacher games are completed
+ */
+export const checkRequiredConnectedTeacherGamesCompleted = async (userId) => {
+  try {
+    const requiredGameIds = [
+      'teacher-education-71',  // The Support Circle
+      'teacher-education-74',  // Team Gratitude Wall
+      'teacher-education-76',  // Encourage-a-Colleague Challenge
+      'teacher-education-78',  // Staffroom Connection Map
+      'teacher-education-79'   // Team Harmony Simulation
+    ];
+
+    const completedGames = await UnifiedGameProgress.find({
+      userId,
+      gameId: { $in: requiredGameIds },
+      gameType: 'teacher-education',
+      fullyCompleted: true,
+      userRole: 'school_teacher'
+    });
+
+    const completedGameIds = new Set(completedGames.map(g => g.gameId));
+    const allCompleted = requiredGameIds.every(id => completedGameIds.has(id));
+
+    return {
+      allCompleted,
+      completedCount: completedGameIds.size,
+      totalRequired: requiredGameIds.length,
+      completedGameIds: Array.from(completedGameIds),
+      missingGameIds: requiredGameIds.filter(id => !completedGameIds.has(id)),
+      requiredGames: requiredGameIds.map(id => ({
+        gameId: id,
+        completed: completedGameIds.has(id)
+      }))
+    };
+  } catch (error) {
+    console.error('Error checking required Connected Teacher games:', error);
+    return {
+      allCompleted: false,
+      completedCount: 0,
+      totalRequired: 5,
+      completedGameIds: [],
+      missingGameIds: [],
+      requiredGames: []
+    };
+  }
+};
+
+/**
+ * Check Connected Teacher Badge status
+ */
+export const checkConnectedTeacherBadgeStatus = async (userId) => {
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return {
+        hasBadge: false,
+        newlyEarned: false
+      };
+    }
+
+    const hasBadge = user.badges?.some(badge => 
+      badge.badgeId === 'connected-teacher' && badge.earned === true
+    );
+
+    const newlyEarned = user.badges?.some(badge => 
+      badge.badgeId === 'connected-teacher' && badge.newlyEarned === true
+    );
+
+    const gamesStatus = await checkRequiredConnectedTeacherGamesCompleted(userId);
+
+    return {
+      hasBadge: hasBadge || false,
+      newlyEarned: newlyEarned || false,
+      ...gamesStatus
+    };
+  } catch (error) {
+    console.error('Error checking Connected Teacher Badge status:', error);
+    return {
+      hasBadge: false,
+      newlyEarned: false,
+      allCompleted: false,
+      completedCount: 0,
+      totalRequired: 5
+    };
+  }
+};
+
+/**
+ * Collect Connected Teacher Badge
+ */
+export const collectConnectedTeacherBadge = async (userId) => {
+  try {
+    const gamesStatus = await checkRequiredConnectedTeacherGamesCompleted(userId);
+    
+    if (!gamesStatus.allCompleted) {
+      return {
+        success: false,
+        error: 'Not all required games are completed',
+        gamesStatus
+      };
+    }
+
+    const user = await User.findById(userId);
+    if (!user) {
+      return {
+        success: false,
+        error: 'User not found'
+      };
+    }
+
+    // Check if badge already exists
+    const existingBadgeIndex = user.badges?.findIndex(badge => 
+      badge.badgeId === 'connected-teacher'
+    );
+
+    let newlyEarned = false;
+
+    if (existingBadgeIndex >= 0) {
+      // Update existing badge
+      if (!user.badges[existingBadgeIndex].earned) {
+        user.badges[existingBadgeIndex].earned = true;
+        user.badges[existingBadgeIndex].earnedAt = new Date();
+        user.badges[existingBadgeIndex].newlyEarned = true;
+        newlyEarned = true;
+      }
+    } else {
+      // Add new badge
+      if (!user.badges) {
+        user.badges = [];
+      }
+      user.badges.push({
+        badgeId: 'connected-teacher',
+        badgeName: 'Connected Teacher',
+        earned: true,
+        earnedAt: new Date(),
+        newlyEarned: true
+      });
+      newlyEarned = true;
+    }
+
+    await user.save();
+
+    // Create notification
+    if (newlyEarned) {
+      try {
+        await Notification.create({
+          userId,
+          type: 'badge_earned',
+          title: 'Connected Teacher Badge Earned!',
+          message: 'You\'ve earned the Connected Teacher Badge! "Connection creates calm."',
+          relatedId: 'connected-teacher',
+          relatedType: 'badge'
+        });
+      } catch (notifError) {
+        console.error('Error creating notification:', notifError);
+      }
+    }
+
+    return {
+      success: true,
+      newlyEarned,
+      badge: {
+        badgeId: 'connected-teacher',
+        badgeName: 'Connected Teacher',
+        earned: true,
+        earnedAt: user.badges.find(b => b.badgeId === 'connected-teacher')?.earnedAt
+      }
+    };
+  } catch (error) {
+    console.error('Error collecting Connected Teacher Badge:', error);
+    return {
+      success: false,
+      error: 'Failed to collect badge',
+      message: error.message
+    };
+  }
+};
+
+/**
+ * GET /api/school/teacher/badge/connected-teacher
+ * Get Connected Teacher Badge status
+ */
+export const getConnectedTeacherBadgeStatus = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Validate teacher role
+    if (req.user.role !== 'school_teacher') {
+      return res.status(403).json({
+        success: false,
+        error: 'Only teachers can access teacher badges'
+      });
+    }
+
+    const result = await checkConnectedTeacherBadgeStatus(userId);
+
+    res.json({
+      success: true,
+      ...result
+    });
+  } catch (error) {
+    console.error('Error getting Connected Teacher Badge status:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to get badge status',
+      message: error.message
+    });
+  }
+};
+
+/**
+ * POST /api/school/teacher/badge/connected-teacher/collect
+ * Collect Connected Teacher Badge
+ */
+export const collectConnectedTeacherBadgeEndpoint = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Validate teacher role
+    if (req.user.role !== 'school_teacher') {
+      return res.status(403).json({
+        success: false,
+        error: 'Only teachers can collect teacher badges'
+      });
+    }
+
+    const result = await collectConnectedTeacherBadge(userId);
+
+    if (result.success) {
+      res.json({
+        success: true,
+        ...result
+      });
+    } else {
+      res.status(400).json({
+        success: false,
+        ...result
+      });
+    }
+  } catch (error) {
+    console.error('Error collecting Connected Teacher Badge:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to collect badge',
+      message: error.message
+    });
+  }
+};
+
+/**
+ * Check if all required Purposeful Teacher games are completed
+ */
+export const checkRequiredPurposefulTeacherGamesCompleted = async (userId) => {
+  try {
+    const requiredGameIds = [
+      'teacher-education-81',  // Why I Teach
+      'teacher-education-85',  // Meaning in the Moment
+      'teacher-education-86',  // Fulfillment Journal
+      'teacher-education-87',  // Impact Visualization
+      'teacher-education-82'   // The Ripple Effect
+    ];
+
+    const completedGames = await UnifiedGameProgress.find({
+      userId,
+      gameId: { $in: requiredGameIds },
+      gameType: 'teacher-education',
+      fullyCompleted: true,
+      userRole: 'school_teacher'
+    });
+
+    const completedGameIds = new Set(completedGames.map(g => g.gameId));
+    const allCompleted = requiredGameIds.every(id => completedGameIds.has(id));
+
+    return {
+      allCompleted,
+      completedCount: completedGameIds.size,
+      totalRequired: requiredGameIds.length,
+      completedGameIds: Array.from(completedGameIds),
+      missingGameIds: requiredGameIds.filter(id => !completedGameIds.has(id)),
+      requiredGames: requiredGameIds.map(id => ({
+        gameId: id,
+        completed: completedGameIds.has(id)
+      }))
+    };
+  } catch (error) {
+    console.error('Error checking required Purposeful Teacher games:', error);
+    return {
+      allCompleted: false,
+      completedCount: 0,
+      totalRequired: 5,
+      completedGameIds: [],
+      missingGameIds: [],
+      requiredGames: []
+    };
+  }
+};
+
+/**
+ * Check Purposeful Teacher Badge status
+ */
+export const checkPurposefulTeacherBadgeStatus = async (userId) => {
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return {
+        hasBadge: false,
+        newlyEarned: false
+      };
+    }
+
+    const hasBadge = user.badges?.some(badge => 
+      badge.badgeId === 'purposeful-teacher' && badge.earned === true
+    );
+
+    const newlyEarned = user.badges?.some(badge => 
+      badge.badgeId === 'purposeful-teacher' && badge.newlyEarned === true
+    );
+
+    const gamesStatus = await checkRequiredPurposefulTeacherGamesCompleted(userId);
+
+    return {
+      hasBadge: hasBadge || false,
+      newlyEarned: newlyEarned || false,
+      ...gamesStatus
+    };
+  } catch (error) {
+    console.error('Error checking Purposeful Teacher Badge status:', error);
+    return {
+      hasBadge: false,
+      newlyEarned: false,
+      allCompleted: false,
+      completedCount: 0,
+      totalRequired: 5
+    };
+  }
+};
+
+/**
+ * Collect Purposeful Teacher Badge
+ */
+export const collectPurposefulTeacherBadge = async (userId) => {
+  try {
+    const gamesStatus = await checkRequiredPurposefulTeacherGamesCompleted(userId);
+    
+    if (!gamesStatus.allCompleted) {
+      return {
+        success: false,
+        error: 'Not all required games are completed',
+        gamesStatus
+      };
+    }
+
+    const user = await User.findById(userId);
+    if (!user) {
+      return {
+        success: false,
+        error: 'User not found'
+      };
+    }
+
+    // Check if badge already exists
+    const existingBadgeIndex = user.badges?.findIndex(badge => 
+      badge.badgeId === 'purposeful-teacher'
+    );
+
+    let newlyEarned = false;
+
+    if (existingBadgeIndex >= 0) {
+      // Update existing badge
+      if (!user.badges[existingBadgeIndex].earned) {
+        user.badges[existingBadgeIndex].earned = true;
+        user.badges[existingBadgeIndex].earnedAt = new Date();
+        user.badges[existingBadgeIndex].newlyEarned = true;
+        newlyEarned = true;
+      }
+    } else {
+      // Add new badge
+      if (!user.badges) {
+        user.badges = [];
+      }
+      user.badges.push({
+        badgeId: 'purposeful-teacher',
+        badgeName: 'Purposeful Teacher',
+        earned: true,
+        earnedAt: new Date(),
+        newlyEarned: true
+      });
+      newlyEarned = true;
+    }
+
+    await user.save();
+
+    // Create notification
+    if (newlyEarned) {
+      try {
+        await Notification.create({
+          userId,
+          type: 'badge_earned',
+          title: 'Purposeful Teacher Badge Earned!',
+          message: 'You\'ve earned the Purposeful Teacher Badge! "Your purpose lights paths."',
+          relatedId: 'purposeful-teacher',
+          relatedType: 'badge'
+        });
+      } catch (notifError) {
+        console.error('Error creating notification:', notifError);
+      }
+    }
+
+    return {
+      success: true,
+      newlyEarned,
+      badge: {
+        badgeId: 'purposeful-teacher',
+        badgeName: 'Purposeful Teacher',
+        earned: true,
+        earnedAt: user.badges.find(b => b.badgeId === 'purposeful-teacher')?.earnedAt
+      }
+    };
+  } catch (error) {
+    console.error('Error collecting Purposeful Teacher Badge:', error);
+    return {
+      success: false,
+      error: 'Failed to collect badge',
+      message: error.message
+    };
+  }
+};
+
+/**
+ * GET /api/school/teacher/badge/purposeful-teacher
+ * Get Purposeful Teacher Badge status
+ */
+export const getPurposefulTeacherBadgeStatus = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Validate teacher role
+    if (req.user.role !== 'school_teacher') {
+      return res.status(403).json({
+        success: false,
+        error: 'Only teachers can access teacher badges'
+      });
+    }
+
+    const result = await checkPurposefulTeacherBadgeStatus(userId);
+
+    res.json({
+      success: true,
+      ...result
+    });
+  } catch (error) {
+    console.error('Error getting Purposeful Teacher Badge status:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to get badge status',
+      message: error.message
+    });
+  }
+};
+
+/**
+ * POST /api/school/teacher/badge/purposeful-teacher/collect
+ * Collect Purposeful Teacher Badge
+ */
+export const collectPurposefulTeacherBadgeEndpoint = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Validate teacher role
+    if (req.user.role !== 'school_teacher') {
+      return res.status(403).json({
+        success: false,
+        error: 'Only teachers can collect teacher badges'
+      });
+    }
+
+    const result = await collectPurposefulTeacherBadge(userId);
+
+    if (result.success) {
+      res.json({
+        success: true,
+        ...result
+      });
+    } else {
+      res.status(400).json({
+        success: false,
+        ...result
+      });
+    }
+  } catch (error) {
+    console.error('Error collecting Purposeful Teacher Badge:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to collect badge',
+      message: error.message
+    });
+  }
+};
+
+/**
+ * Check if all required Self-Care Champion games are completed
+ */
+export const checkRequiredSelfCareChampionGamesCompleted = async (userId) => {
+  try {
+    const requiredGameIds = [
+      'teacher-education-93',  // Evening Log-Off Ritual
+      'teacher-education-95',  // Morning Nourish Routine
+      'teacher-education-96',  // Nature Reconnect Challenge
+      'teacher-education-91',  // Screen-Time Mirror
+      'teacher-education-99'   // Silence & Stillness Practice
+    ];
+
+    const completedGames = await UnifiedGameProgress.find({
+      userId,
+      gameId: { $in: requiredGameIds },
+      gameType: 'teacher-education',
+      fullyCompleted: true,
+      userRole: 'school_teacher'
+    });
+
+    const completedGameIds = new Set(completedGames.map(g => g.gameId));
+    const allCompleted = requiredGameIds.every(id => completedGameIds.has(id));
+
+    return {
+      allCompleted,
+      completedCount: completedGameIds.size,
+      totalRequired: requiredGameIds.length,
+      completedGameIds: Array.from(completedGameIds),
+      missingGameIds: requiredGameIds.filter(id => !completedGameIds.has(id)),
+      requiredGames: requiredGameIds.map(id => ({
+        gameId: id,
+        completed: completedGameIds.has(id)
+      }))
+    };
+  } catch (error) {
+    console.error('Error checking required Self-Care Champion games:', error);
+    return {
+      allCompleted: false,
+      completedCount: 0,
+      totalRequired: 5,
+      completedGameIds: [],
+      missingGameIds: [],
+      requiredGames: []
+    };
+  }
+};
+
+/**
+ * Check Self-Care Champion Badge status
+ */
+export const checkSelfCareChampionBadgeStatus = async (userId) => {
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return {
+        hasBadge: false,
+        newlyEarned: false
+      };
+    }
+
+    const hasBadge = user.badges?.some(badge => 
+      badge.badgeId === 'self-care-champion' && badge.earned === true
+    );
+
+    const newlyEarned = user.badges?.some(badge => 
+      badge.badgeId === 'self-care-champion' && badge.newlyEarned === true
+    );
+
+    const gamesStatus = await checkRequiredSelfCareChampionGamesCompleted(userId);
+
+    return {
+      hasBadge: hasBadge || false,
+      newlyEarned: newlyEarned || false,
+      ...gamesStatus
+    };
+  } catch (error) {
+    console.error('Error checking Self-Care Champion Badge status:', error);
+    return {
+      hasBadge: false,
+      newlyEarned: false,
+      allCompleted: false,
+      completedCount: 0,
+      totalRequired: 5
+    };
+  }
+};
+
+/**
+ * Collect Self-Care Champion Badge
+ */
+export const collectSelfCareChampionBadge = async (userId) => {
+  try {
+    const gamesStatus = await checkRequiredSelfCareChampionGamesCompleted(userId);
+    
+    if (!gamesStatus.allCompleted) {
+      return {
+        success: false,
+        error: 'Not all required games are completed',
+        gamesStatus
+      };
+    }
+
+    const user = await User.findById(userId);
+    if (!user) {
+      return {
+        success: false,
+        error: 'User not found'
+      };
+    }
+
+    // Check if badge already exists
+    const existingBadgeIndex = user.badges?.findIndex(badge => 
+      badge.badgeId === 'self-care-champion'
+    );
+
+    let newlyEarned = false;
+
+    if (existingBadgeIndex >= 0) {
+      // Update existing badge
+      if (!user.badges[existingBadgeIndex].earned) {
+        user.badges[existingBadgeIndex].earned = true;
+        user.badges[existingBadgeIndex].earnedAt = new Date();
+        user.badges[existingBadgeIndex].newlyEarned = true;
+        newlyEarned = true;
+      }
+    } else {
+      // Add new badge
+      if (!user.badges) {
+        user.badges = [];
+      }
+      user.badges.push({
+        badgeId: 'self-care-champion',
+        badgeName: 'Self-Care Champion',
+        earned: true,
+        earnedAt: new Date(),
+        newlyEarned: true
+      });
+      newlyEarned = true;
+    }
+
+    await user.save();
+
+    // Create notification
+    if (newlyEarned) {
+      try {
+        await Notification.create({
+          userId,
+          type: 'badge_earned',
+          title: 'Self-Care Champion Badge Earned!',
+          message: 'You\'ve earned the Self-Care Champion Badge! "When you rest, your light grows brighter."',
+          relatedId: 'self-care-champion',
+          relatedType: 'badge'
+        });
+      } catch (notifError) {
+        console.error('Error creating notification:', notifError);
+      }
+    }
+
+    return {
+      success: true,
+      newlyEarned,
+      badge: {
+        badgeId: 'self-care-champion',
+        badgeName: 'Self-Care Champion',
+        earned: true,
+        earnedAt: user.badges.find(b => b.badgeId === 'self-care-champion')?.earnedAt
+      }
+    };
+  } catch (error) {
+    console.error('Error collecting Self-Care Champion Badge:', error);
+    return {
+      success: false,
+      error: 'Failed to collect badge',
+      message: error.message
+    };
+  }
+};
+
+/**
+ * GET /api/school/teacher/badge/self-care-champion
+ * Get Self-Care Champion Badge status
+ */
+export const getSelfCareChampionBadgeStatus = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Validate teacher role
+    if (req.user.role !== 'school_teacher') {
+      return res.status(403).json({
+        success: false,
+        error: 'Only teachers can access teacher badges'
+      });
+    }
+
+    const result = await checkSelfCareChampionBadgeStatus(userId);
+
+    res.json({
+      success: true,
+      ...result
+    });
+  } catch (error) {
+    console.error('Error getting Self-Care Champion Badge status:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to get badge status',
+      message: error.message
+    });
+  }
+};
+
+/**
+ * POST /api/school/teacher/badge/self-care-champion/collect
+ * Collect Self-Care Champion Badge
+ */
+export const collectSelfCareChampionBadgeEndpoint = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Validate teacher role
+    if (req.user.role !== 'school_teacher') {
+      return res.status(403).json({
+        success: false,
+        error: 'Only teachers can collect teacher badges'
+      });
+    }
+
+    const result = await collectSelfCareChampionBadge(userId);
+
+    if (result.success) {
+      res.json({
+        success: true,
+        ...result
+      });
+    } else {
+      res.status(400).json({
+        success: false,
+        ...result
+      });
+    }
+  } catch (error) {
+    console.error('Error collecting Self-Care Champion Badge:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to collect badge',

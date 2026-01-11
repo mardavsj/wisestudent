@@ -130,7 +130,12 @@ const TeacherGameCategoryPage = () => {
     const isCompassionBalanceBadge = game.id === 'teacher-education-30';
     const isBalancedLifeBadge = game.id === 'teacher-education-40';
     const isMindfulMasteryBadge = game.id === 'teacher-education-50';
-    const isBadgeGame = isSelfAwareBadge || isCalmBadge || isCompassionBalanceBadge || isBalancedLifeBadge || isMindfulMasteryBadge;
+    const isResilientEducatorBadge = game.id === 'teacher-education-60';
+    const isClearCommunicatorBadge = game.id === 'teacher-education-70';
+    const isConnectedTeacherBadge = game.id === 'teacher-education-80';
+    const isPurposefulTeacherBadge = game.id === 'teacher-education-90';
+    const isSelfCareChampionBadge = game.id === 'teacher-education-100';
+    const isBadgeGame = isSelfAwareBadge || isCalmBadge || isCompassionBalanceBadge || isBalancedLifeBadge || isMindfulMasteryBadge || isResilientEducatorBadge || isClearCommunicatorBadge || isConnectedTeacherBadge || isPurposefulTeacherBadge || isSelfCareChampionBadge;
     
     if (isSelfAwareBadge) {
       // Check if all 5 required games are completed for Self-Aware Badge
@@ -210,6 +215,86 @@ const TeacherGameCategoryPage = () => {
       
       if (!allCompleted) {
         toast.error('Complete all 5 mindfulness activities first to unlock this badge!');
+        return;
+      }
+    } else if (isResilientEducatorBadge) {
+      // Check if all 5 required games are completed for Resilient Educator Badge
+      const requiredGameIds = [
+        'teacher-education-51',  // The Bounce-Back Quiz
+        'teacher-education-52',  // Growth Mindset Puzzle
+        'teacher-education-53',  // Tough Day Simulation
+        'teacher-education-56',  // Challenge Journal
+        'teacher-education-59'   // Gratitude Ladder
+      ];
+      
+      const allCompleted = requiredGameIds.every(id => gameCompletionStatus[id] === true);
+      
+      if (!allCompleted) {
+        toast.error('Complete all 5 resilience activities first to unlock this badge!');
+        return;
+      }
+    } else if (isClearCommunicatorBadge) {
+      // Check if all 5 required games are completed for Clear Communicator Badge
+      const requiredGameIds = [
+        'teacher-education-60',  // The Respectful "No"
+        'teacher-education-61',  // Active Listening Quiz
+        'teacher-education-68',  // Empathetic Dialogue Roleplay
+        'teacher-education-66',  // Communication Mirror
+        'teacher-education-69'   // Communication Reflex
+      ];
+      
+      const allCompleted = requiredGameIds.every(id => gameCompletionStatus[id] === true);
+      
+      if (!allCompleted) {
+        toast.error('Complete all 5 communication activities first to unlock this badge!');
+        return;
+      }
+    } else if (isConnectedTeacherBadge) {
+      // Check if all 5 required games are completed for Connected Teacher Badge
+      const requiredGameIds = [
+        'teacher-education-71',  // The Support Circle
+        'teacher-education-74',  // Team Gratitude Wall
+        'teacher-education-76',  // Encourage-a-Colleague Challenge
+        'teacher-education-78',  // Staffroom Connection Map
+        'teacher-education-79'   // Team Harmony Simulation
+      ];
+      
+      const allCompleted = requiredGameIds.every(id => gameCompletionStatus[id] === true);
+      
+      if (!allCompleted) {
+        toast.error('Complete all 5 support-oriented games first to unlock this badge!');
+        return;
+      }
+    } else if (isPurposefulTeacherBadge) {
+      // Check if all 5 required games are completed for Purposeful Teacher Badge
+      const requiredGameIds = [
+        'teacher-education-81',  // Why I Teach
+        'teacher-education-85',  // Meaning in the Moment
+        'teacher-education-86',  // Fulfillment Journal
+        'teacher-education-87',  // Impact Visualization
+        'teacher-education-82'   // The Ripple Effect
+      ];
+      
+      const allCompleted = requiredGameIds.every(id => gameCompletionStatus[id] === true);
+      
+      if (!allCompleted) {
+        toast.error('Complete all 5 purpose-related activities first to unlock this badge!');
+        return;
+      }
+    } else if (isSelfCareChampionBadge) {
+      // Check if all 5 required games are completed for Self-Care Champion Badge
+      const requiredGameIds = [
+        'teacher-education-93',  // Evening Log-Off Ritual
+        'teacher-education-95',  // Morning Nourish Routine
+        'teacher-education-96',  // Nature Reconnect Challenge
+        'teacher-education-91',  // Screen-Time Mirror
+        'teacher-education-99'   // Silence & Stillness Practice
+      ];
+      
+      const allCompleted = requiredGameIds.every(id => gameCompletionStatus[id] === true);
+      
+      if (!allCompleted) {
+        toast.error('Complete all 5 self-care activities first to unlock this badge!');
         return;
       }
     }
@@ -348,7 +433,12 @@ const TeacherGameCategoryPage = () => {
     const isCompassionBalanceBadge = game.id === 'teacher-education-30';
     const isBalancedLifeBadge = game.id === 'teacher-education-40';
     const isMindfulMasteryBadge = game.id === 'teacher-education-50';
-    const isBadgeGame = isSelfAwareBadge || isCalmBadge || isCompassionBalanceBadge || isBalancedLifeBadge || isMindfulMasteryBadge;
+    const isResilientEducatorBadge = game.id === 'teacher-education-60';
+    const isClearCommunicatorBadge = game.id === 'teacher-education-70';
+    const isConnectedTeacherBadge = game.id === 'teacher-education-80';
+    const isPurposefulTeacherBadge = game.id === 'teacher-education-90';
+    const isSelfCareChampionBadge = game.id === 'teacher-education-100';
+    const isBadgeGame = isSelfAwareBadge || isCalmBadge || isCompassionBalanceBadge || isBalancedLifeBadge || isMindfulMasteryBadge || isResilientEducatorBadge || isClearCommunicatorBadge || isConnectedTeacherBadge || isPurposefulTeacherBadge || isSelfCareChampionBadge;
     
     if (isSelfAwareBadge) {
       // Check if all required games are completed for Self-Aware Badge
@@ -446,6 +536,116 @@ const TeacherGameCategoryPage = () => {
         'teacher-education-43',  // Focus Anchor Exercise
         'teacher-education-45',  // Guided Meditation Audio
         'teacher-education-49'   // Gratitude in the Moment
+      ];
+      
+      const allRequiredCompleted = requiredGameIds.every(id => gameCompletionStatus[id] === true);
+      const badgeCollected = gameCompletionStatus[game.id] === true;
+      
+      return {
+        isCompleted: badgeCollected,
+        hasProgress: badgeCollected,
+        canReplay: false, // Badge games don't have replay
+        needsReplayUnlock: false,
+        isLocked: !allRequiredCompleted,
+        isSequentiallyLocked: false, // Badge games are not sequentially locked
+        isBadgeGame: true
+      };
+    } else if (isResilientEducatorBadge) {
+      // Check if all required games are completed for Resilient Educator Badge
+      const requiredGameIds = [
+        'teacher-education-51',  // The Bounce-Back Quiz
+        'teacher-education-52',  // Growth Mindset Puzzle
+        'teacher-education-53',  // Tough Day Simulation
+        'teacher-education-56',  // Challenge Journal
+        'teacher-education-59'   // Gratitude Ladder
+      ];
+      
+      const allRequiredCompleted = requiredGameIds.every(id => gameCompletionStatus[id] === true);
+      const badgeCollected = gameCompletionStatus[game.id] === true;
+      
+      return {
+        isCompleted: badgeCollected,
+        hasProgress: badgeCollected,
+        canReplay: false, // Badge games don't have replay
+        needsReplayUnlock: false,
+        isLocked: !allRequiredCompleted,
+        isSequentiallyLocked: false, // Badge games are not sequentially locked
+        isBadgeGame: true
+      };
+    } else if (isClearCommunicatorBadge) {
+      // Check if all required games are completed for Clear Communicator Badge
+      const requiredGameIds = [
+        'teacher-education-60',  // The Respectful "No"
+        'teacher-education-61',  // Active Listening Quiz
+        'teacher-education-68',  // Empathetic Dialogue Roleplay
+        'teacher-education-66',  // Communication Mirror
+        'teacher-education-69'   // Communication Reflex
+      ];
+      
+      const allRequiredCompleted = requiredGameIds.every(id => gameCompletionStatus[id] === true);
+      const badgeCollected = gameCompletionStatus[game.id] === true;
+      
+      return {
+        isCompleted: badgeCollected,
+        hasProgress: badgeCollected,
+        canReplay: false, // Badge games don't have replay
+        needsReplayUnlock: false,
+        isLocked: !allRequiredCompleted,
+        isSequentiallyLocked: false, // Badge games are not sequentially locked
+        isBadgeGame: true
+      };
+    } else if (isConnectedTeacherBadge) {
+      // Check if all required games are completed for Connected Teacher Badge
+      const requiredGameIds = [
+        'teacher-education-71',  // The Support Circle
+        'teacher-education-74',  // Team Gratitude Wall
+        'teacher-education-76',  // Encourage-a-Colleague Challenge
+        'teacher-education-78',  // Staffroom Connection Map
+        'teacher-education-79'   // Team Harmony Simulation
+      ];
+      
+      const allRequiredCompleted = requiredGameIds.every(id => gameCompletionStatus[id] === true);
+      const badgeCollected = gameCompletionStatus[game.id] === true;
+      
+      return {
+        isCompleted: badgeCollected,
+        hasProgress: badgeCollected,
+        canReplay: false, // Badge games don't have replay
+        needsReplayUnlock: false,
+        isLocked: !allRequiredCompleted,
+        isSequentiallyLocked: false, // Badge games are not sequentially locked
+        isBadgeGame: true
+      };
+    } else if (isPurposefulTeacherBadge) {
+      // Check if all required games are completed for Purposeful Teacher Badge
+      const requiredGameIds = [
+        'teacher-education-81',  // Why I Teach
+        'teacher-education-85',  // Meaning in the Moment
+        'teacher-education-86',  // Fulfillment Journal
+        'teacher-education-87',  // Impact Visualization
+        'teacher-education-82'   // The Ripple Effect
+      ];
+      
+      const allRequiredCompleted = requiredGameIds.every(id => gameCompletionStatus[id] === true);
+      const badgeCollected = gameCompletionStatus[game.id] === true;
+      
+      return {
+        isCompleted: badgeCollected,
+        hasProgress: badgeCollected,
+        canReplay: false, // Badge games don't have replay
+        needsReplayUnlock: false,
+        isLocked: !allRequiredCompleted,
+        isSequentiallyLocked: false, // Badge games are not sequentially locked
+        isBadgeGame: true
+      };
+    } else if (isSelfCareChampionBadge) {
+      // Check if all required games are completed for Self-Care Champion Badge
+      const requiredGameIds = [
+        'teacher-education-93',  // Evening Log-Off Ritual
+        'teacher-education-95',  // Morning Nourish Routine
+        'teacher-education-96',  // Nature Reconnect Challenge
+        'teacher-education-91',  // Screen-Time Mirror
+        'teacher-education-99'   // Silence & Stillness Practice
       ];
       
       const allRequiredCompleted = requiredGameIds.every(id => gameCompletionStatus[id] === true);
@@ -766,6 +966,11 @@ const TeacherGameCategoryPage = () => {
                              game.id === 'teacher-education-30' ? 'Complete All Empathy Balance Tasks to Unlock' :
                              game.id === 'teacher-education-40' ? 'Complete All Balance Activities to Unlock' :
                              game.id === 'teacher-education-50' ? 'Complete All Mindfulness Activities to Unlock' :
+                             game.id === 'teacher-education-60' ? 'Complete All Resilience Activities to Unlock' :
+                             game.id === 'teacher-education-70' ? 'Complete All Communication Activities to Unlock' :
+                             game.id === 'teacher-education-80' ? 'Complete All Support-Oriented Games to Unlock' :
+                             game.id === 'teacher-education-90' ? 'Complete All Purpose-Related Activities to Unlock' :
+                             game.id === 'teacher-education-100' ? 'Complete All Self-Care Activities to Unlock' :
                              'Complete Required Tasks to Unlock'}
                           </span>
                         </motion.button>

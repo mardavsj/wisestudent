@@ -805,6 +805,840 @@ export const teacherEducationGameData = [
     totalLevels: 1,
     path: '/school-teacher/games/mental-health-emotional-regulation/tough-day-simulation'
   },
+  {
+    id: 'teacher-education-54',
+    slug: 'positive-recall-game',
+    title: 'Positive Recall Game',
+    description: 'Reinforce optimism by recalling moments of past success',
+    gameIndex: 54,
+    calmCoins: getCalmCoinsForGame(54),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(54), // 2 CalmCoins
+    estimatedTime: '8 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 3,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/positive-recall-game'
+  },
+  {
+    id: 'teacher-education-55',
+    slug: 'resilience-roleplay',
+    title: 'Resilience Roleplay',
+    description: 'Choose adaptive reactions when criticized or corrected',
+    gameIndex: 55,
+    calmCoins: getCalmCoinsForGame(55),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(55), // 2 CalmCoins
+    estimatedTime: '12 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 4,
+    totalLevels: 4,
+    path: '/school-teacher/games/mental-health-emotional-regulation/resilience-roleplay'
+  },
+  {
+    id: 'teacher-education-56',
+    slug: 'challenge-journal',
+    title: 'Challenge Journal',
+    description: 'Document one recent difficulty and how it was overcome',
+    gameIndex: 56,
+    calmCoins: getCalmCoinsForGame(56),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(56), // 2 CalmCoins
+    estimatedTime: '8 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/challenge-journal'
+  },
+  {
+    id: 'teacher-education-57',
+    slug: 'emotional-recovery-toolkit',
+    title: 'Emotional Recovery Toolkit',
+    description: 'Build a personal plan to handle disappointment or failure days',
+    gameIndex: 57,
+    calmCoins: getCalmCoinsForGame(57),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(57), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/emotional-recovery-toolkit'
+  },
+  {
+    id: 'teacher-education-58',
+    slug: 'the-reframe-reflex',
+    title: 'The Reframe Reflex',
+    description: 'Quickly convert negative thoughts into empowering ones',
+    gameIndex: 58,
+    calmCoins: getCalmCoinsForGame(58),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(58), // 2 CalmCoins
+    estimatedTime: '8 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 20,
+    totalLevels: 20,
+    path: '/school-teacher/games/mental-health-emotional-regulation/the-reframe-reflex'
+  },
+  {
+    id: 'teacher-education-59',
+    slug: 'gratitude-ladder',
+    title: 'Gratitude Ladder',
+    description: 'Increase resilience through appreciation of daily progress',
+    gameIndex: 59,
+    calmCoins: getCalmCoinsForGame(59),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(59), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/gratitude-ladder'
+  },
+  {
+    id: 'teacher-education-60',
+    slug: 'resilient-educator-badge',
+    title: 'Resilient Educator Badge',
+    description: 'Celebrate teachers who display consistent bounce-back behaviors',
+    gameIndex: 60,
+    calmCoins: getCalmCoinsForGame(60),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(60), // 2 CalmCoins
+    estimatedTime: '5 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/resilient-educator-badge',
+    isBadgeGame: true
+  },
+  {
+    id: 'teacher-education-61',
+    slug: 'the-respectful-no',
+    title: 'The Respectful "No"',
+    description: 'Practice saying "no" with kindness and clarity',
+    gameIndex: 61,
+    calmCoins: getCalmCoinsForGame(61),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(61), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 5,
+    totalLevels: 5,
+    path: '/school-teacher/games/mental-health-emotional-regulation/the-respectful-no'
+  },
+  {
+    id: 'teacher-education-62',
+    slug: 'active-listening-quiz',
+    title: 'Active Listening Quiz',
+    description: 'Strengthen listening skills to reduce misunderstandings',
+    gameIndex: 62,
+    calmCoins: getCalmCoinsForGame(62),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(62), // 2 CalmCoins
+    estimatedTime: '12 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 6,
+    totalLevels: 6,
+    path: '/school-teacher/games/mental-health-emotional-regulation/active-listening-quiz'
+  },
+  {
+    id: 'teacher-education-63',
+    slug: 'boundary-builder-puzzle',
+    title: 'Boundary Builder Puzzle',
+    description: 'Learn which boundaries protect emotional health',
+    gameIndex: 63,
+    calmCoins: getCalmCoinsForGame(63),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(63), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/boundary-builder-puzzle'
+  },
+  {
+    id: 'teacher-education-64',
+    slug: 'conflict-tone-simulation',
+    title: 'Conflict Tone Simulation',
+    description: 'Choose communication tone during tense situations',
+    gameIndex: 64,
+    calmCoins: getCalmCoinsForGame(64),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(64), // 2 CalmCoins
+    estimatedTime: '15 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 5,
+    totalLevels: 5,
+    path: '/school-teacher/games/mental-health-emotional-regulation/conflict-tone-simulation'
+  },
+  {
+    id: 'teacher-education-65',
+    slug: 'assertiveness-ladder',
+    title: 'Assertiveness Ladder',
+    description: 'Identify where you stand between passive and aggressive responses',
+    gameIndex: 65,
+    calmCoins: getCalmCoinsForGame(65),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(65), // 2 CalmCoins
+    estimatedTime: '12 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 5,
+    totalLevels: 5,
+    path: '/school-teacher/games/mental-health-emotional-regulation/assertiveness-ladder'
+  },
+  {
+    id: 'teacher-education-66',
+    slug: 'communication-mirror',
+    title: 'Communication Mirror',
+    description: 'Reflect on personal communication habits',
+    gameIndex: 66,
+    calmCoins: getCalmCoinsForGame(66),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(66), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 10,
+    totalLevels: 10,
+    path: '/school-teacher/games/mental-health-emotional-regulation/communication-mirror'
+  },
+  {
+    id: 'teacher-education-67',
+    slug: 'professional-boundaries-journal',
+    title: 'Professional Boundaries Journal',
+    description: 'Define boundaries around availability and self-respect',
+    gameIndex: 67,
+    calmCoins: getCalmCoinsForGame(67),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(67), // 2 CalmCoins
+    estimatedTime: '15 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/professional-boundaries-journal'
+  },
+  {
+    id: 'teacher-education-68',
+    slug: 'empathetic-dialogue-roleplay',
+    title: 'Empathetic Dialogue Roleplay',
+    description: 'Balance empathy with firmness in communication',
+    gameIndex: 68,
+    calmCoins: getCalmCoinsForGame(68),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(68), // 2 CalmCoins
+    estimatedTime: '15 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 5,
+    totalLevels: 5,
+    path: '/school-teacher/games/mental-health-emotional-regulation/empathetic-dialogue-roleplay'
+  },
+  {
+    id: 'teacher-education-69',
+    slug: 'communication-reflex',
+    title: 'Communication Reflex',
+    description: 'Quickly identify positive vs negative communication cues',
+    gameIndex: 69,
+    calmCoins: getCalmCoinsForGame(69),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(69), // 2 CalmCoins
+    estimatedTime: '5 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 20,
+    totalLevels: 20,
+    path: '/school-teacher/games/mental-health-emotional-regulation/communication-reflex'
+  },
+  {
+    id: 'clear-communicator-badge',
+    slug: 'clear-communicator-badge',
+    title: 'Clear Communicator Badge',
+    description: 'Reward consistent use of assertive, empathetic communication',
+    gameIndex: 70,
+    calmCoins: getCalmCoinsForGame(70),  // 10 CalmCoins
+    replayCost: getReplayCostForGame(70), // 0 CalmCoins (badge games can't be replayed)
+    estimatedTime: 'N/A',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/clear-communicator-badge',
+    isBadgeGame: true,
+    icon: '🎯',
+    color: 'from-indigo-500 to-purple-500',
+    category: 'Communication',
+    teacherTip: 'Highlight badge earners during staff communication workshops.'
+  },
+  {
+    id: 'teacher-education-71',
+    slug: 'the-support-circle',
+    title: 'The Support Circle',
+    description: 'Recognize the value of peer emotional support in teaching environments',
+    gameIndex: 71,
+    calmCoins: getCalmCoinsForGame(71),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(71), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 3,
+    totalLevels: 3,
+    path: '/school-teacher/games/mental-health-emotional-regulation/the-support-circle',
+    icon: '💙',
+    color: 'from-blue-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Encourage teachers to form 3-member micro support circles per department.'
+  },
+  {
+    id: 'teacher-education-72',
+    slug: 'empathy-chain-game',
+    title: 'Empathy Chain Game',
+    description: 'Learn to pass supportive words forward among peers',
+    gameIndex: 72,
+    calmCoins: getCalmCoinsForGame(72),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(72), // 2 CalmCoins
+    estimatedTime: '12 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 5,
+    totalLevels: 5,
+    path: '/school-teacher/games/mental-health-emotional-regulation/empathy-chain-game',
+    icon: '💚',
+    color: 'from-pink-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Create a real "Empathy Chain" board in the staffroom.'
+  },
+  {
+    id: 'teacher-education-73',
+    slug: 'ask-for-help-simulation',
+    title: 'Ask for Help Simulation',
+    description: 'Practice requesting help without guilt or hesitation',
+    gameIndex: 73,
+    calmCoins: getCalmCoinsForGame(73),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(73), // 2 CalmCoins
+    estimatedTime: '15 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 4,
+    totalLevels: 4,
+    path: '/school-teacher/games/mental-health-emotional-regulation/ask-for-help-simulation',
+    icon: '🤝',
+    color: 'from-blue-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Reinforce that asking for help builds—not weakens—professional respect.'
+  },
+  {
+    id: 'teacher-education-74',
+    slug: 'team-gratitude-wall',
+    title: 'Team Gratitude Wall',
+    description: 'Strengthen group morale through appreciation messages',
+    gameIndex: 74,
+    calmCoins: getCalmCoinsForGame(74),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(74), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/team-gratitude-wall',
+    icon: '💙',
+    color: 'from-pink-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Set a real gratitude wall for end-of-month morale boosts.'
+  },
+  {
+    id: 'teacher-education-75',
+    slug: 'listening-partner-practice',
+    title: 'Listening Partner Practice',
+    description: 'Develop active listening through peer conversations',
+    gameIndex: 75,
+    calmCoins: getCalmCoinsForGame(75),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(75), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 2,
+    totalLevels: 2,
+    path: '/school-teacher/games/mental-health-emotional-regulation/listening-partner-practice',
+    icon: '👂',
+    color: 'from-blue-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Pair teachers randomly every week for 5-min listening rounds.'
+  },
+  {
+    id: 'teacher-education-76',
+    slug: 'encourage-a-colleague-challenge',
+    title: 'Encourage-a-Colleague Challenge',
+    description: 'Promote verbal appreciation in the workplace',
+    gameIndex: 76,
+    calmCoins: getCalmCoinsForGame(76),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(76), // 2 CalmCoins
+    estimatedTime: '5 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 3,
+    totalLevels: 3,
+    path: '/school-teacher/games/mental-health-emotional-regulation/encourage-a-colleague-challenge',
+    icon: '💙',
+    color: 'from-pink-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Build this habit till it becomes daily culture.'
+  },
+  {
+    id: 'teacher-education-77',
+    slug: 'mentor-memory-journal',
+    title: 'Mentor Memory Journal',
+    description: 'Recall moments of being mentored or mentoring others',
+    gameIndex: 77,
+    calmCoins: getCalmCoinsForGame(77),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(77), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/mentor-memory-journal',
+    icon: '📖',
+    color: 'from-indigo-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Encourage sharing one mentor story per staff meeting.'
+  },
+  {
+    id: 'teacher-education-78',
+    slug: 'staffroom-connection-map',
+    title: 'Staffroom Connection Map',
+    description: 'Visualize support relationships in the workplace',
+    gameIndex: 78,
+    calmCoins: getCalmCoinsForGame(78),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(78), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/staffroom-connection-map',
+    icon: '🗺️',
+    color: 'from-blue-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Use map to identify isolated colleagues and support them.'
+  },
+  {
+    id: 'teacher-education-79',
+    slug: 'team-harmony-simulation',
+    title: 'Team Harmony Simulation',
+    description: 'Balance opinions, workload, and empathy in team meetings',
+    gameIndex: 79,
+    calmCoins: getCalmCoinsForGame(79),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(79), // 2 CalmCoins
+    estimatedTime: '15 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 5,
+    totalLevels: 5,
+    path: '/school-teacher/games/mental-health-emotional-regulation/team-harmony-simulation',
+    icon: '🤝',
+    color: 'from-blue-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Model this in department heads\' meetings for consistency.'
+  },
+  {
+    id: 'teacher-education-80',
+    slug: 'connected-teacher-badge',
+    title: 'Connected Teacher Badge',
+    description: 'Recognize teachers who nurture healthy community culture',
+    gameIndex: 80,
+    calmCoins: getCalmCoinsForGame(80),  // 10 CalmCoins
+    replayCost: getReplayCostForGame(80), // 0 CalmCoins
+    estimatedTime: '5 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/connected-teacher-badge',
+    icon: '🤝',
+    color: 'from-pink-500 to-purple-500',
+    category: 'Support',
+    isBadgeGame: true,
+    teacherTip: 'Display badge earners as peer-support ambassadors.'
+  },
+  {
+    id: 'teacher-education-81',
+    slug: 'why-i-teach',
+    title: 'Why I Teach',
+    description: 'Reconnect with the original reason for becoming a teacher',
+    gameIndex: 81,
+    calmCoins: getCalmCoinsForGame(81),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(81), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/why-i-teach',
+    icon: '💡',
+    color: 'from-purple-500 to-indigo-500',
+    category: 'Support',
+    teacherTip: 'Print and place "Why I Teach" notes on a shared wall to inspire others.'
+  },
+  {
+    id: 'teacher-education-82',
+    slug: 'the-ripple-effect',
+    title: 'The Ripple Effect',
+    description: 'Realize the long-term impact teachers have on students\' lives',
+    gameIndex: 82,
+    calmCoins: getCalmCoinsForGame(82),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(82), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/the-ripple-effect',
+    icon: '🌊',
+    color: 'from-blue-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Share real success stories during monthly staff circles.'
+  },
+  {
+    id: 'teacher-education-83',
+    slug: 'legacy-ladder',
+    title: 'Legacy Ladder',
+    description: 'Visualize one\'s growth beyond daily struggles',
+    gameIndex: 83,
+    calmCoins: getCalmCoinsForGame(83),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(83), // 2 CalmCoins
+    estimatedTime: '15 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/legacy-ladder',
+    icon: '🪜',
+    color: 'from-purple-500 to-pink-500',
+    category: 'Support',
+    teacherTip: 'Encourage teachers to celebrate personal evolution, not just outcomes.'
+  },
+  {
+    id: 'teacher-education-84',
+    slug: 'life-map-puzzle',
+    title: 'Life Map Puzzle',
+    description: 'Identify personal values aligning with the teaching journey',
+    gameIndex: 84,
+    calmCoins: getCalmCoinsForGame(84),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(84), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/life-map-puzzle',
+    icon: '🗺️',
+    color: 'from-indigo-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Ask staff to share 1 core value in morning assembly.'
+  },
+  {
+    id: 'teacher-education-85',
+    slug: 'meaning-in-the-moment',
+    title: 'Meaning in the Moment',
+    description: 'Practice finding purpose in ordinary classroom moments',
+    gameIndex: 85,
+    calmCoins: getCalmCoinsForGame(85),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(85), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 8,
+    totalLevels: 8,
+    path: '/school-teacher/games/mental-health-emotional-regulation/meaning-in-the-moment',
+    icon: '💡',
+    color: 'from-purple-500 to-pink-500',
+    category: 'Support',
+    teacherTip: 'Pause daily to name one purposeful act before leaving school.'
+  },
+  {
+    id: 'teacher-education-86',
+    slug: 'fulfillment-journal',
+    title: 'Fulfillment Journal',
+    description: 'Reflect on the week\'s most meaningful teaching experience',
+    gameIndex: 86,
+    calmCoins: getCalmCoinsForGame(86),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(86), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/fulfillment-journal',
+    icon: '📔',
+    color: 'from-purple-500 to-indigo-500',
+    category: 'Support',
+    teacherTip: 'Use journal reflections for end-of-year gratitude portfolios.'
+  },
+  {
+    id: 'teacher-education-87',
+    slug: 'impact-visualization',
+    title: 'Impact Visualization',
+    description: 'Visualize future student success inspired by your teaching',
+    gameIndex: 87,
+    calmCoins: getCalmCoinsForGame(87),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(87), // 2 CalmCoins
+    estimatedTime: '5 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/impact-visualization',
+    icon: '✨',
+    color: 'from-purple-500 to-pink-500',
+    category: 'Support',
+    teacherTip: 'Repeat before exams or reviews to remember the deeper "why."'
+  },
+  {
+    id: 'teacher-education-88',
+    slug: 'mentor-gratitude-challenge',
+    title: 'Mentor Gratitude Challenge',
+    description: 'Express gratitude toward a mentor or student who inspired growth',
+    gameIndex: 88,
+    calmCoins: getCalmCoinsForGame(88),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(88), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/mentor-gratitude-challenge',
+    icon: '💌',
+    color: 'from-pink-500 to-rose-500',
+    category: 'Support',
+    teacherTip: 'Encourage every teacher to complete one gratitude message per term.'
+  },
+  {
+    id: 'teacher-education-89',
+    slug: 'inner-alignment-quiz',
+    title: 'Inner Alignment Quiz',
+    description: 'Check whether daily actions align with core values and goals',
+    gameIndex: 89,
+    calmCoins: getCalmCoinsForGame(89),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(89), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'intermediate',
+    category: 'teacher-education',
+    totalQuestions: 10,
+    totalLevels: 10,
+    path: '/school-teacher/games/mental-health-emotional-regulation/inner-alignment-quiz',
+    icon: '🎯',
+    color: 'from-purple-500 to-indigo-500',
+    category: 'Support',
+    teacherTip: 'Discuss results with mentors during review sessions.'
+  },
+  {
+    id: 'teacher-education-90',
+    slug: 'purposeful-teacher-badge',
+    title: 'Purposeful Teacher Badge',
+    description: 'Reward teachers who sustain joy, gratitude, and meaning in their work',
+    gameIndex: 90,
+    calmCoins: getCalmCoinsForGame(90),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(90), // 2 CalmCoins
+    estimatedTime: '1 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/purposeful-teacher-badge',
+    icon: '✨',
+    color: 'from-purple-500 to-pink-500',
+    category: 'Support',
+    isBadgeGame: true,
+    teacherTip: 'Showcase Purpose Badge earners during Teacher Appreciation Week.'
+  },
+  {
+    id: 'teacher-education-91',
+    slug: 'screen-time-mirror',
+    title: 'Screen-Time Mirror',
+    description: 'Become aware of how much daily digital exposure affects focus and rest',
+    gameIndex: 91,
+    calmCoins: getCalmCoinsForGame(91),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(91), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/screen-time-mirror',
+    icon: '📱',
+    color: 'from-blue-500 to-indigo-500',
+    category: 'Support',
+    teacherTip: 'Review chart every Sunday and set one small reduction goal.'
+  },
+  {
+    id: 'teacher-education-92',
+    slug: 'digital-boundaries-quiz',
+    title: 'Digital Boundaries Quiz',
+    description: 'Learn healthy screen limits for personal and professional life',
+    gameIndex: 92,
+    calmCoins: getCalmCoinsForGame(92),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(92), // 2 CalmCoins
+    estimatedTime: '15 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 10,
+    totalLevels: 10,
+    path: '/school-teacher/games/mental-health-emotional-regulation/digital-boundaries-quiz',
+    icon: '🛡️',
+    color: 'from-indigo-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Add "no-email zones" in staff policy for collective rest.'
+  },
+  {
+    id: 'teacher-education-93',
+    slug: 'evening-log-off-ritual',
+    title: 'Evening Log-Off Ritual',
+    description: 'Create a calm nightly transition away from screens',
+    gameIndex: 93,
+    calmCoins: getCalmCoinsForGame(93),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(93), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/evening-log-off-ritual',
+    icon: '🌙',
+    color: 'from-indigo-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Keep phone outside bedroom; use analogue alarm.'
+  },
+  {
+    id: 'teacher-education-94',
+    slug: 'social-media-reflection',
+    title: 'Social-Media Reflection',
+    description: 'Observe emotional patterns after social-media scrolling',
+    gameIndex: 94,
+    calmCoins: getCalmCoinsForGame(94),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(94), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/social-media-reflection',
+    icon: '📱',
+    color: 'from-pink-500 to-rose-500',
+    category: 'Support',
+    teacherTip: 'Replace 10 min scrolling with mindful breathing break.'
+  },
+  {
+    id: 'teacher-education-95',
+    slug: 'morning-nourish-routine',
+    title: 'Morning Nourish Routine',
+    description: 'Start each day with mindful self-care before digital check-ins',
+    gameIndex: 95,
+    calmCoins: getCalmCoinsForGame(95),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(95), // 2 CalmCoins
+    estimatedTime: '15 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/morning-nourish-routine',
+    icon: '🌅',
+    color: 'from-orange-500 to-yellow-500',
+    category: 'Support',
+    teacherTip: 'Share "#MorningNourish" updates in staff wellness chat weekly.'
+  },
+  {
+    id: 'teacher-education-96',
+    slug: 'nature-reconnect-challenge',
+    title: 'Nature Reconnect Challenge',
+    description: 'Reduce digital fatigue by engaging with nature',
+    gameIndex: 96,
+    calmCoins: getCalmCoinsForGame(96),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(96), // 2 CalmCoins
+    estimatedTime: '20 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/nature-reconnect-challenge',
+    icon: '🌿',
+    color: 'from-green-500 to-emerald-500',
+    category: 'Support',
+    teacherTip: 'Plan monthly "Nature Walk & Talk" meet-ups.'
+  },
+  {
+    id: 'teacher-education-97',
+    slug: 'self-care-inventory',
+    title: 'Self-Care Inventory',
+    description: 'Assess and balance physical, emotional, social, and spiritual care',
+    gameIndex: 97,
+    calmCoins: getCalmCoinsForGame(97),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(97), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 20,
+    totalLevels: 20,
+    path: '/school-teacher/games/mental-health-emotional-regulation/self-care-inventory',
+    icon: '📊',
+    color: 'from-indigo-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Focus on weakest category for the next week.'
+  },
+  {
+    id: 'teacher-education-98',
+    slug: 'rest-recovery-plan',
+    title: 'Rest & Recovery Plan',
+    description: 'Schedule deliberate rest periods to prevent exhaustion',
+    gameIndex: 98,
+    calmCoins: getCalmCoinsForGame(98),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(98), // 2 CalmCoins
+    estimatedTime: '10 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/rest-recovery-plan',
+    icon: '📅',
+    color: 'from-indigo-500 to-purple-500',
+    category: 'Support',
+    teacherTip: 'Honour rest appointments as strictly as meetings.'
+  },
+  {
+    id: 'teacher-education-99',
+    slug: 'silence-stillness-practice',
+    title: 'Silence & Stillness Practice',
+    description: 'Train mind to enjoy moments without digital input',
+    gameIndex: 99,
+    calmCoins: getCalmCoinsForGame(99),  // 5 CalmCoins
+    replayCost: getReplayCostForGame(99), // 2 CalmCoins
+    estimatedTime: '5 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/silence-stillness-practice',
+    icon: '🤫',
+    color: 'from-purple-500 to-indigo-500',
+    category: 'Support',
+    teacherTip: 'Introduce "Silent Minute" between classes for all staff.'
+  },
+  {
+    id: 'teacher-education-100',
+    slug: 'self-care-champion-badge',
+    title: 'Self-Care Champion Badge',
+    description: 'Honour teachers who maintain consistent self-care and digital balance',
+    gameIndex: 100,
+    calmCoins: getCalmCoinsForGame(100),  // 20 CalmCoins
+    replayCost: getReplayCostForGame(100), // 2 CalmCoins
+    estimatedTime: '1 min',
+    difficulty: 'beginner',
+    category: 'teacher-education',
+    totalQuestions: 1,
+    totalLevels: 1,
+    path: '/school-teacher/games/mental-health-emotional-regulation/self-care-champion-badge',
+    icon: '🏆',
+    color: 'from-amber-500 to-yellow-500',
+    category: 'Support',
+    isBadgeGame: true,
+    teacherTip: 'Celebrate Self-Care Champions publicly each term to normalize rest culture.'
+  },
   // More games will be added here later
 ];
 

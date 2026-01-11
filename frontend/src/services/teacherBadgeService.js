@@ -96,6 +96,106 @@ class TeacherBadgeService {
   }
 
   /**
+   * Get Resilient Educator Badge status
+   * @returns {Promise<Object>} Badge status
+   */
+  async getResilientEducatorBadgeStatus() {
+    try {
+      const response = await api.get('/api/school/teacher/badge/resilient-educator');
+      return response.data;
+    } catch (error) {
+      console.error('Failed to get Resilient Educator Badge status:', error);
+      return {
+        success: false,
+        hasBadge: false,
+        newlyEarned: false
+      };
+    }
+  }
+
+  /**
+   * Get Clear Communicator Badge status
+   * @returns {Promise<Object>} Badge status
+   */
+  async getClearCommunicatorBadgeStatus() {
+    try {
+      const response = await api.get('/api/school/teacher/badge/clear-communicator');
+      return response.data;
+    } catch (error) {
+      console.error('Failed to get Clear Communicator Badge status:', error);
+      return {
+        success: false,
+        hasBadge: false,
+        newlyEarned: false
+      };
+    }
+  }
+
+  /**
+   * Get Connected Teacher Badge status
+   * @returns {Promise<Object>} Badge status
+   */
+  async getConnectedTeacherBadgeStatus() {
+    try {
+      const response = await api.get('/api/school/teacher/badge/connected-teacher');
+      return response.data;
+    } catch (error) {
+      console.error('Failed to get Connected Teacher Badge status:', error);
+      return {
+        success: false,
+        hasBadge: false,
+        newlyEarned: false
+      };
+    }
+  }
+
+  /**
+   * Collect Connected Teacher Badge
+   * @returns {Promise<Object>} Collection result
+   */
+  async collectConnectedTeacherBadge() {
+    try {
+      const response = await api.post('/api/school/teacher/badge/connected-teacher/collect');
+      return response.data;
+    } catch (error) {
+      console.error('Failed to collect Connected Teacher Badge:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Get Purposeful Teacher Badge status
+   * @returns {Promise<Object>} Badge status
+   */
+  async getPurposefulTeacherBadgeStatus() {
+    try {
+      const response = await api.get('/api/school/teacher/badge/purposeful-teacher');
+      return response.data;
+    } catch (error) {
+      console.error('Failed to get Purposeful Teacher Badge status:', error);
+      return {
+        success: false,
+        hasBadge: false,
+        newlyEarned: false
+      };
+    }
+  }
+
+  /**
+   * Collect Purposeful Teacher Badge
+   * @returns {Promise<Object>} Collection result
+   */
+  async collectPurposefulTeacherBadge() {
+    try {
+      const response = await api.post('/api/school/teacher/badge/purposeful-teacher/collect');
+      return response.data;
+    } catch (error) {
+      console.error('Failed to collect Purposeful Teacher Badge:', error);
+      throw error;
+    }
+  }
+
+  /**
    * Get all teacher badges
    * @returns {Promise<Object>} All badges
    */

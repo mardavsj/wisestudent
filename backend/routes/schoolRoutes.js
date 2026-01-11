@@ -200,7 +200,19 @@ import {
   checkMindfulMasteryBadgeStatus,
   collectMindfulMasteryBadge,
   getMindfulMasteryBadgeStatus,
-  collectMindfulMasteryBadgeEndpoint
+  collectMindfulMasteryBadgeEndpoint,
+  getResilientEducatorBadgeStatus,
+  collectResilientEducatorBadgeEndpoint,
+  checkClearCommunicatorBadgeStatus,
+  collectClearCommunicatorBadge,
+  getClearCommunicatorBadgeStatus,
+  collectClearCommunicatorBadgeEndpoint,
+  getConnectedTeacherBadgeStatus,
+  collectConnectedTeacherBadgeEndpoint,
+  getPurposefulTeacherBadgeStatus,
+  collectPurposefulTeacherBadgeEndpoint,
+  getSelfCareChampionBadgeStatus,
+  collectSelfCareChampionBadgeEndpoint
 } from '../controllers/teacherBadgeController.js';
 import multer from 'multer';
 
@@ -518,6 +530,36 @@ router.get('/teacher/badge/mindful-mastery', requireAuth, requireSchoolRole, get
 
 // POST /api/school/teacher/badge/mindful-mastery/collect - Collect Mindful Mastery Badge
 router.post('/teacher/badge/mindful-mastery/collect', requireAuth, requireSchoolRole, collectMindfulMasteryBadgeEndpoint);
+
+// GET /api/school/teacher/badge/resilient-educator - Get Resilient Educator Badge status
+router.get('/teacher/badge/resilient-educator', requireAuth, requireSchoolRole, getResilientEducatorBadgeStatus);
+
+// POST /api/school/teacher/badge/resilient-educator/collect - Collect Resilient Educator Badge
+router.post('/teacher/badge/resilient-educator/collect', requireAuth, requireSchoolRole, collectResilientEducatorBadgeEndpoint);
+
+// GET /api/school/teacher/badge/clear-communicator - Get Clear Communicator Badge status
+router.get('/teacher/badge/clear-communicator', requireAuth, requireSchoolRole, getClearCommunicatorBadgeStatus);
+
+// POST /api/school/teacher/badge/clear-communicator/collect - Collect Clear Communicator Badge
+router.post('/teacher/badge/clear-communicator/collect', requireAuth, requireSchoolRole, collectClearCommunicatorBadgeEndpoint);
+
+// GET /api/school/teacher/badge/connected-teacher - Get Connected Teacher Badge status
+router.get('/teacher/badge/connected-teacher', requireAuth, requireSchoolRole, getConnectedTeacherBadgeStatus);
+
+// POST /api/school/teacher/badge/connected-teacher/collect - Collect Connected Teacher Badge
+router.post('/teacher/badge/connected-teacher/collect', requireAuth, requireSchoolRole, collectConnectedTeacherBadgeEndpoint);
+
+// GET /api/school/teacher/badge/purposeful-teacher - Get Purposeful Teacher Badge status
+router.get('/teacher/badge/purposeful-teacher', requireAuth, requireSchoolRole, getPurposefulTeacherBadgeStatus);
+
+// POST /api/school/teacher/badge/purposeful-teacher/collect - Collect Purposeful Teacher Badge
+router.post('/teacher/badge/purposeful-teacher/collect', requireAuth, requireSchoolRole, collectPurposefulTeacherBadgeEndpoint);
+
+// GET /api/school/teacher/badge/self-care-champion - Get Self-Care Champion Badge status
+router.get('/teacher/badge/self-care-champion', requireAuth, requireSchoolRole, getSelfCareChampionBadgeStatus);
+
+// POST /api/school/teacher/badge/self-care-champion/collect - Collect Self-Care Champion Badge
+router.post('/teacher/badge/self-care-champion/collect', requireAuth, requireSchoolRole, collectSelfCareChampionBadgeEndpoint);
 
 // GET /api/school/teacher/badges - Get all teacher badges
 router.get('/teacher/badges', requireAuth, requireSchoolRole, getTeacherBadges);
