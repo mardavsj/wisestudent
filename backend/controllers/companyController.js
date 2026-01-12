@@ -702,7 +702,12 @@ export const companySignup = async (req, res) => {
           board: academicInfo?.board || '',
           establishedYear: academicInfo?.establishedYear || '',
           totalStudents: academicInfo?.totalStudents || 0,
-          totalTeachers: academicInfo?.totalTeachers || 0
+          totalTeachers: academicInfo?.totalTeachers || 0,
+          contactInfo: {
+            phone: contactInfo?.phone || '',
+            email: contactInfo?.email || email.toLowerCase(),
+            website: contactInfo?.website || ''
+          }
         }
       });
       // Save to generate the _id first
@@ -730,7 +735,12 @@ export const companySignup = async (req, res) => {
       orgId: organization?._id,
       tenantId: organization?.tenantId || (organization?._id ? organization._id.toString() : null),
       isVerified: false,
-      approvalStatus: 'pending'
+      approvalStatus: 'pending',
+      phone: contactInfo?.phone || '',
+      professional: {
+        position: 'School Administrator',
+        joiningDate: new Date()
+      }
     });
 
     if (io) {
@@ -917,6 +927,11 @@ export const registerOrganization = async (req, res) => {
       tenantId: organization.tenantId,
       isVerified: true,
       approvalStatus: "approved",
+      phone: contactInfo.phone || "",
+      professional: {
+        position: contactInfo.position || "School Administrator",
+        joiningDate: contactInfo.joiningDate || new Date()
+      },
       contactInfo
     });
 

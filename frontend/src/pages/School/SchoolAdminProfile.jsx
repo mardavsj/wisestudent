@@ -56,12 +56,35 @@ const SchoolAdminProfile = () => {
     fetchSubscriptionDetails();
   }, []);
 
+  const normalizeProfile = (data) => {
+    const normalized = { ...(data || {}) };
+    normalized.position =
+      normalized.position ||
+      normalized.professional?.position ||
+      normalized.metadata?.position ||
+      '';
+    normalized.joiningDate =
+      normalized.joiningDate ||
+      normalized.professional?.joiningDate ||
+      normalized.metadata?.joiningDate ||
+      '';
+    normalized.organization =
+      normalized.organization ||
+      normalized.school?.name ||
+      normalized.schoolDetails?.schoolName ||
+      '';
+    normalized.dateOfBirth =
+      normalized.dateOfBirth || normalized.dob || normalized.metadata?.dateOfBirth || '';
+    return normalized;
+  };
+
   const fetchProfile = async () => {
     try {
       setLoading(true);
       const response = await api.get('/api/user/profile');
-      setProfile(response.data);
-      setEditProfile(response.data);
+      const normalized = normalizeProfile(response.data);
+      setProfile(normalized);
+      setEditProfile(normalized);
     } catch (error) {
       console.error('Error fetching profile:', error);
       toast.error('Failed to load profile');
@@ -98,8 +121,24 @@ const SchoolAdminProfile = () => {
     e.preventDefault();
     try {
       setSaving(true);
-      await api.put('/api/user/profile', editProfile);
-      setProfile(editProfile);
+      const payload = {
+        personal: {
+          name: editProfile.name || '',
+          phone: editProfile.phone || '',
+          location: editProfile.location || '',
+          website: editProfile.website || '',
+          bio: editProfile.bio || ''
+        },
+        dateOfBirth: editProfile.dateOfBirth || null,
+        professional: {
+          position: editProfile.position || '',
+          joiningDate: editProfile.joiningDate || ''
+        }
+      };
+      const response = await api.put('/api/user/profile', payload);
+      const normalized = normalizeProfile(response.data?.user || editProfile);
+      setProfile(normalized);
+      setEditProfile(normalized);
       setEditMode(false);
       toast.success('Profile updated successfully!');
     } catch (error) {

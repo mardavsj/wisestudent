@@ -1,5 +1,6 @@
 import User from '../models/User.js';
 import Organization from '../models/Organization.js';
+import Company from '../models/Company.js';
 import SchoolStudent from '../models/School/SchoolStudent.js';
 import SchoolClass from '../models/School/SchoolClass.js';
 import UserSubscription from '../models/UserSubscription.js';
@@ -304,6 +305,8 @@ export const getUserProfile = async (req, res) => {
       website: user.website || '',
       bio: user.bio || '',
       avatar: user.avatar || '',
+      position: user.professional?.position || user.metadata?.position || user.position || '',
+      joiningDate: user.professional?.joiningDate || user.metadata?.joiningDate || user.joiningDate || user.createdAt || null,
       dateOfBirth: user.dateOfBirth || user.dob || null,
       dob: user.dob || null,
       gender: user.gender || null,
@@ -356,6 +359,21 @@ export const getUserProfile = async (req, res) => {
         }
       } catch (orgError) {
         console.error('Failed to load organization for profile:', orgError);
+      }
+    }
+
+    if (!profileData.phone && organization?.settings?.contactInfo?.phone) {
+      profileData.phone = organization.settings.contactInfo.phone;
+    }
+
+    if (!profileData.phone && organization?.companyId) {
+      try {
+        const company = await Company.findById(organization.companyId).select('contactInfo').lean();
+        if (company?.contactInfo?.phone) {
+          profileData.phone = company.contactInfo.phone;
+        }
+      } catch (companyError) {
+        console.error('Failed to load company contact info:', companyError);
       }
     }
 
