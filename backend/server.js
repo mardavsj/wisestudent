@@ -26,8 +26,6 @@ const allowedOrigins = process.env.CLIENT_URL
   : [
       "http://localhost:5173",
       "http://localhost:3000",
-      "https://wisestudent.onrender.com",
-      "https://www.wisestudent.org"
     ];
 
 // Initialize app and server
@@ -88,9 +86,16 @@ app.use(
         // If URL parsing fails, continue to check against allowed origins
       }
       
+      // Log rejected origin for debugging (in production, you might want to remove this)
+      console.warn("CORS: Origin not allowed:", origin);
       return callback(new Error("Not allowed by CORS: " + origin), false);
     },
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+    exposedHeaders: ['Content-Range', 'X-Content-Range'],
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
   })
 );
 
