@@ -7,15 +7,16 @@ import { HelpCircle, CheckCircle, MessageCircle, TrendingUp, BookOpen, Users, Cl
 
 const AskForHelpSimulation = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-73";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 4;
-  
+
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedRequest, setSelectedRequest] = useState({});
   const [showResponse, setShowResponse] = useState(false);
@@ -49,23 +50,7 @@ const AskForHelpSimulation = () => {
             overall: "While it's natural to feel hesitant about asking for help, excessive apologizing suggests that needing help is wrong. This weakens your request and creates guilt."
           }
         },
-        {
-          id: 'direct-polite',
-          label: 'Direct & Polite Request',
-          phrasing: "I'm dealing with a lot of grading this week and would appreciate some help if you have time. Would you be able to help grade about 20 essays? I can return the favor next time you need support.",
-          tone: 90,
-          timing: 85,
-          response: {
-            text: "Of course! I'd be happy to help. I have some free time tomorrow afternoon - does that work for you? And thanks for offering to help me next time, that's really thoughtful.",
-            emotion: "willing and positive",
-            outcome: "The colleague is happy to help, appreciates your reciprocity, and the conversation feels collaborative. You feel supported without guilt."
-          },
-          feedback: {
-            tone: "Perfect! Direct and polite without apology. You stated your need clearly, acknowledged their time, and offered reciprocity. This communicates confidence and respect.",
-            timing: "Good timing - mid-week gives them notice and flexibility. Asking before you're completely desperate also shows planning rather than crisis management.",
-            overall: "This approach builds professional respect. You're clear about your needs, respectful of others' time, and offer mutual support. This creates positive relationships and makes help more likely."
-          }
-        },
+
         {
           id: 'vague',
           label: 'Vague Request',
@@ -99,7 +84,24 @@ const AskForHelpSimulation = () => {
             timing: "The timing seems urgent, which can make others feel cornered. Giving people space to decide makes help more likely and relationships stronger.",
             overall: "Demanding requests may get short-term help but damage relationships long-term. People help more willingly when they feel respected and have choice, not obligation."
           }
-        }
+        },
+        {
+          id: 'direct-polite',
+          label: 'Direct & Polite Request',
+          phrasing: "I'm dealing with a lot of grading this week and would appreciate some help if you have time. Would you be able to help grade about 20 essays? I can return the favor next time you need support.",
+          tone: 90,
+          timing: 85,
+          response: {
+            text: "Of course! I'd be happy to help. I have some free time tomorrow afternoon - does that work for you? And thanks for offering to help me next time, that's really thoughtful.",
+            emotion: "willing and positive",
+            outcome: "The colleague is happy to help, appreciates your reciprocity, and the conversation feels collaborative. You feel supported without guilt."
+          },
+          feedback: {
+            tone: "Perfect! Direct and polite without apology. You stated your need clearly, acknowledged their time, and offered reciprocity. This communicates confidence and respect.",
+            timing: "Good timing - mid-week gives them notice and flexibility. Asking before you're completely desperate also shows planning rather than crisis management.",
+            overall: "This approach builds professional respect. You're clear about your needs, respectful of others' time, and offer mutual support. This creates positive relationships and makes help more likely."
+          }
+        },
       ],
       correctRequest: 'direct-polite'
     },
@@ -127,23 +129,7 @@ const AskForHelpSimulation = () => {
             overall: "Even in urgent situations, calm and clear requests get better results. Panic spreads stress, while calm communicates confidence and makes help more effective."
           }
         },
-        {
-          id: 'calm-direct',
-          label: 'Calm & Direct Request',
-          phrasing: "My smartboard stopped working and I teach in 15 minutes. I know this is last-minute, but could you take a quick look and see if there's an easy fix? If not, I'll adapt my lesson, but any help would be great.",
-          tone: 90,
-          timing: 80,
-          response: {
-            text: "Of course! Let me take a look right away. I'll do my best to get it working, and if not, I can help you adapt your lesson quickly.",
-            emotion: "helpful and calm",
-            outcome: "The colleague is willing to help immediately, appreciates your flexibility, and feels good about assisting. Even if they can't fix it, you both feel supported."
-          },
-          feedback: {
-            tone: "Excellent! Calm and direct even in urgency. You acknowledged the last-minute nature, stated your need clearly, and showed flexibility. This makes help more likely.",
-            timing: "While urgent, you acknowledged the timing challenge and showed flexibility. This makes others more willing to help, even with short notice.",
-            overall: "Perfect approach for urgent requests! Calm communication, clear need, and flexibility make others willing to help. This builds respect and relationships."
-          }
-        },
+
         {
           id: 'guilty',
           label: 'Guilt-Laden Request',
@@ -159,6 +145,23 @@ const AskForHelpSimulation = () => {
             tone: "Excessive apology ('I'm so sorry', 'I hate bothering you', 'I feel terrible') communicates that asking is wrong. This creates guilt and makes helpers feel responsible for your emotions.",
             timing: "The timing requires urgency, but guilt makes the request feel heavier. Clear, direct requests work better even in urgent situations.",
             overall: "Guilt-laden requests get help but at the cost of relationship quality. Asking confidently communicates that needing help is normal, which builds respect."
+          }
+        },
+        {
+          id: 'calm-direct',
+          label: 'Calm & Direct Request',
+          phrasing: "My smartboard stopped working and I teach in 15 minutes. I know this is last-minute, but could you take a quick look and see if there's an easy fix? If not, I'll adapt my lesson, but any help would be great.",
+          tone: 90,
+          timing: 80,
+          response: {
+            text: " Let me take a look right away. I'll do my best to get it working, and if not, I can help you adapt your lesson quickly.",
+            emotion: "helpful and calm",
+            outcome: "The colleague is willing to help immediately, appreciates your flexibility, and feels good about assisting. Even if they can't fix it, you both feel supported."
+          },
+          feedback: {
+            tone: "Excellent! Calm and direct even in urgency. You acknowledged the last-minute nature, stated your need clearly, and showed flexibility. This makes help more likely.",
+            timing: "While urgent, you acknowledged the timing challenge and showed flexibility. This makes others more willing to help, even with short notice.",
+            overall: "Perfect approach for urgent requests! Calm communication, clear need, and flexibility make others willing to help. This builds respect and relationships."
           }
         },
         {
@@ -212,7 +215,7 @@ const AskForHelpSimulation = () => {
           tone: 95,
           timing: 90,
           response: {
-            text: "Absolutely. Thank you for being honest about needing support - that takes strength. Let's talk about what would help. I'm here to support you, and we can work on solutions together.",
+            text: " Thank you for being honest about needing support - that takes strength. Let's talk about what would help. I'm here to support you, and we can work on solutions together.",
             emotion: "appreciative and supportive",
             outcome: "The administrator appreciates your honesty and professionalism. You feel heard and supported, and practical solutions are discussed. Your professional respect increases."
           },
@@ -267,6 +270,23 @@ const AskForHelpSimulation = () => {
       timing: "Beginning of semester, during prep time",
       requests: [
         {
+          id: 'confident-collaborative',
+          label: 'Confident & Collaborative Request',
+          phrasing: "I'm adapting to the new curriculum and would value your expertise. Could we collaborate on lesson planning? I'd love to learn from your experience and work together on creating effective lessons.",
+          tone: 95,
+          timing: 90,
+          response: {
+            text: "I'd love to collaborate. I learned a lot last year, and I'm happy to share. Working together will make both our lessons better. When would be a good time?",
+            emotion: "enthusiastic and collaborative",
+            outcome: "The colleague is excited to collaborate, sees it as mutual learning, and a professional partnership forms. You both benefit, and your professional respect grows."
+          },
+          feedback: {
+            tone: "Perfect! Framing it as collaboration and valuing their expertise shows confidence and respect. This approach builds professional relationships and mutual learning.",
+            timing: "Beginning of semester is ideal - early support prevents struggles later. Good timing shows planning and professionalism.",
+            overall: "Excellent! Framing help requests as collaboration shows professional confidence. Recognizing that learning from colleagues is normal and valuable builds respect and creates partnerships."
+          }
+        },
+        {
           id: 'insecure',
           label: 'Insecure Request',
           phrasing: "I know I should know this, but I'm really struggling. I feel like I should be able to figure it out myself, but I just can't. Could you help me even though I probably should know this already?",
@@ -283,23 +303,7 @@ const AskForHelpSimulation = () => {
             overall: "Insecurity about asking for help makes the request uncomfortable for everyone. Recognizing that needing help is normal and professional makes requests easier."
           }
         },
-        {
-          id: 'confident-collaborative',
-          label: 'Confident & Collaborative Request',
-          phrasing: "I'm adapting to the new curriculum and would value your expertise. Could we collaborate on lesson planning? I'd love to learn from your experience and work together on creating effective lessons.",
-          tone: 95,
-          timing: 90,
-          response: {
-            text: "Absolutely! I'd love to collaborate. I learned a lot last year, and I'm happy to share. Working together will make both our lessons better. When would be a good time?",
-            emotion: "enthusiastic and collaborative",
-            outcome: "The colleague is excited to collaborate, sees it as mutual learning, and a professional partnership forms. You both benefit, and your professional respect grows."
-          },
-          feedback: {
-            tone: "Perfect! Framing it as collaboration and valuing their expertise shows confidence and respect. This approach builds professional relationships and mutual learning.",
-            timing: "Beginning of semester is ideal - early support prevents struggles later. Good timing shows planning and professionalism.",
-            overall: "Excellent! Framing help requests as collaboration shows professional confidence. Recognizing that learning from colleagues is normal and valuable builds respect and creates partnerships."
-          }
-        },
+
         {
           id: 'deferential',
           label: 'Overly Deferential Request',
@@ -339,6 +343,85 @@ const AskForHelpSimulation = () => {
     }
   ];
 
+  // Adding a fifth scenario
+  scenarios.push({
+    id: 5,
+    title: "Professional Development Opportunity",
+    context: "Your district announced a prestigious professional development workshop that could advance your career, but it requires release time from your principal. You need to ask for their support and approval.",
+    person: "Your Principal",
+    timing: "During scheduled office hours, with advance notice",
+    requests: [
+      {
+        id: 'undervaluing',
+        label: 'Undervaluing Request',
+        phrasing: "I know this isn't a big deal, but there's this workshop thing that might be useful. If you have time and it's not too much trouble, maybe I could attend?",
+        tone: 35,
+        timing: 40,
+        response: {
+          text: "Well, if it's really not a big deal to you, then it might not be worth the substitute cost. Maybe next time when it's more important.",
+          emotion: "dismissive",
+          outcome: "The principal questions the value of the opportunity based on your own dismissal of it. You miss the chance because you didn't advocate for yourself properly."
+        },
+        feedback: {
+          tone: "Undervaluing language ('not a big deal', 'thing') suggests the opportunity isn't worthwhile. This gives the principal permission to dismiss your request.",
+          timing: "While the timing is appropriate, undervaluing the opportunity makes it seem less important than it is.",
+          overall: "Undervaluing requests makes others question the importance of what you're asking for. This undermines your own case and makes support less likely."
+        }
+      },
+      {
+        id: 'confident-professional',
+        label: 'Confident & Professional Request',
+        phrasing: "I'd like to apply for the Advanced Pedagogy Workshop. It aligns with our school's goals and could significantly benefit my teaching practice. The release time would be Friday morning, and I'd need to arrange coverage. Would you consider supporting my application?",
+        tone: 95,
+        timing: 90,
+        response: {
+          text: "That sounds excellent! Professional development aligned with our goals is exactly what we want to support. Yes, I'd be happy to approve your application."
+        },
+        outcome: "The principal appreciates your initiative and alignment with school goals. You receive enthusiastic support and the opportunity to grow professionally.",
+        feedback: {
+          tone: "Perfect! Confident and professional. You clearly stated the value, aligned with school goals, and made a clear request. This demonstrates initiative and professional growth mindset.",
+          timing: "Great timing with advance notice. This shows planning and consideration for the administrative process. It allows time for decision-making.",
+          overall: "Excellent approach! You demonstrated the value, showed alignment with institutional goals, and made a clear request. This approach builds respect and gets support."
+        }
+      },
+      {
+        id: 'desperate-demand',
+        label: 'Desperate Demand',
+        phrasing: "I absolutely need to go to this workshop. It's make or break for my career, and I have to go. I don't care about coverage or anything - just approve it. I'll figure out the rest myself.",
+        tone: 25,
+        timing: 30,
+        response: {
+          text: "I understand you're passionate, but I can't approve something without considering the logistics. We need to discuss coverage and alignment with our goals first.",
+          emotion: "cautious",
+          outcome: "The principal is hesitant to approve your request because of the demanding tone and lack of consideration for school logistics. Your desperation creates concern."
+        },
+        feedback: {
+          tone: "Demanding language ('absolutely need', 'make or break') creates pressure and ignores the collaborative nature of the decision. This makes others feel pushed rather than asked.",
+          timing: "Even with good timing, demanding requests feel heavy-handed. Respectful requests work better than demands, regardless of timing.",
+          overall: "Demanding requests, even for important opportunities, create resistance. Professional requests with clear value statements work better than demands."
+        }
+      },
+      {
+        id: 'overly-formal',
+        label: 'Overly Formal Request',
+        phrasing: "Most esteemed principal, I humbly submit this request for your gracious consideration regarding a professional development opportunity that may prove beneficial. If it pleases you to grant me the privilege of attendance...",
+        tone: 50,
+        timing: 45,
+        response: {
+          text: "I appreciate the formality, but I need to understand the practical details and benefits. Can you tell me more about the workshop and how it connects to our goals?",
+          emotion: "confused",
+          outcome: "The principal is unsure how to respond to the overly formal tone and misses the practical information needed to make a decision."
+        },
+        feedback: {
+          tone: "Overly formal language creates distance and makes it hard to connect. Professional doesn't mean flowery - clear, direct language works better.",
+          timing: "The timing is fine, but the formal tone makes the request feel artificial. Natural professional language works better.",
+          overall: "While professional respect is important, overly formal language obscures your message. Clear, confident language is more effective than elaborate formality."
+        }
+      }
+    ],
+    correctRequest: 'confident-professional'
+  });
+
   const handleRequestSelect = (scenarioIndex, requestId) => {
     if (selectedRequest[scenarioIndex]) return; // Already answered
 
@@ -359,7 +442,7 @@ const AskForHelpSimulation = () => {
     } else {
       setShowResponse(false);
       setShowFeedback(false);
-      
+
       if (currentScenario < totalLevels - 1) {
         setCurrentScenario(prev => prev + 1);
       } else {
@@ -387,7 +470,7 @@ const AskForHelpSimulation = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={currentScenario + 1}
+      currentQuestion={currentScenario}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         <motion.div
@@ -426,7 +509,7 @@ const AskForHelpSimulation = () => {
                     </h2>
                   </div>
                 </div>
-                
+
                 <div className="bg-white rounded-xl p-6 shadow-lg mb-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-400 to-purple-500 flex items-center justify-center flex-shrink-0">
@@ -464,18 +547,13 @@ const AskForHelpSimulation = () => {
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     onClick={() => handleRequestSelect(currentScenario, request.id)}
-                    className={`w-full p-6 rounded-xl border-2 text-left transition-all ${
-                      request.id === current.correctRequest
-                        ? 'border-green-300 bg-gradient-to-br from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100'
+                    className={`w-full p-6 rounded-xl border-2 text-left transition-all ${request.id === current.correctRequest
+                        ? 'border-gray-300 bg-white hover:border-blue-300 hover:shadow-lg'
                         : 'border-gray-300 bg-white hover:border-blue-300 hover:shadow-lg'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-start gap-4">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        request.id === current.correctRequest
-                          ? 'bg-gradient-to-r from-green-400 to-emerald-500'
-                          : 'bg-gradient-to-r from-gray-300 to-gray-400'
-                      }`}>
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-gradient-to-r from-green-400 to-emerald-500">
                         <span className="text-white font-bold">{index + 1}</span>
                       </div>
                       <div className="flex-1">
@@ -498,13 +576,12 @@ const AskForHelpSimulation = () => {
               animate={{ opacity: 1, y: 0 }}
               className="bg-white rounded-2xl shadow-lg p-8 mb-6"
             >
-              <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${
-                selected.tone >= 80
+              <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${selected.tone >= 80
                   ? 'from-green-50 to-emerald-50 border-green-200'
                   : selected.tone >= 50
-                  ? 'from-yellow-50 to-orange-50 border-yellow-200'
-                  : 'from-red-50 to-rose-50 border-red-200'
-              }`}>
+                    ? 'from-yellow-50 to-orange-50 border-yellow-200'
+                    : 'from-red-50 to-rose-50 border-red-200'
+                }`}>
                 <div className="text-center mb-4">
                   <div className="text-5xl mb-2">{selected.tone >= 80 ? '💚' : selected.tone >= 50 ? '💛' : '💔'}</div>
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">
@@ -537,13 +614,12 @@ const AskForHelpSimulation = () => {
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${selected.tone}%` }}
-                      className={`h-3 rounded-full ${
-                        selected.tone >= 80
+                      className={`h-3 rounded-full ${selected.tone >= 80
                           ? 'bg-gradient-to-r from-green-400 to-emerald-500'
                           : selected.tone >= 50
-                          ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                          : 'bg-gradient-to-r from-red-400 to-rose-500'
-                      }`}
+                            ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
+                            : 'bg-gradient-to-r from-red-400 to-rose-500'
+                        }`}
                     />
                   </div>
                 </div>
@@ -556,13 +632,12 @@ const AskForHelpSimulation = () => {
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${selected.timing}%` }}
-                      className={`h-3 rounded-full ${
-                        selected.timing >= 80
+                      className={`h-3 rounded-full ${selected.timing >= 80
                           ? 'bg-gradient-to-r from-green-400 to-emerald-500'
                           : selected.timing >= 50
-                          ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                          : 'bg-gradient-to-r from-red-400 to-rose-500'
-                      }`}
+                            ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
+                            : 'bg-gradient-to-r from-red-400 to-rose-500'
+                        }`}
                     />
                   </div>
                 </div>
@@ -719,4 +794,3 @@ const AskForHelpSimulation = () => {
 };
 
 export default AskForHelpSimulation;
-

@@ -7,24 +7,23 @@ import { Monitor, Smartphone, Tablet, Laptop, Tv, Clock, TrendingUp, BookOpen, B
 
 const ScreenTimeMirror = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-91";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [screenTimeData, setScreenTimeData] = useState({
     work: { hours: 0, minutes: 0 },
     email: { hours: 0, minutes: 0 },
     social: { hours: 0, minutes: 0 },
     entertainment: { hours: 0, minutes: 0 },
-    news: { hours: 0, minutes: 0 },
-    other: { hours: 0, minutes: 0 }
+    news: { hours: 0, minutes: 0 }
   });
-  
+
   const [showChart, setShowChart] = useState(false);
   const [score, setScore] = useState(0);
   const [showGameOver, setShowGameOver] = useState(false);
@@ -75,22 +74,13 @@ const ScreenTimeMirror = () => {
       color: 'from-green-400 to-emerald-500',
       bgColor: 'from-green-50 to-emerald-50',
       borderColor: 'border-green-300'
-    },
-    {
-      id: 'other',
-      name: 'Other Digital Activities',
-      description: 'Other screen time activities',
-      icon: Monitor,
-      color: 'from-gray-400 to-slate-500',
-      bgColor: 'from-gray-50 to-slate-50',
-      borderColor: 'border-gray-300'
     }
   ];
 
   const handleTimeChange = (activityId, type, value) => {
     const numValue = parseInt(value) || 0;
     const maxValue = type === 'hours' ? 24 : 59;
-    
+
     if (numValue >= 0 && numValue <= maxValue) {
       setScreenTimeData(prev => ({
         ...prev,
@@ -186,8 +176,18 @@ const ScreenTimeMirror = () => {
       alert("Please enter at least some screen time data first.");
       return;
     }
+
+    // Calculate score based on completed activities (1 point per activity with time entered)
+    let calculatedScore = 0;
+    for (const activityId in screenTimeData) {
+      const activity = screenTimeData[activityId];
+      if ((activity.hours || 0) > 0 || (activity.minutes || 0) > 0) {
+        calculatedScore++;
+      }
+    }
+
     setShowChart(true);
-    setScore(1);
+    setScore(calculatedScore);
     setTimeout(() => {
       setShowGameOver(true);
     }, 3000);
@@ -206,7 +206,7 @@ const ScreenTimeMirror = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={0}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         {!showGameOver && (
@@ -214,9 +214,7 @@ const ScreenTimeMirror = () => {
             {/* Header */}
             <div className="text-center mb-8">
               <div className="text-6xl mb-4">📱</div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Screen-Time Mirror
-              </h2>
+
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Track your daily digital exposure to understand how screen time affects your focus and rest.
               </p>
@@ -244,7 +242,7 @@ const ScreenTimeMirror = () => {
                     const Icon = activity.icon;
                     const activityData = screenTimeData[activity.id];
                     const totalMinutes = getActivityMinutes(activity.id);
-                    
+
                     return (
                       <motion.div
                         key={activity.id}
@@ -264,7 +262,7 @@ const ScreenTimeMirror = () => {
                             <p className="text-sm text-gray-600 mb-4">
                               {activity.description}
                             </p>
-                            
+
                             {/* Time Input */}
                             <div className="flex items-center gap-4">
                               <div className="flex items-center gap-2">
@@ -361,13 +359,12 @@ const ScreenTimeMirror = () => {
                 <div className={`bg-gradient-to-br ${digitalLoad.bgColor} rounded-xl p-8 border-2 ${digitalLoad.borderColor} mb-8`}>
                   <div className="text-center mb-6">
                     <div className="text-6xl mb-4">{digitalLoad.emoji}</div>
-                    <h3 className={`text-3xl font-bold mb-2 ${
-                      digitalLoad.level === 'Very High' ? 'text-red-700' :
-                      digitalLoad.level === 'High' ? 'text-orange-700' :
-                      digitalLoad.level === 'Moderate' ? 'text-yellow-700' :
-                      digitalLoad.level === 'Low' ? 'text-green-700' :
-                      'text-emerald-700'
-                    }`}>
+                    <h3 className={`text-3xl font-bold mb-2 ${digitalLoad.level === 'Very High' ? 'text-red-700' :
+                        digitalLoad.level === 'High' ? 'text-orange-700' :
+                          digitalLoad.level === 'Moderate' ? 'text-yellow-700' :
+                            digitalLoad.level === 'Low' ? 'text-green-700' :
+                              'text-emerald-700'
+                      }`}>
                       {digitalLoad.level} Digital Load
                     </h3>
                     <div className="text-2xl font-bold text-gray-700 mb-2">
@@ -377,7 +374,7 @@ const ScreenTimeMirror = () => {
                       {digitalLoad.message}
                     </p>
                   </div>
-                  
+
                   <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
                     <p className="text-sm font-semibold text-gray-700 mb-2">Recommendation:</p>
                     <p className="text-gray-800 leading-relaxed">
@@ -392,7 +389,7 @@ const ScreenTimeMirror = () => {
                     <BarChart3 className="w-6 h-6 text-purple-600" />
                     Activity Breakdown
                   </h3>
-                  
+
                   <div className="space-y-4">
                     {activities.map((activity, index) => {
                       const Icon = activity.icon;
@@ -400,9 +397,9 @@ const ScreenTimeMirror = () => {
                       const percentage = getActivityPercentage(activity.id);
                       const hours = Math.floor(minutes / 60);
                       const mins = minutes % 60;
-                      
+
                       if (minutes === 0) return null;
-                      
+
                       return (
                         <motion.div
                           key={activity.id}
@@ -424,7 +421,7 @@ const ScreenTimeMirror = () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           {/* Progress Bar */}
                           <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                             <motion.div
@@ -521,13 +518,12 @@ const ScreenTimeMirror = () => {
                 <div className={`bg-gradient-to-br ${digitalLoad.bgColor} rounded-xl p-8 border-2 ${digitalLoad.borderColor} mb-6`}>
                   <div className="text-center">
                     <div className="text-5xl mb-3">{digitalLoad.emoji}</div>
-                    <h3 className={`text-2xl font-bold mb-2 ${
-                      digitalLoad.level === 'Very High' ? 'text-red-700' :
-                      digitalLoad.level === 'High' ? 'text-orange-700' :
-                      digitalLoad.level === 'Moderate' ? 'text-yellow-700' :
-                      digitalLoad.level === 'Low' ? 'text-green-700' :
-                      'text-emerald-700'
-                    }`}>
+                    <h3 className={`text-2xl font-bold mb-2 ${digitalLoad.level === 'Very High' ? 'text-red-700' :
+                        digitalLoad.level === 'High' ? 'text-orange-700' :
+                          digitalLoad.level === 'Moderate' ? 'text-yellow-700' :
+                            digitalLoad.level === 'Low' ? 'text-green-700' :
+                              'text-emerald-700'
+                      }`}>
                       {digitalLoad.level} Digital Load
                     </h3>
                     <div className="text-3xl font-bold text-gray-700 mb-3">
@@ -559,7 +555,7 @@ const ScreenTimeMirror = () => {
                         const Icon = activity.icon;
                         const hours = Math.floor(activity.minutes / 60);
                         const mins = activity.minutes % 60;
-                        
+
                         return (
                           <div key={activity.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-2 border-gray-200">
                             <div className="text-2xl font-bold text-purple-600 w-8">#{index + 1}</div>
@@ -634,4 +630,3 @@ const ScreenTimeMirror = () => {
 };
 
 export default ScreenTimeMirror;
-

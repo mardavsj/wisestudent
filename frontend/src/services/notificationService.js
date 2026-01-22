@@ -1,51 +1,48 @@
 import api from "../utils/api";
 
-// 📬 Fetch all notifications for the logged-in user
-export const fetchMyNotifications = async () => {
-  try {
-    // Check if user is authenticated before fetching
-    const token = localStorage.getItem("finmen_token");
-    if (!token) {
-      return [];
+const handleError = (error) => {
+  throw error.response?.data || error;
+};
+
+const buildQuery = (params = {}) => {
+  const query = new URLSearchParams();
+  Object.entries(params).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== "") {
+      query.append(key, value);
     }
-
-    const res = await api.get("/api/notifications", {
-      withCredentials: true, // Ensures cookies like finmen_token are sent
-    });
-    return res.data;
-  } catch (error) {
-    console.error("Error fetching notifications:", error);
-    
-    // Return empty array for auth errors to prevent UI issues
-    if (error.response?.status === 401) {
-      return [];
-    }
-    
-    // Return empty array instead of throwing error
-    return [];
-  }
-};
-
-// ✅ Mark all notifications as read
-export const markAllAsRead = async () => {
-  const res = await api.patch("/api/notifications/read-all", {}, {
-    withCredentials: true,
   });
-  return res.data;
+  const queryString = query.toString();
+  return queryString ? `?${queryString}` : "";
 };
 
-// ✅ Mark a specific notification as read
-export const markNotificationRead = async (id) => {
-  const res = await api.patch(`/api/notifications/${id}/read`, {}, {
-    withCredentials: true,
-  });
-  return res.data;
+const notificationService = {
+  list: (params = {}) =>
+    api
+      .get(`/api/notifications${buildQuery(params)}`)
+      .then((res) => res.data)
+      .catch(handleError),
+  unreadCount: () =>
+    api
+      .get("/api/notifications/unread-count")
+      .then((res) => res.data)
+      .catch(handleError),
+  markAsRead: (id) =>
+    api
+      .patch(`/api/notifications/${id}/read`)
+      .then((res) => res.data)
+      .catch(handleError),
+  markAllAsRead: () =>
+    api
+      .patch("/api/notifications/read-all")
+      .then((res) => res.data)
+      .catch(handleError),
+  remove: (id) =>
+    api
+      .delete(`/api/notifications/${id}`)
+      .then((res) => res.data)
+      .catch(handleError),
 };
 
-// ❌ Delete a specific notification
-export const deleteNotification = async (id) => {
-  const res = await api.delete(`/api/notifications/${id}`, {
-    withCredentials: true,
-  });
-  return res.data;
-};
+export default notificationService;
+
+export const fetchMyNotifications = (params = {}) => notificationService.list(params);

@@ -7,15 +7,15 @@ import { Ear, Wrench, Heart, X, CheckCircle, AlertCircle } from "lucide-react";
 
 const EmpathyVsOverloadQuiz = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-22";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showFeedback, setShowFeedback] = useState(false);
@@ -38,7 +38,7 @@ const EmpathyVsOverloadQuiz = () => {
       vignette: "A student comes to you after class, visibly upset. They're worried about an upcoming test and share that they've been having trouble sleeping and feeling overwhelmed. They're asking for help but seem to be carrying a lot of emotional weight.",
       correctAnswer: 'listen', // Listen is the healthiest response
       responses: {
-       
+
         solve: {
           title: "Solve",
           description: "You immediately jump into problem-solving mode, creating a detailed study plan, offering to tutor them daily, and trying to fix everything. You take on responsibility for their success and feel stressed about their outcome.",
@@ -49,7 +49,7 @@ const EmpathyVsOverloadQuiz = () => {
           description: "You feel their anxiety deeply, lose sleep worrying about them, and carry their emotional burden. You think about them constantly and feel responsible for their wellbeing. Their stress becomes your stress.",
           explanation: "Absorbing someone's emotions is unhealthy emotional absorption. You're taking on their emotional burden, which drains your capacity and prevents you from being sustainably helpful. This leads to compassion fatigue."
         },
-         listen: {
+        listen: {
           title: "Listen",
           description: "You listen attentively, acknowledge their feelings, and validate their experience. You offer support and connect them with appropriate resources (counselor, study strategies) while maintaining emotional boundaries. You care without taking on their emotional burden.",
           explanation: "Listening without carrying is the healthiest response. You can be present, validate feelings, and offer support without absorbing their emotional weight. This maintains your capacity while still being helpful."
@@ -65,7 +65,7 @@ const EmpathyVsOverloadQuiz = () => {
       id: 2,
       title: "The Struggling Learner",
       vignette: "A student is consistently failing assignments despite your efforts. They're frustrated and discouraged. They come to you asking what they're doing wrong, and you can see they're on the verge of giving up.",
-      correctAnswer: 'listen', // Listen is the healthiest response
+      correctAnswer: 'solve', // Solve with boundaries is the healthiest response
       responses: {
         listen: {
           title: "Listen",
@@ -95,7 +95,7 @@ const EmpathyVsOverloadQuiz = () => {
       vignette: "A student confides in you about a serious family crisis at home. They're worried, scared, and don't know what to do. They're looking to you for guidance and emotional support during this difficult time.",
       correctAnswer: 'listen', // Listen is the healthiest response
       responses: {
-        
+
         solve: {
           title: "Solve",
           description: "You immediately try to fix their family situation, offer to intervene directly, and take on responsibility for resolving their crisis. You work beyond your role and feel stressed about outcomes you can't control.",
@@ -122,9 +122,9 @@ const EmpathyVsOverloadQuiz = () => {
       id: 4,
       title: "The Behavioral Challenge",
       vignette: "A student with behavioral challenges is disrupting your class regularly. They're acting out, and you can see they're struggling emotionally. Other students are being affected, and you're feeling frustrated and overwhelmed.",
-      correctAnswer: 'listen', // Listen is the healthiest response
+      correctAnswer: 'solve', // Solve with boundaries is the healthiest response
       responses: {
-        
+
         solve: {
           title: "Solve",
           description: "You immediately create an intensive behavior plan, take on full responsibility for fixing their behavior, and work extra hours trying to solve the problem. You feel stressed and responsible for their transformation.",
@@ -182,7 +182,7 @@ const EmpathyVsOverloadQuiz = () => {
     if (selectedAnswers[currentQuestion]) return; // Already answered
 
     const isCorrect = answer === scenarios[currentQuestion].correctAnswer;
-    
+
     setSelectedAnswers(prev => ({
       ...prev,
       [currentQuestion]: answer
@@ -276,10 +276,34 @@ const EmpathyVsOverloadQuiz = () => {
                             {option.label}
                           </h3>
                           <p className={`text-sm ${option.textColor} opacity-80`}>
-                            {option.id === 'listen' && 'Listen attentively and offer support with boundaries'}
-                            {option.id === 'solve' && 'Take action to solve the problem directly'}
-                            {option.id === 'absorb' && 'Take on their emotional burden as your own'}
-                            {option.id === 'avoid' && 'Minimize or avoid dealing with the situation'}
+                            {option.id === 'listen' && (
+                              current.id === 1 ? 'Listen with empathy and connect to resources' :
+                                current.id === 2 ? 'Listen and guide toward self-efficacy' :
+                                  current.id === 3 ? 'Listen while connecting to professional support' :
+                                    current.id === 4 ? 'Listen to understand underlying causes' :
+                                      'Listen and facilitate mutual understanding'
+                            )}
+                            {option.id === 'solve' && (
+                              current.id === 1 ? 'Create detailed study plan and tutor intensively' :
+                                current.id === 2 ? 'Develop intensive intervention and take ownership' :
+                                  current.id === 3 ? 'Intervene directly in the family situation' :
+                                    current.id === 4 ? 'Design behavior plan and manage outcomes' :
+                                      'Take sides and resolve the conflict for them'
+                            )}
+                            {option.id === 'absorb' && (
+                              current.id === 1 ? 'Feel their anxiety deeply and lose sleep' :
+                                current.id === 2 ? 'Take their failure personally and feel guilty' :
+                                  current.id === 3 ? 'Take on their crisis as your own burden' :
+                                    current.id === 4 ? 'Take their behavior personally as reflection of your teaching' :
+                                      'Take on their emotional burden and relationship stress'
+                            )}
+                            {option.id === 'avoid' && (
+                              current.id === 1 ? 'Minimize concerns and tell them to relax' :
+                                current.id === 2 ? 'Tell them to try harder and move on' :
+                                  current.id === 3 ? 'Redirect and avoid getting involved' :
+                                    current.id === 4 ? 'Send out of class and manage disruption only' :
+                                      'Tell them to work it out themselves'
+                            )}
                           </p>
                         </div>
                       </div>
@@ -294,11 +318,10 @@ const EmpathyVsOverloadQuiz = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className={`mb-6 rounded-xl p-6 border-2 ${
-                    isCorrect
+                  className={`mb-6 rounded-xl p-6 border-2 ${isCorrect
                       ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-300'
                       : 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-300'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start gap-4 mb-4">
                     {isCorrect ? (
@@ -308,9 +331,8 @@ const EmpathyVsOverloadQuiz = () => {
                     )}
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">
-                        <h3 className={`text-2xl font-bold ${
-                          isCorrect ? 'text-green-800' : 'text-orange-800'
-                        }`}>
+                        <h3 className={`text-2xl font-bold ${isCorrect ? 'text-green-800' : 'text-orange-800'
+                          }`}>
                           {feedback.title}
                         </h3>
                         {selectedOption && (
@@ -319,22 +341,18 @@ const EmpathyVsOverloadQuiz = () => {
                           </div>
                         )}
                       </div>
-                      <p className={`text-lg mb-4 ${
-                        isCorrect ? 'text-green-700' : 'text-orange-700'
-                      }`}>
+                      <p className={`text-lg mb-4 ${isCorrect ? 'text-green-700' : 'text-orange-700'
+                        }`}>
                         {feedback.description}
                       </p>
-                      <div className={`bg-white rounded-lg p-4 border-l-4 ${
-                        isCorrect ? 'border-green-500' : 'border-orange-500'
-                      }`}>
-                        <p className={`font-semibold mb-2 ${
-                          isCorrect ? 'text-green-800' : 'text-orange-800'
+                      <div className={`bg-white rounded-lg p-4 border-l-4 ${isCorrect ? 'border-green-500' : 'border-orange-500'
                         }`}>
+                        <p className={`font-semibold mb-2 ${isCorrect ? 'text-green-800' : 'text-orange-800'
+                          }`}>
                           💡 Key Insight:
                         </p>
-                        <p className={`${
-                          isCorrect ? 'text-green-700' : 'text-orange-700'
-                        }`}>
+                        <p className={`${isCorrect ? 'text-green-700' : 'text-orange-700'
+                          }`}>
                           {feedback.explanation}
                         </p>
                       </div>
@@ -378,10 +396,10 @@ const EmpathyVsOverloadQuiz = () => {
                 {score === totalLevels
                   ? "Perfect! You have a strong understanding of the difference between helpful empathy and unhealthy emotional absorption. Remember that 'listening without carrying' is the key to sustainable care."
                   : score >= Math.ceil(totalLevels * 0.8)
-                  ? "Excellent! You're developing awareness of healthy empathy boundaries. Keep practicing 'listening without carrying' to maintain your capacity while being helpful."
-                  : score >= Math.ceil(totalLevels * 0.6)
-                  ? "Good effort! Understanding empathy vs overload takes practice. Remember that you can care deeply while maintaining boundaries. 'Listening without carrying' protects your capacity."
-                  : "Keep learning! Understanding the difference between helpful empathy and emotional absorption is important. Remember that 'listening without carrying' allows you to be sustainably helpful."}
+                    ? "Excellent! You're developing awareness of healthy empathy boundaries. Keep practicing 'listening without carrying' to maintain your capacity while being helpful."
+                    : score >= Math.ceil(totalLevels * 0.6)
+                      ? "Good effort! Understanding empathy vs overload takes practice. Remember that you can care deeply while maintaining boundaries. 'Listening without carrying' protects your capacity."
+                      : "Keep learning! Understanding the difference between helpful empathy and emotional absorption is important. Remember that 'listening without carrying' allows you to be sustainably helpful."}
               </p>
             </div>
 
@@ -407,4 +425,3 @@ const EmpathyVsOverloadQuiz = () => {
 };
 
 export default EmpathyVsOverloadQuiz;
-

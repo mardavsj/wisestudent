@@ -7,19 +7,19 @@ import { Zap, CheckCircle, XCircle, MessageCircle, TrendingUp, BookOpen, Clock, 
 
 const CommunicationReflex = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-69";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 20;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [gameState, setGameState] = useState("instructions"); // instructions, playing, gameOver
   const [currentCard, setCurrentCard] = useState(0);
   const [score, setScore] = useState(0);
-  const [timeRemaining, setTimeRemaining] = useState(30); // 30 seconds
+  const [timeRemaining, setTimeRemaining] = useState(45); // 45 seconds
   const [selectedCards, setSelectedCards] = useState({});
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState("");
@@ -27,187 +27,37 @@ const CommunicationReflex = () => {
   const [reactionTime, setReactionTime] = useState([]);
   const [startTime, setStartTime] = useState(null);
 
-  // Communication cue flash cards (positive vs negative)
+  // Communication cue flash cards (positive vs negative) - Teacher focused scenarios
   const communicationCues = [
     {
       id: 1,
-      text: "You never listen",
-      type: "negative",
-      explanation: "Negative: Uses 'never' which is absolute and accusatory. Creates defensiveness."
+      text: "I understand you're concerned about your child's progress. Let's work together to find solutions.",
+      type: "positive",
+      explanation: "Positive: Validates concern and invites collaboration. Builds partnership with parents."
     },
     {
       id: 2,
-      text: "Can we talk?",
-      type: "positive",
-      explanation: "Positive: Invites dialogue with openness. Creates space for conversation."
+      text: "Parents like you just don't care about their children's education.",
+      type: "negative",
+      explanation: "Negative: Makes sweeping generalizations about parents. Creates defensiveness and conflict."
     },
     {
       id: 3,
-      text: "This is all your fault",
-      type: "negative",
-      explanation: "Negative: Places blame entirely on one person. Creates defensiveness and conflict."
+      text: "I noticed your student responded well to positive reinforcement today. Thanks for sharing that insight.",
+      type: "positive",
+      explanation: "Positive: Recognizes positive behavior and validates parent's contribution. Strengthens home-school connection."
     },
     {
       id: 4,
-      text: "I'd like to understand your perspective",
-      type: "positive",
-      explanation: "Positive: Shows curiosity and openness. Invites collaboration."
+      text: "This is all because of your poor parenting.",
+      type: "negative",
+      explanation: "Negative: Places blame on parent. Creates hostility and shuts down productive communication."
     },
     {
       id: 5,
-      text: "You always do this",
-      type: "negative",
-      explanation: "Negative: Uses 'always' which is absolute and dismissive. Doesn't invite dialogue."
-    },
-    {
-      id: 6,
-      text: "I hear you",
+      text: "I'd love to hear your thoughts on how we can support your child's learning goals.",
       type: "positive",
-      explanation: "Positive: Validates feelings and shows active listening. Creates connection."
-    },
-    {
-      id: 7,
-      text: "That's a stupid idea",
-      type: "negative",
-      explanation: "Negative: Dismissive and insulting. Shuts down communication."
-    },
-    {
-      id: 8,
-      text: "Help me understand why you think that",
-      type: "positive",
-      explanation: "Positive: Invites explanation with curiosity. Opens dialogue."
-    },
-    {
-      id: 9,
-      text: "Why can't you just...",
-      type: "negative",
-      explanation: "Negative: Frustrated tone suggests the other person should be different. Creates defensiveness."
-    },
-    {
-      id: 10,
-      text: "I see your point, and here's another way to look at it",
-      type: "positive",
-      explanation: "Positive: Acknowledges their perspective while offering alternative. Balances validation with direction."
-    },
-    {
-      id: 11,
-      text: "You're wrong",
-      type: "negative",
-      explanation: "Negative: Absolute statement without explanation. Shuts down conversation."
-    },
-    {
-      id: 12,
-      text: "I see it differently, and here's why",
-      type: "positive",
-      explanation: "Positive: Shares perspective without invalidating theirs. Opens dialogue."
-    },
-    {
-      id: 13,
-      text: "This is ridiculous",
-      type: "negative",
-      explanation: "Negative: Dismissive and judgmental. Doesn't invite understanding."
-    },
-    {
-      id: 14,
-      text: "I understand this is important to you",
-      type: "positive",
-      explanation: "Positive: Validates importance of the topic to them. Creates connection."
-    },
-    {
-      id: 15,
-      text: "Whatever",
-      type: "negative",
-      explanation: "Negative: Dismissive and uninterested. Shuts down communication."
-    },
-    {
-      id: 16,
-      text: "Let's work on this together",
-      type: "positive",
-      explanation: "Positive: Invites collaboration and partnership. Creates shared solution-finding."
-    },
-    {
-      id: 17,
-      text: "You don't get it",
-      type: "negative",
-      explanation: "Negative: Assumes lack of understanding. Creates defensiveness and shuts down dialogue."
-    },
-    {
-      id: 18,
-      text: "Can you help me understand what you mean?",
-      type: "positive",
-      explanation: "Positive: Asks for clarification with curiosity. Opens understanding."
-    },
-    {
-      id: 19,
-      text: "That makes no sense",
-      type: "negative",
-      explanation: "Negative: Dismissive without explanation. Doesn't invite understanding."
-    },
-    {
-      id: 20,
-      text: "I'm not sure I understand. Can you explain more?",
-      type: "positive",
-      explanation: "Positive: Acknowledges confusion and asks for clarification. Opens dialogue."
-    },
-    {
-      id: 21,
-      text: "You're overreacting",
-      type: "negative",
-      explanation: "Negative: Invalidates their emotional experience. Dismissive and creates defensiveness."
-    },
-    {
-      id: 22,
-      text: "I can see this is really affecting you",
-      type: "positive",
-      explanation: "Positive: Validates emotional experience without judgment. Creates connection."
-    },
-    {
-      id: 23,
-      text: "This is pointless",
-      type: "negative",
-      explanation: "Negative: Dismissive and hopeless. Shuts down communication and problem-solving."
-    },
-    {
-      id: 24,
-      text: "This is challenging, and let's find a way forward",
-      type: "positive",
-      explanation: "Positive: Acknowledges difficulty while maintaining hope. Invites solution-finding."
-    },
-    {
-      id: 25,
-      text: "You're being unreasonable",
-      type: "negative",
-      explanation: "Negative: Judgment about their behavior. Creates defensiveness and conflict."
-    },
-    {
-      id: 26,
-      text: "I understand you're frustrated, and let's find a solution",
-      type: "positive",
-      explanation: "Positive: Validates feeling while maintaining direction toward solutions. Balances empathy with firmness."
-    },
-    {
-      id: 27,
-      text: "Stop complaining",
-      type: "negative",
-      explanation: "Negative: Dismissive command. Shuts down expression and creates resentment."
-    },
-    {
-      id: 28,
-      text: "I hear your concerns, and what would help?",
-      type: "positive",
-      explanation: "Positive: Validates concerns and invites problem-solving. Creates collaboration."
-    },
-    {
-      id: 29,
-      text: "You're being difficult",
-      type: "negative",
-      explanation: "Negative: Labels the person negatively. Creates defensiveness and shuts down communication."
-    },
-    {
-      id: 30,
-      text: "This seems challenging. How can I support you?",
-      type: "positive",
-      explanation: "Positive: Acknowledges difficulty and offers support. Creates connection and collaboration."
+      explanation: "Positive: Invites parental input and shows collaborative approach. Values parent perspective."
     }
   ];
 
@@ -217,14 +67,13 @@ const CommunicationReflex = () => {
 
   useEffect(() => {
     if (gameState === "playing") {
-      // Shuffle and select subset
-      const shuffled = [...communicationCues].sort(() => Math.random() - 0.5);
-      const selected = shuffled.slice(0, totalLevels);
+      // Select subset without shuffling
+      const selected = communicationCues.slice(0, totalLevels);
       setShuffledCards(selected);
       setCurrentShuffledIndex(0);
       setScore(0);
       setSelectedCards({});
-      setTimeRemaining(30);
+      setTimeRemaining(45);
       setReactionTime([]);
       setStartTime(Date.now());
       setShowFeedback(false);
@@ -233,7 +82,7 @@ const CommunicationReflex = () => {
 
   // Timer countdown
   useEffect(() => {
-    if (gameState === "playing" && timeRemaining > 0) {
+    if (gameState === "playing" && timeRemaining > 0 && currentShuffledIndex < shuffledCards.length) {
       const timer = setTimeout(() => {
         setTimeRemaining(prev => prev - 1);
       }, 1000);
@@ -243,14 +92,14 @@ const CommunicationReflex = () => {
       setShowGameOver(true);
       setGameState("gameOver");
     }
-  }, [gameState, timeRemaining]);
+  }, [gameState, timeRemaining, currentShuffledIndex, shuffledCards.length]);
 
   const handleCardTap = (isPositive) => {
     if (gameState !== "playing" || selectedCards[currentShuffledIndex]) return;
-    
+
     const card = shuffledCards[currentShuffledIndex];
     const isCorrect = (isPositive && card.type === "positive") || (!isPositive && card.type === "negative");
-    
+
     // Calculate reaction time
     const reaction = Date.now() - startTime;
     setReactionTime(prev => [...prev, reaction]);
@@ -265,13 +114,19 @@ const CommunicationReflex = () => {
       }
     }));
 
-    if (isCorrect && card.type === "positive") {
+    if (isCorrect) {
       setScore(prev => prev + 1);
-      setFeedbackMessage(`✓ Correct! Positive communication. ${card.explanation}`);
-    } else if (!isCorrect && card.type === "positive") {
-      setFeedbackMessage(`✗ Missed! This was positive: "${card.text}". ${card.explanation}`);
-    } else if (!isCorrect && card.type === "negative") {
-      setFeedbackMessage(`✗ Incorrect. This was negative: "${card.text}". ${card.explanation}`);
+      if (card.type === "positive") {
+        setFeedbackMessage(`✓ Correct! Positive communication. ${card.explanation}`);
+      } else {
+        setFeedbackMessage(`✓ Correct! Negative communication. ${card.explanation}`);
+      }
+    } else {
+      if (card.type === "positive") {
+        setFeedbackMessage(`✗ Missed! This was positive: "${card.text}". ${card.explanation}`);
+      } else {
+        setFeedbackMessage(`✗ Incorrect. This was negative: "${card.text}". ${card.explanation}`);
+      }
     }
 
     setShowFeedback(true);
@@ -282,6 +137,7 @@ const CommunicationReflex = () => {
       if (currentShuffledIndex < shuffledCards.length - 1) {
         setCurrentShuffledIndex(prev => prev + 1);
         setStartTime(Date.now());
+        setTimeRemaining(45); // Reset timer for next card
       } else {
         // All cards shown
         setShowGameOver(true);
@@ -299,7 +155,7 @@ const CommunicationReflex = () => {
     setScore(0);
     setCurrentShuffledIndex(0);
     setSelectedCards({});
-    setTimeRemaining(30);
+    setTimeRemaining(45);
     setShowGameOver(false);
     setShowFeedback(false);
     setReactionTime([]);
@@ -307,15 +163,15 @@ const CommunicationReflex = () => {
 
   const currentCardData = shuffledCards[currentShuffledIndex];
   const progress = shuffledCards.length > 0 ? ((currentShuffledIndex + 1) / shuffledCards.length) * 100 : 0;
-  const positiveCount = shuffledCards.filter(c => c && c.type === "positive").length;
+  const totalPossible = shuffledCards.length;
   const averageReactionTime = reactionTime.length > 0
     ? Math.round(reactionTime.reduce((a, b) => a + b, 0) / reactionTime.length)
     : 0;
-  const correctPositiveSelections = Object.values(selectedCards).filter(
-    (sel, idx) => sel && shuffledCards[idx] && shuffledCards[idx].type === "positive" && sel.selected === true
+  const totalCorrect = Object.values(selectedCards).filter(
+    (sel, idx) => sel && sel.correct
   ).length;
-  const awarenessScore = shuffledCards.length > 0
-    ? Math.round((correctPositiveSelections / positiveCount) * 100)
+  const awarenessScore = totalPossible > 0
+    ? Math.round((totalCorrect / totalPossible) * 100)
     : 0;
 
   return (
@@ -328,7 +184,7 @@ const CommunicationReflex = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={currentShuffledIndex + 1}
+      currentQuestion={currentShuffledIndex}
     >
       <div className="w-full max-w-4xl mx-auto px-4">
         {/* Instructions */}
@@ -344,7 +200,7 @@ const CommunicationReflex = () => {
                 Communication Reflex
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Quickly identify positive communication cues! Tap positive ones as fast as you can.
+                Identify positive vs negative communication in parent-teacher interactions! Tap positive or negative cues as they appear.
               </p>
             </div>
 
@@ -356,19 +212,19 @@ const CommunicationReflex = () => {
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <span><strong>Tap positive communication cues</strong> quickly as they appear. Examples: "Can we talk?", "I hear you", "Let's work together"</span>
+                  <span><strong>Identify positive communication cues</strong> in parent-teacher interactions. Tap the "Positive" button when you see supportive phrases.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                  <span><strong>Don't tap negative cues</strong>. Examples: "You never listen", "That's stupid", "You're wrong"</span>
+                  <span><strong>Identify negative communication cues</strong> that create barriers. Tap the "Negative" button when you see problematic phrases.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Clock className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
-                  <span><strong>Speed matters!</strong> You have limited time. The faster you identify positive cues, the better your score.</span>
+                  <span><strong>Respond thoughtfully!</strong> You have 45 seconds per question to strengthen your communication awareness.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Target className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
-                  <span><strong>Build your awareness</strong> of positive vs negative communication patterns to improve your communication skills.</span>
+                  <span><strong>Build your awareness</strong> of effective parent-teacher communication to improve your professional interactions.</span>
                 </li>
               </ul>
             </div>
@@ -379,21 +235,19 @@ const CommunicationReflex = () => {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <p className="text-sm font-semibold text-green-700 mb-2">✓ Positive (Tap These):</p>
+                  <p className="text-sm font-semibold text-green-700 mb-2">✓ Positive Examples:</p>
                   <ul className="text-sm text-green-800 space-y-1">
-                    <li>• "Can we talk?"</li>
-                    <li>• "I hear you"</li>
-                    <li>• "Let's work together"</li>
-                    <li>• "I'd like to understand"</li>
+
+                    <li>• "I appreciate your time"</li>
+                    <li>• "I see your child's potential"</li>
                   </ul>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-red-700 mb-2">✗ Negative (Don't Tap):</p>
+                  <p className="text-sm font-semibold text-red-700 mb-2">✗ Negative Examples:</p>
                   <ul className="text-sm text-red-800 space-y-1">
-                    <li>• "You never listen"</li>
-                    <li>• "That's stupid"</li>
-                    <li>• "You're wrong"</li>
-                    <li>• "You always do this"</li>
+
+                    <li>• "You don't care about education"</li>
+                    <li>• "Some students aren't cut out for success"</li>
                   </ul>
                 </div>
               </div>
@@ -432,7 +286,7 @@ const CommunicationReflex = () => {
                     </span>
                   </div>
                   <div className="text-sm text-gray-600">
-                    Card {currentShuffledIndex + 1} of {shuffledCards.length}
+                    Question {currentShuffledIndex + 1} of {shuffledCards.length}
                   </div>
                 </div>
               </div>
@@ -455,11 +309,10 @@ const CommunicationReflex = () => {
                 transition={{ duration: 0.3 }}
                 className="mb-6"
               >
-                <div className={`bg-gradient-to-br rounded-2xl p-12 shadow-2xl border-4 min-h-[300px] flex items-center justify-center ${
-                  currentCardData.type === "positive"
+                <div className={`bg-gradient-to-br rounded-2xl p-12 shadow-2xl border-4 min-h-[300px] flex items-center justify-center ${currentCardData.type === "positive"
                     ? "from-green-100 via-emerald-100 to-teal-100 border-green-300"
-                    : "from-red-100 via-rose-100 to-pink-100 border-red-300"
-                }`}>
+                    : "from-green-100 via-emerald-100 to-teal-100 border-green-300"
+                  }`}>
                   <p className="text-3xl font-bold text-center text-gray-800 leading-relaxed">
                     "{currentCardData.text}"
                   </p>
@@ -474,14 +327,14 @@ const CommunicationReflex = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleCardTap(true)}
-                  className="p-8 rounded-xl border-4 border-green-400 bg-gradient-to-br from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 transition-all shadow-lg"
+                  className="p-8 rounded-xl border-4 border-gray-400 bg-gradient-to-br from-gray-50 to-slate-50 hover:from-gray-100 hover:to-slate-100 transition-all shadow-lg"
                 >
                   <div className="flex flex-col items-center gap-4">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center shadow-lg">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-r from-gray-400 to-gray-500 flex items-center justify-center shadow-lg">
                       <CheckCircle className="w-10 h-10 text-white" />
                     </div>
-                    <p className="text-2xl font-bold text-green-800">Positive</p>
-                    <p className="text-sm text-green-600">Tap if positive!</p>
+                    <p className="text-2xl font-bold text-gray-800">Positive</p>
+                    <p className="text-sm text-gray-600">Tap if positive!</p>
                   </div>
                 </motion.button>
 
@@ -537,7 +390,7 @@ const CommunicationReflex = () => {
                 Communication Reflex Complete!
               </h2>
               <p className="text-xl text-gray-600">
-                You identified {score} positive communication cues
+                You completed {shuffledCards.length} communication scenarios
               </p>
             </div>
 
@@ -546,7 +399,7 @@ const CommunicationReflex = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-indigo-600 mb-2">{score}</div>
-                  <p className="text-sm text-gray-700">Positive Cues Identified</p>
+                  <p className="text-sm text-gray-700">Correct Responses</p>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-green-600 mb-2">{awarenessScore}%</div>
@@ -569,19 +422,19 @@ const CommunicationReflex = () => {
               </h3>
               {awarenessScore >= 90 ? (
                 <p className="text-green-800 leading-relaxed">
-                  <strong>Excellent!</strong> You have strong awareness of positive communication cues. You quickly identify phrases that invite dialogue, validate feelings, and create connection. Keep practicing to maintain this awareness in real conversations.
+                  <strong>Excellent!</strong> You have strong awareness of effective parent-teacher communication. You quickly identify phrases that build partnerships, validate concerns, and create positive dialogue. This awareness will enhance your professional interactions with families.
                 </p>
               ) : awarenessScore >= 70 ? (
                 <p className="text-green-800 leading-relaxed">
-                  <strong>Good!</strong> You have solid awareness of positive communication cues. Continue practicing to improve your speed and recognition. Focus on identifying phrases that invite collaboration and validate feelings.
+                  <strong>Good!</strong> You have solid awareness of effective parent-teacher communication. Continue practicing to improve your recognition of phrases that invite collaboration and validate parental concerns. This strengthens home-school connections.
                 </p>
               ) : awarenessScore >= 50 ? (
                 <p className="text-green-800 leading-relaxed">
-                  <strong>Developing.</strong> You're building awareness of positive communication cues. Practice identifying phrases that invite dialogue, show empathy, and create connection. The more you practice, the faster you'll recognize positive communication.
+                  <strong>Developing.</strong> You're building awareness of effective parent-teacher communication. Practice identifying phrases that invite dialogue, acknowledge parental perspectives, and create positive partnerships. This will improve your home-school relationships.
                 </p>
               ) : (
                 <p className="text-green-800 leading-relaxed">
-                  <strong>Keep practicing!</strong> Building awareness of positive communication cues takes time. Focus on identifying phrases that invite dialogue, validate feelings, and create connection. Practice regularly to improve your recognition speed.
+                  <strong>Keep practicing!</strong> Building awareness of effective parent-teacher communication takes time. Focus on recognizing phrases that build trust, validate concerns, and create collaborative partnerships. Regular practice enhances your professional communication skills.
                 </p>
               )}
             </div>
@@ -590,13 +443,13 @@ const CommunicationReflex = () => {
             <div className="bg-blue-50 rounded-xl p-6 border-2 border-blue-200 mb-6">
               <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
                 <MessageCircle className="w-5 h-5" />
-                Positive Communication Patterns
+                Effective Parent-Teacher Communication
               </h3>
               <ul className="space-y-2 text-blue-800">
-                <li>• <strong>Inviting phrases:</strong> "Can we talk?", "Let's work together", "I'd like to understand"</li>
-                <li>• <strong>Validating phrases:</strong> "I hear you", "I understand", "I see your point"</li>
-                <li>• <strong>Collaborative phrases:</strong> "Let's find a solution", "How can I support you?", "What would help?"</li>
-                <li>• <strong>Curious phrases:</strong> "Help me understand", "Can you explain more?", "I'm curious about..."</li>
+                <li>• <strong>Partnership phrases:</strong> "Let's work together", "I appreciate your time", "How can we support your child"</li>
+                <li>• <strong>Validation phrases:</strong> "I understand your concerns", "I see your child's potential", "Thank you for sharing"</li>
+                <li>• <strong>Collaborative phrases:</strong> "What are your thoughts?", "How can I help?", "Let's find solutions together"</li>
+                <li>• <strong>Growth-focused phrases:</strong> "I see progress", "With support they can grow", "Building on strengths"</li>
                 <li>• <strong>Balanced phrases:</strong> "I hear you, and here's what we can do" - blends empathy with direction</li>
               </ul>
             </div>
@@ -610,20 +463,19 @@ const CommunicationReflex = () => {
                     💡 Teacher Tip:
                   </p>
                   <p className="text-sm text-amber-800 leading-relaxed mb-3">
-                    <strong>Use this as a pre-meeting game to reset tone.</strong> Playing Communication Reflex before important meetings helps you recognize positive communication patterns and enter conversations with greater awareness:
+                    <strong>Practice this awareness before parent conferences.</strong> Playing Communication Reflex regularly helps you recognize positive and negative communication patterns that arise in parent-teacher interactions. This awareness enables you to respond thoughtfully rather than reactively:
                   </p>
                   <ul className="text-sm text-amber-800 mt-2 ml-4 space-y-1 list-disc">
-                    <li><strong>Reset your communication mindset:</strong> Playing this game before meetings helps you shift into a positive communication mindset. You become more aware of how to invite dialogue and validate feelings.</li>
-                    <li><strong>Recognize patterns quickly:</strong> The speed practice helps you quickly identify positive vs negative communication cues in real-time conversations. You'll catch yourself using negative patterns before they escalate.</li>
-                    <li><strong>Enter with awareness:</strong> When you practice positive communication recognition, you enter meetings more aware of your communication style and more ready to use positive patterns.</li>
-                    <li><strong>Build team culture:</strong> Use this game with your team before meetings to create shared awareness of positive communication. This builds a culture of respectful, collaborative dialogue.</li>
-                    <li><strong>Reduce conflict:</strong> Greater awareness of positive communication patterns helps prevent conflicts and de-escalate tense situations. You'll naturally use more inviting, validating phrases.</li>
-                    <li><strong>Improve outcomes:</strong> Meetings that start with positive communication awareness tend to be more productive, collaborative, and solution-focused.</li>
-                    <li><strong>Make it a habit:</strong> Play this game regularly, especially before difficult conversations or important meetings. The more you practice, the more naturally positive communication comes to you.</li>
+                    <li><strong>Prepare your mindset:</strong> Before parent conferences, spend a few minutes reviewing positive communication patterns. This primes you to focus on collaborative, solution-oriented language.</li>
+                    <li><strong>Recognize triggers:</strong> Awareness of negative communication patterns helps you identify when conversations may be becoming unproductive. You can then pivot to more positive approaches.</li>
+                    <li><strong>Build rapport:</strong> When you consistently use positive communication, parents feel heard and respected. This creates a foundation for productive discussions about their child's needs.</li>
+                    <li><strong>Model for students:</strong> Your positive communication with parents demonstrates the respectful dialogue you want to see in your classroom. Students benefit when they see respectful adult communication modeled.</li>
+                    <li><strong>De-escalate tensions:</strong> When conversations become tense, your awareness of positive communication patterns helps you redirect toward solutions and mutual understanding.</li>
+                    <li><strong>Strengthen partnerships:</strong> Parents who feel heard and respected are more likely to support your classroom initiatives and collaborate on their child's education.</li>
+                    <li><strong>Self-reflection:</strong> Regular practice with identifying communication patterns helps you reflect on your own communication style and continuously improve your professional interactions.</li>
                   </ul>
                   <p className="text-sm text-amber-800 leading-relaxed mt-3">
-                    When you use this as a pre-meeting game to reset tone, you're actively preparing yourself for positive communication. This practice builds awareness, reduces conflict, and creates more productive, collaborative conversations. Regular practice makes positive communication a natural reflex.
-                  </p>
+                    When you practice this awareness before parent conferences, you're actively preparing yourself for positive, productive interactions. This practice builds stronger home-school partnerships, reduces misunderstandings, and creates more collaborative relationships with families. Regular awareness exercises make thoughtful communication a natural reflex.</p>
                 </div>
               </div>
             </div>
@@ -646,4 +498,3 @@ const CommunicationReflex = () => {
 };
 
 export default CommunicationReflex;
-

@@ -7,15 +7,15 @@ import { Volume2, VolumeX, Play, Pause, AlertCircle, CheckCircle, Users, Message
 
 const ConflictToneSimulation = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-64";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedTone, setSelectedTone] = useState({});
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
@@ -54,6 +54,27 @@ const ConflictToneSimulation = () => {
           },
           feedback: "Sharp tones may get immediate compliance, but they damage relationships and increase tension. The high pitch and fast rate signal threat, making the situation more adversarial."
         },
+
+        {
+          id: 'passive',
+          label: 'Passive Tone',
+          description: 'Weak, uncertain voice',
+          text: "Um, could you maybe... try to be a little quieter? If that's okay?",
+          rate: 0.9,
+          pitch: 1.1,
+          volume: 0.7,
+          outcome: {
+            title: "Passive Tone Outcome",
+            respect: 30,
+            clarity: 50,
+            description: "The student continues talking and ignores the request. Other students notice the lack of authority. The passive tone communicates uncertainty and doesn't enforce boundaries effectively.",
+            emoji: "😔",
+            color: "from-gray-500 to-slate-600",
+            bgColor: "from-gray-50 to-slate-50",
+            borderColor: "border-gray-400"
+          },
+          feedback: "Passive tones lack authority and don't effectively enforce boundaries. The uncertain pitch and weak volume communicate that you're not confident in your request, so students may not respect it."
+        },
         {
           id: 'calm-firm',
           label: 'Calm & Firm Tone',
@@ -74,26 +95,6 @@ const ConflictToneSimulation = () => {
           },
           feedback: "Excellent! 'Low and slow' voice modulation maintains authority while preserving respect. The lower pitch and slower rate signal confidence and control, not threat. This approach protects relationships while enforcing boundaries."
         },
-        {
-          id: 'passive',
-          label: 'Passive Tone',
-          description: 'Weak, uncertain voice',
-          text: "Um, could you maybe... try to be a little quieter? If that's okay?",
-          rate: 0.9,
-          pitch: 1.1,
-          volume: 0.7,
-          outcome: {
-            title: "Passive Tone Outcome",
-            respect: 30,
-            clarity: 50,
-            description: "The student continues talking and ignores the request. Other students notice the lack of authority. The passive tone communicates uncertainty and doesn't enforce boundaries effectively.",
-            emoji: "😔",
-            color: "from-gray-500 to-slate-600",
-            bgColor: "from-gray-50 to-slate-50",
-            borderColor: "border-gray-400"
-          },
-          feedback: "Passive tones lack authority and don't effectively enforce boundaries. The uncertain pitch and weak volume communicate that you're not confident in your request, so students may not respect it."
-        }
       ],
       correctTone: 'calm-firm'
     },
@@ -159,7 +160,7 @@ const ConflictToneSimulation = () => {
             emoji: "😐",
             color: "from-yellow-500 to-orange-500",
             bgColor: "from-yellow-50 to-orange-50",
-          borderColor: "border-yellow-400"
+            borderColor: "border-yellow-400"
           },
           feedback: "Avoidant tones prevent addressing real issues and may create patterns of giving in to pressure. The rushed pace signals that you want to escape rather than engage constructively."
         }
@@ -172,26 +173,6 @@ const ConflictToneSimulation = () => {
       situation: "A colleague is criticizing your teaching approach in a team meeting. They're speaking harshly and their tone is dismissive. Other team members are listening.",
       conflictLevel: "Medium",
       tones: [
-        {
-          id: 'reactive',
-          label: 'Reactive Tone',
-          description: 'Immediate, sharp response',
-          text: "That's not true at all! You don't know what you're talking about! I've seen great results with my approach!",
-          rate: 1.25,
-          pitch: 1.35,
-          volume: 1.0,
-          outcome: {
-            title: "Reactive Tone Outcome",
-            respect: 35,
-            clarity: 65,
-            description: "The conversation becomes heated and personal. Other team members feel uncomfortable. The reactive tone created division rather than understanding. The team dynamic is damaged.",
-            emoji: "🔥",
-            color: "from-red-500 to-rose-600",
-            bgColor: "from-red-50 to-rose-50",
-            borderColor: "border-red-400"
-          },
-          feedback: "Reactive tones in professional settings damage relationships and team cohesion. The high pitch and fast rate signal defensiveness rather than professionalism."
-        },
         {
           id: 'calm-firm',
           label: 'Calm & Firm Tone',
@@ -212,6 +193,27 @@ const ConflictToneSimulation = () => {
           },
           feedback: "Excellent! 'Low and slow' voice modulation in professional conflicts maintains respect and professionalism. Your calm tone influences the conversation's direction, creating space for constructive dialogue."
         },
+        {
+          id: 'reactive',
+          label: 'Reactive Tone',
+          description: 'Immediate, sharp response',
+          text: "That's not true at all! You don't know what you're talking about! I've seen great results with my approach!",
+          rate: 1.25,
+          pitch: 1.35,
+          volume: 1.0,
+          outcome: {
+            title: "Reactive Tone Outcome",
+            respect: 35,
+            clarity: 65,
+            description: "The conversation becomes heated and personal. Other team members feel uncomfortable. The reactive tone created division rather than understanding. The team dynamic is damaged.",
+            emoji: "🔥",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400"
+          },
+          feedback: "Reactive tones in professional settings damage relationships and team cohesion. The high pitch and fast rate signal defensiveness rather than professionalism."
+        },
+
         {
           id: 'silent',
           label: 'Remain Silent',
@@ -261,6 +263,27 @@ const ConflictToneSimulation = () => {
           },
           feedback: "Compliant tones in the face of pressure don't protect your boundaries. The higher pitch may signal uncertainty, making it easier for others to override your needs."
         },
+
+        {
+          id: 'aggressive',
+          label: 'Aggressive Tone',
+          description: 'Angry, forceful refusal',
+          text: "No! I can't do it! I'm already doing too much! You need to find someone else!",
+          rate: 1.4,
+          pitch: 1.5,
+          volume: 1.0,
+          outcome: {
+            title: "Aggressive Tone Outcome",
+            respect: 40,
+            clarity: 80,
+            description: "The administrator seems taken aback. Your boundary was clear, but the aggressive tone damaged the relationship. They may respect your limit but may also view you differently professionally.",
+            emoji: "😠",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400"
+          },
+          feedback: "While aggressive tones may communicate boundaries clearly, they damage professional relationships. The very high pitch and fast rate signal anger rather than confident boundary-setting."
+        },
         {
           id: 'calm-firm',
           label: 'Calm & Firm Tone',
@@ -281,26 +304,6 @@ const ConflictToneSimulation = () => {
           },
           feedback: "Perfect! 'Low and slow' voice modulation when setting boundaries communicates confidence and clarity. The lower pitch and slower rate signal that you're certain about your limits, making your boundary more likely to be respected."
         },
-        {
-          id: 'aggressive',
-          label: 'Aggressive Tone',
-          description: 'Angry, forceful refusal',
-          text: "No! I can't do it! I'm already doing too much! You need to find someone else!",
-          rate: 1.4,
-          pitch: 1.5,
-          volume: 1.0,
-          outcome: {
-            title: "Aggressive Tone Outcome",
-            respect: 40,
-            clarity: 80,
-            description: "The administrator seems taken aback. Your boundary was clear, but the aggressive tone damaged the relationship. They may respect your limit but may also view you differently professionally.",
-            emoji: "😠",
-            color: "from-red-500 to-rose-600",
-            bgColor: "from-red-50 to-rose-50",
-            borderColor: "border-red-400"
-          },
-          feedback: "While aggressive tones may communicate boundaries clearly, they damage professional relationships. The very high pitch and fast rate signal anger rather than confident boundary-setting."
-        }
       ],
       correctTone: 'calm-firm'
     },
@@ -389,10 +392,10 @@ const ConflictToneSimulation = () => {
 
   const playTone = (tone) => {
     if (!speechSynthRef.current || !tone.text) return;
-    
+
     speechSynthRef.current.cancel();
     setIsPlayingAudio(true);
-    
+
     const utterance = new SpeechSynthesisUtterance(tone.text);
     utterance.rate = tone.rate;
     utterance.pitch = tone.pitch;
@@ -470,7 +473,7 @@ const ConflictToneSimulation = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={currentScenario + 1}
+      currentQuestion={currentScenario}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         <motion.div
@@ -497,17 +500,15 @@ const ConflictToneSimulation = () => {
           {!showOutcome && !showFeedback && (
             <>
               {/* Scenario Card */}
-              <div className={`bg-gradient-to-br rounded-2xl p-8 mb-8 shadow-xl border-2 ${
-                current.conflictLevel === 'High'
+              <div className={`bg-gradient-to-br rounded-2xl p-8 mb-8 shadow-xl border-2 ${current.conflictLevel === 'High'
                   ? 'from-red-50 via-orange-50 to-pink-50 border-red-200'
                   : 'from-orange-50 via-yellow-50 to-amber-50 border-orange-200'
-              }`}>
+                }`}>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-12 h-12 rounded-full bg-gradient-to-r flex items-center justify-center ${
-                    current.conflictLevel === 'High'
+                  <div className={`w-12 h-12 rounded-full bg-gradient-to-r flex items-center justify-center ${current.conflictLevel === 'High'
                       ? 'from-red-400 to-rose-500'
                       : 'from-orange-400 to-amber-500'
-                  }`}>
+                    }`}>
                     <ScenarioIcon className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -539,29 +540,27 @@ const ConflictToneSimulation = () => {
                 {current.tones.map((tone, index) => {
                   const isSelected = selected && selected.toneId === tone.id;
                   const isPlaying = isPlayingAudio && currentAudioRef.current?.text === tone.text;
-                  
+
                   return (
                     <motion.div
                       key={tone.id}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className={`bg-white rounded-xl p-6 border-2 shadow-md transition-all ${
-                        isSelected
+                      className={`bg-white rounded-xl p-6 border-2 shadow-md transition-all ${isSelected
                           ? tone.id === 'calm-firm'
                             ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-400 shadow-lg'
                             : 'bg-gray-50 border-gray-300 opacity-60'
                           : 'border-gray-300 hover:border-indigo-400 hover:shadow-lg'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-start gap-4">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${
-                          tone.id === 'calm-firm'
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${tone.id === 'calm-firm'
                             ? 'bg-gradient-to-r from-green-400 to-emerald-500'
                             : tone.id === 'sharp' || tone.id === 'defensive' || tone.id === 'reactive' || tone.id === 'aggressive' || tone.id === 'matching-energy'
-                            ? 'bg-gradient-to-r from-red-400 to-rose-500'
-                            : 'bg-gradient-to-r from-gray-400 to-slate-500'
-                        }`}>
+                              ? 'bg-gradient-to-r from-red-400 to-rose-500'
+                              : 'bg-gradient-to-r from-gray-400 to-slate-500'
+                          }`}>
                           <span className="text-white font-bold">{index + 1}</span>
                         </div>
                         <div className="flex-1">
@@ -581,7 +580,7 @@ const ConflictToneSimulation = () => {
                               "{tone.text || 'No verbal response'}"
                             </p>
                           </div>
-                          
+
                           {/* Audio Controls */}
                           {tone.text && (
                             <div className="flex items-center gap-3">
@@ -620,7 +619,7 @@ const ConflictToneSimulation = () => {
                           )}
                         </div>
                       </div>
-                      
+
                       {!isSelected && tone.text && (
                         <div className="mt-4 text-center">
                           <motion.button
@@ -658,7 +657,7 @@ const ConflictToneSimulation = () => {
                   <p className="text-gray-800 leading-relaxed text-lg mb-4">
                     {selected.tone.outcome.description}
                   </p>
-                  
+
                   {/* Respect and Clarity Meters */}
                   <div className="grid grid-cols-2 gap-4 mt-4">
                     <div className="bg-white/80 rounded-lg p-3">
@@ -671,13 +670,12 @@ const ConflictToneSimulation = () => {
                           initial={{ width: 0 }}
                           animate={{ width: `${selected.tone.outcome.respect}%` }}
                           transition={{ duration: 0.8 }}
-                          className={`h-3 rounded-full ${
-                            selected.tone.outcome.respect >= 85
+                          className={`h-3 rounded-full ${selected.tone.outcome.respect >= 85
                               ? 'bg-gradient-to-r from-green-400 to-emerald-500'
                               : selected.tone.outcome.respect >= 60
-                              ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                              : 'bg-gradient-to-r from-red-400 to-rose-500'
-                          }`}
+                                ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
+                                : 'bg-gradient-to-r from-red-400 to-rose-500'
+                            }`}
                         />
                       </div>
                     </div>
@@ -691,13 +689,12 @@ const ConflictToneSimulation = () => {
                           initial={{ width: 0 }}
                           animate={{ width: `${selected.tone.outcome.clarity}%` }}
                           transition={{ duration: 0.8 }}
-                          className={`h-3 rounded-full ${
-                            selected.tone.outcome.clarity >= 85
+                          className={`h-3 rounded-full ${selected.tone.outcome.clarity >= 85
                               ? 'bg-gradient-to-r from-blue-400 to-cyan-500'
                               : selected.tone.outcome.clarity >= 60
-                              ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                              : 'bg-gradient-to-r from-red-400 to-rose-500'
-                          }`}
+                                ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
+                                : 'bg-gradient-to-r from-red-400 to-rose-500'
+                            }`}
                         />
                       </div>
                     </div>
@@ -790,28 +787,26 @@ const ConflictToneSimulation = () => {
             </div>
 
             {/* Score Summary */}
-            <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${
-              score === totalLevels
+            <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${score === totalLevels
                 ? 'from-green-50 to-emerald-50 border-green-200'
                 : score >= totalLevels / 2
-                ? 'from-blue-50 to-indigo-50 border-blue-200'
-                : 'from-yellow-50 to-orange-50 border-yellow-200'
-            }`}>
+                  ? 'from-blue-50 to-indigo-50 border-blue-200'
+                  : 'from-yellow-50 to-orange-50 border-yellow-200'
+              }`}>
               <div className="text-center">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Your Tone Score</h3>
-                <div className={`text-5xl font-bold mb-2 ${
-                  score === totalLevels ? 'text-green-600' :
-                  score >= totalLevels / 2 ? 'text-blue-600' :
-                  'text-yellow-600'
-                }`}>
+                <div className={`text-5xl font-bold mb-2 ${score === totalLevels ? 'text-green-600' :
+                    score >= totalLevels / 2 ? 'text-blue-600' :
+                      'text-yellow-600'
+                  }`}>
                   {Math.round((score / totalLevels) * 100)}%
                 </div>
                 <p className="text-gray-700">
                   {score === totalLevels
                     ? "Excellent! You consistently chose calm & firm tones. You're building strong conflict communication skills!"
                     : score >= totalLevels / 2
-                    ? "Good progress! You're learning to use 'low and slow' voice modulation during conflicts. Keep practicing."
-                    : "Keep practicing! Each scenario helps you understand how tone affects conflict outcomes."}
+                      ? "Good progress! You're learning to use 'low and slow' voice modulation during conflicts. Keep practicing."
+                      : "Keep practicing! Each scenario helps you understand how tone affects conflict outcomes."}
                 </p>
               </div>
             </div>
@@ -864,4 +859,3 @@ const ConflictToneSimulation = () => {
 };
 
 export default ConflictToneSimulation;
-

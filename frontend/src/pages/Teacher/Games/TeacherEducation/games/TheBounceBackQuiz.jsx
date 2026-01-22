@@ -7,15 +7,15 @@ import { Shield, Zap, EyeOff, CheckCircle, TrendingUp, AlertCircle } from "lucid
 
 const TheBounceBackQuiz = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-51";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 8;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showFeedback, setShowFeedback] = useState(false);
@@ -25,33 +25,33 @@ const TheBounceBackQuiz = () => {
 
   // Reaction type options
   const reactionTypes = [
-    { 
-      id: 'resilient', 
-      label: 'Resilient', 
-      icon: Shield, 
-      color: 'from-green-500 to-emerald-500', 
-      bgColor: 'from-green-50 to-emerald-50', 
-      borderColor: 'border-green-300', 
-      textColor: 'text-green-800',
+    {
+      id: 'resilient',
+      label: 'Resilient',
+      icon: Shield,
+      color: 'from-gray-500 to-slate-500',
+      bgColor: 'from-gray-50 to-slate-50',
+      borderColor: 'border-gray-300',
+      textColor: 'text-gray-800',
       description: 'Bounce back quickly, learn from setbacks, maintain perspective'
     },
-    { 
-      id: 'reactive', 
-      label: 'Reactive', 
-      icon: Zap, 
-      color: 'from-orange-500 to-red-500', 
-      bgColor: 'from-orange-50 to-red-50', 
-      borderColor: 'border-orange-300', 
-      textColor: 'text-orange-800',
+    {
+      id: 'reactive',
+      label: 'Reactive',
+      icon: Zap,
+      color: 'from-gray-500 to-slate-500',
+      bgColor: 'from-gray-50 to-slate-50',
+      borderColor: 'border-gray-300',
+      textColor: 'text-gray-800',
       description: 'Respond quickly with strong emotions, may take setbacks personally'
     },
-    { 
-      id: 'avoidant', 
-      label: 'Avoidant', 
-      icon: EyeOff, 
-      color: 'from-gray-500 to-slate-500', 
-      bgColor: 'from-gray-50 to-slate-50', 
-      borderColor: 'border-gray-300', 
+    {
+      id: 'avoidant',
+      label: 'Avoidant',
+      icon: EyeOff,
+      color: 'from-gray-500 to-slate-500',
+      bgColor: 'from-gray-50 to-slate-50',
+      borderColor: 'border-gray-300',
       textColor: 'text-gray-800',
       description: 'Withdraw, avoid addressing issues, may feel overwhelmed'
     }
@@ -64,11 +64,7 @@ const TheBounceBackQuiz = () => {
       title: "Student Misbehavior",
       scenario: "A student disrupts your lesson repeatedly, despite your attempts to redirect. Other students are getting frustrated, and you feel your lesson plan is falling apart. The student seems to be acting out intentionally.",
       reactions: [
-        {
-          type: 'resilient',
-          text: "You pause, take a breath, and calmly address the behavior while maintaining class flow. You acknowledge this is challenging but don't take it personally. You reflect on what might be causing the behavior and plan a follow-up conversation.",
-          feedback: "Resilient response! You maintained composure, addressed the issue, and didn't take it personally. This shows emotional regulation and problem-solving focus."
-        },
+
         {
           type: 'reactive',
           text: "You feel your frustration building immediately. You raise your voice, send the student out, and feel personally attacked. You replay the incident in your mind and feel angry that your lesson was disrupted.",
@@ -78,7 +74,12 @@ const TheBounceBackQuiz = () => {
           type: 'avoidant',
           text: "You feel overwhelmed and unsure how to handle it. You let the behavior continue, avoid direct confrontation, and hope it resolves itself. You feel powerless and stressed.",
           feedback: "Avoidant response. While feeling overwhelmed is understandable, avoiding the situation can make it worse. Building confidence to address challenges directly is part of resilience."
-        }
+        },
+        {
+          type: 'resilient',
+          text: "You pause, take a breath, and calmly address the behavior while maintaining class flow. You acknowledge this is challenging but don't take it personally. You reflect on what might be causing the behavior and plan a follow-up conversation.",
+          feedback: "Resilient response! You maintained composure, addressed the issue, and didn't take it personally. This shows emotional regulation and problem-solving focus."
+        },
       ]
     },
     {
@@ -86,15 +87,16 @@ const TheBounceBackQuiz = () => {
       title: "Parent Complaint",
       scenario: "A parent emails you expressing frustration about their child's grade and questioning your teaching methods. The email is critical and feels accusatory. They've copied the principal on the message.",
       reactions: [
-        {
-          type: 'resilient',
-          text: "You read the email carefully, take time to process your feelings, and respond professionally. You acknowledge their concerns, provide context, and suggest a conversation. You don't take it personally and focus on finding solutions.",
-          feedback: "Resilient response! You maintained professionalism, didn't take criticism personally, and focused on solutions. This shows emotional regulation and communication skills."
-        },
+
         {
           type: 'reactive',
           text: "You feel immediately defensive and angry. You draft a sharp response defending yourself, feel attacked, and worry about your reputation. You lose sleep thinking about the complaint.",
           feedback: "Reactive response. Feeling defensive is natural, but strong reactions can escalate situations. Taking time to process before responding helps maintain professionalism and perspective."
+        },
+        {
+          type: 'resilient',
+          text: "You read the email carefully, take time to process your feelings, and respond professionally. You acknowledge their concerns, provide context, and suggest a conversation. You don't take it personally and focus on finding solutions.",
+          feedback: "Resilient response! You maintained professionalism, didn't take criticism personally, and focused on solutions. This shows emotional regulation and communication skills."
         },
         {
           type: 'avoidant',
@@ -130,11 +132,7 @@ const TheBounceBackQuiz = () => {
       title: "Technology Failure",
       scenario: "Right before an important presentation, your technology fails. The projector won't work, your slides are inaccessible, and you have no backup plan. Students are waiting, and you feel unprepared.",
       reactions: [
-        {
-          type: 'resilient',
-          text: "You stay calm, acknowledge the situation to students, and quickly adapt. You find an alternative way to present the material, maybe using the board or a discussion format. You see it as an opportunity to be flexible.",
-          feedback: "Resilient response! You adapted quickly, maintained composure, and found solutions. This flexibility and problem-solving under pressure shows strong resilience."
-        },
+
         {
           type: 'reactive',
           text: "You feel panicked and frustrated. You blame yourself for not having a backup, get flustered in front of students, and feel like the whole lesson is ruined. You're visibly stressed and struggle to recover.",
@@ -144,7 +142,12 @@ const TheBounceBackQuiz = () => {
           type: 'avoidant',
           text: "You feel overwhelmed and unsure what to do. You cancel the lesson, avoid teaching that day, and feel anxious about teaching without technology going forward.",
           feedback: "Avoidant response. Avoiding teaching due to technical issues prevents learning opportunities. Building confidence to teach flexibly, with or without technology, increases resilience."
-        }
+        },
+        {
+          type: 'resilient',
+          text: "You stay calm, acknowledge the situation to students, and quickly adapt. You find an alternative way to present the material, maybe using the board or a discussion format. You see it as an opportunity to be flexible.",
+          feedback: "Resilient response! You adapted quickly, maintained composure, and found solutions. This flexibility and problem-solving under pressure shows strong resilience."
+        },
       ]
     },
     {
@@ -168,88 +171,22 @@ const TheBounceBackQuiz = () => {
           feedback: "Avoidant response. Avoiding feedback prevents professional growth. Engaging constructively with feedback, even when it's difficult, helps you develop and build confidence in your teaching."
         }
       ]
-    },
-    {
-      id: 6,
-      title: "Colleague Conflict",
-      scenario: "A colleague publicly criticizes your teaching approach during a staff meeting. Their comments feel harsh and unfair, and you're caught off guard. Other staff members are present, and you feel embarrassed.",
-      reactions: [
-        {
-          type: 'resilient',
-          text: "You listen to their concerns, respond professionally, and suggest discussing it privately if needed. You don't take it personally, focus on the issue rather than the delivery, and seek to understand their perspective.",
-          feedback: "Resilient response! You maintained professionalism, didn't escalate the conflict, and focused on understanding. This emotional regulation and communication helps resolve conflicts constructively."
-        },
-        {
-          type: 'reactive',
-          text: "You feel attacked and respond defensively in the moment. You counter their criticism, feel angry and embarrassed, and the situation escalates. You hold a grudge and avoid that colleague afterward.",
-          feedback: "Reactive response. Feeling defensive is natural, but reacting in the moment can escalate conflicts. Taking time to process and responding professionally helps maintain relationships and resolve issues."
-        },
-        {
-          type: 'avoidant',
-          text: "You feel overwhelmed and don't respond in the meeting. You avoid the colleague afterward, don't address the conflict, and feel anxious in future staff meetings.",
-          feedback: "Avoidant response. Avoiding conflict doesn't resolve issues and can create ongoing tension. Addressing concerns professionally, even when difficult, builds relationship resilience."
-        }
-      ]
-    },
-    {
-      id: 7,
-      title: "Low Student Test Scores",
-      scenario: "Your class performs poorly on a standardized test. The scores are below expectations, and you're concerned about how this reflects on your teaching. Other classes performed better, and you feel responsible.",
-      reactions: [
-        {
-          type: 'resilient',
-          text: "You analyze the results objectively, identify patterns in what students struggled with, and create a plan to address gaps. You reflect on your teaching methods and seek support from colleagues. You don't take it as a personal failure.",
-          feedback: "Resilient response! You analyzed results constructively, created an action plan, and didn't take it personally. This data-driven approach to improvement shows professional resilience."
-        },
-        {
-          type: 'reactive',
-          text: "You feel like a failure and take the scores personally. You blame yourself entirely, question your teaching abilities, and feel demoralized. You worry about your reputation and job security.",
-          feedback: "Reactive response. Test scores reflect many factors beyond just your teaching. Taking results personally can be draining. Focus on what you can control: analyzing data and making improvements."
-        },
-        {
-          type: 'avoidant',
-          text: "You feel overwhelmed and don't want to look at the results. You avoid discussing them, don't make changes, and hope the next test will be better. You feel anxious about future assessments.",
-          feedback: "Avoidant response. Avoiding data prevents improvement. Engaging with results, even when challenging, helps you identify areas for growth and build confidence in addressing student needs."
-        }
-      ]
-    },
-    {
-      id: 8,
-      title: "Unexpected Curriculum Change",
-      scenario: "Mid-semester, you're told you need to completely change your curriculum to align with new standards. You've already planned months ahead, and this feels overwhelming. You have limited time to adapt.",
-      reactions: [
-        {
-          type: 'resilient',
-          text: "You take time to understand the new requirements, prioritize what's most important, and create a flexible plan. You seek support, collaborate with colleagues, and see it as an opportunity to improve. You adapt systematically.",
-          feedback: "Resilient response! You approached the change systematically, sought support, and maintained perspective. This adaptability and collaborative problem-solving shows strong professional resilience."
-        },
-        {
-          type: 'reactive',
-          text: "You feel angry and frustrated about the change. You complain about it, feel overwhelmed, and struggle to adapt. You take it personally and feel like your work isn't valued. You stress about meeting expectations.",
-          feedback: "Reactive response. Change can be frustrating, but strong emotional reactions can make adaptation harder. Focusing on what you can control and seeking support helps you navigate changes more effectively."
-        },
-        {
-          type: 'avoidant',
-          text: "You feel overwhelmed and don't know where to start. You delay making changes, avoid planning, and feel anxious about the deadline. You hope someone will help you figure it out.",
-          feedback: "Avoidant response. Avoiding necessary changes increases stress and makes transitions harder. Breaking changes into manageable steps and seeking support helps you adapt and build confidence."
-        }
-      ]
     }
   ];
 
   const handleAnswerSelect = (reactionType) => {
     const newAnswers = { ...selectedAnswers, [currentQuestion]: reactionType };
     setSelectedAnswers(newAnswers);
-    
+
     // Update classification counts
     const counts = { resilient: 0, reactive: 0, avoidant: 0 };
     Object.values(newAnswers).forEach(type => {
       counts[type] = (counts[type] || 0) + 1;
     });
     setClassificationCounts(counts);
-    
+
     setShowFeedback(true);
-    
+
     // Increment score if resilient
     if (reactionType === 'resilient') {
       setScore(prev => prev + 1);
@@ -290,7 +227,7 @@ const TheBounceBackQuiz = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={currentQuestion + 1}
+      currentQuestion={currentQuestion}
     >
       <div className="w-full max-w-4xl mx-auto px-4">
         {!showGameOver && (
@@ -326,16 +263,15 @@ const TheBounceBackQuiz = () => {
                 {currentScenario.reactions.map((reaction, index) => {
                   const reactionType = reactionTypes.find(rt => rt.id === reaction.type);
                   const Icon = reactionType.icon;
-                  
+
                   return (
                     <motion.button
                       key={index}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => handleAnswerSelect(reaction.type)}
-                      className={`w-full p-4 rounded-xl border-2 transition-all text-left ${
-                        reactionType.borderColor
-                      } bg-gradient-to-br ${reactionType.bgColor} hover:shadow-lg`}
+                      className={`w-full p-4 rounded-xl border-2 transition-all text-left ${reactionType.borderColor
+                        } bg-gradient-to-br ${reactionType.bgColor} hover:shadow-lg`}
                     >
                       <div className="flex items-center gap-3">
                         <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${reactionType.color} flex items-center justify-center flex-shrink-0`}>
@@ -428,7 +364,7 @@ const TheBounceBackQuiz = () => {
                   <p className="text-gray-700">{dominantData.description}</p>
                 </div>
               </div>
-              
+
               <div className="bg-white/60 rounded-lg p-4 mb-4">
                 <h4 className="font-semibold text-gray-800 mb-3">Your Response Breakdown:</h4>
                 <div className="space-y-2">
@@ -504,4 +440,3 @@ const TheBounceBackQuiz = () => {
 };
 
 export default TheBounceBackQuiz;
-

@@ -12,11 +12,11 @@ import { toast } from "react-toastify";
 const SelfAwareTeacherBadge = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   // Get game data
   const gameId = "teacher-education-10";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   const [loading, setLoading] = useState(true);
   const [gamesStatus, setGamesStatus] = useState([]);
   const [allCompleted, setAllCompleted] = useState(false);
@@ -56,7 +56,7 @@ const SelfAwareTeacherBadge = () => {
     if ('speechSynthesis' in window) {
       setSpeechSynth(window.speechSynthesis);
     }
-    
+
     checkGamesCompletion();
     checkBadgeStatus();
   }, []);
@@ -120,7 +120,7 @@ const SelfAwareTeacherBadge = () => {
 
     speechSynth.cancel();
     setIsPlayingAudio(true);
-    
+
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = 0.85;
     utterance.pitch = 1.0;
@@ -151,15 +151,15 @@ const SelfAwareTeacherBadge = () => {
 
       const result = response.data;
 
-      if (result.success && result.badgeEarned) {
+      if (result.success && (result.badgeEarned || result.newlyEarned)) {
         setBadgeCollected(true);
         setShowCollectionModal(false);
         toast.success('🎉 Badge collected successfully!');
-        
+
         // Play positive audio affirmation
         const affirmation = "Congratulations! You have earned the Self-Aware Teacher Badge. Your commitment to emotional awareness and self-reflection makes you a more effective and compassionate educator. You understand yourself, and that understanding brings peace to your classroom and your life. Well done!";
         playAffirmation(affirmation);
-        
+
         // Dispatch badge earned event
         window.dispatchEvent(new CustomEvent('teacherBadgeEarned', {
           detail: {
@@ -169,7 +169,7 @@ const SelfAwareTeacherBadge = () => {
             badge: result.badge
           }
         }));
-        
+
         // Register the badge game as completed in the game progress system
         // This is crucial for sequential unlocking of the next game
         try {
@@ -256,11 +256,10 @@ const SelfAwareTeacherBadge = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className={`flex items-center justify-between p-4 rounded-xl border-2 ${
-                    game.completed
+                  className={`flex items-center justify-between p-4 rounded-xl border-2 ${game.completed
                       ? 'bg-green-50 border-green-200'
                       : 'bg-gray-50 border-gray-200'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3">
                     {game.completed ? (
@@ -269,15 +268,13 @@ const SelfAwareTeacherBadge = () => {
                       <div className="w-6 h-6 rounded-full border-2 border-gray-400"></div>
                     )}
                     <span className="text-2xl">{game.icon}</span>
-                    <span className={`font-medium text-lg ${
-                      game.completed ? 'text-green-800' : 'text-gray-600'
-                    }`}>
+                    <span className={`font-medium text-lg ${game.completed ? 'text-green-800' : 'text-gray-600'
+                      }`}>
                       {index + 1}. {game.name}
                     </span>
                   </div>
-                  <span className={`text-sm font-semibold ${
-                    game.completed ? 'text-green-600' : 'text-gray-400'
-                  }`}>
+                  <span className={`text-sm font-semibold ${game.completed ? 'text-green-600' : 'text-gray-400'
+                    }`}>
                     {game.completed ? 'Completed ✓' : 'Not Completed'}
                   </span>
                 </motion.div>
@@ -296,8 +293,8 @@ const SelfAwareTeacherBadge = () => {
                 <motion.div
                   className="bg-gradient-to-r from-purple-500 to-pink-500 h-4 rounded-full"
                   initial={{ width: 0 }}
-                  animate={{ 
-                    width: `${(gamesStatus.filter(g => g.completed).length / 5) * 100}%` 
+                  animate={{
+                    width: `${(gamesStatus.filter(g => g.completed).length / 5) * 100}%`
                   }}
                   transition={{ duration: 0.5 }}
                 />
@@ -350,7 +347,7 @@ const SelfAwareTeacherBadge = () => {
                 Congratulations! You have successfully completed all self-awareness tasks and earned the Self-Aware Teacher Badge.
               </p>
             </div>
-            
+
             {/* Audio Affirmation Button */}
             <div className="mb-6">
               <button
@@ -486,4 +483,3 @@ const SelfAwareTeacherBadge = () => {
 };
 
 export default SelfAwareTeacherBadge;
-

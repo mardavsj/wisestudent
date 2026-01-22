@@ -7,15 +7,15 @@ import { Eye, CheckCircle, AlertCircle, Target, Sparkles, GraduationCap } from "
 
 const MindfulObservationGame = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-44";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showFeedback, setShowFeedback] = useState(false);
@@ -29,38 +29,38 @@ const MindfulObservationGame = () => {
       title: "Mindful Classroom Observation",
       question: "You notice a student frequently looking out the window during lessons. What is the most mindful observation approach?",
       options: [
-        
+
         {
-          id: 'b',
+          id: 'a',
           text: "Immediately redirect the student and scold them for distraction",
           explanation: "This reactive approach doesn't involve mindful observation. It's more about immediate correction than understanding."
         },
         {
-          id: 'c',
+          id: 'b',
           text: "Ignore it completely to avoid micromanaging",
           explanation: "Avoiding observation altogether doesn't help you understand your students' needs or improve your teaching environment."
         },
         {
-          id: 'a',
+          id: 'c',
           text: "Observe without judgment, noting patterns in timing and frequency",
           explanation: "Correct! Mindful observation involves noticing patterns without jumping to conclusions. This helps you understand the student's behavior in context."
         },
       ],
-      correctAnswer: 'a'
+      correctAnswer: 'c'
     },
     {
       id: 2,
       title: "Environmental Awareness",
       question: "You enter your classroom and notice the lighting seems dimmer than usual. Your mindful response is?",
       options: [
-       
+
         {
-          id: 'b',
+          id: 'a',
           text: "Change the lighting immediately without considering why it's different",
           explanation: "Acting without mindfulness may not address the root cause or consider student needs."
         },
-         {
-          id: 'a',
+        {
+          id: 'b',
           text: "Notice the change without immediate action, considering its impact on students",
           explanation: "Excellent! Mindful awareness means noticing changes and considering their effects without rushing to fix everything."
         },
@@ -70,7 +70,7 @@ const MindfulObservationGame = () => {
           explanation: "This reaction lacks mindful observation and jumps to assigning blame instead of understanding."
         }
       ],
-      correctAnswer: 'a'
+      correctAnswer: 'b'
     },
     {
       id: 3,
@@ -100,39 +100,40 @@ const MindfulObservationGame = () => {
       title: "Emotional Climate Awareness",
       question: "During a lesson, you notice several students appear restless and disengaged. Your mindful observation focuses on?",
       options: [
-        
+
         {
-          id: 'b',
+          id: 'a',
           text: "Increasing the pace to capture their attention",
           explanation: "This reaction doesn't involve mindful observation of the situation before responding."
         },
         {
-          id: 'c',
+          id: 'b',
           text: "Assigning more work to keep them busy",
           explanation: "Adding work without understanding the cause doesn't involve mindful observation of student needs."
         },
         {
-          id: 'a',
+          id: 'c',
           text: "Noticing the emotional climate while reflecting on possible causes",
           explanation: "Perfect! Mindful observation includes awareness of emotional dynamics and reflection on contributing factors."
         },
       ],
-      correctAnswer: 'a'
+      correctAnswer: 'c'
     },
     {
       id: 5,
       title: "Self-Awareness During Teaching",
       question: "While teaching, you realize you're feeling impatient with slower students. What does mindful observation suggest?",
       options: [
+
         {
           id: 'a',
-          text: "Notice your impatience without judgment and adjust your approach",
-          explanation: "Excellent! Mindful self-observation involves recognizing your emotional state and consciously adjusting your response."
+          text: "Push through the lesson as planned regardless of your feelings",
+          explanation: "Ignoring your emotional state doesn't involve mindful awareness of how it might affect your teaching."
         },
         {
           id: 'b',
-          text: "Push through the lesson as planned regardless of your feelings",
-          explanation: "Ignoring your emotional state doesn't involve mindful awareness of how it might affect your teaching."
+          text: "Notice your impatience without judgment and adjust your approach",
+          explanation: "Excellent! Mindful self-observation involves recognizing your emotional state and consciously adjusting your response."
         },
         {
           id: 'c',
@@ -140,7 +141,7 @@ const MindfulObservationGame = () => {
           explanation: "Expressing impatience doesn't demonstrate mindful self-awareness or professional emotional regulation."
         }
       ],
-      correctAnswer: 'a'
+      correctAnswer: 'b'
     }
   ];
 
@@ -156,7 +157,7 @@ const MindfulObservationGame = () => {
 
     const currentQ = questions[currentQuestion];
     const isCorrect = answerId === currentQ.correctAnswer;
-    
+
     setSelectedAnswers(prev => ({
       ...prev,
       [currentQuestion]: answerId
@@ -264,11 +265,10 @@ const MindfulObservationGame = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className={`mb-6 rounded-xl p-6 border-2 ${
-                    isCorrect
+                  className={`mb-6 rounded-xl p-6 border-2 ${isCorrect
                       ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-300'
                       : 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-300'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start gap-4 mb-4">
                     {isCorrect ? (
@@ -278,9 +278,8 @@ const MindfulObservationGame = () => {
                     )}
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">
-                        <h3 className={`text-2xl font-bold ${
-                          isCorrect ? 'text-green-800' : 'text-orange-800'
-                        }`}>
+                        <h3 className={`text-2xl font-bold ${isCorrect ? 'text-green-800' : 'text-orange-800'
+                          }`}>
                           {feedback?.text}
                         </h3>
                         {selectedOption && (
@@ -289,17 +288,14 @@ const MindfulObservationGame = () => {
                           </div>
                         )}
                       </div>
-                      <div className={`bg-white rounded-lg p-4 border-l-4 ${
-                        isCorrect ? 'border-green-500' : 'border-orange-500'
-                      }`}>
-                        <p className={`font-semibold mb-2 ${
-                          isCorrect ? 'text-green-800' : 'text-orange-800'
+                      <div className={`bg-white rounded-lg p-4 border-l-4 ${isCorrect ? 'border-green-500' : 'border-orange-500'
                         }`}>
+                        <p className={`font-semibold mb-2 ${isCorrect ? 'text-green-800' : 'text-orange-800'
+                          }`}>
                           💡 Explanation:
                         </p>
-                        <p className={`${
-                          isCorrect ? 'text-green-700' : 'text-orange-700'
-                        }`}>
+                        <p className={`${isCorrect ? 'text-green-700' : 'text-orange-700'
+                          }`}>
                           {feedback?.explanation}
                         </p>
                       </div>
@@ -345,10 +341,10 @@ const MindfulObservationGame = () => {
                 {score === totalLevels
                   ? "Perfect! You have a strong understanding of mindful observation techniques. Your awareness of classroom dynamics and student needs is excellent."
                   : score >= Math.ceil(totalLevels * 0.8)
-                  ? "Excellent! You're developing strong mindful observation skills. Keep practicing these awareness techniques to enhance your teaching effectiveness."
-                  : score >= Math.ceil(totalLevels * 0.6)
-                  ? "Good effort! Mindful observation takes practice. Continue to develop your awareness of classroom environments and student behaviors."
-                  : "Keep learning! Mindful observation is a valuable skill that helps you better understand your classroom environment and student needs. Practice will strengthen these abilities."}
+                    ? "Excellent! You're developing strong mindful observation skills. Keep practicing these awareness techniques to enhance your teaching effectiveness."
+                    : score >= Math.ceil(totalLevels * 0.6)
+                      ? "Good effort! Mindful observation takes practice. Continue to develop your awareness of classroom environments and student behaviors."
+                      : "Keep learning! Mindful observation is a valuable skill that helps you better understand your classroom environment and student needs. Practice will strengthen these abilities."}
               </p>
             </div>
 
@@ -391,4 +387,3 @@ const MindfulObservationGame = () => {
 };
 
 export default MindfulObservationGame;
-

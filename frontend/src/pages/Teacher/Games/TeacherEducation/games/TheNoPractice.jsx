@@ -7,15 +7,15 @@ import { Volume2, VolumeX, CheckCircle, AlertCircle, TrendingUp, Ban } from "luc
 
 const TheNoPractice = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-36";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentRequest, setCurrentRequest] = useState(0);
   const [selectedResponses, setSelectedResponses] = useState({});
   const [showFeedback, setShowFeedback] = useState(false);
@@ -31,7 +31,7 @@ const TheNoPractice = () => {
       request: "Can you cover my class? I have an emergency and need to leave early.",
       context: "A colleague asks you to cover their class with short notice",
       responseOptions: [
-       
+
         {
           id: 'b',
           text: "Sure, I can do that. No problem at all.",
@@ -46,7 +46,7 @@ const TheNoPractice = () => {
           type: 'too-direct',
           explanation: "While clear, this response lacks empathy and might damage relationships. A firm 'no' with brief explanation and alternative offer is more effective."
         },
-         {
+        {
           id: 'a',
           text: "I'd love to help, but I'm full today. Can I support you in another way?",
           calmScore: 9,
@@ -102,7 +102,7 @@ const TheNoPractice = () => {
       request: "Would you mind staying late today to finish this report? It's really important.",
       context: "Supervisor requests you stay late for additional work",
       responseOptions: [
-        
+
         {
           id: 'b',
           text: "Okay, I'll stay. Family can wait, I guess.",
@@ -138,7 +138,7 @@ const TheNoPractice = () => {
       request: "Can you take on this extra committee role? We really need someone with your expertise.",
       context: "Administration asks you to join an additional committee",
       responseOptions: [
-        
+
         {
           id: 'b',
           text: "Yes, absolutely! I'll make it work somehow.",
@@ -214,10 +214,10 @@ const TheNoPractice = () => {
 
   const playRequestAudio = (text) => {
     if (!speechSynthRef) return;
-    
+
     speechSynthRef.cancel();
     setIsPlayingAudio(true);
-    
+
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = 0.85;
     utterance.pitch = 1.0;
@@ -255,7 +255,7 @@ const TheNoPractice = () => {
 
     setShowFeedback(true);
     setTotalCalmScore(prev => prev + option.calmScore);
-    
+
     // Award 1 point for each answered question regardless of calm score
     setScore(prev => prev + 1);
   };
@@ -272,15 +272,15 @@ const TheNoPractice = () => {
 
   const getCalmScoreLabel = (score) => {
     if (score >= 8) return { label: 'Excellent', color: 'from-green-500 to-emerald-500', emoji: '🌟' };
-    if (score >= 6) return { label: 'Good', color: 'from-blue-500 to-cyan-500', emoji: '✨' };
-    if (score >= 4) return { label: 'Fair', color: 'from-yellow-500 to-orange-500', emoji: '💪' };
-    return { label: 'Needs Work', color: 'from-gray-500 to-slate-500', emoji: '📚' };
+    if (score >= 6) return { label: 'Good', color: 'from-green-500 to-emerald-500', emoji: '✨' };
+    if (score >= 4) return { label: 'Fair', color: 'from-green-500 to-emerald-500', emoji: '💪' };
+    return { label: 'Needs Work', color: 'from-green-500 to-emerald-500', emoji: '📚' };
   };
 
   // Calculate average calm score from all completed requests
   const completedRequests = Object.keys(selectedResponses).length;
   const calculatedTotal = Object.values(selectedResponses).reduce((sum, resp) => sum + (resp?.calmScore || 0), 0);
-  const averageCalmScore = completedRequests > 0 
+  const averageCalmScore = completedRequests > 0
     ? Math.round(calculatedTotal / completedRequests)
     : 0;
 
@@ -414,28 +414,26 @@ const TheNoPractice = () => {
                         <p className="text-gray-700 italic mb-2">
                           "{selectedResponse.text}"
                         </p>
-                        <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-                          selectedResponse.type === 'assertive-empathy' ? 'bg-green-100 text-green-800' :
-                          selectedResponse.type === 'too-direct' ? 'bg-yellow-100 text-yellow-800' :
-                          selectedResponse.type === 'wishy-washy' ? 'bg-orange-100 text-orange-800' :
-                          'bg-red-100 text-red-800'
-                        }`}>
+                        <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${selectedResponse.type === 'assertive-empathy' ? 'bg-green-100 text-green-800' :
+                            selectedResponse.type === 'too-direct' ? 'bg-yellow-100 text-yellow-800' :
+                              selectedResponse.type === 'wishy-washy' ? 'bg-orange-100 text-orange-800' :
+                                'bg-red-100 text-red-800'
+                          }`}>
                           {selectedResponse.type === 'assertive-empathy' ? 'Assertive Empathy' :
-                           selectedResponse.type === 'too-direct' ? 'Too Direct' :
-                           selectedResponse.type === 'wishy-washy' ? 'Wishy-Washy' :
-                           'Over-Accommodating'}
+                            selectedResponse.type === 'too-direct' ? 'Too Direct' :
+                              selectedResponse.type === 'wishy-washy' ? 'Wishy-Washy' :
+                                'Over-Accommodating'}
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Explanation */}
-                  <div className={`bg-white rounded-xl p-4 border-l-4 ${
-                    selectedResponse.calmScore >= 8 ? 'border-green-500' :
-                    selectedResponse.calmScore >= 6 ? 'border-blue-500' :
-                    selectedResponse.calmScore >= 4 ? 'border-yellow-500' :
-                    'border-red-500'
-                  }`}>
+                  <div className={`bg-white rounded-xl p-4 border-l-4 ${selectedResponse.calmScore >= 8 ? 'border-green-500' :
+                      selectedResponse.calmScore >= 6 ? 'border-blue-500' :
+                        selectedResponse.calmScore >= 4 ? 'border-yellow-500' :
+                          'border-red-500'
+                    }`}>
                     <p className="text-sm text-gray-700 leading-relaxed">
                       {selectedResponse.explanation}
                     </p>
@@ -488,8 +486,8 @@ const TheNoPractice = () => {
                 {averageCalmScore >= 8
                   ? "Excellent! You demonstrate strong assertive empathy skills. You can say 'no' firmly yet kindly, protecting your boundaries while maintaining relationships."
                   : averageCalmScore >= 6
-                  ? "Good job! You're developing assertive communication skills. Continue practicing to refine your ability to say 'no' with empathy and clarity."
-                  : "Nice effort! Assertive 'no' skills improve with practice. Review the feedback to learn how to say 'no' firmly yet kindly, protecting your boundaries while maintaining relationships."}
+                    ? "Good job! You're developing assertive communication skills. Continue practicing to refine your ability to say 'no' with empathy and clarity."
+                    : "Nice effort! Assertive 'no' skills improve with practice. Review the feedback to learn how to say 'no' firmly yet kindly, protecting your boundaries while maintaining relationships."}
               </p>
             </div>
 
@@ -504,15 +502,14 @@ const TheNoPractice = () => {
                   return (
                     <div
                       key={request.id}
-                      className={`p-3 rounded-lg border ${
-                        response.calmScore >= 8
+                      className={`p-3 rounded-lg border ${response.calmScore >= 8
                           ? 'bg-green-50 border-green-200'
                           : response.calmScore >= 6
-                          ? 'bg-blue-50 border-blue-200'
-                          : response.calmScore >= 4
-                          ? 'bg-yellow-50 border-yellow-200'
-                          : 'bg-red-50 border-red-200'
-                      }`}
+                            ? 'bg-blue-50 border-blue-200'
+                            : response.calmScore >= 4
+                              ? 'bg-yellow-50 border-yellow-200'
+                              : 'bg-red-50 border-red-200'
+                        }`}
                     >
                       <div className="flex items-start gap-2">
                         <span className="text-2xl">{calmInfo.emoji}</span>
@@ -524,11 +521,10 @@ const TheNoPractice = () => {
                             Your response: "{response.text.substring(0, 60)}..."
                           </p>
                           <div className="flex items-center gap-2 mt-1">
-                            <span className={`text-xs px-2 py-1 rounded ${
-                              response.calmScore >= 8 ? 'bg-green-200 text-green-800' :
-                              response.calmScore >= 6 ? 'bg-blue-200 text-blue-800' :
-                              'bg-yellow-200 text-yellow-800'
-                            }`}>
+                            <span className={`text-xs px-2 py-1 rounded ${response.calmScore >= 8 ? 'bg-green-200 text-green-800' :
+                                response.calmScore >= 6 ? 'bg-blue-200 text-blue-800' :
+                                  'bg-yellow-200 text-yellow-800'
+                              }`}>
                               Calm Score: {response.calmScore}/10
                             </span>
                             <span className="text-xs text-gray-500">
@@ -565,4 +561,3 @@ const TheNoPractice = () => {
 };
 
 export default TheNoPractice;
-

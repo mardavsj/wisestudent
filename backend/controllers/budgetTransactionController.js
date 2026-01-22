@@ -1,5 +1,4 @@
 import BudgetTransaction from '../models/BudgetTransaction.js';
-import Campaign from '../models/Campaign.js';
 import User from '../models/User.js';
 import VoucherRedemption from '../models/VoucherRedemption.js';
 import Transaction from '../models/Transaction.js';

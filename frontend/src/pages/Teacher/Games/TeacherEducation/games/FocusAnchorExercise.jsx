@@ -7,32 +7,36 @@ import { Play, Pause, RotateCcw, Clock, Target, Eye, Volume2, Hand, AlertCircle,
 
 const FocusAnchorExercise = () => {
   const location = useLocation();
-  
+
+  // Function to calculate duration: 20 seconds for first exercise, increasing by 10 seconds for each subsequent exercise
+  const calculateDuration = (exerciseIndex) => {
+    return 20 + (exerciseIndex * 10); // First exercise: 20s, second: 30s, third: 40s, etc.
+  };
+
   // Get game data
   const gameId = "teacher-education-43";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [selectedAnchor, setSelectedAnchor] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [timeRemaining, setTimeRemaining] = useState(120); // 2 minutes = 120 seconds
+  const [timeRemaining, setTimeRemaining] = useState(calculateDuration(0)); // Dynamic initial duration
   const [distractionCount, setDistractionCount] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [showGameOver, setShowGameOver] = useState(false);
   const [score, setScore] = useState(0);
   const [currentExercise, setCurrentExercise] = useState(0);
   const [completedExercises, setCompletedExercises] = useState([]);
-  
+
   const timerRef = useRef(null);
 
   const focusExercises = [
     {
       id: 1,
       title: 'Sound Anchor Focus',
-      duration: 120, // 2 minutes
       anchorType: 'sound',
       name: 'Sound Anchor',
       icon: Volume2,
@@ -47,7 +51,6 @@ const FocusAnchorExercise = () => {
     {
       id: 2,
       title: 'Visual Anchor Focus',
-      duration: 120, // 2 minutes
       anchorType: 'sight',
       name: 'Sight Anchor',
       icon: Eye,
@@ -62,7 +65,6 @@ const FocusAnchorExercise = () => {
     {
       id: 3,
       title: 'Tactile Anchor Focus',
-      duration: 120, // 2 minutes
       anchorType: 'touch',
       name: 'Touch Anchor',
       icon: Hand,
@@ -77,7 +79,6 @@ const FocusAnchorExercise = () => {
     {
       id: 4,
       title: 'Breath Anchor Focus',
-      duration: 120, // 2 minutes
       anchorType: 'breath',
       name: 'Breath Anchor',
       icon: AirVent,
@@ -92,7 +93,6 @@ const FocusAnchorExercise = () => {
     {
       id: 5,
       title: 'Body Scan Anchor Focus',
-      duration: 120, // 2 minutes
       anchorType: 'body',
       name: 'Body Scan Anchor',
       icon: HeartPulse,
@@ -105,14 +105,15 @@ const FocusAnchorExercise = () => {
       tip: 'Move slowly from one body part to the next. This creates embodied awareness and grounds you in the present moment.'
     }
   ];
-  
+
   const currentExerciseData = focusExercises[currentExercise];
+  const currentExerciseDuration = calculateDuration(currentExercise);
   const IconComponent = currentExerciseData?.icon;
 
   // Start the focus exercise
   const startExercise = () => {
     setIsPlaying(true);
-    setTimeRemaining(currentExerciseData.duration);
+    setTimeRemaining(currentExerciseDuration);
     setDistractionCount(0);
     setShowResults(false);
   };
@@ -125,7 +126,7 @@ const FocusAnchorExercise = () => {
   // Reset exercise
   const resetExercise = () => {
     setIsPlaying(false);
-    setTimeRemaining(currentExerciseData.duration);
+    setTimeRemaining(currentExerciseDuration);
     setDistractionCount(0);
     setShowResults(false);
     if (timerRef.current) {
@@ -151,14 +152,14 @@ const FocusAnchorExercise = () => {
       // Exercise complete
       setIsPlaying(false);
       setShowResults(true);
-      
+
       // Mark current exercise as completed if not already marked
       if (!completedExercises.includes(currentExercise)) {
         const newCompleted = [...completedExercises, currentExercise];
         setCompletedExercises(newCompleted);
         setScore(newCompleted.length); // Set score to number of completed exercises
       }
-      
+
       if (timerRef.current) {
         clearTimeout(timerRef.current);
       }
@@ -169,10 +170,10 @@ const FocusAnchorExercise = () => {
         clearTimeout(timerRef.current);
       }
     };
-  }, [isPlaying, timeRemaining, completedExercises, currentExercise, focusExercises.length]);
+  }, [isPlaying, timeRemaining, completedExercises, currentExercise, currentExerciseDuration]);
 
   // Calculate progress percentage
-  const progressPercentage = ((currentExerciseData.duration - timeRemaining) / currentExerciseData.duration) * 100;
+  const progressPercentage = ((currentExerciseDuration - timeRemaining) / currentExerciseDuration) * 100;
   const circumference = 2 * Math.PI * 100; // radius = 100
   const strokeDashoffset = circumference - (progressPercentage / 100) * circumference;
 
@@ -226,7 +227,7 @@ const FocusAnchorExercise = () => {
                     className={`bg-gradient-to-r ${currentExerciseData.color} text-white px-8 py-4 rounded-xl text-xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-3 mx-auto`}
                   >
                     <Play className="w-6 h-6" />
-                    Start {currentExerciseData.duration/60}-Minute Focus Exercise
+                    Start {Math.ceil(currentExerciseDuration / 60)}-Minute Focus Exercise ({currentExerciseDuration}s)
                   </motion.button>
                 </div>
               </>
@@ -378,7 +379,7 @@ const FocusAnchorExercise = () => {
             <div className="text-center mb-8">
               <div className="text-6xl mb-4">✨</div>
               <h2 className="text-3xl font-bold text-gray-800 mb-2">
-                {currentExerciseData.duration/60}-Minute Focus Complete!
+                {Math.ceil(currentExerciseDuration / 60)}-Minute Focus Complete! ({currentExerciseDuration}s)
               </h2>
               <p className="text-gray-600 text-lg">
                 You focused on your {currentExerciseData.name}
@@ -417,8 +418,8 @@ const FocusAnchorExercise = () => {
                   {distractionCount === 0
                     ? "Perfect focus! You stayed present throughout."
                     : distractionCount <= 3
-                    ? "Good awareness! You noticed when your mind wandered and returned to focus."
-                    : "Normal practice! Each time you noticed a distraction and returned to your anchor, you strengthened your focus muscle."}
+                      ? "Good awareness! You noticed when your mind wandered and returned to focus."
+                      : "Normal practice! Each time you noticed a distraction and returned to your anchor, you strengthened your focus muscle."}
                 </p>
               </div>
             </div>
@@ -430,7 +431,7 @@ const FocusAnchorExercise = () => {
                 {distractionCount === 0 && (
                   <p className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span>Excellent! You maintained strong focus throughout the 2 minutes. This demonstrates your ability to anchor your attention.</span>
+                    <span>Excellent! You maintained strong focus throughout the {currentExerciseDuration} seconds. This demonstrates your ability to anchor your attention.</span>
                   </p>
                 )}
                 {distractionCount > 0 && distractionCount <= 3 && (
@@ -461,7 +462,7 @@ const FocusAnchorExercise = () => {
                   onClick={() => {
                     setCurrentExercise(prev => prev + 1);
                     setShowResults(false);
-                    setTimeRemaining(focusExercises[currentExercise + 1]?.duration || 120);
+                    setTimeRemaining(calculateDuration(currentExercise + 1));
                     setDistractionCount(0);
                   }}
                   className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-8 py-4 rounded-xl text-xl font-semibold shadow-lg hover:shadow-xl transition-all"
@@ -503,7 +504,7 @@ const FocusAnchorExercise = () => {
                 You completed all {focusExercises.length} focus anchor exercises and earned {score} points.
               </p>
               <p className="text-gray-600">
-                These focus anchor exercises strengthen your ability to ground attention in the present moment using different sensory anchors. Regular practice will enhance your focus and mindfulness.
+                These focus anchor exercises with increasing durations (starting at 20 seconds and adding 10 seconds each time) strengthen your ability to ground attention in the present moment using different sensory anchors. Regular practice will enhance your focus and mindfulness.
               </p>
             </div>
 
@@ -543,4 +544,3 @@ const FocusAnchorExercise = () => {
 };
 
 export default FocusAnchorExercise;
-

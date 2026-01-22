@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import TeacherGameShell from "../../TeacherGameShell";
 import { getTeacherEducationGameById } from "../data/gameData";
-import { Smartphone, TrendingUp, TrendingDown, Heart, Smile, Frown, Meh, AlertCircle, BookOpen, Wind, Sparkles, Eye } from "lucide-react";
+import { Smartphone, TrendingUp, TrendingDown, Heart, Smile, Frown, Meh, AlertCircle, BookOpen, Wind, Sparkles, Eye, CheckCircle } from "lucide-react";
 
 const SocialMediaReflection = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-94";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [currentStep, setCurrentStep] = useState('pre-scroll'); // 'pre-scroll', 'scrolling', 'post-scroll', 'reflection', 'complete'
   const [preScrollMood, setPreScrollMood] = useState(null);
   const [postScrollMood, setPostScrollMood] = useState(null);
@@ -91,61 +91,6 @@ const SocialMediaReflection = () => {
       content: '🎓 Get Your Master\'s Degree Online - Special Discount for Teachers!',
       color: 'bg-yellow-50',
       borderColor: 'border-yellow-200'
-    },
-    {
-      id: 6,
-      type: 'post',
-      author: 'Inspiration Daily',
-      avatar: '🌟',
-      content: 'Remember: You are making a difference every single day. Your students appreciate you more than you know. Keep going! 💪',
-      likes: 5.2,
-      comments: 678,
-      time: '1d ago',
-      color: 'bg-green-50',
-      borderColor: 'border-green-200'
-    },
-    {
-      id: 7,
-      type: 'post',
-      author: 'Teacher Rants',
-      avatar: '😤',
-      content: 'Another unrealistic deadline from admin. How are we supposed to do all this with no support? This is ridiculous!',
-      likes: 1.8,
-      comments: 423,
-      time: '1d ago',
-      color: 'bg-red-50',
-      borderColor: 'border-red-200'
-    },
-    {
-      id: 8,
-      type: 'post',
-      author: 'Success Stories',
-      avatar: '🏆',
-      content: 'My student won the science fair! So proud! This is why I teach. 🎉',
-      likes: 456,
-      comments: 67,
-      time: '2d ago',
-      color: 'bg-indigo-50',
-      borderColor: 'border-indigo-200'
-    },
-    {
-      id: 9,
-      type: 'post',
-      author: 'Comparison Trap',
-      avatar: '😰',
-      content: 'Everyone else\'s classrooms look so much better than mine. I must be doing something wrong...',
-      likes: 234,
-      comments: 89,
-      time: '2d ago',
-      color: 'bg-pink-50',
-      borderColor: 'border-pink-200'
-    },
-    {
-      id: 10,
-      type: 'ad',
-      content: '💊 Get More Energy! Try This Teacher Supplement Now!',
-      color: 'bg-cyan-50',
-      borderColor: 'border-cyan-200'
     }
   ];
 
@@ -154,9 +99,9 @@ const SocialMediaReflection = () => {
       alert('Please select your mood before scrolling first.');
       return;
     }
-    
+
     setCurrentStep('scrolling');
-    
+
     // Start timer
     const timer = setInterval(() => {
       setScrollTime(prev => prev + 1);
@@ -165,7 +110,12 @@ const SocialMediaReflection = () => {
   };
 
   const handleItemViewed = (itemId) => {
-    setScrolledItems(prev => new Set([...prev, itemId]));
+    setScrolledItems(prev => {
+      const newSet = new Set([...prev, itemId]);
+      // Award 1 point for each new item viewed
+      setScore(newSet.size);
+      return newSet;
+    });
   };
 
   const handleFinishScrolling = () => {
@@ -173,6 +123,7 @@ const SocialMediaReflection = () => {
       clearInterval(scrollTimer);
       setScrollTimer(null);
     }
+    // If user hasn't viewed 5 posts yet, still allow them to finish scrolling
     setCurrentStep('post-scroll');
   };
 
@@ -183,28 +134,32 @@ const SocialMediaReflection = () => {
   const handleSelectPostScrollMood = (emotion) => {
     setPostScrollMood(emotion);
     setCurrentStep('reflection');
+    // Automatically move to game complete after a brief reflection
+    setTimeout(() => {
+      setShowGameOver(true);
+    }, 1000);
   };
 
   const getMoodChange = () => {
     if (!preScrollMood || !postScrollMood) return null;
-    
+
     const change = postScrollMood.value - preScrollMood.value;
     return {
       value: change,
       direction: change > 0 ? 'improved' : change < 0 ? 'worsened' : 'unchanged',
       magnitude: Math.abs(change),
-      description: change > 0 
+      description: change > 0
         ? `Your mood improved by ${change} point(s) after scrolling`
         : change < 0
-        ? `Your mood worsened by ${Math.abs(change)} point(s) after scrolling`
-        : 'Your mood remained unchanged after scrolling'
+          ? `Your mood worsened by ${Math.abs(change)} point(s) after scrolling`
+          : 'Your mood remained unchanged after scrolling'
     };
   };
 
   const getReflectionInsights = () => {
     const moodChange = getMoodChange();
     const insights = [];
-    
+
     if (moodChange?.direction === 'worsened') {
       insights.push({
         type: 'warning',
@@ -233,7 +188,7 @@ const SocialMediaReflection = () => {
         borderColor: 'border-green-300'
       });
     }
-    
+
     // Time-based insights
     if (scrollTime > 600) { // 10 minutes
       insights.push({
@@ -245,7 +200,7 @@ const SocialMediaReflection = () => {
         borderColor: 'border-orange-300'
       });
     }
-    
+
     // Engagement insights
     if (scrolledItems.size > 8) {
       insights.push({
@@ -257,20 +212,31 @@ const SocialMediaReflection = () => {
         borderColor: 'border-blue-300'
       });
     }
-    
+
     return insights;
   };
 
   const handleComplete = () => {
-    setScore(1);
+    // Score is already calculated based on number of items scrolled
     setShowGameOver(true);
   };
+
+  // Automatically move to reflection when all posts are viewed
+  React.useEffect(() => {
+    if (scrolledItems.size >= 5 && currentStep === 'scrolling') {
+      // Wait a bit to show the last post being viewed, then move to post-scroll mood selection
+      const timer = setTimeout(() => {
+        setCurrentStep('post-scroll');
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [scrolledItems.size, currentStep]);
 
   const moodChange = getMoodChange();
 
   if (showGameOver) {
     const insights = getReflectionInsights();
-    
+
     return (
       <TeacherGameShell
         title={gameData?.title || "Social-Media Reflection"}
@@ -281,7 +247,7 @@ const SocialMediaReflection = () => {
         gameType="teacher-education"
         totalLevels={totalLevels}
         totalCoins={totalCoins}
-        currentQuestion={1}
+        currentQuestion={Math.min(scrolledItems.size, totalLevels)}
       >
         <div className="w-full max-w-4xl mx-auto px-4">
           <motion.div
@@ -325,11 +291,10 @@ const SocialMediaReflection = () => {
                   </div>
                 </div>
                 {moodChange && (
-                  <div className={`text-center p-4 rounded-lg border-2 ${
-                    moodChange.direction === 'improved' ? 'bg-green-50 border-green-300' :
-                    moodChange.direction === 'worsened' ? 'bg-red-50 border-red-300' :
-                    'bg-gray-50 border-gray-300'
-                  }`}>
+                  <div className={`text-center p-4 rounded-lg border-2 ${moodChange.direction === 'improved' ? 'bg-green-50 border-green-300' :
+                      moodChange.direction === 'worsened' ? 'bg-red-50 border-red-300' :
+                        'bg-gray-50 border-gray-300'
+                    }`}>
                     <p className="font-semibold text-gray-800 mb-1">
                       {moodChange.description}
                     </p>
@@ -497,16 +462,14 @@ const SocialMediaReflection = () => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => handleSelectPreScrollMood(emotion)}
-                      className={`p-6 rounded-xl border-2 transition-all ${
-                        preScrollMood?.id === emotion.id
+                      className={`p-6 rounded-xl border-2 transition-all ${preScrollMood?.id === emotion.id
                           ? `${emotion.bgColor} ${emotion.borderColor} shadow-lg`
                           : 'bg-white border-gray-200 hover:border-gray-300'
-                      }`}
+                        }`}
                     >
                       <div className="text-5xl mb-2">{emotion.emoji}</div>
-                      <p className={`font-semibold text-sm ${
-                        preScrollMood?.id === emotion.id ? 'text-gray-800' : 'text-gray-600'
-                      }`}>
+                      <p className={`font-semibold text-sm ${preScrollMood?.id === emotion.id ? 'text-gray-800' : 'text-gray-600'
+                        }`}>
                         {emotion.label}
                       </p>
                     </motion.button>
@@ -547,12 +510,12 @@ const SocialMediaReflection = () => {
                     Time: {Math.floor(scrollTime / 60)}:{String(scrollTime % 60).padStart(2, '0')}
                   </div>
                 </div>
-                
+
                 <div className="bg-gray-100 rounded-xl p-4 border-2 border-gray-300 max-h-96 overflow-y-auto">
                   <div className="space-y-4">
                     {socialMediaFeed.map((post, index) => {
                       const isViewed = scrolledItems.has(post.id);
-                      
+
                       return (
                         <motion.div
                           key={post.id}
@@ -628,16 +591,14 @@ const SocialMediaReflection = () => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => handleSelectPostScrollMood(emotion)}
-                      className={`p-6 rounded-xl border-2 transition-all ${
-                        postScrollMood?.id === emotion.id
+                      className={`p-6 rounded-xl border-2 transition-all ${postScrollMood?.id === emotion.id
                           ? `${emotion.bgColor} ${emotion.borderColor} shadow-lg`
                           : 'bg-white border-gray-200 hover:border-gray-300'
-                      }`}
+                        }`}
                     >
                       <div className="text-5xl mb-2">{emotion.emoji}</div>
-                      <p className={`font-semibold text-sm ${
-                        postScrollMood?.id === emotion.id ? 'text-gray-800' : 'text-gray-600'
-                      }`}>
+                      <p className={`font-semibold text-sm ${postScrollMood?.id === emotion.id ? 'text-gray-800' : 'text-gray-600'
+                        }`}>
                         {emotion.label}
                       </p>
                     </motion.button>
@@ -653,11 +614,10 @@ const SocialMediaReflection = () => {
               animate={{ opacity: 1, y: 0 }}
             >
               {/* Reflection Display */}
-              <div className={`bg-gradient-to-br ${
-                moodChange.direction === 'improved' ? 'from-green-50 to-emerald-50 border-green-300' :
-                moodChange.direction === 'worsened' ? 'from-red-50 to-rose-50 border-red-300' :
-                'from-gray-50 to-slate-50 border-gray-300'
-              } rounded-xl p-6 border-2 mb-6`}>
+              <div className={`bg-gradient-to-br ${moodChange.direction === 'improved' ? 'from-green-50 to-emerald-50 border-green-300' :
+                  moodChange.direction === 'worsened' ? 'from-red-50 to-rose-50 border-red-300' :
+                    'from-gray-50 to-slate-50 border-gray-300'
+                } rounded-xl p-6 border-2 mb-6`}>
                 <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">
                   Your Mood Change
                 </h3>
@@ -728,4 +688,3 @@ const SocialMediaReflection = () => {
 };
 
 export default SocialMediaReflection;
-

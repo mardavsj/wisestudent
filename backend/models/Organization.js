@@ -140,6 +140,39 @@ const organizationSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Subscription',
     },
+    sponsorshipInfo: {
+      sponsorId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "CSRSponsor",
+      },
+      sponsorshipId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Sponsorship",
+      },
+      status: {
+        type: String,
+        enum: ["active", "pending", "expired", "renewal"],
+        default: "pending",
+      },
+      studentsCovered: {
+        type: Number,
+        default: 0,
+      },
+      committedAmount: {
+        type: Number,
+        default: 0,
+      },
+      lastUpdated: Date,
+      nextRenewalDate: Date,
+      lastThankYou: {
+        message: String,
+        createdBy: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+        createdAt: Date,
+      },
+    },
     linkingCode: {
       type: String,
       unique: true,
@@ -158,6 +191,8 @@ const organizationSchema = new mongoose.Schema(
 // Only keep companyId and type+tenantId indexes, tenantId is already unique
 organizationSchema.index({ companyId: 1 });
 organizationSchema.index({ type: 1, tenantId: 1 });
+organizationSchema.index({ "sponsorshipInfo.sponsorId": 1 });
+organizationSchema.index({ "sponsorshipInfo.sponsorshipId": 1 });
 
 // Generate unique tenantId before saving
 organizationSchema.statics.generateUniqueLinkingCode = async function(prefix = "SC", length = 6) {

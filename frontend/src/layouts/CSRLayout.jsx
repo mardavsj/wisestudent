@@ -1,19 +1,16 @@
-import React from 'react';
-import CSRSidebar from '../components/CSR/CSRSidebar';
+import React from "react";
+import CSRSidebar from "../components/CSR/CSRSidebar";
+import CSRHeader from "../components/CSR/CSRHeader";
 
-const CSRLayout = ({ children }) => {
-  return (
-    <div className="min-h-screen bg-gray-50 flex">
-      {/* Sidebar */}
-      <CSRSidebar />
-
-      {/* Main Content */}
-      <main className="flex-1 lg:ml-0 overflow-x-hidden">
-        {children}
-      </main>
+const CSRLayout = ({ children }) => (
+  <div className="min-h-screen flex bg-slate-50">
+    <CSRSidebar />
+    <div className="flex-1 flex flex-col">
+      <CSRHeader />
+      <main className="flex-1 overflow-y-auto px-4 py-6">{children}</main>
     </div>
-  );
-};
+  </div>
+);
 
 export default CSRLayout;
 

@@ -89,6 +89,8 @@ import PredictiveModels from "./pages/Admin/PredictiveModels";
 import APIControlPlane from "./pages/Admin/APIControlPlane";
 import AdminPlatform from "./pages/Admin/AdminPlatform";
 import GoodieOrders from "./pages/Admin/GoodieOrders";
+import AdminCSRTestimonials from "./pages/Admin/AdminCSRTestimonials";
+import AdminCSRRefunds from "./pages/Admin/AdminCSRRefunds";
 
 // Parent Pages
 import ParentDashboard from "./pages/Parent/ParentDashboard";
@@ -113,22 +115,23 @@ import SellerDashboard from "./pages/Seller/SellerDashboard";
 
 // CSR Pages
 import CSRDashboard from "./pages/CSR/CSRDashboard";
-import CSRExecutiveDashboard from "./pages/CSR/CSRExecutiveDashboard";
-import CSROverview from "./pages/CSR/CSROverview";
-import CSRCampaigns from "./pages/CSR/CSRCampaigns";
-import CSRFinancial from "./pages/CSR/CSRFinancial";
-import CSRReports from "./pages/CSR/CSRReports";
 import CSRApprovals from "./pages/CSR/CSRApprovals";
-import CSRBudgetTracking from "./pages/CSR/CSRBudgetTracking";
-import CSRBudget from "./pages/CSR/CSRBudget";
-import CSRCobranding from "./pages/CSR/CSRCobranding";
-import CSRGoals from "./pages/CSR/CSRGoals";
-import CSRComplianceCalendar from "./pages/CSR/CSRComplianceCalendar";
-import CSRROICalculator from "./pages/CSR/CSRROICalculator";
-import CSRAlerts from "./pages/CSR/CSRAlerts";
 import CSRProfile from "./pages/CSR/CSRProfile";
 import CSRSettings from "./pages/CSR/CSRSettings";
 import CSRSchools from "./pages/CSR/CSRSchools";
+import CSRFunds from "./pages/CSR/CSRFunds";
+import CSRFundsAdd from "./pages/CSR/CSRFundsAdd";
+import CSRFundsRefund from "./pages/CSR/CSRFundsRefund";
+import CSRFinancial from "./pages/CSR/CSRFinancial";
+import CSRReports from "./pages/CSR/CSRReports";
+import CSRReportGenerate from "./pages/CSR/CSRReportGenerate";
+import CSRGallery from "./pages/CSR/CSRGallery";
+import CSRTestimonials from "./pages/CSR/CSRTestimonials";
+import CSRSponsorships from "./pages/CSR/CSRSponsorships";
+import CSRSponsorshipNew from "./pages/CSR/CSRSponsorshipNew";
+import CSRSponsorshipDetails from "./pages/CSR/CSRSponsorshipDetails";
+import CSRNotifications from "./pages/CSR/CSRNotifications";
+import CSRSponsorshipRenew from "./pages/CSR/CSRSponsorshipRenew";
 import CSRLayout from "./layouts/CSRLayout";
 
 // Multi-Tenant Pages
@@ -160,6 +163,10 @@ import SchoolTeacherDashboard from "./pages/School/SchoolTeacherDashboard";
 import SchoolStudentDashboard from "./pages/School/SchoolStudentDashboard";
 import SchoolParentDashboard from "./pages/School/SchoolParentDashboard";
 import TeacherOverview from "./pages/School/TeacherOverview";
+import SchoolTestimonialSubmit from "./pages/School/SchoolTestimonialSubmit";
+import SchoolSponsorship from "./pages/School/SchoolSponsorship";
+import SchoolSponsorshipGallery from "./pages/School/SchoolSponsorshipGallery";
+import SchoolSponsorshipThankYou from "./pages/School/SchoolSponsorshipThankYou";
 import TeacherStudents from "./pages/School/TeacherStudents";
 import TeacherAnalytics from "./pages/School/TeacherAnalytics";
 import TeacherTasks from "./pages/School/TeacherTasks";
@@ -393,8 +400,11 @@ const App = () => {
       if (pathname === "/csr/dashboard") return "CSR Dashboard";
       if (pathname === "/csr/campaigns") return "CSR Campaigns";
       if (pathname === "/csr/campaign-wizard") return "Campaign Wizard";
-      if (pathname === "/csr/financial") return "CSR Financial";
+      if (pathname === "/csr/funds") return "CSR Funds";
+      if (pathname === "/csr/funds/add") return "Add Funds";
       if (pathname === "/csr/reports") return "CSR Reports";
+      if (pathname === "/csr/reports/generate") return "Generate Report";
+      if (pathname === "/csr/gallery") return "CSR Gallery";
       if (pathname === "/csr/approvals") return "CSR Approvals";
       if (pathname === "/csr/budget-tracking") return "Budget Tracking";
       if (pathname === "/csr/budget") return "Budget";
@@ -655,6 +665,14 @@ const App = () => {
             element={
               <ProtectedRoute roles={["school_admin"]}>
                 <AnnouncementManagement />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/school/testimonial/submit"
+            element={
+              <ProtectedRoute roles={["school_admin","school_teacher","school_parent","school_student"]}>
+                <SchoolTestimonialSubmit />
               </ProtectedRoute>
             }
           />
@@ -924,6 +942,31 @@ const App = () => {
             element={
               <ProtectedRoute roles={["school_parent"]}>
                 <ParentChat />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/school/sponsorship"
+            element={
+              <ProtectedRoute roles={["school_admin", "school_teacher", "school_student", "school_parent"]}>
+                <SchoolSponsorship />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/school/sponsorship/gallery"
+            element={
+              <ProtectedRoute roles={["school_admin", "school_teacher", "school_student", "school_parent"]}>
+                <SchoolSponsorshipGallery />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/school/sponsorship/thank-you"
+            element={
+              <ProtectedRoute roles={["school_admin", "school_teacher", "school_student", "school_parent"]}>
+                <SchoolSponsorshipThankYou />
               </ProtectedRoute>
             }
           />
@@ -1450,6 +1493,22 @@ const App = () => {
             }
           />
           <Route
+            path="/admin/csr/testimonials"
+            element={
+              <ProtectedRoute roles={["admin"]}>
+                <AdminCSRTestimonials />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/csr/refunds"
+            element={
+              <ProtectedRoute roles={["admin"]}>
+                <AdminCSRRefunds />
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="/admin/lifecycle"
             element={
               <ProtectedRoute roles={["admin"]}>
@@ -1733,21 +1792,11 @@ const App = () => {
             }
           />
           <Route
-            path="/csr/executive"
+            path="/csr/notifications"
             element={
               <ProtectedRoute roles={["csr"]}>
                 <CSRLayout>
-                  <CSRExecutiveDashboard />
-                </CSRLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/csr/overview"
-            element={
-              <ProtectedRoute roles={["csr"]}>
-                <CSRLayout>
-                <CSROverview />
+                  <CSRNotifications />
                 </CSRLayout>
               </ProtectedRoute>
             }
@@ -1763,25 +1812,81 @@ const App = () => {
             }
           />
           <Route
-            path="/csr/campaigns"
+            path="/csr/sponsorships"
             element={
               <ProtectedRoute roles={["csr"]}>
                 <CSRLayout>
-                <CSRCampaigns />
+                  <CSRSponsorships />
                 </CSRLayout>
               </ProtectedRoute>
             }
           />
           <Route
-            path="/csr/campaign-wizard"
-            element={<Navigate to="/csr/campaigns" replace />}
+            path="/csr/sponsorships/new"
+            element={
+              <ProtectedRoute roles={["csr"]}>
+                <CSRLayout>
+                  <CSRSponsorshipNew />
+                </CSRLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/csr/sponsorships/:id/renew"
+            element={
+              <ProtectedRoute roles={["csr"]}>
+                <CSRLayout>
+                  <CSRSponsorshipRenew />
+                </CSRLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/csr/sponsorships/:id"
+            element={
+              <ProtectedRoute roles={["csr"]}>
+                <CSRLayout>
+                  <CSRSponsorshipDetails />
+                </CSRLayout>
+              </ProtectedRoute>
+            }
           />
           <Route
             path="/csr/financial"
             element={
               <ProtectedRoute roles={["csr"]}>
                 <CSRLayout>
-                <CSRFinancial />
+                  <CSRFinancial />
+                </CSRLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/csr/funds"
+            element={
+              <ProtectedRoute roles={["csr"]}>
+                <CSRLayout>
+                  <CSRFunds />
+                </CSRLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/csr/funds/add"
+            element={
+              <ProtectedRoute roles={["csr"]}>
+                <CSRLayout>
+                  <CSRFundsAdd />
+                </CSRLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/csr/funds/refund"
+            element={
+              <ProtectedRoute roles={["csr"]}>
+                <CSRLayout>
+                  <CSRFundsRefund />
                 </CSRLayout>
               </ProtectedRoute>
             }
@@ -1797,81 +1902,41 @@ const App = () => {
             }
           />
           <Route
+            path="/csr/reports/generate"
+            element={
+              <ProtectedRoute roles={["csr"]}>
+                <CSRLayout>
+                  <CSRReportGenerate />
+                </CSRLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/csr/gallery"
+            element={
+              <ProtectedRoute roles={["csr"]}>
+                <CSRLayout>
+                  <CSRGallery />
+                </CSRLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/csr/testimonials"
+            element={
+              <ProtectedRoute roles={["csr"]}>
+                <CSRLayout>
+                  <CSRTestimonials />
+                </CSRLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="/csr/approvals"
             element={
               <ProtectedRoute roles={["csr"]}>
                 <CSRLayout>
                 <CSRApprovals />
-                </CSRLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/csr/budget-tracking"
-            element={
-              <ProtectedRoute roles={["csr"]}>
-                <CSRLayout>
-                <CSRBudgetTracking />
-                </CSRLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/csr/budget"
-            element={
-              <ProtectedRoute roles={["csr"]}>
-                <CSRLayout>
-                <CSRBudget />
-                </CSRLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/csr/cobranding"
-            element={
-              <ProtectedRoute roles={["csr"]}>
-                <CSRLayout>
-                <CSRCobranding />
-                </CSRLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/csr/goals"
-            element={
-              <ProtectedRoute roles={["csr"]}>
-                <CSRLayout>
-                  <CSRGoals />
-                </CSRLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/csr/compliance"
-            element={
-              <ProtectedRoute roles={["csr"]}>
-                <CSRLayout>
-                  <CSRComplianceCalendar />
-                </CSRLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/csr/roi"
-            element={
-              <ProtectedRoute roles={["csr"]}>
-                <CSRLayout>
-                  <CSRROICalculator />
-                </CSRLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/csr/alerts"
-            element={
-              <ProtectedRoute roles={["csr"]}>
-                <CSRLayout>
-                  <CSRAlerts />
                 </CSRLayout>
               </ProtectedRoute>
             }

@@ -7,15 +7,15 @@ import { Target, CheckCircle, TrendingUp, BookOpen, Sparkles, AlertCircle, Heart
 
 const InnerAlignmentQuiz = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-89";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 10;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [ratings, setRatings] = useState({});
   const [showResults, setShowResults] = useState(false);
@@ -53,36 +53,6 @@ const InnerAlignmentQuiz = () => {
       statement: "I invest time in activities that align with my long-term goals.",
       category: "Goal Alignment",
       description: "How well your daily actions support your long-term aspirations"
-    },
-    {
-      id: 6,
-      statement: "I speak up for what I believe is right, even when it's difficult.",
-      category: "Integrity",
-      description: "Your willingness to stand for your values in challenging situations"
-    },
-    {
-      id: 7,
-      statement: "I prioritize relationships and connection over perfection.",
-      category: "Relationship Focus",
-      description: "Your emphasis on meaningful connections over flawless execution"
-    },
-    {
-      id: 8,
-      statement: "I take time for reflection and self-awareness regularly.",
-      category: "Self-Reflection",
-      description: "Your commitment to understanding yourself and your impact"
-    },
-    {
-      id: 9,
-      statement: "I celebrate student growth even when it's not reflected in test scores.",
-      category: "Holistic Growth",
-      description: "Your recognition of progress beyond traditional metrics"
-    },
-    {
-      id: 10,
-      statement: "I feel authentic and genuine in my teaching role.",
-      category: "Authenticity",
-      description: "Your sense of being true to yourself while teaching"
     }
   ];
 
@@ -110,11 +80,12 @@ const InnerAlignmentQuiz = () => {
   };
 
   const calculateResults = () => {
-    // Calculate alignment score (average of all ratings)
-    const totalRating = Object.values(ratings).reduce((sum, rating) => sum + rating, 0);
-    const alignmentScore = (totalRating / statements.length) * 20; // Convert to percentage (1-5 scale becomes 20-100%)
-    
-    setScore(Math.round(alignmentScore));
+    // Calculate alignment score (award 1 point per question if rating is 3 or higher)
+    const totalPoints = Object.values(ratings).reduce((sum, rating) => {
+      return sum + (rating >= 3 ? 1 : 0); // 1 point if rating is 3-5, 0 points if 1-2
+    }, 0);
+
+    setScore(totalPoints);
 
     // Set results after a brief delay
     setTimeout(() => {
@@ -129,7 +100,7 @@ const InnerAlignmentQuiz = () => {
 
   // Get insights based on score
   const getInsights = (score) => {
-    if (score >= 80) {
+    if (score >= 4) {  // 4-5 out of 5
       return {
         level: "Highly Aligned",
         emoji: "✨",
@@ -150,7 +121,7 @@ const InnerAlignmentQuiz = () => {
           "Regularly review and adjust as your goals evolve"
         ]
       };
-    } else if (score >= 60) {
+    } else if (score >= 3) {  // 3 out of 5
       return {
         level: "Moderately Aligned",
         emoji: "💙",
@@ -170,7 +141,7 @@ const InnerAlignmentQuiz = () => {
           "Consider discussing alignment goals with a mentor or colleague"
         ]
       };
-    } else {
+    } else {  // 0-2 out of 5
       return {
         level: "Needs Attention",
         emoji: "💡",
@@ -199,7 +170,7 @@ const InnerAlignmentQuiz = () => {
   // Calculate category scores
   const getCategoryScores = () => {
     const categoryRatings = {};
-    
+
     statements.forEach(stmt => {
       if (!categoryRatings[stmt.category]) {
         categoryRatings[stmt.category] = [];
@@ -211,8 +182,13 @@ const InnerAlignmentQuiz = () => {
 
     const categoryScores = {};
     Object.keys(categoryRatings).forEach(category => {
-      const avg = categoryRatings[category].reduce((a, b) => a + b, 0) / categoryRatings[category].length;
-      categoryScores[category] = Math.round(avg * 20); // Convert to percentage
+      // Calculate how many questions in this category received a 3 or higher (1 point each)
+      const points = categoryRatings[category].reduce((sum, rating) => {
+        return sum + (rating >= 3 ? 1 : 0);
+      }, 0);
+      // Calculate average points per question in this category, scaled to 1-5 range
+      const numQuestionsInCategory = categoryRatings[category].length;
+      categoryScores[category] = numQuestionsInCategory > 0 ? Math.round((points / numQuestionsInCategory) * 5) : 0;
     });
 
     return categoryScores;
@@ -294,11 +270,10 @@ const InnerAlignmentQuiz = () => {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => handleRatingSelect(currentStatement.id, rating)}
-                            className={`w-14 h-14 rounded-full font-bold text-lg transition-all flex items-center justify-center ${
-                              currentRating === rating
+                            className={`w-14 h-14 rounded-full font-bold text-lg transition-all flex items-center justify-center ${currentRating === rating
                                 ? 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white shadow-lg scale-110'
                                 : 'bg-gray-100 text-gray-600 hover:bg-purple-100 hover:text-purple-600 border-2 border-gray-300'
-                            }`}
+                              }`}
                           >
                             {rating}
                           </motion.button>
@@ -316,11 +291,10 @@ const InnerAlignmentQuiz = () => {
                     whileTap={{ scale: 0.95 }}
                     onClick={handlePrevious}
                     disabled={currentQuestion === 0}
-                    className={`px-6 py-3 rounded-xl font-semibold transition-all ${
-                      currentQuestion === 0
+                    className={`px-6 py-3 rounded-xl font-semibold transition-all ${currentQuestion === 0
                         ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                         : 'bg-gray-500 text-white hover:bg-gray-600'
-                    }`}
+                      }`}
                   >
                     Previous
                   </motion.button>
@@ -334,11 +308,10 @@ const InnerAlignmentQuiz = () => {
                     whileTap={{ scale: 0.95 }}
                     onClick={handleNext}
                     disabled={!currentRating}
-                    className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-                      !currentRating
+                    className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${!currentRating
                         ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                         : 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white hover:shadow-lg'
-                    }`}
+                      }`}
                   >
                     {currentQuestion < statements.length - 1 ? 'Next' : 'View Results'}
                     <TrendingUp className="w-4 h-4" />
@@ -376,13 +349,12 @@ const InnerAlignmentQuiz = () => {
                       transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                       className="text-7xl font-bold text-gray-800 mb-2"
                     >
-                      {score}%
+                      {score} out of {statements.length}
                     </motion.div>
-                    <h3 className={`text-2xl font-bold mb-2 ${
-                      insights?.level === "Highly Aligned" ? "text-green-700" :
-                      insights?.level === "Moderately Aligned" ? "text-blue-700" :
-                      "text-orange-700"
-                    }`}>
+                    <h3 className={`text-2xl font-bold mb-2 ${insights?.level === "Highly Aligned" ? "text-green-700" :
+                        insights?.level === "Moderately Aligned" ? "text-blue-700" :
+                          "text-orange-700"
+                      }`}>
                       {insights?.level}
                     </h3>
                     <p className="text-gray-700 text-lg leading-relaxed">
@@ -404,18 +376,17 @@ const InnerAlignmentQuiz = () => {
                         <div key={category} className="border-2 border-gray-200 rounded-lg p-4">
                           <div className="flex justify-between items-center mb-2">
                             <span className="font-semibold text-gray-800">{category}</span>
-                            <span className="font-bold text-purple-600">{catScore}%</span>
+                            <span className="font-bold text-purple-600">{catScore}/5</span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
                             <motion.div
                               initial={{ width: 0 }}
-                              animate={{ width: `${catScore}%` }}
+                              animate={{ width: `${(catScore / 5) * 100}%` }}
                               transition={{ delay: 0.3 + Object.keys(categoryScores).indexOf(category) * 0.1 }}
-                              className={`h-2 rounded-full ${
-                                catScore >= 80 ? "bg-green-500" :
-                                catScore >= 60 ? "bg-blue-500" :
-                                "bg-orange-500"
-                              }`}
+                              className={`h-2 rounded-full ${catScore >= 4 ? "bg-green-500" :
+                                  catScore >= 3 ? "bg-blue-500" :
+                                    "bg-orange-500"
+                                }`}
                             />
                           </div>
                           <p className="text-sm text-gray-600 mt-2 italic">{statement?.description}</p>
@@ -504,12 +475,11 @@ const InnerAlignmentQuiz = () => {
             {insights && (
               <div className={`bg-gradient-to-br ${insights.bgColor} rounded-xl p-8 border-2 ${insights.borderColor} mb-6`}>
                 <div className="text-center">
-                  <div className="text-6xl font-bold text-gray-800 mb-2">{score}%</div>
-                  <h3 className={`text-2xl font-bold mb-2 ${
-                    insights.level === "Highly Aligned" ? "text-green-700" :
-                    insights.level === "Moderately Aligned" ? "text-blue-700" :
-                    "text-orange-700"
-                  }`}>
+                  <div className="text-6xl font-bold text-gray-800 mb-2">{score} out of {statements.length}</div>
+                  <h3 className={`text-2xl font-bold mb-2 ${insights.level === "Highly Aligned" ? "text-green-700" :
+                      insights.level === "Moderately Aligned" ? "text-blue-700" :
+                        "text-orange-700"
+                    }`}>
                     {insights.level}
                   </h3>
                   <p className="text-gray-700 text-lg">{insights.message}</p>
@@ -571,4 +541,3 @@ const InnerAlignmentQuiz = () => {
 };
 
 export default InnerAlignmentQuiz;
-

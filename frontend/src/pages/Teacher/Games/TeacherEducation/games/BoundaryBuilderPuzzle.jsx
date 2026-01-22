@@ -7,20 +7,20 @@ import { Shield, Clock, Lock, MessageCircle, Zap, CheckCircle, AlertCircle, Grip
 
 const BoundaryBuilderPuzzle = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-63";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [boundaries, setBoundaries] = useState([
-    { 
-      id: 1, 
-      name: 'Time', 
-      category: null, 
+    {
+      id: 1,
+      name: 'Time',
+      category: null,
       icon: Clock,
       description: 'When you are available and when you are not',
       firmAnalysis: 'Firm time boundaries protect your personal time and prevent burnout. Examples: "I don\'t check emails after 6 PM" or "I\'m not available on weekends."',
@@ -29,10 +29,10 @@ const BoundaryBuilderPuzzle = () => {
       recommendedCategory: 'firm',
       emoji: '⏰'
     },
-    { 
-      id: 2, 
-      name: 'Privacy', 
-      category: null, 
+    {
+      id: 2,
+      name: 'Privacy',
+      category: null,
       icon: Lock,
       description: 'What personal information you share and what remains private',
       firmAnalysis: 'Firm privacy boundaries protect your personal life and prevent oversharing. Example: "I don\'t discuss my personal life with students" or "My home address is private."',
@@ -41,10 +41,10 @@ const BoundaryBuilderPuzzle = () => {
       recommendedCategory: 'firm',
       emoji: '🔒'
     },
-    { 
-      id: 3, 
-      name: 'Availability', 
-      category: null, 
+    {
+      id: 3,
+      name: 'Availability',
+      category: null,
       icon: MessageCircle,
       description: 'How accessible you are for requests and communications',
       firmAnalysis: 'Firm availability boundaries protect your focus and reduce interruptions. Example: "I respond to emails during designated hours only" or "I don\'t take calls during class time."',
@@ -53,10 +53,10 @@ const BoundaryBuilderPuzzle = () => {
       recommendedCategory: 'flexible',
       emoji: '📞'
     },
-    { 
-      id: 4, 
-      name: 'Tone', 
-      category: null, 
+    {
+      id: 4,
+      name: 'Tone',
+      category: null,
       icon: MessageCircle,
       description: 'How others speak to you and how you respond',
       firmAnalysis: 'Firm tone boundaries protect your dignity and professional respect. Example: "I won\'t accept being spoken to disrespectfully" or "I maintain calm, professional communication."',
@@ -65,10 +65,10 @@ const BoundaryBuilderPuzzle = () => {
       recommendedCategory: 'firm',
       emoji: '💬'
     },
-    { 
-      id: 5, 
-      name: 'Energy', 
-      category: null, 
+    {
+      id: 5,
+      name: 'Energy',
+      category: null,
       icon: Zap,
       description: 'How you manage and protect your emotional and physical energy',
       firmAnalysis: 'Firm energy boundaries protect your capacity and prevent exhaustion. Example: "I don\'t take on additional tasks when I\'m at capacity" or "I protect my lunch break for rest."',
@@ -78,35 +78,35 @@ const BoundaryBuilderPuzzle = () => {
       emoji: '⚡'
     }
   ]);
-  
+
   const [draggedItem, setDraggedItem] = useState(null);
   const [showAnalysis, setShowAnalysis] = useState(false);
   const [showGameOver, setShowGameOver] = useState(false);
   const [score, setScore] = useState(0);
 
   const categories = [
-    { 
-      id: 'firm', 
-      label: 'Firm', 
-      icon: Shield, 
+    {
+      id: 'firm',
+      label: 'Firm',
+      icon: Shield,
       color: 'from-red-500 to-rose-500',
       bgColor: 'bg-red-50',
       borderColor: 'border-red-300',
       description: 'Non-negotiable boundaries that protect your emotional health'
     },
-    { 
-      id: 'flexible', 
-      label: 'Flexible', 
-      icon: Shield, 
+    {
+      id: 'flexible',
+      label: 'Flexible',
+      icon: Shield,
       color: 'from-blue-500 to-cyan-500',
       bgColor: 'bg-blue-50',
       borderColor: 'border-blue-300',
       description: 'Boundaries with room for exceptions when appropriate'
     },
-    { 
-      id: 'unclear', 
-      label: 'Unclear', 
-      icon: AlertCircle, 
+    {
+      id: 'unclear',
+      label: 'Unclear',
+      icon: AlertCircle,
       color: 'from-gray-500 to-slate-500',
       bgColor: 'bg-gray-50',
       borderColor: 'border-gray-300',
@@ -129,8 +129,8 @@ const BoundaryBuilderPuzzle = () => {
     e.preventDefault();
     if (!draggedItem) return;
 
-    setBoundaries(prev => prev.map(boundary => 
-      boundary.id === draggedItem 
+    setBoundaries(prev => prev.map(boundary =>
+      boundary.id === draggedItem
         ? { ...boundary, category }
         : boundary
     ));
@@ -138,8 +138,8 @@ const BoundaryBuilderPuzzle = () => {
   };
 
   const handleRemoveFromCategory = (boundaryId) => {
-    setBoundaries(prev => prev.map(boundary => 
-      boundary.id === boundaryId 
+    setBoundaries(prev => prev.map(boundary =>
+      boundary.id === boundaryId
         ? { ...boundary, category: null }
         : boundary
     ));
@@ -148,25 +148,15 @@ const BoundaryBuilderPuzzle = () => {
   const handleShowAnalysis = () => {
     const allSorted = boundaries.every(b => b.category !== null);
     if (allSorted) {
-      // Calculate score based on appropriate categorization
+      // Calculate score based on correct categorization - 1 point per correct boundary
       let correctCount = 0;
       boundaries.forEach(boundary => {
-        // Firm is recommended for most, but flexible is acceptable for Availability and Energy
-        const isGoodChoice = 
-          (boundary.recommendedCategory === boundary.category) ||
-          (boundary.recommendedCategory === 'firm' && boundary.category === 'flexible' && (boundary.id === 3 || boundary.id === 5)) ||
-          (boundary.recommendedCategory === 'flexible' && boundary.category === 'firm' && (boundary.id === 3 || boundary.id === 5));
-        
-        // Unclear is never a good choice
-        if (boundary.category === 'unclear') {
-          correctCount += 0;
-        } else if (isGoodChoice) {
-          correctCount += 2;
-        } else {
+        // Award 1 point for each correctly categorized boundary
+        if (boundary.category === boundary.recommendedCategory) {
           correctCount += 1;
         }
       });
-      
+
       setScore(correctCount);
       setShowAnalysis(true);
     }
@@ -192,7 +182,7 @@ const BoundaryBuilderPuzzle = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={score}
     >
       <div className="w-full max-w-6xl mx-auto px-4">
         {!showAnalysis ? (
@@ -228,7 +218,7 @@ const BoundaryBuilderPuzzle = () => {
                 const CategoryIcon = category.icon;
                 const categoryBoundaries = boundaries.filter(b => b.category === category.id);
                 const CategoryIconComponent = category.icon;
-                
+
                 return (
                   <motion.div
                     key={category.id}
@@ -355,34 +345,32 @@ const BoundaryBuilderPuzzle = () => {
                 const CategoryIcon = categoryInfo?.icon || Shield;
                 const isRecommended = boundary.recommendedCategory === boundary.category;
                 const isUnclear = boundary.category === 'unclear';
-                
+
                 return (
                   <motion.div
                     key={boundary.id}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className={`bg-white rounded-xl p-6 shadow-lg border-2 ${
-                      isUnclear 
+                    className={`bg-white rounded-xl p-6 shadow-lg border-2 ${isUnclear
                         ? 'border-gray-300 bg-gray-50'
                         : isRecommended
-                        ? 'border-green-300 bg-green-50'
-                        : boundary.category === 'firm' || boundary.category === 'flexible'
-                        ? `border-${categoryInfo?.borderColor.split('-')[1]}-300 bg-${categoryInfo?.bgColor.split('-')[1]}-50`
-                        : 'border-gray-300'
-                    }`}
+                          ? 'border-green-300 bg-green-50'
+                          : boundary.category === 'firm' || boundary.category === 'flexible'
+                            ? `border-${categoryInfo?.borderColor.split('-')[1]}-300 bg-${categoryInfo?.bgColor.split('-')[1]}-50`
+                            : 'border-gray-300'
+                      }`}
                   >
                     <div className="flex items-start gap-4">
                       <div className="text-4xl">{boundary.emoji}</div>
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-3">
                           <h3 className="text-xl font-bold text-gray-800">{boundary.name}</h3>
-                          <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                            boundary.category === 'firm'
+                          <span className={`px-3 py-1 rounded-full text-sm font-semibold ${boundary.category === 'firm'
                               ? 'bg-red-100 text-red-800'
                               : boundary.category === 'flexible'
-                              ? 'bg-blue-100 text-blue-800'
-                              : 'bg-gray-100 text-gray-800'
-                          }`}>
+                                ? 'bg-blue-100 text-blue-800'
+                                : 'bg-gray-100 text-gray-800'
+                            }`}>
                             {categoryInfo?.label}
                           </span>
                           {isRecommended && !isUnclear && (
@@ -398,7 +386,7 @@ const BoundaryBuilderPuzzle = () => {
                         {!isRecommended && !isUnclear && (
                           <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
                             <p className="text-sm text-blue-800">
-                              <strong>💡 Alternative:</strong> {boundary.recommendedCategory === 'firm' 
+                              <strong>💡 Alternative:</strong> {boundary.recommendedCategory === 'firm'
                                 ? 'Consider making this boundary firmer for stronger emotional health protection.'
                                 : 'This boundary can be flexible, but consider when firmness is needed.'}
                             </p>
@@ -434,28 +422,26 @@ const BoundaryBuilderPuzzle = () => {
             </div>
 
             {/* Score Summary */}
-            <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-8 ${
-              score >= 8
+            <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-8 ${score === 5
                 ? 'from-green-50 to-emerald-50 border-green-200'
-                : score >= 5
-                ? 'from-blue-50 to-indigo-50 border-blue-200'
-                : 'from-yellow-50 to-orange-50 border-yellow-200'
-            }`}>
+                : score >= 3
+                  ? 'from-blue-50 to-indigo-50 border-blue-200'
+                  : 'from-yellow-50 to-orange-50 border-yellow-200'
+              }`}>
               <div className="text-center">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Your Boundary Builder Score</h3>
-                <div className={`text-5xl font-bold mb-2 ${
-                  score >= 8 ? 'text-green-600' :
-                  score >= 5 ? 'text-blue-600' :
-                  'text-yellow-600'
-                }`}>
-                  {score}/10
+                <div className={`text-5xl font-bold mb-2 ${score === 5 ? 'text-green-600' :
+                    score >= 3 ? 'text-blue-600' :
+                      'text-yellow-600'
+                  }`}>
+                  {score}/5
                 </div>
                 <p className="text-gray-700">
-                  {score >= 8
+                  {score === 5
                     ? "Excellent! You've built strong boundaries that protect your emotional health."
-                    : score >= 5
-                    ? "Good progress! You're learning to balance firm and flexible boundaries."
-                    : "Keep practicing! Understanding boundaries is key to protecting your emotional health."}
+                    : score >= 3
+                      ? "Good progress! You're learning to balance firm and flexible boundaries."
+                      : "Keep practicing! Understanding boundaries is key to protecting your emotional health."}
                 </p>
               </div>
             </div>
@@ -504,4 +490,3 @@ const BoundaryBuilderPuzzle = () => {
 };
 
 export default BoundaryBuilderPuzzle;
-

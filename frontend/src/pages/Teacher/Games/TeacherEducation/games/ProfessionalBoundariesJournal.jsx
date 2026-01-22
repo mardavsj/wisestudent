@@ -8,19 +8,21 @@ import toast from "react-hot-toast";
 
 const ProfessionalBoundariesJournal = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-67";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [boundariesEntries, setBoundariesEntries] = useState({
     workHours: "",
     rechargeTime: "",
-    redLines: ""
+    redLines: "",
+    communicationLimits: "",
+    personalTime: ""
   });
   const [completionScore, setCompletionScore] = useState(0);
   const [showGameOver, setShowGameOver] = useState(false);
@@ -64,6 +66,30 @@ const ProfessionalBoundariesJournal = () => {
       borderColor: 'border-red-300',
       textColor: 'text-red-800',
       helpText: 'Identify absolute boundaries that protect your well-being, dignity, and professional integrity. These are non-negotiable limits.'
+    },
+    {
+      id: 'communicationLimits',
+      label: 'My Communication Limits',
+      icon: AlertTriangle,
+      description: 'Set boundaries for how and when others can communicate with you',
+      placeholder: 'e.g., I respond to emails during designated hours only (8 AM - 6 PM). I do not take phone calls during family dinners. I have specific days when I do not engage in work-related communication. I let important contacts know my communication boundaries...',
+      color: 'from-purple-400 to-indigo-500',
+      bgColor: 'from-purple-50 to-indigo-50',
+      borderColor: 'border-purple-300',
+      textColor: 'text-purple-800',
+      helpText: 'Define how, when, and through what channels others can reach you. This prevents interruptions and protects your focus time.'
+    },
+    {
+      id: 'personalTime',
+      label: 'My Personal Time',
+      icon: Heart,
+      description: 'Establish boundaries for protecting your personal and family time',
+      placeholder: 'e.g., I reserve 7-8 PM for family dinner without work distractions. I do not work on Sundays except for urgent planning. I have designated time for personal hobbies and interests. I protect my sleep schedule by avoiding work-related activities before bedtime...',
+      color: 'from-emerald-400 to-teal-500',
+      bgColor: 'from-emerald-50 to-teal-50',
+      borderColor: 'border-emerald-300',
+      textColor: 'text-emerald-800',
+      helpText: 'Protect your personal time by setting clear boundaries that ensure dedicated time for yourself and loved ones.'
     }
   ];
 
@@ -76,21 +102,21 @@ const ProfessionalBoundariesJournal = () => {
     // Calculate completion score
     const completed = Object.values({ ...boundariesEntries, [field]: value })
       .filter(entry => entry.trim().length > 0).length;
-    const newScore = Math.round((completed / 3) * 100);
+    const newScore = Math.round((completed / 5) * 100);
     setCompletionScore(newScore);
   };
 
   const handleSave = async () => {
     const completedCount = Object.values(boundariesEntries)
       .filter(entry => entry.trim().length > 0).length;
-    
+
     if (completedCount === 0) {
       toast.error("Please fill in at least one section of your boundaries journal.");
       return;
     }
 
-    if (completedCount < 3) {
-      const confirmSave = window.confirm(`You've completed ${completedCount} of 3 sections. Would you like to save your Boundaries Note now, or add more?`);
+    if (completedCount < 5) {
+      const confirmSave = window.confirm(`You've completed ${completedCount} of 5 sections. Would you like to save your Boundaries Note now, or add more?`);
       if (!confirmSave) {
         return;
       }
@@ -100,10 +126,10 @@ const ProfessionalBoundariesJournal = () => {
     // For now, we'll just mark it as saved locally
     setHasSaved(true);
     setScore(completedCount);
-    
+
     // Show success message
     toast.success("Your Boundaries Note has been saved!");
-    
+
     // Small delay before showing game over screen
     setTimeout(() => {
       setShowGameOver(true);
@@ -116,7 +142,7 @@ const ProfessionalBoundariesJournal = () => {
 
   const completedCount = Object.values(boundariesEntries)
     .filter(entry => entry.trim().length > 0).length;
-  const allCompleted = completedCount === 3;
+  const allCompleted = completedCount === 5;
 
   return (
     <TeacherGameShell
@@ -128,7 +154,7 @@ const ProfessionalBoundariesJournal = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={score}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         {!showGameOver && (
@@ -148,16 +174,15 @@ const ProfessionalBoundariesJournal = () => {
             <div className="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 rounded-xl p-6 border-2 border-indigo-200 mb-8">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${
-                    completionScore >= 66 ? 'from-green-400 to-emerald-500' :
-                    completionScore >= 33 ? 'from-blue-400 to-cyan-500' :
-                    'from-gray-300 to-gray-400'
-                  } flex items-center justify-center text-2xl font-bold text-white shadow-lg`}>
+                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${completionScore >= 66 ? 'from-green-400 to-emerald-500' :
+                      completionScore >= 33 ? 'from-blue-400 to-cyan-500' :
+                        'from-gray-300 to-gray-400'
+                    } flex items-center justify-center text-2xl font-bold text-white shadow-lg`}>
                     {completionScore}
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-800">Boundaries Defined</h3>
-                    <p className="text-gray-600">{completedCount} of 3 sections completed</p>
+                    <p className="text-gray-600">{completedCount} of 5 sections completed</p>
                   </div>
                 </div>
                 {allCompleted && (
@@ -175,11 +200,10 @@ const ProfessionalBoundariesJournal = () => {
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${completionScore}%` }}
-                  className={`h-3 rounded-full bg-gradient-to-r ${
-                    completionScore >= 66 ? 'from-green-400 to-emerald-500' :
-                    completionScore >= 33 ? 'from-blue-400 to-cyan-500' :
-                    'from-gray-300 to-gray-400'
-                  }`}
+                  className={`h-3 rounded-full bg-gradient-to-r ${completionScore >= 66 ? 'from-green-400 to-emerald-500' :
+                      completionScore >= 33 ? 'from-blue-400 to-cyan-500' :
+                        'from-gray-300 to-gray-400'
+                    }`}
                 />
               </div>
             </div>
@@ -216,17 +240,16 @@ const ProfessionalBoundariesJournal = () => {
                         <p className="text-gray-600 text-xs italic">{section.helpText}</p>
                       </div>
                     </div>
-                    
+
                     <textarea
                       value={value}
                       onChange={(e) => handleEntryChange(section.id, e.target.value)}
                       placeholder={section.placeholder}
                       rows={6}
-                      className={`w-full p-4 rounded-lg border-2 ${section.borderColor} focus:ring-2 focus:ring-opacity-50 focus:outline-none resize-none transition-all ${
-                        isCompleted ? 'bg-white' : 'bg-white/80'
-                      }`}
+                      className={`w-full p-4 rounded-lg border-2 ${section.borderColor} focus:ring-2 focus:ring-opacity-50 focus:outline-none resize-none transition-all ${isCompleted ? 'bg-white' : 'bg-white/80'
+                        }`}
                     />
-                    
+
                     {value.trim().length > 0 && (
                       <motion.div
                         initial={{ opacity: 0 }}
@@ -249,17 +272,16 @@ const ProfessionalBoundariesJournal = () => {
                 whileTap={{ scale: 0.98 }}
                 onClick={handleSave}
                 disabled={completedCount === 0}
-                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all flex items-center gap-3 mx-auto ${
-                  completedCount > 0
+                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all flex items-center gap-3 mx-auto ${completedCount > 0
                     ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-xl'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                }`}
+                  }`}
               >
                 <Save className="w-5 h-5" />
                 Save Boundaries Note
               </motion.button>
-              
-              {completedCount > 0 && completedCount < 3 && (
+
+              {completedCount > 0 && completedCount < 5 && (
                 <p className="text-sm text-gray-600 mt-3">
                   You can save your Boundaries Note now or complete all sections first.
                 </p>
@@ -288,9 +310,9 @@ const ProfessionalBoundariesJournal = () => {
                 Your Boundaries Note Has Been Saved!
               </h2>
               <p className="text-xl text-gray-600">
-                {completedCount === 3 
-                  ? "All sections completed!" 
-                  : `${completedCount} of 3 sections completed`}
+                {completedCount === 5
+                  ? "All sections completed!"
+                  : `${completedCount} of 5 sections completed`}
               </p>
             </div>
 
@@ -301,10 +323,10 @@ const ProfessionalBoundariesJournal = () => {
                 <h3 className="text-2xl font-bold text-gray-800">My Boundaries Note</h3>
                 <div className="ml-auto flex items-center gap-2 text-sm text-gray-600">
                   <Calendar className="w-4 h-4" />
-                  {new Date().toLocaleDateString('en-US', { 
-                    month: 'long', 
-                    day: 'numeric', 
-                    year: 'numeric' 
+                  {new Date().toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
                   })}
                 </div>
               </div>
@@ -337,10 +359,10 @@ const ProfessionalBoundariesJournal = () => {
                 })}
               </div>
 
-              {completedCount < 3 && (
+              {completedCount < 5 && (
                 <div className="mt-6 bg-amber-50 rounded-lg p-4 border-2 border-amber-200">
                   <p className="text-sm text-amber-800">
-                    <strong>Note:</strong> You've saved {completedCount} of 3 sections. You can return to complete the remaining sections anytime.
+                    <strong>Note:</strong> You've saved {completedCount} of 5 sections. You can return to complete the remaining sections anytime.
                   </p>
                 </div>
               )}
@@ -396,4 +418,3 @@ const ProfessionalBoundariesJournal = () => {
 };
 
 export default ProfessionalBoundariesJournal;
-

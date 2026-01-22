@@ -13,6 +13,7 @@ import { toast } from "react-hot-toast";
 import analytics from "../../utils/analytics";
 import SchoolAdminExpiredSubscriptionModal from "../../components/School/SchoolAdminExpiredSubscriptionModal";
 import { useSocket } from "../../context/SocketContext";
+import schoolSponsorshipService from "../../services/schoolSponsorshipService";
 
 const SchoolAdminDashboard = () => {
   const navigate = useNavigate();
@@ -26,6 +27,8 @@ const SchoolAdminDashboard = () => {
   const [adminProfile, setAdminProfile] = useState(null);
   const [pillarMastery, setPillarMastery] = useState({});
   const [wellbeingCases, setWellbeingCases] = useState({});
+  const [sponsorshipOverview, setSponsorshipOverview] = useState(null);
+  const [sponsorshipLoading, setSponsorshipLoading] = useState(true);
 
   const getPillarLabel = (pillarKey) => {
     switch (String(pillarKey || '').toLowerCase()) {
@@ -75,6 +78,10 @@ const SchoolAdminDashboard = () => {
     fetchDashboardData();
     checkSubscriptionStatus();
     analytics.trackOverviewView('school_admin', 'all');
+  }, []);
+
+  useEffect(() => {
+    loadSponsorshipOverview();
   }, []);
 
   // Listen for subscription updates
@@ -253,6 +260,22 @@ const SchoolAdminDashboard = () => {
       toast.error("Failed to load dashboard data");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadSponsorshipOverview = async () => {
+    try {
+      setSponsorshipLoading(true);
+      const payload = await schoolSponsorshipService.getDetails();
+      if (payload?.sponsorship) {
+        setSponsorshipOverview(payload);
+      } else {
+        setSponsorshipOverview(null);
+      }
+    } catch (error) {
+      console.error("Error fetching sponsorship overview:", error);
+    } finally {
+      setSponsorshipLoading(false);
     }
   };
 
@@ -658,8 +681,73 @@ const SchoolAdminDashboard = () => {
               </motion.button>
             </div>
           </motion.div>
-        </div>
       </div>
+    </div>
+
+    {!sponsorshipLoading && (
+      <section className="max-w-7xl mx-auto px-6 -mt-6">
+        {sponsorshipOverview?.sponsorship ? (
+          <div className="bg-white shadow-2xl rounded-3xl border border-slate-100 p-6 flex flex-col lg:flex-row items-center gap-6">
+            <div className="flex-1 flex items-center gap-4">
+              <div className="w-16 h-16 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-xl font-black">
+                {sponsorshipOverview.sponsorship.sponsorId?.companyName?.[0] || "S"}
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wide text-slate-500">Sponsor</p>
+                <h3 className="text-xl font-black text-slate-900">
+                  {sponsorshipOverview.sponsorship.sponsorId?.companyName}
+                </h3>
+                <p className="text-sm text-slate-500">
+                  {sponsorshipOverview.school?.name || "Your School"} partner
+                </p>
+              </div>
+            </div>
+            <div className="flex-1 grid grid-cols-3 gap-4 text-sm text-slate-500">
+              <div className="bg-slate-50 rounded-2xl p-3 text-center">
+                <p className="text-xs uppercase tracking-wide">Period</p>
+                <p className="font-semibold text-slate-900">
+                  {new Date(sponsorshipOverview.sponsorship.startDate).toLocaleDateString()} -{" "}
+                  {new Date(sponsorshipOverview.sponsorship.endDate).toLocaleDateString()}
+                </p>
+              </div>
+              <div className="bg-slate-50 rounded-2xl p-3 text-center">
+                <p className="text-xs uppercase tracking-wide">Students</p>
+                <p className="font-semibold text-slate-900">{sponsorshipOverview.studentCount || 0}</p>
+              </div>
+              <div className="bg-slate-50 rounded-2xl p-3 text-center">
+                <p className="text-xs uppercase tracking-wide">Status</p>
+                <p className="font-semibold text-emerald-600">{sponsorshipOverview.sponsorship.status}</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <button
+                onClick={() => navigate("/school/sponsorship")}
+                className="px-4 py-2 bg-indigo-600 text-white rounded-2xl font-semibold text-sm flex items-center gap-2"
+              >
+                <ArrowRight className="w-4 h-4" />
+                View details
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="bg-white shadow-xl rounded-3xl border border-slate-100 p-6 flex flex-col md:flex-row items-center gap-4 text-slate-600">
+            <Shield className="w-8 h-8 text-indigo-500" />
+            <div className="flex-1">
+              <h3 className="text-lg font-semibold text-slate-900">No CSR sponsor linked</h3>
+              <p className="text-sm text-slate-500">
+                Invite a CSR partner or contact support to connect your sponsorship.
+              </p>
+            </div>
+            <button
+              onClick={() => navigate("/school/sponsorship")}
+              className="px-4 py-2 border border-slate-200 rounded-2xl text-sm font-semibold text-indigo-600 hover:bg-slate-100"
+            >
+              Share details
+            </button>
+          </div>
+        )}
+      </section>
+    )}
 
       <div className="max-w-7xl mx-auto px-6 -mt-8">
         {/* Quick Actions Bar */}

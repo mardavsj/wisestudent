@@ -7,22 +7,22 @@ import { Smartphone, Mail, Clock, CheckCircle, XCircle, AlertCircle, BookOpen, S
 
 const DigitalBoundariesQuiz = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-92";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 10;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showFeedback, setShowFeedback] = useState(false);
   const [score, setScore] = useState(0);
   const [showGameOver, setShowGameOver] = useState(false);
 
-  // Quiz questions on digital boundaries
+  // Quiz questions on digital boundaries (5 essential questions)
   const questions = [
     {
       id: 1,
@@ -34,29 +34,20 @@ const DigitalBoundariesQuiz = () => {
           explanation: 'Responding immediately sets an expectation of 24/7 availability. Healthy boundaries mean not responding to student messages outside of school hours.',
           isCorrect: false,
           emoji: '❌',
-          color: 'from-red-400 to-rose-500',
-          bgColor: 'from-red-50 to-rose-50',
-          borderColor: 'border-red-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
-        {
-          id: 'next-morning',
-          text: 'Wait until the next morning during school hours to respond',
-          explanation: 'Excellent! Responding during school hours sets clear boundaries and protects your personal time. This teaches students appropriate communication times.',
-          isCorrect: true,
-          emoji: '✅',
-          color: 'from-green-400 to-emerald-500',
-          bgColor: 'from-green-50 to-emerald-50',
-          borderColor: 'border-green-300'
-        },
+
         {
           id: 'weekend-response',
           text: 'Respond on the weekend when you have more time',
           explanation: 'Responding on weekends still blurs boundaries between work and personal time. Better to respond during designated school hours.',
           isCorrect: false,
           emoji: '⚠️',
-          color: 'from-yellow-400 to-orange-500',
-          bgColor: 'from-yellow-50 to-orange-50',
-          borderColor: 'border-yellow-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
         {
           id: 'ignore',
@@ -64,10 +55,20 @@ const DigitalBoundariesQuiz = () => {
           explanation: 'While boundaries are important, completely ignoring messages can leave students feeling unsupported. Acknowledge during school hours.',
           isCorrect: false,
           emoji: '❌',
-          color: 'from-gray-400 to-slate-500',
-          bgColor: 'from-gray-50 to-slate-50',
-          borderColor: 'border-gray-300'
-        }
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
+        },
+        {
+          id: 'next-morning',
+          text: 'Wait until the next morning during school hours to respond',
+          explanation: 'Excellent! Responding during school hours sets clear boundaries and protects your personal time. This teaches students appropriate communication times.',
+          isCorrect: true,
+          emoji: '✅',
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
+        },
       ],
       topic: 'Student Communication',
       icon: Smartphone
@@ -82,9 +83,9 @@ const DigitalBoundariesQuiz = () => {
           explanation: 'Replying Friday night sets expectations of 24/7 availability and blurs boundaries between work and personal time.',
           isCorrect: false,
           emoji: '❌',
-          color: 'from-red-400 to-rose-500',
-          bgColor: 'from-red-50 to-rose-50',
-          borderColor: 'border-red-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
         {
           id: 'monday-morning',
@@ -92,9 +93,9 @@ const DigitalBoundariesQuiz = () => {
           explanation: 'Perfect! Responding during school hours maintains professional boundaries and protects your weekend rest. This models healthy work-life balance.',
           isCorrect: true,
           emoji: '✅',
-          color: 'from-green-400 to-emerald-500',
-          bgColor: 'from-green-50 to-emerald-50',
-          borderColor: 'border-green-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
         {
           id: 'saturday-morning',
@@ -102,9 +103,9 @@ const DigitalBoundariesQuiz = () => {
           explanation: 'Responding on weekends still blurs boundaries. It\'s better to wait until school hours to maintain clear work-life separation.',
           isCorrect: false,
           emoji: '⚠️',
-          color: 'from-yellow-400 to-orange-500',
-          bgColor: 'from-yellow-50 to-orange-50',
-          borderColor: 'border-yellow-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
         {
           id: 'auto-reply',
@@ -122,102 +123,6 @@ const DigitalBoundariesQuiz = () => {
     },
     {
       id: 3,
-      question: "Your principal sends you an email on Saturday asking you to prepare something for Monday. What's the ideal boundary?",
-      options: [
-        {
-          id: 'respond-immediately',
-          text: 'Reply immediately and start working on it',
-          explanation: 'Responding and working immediately on weekends erodes boundaries and can lead to burnout. You need rest time.',
-          isCorrect: false,
-          emoji: '❌',
-          color: 'from-red-400 to-rose-500',
-          bgColor: 'from-red-50 to-rose-50',
-          borderColor: 'border-red-300'
-        },
-        {
-          id: 'acknowledge-monday',
-          text: 'Acknowledge Sunday evening and work on it Monday morning',
-          explanation: 'Even acknowledging Sunday evening can blur boundaries. It\'s better to respond Monday morning during work hours.',
-          isCorrect: false,
-          emoji: '⚠️',
-          color: 'from-yellow-400 to-orange-500',
-          bgColor: 'from-yellow-50 to-orange-50',
-          borderColor: 'border-yellow-300'
-        },
-        {
-          id: 'respond-monday',
-          text: 'Respond Monday morning during work hours',
-          explanation: 'Excellent! Responding during work hours maintains clear boundaries and protects your weekend rest. If urgent, your principal should call, not email on weekends.',
-          isCorrect: true,
-          emoji: '✅',
-          color: 'from-green-400 to-emerald-500',
-          bgColor: 'from-green-50 to-emerald-50',
-          borderColor: 'border-green-300'
-        },
-        {
-          id: 'ignore',
-          text: 'Ignore it if it\'s not urgent',
-          explanation: 'While boundaries are important, ignoring work emails can create problems. Better to respond during work hours.',
-          isCorrect: false,
-          emoji: '❌',
-          color: 'from-gray-400 to-slate-500',
-          bgColor: 'from-gray-50 to-slate-50',
-          borderColor: 'border-gray-300'
-        }
-      ],
-      topic: 'Work Email Boundaries',
-      icon: Mail
-    },
-    {
-      id: 4,
-      question: "A colleague calls you on Sunday afternoon about a work matter. What's the healthy boundary?",
-      options: [
-        {
-          id: 'answer-immediately',
-          text: 'Answer and help them immediately',
-          explanation: 'Answering work calls on weekends blurs boundaries. Unless it\'s a true emergency, calls should wait until work hours.',
-          isCorrect: false,
-          emoji: '❌',
-          color: 'from-red-400 to-rose-500',
-          bgColor: 'from-red-50 to-rose-50',
-          borderColor: 'border-red-300'
-        },
-        {
-          id: 'let-voicemail',
-          text: 'Let it go to voicemail and respond Monday',
-          explanation: 'Perfect! Letting non-urgent calls go to voicemail and responding during work hours protects your rest time and maintains healthy boundaries.',
-          isCorrect: true,
-          emoji: '✅',
-          color: 'from-green-400 to-emerald-500',
-          bgColor: 'from-green-50 to-emerald-50',
-          borderColor: 'border-green-300'
-        },
-        {
-          id: 'text-back',
-          text: 'Send a quick text saying you\'ll call Monday',
-          explanation: 'Even sending a text can blur boundaries. If it\'s not urgent, let voicemail handle it and respond during work hours.',
-          isCorrect: false,
-          emoji: '⚠️',
-          color: 'from-yellow-400 to-orange-500',
-          bgColor: 'from-yellow-50 to-orange-50',
-          borderColor: 'border-yellow-300'
-        },
-        {
-          id: 'answer-for-emergency',
-          text: 'Only answer if it\'s a true emergency',
-          explanation: 'This can work, but requires judgment calls. Better to let voicemail handle it and check messages during work hours.',
-          isCorrect: false,
-          emoji: '💡',
-          color: 'from-blue-400 to-cyan-500',
-          bgColor: 'from-blue-50 to-cyan-50',
-          borderColor: 'border-blue-300'
-        }
-      ],
-      topic: 'Weekend Calls',
-      icon: Smartphone
-    },
-    {
-      id: 5,
       question: "You receive multiple work-related notifications on your phone throughout the evening. What's the ideal boundary practice?",
       options: [
         {
@@ -226,9 +131,20 @@ const DigitalBoundariesQuiz = () => {
           explanation: 'Checking notifications immediately creates constant work presence and prevents rest. This blurs boundaries significantly.',
           isCorrect: false,
           emoji: '❌',
-          color: 'from-red-400 to-rose-500',
-          bgColor: 'from-red-50 to-rose-50',
-          borderColor: 'border-red-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
+        },
+
+        {
+          id: 'check-hourly',
+          text: 'Check notifications once per hour',
+          explanation: 'Even checking hourly keeps work in your mind and prevents true rest. Better to disable notifications entirely after hours.',
+          isCorrect: false,
+          emoji: '⚠️',
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
         {
           id: 'disable-notifications',
@@ -236,19 +152,9 @@ const DigitalBoundariesQuiz = () => {
           explanation: 'Excellent! Disabling work notifications after hours creates clear boundaries and protects your rest time. You can check messages during designated work hours.',
           isCorrect: true,
           emoji: '✅',
-          color: 'from-green-400 to-emerald-500',
-          bgColor: 'from-green-50 to-emerald-50',
-          borderColor: 'border-green-300'
-        },
-        {
-          id: 'check-hourly',
-          text: 'Check notifications once per hour',
-          explanation: 'Even checking hourly keeps work in your mind and prevents true rest. Better to disable notifications entirely after hours.',
-          isCorrect: false,
-          emoji: '⚠️',
-          color: 'from-yellow-400 to-orange-500',
-          bgColor: 'from-yellow-50 to-orange-50',
-          borderColor: 'border-yellow-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
         {
           id: 'separate-device',
@@ -265,38 +171,39 @@ const DigitalBoundariesQuiz = () => {
       icon: Smartphone
     },
     {
-      id: 6,
+      id: 4,
       question: "A student sends you a friend request on social media. What's the appropriate boundary?",
       options: [
-        {
-          id: 'accept-friend',
-          text: 'Accept to show you care about students',
-          explanation: 'Accepting friend requests from current students blurs professional boundaries. It\'s best to keep social media separate from student relationships.',
-          isCorrect: false,
-          emoji: '❌',
-          color: 'from-red-400 to-rose-500',
-          bgColor: 'from-red-50 to-rose-50',
-          borderColor: 'border-red-300'
-        },
         {
           id: 'decline-politely',
           text: 'Politely decline and explain professional boundaries',
           explanation: 'Perfect! Politely declining and explaining boundaries maintains professionalism while being respectful. This teaches students about appropriate boundaries.',
           isCorrect: true,
           emoji: '✅',
-          color: 'from-green-400 to-emerald-500',
-          bgColor: 'from-green-50 to-emerald-50',
-          borderColor: 'border-green-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
+        {
+          id: 'accept-friend',
+          text: 'Accept to show you care about students',
+          explanation: 'Accepting friend requests from current students blurs professional boundaries. It\'s best to keep social media separate from student relationships.',
+          isCorrect: false,
+          emoji: '❌',
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
+        },
+
         {
           id: 'accept-after-graduation',
           text: 'Accept only after they graduate',
           explanation: 'Even after graduation, accepting friend requests can be complex. It\'s generally better to maintain professional boundaries. Many schools have policies on this.',
           isCorrect: false,
           emoji: '⚠️',
-          color: 'from-yellow-400 to-orange-500',
-          bgColor: 'from-yellow-50 to-orange-50',
-          borderColor: 'border-yellow-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
         {
           id: 'ignore',
@@ -313,151 +220,7 @@ const DigitalBoundariesQuiz = () => {
       icon: Users
     },
     {
-      id: 7,
-      question: "You're on vacation but receive work emails. What's the healthy boundary?",
-      options: [
-        {
-          id: 'check-daily',
-          text: 'Check emails daily to stay on top of things',
-          explanation: 'Checking emails daily during vacation prevents true rest and defeats the purpose of taking time off. Vacation means vacation from work.',
-          isCorrect: false,
-          emoji: '❌',
-          color: 'from-red-400 to-rose-500',
-          bgColor: 'from-red-50 to-rose-50',
-          borderColor: 'border-red-300'
-        },
-        {
-          id: 'set-out-of-office',
-          text: 'Set an out-of-office message and don\'t check emails',
-          explanation: 'Excellent! Setting an out-of-office message and not checking emails during vacation protects your rest and models healthy boundaries. True rest requires disconnecting.',
-          isCorrect: true,
-          emoji: '✅',
-          color: 'from-green-400 to-emerald-500',
-          bgColor: 'from-green-50 to-emerald-50',
-          borderColor: 'border-green-300'
-        },
-        {
-          id: 'check-once',
-          text: 'Check once at the end of vacation',
-          explanation: 'Even checking once can prevent true relaxation. Better to fully disconnect and set an out-of-office message. You can catch up when you return.',
-          isCorrect: false,
-          emoji: '⚠️',
-          color: 'from-yellow-400 to-orange-500',
-          bgColor: 'from-yellow-50 to-orange-50',
-          borderColor: 'border-yellow-300'
-        },
-        {
-          id: 'only-urgent',
-          text: 'Check only for urgent emails',
-          explanation: 'Defining "urgent" during vacation is difficult and keeps work in your mind. Better to fully disconnect and trust your team to handle emergencies.',
-          isCorrect: false,
-          emoji: '💡',
-          color: 'from-blue-400 to-cyan-500',
-          bgColor: 'from-blue-50 to-cyan-50',
-          borderColor: 'border-blue-300'
-        }
-      ],
-      topic: 'Vacation Boundaries',
-      icon: Calendar
-    },
-    {
-      id: 8,
-      question: "Your school uses a messaging app that colleagues expect responses on within an hour, even on evenings. What's the ideal boundary?",
-      options: [
-        {
-          id: 'respond-hourly',
-          text: 'Respond within an hour to meet expectations',
-          explanation: 'Responding within an hour, even on evenings, blurs boundaries and prevents rest. This expectation needs to be addressed, not accommodated.',
-          isCorrect: false,
-          emoji: '❌',
-          color: 'from-red-400 to-rose-500',
-          bgColor: 'from-red-50 to-rose-50',
-          borderColor: 'border-red-300'
-        },
-        {
-          id: 'set-availability',
-          text: 'Set clear availability hours and communicate them',
-          explanation: 'Perfect! Setting and communicating clear availability hours establishes healthy boundaries. You can respond during designated times, not 24/7.',
-          isCorrect: true,
-          emoji: '✅',
-          color: 'from-green-400 to-emerald-500',
-          bgColor: 'from-green-50 to-emerald-50',
-          borderColor: 'border-green-300'
-        },
-        {
-          id: 'respond-sometimes',
-          text: 'Respond sometimes but not always',
-          explanation: 'Inconsistent responses can create confusion and doesn\'t address the boundary issue. Better to set clear, communicated availability hours.',
-          isCorrect: false,
-          emoji: '⚠️',
-          color: 'from-yellow-400 to-orange-500',
-          bgColor: 'from-yellow-50 to-orange-50',
-          borderColor: 'border-yellow-300'
-        },
-        {
-          id: 'leave-group',
-          text: 'Leave the group chat entirely',
-          explanation: 'While this maintains boundaries, it might limit necessary communication. Better to stay but set clear availability expectations.',
-          isCorrect: false,
-          emoji: '💡',
-          color: 'from-blue-400 to-cyan-500',
-          bgColor: 'from-blue-50 to-cyan-50',
-          borderColor: 'border-blue-300'
-        }
-      ],
-      topic: 'Messaging App Boundaries',
-      icon: Smartphone
-    },
-    {
-      id: 9,
-      question: "You finish grading papers at 8 PM and want to send feedback emails to parents. What's the best boundary practice?",
-      options: [
-        {
-          id: 'send-immediately',
-          text: 'Send emails immediately while feedback is fresh',
-          explanation: 'Sending emails at 8 PM blurs boundaries and sets expectations of evening availability. Better to schedule emails for the next morning.',
-          isCorrect: false,
-          emoji: '❌',
-          color: 'from-red-400 to-rose-500',
-          bgColor: 'from-red-50 to-rose-50',
-          borderColor: 'border-red-300'
-        },
-        {
-          id: 'schedule-morning',
-          text: 'Schedule emails to send during school hours the next day',
-          explanation: 'Excellent! Scheduling emails to send during school hours maintains boundaries while allowing you to work when convenient. This protects your evening rest.',
-          isCorrect: true,
-          emoji: '✅',
-          color: 'from-green-400 to-emerald-500',
-          bgColor: 'from-green-50 to-emerald-50',
-          borderColor: 'border-green-300'
-        },
-        {
-          id: 'send-next-day',
-          text: 'Send them first thing next morning',
-          explanation: 'This works, but scheduling is better because you can complete the work when convenient while maintaining sending boundaries.',
-          isCorrect: false,
-          emoji: '⚠️',
-          color: 'from-yellow-400 to-orange-500',
-          bgColor: 'from-yellow-50 to-orange-50',
-          borderColor: 'border-yellow-300'
-        },
-        {
-          id: 'wait-until-monday',
-          text: 'Wait until Monday morning',
-          explanation: 'If it\'s the weekend, waiting until Monday is good. But during the week, scheduling for the next morning is better for timely communication.',
-          isCorrect: false,
-          emoji: '💡',
-          color: 'from-blue-400 to-cyan-500',
-          bgColor: 'from-blue-50 to-cyan-50',
-          borderColor: 'border-blue-300'
-        }
-      ],
-      topic: 'Email Scheduling',
-      icon: Mail
-    },
-    {
-      id: 10,
+      id: 5,
       question: "Your school expects teachers to respond to parent emails within 2 hours, including evenings and weekends. What's the healthiest approach?",
       options: [
         {
@@ -466,9 +229,9 @@ const DigitalBoundariesQuiz = () => {
           explanation: 'Following unreasonable expectations leads to burnout. Healthy boundaries benefit everyone, including students. You need rest to teach well.',
           isCorrect: false,
           emoji: '❌',
-          color: 'from-red-400 to-rose-500',
-          bgColor: 'from-red-50 to-rose-50',
-          borderColor: 'border-red-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
         {
           id: 'discuss-boundaries',
@@ -476,9 +239,9 @@ const DigitalBoundariesQuiz = () => {
           explanation: 'Perfect! Discussing boundaries with leadership and advocating for healthy practices helps everyone. This can lead to policies that benefit all teachers.',
           isCorrect: true,
           emoji: '✅',
-          color: 'from-green-400 to-emerald-500',
-          bgColor: 'from-green-50 to-emerald-50',
-          borderColor: 'border-green-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
         {
           id: 'set-personal-boundaries',
@@ -486,9 +249,9 @@ const DigitalBoundariesQuiz = () => {
           explanation: 'Personal boundaries are good, but discussing with leadership can help create school-wide policies that benefit everyone.',
           isCorrect: false,
           emoji: '⚠️',
-          color: 'from-yellow-400 to-orange-500',
-          bgColor: 'from-yellow-50 to-orange-50',
-          borderColor: 'border-yellow-300'
+          color: 'from-blue-400 to-cyan-500',
+          bgColor: 'from-blue-50 to-cyan-50',
+          borderColor: 'border-blue-300'
         },
         {
           id: 'find-new-school',
@@ -511,14 +274,14 @@ const DigitalBoundariesQuiz = () => {
 
   const handleAnswerSelect = (optionId) => {
     if (showFeedback) return; // Prevent changing answer after feedback is shown
-    
+
     const option = currentQuestionData.options.find(opt => opt.id === optionId);
     setSelectedAnswers(prev => ({
       ...prev,
       [currentQuestion]: optionId
     }));
     setShowFeedback(true);
-    
+
     if (option.isCorrect) {
       setScore(prev => prev + 1);
     }
@@ -589,7 +352,7 @@ const DigitalBoundariesQuiz = () => {
   if (showGameOver) {
     const boundaryScore = getBoundaryScore();
     const percentage = Math.round((score / questions.length) * 100);
-    
+
     return (
       <TeacherGameShell
         title={gameData?.title || "Digital Boundaries Quiz"}
@@ -600,7 +363,7 @@ const DigitalBoundariesQuiz = () => {
         gameType="teacher-education"
         totalLevels={totalLevels}
         totalCoins={totalCoins}
-        currentQuestion={currentQuestion + 1}
+        currentQuestion={currentQuestion}
       >
         <div className="w-full max-w-4xl mx-auto px-4">
           <motion.div
@@ -758,7 +521,7 @@ const DigitalBoundariesQuiz = () => {
             {currentQuestionData.options.map((option, index) => {
               const isSelected = selectedAnswer === option.id;
               const showResult = showFeedback && isSelected;
-              
+
               return (
                 <motion.button
                   key={option.id}
@@ -767,28 +530,25 @@ const DigitalBoundariesQuiz = () => {
                   transition={{ delay: index * 0.1 }}
                   onClick={() => handleAnswerSelect(option.id)}
                   disabled={showFeedback}
-                  className={`w-full text-left p-5 rounded-xl border-2 transition-all ${
-                    showResult
+                  className={`w-full text-left p-5 rounded-xl border-2 transition-all ${showResult
                       ? option.isCorrect
                         ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-400 shadow-lg'
                         : 'bg-gradient-to-br from-red-50 to-rose-50 border-red-400 shadow-lg'
                       : isSelected
                         ? 'bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-400 shadow-md'
                         : `bg-gradient-to-br ${option.bgColor} ${option.borderColor} hover:shadow-md`
-                  } ${showFeedback ? 'cursor-default' : 'cursor-pointer'}`}
+                    } ${showFeedback ? 'cursor-default' : 'cursor-pointer'}`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-xl ${
-                      showResult && option.isCorrect ? 'bg-green-500 text-white' :
-                      showResult && !option.isCorrect ? 'bg-red-500 text-white' :
-                      'bg-gray-200 text-gray-600'
-                    }`}>
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-xl ${showResult && option.isCorrect ? 'bg-green-500 text-white' :
+                        showResult && !option.isCorrect ? 'bg-red-500 text-white' :
+                          'bg-gray-200 text-gray-600'
+                      }`}>
                       {showResult ? option.emoji : String.fromCharCode(65 + index)}
                     </div>
                     <div className="flex-1">
-                      <p className={`font-semibold ${
-                        showResult ? 'text-gray-800' : 'text-gray-700'
-                      }`}>
+                      <p className={`font-semibold ${showResult ? 'text-gray-800' : 'text-gray-700'
+                        }`}>
                         {option.text}
                       </p>
                     </div>
@@ -803,11 +563,10 @@ const DigitalBoundariesQuiz = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className={`mb-6 p-6 rounded-xl border-2 ${
-                getSelectedOption().isCorrect
+              className={`mb-6 p-6 rounded-xl border-2 ${getSelectedOption().isCorrect
                   ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-300'
                   : 'bg-gradient-to-br from-red-50 to-rose-50 border-red-300'
-              }`}
+                }`}
             >
               <div className="flex items-start gap-3">
                 {getSelectedOption().isCorrect ? (
@@ -816,9 +575,8 @@ const DigitalBoundariesQuiz = () => {
                   <XCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
                 )}
                 <div className="flex-1">
-                  <p className={`text-lg font-bold mb-2 ${
-                    getSelectedOption().isCorrect ? 'text-green-800' : 'text-red-800'
-                  }`}>
+                  <p className={`text-lg font-bold mb-2 ${getSelectedOption().isCorrect ? 'text-green-800' : 'text-red-800'
+                    }`}>
                     {getSelectedOption().isCorrect ? 'Correct!' : 'Not quite'}
                   </p>
                   <p className="text-gray-700 leading-relaxed">
@@ -834,22 +592,20 @@ const DigitalBoundariesQuiz = () => {
             <button
               onClick={handlePrevious}
               disabled={currentQuestion === 0}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all ${
-                currentQuestion === 0
+              className={`px-6 py-3 rounded-xl font-semibold transition-all ${currentQuestion === 0
                   ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                   : 'bg-gray-500 text-white hover:bg-gray-600'
-              }`}
+                }`}
             >
               Previous
             </button>
             <button
               onClick={handleNext}
               disabled={!showFeedback}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all ${
-                !showFeedback
+              className={`px-6 py-3 rounded-xl font-semibold transition-all ${!showFeedback
                   ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                   : 'bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600'
-              }`}
+                }`}
             >
               {currentQuestion < questions.length - 1 ? 'Next Question' : 'See Results'}
             </button>
@@ -861,4 +617,3 @@ const DigitalBoundariesQuiz = () => {
 };
 
 export default DigitalBoundariesQuiz;
-

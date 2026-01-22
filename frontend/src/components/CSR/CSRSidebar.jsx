@@ -2,8 +2,22 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Home, BarChart3, Target, Zap, DollarSign, FileText,
-  CheckCircle, Gift, Calendar, Bell, Menu, X, ChevronRight, Calculator, LogOut, User, Settings, School
+  ArrowDownRight,
+  Bell,
+  Home,
+  BarChart3,
+  Target,
+  DollarSign,
+  FileText,
+  Image,
+  MessageSquare,
+  Menu,
+  X,
+  ChevronRight,
+  Calculator,
+  LogOut,
+  User,
+  Settings,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthUtils';
 
@@ -14,41 +28,21 @@ const CSRSidebar = () => {
   const { logoutUser } = useAuth();
 
   const navigationItems = [
-    {
-      section: 'Main',
-      items: [
-        { icon: Home, label: 'Dashboard', path: '/csr/dashboard', color: 'blue' },
-        { icon: BarChart3, label: 'Executive', path: '/csr/executive', color: 'purple' },
-        { icon: Target, label: 'Overview', path: '/csr/overview', color: 'indigo' },
-        { icon: Zap, label: 'Campaigns', path: '/csr/campaigns', color: 'orange' },
-        { icon: School, label: 'Schools', path: '/csr/schools', color: 'emerald' },
-      ]
-    },
-    {
-      section: 'Financial',
-      items: [
-        { icon: DollarSign, label: 'Financial', path: '/csr/financial', color: 'green' },
+        {
+          section: 'Navigation',
+          items: [
+            { icon: Home, label: 'Dashboard', path: '/csr/dashboard', color: 'blue' },
+            { icon: Bell, label: 'Notifications', path: '/csr/notifications', color: 'rose' },
+            { icon: Target, label: 'Sponsorships', path: '/csr/sponsorships', color: 'purple' },
+            { icon: MessageSquare, label: 'Testimonials', path: '/csr/testimonials', color: 'pink' },
+            { icon: DollarSign, label: 'Funds', path: '/csr/funds', color: 'green' },
+            { icon: ArrowDownRight, label: 'Refunds', path: '/csr/funds/refund', color: 'emerald' },
         { icon: FileText, label: 'Reports', path: '/csr/reports', color: 'teal' },
-        { icon: CheckCircle, label: 'Approvals', path: '/csr/approvals', color: 'cyan' },
-        { icon: Gift, label: 'Budget', path: '/csr/budget-tracking', color: 'emerald' },
-      ]
-    },
-    {
-      section: 'Management',
-      items: [
-        { icon: Target, label: 'Goals', path: '/csr/goals', color: 'pink' },
-        { icon: Calendar, label: 'Compliance', path: '/csr/compliance', color: 'rose' },
-        { icon: Bell, label: 'Alerts', path: '/csr/alerts', color: 'red' },
-        { icon: Calculator, label: 'ROI Calculator', path: '/csr/roi', color: 'violet' },
-      ]
-    },
-    {
-      section: 'Account',
-      items: [
+        { icon: Image, label: 'Gallery', path: '/csr/gallery', color: 'purple' },
         { icon: User, label: 'Profile', path: '/csr/profile', color: 'indigo' },
         { icon: Settings, label: 'Settings', path: '/csr/settings', color: 'slate' },
-      ]
-    }
+      ],
+    },
   ];
 
   const isActive = (path) => {

@@ -7,15 +7,15 @@ import { Map, Heart, Target, CheckCircle, TrendingUp, BookOpen, Sparkles, Award 
 
 const LifeMapPuzzle = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-84";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [availableValues, setAvailableValues] = useState([
     { id: 1, name: "Integrity", emoji: "💎", description: "Honesty, ethics, moral principles", color: "from-blue-400 to-cyan-500" },
     { id: 2, name: "Growth", emoji: "🌱", description: "Continuous learning and development", color: "from-green-400 to-emerald-500" },
@@ -30,7 +30,7 @@ const LifeMapPuzzle = () => {
     { id: 11, name: "Wisdom", emoji: "🧠", description: "Knowledge, insight, understanding", color: "from-indigo-400 to-purple-500" },
     { id: 12, name: "Balance", emoji: "⚖️", description: "Harmony, moderation, work-life integration", color: "from-violet-400 to-fuchsia-500" }
   ]);
-  
+
   const [selectedValues, setSelectedValues] = useState([]);
   const [draggedValue, setDraggedValue] = useState(null);
   const [reflection, setReflection] = useState("");
@@ -78,7 +78,9 @@ const LifeMapPuzzle = () => {
       return;
     }
 
-    setScore(selectedValues.length);
+    // Score based on number of values selected (1 point per value)
+    const valuesSelected = selectedValues.length;
+    setScore(valuesSelected);
     setShowAnalysis(true);
     setTimeout(() => {
       setShowGameOver(true);
@@ -155,13 +157,12 @@ const LifeMapPuzzle = () => {
               <div
                 onDrop={handleDrop}
                 onDragOver={(e) => e.preventDefault()}
-                className={`min-h-[200px] rounded-lg border-2 border-dashed p-6 ${
-                  selectedValues.length === 5
+                className={`min-h-[200px] rounded-lg border-2 border-dashed p-6 ${selectedValues.length === 5
                     ? 'border-green-400 bg-green-50'
                     : selectedValues.length > 0
-                    ? 'border-indigo-400 bg-indigo-50'
-                    : 'border-gray-300 bg-gray-50'
-                } transition-all`}
+                      ? 'border-indigo-400 bg-indigo-50'
+                      : 'border-gray-300 bg-gray-50'
+                  } transition-all`}
               >
                 {selectedValues.length === 0 ? (
                   <div className="text-center text-gray-500 py-12">
@@ -199,7 +200,7 @@ const LifeMapPuzzle = () => {
                     ))}
                   </div>
                 )}
-                
+
                 {selectedValues.length === 5 && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -230,9 +231,8 @@ const LifeMapPuzzle = () => {
                     onDragEnd={handleDragEnd}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`bg-gradient-to-br ${value.color} rounded-xl p-4 border-2 border-white shadow-md cursor-move hover:shadow-lg transition-all ${
-                      draggedValue?.id === value.id ? 'opacity-50' : ''
-                    }`}
+                    className={`bg-gradient-to-br ${value.color} rounded-xl p-4 border-2 border-white shadow-md cursor-move hover:shadow-lg transition-all ${draggedValue?.id === value.id ? 'opacity-50' : ''
+                      }`}
                   >
                     <div className="text-center">
                       <div className="text-3xl mb-2">{value.emoji}</div>
@@ -332,16 +332,15 @@ const LifeMapPuzzle = () => {
                   whileTap={{ scale: 0.95 }}
                   onClick={handleComplete}
                   disabled={!canComplete}
-                  className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all flex items-center gap-3 mx-auto ${
-                    canComplete
+                  className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all flex items-center gap-3 mx-auto ${canComplete
                       ? 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white hover:shadow-xl'
                       : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  }`}
+                    }`}
                 >
                   <Target className="w-5 h-5" />
                   Complete Life Map
                 </motion.button>
-                
+
                 {!canComplete && (
                   <p className="text-sm text-gray-600 mt-3">
                     Please write your reflection on how your values align with your teaching work.
@@ -371,9 +370,13 @@ const LifeMapPuzzle = () => {
               <h2 className="text-3xl font-bold text-gray-800 mb-2">
                 Life Map Complete!
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 mb-2">
                 You've identified your top 5 values and reflected on their alignment
               </p>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-full border-2 border-green-300">
+                <Award className="w-5 h-5 text-green-600" />
+                <span className="font-bold text-green-800">Earned {score} Healcoin{score !== 1 ? 's' : ''}!</span>
+              </div>
             </div>
 
             {/* Selected Values Display */}
@@ -477,4 +480,3 @@ const LifeMapPuzzle = () => {
 };
 
 export default LifeMapPuzzle;
-

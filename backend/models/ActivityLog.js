@@ -19,6 +19,7 @@ const activityLogSchema = new mongoose.Schema(
         "savings_goal_created",
         "savings_goal_updated",
         "contribution_added",
+        "financial_action",
         "quiz_completed",
         "expense_added",
         "expense_deleted",

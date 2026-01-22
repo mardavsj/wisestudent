@@ -7,16 +7,16 @@ import { Heart, Mic, MicOff, Send, BookOpen, CheckCircle, Users, MessageSquare, 
 
 const MentorGratitudeChallenge = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-88";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
-  const [selectedPerson, setSelectedPerson] = useState(null);
+  const totalLevels = gameData?.totalQuestions || 5;
+
+  const [selectedPersons, setSelectedPersons] = useState([]);
   const [messageType, setMessageType] = useState('text'); // 'text' or 'voice'
   const [messageText, setMessageText] = useState("");
   const [isRecording, setIsRecording] = useState(false);
@@ -26,7 +26,8 @@ const MentorGratitudeChallenge = () => {
   const [messageSent, setMessageSent] = useState(false);
   const [score, setScore] = useState(0);
   const [showGameOver, setShowGameOver] = useState(false);
-  
+  const [currentStep, setCurrentStep] = useState(0); // Track which person we're currently messaging (0 = person selection step)
+
   const mediaRecorderRef = useRef(null);
   const recordingTimerRef = useRef(null);
   const chunksRef = useRef([]);
@@ -101,7 +102,35 @@ const MentorGratitudeChallenge = () => {
 
   const handlePersonSelect = (personId) => {
     const person = personOptions.find(p => p.id === personId);
-    setSelectedPerson(person);
+    if (selectedPersons.length < 5 && !selectedPersons.some(p => p.id === personId)) {
+      const newSelectedPersons = [...selectedPersons, person];
+      setSelectedPersons(newSelectedPersons);
+
+      // If we've reached 5 persons, move to the first person's message creation
+      if (newSelectedPersons.length === 5) {
+        setCurrentStep(1);
+      }
+    }
+  };
+
+  const handleRemovePerson = (indexToRemove) => {
+    const newSelectedPersons = selectedPersons.filter((_, index) => index !== indexToRemove);
+    setSelectedPersons(newSelectedPersons);
+    if (indexToRemove < currentStep - 1) {
+      setCurrentStep(prev => Math.max(1, prev - 1));
+    }
+  };
+
+  const handleNextPerson = () => {
+    if (currentStep < selectedPersons.length) {
+      setCurrentStep(prev => prev + 1);
+    }
+  };
+
+  const handlePrevPerson = () => {
+    if (currentStep > 1) {
+      setCurrentStep(prev => prev - 1);
+    }
   };
 
   const handleMessageTypeChange = (type) => {
@@ -173,8 +202,9 @@ const MentorGratitudeChallenge = () => {
   };
 
   const handleSendMessage = () => {
-    if (!selectedPerson) {
-      alert("Please select a person first.");
+    const currentIndex = currentStep - 1; // Convert to 0-indexed
+    if (currentIndex < 0 || currentIndex >= selectedPersons.length) {
+      alert("No person selected.");
       return;
     }
 
@@ -190,13 +220,31 @@ const MentorGratitudeChallenge = () => {
 
     // Simulate sending
     setMessageSent(true);
-    setScore(1);
-    
-    setTimeout(() => {
-      setShowGameOver(true);
-    }, 3000);
+    // Increase score by 1 for each completed person
+    setScore(prev => Math.min(prev + 1, 5)); // Cap at 5
+
+    // Clear message fields for next person
+    setMessageText("");
+    setRecordedAudio(null);
+    setAudioBlob(null);
+    setIsRecording(false);
+    setRecordingTime(0);
+
+    // If we've reached 5 people, show game over
+    if (score + 1 >= 5) { // If the new score will be 5
+      setTimeout(() => {
+        setShowGameOver(true);
+      }, 3000);
+    } else {
+      // Move to next person after a short delay
+      setTimeout(() => {
+        setMessageSent(false);
+        setCurrentStep(prev => prev + 1); // Move to next person
+      }, 2000);
+    }
   };
 
+  const selectedPerson = selectedPersons[currentStep - 1];
   const canSend = selectedPerson && (
     (messageType === 'text' && messageText.trim()) ||
     (messageType === 'voice' && recordedAudio)
@@ -212,7 +260,7 @@ const MentorGratitudeChallenge = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={currentStep > 0 ? currentStep : 1}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         {!showGameOver && (
@@ -228,74 +276,102 @@ const MentorGratitudeChallenge = () => {
               </p>
             </div>
 
-            {/* Step 1: Select Person */}
-            {!selectedPerson ? (
+            {/* Step 1: Select Persons (up to 5) */}
+            {currentStep === 0 ? (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
                 <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
                   <Users className="w-6 h-6 text-purple-600" />
-                  Step 1: Select a Person
+                  Step 1: Select 5 People
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Choose a mentor or student who inspired your growth and deserves your gratitude:
+                  Choose 5 mentors or students who inspired your growth and deserve your gratitude (you have selected {selectedPersons.length}/5):
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {personOptions.map((person) => (
-                    <motion.button
-                      key={person.id}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={() => handlePersonSelect(person.id)}
-                      className={`p-6 rounded-xl border-2 border-gray-300 bg-white hover:border-purple-400 hover:shadow-lg transition-all text-left`}
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="text-4xl">{person.emoji}</div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-lg text-gray-800 mb-1">
-                            {person.name}
-                          </h4>
-                          <p className="text-sm text-purple-600 font-semibold mb-1">
-                            {person.role}
-                          </p>
-                          <p className="text-sm text-gray-600">
-                            {person.description}
-                          </p>
+                {/* Selected Persons List */}
+                {selectedPersons.length > 0 && (
+                  <div className="mb-6">
+                    <h4 className="font-bold text-gray-700 mb-3">Selected People:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedPersons.map((person, index) => (
+                        <div key={`${person.id}-${index}`} className="flex items-center gap-2 bg-purple-100 px-3 py-2 rounded-lg">
+                          <span>{person.emoji}</span>
+                          <span className="text-sm">{person.name}</span>
+                          <button
+                            onClick={() => handleRemovePerson(index)}
+                            className="text-red-500 hover:text-red-700"
+                          >
+                            ×
+                          </button>
                         </div>
-                      </div>
-                    </motion.button>
-                  ))}
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {personOptions
+                    .filter(person => !selectedPersons.some(sp => sp.id === person.id))
+                    .map((person) => (
+                      <motion.button
+                        key={person.id}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => handlePersonSelect(person.id)}
+                        className={`p-6 rounded-xl border-2 border-gray-300 bg-white hover:border-purple-400 hover:shadow-lg transition-all text-left ${selectedPersons.length >= 5 ? 'opacity-50 pointer-events-none' : ''}`}
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="text-4xl">{person.emoji}</div>
+                          <div className="flex-1">
+                            <h4 className="font-bold text-lg text-gray-800 mb-1">
+                              {person.name}
+                            </h4>
+                            <p className="text-sm text-purple-600 font-semibold mb-1">
+                              {person.role}
+                            </p>
+                            <p className="text-sm text-gray-600">
+                              {person.description}
+                            </p>
+                          </div>
+                        </div>
+                      </motion.button>
+                    ))}
                 </div>
+
+                {selectedPersons.length === 5 && (
+                  <div className="mt-6 text-center">
+                    <p className="text-green-600 font-semibold">✓ You have selected 5 people. Starting message creation...</p>
+                  </div>
+                )}
               </motion.div>
             ) : (
               <>
                 {/* Selected Person Display */}
-                <div className={`bg-gradient-to-br ${selectedPerson.color} rounded-xl p-6 border-2 border-purple-200 mb-8`}>
-                  <div className="flex items-center gap-4">
-                    <div className="text-5xl">{selectedPerson.emoji}</div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-white mb-1">
-                        Thanking: {selectedPerson.name}
-                      </h3>
-                      <p className="text-white/90">{selectedPerson.description}</p>
+                {selectedPersons[currentStep - 1] && (
+                  <div className={`bg-gradient-to-br ${selectedPersons[currentStep - 1].color} rounded-xl p-6 border-2 border-purple-200 mb-8`}>
+                    <div className="flex items-center gap-4">
+                      <div className="text-5xl">{selectedPersons[currentStep - 1].emoji}</div>
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-bold text-white mb-1">
+                          Thanking: {selectedPersons[currentStep - 1].name}
+                        </h3>
+                        <p className="text-white/90">{selectedPersons[currentStep - 1].description}</p>
+                      </div>
+                      <div className="text-white text-sm font-semibold">
+                        Person {currentStep} of 5
+                      </div>
                     </div>
-                    <button
-                      onClick={() => setSelectedPerson(null)}
-                      className="px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-all text-sm"
-                    >
-                      Change
-                    </button>
                   </div>
-                </div>
+                )}
 
                 {/* Step 2: Choose Message Type */}
                 {!messageSent && (
                   <>
                     <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
                       <MessageSquare className="w-6 h-6 text-purple-600" />
-                      Step 2: Create Your Message
+                      Create Your Message for Person {currentStep} of 5
                     </h3>
 
                     {/* Message Type Selector */}
@@ -304,11 +380,10 @@ const MentorGratitudeChallenge = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => handleMessageTypeChange('text')}
-                        className={`flex-1 p-4 rounded-xl border-2 font-semibold transition-all flex items-center justify-center gap-2 ${
-                          messageType === 'text'
+                        className={`flex-1 p-4 rounded-xl border-2 font-semibold transition-all flex items-center justify-center gap-2 ${messageType === 'text'
                             ? 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white border-purple-400 shadow-lg'
                             : 'bg-white text-gray-700 border-gray-300 hover:border-purple-300'
-                        }`}
+                          }`}
                       >
                         <Type className="w-5 h-5" />
                         Write Message
@@ -317,11 +392,10 @@ const MentorGratitudeChallenge = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => handleMessageTypeChange('voice')}
-                        className={`flex-1 p-4 rounded-xl border-2 font-semibold transition-all flex items-center justify-center gap-2 ${
-                          messageType === 'voice'
+                        className={`flex-1 p-4 rounded-xl border-2 font-semibold transition-all flex items-center justify-center gap-2 ${messageType === 'voice'
                             ? 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white border-purple-400 shadow-lg'
                             : 'bg-white text-gray-700 border-gray-300 hover:border-purple-300'
-                        }`}
+                          }`}
                       >
                         <Mic className="w-5 h-5" />
                         Record Voice
@@ -355,7 +429,7 @@ const MentorGratitudeChallenge = () => {
                         <textarea
                           value={messageText}
                           onChange={(e) => setMessageText(e.target.value)}
-                          placeholder={`Dear ${selectedPerson.name.split(' ').slice(-1)[0]},
+                          placeholder={`Dear ${selectedPersons[currentStep - 1]?.name.split(' ').slice(-1)[0]},
 
 I wanted to take a moment to express my gratitude for...
 
@@ -498,7 +572,10 @@ I wanted to take a moment to express my gratitude for...
                       Message Sent!
                     </h3>
                     <p className="text-xl text-gray-600 mb-6">
-                      Your gratitude message has been sent to {selectedPerson.name}.
+                      Your gratitude message has been sent to {selectedPersons[currentStep - 1]?.name}.
+                    </p>
+                    <p className="text-sm text-gray-500 mt-4">
+                      {score} of 5 messages completed
                     </p>
                     <p className="text-lg text-purple-600 font-semibold">
                       Thank you for expressing your gratitude!
@@ -534,38 +611,23 @@ I wanted to take a moment to express my gratitude for...
               </p>
             </div>
 
-            {/* Message Summary */}
-            {selectedPerson && (
-              <div className={`bg-gradient-to-br ${selectedPerson.color} rounded-xl p-8 border-2 border-purple-200 mb-6`}>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="text-5xl">{selectedPerson.emoji}</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-1">
-                      Message Sent To: {selectedPerson.name}
-                    </h3>
-                    <p className="text-white/90">{selectedPerson.description}</p>
+            {/* Messages Summary for All 5 Persons */}
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">Summary of Your Gratitude Messages</h3>
+              {selectedPersons.map((person, index) => (
+                <div key={person.id} className={`bg-gradient-to-br ${person.color} rounded-xl p-6 border-2 border-purple-200 mb-4`}>
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="text-4xl">{person.emoji}</div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-1">
+                        Message {index + 1}: {person.name}
+                      </h3>
+                      <p className="text-white/90 text-sm">{person.description}</p>
+                    </div>
                   </div>
                 </div>
-
-                {messageType === 'text' && messageText && (
-                  <div className="bg-white/90 rounded-lg p-6 border-2 border-white/50">
-                    <p className="text-sm font-semibold text-gray-600 mb-2">Your Message:</p>
-                    <p className="text-gray-800 leading-relaxed whitespace-pre-wrap">
-                      {messageText}
-                    </p>
-                  </div>
-                )}
-
-                {messageType === 'voice' && recordedAudio && (
-                  <div className="bg-white/90 rounded-lg p-6 border-2 border-white/50">
-                    <p className="text-sm font-semibold text-gray-600 mb-3">Your Voice Message:</p>
-                    <audio controls src={recordedAudio} className="w-full">
-                      Your browser does not support audio playback.
-                    </audio>
-                  </div>
-                )}
-              </div>
-            )}
+              ))}
+            </div>
 
             {/* Benefits */}
             <div className="bg-green-50 rounded-xl p-6 border-2 border-green-200 mb-6">
@@ -621,4 +683,3 @@ I wanted to take a moment to express my gratitude for...
 };
 
 export default MentorGratitudeChallenge;
-

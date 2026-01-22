@@ -7,15 +7,15 @@ import { ArrowUp, Heart, Award, Users, CheckCircle, TrendingUp, BookOpen, Sparkl
 
 const LegacyLadder = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-83";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [step, setStep] = useState(1); // 1: Writing, 2: Animation, 3: Complete
   const [rungEntries, setRungEntries] = useState({
     learned: "",
@@ -94,7 +94,9 @@ const LegacyLadder = () => {
 
   const handleStartClimb = () => {
     if (allRungsFilled) {
-      setScore(1);
+      // Score based on number of rungs filled (1 point per rung)
+      const rungsCompleted = Object.values(rungEntries).filter(entry => entry.trim().length >= 10).length;
+      setScore(rungsCompleted);
       setStep(2);
       setShowLegacyPath(true);
       animateLegacyPath();
@@ -106,7 +108,7 @@ const LegacyLadder = () => {
     const climbInterval = setInterval(() => {
       setCurrentClimbingRung(currentRung);
       currentRung++;
-      
+
       if (currentRung > rungs.length) {
         clearInterval(climbInterval);
         setTimeout(() => {
@@ -131,7 +133,7 @@ const LegacyLadder = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={0}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         {step === 1 && (
@@ -143,7 +145,7 @@ const LegacyLadder = () => {
                 Legacy Ladder
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                Climb the ladder of legacy by reflecting on your growth and contributions beyond daily struggles. 
+                Climb the ladder of legacy by reflecting on your growth and contributions beyond daily struggles.
                 Fill each rung with a contribution that represents your teaching journey.
               </p>
             </div>
@@ -207,9 +209,8 @@ const LegacyLadder = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className={`bg-gradient-to-br ${rung.bgColor} rounded-xl p-6 border-2 ${rung.borderColor} transition-all ${
-                      isCompleted ? 'ring-2 ring-green-400' : ''
-                    }`}
+                    className={`bg-gradient-to-br ${rung.bgColor} rounded-xl p-6 border-2 ${rung.borderColor} transition-all ${isCompleted ? 'ring-2 ring-green-400' : ''
+                      }`}
                   >
                     <div className="flex items-start gap-4">
                       {/* Rung Number & Emoji */}
@@ -235,7 +236,7 @@ const LegacyLadder = () => {
                           </h3>
                           <p className="text-gray-700 font-medium">{rung.description}</p>
                         </div>
-                        
+
                         <div className="bg-white rounded-lg p-4 border-2 border-gray-200 mb-3">
                           <p className="text-sm text-gray-600 mb-3">{rung.prompt}</p>
                           <textarea
@@ -265,16 +266,15 @@ const LegacyLadder = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={handleStartClimb}
                 disabled={!allRungsFilled}
-                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all flex items-center gap-3 mx-auto ${
-                  allRungsFilled
+                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all flex items-center gap-3 mx-auto ${allRungsFilled
                     ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-xl'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                }`}
+                  }`}
               >
                 <ArrowUp className="w-5 h-5" />
                 Generate Legacy Path
               </motion.button>
-              
+
               {!allRungsFilled && (
                 <p className="text-sm text-gray-600 mt-3">
                   Complete all {rungs.length} rungs to generate your Legacy Path ({completedCount} / {rungs.length})
@@ -309,7 +309,7 @@ const LegacyLadder = () => {
               {rungs.map((rung, index) => {
                 const isActive = currentClimbingRung > index;
                 const isCurrent = currentClimbingRung === index + 1;
-                
+
                 return (
                   <motion.div
                     key={rung.id}
@@ -320,13 +320,12 @@ const LegacyLadder = () => {
                       x: isActive || isCurrent ? 0 : -50
                     }}
                     transition={{ duration: 0.5 }}
-                    className={`w-full max-w-2xl rounded-xl p-6 border-2 transition-all ${
-                      isCurrent
+                    className={`w-full max-w-2xl rounded-xl p-6 border-2 transition-all ${isCurrent
                         ? `${rung.borderColor} bg-gradient-to-br ${rung.bgColor} shadow-xl ring-4 ring-purple-300`
                         : isActive
-                        ? `${rung.borderColor} bg-gradient-to-br ${rung.bgColor} shadow-lg`
-                        : 'border-gray-300 bg-gray-100 opacity-30'
-                    }`}
+                          ? `${rung.borderColor} bg-gradient-to-br ${rung.bgColor} shadow-lg`
+                          : 'border-gray-300 bg-gray-100 opacity-30'
+                      }`}
                   >
                     <div className="flex items-center gap-4">
                       <div className={`text-4xl ${isCurrent ? 'animate-bounce' : ''}`}>
@@ -408,9 +407,13 @@ const LegacyLadder = () => {
               <h2 className="text-3xl font-bold text-gray-800 mb-2">
                 Legacy Ladder Complete!
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 mb-2">
                 You've visualized your growth beyond daily struggles
               </p>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-full border-2 border-green-300">
+                <Award className="w-5 h-5 text-green-600" />
+                <span className="font-bold text-green-800">Earned {score} Healcoin{score !== 1 ? 's' : ''}!</span>
+              </div>
             </div>
 
             {/* Legacy Path Display */}
@@ -503,4 +506,3 @@ const LegacyLadder = () => {
 };
 
 export default LegacyLadder;
-

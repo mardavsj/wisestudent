@@ -7,21 +7,33 @@ import { Heart, MessageCircle, Users, CheckCircle, BookOpen, Sparkles, Send } fr
 
 const TeamGratitudeWall = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-74";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [gratitudeNotes, setGratitudeNotes] = useState({
     note1: {
       to: "",
       message: ""
     },
     note2: {
+      to: "",
+      message: ""
+    },
+    note3: {
+      to: "",
+      message: ""
+    },
+    note4: {
+      to: "",
+      message: ""
+    },
+    note5: {
       to: "",
       message: ""
     }
@@ -69,6 +81,42 @@ const TeamGratitudeWall = () => {
       completedCount++;
     }
 
+    // Process note 3
+    if (gratitudeNotes.note3.to.trim() && gratitudeNotes.note3.message.trim()) {
+      notes.push({
+        id: 3,
+        to: gratitudeNotes.note3.to.trim(),
+        message: gratitudeNotes.note3.message.trim(),
+        postedAt: new Date().toISOString(),
+        emoji: '💛'
+      });
+      completedCount++;
+    }
+
+    // Process note 4
+    if (gratitudeNotes.note4.to.trim() && gratitudeNotes.note4.message.trim()) {
+      notes.push({
+        id: 4,
+        to: gratitudeNotes.note4.to.trim(),
+        message: gratitudeNotes.note4.message.trim(),
+        postedAt: new Date().toISOString(),
+        emoji: '💜'
+      });
+      completedCount++;
+    }
+
+    // Process note 5
+    if (gratitudeNotes.note5.to.trim() && gratitudeNotes.note5.message.trim()) {
+      notes.push({
+        id: 5,
+        to: gratitudeNotes.note5.to.trim(),
+        message: gratitudeNotes.note5.message.trim(),
+        postedAt: new Date().toISOString(),
+        emoji: '🧡'
+      });
+      completedCount++;
+    }
+
     if (notes.length === 0) {
       alert("Please write at least one gratitude note before posting.");
       return;
@@ -77,16 +125,19 @@ const TeamGratitudeWall = () => {
     setPostedNotes(notes);
     setScore(completedCount);
     setShowWall(true);
-    
+
     // Show game over after a short delay
     setTimeout(() => {
       setShowGameOver(true);
     }, 2000);
   };
 
-  const completedNotesCount = 
+  const completedNotesCount =
     (gratitudeNotes.note1.to.trim() && gratitudeNotes.note1.message.trim() ? 1 : 0) +
-    (gratitudeNotes.note2.to.trim() && gratitudeNotes.note2.message.trim() ? 1 : 0);
+    (gratitudeNotes.note2.to.trim() && gratitudeNotes.note2.message.trim() ? 1 : 0) +
+    (gratitudeNotes.note3.to.trim() && gratitudeNotes.note3.message.trim() ? 1 : 0) +
+    (gratitudeNotes.note4.to.trim() && gratitudeNotes.note4.message.trim() ? 1 : 0) +
+    (gratitudeNotes.note5.to.trim() && gratitudeNotes.note5.message.trim() ? 1 : 0);
 
   return (
     <TeacherGameShell
@@ -98,7 +149,7 @@ const TeamGratitudeWall = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={0}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         {!showWall && (
@@ -123,7 +174,7 @@ const TeamGratitudeWall = () => {
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <span><strong>Write 2 gratitude notes</strong> to colleagues who have supported you, helped you, or inspired you</span>
+                  <span><strong>Write 5 gratitude notes</strong> to colleagues who have supported you, helped you, or inspired you</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
@@ -135,7 +186,7 @@ const TeamGratitudeWall = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <span><strong>Complete both notes</strong> or post with what you have - every appreciation matters!</span>
+                  <span><strong>Complete all 5 notes</strong> or post with what you have - every appreciation matters!</span>
                 </li>
               </ul>
             </div>
@@ -145,16 +196,16 @@ const TeamGratitudeWall = () => {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-bold text-gray-800">Notes Progress</h3>
-                  <p className="text-gray-600">{completedNotesCount} of 2 notes completed</p>
+                  <p className="text-gray-600">{completedNotesCount} of 5 notes completed</p>
                 </div>
                 <div className="text-3xl font-bold text-blue-600">
-                  {completedNotesCount} / 2
+                  {completedNotesCount} / 5
                 </div>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-3">
                 <motion.div
                   initial={{ width: 0 }}
-                  animate={{ width: `${(completedNotesCount / 2) * 100}%` }}
+                  animate={{ width: `${(completedNotesCount / 5) * 100}%` }}
                   className="bg-gradient-to-r from-pink-500 to-purple-500 h-3 rounded-full"
                 />
               </div>
@@ -172,7 +223,7 @@ const TeamGratitudeWall = () => {
                     <CheckCircle className="w-5 h-5 text-green-500" />
                   )}
                 </div>
-                
+
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -186,7 +237,7 @@ const TeamGratitudeWall = () => {
                       className="w-full p-4 rounded-lg border-2 border-pink-300 focus:ring-2 focus:ring-pink-500 focus:outline-none"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Message: (What you appreciate about them)
@@ -215,7 +266,7 @@ const TeamGratitudeWall = () => {
                     <CheckCircle className="w-5 h-5 text-green-500" />
                   )}
                 </div>
-                
+
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -229,7 +280,7 @@ const TeamGratitudeWall = () => {
                       className="w-full p-4 rounded-lg border-2 border-purple-300 focus:ring-2 focus:ring-purple-500 focus:outline-none"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Message: (What you appreciate about them)
@@ -246,6 +297,135 @@ const TeamGratitudeWall = () => {
               </div>
             </div>
 
+            {/* Gratitude Note 3 */}
+            <div className="mb-6">
+              <div className="bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 rounded-xl p-6 border-2 border-yellow-200 mb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-yellow-500 to-amber-500 flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">3</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800">Gratitude Note 3</h3>
+                  {gratitudeNotes.note3.to.trim() && gratitudeNotes.note3.message.trim() && (
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                  )}
+                </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      To: (Colleague's name or role)
+                    </label>
+                    <input
+                      type="text"
+                      value={gratitudeNotes.note3.to}
+                      onChange={(e) => handleNoteChange('note3', 'to', e.target.value)}
+                      placeholder="e.g., The science department, Maria, My principal..."
+                      className="w-full p-4 rounded-lg border-2 border-yellow-300 focus:ring-2 focus:ring-yellow-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Message: (What you appreciate about them)
+                    </label>
+                    <textarea
+                      value={gratitudeNotes.note3.message}
+                      onChange={(e) => handleNoteChange('note3', 'message', e.target.value)}
+                      placeholder="e.g., Your leadership and guidance have made a real difference. Thank you for always supporting our professional growth and creating a positive learning environment..."
+                      rows={5}
+                      className="w-full p-4 rounded-lg border-2 border-yellow-300 focus:ring-2 focus:ring-yellow-500 focus:outline-none resize-none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Gratitude Note 4 */}
+            <div className="mb-6">
+              <div className="bg-gradient-to-br from-indigo-50 via-violet-50 to-purple-50 rounded-xl p-6 border-2 border-indigo-200 mb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">4</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800">Gratitude Note 4</h3>
+                  {gratitudeNotes.note4.to.trim() && gratitudeNotes.note4.message.trim() && (
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                  )}
+                </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      To: (Colleague's name or role)
+                    </label>
+                    <input
+                      type="text"
+                      value={gratitudeNotes.note4.to}
+                      onChange={(e) => handleNoteChange('note4', 'to', e.target.value)}
+                      placeholder="e.g., The counseling team, James, My grade-level partner..."
+                      className="w-full p-4 rounded-lg border-2 border-indigo-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Message: (What you appreciate about them)
+                    </label>
+                    <textarea
+                      value={gratitudeNotes.note4.message}
+                      onChange={(e) => handleNoteChange('note4', 'message', e.target.value)}
+                      placeholder="e.g., I appreciate how you've been there for students during difficult times. Your dedication to their wellbeing and success doesn't go unnoticed. Thank you for your compassion and hard work..."
+                      rows={5}
+                      className="w-full p-4 rounded-lg border-2 border-indigo-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none resize-none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Gratitude Note 5 */}
+            <div className="mb-6">
+              <div className="bg-gradient-to-br from-red-50 via-pink-50 to-rose-50 rounded-xl p-6 border-2 border-red-200 mb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">5</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800">Gratitude Note 5</h3>
+                  {gratitudeNotes.note5.to.trim() && gratitudeNotes.note5.message.trim() && (
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                  )}
+                </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      To: (Colleague's name or role)
+                    </label>
+                    <input
+                      type="text"
+                      value={gratitudeNotes.note5.to}
+                      onChange={(e) => handleNoteChange('note5', 'to', e.target.value)}
+                      placeholder="e.g., The custodial staff, Lisa, Our school nurse..."
+                      className="w-full p-4 rounded-lg border-2 border-red-300 focus:ring-2 focus:ring-red-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Message: (What you appreciate about them)
+                    </label>
+                    <textarea
+                      value={gratitudeNotes.note5.message}
+                      onChange={(e) => handleNoteChange('note5', 'message', e.target.value)}
+                      placeholder="e.g., Your behind-the-scenes work keeps our school running smoothly. Thank you for everything you do to support our teaching and learning environment. Your contributions are truly valued and make a difference in our students' lives..."
+                      rows={5}
+                      className="w-full p-4 rounded-lg border-2 border-red-300 focus:ring-2 focus:ring-red-500 focus:outline-none resize-none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Post Button */}
             <div className="text-center">
               <motion.button
@@ -253,19 +433,18 @@ const TeamGratitudeWall = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={handlePostNotes}
                 disabled={completedNotesCount === 0}
-                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all flex items-center gap-3 mx-auto ${
-                  completedNotesCount > 0
+                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all flex items-center gap-3 mx-auto ${completedNotesCount > 0
                     ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:shadow-xl'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                }`}
+                  }`}
               >
                 <Send className="w-5 h-5" />
-                Post to Gratitude Wall
+                Post to Gratitude Wall ({completedNotesCount}/5)
               </motion.button>
-              
-              {completedNotesCount > 0 && completedNotesCount < 2 && (
+
+              {completedNotesCount > 0 && completedNotesCount < 5 && (
                 <p className="text-sm text-gray-600 mt-3">
-                  You can post now with {completedNotesCount} note(s) or complete both first.
+                  You can post now with {completedNotesCount} note(s) or complete all 5 first.
                 </p>
               )}
             </div>
@@ -298,7 +477,7 @@ const TeamGratitudeWall = () => {
 
             {/* Wall Display */}
             <div className="bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 rounded-xl p-8 border-2 border-pink-200 mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {postedNotes.map((note, index) => (
                   <motion.div
                     key={note.id}
@@ -336,8 +515,8 @@ const TeamGratitudeWall = () => {
                   Your Gratitude Makes a Difference
                 </h3>
                 <p className="text-green-800 leading-relaxed">
-                  Your appreciation messages strengthen group morale, build connections, and create a culture of gratitude. 
-                  When colleagues receive appreciation, they feel valued and supported, which strengthens the entire team. 
+                  Your appreciation messages strengthen group morale, build connections, and create a culture of gratitude.
+                  When colleagues receive appreciation, they feel valued and supported, which strengthens the entire team.
                   Every note of gratitude contributes to a positive work environment where everyone feels appreciated.
                 </p>
               </div>
@@ -397,4 +576,3 @@ const TeamGratitudeWall = () => {
 };
 
 export default TeamGratitudeWall;
-

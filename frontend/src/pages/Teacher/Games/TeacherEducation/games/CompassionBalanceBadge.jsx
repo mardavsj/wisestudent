@@ -12,11 +12,11 @@ import { toast } from "react-toastify";
 const CompassionBalanceBadge = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   // Get game data
   const gameId = "teacher-education-30";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   const [loading, setLoading] = useState(true);
   const [gamesStatus, setGamesStatus] = useState([]);
   const [allCompleted, setAllCompleted] = useState(false);
@@ -56,7 +56,7 @@ const CompassionBalanceBadge = () => {
     if ('speechSynthesis' in window) {
       setSpeechSynth(window.speechSynthesis);
     }
-    
+
     checkGamesCompletion();
     checkBadgeStatus();
   }, []);
@@ -119,7 +119,7 @@ const CompassionBalanceBadge = () => {
 
     speechSynth.cancel();
     setIsPlayingAudio(true);
-    
+
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = 0.85;
     utterance.pitch = 1.0;
@@ -148,10 +148,27 @@ const CompassionBalanceBadge = () => {
       setIsCollecting(true);
       const response = await api.post('/api/school/teacher/badge/compassion-balance/collect');
 
-      if (response.data.success) {
+      const result = response.data;
+
+      if (result.success && (result.badgeEarned || result.newlyEarned)) {
         setBadgeCollected(true);
-        setShowCollectionModal(true);
-        
+        setShowCollectionModal(false);
+        toast.success('🎉 Badge collected successfully!');
+
+        // Play positive audio affirmation
+        const affirmation = "Your care has clarity. Congratulations! You have earned the Compassion Balance Badge. Your commitment to healthy empathy and compassion balance sustains your wellbeing while serving others. You are a Compassion Balance Champion, modeling healthy empathy in school culture. Well done!";
+        playAffirmation(affirmation);
+
+        // Dispatch badge earned event
+        window.dispatchEvent(new CustomEvent('teacherBadgeEarned', {
+          detail: {
+            badgeId: 'compassion-balance',
+            badgeName: 'Compassion Balance',
+            message: 'Your care has clarity.',
+            badge: result.badge
+          }
+        }));
+
         // Register the badge game as completed in the game progress system
         // This is crucial for sequential unlocking of the next game
         try {
@@ -167,10 +184,8 @@ const CompassionBalanceBadge = () => {
         } catch (error) {
           console.error('Failed to mark badge game completed:', error);
         }
-        
-        playAffirmation("Your care has clarity.");
       } else {
-        toast.error(response.data.message || 'Failed to collect badge');
+        toast.error(result.error || 'Failed to collect badge');
       }
     } catch (error) {
       console.error('Error collecting badge:', error);
@@ -277,19 +292,17 @@ const CompassionBalanceBadge = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className={`p-4 rounded-xl border-2 transition-all ${
-                      game.completed
+                    className={`p-4 rounded-xl border-2 transition-all ${game.completed
                         ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-green-300'
                         : 'bg-gray-50 border-gray-300'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="text-3xl">{game.icon}</div>
                         <div>
-                          <h4 className={`font-semibold ${
-                            game.completed ? 'text-green-800' : 'text-gray-700'
-                          }`}>
+                          <h4 className={`font-semibold ${game.completed ? 'text-green-800' : 'text-gray-700'
+                            }`}>
                             {game.name}
                           </h4>
                         </div>
@@ -429,4 +442,3 @@ const CompassionBalanceBadge = () => {
 };
 
 export default CompassionBalanceBadge;
-

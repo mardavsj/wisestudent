@@ -5,24 +5,24 @@ import { getParentEducationGameById } from "../data/gameData";
 
 const EmotionalReflex = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "parent-education-9";
   const gameData = getParentEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentRound, setCurrentRound] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [timeRemaining, setTimeRemaining] = useState(2); // 2 seconds per round
+  const [timeRemaining, setTimeRemaining] = useState(5); // 5 seconds per round
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
   const [isRoundActive, setIsRoundActive] = useState(false);
   const [showGameOver, setShowGameOver] = useState(false);
   const [roundResults, setRoundResults] = useState([]);
-  
+
   const timerRef = useRef(null);
   const roundStartTimeRef = useRef(null);
 
@@ -62,7 +62,7 @@ const EmotionalReflex = () => {
     {
       id: 3,
       correctEmotion: { emoji: '😨', label: 'Fearful' },
-      options: ['Fearful', 'Confused', 'Tired', 'Irritated'],
+      options: ['Confused', 'Tired', 'Fearful', 'Irritated'],
       context: "A child seeing a big dog for the first time"
     },
     {
@@ -74,7 +74,7 @@ const EmotionalReflex = () => {
     {
       id: 5,
       correctEmotion: { emoji: '😟', label: 'Worried' },
-      options: ['Worried', 'Confident', 'Grateful', 'Calm'],
+      options: ['Confident', 'Grateful', 'Calm', 'Worried'],
       context: "A parent waiting for important test results"
     }
   ];
@@ -82,7 +82,7 @@ const EmotionalReflex = () => {
   // Start a new round
   const startRound = () => {
     setIsRoundActive(true);
-    setTimeRemaining(2);
+    setTimeRemaining(5);
     setSelectedAnswer(null);
     setShowFeedback(false);
     roundStartTimeRef.current = Date.now();
@@ -105,15 +105,15 @@ const EmotionalReflex = () => {
     }
     setIsRoundActive(false);
     setShowFeedback(true);
-    
+
     const result = {
       round: currentRound + 1,
       correct: false,
-      answerTime: 2,
+      answerTime: 5,
       wasTimeout: true
     };
     setRoundResults([...roundResults, result]);
-    
+
     setTimeout(() => {
       moveToNextRound();
     }, 2000);
@@ -124,7 +124,7 @@ const EmotionalReflex = () => {
     if (!isRoundActive || selectedAnswer !== null) return;
 
     const answerTime = ((Date.now() - roundStartTimeRef.current) / 1000).toFixed(2);
-    
+
     if (timerRef.current) {
       clearInterval(timerRef.current);
     }
@@ -225,16 +225,14 @@ const EmotionalReflex = () => {
             <div className="mb-6">
               <div className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-full h-4 mb-2 relative overflow-hidden">
                 <div
-                  className={`h-full transition-all duration-100 ${
-                    timeRemaining > 1 ? 'bg-green-500' : timeRemaining > 0.5 ? 'bg-yellow-500' : 'bg-red-500'
-                  }`}
-                  style={{ width: `${(timeRemaining / 2) * 100}%` }}
+                  className={`h-full transition-all duration-100 ${timeRemaining > 2.5 ? 'bg-green-500' : timeRemaining > 1.25 ? 'bg-yellow-500' : 'bg-red-500'
+                    }`}
+                  style={{ width: `${(timeRemaining / 5) * 100}%` }}
                 ></div>
               </div>
               <div className="text-center">
-                <span className={`text-2xl font-bold ${
-                  timeRemaining > 1 ? 'text-green-600' : timeRemaining > 0.5 ? 'text-yellow-600' : 'text-red-600'
-                }`}>
+                <span className={`text-2xl font-bold ${timeRemaining > 2.5 ? 'text-green-600' : timeRemaining > 1.25 ? 'text-yellow-600' : 'text-red-600'
+                  }`}>
                   {timeRemaining.toFixed(1)}s
                 </span>
               </div>
@@ -285,9 +283,8 @@ const EmotionalReflex = () => {
                     key={index}
                     onClick={() => handleAnswerSelect(option)}
                     disabled={hasAnswered}
-                    className={`p-6 rounded-xl border-2 text-lg font-semibold transition-all ${
-                      !hasAnswered ? 'cursor-pointer hover:scale-105 hover:shadow-lg' : 'cursor-not-allowed'
-                    } ${buttonStyle} ${textStyle}`}
+                    className={`p-6 rounded-xl border-2 text-lg font-semibold transition-all ${!hasAnswered ? 'cursor-pointer hover:scale-105 hover:shadow-lg' : 'cursor-not-allowed'
+                      } ${buttonStyle} ${textStyle}`}
                   >
                     {option}
                     {hasAnswered && option === currentRoundData.correctEmotion.label && (
@@ -303,32 +300,29 @@ const EmotionalReflex = () => {
 
             {/* Feedback Message */}
             {showFeedback && (
-              <div className={`mb-6 p-6 rounded-xl border-2 animate-fade-in ${
-                isCorrect
+              <div className={`mb-6 p-6 rounded-xl border-2 animate-fade-in ${isCorrect
                   ? 'bg-green-50 border-green-200'
                   : timeRemaining <= 0
                     ? 'bg-orange-50 border-orange-200'
                     : 'bg-red-50 border-red-200'
-              }`}>
+                }`}>
                 <div className="flex items-center gap-3">
                   <span className="text-3xl">
                     {isCorrect ? '🎯' : timeRemaining <= 0 ? '⏱️' : '❌'}
                   </span>
                   <div>
-                    <h4 className={`font-bold text-lg mb-1 ${
-                      isCorrect ? 'text-green-800' : 'text-orange-800'
-                    }`}>
+                    <h4 className={`font-bold text-lg mb-1 ${isCorrect ? 'text-green-800' : 'text-orange-800'
+                      }`}>
                       {isCorrect
                         ? 'Correct! Great reaction time!'
                         : timeRemaining <= 0
                           ? 'Time\'s up!'
                           : 'Not quite right'}
                     </h4>
-                    <p className={`text-sm ${
-                      isCorrect ? 'text-green-700' : 'text-orange-700'
-                    }`}>
+                    <p className={`text-sm ${isCorrect ? 'text-green-700' : 'text-orange-700'
+                      }`}>
                       {isCorrect
-                        ? `You identified ${currentRoundData.correctEmotion.label} in ${selectedAnswer !== null ? roundResults[roundResults.length - 1]?.answerTime.toFixed(2) : '2.00'}s!`
+                        ? `You identified ${currentRoundData.correctEmotion.label} in ${selectedAnswer !== null ? roundResults[roundResults.length - 1]?.answerTime.toFixed(2) : '5.00'}s!`
                         : timeRemaining <= 0
                           ? `The correct emotion was ${currentRoundData.correctEmotion.label}. Quick recognition takes practice!`
                           : `The correct emotion was ${currentRoundData.correctEmotion.label}. Keep practicing!`}
@@ -353,7 +347,7 @@ const EmotionalReflex = () => {
           </div>
         </div>
       ) : null}
-      
+
       <style>{`
         @keyframes fade-in {
           from { opacity: 0; transform: translateY(-10px); }
@@ -375,4 +369,3 @@ const EmotionalReflex = () => {
 };
 
 export default EmotionalReflex;
-

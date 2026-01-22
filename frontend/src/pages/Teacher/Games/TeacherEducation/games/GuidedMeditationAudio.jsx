@@ -7,15 +7,15 @@ import { Play, Pause, RotateCcw, Clock, Sparkles, Brain, Volume2, CheckCircle, A
 
 const GuidedMeditationAudio = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-45";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showFeedback, setShowFeedback] = useState(false);
@@ -29,38 +29,38 @@ const GuidedMeditationAudio = () => {
       title: "Meditation Benefits for Teachers",
       question: "Which of the following is a key benefit of guided meditation for teachers?",
       options: [
-        
+
         {
-          id: 'b',
+          id: 'a',
           text: "Increased stress and anxiety levels",
           explanation: "Incorrect. Guided meditation is designed to reduce stress and anxiety, not increase it."
         },
         {
-          id: 'c',
+          id: 'b',
           text: "Reduced ability to manage classroom disruptions",
           explanation: "Incorrect. Meditation actually improves emotional regulation and helps teachers manage disruptions more effectively."
         },
         {
-          id: 'a',
+          id: 'c',
           text: "Improved nervous system regulation and sustained focus",
           explanation: "Correct! Guided meditation helps regulate the nervous system and improves sustained focus, which is crucial for effective teaching."
         },
       ],
-      correctAnswer: 'a'
+      correctAnswer: 'c'
     },
     {
       id: 2,
       title: "Optimal Timing for Meditation",
       question: "When is the best time for a teacher to practice guided meditation to enhance their teaching effectiveness?",
       options: [
-        
+
         {
-          id: 'b',
+          id: 'a',
           text: "During active class time when students are working",
           explanation: "Incorrect. While mindfulness can be practiced during class, dedicated meditation requires uninterrupted focus."
         },
         {
-          id: 'a',
+          id: 'b',
           text: "Before important meetings or stressful situations",
           explanation: "Correct! Practicing before stressful events helps calm the nervous system and improve performance."
         },
@@ -70,7 +70,7 @@ const GuidedMeditationAudio = () => {
           explanation: "Incorrect. While meditation can help afterward, it's better to practice prevention rather than only using it as a reaction."
         }
       ],
-      correctAnswer: 'a'
+      correctAnswer: 'b'
     },
     {
       id: 3,
@@ -100,38 +100,38 @@ const GuidedMeditationAudio = () => {
       title: "Visualization in Meditation",
       question: "How can visualization techniques in meditation benefit a teacher's classroom management?",
       options: [
-        
+
         {
-          id: 'b',
+          id: 'a',
           text: "Makes it easier to ignore problematic students",
           explanation: "Incorrect. Visualization is about positive preparation, not avoiding challenges."
         },
         {
-          id: 'c',
+          id: 'b',
           text: "Eliminates the need for actual classroom management strategies",
           explanation: "Incorrect. Visualization supplements but doesn't replace practical management strategies."
         },
         {
-          id: 'a',
+          id: 'c',
           text: "Helps create mental images of calm classroom scenarios, reducing anxiety",
           explanation: "Correct! Visualization can help teachers mentally rehearse positive classroom scenarios, reducing anxiety and increasing confidence."
         },
       ],
-      correctAnswer: 'a'
+      correctAnswer: 'c'
     },
     {
       id: 5,
       title: "Integrating Meditation in School Culture",
       question: "How can teachers effectively share meditation benefits with students?",
       options: [
-        
+
         {
-          id: 'b',
+          id: 'a',
           text: "Mandate meditation for all students regardless of comfort level",
           explanation: "Incorrect. Meditation should be offered as an option, respecting students' comfort levels and beliefs."
         },
         {
-          id: 'a',
+          id: 'b',
           text: "Model the practice first, then introduce simple techniques appropriate for students",
           explanation: "Correct! Teachers should practice and embody meditation techniques before introducing them to students, ensuring age-appropriate adaptations."
         },
@@ -141,7 +141,7 @@ const GuidedMeditationAudio = () => {
           explanation: "Incorrect. Teachers can appropriately share beneficial wellness practices with students when adapted properly."
         }
       ],
-      correctAnswer: 'a'
+      correctAnswer: 'b'
     }
   ];
 
@@ -157,7 +157,7 @@ const GuidedMeditationAudio = () => {
 
     const currentQ = questions[currentQuestion];
     const isCorrect = answerId === currentQ.correctAnswer;
-    
+
     setSelectedAnswers(prev => ({
       ...prev,
       [currentQuestion]: answerId
@@ -264,11 +264,10 @@ const GuidedMeditationAudio = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className={`mb-6 rounded-xl p-6 border-2 ${
-                    isCorrect
+                  className={`mb-6 rounded-xl p-6 border-2 ${isCorrect
                       ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-300'
                       : 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-300'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start gap-4 mb-4">
                     {isCorrect ? (
@@ -278,9 +277,8 @@ const GuidedMeditationAudio = () => {
                     )}
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">
-                        <h3 className={`text-2xl font-bold ${
-                          isCorrect ? 'text-green-800' : 'text-orange-800'
-                        }`}>
+                        <h3 className={`text-2xl font-bold ${isCorrect ? 'text-green-800' : 'text-orange-800'
+                          }`}>
                           {feedback?.text}
                         </h3>
                         {selectedOption && (
@@ -289,17 +287,14 @@ const GuidedMeditationAudio = () => {
                           </div>
                         )}
                       </div>
-                      <div className={`bg-white rounded-lg p-4 border-l-4 ${
-                        isCorrect ? 'border-green-500' : 'border-orange-500'
-                      }`}>
-                        <p className={`font-semibold mb-2 ${
-                          isCorrect ? 'text-green-800' : 'text-orange-800'
+                      <div className={`bg-white rounded-lg p-4 border-l-4 ${isCorrect ? 'border-green-500' : 'border-orange-500'
                         }`}>
+                        <p className={`font-semibold mb-2 ${isCorrect ? 'text-green-800' : 'text-orange-800'
+                          }`}>
                           💡 Explanation:
                         </p>
-                        <p className={`${
-                          isCorrect ? 'text-green-700' : 'text-orange-700'
-                        }`}>
+                        <p className={`${isCorrect ? 'text-green-700' : 'text-orange-700'
+                          }`}>
                           {feedback?.explanation}
                         </p>
                       </div>
@@ -344,10 +339,10 @@ const GuidedMeditationAudio = () => {
                 {score === totalLevels
                   ? "Perfect! You have a strong understanding of how guided meditation benefits teachers. You know how to use meditation for nervous system regulation, optimal timing, breathing techniques, visualization, and integrating meditation in school culture."
                   : score >= Math.ceil(totalLevels * 0.8)
-                  ? "Excellent! You're developing a solid understanding of guided meditation principles for teachers. Keep applying these concepts to enhance your teaching practice."
-                  : score >= Math.ceil(totalLevels * 0.6)
-                  ? "Good effort! You understand the basics of guided meditation for teachers. Continue learning to deepen your knowledge of these beneficial practices."
-                  : "Keep learning! Understanding how guided meditation benefits teachers is valuable for creating a calm classroom environment and managing stress effectively."
+                    ? "Excellent! You're developing a solid understanding of guided meditation principles for teachers. Keep applying these concepts to enhance your teaching practice."
+                    : score >= Math.ceil(totalLevels * 0.6)
+                      ? "Good effort! You understand the basics of guided meditation for teachers. Continue learning to deepen your knowledge of these beneficial practices."
+                      : "Keep learning! Understanding how guided meditation benefits teachers is valuable for creating a calm classroom environment and managing stress effectively."
                 }
               </p>
             </div>
@@ -391,4 +386,3 @@ const GuidedMeditationAudio = () => {
 };
 
 export default GuidedMeditationAudio;
-

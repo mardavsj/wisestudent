@@ -7,30 +7,37 @@ import { BookOpen, Heart, Award, Users, CheckCircle, TrendingUp, Sparkles, Targe
 
 const WhyITeach = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-81";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 1;
-  
-  const [reflection, setReflection] = useState("");
-  const [selectedEmotion, setSelectedEmotion] = useState(null);
+
   const [showGameOver, setShowGameOver] = useState(false);
   const [score, setScore] = useState(0);
 
-  // Guided prompts
+  // Guided prompts for 5 diverse questions
   const prompts = [
-    "What moment made me choose teaching?",
-    "When did I first realize teaching was my calling?",
-    "What experience inspired me to become a teacher?",
-    "Who or what influenced my decision to teach?",
-    "What memory connects me to why I teach?"
+    "What pivotal moment in my life made me realize I wanted to become a teacher?",
+    "How has my understanding of education evolved from my own school experience?",
+    "What specific student interaction or achievement keeps me motivated in difficult times?",
+    "Which personal values or beliefs drive my approach to teaching and classroom management?",
+    "What legacy do I hope to leave through my years of educating future generations?"
   ];
 
-  const [currentPrompt, setCurrentPrompt] = useState(prompts[0]);
+  // Track responses for all 5 questions
+  const [responses, setResponses] = useState([
+    { reflection: "", selectedEmotion: null },
+    { reflection: "", selectedEmotion: null },
+    { reflection: "", selectedEmotion: null },
+    { reflection: "", selectedEmotion: null },
+    { reflection: "", selectedEmotion: null }
+  ]);
+
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   // Emotion tags
   const emotionTags = [
@@ -67,30 +74,42 @@ const WhyITeach = () => {
   ];
 
   const handleReflectionChange = (value) => {
-    setReflection(value);
+    const updatedResponses = [...responses];
+    updatedResponses[currentQuestionIndex].reflection = value;
+    setResponses(updatedResponses);
   };
 
   const handleEmotionSelect = (emotionId) => {
-    setSelectedEmotion(emotionId);
+    const updatedResponses = [...responses];
+    updatedResponses[currentQuestionIndex].selectedEmotion = emotionId;
+    setResponses(updatedResponses);
   };
 
   const handleComplete = () => {
-    if (!reflection.trim()) {
+    const currentResponse = responses[currentQuestionIndex];
+
+    if (!currentResponse.reflection.trim()) {
       alert("Please write your reflection about why you teach first.");
       return;
     }
 
-    if (!selectedEmotion) {
+    if (!currentResponse.selectedEmotion) {
       alert("Please choose an emotion tag that captures your reflection.");
       return;
     }
 
-    setScore(1);
-    setShowGameOver(true);
+    // Move to next question or finish if it's the last one
+    if (currentQuestionIndex < 4) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    } else {
+      // Calculate score based on all 5 questions completed
+      setScore(5); // Full score for completing all 5 questions
+      setShowGameOver(true);
+    }
   };
 
-  const selectedEmotionData = selectedEmotion ? emotionTags.find(t => t.id === selectedEmotion) : null;
-  const reflectionLength = reflection.trim().length;
+  const selectedEmotionData = responses[currentQuestionIndex].selectedEmotion ? emotionTags.find(t => t.id === responses[currentQuestionIndex].selectedEmotion) : null;
+  const reflectionLength = responses[currentQuestionIndex].reflection.trim().length;
 
   return (
     <TeacherGameShell
@@ -102,7 +121,7 @@ const WhyITeach = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={showGameOver ? totalLevels : currentQuestionIndex + 1}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         {!showGameOver && (
@@ -111,11 +130,26 @@ const WhyITeach = () => {
             <div className="text-center mb-8">
               <div className="text-6xl mb-4">💡</div>
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Why I Teach
+                {currentQuestionIndex === 0 && "My Teaching Origin Story"}
+                {currentQuestionIndex === 1 && "My Educational Philosophy"}
+                {currentQuestionIndex === 2 && "My Motivating Moments"}
+                {currentQuestionIndex === 3 && "My Teaching Values"}
+                {currentQuestionIndex === 4 && "My Teaching Legacy"}
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Reconnect with the original reason for becoming a teacher. Reflect on the moment that made you choose teaching.
+                {currentQuestionIndex === 0 && "Explore the defining moment that sparked your teaching journey."}
+                {currentQuestionIndex === 1 && "Reflect on how your student experiences shaped your educational philosophy."}
+                {currentQuestionIndex === 2 && "Identify the student moments that sustain your teaching passion."}
+                {currentQuestionIndex === 3 && "Discover the values that guide your teaching approach."}
+                {currentQuestionIndex === 4 && "Envision the lasting impact of your teaching legacy."}
               </p>
+            </div>
+
+            {/* Question Counter */}
+            <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-xl p-4 mb-6 text-center">
+              <h3 className="text-xl font-bold text-gray-800">
+                Question {currentQuestionIndex + 1} of 5
+              </h3>
             </div>
 
             {/* Guided Prompt */}
@@ -131,23 +165,8 @@ const WhyITeach = () => {
               </div>
               <div className="bg-white rounded-lg p-6 border-2 border-purple-200">
                 <p className="text-2xl font-semibold text-gray-800 text-center italic leading-relaxed">
-                  "{currentPrompt}"
+                  "{prompts[currentQuestionIndex]}"
                 </p>
-              </div>
-              <div className="mt-4 flex flex-wrap gap-2 justify-center">
-                {prompts.map((prompt, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentPrompt(prompt)}
-                    className={`px-3 py-1 rounded-lg text-sm font-semibold transition-all ${
-                      currentPrompt === prompt
-                        ? 'bg-purple-500 text-white shadow-lg'
-                        : 'bg-white text-gray-700 hover:bg-purple-100 border-2 border-purple-200'
-                    }`}
-                  >
-                    {prompt}
-                  </button>
-                ))}
               </div>
             </div>
 
@@ -156,24 +175,76 @@ const WhyITeach = () => {
               <div className="flex items-center gap-3 mb-4">
                 <BookOpen className="w-6 h-6 text-blue-600" />
                 <h3 className="text-xl font-bold text-gray-800">Your Reflection</h3>
-                {reflection.trim() && (
+                {responses[currentQuestionIndex].reflection.trim() && (
                   <CheckCircle className="w-5 h-5 text-green-500" />
                 )}
               </div>
-              
+
               <div className="bg-amber-50 rounded-lg p-4 border-2 border-amber-200 mb-4">
-                <p className="text-sm text-amber-800 mb-2">
-                  <strong>Write a short paragraph:</strong> Recall the moment, experience, person, or realization that made you choose teaching. Describe what happened, how you felt, and why it mattered.
-                </p>
-                <p className="text-xs text-amber-700 italic">
-                  Examples: "I had a teacher who believed in me when no one else did...", "I saw a student's face light up when they finally understood...", "I realized that education could change lives..."
-                </p>
+                {currentQuestionIndex === 0 && (
+                  <>
+                    <p className="text-sm text-amber-800 mb-2">
+                      <strong>Write a short paragraph:</strong> Think about the specific moment, event, or realization that sparked your desire to become a teacher. What was happening in your life at the time?
+                    </p>
+                    <p className="text-xs text-amber-700 italic">
+                      Example: "During my senior year, when I tutored my younger brother through a difficult subject and saw his confidence bloom..."
+                    </p>
+                  </>
+                )}
+                {currentQuestionIndex === 1 && (
+                  <>
+                    <p className="text-sm text-amber-800 mb-2">
+                      <strong>Write a short paragraph:</strong> Reflect on how your own experiences as a student shaped your philosophy of education. What lessons from your school days influence how you teach today?
+                    </p>
+                    <p className="text-xs text-amber-700 italic">
+                      Example: "My quiet nature made me notice how some teachers unintentionally overlooked introverted students, which taught me to create inclusive spaces..."
+                    </p>
+                  </>
+                )}
+                {currentQuestionIndex === 2 && (
+                  <>
+                    <p className="text-sm text-amber-800 mb-2">
+                      <strong>Write a short paragraph:</strong> Share a specific moment with a student that reminded you why you chose this profession. What made this interaction particularly meaningful?
+                    </p>
+                    <p className="text-xs text-amber-700 italic">
+                      Example: "When Sarah, who struggled with reading all year, voluntarily read aloud to the class and her voice shook with pride..."
+                    </p>
+                  </>
+                )}
+                {currentQuestionIndex === 3 && (
+                  <>
+                    <p className="text-sm text-amber-800 mb-2">
+                      <strong>Write a short paragraph:</strong> Identify the core values or beliefs that guide your teaching decisions. How do these principles manifest in your daily classroom practices?
+                    </p>
+                    <p className="text-xs text-amber-700 italic">
+                      Example: "My belief that every child deserves to feel seen drives me to learn each student's name within the first week and discover their unique strengths..."
+                    </p>
+                  </>
+                )}
+                {currentQuestionIndex === 4 && (
+                  <>
+                    <p className="text-sm text-amber-800 mb-2">
+                      <strong>Write a short paragraph:</strong> Envision the lasting impact you hope your teaching career will have. What change in the world would make you feel your work was meaningful?
+                    </p>
+                    <p className="text-xs text-amber-700 italic">
+                      Example: "I hope former students remember that they matter and carry forward the confidence to believe in their own potential..."
+                    </p>
+                  </>
+                )}
               </div>
 
               <textarea
-                value={reflection}
+                value={responses[currentQuestionIndex].reflection}
                 onChange={(e) => handleReflectionChange(e.target.value)}
-                placeholder="Write your reflection about why you teach... Think about the moment that made you choose teaching, what it meant to you, and how it connects to who you are as a teacher today..."
+                placeholder={currentQuestionIndex === 0
+                  ? "Describe the specific moment that sparked your desire to become a teacher... What was happening in your life at the time?"
+                  : currentQuestionIndex === 1
+                    ? "Reflect on how your own student experiences shaped your teaching philosophy... What lessons from your school days influence your approach today?"
+                    : currentQuestionIndex === 2
+                      ? "Share a meaningful student interaction that reminded you why you chose teaching... What made this moment particularly significant?"
+                      : currentQuestionIndex === 3
+                        ? "Identify the core values that guide your teaching decisions... How do these principles show up in your daily classroom practices?"
+                        : "Envision the lasting impact of your teaching career... What change would make you feel your work was truly meaningful?"}
                 rows={8}
                 className="w-full p-4 rounded-lg border-2 border-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none text-gray-800"
               />
@@ -207,35 +278,32 @@ const WhyITeach = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleEmotionSelect(tag.id)}
-                    className={`p-6 rounded-xl border-2 text-left transition-all ${
-                      selectedEmotion === tag.id
+                    className={`p-6 rounded-xl border-2 text-left transition-all ${responses[currentQuestionIndex].selectedEmotion === tag.id
                         ? `${tag.borderColor} bg-gradient-to-br ${tag.bgColor} shadow-lg`
                         : 'border-gray-300 bg-white hover:border-gray-400 hover:shadow-md'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <div className="text-4xl">{tag.emoji}</div>
                       <div className="flex-1">
-                        <h4 className={`font-bold text-lg mb-1 ${
-                          selectedEmotion === tag.id ? 'text-gray-800' : 'text-gray-700'
-                        }`}>
+                        <h4 className={`font-bold text-lg mb-1 ${responses[currentQuestionIndex].selectedEmotion === tag.id ? 'text-gray-800' : 'text-gray-700'
+                          }`}>
                           {tag.label}
                         </h4>
                       </div>
-                      {selectedEmotion === tag.id && (
+                      {responses[currentQuestionIndex].selectedEmotion === tag.id && (
                         <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
                       )}
                     </div>
-                    <p className={`text-sm leading-relaxed ${
-                      selectedEmotion === tag.id ? 'text-gray-800' : 'text-gray-600'
-                    }`}>
+                    <p className={`text-sm leading-relaxed ${responses[currentQuestionIndex].selectedEmotion === tag.id ? 'text-gray-800' : 'text-gray-600'
+                      }`}>
                       {tag.description}
                     </p>
                   </motion.button>
                 ))}
               </div>
 
-              {selectedEmotion && (
+              {responses[currentQuestionIndex].selectedEmotion && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -254,26 +322,25 @@ const WhyITeach = () => {
               )}
             </div>
 
-            {/* Complete Button */}
+            {/* Navigation and Complete Button */}
             <div className="text-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleComplete}
-                disabled={!reflection.trim() || !selectedEmotion}
-                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all flex items-center gap-3 mx-auto ${
-                  reflection.trim() && selectedEmotion
+                disabled={!responses[currentQuestionIndex].reflection.trim() || !responses[currentQuestionIndex].selectedEmotion}
+                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all flex items-center gap-3 mx-auto ${responses[currentQuestionIndex].reflection.trim() && responses[currentQuestionIndex].selectedEmotion
                     ? 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white hover:shadow-xl'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                }`}
+                  }`}
               >
                 <BookOpen className="w-5 h-5" />
-                Complete Reflection
+                {currentQuestionIndex < 4 ? 'Continue to Next Question' : 'Complete All Reflections'}
               </motion.button>
-              
-              {(!reflection.trim() || !selectedEmotion) && (
+
+              {(!responses[currentQuestionIndex].reflection.trim() || !responses[currentQuestionIndex].selectedEmotion) && (
                 <p className="text-sm text-gray-600 mt-3">
-                  Please write your reflection and choose an emotion tag to complete.
+                  Please write your reflection and choose an emotion tag to continue.
                 </p>
               )}
             </div>
@@ -304,44 +371,46 @@ const WhyITeach = () => {
               </p>
             </div>
 
-            {/* Reflection Display */}
+            {/* All Reflections Display */}
             <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 rounded-xl p-8 border-2 border-purple-200 mb-6">
               <div className="flex items-center gap-3 mb-6">
                 <Target className="w-8 h-8 text-purple-600" />
-                <h3 className="text-2xl font-bold text-gray-800">Your "Why I Teach" Reflection</h3>
+                <h3 className="text-2xl font-bold text-gray-800">Your "Why I Teach" Reflections</h3>
               </div>
 
-              <div className="bg-white rounded-lg p-6 border-2 border-purple-200 mb-6">
-                <div className="mb-4">
-                  <p className="text-sm font-semibold text-gray-600 mb-2">Prompt:</p>
-                  <p className="text-lg text-gray-800 italic">"{currentPrompt}"</p>
-                </div>
-                <div className="border-t border-gray-200 pt-4">
-                  <p className="text-sm font-semibold text-gray-600 mb-2">Your Reflection:</p>
-                  <p className="text-gray-800 leading-relaxed whitespace-pre-wrap">
-                    {reflection}
-                  </p>
-                </div>
-              </div>
-
-              {selectedEmotionData && (
-                <div className={`bg-gradient-to-br ${selectedEmotionData.bgColor} rounded-lg p-6 border-2 ${selectedEmotionData.borderColor}`}>
-                  <div className="flex items-start gap-4">
-                    <div className="text-4xl">{selectedEmotionData.emoji}</div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-bold text-gray-800 mb-2">Emotion Tag: {selectedEmotionData.label}</h4>
-                      <p className="text-gray-800 leading-relaxed mb-3">
-                        {selectedEmotionData.description}
-                      </p>
-                      <div className="bg-white/60 rounded-lg p-4 border border-gray-200">
-                        <p className="text-gray-800 leading-relaxed">
-                          {selectedEmotionData.insight}
-                        </p>
-                      </div>
-                    </div>
+              {responses.map((response, index) => (
+                <div key={index} className="bg-white rounded-lg p-6 border-2 border-purple-200 mb-6">
+                  <div className="mb-4">
+                    <p className="text-sm font-semibold text-gray-600 mb-2">Question {index + 1}:</p>
+                    <p className="text-lg text-gray-800 italic">"{prompts[index]}"</p>
                   </div>
+                  <div className="border-t border-gray-200 pt-4">
+                    <p className="text-sm font-semibold text-gray-600 mb-2">Your Reflection:</p>
+                    <p className="text-gray-800 leading-relaxed whitespace-pre-wrap">
+                      {response.reflection}
+                    </p>
+                  </div>
+
+                  {response.selectedEmotion && (
+                    (() => {
+                      const emotionData = emotionTags.find(t => t.id === response.selectedEmotion);
+                      return (
+                        <div className={`bg-gradient-to-br ${emotionData.bgColor} rounded-lg p-4 border-2 ${emotionData.borderColor} mt-4`}>
+                          <div className="flex items-start gap-3">
+                            <div className="text-2xl">{emotionData.emoji}</div>
+                            <div>
+                              <h4 className="font-bold text-gray-800 mb-2">Emotion Tag: {emotionData.label}</h4>
+                              <p className="text-gray-800 leading-relaxed">
+                                {emotionData.description}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })()
+                  )}
                 </div>
-              )}
+              ))}
             </div>
 
             {/* Benefits */}
@@ -398,4 +467,3 @@ const WhyITeach = () => {
 };
 
 export default WhyITeach;
-

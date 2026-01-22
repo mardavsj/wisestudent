@@ -3,190 +3,97 @@ import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import TeacherGameShell from "../../TeacherGameShell";
 import { getTeacherEducationGameById } from "../data/gameData";
-import { Heart, Activity, Users, Sparkles, BarChart3, TrendingDown, AlertCircle, CheckCircle, BookOpen, Target } from "lucide-react";
+import { Heart, Activity, Users, Sparkles, BarChart3, TrendingDown, AlertCircle, CheckCircle, BookOpen, Target, Circle } from "lucide-react";
 
 const SelfCareInventory = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-97";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState({}); // Will store selected option values (1-4)
+  const [selectedOption, setSelectedOption] = useState(null); // Track current selection
   const [showResults, setShowResults] = useState(false);
   const [score, setScore] = useState(0);
   const [showGameOver, setShowGameOver] = useState(false);
 
-  // 20 questions across 4 categories (5 questions each)
+  // 5 quiz-style questions with one correct answer each
   const questions = [
-    // Physical Care (5 questions)
     {
       id: 1,
       category: 'physical',
       categoryLabel: 'Physical Care',
-      question: 'I get 7-9 hours of sleep most nights',
+      question: 'Which of these is most important for teacher wellness?',
       icon: Activity,
-      emoji: '😴'
+      emoji: '😴',
+      options: [
+        { value: 1, label: 'Getting 7-9 hours of quality sleep regularly', isCorrect: true, explanation: 'Adequate sleep is foundational for all other wellness areas' },
+        { value: 2, label: 'Drinking coffee to stay alert during long meetings', isCorrect: false, explanation: 'While caffeine can help temporarily, it doesnt replace quality sleep' },
+        { value: 3, label: 'Working through lunch to catch up on grading', isCorrect: false, explanation: 'Skipping meals creates stress and reduces energy levels' },
+        { value: 4, label: 'Taking work home to finish lesson plans at night', isCorrect: false, explanation: 'Bringing work home often leads to burnout and poor work-life balance' }
+      ]
     },
     {
       id: 2,
-      category: 'physical',
-      categoryLabel: 'Physical Care',
-      question: 'I eat regular, balanced meals throughout the day',
-      icon: Activity,
-      emoji: '🍎'
+      category: 'emotional',
+      categoryLabel: 'Emotional Care',
+      question: 'What is the most effective way to manage teaching stress?',
+      icon: Heart,
+      emoji: '❤️',
+      options: [
+        { value: 1, label: 'Suppressing emotions to appear professional', isCorrect: false, explanation: 'Suppressing emotions often leads to bigger breakdowns later' },
+        { value: 2, label: 'Taking 5 minutes daily for mindful breathing or reflection', isCorrect: true, explanation: 'Regular mindfulness builds emotional resilience and stress management skills' },
+        { value: 3, label: 'Complaining to colleagues about difficult students', isCorrect: false, explanation: 'While venting can help, it often increases negative feelings without solving problems' },
+        { value: 4, label: 'Ignoring stress and pushing through exhaustion', isCorrect: false, explanation: 'This approach leads to burnout and decreased effectiveness' }
+      ]
     },
     {
       id: 3,
-      category: 'physical',
-      categoryLabel: 'Physical Care',
-      question: 'I engage in physical activity or exercise at least 3 times per week',
-      icon: Activity,
-      emoji: '🏃'
+      category: 'social',
+      categoryLabel: 'Social Care',
+      question: 'How can teachers best maintain healthy professional relationships?',
+      icon: Users,
+      emoji: '👥',
+      options: [
+        { value: 1, label: 'Avoiding all workplace interactions to prevent drama', isCorrect: false, explanation: 'Isolation increases stress and reduces job satisfaction' },
+        { value: 2, label: 'Befriending everyone regardless of professional appropriateness', isCorrect: false, explanation: 'Blurred boundaries can create complications and stress' },
+        { value: 3, label: 'Keeping work completely separate from personal life', isCorrect: false, explanation: 'Some integration is healthy; complete separation isnt realistic or beneficial' },
+        { value: 4, label: 'Setting clear boundaries while staying connected with supportive colleagues', isCorrect: true, explanation: 'Boundaries prevent burnout while connections provide essential support' },
+      ]
     },
     {
       id: 4,
-      category: 'physical',
-      categoryLabel: 'Physical Care',
-      question: 'I take breaks during the day to rest and recharge',
-      icon: Activity,
-      emoji: '🧘'
+      category: 'spiritual',
+      categoryLabel: 'Spiritual Care',
+      question: 'What helps teachers maintain their sense of purpose in challenging times?',
+      icon: Sparkles,
+      emoji: '✨',
+      options: [
+        { value: 1, label: 'Focusing only on test scores and measurable outcomes', isCorrect: false, explanation: 'Numbers alone dont sustain long-term motivation or fulfillment' },
+        { value: 2, label: 'Comparing yourself to other teachers who seem more successful', isCorrect: false, explanation: 'Comparison often decreases confidence and satisfaction' },
+        { value: 3, label: 'Remembering why you became a teacher and connecting with your core values', isCorrect: true, explanation: 'Reconnecting with your mission provides motivation during difficult periods' },
+        { value: 4, label: 'Accepting that teaching is just a job, not a calling', isCorrect: false, explanation: 'This mindset leads to disengagement and reduced effectiveness' }
+      ]
     },
     {
       id: 5,
       category: 'physical',
       categoryLabel: 'Physical Care',
-      question: 'I drink enough water and stay hydrated',
+      question: 'What is the most sustainable approach to teacher physical wellness?',
       icon: Activity,
-      emoji: '💧'
-    },
-    // Emotional Care (5 questions)
-    {
-      id: 6,
-      category: 'emotional',
-      categoryLabel: 'Emotional Care',
-      question: 'I regularly check in with my emotions and acknowledge how I feel',
-      icon: Heart,
-      emoji: '❤️'
-    },
-    {
-      id: 7,
-      category: 'emotional',
-      categoryLabel: 'Emotional Care',
-      question: 'I practice stress management techniques (breathing, meditation, journaling)',
-      icon: Heart,
-      emoji: '🧘‍♀️'
-    },
-    {
-      id: 8,
-      category: 'emotional',
-      categoryLabel: 'Emotional Care',
-      question: 'I allow myself to feel and express emotions without judgment',
-      icon: Heart,
-      emoji: '😌'
-    },
-    {
-      id: 9,
-      category: 'emotional',
-      categoryLabel: 'Emotional Care',
-      question: 'I engage in activities that bring me joy and pleasure',
-      icon: Heart,
-      emoji: '😊'
-    },
-    {
-      id: 10,
-      category: 'emotional',
-      categoryLabel: 'Emotional Care',
-      question: 'I set boundaries to protect my emotional well-being',
-      icon: Heart,
-      emoji: '🛡️'
-    },
-    // Social Care (5 questions)
-    {
-      id: 11,
-      category: 'social',
-      categoryLabel: 'Social Care',
-      question: 'I maintain meaningful connections with friends and family',
-      icon: Users,
-      emoji: '👥'
-    },
-    {
-      id: 12,
-      category: 'social',
-      categoryLabel: 'Social Care',
-      question: 'I feel comfortable asking for help when I need it',
-      icon: Users,
-      emoji: '🤝'
-    },
-    {
-      id: 13,
-      category: 'social',
-      categoryLabel: 'Social Care',
-      question: 'I spend quality time with loved ones regularly',
-      icon: Users,
-      emoji: '💕'
-    },
-    {
-      id: 14,
-      category: 'social',
-      categoryLabel: 'Social Care',
-      question: 'I have a support network of people I can rely on',
-      icon: Users,
-      emoji: '🌟'
-    },
-    {
-      id: 15,
-      category: 'social',
-      categoryLabel: 'Social Care',
-      question: 'I participate in social activities or groups that I enjoy',
-      icon: Users,
-      emoji: '🎉'
-    },
-    // Spiritual Care (5 questions)
-    {
-      id: 16,
-      category: 'spiritual',
-      categoryLabel: 'Spiritual Care',
-      question: 'I engage in practices that give my life meaning and purpose',
-      icon: Sparkles,
-      emoji: '✨'
-    },
-    {
-      id: 17,
-      category: 'spiritual',
-      categoryLabel: 'Spiritual Care',
-      question: 'I take time for reflection, meditation, or prayer',
-      icon: Sparkles,
-      emoji: '🧘'
-    },
-    {
-      id: 18,
-      category: 'spiritual',
-      categoryLabel: 'Spiritual Care',
-      question: 'I feel connected to something larger than myself',
-      icon: Sparkles,
-      emoji: '🌌'
-    },
-    {
-      id: 19,
-      category: 'spiritual',
-      categoryLabel: 'Spiritual Care',
-      question: 'I practice gratitude regularly',
-      icon: Sparkles,
-      emoji: '🙏'
-    },
-    {
-      id: 20,
-      category: 'spiritual',
-      categoryLabel: 'Spiritual Care',
-      question: 'I engage in creative or artistic activities that inspire me',
-      icon: Sparkles,
-      emoji: '🎨'
+      emoji: '🍎',
+      options: [
+        { value: 1, label: 'Intense workout sessions when you have free time', isCorrect: false, explanation: 'Inconsistent intense exercise is hard to maintain and can lead to injury' },
+        { value: 2, label: 'Building small, consistent healthy habits into your routine', isCorrect: true, explanation: 'Small sustainable changes create lasting wellness improvements' },
+        { value: 3, label: 'Eating whatever is convenient during busy school days', isCorrect: false, explanation: 'Poor nutrition affects energy, mood, and cognitive function' },
+        { value: 4, label: 'Saving all self-care for weekends and breaks', isCorrect: false, explanation: 'Waiting creates deprivation and makes sustainable habits impossible' }
+      ]
     }
   ];
 
@@ -229,89 +136,138 @@ const SelfCareInventory = () => {
     }
   };
 
-  const handleAnswer = (answer) => {
+  const [questionScores, setQuestionScores] = useState(Array(questions.length).fill(false)); // Track correct answers per question
+
+  // Add a state to track if the question is answered
+  const [questionAnswered, setQuestionAnswered] = useState(false);
+
+  const handleSelectOption = (optionValue) => {
+    // Only allow selection if question hasn't been answered yet
+    if (!questionAnswered) {
+      setSelectedOption(optionValue);
+      setQuestionAnswered(true);
+    }
+  };
+
+  const handleNextQuestion = () => {
+    if (selectedOption === null || !questionAnswered) return; // Require selection and answered status
+
+    // Check if selected option is correct
+    const currentQuestionObj = questions[currentQuestion];
+    const selectedOptionObj = currentQuestionObj.options.find(opt => opt.value === selectedOption);
+    const isCorrect = selectedOptionObj?.isCorrect || false;
+
+    // Update question scores array
+    const newQuestionScores = [...questionScores];
+    newQuestionScores[currentQuestion] = isCorrect;
+    setQuestionScores(newQuestionScores);
+
+    // Store the answer
     const newAnswers = {
       ...answers,
-      [questions[currentQuestion].id]: answer
+      [questions[currentQuestion].id]: {
+        selected: selectedOption,
+        correct: isCorrect,
+        explanation: selectedOptionObj?.explanation || ''
+      }
     };
     setAnswers(newAnswers);
-    
+
     // Move to next question or show results
     if (currentQuestion < questions.length - 1) {
       setTimeout(() => {
         setCurrentQuestion(prev => prev + 1);
+        setQuestionAnswered(false); // Reset for next question
+        setSelectedOption(null); // Reset selection for next question
       }, 300);
     } else {
       // Calculate results
       setTimeout(() => {
-        calculateResults(newAnswers);
+        calculateResults(newAnswers, newQuestionScores);
         setShowResults(true);
       }, 300);
     }
   };
 
-  const calculateResults = (allAnswers) => {
-    const categoryScores = {
-      physical: 0,
-      emotional: 0,
-      social: 0,
-      spiritual: 0
+  const calculateResults = (allAnswers, questionScoresArray) => {
+    // Count correct answers
+    const correctCount = questionScoresArray.filter(isCorrect => isCorrect).length;
+
+    // Set score as number of correct answers
+    setScore(correctCount);
+
+    // Calculate category-wise results
+    const categoryResults = {
+      physical: { correct: 0, total: 0 },
+      emotional: { correct: 0, total: 0 },
+      social: { correct: 0, total: 0 },
+      spiritual: { correct: 0, total: 0 }
     };
 
-    questions.forEach(q => {
-      if (allAnswers[q.id] === true) {
-        categoryScores[q.category] += 1;
+    questions.forEach((q, index) => {
+      categoryResults[q.category].total += 1;
+      if (questionScoresArray[index]) {
+        categoryResults[q.category].correct += 1;
       }
     });
 
-    // Calculate percentages (out of 5 questions per category)
-    const categoryPercentages = {
-      physical: (categoryScores.physical / 5) * 100,
-      emotional: (categoryScores.emotional / 5) * 100,
-      social: (categoryScores.social / 5) * 100,
-      spiritual: (categoryScores.spiritual / 5) * 100
-    };
+    // Convert to percentages
+    const categoryPercentages = {};
+    Object.keys(categoryResults).forEach(category => {
+      const { correct, total } = categoryResults[category];
+      categoryPercentages[category] = total > 0 ? (correct / total) * 100 : 0;
+    });
 
     // Find weakest category
     const weakestCategory = Object.keys(categoryPercentages).reduce((a, b) =>
       categoryPercentages[a] < categoryPercentages[b] ? a : b
     );
 
-    // Calculate total score
-    const totalScore = Object.values(categoryScores).reduce((a, b) => a + b, 0);
-    setScore(totalScore);
-
-    return { categoryScores, categoryPercentages, weakestCategory };
+    return {
+      correctCount,
+      categoryResults,
+      categoryPercentages,
+      weakestCategory,
+      questionScores: questionScoresArray
+    };
   };
 
   const getResults = () => {
     if (!showResults) return null;
-    
-    const categoryScores = {
-      physical: 0,
-      emotional: 0,
-      social: 0,
-      spiritual: 0
+
+    const correctCount = questionScores.filter(isCorrect => isCorrect).length;
+
+    const categoryResults = {
+      physical: { correct: 0, total: 0 },
+      emotional: { correct: 0, total: 0 },
+      social: { correct: 0, total: 0 },
+      spiritual: { correct: 0, total: 0 }
     };
 
-    questions.forEach(q => {
-      if (answers[q.id] === true) {
-        categoryScores[q.category] += 1;
+    questions.forEach((q, index) => {
+      categoryResults[q.category].total += 1;
+      if (questionScores[index]) {
+        categoryResults[q.category].correct += 1;
       }
     });
 
-    const categoryPercentages = {
-      physical: (categoryScores.physical / 5) * 100,
-      emotional: (categoryScores.emotional / 5) * 100,
-      social: (categoryScores.social / 5) * 100,
-      spiritual: (categoryScores.spiritual / 5) * 100
-    };
+    const categoryPercentages = {};
+    Object.keys(categoryResults).forEach(category => {
+      const { correct, total } = categoryResults[category];
+      categoryPercentages[category] = total > 0 ? (correct / total) * 100 : 0;
+    });
 
     const weakestCategory = Object.keys(categoryPercentages).reduce((a, b) =>
       categoryPercentages[a] < categoryPercentages[b] ? a : b
     );
 
-    return { categoryScores, categoryPercentages, weakestCategory };
+    return {
+      correctCount,
+      categoryResults,
+      categoryPercentages,
+      weakestCategory,
+      questionScores
+    };
   };
 
   const results = getResults();
@@ -319,10 +275,10 @@ const SelfCareInventory = () => {
   const CurrentIcon = currentQuestionData.icon;
 
   if (showGameOver) {
-    const { categoryScores, categoryPercentages, weakestCategory } = results || {};
+    const { correctCount, categoryResults, categoryPercentages, weakestCategory, questionScores } = results || {};
     const weakestCategoryInfo = weakestCategory ? categories[weakestCategory] : null;
-    const totalScore = Object.values(categoryScores || {}).reduce((a, b) => a + b, 0);
-    
+    const totalScore = correctCount;
+
     return (
       <TeacherGameShell
         title={gameData?.title || "Self-Care Inventory"}
@@ -333,7 +289,7 @@ const SelfCareInventory = () => {
         gameType="teacher-education"
         totalLevels={totalLevels}
         totalCoins={totalCoins}
-        currentQuestion={1}
+        currentQuestion={0}
       >
         <div className="w-full max-w-5xl mx-auto px-4">
           <motion.div
@@ -351,7 +307,7 @@ const SelfCareInventory = () => {
                 📊✨
               </motion.div>
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Inventory Complete!
+                Assessment Complete!
               </h2>
               <p className="text-xl text-gray-600">
                 Your self-care assessment results
@@ -362,21 +318,21 @@ const SelfCareInventory = () => {
             <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-6 border-2 border-indigo-200 mb-6">
               <div className="text-center">
                 <div className="text-4xl font-bold text-indigo-600 mb-2">
-                  {totalScore} / 20
+                  {correctCount} / {questions.length}
                 </div>
                 <p className="text-lg text-gray-700 mb-2">
-                  Overall Self-Care Score
+                  Questions Correct
                 </p>
                 <div className="w-full bg-gray-200 rounded-full h-4 max-w-md mx-auto overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: `${(totalScore / 20) * 100}%` }}
+                    animate={{ width: `${(correctCount / questions.length) * 100}%` }}
                     transition={{ duration: 0.5 }}
                     className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
                   />
                 </div>
                 <p className="text-sm text-gray-600 mt-2">
-                  {Math.round((totalScore / 20) * 100)}% Complete
+                  {Math.round((correctCount / questions.length) * 100)}% Success Rate
                 </p>
               </div>
             </div>
@@ -385,7 +341,7 @@ const SelfCareInventory = () => {
             {weakestCategoryInfo && categoryPercentages && (
               <div className={`bg-gradient-to-br ${weakestCategoryInfo.bgColor} rounded-xl p-6 border-2 ${weakestCategoryInfo.borderColor} mb-6`}>
                 <div className="flex items-start gap-4">
-                  <AlertCircle className={`w-8 h-8 text-${weakestCategoryInfo.color.split('-')[1]}-600 flex-shrink-0 mt-1`} />
+                  <AlertCircle className="w-8 h-8 text-red-500 flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-gray-800 mb-2 flex items-center gap-2">
                       <Target className="w-6 h-6" />
@@ -395,7 +351,12 @@ const SelfCareInventory = () => {
                       <span className="text-4xl">{weakestCategoryInfo.emoji}</span>
                       <div>
                         <h4 className="text-lg font-bold text-gray-800">{weakestCategoryInfo.label}</h4>
-                        <p className="text-sm text-gray-600">{Math.round(categoryPercentages[weakestCategory])}%</p>
+                        <p className="text-sm text-gray-600">
+                          Correct: {categoryResults?.[weakestCategory]?.correct || 0}/{categoryResults?.[weakestCategory]?.total || 1}
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          {Math.round(categoryPercentages[weakestCategory])}% success rate
+                        </p>
                       </div>
                     </div>
                     <p className="text-gray-700 leading-relaxed mb-3">
@@ -415,25 +376,24 @@ const SelfCareInventory = () => {
                 <BarChart3 className="w-6 h-6 text-indigo-600" />
                 Self-Care Category Scores
               </h3>
-              
+
               <div className="space-y-6">
                 {Object.entries(categories).map(([key, category]) => {
                   const CategoryIcon = category.icon;
-                  const score = categoryScores?.[key] || 0;
+                  const categoryResult = categoryResults?.[key] || { correct: 0, total: 1 };
                   const percentage = categoryPercentages?.[key] || 0;
                   const isWeakest = weakestCategory === key;
-                  
+
                   return (
                     <motion.div
                       key={key}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 }}
-                      className={`p-4 rounded-xl border-2 ${
-                        isWeakest
+                      className={`p-4 rounded-xl border-2 ${isWeakest
                           ? `${category.bgColor} ${category.borderColor} border-2 shadow-lg`
                           : 'bg-gray-50 border-gray-200'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-3">
@@ -443,17 +403,19 @@ const SelfCareInventory = () => {
                               {category.label}
                             </h4>
                             <p className="text-sm text-gray-600">
-                              {score} / 5 questions
+                              Correct: {categoryResult.correct}/{categoryResult.total}
+                            </p>
+                            <p className="text-xs text-gray-500">
+                              {Math.round((categoryResult.correct / categoryResult.total) * 100)}% success rate
                             </p>
                           </div>
                         </div>
-                        <div className={`text-2xl font-bold ${
-                          isWeakest ? 'text-gray-800' : 'text-gray-600'
-                        }`}>
+                        <div className={`text-2xl font-bold ${isWeakest ? 'text-gray-800' : 'text-gray-600'
+                          }`}>
                           {Math.round(percentage)}%
                         </div>
                       </div>
-                      
+
                       {/* Progress Bar */}
                       <div className="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
                         <motion.div
@@ -523,7 +485,7 @@ const SelfCareInventory = () => {
   }
 
   if (showResults) {
-    const { categoryScores, categoryPercentages, weakestCategory } = results || {};
+    const { correctCount, categoryResults, categoryPercentages, weakestCategory, questionScores } = results || {};
     const weakestCategoryInfo = weakestCategory ? categories[weakestCategory] : null;
 
     return (
@@ -544,11 +506,34 @@ const SelfCareInventory = () => {
             <div className="text-center mb-8">
               <div className="text-6xl mb-4">📊</div>
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Your Self-Care Results
+                Quiz Results
               </h2>
               <p className="text-xl text-gray-600">
-                See which care areas need attention
+                {correctCount} out of {questions.length} questions correct
               </p>
+            </div>
+
+            {/* Overall Score */}
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-6 border-2 border-indigo-200 mb-6">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-indigo-600 mb-2">
+                  {correctCount} / {questions.length}
+                </div>
+                <p className="text-lg text-gray-700 mb-2">
+                  Questions Correct
+                </p>
+                <div className="w-full bg-gray-200 rounded-full h-4 max-w-md mx-auto overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: `${(correctCount / questions.length) * 100}%` }}
+                    transition={{ duration: 0.5 }}
+                    className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+                  />
+                </div>
+                <p className="text-sm text-gray-600 mt-2">
+                  {Math.round((correctCount / questions.length) * 100)}% Success Rate
+                </p>
+              </div>
             </div>
 
             {/* Weakest Category Alert */}
@@ -565,7 +550,8 @@ const SelfCareInventory = () => {
                       <span className="text-4xl">{weakestCategoryInfo.emoji}</span>
                       <div>
                         <h4 className="text-lg font-bold text-gray-800">{weakestCategoryInfo.label}</h4>
-                        <p className="text-sm text-gray-600">{Math.round(categoryPercentages[weakestCategory])}% Score</p>
+                        <p className="text-sm text-gray-600">Correct: {categoryResults?.[weakestCategory]?.correct || 0}/{categoryResults?.[weakestCategory]?.total || 1}</p>
+                        <p className="text-xs text-gray-500">{Math.round(categoryPercentages[weakestCategory])}% success rate</p>
                       </div>
                     </div>
                     <p className="text-gray-700 leading-relaxed">
@@ -582,21 +568,20 @@ const SelfCareInventory = () => {
                 <BarChart3 className="w-6 h-6 text-indigo-600" />
                 Self-Care Categories
               </h3>
-              
+
               <div className="space-y-6">
                 {Object.entries(categories).map(([key, category]) => {
-                  const score = categoryScores?.[key] || 0;
+                  const categoryResult = categoryResults?.[key] || { correct: 0, total: 1 };
                   const percentage = categoryPercentages?.[key] || 0;
                   const isWeakest = weakestCategory === key;
-                  
+
                   return (
                     <div
                       key={key}
-                      className={`p-4 rounded-xl border-2 ${
-                        isWeakest
+                      className={`p-4 rounded-xl border-2 ${isWeakest
                           ? `${category.bgColor} ${category.borderColor} border-2 shadow-lg`
                           : 'bg-gray-50 border-gray-200'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-3">
@@ -606,17 +591,19 @@ const SelfCareInventory = () => {
                               {category.label}
                             </h4>
                             <p className="text-sm text-gray-600">
-                              {score} / 5
+                              Correct: {categoryResult.correct}/{categoryResult.total}
+                            </p>
+                            <p className="text-xs text-gray-500">
+                              {Math.round((categoryResult.correct / categoryResult.total) * 100)}% success rate
                             </p>
                           </div>
                         </div>
-                        <div className={`text-2xl font-bold ${
-                          isWeakest ? 'text-gray-800' : 'text-gray-600'
-                        }`}>
+                        <div className={`text-2xl font-bold ${isWeakest ? 'text-gray-800' : 'text-gray-600'
+                          }`}>
                           {Math.round(percentage)}%
                         </div>
                       </div>
-                      
+
                       {/* Progress Bar */}
                       <div className="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
                         <motion.div
@@ -688,12 +675,11 @@ const SelfCareInventory = () => {
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
               <CurrentIcon className="w-8 h-8 text-indigo-600" />
-              <div className={`px-4 py-2 rounded-lg border-2 ${
-                currentQuestionData.category === 'physical' ? 'bg-green-50 border-green-200' :
-                currentQuestionData.category === 'emotional' ? 'bg-pink-50 border-pink-200' :
-                currentQuestionData.category === 'social' ? 'bg-blue-50 border-blue-200' :
-                'bg-purple-50 border-purple-200'
-              }`}>
+              <div className={`px-4 py-2 rounded-lg border-2 ${currentQuestionData.category === 'physical' ? 'bg-green-50 border-green-200' :
+                  currentQuestionData.category === 'emotional' ? 'bg-pink-50 border-pink-200' :
+                    currentQuestionData.category === 'social' ? 'bg-blue-50 border-blue-200' :
+                      'bg-purple-50 border-purple-200'
+                }`}>
                 <p className="text-sm font-semibold text-gray-700">
                   {currentQuestionData.categoryLabel}
                 </p>
@@ -707,27 +693,88 @@ const SelfCareInventory = () => {
             </div>
           </div>
 
-          {/* Answer Buttons */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* Rating Options */}
+          <div className="space-y-4 mb-8">
+            <p className="text-center text-gray-600 font-medium mb-6">
+              Choose the best answer for teacher wellness:
+            </p>
+
+            <div className="grid grid-cols-1 gap-3">
+              {currentQuestionData.options.map((option) => (
+                <motion.button
+                  key={option.value}
+                  whileHover={!questionAnswered ? { scale: 1.01 } : {}}
+                  whileTap={!questionAnswered ? { scale: 0.99 } : {}}
+                  onClick={() => !questionAnswered && handleSelectOption(option.value)}
+                  className={`p-4 rounded-lg border-2 text-left transition-all ${selectedOption === option.value
+                      ? option.isCorrect
+                        ? 'border-green-500 bg-green-50 shadow-md'
+                        : 'border-red-500 bg-red-50 shadow-md'
+                      : questionAnswered
+                        ? 'border-gray-200 bg-gray-50 opacity-70 cursor-not-allowed'  // Disabled state
+                        : 'border-gray-200 bg-white hover:border-indigo-300'
+                    }`}
+                  disabled={questionAnswered}  // Disable button after selection
+                >
+                  <div className="flex items-start gap-3">
+                    <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5 ${selectedOption === option.value
+                        ? option.isCorrect
+                          ? 'bg-green-500 text-white'
+                          : 'bg-red-500 text-white'
+                        : 'bg-gray-100 text-gray-600'
+                      }`}>
+                      {String.fromCharCode(65 + option.value - 1)} {/* A, B, C, D */}
+                    </div>
+                    <div className="flex-1">
+                      <p className={`font-medium ${selectedOption === option.value
+                          ? option.isCorrect ? 'text-green-700' : 'text-red-700'
+                          : 'text-gray-800'
+                        }`}>
+                        {option.label}
+                      </p>
+                      {selectedOption === option.value && (
+                        <p className={`text-sm mt-2 italic ${option.isCorrect ? 'text-green-600' : 'text-red-600'
+                          }`}>
+                          {option.explanation}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </motion.button>
+              ))}
+            </div>
+          </div>
+
+          {/* Action Button */}
+          <div className="text-center">
             <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => handleAnswer(true)}
-              className="p-6 rounded-xl border-2 border-green-300 bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-all"
+              whileHover={{ scale: (selectedOption !== null && questionAnswered) ? 1.05 : 1 }}
+              whileTap={{ scale: (selectedOption !== null && questionAnswered) ? 0.95 : 1 }}
+              onClick={handleNextQuestion}
+              disabled={selectedOption === null || !questionAnswered}
+              className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all flex items-center gap-3 mx-auto ${(selectedOption !== null && questionAnswered)
+                  ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-xl'
+                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
             >
-              <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-3" />
-              <p className="font-semibold text-gray-800 text-lg">Yes</p>
+              <Activity className="w-6 h-6" />
+              {currentQuestion < questions.length - 1
+                ? questionAnswered
+                  ? answers[questions[currentQuestion].id]?.correct
+                    ? '✓ Correct! Continue'
+                    : 'Continue to Next'
+                  : 'Select an answer'
+                : questionAnswered
+                  ? 'See Final Results'
+                  : 'Select an answer'
+              }
             </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => handleAnswer(false)}
-              className="p-6 rounded-xl border-2 border-gray-300 bg-gradient-to-br from-gray-50 to-slate-50 hover:shadow-lg transition-all"
-            >
-              <Circle className="w-8 h-8 text-gray-600 mx-auto mb-3" />
-              <p className="font-semibold text-gray-800 text-lg">No</p>
-            </motion.button>
+
+            {selectedOption === null && (
+              <p className="text-sm text-gray-500 mt-3">
+                Please select an option above to continue
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -736,4 +783,3 @@ const SelfCareInventory = () => {
 };
 
 export default SelfCareInventory;
-

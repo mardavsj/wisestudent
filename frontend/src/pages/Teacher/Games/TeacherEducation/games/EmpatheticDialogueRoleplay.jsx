@@ -7,15 +7,15 @@ import { Heart, MessageCircle, Users, CheckCircle, AlertCircle, TrendingUp, Book
 
 const EmpatheticDialogueRoleplay = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-68";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedResponse, setSelectedResponse] = useState({});
   const [showReaction, setShowReaction] = useState(false);
@@ -54,6 +54,29 @@ const EmpatheticDialogueRoleplay = () => {
             overall: "This response prioritizes defending yourself over understanding the situation. It lacks empathy and doesn't invite collaboration."
           }
         },
+
+        {
+          id: 'passive',
+          label: 'Passive Response',
+          description: "I'm so sorry. I'll take on more responsibility. You're right, I haven't been helping enough.",
+          statement: "I'm so sorry. You're absolutely right—I haven't been helping enough. I'll take on more responsibility right away. I'll handle most of it from now on.",
+          reaction: {
+            title: "Passive Response",
+            outcome: "Your colleague seems satisfied initially, but you feel resentful and overburdened. The workload becomes unbalanced, you burn out, and the underlying issues aren't addressed. The relationship feels strained by unspoken resentment.",
+            emoji: "😔",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400",
+            tone: 50,
+            clarity: 60,
+            empathy: 70
+          },
+          feedback: {
+            tone: "The tone is warm and empathetic, which is good, but it lacks firmness and boundary-setting.",
+            clarity: "The message is clear but problematic: it accepts full blame without understanding the situation, which can create unfair dynamics.",
+            overall: "This response shows empathy but lacks boundaries. While it may resolve immediate conflict, it doesn't address root causes and can lead to resentment and burnout."
+          }
+        },
         {
           id: 'empathetic-firm',
           label: 'Empathetic & Firm Response',
@@ -63,9 +86,9 @@ const EmpatheticDialogueRoleplay = () => {
             title: "Empathetic & Firm Response",
             outcome: "Your colleague's energy softens. They respond: 'Thank you for hearing me out. I appreciate that you want to work together on this.' You have a productive conversation, create a fair plan, and rebuild trust. The collaboration improves, and both of you feel supported.",
             emoji: "✨",
-            color: "from-green-400 to-emerald-500",
-            bgColor: "from-green-50 to-emerald-50",
-            borderColor: "border-green-300",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400",
             tone: 95,
             clarity: 95,
             empathy: 100
@@ -76,28 +99,6 @@ const EmpatheticDialogueRoleplay = () => {
             overall: "Perfect balance of empathy and firmness! You validated their feelings while maintaining your position and inviting collaboration. This approach builds trust and resolves conflicts."
           }
         },
-        {
-          id: 'passive',
-          label: 'Passive Response',
-          description: "I'm so sorry. I'll take on more responsibility. You're right, I haven't been helping enough.",
-          statement: "I'm so sorry. You're absolutely right—I haven't been helping enough. I'll take on more responsibility right away. I'll handle most of it from now on.",
-          reaction: {
-            title: "Passive Response",
-            outcome: "Your colleague seems satisfied initially, but you feel resentful and overburdened. The workload becomes unbalanced, you burn out, and the underlying issues aren't addressed. The relationship feels strained by unspoken resentment.",
-            emoji: "😔",
-            color: "from-gray-500 to-slate-600",
-            bgColor: "from-gray-50 to-slate-50",
-            borderColor: "border-gray-400",
-            tone: 50,
-            clarity: 60,
-            empathy: 70
-          },
-          feedback: {
-            tone: "The tone is warm and empathetic, which is good, but it lacks firmness and boundary-setting.",
-            clarity: "The message is clear but problematic: it accepts full blame without understanding the situation, which can create unfair dynamics.",
-            overall: "This response shows empathy but lacks boundaries. While it may resolve immediate conflict, it doesn't address root causes and can lead to resentment and burnout."
-          }
-        }
       ],
       correctResponse: 'empathetic-firm'
     },
@@ -139,9 +140,9 @@ const EmpatheticDialogueRoleplay = () => {
             title: "Empathetic & Firm Response",
             outcome: "The student's energy calms. They respond: 'Okay, thank you. I'd like to understand what I missed.' You have a productive conversation, review the rubric together, and the student leaves feeling heard and supported. They understand the grading criteria better and are motivated to improve.",
             emoji: "🤝",
-            color: "from-green-400 to-emerald-500",
-            bgColor: "from-green-50 to-emerald-50",
-            borderColor: "border-green-300",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400",
             tone: 95,
             clarity: 100,
             empathy: 100
@@ -161,9 +162,9 @@ const EmpatheticDialogueRoleplay = () => {
             title: "Passive Response",
             outcome: "The student seems happy initially, but other students learn about the grade change and question fairness. You feel uncertain about your grading decisions, and the situation creates inconsistency. Your authority is undermined, and students learn that complaints lead to grade changes rather than understanding criteria.",
             emoji: "😓",
-            color: "from-gray-500 to-slate-600",
-            bgColor: "from-gray-50 to-slate-50",
-            borderColor: "border-gray-400",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400",
             tone: 60,
             clarity: 50,
             empathy: 80
@@ -184,6 +185,28 @@ const EmpatheticDialogueRoleplay = () => {
       situation: "A parent calls you upset about their child's recent behavior report. They say: 'My child never acts like this at home. I think you're being too harsh, and this is unfair. You're picking on my child, and I don't understand why you're targeting them.'",
       personName: "The Parent",
       responses: [
+        {
+          id: 'empathetic-firm',
+          label: 'Empathetic & Firm Response',
+          description: "I hear you, and here's what we can do. I understand your concern, and let's work together to support your child.",
+          statement: "I hear you, and I understand your concern—it's difficult when you feel your child is being treated unfairly. I want to acknowledge that. I'm committed to documenting behavior accurately and consistently for all students. Let's work together: I'll share specific examples of the incidents I observed, and we can discuss how we can both support your child in developing positive classroom behavior. My goal is to help your child succeed.",
+          reaction: {
+            title: "Empathetic & Firm Response",
+            outcome: "The parent's energy softens. They respond: 'Thank you for hearing me out. I appreciate that you want to work together on this.' You have a productive conversation, share observations, and create a collaborative plan. The parent feels heard and supported, and you maintain your professional standards. The relationship improves, and you work together to support the child.",
+            emoji: "💬",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400",
+            tone: 95,
+            clarity: 95,
+            empathy: 100
+          },
+          feedback: {
+            tone: "Excellent! 'I hear you, and here's what we can do' blends warmth with professionalism. The tone acknowledges their concern while maintaining boundaries.",
+            clarity: "The message clearly acknowledges their feelings, maintains reporting standards, and outlines a collaborative path forward. This creates structure and direction.",
+            overall: "Perfect balance! You validated their concern while maintaining your professional standards and inviting collaboration. This approach builds trust and supports the child."
+          }
+        },
         {
           id: 'dismissive',
           label: 'Dismissive Response',
@@ -206,28 +229,7 @@ const EmpatheticDialogueRoleplay = () => {
             overall: "This response maintains professional boundaries but lacks empathy. Parents need to feel heard even when reports can't be changed. Balancing empathy with firmness creates better outcomes."
           }
         },
-        {
-          id: 'empathetic-firm',
-          label: 'Empathetic & Firm Response',
-          description: "I hear you, and here's what we can do. I understand your concern, and let's work together to support your child.",
-          statement: "I hear you, and I understand your concern—it's difficult when you feel your child is being treated unfairly. I want to acknowledge that. I'm committed to documenting behavior accurately and consistently for all students. Let's work together: I'll share specific examples of the incidents I observed, and we can discuss how we can both support your child in developing positive classroom behavior. My goal is to help your child succeed.",
-          reaction: {
-            title: "Empathetic & Firm Response",
-            outcome: "The parent's energy softens. They respond: 'Thank you for hearing me out. I appreciate that you want to work together on this.' You have a productive conversation, share observations, and create a collaborative plan. The parent feels heard and supported, and you maintain your professional standards. The relationship improves, and you work together to support the child.",
-            emoji: "💬",
-            color: "from-green-400 to-emerald-500",
-            bgColor: "from-green-50 to-emerald-50",
-            borderColor: "border-green-300",
-            tone: 95,
-            clarity: 95,
-            empathy: 100
-          },
-          feedback: {
-            tone: "Excellent! 'I hear you, and here's what we can do' blends warmth with professionalism. The tone acknowledges their concern while maintaining boundaries.",
-            clarity: "The message clearly acknowledges their feelings, maintains reporting standards, and outlines a collaborative path forward. This creates structure and direction.",
-            overall: "Perfect balance! You validated their concern while maintaining your professional standards and inviting collaboration. This approach builds trust and supports the child."
-          }
-        },
+
         {
           id: 'passive',
           label: 'Passive Response',
@@ -237,9 +239,9 @@ const EmpatheticDialogueRoleplay = () => {
             title: "Passive Response",
             outcome: "The parent seems satisfied initially, but the behavior issues continue unaddressed. Other parents learn about removed reports and question consistency. You feel uncertain about your professional judgment, and the situation creates inconsistency. The child doesn't receive needed support, and classroom behavior management becomes unclear.",
             emoji: "😓",
-            color: "from-gray-500 to-slate-600",
-            bgColor: "from-gray-50 to-slate-50",
-            borderColor: "border-gray-400",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400",
             tone: 55,
             clarity: 45,
             empathy: 75
@@ -291,9 +293,9 @@ const EmpatheticDialogueRoleplay = () => {
             title: "Empathetic & Firm Response",
             outcome: "Your administrator appreciates your response. They say: 'Thank you for understanding. Let's explore those alternatives together.' You have a productive conversation, find a solution that works for both of you, and maintain your boundaries. The relationship remains respectful, and you're seen as collaborative while protecting your needs.",
             emoji: "🤝",
-            color: "from-green-400 to-emerald-500",
-            bgColor: "from-green-50 to-emerald-50",
-            borderColor: "border-green-300",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400",
             tone: 95,
             clarity: 100,
             empathy: 100
@@ -313,9 +315,9 @@ const EmpatheticDialogueRoleplay = () => {
             title: "Passive Response",
             outcome: "Your administrator seems satisfied, but you feel resentful and overburdened. You work during lunch, after school, and at home to keep up. The additional responsibility becomes a pattern, and you burn out. Your boundaries erode, and you struggle to maintain quality in your primary responsibilities.",
             emoji: "😔",
-            color: "from-gray-500 to-slate-600",
-            bgColor: "from-gray-50 to-slate-50",
-            borderColor: "border-gray-400",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400",
             tone: 50,
             clarity: 55,
             empathy: 70
@@ -358,6 +360,29 @@ const EmpatheticDialogueRoleplay = () => {
             overall: "This response maintains professional standards but lacks emotional empathy. Students need to feel heard and supported emotionally, even when feedback needs to be maintained. Balancing empathy with firmness creates better outcomes."
           }
         },
+
+        {
+          id: 'passive',
+          label: 'Passive Response',
+          description: "I'm so sorry. Let me change your grade. I didn't mean to upset you.",
+          statement: "I'm so sorry you're upset. You're right—I shouldn't have been so critical. Let me change your grade and make this better for you. I don't want you to feel bad.",
+          reaction: {
+            title: "Passive Response",
+            outcome: "The student seems relieved initially, but they don't learn from the feedback or develop resilience. Other students notice the grade change and question fairness. You feel uncertain about providing honest feedback, and the situation creates inconsistency. The student doesn't develop skills to handle feedback, and learning is compromised.",
+            emoji: "😓",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400",
+            tone: 60,
+            clarity: 45,
+            empathy: 85
+          },
+          feedback: {
+            tone: "The tone is warm and caring, which shows empathy, but it lacks the firmness needed to support learning and growth.",
+            clarity: "The message is unclear about feedback purposes and boundaries. Changing grades without addressing feedback undermines learning and fairness.",
+            overall: "This response shows emotional empathy but compromises educational standards. While it may resolve immediate distress, it doesn't support long-term learning or emotional resilience."
+          }
+        },
         {
           id: 'empathetic-firm',
           label: 'Empathetic & Firm Response',
@@ -367,9 +392,9 @@ const EmpatheticDialogueRoleplay = () => {
             title: "Empathetic & Firm Response",
             outcome: "The student's energy begins to calm. They respond: 'Okay... I just feel like I can't do anything right.' You have a supportive conversation, validate their feelings, and explain the feedback in a way that feels constructive rather than critical. The student feels heard and supported, and you maintain your professional standards. The relationship improves, and the student is more open to feedback in the future.",
             emoji: "💙",
-            color: "from-green-400 to-emerald-500",
-            bgColor: "from-green-50 to-emerald-50",
-            borderColor: "border-green-300",
+            color: "from-red-500 to-rose-600",
+            bgColor: "from-red-50 to-rose-50",
+            borderColor: "border-red-400",
             tone: 95,
             clarity: 95,
             empathy: 100
@@ -380,28 +405,6 @@ const EmpatheticDialogueRoleplay = () => {
             overall: "Excellent balance! You validated their emotional experience while maintaining professional standards and inviting collaboration. This approach builds trust, supports emotional regulation, and maintains learning goals."
           }
         },
-        {
-          id: 'passive',
-          label: 'Passive Response',
-          description: "I'm so sorry. Let me change your grade. I didn't mean to upset you.",
-          statement: "I'm so sorry you're upset. You're right—I shouldn't have been so critical. Let me change your grade and make this better for you. I don't want you to feel bad.",
-          reaction: {
-            title: "Passive Response",
-            outcome: "The student seems relieved initially, but they don't learn from the feedback or develop resilience. Other students notice the grade change and question fairness. You feel uncertain about providing honest feedback, and the situation creates inconsistency. The student doesn't develop skills to handle feedback, and learning is compromised.",
-            emoji: "😓",
-            color: "from-gray-500 to-slate-600",
-            bgColor: "from-gray-50 to-slate-50",
-            borderColor: "border-gray-400",
-            tone: 60,
-            clarity: 45,
-            empathy: 85
-          },
-          feedback: {
-            tone: "The tone is warm and caring, which shows empathy, but it lacks the firmness needed to support learning and growth.",
-            clarity: "The message is unclear about feedback purposes and boundaries. Changing grades without addressing feedback undermines learning and fairness.",
-            overall: "This response shows emotional empathy but compromises educational standards. While it may resolve immediate distress, it doesn't support long-term learning or emotional resilience."
-          }
-        }
       ],
       correctResponse: 'empathetic-firm'
     }
@@ -424,7 +427,7 @@ const EmpatheticDialogueRoleplay = () => {
     } else {
       setShowReaction(false);
       setShowFeedback(false);
-      
+
       if (currentScenario < totalLevels - 1) {
         setCurrentScenario(prev => prev + 1);
       } else {
@@ -453,7 +456,7 @@ const EmpatheticDialogueRoleplay = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={currentScenario + 1}
+      currentQuestion={currentScenario}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         <motion.div
@@ -492,7 +495,7 @@ const EmpatheticDialogueRoleplay = () => {
                     </h2>
                   </div>
                 </div>
-                
+
                 <div className="bg-white rounded-xl p-6 shadow-lg mb-6">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-400 to-rose-500 flex items-center justify-center flex-shrink-0">
@@ -526,22 +529,20 @@ const EmpatheticDialogueRoleplay = () => {
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     onClick={() => handleResponseSelect(response.id)}
-                    className={`w-full p-6 rounded-xl border-2 ${
-                      response.id === 'empathetic-firm'
-                        ? 'border-green-300 bg-gradient-to-br from-green-50 to-emerald-50'
-                        : response.id === 'dismissive'
+                    className={`w-full p-6 rounded-xl border-2 ${response.id === 'empathetic-firm'
                         ? 'border-red-300 bg-gradient-to-br from-red-50 to-rose-50'
-                        : 'border-gray-300 bg-gradient-to-br from-gray-50 to-slate-50'
-                    } hover:shadow-lg transition-all text-left`}
+                        : response.id === 'dismissive'
+                          ? 'border-red-300 bg-gradient-to-br from-red-50 to-rose-50'
+                          : 'border-red-300 bg-gradient-to-br from-red-50 to-rose-50'
+                      } hover:shadow-lg transition-all text-left`}
                   >
                     <div className="flex items-start gap-4">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        response.id === 'empathetic-firm'
-                          ? 'bg-gradient-to-r from-green-400 to-emerald-500'
-                          : response.id === 'dismissive'
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${response.id === 'empathetic-firm'
                           ? 'bg-gradient-to-r from-red-400 to-rose-500'
-                          : 'bg-gradient-to-r from-gray-400 to-slate-500'
-                      }`}>
+                          : response.id === 'dismissive'
+                            ? 'bg-gradient-to-r from-red-400 to-rose-500'
+                            : 'bg-gradient-to-r from-red-400 to-rose-500'
+                        }`}>
                         <span className="text-white font-bold">{index + 1}</span>
                       </div>
                       <div className="flex-1">
@@ -590,13 +591,12 @@ const EmpatheticDialogueRoleplay = () => {
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${selectedResponseData.reaction.tone}%` }}
-                      className={`h-3 rounded-full ${
-                        selectedResponseData.reaction.tone >= 80
+                      className={`h-3 rounded-full ${selectedResponseData.reaction.tone >= 80
                           ? 'bg-gradient-to-r from-green-400 to-emerald-500'
                           : selectedResponseData.reaction.tone >= 50
-                          ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                          : 'bg-gradient-to-r from-red-400 to-rose-500'
-                      }`}
+                            ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
+                            : 'bg-gradient-to-r from-red-400 to-rose-500'
+                        }`}
                     />
                   </div>
                 </div>
@@ -609,13 +609,12 @@ const EmpatheticDialogueRoleplay = () => {
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${selectedResponseData.reaction.clarity}%` }}
-                      className={`h-3 rounded-full ${
-                        selectedResponseData.reaction.clarity >= 80
+                      className={`h-3 rounded-full ${selectedResponseData.reaction.clarity >= 80
                           ? 'bg-gradient-to-r from-green-400 to-emerald-500'
                           : selectedResponseData.reaction.clarity >= 50
-                          ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                          : 'bg-gradient-to-r from-red-400 to-rose-500'
-                      }`}
+                            ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
+                            : 'bg-gradient-to-r from-red-400 to-rose-500'
+                        }`}
                     />
                   </div>
                 </div>
@@ -628,13 +627,12 @@ const EmpatheticDialogueRoleplay = () => {
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${selectedResponseData.reaction.empathy}%` }}
-                      className={`h-3 rounded-full ${
-                        selectedResponseData.reaction.empathy >= 80
+                      className={`h-3 rounded-full ${selectedResponseData.reaction.empathy >= 80
                           ? 'bg-gradient-to-r from-green-400 to-emerald-500'
                           : selectedResponseData.reaction.empathy >= 50
-                          ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                          : 'bg-gradient-to-r from-red-400 to-rose-500'
-                      }`}
+                            ? 'bg-gradient-to-r from-yellow-400 to-orange-500'
+                            : 'bg-gradient-to-r from-red-400 to-rose-500'
+                        }`}
                     />
                   </div>
                 </div>
@@ -788,4 +786,3 @@ const EmpatheticDialogueRoleplay = () => {
 };
 
 export default EmpatheticDialogueRoleplay;
-

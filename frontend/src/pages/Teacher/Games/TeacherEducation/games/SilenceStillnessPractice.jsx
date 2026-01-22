@@ -7,15 +7,15 @@ import { VolumeX, Wind, Heart, Star, CheckCircle, Clock, BookOpen, Play, Pause, 
 
 const SilenceStillnessPractice = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-99";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [currentPhase, setCurrentPhase] = useState('breathing'); // 'breathing', 'silence', 'rating', 'complete'
   const [isPlaying, setIsPlaying] = useState(false);
   const [breathCount, setBreathCount] = useState(0);
@@ -42,7 +42,7 @@ const SilenceStillnessPractice = () => {
     if ('speechSynthesis' in window) {
       // Cancel any previous speech
       window.speechSynthesis.cancel();
-      
+
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.rate = 0.9;
       utterance.pitch = 1;
@@ -57,14 +57,14 @@ const SilenceStillnessPractice = () => {
     setTotalBreaths(0);
     setBreathCount(0);
     setBreathPhase('inhale');
-    
+
     // Play initial guidance
     playAudioGuide('Follow the breathing rhythm. Breathe in for 4, hold for 2, breathe out for 6. Let us begin.');
-    
+
     // Start breathing cycle
     let phaseIndex = 0;
     let breathsCompleted = 0;
-    
+
     const cyclePhase = () => {
       if (!isPlaying || breathsCompleted >= 5) {
         // After 5 breaths, move to silence
@@ -77,10 +77,10 @@ const SilenceStillnessPractice = () => {
         startSilence();
         return;
       }
-      
+
       const phase = breathingPhases[phaseIndex];
       setBreathPhase(phase);
-      
+
       if (phase === 'inhale') {
         playAudioGuide('Breathe in');
       } else if (phase === 'hold') {
@@ -90,24 +90,24 @@ const SilenceStillnessPractice = () => {
         breathsCompleted += 1;
         setTotalBreaths(breathsCompleted);
       }
-      
+
       phaseIndex = (phaseIndex + 1) % breathingPhases.length;
       const delay = breathTimings[phase];
-      
+
       intervalRef.current = setTimeout(cyclePhase, delay);
     };
-    
+
     cyclePhase();
   };
 
   const startSilence = () => {
     setSilenceTime(0);
     playAudioGuide('Now sit in silence. Enjoy this moment without digital input. Be still and present.');
-    
+
     silenceIntervalRef.current = setInterval(() => {
       setSilenceTime(prev => prev + 1);
     }, 1000);
-    
+
     // Silence period: 60 seconds (1 minute)
     setTimeout(() => {
       if (silenceIntervalRef.current) {
@@ -169,7 +169,7 @@ const SilenceStillnessPractice = () => {
 
   if (showGameOver) {
     const calmnessInfo = calmnessRating ? calmnessLevels.find(l => l.id === calmnessRating.id) : null;
-    
+
     return (
       <TeacherGameShell
         title={gameData?.title || "Silence & Stillness Practice"}
@@ -180,7 +180,7 @@ const SilenceStillnessPractice = () => {
         gameType="teacher-education"
         totalLevels={totalLevels}
         totalCoins={totalCoins}
-        currentQuestion={1}
+        currentQuestion={score}
       >
         <div className="w-full max-w-5xl mx-auto px-4">
           <motion.div
@@ -307,7 +307,7 @@ const SilenceStillnessPractice = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={score}
     >
       <div className="w-full max-w-4xl mx-auto px-4">
         <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -354,12 +354,11 @@ const SilenceStillnessPractice = () => {
                   className="flex items-center justify-center mb-8"
                 >
                   <div className="relative">
-                    <div className={`w-64 h-64 rounded-full border-4 flex items-center justify-center ${
-                      breathPhase === 'inhale' ? 'border-blue-400 bg-blue-100' :
-                      breathPhase === 'hold' ? 'border-purple-400 bg-purple-100' :
-                      breathPhase === 'exhale' ? 'border-green-400 bg-green-100' :
-                      'border-gray-400 bg-gray-100'
-                    }`}>
+                    <div className={`w-64 h-64 rounded-full border-4 flex items-center justify-center ${breathPhase === 'inhale' ? 'border-blue-400 bg-blue-100' :
+                        breathPhase === 'hold' ? 'border-purple-400 bg-purple-100' :
+                          breathPhase === 'exhale' ? 'border-green-400 bg-green-100' :
+                            'border-gray-400 bg-gray-100'
+                      }`}>
                       <div className="text-center">
                         <div className="text-5xl mb-2">
                           {breathPhase === 'inhale' ? '⬆️' : breathPhase === 'hold' ? '⏸️' : breathPhase === 'exhale' ? '⬇️' : '•'}
@@ -511,16 +510,14 @@ const SilenceStillnessPractice = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => handleCalmnessRating(level)}
-                    className={`p-6 rounded-xl border-2 transition-all ${
-                      calmnessRating?.id === level.id
+                    className={`p-6 rounded-xl border-2 transition-all ${calmnessRating?.id === level.id
                         ? `${level.bgColor} ${level.borderColor} shadow-lg`
                         : 'bg-white border-gray-200 hover:border-gray-300'
-                    }`}
+                      }`}
                   >
                     <div className="text-5xl mb-2">{level.emoji}</div>
-                    <p className={`font-semibold text-sm ${
-                      calmnessRating?.id === level.id ? 'text-gray-800' : 'text-gray-600'
-                    }`}>
+                    <p className={`font-semibold text-sm ${calmnessRating?.id === level.id ? 'text-gray-800' : 'text-gray-600'
+                      }`}>
                       {level.label}
                     </p>
                   </motion.button>
@@ -542,4 +539,3 @@ const SilenceStillnessPractice = () => {
 };
 
 export default SilenceStillnessPractice;
-

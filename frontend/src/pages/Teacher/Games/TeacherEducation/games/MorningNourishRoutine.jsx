@@ -7,15 +7,15 @@ import { Droplet, Activity, Heart, Sun, VolumeX, Sparkles, CheckCircle, Circle, 
 
 const MorningNourishRoutine = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-95";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [selectedRoutines, setSelectedRoutines] = useState([]);
   const [currentStep, setCurrentStep] = useState('select'); // 'select', 'guide', 'rate', 'complete'
   const [currentRoutineIndex, setCurrentRoutineIndex] = useState(0);
@@ -145,23 +145,27 @@ const MorningNourishRoutine = () => {
   const handleSelectRoutine = (routineId) => {
     const routine = routines.find(r => r.id === routineId);
     if (!routine) return;
-    
+
     if (selectedRoutines.find(r => r.id === routineId)) {
       // Deselect
       setSelectedRoutines(prev => prev.filter(r => r.id !== routineId));
+      // Remove 1 point for each routine deselected
+      setScore(prev => Math.max(0, prev - 1));
     } else {
-      // Select (max 3)
-      if (selectedRoutines.length < 3) {
+      // Select (max 5)
+      if (selectedRoutines.length < 5) {
         setSelectedRoutines(prev => [...prev, routine]);
+        // Award 1 point for each routine selected
+        setScore(prev => prev + 1);
       } else {
-        alert('Please select only 3 routines. Deselect one first if you want to change.');
+        alert('Please select only 5 routines. Deselect one first if you want to change.');
       }
     }
   };
 
   const handleStartRoutine = () => {
-    if (selectedRoutines.length !== 3) {
-      alert('Please select exactly 3 routines to start your morning nourish routine.');
+    if (selectedRoutines.length !== 5) {
+      alert('Please select exactly 5 routines to start your morning nourish routine.');
       return;
     }
     setCurrentStep('guide');
@@ -170,7 +174,7 @@ const MorningNourishRoutine = () => {
 
   const handleCompleteRoutine = (routineId) => {
     setRoutineCompleted(prev => new Set([...prev, routineId]));
-    
+
     // Move to next routine or finish
     if (currentRoutineIndex < selectedRoutines.length - 1) {
       setTimeout(() => {
@@ -187,7 +191,7 @@ const MorningNourishRoutine = () => {
 
   const handleEnergyRating = (level) => {
     setEnergyLevel(level);
-    setScore(level.value);
+    // Keep the routine selection score (5) and don't override it with energy level
     setTimeout(() => {
       setShowGameOver(true);
     }, 1000);
@@ -219,7 +223,7 @@ const MorningNourishRoutine = () => {
         gameType="teacher-education"
         totalLevels={totalLevels}
         totalCoins={totalCoins}
-        currentQuestion={1}
+        currentQuestion={Math.min(selectedRoutines.length, totalLevels)}
       >
         <div className="w-full max-w-5xl mx-auto px-4">
           <motion.div
@@ -256,11 +260,11 @@ const MorningNourishRoutine = () => {
                     {energyLevel.label}
                   </p>
                   <p className="text-gray-600">
-                    {energyLevel.value >= 4 
+                    {energyLevel.value >= 4
                       ? 'Excellent! Your morning routine energized you well.'
                       : energyLevel.value >= 3
-                      ? 'Good! Your routine is supporting your energy.'
-                      : 'Continue practicing your routine to build morning energy.'
+                        ? 'Good! Your routine is supporting your energy.'
+                        : 'Continue practicing your routine to build morning energy.'
                     }
                   </p>
                 </div>
@@ -361,7 +365,7 @@ const MorningNourishRoutine = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={Math.min(selectedRoutines.length, totalLevels)}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -374,7 +378,7 @@ const MorningNourishRoutine = () => {
                   Morning Nourish Routine
                 </h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                  Select 3 routines to start your day with mindful self-care
+                  Select 5 routines to start your day with mindful self-care
                 </p>
               </div>
 
@@ -385,7 +389,7 @@ const MorningNourishRoutine = () => {
                   How This Works
                 </h3>
                 <ul className="text-indigo-800 space-y-2 text-sm">
-                  <li>• <strong>Choose 3 routines:</strong> Select 3 practices that resonate with you</li>
+                  <li>• <strong>Choose 5 routines:</strong> Select 5 practices that resonate with you</li>
                   <li>• <strong>Follow the guide:</strong> Complete each routine with the quick guide</li>
                   <li>• <strong>Rate your energy:</strong> After completing all routines, rate your energy level</li>
                   <li>• <strong>Build the habit:</strong> Practice these routines daily to start your day nourished</li>
@@ -397,8 +401,8 @@ const MorningNourishRoutine = () => {
                 {routines.map((routine, index) => {
                   const Icon = routine.icon;
                   const isSelected = selectedRoutines.find(r => r.id === routine.id);
-                  const canSelect = selectedRoutines.length < 3 || isSelected;
-                  
+                  const canSelect = selectedRoutines.length < 5 || isSelected;
+
                   return (
                     <motion.button
                       key={routine.id}
@@ -407,13 +411,12 @@ const MorningNourishRoutine = () => {
                       transition={{ delay: index * 0.1 }}
                       onClick={() => handleSelectRoutine(routine.id)}
                       disabled={!canSelect && !isSelected}
-                      className={`relative overflow-hidden rounded-xl border-2 transition-all text-left ${
-                        isSelected
+                      className={`relative overflow-hidden rounded-xl border-2 transition-all text-left ${isSelected
                           ? `${routine.bgColor} ${routine.borderColor} shadow-lg`
                           : canSelect
-                          ? 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-md'
-                          : 'bg-gray-100 border-gray-200 opacity-60 cursor-not-allowed'
-                      }`}
+                            ? 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-md'
+                            : 'bg-gray-100 border-gray-200 opacity-60 cursor-not-allowed'
+                        }`}
                     >
                       <div className="p-6">
                         <div className="flex items-start gap-4 mb-4">
@@ -429,14 +432,13 @@ const MorningNourishRoutine = () => {
                             </p>
                           </div>
                         </div>
-                        
+
                         {/* Selection Indicator */}
                         <div className="flex items-center justify-between">
-                          <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                            isSelected
+                          <div className={`px-3 py-1 rounded-full text-xs font-semibold ${isSelected
                               ? 'bg-white text-indigo-700'
                               : 'bg-gray-100 text-gray-500'
-                          }`}>
+                            }`}>
                             {isSelected ? 'Selected' : 'Click to select'}
                           </div>
                           {isSelected && (
@@ -457,17 +459,17 @@ const MorningNourishRoutine = () => {
                       Routines Selected
                     </p>
                     <p className="text-sm text-gray-600">
-                      {selectedRoutines.length} of 3 selected
+                      {selectedRoutines.length} of 5 selected
                     </p>
                   </div>
                   <div className="text-3xl font-bold text-purple-600">
-                    {selectedRoutines.length} / 3
+                    {selectedRoutines.length} / 5
                   </div>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-3 mt-4 overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: `${(selectedRoutines.length / 3) * 100}%` }}
+                    animate={{ width: `${(selectedRoutines.length / 5) * 100}%` }}
                     transition={{ duration: 0.3 }}
                     className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"
                   />
@@ -475,7 +477,7 @@ const MorningNourishRoutine = () => {
               </div>
 
               {/* Start Button */}
-              {selectedRoutines.length === 3 && (
+              {selectedRoutines.length === 5 && (
                 <div className="text-center">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -588,16 +590,14 @@ const MorningNourishRoutine = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => handleEnergyRating(level)}
-                    className={`p-6 rounded-xl border-2 transition-all ${
-                      energyLevel?.id === level.id
+                    className={`p-6 rounded-xl border-2 transition-all ${energyLevel?.id === level.id
                         ? `${level.bgColor} ${level.borderColor} shadow-lg`
                         : 'bg-white border-gray-200 hover:border-gray-300'
-                    }`}
+                      }`}
                   >
                     <div className="text-5xl mb-2">{level.emoji}</div>
-                    <p className={`font-semibold text-sm ${
-                      energyLevel?.id === level.id ? 'text-gray-800' : 'text-gray-600'
-                    }`}>
+                    <p className={`font-semibold text-sm ${energyLevel?.id === level.id ? 'text-gray-800' : 'text-gray-600'
+                      }`}>
                       {level.label}
                     </p>
                   </motion.button>
@@ -619,4 +619,3 @@ const MorningNourishRoutine = () => {
 };
 
 export default MorningNourishRoutine;
-

@@ -7,15 +7,15 @@ import { Volume2, VolumeX, Mic, CheckCircle, XCircle } from "lucide-react";
 
 const CalmVoiceChallenge = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "parent-education-15";
   const gameData = getParentEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentScenario, setCurrentScenario] = useState(0);
   const [userResponse, setUserResponse] = useState("");
   const [showComparison, setShowComparison] = useState(false);
@@ -52,9 +52,9 @@ const CalmVoiceChallenge = () => {
         impact: "Child feels heard, more likely to cooperate, relationship stays positive"
       },
       goodResponses: [
-        "I understand this is difficult. What would help you get started?",
         "I see you're frustrated. Let's take a break and try again in 5 minutes.",
         "I hear that you don't want to do this right now. Can we find a way to make it easier?",
+        "I understand this is difficult. What would help you get started?",
         "You're feeling stuck, and that's okay. Let's work on this together."
       ],
       feedback: "A calm, firm tone shows respect while maintaining boundaries. Your child learns that you listen even when setting limits."
@@ -149,9 +149,9 @@ const CalmVoiceChallenge = () => {
         impact: "Child feels supported, learns organization skills, room gets cleaned together, relationship strengthens"
       },
       goodResponses: [
-        "The room is still messy. That's okay - it can feel overwhelming. Let's break it into small steps.",
         "I noticed the room hasn't been cleaned yet. What would make it easier for you to get started?",
-        "The room needs attention. I'm here to help if you want to tackle it together."
+        "The room needs attention. I'm here to help if you want to tackle it together.",
+        "The room is still messy. That's okay - it can feel overwhelming. Let's break it into small steps.",
       ],
       feedback: "When you speak calmly about problems, you avoid shame. Your child learns that mistakes are opportunities to learn and grow."
     },
@@ -198,19 +198,19 @@ const CalmVoiceChallenge = () => {
     if (!userResponse.trim()) return;
 
     const current = scenarios[currentScenario];
-    const isCalm = current.goodResponses.some(good => 
+    const isCalm = current.goodResponses.some(good =>
       userResponse.toLowerCase().includes(good.toLowerCase().substring(0, 20))
     ) || userResponse.length > 30 && !/[!?]{2,}/.test(userResponse) && !userResponse.toUpperCase() === userResponse;
 
     // Analyze tone characteristics
-    const hasAngryWords = /(stop|now|right|can't|won't|don't|must|have to|demanding)/i.test(userResponse) && 
-                          !/(understand|feel|hear|help|together|let's|we can)/i.test(userResponse);
+    const hasAngryWords = /(stop|now|right|can't|won't|don't|must|have to|demanding)/i.test(userResponse) &&
+      !/(understand|feel|hear|help|together|let's|we can)/i.test(userResponse);
     const hasCalmWords = /(understand|feel|hear|help|together|let's|we can|okay|how about)/i.test(userResponse);
     const isAllCaps = userResponse === userResponse.toUpperCase() && userResponse.length > 10;
     const hasManyExclamation = (userResponse.match(/!/g) || []).length > 2;
     const isShortAndHarsh = userResponse.length < 40 && !hasCalmWords;
 
-    const finalScore = 
+    const finalScore =
       (hasCalmWords ? 2 : 0) +
       (isAllCaps ? -2 : 0) +
       (hasManyExclamation ? -1 : 0) +
@@ -228,13 +228,13 @@ const CalmVoiceChallenge = () => {
     setFeedback({
       isCalm: finalScore >= 1,
       toneAnalysis,
-      message: finalScore >= 2 
+      message: finalScore >= 2
         ? "Excellent! Your response shows calm, firm leadership. This tone builds connection while maintaining boundaries."
         : finalScore >= 1
-        ? "Good! Your response is heading in the right direction. Keep focusing on understanding and collaboration."
-        : finalScore <= -2
-        ? "Your response sounds reactive. Try using 'I understand' or 'I hear you' to show empathy before setting boundaries."
-        : "Your response is neutral. Adding empathetic phrases like 'I understand' or 'Let's work together' can make it more calming."
+          ? "Good! Your response is heading in the right direction. Keep focusing on understanding and collaboration."
+          : finalScore <= -2
+            ? "Your response sounds reactive. Try using 'I understand' or 'I hear you' to show empathy before setting boundaries."
+            : "Your response is neutral. Adding empathetic phrases like 'I understand' or 'Let's work together' can make it more calming."
     });
 
     if (finalScore >= 1) {
@@ -351,7 +351,7 @@ const CalmVoiceChallenge = () => {
                   Practice Your Calm Response
                 </h3>
               </div>
-              
+
               <p className="text-gray-600 mb-4">
                 Type or select how you would respond using a calm, firm tone:
               </p>
@@ -364,11 +364,10 @@ const CalmVoiceChallenge = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleResponseSelect(response)}
-                    className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
-                      selectedResponse === response
+                    className={`w-full text-left p-4 rounded-lg border-2 transition-all ${selectedResponse === response
                         ? 'bg-blue-50 border-blue-400'
                         : 'bg-gray-50 border-gray-200 hover:border-blue-300'
-                    }`}
+                      }`}
                   >
                     <p className="text-gray-700">{response}</p>
                   </motion.button>
@@ -405,18 +404,16 @@ const CalmVoiceChallenge = () => {
               className="space-y-6"
             >
               {/* Tone analysis */}
-              <div className={`bg-gradient-to-br ${
-                feedback.isCalm ? 'from-green-50 to-emerald-50 border-green-200' : 'from-orange-50 to-amber-50 border-orange-200'
-              } rounded-2xl p-8 shadow-xl border-2`}>
+              <div className={`bg-gradient-to-br ${feedback.isCalm ? 'from-green-50 to-emerald-50 border-green-200' : 'from-orange-50 to-amber-50 border-orange-200'
+                } rounded-2xl p-8 shadow-xl border-2`}>
                 <div className="flex items-center gap-3 mb-6">
                   {feedback.isCalm ? (
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   ) : (
                     <XCircle className="w-8 h-8 text-orange-600" />
                   )}
-                  <h3 className={`text-3xl font-bold ${
-                    feedback.isCalm ? 'text-green-700' : 'text-orange-700'
-                  }`}>
+                  <h3 className={`text-3xl font-bold ${feedback.isCalm ? 'text-green-700' : 'text-orange-700'
+                    }`}>
                     Your Tone Analysis
                   </h3>
                 </div>
@@ -448,12 +445,10 @@ const CalmVoiceChallenge = () => {
                 </div>
 
                 {/* Feedback message */}
-                <div className={`p-6 rounded-xl ${
-                  feedback.isCalm ? 'bg-green-100 border-green-300' : 'bg-orange-100 border-orange-300'
-                } border-2`}>
-                  <p className={`font-semibold ${
-                    feedback.isCalm ? 'text-green-800' : 'text-orange-800'
-                  }`}>
+                <div className={`p-6 rounded-xl ${feedback.isCalm ? 'bg-green-100 border-green-300' : 'bg-orange-100 border-orange-300'
+                  } border-2`}>
+                  <p className={`font-semibold ${feedback.isCalm ? 'text-green-800' : 'text-orange-800'
+                    }`}>
                     {feedback.message}
                   </p>
                 </div>
@@ -469,7 +464,7 @@ const CalmVoiceChallenge = () => {
               {/* Parent tip */}
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                 <p className="text-sm text-amber-800 leading-relaxed text-center">
-                  <strong>💡 Parent Tip:</strong> A calm tone teaches respect far faster than loud words. 
+                  <strong>💡 Parent Tip:</strong> A calm tone teaches respect far faster than loud words.
                   When you speak firmly but softly, your child learns that boundaries come with respect, not fear.
                 </p>
               </div>
@@ -508,4 +503,3 @@ const CalmVoiceChallenge = () => {
 };
 
 export default CalmVoiceChallenge;
-

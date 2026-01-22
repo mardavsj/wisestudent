@@ -7,15 +7,15 @@ import { MessageCircle, Phone, Users, CheckCircle, TrendingUp, BookOpen, Ban, Al
 
 const TheRespectfulNo = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-61";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedResponse, setSelectedResponse] = useState({});
   const [showToneMeter, setShowToneMeter] = useState(false);
@@ -57,6 +57,20 @@ const TheRespectfulNo = () => {
           bgColor: "from-red-50 to-rose-50",
           borderColor: "border-red-300"
         },
+
+        {
+          id: 'wishy-washy',
+          label: 'Unclear Response',
+          text: "I'm not sure... maybe? Let me think about it.",
+          assertiveness: 40,
+          kindness: 70,
+          tone: "Unclear",
+          feedback: "This creates uncertainty and doesn't set clear boundaries. A definitive response with kindness is more respectful to everyone.",
+          emoji: "🤔",
+          color: "from-yellow-400 to-orange-500",
+          bgColor: "from-yellow-50 to-orange-50",
+          borderColor: "border-yellow-300"
+        },
         {
           id: 'respectful-no',
           label: 'Respectful "No"',
@@ -70,19 +84,6 @@ const TheRespectfulNo = () => {
           bgColor: "from-green-50 to-emerald-50",
           borderColor: "border-green-300"
         },
-        {
-          id: 'wishy-washy',
-          label: 'Unclear Response',
-          text: "I'm not sure... maybe? Let me think about it.",
-          assertiveness: 40,
-          kindness: 70,
-          tone: "Unclear",
-          feedback: "This creates uncertainty and doesn't set clear boundaries. A definitive response with kindness is more respectful to everyone.",
-          emoji: "🤔",
-          color: "from-yellow-400 to-orange-500",
-          bgColor: "from-yellow-50 to-orange-50",
-          borderColor: "border-yellow-300"
-        }
       ],
       correctResponse: 'respectful-no'
     },
@@ -154,6 +155,19 @@ const TheRespectfulNo = () => {
       situation: "A colleague asks you to swap your planning period with theirs this week so they can attend a personal appointment. They've done this several times before, and it's starting to feel like a pattern.",
       responses: [
         {
+          id: 'respectful-no',
+          label: 'Respectful "No"',
+          text: "I wish I could help, but my current commitments are full this week. I need to protect my planning time. Perhaps we could find another solution?",
+          assertiveness: 85,
+          kindness: 88,
+          tone: "Respectful & Assertive",
+          feedback: "Perfect! This is a respectful 'no'—you acknowledge the request, state your boundary clearly, and offer to explore alternatives. This maintains the relationship while protecting your time.",
+          emoji: "✨",
+          color: "from-green-400 to-emerald-500",
+          bgColor: "from-green-50 to-emerald-50",
+          borderColor: "border-green-300"
+        },
+        {
           id: 'over-accommodating',
           label: 'Agree Immediately',
           text: "Sure, no problem! I can always make it work.",
@@ -179,19 +193,7 @@ const TheRespectfulNo = () => {
           bgColor: "from-red-50 to-rose-50",
           borderColor: "border-red-300"
         },
-        {
-          id: 'respectful-no',
-          label: 'Respectful "No"',
-          text: "I wish I could help, but my current commitments are full this week. I need to protect my planning time. Perhaps we could find another solution?",
-          assertiveness: 85,
-          kindness: 88,
-          tone: "Respectful & Assertive",
-          feedback: "Perfect! This is a respectful 'no'—you acknowledge the request, state your boundary clearly, and offer to explore alternatives. This maintains the relationship while protecting your time.",
-          emoji: "✨",
-          color: "from-green-400 to-emerald-500",
-          bgColor: "from-green-50 to-emerald-50",
-          borderColor: "border-green-300"
-        },
+
         {
           id: 'wishy-washy',
           label: 'Unclear Response',
@@ -289,19 +291,6 @@ const TheRespectfulNo = () => {
           borderColor: "border-gray-300"
         },
         {
-          id: 'too-direct',
-          label: 'Refuse Abruptly',
-          text: "No, I'm not available. You should have planned better.",
-          assertiveness: 100,
-          kindness: 20,
-          tone: "Too Direct",
-          feedback: "While your boundary is important, the tone is harsh. A respectful 'no' can be clear without being judgmental.",
-          emoji: "😤",
-          color: "from-red-400 to-rose-500",
-          bgColor: "from-red-50 to-rose-50",
-          borderColor: "border-red-300"
-        },
-        {
           id: 'respectful-no',
           label: 'Respectful "No"',
           text: "I wish I could help, but I've committed to resting this weekend. I hope you're able to find support elsewhere.",
@@ -314,6 +303,20 @@ const TheRespectfulNo = () => {
           bgColor: "from-green-50 to-emerald-50",
           borderColor: "border-green-300"
         },
+        {
+          id: 'too-direct',
+          label: 'Refuse Abruptly',
+          text: "No, I'm not available. You should have planned better.",
+          assertiveness: 100,
+          kindness: 20,
+          tone: "Too Direct",
+          feedback: "While your boundary is important, the tone is harsh. A respectful 'no' can be clear without being judgmental.",
+          emoji: "😤",
+          color: "from-red-400 to-rose-500",
+          bgColor: "from-red-50 to-rose-50",
+          borderColor: "border-red-300"
+        },
+
         {
           id: 'wishy-washy',
           label: 'Unclear Response',
@@ -383,7 +386,7 @@ const TheRespectfulNo = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={currentScenario + 1}
+      currentQuestion={currentScenario}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         <motion.div
@@ -440,7 +443,7 @@ const TheRespectfulNo = () => {
               <div className="space-y-4 mb-6">
                 {current.responses.map((response, index) => {
                   const isSelected = selected && selected.responseId === response.id;
-                  
+
                   return (
                     <motion.button
                       key={response.id}
@@ -448,24 +451,15 @@ const TheRespectfulNo = () => {
                       whileTap={{ scale: 0.99 }}
                       onClick={() => handleResponseSelect(response.id)}
                       disabled={!!selected}
-                      className={`w-full p-6 rounded-xl border-2 text-left transition-all ${
-                        isSelected
+                      className={`w-full p-6 rounded-xl border-2 text-left transition-all ${isSelected
                           ? response.id === 'respectful-no'
                             ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-400 shadow-lg'
                             : 'bg-gray-50 border-gray-300 opacity-60'
                           : 'bg-white border-gray-300 hover:border-indigo-400 hover:shadow-md cursor-pointer'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-start gap-4">
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-                          response.id === 'respectful-no'
-                            ? 'bg-gradient-to-r from-green-400 to-emerald-500'
-                            : response.id === 'too-direct'
-                            ? 'bg-gradient-to-r from-red-400 to-rose-500'
-                            : response.id === 'over-accommodating'
-                            ? 'bg-gradient-to-r from-gray-400 to-slate-500'
-                            : 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                        }`}>
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-gradient-to-r from-yellow-400 to-orange-500`}>
                           <span className="text-white font-bold">{String.fromCharCode(65 + index)}</span>
                         </div>
                         <div className="flex-1">
@@ -515,13 +509,12 @@ const TheRespectfulNo = () => {
                         initial={{ width: 0 }}
                         animate={{ width: `${selected.response.assertiveness}%` }}
                         transition={{ duration: 0.8 }}
-                        className={`h-6 rounded-full ${
-                          selected.response.assertiveness >= 80
+                        className={`h-6 rounded-full ${selected.response.assertiveness >= 80
                             ? 'bg-gradient-to-r from-green-400 to-emerald-500'
                             : selected.response.assertiveness >= 50
-                            ? 'bg-gradient-to-r from-blue-400 to-cyan-500'
-                            : 'bg-gradient-to-r from-gray-400 to-slate-500'
-                        } shadow-md`}
+                              ? 'bg-gradient-to-r from-blue-400 to-cyan-500'
+                              : 'bg-gradient-to-r from-gray-400 to-slate-500'
+                          } shadow-md`}
                       />
                     </div>
                   </div>
@@ -529,8 +522,8 @@ const TheRespectfulNo = () => {
                     {selected.response.assertiveness >= 80
                       ? "Strong boundary-setting ✓"
                       : selected.response.assertiveness >= 50
-                      ? "Moderate assertiveness"
-                      : "Could be more assertive"}
+                        ? "Moderate assertiveness"
+                        : "Could be more assertive"}
                   </p>
                 </div>
 
@@ -548,13 +541,12 @@ const TheRespectfulNo = () => {
                         initial={{ width: 0 }}
                         animate={{ width: `${selected.response.kindness}%` }}
                         transition={{ duration: 0.8 }}
-                        className={`h-6 rounded-full ${
-                          selected.response.kindness >= 85
+                        className={`h-6 rounded-full ${selected.response.kindness >= 85
                             ? 'bg-gradient-to-r from-pink-400 to-rose-500'
                             : selected.response.kindness >= 50
-                            ? 'bg-gradient-to-r from-orange-400 to-amber-500'
-                            : 'bg-gradient-to-r from-gray-400 to-slate-500'
-                        } shadow-md`}
+                              ? 'bg-gradient-to-r from-orange-400 to-amber-500'
+                              : 'bg-gradient-to-r from-gray-400 to-slate-500'
+                          } shadow-md`}
                       />
                     </div>
                   </div>
@@ -562,8 +554,8 @@ const TheRespectfulNo = () => {
                     {selected.response.kindness >= 85
                       ? "Warm and empathetic ✓"
                       : selected.response.kindness >= 50
-                      ? "Moderately kind"
-                      : "Could be kinder"}
+                        ? "Moderately kind"
+                        : "Could be kinder"}
                   </p>
                 </div>
               </div>
@@ -667,28 +659,26 @@ const TheRespectfulNo = () => {
             </div>
 
             {/* Score Summary */}
-            <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${
-              score === totalLevels
+            <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${score === totalLevels
                 ? 'from-green-50 to-emerald-50 border-green-200'
                 : score >= totalLevels / 2
-                ? 'from-blue-50 to-indigo-50 border-blue-200'
-                : 'from-yellow-50 to-orange-50 border-yellow-200'
-            }`}>
+                  ? 'from-blue-50 to-indigo-50 border-blue-200'
+                  : 'from-yellow-50 to-orange-50 border-yellow-200'
+              }`}>
               <div className="text-center">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Your Assertiveness Score</h3>
-                <div className={`text-5xl font-bold mb-2 ${
-                  score === totalLevels ? 'text-green-600' :
-                  score >= totalLevels / 2 ? 'text-blue-600' :
-                  'text-yellow-600'
-                }`}>
+                <div className={`text-5xl font-bold mb-2 ${score === totalLevels ? 'text-green-600' :
+                    score >= totalLevels / 2 ? 'text-blue-600' :
+                      'text-yellow-600'
+                  }`}>
                   {Math.round((score / totalLevels) * 100)}%
                 </div>
                 <p className="text-gray-700">
                   {score === totalLevels
                     ? "Excellent! You consistently chose respectful 'no' responses. You're building strong boundary-setting skills."
                     : score >= totalLevels / 2
-                    ? "Good progress! You're learning to balance assertiveness and kindness. Keep practicing."
-                    : "Keep practicing! Each scenario helps you understand respectful 'no' responses better."}
+                      ? "Good progress! You're learning to balance assertiveness and kindness. Keep practicing."
+                      : "Keep practicing! Each scenario helps you understand respectful 'no' responses better."}
                 </p>
               </div>
             </div>
@@ -740,4 +730,3 @@ const TheRespectfulNo = () => {
 };
 
 export default TheRespectfulNo;
-

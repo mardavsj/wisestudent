@@ -7,82 +7,64 @@ import { BookOpen, Heart, Award, Users, CheckCircle, TrendingUp, Sparkles, Targe
 
 const TheRippleEffect = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-82";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5
+
   const [currentStep, setCurrentStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [reflection, setReflection] = useState("");
   const [showGameOver, setShowGameOver] = useState(false);
   const [score, setScore] = useState(0);
 
-  // Story animation steps
+  // Story animation steps (5 steps for scoring)
   const storySteps = [
     {
       id: 1,
       title: "The Struggling Student",
       emoji: "😟",
-      text: "Sarah was a quiet student in middle school who struggled with math. She felt invisible, overwhelmed, and ready to give up.",
+      text: "Sarah was a quiet student in middle school who struggled with math. She felt invisible, overwhelmed, and ready to give up. Her confidence was shattered, and she couldn't see a way forward.",
       color: "from-gray-400 to-slate-500",
       bgColor: "from-gray-50 to-slate-50",
       borderColor: "border-gray-300"
     },
     {
       id: 2,
-      title: "The Teacher Notices",
+      title: "The Teacher's Intervention",
       emoji: "👁️",
-      text: "Ms. Johnson noticed Sarah sitting alone during lunch, looking defeated after yet another difficult math test. She saw not just a struggling student, but a child who needed someone to believe in her.",
+      text: "Ms. Johnson noticed Sarah's struggle and took action. She saw beyond the test scores to recognize a student who needed support, encouragement, and belief in her potential.",
       color: "from-blue-400 to-cyan-500",
       bgColor: "from-blue-50 to-cyan-50",
       borderColor: "border-blue-300"
     },
     {
       id: 3,
-      title: "The Simple Act",
+      title: "Building Confidence",
       emoji: "💙",
-      text: "Ms. Johnson pulled Sarah aside after class. 'I see how hard you're trying,' she said. 'Let's work on this together, step by step. I believe you can do this.' It was a simple conversation—just 10 minutes of encouragement.",
+      text: "Through consistent support, personalized attention, and celebrating small victories, Ms. Johnson helped Sarah rebuild her confidence and develop a growth mindset about learning.",
       color: "from-indigo-400 to-purple-500",
       bgColor: "from-indigo-50 to-purple-50",
       borderColor: "border-indigo-300"
     },
     {
       id: 4,
-      title: "The Support Continues",
-      emoji: "🤝",
-      text: "Ms. Johnson continued checking in, offering extra help, celebrating small wins, and reminding Sarah of her potential. Over months, Sarah began to believe in herself.",
-      color: "from-green-400 to-emerald-500",
-      bgColor: "from-green-50 to-emerald-50",
-      borderColor: "border-green-300"
-    },
-    {
-      id: 5,
-      title: "The Transformation",
+      title: "Creating Positive Change",
       emoji: "✨",
-      text: "Sarah's confidence grew. Her grades improved. She started helping other struggling students. The impact didn't stop with her—it rippled outward.",
+      text: "Sarah's transformation inspired others. She began helping fellow students, demonstrating that with the right support, anyone can overcome academic challenges and discover their potential.",
       color: "from-yellow-400 to-amber-500",
       bgColor: "from-yellow-50 to-amber-50",
       borderColor: "border-yellow-300"
     },
     {
-      id: 6,
-      title: "The Future",
-      emoji: "🎓",
-      text: "Years later, Sarah became a math teacher herself, dedicating her career to helping students like her. She tells her students: 'One teacher believed in me when I didn't believe in myself. Now I'm here to do the same for you.'",
-      color: "from-pink-400 to-rose-500",
-      bgColor: "from-pink-50 to-rose-50",
-      borderColor: "border-pink-300"
-    },
-    {
-      id: 7,
-      title: "The Ripple Continues",
+      id: 5,
+      title: "The Lasting Impact",
       emoji: "🌊",
-      text: "Sarah's students go on to succeed, each carrying forward the belief and support they received. Ms. Johnson's simple act of noticing and believing created ripples that continue to spread—touching countless lives across generations.",
+      text: "Years later, Sarah became an educator herself, carrying forward the lessons learned. Her journey demonstrates how one teacher's investment creates ripples that touch countless lives across generations.",
       color: "from-cyan-400 to-blue-500",
       bgColor: "from-cyan-50 to-blue-50",
       borderColor: "border-cyan-300"
@@ -98,6 +80,7 @@ const TheRippleEffect = () => {
     if (currentStep < storySteps.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
+      // Completed all 5 steps - show completion
       setIsPlaying(false);
       setCurrentStep(storySteps.length - 1);
     }
@@ -115,7 +98,9 @@ const TheRippleEffect = () => {
       return;
     }
 
-    setScore(1);
+    // Score based on steps completed (1 point per step)
+    const stepsCompleted = currentStep + 1;
+    setScore(stepsCompleted);
     setShowGameOver(true);
   };
 
@@ -132,7 +117,7 @@ const TheRippleEffect = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={0}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         {!showGameOver && (
@@ -156,7 +141,7 @@ const TheRippleEffect = () => {
                   Watch the Story
                 </h3>
                 <p className="text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed">
-                  Discover how a teacher's simple act of noticing and believing in a struggling student created ripples that transformed not just one life, but countless others across generations.
+                  Discover how a teacher's simple act of noticing and believing in a struggling student created ripples that transformed not just one life, but countless others across generations. Complete all 5 steps to earn healcoins!
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -204,6 +189,9 @@ const TheRippleEffect = () => {
                           className={`bg-gradient-to-r ${currentStoryStep.color} h-2 rounded-full`}
                         />
                       </div>
+                      <div className="text-xs text-gray-500 mt-1 text-center">
+                        Score: {currentStep + 1} point{currentStep > 0 ? 's' : ''} earned
+                      </div>
                     </div>
 
                     {/* Navigation Buttons */}
@@ -213,11 +201,10 @@ const TheRippleEffect = () => {
                         whileTap={{ scale: 0.95 }}
                         onClick={handlePreviousStep}
                         disabled={currentStep === 0}
-                        className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-                          currentStep === 0
+                        className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${currentStep === 0
                             ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                             : 'bg-gray-500 text-white hover:bg-gray-600'
-                        }`}
+                          }`}
                       >
                         ← Previous
                       </motion.button>
@@ -241,8 +228,8 @@ const TheRippleEffect = () => {
                           }}
                           className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all flex items-center gap-2"
                         >
-                          <CheckCircle className="w-5 h-5" />
-                          Complete Story
+                          <Award className="w-5 h-5" />
+                          Earn Healcoins!
                         </motion.button>
                       )}
                     </div>
@@ -342,9 +329,13 @@ const TheRippleEffect = () => {
               <h2 className="text-3xl font-bold text-gray-800 mb-2">
                 Reflection Complete!
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 mb-2">
                 You've reflected on the ripple you're creating
               </p>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-full border-2 border-green-300">
+                <Award className="w-5 h-5 text-green-600" />
+                <span className="font-bold text-green-800">Earned {score} Healcoin{score !== 1 ? 's' : ''}!</span>
+              </div>
             </div>
 
             {/* Reflection Display */}
@@ -422,4 +413,3 @@ const TheRippleEffect = () => {
 };
 
 export default TheRippleEffect;
-

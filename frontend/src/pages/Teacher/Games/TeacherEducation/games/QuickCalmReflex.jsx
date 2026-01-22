@@ -7,15 +7,15 @@ import { getTeacherEducationGameById } from "../data/gameData";
 
 const QuickCalmReflex = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-13";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = 5; // Updated to 5 questions
-  
+
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
   const [currentRound, setCurrentRound] = useState(0);
   const [score, setScore] = useState(0);
@@ -30,7 +30,7 @@ const QuickCalmReflex = () => {
 
   const TOTAL_ROUNDS = 5; // Updated to match total levels
   const ICONS_PER_ROUND = 6; // Show 6 icons at once
-  const ICON_FLASH_INTERVAL = 3000; // Change icons every 3 seconds (more time to react)
+  const ICON_FLASH_INTERVAL = 5000; // Change icons every 3 seconds (more time to react)
 
   // Calming actions (correct - should tap)
   const calmingActions = [
@@ -49,7 +49,7 @@ const QuickCalmReflex = () => {
   // Generate random icons for display (ensuring exactly one calming action per round)
   const generateRandomIcons = () => {
     const icons = [];
-    
+
     // Ensure exactly one calming action (Breathe) per round
     if (calmingActions.length > 0) {
       const calmingAction = calmingActions[0]; // Take the first (and only) calming action
@@ -59,7 +59,7 @@ const QuickCalmReflex = () => {
         uniqueId: `${Date.now()}-calming-${Math.random()}` // Unique ID for each flash
       });
     }
-    
+
     // Fill remaining slots with non-calming actions
     for (let i = 1; i < ICONS_PER_ROUND; i++) {
       const nonCalmingAction = nonCalmingActions[Math.floor(Math.random() * nonCalmingActions.length)];
@@ -69,7 +69,7 @@ const QuickCalmReflex = () => {
         uniqueId: `${Date.now()}-noncalming-${i}-${Math.random()}` // Unique ID for each flash
       });
     }
-    
+
     // Shuffle the icons so the calming action isn't always in the same position
     return icons.sort(() => Math.random() - 0.5);
   };
@@ -80,10 +80,10 @@ const QuickCalmReflex = () => {
     setTimeLeft(5);
     roundRef.current = roundRef.current + 1;
     setCurrentRound(roundRef.current);
-    
+
     // Show initial set of icons
     setCurrentIcons(generateRandomIcons());
-    
+
     // Flash new icons periodically
     iconTimerRef.current = setInterval(() => {
       setCurrentIcons(generateRandomIcons());
@@ -93,9 +93,9 @@ const QuickCalmReflex = () => {
   // Handle icon tap
   const handleIconTap = (icon) => {
     if (tappedIcons.has(icon.uniqueId) || gameState !== "playing") return;
-    
+
     setTappedIcons(new Set([...tappedIcons, icon.uniqueId]));
-    
+
     if (icon.isCalming) {
       // Correct - tapped a calming action
       setScore(prev => prev + 1);
@@ -139,7 +139,7 @@ const QuickCalmReflex = () => {
             clearInterval(iconTimerRef.current);
             iconTimerRef.current = null;
           }
-          
+
           // Move to next round or finish
           setTimeout(() => {
             if (roundRef.current < TOTAL_ROUNDS) {
@@ -191,7 +191,7 @@ const QuickCalmReflex = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={currentRound+0-1}
+      currentQuestion={currentRound + 0 - 1}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         {gameState === "ready" && (
@@ -271,13 +271,13 @@ const QuickCalmReflex = () => {
                   {currentIcons.map((icon) => {
                     const isTapped = tappedIcons.has(icon.uniqueId);
                     const isCorrect = icon.isCalming;
-                    
+
                     return (
                       <motion.button
                         key={icon.uniqueId}
                         initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ 
-                          scale: isTapped ? 0.7 : 1, 
+                        animate={{
+                          scale: isTapped ? 0.7 : 1,
                           opacity: isTapped ? 0.4 : 1,
                         }}
                         whileHover={!isTapped ? { scale: 1.05 } : {}}
@@ -285,15 +285,13 @@ const QuickCalmReflex = () => {
                         transition={{ duration: 0.2 }}
                         onClick={() => handleIconTap(icon)}
                         disabled={isTapped}
-                        className={`relative w-full aspect-square rounded-xl bg-gradient-to-br ${icon.color} shadow-lg flex flex-col items-center justify-center text-white transform transition-all ${
-                          isTapped 
-                            ? 'cursor-not-allowed' 
+                        className={`relative w-full aspect-square rounded-xl bg-gradient-to-br ${icon.color} shadow-lg flex flex-col items-center justify-center text-white transform transition-all ${isTapped
+                            ? 'cursor-not-allowed'
                             : 'cursor-pointer hover:shadow-xl'
-                        } ${
-                          isTapped && isCorrect ? 'ring-4 ring-green-500' :
-                          isTapped && !isCorrect ? 'ring-4 ring-red-500' :
-                          ''
-                        }`}
+                          } ${isTapped && isCorrect ? 'ring-4 ring-green-500' :
+                            isTapped && !isCorrect ? 'ring-4 ring-red-500' :
+                              ''
+                          }`}
                       >
                         <span className="text-5xl mb-2">{icon.icon}</span>
                         <span className="text-sm font-bold">{icon.label}</span>
@@ -321,7 +319,7 @@ const QuickCalmReflex = () => {
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Game Complete!
             </h2>
-            
+
             <div className="grid grid-cols-2 gap-6 mb-8 max-w-md mx-auto">
               <div className="bg-green-50 rounded-xl p-4 border-2 border-green-200">
                 <div className="text-3xl font-bold text-green-600 mb-1">{score}</div>
@@ -367,4 +365,3 @@ const QuickCalmReflex = () => {
 };
 
 export default QuickCalmReflex;
-

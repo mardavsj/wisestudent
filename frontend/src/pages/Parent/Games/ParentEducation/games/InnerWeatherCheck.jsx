@@ -5,15 +5,15 @@ import { getParentEducationGameById } from "../data/gameData";
 
 const InnerWeatherCheck = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "parent-education-4";
   const gameData = getParentEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [score, setScore] = useState(0);
@@ -21,73 +21,73 @@ const InnerWeatherCheck = () => {
 
   // Weather options for emotional states
   const weatherOptions = [
-    { 
-      id: 'sunny', 
-      label: 'Sunny', 
-      emoji: '☀️', 
+    {
+      id: 'sunny',
+      label: 'Sunny',
+      emoji: '☀️',
       description: 'Bright, clear, and positive',
       color: 'from-yellow-400 to-orange-500',
       bgColor: 'from-yellow-50 to-orange-50',
       borderColor: 'border-yellow-300'
     },
-    { 
-      id: 'partly-cloudy', 
-      label: 'Partly Cloudy', 
-      emoji: '⛅', 
+    {
+      id: 'partly-cloudy',
+      label: 'Partly Cloudy',
+      emoji: '⛅',
       description: 'Mixed feelings, some clarity',
       color: 'from-blue-400 to-gray-400',
       bgColor: 'from-blue-50 to-gray-50',
       borderColor: 'border-blue-300'
     },
-    { 
-      id: 'cloudy', 
-      label: 'Cloudy', 
-      emoji: '☁️', 
+    {
+      id: 'cloudy',
+      label: 'Cloudy',
+      emoji: '☁️',
       description: 'Heavy, uncertain, or low',
       color: 'from-gray-400 to-slate-500',
       bgColor: 'from-gray-50 to-slate-50',
       borderColor: 'border-gray-300'
     },
-    { 
-      id: 'stormy', 
-      label: 'Stormy', 
-      emoji: '⛈️', 
+    {
+      id: 'stormy',
+      label: 'Stormy',
+      emoji: '⛈️',
       description: 'Intense, turbulent emotions',
       color: 'from-gray-600 to-purple-700',
       bgColor: 'from-gray-100 to-purple-100',
       borderColor: 'border-gray-400'
     },
-    { 
-      id: 'rainy', 
-      label: 'Rainy', 
-      emoji: '🌧️', 
+    {
+      id: 'rainy',
+      label: 'Rainy',
+      emoji: '🌧️',
       description: 'Sad, melancholic, or teary',
       color: 'from-blue-500 to-indigo-600',
       bgColor: 'from-blue-50 to-indigo-50',
       borderColor: 'border-blue-300'
     },
-    { 
-      id: 'windy', 
-      label: 'Windy', 
-      emoji: '💨', 
+    {
+      id: 'windy',
+      label: 'Windy',
+      emoji: '💨',
       description: 'Restless, anxious, or scattered',
       color: 'from-teal-400 to-cyan-500',
       bgColor: 'from-teal-50 to-cyan-50',
       borderColor: 'border-teal-300'
     },
-    { 
-      id: 'foggy', 
-      label: 'Foggy', 
-      emoji: '🌫️', 
+    {
+      id: 'foggy',
+      label: 'Foggy',
+      emoji: '🌫️',
       description: 'Unclear, confused, or uncertain',
       color: 'from-slate-300 to-gray-400',
       bgColor: 'from-slate-50 to-gray-50',
       borderColor: 'border-slate-300'
     },
-    { 
-      id: 'rainbow', 
-      label: 'Rainbow', 
-      emoji: '🌈', 
+    {
+      id: 'rainbow',
+      label: 'Rainbow',
+      emoji: '🌈',
       description: 'Grateful, hopeful, mixed positive',
       color: 'from-pink-400 via-purple-400 to-indigo-400',
       bgColor: 'from-pink-50 via-purple-50 to-indigo-50',
@@ -102,7 +102,7 @@ const InnerWeatherCheck = () => {
       title: "Morning After Restful Sleep",
       description: "You woke up well-rested after a good night's sleep. The house is quiet, and you have a moment to enjoy your coffee. Everything feels manageable.",
       correctWeather: 'sunny',
-      options: ['sunny', 'partly-cloudy', 'cloudy', 'rainbow'],
+      options: ['partly-cloudy', 'cloudy', 'rainbow', 'sunny'],
       reflection: "Recognizing 'sunny' weather helps you appreciate positive moments. When you notice this feeling, you can say: 'My inner weather is sunny today.' This awareness helps you recognize what contributes to your wellbeing and return to this state when needed.",
       parentTip: "Ask your child: 'What's your weather today?' This simple question opens conversations about emotions without pressure. When they say 'sunny,' celebrate it together and discuss what makes them feel good."
     },
@@ -111,7 +111,7 @@ const InnerWeatherCheck = () => {
       title: "Balancing Work and Family",
       description: "You're managing multiple responsibilities - work deadlines, children's needs, household tasks. Some things are going well, but you feel pulled in different directions.",
       correctWeather: 'partly-cloudy',
-      options: ['partly-cloudy', 'cloudy', 'windy', 'foggy'],
+      options: ['cloudy', 'partly-cloudy', 'windy', 'foggy'],
       reflection: "Acknowledging 'partly cloudy' weather helps you recognize mixed feelings without judgment. You can say: 'My inner weather is partly cloudy - some things feel good, others feel heavy.' This honest assessment helps you prioritize and ask for support when needed.",
       parentTip: "When your child says their weather is 'partly cloudy,' validate both sides. Say: 'I hear that some things feel good and some feel hard. That's normal. What's making you feel cloudy right now?' This teaches emotional nuance."
     },
@@ -120,7 +120,7 @@ const InnerWeatherCheck = () => {
       title: "Overwhelming Day",
       description: "Everything seems to be going wrong. You're behind on tasks, the kids are arguing, and you feel exhausted. Nothing feels right, and you're struggling to stay positive.",
       correctWeather: 'cloudy',
-      options: ['cloudy', 'stormy', 'rainy', 'foggy'],
+      options: ['stormy', 'rainy', 'cloudy', 'foggy'],
       reflection: "Naming 'cloudy' weather helps you acknowledge difficulty without shame. You can say: 'My inner weather is cloudy today - and that's okay. Clouds pass.' This self-compassion prevents you from adding judgment to an already difficult day.",
       parentTip: "When your child's weather is 'cloudy,' offer comfort without trying to fix it. Say: 'I see your weather is cloudy. That must feel heavy. I'm here with you.' Sometimes children just need to be heard, not cheered up immediately."
     },
@@ -138,7 +138,7 @@ const InnerWeatherCheck = () => {
       title: "Feeling Grateful Despite Challenges",
       description: "You've had a challenging week, but you're reflecting on the good moments - a child's laughter, a moment of connection, small victories. You feel grateful even though things aren't perfect.",
       correctWeather: 'rainbow',
-      options: ['rainbow', 'sunny', 'partly-cloudy', 'windy'],
+      options: ['sunny', 'partly-cloudy', 'windy', 'rainbow'],
       reflection: "Recognizing 'rainbow' weather helps you hold both challenge and gratitude. You can say: 'My inner weather is a rainbow - there's been rain, but I can also see the beauty.' This perspective builds resilience and emotional flexibility.",
       parentTip: "The 'rainbow' weather teaches children that emotions can coexist. Say: 'Your weather can be both challenging and beautiful at the same time. What are you grateful for, even when things are hard?' This builds emotional complexity and resilience."
     }
@@ -198,7 +198,7 @@ const InnerWeatherCheck = () => {
   };
 
   const currentScenario = scenarios[currentQuestion];
-  const availableOptions = currentScenario.options.map(opt => 
+  const availableOptions = currentScenario.options.map(opt =>
     weatherOptions.find(weather => weather.id === opt)
   ).filter(Boolean);
 
@@ -256,11 +256,9 @@ const InnerWeatherCheck = () => {
                     key={weather.id}
                     onClick={() => !selectedAnswers[currentQuestion] && handleWeatherSelect(currentQuestion, weather.id)}
                     disabled={!!selectedAnswers[currentQuestion]}
-                    className={`p-6 rounded-xl border-2 transition-all text-center relative overflow-hidden ${
-                      getWeatherCardStyle(currentQuestion, weather.id)
-                    } ${
-                      selectedAnswers[currentQuestion] ? 'cursor-not-allowed' : 'cursor-pointer hover:shadow-xl hover:scale-105'
-                    }`}
+                    className={`p-6 rounded-xl border-2 transition-all text-center relative overflow-hidden ${getWeatherCardStyle(currentQuestion, weather.id)
+                      } ${selectedAnswers[currentQuestion] ? 'cursor-not-allowed' : 'cursor-pointer hover:shadow-xl hover:scale-105'
+                      }`}
                   >
                     {/* Animated sky background for selected correct answer */}
                     {showFeedback && isCorrect && (
@@ -283,34 +281,30 @@ const InnerWeatherCheck = () => {
 
             {/* Reflection Message */}
             {selectedAnswers[currentQuestion] !== undefined && (
-              <div className={`mt-6 p-4 rounded-xl border-2 ${
-                selectedAnswers[currentQuestion] === currentScenario.correctWeather
+              <div className={`mt-6 p-4 rounded-xl border-2 ${selectedAnswers[currentQuestion] === currentScenario.correctWeather
                   ? 'bg-green-50 border-green-200'
                   : 'bg-orange-50 border-orange-200'
-              }`}>
+                }`}>
                 <div className="flex items-start gap-3">
-                  <div className={`text-2xl flex-shrink-0 ${
-                    selectedAnswers[currentQuestion] === currentScenario.correctWeather
+                  <div className={`text-2xl flex-shrink-0 ${selectedAnswers[currentQuestion] === currentScenario.correctWeather
                       ? 'text-green-600'
                       : 'text-orange-600'
-                  }`}>
+                    }`}>
                     {selectedAnswers[currentQuestion] === currentScenario.correctWeather ? '💡' : '📝'}
                   </div>
                   <div className="flex-1">
-                    <h4 className={`font-bold mb-2 ${
-                      selectedAnswers[currentQuestion] === currentScenario.correctWeather
+                    <h4 className={`font-bold mb-2 ${selectedAnswers[currentQuestion] === currentScenario.correctWeather
                         ? 'text-green-800'
                         : 'text-orange-800'
-                    }`}>
+                      }`}>
                       {selectedAnswers[currentQuestion] === currentScenario.correctWeather
                         ? 'Reflection'
                         : 'Learning Moment'}
                     </h4>
-                    <p className={`text-sm leading-relaxed mb-2 ${
-                      selectedAnswers[currentQuestion] === currentScenario.correctWeather
+                    <p className={`text-sm leading-relaxed mb-2 ${selectedAnswers[currentQuestion] === currentScenario.correctWeather
                         ? 'text-green-700'
                         : 'text-orange-700'
-                    }`}>
+                      }`}>
                       {currentScenario.reflection}
                     </p>
                     <div className="bg-white/60 rounded-lg p-3 mt-3 border border-blue-200">
@@ -326,7 +320,7 @@ const InnerWeatherCheck = () => {
           </div>
         </div>
       ) : null}
-      
+
       <style>{`
         @keyframes bounce-slow {
           0%, 100% { transform: translateY(0); }
@@ -341,4 +335,3 @@ const InnerWeatherCheck = () => {
 };
 
 export default InnerWeatherCheck;
-

@@ -12,11 +12,11 @@ import { toast } from "react-toastify";
 const BalancedLifeBadge = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   // Get game data
   const gameId = "teacher-education-40";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   const [loading, setLoading] = useState(true);
   const [gamesStatus, setGamesStatus] = useState([]);
   const [allCompleted, setAllCompleted] = useState(false);
@@ -56,7 +56,7 @@ const BalancedLifeBadge = () => {
     if ('speechSynthesis' in window) {
       setSpeechSynth(window.speechSynthesis);
     }
-    
+
     checkGamesCompletion();
     checkBadgeStatus();
   }, []);
@@ -119,7 +119,7 @@ const BalancedLifeBadge = () => {
 
     speechSynth.cancel();
     setIsPlayingAudio(true);
-    
+
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = 0.85;
     utterance.pitch = 1.0;
@@ -150,15 +150,15 @@ const BalancedLifeBadge = () => {
 
       const result = response.data;
 
-      if (result.success && result.badgeEarned) {
+      if (result.success && (result.badgeEarned || result.newlyEarned)) {
         setBadgeCollected(true);
         setShowCollectionModal(false);
         toast.success('🎉 Badge collected successfully!');
-        
+
         // Play positive audio affirmation
         const affirmation = "Congratulations! You have earned the Balanced Life Badge. Your consistent practice of work-life balance shows your commitment to wellbeing. You have mastered weekend planning, saying no, tracking work-life balance, connecting with family, and digital shutdown. Your balanced approach benefits not only you but also your students and colleagues. Well done!";
         playAffirmation(affirmation);
-        
+
         // Dispatch badge earned event
         window.dispatchEvent(new CustomEvent('teacherBadgeEarned', {
           detail: {
@@ -168,7 +168,7 @@ const BalancedLifeBadge = () => {
             badge: result.badge
           }
         }));
-        
+
         // Register the badge game as completed in the game progress system
         // This is crucial for sequential unlocking of the next game
         try {
@@ -226,13 +226,12 @@ const BalancedLifeBadge = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                  className={`w-32 h-32 mx-auto rounded-full bg-gradient-to-br ${
-                    allCompleted && badgeCollected
+                  className={`w-32 h-32 mx-auto rounded-full bg-gradient-to-br ${allCompleted && badgeCollected
                       ? 'from-amber-400 via-yellow-400 to-orange-400'
                       : allCompleted
-                      ? 'from-amber-300 via-yellow-300 to-orange-300'
-                      : 'from-gray-300 to-gray-400'
-                  } flex items-center justify-center shadow-lg border-4 border-white`}
+                        ? 'from-amber-300 via-yellow-300 to-orange-300'
+                        : 'from-gray-300 to-gray-400'
+                    } flex items-center justify-center shadow-lg border-4 border-white`}
                 >
                   {badgeCollected ? (
                     <Award className="w-20 h-20 text-white" />
@@ -243,14 +242,14 @@ const BalancedLifeBadge = () => {
                   )}
                 </motion.div>
               </div>
-              
+
               <h2 className="text-3xl font-bold text-gray-800 mb-2">
                 Balanced Life Badge
               </h2>
               <p className="text-gray-600 text-lg mb-4">
                 Maintain consistent rest and self-care routines
               </p>
-              
+
               {/* Progress */}
               <div className="max-w-md mx-auto mb-6">
                 <div className="flex justify-between text-sm text-gray-600 mb-2">
@@ -273,29 +272,26 @@ const BalancedLifeBadge = () => {
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 Required Activities:
               </h3>
-              
+
               {gamesStatus.map((game, index) => (
                 <motion.div
                   key={game.gameId}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className={`rounded-xl p-5 border-2 ${
-                    game.completed
+                  className={`rounded-xl p-5 border-2 ${game.completed
                       ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-green-300'
                       : 'bg-gray-50 border-gray-300'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`text-4xl ${
-                      game.completed ? '' : 'opacity-50 grayscale'
-                    }`}>
+                    <div className={`text-4xl ${game.completed ? '' : 'opacity-50 grayscale'
+                      }`}>
                       {game.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className={`font-semibold text-lg mb-1 ${
-                        game.completed ? 'text-gray-800' : 'text-gray-500'
-                      }`}>
+                      <h4 className={`font-semibold text-lg mb-1 ${game.completed ? 'text-gray-800' : 'text-gray-500'
+                        }`}>
                         {game.name}
                       </h4>
                       {!game.completed && (
@@ -483,4 +479,3 @@ const BalancedLifeBadge = () => {
 };
 
 export default BalancedLifeBadge;
-

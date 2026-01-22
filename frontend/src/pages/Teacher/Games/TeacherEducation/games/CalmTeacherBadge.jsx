@@ -12,11 +12,11 @@ import { toast } from "react-toastify";
 const CalmTeacherBadge = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   // Get game data
   const gameId = "teacher-education-20";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   const [loading, setLoading] = useState(true);
   const [gamesStatus, setGamesStatus] = useState([]);
   const [allCompleted, setAllCompleted] = useState(false);
@@ -56,7 +56,7 @@ const CalmTeacherBadge = () => {
     if ('speechSynthesis' in window) {
       setSpeechSynth(window.speechSynthesis);
     }
-    
+
     checkGamesCompletion();
     checkBadgeStatus();
   }, []);
@@ -119,7 +119,7 @@ const CalmTeacherBadge = () => {
 
     speechSynth.cancel();
     setIsPlayingAudio(true);
-    
+
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = 0.85;
     utterance.pitch = 1.0;
@@ -150,15 +150,15 @@ const CalmTeacherBadge = () => {
 
       const result = response.data;
 
-      if (result.success && result.badgeEarned) {
+      if (result.success && (result.badgeEarned || result.newlyEarned)) {
         setBadgeCollected(true);
         setShowCollectionModal(false);
         toast.success('🎉 Badge collected successfully!');
-        
+
         // Play positive audio affirmation
         const affirmation = "Congratulations! You have earned the Calm Teacher Badge. Your consistent practice of stress management techniques shows your commitment to wellbeing. You have mastered breathing, pausing, journaling, body awareness, and quick calming strategies. Your calm presence benefits not only you but also your students and colleagues. Well done!";
         playAffirmation(affirmation);
-        
+
         // Dispatch badge earned event
         window.dispatchEvent(new CustomEvent('teacherBadgeEarned', {
           detail: {
@@ -168,7 +168,7 @@ const CalmTeacherBadge = () => {
             badge: result.badge
           }
         }));
-        
+
         // Register the badge game as completed in the game progress system
         // This is crucial for sequential unlocking of the next game
         try {
@@ -255,11 +255,10 @@ const CalmTeacherBadge = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className={`flex items-center justify-between p-4 rounded-xl border-2 ${
-                    game.completed
+                  className={`flex items-center justify-between p-4 rounded-xl border-2 ${game.completed
                       ? 'bg-green-50 border-green-200'
                       : 'bg-gray-50 border-gray-200'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3">
                     {game.completed ? (
@@ -268,15 +267,13 @@ const CalmTeacherBadge = () => {
                       <div className="w-6 h-6 rounded-full border-2 border-gray-400"></div>
                     )}
                     <span className="text-2xl">{game.icon}</span>
-                    <span className={`font-medium text-lg ${
-                      game.completed ? 'text-green-800' : 'text-gray-600'
-                    }`}>
+                    <span className={`font-medium text-lg ${game.completed ? 'text-green-800' : 'text-gray-600'
+                      }`}>
                       {index + 1}. {game.name}
                     </span>
                   </div>
-                  <span className={`text-sm font-semibold ${
-                    game.completed ? 'text-green-600' : 'text-gray-400'
-                  }`}>
+                  <span className={`text-sm font-semibold ${game.completed ? 'text-green-600' : 'text-gray-400'
+                    }`}>
                     {game.completed ? 'Completed ✓' : 'Not Completed'}
                   </span>
                 </motion.div>
@@ -295,8 +292,8 @@ const CalmTeacherBadge = () => {
                 <motion.div
                   className="bg-gradient-to-r from-blue-500 to-cyan-500 h-4 rounded-full"
                   initial={{ width: 0 }}
-                  animate={{ 
-                    width: `${(gamesStatus.filter(g => g.completed).length / 5) * 100}%` 
+                  animate={{
+                    width: `${(gamesStatus.filter(g => g.completed).length / 5) * 100}%`
                   }}
                   transition={{ duration: 0.5 }}
                 />
@@ -349,7 +346,7 @@ const CalmTeacherBadge = () => {
                 Congratulations! You have successfully completed all calming activities and earned the Calm Teacher Badge.
               </p>
             </div>
-            
+
             {/* Audio Affirmation Button */}
             <div className="mb-6">
               <button
@@ -485,4 +482,3 @@ const CalmTeacherBadge = () => {
 };
 
 export default CalmTeacherBadge;
-

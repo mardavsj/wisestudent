@@ -7,15 +7,15 @@ import { Clock, Star, Pause, AlertCircle, CheckCircle, GripVertical, TrendingUp 
 
 const TaskPrioritizationPuzzle = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-34";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = 5; // Set to 5 questions
-  
+
   // Define 5 different question sets
   const questionSets = [
     // Question 1: Basic Urgent vs Important vs Can Wait
@@ -64,7 +64,7 @@ const TaskPrioritizationPuzzle = () => {
       { id: 6, text: "Organize teacher potluck event", correctCategory: 'can-wait', icon: '🥗', explanation: "Can Wait - Social events are nice but can be postponed without consequence.", category: null }
     ]
   ];
-  
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [tasks, setTasks] = useState(questionSets[currentQuestionIndex]);
   const [draggedItem, setDraggedItem] = useState(null);
@@ -75,28 +75,28 @@ const TaskPrioritizationPuzzle = () => {
   const [feedbackTasks, setFeedbackTasks] = useState([]);
 
   const categories = [
-    { 
-      id: 'urgent', 
-      label: 'Urgent', 
-      icon: Clock, 
+    {
+      id: 'urgent',
+      label: 'Urgent',
+      icon: Clock,
       color: 'from-red-500 to-rose-500',
       bgColor: 'bg-red-50',
       borderColor: 'border-red-300',
       description: 'Needs immediate attention - Do First'
     },
-    { 
-      id: 'important', 
-      label: 'Important', 
-      icon: Star, 
+    {
+      id: 'important',
+      label: 'Important',
+      icon: Star,
       color: 'from-blue-500 to-cyan-500',
       bgColor: 'bg-blue-50',
       borderColor: 'border-blue-300',
       description: 'Matters significantly - Schedule'
     },
-    { 
-      id: 'can-wait', 
-      label: 'Can Wait', 
-      icon: Pause, 
+    {
+      id: 'can-wait',
+      label: 'Can Wait',
+      icon: Pause,
       color: 'from-gray-500 to-slate-500',
       bgColor: 'bg-gray-50',
       borderColor: 'border-gray-300',
@@ -119,8 +119,8 @@ const TaskPrioritizationPuzzle = () => {
     e.preventDefault();
     if (!draggedItem) return;
 
-    setTasks(prev => prev.map(task => 
-      task.id === draggedItem 
+    setTasks(prev => prev.map(task =>
+      task.id === draggedItem
         ? { ...task, category }
         : task
     ));
@@ -128,8 +128,8 @@ const TaskPrioritizationPuzzle = () => {
   };
 
   const handleRemoveFromCategory = (taskId) => {
-    setTasks(prev => prev.map(task => 
-      task.id === taskId 
+    setTasks(prev => prev.map(task =>
+      task.id === taskId
         ? { ...task, category: null }
         : task
     ));
@@ -144,19 +144,19 @@ const TaskPrioritizationPuzzle = () => {
         isCorrect: task.category === task.correctCategory,
         userCategory: task.category
       }));
-      
+
       // Calculate if all tasks in current question are correct
       const allCorrectInQuestion = feedback.every(f => f.isCorrect);
-      
+
       // Update question scores - 1 point if all tasks in question are correct, 0 otherwise
       const newQuestionScores = [...questionScores];
       newQuestionScores[currentQuestionIndex] = allCorrectInQuestion ? 1 : 0;
       setQuestionScores(newQuestionScores);
-      
+
       // Update overall score
       const newOverallScore = newQuestionScores.reduce((sum, score) => sum + score, 0);
       setOverallScore(newOverallScore);
-      
+
       setFeedbackTasks(feedback);
       setShowFeedback(true);
     }
@@ -198,7 +198,7 @@ const TaskPrioritizationPuzzle = () => {
         {!showFeedback ? (
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">
-              Task Prioritization Puzzle - Question {currentQuestionIndex + 1} of {totalLevels}
+              Question {currentQuestionIndex + 1} of {totalLevels}
             </h2>
             <p className="text-gray-600 mb-6 text-center">
               Drag and drop each task into the category that best describes its priority
@@ -235,9 +235,8 @@ const TaskPrioritizationPuzzle = () => {
               <div
                 onDragOver={handleDragOver}
                 onDrop={(e) => handleDrop(e, 'urgent')}
-                className={`min-h-[400px] rounded-xl border-2 border-dashed p-4 transition-all ${
-                  draggedItem ? 'border-red-400 bg-red-50' : 'border-red-300 bg-red-50/50'
-                }`}
+                className={`min-h-[400px] rounded-xl border-2 border-dashed p-4 transition-all ${draggedItem ? 'border-red-400 bg-red-50' : 'border-red-300 bg-red-50/50'
+                  }`}
               >
                 <div className="flex items-center gap-2 mb-3">
                   <Clock className="w-5 h-5 text-red-600" />
@@ -274,9 +273,8 @@ const TaskPrioritizationPuzzle = () => {
               <div
                 onDragOver={handleDragOver}
                 onDrop={(e) => handleDrop(e, 'important')}
-                className={`min-h-[400px] rounded-xl border-2 border-dashed p-4 transition-all ${
-                  draggedItem ? 'border-blue-400 bg-blue-50' : 'border-blue-300 bg-blue-50/50'
-                }`}
+                className={`min-h-[400px] rounded-xl border-2 border-dashed p-4 transition-all ${draggedItem ? 'border-blue-400 bg-blue-50' : 'border-blue-300 bg-blue-50/50'
+                  }`}
               >
                 <div className="flex items-center gap-2 mb-3">
                   <Star className="w-5 h-5 text-blue-600" />
@@ -313,9 +311,8 @@ const TaskPrioritizationPuzzle = () => {
               <div
                 onDragOver={handleDragOver}
                 onDrop={(e) => handleDrop(e, 'can-wait')}
-                className={`min-h-[400px] rounded-xl border-2 border-dashed p-4 transition-all ${
-                  draggedItem ? 'border-gray-400 bg-gray-50' : 'border-gray-300 bg-gray-50/50'
-                }`}
+                className={`min-h-[400px] rounded-xl border-2 border-dashed p-4 transition-all ${draggedItem ? 'border-gray-400 bg-gray-50' : 'border-gray-300 bg-gray-50/50'
+                  }`}
               >
                 <div className="flex items-center gap-2 mb-3">
                   <Pause className="w-5 h-5 text-gray-600" />
@@ -414,18 +411,17 @@ const TaskPrioritizationPuzzle = () => {
                 {feedbackTasks.map((task, index) => {
                   const category = categories.find(c => c.id === task.userCategory);
                   const correctCategory = categories.find(c => c.id === task.correctCategory);
-                  
+
                   return (
                     <motion.div
                       key={task.id}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className={`p-4 rounded-xl border-2 ${
-                        task.isCorrect
+                      className={`p-4 rounded-xl border-2 ${task.isCorrect
                           ? 'bg-green-50 border-green-300'
                           : 'bg-yellow-50 border-yellow-300'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-start gap-3">
                         {task.isCorrect ? (
@@ -439,11 +435,10 @@ const TaskPrioritizationPuzzle = () => {
                             <p className="font-semibold text-gray-800">{task.text}</p>
                           </div>
                           <div className="flex items-center gap-2 mb-2">
-                            <span className={`text-sm px-2 py-1 rounded ${
-                              task.isCorrect
+                            <span className={`text-sm px-2 py-1 rounded ${task.isCorrect
                                 ? 'bg-green-200 text-green-800'
                                 : 'bg-yellow-200 text-yellow-800'
-                            }`}>
+                              }`}>
                               Your choice: {category ? category.label : 'Unassigned'}
                             </span>
                             {!task.isCorrect && (
@@ -452,9 +447,8 @@ const TaskPrioritizationPuzzle = () => {
                               </span>
                             )}
                           </div>
-                          <div className={`bg-white rounded-lg p-3 border-l-4 ${
-                            task.isCorrect ? 'border-green-500' : 'border-yellow-500'
-                          }`}>
+                          <div className={`bg-white rounded-lg p-3 border-l-4 ${task.isCorrect ? 'border-green-500' : 'border-yellow-500'
+                            }`}>
                             <p className="text-sm text-gray-700">
                               {task.isCorrect ? (
                                 <span className="text-green-800 font-semibold">✓ Correct! </span>
@@ -535,8 +529,8 @@ const TaskPrioritizationPuzzle = () => {
                 {overallScore >= 5
                   ? "Excellent! You have a strong understanding of task prioritization. You can effectively distinguish between urgent, important, and tasks that can wait."
                   : overallScore >= 3
-                  ? "Good job! You're developing strong prioritization skills. Continue practicing to refine your ability to separate urgent from important tasks."
-                  : "Nice effort! Task prioritization is a skill that improves with practice. Review the feedback to better understand the difference between urgent and important tasks."}
+                    ? "Good job! You're developing strong prioritization skills. Continue practicing to refine your ability to separate urgent from important tasks."
+                    : "Nice effort! Task prioritization is a skill that improves with practice. Review the feedback to better understand the difference between urgent and important tasks."}
               </p>
             </div>
 
@@ -562,4 +556,3 @@ const TaskPrioritizationPuzzle = () => {
 };
 
 export default TaskPrioritizationPuzzle;
-

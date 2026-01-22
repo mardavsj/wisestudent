@@ -7,15 +7,15 @@ import { Calendar, Clock, Coffee, Heart, Moon, CheckCircle, Bell, BookOpen, Plus
 
 const RestRecoveryPlan = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-98";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [planData, setPlanData] = useState({
     dailyMiniBreak: {
       time: '',
@@ -31,14 +31,30 @@ const RestRecoveryPlan = () => {
       date: '',
       activity: '',
       duration: ''
+    },
+    monthlySelfCare: {
+      date: '',
+      activity: '',
+      duration: ''
+    },
+    quarterlyReflection: {
+      date: '',
+      activity: '',
+      duration: ''
     }
   });
-  const [reminderSet, setReminderSet] = useState(false);
+  const [remindersSet, setRemindersSet] = useState({
+    dailyMiniBreak: false,
+    weeklyJoy: false,
+    monthlyReset: false,
+    monthlySelfCare: false,
+    quarterlyReflection: false
+  });
   const [score, setScore] = useState(0);
   const [showGameOver, setShowGameOver] = useState(false);
 
   const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  
+
   const activitySuggestions = {
     dailyMiniBreak: [
       'Deep breathing (5 minutes)',
@@ -68,6 +84,26 @@ const RestRecoveryPlan = () => {
       'Reconnect with loved ones',
       'Try something new',
       'Reflect and plan ahead'
+    ],
+    monthlySelfCare: [
+      'Self-massage with oils',
+      'Take a relaxing bath',
+      'Practice yoga at home',
+      'Do a skincare routine',
+      'Journal and reflect',
+      'Meditate for 20 minutes',
+      'Read inspirational books',
+      'Listen to healing music'
+    ],
+    quarterlyReflection: [
+      'Review and adjust goals',
+      'Evaluate teaching practices',
+      'Plan professional development',
+      'Assess work-life balance',
+      'Celebrate achievements',
+      'Identify stress patterns',
+      'Reassess priorities',
+      'Create new intentions'
     ]
   };
 
@@ -81,29 +117,64 @@ const RestRecoveryPlan = () => {
     }));
   };
 
-  const handleSetReminder = () => {
-    // Validate that all sections are filled
-    const isValid = 
-      planData.dailyMiniBreak.time && planData.dailyMiniBreak.activity &&
-      planData.weeklyJoy.day && planData.weeklyJoy.activity &&
-      planData.monthlyReset.date && planData.monthlyReset.activity;
+  const handleSetReminder = (section) => {
+    // Validate that the specific section is filled
+    let isValid = false;
+
+    switch (section) {
+      case 'dailyMiniBreak':
+        isValid = planData.dailyMiniBreak.time && planData.dailyMiniBreak.activity;
+        break;
+      case 'weeklyJoy':
+        isValid = planData.weeklyJoy.day && planData.weeklyJoy.activity;
+        break;
+      case 'monthlyReset':
+        isValid = planData.monthlyReset.date && planData.monthlyReset.activity;
+        break;
+      case 'monthlySelfCare':
+        isValid = planData.monthlySelfCare.date && planData.monthlySelfCare.activity;
+        break;
+      case 'quarterlyReflection':
+        isValid = planData.quarterlyReflection.date && planData.quarterlyReflection.activity;
+        break;
+      default:
+        isValid = false;
+    }
 
     if (!isValid) {
-      alert('Please fill in all fields before setting reminders.');
+      alert(`Please fill in all required fields for ${section.replace(/([A-Z])/g, ' $1').toLowerCase().trim()} before setting reminder.`);
       return;
     }
 
-    setReminderSet(true);
-    setScore(1);
-    setTimeout(() => {
-      setShowGameOver(true);
-    }, 2000);
+    // Update the specific reminder status
+    setRemindersSet(prev => ({
+      ...prev,
+      [section]: true
+    }));
+
+    // Update score based on how many reminders are set
+    const newScore = Object.values({ ...remindersSet, [section]: true }).filter(Boolean).length;
+    setScore(Math.min(newScore, 5)); // Cap at 5
+
+    // Check if all 5 reminders are set
+    const allSet = Object.values({ ...remindersSet, [section]: true }).every(Boolean);
+    if (allSet) {
+      setTimeout(() => {
+        setShowGameOver(true);
+      }, 2000);
+    }
   };
 
   const getFormattedDate = () => {
     const today = new Date();
     const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
     return nextMonth.toISOString().split('T')[0];
+  };
+
+  const getQuarterlyDate = () => {
+    const today = new Date();
+    const nextQuarter = new Date(today.getFullYear(), today.getMonth() + 3, 1);
+    return nextQuarter.toISOString().split('T')[0];
   };
 
   if (showGameOver) {
@@ -117,7 +188,7 @@ const RestRecoveryPlan = () => {
         gameType="teacher-education"
         totalLevels={totalLevels}
         totalCoins={totalCoins}
-        currentQuestion={1}
+        currentQuestion={score}
       >
         <div className="w-full max-w-5xl mx-auto px-4">
           <motion.div
@@ -143,19 +214,34 @@ const RestRecoveryPlan = () => {
             </div>
 
             {/* Reminder Confirmation */}
-            {reminderSet && (
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200 mb-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Bell className="w-8 h-8 text-green-600" />
-                  <h3 className="text-xl font-bold text-gray-800">
-                    Reminders Set
-                  </h3>
-                </div>
-                <p className="text-gray-700 leading-relaxed">
-                  Your rest appointments have been scheduled. Remember to honor these rest times as strictly as you would honor a meeting.
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200 mb-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Bell className="w-8 h-8 text-green-600" />
+                <h3 className="text-xl font-bold text-gray-800">
+                  Reminders Set
+                </h3>
+              </div>
+              <div className="space-y-2">
+                <p className="text-gray-700">
+                  ✓ Daily Mini Break: {remindersSet.dailyMiniBreak ? 'SET' : 'NOT SET'}
+                </p>
+                <p className="text-gray-700">
+                  ✓ Weekly Joy: {remindersSet.weeklyJoy ? 'SET' : 'NOT SET'}
+                </p>
+                <p className="text-gray-700">
+                  ✓ Monthly Reset: {remindersSet.monthlyReset ? 'SET' : 'NOT SET'}
+                </p>
+                <p className="text-gray-700">
+                  ✓ Monthly Self Care: {remindersSet.monthlySelfCare ? 'SET' : 'NOT SET'}
+                </p>
+                <p className="text-gray-700">
+                  ✓ Quarterly Reflection: {remindersSet.quarterlyReflection ? 'SET' : 'NOT SET'}
                 </p>
               </div>
-            )}
+              <p className="text-gray-700 leading-relaxed mt-4">
+                Your rest appointments have been scheduled. Remember to honor these rest times as strictly as you would honor a meeting.
+              </p>
+            </div>
 
             {/* Plan Summary */}
             <div className="space-y-6 mb-6">
@@ -224,6 +310,50 @@ const RestRecoveryPlan = () => {
                   </div>
                 </div>
               )}
+
+              {/* Monthly Self Care */}
+              {planData.monthlySelfCare.date && planData.monthlySelfCare.activity && (
+                <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6 border-2 border-yellow-200">
+                  <div className="flex items-start gap-4 mb-4">
+                    <Heart className="w-8 h-8 text-yellow-600 flex-shrink-0 mt-1" />
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">Monthly Self Care</h3>
+                      <div className="space-y-2 text-gray-700">
+                        <p><strong>Date:</strong> {new Date(planData.monthlySelfCare.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+                        <p><strong>Activity:</strong> {planData.monthlySelfCare.activity}</p>
+                        {planData.monthlySelfCare.duration && (
+                          <p><strong>Duration:</strong> {planData.monthlySelfCare.duration}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-lg px-4 py-2 border-2 border-yellow-200">
+                      <p className="text-sm font-semibold text-yellow-700">Monthly</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Quarterly Reflection */}
+              {planData.quarterlyReflection.date && planData.quarterlyReflection.activity && (
+                <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl p-6 border-2 border-teal-200">
+                  <div className="flex items-start gap-4 mb-4">
+                    <BookOpen className="w-8 h-8 text-teal-600 flex-shrink-0 mt-1" />
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">Quarterly Reflection</h3>
+                      <div className="space-y-2 text-gray-700">
+                        <p><strong>Date:</strong> {new Date(planData.quarterlyReflection.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+                        <p><strong>Activity:</strong> {planData.quarterlyReflection.activity}</p>
+                        {planData.quarterlyReflection.duration && (
+                          <p><strong>Duration:</strong> {planData.quarterlyReflection.duration}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-lg px-4 py-2 border-2 border-teal-200">
+                      <p className="text-sm font-semibold text-teal-700">Quarterly</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Benefits */}
@@ -241,6 +371,8 @@ const RestRecoveryPlan = () => {
                 <li>• <strong>Supports sustainability:</strong> Regular recovery supports long-term teaching careers</li>
                 <li>• <strong>Models self-care:</strong> When you schedule rest, you model healthy practices for students and colleagues</li>
                 <li>• <strong>Creates anticipation:</strong> Having scheduled rest gives you something to look forward to</li>
+                <li>• <strong>Five-tier approach:</strong> Daily, weekly, monthly, quarterly rest ensures comprehensive recovery</li>
+                <li>• <strong>Progressive wellness:</strong> Each tier builds upon the others for sustained well-being</li>
               </ul>
             </div>
 
@@ -291,7 +423,7 @@ const RestRecoveryPlan = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={score}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -316,7 +448,10 @@ const RestRecoveryPlan = () => {
               <li>• <strong>Daily Mini Break:</strong> Schedule a brief rest period each day (5-15 minutes)</li>
               <li>• <strong>Weekly Joy:</strong> Plan one joyful activity each week for deeper restoration</li>
               <li>• <strong>Monthly Reset:</strong> Schedule a longer rest period once per month</li>
+              <li>• <strong>Monthly Self Care:</strong> Dedicate time to personal care and nurturing activities</li>
+              <li>• <strong>Quarterly Reflection:</strong> Schedule time for deep evaluation and planning</li>
               <li>• <strong>Set Reminders:</strong> Add these to your calendar with reminders to honor them</li>
+              <li>• <strong>Earn Points:</strong> Set each reminder to earn 1 point, up to 5 total points</li>
               <li>• <strong>Treat as commitments:</strong> Honor rest appointments as strictly as you would honor a meeting</li>
             </ul>
           </div>
@@ -330,7 +465,7 @@ const RestRecoveryPlan = () => {
                 <p className="text-sm text-gray-600 mb-4">
                   Schedule a brief rest period each day to recharge during work hours
                 </p>
-                
+
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -343,7 +478,7 @@ const RestRecoveryPlan = () => {
                       className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Activity <span className="text-red-500">*</span>
@@ -362,7 +497,7 @@ const RestRecoveryPlan = () => {
                       ))}
                     </datalist>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Duration (Optional)
@@ -389,7 +524,7 @@ const RestRecoveryPlan = () => {
                 <p className="text-sm text-gray-600 mb-4">
                   Plan one activity each week that brings you joy and deeper restoration
                 </p>
-                
+
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -406,7 +541,7 @@ const RestRecoveryPlan = () => {
                       ))}
                     </select>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Activity <span className="text-red-500">*</span>
@@ -425,7 +560,7 @@ const RestRecoveryPlan = () => {
                       ))}
                     </datalist>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Duration (Optional)
@@ -444,7 +579,7 @@ const RestRecoveryPlan = () => {
           </div>
 
           {/* Monthly Reset */}
-          <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 border-2 border-purple-200 mb-8">
+          <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 border-2 border-purple-200 mb-6">
             <div className="flex items-start gap-4 mb-4">
               <Moon className="w-8 h-8 text-purple-600 flex-shrink-0 mt-1" />
               <div className="flex-1">
@@ -452,7 +587,7 @@ const RestRecoveryPlan = () => {
                 <p className="text-sm text-gray-600 mb-4">
                   Schedule a longer rest period once per month for deeper recovery
                 </p>
-                
+
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -466,7 +601,7 @@ const RestRecoveryPlan = () => {
                       className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-purple-500 focus:outline-none"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Activity <span className="text-red-500">*</span>
@@ -485,7 +620,7 @@ const RestRecoveryPlan = () => {
                       ))}
                     </datalist>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Duration (Optional)
@@ -503,30 +638,238 @@ const RestRecoveryPlan = () => {
             </div>
           </div>
 
-          {/* Set Reminder Button */}
-          <div className="text-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={handleSetReminder}
-              disabled={reminderSet}
-              className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all flex items-center gap-3 mx-auto ${
-                reminderSet
-                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white'
-              }`}
-            >
-              <Bell className="w-5 h-5" />
-              {reminderSet ? 'Reminders Set!' : 'Set Digital Reminders'}
-            </motion.button>
+          {/* Monthly Self Care */}
+          <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6 border-2 border-yellow-200 mb-6">
+            <div className="flex items-start gap-4 mb-4">
+              <Heart className="w-8 h-8 text-yellow-600 flex-shrink-0 mt-1" />
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">Monthly Self Care</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  Schedule dedicated time for self-care activities each month
+                </p>
+
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Date <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="date"
+                      value={planData.monthlySelfCare.date}
+                      onChange={(e) => handleInputChange('monthlySelfCare', 'date', e.target.value)}
+                      min={new Date().toISOString().split('T')[0]}
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Activity <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={planData.monthlySelfCare.activity}
+                      onChange={(e) => handleInputChange('monthlySelfCare', 'activity', e.target.value)}
+                      placeholder="e.g., Spa day, massage, yoga session"
+                      list="selfcare-activities"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:outline-none"
+                    />
+                    <datalist id="selfcare-activities">
+                      {activitySuggestions.monthlySelfCare.map((activity, index) => (
+                        <option key={index} value={activity} />
+                      ))}
+                    </datalist>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Duration (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      value={planData.monthlySelfCare.duration}
+                      onChange={(e) => handleInputChange('monthlySelfCare', 'duration', e.target.value)}
+                      placeholder="e.g., 1 hour, 2 hours, half day"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:outline-none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Quarterly Reflection */}
+          <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl p-6 border-2 border-teal-200 mb-8">
+            <div className="flex items-start gap-4 mb-4">
+              <BookOpen className="w-8 h-8 text-teal-600 flex-shrink-0 mt-1" />
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">Quarterly Reflection</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  Schedule time for deep reflection and planning every quarter
+                </p>
+
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Date <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="date"
+                      value={planData.quarterlyReflection.date}
+                      onChange={(e) => handleInputChange('quarterlyReflection', 'date', e.target.value)}
+                      min={getQuarterlyDate()}
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Activity <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={planData.quarterlyReflection.activity}
+                      onChange={(e) => handleInputChange('quarterlyReflection', 'activity', e.target.value)}
+                      placeholder="e.g., Review goals, evaluate practices, plan ahead"
+                      list="reflection-activities"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                    />
+                    <datalist id="reflection-activities">
+                      {activitySuggestions.quarterlyReflection.map((activity, index) => (
+                        <option key={index} value={activity} />
+                      ))}
+                    </datalist>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Duration (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      value={planData.quarterlyReflection.duration}
+                      onChange={(e) => handleInputChange('quarterlyReflection', 'duration', e.target.value)}
+                      placeholder="e.g., Half day, Full day, 2 hours"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Set Reminder Buttons */}
+          <div className="space-y-4">
+            <div className="text-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleSetReminder('dailyMiniBreak')}
+                disabled={remindersSet.dailyMiniBreak}
+                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all flex items-center gap-3 mx-auto ${remindersSet.dailyMiniBreak
+                    ? 'bg-green-500 text-white cursor-default'
+                    : 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
+                  }`}
+              >
+                <CheckCircle className="w-5 h-5" />
+                {remindersSet.dailyMiniBreak ? 'Daily Mini Break Set!' : 'Set Daily Mini Break Reminder'}
+              </motion.button>
+            </div>
+
+            <div className="text-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleSetReminder('weeklyJoy')}
+                disabled={remindersSet.weeklyJoy}
+                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all flex items-center gap-3 mx-auto ${remindersSet.weeklyJoy
+                    ? 'bg-green-500 text-white cursor-default'
+                    : 'bg-gradient-to-r from-pink-500 to-rose-500 text-white'
+                  }`}
+              >
+                <CheckCircle className="w-5 h-5" />
+                {remindersSet.weeklyJoy ? 'Weekly Joy Set!' : 'Set Weekly Joy Reminder'}
+              </motion.button>
+            </div>
+
+            <div className="text-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleSetReminder('monthlyReset')}
+                disabled={remindersSet.monthlyReset}
+                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all flex items-center gap-3 mx-auto ${remindersSet.monthlyReset
+                    ? 'bg-green-500 text-white cursor-default'
+                    : 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white'
+                  }`}
+              >
+                <CheckCircle className="w-5 h-5" />
+                {remindersSet.monthlyReset ? 'Monthly Reset Set!' : 'Set Monthly Reset Reminder'}
+              </motion.button>
+            </div>
+
+            <div className="text-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleSetReminder('monthlySelfCare')}
+                disabled={remindersSet.monthlySelfCare}
+                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all flex items-center gap-3 mx-auto ${remindersSet.monthlySelfCare
+                    ? 'bg-green-500 text-white cursor-default'
+                    : 'bg-gradient-to-r from-yellow-500 to-amber-500 text-white'
+                  }`}
+              >
+                <CheckCircle className="w-5 h-5" />
+                {remindersSet.monthlySelfCare ? 'Monthly Self Care Set!' : 'Set Monthly Self Care Reminder'}
+              </motion.button>
+            </div>
+
+            <div className="text-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleSetReminder('quarterlyReflection')}
+                disabled={remindersSet.quarterlyReflection}
+                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all flex items-center gap-3 mx-auto ${remindersSet.quarterlyReflection
+                    ? 'bg-green-500 text-white cursor-default'
+                    : 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white'
+                  }`}
+              >
+                <CheckCircle className="w-5 h-5" />
+                {remindersSet.quarterlyReflection ? 'Quarterly Reflection Set!' : 'Set Quarterly Reflection Reminder'}
+              </motion.button>
+            </div>
           </div>
 
           {/* Validation Message */}
-          {(!planData.dailyMiniBreak.time || !planData.dailyMiniBreak.activity ||
-            !planData.weeklyJoy.day || !planData.weeklyJoy.activity ||
-            !planData.monthlyReset.date || !planData.monthlyReset.activity) && (
-            <div className="mt-4 text-center text-sm text-gray-500">
-              Please fill in all required fields (*) before setting reminders
+          {!remindersSet.dailyMiniBreak && (!planData.dailyMiniBreak.time || !planData.dailyMiniBreak.activity) && (
+            <div className="mt-2 text-center text-sm text-gray-500">
+              Please fill in required fields for Daily Mini Break before setting reminder
+            </div>
+          )}
+          {!remindersSet.weeklyJoy && (!planData.weeklyJoy.day || !planData.weeklyJoy.activity) && (
+            <div className="mt-2 text-center text-sm text-gray-500">
+              Please fill in required fields for Weekly Joy before setting reminder
+            </div>
+          )}
+          {!remindersSet.monthlyReset && (!planData.monthlyReset.date || !planData.monthlyReset.activity) && (
+            <div className="mt-2 text-center text-sm text-gray-500">
+              Please fill in required fields for Monthly Reset before setting reminder
+            </div>
+          )}
+          {!remindersSet.monthlySelfCare && (!planData.monthlySelfCare.date || !planData.monthlySelfCare.activity) && (
+            <div className="mt-2 text-center text-sm text-gray-500">
+              Please fill in required fields for Monthly Self Care before setting reminder
+            </div>
+          )}
+          {!remindersSet.quarterlyReflection && (!planData.quarterlyReflection.date || !planData.quarterlyReflection.activity) && (
+            <div className="mt-2 text-center text-sm text-gray-500">
+              Please fill in required fields for Quarterly Reflection before setting reminder
+            </div>
+          )}
+          {score === 5 && (
+            <div className="mt-2 text-center text-sm text-green-600 font-semibold">
+              Congratulations! You've set all 5 rest reminders and earned 5/5 points!
             </div>
           )}
         </div>
@@ -536,4 +879,3 @@ const RestRecoveryPlan = () => {
 };
 
 export default RestRecoveryPlan;
-

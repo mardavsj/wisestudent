@@ -12,11 +12,11 @@ import { toast } from "react-toastify";
 
 const ResilientEducatorBadge = () => {
   const navigate = useNavigate();
-  
+
   // Get game data
   const gameId = "teacher-education-60";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   const [loading, setLoading] = useState(true);
   const [gamesStatus, setGamesStatus] = useState([]);
   const [allCompleted, setAllCompleted] = useState(false);
@@ -109,7 +109,7 @@ const ResilientEducatorBadge = () => {
     if ('speechSynthesis' in window) {
       setSpeechSynth(window.speechSynthesis);
     }
-    
+
     checkGamesCompletion();
     checkBadgeStatus();
   }, [checkGamesCompletion, checkBadgeStatus]);
@@ -119,7 +119,7 @@ const ResilientEducatorBadge = () => {
 
     speechSynth.cancel();
     setIsPlayingAudio(true);
-    
+
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = 0.85;
     utterance.pitch = 1.0;
@@ -147,285 +147,335 @@ const ResilientEducatorBadge = () => {
     try {
       setIsCollecting(true);
       const response = await api.post('/api/school/teacher/badge/resilient-educator/collect');
-      
-      if (response.data.success && response.data.badgeEarned) {
+
+      const result = response.data;
+
+      if (result.success && (result.badgeEarned || result.newlyEarned)) {
         setBadgeCollected(true);
-        setShowCollectionModal(true);
-        
-        // Play affirmation audio
-        setTimeout(() => {
-          playAffirmation("Your strength lifts others.");
-        }, 500);
-        
-        toast.success('🏆 Resilient Educator Badge Collected! Your strength lifts others.');
-      } else if (response.data.alreadyEarned) {
-        setBadgeCollected(true);
-        toast.info('You already have this badge!');
+        setShowCollectionModal(false);
+        toast.success('🏆 Badge collected successfully!');
+
+        // Play positive audio affirmation
+        const affirmation = "Your strength lifts others. Congratulations! You have earned the Resilient Educator Badge. Your consistent bounce-back behaviors inspire those around you. You are a Resilience Role Model, demonstrating strength and perseverance in the face of challenges. Well done!";
+        playAffirmation(affirmation);
+
+        // Dispatch badge earned event
+        window.dispatchEvent(new CustomEvent('teacherBadgeEarned', {
+          detail: {
+            badgeId: 'resilient-educator',
+            badgeName: 'Resilient Educator',
+            message: 'Your strength lifts others.',
+            badge: result.badge
+          }
+        }));
+
+        // Register the badge game as completed in the game progress system
+        // This is crucial for sequential unlocking of the next game
+        try {
+          await teacherGameCompletionService.completeGame({
+            gameId,
+            gameType: 'teacher-education',
+            gameIndex: gameData?.gameIndex || null,
+            score: 5,
+            totalLevels: 5,
+            totalCoins: 0,
+            isReplay: false
+          });
+        } catch (error) {
+          console.error('Failed to mark badge game completed:', error);
+        }
       } else {
-        toast.error(response.data.error || 'Failed to collect badge. Please complete all required activities first.');
+        toast.error(result.error || 'Failed to collect badge');
       }
     } catch (error) {
       console.error('Error collecting badge:', error);
-      toast.error(error.response?.data?.error || 'Failed to collect badge');
+      const errorMessage = error.response?.data?.error || 'Failed to collect badge. Please try again.';
+      toast.error(errorMessage);
     } finally {
       setIsCollecting(false);
     }
   };
 
-  const handleGameClick = (gameId) => {
-    const gameData = getTeacherEducationGameById(gameId);
-    if (gameData) {
-      navigate(gameData.path, { state: { fromBadge: true } });
-    }
-  };
+
 
   const completedCount = gamesStatus.filter(status => status.completed).length;
   const totalRequired = requiredGameIds.length;
   const progressPercentage = (completedCount / totalRequired) * 100;
 
+  if (!allCompleted) {
+    return (
+      <TeacherGameShell
+        title={gameData?.title || "Resilient Educator Badge"}
+        subtitle="Locked - Complete all resilience activities to unlock"
+        showGameOver={false}
+        score={0}
+        gameId={gameId}
+        gameType="teacher-education"
+        totalLevels={0}
+        totalCoins={0}
+        currentQuestion={0}
+      >
+        <div className="w-full max-w-4xl mx-auto px-4">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gray-200 mb-4">
+                <Lock className="w-12 h-12 text-gray-400" />
+              </div>
+              <h2 className="text-3xl font-bold text-gray-800 mb-2">
+                Badge Locked
+              </h2>
+              <p className="text-lg text-gray-600">
+                Complete all 5 resilience activities to unlock this badge
+              </p>
+            </div>
+
+            {/* Progress Tracker */}
+            <div className="space-y-4 mb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Resilience Activities:</h3>
+              {gamesStatus.map((game, index) => (
+                <motion.div
+                  key={game.gameId}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className={`flex items-center justify-between p-4 rounded-xl border-2 ${game.completed
+                      ? 'bg-green-50 border-green-200'
+                      : 'bg-gray-50 border-gray-200'
+                    }`}
+                >
+                  <div className="flex items-center gap-3">
+                    {game.completed ? (
+                      <CheckCircle className="w-6 h-6 text-green-600" />
+                    ) : (
+                      <div className="w-6 h-6 rounded-full border-2 border-gray-400"></div>
+                    )}
+                    <span className="text-2xl">{game.icon}</span>
+                    <span className={`font-medium text-lg ${game.completed ? 'text-green-800' : 'text-gray-600'
+                      }`}>
+                      {index + 1}. {game.name}
+                    </span>
+                  </div>
+                  <span className={`text-sm font-semibold ${game.completed ? 'text-green-600' : 'text-gray-400'
+                    }`}>
+                    {game.completed ? 'Completed ✓' : 'Not Completed'}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Progress Bar */}
+            <div className="mb-6">
+              <div className="flex justify-between text-sm text-gray-600 mb-2">
+                <span className="font-semibold">Progress</span>
+                <span className="font-semibold">
+                  {gamesStatus.filter(g => g.completed).length} / 5 activities completed
+                </span>
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-4">
+                <motion.div
+                  className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-4 rounded-full"
+                  initial={{ width: 0 }}
+                  animate={{
+                    width: `${(gamesStatus.filter(g => g.completed).length / 5) * 100}%`
+                  }}
+                  transition={{ duration: 0.5 }}
+                />
+              </div>
+            </div>
+
+            <div className="bg-blue-50 rounded-xl p-4 border border-blue-200 text-center">
+              <p className="text-sm text-blue-700">
+                Complete all 5 resilience activities to earn the Resilient Educator Badge!
+              </p>
+            </div>
+          </div>
+        </div>
+      </TeacherGameShell>
+    );
+  }
+
   return (
     <TeacherGameShell
       title={gameData?.title || "Resilient Educator Badge"}
-      subtitle={gameData?.description || "Celebrate teachers who display consistent bounce-back behaviors"}
-      showGameOver={badgeCollected}
-      score={badgeCollected ? 1 : 0}
+      subtitle="Celebrate teachers who display consistent bounce-back behaviors"
+      showGameOver={false}
+      score={0}
       gameId={gameId}
       gameType="teacher-education"
-      totalLevels={1}
-      totalCoins={gameData?.calmCoins || 5}
-      currentQuestion={1}
+      totalLevels={0}
+      totalCoins={0}
+      currentQuestion={0}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
-        {loading ? (
+        {!allCompleted ? null : loading ? (
           <div className="flex items-center justify-center min-h-[400px]">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
           </div>
         ) : (
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            {/* Badge Header */}
-            <div className="text-center mb-8">
-              <div className="mb-6">
-                {badgeCollected ? (
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                    className="text-8xl mb-4"
+          <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
+            {badgeCollected ? (
+              // Badge Already Collected
+              <div>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                  className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 border-4 border-purple-300 mb-6"
+                >
+                  <Award className="w-16 h-16 text-purple-600" />
+                </motion.div>
+                <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                  Resilient Educator Badge
+                </h2>
+                <p className="text-2xl text-indigo-600 font-medium italic mb-6">
+                  "Your strength lifts others."
+                </p>
+                <div className="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 rounded-xl p-6 border-2 border-indigo-200 mb-6">
+                  <p className="text-gray-700 text-lg">
+                    Congratulations! You have successfully completed all resilience activities and earned the Resilient Educator Badge. Your consistent bounce-back behaviors inspire those around you.
+                  </p>
+                </div>
+
+                {/* Audio Affirmation Button */}
+                <div className="mb-6">
+                  <button
+                    onClick={() => {
+                      if (isPlayingAudio) {
+                        stopAudio();
+                      } else {
+                        playAffirmation("Your strength lifts others. Congratulations! You have earned the Resilient Educator Badge. Your consistent bounce-back behaviors inspire those around you. You are a Resilience Role Model, demonstrating strength and perseverance in the face of challenges. Well done!");
+                      }
+                    }}
+                    className="flex items-center gap-2 mx-auto px-6 py-3 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 rounded-xl font-semibold transition-all"
                   >
-                    🏆
-                  </motion.div>
-                ) : (
-                  <div className="text-8xl mb-4 opacity-50">
-                    🏆
-                  </div>
-                )}
+                    {isPlayingAudio ? (
+                      <>
+                        <VolumeX className="w-5 h-5" />
+                        Stop Affirmation
+                      </>
+                    ) : (
+                      <>
+                        <Volume2 className="w-5 h-5" />
+                        Hear Affirmation Again
+                      </>
+                    )}
+                  </button>
+                </div>
+
+
               </div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
-                Resilient Educator Badge
-              </h2>
-              <p className="text-lg text-gray-600 mb-4">
-                Celebrate teachers who display consistent bounce-back behaviors
-              </p>
-              {badgeCollected && (
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border-2 border-green-300 max-w-md mx-auto">
-                  <p className="text-xl font-bold text-green-800">
+            ) : (
+              // Badge Collection Screen
+              <div>
+                <motion.div
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                  className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 border-4 border-purple-300 mb-6"
+                >
+                  <Sparkles className="w-16 h-16 text-purple-600" />
+                </motion.div>
+                <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                  Congratulations!
+                </h2>
+                <p className="text-xl text-gray-600 mb-8">
+                  You have successfully completed all 5 resilience activities
+                </p>
+
+                {/* Completed Tasks List */}
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200 mb-8">
+                  <h3 className="text-lg font-bold text-green-800 mb-4">Completed Activities:</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    {gamesStatus.map((game, index) => (
+                      <div
+                        key={game.gameId}
+                        className="flex items-center gap-2 text-green-700 bg-white rounded-lg p-3"
+                      >
+                        <CheckCircle className="w-5 h-5 text-green-600" />
+                        <span className="text-lg">{game.icon}</span>
+                        <span className="font-medium">{index + 1}. {game.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Badge Preview */}
+                <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 rounded-xl p-8 border-4 border-purple-300 mb-8">
+                  <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-purple-400 via-indigo-400 to-pink-400 mb-4">
+                    <Award className="w-12 h-12 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                    Resilient Educator Badge
+                  </h3>
+                  <p className="text-xl text-indigo-600 font-medium italic">
                     "Your strength lifts others."
                   </p>
                 </div>
-              )}
-            </div>
 
-            {/* Progress Section */}
-            <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50 rounded-xl p-6 border-2 border-purple-200 mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">Progress</h3>
-                  <p className="text-sm text-gray-600">Complete all 5 resilience activities</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-gray-600 mb-1">Activities Completed</p>
-                  <p className="text-3xl font-bold text-indigo-600">
-                    {completedCount} / {totalRequired}
-                  </p>
-                </div>
-              </div>
-              
-              {/* Progress Bar */}
-              <div className="w-full bg-gray-200 rounded-full h-4 mb-4">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: `${progressPercentage}%` }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 h-4 rounded-full"
-                />
-              </div>
-
-              <p className="text-sm text-center text-gray-600">
-                {completedCount === totalRequired
-                  ? "✨ All activities completed! You're ready to collect your badge!"
-                  : `${totalRequired - completedCount} more activit${totalRequired - completedCount === 1 ? 'y' : 'ies'} needed to unlock the badge`}
-              </p>
-            </div>
-
-            {/* Required Activities List */}
-            <div className="mb-8">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Required Activities:</h3>
-              <div className="space-y-3">
-                {gamesStatus.map((game, index) => (
-                  <motion.div
-                    key={game.gameId}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className={`flex items-center gap-4 p-4 rounded-xl border-2 transition-all ${
-                      game.completed
-                        ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-300 shadow-md'
-                        : 'bg-gray-50 border-gray-300 hover:border-indigo-400 cursor-pointer'
-                    }`}
-                    onClick={() => !game.completed && handleGameClick(game.gameId)}
-                  >
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-2xl flex-shrink-0 ${
-                      game.completed
-                        ? 'bg-gradient-to-r from-green-400 to-emerald-500 shadow-lg'
-                        : 'bg-gray-200'
-                    }`}>
-                      {game.completed ? (
-                        <CheckCircle className="w-6 h-6 text-white" />
-                      ) : (
-                        <span>{game.icon}</span>
-                      )}
-                    </div>
-                    <div className="flex-1">
-                      <h4 className={`font-semibold text-lg ${
-                        game.completed ? 'text-green-800' : 'text-gray-800'
-                      }`}>
-                        {game.name}
-                      </h4>
-                      {!game.completed && (
-                        <p className="text-sm text-gray-600">Click to complete this activity</p>
-                      )}
-                    </div>
-                    {game.completed && (
-                      <Sparkles className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    )}
-                    {!game.completed && (
-                      <Lock className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Collect Badge Button */}
-            {allCompleted && !badgeCollected && (
-              <div className="text-center mb-6">
+                {/* Collect Badge Button */}
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={handleCollectBadge}
-                  disabled={isCollecting}
-                  className="bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 text-white px-8 py-4 rounded-xl text-xl font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-3 mx-auto"
+                  onClick={() => setShowCollectionModal(true)}
+                  className="bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 text-white px-12 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transform transition-all duration-200"
                 >
-                  {isCollecting ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                      Collecting...
-                    </>
-                  ) : (
-                    <>
-                      <Award className="w-6 h-6" />
-                      Collect Resilient Educator Badge
-                    </>
-                  )}
+                  Collect Badge
                 </motion.button>
-
-                {/* Audio Control */}
-                <div className="mt-4 flex items-center justify-center gap-3">
-                  <button
-                    onClick={() => isPlayingAudio ? stopAudio() : playAffirmation("Your strength lifts others.")}
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all"
-                  >
-                    {isPlayingAudio ? (
-                      <VolumeX className="w-5 h-5 text-gray-600" />
-                    ) : (
-                      <Volume2 className="w-5 h-5 text-gray-600" />
-                    )}
-                  </button>
-                  <span className="text-sm text-gray-600">Listen to badge message</span>
-                </div>
               </div>
             )}
 
-            {/* Badge Collected Modal */}
-            {showCollectionModal && badgeCollected && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
-                onClick={() => setShowCollectionModal(false)}
-              >
+            {/* Collection Confirmation Modal */}
+            {showCollectionModal && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
                 <motion.div
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  className="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-2xl text-center"
-                  onClick={(e) => e.stopPropagation()}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center"
                 >
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                    className="text-8xl mb-4"
-                  >
-                    🏆✨
-                  </motion.div>
-                  <h3 className="text-3xl font-bold text-gray-800 mb-4">
-                    Resilient Educator Badge Collected!
-                  </h3>
-                  <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 border-2 border-purple-200 mb-6">
-                    <p className="text-2xl font-bold text-purple-800 mb-2">
-                      "Your strength lifts others."
-                    </p>
-                    <p className="text-gray-700">
-                      Congratulations! You've completed all resilience activities and earned your badge. 
-                      Your consistent bounce-back behaviors inspire those around you.
-                    </p>
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-purple-400 via-indigo-400 to-pink-400 mb-4">
+                    <Award className="w-10 h-10 text-white" />
                   </div>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setShowCollectionModal(false)}
-                    className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
-                  >
-                    Close
-                  </motion.button>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                    Collect Your Badge
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Are you ready to collect your Resilient Educator Badge? You'll hear the affirmation "Your strength lifts others" when you collect it!
+                  </p>
+                  <div className="flex gap-4 justify-center">
+                    <button
+                      onClick={() => setShowCollectionModal(false)}
+                      disabled={isCollecting}
+                      className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-6 py-3 rounded-full font-semibold transition disabled:opacity-50"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={handleCollectBadge}
+                      disabled={isCollecting}
+                      className="bg-gradient-to-r from-purple-400 to-indigo-400 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:opacity-50"
+                    >
+                      {isCollecting ? 'Collecting...' : 'Yes, Collect Badge!'}
+                    </button>
+                  </div>
                 </motion.div>
-              </motion.div>
+              </div>
             )}
 
             {/* Teacher Tip */}
             {badgeCollected && (
-              <div className="bg-amber-50 rounded-xl p-6 border-2 border-amber-200 mt-8">
-                <div className="flex items-start gap-3">
-                  <Book className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="text-sm font-semibold text-amber-900 mb-2">
-                      💡 Teacher Tip:
-                    </p>
-                    <p className="text-sm text-amber-800 leading-relaxed">
-                      Create "Resilient Wall" highlighting badge holders to inspire peers. Showcasing resilience builds collective strength:
-                    </p>
-                    <ul className="text-sm text-amber-800 mt-2 ml-4 space-y-1 list-disc">
-                      <li><strong>Display badge holders:</strong> Create a physical or digital "Resilient Wall" featuring teachers who have earned the Resilient Educator Badge.</li>
-                      <li><strong>Share resilience stories:</strong> Invite badge holders to share brief stories about how they've bounced back from challenges.</li>
-                      <li><strong>Peer inspiration:</strong> Seeing colleagues who have earned the badge inspires others to develop their own resilience skills.</li>
-                      <li><strong>School-wide culture:</strong> Highlighting resilience builds a school-wide culture where bouncing back from challenges is celebrated and normalized.</li>
-                      <li><strong>Recognition matters:</strong> Publicly recognizing resilience helps create an environment where teachers feel supported and inspired to grow.</li>
-                    </ul>
-                    <p className="text-sm text-amber-800 leading-relaxed mt-3">
-                      When you create a "Resilient Wall" featuring badge holders, you're not just celebrating individual achievements—you're building collective resilience. This recognition inspires peers, normalizes bounce-back behaviors, and creates a supportive culture where teachers feel empowered to grow through challenges.
-                    </p>
-                  </div>
-                </div>
+              <div className="bg-purple-50 rounded-xl p-4 border border-purple-200 mt-8">
+                <p className="text-sm font-semibold text-purple-800 mb-2">💡 Teacher Tip:</p>
+                <p className="text-sm text-purple-700">
+                  Create "Resilient Wall" highlighting badge holders to inspire peers. Showcasing resilience builds collective strength:
+                  <ul className="mt-2 ml-4 space-y-1 list-disc text-left">
+                    <li><strong>Display badge holders:</strong> Create a physical or digital "Resilient Wall" featuring teachers who have earned the Resilient Educator Badge.</li>
+                    <li><strong>Share resilience stories:</strong> Invite badge holders to share brief stories about how they've bounced back from challenges.</li>
+                    <li><strong>Peer inspiration:</strong> Seeing colleagues who have earned the badge inspires others to develop their own resilience skills.</li>
+                    <li><strong>School-wide culture:</strong> Highlighting resilience builds a school-wide culture where bouncing back from challenges is celebrated and normalized.</li>
+                    <li><strong>Recognition matters:</strong> Publicly recognizing resilience helps create an environment where teachers feel supported and inspired to grow.</li>
+                  </ul>
+                  When you create a "Resilient Wall" featuring badge holders, you're not just celebrating individual achievements—you're building collective resilience. This recognition inspires peers, normalizes bounce-back behaviors, and creates a supportive culture where teachers feel empowered to grow through challenges.
+                </p>
               </div>
             )}
           </div>
@@ -436,4 +486,3 @@ const ResilientEducatorBadge = () => {
 };
 
 export default ResilientEducatorBadge;
-

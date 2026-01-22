@@ -6,15 +6,15 @@ import { getParentEducationGameById } from "../data/gameData";
 
 const GratitudeForEffort = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "parent-education-28";
   const gameData = getParentEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedChoices, setSelectedChoices] = useState({});
   const [showOutcome, setShowOutcome] = useState(false);
@@ -31,14 +31,7 @@ const GratitudeForEffort = () => {
       situation: "Your child comes to you excitedly with a drawing. It's messy—lines are outside the boundaries, colors are mixed, and it's hard to tell what it is. They say 'Look what I made! Do you like it?'",
       childEffort: "They spent 20 minutes on this drawing, trying different colors and shapes.",
       phraseOptions: [
-        {
-          id: 'effort-focused',
-          text: "I can see you worked really hard on this! You tried so many different colors and shapes. I love how creative and persistent you were. Tell me about what you drew!",
-          type: "effort",
-          explanation: "This response focuses on the effort, creativity, and persistence rather than the result. It values the process and invites them to share their story.",
-          outcome: "Your child feels proud of their effort and creativity. They learn that trying hard is what matters. Their confidence grows, and they become more willing to take risks.",
-          heartGrowth: 3
-        },
+
         {
           id: 'result-focused',
           text: "It's nice, sweetie! Maybe next time we can make it neater and stay in the lines. I'll help you make it look better.",
@@ -54,7 +47,15 @@ const GratitudeForEffort = () => {
           explanation: "This response dismisses their work entirely and moves on to the next task. It doesn't acknowledge their effort at all.",
           outcome: "Your child feels ignored and unimportant. They learn that their efforts don't matter, which can decrease motivation and self-worth.",
           heartGrowth: -1
-        }
+        },
+        {
+          id: 'effort-focused',
+          text: "I can see you worked really hard on this! You tried so many different colors and shapes. I love how creative and persistent you were. Tell me about what you drew!",
+          type: "effort",
+          explanation: "This response focuses on the effort, creativity, and persistence rather than the result. It values the process and invites them to share their story.",
+          outcome: "Your child feels proud of their effort and creativity. They learn that trying hard is what matters. Their confidence grows, and they become more willing to take risks.",
+          heartGrowth: 3
+        },
       ],
       correctChoice: "effort-focused",
       whyItMatters: "When children put effort into something, they need that effort to be seen and valued, regardless of the result. Praising effort builds resilience and willingness to try."
@@ -65,14 +66,7 @@ const GratitudeForEffort = () => {
       situation: "You asked your child to put away their toys before dinner. When you check, they've put away about half the toys, but the room is still messy. Some toys are on the floor, and they're playing with one of them.",
       childEffort: "They actually put away most of their toys and were trying hard, but got distracted by a favorite toy.",
       phraseOptions: [
-        {
-          id: 'effort-focused',
-          text: "I can see you put away a lot of your toys! You worked really hard on that. I appreciate your effort. Let's finish up together so we can have dinner.",
-          type: "effort",
-          explanation: "This response acknowledges what they did accomplish and appreciates their effort. It offers to help finish rather than criticizing what's not done.",
-          outcome: "Your child feels recognized for their effort and is more willing to complete the task. They learn that partial effort is still valued and that you're there to help.",
-          heartGrowth: 3
-        },
+
         {
           id: 'result-focused',
           text: "You're not done yet. I asked you to put ALL the toys away, and the room is still messy. Finish it now, please.",
@@ -80,6 +74,14 @@ const GratitudeForEffort = () => {
           explanation: "This response focuses only on what's not done and the imperfect result. It doesn't acknowledge the effort that was put in.",
           outcome: "Your child feels like their effort didn't count because the result wasn't perfect. They may become discouraged or resistant to helping.",
           heartGrowth: 0
+        },
+        {
+          id: 'effort-focused',
+          text: "I can see you put away a lot of your toys! You worked really hard on that. I appreciate your effort. Let's finish up together so we can have dinner.",
+          type: "effort",
+          explanation: "This response acknowledges what they did accomplish and appreciates their effort. It offers to help finish rather than criticizing what's not done.",
+          outcome: "Your child feels recognized for their effort and is more willing to complete the task. They learn that partial effort is still valued and that you're there to help.",
+          heartGrowth: 3
         },
         {
           id: 'dismissive',
@@ -133,14 +135,7 @@ const GratitudeForEffort = () => {
       situation: "Your child has been working on a difficult math problem for 30 minutes. They've tried different approaches, erased and started over several times. They're frustrated and say 'I don't get it! I've tried everything!'",
       childEffort: "They've been persistent, tried multiple strategies, and haven't given up despite frustration.",
       phraseOptions: [
-        {
-          id: 'effort-focused',
-          text: "I can see you've been working on this for a long time and trying really hard. You've tried different ways to solve it, and that shows great problem-solving thinking. That persistence is impressive. Let's take a break and come back to it fresh, or would you like help?",
-          type: "effort",
-          explanation: "This response acknowledges the time, effort, and strategies they've tried. It praises their persistence and problem-solving process, not just the result.",
-          outcome: "Your child feels that their effort is seen and valued. They learn that persistence and trying different approaches are valuable skills, regardless of whether they solve it immediately.",
-          heartGrowth: 3
-        },
+
         {
           id: 'result-focused',
           text: "You just need to keep trying. Once you figure it out, you'll see it wasn't that hard. Let's work through it together until you get the right answer.",
@@ -156,7 +151,15 @@ const GratitudeForEffort = () => {
           explanation: "This response dismisses their effort and blames them, then takes over instead of valuing their persistence.",
           outcome: "Your child feels blamed and inadequate. They learn that their effort doesn't matter and may become dependent on others to solve problems.",
           heartGrowth: -2
-        }
+        },
+        {
+          id: 'effort-focused',
+          text: "I can see you've been working on this for a long time and trying really hard. You've tried different ways to solve it, and that shows great problem-solving thinking. That persistence is impressive. Let's take a break and come back to it fresh, or would you like help?",
+          type: "effort",
+          explanation: "This response acknowledges the time, effort, and strategies they've tried. It praises their persistence and problem-solving process, not just the result.",
+          outcome: "Your child feels that their effort is seen and valued. They learn that persistence and trying different approaches are valuable skills, regardless of whether they solve it immediately.",
+          heartGrowth: 3
+        },
       ],
       correctChoice: "effort-focused",
       whyItMatters: "Praising the process—the strategies tried, the persistence shown, the time invested—teaches children that learning is valuable even when it's difficult. This builds growth mindset."
@@ -300,7 +303,7 @@ const GratitudeForEffort = () => {
   const gameContent = (
     <div className="flex flex-col items-center justify-center min-h-[60vh] p-6">
       <HeartGrowthAnimation />
-      
+
       <motion.div
         key={currentScenario}
         initial={{ opacity: 0, y: 20 }}
@@ -394,14 +397,14 @@ const GratitudeForEffort = () => {
                           : 'bg-gradient-to-br from-red-50 to-rose-50 border-red-400 shadow-lg'
                         : 'bg-gray-50 border-gray-300 opacity-50'
                       : option.type === 'effort'
-                        ? 'bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-300 hover:shadow-xl cursor-pointer'
+                        ? 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-300 hover:shadow-xl cursor-pointer'
                         : 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-300 hover:shadow-xl cursor-pointer'
                     }
                   `}
                 >
                   <div className="flex items-start gap-4">
                     <div className="text-3xl">
-                      {option.type === 'effort' ? '💙' : option.type === 'result' ? '🎯' : '😐'}
+                      {option.type === 'effort' ? '🎯' : option.type === 'result' ? '🎯' : '🎯'}
                     </div>
                     <div className="flex-1">
                       <p className="text-base text-gray-700 leading-relaxed italic">
@@ -409,7 +412,7 @@ const GratitudeForEffort = () => {
                       </p>
                       {!selected && option.type === 'effort' && (
                         <div className="text-xs text-green-600 font-medium mt-2">
-                          +{option.heartGrowth} ❤️ Heart Growth
+
                         </div>
                       )}
                     </div>
@@ -418,9 +421,8 @@ const GratitudeForEffort = () => {
                     <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      className={`absolute top-4 right-4 text-3xl ${
-                        option.type === 'effort' ? 'text-green-600' : 'text-red-600'
-                      }`}
+                      className={`absolute top-4 right-4 text-3xl ${option.type === 'effort' ? 'text-green-600' : 'text-red-600'
+                        }`}
                     >
                       {option.type === 'effort' ? '✓' : '×'}
                     </motion.div>
@@ -439,23 +441,21 @@ const GratitudeForEffort = () => {
               className="space-y-6"
             >
               {/* Selected phrase card */}
-              <div className={`bg-gradient-to-br ${
-                selected && selected.isCorrect
+              <div className={`bg-gradient-to-br ${selected && selected.isCorrect
                   ? 'from-green-50 to-emerald-50 border-green-300'
                   : selectedPhrase?.type === 'result'
                     ? 'from-orange-50 to-yellow-50 border-orange-300'
                     : 'from-red-50 to-rose-50 border-red-300'
-              } rounded-2xl p-8 shadow-xl border-2`}>
+                } rounded-2xl p-8 shadow-xl border-2`}>
                 <div className="text-center mb-6">
                   <div className="text-6xl mb-4">
                     {selected && selected.isCorrect ? '💙' : selectedPhrase?.type === 'result' ? '🎯' : '💡'}
                   </div>
-                  <h3 className={`text-3xl font-bold mb-2 ${
-                    selected && selected.isCorrect
+                  <h3 className={`text-3xl font-bold mb-2 ${selected && selected.isCorrect
                       ? 'text-green-700'
                       : 'text-orange-700'
-                  }`}>
-                    {selected && selected.isCorrect 
+                    }`}>
+                    {selected && selected.isCorrect
                       ? 'Effort-Focused Gratitude!'
                       : selectedPhrase?.type === 'result'
                         ? 'Result-Focused Response'
@@ -471,12 +471,10 @@ const GratitudeForEffort = () => {
                   <p className="text-lg text-gray-700 leading-relaxed italic mb-4">
                     "{selectedPhrase.text}"
                   </p>
-                  <div className={`rounded-lg p-4 ${
-                    selected && selected.isCorrect ? 'bg-green-50' : 'bg-orange-50'
-                  }`}>
-                    <p className={`text-sm font-medium ${
-                      selected && selected.isCorrect ? 'text-green-800' : 'text-orange-800'
+                  <div className={`rounded-lg p-4 ${selected && selected.isCorrect ? 'bg-green-50' : 'bg-orange-50'
                     }`}>
+                    <p className={`text-sm font-medium ${selected && selected.isCorrect ? 'text-green-800' : 'text-orange-800'
+                      }`}>
                       {selectedPhrase.explanation}
                     </p>
                   </div>
@@ -536,15 +534,13 @@ const GratitudeForEffort = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 delay={0.5}
-                className={`p-6 rounded-xl border-2 ${
-                  selected && selected.isCorrect
+                className={`p-6 rounded-xl border-2 ${selected && selected.isCorrect
                     ? 'bg-green-50 border-green-200'
                     : 'bg-orange-50 border-orange-200'
-                }`}
+                  }`}
               >
-                <p className={`font-semibold ${
-                  selected && selected.isCorrect ? 'text-green-800' : 'text-orange-800'
-                }`}>
+                <p className={`font-semibold ${selected && selected.isCorrect ? 'text-green-800' : 'text-orange-800'
+                  }`}>
                   💡 {current.whyItMatters}
                 </p>
               </motion.div>
@@ -557,8 +553,8 @@ const GratitudeForEffort = () => {
                 className="bg-amber-50 border border-amber-200 rounded-xl p-6"
               >
                 <p className="text-sm text-amber-800 leading-relaxed">
-                  <strong>💡 Parent Tip:</strong> Praise effort, not just achievement—confidence blooms through empathy. 
-                  When you focus on what children tried, how hard they worked, and the courage they showed, you build their self-worth on character rather than results. 
+                  <strong>💡 Parent Tip:</strong> Praise effort, not just achievement—confidence blooms through empathy.
+                  When you focus on what children tried, how hard they worked, and the courage they showed, you build their self-worth on character rather than results.
                   This creates resilient children who are willing to try, learn, and grow even when things are difficult.
                 </p>
               </motion.div>
@@ -597,4 +593,3 @@ const GratitudeForEffort = () => {
 };
 
 export default GratitudeForEffort;
-

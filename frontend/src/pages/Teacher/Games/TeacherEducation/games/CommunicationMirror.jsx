@@ -7,15 +7,15 @@ import { CheckCircle, XCircle, Eye, MessageCircle, TrendingUp, BookOpen, Users }
 
 const CommunicationMirror = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-66";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 10;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showInsight, setShowInsight] = useState(false);
@@ -38,6 +38,11 @@ const CommunicationMirror = () => {
         title: "Good Listening Skills",
         insight: "You tend to let others finish speaking before you respond. This shows strong listening skills and respect for others' perspectives. You create space for complete thoughts and better understanding.",
         suggestion: "Continue this practice! Your ability to listen fully before responding builds trust and deeper connections with students, colleagues, and parents."
+      },
+      sometimesInsight: {
+        title: "Occasional Interruption",
+        insight: "You sometimes interrupt others when speaking. This may happen when you're excited about the topic or feel the urge to contribute. Being aware of this pattern helps you choose when to hold back and when to jump in appropriately.",
+        suggestion: "Notice the situations when you're more likely to interrupt. Practice patience in those moments, but also recognize when timely interjections can enhance the conversation."
       }
     },
     {
@@ -54,6 +59,11 @@ const CommunicationMirror = () => {
         title: "Appropriate Apology Use",
         insight: "You use apologies appropriately—when you've actually made a mistake or caused harm. This shows healthy boundaries and self-awareness. You understand the difference between taking responsibility and unnecessary self-blame.",
         suggestion: "Great balance! Your appropriate use of apologies maintains accountability without undermining your confidence or authority."
+      },
+      sometimesInsight: {
+        title: "Balanced Apology Use",
+        insight: "You occasionally apologize when it might not be necessary, but generally maintain appropriate boundaries. This shows self-awareness about your communication patterns and an ongoing effort to find the right balance.",
+        suggestion: "Continue monitoring your apology patterns. Notice the difference between acknowledging impact and taking responsibility for unintended outcomes."
       }
     },
     {
@@ -70,6 +80,11 @@ const CommunicationMirror = () => {
         title: "Clear Communication",
         insight: "You communicate with minimal filler words, which suggests clarity of thought and confidence in your communication. This makes your messages more effective and easier to follow.",
         suggestion: "Your clear communication style helps others understand you better. Continue this practice—it's a valuable skill in teaching and relationships."
+      },
+      sometimesInsight: {
+        title: "Moderate Filler Word Usage",
+        insight: "You sometimes use filler words, particularly in stressful situations or when discussing complex topics. This is quite normal and often goes unnoticed in casual conversation.",
+        suggestion: "Focus on using pauses instead of filler words during high-stakes conversations. Practice your key talking points in advance to reduce uncertainty that leads to fillers."
       }
     },
     {
@@ -86,6 +101,11 @@ const CommunicationMirror = () => {
         title: "Willingness to Address Difficulties",
         insight: "You're willing to engage in difficult conversations when needed. This shows courage and commitment to addressing issues directly. You understand that avoiding problems doesn't solve them, and you're willing to navigate discomfort for resolution.",
         suggestion: "Your willingness to address difficult topics is a strength. Continue approaching challenging conversations with preparation and empathy."
+      },
+      sometimesInsight: {
+        title: "Selective Conversation Engagement",
+        insight: "You sometimes avoid difficult conversations, particularly when you're unsure of the outcome or feel emotionally unprepared. This selective approach can be strategic, but make sure important issues don't get overlooked.",
+        suggestion: "Evaluate which conversations are worth having despite discomfort. Set a timeline for addressing important issues rather than indefinitely postponing them."
       }
     },
     {
@@ -102,86 +122,11 @@ const CommunicationMirror = () => {
         title: "Emotional Regulation in Communication",
         insight: "You maintain appropriate volume even when frustrated or stressed. This shows strong emotional regulation and communication control. You understand that raised voices don't solve problems and can damage relationships.",
         suggestion: "Your ability to regulate volume under stress is valuable. This skill maintains relationships and authority even in challenging situations."
-      }
-    },
-    {
-      id: 6,
-      question: "Do I listen to understand or to respond?",
-      category: "Listening Habits",
-      emoji: "👂",
-      yesInsight: {
-        title: "Listening to Respond",
-        insight: "You tend to listen with the goal of responding rather than understanding. When we listen to respond, we're often formulating our reply while others are speaking, which means we miss important information and nuances. This can lead to misunderstandings and missed connections.",
-        suggestion: "Practice listening to understand first. Put aside your response and focus fully on what the other person is saying. After they finish, take a moment to reflect before responding. This deepens understanding and strengthens relationships."
       },
-      noInsight: {
-        title: "Listening to Understand",
-        insight: "You listen with the goal of understanding rather than immediately responding. This is active listening—you're fully present, absorbing what others are sharing, and considering their perspective. This approach builds trust and deeper connections.",
-        suggestion: "Your listening-to-understand approach is a strength. This active listening skill helps you build stronger relationships with students, colleagues, and parents."
-      }
-    },
-    {
-      id: 7,
-      question: "Do I use 'I' statements or 'you' statements when addressing concerns?",
-      category: "Expressing Concerns",
-      emoji: "💭",
-      yesInsight: {
-        title: "Tendency Toward 'You' Statements",
-        insight: "You tend to use 'you' statements when addressing concerns. 'You' statements can sound accusatory and put others on the defensive (e.g., 'You always...' or 'You never...'). This often escalates conflict rather than resolving it.",
-        suggestion: "Practice using 'I' statements instead. For example, instead of 'You never listen,' try 'I feel unheard when I share my concerns.' 'I' statements express your experience without blaming others, making it easier for them to hear and respond constructively."
-      },
-      noInsight: {
-        title: "Use of 'I' Statements",
-        insight: "You use 'I' statements when expressing concerns. This approach communicates your experience and feelings without blaming others (e.g., 'I feel...' or 'I noticed...'). This reduces defensiveness and creates space for constructive dialogue.",
-        suggestion: "Your use of 'I' statements is effective. This approach helps others hear your concerns without feeling attacked, leading to better problem-solving and relationship maintenance."
-      }
-    },
-    {
-      id: 8,
-      question: "Do I check my phone/device during conversations?",
-      category: "Presence Habits",
-      emoji: "📱",
-      yesInsight: {
-        title: "Device Distraction During Conversations",
-        insight: "You tend to check devices during conversations. Even quick glances at phones signal that the conversation isn't fully important. This reduces presence, makes others feel dismissed, and weakens connection and understanding.",
-        suggestion: "Put devices away during conversations. Give your full attention—this shows respect and allows for deeper understanding. If you must check something, acknowledge it: 'I need to quickly check something important' and then put it away."
-      },
-      noInsight: {
-        title: "Full Presence in Conversations",
-        insight: "You maintain full presence during conversations, keeping devices away. This shows respect, creates stronger connections, and allows for better understanding. Your undivided attention signals that the conversation and person matter to you.",
-        suggestion: "Your ability to be fully present during conversations is valuable. This practice builds trust and stronger relationships with students, colleagues, and parents."
-      }
-    },
-    {
-      id: 9,
-      question: "Do I give unsolicited advice when others share problems?",
-      category: "Support Communication",
-      emoji: "💡",
-      yesInsight: {
-        title: "Tendency to Give Advice",
-        insight: "You tend to offer advice when others share problems. While well-intentioned, jumping to solutions before fully understanding can make people feel dismissed. Sometimes people need to be heard and understood before they're ready for advice.",
-        suggestion: "Practice listening first, then asking if they want advice before offering solutions. Try: 'I hear what you're dealing with. Would you like to hear some suggestions, or would it help to talk it through more first?' This respects their process."
-      },
-      noInsight: {
-        title: "Listening Before Advising",
-        insight: "You tend to listen and understand before offering advice. You recognize that sometimes people need to process and be heard before they're ready for solutions. This approach builds trust and allows for more effective support when advice is requested.",
-        suggestion: "Your approach of listening before advising is effective. This allows others to feel heard and understood, and your advice becomes more valuable when they're ready for it."
-      }
-    },
-    {
-      id: 10,
-      question: "Do I maintain eye contact during conversations?",
-      category: "Presence Habits",
-      emoji: "👁️",
-      yesInsight: {
-        title: "Good Eye Contact",
-        insight: "You maintain eye contact during conversations. This shows presence, respect, and engagement. Eye contact signals that you're listening and that the conversation matters to you. It builds connection and trust.",
-        suggestion: "Continue this practice! Good eye contact (without staring) strengthens relationships and helps you read non-verbal cues better, leading to deeper understanding."
-      },
-      noInsight: {
-        title: "Limited Eye Contact",
-        insight: "You tend to avoid or limit eye contact during conversations. This can signal discomfort, distraction, or lack of engagement. While cultural differences exist, appropriate eye contact generally shows respect and presence in most professional settings.",
-        suggestion: "Practice maintaining gentle eye contact during conversations. Aim for about 60-70% eye contact—enough to show engagement without making others uncomfortable. Look at their eyes, then briefly away, then back."
+      sometimesInsight: {
+        title: "Occasional Volume Fluctuation",
+        insight: "You sometimes raise your voice when particularly stressed or frustrated, but generally maintain emotional regulation. This suggests you're mostly in control but may need additional strategies for your most challenging moments.",
+        suggestion: "Identify the specific triggers that cause you to raise your voice. Develop a personal signal (like a mental note or physical gesture) to remind yourself to pause and breathe deeply."
       }
     }
   ];
@@ -190,7 +135,14 @@ const CommunicationMirror = () => {
     if (answers[currentQuestion]) return; // Already answered
 
     const question = questions[currentQuestion];
-    const insight = answer ? question.yesInsight : question.noInsight;
+    let insight;
+    if (answer === 'yes') {
+      insight = question.yesInsight;
+    } else if (answer === 'no') {
+      insight = question.noInsight;
+    } else { // 'sometimes'
+      insight = question.sometimesInsight;
+    }
 
     setAnswers(prev => ({
       ...prev,
@@ -269,7 +221,7 @@ const CommunicationMirror = () => {
                     </h2>
                   </div>
                 </div>
-                
+
                 <div className="bg-white rounded-xl p-8 shadow-lg text-center">
                   <div className="text-5xl mb-4">{current.emoji}</div>
                   <p className="text-2xl font-semibold text-gray-800 leading-relaxed">
@@ -279,32 +231,46 @@ const CommunicationMirror = () => {
               </div>
 
               {/* Answer Options */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => handleAnswer(true)}
-                  className="p-8 rounded-xl border-2 border-gray-300 bg-white hover:border-green-400 hover:shadow-lg transition-all cursor-pointer group"
+                  onClick={() => handleAnswer('yes')}
+                  className="p-6 rounded-xl border-2 border-gray-300 bg-white hover:border-green-400 hover:shadow-lg transition-all cursor-pointer group"
                 >
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <CheckCircle className="w-8 h-8 text-white" />
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <CheckCircle className="w-7 h-7 text-white" />
                     </div>
-                    <p className="text-xl font-bold text-gray-800">Yes</p>
+                    <p className="text-lg font-bold text-gray-800">Yes</p>
                   </div>
                 </motion.button>
 
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => handleAnswer(false)}
-                  className="p-8 rounded-xl border-2 border-gray-300 bg-white hover:border-red-400 hover:shadow-lg transition-all cursor-pointer group"
+                  onClick={() => handleAnswer('sometimes')}
+                  className="p-6 rounded-xl border-2 border-gray-300 bg-white hover:border-yellow-400 hover:shadow-lg transition-all cursor-pointer group"
                 >
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-red-400 to-rose-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <XCircle className="w-8 h-8 text-white" />
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <MessageCircle className="w-7 h-7 text-white" />
                     </div>
-                    <p className="text-xl font-bold text-gray-800">No</p>
+                    <p className="text-lg font-bold text-gray-800">Sometimes</p>
+                  </div>
+                </motion.button>
+
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handleAnswer('no')}
+                  className="p-6 rounded-xl border-2 border-gray-300 bg-white hover:border-red-400 hover:shadow-lg transition-all cursor-pointer group"
+                >
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-r from-red-400 to-rose-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <XCircle className="w-7 h-7 text-white" />
+                    </div>
+                    <p className="text-lg font-bold text-gray-800">No</p>
                   </div>
                 </motion.button>
               </div>
@@ -409,7 +375,7 @@ const CommunicationMirror = () => {
                 {questions.slice(0, totalLevels).map((q, index) => {
                   const answer = answers[index];
                   if (!answer) return null;
-                  
+
                   return (
                     <div key={q.id} className="bg-white rounded-lg p-4 border border-gray-200">
                       <div className="flex items-start gap-3">
@@ -417,7 +383,7 @@ const CommunicationMirror = () => {
                         <div className="flex-1">
                           <p className="font-semibold text-gray-800 mb-1">{q.question}</p>
                           <p className="text-sm text-gray-600">
-                            Your answer: <strong>{answer.answer ? 'Yes' : 'No'}</strong> — {answer.insight.title}
+                            Your answer: <strong>{answer.answer === 'yes' ? 'Yes' : answer.answer === 'no' ? 'No' : 'Sometimes'}</strong> — {answer.insight.title}
                           </p>
                         </div>
                       </div>
@@ -461,4 +427,3 @@ const CommunicationMirror = () => {
 };
 
 export default CommunicationMirror;
-

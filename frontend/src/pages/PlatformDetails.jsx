@@ -618,23 +618,23 @@ const PlatformDetails = () => {
         <header className="max-w-5xl mx-auto text-center space-y-8">
           {/* Badge */}
           <div
-            className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/80 backdrop-blur-md 
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md 
                        border border-indigo-200 shadow-lg"
             style={{ animation: 'fadeInUp 0.8s ease-out' }}
           >
             <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></div>
-            <span className="text-xs uppercase tracking-[0.3em] text-indigo-600 font-bold">
+            <span className="text-sm sm:text-base uppercase tracking-[0.3em] text-indigo-600 font-bold">
               How WiseStudent Works
             </span>
           </div>
 
           {/* Main heading */}
           <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-clip-text 
+            className="text-5xl sm:text-6xl lg:text-7xl font-black text-transparent bg-clip-text 
                        bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 leading-tight"
             style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
           >
-            Student Help Guide
+            Help Guide
           </h1>
 
           {/* Subheading */}

@@ -5,15 +5,15 @@ import { getParentEducationGameById } from "../data/gameData";
 
 const ThoughtCatcher = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "parent-education-6";
   const gameData = getParentEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [score, setScore] = useState(0);
@@ -42,9 +42,10 @@ const ThoughtCatcher = () => {
       negativeThought: "I'm a bad parent",
       thoughtBubble: "💭",
       reframeOptions: [
-        { id: 'reframe1', text: "I'm doing my best, and that's enough", isCorrect: true },
+
         { id: 'reframe2', text: "All parents face challenging moments", isCorrect: false },
         { id: 'reframe3', text: "This is temporary and doesn't define me", isCorrect: false },
+        { id: 'reframe1', text: "I'm doing my best, and that's enough", isCorrect: true },
         { id: 'reframe4', text: "I'm learning and growing as a parent", isCorrect: false }
       ],
       affirmation: "I am a capable parent learning and growing every day. Challenges don't define my worth.",
@@ -74,10 +75,10 @@ const ThoughtCatcher = () => {
       negativeThought: "Everyone else is better than me",
       thoughtBubble: "💭",
       reframeOptions: [
-        { id: 'reframe1', text: "I'm on my own unique parenting journey", isCorrect: true },
         { id: 'reframe2', text: "Social media shows highlights, not reality", isCorrect: false },
         { id: 'reframe3', text: "I have my own strengths as a parent", isCorrect: false },
-        { id: 'reframe4', text: "Comparison steals my joy", isCorrect: false }
+        { id: 'reframe4', text: "Comparison steals my joy", isCorrect: false },
+        { id: 'reframe1', text: "I'm on my own unique parenting journey", isCorrect: true },
       ],
       affirmation: "I am enough. My parenting journey is unique, and I bring my own strengths and love to my family.",
       reflection: "Reframing comparison thoughts helps you focus on your own journey rather than others'. Everyone's situation is different, and social media only shows highlights. Your worth as a parent isn't measured against others - it's measured by your love, effort, and presence.",
@@ -106,8 +107,8 @@ const ThoughtCatcher = () => {
       negativeThought: "I'm not enough",
       thoughtBubble: "💭",
       reframeOptions: [
-        { id: 'reframe1', text: "I am enough, exactly as I am", isCorrect: true },
         { id: 'reframe2', text: "Parenting is challenging for everyone", isCorrect: false },
+        { id: 'reframe1', text: "I am enough, exactly as I am", isCorrect: true },
         { id: 'reframe3', text: "I'm learning and growing", isCorrect: false },
         { id: 'reframe4', text: "My love and presence matter", isCorrect: false }
       ],
@@ -136,7 +137,7 @@ const ThoughtCatcher = () => {
         // All questions answered
         setShowGameOver(true);
       }
-    }, 2500); // 2.5 second delay to show affirmation
+    }, 6500); // 2.5 second delay to show affirmation
   };
 
   const getReframeStyle = (questionIndex, reframeId) => {
@@ -171,7 +172,7 @@ const ThoughtCatcher = () => {
 
   const currentScenario = scenarios[currentQuestion];
   const selectedReframeId = selectedAnswers[currentQuestion];
-  const selectedReframe = selectedReframeId ? 
+  const selectedReframe = selectedReframeId ?
     currentScenario.reframeOptions.find(opt => opt.id === selectedReframeId) : null;
 
   return (
@@ -209,7 +210,7 @@ const ThoughtCatcher = () => {
                 <p className="text-lg text-gray-700 leading-relaxed mb-4">
                   {currentScenario.description}
                 </p>
-                
+
                 {/* Negative Thought Bubble */}
                 <div className="bg-white rounded-xl p-4 border-2 border-orange-300 shadow-md relative">
                   <div className="flex items-center gap-3">
@@ -240,11 +241,9 @@ const ThoughtCatcher = () => {
                     key={reframe.id}
                     onClick={() => !selectedAnswers[currentQuestion] && handleReframeSelect(currentQuestion, reframe.id)}
                     disabled={!!selectedAnswers[currentQuestion]}
-                    className={`w-full p-5 rounded-xl border-2 text-left transition-all ${
-                      getReframeStyle(currentQuestion, reframe.id)
-                    } ${
-                      selectedAnswers[currentQuestion] ? 'cursor-not-allowed' : 'cursor-pointer hover:shadow-lg hover:scale-[1.02]'
-                    }`}
+                    className={`w-full p-5 rounded-xl border-2 text-left transition-all ${getReframeStyle(currentQuestion, reframe.id)
+                      } ${selectedAnswers[currentQuestion] ? 'cursor-not-allowed' : 'cursor-pointer hover:shadow-lg hover:scale-[1.02]'
+                      }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
@@ -281,34 +280,30 @@ const ThoughtCatcher = () => {
 
             {/* Reflection Message */}
             {selectedAnswers[currentQuestion] !== undefined && (
-              <div className={`mt-6 p-4 rounded-xl border-2 ${
-                selectedReframe && selectedReframe.isCorrect
+              <div className={`mt-6 p-4 rounded-xl border-2 ${selectedReframe && selectedReframe.isCorrect
                   ? 'bg-green-50 border-green-200'
                   : 'bg-orange-50 border-orange-200'
-              }`}>
+                }`}>
                 <div className="flex items-start gap-3">
-                  <div className={`text-2xl flex-shrink-0 ${
-                    selectedReframe && selectedReframe.isCorrect
+                  <div className={`text-2xl flex-shrink-0 ${selectedReframe && selectedReframe.isCorrect
                       ? 'text-green-600'
                       : 'text-orange-600'
-                  }`}>
+                    }`}>
                     {selectedReframe && selectedReframe.isCorrect ? '💡' : '📝'}
                   </div>
                   <div className="flex-1">
-                    <h4 className={`font-bold mb-2 ${
-                      selectedReframe && selectedReframe.isCorrect
+                    <h4 className={`font-bold mb-2 ${selectedReframe && selectedReframe.isCorrect
                         ? 'text-green-800'
                         : 'text-orange-800'
-                    }`}>
+                      }`}>
                       {selectedReframe && selectedReframe.isCorrect
                         ? 'Reflection'
                         : 'Learning Moment'}
                     </h4>
-                    <p className={`text-sm leading-relaxed mb-2 ${
-                      selectedReframe && selectedReframe.isCorrect
+                    <p className={`text-sm leading-relaxed mb-2 ${selectedReframe && selectedReframe.isCorrect
                         ? 'text-green-700'
                         : 'text-orange-700'
-                    }`}>
+                      }`}>
                       {currentScenario.reflection}
                     </p>
                     <div className="bg-white/60 rounded-lg p-3 mt-3 border border-blue-200">
@@ -324,7 +319,7 @@ const ThoughtCatcher = () => {
           </div>
         </div>
       ) : null}
-      
+
       <style>{`
         @keyframes fade-in {
           from { opacity: 0; transform: translateY(-10px); }
@@ -339,4 +334,3 @@ const ThoughtCatcher = () => {
 };
 
 export default ThoughtCatcher;
-

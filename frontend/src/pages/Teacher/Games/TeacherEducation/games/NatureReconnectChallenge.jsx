@@ -7,15 +7,15 @@ import { TreePine, Sun, Flower, Wind, CheckCircle, Circle, Camera, FileText, Spa
 
 const NatureReconnectChallenge = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-96";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [completedActivities, setCompletedActivities] = useState(new Set());
   const [currentStep, setCurrentStep] = useState('activities'); // 'activities', 'reflection', 'complete'
   const [reflectionType, setReflectionType] = useState(null); // 'photo' or 'note'
@@ -115,15 +115,20 @@ const NatureReconnectChallenge = () => {
       if (newSet.has(activityId)) {
         newSet.delete(activityId);
       } else {
-        newSet.add(activityId);
+        // Only allow adding if we haven't reached 5 yet
+        if (newSet.size < 5) {
+          newSet.add(activityId);
+        } else {
+          alert('You can only select up to 5 activities. Deselect an activity first if you want to change your selection.');
+        }
       }
       return newSet;
     });
   };
 
   const handleContinueToReflection = () => {
-    if (completedActivities.size < 3) {
-      alert('Please complete at least 3 activities outdoors before continuing to reflection.');
+    if (completedActivities.size < 5) {
+      alert('Please complete at least 5 activities outdoors before continuing to reflection.');
       return;
     }
     setCurrentStep('reflection');
@@ -148,12 +153,12 @@ const NatureReconnectChallenge = () => {
       alert('Please choose either a photo or note for your reflection.');
       return;
     }
-    
+
     if (reflectionType === 'photo' && !reflectionPhoto) {
       alert('Please upload a photo for your reflection.');
       return;
     }
-    
+
     if (reflectionType === 'note' && !reflectionNote.trim()) {
       alert('Please write a reflection note.');
       return;
@@ -164,7 +169,8 @@ const NatureReconnectChallenge = () => {
       return;
     }
 
-    setScore(completedActivities.size);
+    // Set the score to the number of completed activities (up to 5)
+    setScore(Math.min(completedActivities.size, 5));
     setShowGameOver(true);
   };
 
@@ -174,7 +180,7 @@ const NatureReconnectChallenge = () => {
 
   if (showGameOver) {
     const completedActivitiesList = Array.from(completedActivities).map(id => getActivityById(id)).filter(Boolean);
-    
+
     return (
       <TeacherGameShell
         title={gameData?.title || "Nature Reconnect Challenge"}
@@ -185,7 +191,7 @@ const NatureReconnectChallenge = () => {
         gameType="teacher-education"
         totalLevels={totalLevels}
         totalCoins={totalCoins}
-        currentQuestion={1}
+        currentQuestion={Math.min(completedActivities.size, totalLevels)}
       >
         <div className="w-full max-w-5xl mx-auto px-4">
           <motion.div
@@ -221,9 +227,9 @@ const NatureReconnectChallenge = () => {
                   {completedActivities.size} / {activities.length}
                 </div>
                 <p className="text-gray-700">
-                  {completedActivities.size >= 3 
-                    ? 'Great job! You completed at least 3 activities outdoors.'
-                    : 'You completed some activities. Try for 3 or more next time!'
+                  {completedActivities.size >= 5
+                    ? 'Great job! You completed at least 5 activities outdoors.'
+                    : 'You completed some activities. Try for 5 or more next time!'
                   }
                 </p>
               </div>
@@ -268,9 +274,9 @@ const NatureReconnectChallenge = () => {
                 </h3>
                 {reflectionPhoto && photoPreview && (
                   <div className="mb-4">
-                    <img 
-                      src={photoPreview} 
-                      alt="Nature reflection" 
+                    <img
+                      src={photoPreview}
+                      alt="Nature reflection"
                       className="w-full max-w-md mx-auto rounded-xl border-2 border-gray-200"
                     />
                   </div>
@@ -348,7 +354,7 @@ const NatureReconnectChallenge = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={Math.min(completedActivities.size, totalLevels)}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -361,7 +367,7 @@ const NatureReconnectChallenge = () => {
                   Nature Reconnect Challenge
                 </h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                  Complete at least 3 outdoor activities to reconnect with nature and reduce digital fatigue
+                  Complete at least 5 outdoor activities to reconnect with nature and reduce digital fatigue
                 </p>
               </div>
 
@@ -372,7 +378,7 @@ const NatureReconnectChallenge = () => {
                   How This Works
                 </h3>
                 <ul className="text-green-800 space-y-2 text-sm">
-                  <li>• <strong>Choose activities:</strong> Select at least 3 activities from the checklist</li>
+                  <li>• <strong>Choose activities:</strong> Select exactly 5 activities from the checklist</li>
                   <li>• <strong>Complete outdoors:</strong> Go outside and complete each activity you've selected</li>
                   <li>• <strong>Check off items:</strong> Mark each activity as complete after you've done it</li>
                   <li>• <strong>Add reflection:</strong> Upload a photo or write a note about your nature experience</li>
@@ -385,7 +391,7 @@ const NatureReconnectChallenge = () => {
                 {activities.map((activity, index) => {
                   const Icon = activity.icon;
                   const isCompleted = completedActivities.has(activity.id);
-                  
+
                   return (
                     <motion.button
                       key={activity.id}
@@ -393,19 +399,17 @@ const NatureReconnectChallenge = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.05 }}
                       onClick={() => handleToggleActivity(activity.id)}
-                      className={`relative overflow-hidden rounded-xl border-2 transition-all text-left ${
-                        isCompleted
+                      className={`relative overflow-hidden rounded-xl border-2 transition-all text-left ${isCompleted
                           ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-400 shadow-lg'
                           : 'bg-white border-gray-200 hover:border-gray-300'
-                      }`}
+                        }`}
                     >
                       <div className="p-6">
                         <div className="flex items-start gap-4 mb-4">
-                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                            isCompleted
+                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${isCompleted
                               ? 'bg-gradient-to-r from-green-400 to-emerald-500 text-white shadow-md'
                               : 'bg-gray-100 text-gray-400'
-                          }`}>
+                            }`}>
                             {isCompleted ? (
                               <CheckCircle className="w-6 h-6" />
                             ) : (
@@ -443,35 +447,23 @@ const NatureReconnectChallenge = () => {
                 })}
               </div>
 
-              {/* Progress */}
+              {/* Progress Message */}
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200 mb-8">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2">
-                    <TreePine className="w-5 h-5 text-green-600" />
+                <div className="text-center">
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">
                     Progress
                   </h3>
-                  <div className="text-2xl font-bold text-green-600">
-                    {completedActivities.size} / {activities.length}
-                  </div>
+                  <p className="text-sm text-gray-600 mt-2">
+                    {completedActivities.size >= 5
+                      ? '✅ You have completed at least 5 activities! You can continue to reflection or do more activities.'
+                      : `Complete ${5 - completedActivities.size} more activity${5 - completedActivities.size === 1 ? '' : 'ies'} to continue`
+                    }
+                  </p>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${(completedActivities.size / activities.length) * 100}%` }}
-                    transition={{ duration: 0.3 }}
-                    className="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"
-                  />
-                </div>
-                <p className="text-sm text-gray-600 mt-2 text-center">
-                  {completedActivities.size >= 3 
-                    ? '✅ You\'ve completed at least 3 activities! You can continue to reflection or do more activities.'
-                    : `Complete ${3 - completedActivities.size} more activity${3 - completedActivities.size === 1 ? '' : 'ies'} to continue`
-                  }
-                </p>
               </div>
 
               {/* Continue Button */}
-              {completedActivities.size >= 3 && (
+              {completedActivities.size >= 5 && (
                 <div className="text-center">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -509,11 +501,10 @@ const NatureReconnectChallenge = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setReflectionType('photo')}
-                  className={`p-6 rounded-xl border-2 transition-all text-left ${
-                    reflectionType === 'photo'
+                  className={`p-6 rounded-xl border-2 transition-all text-left ${reflectionType === 'photo'
                       ? 'bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-400 shadow-lg'
                       : 'bg-white border-gray-200 hover:border-gray-300'
-                  }`}
+                    }`}
                 >
                   <Camera className={`w-8 h-8 mb-3 ${reflectionType === 'photo' ? 'text-blue-600' : 'text-gray-400'}`} />
                   <h3 className={`text-lg font-bold mb-2 ${reflectionType === 'photo' ? 'text-gray-800' : 'text-gray-700'}`}>
@@ -528,11 +519,10 @@ const NatureReconnectChallenge = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setReflectionType('note')}
-                  className={`p-6 rounded-xl border-2 transition-all text-left ${
-                    reflectionType === 'note'
+                  className={`p-6 rounded-xl border-2 transition-all text-left ${reflectionType === 'note'
                       ? 'bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-400 shadow-lg'
                       : 'bg-white border-gray-200 hover:border-gray-300'
-                  }`}
+                    }`}
                 >
                   <FileText className={`w-8 h-8 mb-3 ${reflectionType === 'note' ? 'text-purple-600' : 'text-gray-400'}`} />
                   <h3 className={`text-lg font-bold mb-2 ${reflectionType === 'note' ? 'text-gray-800' : 'text-gray-700'}`}>
@@ -568,9 +558,9 @@ const NatureReconnectChallenge = () => {
                         className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-blue-300 rounded-xl bg-white hover:bg-blue-50 transition-all cursor-pointer"
                       >
                         {photoPreview ? (
-                          <img 
-                            src={photoPreview} 
-                            alt="Preview" 
+                          <img
+                            src={photoPreview}
+                            alt="Preview"
                             className="max-w-full max-h-48 rounded-lg"
                           />
                         ) : (
@@ -628,4 +618,3 @@ const NatureReconnectChallenge = () => {
 };
 
 export default NatureReconnectChallenge;
-

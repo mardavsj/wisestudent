@@ -7,15 +7,15 @@ import { Users, Heart, CheckCircle, MessageCircle, TrendingUp, BookOpen, Sparkle
 
 const TheSupportCircle = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-71";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 3;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [currentStep, setCurrentStep] = useState(0); // 0: intro, 1: story part 1, 2: story part 2, 3: reflection, 4: summary
   const [selectedReflections, setSelectedReflections] = useState({});
   const [showReflectionFeedback, setShowReflectionFeedback] = useState(false);
@@ -101,15 +101,16 @@ const TheSupportCircle = () => {
           feedback: 'True! When we\'re overwhelmed, our perspective narrows. Supportive colleagues can help us see situations more clearly and find solutions.'
         },
         {
+          id: 'all-reasons',
+          text: 'All of the above - it addresses isolation, perspective, and builds community',
+          feedback: 'Perfect! Peer support does all of these things - it reduces isolation, provides perspective, and builds a caring community. This comprehensive impact makes it invaluable.'
+        },
+        {
           id: 'builds-community',
           text: 'It builds a culture of care and collaboration rather than competition',
           feedback: 'Exactly! When teachers support each other, it creates a collaborative culture where everyone benefits. This transforms workplace relationships.'
         },
-        {
-          id: 'all-reasons',
-          text: 'All of the above - it addresses isolation, perspective, and builds community',
-          feedback: 'Perfect! Peer support does all of these things - it reduces isolation, provides perspective, and builds a caring community. This comprehensive impact makes it invaluable.'
-        }
+
       ],
       correctOption: 'all-reasons'
     },
@@ -117,6 +118,11 @@ const TheSupportCircle = () => {
       id: 3,
       question: 'What can you do to create supportive connections with colleagues?',
       options: [
+        {
+          id: 'combine-all',
+          text: 'All of the above - combine noticing, listening, and forming support circles',
+          feedback: 'Perfect approach! Combining individual acts of care (noticing, listening) with structured support (circles) creates both immediate and sustainable support systems.'
+        },
         {
           id: 'notice-and-reach-out',
           text: 'Notice when colleagues seem stressed and reach out with care',
@@ -132,13 +138,64 @@ const TheSupportCircle = () => {
           text: 'Form small support circles or find colleagues you can regularly check in with',
           feedback: 'Excellent! Structured support circles create consistent opportunities for connection and mutual support. This builds sustainable support networks.'
         },
-        {
-          id: 'combine-all',
-          text: 'All of the above - combine noticing, listening, and forming support circles',
-          feedback: 'Perfect approach! Combining individual acts of care (noticing, listening) with structured support (circles) creates both immediate and sustainable support systems.'
-        }
+
       ],
       correctOption: 'combine-all'
+    },
+    {
+      id: 4,
+      question: 'What is the most effective way to respond when a colleague shares they\'re struggling?',
+      options: [
+        {
+          id: 'immediate-solution',
+          text: 'Immediately jump in with solutions and advice on how to fix the problem',
+          feedback: 'While helpful intentions, jumping straight to solutions can make colleagues feel like their feelings aren\'t being heard first. They may need validation before practical help.'
+        },
+        {
+          id: 'validate-first',
+          text: 'First acknowledge their feelings and validate their experience before offering help',
+          feedback: 'Perfect! Validating feelings first creates psychological safety and shows you understand their experience. This builds trust and makes colleagues more receptive to support.'
+        },
+        {
+          id: 'share-similar',
+          text: 'Share your own similar experiences to show you understand what they\'re going through',
+          feedback: 'Sharing experiences can be helpful, but timing matters. It\'s more effective after validating their feelings, not as the primary response.'
+        },
+        {
+          id: 'suggest-break',
+          text: 'Tell them to take a break and come back refreshed tomorrow',
+          feedback: 'While self-care is important, suggesting a break without acknowledging their struggle first can feel dismissive of their current reality and needs.'
+        }
+      ],
+      correctOption: 'validate-first'
+    },
+    {
+      id: 5,
+      question: 'How often should micro support circles meet to be most effective?',
+      options: [
+        {
+          id: 'monthly',
+          text: 'Monthly - gives everyone time to accumulate enough issues to discuss',
+          feedback: 'Monthly meetings may be too infrequent. By then, issues may have escalated or colleagues may have moved on, missing opportunities for timely support.'
+        },
+
+        {
+          id: 'as-needed',
+          text: 'Only when someone specifically requests a meeting',
+          feedback: 'While responsive, this approach misses the preventive benefits of regular check-ins. Scheduled meetings ensure consistent support regardless of who initiates.'
+        },
+        {
+          id: 'daily',
+          text: 'Daily quick check-ins during lunch or passing periods',
+          feedback: 'Daily might be too frequent and could become burdensome. Weekly or bi-weekly strikes the right balance between consistency and sustainability.'
+        },
+        {
+          id: 'weekly-or-biweekly',
+          text: 'Weekly or bi-weekly - creates consistent connection and addresses issues before they escalate',
+          feedback: 'Exactly! Weekly or bi-weekly meetings create regular touchpoints that prevent isolation and address challenges while they\'re still manageable. Consistency builds trust and makes support a routine practice.'
+        },
+      ],
+      correctOption: 'weekly-or-biweekly'
     }
   ];
 
@@ -164,7 +221,7 @@ const TheSupportCircle = () => {
       [reflectionIndex]: optionId
     }));
     setShowReflectionFeedback(true);
-    
+
     setTimeout(() => {
       setShowReflectionFeedback(false);
       if (reflectionIndex < reflections.length - 1) {
@@ -189,7 +246,7 @@ const TheSupportCircle = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={currentStep + 1}
+      currentQuestion={currentStep}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         {/* Story Vignette */}
@@ -302,20 +359,18 @@ const TheSupportCircle = () => {
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleReflectionSelect(currentReflectionIndex, option.id)}
                     disabled={!!selectedReflections[currentReflectionIndex]}
-                    className={`w-full p-6 rounded-xl border-2 text-left transition-all ${
-                      isSelected
+                    className={`w-full p-6 rounded-xl border-2 text-left transition-all ${isSelected
                         ? 'border-green-400 bg-gradient-to-br from-green-50 to-emerald-50'
                         : selectedReflections[currentReflectionIndex]
-                        ? 'border-gray-300 bg-gray-50 opacity-60'
-                        : 'border-gray-300 bg-white hover:border-blue-400 hover:shadow-lg'
-                    } ${selectedReflections[currentReflectionIndex] ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                          ? 'border-gray-300 bg-gray-50 opacity-60'
+                          : 'border-gray-300 bg-white hover:border-blue-400 hover:shadow-lg'
+                      } ${selectedReflections[currentReflectionIndex] ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                   >
                     <div className="flex items-start gap-4">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        isSelected
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${isSelected
                           ? 'bg-gradient-to-r from-green-400 to-emerald-500'
                           : 'bg-gray-200'
-                      }`}>
+                        }`}>
                         {isSelected ? (
                           <CheckCircle className="w-5 h-5 text-white" />
                         ) : (
@@ -482,4 +537,3 @@ const TheSupportCircle = () => {
 };
 
 export default TheSupportCircle;
-

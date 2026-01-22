@@ -5,15 +5,15 @@ import { getParentEducationGameById } from "../data/gameData";
 
 const NameYourFeeling = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "parent-education-1";
   const gameData = getParentEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [score, setScore] = useState(0);
@@ -54,11 +54,11 @@ const NameYourFeeling = () => {
       description: "You and your teenager haven't spoken in two days after an argument about screen time. The house feels heavy with unspoken tension. Every interaction is brief and cold.",
       options: [
         "Peaceful and Content",
-        "Sad and Disconnected",
         "Angry and Resentful",
-        "Hopeful and Optimistic"
+        "Hopeful and Optimistic",
+        "Sad and Disconnected",
       ],
-      correct: 1, // Sad and Disconnected
+      correct: 3, // Sad and Disconnected
       reflection: "Identifying you feel 'Sad and Disconnected' opens the door to repair. You can initiate: 'I'm feeling sad that we're not talking. Can we find a time to reconnect?' Naming the emotion breaks the silence and creates an opportunity for healing.",
       parentTip: "Naming 'sadness' or 'disconnection' helps you reach out instead of waiting for the other person. It shows your child that relationships can be repaired through honest communication."
     },
@@ -68,11 +68,11 @@ const NameYourFeeling = () => {
       description: "Your family is playing a board game together. Everyone is laughing, sharing jokes, and genuinely enjoying each other's company. The room is filled with warmth and connection.",
       options: [
         "Anxious and Worried",
-        "Joyful and Connected",
         "Bored and Disinterested",
+        "Joyful and Connected",
         "Irritated and Impatient"
       ],
-      correct: 1, // Joyful and Connected
+      correct: 2, // Joyful and Connected
       reflection: "Recognizing you feel 'Joyful and Connected' helps you savor the moment. You can say: 'I'm feeling so happy right now being together.' This reinforces positive family bonds and teaches your child to appreciate joyful moments.",
       parentTip: "Naming positive emotions like 'joy' and 'connection' helps you create more of these moments. Your child learns to recognize and express happiness, strengthening family bonds."
     },
@@ -81,12 +81,12 @@ const NameYourFeeling = () => {
       title: "Disappointment Scenario",
       description: "Your child shows you their test score - it's much lower than expected. They worked hard and studied, but the results don't reflect their effort. You see the disappointment in their eyes.",
       options: [
-        "Proud and Encouraging",
         "Disappointed and Concerned",
+        "Proud and Encouraging",
         "Angry and Critical",
         "Indifferent and Unmoved"
       ],
-      correct: 1, // Disappointed and Concerned
+      correct: 0, // Disappointed and Concerned
       reflection: "Acknowledging you feel 'Disappointed and Concerned' allows you to respond with empathy. You can say: 'I'm feeling disappointed too, but I'm also concerned about how you're feeling. Let's talk about what happened.' This validates their feelings while offering support.",
       parentTip: "Naming your disappointment helps you respond with empathy rather than criticism. Your child learns that disappointment is a normal emotion that can be discussed and worked through together."
     }
@@ -112,7 +112,7 @@ const NameYourFeeling = () => {
         // All questions answered
         setShowGameOver(true);
       }
-    }, 2000); // 2 second delay to show reflection
+    }, 8000); // 2 second delay to show reflection
   };
 
   const getOptionStyle = (questionIndex, optionIndex) => {
@@ -196,11 +196,9 @@ const NameYourFeeling = () => {
                     key={optionIndex}
                     onClick={() => !selectedAnswers[currentQuestion] && handleAnswerSelect(currentQuestion, optionIndex)}
                     disabled={!!selectedAnswers[currentQuestion]}
-                    className={`w-full p-4 rounded-xl border-2 text-left transition-all ${
-                      getOptionStyle(currentQuestion, optionIndex)
-                    } ${
-                      selectedAnswers[currentQuestion] ? 'cursor-not-allowed' : 'cursor-pointer hover:shadow-md'
-                    }`}
+                    className={`w-full p-4 rounded-xl border-2 text-left transition-all ${getOptionStyle(currentQuestion, optionIndex)
+                      } ${selectedAnswers[currentQuestion] ? 'cursor-not-allowed' : 'cursor-pointer hover:shadow-md'
+                      }`}
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-medium">{option}</span>
@@ -217,34 +215,30 @@ const NameYourFeeling = () => {
 
             {/* Reflection Message */}
             {selectedAnswers[currentQuestion] !== undefined && (
-              <div className={`mt-6 p-4 rounded-xl border-2 ${
-                selectedAnswers[currentQuestion] === scenarios[currentQuestion].correct
+              <div className={`mt-6 p-4 rounded-xl border-2 ${selectedAnswers[currentQuestion] === scenarios[currentQuestion].correct
                   ? 'bg-green-50 border-green-200'
                   : 'bg-orange-50 border-orange-200'
-              }`}>
+                }`}>
                 <div className="flex items-start gap-3">
-                  <div className={`text-2xl flex-shrink-0 ${
-                    selectedAnswers[currentQuestion] === scenarios[currentQuestion].correct
+                  <div className={`text-2xl flex-shrink-0 ${selectedAnswers[currentQuestion] === scenarios[currentQuestion].correct
                       ? 'text-green-600'
                       : 'text-orange-600'
-                  }`}>
+                    }`}>
                     {selectedAnswers[currentQuestion] === scenarios[currentQuestion].correct ? '💡' : '📝'}
                   </div>
                   <div className="flex-1">
-                    <h4 className={`font-bold mb-2 ${
-                      selectedAnswers[currentQuestion] === scenarios[currentQuestion].correct
+                    <h4 className={`font-bold mb-2 ${selectedAnswers[currentQuestion] === scenarios[currentQuestion].correct
                         ? 'text-green-800'
                         : 'text-orange-800'
-                    }`}>
+                      }`}>
                       {selectedAnswers[currentQuestion] === scenarios[currentQuestion].correct
                         ? 'Reflection'
                         : 'Learning Moment'}
                     </h4>
-                    <p className={`text-sm leading-relaxed mb-2 ${
-                      selectedAnswers[currentQuestion] === scenarios[currentQuestion].correct
+                    <p className={`text-sm leading-relaxed mb-2 ${selectedAnswers[currentQuestion] === scenarios[currentQuestion].correct
                         ? 'text-green-700'
                         : 'text-orange-700'
-                    }`}>
+                      }`}>
                       {scenarios[currentQuestion].reflection}
                     </p>
                     <div className="bg-white/60 rounded-lg p-3 mt-3 border border-blue-200">
@@ -265,4 +259,3 @@ const NameYourFeeling = () => {
 };
 
 export default NameYourFeeling;
-

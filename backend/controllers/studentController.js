@@ -1,4 +1,5 @@
 // controllers/studentController.js
+import mongoose from 'mongoose';
 import User from '../models/User.js';
 import Budget from '../models/Budget.js';
 import Investment from '../models/Investment.js';
@@ -287,6 +288,30 @@ export const getInvestmentData = async (req, res) => {
 };
 
 // Save savings goals
+const parseTargetDateFromPayload = (payload) => {
+  const rawDate = payload?.targetDate || payload?.deadline;
+  if (!rawDate) return null;
+
+  const dateCandidate = rawDate instanceof Date ? rawDate : new Date(rawDate);
+  if (Number.isNaN(dateCandidate.getTime())) {
+    return null;
+  }
+
+  return dateCandidate;
+};
+
+const formatGoalForResponse = (goalDoc) => {
+  const goal = goalDoc.toObject({ versionKey: false });
+  if (goal.targetDate) {
+    goal.deadline = goal.targetDate instanceof Date
+      ? goal.targetDate.toISOString()
+      : new Date(goal.targetDate).toISOString();
+  } else if (!goal.deadline) {
+    goal.deadline = null;
+  }
+  return goal;
+};
+
 export const saveSavingsGoals = async (req, res) => {
   try {
     const userId = req.user._id;
@@ -300,7 +325,21 @@ export const saveSavingsGoals = async (req, res) => {
     const savedGoals = [];
     
     for (const goal of goals) {
-      if (goal._id) {
+      const targetDate = parseTargetDateFromPayload(goal);
+
+      if (!targetDate) {
+        return res.status(400).json({ error: 'Each goal must have a valid deadline/target date' });
+      }
+
+      const sanitizedGoal = { ...goal };
+      sanitizedGoal.targetDate = targetDate;
+      delete sanitizedGoal.deadline;
+      delete sanitizedGoal._id;
+      delete sanitizedGoal.userId;
+
+      const hasValidObjectId = goal._id && mongoose.Types.ObjectId.isValid(goal._id);
+
+      if (hasValidObjectId) {
         // Update existing goal
         const existingGoal = await SavingsGoal.findOne({ 
           _id: goal._id, 
@@ -308,25 +347,20 @@ export const saveSavingsGoals = async (req, res) => {
         });
         
         if (existingGoal) {
-          // Update fields
-          Object.keys(goal).forEach(key => {
-            if (key !== '_id' && key !== 'userId') {
-              existingGoal[key] = goal[key];
-            }
-          });
+          Object.assign(existingGoal, sanitizedGoal);
           
           await existingGoal.save();
-          savedGoals.push(existingGoal);
+          savedGoals.push(formatGoalForResponse(existingGoal));
         }
       } else {
         // Create new goal
         const newGoal = new SavingsGoal({
-          ...goal,
+          ...sanitizedGoal,
           userId
         });
         
         await newGoal.save();
-        savedGoals.push(newGoal);
+        savedGoals.push(formatGoalForResponse(newGoal));
       }
     }
     
@@ -347,8 +381,9 @@ export const getSavingsGoals = async (req, res) => {
     const userId = req.user._id;
     
     const goals = await SavingsGoal.find({ userId }).sort({ createdAt: -1 });
+    const mappedGoals = goals.map(formatGoalForResponse);
     
-    res.status(200).json(goals);
+    res.status(200).json(mappedGoals);
   } catch (err) {
     console.error('Failed to fetch savings goals:', err);
     res.status(500).json({ error: 'Server error fetching savings goals' });

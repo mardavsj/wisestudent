@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import TeacherGameShell from "../../TeacherGameShell";
@@ -7,20 +7,18 @@ import { MessageCircle, Moon, BookOpen, TrendingUp, TrendingDown, AlertCircle, C
 
 const ToughDaySimulation = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-53";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [currentMoment, setCurrentMoment] = useState(0);
   const [calmLevel, setCalmLevel] = useState(70); // Start at 70% (moderate stress)
   const [selectedChoices, setSelectedChoices] = useState({});
-  const [showRecovery, setShowRecovery] = useState(false);
-  const [selectedRecoverySteps, setSelectedRecoverySteps] = useState([]);
   const [showSummary, setShowSummary] = useState(false);
   const [score, setScore] = useState(0);
   const [showGameOver, setShowGameOver] = useState(false);
@@ -39,6 +37,14 @@ const ToughDaySimulation = () => {
           description: "You frantically try to do everything at once, feeling overwhelmed and stressed. You rush through the parent conversation and print materials while students wait.",
           feedback: "Panic mode increases stress. Taking a moment to breathe and prioritize would help."
         },
+
+        {
+          id: 'delay',
+          label: 'Delay everything and feel anxious',
+          calmChange: -10,
+          description: "You feel frozen, delay addressing anything, and worry about all the tasks. The parent waits, materials aren't ready, and you feel increasingly anxious.",
+          feedback: "Avoiding and delaying increases anxiety. Taking action, even small steps, helps reduce stress."
+        },
         {
           id: 'prioritize',
           label: 'Take a breath, prioritize, and delegate',
@@ -46,13 +52,6 @@ const ToughDaySimulation = () => {
           description: "You take a deep breath, quickly address the parent's urgent concern, ask a colleague to help with printing, and calmly greet students. You handle it systematically.",
           feedback: "Good prioritization! Taking a breath and handling things systematically reduces stress."
         },
-        {
-          id: 'delay',
-          label: 'Delay everything and feel anxious',
-          calmChange: -10,
-          description: "You feel frozen, delay addressing anything, and worry about all the tasks. The parent waits, materials aren't ready, and you feel increasingly anxious.",
-          feedback: "Avoiding and delaying increases anxiety. Taking action, even small steps, helps reduce stress."
-        }
       ]
     },
     {
@@ -89,19 +88,20 @@ const ToughDaySimulation = () => {
       situation: "During lunch, you receive an email from the principal with feedback on a recent observation. The feedback highlights several areas for improvement and feels critical. You thought the lesson went well.",
       choices: [
         {
+          id: 'process',
+          label: 'Process it, reflect, and plan improvements',
+          calmChange: -5,
+          description: "You read the feedback carefully, take time to process it, and reflect on what you can learn. You identify actionable steps for improvement and see it as professional growth.",
+          feedback: "Great approach! Processing feedback constructively and seeing it as growth reduces stress and helps you improve."
+        },
+        {
           id: 'defensive',
           label: 'Get defensive and question your abilities',
           calmChange: -18,
           description: "You read the feedback and immediately feel criticized. You question whether you're a good teacher, replay the observation in your mind, and lose confidence. Your stress spikes.",
           feedback: "Taking feedback personally increases stress. Try to see it as growth opportunities rather than personal criticism."
         },
-        {
-          id: 'process',
-          label: 'Process it, reflect, and plan improvements',
-          calmChange: -8,
-          description: "You read the feedback carefully, take time to process it, and reflect on what you can learn. You identify actionable steps for improvement and see it as professional growth.",
-          feedback: "Great approach! Processing feedback constructively and seeing it as growth reduces stress and helps you improve."
-        },
+
         {
           id: 'avoid',
           label: 'Avoid reading it and feel anxious',
@@ -151,6 +151,14 @@ const ToughDaySimulation = () => {
           description: "You push through, continue working while exhausted, and ignore your need for rest. You work for two more hours, feeling increasingly drained and stressed.",
           feedback: "Pushing through exhaustion increases stress and prevents recovery. Rest is essential for sustainable teaching."
         },
+
+        {
+          id: 'ignore',
+          label: 'Ignore feelings and carry stress home',
+          calmChange: -10,
+          description: "You pack up quickly, ignore your feelings, and head home carrying all the stress. You feel tense and don't process the day, carrying it into your evening.",
+          feedback: "Ignoring feelings doesn't make them go away. Acknowledging and processing the day helps prevent carrying stress home."
+        },
         {
           id: 'pause',
           label: 'Acknowledge the tough day and pause',
@@ -158,13 +166,6 @@ const ToughDaySimulation = () => {
           description: "You acknowledge it was a tough day, pause, and take a moment to breathe. You recognize you're exhausted and that it's okay to rest. You decide to address tasks later.",
           feedback: "Excellent self-awareness! Acknowledging your state and pausing is the first step to recovery. This reduces stress."
         },
-        {
-          id: 'ignore',
-          label: 'Ignore feelings and carry stress home',
-          calmChange: -10,
-          description: "You pack up quickly, ignore your feelings, and head home carrying all the stress. You feel tense and don't process the day, carrying it into your evening.",
-          feedback: "Ignoring feelings doesn't make them go away. Acknowledging and processing the day helps prevent carrying stress home."
-        }
       ]
     }
   ];
@@ -172,111 +173,46 @@ const ToughDaySimulation = () => {
   const handleMomentChoice = (choiceId) => {
     const moment = dayMoments[currentMoment];
     const choice = moment.choices.find(c => c.id === choiceId);
-    
+
     setSelectedChoices(prev => ({
       ...prev,
       [currentMoment]: choice
     }));
-    
+
     // Update calm level
     const newCalmLevel = Math.max(0, Math.min(100, calmLevel + choice.calmChange));
     setCalmLevel(newCalmLevel);
-    
-    // Move to next moment or show recovery
+
+    // Move to next moment
     if (currentMoment < dayMoments.length - 1) {
       setTimeout(() => {
         setCurrentMoment(prev => prev + 1);
       }, 1500);
     } else {
-      // End of day - show recovery options
+      // End of day - show summary
       setTimeout(() => {
-        setShowRecovery(true);
+        setShowSummary(true);
+        setShowGameOver(true);
       }, 1500);
     }
-  };
-
-  const recoverySteps = [
-    {
-      id: 'talk',
-      label: 'Talk',
-      icon: MessageCircle,
-      description: "Debrief with a colleague, friend, or partner about the day. Share what happened and how you felt.",
-      calmChange: +15,
-      color: 'from-blue-500 to-cyan-500',
-      bgColor: 'from-blue-50 to-cyan-50',
-      borderColor: 'border-blue-300',
-      feedback: "Talking about your day helps process emotions and release stress. Connection and sharing reduce feelings of isolation."
-    },
-    {
-      id: 'rest',
-      label: 'Rest',
-      icon: Moon,
-      description: "Take time to rest and recharge. This could be quiet time, a short nap, or simply doing nothing for a while.",
-      calmChange: +12,
-      color: 'from-purple-500 to-indigo-500',
-      bgColor: 'from-purple-50 to-indigo-50',
-      borderColor: 'border-purple-300',
-      feedback: "Rest is essential for recovery. Giving yourself permission to rest helps restore energy and reduces stress."
-    },
-    {
-      id: 'reflect',
-      label: 'Reflect',
-      icon: BookOpen,
-      description: "Journal about the day, write down your thoughts and feelings, and reflect on what happened.",
-      calmChange: +10,
-      color: 'from-green-500 to-emerald-500',
-      bgColor: 'from-green-50 to-emerald-50',
-      borderColor: 'border-green-300',
-      feedback: "Reflection helps you process the day, gain perspective, and learn from experiences. Writing can be cathartic and clarifying."
-    }
-  ];
-
-  const handleRecoveryStepSelect = (stepId) => {
-    const step = recoverySteps.find(s => s.id === stepId);
-    
-    if (selectedRecoverySteps.includes(stepId)) {
-      // Deselect
-      setSelectedRecoverySteps(prev => prev.filter(id => id !== stepId));
-      setCalmLevel(prev => Math.max(0, Math.min(100, prev - step.calmChange)));
-    } else {
-      // Select (can select multiple)
-      setSelectedRecoverySteps(prev => [...prev, stepId]);
-      setCalmLevel(prev => Math.max(0, Math.min(100, prev + step.calmChange)));
-    }
-  };
-
-  const handleCompleteRecovery = () => {
-    if (selectedRecoverySteps.length === 0) {
-      alert("Please select at least one recovery step to complete your day.");
-      return;
-    }
-    
-    // Calculate score based on final calm level
-    const finalScore = Math.round(calmLevel / 10);
-    setScore(finalScore);
-    
-    setShowSummary(true);
-    setTimeout(() => {
-      setShowGameOver(true);
-    }, 1000);
   };
 
   const currentMomentData = dayMoments[currentMoment];
   const selectedChoice = selectedChoices[currentMoment];
 
-  // Calculate resilience score based on choices
-  const calculateResilienceScore = () => {
-    let resiliencePoints = 0;
+  // Update score whenever choices change
+  useEffect(() => {
+    const calculatedScore = calculateScore();
+    setScore(calculatedScore);
+  }, [selectedChoices]);
+
+  // Calculate score based on good choices (calmChange >= -6)
+  const calculateScore = () => {
+    let correctChoices = 0;
     Object.values(selectedChoices).forEach(choice => {
-      if (choice.calmChange >= -6) resiliencePoints += 2; // Good choice
-      else if (choice.calmChange >= -10) resiliencePoints += 1; // Moderate choice
-      // Poor choices add 0
+      if (choice.calmChange >= -6) correctChoices += 1; // Good choices
     });
-    
-    // Recovery steps add points
-    resiliencePoints += selectedRecoverySteps.length * 2;
-    
-    return resiliencePoints;
+    return correctChoices;
   };
 
   return (
@@ -289,30 +225,28 @@ const ToughDaySimulation = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={currentMoment + 1}
+      currentQuestion={currentMoment}
     >
       <div className="w-full max-w-4xl mx-auto px-4">
-        {!showRecovery && !showSummary && (
+        {!showSummary && (
           <div className="bg-white rounded-2xl shadow-lg p-8">
             {/* Calm Level Indicator */}
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-semibold text-gray-700">Your Calm Level</span>
-                <span className={`text-lg font-bold ${
-                  calmLevel >= 60 ? 'text-green-600' :
-                  calmLevel >= 40 ? 'text-yellow-600' :
-                  'text-red-600'
-                }`}>
+                <span className={`text-lg font-bold ${calmLevel >= 60 ? 'text-green-600' :
+                    calmLevel >= 40 ? 'text-yellow-600' :
+                      'text-red-600'
+                  }`}>
                   {Math.round(calmLevel)}%
                 </span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-4">
                 <motion.div
-                  className={`h-4 rounded-full ${
-                    calmLevel >= 60 ? 'bg-gradient-to-r from-green-400 to-emerald-500' :
-                    calmLevel >= 40 ? 'bg-gradient-to-r from-yellow-400 to-orange-500' :
-                    'bg-gradient-to-r from-red-400 to-rose-500'
-                  }`}
+                  className={`h-4 rounded-full ${calmLevel >= 60 ? 'bg-gradient-to-r from-green-400 to-emerald-500' :
+                      calmLevel >= 40 ? 'bg-gradient-to-r from-yellow-400 to-orange-500' :
+                        'bg-gradient-to-r from-red-400 to-rose-500'
+                    }`}
                   initial={{ width: `${calmLevel}%` }}
                   animate={{ width: `${calmLevel}%` }}
                   transition={{ duration: 0.5 }}
@@ -359,12 +293,11 @@ const ToughDaySimulation = () => {
                     >
                       <div className="flex items-center justify-between">
                         <span className="font-medium text-gray-800">{choice.label}</span>
-                        <span className={`text-sm font-semibold ${
-                          choice.calmChange >= -6 ? 'text-green-600' :
-                          choice.calmChange >= -10 ? 'text-yellow-600' :
-                          'text-red-600'
-                        }`}>
-                          {choice.calmChange > 0 ? '+' : ''}{choice.calmChange} calm
+                        <span className={`text-sm font-semibold ${choice.calmChange >= -6 ? 'text-green-600' :
+                            choice.calmChange >= -10 ? 'text-yellow-600' :
+                              'text-red-600'
+                          }`}>
+                          {choice.calmChange > 0 ? '+' : ''}
                         </span>
                       </div>
                     </motion.button>
@@ -378,13 +311,12 @@ const ToughDaySimulation = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`rounded-xl p-6 border-2 mb-4 ${
-                  selectedChoice.calmChange >= -6
+                className={`rounded-xl p-6 border-2 mb-4 ${selectedChoice.calmChange >= -6
                     ? 'bg-green-50 border-green-300'
                     : selectedChoice.calmChange >= -10
-                    ? 'bg-yellow-50 border-yellow-300'
-                    : 'bg-red-50 border-red-300'
-                }`}
+                      ? 'bg-yellow-50 border-yellow-300'
+                      : 'bg-red-50 border-red-300'
+                  }`}
               >
                 <div className="flex items-start gap-3 mb-3">
                   {selectedChoice.calmChange >= -6 ? (
@@ -406,11 +338,10 @@ const ToughDaySimulation = () => {
                     key={calmLevel}
                     initial={{ scale: 1.2 }}
                     animate={{ scale: 1 }}
-                    className={`font-bold ${
-                      calmLevel >= 60 ? 'text-green-600' :
-                      calmLevel >= 40 ? 'text-yellow-600' :
-                      'text-red-600'
-                    }`}
+                    className={`font-bold ${calmLevel >= 60 ? 'text-green-600' :
+                        calmLevel >= 40 ? 'text-yellow-600' :
+                          'text-red-600'
+                      }`}
                   >
                     {selectedChoice.calmChange > 0 ? '+' : ''}{selectedChoice.calmChange} ({Math.round(calmLevel)}%)
                   </motion.span>
@@ -420,109 +351,7 @@ const ToughDaySimulation = () => {
           </div>
         )}
 
-        {/* Recovery Steps Section */}
-        {showRecovery && !showSummary && (
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <div className="text-center mb-6">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">End of Day</h2>
-              <p className="text-xl text-gray-600 mb-4">Your calm level: <span className={`font-bold ${
-                calmLevel >= 60 ? 'text-green-600' :
-                calmLevel >= 40 ? 'text-yellow-600' :
-                'text-red-600'
-              }`}>{Math.round(calmLevel)}%</span></p>
-              <p className="text-gray-700">Choose recovery steps to help you process and recover from this challenging day.</p>
-            </div>
 
-            <div className="mb-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Recovery Steps (Select all that apply):</h3>
-              <div className="space-y-4">
-                {recoverySteps.map((step) => {
-                  const Icon = step.icon;
-                  const isSelected = selectedRecoverySteps.includes(step.id);
-                  
-                  return (
-                    <motion.button
-                      key={step.id}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={() => handleRecoveryStepSelect(step.id)}
-                      className={`w-full p-5 rounded-xl border-2 text-left transition-all ${
-                        isSelected
-                          ? `${step.borderColor} bg-gradient-to-br ${step.bgColor} shadow-lg`
-                          : 'border-gray-300 bg-white hover:border-gray-400'
-                      }`}
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center flex-shrink-0`}>
-                          <Icon className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-bold text-lg text-gray-800">{step.label}</h4>
-                            {isSelected && (
-                              <span className="text-sm font-semibold text-green-600">+{step.calmChange} calm</span>
-                            )}
-                          </div>
-                          <p className="text-gray-700 mb-2">{step.description}</p>
-                          {isSelected && (
-                            <div className="bg-white/60 rounded-lg p-3 mt-2">
-                              <p className="text-sm text-gray-800">{step.feedback}</p>
-                            </div>
-                          )}
-                        </div>
-                        {isSelected && (
-                          <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                        )}
-                      </div>
-                    </motion.button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Updated Calm Level */}
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-6 border-2 border-indigo-200 mb-6">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-lg font-semibold text-gray-800">Your Calm Level After Recovery:</span>
-                <motion.span
-                  key={calmLevel}
-                  initial={{ scale: 1.3 }}
-                  animate={{ scale: 1 }}
-                  className={`text-3xl font-bold ${
-                    calmLevel >= 60 ? 'text-green-600' :
-                    calmLevel >= 40 ? 'text-yellow-600' :
-                    'text-red-600'
-                  }`}
-                >
-                  {Math.round(calmLevel)}%
-                </motion.span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-4">
-                <motion.div
-                  className={`h-4 rounded-full ${
-                    calmLevel >= 60 ? 'bg-gradient-to-r from-green-400 to-emerald-500' :
-                    calmLevel >= 40 ? 'bg-gradient-to-r from-yellow-400 to-orange-500' :
-                    'bg-gradient-to-r from-red-400 to-rose-500'
-                  }`}
-                  initial={{ width: `${calmLevel}%` }}
-                  animate={{ width: `${calmLevel}%` }}
-                  transition={{ duration: 0.5 }}
-                />
-              </div>
-            </div>
-
-            <div className="text-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleCompleteRecovery}
-                className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
-              >
-                Complete Recovery & View Summary
-              </motion.button>
-            </div>
-          </div>
-        )}
 
         {/* Summary */}
         {showSummary && (
@@ -540,64 +369,28 @@ const ToughDaySimulation = () => {
               <p className="text-xl text-gray-600">Your Day Summary</p>
             </div>
 
-            {/* Final Calm Level */}
-            <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${
-              calmLevel >= 60
+            {/* Final Score */}
+            <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${score >= 4
                 ? 'from-green-50 to-emerald-50 border-green-200'
-                : calmLevel >= 40
-                ? 'from-yellow-50 to-orange-50 border-yellow-200'
-                : 'from-red-50 to-rose-50 border-red-200'
-            }`}>
+                : score >= 3
+                  ? 'from-yellow-50 to-orange-50 border-yellow-200'
+                  : 'from-red-50 to-rose-50 border-red-200'
+              }`}>
               <div className="text-center mb-4">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Final Calm Level</h3>
-                <div className={`text-5xl font-bold mb-2 ${
-                  calmLevel >= 60 ? 'text-green-600' :
-                  calmLevel >= 40 ? 'text-yellow-600' :
-                  'text-red-600'
-                }`}>
-                  {Math.round(calmLevel)}%
+                <h3 className="text-xl font-bold text-gray-800 mb-2">Final Score</h3>
+                <div className={`text-5xl font-bold mb-2 ${score >= 4 ? 'text-green-600' :
+                    score >= 3 ? 'text-yellow-600' :
+                      'text-red-600'
+                  }`}>
+                  {score} / 5
                 </div>
                 <p className="text-gray-700">
-                  {calmLevel >= 60
-                    ? "Excellent recovery! You've maintained good calm levels and practiced effective recovery."
-                    : calmLevel >= 40
-                    ? "Moderate recovery. You've processed the day and taken steps to recover."
-                    : "Challenging day with lower calm levels. Remember: recovery takes time, and every step counts."}
+                  {score >= 4
+                    ? "Excellent! You made great choices in challenging situations."
+                    : score >= 3
+                      ? "Good job! You handled most situations well."
+                      : "Keep practicing! Every challenging moment is a learning opportunity."}
                 </p>
-              </div>
-            </div>
-
-            {/* Recovery Steps Used */}
-            <div className="mb-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Recovery Steps You Used:</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {recoverySteps.map((step) => {
-                  const Icon = step.icon;
-                  const used = selectedRecoverySteps.includes(step.id);
-                  
-                  return (
-                    <div
-                      key={step.id}
-                      className={`p-4 rounded-xl border-2 ${
-                        used
-                          ? `bg-gradient-to-br ${step.bgColor} ${step.borderColor}`
-                          : 'bg-gray-50 border-gray-200 opacity-50'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center flex-shrink-0`}>
-                          <Icon className={`w-5 h-5 ${used ? 'text-white' : 'text-gray-300'}`} />
-                        </div>
-                        <span className={`font-semibold ${used ? 'text-gray-800' : 'text-gray-400'}`}>
-                          {step.label}
-                        </span>
-                      </div>
-                      {used && (
-                        <p className="text-sm text-gray-700">{step.feedback}</p>
-                      )}
-                    </div>
-                  );
-                })}
               </div>
             </div>
 
@@ -605,14 +398,14 @@ const ToughDaySimulation = () => {
             <div className="bg-blue-50 rounded-xl p-6 border-2 border-blue-200 mb-6">
               <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
                 <TrendingUp className="w-5 h-5" />
-                Recovery Insights
+                Resilience Insights
               </h3>
               <ul className="space-y-2 text-blue-800">
-                <li>• <strong>Recovery is essential:</strong> Taking time to recover after a tough day prevents carrying stress home and supports sustainable teaching.</li>
-                <li>• <strong>Multiple strategies help:</strong> Using multiple recovery steps (talk, rest, reflect) provides comprehensive recovery and emotional processing.</li>
-                <li>• <strong>Processing matters:</strong> Acknowledging and processing the day helps release stress and gain perspective.</li>
-                <li>• <strong>Self-care is professional:</strong> Taking care of yourself is not selfish—it's necessary for effective, sustainable teaching.</li>
-                <li>• <strong>Every day is new:</strong> One challenging day doesn't define you. Recovery helps you reset for the next day.</li>
+                <li>• <strong>Small choices matter:</strong> Making calm, thoughtful responses in challenging moments builds resilience over time.</li>
+                <li>• <strong>Prioritization helps:</strong> Taking a breath and focusing on what's most urgent reduces overwhelm.</li>
+                <li>• <strong>Flexibility is strength:</strong> Adapting to unexpected challenges shows professional resilience.</li>
+                <li>• <strong>Self-awareness pays off:</strong> Recognizing your stress levels helps you make better choices.</li>
+                <li>• <strong>Every moment is practice:</strong> Each challenging situation is an opportunity to strengthen your resilience skills.</li>
               </ul>
             </div>
 
@@ -647,4 +440,3 @@ const ToughDaySimulation = () => {
 };
 
 export default ToughDaySimulation;
-

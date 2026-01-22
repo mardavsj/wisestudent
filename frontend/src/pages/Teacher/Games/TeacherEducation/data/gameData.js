@@ -1047,7 +1047,7 @@ export const teacherEducationGameData = [
     path: '/school-teacher/games/mental-health-emotional-regulation/communication-reflex'
   },
   {
-    id: 'clear-communicator-badge',
+    id: 'teacher-education-70',
     slug: 'clear-communicator-badge',
     title: 'Clear Communicator Badge',
     description: 'Reward consistent use of assertive, empathetic communication',
@@ -1655,4 +1655,3 @@ export const getTeacherEducationGameById = (gameId) => {
 export const getAllTeacherEducationGames = () => {
   return teacherEducationGameData;
 };
-

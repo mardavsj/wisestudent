@@ -7,15 +7,15 @@ import { Moon, CheckCircle, Circle, Sparkles, Smartphone, Lightbulb, Activity, H
 
 const EveningLogOffRitual = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-93";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [ritualItems, setRitualItems] = useState([
     {
       id: 'dim-lights',
@@ -44,17 +44,17 @@ const EveningLogOffRitual = () => {
       tip: 'Blue light from screens interferes with sleep hormones. Give your brain time to produce melatonin naturally.'
     },
     {
-      id: 'gentle-stretch',
-      title: 'Gentle Stretching',
-      description: 'Do 5-10 minutes of gentle stretches or yoga',
-      category: 'Physical',
-      icon: Activity,
+      id: 'phone-outside',
+      title: 'Phone Outside Bedroom',
+      description: 'Charge your phone in another room, not beside your bed',
+      category: 'Digital Boundaries',
+      icon: Smartphone,
       checked: false,
-      emoji: '🧘',
-      color: 'from-green-400 to-emerald-500',
-      bgColor: 'from-green-50 to-emerald-50',
-      borderColor: 'border-green-300',
-      tip: 'Gentle movement releases physical tension and helps your body transition into rest mode.'
+      emoji: '🚪',
+      color: 'from-purple-400 to-indigo-500',
+      bgColor: 'from-purple-50 to-indigo-50',
+      borderColor: 'border-purple-300',
+      tip: 'Keeping phones out of the bedroom eliminates temptation to check and prevents sleep-disrupting notifications.'
     },
     {
       id: 'gratitude-practice',
@@ -70,82 +70,17 @@ const EveningLogOffRitual = () => {
       tip: 'Gratitude shifts your mind from stress to appreciation, creating a peaceful mental state for sleep.'
     },
     {
-      id: 'phone-outside',
-      title: 'Phone Outside Bedroom',
-      description: 'Charge your phone in another room, not beside your bed',
-      category: 'Digital Boundaries',
-      icon: Smartphone,
-      checked: false,
-      emoji: '🚪',
-      color: 'from-purple-400 to-indigo-500',
-      bgColor: 'from-purple-50 to-indigo-50',
-      borderColor: 'border-purple-300',
-      tip: 'Keeping phones out of the bedroom eliminates temptation to check and prevents sleep-disrupting notifications.'
-    },
-    {
-      id: 'reading-time',
-      title: 'Reading or Quiet Activity',
-      description: 'Spend 15-20 minutes reading a physical book or doing a calm activity',
-      category: 'Mindful',
-      icon: BookOpen,
-      checked: false,
-      emoji: '📖',
-      color: 'from-orange-400 to-amber-500',
-      bgColor: 'from-orange-50 to-amber-50',
-      borderColor: 'border-orange-300',
-      tip: 'Reading a physical book (not a screen) helps calm your mind and naturally prepares you for sleep.'
-    },
-    {
-      id: 'breathing-exercise',
-      title: 'Deep Breathing',
-      description: 'Practice 5-10 minutes of deep, slow breathing (4-7-8 technique)',
+      id: 'gentle-stretch',
+      title: 'Gentle Stretching',
+      description: 'Do 5-10 minutes of gentle stretches or yoga',
       category: 'Physical',
-      icon: Wind,
+      icon: Activity,
       checked: false,
-      emoji: '🌬️',
-      color: 'from-cyan-400 to-teal-500',
-      bgColor: 'from-cyan-50 to-teal-50',
-      borderColor: 'border-cyan-300',
-      tip: 'Deep breathing activates your parasympathetic nervous system, promoting relaxation and reducing stress.'
-    },
-    {
-      id: 'journaling',
-      title: 'Evening Journaling',
-      description: 'Write down any worries or thoughts in a journal to clear your mind',
-      category: 'Mindful',
-      icon: BookOpen,
-      checked: false,
-      emoji: '✍️',
-      color: 'from-indigo-400 to-purple-500',
-      bgColor: 'from-indigo-50 to-purple-50',
-      borderColor: 'border-indigo-300',
-      tip: 'Journaling helps process thoughts and emotions, preventing them from keeping you awake.'
-    },
-    {
-      id: 'calm-drink',
-      title: 'Calm Drink (Optional)',
-      description: 'Sip herbal tea, warm milk, or warm water (avoid caffeine)',
-      category: 'Environment',
-      icon: Sparkles,
-      checked: false,
-      emoji: '☕',
-      color: 'from-amber-400 to-yellow-500',
-      bgColor: 'from-amber-50 to-yellow-50',
-      borderColor: 'border-amber-300',
-      tip: 'Warm beverages can be soothing, but avoid caffeine after 2 PM as it can interfere with sleep.'
-    },
-    {
-      id: 'set-alarm',
-      title: 'Set Analogue Alarm',
-      description: 'Set a traditional alarm clock (not your phone)',
-      category: 'Digital Boundaries',
-      icon: Clock,
-      checked: false,
-      emoji: '⏰',
-      color: 'from-red-400 to-rose-500',
-      bgColor: 'from-red-50 to-rose-50',
-      borderColor: 'border-red-300',
-      tip: 'Using an analogue alarm eliminates the need for your phone in the bedroom and prevents late-night checking.'
+      emoji: '🧘',
+      color: 'from-green-400 to-emerald-500',
+      bgColor: 'from-green-50 to-emerald-50',
+      borderColor: 'border-green-300',
+      tip: 'Gentle movement releases physical tension and helps your body transition into rest mode.'
     }
   ]);
 
@@ -154,36 +89,18 @@ const EveningLogOffRitual = () => {
   const [showGameOver, setShowGameOver] = useState(false);
 
   const handleToggleItem = (itemId) => {
-    setRitualItems(prev => prev.map(item => 
+    setRitualItems(prev => prev.map(item =>
       item.id === itemId ? { ...item, checked: !item.checked } : item
     ));
   };
 
   const calculateDigitalWindDownScore = () => {
     const checkedCount = ritualItems.filter(item => item.checked).length;
-    const totalItems = ritualItems.length;
-    const percentage = (checkedCount / totalItems) * 100;
-    
-    // Weight different items based on importance
-    const importantItems = [
-      'reduce-screen-time',
-      'phone-outside',
-      'dim-lights',
-      'gentle-stretch',
-      'gratitude-practice'
-    ];
-    
-    const checkedImportant = ritualItems.filter(
-      item => item.checked && importantItems.includes(item.id)
-    ).length;
-    
-    // Base score from percentage, bonus for important items
-    let score = Math.round(percentage);
-    if (checkedImportant >= 3) score += 10;
-    if (checkedImportant >= 4) score += 5;
-    if (checkedImportant === 5) score += 5;
-    
-    return Math.min(100, score);
+
+    // Simple scoring: 1 point per completed ritual, up to 5 points
+    const score = checkedCount;
+
+    return score;
   };
 
   const handleCompleteRitual = () => {
@@ -196,7 +113,7 @@ const EveningLogOffRitual = () => {
   };
 
   const getWindDownLevel = (score) => {
-    if (score >= 90) {
+    if (score >= 5) {
       return {
         level: 'Excellent',
         emoji: '🌟',
@@ -206,7 +123,7 @@ const EveningLogOffRitual = () => {
         message: 'Excellent digital wind-down! You\'ve created a comprehensive evening ritual that supports rest.',
         recommendation: 'Continue this ritual nightly to maintain healthy sleep habits.'
       };
-    } else if (score >= 75) {
+    } else if (score >= 4) {
       return {
         level: 'Great',
         emoji: '✨',
@@ -216,7 +133,7 @@ const EveningLogOffRitual = () => {
         message: 'Great wind-down ritual! You\'ve established strong evening habits for rest.',
         recommendation: 'Consider adding the remaining items to enhance your ritual further.'
       };
-    } else if (score >= 60) {
+    } else if (score >= 3) {
       return {
         level: 'Good',
         emoji: '👍',
@@ -226,7 +143,7 @@ const EveningLogOffRitual = () => {
         message: 'Good start on your wind-down ritual! You\'re building healthy evening habits.',
         recommendation: 'Try adding more items to create a more complete wind-down routine.'
       };
-    } else if (score >= 40) {
+    } else if (score >= 2) {
       return {
         level: 'Developing',
         emoji: '🌱',
@@ -264,7 +181,7 @@ const EveningLogOffRitual = () => {
         gameType="teacher-education"
         totalLevels={totalLevels}
         totalCoins={totalCoins}
-        currentQuestion={1}
+        currentQuestion={Math.min(checkedCount, totalLevels)}
       >
         <div className="w-full max-w-5xl mx-auto px-4">
           <motion.div
@@ -285,7 +202,7 @@ const EveningLogOffRitual = () => {
                 Evening Ritual Complete!
               </h2>
               <div className={`inline-block px-6 py-3 rounded-full bg-gradient-to-r ${windDownLevel?.color || 'from-blue-500 to-indigo-500'} text-white font-bold text-xl mb-4`}>
-                Digital Wind-Down Score: {windDownScore}%
+                Digital Wind-Down Score: {windDownScore}/{totalLevels}
               </div>
               <p className="text-2xl font-bold text-gray-700 mb-2">
                 {windDownLevel?.level || 'Complete'}
@@ -319,18 +236,16 @@ const EveningLogOffRitual = () => {
                   return (
                     <div
                       key={item.id}
-                      className={`p-4 rounded-lg border-2 ${
-                        item.checked
+                      className={`p-4 rounded-lg border-2 ${item.checked
                           ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-300'
                           : 'bg-gray-50 border-gray-200'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-start gap-3">
-                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                          item.checked
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${item.checked
                             ? 'bg-green-500 text-white'
                             : 'bg-gray-300 text-gray-600'
-                        }`}>
+                          }`}>
                           {item.checked ? <CheckCircle className="w-5 h-5" /> : <Circle className="w-5 h-5" />}
                         </div>
                         <div className="flex-1">
@@ -423,8 +338,8 @@ const EveningLogOffRitual = () => {
       gameId={gameId}
       gameType="teacher-education"
       totalLevels={totalLevels}
-      totalCoins={totalCoins}
-      currentQuestion={1}
+      totalCoins={totalLevels}
+      currentQuestion={Math.min(checkedCount, totalLevels)}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -464,11 +379,10 @@ const EveningLogOffRitual = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className={`relative overflow-hidden rounded-xl border-2 transition-all ${
-                    item.checked
+                  className={`relative overflow-hidden rounded-xl border-2 transition-all ${item.checked
                       ? `${item.bgColor} ${item.borderColor} shadow-lg`
                       : 'bg-white border-gray-200 hover:border-gray-300'
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => handleToggleItem(item.id)}
@@ -476,11 +390,10 @@ const EveningLogOffRitual = () => {
                   >
                     <div className="flex items-start gap-4">
                       {/* Checkbox */}
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-all ${
-                        item.checked
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-all ${item.checked
                           ? `bg-gradient-to-r ${item.color} text-white shadow-md`
                           : 'bg-gray-200 text-gray-400 hover:bg-gray-300'
-                      }`}>
+                        }`}>
                         {item.checked ? (
                           <CheckCircle className="w-6 h-6" />
                         ) : (
@@ -492,17 +405,15 @@ const EveningLogOffRitual = () => {
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-2xl">{item.emoji}</span>
-                          <h3 className={`text-xl font-bold ${
-                            item.checked ? 'text-gray-800' : 'text-gray-700'
-                          }`}>
+                          <h3 className={`text-xl font-bold ${item.checked ? 'text-gray-800' : 'text-gray-700'
+                            }`}>
                             {item.title}
                           </h3>
-                          <div className={`px-2 py-1 rounded text-xs font-semibold ${
-                            item.category === 'Digital Boundaries' ? 'bg-blue-100 text-blue-700' :
-                            item.category === 'Physical' ? 'bg-green-100 text-green-700' :
-                            item.category === 'Mindful' ? 'bg-pink-100 text-pink-700' :
-                            'bg-yellow-100 text-yellow-700'
-                          }`}>
+                          <div className={`px-2 py-1 rounded text-xs font-semibold ${item.category === 'Digital Boundaries' ? 'bg-blue-100 text-blue-700' :
+                              item.category === 'Physical' ? 'bg-green-100 text-green-700' :
+                                item.category === 'Mindful' ? 'bg-pink-100 text-pink-700' :
+                                  'bg-yellow-100 text-yellow-700'
+                            }`}>
                             {item.category}
                           </div>
                         </div>
@@ -582,13 +493,13 @@ const EveningLogOffRitual = () => {
                   Digital Wind-Down Score
                 </h3>
                 <div className="text-4xl font-bold text-indigo-600 mb-3">
-                  {windDownScore}%
+                  {windDownScore}/{totalLevels}
                 </div>
-                <p className={`text-xl font-semibold mb-4 ${
-                  windDownScore >= 75 ? 'text-green-700' :
-                  windDownScore >= 60 ? 'text-yellow-700' :
-                  'text-orange-700'
-                }`}>
+                <p className={`text-xl font-semibold mb-4 ${windDownScore >= 5 ? 'text-green-700' :
+                    windDownScore >= 4 ? 'text-green-700' :
+                      windDownScore >= 3 ? 'text-yellow-700' :
+                        'text-orange-700'
+                  }`}>
                   {windDownLevel.level}
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -610,4 +521,3 @@ const EveningLogOffRitual = () => {
 };
 
 export default EveningLogOffRitual;
-

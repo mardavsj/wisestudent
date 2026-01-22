@@ -2,6 +2,13 @@ import { scheduleSubscriptionReminders } from './cronJobs/subscriptionReminders.
 import { scheduleSubscriptionExpirationNotifications } from './cronJobs/subscriptionExpirationNotifications.js';
 import { scheduleExpiredSubscriptionSync } from './cronJobs/syncExpiredSubscriptions.js';
 import { scheduleCSRAlertChecker } from './cronJobs/csrAlertChecker.js';
+import { scheduleSponsoredStudentStatsUpdater } from './cronJobs/updateSponsoredStudentStats.js';
+import { scheduleExpiringSponsorships } from './cronJobs/checkExpiringSponsorships.js';
+import { scheduleLowBalanceAlerts } from './cronJobs/checkLowBalance.js';
+import { scheduleMonthlySummary } from './cronJobs/sendMonthlySummary.js';
+import { schedulePendingNotifications } from './cronJobs/sendPendingNotifications.js';
+import { scheduleTestimonialRequests } from './cronJobs/requestTestimonials.js';
+import { scheduleAgreementExpiryChecks } from './cronJobs/checkAgreementExpiry.js';
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -128,8 +135,17 @@ import userRoutes from "./routes/userRoutes.js";
 import parentRoutes from "./routes/parentRoutes.js";
 import sellerRoutes from "./routes/sellerRoutes.js";
 import csrRoutes from "./routes/csrRoutes.js";
-import csrKPIRoutes from "./routes/csrKPIRoutes.js";
-import campaignRoutes from "./routes/campaignRoutes.js";
+import csrSponsorRoutes from "./routes/csrSponsorRoutes.js";
+import csrFundRoutes from "./routes/csrFundRoutes.js";
+import csrSponsorshipRoutes from "./routes/csrSponsorshipRoutes.js";
+import csrSchoolRoutes from "./routes/csrSchoolRoutes.js";
+import csrImpactRoutes from "./routes/csrImpactRoutes.js";
+import csrImpactReportRoutes from "./routes/csrImpactReportRoutes.js";
+import csrGalleryRoutes from "./routes/csrGalleryRoutes.js";
+import csrInvoiceRoutes from "./routes/csrInvoiceRoutes.js";
+import csrAuditRoutes from "./routes/csrAuditRoutes.js";
+import csrTestimonialRoutes from "./routes/csrTestimonialRoutes.js";
+import csrOverviewRoutes from "./routes/csrOverviewRoutes.js";
 import budgetTransactionRoutes from "./routes/budgetTransactionRoutes.js";
 import impactReportRoutes from "./routes/impactReportRoutes.js";
 import cobrandingLegalRoutes from "./routes/cobrandingLegalRoutes.js";
@@ -137,13 +153,7 @@ import campaignWizardRoutes from "./routes/campaignWizardRoutes.js";
 import csrPaymentRoutes from "./routes/csrPaymentRoutes.js";
 import invoiceRoutes from "./routes/invoiceRoutes.js";
 import csrReportRoutes from "./routes/csrReportRoutes.js";
-import campaignApprovalRoutes from "./routes/campaignApprovalRoutes.js";
 import budgetTrackingRoutes from "./routes/budgetTrackingRoutes.js";
-import csrOverviewRoutes from "./routes/csrOverviewRoutes.js";
-import csrGoalRoutes from "./routes/csrGoalRoutes.js";
-import csrComplianceRoutes from "./routes/csrComplianceRoutes.js";
-import csrROIRoutes from "./routes/csrROIRoutes.js";
-import csrAlertRoutes from "./routes/csrAlertRoutes.js";
 import avatarRoutes from "./routes/avatarRoutes.js";
 import announcementRoutes from "./routes/announcementRoutes.js";
 import assignmentAttemptRoutes from "./routes/assignmentAttemptRoutes.js";
@@ -185,6 +195,13 @@ import webhookRoutes from "./routes/webhookRoutes.js";
 import presentationRoutes from "./routes/presentationRoutes.js";
 import slideElementRoutes from "./routes/slideElementRoutes.js";
 import presentationTemplateRoutes from "./routes/presentationTemplateRoutes.js";
+import adminCsrRoutes from "./routes/adminCsrRoutes.js";
+import adminCsrDepositRoutes from "./routes/adminCsrDepositRoutes.js";
+import adminCsrTestimonialRoutes from "./routes/adminCsrTestimonialRoutes.js";
+import adminCsrRefundRoutes from "./routes/adminCsrRefundRoutes.js";
+import csrRefundRoutes from "./routes/csrRefundRoutes.js";
+import schoolTestimonialRoutes from "./routes/schoolTestimonialRoutes.js";
+import schoolSponsorshipRoutes from "./routes/schoolSponsorshipRoutes.js";
 
 // Import models and other logic
 import User from "./models/User.js";
@@ -198,8 +215,8 @@ import { setupFeedbackSocket } from "./socketHandlers/feedbackSocket.js";
 import { setupGameSocket } from "./socketHandlers/gameSocket.js";
 import { setupJournalSocket } from "./socketHandlers/journalSocket.js";
 import { setupChatSocket } from "./socketHandlers/chatSocket.js";
-import { setupCSROverviewSocket } from "./socketHandlers/csrOverviewSocket.js";
 import { setupPresentationSocket } from "./socketHandlers/presentationSocket.js";
+import { setupCSROverviewSocket } from "./socketHandlers/csrOverviewSocket.js";
 
 // Socket.IO Authentication and Events
 io.on("connection", async (socket) => {
@@ -275,55 +292,52 @@ io.on("connection", async (socket) => {
 app.use('/uploads', express.static(path.resolve(__dirname, './uploads')));
 
 // Legacy Routes (maintain backward compatibility)
-app.use("/api/auth", authRoutes);
-app.use("/api/mood", moodRoutes);
-app.use("/api/game", gameRoutes);
-app.use("/api/rewards", rewardsRoutes);
-app.use("/api/analytics", analyticsRoutes);
-
-// Multi-tenant Routes
+  app.use("/api/auth", authRoutes);
+  app.use("/api/mood", moodRoutes);
+  app.use("/api/game", gameRoutes);
+  app.use("/api/rewards", rewardsRoutes);
+  app.use("/api/analytics", analyticsRoutes);
+  app.use("/api/wallet", walletRoutes);
+  app.use("/api/student", studentRoutes);
+  app.use("/api/activity", activityRoutes);
+  
+  // Multi-tenant Routes
 app.use("/api/company", companyRoutes);
 app.use("/api/organization", organizationRoutes);
 app.use("/api/school", schoolRoutes);
+app.use("/api/school/testimonials", schoolTestimonialRoutes);
+app.use("/api/school/sponsorship", schoolSponsorshipRoutes);
 app.use("/api/global", globalStatsRoutes);
 
 app.use("/api/payment", paymentRoutes);
 app.use("/api/subscription", userSubscriptionRoutes);
 app.use("/api", webhookRoutes); // Razorpay webhook at /api/webhook
-app.use("/api/presentations", presentationRoutes);
-app.use("/api/presentations", slideElementRoutes);
-app.use("/api/presentation-templates", presentationTemplateRoutes);
-app.use("/api/notifications", notificationRoutes);
-app.use("/api/reports", reportRoutes);
-app.use("/api/transactions", transactionRoutes);
-app.use("/api/journal", journalRoutes);
-app.use("/api/wallet", walletRoutes);
-app.use("/api/goodies", goodieRoutes);
-app.use("/api/stats", statsRoutes);
-app.use("/api/student", studentRoutes);
-app.use('/api/activity', activityRoutes);
-app.use('/api/progress', userProgressRoutes);
-app.use('/api/user', userRoutes);
-app.use('/api/parent', parentRoutes);
-app.use('/api/seller', sellerRoutes);
-app.use('/api/csr', csrRoutes);
-app.use('/api/csr-kpis', csrKPIRoutes);
-app.use('/api/csr', campaignRoutes);
-app.use('/api/budget', budgetTransactionRoutes);
-app.use('/api/csr', impactReportRoutes);
-app.use('/api/csr', cobrandingLegalRoutes);
-app.use('/api/campaign-wizard', campaignWizardRoutes);
+  app.use("/api/presentations", presentationRoutes);
+  app.use("/api/presentations", slideElementRoutes);
+  app.use("/api/presentation-templates", presentationTemplateRoutes);
+  app.use("/api/notifications", notificationRoutes);
+  app.use("/api/csr/funds", csrFundRoutes);
+  app.use("/api/csr/funds/refund", csrRefundRoutes);
+  app.use("/api/csr/sponsorships", csrSponsorshipRoutes);
+  app.use("/api/csr/schools", csrSchoolRoutes);
+  app.use("/api/csr/impact", csrImpactRoutes);
+  app.use("/api/csr/reports", csrImpactReportRoutes);
+  app.use("/api/csr/gallery", csrGalleryRoutes);
+  app.use("/api/csr/testimonials", csrTestimonialRoutes);
+  app.use("/api/csr/invoices", csrInvoiceRoutes);
+  app.use("/api/csr/audit-log", csrAuditRoutes);
+  app.use("/api/csr", csrSponsorRoutes);
+  app.use("/api/csr", csrRoutes);
+  app.use("/api/csr", impactReportRoutes);
+  app.use("/api/csr", cobrandingLegalRoutes);
+  app.use("/api/csr-overview", csrOverviewRoutes);
+  app.use('/api/budget', budgetTransactionRoutes);
+  app.use('/api/campaign-wizard', campaignWizardRoutes);
 app.use('/api/csr-financial', csrPaymentRoutes);
 app.use('/api/csr-financial', invoiceRoutes);
 app.use('/api/csr-reports', csrReportRoutes);
-app.use('/api/campaign-approvals', campaignApprovalRoutes);
-app.use('/api/budget-tracking', budgetTrackingRoutes);
-app.use('/api/csr-overview', csrOverviewRoutes);
-app.use('/api/csr-goals', csrGoalRoutes);
-app.use('/api/csr-compliance', csrComplianceRoutes);
-app.use('/api/csr-roi', csrROIRoutes);
-app.use('/api/csr-alerts', csrAlertRoutes);
-app.use('/api/avatar', avatarRoutes);
+  app.use('/api/budget-tracking', budgetTrackingRoutes);
+  app.use('/api/avatar', avatarRoutes);
 app.use('/api/announcements', announcementRoutes);
 app.use('/api/assignment-attempts', assignmentAttemptRoutes);
 app.use('/api/chat', chatRoutes);
@@ -338,8 +352,12 @@ app.use('/api/admin/reports', adminReportsRoutes);
 app.use('/api/admin/behavior-analytics', behaviorAnalyticsRoutes);
 app.use('/api/admin/smart-insights', smartInsightsRoutes);
 app.use('/api/admin/financial-console', financialConsoleRoutes);
-app.use('/api/admin/schools', adminSchoolsRoutes);
-app.use('/api/admin/support-desk', supportDeskRoutes);
+  app.use('/api/admin/schools', adminSchoolsRoutes);
+  app.use('/api/admin/support-desk', supportDeskRoutes);
+  app.use('/api/admin/csr', adminCsrRoutes);
+  app.use('/api/admin/csr/testimonials', adminCsrTestimonialRoutes);
+  app.use('/api/admin/csr/deposits', adminCsrDepositRoutes);
+  app.use('/api/admin/csr/refunds', adminCsrRefundRoutes);
 app.use('/api/admin/lifecycle', userLifecycleRoutes);
 app.use('/api/admin/content-governance', contentGovernanceRoutes);
 app.use('/api/admin/audit-timeline', auditTimelineRoutes);
@@ -407,6 +425,15 @@ server.listen(PORT, () => {
   // Schedule periodic sync of expired subscriptions (syncs students/teachers when school plan expires)
   scheduleExpiredSubscriptionSync(io);
   
+  // CSR cron jobs
+  scheduleSponsoredStudentStatsUpdater();
+  scheduleExpiringSponsorships();
+  scheduleLowBalanceAlerts();
+  scheduleMonthlySummary();
+  schedulePendingNotifications();
+  scheduleTestimonialRequests();
+  scheduleAgreementExpiryChecks();
+
   // Start real-time notification TTL cleanup (15 days)
   const ttlSeconds = parseInt(process.env.NOTIFICATION_TTL_SECONDS || "1296000", 10);
   startNotificationTTL(io, { ttlSeconds, intervalSeconds: 3600 });

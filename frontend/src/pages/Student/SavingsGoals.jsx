@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -27,7 +27,7 @@ const SavingsGoals = () => {
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
   const [sortBy, setSortBy] = useState('priority'); // 'priority', 'progress', 'deadline', 'amount'
   const [filterCategory, setFilterCategory] = useState('all');
-  const [autoSaveTimer, setAutoSaveTimer] = useState(null);
+  const autoSaveTimer = useRef(null);
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
   
   const [newGoal, setNewGoal] = useState({
@@ -149,26 +149,57 @@ const SavingsGoals = () => {
   // Auto-save functionality
   useEffect(() => {
     if (hasUnsavedChanges && goals.length > 0) {
-      if (autoSaveTimer) {
-        clearTimeout(autoSaveTimer);
+      if (autoSaveTimer.current) {
+        clearTimeout(autoSaveTimer.current);
       }
       
-      const timer = setTimeout(async () => {
+      autoSaveTimer.current = setTimeout(async () => {
         try {
-          await saveSavingsGoals(goals);
+          const savedResponse = await saveSavingsGoals(goals);
+          if (savedResponse?.data?.goals) {
+            setGoals(savedResponse.data.goals);
+          }
           setHasUnsavedChanges(false);
         } catch (error) {
           console.error('Auto-save failed:', error);
         }
       }, 2000); // Auto-save after 2 seconds of inactivity
       
-      setAutoSaveTimer(timer);
-      
       return () => {
-        if (timer) clearTimeout(timer);
+        if (autoSaveTimer.current) {
+          clearTimeout(autoSaveTimer.current);
+        }
       };
     }
-  }, [goals, hasUnsavedChanges, autoSaveTimer]);
+  }, [goals, hasUnsavedChanges]);
+
+  // Helper functions
+  const calculateProgress = (current, target) => {
+    if (!target || target === 0) return 0;
+    return Math.min(100, Math.round((current / target) * 100));
+  };
+
+  const getProgressColor = (progress) => {
+    if (progress >= 100) return 'from-green-500 to-emerald-400';
+    if (progress >= 75) return 'from-blue-500 to-cyan-400';
+    if (progress >= 50) return 'from-yellow-500 to-orange-400';
+    if (progress >= 25) return 'from-orange-500 to-red-400';
+    return 'from-red-500 to-pink-400';
+  };
+
+  const getDaysLeft = (deadline) => {
+    if (!deadline) return null;
+    const days = Math.ceil((new Date(deadline) - new Date()) / (1000 * 60 * 60 * 24));
+    return days;
+  };
+
+  const getMonthlyContribution = (goal) => {
+    const daysLeft = getDaysLeft(goal.deadline);
+    if (!daysLeft || daysLeft <= 0) return null;
+    const remaining = (goal.targetAmount || 0) - (goal.currentAmount || 0);
+    const monthsLeft = daysLeft / 30;
+    return monthsLeft > 0 ? Math.ceil(remaining / monthsLeft) : null;
+  };
 
   // Calculate statistics
   const stats = useMemo(() => {
@@ -222,34 +253,6 @@ const SavingsGoals = () => {
     
     return sorted;
   }, [goals, filterCategory, sortBy]);
-
-  // Helper functions
-  const calculateProgress = (current, target) => {
-    if (!target || target === 0) return 0;
-    return Math.min(100, Math.round((current / target) * 100));
-  };
-
-  const getProgressColor = (progress) => {
-    if (progress >= 100) return 'from-green-500 to-emerald-400';
-    if (progress >= 75) return 'from-blue-500 to-cyan-400';
-    if (progress >= 50) return 'from-yellow-500 to-orange-400';
-    if (progress >= 25) return 'from-orange-500 to-red-400';
-    return 'from-red-500 to-pink-400';
-  };
-
-  const getDaysLeft = (deadline) => {
-    if (!deadline) return null;
-    const days = Math.ceil((new Date(deadline) - new Date()) / (1000 * 60 * 60 * 24));
-    return days;
-  };
-
-  const getMonthlyContribution = (goal) => {
-    const daysLeft = getDaysLeft(goal.deadline);
-    if (!daysLeft || daysLeft <= 0) return null;
-    const remaining = (goal.targetAmount || 0) - (goal.currentAmount || 0);
-    const monthsLeft = daysLeft / 30;
-    return monthsLeft > 0 ? Math.ceil(remaining / monthsLeft) : null;
-  };
 
   // Handle add/edit goal
   const handleSaveGoal = async () => {

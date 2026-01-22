@@ -7,15 +7,15 @@ import { Pause, Zap, CheckCircle, XCircle, AlertCircle } from "lucide-react";
 
 const PausePracticeSimulation = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-18";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedChoices, setSelectedChoices] = useState({});
   const [showOutcome, setShowOutcome] = useState(false);
@@ -29,27 +29,46 @@ const PausePracticeSimulation = () => {
       id: 1,
       title: "Angry Parent",
       situation: "A parent storms into your classroom after school, upset about their child's grade. They're raising their voice and questioning your teaching methods in front of other teachers.",
-      
-      redirectOutcome: {
-        title: "You Redirected",
-        description: "You acknowledged their concerns and suggested: 'I understand your concern. Let's schedule a formal conference where we can discuss your child's progress in detail with the principal present.'",
-        result: "The parent appreciated the structured approach and agreed to the scheduled meeting. The immediate tension was reduced and you had time to prepare. You felt strategic but also delayed resolution.",
-        emoji: "🔄",
-        color: "from-yellow-500 to-amber-600",
-        bgColor: "from-yellow-50 to-amber-50",
-        borderColor: "border-yellow-400"
-      },
-      reactOutcome: {
-        title: "You Reacted Immediately",
-        description: "You immediately defended yourself: 'I've been teaching for years! Your child needs to work harder. This is not my fault!'",
-        result: "The situation escalated. The parent became more angry, other teachers got involved, and the principal had to intervene. You felt defensive and exhausted, and the relationship was damaged.",
-        emoji: "💥",
-        color: "from-red-500 to-rose-600",
-        bgColor: "from-red-50 to-rose-50",
-        borderColor: "border-red-400"
-      },
-      pauseOutcome: {
-        title: "You Paused → Breathed → Responded",
+
+      options: [
+
+        {
+          id: "defensive",
+          title: "Defend Yourself",
+          description: "Immediately defend your teaching methods",
+          emoji: "🛡️",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <XCircle className="w-8 h-8 text-red-600" />
+        },
+        {
+          id: "formal",
+          title: "Schedule Meeting",
+          description: "Suggest a formal conference with the principal",
+          emoji: "📅",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <AlertCircle className="w-8 h-8 text-yellow-600" />
+        },
+        {
+          id: "pause",
+          title: "Stay Calm",
+          description: "Take a deep breath and respond with respect",
+          emoji: "🤝",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <CheckCircle className="w-8 h-8 text-green-600" />
+        },
+      ],
+
+      stayCalmOutcome: {
+        title: "You Stayed Calm",
         description: "You took a deep breath, maintained eye contact, and said calmly: 'I can see you're concerned about your child's progress. Let's sit down and discuss this together. I'd like to understand your perspective.'",
         result: "The parent calmed down. You had a productive conversation, found common ground, and created a plan together. The relationship improved, and you felt professional and in control.",
         emoji: "🤝",
@@ -57,15 +76,71 @@ const PausePracticeSimulation = () => {
         bgColor: "from-green-50 to-emerald-50",
         borderColor: "border-green-300"
       },
+      defensiveOutcome: {
+        title: "You Defended Yourself",
+        description: "You immediately defended yourself: 'I've been teaching for years! Your child needs to work harder. This is not my fault!'",
+        result: "The situation escalated. The parent became more angry, other teachers got involved, and the principal had to intervene. You felt defensive and exhausted, and the relationship was damaged.",
+        emoji: "💥",
+        color: "from-red-500 to-rose-600",
+        bgColor: "from-red-50 to-rose-50",
+        borderColor: "border-red-400"
+      },
+      formalOutcome: {
+        title: "You Scheduled a Meeting",
+        description: "You acknowledged their concerns and suggested: 'I understand your concern. Let's schedule a formal conference where we can discuss your child's progress in detail with the principal present.'",
+        result: "The parent appreciated the structured approach and agreed to the scheduled meeting. The immediate tension was reduced and you had time to prepare. You felt strategic but also delayed resolution.",
+        emoji: "🔄",
+        color: "from-yellow-500 to-amber-600",
+        bgColor: "from-yellow-50 to-amber-50",
+        borderColor: "border-yellow-400"
+      },
       correctChoice: "pause",
-      explanation: "Pausing allows you to respond professionally instead of defensively. Taking a breath gives you time to choose words that de-escalate and build understanding."
+      explanation: "Staying calm allows you to respond professionally instead of defensively. Taking a breath gives you time to choose words that de-escalate and build understanding."
     },
     {
       id: 2,
       title: "Disruptive Class",
       situation: "Your class is completely out of control. Students are talking loudly, throwing paper, and ignoring your instructions. You've asked them to settle down three times, and they're getting worse.",
-      pauseOutcome: {
-        title: "You Paused → Breathed → Responded",
+
+      options: [
+
+        {
+          id: "shout",
+          title: "Raise Your Voice",
+          description: "Shout over the chaos to regain control",
+          emoji: "🔊",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <XCircle className="w-8 h-8 text-red-600" />
+        },
+        {
+          id: "pause",
+          title: "Use Silence",
+          description: "Stop and wait quietly for attention",
+          emoji: "🧘",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <CheckCircle className="w-8 h-8 text-green-600" />
+        },
+        {
+          id: "activity",
+          title: "Physical Break",
+          description: "Have students do physical activity to release energy",
+          emoji: "🏃",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <AlertCircle className="w-8 h-8 text-yellow-600" />
+        }
+      ],
+
+      silenceOutcome: {
+        title: "You Used Silence",
         description: "You stopped, took three deep breaths, and waited silently for 10 seconds. Then you said calmly: 'I need everyone's attention. Let's reset. Take a moment to breathe with me.'",
         result: "The silence caught their attention. Students settled down. You regained control without yelling, and the rest of the lesson went smoothly. You felt calm and effective.",
         emoji: "🧘",
@@ -73,8 +148,8 @@ const PausePracticeSimulation = () => {
         bgColor: "from-green-50 to-emerald-50",
         borderColor: "border-green-300"
       },
-      reactOutcome: {
-        title: "You Reacted Immediately",
+      shoutOutcome: {
+        title: "You Raised Your Voice",
         description: "You shouted: 'That's ENOUGH! Everyone is getting detention! You're all being disrespectful!'",
         result: "The class got louder and more defiant. Students became defensive, and you spent the rest of the period in a power struggle. You felt frustrated and ineffective.",
         emoji: "😤",
@@ -82,8 +157,8 @@ const PausePracticeSimulation = () => {
         bgColor: "from-red-50 to-rose-50",
         borderColor: "border-red-400"
       },
-      redirectOutcome: {
-        title: "You Redirected",
+      physicalOutcome: {
+        title: "You Gave a Physical Break",
         description: "You changed the activity entirely: 'Let's all stand up and do 10 jumping jacks to release some energy, then we'll tackle this challenge with fresh minds.'",
         result: "Students got their energy out physically and were more ready to focus. The disruptive behavior decreased and engagement increased. You felt creative but it took time away from academic content.",
         emoji: "🏃",
@@ -92,33 +167,51 @@ const PausePracticeSimulation = () => {
         borderColor: "border-yellow-400"
       },
       correctChoice: "pause",
-      explanation: "Pausing creates space for students to self-regulate. Your calm presence is more powerful than your voice. Silence can be more effective than shouting."
+      explanation: "Using silence creates space for students to self-regulate. Your calm presence is more powerful than your voice. Silence can be more effective than shouting."
     },
     {
       id: 3,
       title: "Last-Minute Observation",
       situation: "Your principal walks into your classroom unannounced for an observation. You're in the middle of a lesson that's not going well, and students are off-task. You feel unprepared and anxious.",
-      
-      reactOutcome: {
-        title: "You Reacted Immediately",
-        description: "You panicked, started talking faster, and frantically tried to 'fix' everything at once. You interrupted students mid-sentence and changed the lesson abruptly.",
-        result: "The situation became more chaotic. Students were confused, the lesson fell apart, and the principal saw you struggling. You felt embarrassed and unprofessional.",
-        emoji: "😰",
-        color: "from-red-500 to-rose-600",
-        bgColor: "from-red-50 to-rose-50",
-        borderColor: "border-red-400"
-      },
-      redirectOutcome: {
-        title: "You Redirected",
-        description: "You acknowledged the principal and immediately pivoted to a different activity you had prepared: 'Perfect timing! We're transitioning to our review activity that I think you'll enjoy observing.'",
-        result: "You turned an unprepared moment into a showcase opportunity. The principal observed a well-prepared activity. You felt resourceful but also had to abandon your original lesson plan.",
-        emoji: "🎯",
-        color: "from-yellow-500 to-amber-600",
-        bgColor: "from-yellow-50 to-amber-50",
-        borderColor: "border-yellow-400"
-      },
-      pauseOutcome: {
-        title: "You Paused → Breathed → Responded",
+
+      options: [
+        {
+          id: "pause",
+          title: "Stay Composed",
+          description: "Acknowledge and adapt with confidence",
+          emoji: "✨",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <CheckCircle className="w-8 h-8 text-green-600" />
+        },
+        {
+          id: "panic",
+          title: "Panic",
+          description: "Frantically try to fix everything at once",
+          emoji: "😰",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <XCircle className="w-8 h-8 text-red-600" />
+        },
+        {
+          id: "pivot",
+          title: "Change Activity",
+          description: "Transition to a different prepared activity",
+          emoji: "🎯",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <AlertCircle className="w-8 h-8 text-yellow-600" />
+        }
+      ],
+
+      composedOutcome: {
+        title: "You Stayed Composed",
         description: "You took a moment, acknowledged the principal with a nod, and calmly redirected the class: 'I see we have a visitor. Let's show our best learning. Everyone, let's refocus on our task.'",
         result: "You handled the situation gracefully. The principal saw you adapt under pressure. Students responded well, and you demonstrated professional composure. You felt confident.",
         emoji: "✨",
@@ -126,26 +219,71 @@ const PausePracticeSimulation = () => {
         bgColor: "from-green-50 to-emerald-50",
         borderColor: "border-green-300"
       },
-      correctChoice: "pause",
-      explanation: "Pausing helps you stay present and adapt calmly. When you pause, you can assess the situation and respond thoughtfully rather than reactively."
-    }
-    ,
-    {
-      id: 4,
-      title: "Overwhelming Deadline",
-      situation: "You have three major deadlines tomorrow, your personal life feels chaotic, and a colleague just asked you to cover their duty. You feel overwhelmed and your stress levels are rising rapidly.",
-      
-      reactOutcome: {
-        title: "You Reacted Immediately",
-        description: "You immediately agreed to help: 'Sure, I'll take care of it! I can handle everything, no problem!' while internally panicking.",
-        result: "You overcommitted, felt completely overwhelmed, and couldn't deliver quality work on any fronts. You experienced burnout and resentment. You felt exhausted and stressed.",
-        emoji: "😵",
+      panicOutcome: {
+        title: "You Panicked",
+        description: "You panicked, started talking faster, and frantically tried to 'fix' everything at once. You interrupted students mid-sentence and changed the lesson abruptly.",
+        result: "The situation became more chaotic. Students were confused, the lesson fell apart, and the principal saw you struggling. You felt embarrassed and unprofessional.",
+        emoji: "😰",
         color: "from-red-500 to-rose-600",
         bgColor: "from-red-50 to-rose-50",
         borderColor: "border-red-400"
       },
-      pauseOutcome: {
-        title: "You Paused → Breathed → Responded",
+      pivotOutcome: {
+        title: "You Changed Activity",
+        description: "You acknowledged the principal and immediately pivoted to a different activity you had prepared: 'Perfect timing! We're transitioning to our review activity that I think you'll enjoy observing.'",
+        result: "You turned an unprepared moment into a showcase opportunity. The principal observed a well-prepared activity. You felt resourceful but also had to abandon your original lesson plan.",
+        emoji: "🎯",
+        color: "from-yellow-500 to-amber-600",
+        bgColor: "from-yellow-50 to-amber-50",
+        borderColor: "border-yellow-400"
+      },
+      correctChoice: "pause",
+      explanation: "Staying composed helps you stay present and adapt calmly. When you remain composed, you can assess the situation and respond thoughtfully rather than reactively."
+    },
+    {
+      id: 4,
+      title: "Overwhelming Deadline",
+      situation: "You have three major deadlines tomorrow, your personal life feels chaotic, and a colleague just asked you to cover their duty. You feel overwhelmed and your stress levels are rising rapidly.",
+
+      options: [
+
+        {
+          id: "agree",
+          title: "Agree to Help",
+          description: "Say yes despite your current workload",
+          emoji: "😵",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <XCircle className="w-8 h-8 text-red-600" />
+        },
+        {
+          id: "delegate",
+          title: "Find Someone Else",
+          description: "Connect them with another colleague",
+          emoji: "📤",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <AlertCircle className="w-8 h-8 text-yellow-600" />
+        },
+        {
+          id: "pause",
+          title: "Set Boundaries",
+          description: "Politely decline and suggest alternatives",
+          emoji: "⚖️",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <CheckCircle className="w-8 h-8 text-green-600" />
+        },
+      ],
+
+      boundariesOutcome: {
+        title: "You Set Boundaries",
         description: "You acknowledged your feelings, took a few deep breaths, and said: 'I understand this is important, but I'm currently at capacity. Can we discuss alternatives or find another solution?'",
         result: "You maintained your boundaries, avoided burnout, and preserved your wellbeing. Your colleague respected your limits and found another way. You felt empowered and in control.",
         emoji: "⚖️",
@@ -153,8 +291,17 @@ const PausePracticeSimulation = () => {
         bgColor: "from-green-50 to-emerald-50",
         borderColor: "border-green-300"
       },
-      redirectOutcome: {
-        title: "You Redirected",
+      agreeOutcome: {
+        title: "You Agreed to Help",
+        description: "You immediately agreed to help: 'Sure, I'll take care of it! I can handle everything, no problem!' while internally panicking.",
+        result: "You overcommitted, felt completely overwhelmed, and couldn't deliver quality work on any fronts. You experienced burnout and resentment. You felt exhausted and stressed.",
+        emoji: "😵",
+        color: "from-red-500 to-rose-600",
+        bgColor: "from-red-50 to-rose-50",
+        borderColor: "border-red-400"
+      },
+      delegateOutcome: {
+        title: "You Found Someone Else",
         description: "You suggested involving a third party: 'This sounds important. Let me connect you with Sarah who might have more availability today.'",
         result: "You successfully redirected the request to someone else who could help. You avoided overcommitment but also didn't fully address the root issue of your workload. You felt relieved temporarily.",
         emoji: "📤",
@@ -163,14 +310,51 @@ const PausePracticeSimulation = () => {
         borderColor: "border-yellow-400"
       },
       correctChoice: "pause",
-      explanation: "Pausing allows you to set healthy boundaries and communicate your limitations respectfully. It prevents overcommitment and protects your wellbeing."
+      explanation: "Setting boundaries allows you to communicate your limitations respectfully. It prevents overcommitment and protects your wellbeing."
     },
     {
       id: 5,
       title: "Difficult Conversation",
       situation: "You need to have a difficult conversation with a team member about their performance. You're feeling anxious about potential conflict and aren't sure how to approach it constructively.",
-      pauseOutcome: {
-        title: "You Paused → Breathed → Responded",
+
+      options: [
+        {
+          id: "pause",
+          title: "Prepare Thoughtfully",
+          description: "Plan your approach and stay solution-focused",
+          emoji: "🤝",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <CheckCircle className="w-8 h-8 text-green-600" />
+        },
+        {
+          id: "confront",
+          title: "Address Directly",
+          description: "Confront the issue immediately without preparation",
+          emoji: "🗣️",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <XCircle className="w-8 h-8 text-red-600" />
+        },
+        {
+          id: "mediator",
+          title: "Involve Mediator",
+          description: "Bring in a neutral third party",
+          emoji: "👥",
+          bg: "from-blue-50 to-cyan-50",
+          hoverBorder: "blue-300",
+          selectedBg: "from-green-50 to-emerald-50",
+          borderColor: "green-400",
+          icon: <AlertCircle className="w-8 h-8 text-yellow-600" />
+        }
+      ],
+
+      prepareOutcome: {
+        title: "You Prepared Thoughtfully",
         description: "You took time to prepare, breathed deeply before the meeting, and approached with: 'I'd like to share some observations and work together on solutions for improvement.'",
         result: "The conversation remained professional and constructive. The team member appreciated your approach and was receptive to feedback. You felt confident and professional.",
         emoji: "🤝",
@@ -178,8 +362,8 @@ const PausePracticeSimulation = () => {
         bgColor: "from-green-50 to-emerald-50",
         borderColor: "border-green-300"
       },
-      reactOutcome: {
-        title: "You Reacted Immediately",
+      directOutcome: {
+        title: "You Addressed Directly",
         description: "You rushed into the conversation without preparation: 'We need to talk about your poor performance. This has to stop immediately!'",
         result: "The conversation became confrontational. The team member became defensive and the relationship was damaged. You felt frustrated and ineffective.",
         emoji: "🗣️",
@@ -187,8 +371,8 @@ const PausePracticeSimulation = () => {
         bgColor: "from-red-50 to-rose-50",
         borderColor: "border-red-400"
       },
-      redirectOutcome: {
-        title: "You Redirected",
+      thirdPartyOutcome: {
+        title: "You Involved a Mediator",
         description: "You decided to involve HR or a mediator: 'This is important, and I think we could benefit from a neutral third party to guide this conversation constructively.'",
         result: "The conversation had oversight which ensured professionalism. However, the team member may have felt uncomfortable with the third party involvement. You felt safer but less autonomous.",
         emoji: "👥",
@@ -197,7 +381,7 @@ const PausePracticeSimulation = () => {
         borderColor: "border-yellow-400"
       },
       correctChoice: "pause",
-      explanation: "Pausing allows you to approach difficult conversations thoughtfully and constructively. Preparation and mindfulness lead to better outcomes."
+      explanation: "Preparing thoughtfully allows you to approach difficult conversations constructively. Planning and mindfulness lead to better outcomes."
     }
   ];
 
@@ -240,10 +424,23 @@ const PausePracticeSimulation = () => {
   const current = scenarios[currentScenario];
   const selected = selectedChoices[currentScenario];
   const progress = ((currentScenario + 1) / totalLevels) * 100;
-  const outcome = selected ? 
-    (selected.choice === 'pause' ? current.pauseOutcome : 
-     selected.choice === 'react' ? current.reactOutcome : 
-     current.redirectOutcome) : null;
+  const outcome = selected ?
+    (selected.choice === 'pause' ?
+      (current.id === 1 ? current.stayCalmOutcome :
+        current.id === 2 ? current.silenceOutcome :
+          current.id === 3 ? current.composedOutcome :
+            current.id === 4 ? current.boundariesOutcome :
+              current.prepareOutcome) :
+      selected.choice === 'defensive' ? current.defensiveOutcome :
+        selected.choice === 'formal' ? current.formalOutcome :
+          selected.choice === 'shout' ? current.shoutOutcome :
+            selected.choice === 'activity' ? current.physicalOutcome :
+              selected.choice === 'panic' ? current.panicOutcome :
+                selected.choice === 'pivot' ? current.pivotOutcome :
+                  selected.choice === 'agree' ? current.agreeOutcome :
+                    selected.choice === 'delegate' ? current.delegateOutcome :
+                      selected.choice === 'confront' ? current.directOutcome :
+                        selected.choice === 'mediator' ? current.thirdPartyOutcome : null) : null;
 
   return (
     <TeacherGameShell
@@ -305,121 +502,47 @@ const PausePracticeSimulation = () => {
                 </div>
               </div>
 
-              {/* Choice buttons */}
+              {/* Dynamic Choice buttons based on scenario */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                {/* Pause option */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => handleChoice('pause')}
-                  disabled={!!selected}
-                  className={`
-                    relative p-8 rounded-2xl border-2 transition-all text-left
-                    ${selected
-                      ? selected.choice === 'pause'
-                        ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-400 shadow-lg'
-                        : 'bg-gray-50 border-gray-300 opacity-50'
-                      : 'bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-300 hover:shadow-xl cursor-pointer'
-                    }
-                  `}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="text-5xl">⏸️</div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        Pause
-                      </h3>
-                      <p className="text-gray-700 leading-relaxed">
-                        Take 5 seconds to breathe and think before responding
-                      </p>
+                {current.options.map((option, index) => (
+                  <motion.button
+                    key={option.id}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => handleChoice(option.id)}
+                    disabled={!!selected}
+                    className={`
+                      relative p-8 rounded-2xl border-2 transition-all text-left
+                      ${selected
+                        ? selected.choice === option.id
+                          ? `bg-gradient-to-br ${option.selectedBg} border-${option.borderColor} shadow-lg`
+                          : 'bg-gray-50 border-gray-300 opacity-50'
+                        : `bg-gradient-to-br ${option.bg} border-${option.hoverBorder} hover:shadow-xl cursor-pointer`
+                      }
+                    `}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="text-5xl">{option.emoji}</div>
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                          {option.title}
+                        </h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          {option.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  {selected && selected.choice === 'pause' && (
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className="absolute top-4 right-4"
-                    >
-                      <CheckCircle className="w-8 h-8 text-green-600" />
-                    </motion.div>
-                  )}
-                </motion.button>
-
-                {/* React option */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => handleChoice('react')}
-                  disabled={!!selected}
-                  className={`
-                    relative p-8 rounded-2xl border-2 transition-all text-left
-                    ${selected
-                      ? selected.choice === 'react'
-                        ? 'bg-gradient-to-br from-red-50 to-rose-50 border-red-400 shadow-lg'
-                        : 'bg-gray-50 border-gray-300 opacity-50'
-                      : 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-300 hover:shadow-xl cursor-pointer'
-                    }
-                  `}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="text-5xl">⚡</div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        React
-                      </h3>
-                      <p className="text-gray-700 leading-relaxed">
-                        Respond immediately with your first instinct
-                      </p>
-                    </div>
-                  </div>
-                  {selected && selected.choice === 'react' && (
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className="absolute top-4 right-4"
-                    >
-                      <XCircle className="w-8 h-8 text-red-600" />
-                    </motion.div>
-                  )}
-                </motion.button>
-
-                {/* Redirect option */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => handleChoice('redirect')}
-                  disabled={!!selected}
-                  className={`
-                    relative p-8 rounded-2xl border-2 transition-all text-left
-                    ${selected
-                      ? selected.choice === 'redirect'
-                        ? 'bg-gradient-to-br from-yellow-50 to-amber-50 border-yellow-400 shadow-lg'
-                        : 'bg-gray-50 border-gray-300 opacity-50'
-                      : 'bg-gradient-to-br from-yellow-50 to-amber-50 border-yellow-300 hover:shadow-xl cursor-pointer'
-                    }
-                  `}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="text-5xl">🔄</div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        Redirect
-                      </h3>
-                      <p className="text-gray-700 leading-relaxed">
-                        Change direction or involve others to handle the situation
-                      </p>
-                    </div>
-                  </div>
-                  {selected && selected.choice === 'redirect' && (
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className="absolute top-4 right-4"
-                    >
-                      <AlertCircle className="w-8 h-8 text-yellow-600" />
-                    </motion.div>
-                  )}
-                </motion.button>
+                    {selected && selected.choice === option.id && (
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="absolute top-4 right-4"
+                      >
+                        {option.icon}
+                      </motion.div>
+                    )}
+                  </motion.button>
+                ))}
               </div>
             </>
           ) : !showComparison ? (
@@ -484,64 +607,64 @@ const PausePracticeSimulation = () => {
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className={`bg-gradient-to-br ${current.pauseOutcome.bgColor} rounded-2xl p-6 border-2 ${current.pauseOutcome.borderColor} shadow-lg`}
+                    className={`bg-gradient-to-br ${(current.id === 1 ? current.stayCalmOutcome : current.id === 2 ? current.silenceOutcome : current.id === 3 ? current.composedOutcome : current.id === 4 ? current.boundariesOutcome : current.prepareOutcome).bgColor} rounded-2xl p-6 border-2 ${(current.id === 1 ? current.stayCalmOutcome : current.id === 2 ? current.silenceOutcome : current.id === 3 ? current.composedOutcome : current.id === 4 ? current.boundariesOutcome : current.prepareOutcome).borderColor} shadow-lg`}
                   >
                     <div className="text-center mb-4">
-                      <div className="text-5xl mb-3">{current.pauseOutcome.emoji}</div>
+                      <div className="text-5xl mb-3">{(current.id === 1 ? current.stayCalmOutcome : current.id === 2 ? current.silenceOutcome : current.id === 3 ? current.composedOutcome : current.id === 4 ? current.boundariesOutcome : current.prepareOutcome).emoji}</div>
                       <h4 className="text-xl font-bold text-gray-900 mb-2">
-                        {current.pauseOutcome.title}
+                        {(current.id === 1 ? current.stayCalmOutcome : current.id === 2 ? current.silenceOutcome : current.id === 3 ? current.composedOutcome : current.id === 4 ? current.boundariesOutcome : current.prepareOutcome).title}
                       </h4>
                     </div>
                     <div className="bg-white/80 rounded-lg p-4 mb-4">
                       <p className="text-sm text-gray-700 mb-3">
-                        {current.pauseOutcome.description}
+                        {(current.id === 1 ? current.stayCalmOutcome : current.id === 2 ? current.silenceOutcome : current.id === 3 ? current.composedOutcome : current.id === 4 ? current.boundariesOutcome : current.prepareOutcome).description}
                       </p>
                       <p className="text-sm font-semibold text-gray-800">
-                        {current.pauseOutcome.result}
+                        {(current.id === 1 ? current.stayCalmOutcome : current.id === 2 ? current.silenceOutcome : current.id === 3 ? current.composedOutcome : current.id === 4 ? current.boundariesOutcome : current.prepareOutcome).result}
                       </p>
                     </div>
                   </motion.div>
-                
-                  {/* React Outcome */}
+
+                  {/* Second Option Outcome */}
                   <motion.div
                     initial={{ opacity: 0, x: 0 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className={`bg-gradient-to-br ${current.reactOutcome.bgColor} rounded-2xl p-6 border-2 ${current.reactOutcome.borderColor} shadow-lg`}
+                    className={`bg-gradient-to-br ${(current.id === 1 ? current.defensiveOutcome : current.id === 2 ? current.shoutOutcome : current.id === 3 ? current.panicOutcome : current.id === 4 ? current.agreeOutcome : current.directOutcome).bgColor} rounded-2xl p-6 border-2 ${(current.id === 1 ? current.defensiveOutcome : current.id === 2 ? current.shoutOutcome : current.id === 3 ? current.panicOutcome : current.id === 4 ? current.agreeOutcome : current.directOutcome).borderColor} shadow-lg`}
                   >
                     <div className="text-center mb-4">
-                      <div className="text-5xl mb-3">{current.reactOutcome.emoji}</div>
+                      <div className="text-5xl mb-3">{(current.id === 1 ? current.defensiveOutcome : current.id === 2 ? current.shoutOutcome : current.id === 3 ? current.panicOutcome : current.id === 4 ? current.agreeOutcome : current.directOutcome).emoji}</div>
                       <h4 className="text-xl font-bold text-gray-900 mb-2">
-                        {current.reactOutcome.title}
+                        {(current.id === 1 ? current.defensiveOutcome : current.id === 2 ? current.shoutOutcome : current.id === 3 ? current.panicOutcome : current.id === 4 ? current.agreeOutcome : current.directOutcome).title}
                       </h4>
                     </div>
                     <div className="bg-white/80 rounded-lg p-4 mb-4">
                       <p className="text-sm text-gray-700 mb-3">
-                        {current.reactOutcome.description}
+                        {(current.id === 1 ? current.defensiveOutcome : current.id === 2 ? current.shoutOutcome : current.id === 3 ? current.panicOutcome : current.id === 4 ? current.agreeOutcome : current.directOutcome).description}
                       </p>
                       <p className="text-sm font-semibold text-gray-800">
-                        {current.reactOutcome.result}
+                        {(current.id === 1 ? current.defensiveOutcome : current.id === 2 ? current.shoutOutcome : current.id === 3 ? current.panicOutcome : current.id === 4 ? current.agreeOutcome : current.directOutcome).result}
                       </p>
                     </div>
                   </motion.div>
-                
-                  {/* Redirect Outcome */}
+
+                  {/* Third Option Outcome */}
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className={`bg-gradient-to-br ${current.redirectOutcome.bgColor} rounded-2xl p-6 border-2 ${current.redirectOutcome.borderColor} shadow-lg`}
+                    className={`bg-gradient-to-br ${(current.id === 1 ? current.formalOutcome : current.id === 2 ? current.physicalOutcome : current.id === 3 ? current.pivotOutcome : current.id === 4 ? current.delegateOutcome : current.thirdPartyOutcome).bgColor} rounded-2xl p-6 border-2 ${(current.id === 1 ? current.formalOutcome : current.id === 2 ? current.physicalOutcome : current.id === 3 ? current.pivotOutcome : current.id === 4 ? current.delegateOutcome : current.thirdPartyOutcome).borderColor} shadow-lg`}
                   >
                     <div className="text-center mb-4">
-                      <div className="text-5xl mb-3">{current.redirectOutcome.emoji}</div>
+                      <div className="text-5xl mb-3">{(current.id === 1 ? current.formalOutcome : current.id === 2 ? current.physicalOutcome : current.id === 3 ? current.pivotOutcome : current.id === 4 ? current.delegateOutcome : current.thirdPartyOutcome).emoji}</div>
                       <h4 className="text-xl font-bold text-gray-900 mb-2">
-                        {current.redirectOutcome.title}
+                        {(current.id === 1 ? current.formalOutcome : current.id === 2 ? current.physicalOutcome : current.id === 3 ? current.pivotOutcome : current.id === 4 ? current.delegateOutcome : current.thirdPartyOutcome).title}
                       </h4>
                     </div>
                     <div className="bg-white/80 rounded-lg p-4 mb-4">
                       <p className="text-sm text-gray-700 mb-3">
-                        {current.redirectOutcome.description}
+                        {(current.id === 1 ? current.formalOutcome : current.id === 2 ? current.physicalOutcome : current.id === 3 ? current.pivotOutcome : current.id === 4 ? current.delegateOutcome : current.thirdPartyOutcome).description}
                       </p>
                       <p className="text-sm font-semibold text-gray-800">
-                        {current.redirectOutcome.result}
+                        {(current.id === 1 ? current.formalOutcome : current.id === 2 ? current.physicalOutcome : current.id === 3 ? current.pivotOutcome : current.id === 4 ? current.delegateOutcome : current.thirdPartyOutcome).result}
                       </p>
                     </div>
                   </motion.div>
@@ -577,9 +700,9 @@ const PausePracticeSimulation = () => {
                 💡 Teacher Tip:
               </p>
               <p className="text-sm text-amber-800 leading-relaxed">
-                Reinforce the "Pause → Breathe → Respond" mantra. Practice this sequence daily: 
-                When you feel triggered, pause (stop), breathe (take 3 deep breaths), then respond (choose your words thoughtfully). 
-                Write this mantra on a sticky note at your desk. The more you practice, the more automatic it becomes. 
+                Reinforce the "Pause → Breathe → Respond" mantra. Practice this sequence daily:
+                When you feel triggered, pause (stop), breathe (take 3 deep breaths), then respond (choose your words thoughtfully).
+                Write this mantra on a sticky note at your desk. The more you practice, the more automatic it becomes.
                 Share this technique with colleagues—building a pause habit together creates a calmer school culture.
               </p>
             </div>
@@ -591,4 +714,3 @@ const PausePracticeSimulation = () => {
 };
 
 export default PausePracticeSimulation;
-

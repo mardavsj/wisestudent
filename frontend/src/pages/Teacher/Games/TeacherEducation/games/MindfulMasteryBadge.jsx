@@ -12,11 +12,11 @@ import { toast } from "react-toastify";
 const MindfulMasteryBadge = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   // Get game data
   const gameId = "teacher-education-50";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   const [loading, setLoading] = useState(true);
   const [gamesStatus, setGamesStatus] = useState([]);
   const [allCompleted, setAllCompleted] = useState(false);
@@ -56,7 +56,7 @@ const MindfulMasteryBadge = () => {
     if ('speechSynthesis' in window) {
       setSpeechSynth(window.speechSynthesis);
     }
-    
+
     checkGamesCompletion();
     checkBadgeStatus();
   }, []);
@@ -120,7 +120,7 @@ const MindfulMasteryBadge = () => {
 
     speechSynth.cancel();
     setIsPlayingAudio(true);
-    
+
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = 0.85;
     utterance.pitch = 1.0;
@@ -151,15 +151,15 @@ const MindfulMasteryBadge = () => {
 
       const result = response.data;
 
-      if (result.success && result.badgeEarned) {
+      if (result.success && (result.badgeEarned || result.newlyEarned)) {
         setBadgeCollected(true);
         setShowCollectionModal(false);
         toast.success('🎉 Badge collected successfully!');
-        
+
         // Play positive audio affirmation
         const affirmation = "Your calm inspires clarity. Congratulations! You have earned the Mindful Mastery Badge. Your commitment to daily mindfulness practices sustains your focus, reduces stress, and brings presence to your teaching. You are a Mindfulness Mentor, inspiring clarity and calm in your classroom and beyond. Well done!";
         playAffirmation(affirmation);
-        
+
         // Dispatch badge earned event
         window.dispatchEvent(new CustomEvent('teacherBadgeEarned', {
           detail: {
@@ -169,7 +169,7 @@ const MindfulMasteryBadge = () => {
             badge: result.badge
           }
         }));
-        
+
         // Register the badge game as completed in the game progress system
         // This is crucial for sequential unlocking of the next game
         try {
@@ -256,11 +256,10 @@ const MindfulMasteryBadge = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className={`flex items-center justify-between p-4 rounded-xl border-2 ${
-                    game.completed
+                  className={`flex items-center justify-between p-4 rounded-xl border-2 ${game.completed
                       ? 'bg-green-50 border-green-200'
                       : 'bg-gray-50 border-gray-200'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3">
                     {game.completed ? (
@@ -269,15 +268,13 @@ const MindfulMasteryBadge = () => {
                       <div className="w-6 h-6 rounded-full border-2 border-gray-400"></div>
                     )}
                     <span className="text-2xl">{game.icon}</span>
-                    <span className={`font-medium text-lg ${
-                      game.completed ? 'text-green-800' : 'text-gray-600'
-                    }`}>
+                    <span className={`font-medium text-lg ${game.completed ? 'text-green-800' : 'text-gray-600'
+                      }`}>
                       {index + 1}. {game.name}
                     </span>
                   </div>
-                  <span className={`text-sm font-semibold ${
-                    game.completed ? 'text-green-600' : 'text-gray-400'
-                  }`}>
+                  <span className={`text-sm font-semibold ${game.completed ? 'text-green-600' : 'text-gray-400'
+                    }`}>
                     {game.completed ? 'Completed ✓' : 'Not Completed'}
                   </span>
                 </motion.div>
@@ -296,8 +293,8 @@ const MindfulMasteryBadge = () => {
                 <motion.div
                   className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-4 rounded-full"
                   initial={{ width: 0 }}
-                  animate={{ 
-                    width: `${(gamesStatus.filter(g => g.completed).length / 5) * 100}%` 
+                  animate={{
+                    width: `${(gamesStatus.filter(g => g.completed).length / 5) * 100}%`
                   }}
                   transition={{ duration: 0.5 }}
                 />
@@ -350,7 +347,7 @@ const MindfulMasteryBadge = () => {
                 Congratulations! You have successfully completed all mindfulness activities and earned the Mindful Mastery Badge. Your daily mindfulness practice sustains focus, reduces stress, and brings presence to your teaching.
               </p>
             </div>
-            
+
             {/* Audio Affirmation Button */}
             <div className="mb-6">
               <button
@@ -486,4 +483,3 @@ const MindfulMasteryBadge = () => {
 };
 
 export default MindfulMasteryBadge;
-

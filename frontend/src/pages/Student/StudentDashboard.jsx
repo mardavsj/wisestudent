@@ -78,6 +78,7 @@ import {
 } from "../../services/dashboardService";
 import { toast } from "react-hot-toast";
 import { mockFeatures } from "../../data/mockFeatures";
+import schoolSponsorshipService from "../../services/schoolSponsorshipService";
 import { useSocket } from '../../context/SocketContext';
 import api from "../../utils/api";
 
@@ -120,6 +121,8 @@ export default function StudentDashboard() {
     const [achievementTimeline, setAchievementTimeline] = useState(null);
     const [dailyActions, setDailyActions] = useState(null);
     const [newAchievementIds, setNewAchievementIds] = useState(new Set());
+    const [sponsorBadge, setSponsorBadge] = useState(null);
+    const [sponsorshipLoading, setSponsorshipLoading] = useState(true);
     
     // Track if data has been loaded to prevent unnecessary refetches
     const dataLoadedRef = useRef(false);
@@ -269,6 +272,37 @@ export default function StudentDashboard() {
     useEffect(() => {
         setFeatureCards(mockFeatures);
     }, []);
+
+    useEffect(() => {
+        let mounted = true;
+        const loadBadge = async () => {
+            setSponsorshipLoading(true);
+            try {
+                const response = await schoolSponsorshipService.getDetails();
+                if (!mounted) return;
+                if (response?.sponsorship) {
+                    const sponsor = response.sponsorship.sponsorId || {};
+                    setSponsorBadge({
+                        sponsorName: sponsor.companyName,
+                        sponsorLogo: sponsor.metadata?.logo,
+                        startDate: response.sponsorship.startDate,
+                        endDate: response.sponsorship.endDate,
+                        studentCount: response.studentCount,
+                    });
+                } else {
+                    setSponsorBadge(null);
+                }
+            } catch (err) {
+                console.error("Sponsor badge load error:", err);
+            } finally {
+                if (mounted) setSponsorshipLoading(false);
+            }
+        };
+        loadBadge();
+        return () => {
+            mounted = false;
+        };
+    }, [user]);
 
     // Optimized: Load critical dashboard data in parallel
     const loadDashboardData = React.useCallback(async () => {
@@ -1294,6 +1328,39 @@ export default function StudentDashboard() {
                             <Star className="w-5 h-5" />
                         </div>
                     </motion.div>
+
+                    {!sponsorshipLoading && sponsorBadge && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="max-w-4xl mx-auto mt-6 rounded-3xl bg-white/90 backdrop-blur-xl border border-slate-100 shadow-xl p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-5"
+                        >
+                            <div className="flex items-center gap-4">
+                                <div className="w-14 h-14 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-2xl font-black">
+                                    {sponsorBadge.sponsorName?.[0] || "S"}
+                                </div>
+                                <div>
+                                    <p className="text-xs uppercase tracking-wide text-slate-500">Sponsored by</p>
+                                    <h3 className="text-xl font-bold text-slate-900">{sponsorBadge.sponsorName}</h3>
+                                    <p className="text-sm text-slate-500">
+                                        {sponsorBadge.studentCount || 0} students supported
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="text-sm text-slate-600 space-y-1 text-right">
+                                <p className="font-semibold text-slate-900">
+                                    {sponsorBadge.startDate ? new Date(sponsorBadge.startDate).toLocaleDateString() : "-"} - {sponsorBadge.endDate ? new Date(sponsorBadge.endDate).toLocaleDateString() : "-"}
+                                </p>
+                                <p className="text-xs uppercase tracking-wide text-slate-500">Sponsorship period</p>
+                            </div>
+                            <button
+                                onClick={() => navigate("/school/sponsorship")}
+                                className="px-4 py-2 rounded-2xl bg-indigo-600 text-white text-sm font-semibold shadow-lg hover:bg-indigo-500 transition"
+                            >
+                                View sponsorship
+                            </button>
+                        </motion.div>
+                    )}
 
                     
                     {/* Category Pills - Below Header */}

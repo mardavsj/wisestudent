@@ -7,15 +7,15 @@ import { TrendingUp, TrendingDown, CheckCircle, AlertCircle, Users, MessageCircl
 
 const AssertivenessLadder = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-65";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedResponse, setSelectedResponse] = useState({});
   const [showLadderPosition, setShowLadderPosition] = useState(false);
@@ -129,12 +129,7 @@ const AssertivenessLadder = () => {
           assertivenessLevel: 'submissive',
           feedback: "This is a submissive response. You're uncertain and not confident in your boundary. This doesn't protect your capacity effectively and creates confusion."
         },
-        {
-          id: 'assertive-empathy',
-          text: "I appreciate the opportunity, but my current commitments are full. I want to maintain quality in what I'm already doing. Could we explore other options?",
-          assertivenessLevel: 'assertive-empathy',
-          feedback: "Perfect! This is assertive empathy—firm but caring. You acknowledge their request positively, state your boundary clearly, and offer alternatives. This maintains relationships while protecting your capacity."
-        },
+
         {
           id: 'confident',
           text: "I'm at capacity right now. I can't take on additional work.",
@@ -152,7 +147,13 @@ const AssertivenessLadder = () => {
           text: "Are you serious? I'm already drowning in work! This is ridiculous!",
           assertivenessLevel: 'hostile',
           feedback: "This is a hostile response. The attacking tone damages relationships and creates conflict. Even when feeling overwhelmed, assertive empathy maintains professionalism and respect."
-        }
+        },
+        {
+          id: 'assertive-empathy',
+          text: "I appreciate the opportunity, but my current commitments are full. I want to maintain quality in what I'm already doing. Could we explore other options?",
+          assertivenessLevel: 'assertive-empathy',
+          feedback: "Perfect! This is assertive empathy—firm but caring. You acknowledge their request positively, state your boundary clearly, and offer alternatives. This maintains relationships while protecting your capacity."
+        },
       ],
       correctResponse: 'assertive-empathy'
     },
@@ -229,12 +230,7 @@ const AssertivenessLadder = () => {
           assertivenessLevel: 'submissive',
           feedback: "This is a submissive response. You're avoiding conflict but not advocating for your perspective. This doesn't contribute to productive collaboration."
         },
-        {
-          id: 'assertive-empathy',
-          text: "I appreciate your perspective. I'd like to understand your concerns better. Can we discuss the specific areas where you see challenges? Perhaps we can find common ground.",
-          assertivenessLevel: 'assertive-empathy',
-          feedback: "Perfect! This is assertive empathy—firm but caring. You acknowledge their perspective, maintain your position, and invite collaboration. This builds understanding while preserving relationships."
-        },
+
         {
           id: 'confident',
           text: "I understand your concern, but my approach has been effective. Let's agree to disagree.",
@@ -246,6 +242,12 @@ const AssertivenessLadder = () => {
           text: "That's not true! You don't know what you're talking about! My approach works!",
           assertivenessLevel: 'aggressive',
           feedback: "This is an aggressive response. While defending your position, the forceful tone damages team relationships. A firm but empathetic approach builds collaboration better."
+        },
+        {
+          id: 'assertive-empathy',
+          text: "I appreciate your perspective. I'd like to understand your concerns better. Can we discuss the specific areas where you see challenges? ",
+          assertivenessLevel: 'assertive-empathy',
+          feedback: "Perfect! This is assertive empathy—firm but caring. You acknowledge their perspective, maintain your position, and invite collaboration. This builds understanding while preserving relationships."
         },
         {
           id: 'hostile',
@@ -261,6 +263,12 @@ const AssertivenessLadder = () => {
       title: "Student Misbehavior",
       situation: "A student is being disrespectful and disruptive in class. You've addressed it privately, but their behavior continues and is affecting other students' learning.",
       responses: [
+        {
+          id: 'assertive-empathy',
+          text: "Your behavior is disrupting the class. I know you can do better. Let's work together to make this right. What do you need to be successful?",
+          assertivenessLevel: 'assertive-empathy',
+          feedback: "Excellent! This is assertive empathy—firm but caring. You state the boundary clearly, express belief in the student, and offer collaboration. This maintains authority while showing care."
+        },
         {
           id: 'passive',
           text: "Please try to be better. I know you can do it.",
@@ -279,12 +287,7 @@ const AssertivenessLadder = () => {
           assertivenessLevel: 'submissive',
           feedback: "This is a submissive response. The uncertainty doesn't communicate authority or boundaries effectively. Students need clear, confident guidance."
         },
-        {
-          id: 'assertive-empathy',
-          text: "Your behavior is disrupting the class. I know you can do better. Let's work together to make this right. What do you need to be successful?",
-          assertivenessLevel: 'assertive-empathy',
-          feedback: "Excellent! This is assertive empathy—firm but caring. You state the boundary clearly, express belief in the student, and offer collaboration. This maintains authority while showing care."
-        },
+
         {
           id: 'confident',
           text: "Your behavior is unacceptable. You need to stop disrupting the class immediately.",
@@ -467,7 +470,7 @@ const AssertivenessLadder = () => {
               <div className="space-y-3 mb-6">
                 {current.responses.map((response, index) => {
                   const isSelected = selected && selected.responseId === response.id;
-                  
+
                   return (
                     <motion.button
                       key={response.id}
@@ -475,24 +478,15 @@ const AssertivenessLadder = () => {
                       whileTap={{ scale: 0.99 }}
                       onClick={() => handleResponseSelect(response.id)}
                       disabled={!!selected}
-                      className={`w-full p-5 rounded-xl border-2 text-left transition-all ${
-                        isSelected
+                      className={`w-full p-5 rounded-xl border-2 text-left transition-all ${isSelected
                           ? response.id === 'assertive-empathy'
                             ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-400 shadow-lg'
                             : 'bg-gray-50 border-gray-300 opacity-60'
                           : 'bg-white border-gray-300 hover:border-indigo-400 hover:shadow-md cursor-pointer'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-start gap-3">
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold ${
-                          response.assertivenessLevel === 'assertive-empathy'
-                            ? 'bg-gradient-to-r from-green-400 to-emerald-500'
-                            : response.assertivenessLevel === 'hostile' || response.assertivenessLevel === 'aggressive'
-                            ? 'bg-gradient-to-r from-red-400 to-rose-500'
-                            : response.assertivenessLevel === 'passive' || response.assertivenessLevel === 'passive-aggressive'
-                            ? 'bg-gradient-to-r from-gray-400 to-slate-500'
-                            : 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                        }`}>
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold bg-gradient-to-r from-pink-400 to-rose-500`}>
                           {index + 1}
                         </div>
                         <div className="flex-1">
@@ -531,32 +525,30 @@ const AssertivenessLadder = () => {
                     const isSelectedLevel = level.id === selectedLevel.id;
                     const isAssertiveEmpathy = level.id === 'assertive-empathy';
                     const rungPosition = ((7 - index) / 7) * 100;
-                    
+
                     return (
                       <motion.div
                         key={level.id}
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        className={`relative mb-2 ${
-                          isSelectedLevel
+                        className={`relative mb-2 ${isSelectedLevel
                             ? 'transform scale-105 z-10'
                             : isAssertiveEmpathy
-                            ? 'transform scale-102 z-5'
-                            : ''
-                        }`}
+                              ? 'transform scale-102 z-5'
+                              : ''
+                          }`}
                       >
-                        <div className={`h-12 rounded-lg border-2 flex items-center justify-between px-4 transition-all ${
-                          isSelectedLevel
+                        <div className={`h-12 rounded-lg border-2 flex items-center justify-between px-4 transition-all ${isSelectedLevel
                             ? `bg-gradient-to-r ${level.color} ${level.borderColor} shadow-lg border-4`
                             : isAssertiveEmpathy
-                            ? `${level.bgColor} ${level.borderColor} border-2 shadow-md`
-                            : level.id === 'hostile' || level.id === 'aggressive'
-                            ? `${level.bgColor} ${level.borderColor} border opacity-70`
-                            : level.id === 'passive' || level.id === 'passive-aggressive' || level.id === 'submissive'
-                            ? `${level.bgColor} ${level.borderColor} border opacity-70`
-                            : `${level.bgColor} ${level.borderColor} border opacity-70`
-                        }`}>
+                              ? `${level.bgColor} ${level.borderColor} border-2 shadow-md`
+                              : level.id === 'hostile' || level.id === 'aggressive'
+                                ? `${level.bgColor} ${level.borderColor} border opacity-70`
+                                : level.id === 'passive' || level.id === 'passive-aggressive' || level.id === 'submissive'
+                                  ? `${level.bgColor} ${level.borderColor} border opacity-70`
+                                  : `${level.bgColor} ${level.borderColor} border opacity-70`
+                          }`}>
                           <div className="flex items-center gap-3">
                             <span className="text-2xl">{level.emoji}</span>
                             <div>
@@ -713,28 +705,26 @@ const AssertivenessLadder = () => {
             </div>
 
             {/* Score Summary */}
-            <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${
-              score === totalLevels
+            <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${score === totalLevels
                 ? 'from-green-50 to-emerald-50 border-green-200'
                 : score >= totalLevels / 2
-                ? 'from-blue-50 to-indigo-50 border-blue-200'
-                : 'from-yellow-50 to-orange-50 border-yellow-200'
-            }`}>
+                  ? 'from-blue-50 to-indigo-50 border-blue-200'
+                  : 'from-yellow-50 to-orange-50 border-yellow-200'
+              }`}>
               <div className="text-center">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Your Assertiveness Score</h3>
-                <div className={`text-5xl font-bold mb-2 ${
-                  score === totalLevels ? 'text-green-600' :
-                  score >= totalLevels / 2 ? 'text-blue-600' :
-                  'text-yellow-600'
-                }`}>
+                <div className={`text-5xl font-bold mb-2 ${score === totalLevels ? 'text-green-600' :
+                    score >= totalLevels / 2 ? 'text-blue-600' :
+                      'text-yellow-600'
+                  }`}>
                   {Math.round((score / totalLevels) * 100)}%
                 </div>
                 <p className="text-gray-700">
                   {score === totalLevels
                     ? "Excellent! You consistently chose assertive empathy. You're mastering the balance between firm boundaries and warm delivery!"
                     : score >= totalLevels / 2
-                    ? "Good progress! You're learning to aim for assertive empathy. Keep practicing the balance between firm and caring."
-                    : "Keep practicing! Each scenario helps you understand where you land on the assertiveness ladder."}
+                      ? "Good progress! You're learning to aim for assertive empathy. Keep practicing the balance between firm and caring."
+                      : "Keep practicing! Each scenario helps you understand where you land on the assertiveness ladder."}
                 </p>
               </div>
             </div>
@@ -787,4 +777,3 @@ const AssertivenessLadder = () => {
 };
 
 export default AssertivenessLadder;
-

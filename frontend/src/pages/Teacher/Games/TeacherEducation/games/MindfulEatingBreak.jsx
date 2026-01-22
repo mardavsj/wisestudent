@@ -7,15 +7,15 @@ import { Play, Pause, RotateCcw, Clock, Utensils, Heart, Volume2, ArrowLeft, Arr
 
 const MindfulEatingBreak = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-47";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = 5; // Updated to 5 activities
-  
+
   const [currentActivity, setCurrentActivity] = useState(0);
   const [activitiesCompleted, setActivitiesCompleted] = useState(Array(5).fill(false));
   const [scores, setScores] = useState(Array(5).fill(0));
@@ -26,10 +26,8 @@ const MindfulEatingBreak = () => {
   const [showReflection, setShowReflection] = useState(false);
   const [showGameOver, setShowGameOver] = useState(false);
   const [rating, setRating] = useState(null);
-  
-  const timerRef = useRef(null);
-  const speechSynthRef = useRef(null);
 
+  const timerRef = useRef(null);
   // Define 5 different mindful eating activities
   const activities = [
     {
@@ -86,28 +84,7 @@ const MindfulEatingBreak = () => {
 
   const currentActivityData = activities[currentActivity];
 
-  // Initialize speech synthesis
-  useEffect(() => {
-    if ('speechSynthesis' in window) {
-      speechSynthRef.current = window.speechSynthesis;
-    }
-    return () => {
-      if (speechSynthRef.current) {
-        speechSynthRef.current.cancel();
-      }
-    };
-  }, []);
 
-  const speakText = (text) => {
-    if (!speechSynthRef.current) return;
-    
-    speechSynthRef.current.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 0.75; // Calm, slow pace
-    utterance.pitch = 1.0;
-    utterance.volume = 1.0;
-    speechSynthRef.current.speak(utterance);
-  };
 
   const startActivity = () => {
     setPhase('active');
@@ -118,13 +95,6 @@ const MindfulEatingBreak = () => {
 
   const togglePause = () => {
     setIsPlaying(!isPlaying);
-    if (speechSynthRef.current) {
-      if (!isPlaying) {
-        speechSynthRef.current.pause();
-      } else {
-        speechSynthRef.current.resume();
-      }
-    }
   };
 
   const resetActivity = () => {
@@ -136,9 +106,6 @@ const MindfulEatingBreak = () => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
-    if (speechSynthRef.current) {
-      speechSynthRef.current.cancel();
-    }
   };
 
   const handleNextActivity = () => {
@@ -146,12 +113,12 @@ const MindfulEatingBreak = () => {
     const newCompleted = [...activitiesCompleted];
     newCompleted[currentActivity] = true;
     setActivitiesCompleted(newCompleted);
-    
+
     // Set score for current activity
     const newScores = [...scores];
     newScores[currentActivity] = 1; // 1 point per completed activity
     setScores(newScores);
-    
+
     if (currentActivity < 4) {
       setCurrentActivity(currentActivity + 1);
       setPhase('ready');
@@ -186,12 +153,8 @@ const MindfulEatingBreak = () => {
       // Activity complete
       setIsPlaying(false);
       setActivityPhase('completed');
-      speakText(`You've completed the ${currentActivityData.title}. Take a moment to reflect on your experience.`);
       setTimeout(() => {
         setShowReflection(true);
-        if (speechSynthRef.current) {
-          speechSynthRef.current.cancel();
-        }
       }, 2000);
     }
 
@@ -202,14 +165,7 @@ const MindfulEatingBreak = () => {
     };
   }, [isPlaying, phase, timeRemaining, currentActivityData]);
 
-  // Initial instruction when starting activity
-  useEffect(() => {
-    if (phase === 'active' && activityPhase === 'active' && isPlaying) {
-      setTimeout(() => {
-        speakText(`${currentActivityData.instruction}`);
-      }, 500);
-    }
-  }, [phase, activityPhase, isPlaying, currentActivityData]);
+
 
   const handleRateExperience = (ratingValue) => {
     setRating(ratingValue);
@@ -294,7 +250,7 @@ const MindfulEatingBreak = () => {
                 {currentActivityData.description}
               </p>
             </div>
-            
+
             {/* Progress Tracker */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4">
@@ -302,26 +258,26 @@ const MindfulEatingBreak = () => {
                   Activity {currentActivity + 1} of {totalLevels}
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
+                  <div
                     className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full transition-all duration-300"
                     style={{ width: `${((currentActivity + 1) / totalLevels) * 100}%` }}
                   />
                 </div>
               </div>
-              
+
               <div className="bg-amber-50 border-2 border-amber-200 rounded-lg p-4">
                 <div className="text-sm text-gray-700 font-semibold mb-1">
                   Total Score: {calculateTotalScore()} / {totalLevels}
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
+                  <div
                     className="bg-gradient-to-r from-amber-500 to-orange-500 h-2 rounded-full transition-all duration-300"
                     style={{ width: `${(calculateTotalScore() / totalLevels) * 100}%` }}
                   />
                 </div>
               </div>
             </div>
-            
+
             {/* Activity Instructions */}
             <div className={`bg-gradient-to-br ${currentActivityData.color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 rounded-xl p-6 border-2 mb-6`}>
               <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
@@ -338,29 +294,23 @@ const MindfulEatingBreak = () => {
                 </p>
               </div>
             </div>
-            
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-              <p className="text-sm text-blue-800 flex items-center gap-2 justify-center">
-                <Volume2 className="w-4 h-4" />
-                <span><strong>Prepare your food or snack</strong> before starting. Audio will guide you through the practice.</span>
-              </p>
-            </div>
-            
+
+
+
             {/* Navigation and Start Button */}
             <div className="flex justify-between items-center">
               <button
                 onClick={handlePrevActivity}
                 disabled={currentActivity === 0}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
-                  currentActivity === 0 
-                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${currentActivity === 0
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
+                  }`}
               >
                 <ArrowLeft className="w-5 h-5" />
                 Previous
               </button>
-              
+
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -370,7 +320,7 @@ const MindfulEatingBreak = () => {
                 <Play className="w-6 h-6" />
                 Begin {currentActivityData.title.split(' ')[0]}
               </motion.button>
-              
+
               <div className="w-24"></div> {/* Spacer for alignment */}
             </div>
           </div>
@@ -386,7 +336,7 @@ const MindfulEatingBreak = () => {
                 Activity {currentActivity + 1} of {totalLevels}
               </p>
               <div className="mt-4 w-full bg-gray-200 rounded-full h-3 max-w-md mx-auto">
-                <div 
+                <div
                   className={`bg-gradient-to-r ${currentActivityData.color} h-3 rounded-full transition-all duration-300`}
                   style={{ width: `${((currentActivityData.duration - timeRemaining) / currentActivityData.duration) * 100}%` }}
                 />
@@ -484,18 +434,16 @@ const MindfulEatingBreak = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleRateExperience(ratingValue)}
-                  className={`p-6 rounded-xl border-2 transition-all ${
-                    rating === ratingValue
+                  className={`p-6 rounded-xl border-2 transition-all ${rating === ratingValue
                       ? `border-${currentActivityData.color.includes('red') ? 'red' : currentActivityData.color.includes('green') ? 'green' : currentActivityData.color.includes('blue') ? 'blue' : currentActivityData.color.includes('purple') ? 'purple' : 'amber'}-500 bg-gradient-to-br ${currentActivityData.color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-20 shadow-lg`
                       : 'border-gray-300 bg-white hover:border-gray-400 hover:shadow-md'
-                  }`}
+                    }`}
                 >
                   <div className="text-4xl mb-2">
                     {ratingValue === 1 ? '😞' : ratingValue === 2 ? '😐' : ratingValue === 3 ? '🙂' : ratingValue === 4 ? '😊' : '😍'}
                   </div>
-                  <div className={`font-bold text-lg ${
-                    rating === ratingValue ? 'text-gray-800' : 'text-gray-700'
-                  }`}>
+                  <div className={`font-bold text-lg ${rating === ratingValue ? 'text-gray-800' : 'text-gray-700'
+                    }`}>
                     {ratingValue}
                   </div>
                   {ratingValue === 1 && <div className="text-xs text-gray-500 mt-1">Poor</div>}
@@ -515,8 +463,8 @@ const MindfulEatingBreak = () => {
                   {rating >= 4
                     ? `Excellent! You've successfully practiced ${currentActivityData.title.toLowerCase()}. This mindful approach helps you develop greater awareness and appreciation for your eating experience.`
                     : rating >= 3
-                    ? `Good job! You've completed the ${currentActivityData.title.toLowerCase()} practice. With regular practice, this mindful approach will become more natural and beneficial.`
-                    : `You've completed the ${currentActivityData.title.toLowerCase()} activity. Mindful eating skills improve with practice. Each attempt builds your awareness and presence.`}
+                      ? `Good job! You've completed the ${currentActivityData.title.toLowerCase()} practice. With regular practice, this mindful approach will become more natural and beneficial.`
+                      : `You've completed the ${currentActivityData.title.toLowerCase()} activity. Mindful eating skills improve with practice. Each attempt builds your awareness and presence.`}
                 </p>
               </motion.div>
             )}
@@ -538,8 +486,8 @@ const MindfulEatingBreak = () => {
             </h2>
             <div className="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 rounded-xl p-6 border-2 border-indigo-200 mb-6">
               <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                Congratulations! You've completed all 5 mindful eating activities and developed a comprehensive practice for bringing awareness to your meals. 
-                You've explored tasting, gratitude, sensory awareness, mindful chewing, and appreciation—each building different aspects of mindful eating. 
+                Congratulations! You've completed all 5 mindful eating activities and developed a comprehensive practice for bringing awareness to your meals.
+                You've explored tasting, gratitude, sensory awareness, mindful chewing, and appreciation—each building different aspects of mindful eating.
                 This holistic approach helps you cultivate presence, reduce stress, and develop a healthier relationship with food and eating.
               </p>
               <div className="bg-white/60 rounded-lg p-4 mt-4">
@@ -578,4 +526,3 @@ const MindfulEatingBreak = () => {
 };
 
 export default MindfulEatingBreak;
-

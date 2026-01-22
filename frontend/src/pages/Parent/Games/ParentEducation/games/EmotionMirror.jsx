@@ -5,15 +5,15 @@ import { getParentEducationGameById } from "../data/gameData";
 
 const EmotionMirror = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "parent-education-2";
   const gameData = getParentEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedBodyParts, setSelectedBodyParts] = useState({});
   const [score, setScore] = useState(0);
@@ -25,8 +25,8 @@ const EmotionMirror = () => {
     { id: 'neck', label: 'Neck', emoji: '👤', position: { top: '15%', left: '50%' } },
     { id: 'shoulders', label: 'Shoulders', emoji: '💪', position: { top: '20%', left: '50%' } },
     { id: 'chest', label: 'Chest', emoji: '❤️', position: { top: '30%', left: '50%' } },
-    { id: 'stomach', label: 'Stomach', emoji: '🫀', position: { top: '45%', left: '50%' } },
-    { id: 'hands', label: 'Hands', emoji: '✋', position: { top: '25%', left: '25%' } },
+    { id: 'stomach', label: 'Stomach', emoji: '🛑', position: { top: '45%', left: '50%' } },
+    { id: 'hands', label: 'Hands', emoji: '✋', position: { top: '25%', left: '22%' } },
     { id: 'hands-right', label: 'Hands', emoji: '✋', position: { top: '25%', left: '75%' } },
     { id: 'back', label: 'Back', emoji: '🦴', position: { top: '35%', left: '50%' } },
     { id: 'legs', label: 'Legs', emoji: '🦵', position: { top: '60%', left: '50%' } },
@@ -82,11 +82,11 @@ const EmotionMirror = () => {
 
   const handleBodyPartClick = (partId) => {
     const currentScenario = scenarios[currentQuestion];
-    
+
     // Track selected parts for this question
     const questionKey = `q${currentQuestion}`;
     const currentSelections = selectedBodyParts[questionKey] || [];
-    
+
     if (!currentSelections.includes(partId)) {
       const newSelections = [...currentSelections, partId];
       setSelectedBodyParts({
@@ -180,19 +180,17 @@ const EmotionMirror = () => {
                 {/* Clickable body part markers with better positioning */}
                 <button
                   onClick={() => handleBodyPartClick('head')}
-                  className={`absolute top-8 left-1/2 transform -translate-x-1/2 transition-all ${
-                    selectedParts.includes('head')
+                  className={`absolute top-8 left-1/2 transform -translate-x-1/2 transition-all ${selectedParts.includes('head')
                       ? currentScenario.correctParts.includes('head')
                         ? 'bg-green-500 text-white scale-125'
                         : 'bg-red-500 text-white scale-125'
                       : 'bg-white hover:bg-blue-200 text-gray-700'
-                  } rounded-full w-14 h-14 flex items-center justify-center border-2 ${
-                    selectedParts.includes('head')
+                    } rounded-full w-14 h-14 flex items-center justify-center border-2 ${selectedParts.includes('head')
                       ? currentScenario.correctParts.includes('head')
                         ? 'border-green-700'
                         : 'border-red-700'
                       : 'border-gray-400'
-                  } shadow-lg cursor-pointer z-10`}
+                    } shadow-lg cursor-pointer z-10`}
                   title="Head"
                 >
                   <span className="text-2xl">🧠</span>
@@ -200,19 +198,17 @@ const EmotionMirror = () => {
 
                 <button
                   onClick={() => handleBodyPartClick('neck')}
-                  className={`absolute top-20 left-1/2 transform -translate-x-1/2 transition-all ${
-                    selectedParts.includes('neck')
+                  className={`absolute top-20 left-1/2 transform -translate-x-1/2 transition-all ${selectedParts.includes('neck')
                       ? currentScenario.correctParts.includes('neck')
                         ? 'bg-green-500 text-white scale-125'
                         : 'bg-red-500 text-white scale-125'
                       : 'bg-white hover:bg-blue-200 text-gray-700'
-                  } rounded-full w-14 h-14 flex items-center justify-center border-2 ${
-                    selectedParts.includes('neck')
+                    } rounded-full w-14 h-14 flex items-center justify-center border-2 ${selectedParts.includes('neck')
                       ? currentScenario.correctParts.includes('neck')
                         ? 'border-green-700'
                         : 'border-red-700'
                       : 'border-gray-400'
-                  } shadow-lg cursor-pointer z-10`}
+                    } shadow-lg cursor-pointer z-10`}
                   title="Neck"
                 >
                   <span className="text-2xl">👤</span>
@@ -220,19 +216,17 @@ const EmotionMirror = () => {
 
                 <button
                   onClick={() => handleBodyPartClick('shoulders')}
-                  className={`absolute top-28 left-1/2 transform -translate-x-1/2 transition-all ${
-                    selectedParts.includes('shoulders')
+                  className={`absolute top-28 left-1/2 transform -translate-x-1/2 transition-all ${selectedParts.includes('shoulders')
                       ? currentScenario.correctParts.includes('shoulders')
                         ? 'bg-green-500 text-white scale-125'
                         : 'bg-red-500 text-white scale-125'
                       : 'bg-white hover:bg-blue-200 text-gray-700'
-                  } rounded-full w-14 h-14 flex items-center justify-center border-2 ${
-                    selectedParts.includes('shoulders')
+                    } rounded-full w-14 h-14 flex items-center justify-center border-2 ${selectedParts.includes('shoulders')
                       ? currentScenario.correctParts.includes('shoulders')
                         ? 'border-green-700'
                         : 'border-red-700'
                       : 'border-gray-400'
-                  } shadow-lg cursor-pointer z-10`}
+                    } shadow-lg cursor-pointer z-10`}
                   title="Shoulders"
                 >
                   <span className="text-2xl">💪</span>
@@ -240,19 +234,17 @@ const EmotionMirror = () => {
 
                 <button
                   onClick={() => handleBodyPartClick('chest')}
-                  className={`absolute top-40 left-1/2 transform -translate-x-1/2 transition-all ${
-                    selectedParts.includes('chest')
+                  className={`absolute top-40 left-1/2 transform -translate-x-1/2 transition-all ${selectedParts.includes('chest')
                       ? currentScenario.correctParts.includes('chest')
                         ? 'bg-green-500 text-white scale-125'
                         : 'bg-red-500 text-white scale-125'
                       : 'bg-white hover:bg-blue-200 text-gray-700'
-                  } rounded-full w-14 h-14 flex items-center justify-center border-2 ${
-                    selectedParts.includes('chest')
+                    } rounded-full w-14 h-14 flex items-center justify-center border-2 ${selectedParts.includes('chest')
                       ? currentScenario.correctParts.includes('chest')
                         ? 'border-green-700'
                         : 'border-red-700'
                       : 'border-gray-400'
-                  } shadow-lg cursor-pointer z-10`}
+                    } shadow-lg cursor-pointer z-10`}
                   title="Chest"
                 >
                   <span className="text-2xl">❤️</span>
@@ -260,19 +252,17 @@ const EmotionMirror = () => {
 
                 <button
                   onClick={() => handleBodyPartClick('stomach')}
-                  className={`absolute top-56 left-1/2 transform -translate-x-1/2 transition-all ${
-                    selectedParts.includes('stomach')
+                  className={`absolute top-56 left-1/2 transform -translate-x-1/2 transition-all ${selectedParts.includes('stomach')
                       ? currentScenario.correctParts.includes('stomach')
                         ? 'bg-green-500 text-white scale-125'
                         : 'bg-red-500 text-white scale-125'
                       : 'bg-white hover:bg-blue-200 text-gray-700'
-                  } rounded-full w-14 h-14 flex items-center justify-center border-2 ${
-                    selectedParts.includes('stomach')
+                    } rounded-full w-14 h-14 flex items-center justify-center border-2 ${selectedParts.includes('stomach')
                       ? currentScenario.correctParts.includes('stomach')
                         ? 'border-green-700'
                         : 'border-red-700'
                       : 'border-gray-400'
-                  } shadow-lg cursor-pointer z-10`}
+                    } shadow-lg cursor-pointer z-10`}
                   title="Stomach"
                 >
                   <span className="text-2xl">🫀</span>
@@ -280,19 +270,17 @@ const EmotionMirror = () => {
 
                 <button
                   onClick={() => handleBodyPartClick('hands')}
-                  className={`absolute top-36 left-1/4 transform -translate-x-1/2 transition-all ${
-                    selectedParts.includes('hands')
+                  className={`absolute top-36 left-1/4 transform -translate-x-1/2 transition-all ${selectedParts.includes('hands')
                       ? currentScenario.correctParts.includes('hands')
                         ? 'bg-green-500 text-white scale-125'
                         : 'bg-red-500 text-white scale-125'
                       : 'bg-white hover:bg-blue-200 text-gray-700'
-                  } rounded-full w-14 h-14 flex items-center justify-center border-2 ${
-                    selectedParts.includes('hands')
+                    } rounded-full w-14 h-14 flex items-center justify-center border-2 ${selectedParts.includes('hands')
                       ? currentScenario.correctParts.includes('hands')
                         ? 'border-green-700'
                         : 'border-red-700'
                       : 'border-gray-400'
-                  } shadow-lg cursor-pointer z-10`}
+                    } shadow-lg cursor-pointer z-10`}
                   title="Hands"
                 >
                   <span className="text-2xl">✋</span>
@@ -300,19 +288,17 @@ const EmotionMirror = () => {
 
                 <button
                   onClick={() => handleBodyPartClick('back')}
-                  className={`absolute top-48 left-1/2 transform -translate-x-1/2 transition-all ${
-                    selectedParts.includes('back')
+                  className={`absolute top-48 left-1/2 transform -translate-x-1/2 transition-all ${selectedParts.includes('back')
                       ? currentScenario.correctParts.includes('back')
                         ? 'bg-green-500 text-white scale-125'
                         : 'bg-red-500 text-white scale-125'
                       : 'bg-white hover:bg-blue-200 text-gray-700'
-                  } rounded-full w-14 h-14 flex items-center justify-center border-2 ${
-                    selectedParts.includes('back')
+                    } rounded-full w-14 h-14 flex items-center justify-center border-2 ${selectedParts.includes('back')
                       ? currentScenario.correctParts.includes('back')
                         ? 'border-green-700'
                         : 'border-red-700'
                       : 'border-gray-400'
-                  } shadow-lg cursor-pointer z-10`}
+                    } shadow-lg cursor-pointer z-10`}
                   title="Back"
                 >
                   <span className="text-2xl">🦴</span>
@@ -320,19 +306,17 @@ const EmotionMirror = () => {
 
                 <button
                   onClick={() => handleBodyPartClick('legs')}
-                  className={`absolute top-80 left-1/2 transform -translate-x-1/2 transition-all ${
-                    selectedParts.includes('legs')
+                  className={`absolute top-80 left-1/2 transform -translate-x-1/2 transition-all ${selectedParts.includes('legs')
                       ? currentScenario.correctParts.includes('legs')
                         ? 'bg-green-500 text-white scale-125'
                         : 'bg-red-500 text-white scale-125'
                       : 'bg-white hover:bg-blue-200 text-gray-700'
-                  } rounded-full w-14 h-14 flex items-center justify-center border-2 ${
-                    selectedParts.includes('legs')
+                    } rounded-full w-14 h-14 flex items-center justify-center border-2 ${selectedParts.includes('legs')
                       ? currentScenario.correctParts.includes('legs')
                         ? 'border-green-700'
                         : 'border-red-700'
                       : 'border-gray-400'
-                  } shadow-lg cursor-pointer z-10`}
+                    } shadow-lg cursor-pointer z-10`}
                   title="Legs"
                 >
                   <span className="text-2xl">🦵</span>
@@ -351,11 +335,10 @@ const EmotionMirror = () => {
                     return (
                       <span
                         key={partId}
-                        className={`px-3 py-1 rounded-full text-sm font-medium ${
-                          isCorrect
+                        className={`px-3 py-1 rounded-full text-sm font-medium ${isCorrect
                             ? 'bg-green-100 text-green-700 border border-green-300'
                             : 'bg-red-100 text-red-700 border border-red-300'
-                        }`}
+                          }`}
                       >
                         {part?.emoji} {part?.label} {isCorrect ? '✓' : '✗'}
                       </span>
@@ -367,34 +350,30 @@ const EmotionMirror = () => {
 
             {/* Reflection Message */}
             {selectedParts.length > 0 && (
-              <div className={`mt-6 p-4 rounded-xl border-2 ${
-                hasSelectedCorrect
+              <div className={`mt-6 p-4 rounded-xl border-2 ${hasSelectedCorrect
                   ? 'bg-green-50 border-green-200'
                   : 'bg-orange-50 border-orange-200'
-              }`}>
+                }`}>
                 <div className="flex items-start gap-3">
-                  <div className={`text-2xl flex-shrink-0 ${
-                    hasSelectedCorrect
+                  <div className={`text-2xl flex-shrink-0 ${hasSelectedCorrect
                       ? 'text-green-600'
                       : 'text-orange-600'
-                  }`}>
+                    }`}>
                     {hasSelectedCorrect ? '💡' : '📝'}
                   </div>
                   <div className="flex-1">
-                    <h4 className={`font-bold mb-2 ${
-                      hasSelectedCorrect
+                    <h4 className={`font-bold mb-2 ${hasSelectedCorrect
                         ? 'text-green-800'
                         : 'text-orange-800'
-                    }`}>
+                      }`}>
                       {hasSelectedCorrect
                         ? 'Reflection'
                         : 'Learning Moment'}
                     </h4>
-                    <p className={`text-sm leading-relaxed mb-2 ${
-                      hasSelectedCorrect
+                    <p className={`text-sm leading-relaxed mb-2 ${hasSelectedCorrect
                         ? 'text-green-700'
                         : 'text-orange-700'
-                    }`}>
+                      }`}>
                       {currentScenario.reflection}
                     </p>
                     <div className="bg-white/60 rounded-lg p-3 mt-3 border border-blue-200">
@@ -421,4 +400,3 @@ const EmotionMirror = () => {
 };
 
 export default EmotionMirror;
-

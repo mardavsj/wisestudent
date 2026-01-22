@@ -7,19 +7,21 @@ import { BookOpen, CheckCircle, Sparkles, Share2, TrendingUp, Award } from "luci
 
 const ChallengeJournal = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-56";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [journalEntries, setJournalEntries] = useState({
     challenge: "",
     learned: "",
-    nextTime: ""
+    nextTime: "",
+    helpedBy: "",
+    proudOf: ""
   });
   const [completionScore, setCompletionScore] = useState(0);
   const [showGameOver, setShowGameOver] = useState(false);
@@ -61,6 +63,28 @@ const ChallengeJournal = () => {
       bgColor: 'from-green-50 to-emerald-50',
       borderColor: 'border-green-300',
       textColor: 'text-green-800'
+    },
+    {
+      id: 'helpedBy',
+      label: 'I was helped by…',
+      icon: Share2,
+      description: 'Identify people, resources, or strategies that supported you',
+      placeholder: 'e.g., My mentor gave me advice on de-escalation techniques, and a colleague shared similar experiences...',
+      color: 'from-purple-400 to-pink-500',
+      bgColor: 'from-purple-50 to-pink-50',
+      borderColor: 'border-purple-300',
+      textColor: 'text-purple-800'
+    },
+    {
+      id: 'proudOf',
+      label: "I'm proud that…",
+      icon: Sparkles,
+      description: 'Acknowledge your accomplishments and growth from this experience',
+      placeholder: "e.g., I'm proud that I remained calm under pressure and found a solution that worked for everyone...",
+      color: 'from-yellow-400 to-orange-500',
+      bgColor: 'from-yellow-50 to-orange-50',
+      borderColor: 'border-yellow-300',
+      textColor: 'text-yellow-800'
     }
   ];
 
@@ -73,21 +97,21 @@ const ChallengeJournal = () => {
     // Calculate completion score
     const completed = Object.values({ ...journalEntries, [field]: value })
       .filter(entry => entry.trim().length > 0).length;
-    const newScore = Math.round((completed / 3) * 100);
+    const newScore = Math.round((completed / 5) * 100);
     setCompletionScore(newScore);
   };
 
   const handleComplete = () => {
     const completedCount = Object.values(journalEntries)
       .filter(entry => entry.trim().length > 0).length;
-    
+
     if (completedCount === 0) {
       alert("Please fill in at least one section of your challenge journal.");
       return;
     }
 
-    if (completedCount < 3) {
-      if (!confirm(`You've completed ${completedCount} of 3 sections. Would you like to add more, or complete with what you have?`)) {
+    if (completedCount < 5) {
+      if (!confirm(`You've completed ${completedCount} of 5 sections. Would you like to add more, or complete with what you have?`)) {
         return;
       }
     }
@@ -107,7 +131,7 @@ const ChallengeJournal = () => {
 
   const completedCount = Object.values(journalEntries)
     .filter(entry => entry.trim().length > 0).length;
-  const allCompleted = completedCount === 3;
+  const allCompleted = completedCount === 5;
 
   return (
     <TeacherGameShell
@@ -119,7 +143,7 @@ const ChallengeJournal = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={0}
     >
       <div className="w-full max-w-4xl mx-auto px-4">
         {!showGameOver && (
@@ -128,7 +152,7 @@ const ChallengeJournal = () => {
             <div className="text-center mb-8">
               <div className="text-6xl mb-4">📔</div>
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Challenge Journal
+
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                 Document a recent challenge you faced and reflect on how you overcame it. Celebrating small comebacks strengthens self-belief.
@@ -139,11 +163,10 @@ const ChallengeJournal = () => {
             <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 rounded-xl p-6 border-2 border-purple-200 mb-8">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${
-                    completionScore >= 66 ? 'from-green-400 to-emerald-500' :
-                    completionScore >= 33 ? 'from-blue-400 to-cyan-500' :
-                    'from-gray-300 to-gray-400'
-                  } flex items-center justify-center text-2xl font-bold text-white shadow-lg`}>
+                  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${completionScore >= 66 ? 'from-green-400 to-emerald-500' :
+                      completionScore >= 33 ? 'from-blue-400 to-cyan-500' :
+                        'from-gray-300 to-gray-400'
+                    } flex items-center justify-center text-2xl font-bold text-white shadow-lg`}>
                     {completionScore}
                   </div>
                   <div>
@@ -153,30 +176,31 @@ const ChallengeJournal = () => {
                 </div>
                 <div className="text-right">
                   <p className="text-sm text-gray-600 mb-1">Sections Completed</p>
-                  <p className="text-3xl font-bold text-indigo-600">{completedCount} / 3</p>
+                  <p className="text-3xl font-bold text-indigo-600">{completedCount} / 5</p>
                 </div>
               </div>
-              
+
               {/* Progress Bar */}
               <div className="w-full bg-gray-200 rounded-full h-4 mb-2">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${completionScore}%` }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className={`h-4 rounded-full ${
-                    completionScore >= 66 ? 'bg-gradient-to-r from-green-400 to-emerald-500' :
-                    completionScore >= 33 ? 'bg-gradient-to-r from-blue-400 to-cyan-500' :
-                    'bg-gradient-to-r from-gray-300 to-gray-400'
-                  } shadow-md`}
+                  className={`h-4 rounded-full ${completionScore >= 66 ? 'bg-gradient-to-r from-green-400 to-emerald-500' :
+                      completionScore >= 33 ? 'bg-gradient-to-r from-blue-400 to-cyan-500' :
+                        'bg-gradient-to-r from-gray-300 to-gray-400'
+                    } shadow-md`}
                 />
               </div>
-              
+
               {/* Completion Message */}
               <p className="text-sm text-center text-gray-600 mt-2">
                 {completionScore === 0 && "Start documenting your challenge to begin reflection..."}
-                {completionScore > 0 && completionScore < 33 && "Good start! Continue reflecting..."}
-                {completionScore >= 33 && completionScore < 66 && "You're building insights! Keep going..."}
-                {completionScore >= 66 && completionScore < 100 && "Almost complete! Finish your reflection..."}
+                {completionScore > 0 && completionScore < 20 && "Good start! Continue reflecting..."}
+                {completionScore >= 20 && completionScore < 40 && "You're building insights! Keep going..."}
+                {completionScore >= 40 && completionScore < 60 && "Making progress! Continue your reflection..."}
+                {completionScore >= 60 && completionScore < 80 && "Great work! Almost there..."}
+                {completionScore >= 80 && completionScore < 100 && "Almost complete! Finish your reflection..."}
                 {completionScore === 100 && "Perfect! You've documented your comeback journey."}
               </p>
             </div>
@@ -187,26 +211,24 @@ const ChallengeJournal = () => {
                 const Icon = prompt.icon;
                 const value = journalEntries[prompt.id];
                 const isCompleted = value.trim().length > 0;
-                
+
                 return (
                   <motion.div
                     key={prompt.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className={`relative rounded-xl border-2 transition-all ${
-                      isCompleted
+                    className={`relative rounded-xl border-2 transition-all ${isCompleted
                         ? `bg-gradient-to-br ${prompt.bgColor} ${prompt.borderColor} shadow-md`
                         : 'bg-white border-gray-300 hover:border-indigo-400'
-                    }`}
+                      }`}
                   >
                     <div className="p-6">
                       <div className="flex items-start gap-4 mb-3">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${
-                          isCompleted
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${isCompleted
                             ? `bg-gradient-to-r ${prompt.color} shadow-lg`
                             : 'bg-gray-200'
-                        }`}>
+                          }`}>
                           {isCompleted ? (
                             <CheckCircle className="w-6 h-6 text-white" />
                           ) : (
@@ -235,11 +257,10 @@ const ChallengeJournal = () => {
                         value={value}
                         onChange={(e) => handleEntryChange(prompt.id, e.target.value)}
                         placeholder={prompt.placeholder}
-                        className={`w-full h-32 p-4 rounded-lg border-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none ${
-                          isCompleted
+                        className={`w-full h-32 p-4 rounded-lg border-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none ${isCompleted
                             ? `bg-white ${prompt.borderColor} focus:${prompt.borderColor.replace('border-', 'border-')}`
                             : 'bg-gray-50 border-gray-300 focus:border-indigo-400'
-                        }`}
+                          }`}
                       />
                       {isCompleted && (
                         <motion.div
@@ -275,13 +296,12 @@ const ChallengeJournal = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={handleComplete}
                 disabled={completedCount === 0}
-                className={`flex-1 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all ${
-                  allCompleted
+                className={`flex-1 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all ${allCompleted
                     ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:shadow-xl'
                     : completedCount > 0
-                    ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-xl'
-                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                }`}
+                      ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-xl'
+                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  }`}
               >
                 {allCompleted ? (
                   <span className="flex items-center justify-center gap-2">
@@ -301,11 +321,10 @@ const ChallengeJournal = () => {
                   whileTap={{ scale: 0.95 }}
                   onClick={handleShare}
                   disabled={hasShared}
-                  className={`px-6 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all ${
-                    hasShared
+                  className={`px-6 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all ${hasShared
                       ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
                       : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-xl'
-                  }`}
+                    }`}
                 >
                   {hasShared ? (
                     <span className="flex items-center gap-2">
@@ -395,9 +414,9 @@ const ChallengeJournal = () => {
                 {prompts.map((prompt, index) => {
                   const value = journalEntries[prompt.id];
                   if (!value.trim()) return null;
-                  
+
                   const Icon = prompt.icon;
-                  
+
                   return (
                     <motion.div
                       key={prompt.id}
@@ -468,4 +487,3 @@ const ChallengeJournal = () => {
 };
 
 export default ChallengeJournal;
-

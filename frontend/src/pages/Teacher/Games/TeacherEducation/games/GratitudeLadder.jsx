@@ -7,15 +7,15 @@ import { ArrowUp, Heart, Sparkles, CheckCircle, Book } from "lucide-react";
 
 const GratitudeLadder = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-59";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
-  const totalLevels = gameData?.totalQuestions || 1;
-  
+  const totalLevels = gameData?.totalQuestions || 5;
+
   const [step, setStep] = useState(1); // 1: Writing, 2: Animation, 3: Complete
   const [rungEntries, setRungEntries] = useState({
     today: "",
@@ -27,6 +27,7 @@ const GratitudeLadder = () => {
   const [currentClimbingRung, setCurrentClimbingRung] = useState(0);
   const [showClimbAnimation, setShowClimbAnimation] = useState(false);
   const [score, setScore] = useState(0);
+  const [completedRungs, setCompletedRungs] = useState(new Set());
   const [showGameOver, setShowGameOver] = useState(false);
 
   // Ladder rungs definition
@@ -90,11 +91,22 @@ const GratitudeLadder = () => {
       ...prev,
       [rungId]: value
     }));
+
+    // Track completed rungs for scoring
+    if (value.trim().length >= 10) {
+      setCompletedRungs(prev => new Set(prev).add(rungId));
+    } else {
+      setCompletedRungs(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(rungId);
+        return newSet;
+      });
+    }
   };
 
   const handleStartClimb = () => {
     if (allRungsFilled) {
-      setScore(1); // Award score for completing all entries
+      setScore(completedRungs.size); // Award score based on completed rungs (1 point per rung)
       setStep(2);
       setShowClimbAnimation(true);
       animateClimb();
@@ -107,7 +119,7 @@ const GratitudeLadder = () => {
     const climbInterval = setInterval(() => {
       setCurrentClimbingRung(currentRung);
       currentRung++;
-      
+
       if (currentRung > rungs.length) {
         clearInterval(climbInterval);
         setTimeout(() => {
@@ -125,14 +137,14 @@ const GratitudeLadder = () => {
   return (
     <TeacherGameShell
       title={gameData?.title || "Gratitude Ladder"}
-      subtitle={gameData?.description || "Increase resilience through appreciation of daily progress"}
+      subtitle={gameData?.description || "Earn 1 Healcoin per gratitude rung completed"}
       showGameOver={showGameOver}
       score={score}
       gameId={gameId}
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={1}
+      currentQuestion={completedRungs.size}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         {step === 1 && (
@@ -144,7 +156,7 @@ const GratitudeLadder = () => {
                 Gratitude Ladder
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                Climb the ladder of gratitude by appreciating progress at different time scales. 
+                Climb the ladder of gratitude by appreciating progress at different time scales.
                 Fill each rung with something you're grateful for.
               </p>
             </div>
@@ -159,6 +171,7 @@ const GratitudeLadder = () => {
                 <div className="text-right">
                   <p className="text-sm text-gray-600 mb-1">Rungs Completed</p>
                   <p className="text-3xl font-bold text-indigo-600">{completedCount} / {rungs.length}</p>
+                  <p className="text-sm text-purple-600 font-semibold">🧡 {completedRungs.size} Healcoins earned</p>
                 </div>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-4">
@@ -200,13 +213,13 @@ const GratitudeLadder = () => {
                     strokeWidth="8"
                     strokeLinecap="round"
                   />
-                  
+
                   {/* Rungs */}
                   {rungs.map((rung, index) => {
                     const yPosition = 100 + index * 100;
                     const isCompleted = rungEntries[rung.id].trim().length >= 10;
                     const isClimbing = currentClimbingRung === index + 1;
-                    
+
                     return (
                       <g key={rung.id}>
                         {/* Rung line */}
@@ -269,7 +282,7 @@ const GratitudeLadder = () => {
                       </g>
                     );
                   })}
-                  
+
                   {/* Climbing person animation */}
                   {showClimbAnimation && currentClimbingRung > 0 && currentClimbingRung <= rungs.length && (
                     <motion.g
@@ -297,26 +310,24 @@ const GratitudeLadder = () => {
               {rungs.map((rung, index) => {
                 const value = rungEntries[rung.id];
                 const isCompleted = value.trim().length >= 10;
-                
+
                 return (
                   <motion.div
                     key={rung.id}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className={`rounded-xl border-2 transition-all ${
-                      isCompleted
+                    className={`rounded-xl border-2 transition-all ${isCompleted
                         ? `bg-gradient-to-br ${rung.bgColor} ${rung.borderColor} shadow-md`
                         : 'bg-white border-gray-300 hover:border-indigo-400'
-                    }`}
+                      }`}
                   >
                     <div className="p-6">
                       <div className="flex items-start gap-4 mb-3">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 text-2xl ${
-                          isCompleted
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 text-2xl ${isCompleted
                             ? `bg-gradient-to-r ${rung.color} shadow-lg`
                             : 'bg-gray-200'
-                        }`}>
+                          }`}>
                           {isCompleted ? rung.emoji : <span className="text-gray-500">{index + 1}</span>}
                         </div>
                         <div className="flex-1">
@@ -343,11 +354,10 @@ const GratitudeLadder = () => {
                         value={value}
                         onChange={(e) => handleRungChange(rung.id, e.target.value)}
                         placeholder={rung.prompt}
-                        className={`w-full h-24 p-4 rounded-lg border-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none ${
-                          isCompleted
+                        className={`w-full h-24 p-4 rounded-lg border-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none ${isCompleted
                             ? `bg-white ${rung.borderColor}`
                             : 'bg-gray-50 border-gray-300 focus:border-indigo-400'
-                        }`}
+                          }`}
                       />
                       {isCompleted && (
                         <motion.div
@@ -372,11 +382,10 @@ const GratitudeLadder = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={handleStartClimb}
                 disabled={!allRungsFilled}
-                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all ${
-                  allRungsFilled
+                className={`px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all ${allRungsFilled
                     ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-xl'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                }`}
+                  }`}
               >
                 {allRungsFilled ? (
                   <span className="flex items-center justify-center gap-2">
@@ -396,7 +405,7 @@ const GratitudeLadder = () => {
           <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
             <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-8 border-2 border-purple-200">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Climbing Your Gratitude Ladder</h2>
-              
+
               {/* Animated Ladder */}
               <div className="relative mb-8" style={{ height: '600px', margin: '0 auto', maxWidth: '400px' }}>
                 <svg
@@ -425,13 +434,13 @@ const GratitudeLadder = () => {
                     strokeWidth="8"
                     strokeLinecap="round"
                   />
-                  
+
                   {/* Completed rungs */}
                   {rungs.map((rung, index) => {
                     const yPosition = 100 + index * 100;
                     const isClimbing = currentClimbingRung === index + 1;
                     const isReached = currentClimbingRung > index + 1;
-                    
+
                     return (
                       <g key={rung.id}>
                         {/* Rung line */}
@@ -495,7 +504,7 @@ const GratitudeLadder = () => {
                       </g>
                     );
                   })}
-                  
+
                   {/* Climbing person */}
                   {currentClimbingRung > 0 && currentClimbingRung <= rungs.length && (
                     <motion.g
@@ -516,7 +525,7 @@ const GratitudeLadder = () => {
                   )}
                 </svg>
               </div>
-              
+
               <p className="text-xl text-gray-700">
                 {currentClimbingRung > 0 && currentClimbingRung <= rungs.length && (
                   <span>
@@ -552,18 +561,24 @@ const GratitudeLadder = () => {
                 Gratitude Ladder Complete!
               </h2>
               <p className="text-xl text-gray-600">
-                You've climbed to the top through appreciation
+                You've earned {score} Healcoins for climbing through gratitude
               </p>
             </div>
 
             {/* Gratitude Summary */}
             <div className="mb-8">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Your Gratitude Journey:</h3>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-gray-800">Your Gratitude Journey:</h3>
+                <div className="text-right">
+                  <p className="text-sm text-gray-600">Healcoins Earned</p>
+                  <p className="text-3xl font-bold text-purple-600">🧡 {score}</p>
+                </div>
+              </div>
               <div className="space-y-4">
                 {rungs.map((rung, index) => {
                   const value = rungEntries[rung.id];
                   if (!value.trim()) return null;
-                  
+
                   return (
                     <motion.div
                       key={rung.id}
@@ -634,4 +649,3 @@ const GratitudeLadder = () => {
 };
 
 export default GratitudeLadder;
-

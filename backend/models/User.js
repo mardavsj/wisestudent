@@ -126,6 +126,17 @@ const userSchema = new mongoose.Schema(
       type: String,
       index: true,
     },
+    sponsorBadge: {
+      sponsorId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "CSRSponsor",
+        index: true,
+      },
+      sponsorName: String,
+      sponsorLogo: String,
+      message: String,
+      awardedAt: Date,
+    },
     // Linked relationships
     linkedIds: {
       parentIds: [{

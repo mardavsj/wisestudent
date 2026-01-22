@@ -196,6 +196,38 @@ class TeacherBadgeService {
   }
 
   /**
+   * Get Self-Care Champion Badge status
+   * @returns {Promise<Object>} Badge status
+   */
+  async getSelfCareChampionBadgeStatus() {
+    try {
+      const response = await api.get('/api/school/teacher/badge/self-care-champion');
+      return response.data;
+    } catch (error) {
+      console.error('Failed to get Self-Care Champion Badge status:', error);
+      return {
+        success: false,
+        hasBadge: false,
+        newlyEarned: false
+      };
+    }
+  }
+
+  /**
+   * Collect Self-Care Champion Badge
+   * @returns {Promise<Object>} Collection result
+   */
+  async collectSelfCareChampionBadge() {
+    try {
+      const response = await api.post('/api/school/teacher/badge/self-care-champion/collect');
+      return response.data;
+    } catch (error) {
+      console.error('Failed to collect Self-Care Champion Badge:', error);
+      throw error;
+    }
+  }
+
+  /**
    * Get all teacher badges
    * @returns {Promise<Object>} All badges
    */
@@ -226,4 +258,3 @@ class TeacherBadgeService {
 }
 
 export default new TeacherBadgeService();
-

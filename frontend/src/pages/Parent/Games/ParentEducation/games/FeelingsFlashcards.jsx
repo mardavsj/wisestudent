@@ -25,126 +25,132 @@ const FeelingsFlashcards = () => {
             id: "calm",
             label: "Calm",
             emoji: "😌",
-            description: "Peaceful and relaxed",
+            description: "",
         },
         {
             id: "irritated",
             label: "Irritated",
             emoji: "😤",
-            description: "Annoyed and frustrated",
+            description: "",
         },
         {
             id: "hopeful",
             label: "Hopeful",
             emoji: "🤗",
-            description: "Optimistic and positive",
+            description: "",
         },
         {
             id: "proud",
             label: "Proud",
             emoji: "😊",
-            description: "Satisfied and accomplished",
+            description: "",
         },
         {
             id: "anxious",
             label: "Anxious",
             emoji: "😰",
-            description: "Worried and nervous",
+            description: "",
         },
         {
             id: "grateful",
             label: "Grateful",
             emoji: "🙏",
-            description: "Thankful and appreciative",
+            description: "",
         },
         {
             id: "disappointed",
             label: "Disappointed",
             emoji: "😞",
-            description: "Let down and sad",
+            description: "",
         },
         {
             id: "excited",
             label: "Excited",
             emoji: "🤩",
-            description: "Energetic and enthusiastic",
+            description: "",
         },
         {
             id: "tired",
             label: "Tired",
             emoji: "😴",
-            description: "Exhausted and drained",
+            description: "",
         },
         {
             id: "confused",
             label: "Confused",
             emoji: "😕",
-            description: "Uncertain and puzzled",
+            description: "",
         },
         {
             id: "content",
             label: "Content",
             emoji: "😌",
-            description: "Satisfied and at ease",
+            description: "",
         },
         {
             id: "frustrated",
             label: "Frustrated",
             emoji: "😠",
-            description: "Annoyed and blocked",
+            description: "",
+        },
+        {
+            id: "angry",
+            label: "Angry",
+            emoji: "😡",
+            description: "",
         },
         {
             id: "joyful",
             label: "Joyful",
             emoji: "😄",
-            description: "Happy and elated",
+            description: "",
         },
         {
             id: "worried",
             label: "Worried",
             emoji: "😟",
-            description: "Concerned and anxious",
+            description: "",
         },
         {
             id: "peaceful",
             label: "Peaceful",
             emoji: "☺️",
-            description: "Calm and serene",
+            description: "",
         },
         {
             id: "overwhelmed",
             label: "Overwhelmed",
             emoji: "😵",
-            description: "Stressed and overloaded",
+            description: "",
         },
         {
             id: "lonely",
             label: "Lonely",
             emoji: "😔",
-            description: "Isolated and sad",
+            description: "",
         },
         {
             id: "confident",
             label: "Confident",
             emoji: "😎",
-            description: "Self-assured and strong",
+            description: "",
         },
         {
             id: "embarrassed",
             label: "Embarrassed",
             emoji: "😳",
-            description: "Self-conscious and awkward",
+            description: "",
         },
     ];
 
-    // Scenarios: Match facial expression to emotion card
+    // Scenarios: Match scenario description to emotion card
     const scenarios = [
         {
             id: 1,
             facialExpression: "😌",
-            description: "A relaxed face with a gentle smile, eyes soft and peaceful",
+            description: "Feeling peaceful and relaxed after taking some deep breaths during a stressful day",
             correctEmotion: "calm",
-            options: ["calm", "content", "peaceful", "tired"],
+            options: ["content", "peaceful", "tired", "calm"],
             reflection:
                 "Recognizing 'calm' helps you identify when you're in a good emotional state. When you notice this feeling, you can say: 'I'm feeling calm right now.' This awareness helps you return to this state when stress arises.",
             parentTip:
@@ -154,9 +160,9 @@ const FeelingsFlashcards = () => {
             id: 2,
             facialExpression: "😤",
             description:
-                "A face showing irritation, with a slight frown and tense expression",
+                "Feeling annoyed when someone keeps interrupting you while you're trying to focus",
             correctEmotion: "irritated",
-            options: ["irritated", "frustrated", "angry", "overwhelmed"],
+            options: ["frustrated", "angry", "irritated", "overwhelmed"],
             reflection:
                 "Identifying 'irritated' helps you pause before reacting. When you notice this feeling, you can say: 'I'm feeling irritated. Let me take a breath before I respond.' This prevents overreaction and models emotional regulation.",
             parentTip:
@@ -166,9 +172,9 @@ const FeelingsFlashcards = () => {
             id: 3,
             facialExpression: "🤗",
             description:
-                "A warm, open expression with arms spread, showing optimism and warmth",
+                "Feeling optimistic about the future despite current challenges",
             correctEmotion: "hopeful",
-            options: ["hopeful", "excited", "joyful", "confident"],
+            options: ["excited", "hopeful", "joyful", "confident"],
             reflection:
                 "Recognizing 'hopeful' helps you maintain a positive outlook during challenges. When you feel this way, you can say: 'I'm feeling hopeful about this situation.' This positive emotion can help you stay motivated and resilient.",
             parentTip:
@@ -177,9 +183,9 @@ const FeelingsFlashcards = () => {
         {
             id: 4,
             facialExpression: "😊",
-            description: "A bright, satisfied smile showing accomplishment and pride",
+            description: "Feeling satisfied and accomplished after completing a difficult task",
             correctEmotion: "proud",
-            options: ["proud", "joyful", "confident", "excited"],
+            options: ["joyful", "confident", "excited", "proud"],
             reflection:
                 "Acknowledging 'proud' helps you celebrate achievements, both yours and your child's. When you feel this way, you can say: 'I'm feeling proud of what we accomplished.' This reinforces positive experiences and builds self-esteem.",
             parentTip:
@@ -189,7 +195,7 @@ const FeelingsFlashcards = () => {
             id: 5,
             facialExpression: "😰",
             description:
-                "A worried face with wide eyes and a tense expression, showing anxiety",
+                "Feeling worried and tense before an important meeting or event",
             correctEmotion: "anxious",
             options: ["anxious", "worried", "overwhelmed", "confused"],
             reflection:
@@ -220,7 +226,7 @@ const FeelingsFlashcards = () => {
                 // All questions answered
                 setShowGameOver(true);
             }
-        }, 2000); // 2 second delay to show feedback
+        }, 6000); // 2 second delay to show feedback
     };
 
     const getEmotionCardStyle = (questionIndex, emotionId) => {
@@ -288,13 +294,10 @@ const FeelingsFlashcards = () => {
                             </div>
                         </div>
 
-                        {/* Facial Expression Display */}
+                        {/* Scenario Description */}
                         <div className="mb-8">
                             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border-2 border-blue-200">
                                 <div className="text-center">
-                                    <div className="text-9xl mb-4 animate-bounce-slow">
-                                        {currentScenario.facialExpression}
-                                    </div>
                                     <p className="text-lg text-gray-700 font-medium">
                                         {currentScenario.description}
                                     </p>
@@ -303,7 +306,7 @@ const FeelingsFlashcards = () => {
                         </div>
 
                         <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-6 text-center">
-                            Which emotion card matches this facial expression?
+                            Which emotion card matches this scenario?
                         </h2>
 
                         {/* Emotion Card Options */}
@@ -327,8 +330,8 @@ const FeelingsFlashcards = () => {
                                             currentQuestion,
                                             emotionCard.id
                                         )} ${selectedAnswers[currentQuestion]
-                                                ? "cursor-not-allowed"
-                                                : "cursor-pointer hover:shadow-lg hover:scale-105"
+                                            ? "cursor-not-allowed"
+                                            : "cursor-pointer hover:shadow-lg hover:scale-105"
                                             }`}
                                     >
                                         <div className="text-5xl mb-2">{emotionCard.emoji}</div>
@@ -352,17 +355,17 @@ const FeelingsFlashcards = () => {
                         {selectedAnswers[currentQuestion] !== undefined && (
                             <div
                                 className={`mt-6 p-4 rounded-xl border-2 ${selectedAnswers[currentQuestion] ===
-                                        currentScenario.correctEmotion
-                                        ? "bg-green-50 border-green-200"
-                                        : "bg-orange-50 border-orange-200"
+                                    currentScenario.correctEmotion
+                                    ? "bg-green-50 border-green-200"
+                                    : "bg-orange-50 border-orange-200"
                                     }`}
                             >
                                 <div className="flex items-start gap-3">
                                     <div
                                         className={`text-2xl flex-shrink-0 ${selectedAnswers[currentQuestion] ===
-                                                currentScenario.correctEmotion
-                                                ? "text-green-600"
-                                                : "text-orange-600"
+                                            currentScenario.correctEmotion
+                                            ? "text-green-600"
+                                            : "text-orange-600"
                                             }`}
                                     >
                                         {selectedAnswers[currentQuestion] ===
@@ -373,9 +376,9 @@ const FeelingsFlashcards = () => {
                                     <div className="flex-1">
                                         <h4
                                             className={`font-bold mb-2 ${selectedAnswers[currentQuestion] ===
-                                                    currentScenario.correctEmotion
-                                                    ? "text-green-800"
-                                                    : "text-orange-800"
+                                                currentScenario.correctEmotion
+                                                ? "text-green-800"
+                                                : "text-orange-800"
                                                 }`}
                                         >
                                             {selectedAnswers[currentQuestion] ===
@@ -385,9 +388,9 @@ const FeelingsFlashcards = () => {
                                         </h4>
                                         <p
                                             className={`text-sm leading-relaxed mb-2 ${selectedAnswers[currentQuestion] ===
-                                                    currentScenario.correctEmotion
-                                                    ? "text-green-700"
-                                                    : "text-orange-700"
+                                                currentScenario.correctEmotion
+                                                ? "text-green-700"
+                                                : "text-orange-700"
                                                 }`}
                                         >
                                             {currentScenario.reflection}
@@ -409,13 +412,6 @@ const FeelingsFlashcards = () => {
             ) : null}
 
             <style>{`
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-bounce-slow {
-          animation: bounce-slow 3s ease-in-out infinite;
-        }
       `}</style>
         </ParentGameShell>
     );

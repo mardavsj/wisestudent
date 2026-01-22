@@ -1,87 +1,78 @@
 import api from '../utils/api';
 
-export const csrService = {
-  // Impact Metrics
-  getImpactMetrics: async (filters = {}) => {
-    try {
-      const params = new URLSearchParams(filters);
-      const response = await api.get(`/api/csr/impact?${params}`);
-      return response.data;
-    } catch (error) {
-      throw error.response?.data || error;
-    }
-  },
+const handleError = (error) => {
+  throw error.response?.data || error;
+};
 
-  // Regional Data
-  getRegionalData: async (period = 'month') => {
-    try {
-      const response = await api.get(`/api/csr/regional?period=${period}`);
-      return response.data;
-    } catch (error) {
-      throw error.response?.data || error;
+const buildQuery = (params = {}) => {
+  const query = new URLSearchParams();
+  Object.keys(params).forEach((key) => {
+    if (params[key] !== undefined && params[key] !== "") {
+      query.append(key, params[key]);
     }
-  },
+  });
+  return query.toString();
+};
 
-  // Trend Analysis
-  getTrendData: async (period = 'month', metric = 'students') => {
-    try {
-      const response = await api.get(`/api/csr/trends?period=${period}&metric=${metric}`);
-      return response.data;
-    } catch (error) {
-      throw error.response?.data || error;
-    }
+const csrService = {
+  getImpactMetrics: (filters = {}) =>
+    api
+      .get(`/api/csr-overview/data${buildQuery(filters)}`)
+      .then((res) => res.data)
+      .catch(handleError),
+  sponsor: {
+    register: (payload) => api.post('/api/csr/register', payload).catch(handleError),
+    profile: () => api.get('/api/csr/profile').then((res) => res.data).catch(handleError),
+    update: (payload) => api.put('/api/csr/profile', payload).then((res) => res.data).catch(handleError),
+    dashboard: () => api.get('/api/csr/dashboard').then((res) => res.data).catch(handleError),
   },
-
-  // Report Generation
-  generateReport: async (reportConfig) => {
-    try {
-      const response = await api.post('/api/csr/reports/generate', reportConfig);
-      return response.data;
-    } catch (error) {
-      throw error.response?.data || error;
-    }
+  sponsorships: {
+    list: (params = {}) => api.get(`/api/csr/sponsorships?${buildQuery(params)}`).then((res) => res.data).catch(handleError),
+    get: (id) => api.get(`/api/csr/sponsorships/${id}`).then((res) => res.data).catch(handleError),
+    create: (payload) => api.post('/api/csr/sponsorships', payload).then((res) => res.data).catch(handleError),
+    update: (id, payload) => api.put(`/api/csr/sponsorships/${id}`, payload).then((res) => res.data).catch(handleError),
+    cancel: (id) => api.delete(`/api/csr/sponsorships/${id}`).then((res) => res.data).catch(handleError),
+    schools: (params = {}) => api.get(`/api/csr/schools/available?${buildQuery(params)}`).then((res) => res.data).catch(handleError),
   },
-
-  // Schedule Reports
-  scheduleReports: async (scheduleConfig) => {
-    try {
-      const response = await api.post('/api/csr/reports/schedule', scheduleConfig);
-      return response.data;
-    } catch (error) {
-      throw error.response?.data || error;
-    }
+  funds: {
+    balance: () => api.get('/api/csr/funds').then((res) => res.data).catch(handleError),
+    transactions: (params = {}) => api.get(`/api/csr/funds/transactions?${buildQuery(params)}`).then((res) => res.data).catch(handleError),
+    requestDeposit: (payload) => api.post('/api/csr/funds/deposit', payload).then((res) => res.data).catch(handleError),
+    receipts: () => api.get('/api/csr/funds/receipts').then((res) => res.data).catch(handleError),
   },
-
-  // Export Reports
-  exportReport: async (format = 'pdf', filters = {}) => {
-    try {
-      const response = await api.post('/api/csr/reports/generate', {
-        format,
-        ...filters
+  reports: {
+    list: (params = {}) => api.get(`/api/csr/reports?${buildQuery(params)}`).then((res) => res.data).catch(handleError),
+    generate: (payload) => api.post('/api/csr/reports/generate', payload).then((res) => res.data).catch(handleError),
+    download: (reportId, format = 'pdf') =>
+      `${api.defaults.baseURL}/api/csr/reports/${reportId}/download?format=${format}`,
+  },
+  impact: {
+    metrics: (filters = {}) => api.get(`/api/csr/impact?${buildQuery(filters)}`).then((res) => res.data).catch(handleError),
+    regional: (period = 'month') => api.get(`/api/csr/impact/regional?period=${period}`).then((res) => res.data).catch(handleError),
+    trends: (params = {}) => api.get(`/api/csr/trends?${buildQuery(params)}`).then((res) => res.data).catch(handleError),
+  },
+  gallery: {
+    list: (params = {}) => api.get(`/api/csr/gallery?${buildQuery(params)}`).then((res) => res.data).catch(handleError),
+    upload: (payload) => {
+      const formData = new FormData();
+      Object.keys(payload).forEach((key) => {
+        if (payload[key] !== undefined && payload[key] !== null) {
+          if (Array.isArray(payload[key])) {
+            payload[key].forEach((value) => formData.append(`${key}[]`, value));
+          } else {
+            formData.append(key, payload[key]);
+          }
+        }
       });
-      return response.data;
-    } catch (error) {
-      throw error.response?.data || error;
-    }
+      return api
+        .post('/api/csr/gallery', formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then((res) => res.data)
+        .catch(handleError);
+    },
+    delete: (id) => api.delete(`/api/csr/gallery/${id}`).then((res) => res.data).catch(handleError),
   },
-
-  // Download Report
-  downloadReport: (reportId, format = 'pdf') => {
-    return `${api.defaults.baseURL}/api/csr/reports/download?id=${reportId}&format=${format}`;
-  },
-
-  // Share Report
-  shareReport: async (reportId, recipients) => {
-    try {
-      const response = await api.post('/api/csr/reports/share', {
-        reportId,
-        recipients
-      });
-      return response.data;
-    } catch (error) {
-      throw error.response?.data || error;
-    }
-  }
 };
 
 export default csrService;

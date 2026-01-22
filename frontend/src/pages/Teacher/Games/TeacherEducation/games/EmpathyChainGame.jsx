@@ -7,15 +7,15 @@ import { Link, Heart, CheckCircle, MessageCircle, TrendingUp, BookOpen, Users } 
 
 const EmpathyChainGame = () => {
   const location = useLocation();
-  
+
   // Get game data
   const gameId = "teacher-education-72";
   const gameData = getTeacherEducationGameById(gameId);
-  
+
   // Get game props from location.state or gameData
   const totalCoins = gameData?.calmCoins || location.state?.totalCoins || 5;
   const totalLevels = gameData?.totalQuestions || 5;
-  
+
   const [currentChain, setCurrentChain] = useState(0);
   const [selectedResponses, setSelectedResponses] = useState({});
   const [showFeedback, setShowFeedback] = useState(false);
@@ -44,7 +44,7 @@ const EmpathyChainGame = () => {
         },
         {
           id: 'supportive',
-          text: "That sounds really tough. You're working so hard. How can I help? Maybe I can cover a duty or help with planning?",
+          text: "That sounds really tough. You're working so hard. How can I help?",
           feedback: "Perfect! This response validates feelings, acknowledges effort, and offers practical support. The empathy chain continues!",
           chainResult: {
             statement: "Thank you, that means a lot. Actually, if you could cover my lunch duty tomorrow, that would help. And maybe we could plan together next week?",
@@ -74,6 +74,18 @@ const EmpathyChainGame = () => {
       person: "Your Colleague",
       responses: [
         {
+          id: 'supportive',
+          text: "I understand how stressful that can feel. You're doing great work.",
+          feedback: "Excellent! You validated their feelings, offered support, and gave them options. This continues the empathy chain beautifully!",
+          chainResult: {
+            statement: "Thank you for understanding. Actually, talking through it would help, and having you there would make me feel supported. I really appreciate this.",
+            person: "Your Colleague",
+            emotion: "supported and relieved",
+            continuation: "The empathy chain strengthens! They feel supported and are now more likely to support others."
+          },
+          isSupportive: true
+        },
+        {
           id: 'dismissive',
           text: "Some parents are just difficult. Ignore them.",
           feedback: "This dismisses their struggle and doesn't offer support or understanding.",
@@ -85,18 +97,7 @@ const EmpathyChainGame = () => {
           },
           isSupportive: false
         },
-        {
-          id: 'supportive',
-          text: "I understand how stressful that can feel. You're doing great work. Would you like to talk through it, or would it help if I sat in on a meeting with you?",
-          feedback: "Excellent! You validated their feelings, offered support, and gave them options. This continues the empathy chain beautifully!",
-          chainResult: {
-            statement: "Thank you for understanding. Actually, talking through it would help, and having you there would make me feel supported. I really appreciate this.",
-            person: "Your Colleague",
-            emotion: "supported and relieved",
-            continuation: "The empathy chain strengthens! They feel supported and are now more likely to support others."
-          },
-          isSupportive: true
-        },
+
         {
           id: 'defensive',
           text: "That parent is wrong. You need to stand up for yourself more.",
@@ -128,6 +129,19 @@ const EmpathyChainGame = () => {
           },
           isSupportive: false
         },
+
+        {
+          id: 'avoidant',
+          text: "It's not a big deal. Just forget about it.",
+          feedback: "This avoids addressing their feelings and doesn't offer support.",
+          chainResult: {
+            statement: "Okay. I'll try to forget about it.",
+            person: "Your Colleague",
+            emotion: "still struggling",
+            continuation: "The chain stops. Support wasn't passed forward."
+          },
+          isSupportive: false
+        },
         {
           id: 'supportive',
           text: "I understand that feeling. Making mistakes in front of students can feel vulnerable. But modeling how to handle mistakes actually builds respect. How are you feeling about it now?",
@@ -140,18 +154,6 @@ const EmpathyChainGame = () => {
           },
           isSupportive: true
         },
-        {
-          id: 'avoidant',
-          text: "It's not a big deal. Just forget about it.",
-          feedback: "This avoids addressing their feelings and doesn't offer support.",
-          chainResult: {
-            statement: "Okay. I'll try to forget about it.",
-            person: "Your Colleague",
-            emotion: "still struggling",
-            continuation: "The chain stops. Support wasn't passed forward."
-          },
-          isSupportive: false
-        }
       ]
     },
     {
@@ -173,7 +175,7 @@ const EmpathyChainGame = () => {
         },
         {
           id: 'supportive',
-          text: "I hear how discouraging that feels. You care so much about your students, and that matters. What's one thing that went well today, even if it was small? Sometimes focusing on small wins helps.",
+          text: "I hear how discouraging that feels. You care so much about your students, and that matters. ",
           feedback: "Beautiful response! You validated their feelings, acknowledged their care, and gently redirected toward positive perspective. This continues the empathy chain!",
           chainResult: {
             statement: "Thank you for asking. Actually, one student did ask a good question today. And another one thanked me after class. I guess there were some bright spots. Thank you for helping me see that.",
@@ -203,18 +205,6 @@ const EmpathyChainGame = () => {
       person: "Your Colleague",
       responses: [
         {
-          id: 'false-reassurance',
-          text: "You're fine. Everyone feels that way sometimes.",
-          feedback: "This offers false reassurance without truly addressing their concern or offering specific support.",
-          chainResult: {
-            statement: "Maybe. I just don't know anymore.",
-            person: "Your Colleague",
-            emotion: "still uncertain",
-            continuation: "The chain weakens. Their specific concerns weren't addressed."
-          },
-          isSupportive: false
-        },
-        {
           id: 'supportive',
           text: "I understand that worry. Comparison can be really hard. But I see how much you care about your students and how hard you're working. What specific areas would you like to grow in? Maybe we can work on them together?",
           feedback: "Perfect empathetic response! You acknowledged their worry, validated their care and effort, and offered collaborative support. This is how empathy chains strengthen!",
@@ -226,6 +216,19 @@ const EmpathyChainGame = () => {
           },
           isSupportive: true
         },
+        {
+          id: 'false-reassurance',
+          text: "You're fine. Everyone feels that way sometimes.",
+          feedback: "This offers false reassurance without truly addressing their concern or offering specific support.",
+          chainResult: {
+            statement: "Maybe. I just don't know anymore.",
+            person: "Your Colleague",
+            emotion: "still uncertain",
+            continuation: "The chain weakens. Their specific concerns weren't addressed."
+          },
+          isSupportive: false
+        },
+
         {
           id: 'dismissive',
           text: "You'll figure it out. Teaching takes time.",
@@ -293,7 +296,7 @@ const EmpathyChainGame = () => {
       gameType="teacher-education"
       totalLevels={totalLevels}
       totalCoins={totalCoins}
-      currentQuestion={currentChain + 1}
+      currentQuestion={currentChain}
     >
       <div className="w-full max-w-5xl mx-auto px-4">
         <motion.div
@@ -332,7 +335,7 @@ const EmpathyChainGame = () => {
                     </h2>
                   </div>
                 </div>
-                
+
                 <div className="bg-white rounded-xl p-6 shadow-lg mb-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center flex-shrink-0">
@@ -366,18 +369,16 @@ const EmpathyChainGame = () => {
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     onClick={() => handleResponseSelect(currentChain, response.id)}
-                    className={`w-full p-6 rounded-xl border-2 text-left transition-all ${
-                      response.id === 'supportive'
-                        ? 'border-green-300 bg-gradient-to-br from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100'
+                    className={`w-full p-6 rounded-xl border-2 text-left transition-all ${response.id === 'supportive'
+                        ? 'border-gray-300 bg-white hover:border-pink-300 hover:shadow-lg'
                         : 'border-gray-300 bg-white hover:border-pink-300 hover:shadow-lg'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-start gap-4">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        response.id === 'supportive'
-                          ? 'bg-gradient-to-r from-green-400 to-emerald-500'
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${response.id === 'supportive'
+                          ? 'bg-gradient-to-r from-gray-300 to-gray-400'
                           : 'bg-gradient-to-r from-gray-300 to-gray-400'
-                      }`}>
+                        }`}>
                         <span className="text-white font-bold">{index + 1}</span>
                       </div>
                       <div className="flex-1">
@@ -398,11 +399,10 @@ const EmpathyChainGame = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="bg-white rounded-2xl shadow-lg p-8 mb-6"
               >
-                <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${
-                  selectedResponse.isSupportive
+                <div className={`bg-gradient-to-br rounded-xl p-6 border-2 mb-6 ${selectedResponse.isSupportive
                     ? 'from-green-50 to-emerald-50 border-green-200'
                     : 'from-gray-50 to-slate-50 border-gray-200'
-                }`}>
+                  }`}>
                   <div className="text-center mb-4">
                     <div className="text-5xl mb-2">{selectedResponse.isSupportive ? '💚' : '💭'}</div>
                     <h3 className="text-2xl font-bold text-gray-800 mb-2">
@@ -432,7 +432,7 @@ const EmpathyChainGame = () => {
                       <Link className="w-6 h-6 text-indigo-600" />
                       <h4 className="text-lg font-bold text-gray-800">The Chain Continues...</h4>
                     </div>
-                    
+
                     <div className="bg-white rounded-lg p-5 mb-4">
                       <div className="flex items-start gap-4 mb-4">
                         <div className="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-400 to-purple-500 flex items-center justify-center flex-shrink-0">
@@ -450,14 +450,12 @@ const EmpathyChainGame = () => {
                       </div>
                     </div>
 
-                    <div className={`rounded-lg p-4 border-2 ${
-                      selectedResponse.isSupportive
+                    <div className={`rounded-lg p-4 border-2 ${selectedResponse.isSupportive
                         ? 'bg-green-50 border-green-200'
                         : 'bg-gray-50 border-gray-200'
-                    }`}>
-                      <p className={`text-sm leading-relaxed ${
-                        selectedResponse.isSupportive ? 'text-green-800' : 'text-gray-700'
                       }`}>
+                      <p className={`text-sm leading-relaxed ${selectedResponse.isSupportive ? 'text-green-800' : 'text-gray-700'
+                        }`}>
                         <strong>{selectedResponse.isSupportive ? '✓' : '○'}</strong> {selectedResponse.chainResult.continuation}
                       </p>
                     </div>
@@ -526,20 +524,18 @@ const EmpathyChainGame = () => {
                 {chainHistory.map((link, index) => (
                   <div key={index} className="bg-white rounded-lg p-4 border-2 border-gray-200">
                     <div className="flex items-start gap-3 mb-2">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        link.isSupportive
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${link.isSupportive
                           ? 'bg-gradient-to-r from-green-400 to-emerald-500'
                           : 'bg-gradient-to-r from-gray-300 to-gray-400'
-                      }`}>
+                        }`}>
                         <span className="text-white font-bold">{index + 1}</span>
                       </div>
                       <div className="flex-1">
                         <p className="text-sm text-gray-600 mb-1">Statement {index + 1}:</p>
                         <p className="text-gray-800 italic mb-2">"{link.statement}"</p>
                         <p className="text-sm text-gray-600 mb-1">Your response:</p>
-                        <p className={`font-semibold mb-2 ${
-                          link.isSupportive ? 'text-green-700' : 'text-gray-700'
-                        }`}>
+                        <p className={`font-semibold mb-2 ${link.isSupportive ? 'text-green-700' : 'text-gray-700'
+                          }`}>
                           "{link.response}"
                         </p>
                         <p className="text-sm text-gray-600 mb-1">Chain result:</p>
@@ -602,4 +598,3 @@ const EmpathyChainGame = () => {
 };
 
 export default EmpathyChainGame;
-
