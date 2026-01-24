@@ -32,45 +32,69 @@ const calculateUserAge = (dateOfBirth) => {
 };
 
 // Helper function to extract age group from game category/ID
-const extractAgeGroupFromGameId = (gameId) => {
-  if (!gameId) return null;
-  
-  const gameIdStr = gameId.toString().toLowerCase();
-  
-  // Check for kids games
-  if (gameIdStr.includes('-kids-') || gameIdStr.includes('kids')) {
-    return 'kids';
+const AGE_TIER_RULES = {
+  kids: new Set(['kids', 'teens']),
+  teens: new Set(['teens', 'young-adult']),
+  'young-adult': new Set(['young-adult', 'adults']),
+  adults: new Set(['adults']),
+};
+
+const getAgeTier = (age) => {
+  if (age === null || age === undefined) return null;
+  if (age <= 12) return 'kids';
+  if (age <= 17) return 'teens';
+  if (age <= 23) return 'young-adult';
+  return 'adults';
+};
+
+const normalizeAgeGroup = (value) => {
+  if (!value) return null;
+  const normalized = value.toLowerCase();
+  if (normalized.includes('young-adult') || normalized.includes('young adult')) {
+    return 'young-adult';
   }
-  
-  // Check for teens games
-  if (gameIdStr.includes('-teens-') || gameIdStr.includes('-teen-') || gameIdStr.includes('teens') || gameIdStr.includes('teen')) {
-    return 'teens';
-  }
-  
-  // Check for adults games
-  if (gameIdStr.includes('-adults-') || gameIdStr.includes('adults') || gameIdStr.includes('adult')) {
-    return 'adults';
-  }
-  
+  if (normalized.includes('kid')) return 'kids';
+  if (normalized.includes('teen')) return 'teens';
+  if (normalized.includes('adult')) return 'adults';
   return null;
 };
 
-// Helper function to check if user can access game based on age
+const extractAgeGroupFromGameId = (gameId) => {
+  if (!gameId) return null;
+  const cleaned = gameId.toString().toLowerCase();
+
+  if (cleaned.includes('-young-adult-') || cleaned.includes('young-adult')) {
+    return 'young-adult';
+  }
+  if (cleaned.includes('-kids-') || cleaned.includes('kids')) {
+    return 'kids';
+  }
+  if (
+    cleaned.includes('-teens-') ||
+    cleaned.includes('-teen-') ||
+    cleaned.includes('teens') ||
+    cleaned.includes('teen')
+  ) {
+    return 'teens';
+  }
+  if (cleaned.includes('-adults-') || cleaned.includes('adults') || cleaned.includes('adult')) {
+    return 'adults';
+  }
+
+  return normalizeAgeGroup(cleaned);
+};
+
 const canAccessGameByAge = (userAge, gameAgeGroup) => {
-  if (userAge === null) return false; // Can't verify age, deny access
-  
-  if (gameAgeGroup === 'kids' || gameAgeGroup === 'teens') {
-    // Kids and teens games: only accessible to users under 18
-    return userAge < 18;
-  }
-  
-  if (gameAgeGroup === 'adults') {
-    // Adult games: only accessible to users 18 and above
-    return userAge >= 18;
-  }
-  
-  // Unknown age group, allow access (for backward compatibility)
-  return true;
+  if (userAge === null) return false;
+  const normalizedGameAgeGroup = normalizeAgeGroup(gameAgeGroup) || gameAgeGroup;
+  if (!normalizedGameAgeGroup) return true;
+
+  const tier = getAgeTier(userAge);
+  if (!tier) return false;
+
+  const allowed = AGE_TIER_RULES[tier];
+  if (!allowed) return true;
+  return allowed.has(normalizedGameAgeGroup);
 };
 
 // GET /api/game/missions/:level

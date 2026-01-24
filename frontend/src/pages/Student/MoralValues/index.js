@@ -8,8 +8,7 @@ const moralValuesGames = {
 };
 
 export const getMoralValuesGame = (ageGroup, gameId) => {
-  // Normalize age group to match object keys
-  const normalizedAgeGroup = ageGroup === 'teens' ? 'teen' : ageGroup;
+  const normalizedAgeGroup = ["teens", "young-adult"].includes(ageGroup) ? "teen" : ageGroup;
   return moralValuesGames[normalizedAgeGroup]?.[gameId];
 };
 

@@ -81,6 +81,9 @@ import { mockFeatures } from "../../data/mockFeatures";
 import schoolSponsorshipService from "../../services/schoolSponsorshipService";
 import { useSocket } from '../../context/SocketContext';
 import api from "../../utils/api";
+import { calculateUserAge, getAgeTier, isModuleAccessible } from "../../utils/ageUtils";
+import gameCompletionService from "../../services/gameCompletionService";
+import { getCategoryPrefix, isPreviouslyUnlocked, getAgeRestrictionMessage } from "../../utils/moduleAccessUtils";
 
 export default function StudentDashboard() {
     const navigate = useNavigate();
@@ -127,6 +130,7 @@ export default function StudentDashboard() {
     // Track if data has been loaded to prevent unnecessary refetches
     const dataLoadedRef = useRef(false);
     const lastUserIdRef = useRef(null);
+    const moduleProgressCacheRef = useRef({});
     
     // Profile completion modal state
     const [showProfileModal, setShowProfileModal] = useState(false);
@@ -140,25 +144,6 @@ export default function StudentDashboard() {
     const [savingProfile, setSavingProfile] = useState(false);
     
     // Calculate user's age from date of birth
-    const calculateUserAge = (dob) => {
-        if (!dob) return null;
-        
-        // Handle both string and Date object formats
-        const dobDate = typeof dob === 'string' ? new Date(dob) : new Date(dob);
-        if (isNaN(dobDate.getTime())) return null;
-        
-        const today = new Date();
-        let age = today.getFullYear() - dobDate.getFullYear();
-        const monthDiff = today.getMonth() - dobDate.getMonth();
-        
-        // Adjust if birthday hasn't occurred this year yet
-        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dobDate.getDate())) {
-            age--;
-        }
-        
-        return age;
-    };
-
     const getPillarNameFromType = (gameType) => {
         const map = {
             ai: "AI for All",
@@ -184,43 +169,21 @@ export default function StudentDashboard() {
     const getAgeGroupFromGameId = (gameId = "") => {
         if (gameId.includes("kids")) return "Kids";
         if (gameId.includes("teen")) return "Teen";
+        if (gameId.includes("young-adult")) return "Young Adult";
+        if (gameId.includes("adult")) return "Adult";
         return "Unknown";
-    };
-    
-    // Check if user can access a specific game based on age and completion
-    // eslint-disable-next-line no-unused-vars
-    const canAccessGame = (gameType, userAge) => {
-        if (userAge === null) return false;
-        
-        switch (gameType) {
-            case 'kids':
-                // Kids games: accessible to users under 18, locked for 18+
-                return userAge < 18;
-            case 'teens':
-                // Teens games: accessible to users under 18, locked for 18+
-                return userAge < 18;
-            case 'adults':
-                // Adult games: accessible to users 18 and above
-                return userAge >= 18;
-            default:
-                return true;
-        }
     };
     
     // Check if kids games are completed (in a real app, this would check actual completion)
     // eslint-disable-next-line no-unused-vars
     const areKidsGamesCompleted = () => {
-        // For demo purposes, we'll simulate this with a simple check
-        // In a real implementation, this would check the user's game progress
-        return false; // Will be updated to check actual completion of 20 games
+        return false;
     };
     
     // Check if teen games are completed (in a real app, this would check actual completion)
     // eslint-disable-next-line no-unused-vars
     const areTeenGamesCompleted = () => {
-        // For demo purposes, we'll simulate this with a simple check
-        // In a real implementation, this would check the user's game progress
-        return false; // Will be updated to check actual completion of 20 games
+        return false;
     };
     
     // Get game access status for the current user
@@ -231,6 +194,7 @@ export default function StudentDashboard() {
         
         return {
             userAge,
+            ageTier: getAgeTier(userAge),
         };
     };
     
@@ -502,52 +466,96 @@ export default function StudentDashboard() {
 
 
     const handleNavigate = async (path, featureTitle, recommendationData = null) => {
-        if (path && typeof path === "string") {
-            console.log("Navigating to:", path);
-            
-            // Track recommendation interaction if this is from a recommendation
-            if (recommendationData) {
-                try {
-                    await api.post('/api/stats/recommendations/track', {
-                        recommendationId: recommendationData.recommendationId,
-                        recommendationType: recommendationData.type,
-                        recommendationTitle: recommendationData.title,
-                        recommendationPath: recommendationData.path,
-                        recommendationReason: recommendationData.reason,
-                        recommendationPriority: recommendationData.priority,
-                        recommendationScore: recommendationData.score,
-                        action: 'clicked',
-                        position: recommendationData.position,
-                        metadata: {
-                            recommendationGeneratedAt: recommendations?.generatedAt,
-                            pageUrl: window.location.pathname
-                        }
-                    });
-                } catch (error) {
-                    console.error('Failed to track recommendation interaction:', error);
-                    // Don't block navigation on tracking failure
-                }
-            }
-            
-            // Log feature usage activity
-            logActivity({
-                activityType: "navigation",
-                description: `Navigated to: ${featureTitle || path}`,
-                metadata: {
-                    featurePath: path,
-                    featureTitle: featureTitle,
-                    fromPage: "dashboard",
-                    timestamp: new Date().toISOString(),
-                    isRecommendation: !!recommendationData
-                },
-                pageUrl: window.location.pathname
-            });
-            
-            navigate(path);
-        } else {
+        if (!path || typeof path !== "string") {
             console.log("Invalid path, navigating to default");
             navigate("/student/dashboard");
+            return;
         }
+
+        const ensureModuleAccess = async () => {
+            const moduleMatch = path.match(/^\/games\/([^/]+)\/(kids|teens|teen|young-adult|adults)\/?$/);
+            if (!moduleMatch) return true;
+
+            const categoryKey = moduleMatch[1];
+            const tierRaw = moduleMatch[2];
+            const tierSlug = tierRaw === "teen" ? "teens" : tierRaw;
+            const userAge = calculateUserAge(user?.dateOfBirth || user?.dob);
+
+            if (isModuleAccessible(tierSlug, userAge)) {
+                return true;
+            }
+
+            const categoryPrefix = getCategoryPrefix(categoryKey, tierSlug);
+            try {
+                let progressMap = moduleProgressCacheRef.current[categoryPrefix];
+                if (!progressMap) {
+                    progressMap = await gameCompletionService.getBatchGameProgress(categoryPrefix);
+                    moduleProgressCacheRef.current[categoryPrefix] = progressMap || {};
+                }
+
+                if (isPreviouslyUnlocked(progressMap)) {
+                    return true;
+                }
+            } catch (error) {
+                console.error(`❌ Failed to check module progress for ${path}:`, error);
+            }
+
+            const restrictionMessage = getAgeRestrictionMessage(tierSlug, userAge);
+            toast.error(restrictionMessage || "This module is locked for your age group.", {
+                duration: 4000,
+                position: "bottom-center",
+                icon: "🔒"
+            });
+
+            return false;
+        };
+
+        const moduleAccessAllowed = await ensureModuleAccess();
+        if (!moduleAccessAllowed) {
+            return;
+        }
+
+        console.log("Navigating to:", path);
+        
+        // Track recommendation interaction if this is from a recommendation
+        if (recommendationData) {
+            try {
+                await api.post('/api/stats/recommendations/track', {
+                    recommendationId: recommendationData.recommendationId,
+                    recommendationType: recommendationData.type,
+                    recommendationTitle: recommendationData.title,
+                    recommendationPath: recommendationData.path,
+                    recommendationReason: recommendationData.reason,
+                    recommendationPriority: recommendationData.priority,
+                    recommendationScore: recommendationData.score,
+                    action: 'clicked',
+                    position: recommendationData.position,
+                    metadata: {
+                        recommendationGeneratedAt: recommendations?.generatedAt,
+                        pageUrl: window.location.pathname
+                    }
+                });
+            } catch (error) {
+                console.error('Failed to track recommendation interaction:', error);
+                // Don't block navigation on tracking failure
+            }
+        }
+        
+        // Log feature usage activity
+        logActivity({
+            activityType: "navigation",
+            description: `Navigated to: ${featureTitle || path}`,
+            metadata: {
+                featurePath: path,
+                featureTitle: featureTitle,
+                fromPage: "dashboard",
+                timestamp: new Date().toISOString(),
+                isRecommendation: !!recommendationData
+            },
+            pageUrl: window.location.pathname
+        });
+        
+        navigate(path);
     };
 
     // Handle dismissing a recommendation
@@ -2508,10 +2516,10 @@ export default function StudentDashboard() {
 
                                                     const routeBase = pillarRouteMap[pillar.pillarKey] || `/games/${pillar.pillarKey}`;
                                                     
-                                                    // Navigate to kids games by default (can be changed based on user age)
+                                                    // Determine the age bucket for navigation
                                                     const userAge = calculateUserAge(user?.dateOfBirth || user?.dob);
-                                                    const ageGroup = userAge && userAge < 13 ? 'kids' : userAge && userAge < 18 ? 'teens' : 'adults';
-                                                    
+                                                    const ageGroup = getAgeTier(userAge) || 'kids';
+                                                   
                                                     navigate(`${routeBase}/${ageGroup}`);
                                                 }}
                                                 className={`mt-4 bg-gradient-to-r ${colorScheme.gradient} rounded-2xl px-4 py-3 shadow-lg min-h-[4rem] flex flex-col justify-center ${pillar.locked || pillar.accessMode === 'locked' || pillar.upgradeRequired ? 'cursor-pointer opacity-75' : 'cursor-pointer'}`}

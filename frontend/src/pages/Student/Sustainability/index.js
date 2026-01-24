@@ -67,7 +67,7 @@ export const getSustainabilityGame = (age, gameId) => {
   }
   
   // For teens age group, try to get from teens games first
-  if (age === 'teens' || age === 'teen') {
+  if (['teens', 'teen', 'young-adult'].includes(age)) {
     const teenGame = getSustainabilityTeenGame(normalizedGameId);
     if (teenGame) {
       return teenGame;
@@ -78,15 +78,17 @@ export const getSustainabilityGame = (age, gameId) => {
 };
 
 export const getAllSustainabilityGames = (age = null) => {
-  if (age && age !== 'all') {
-    return sustainabilityGames[age] || {};
+  const normalizedAge = age === "young-adult" ? "teen" : age;
+  if (normalizedAge && normalizedAge !== "all") {
+    return sustainabilityGames[normalizedAge] || {};
   }
   return sustainabilityGames.all;
 };
 
 export const getSustainabilityGameIds = (age = null) => {
-  if (age && age !== 'all') {
-    return Object.keys(sustainabilityGames[age] || {});
+  const normalizedAge = age === "young-adult" ? "teen" : age;
+  if (normalizedAge && normalizedAge !== "all") {
+    return Object.keys(sustainabilityGames[normalizedAge] || {});
   }
   return Object.keys(sustainabilityGames.all);
 };

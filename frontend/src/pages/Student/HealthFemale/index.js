@@ -7,8 +7,7 @@ const healthFemaleGames = {
 };
 
 export const getHealthFemaleGame = (ageGroup, gameId) => {
-  // Normalize age group to match object keys
-  const normalizedAgeGroup = ageGroup === 'teens' ? 'teen' : ageGroup;
+  const normalizedAgeGroup = ["teens", "young-adult"].includes(ageGroup) ? "teen" : ageGroup;
   return healthFemaleGames[normalizedAgeGroup]?.[gameId];
 };
 
