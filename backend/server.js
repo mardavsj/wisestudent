@@ -298,8 +298,10 @@ app.use('/uploads', express.static(path.resolve(__dirname, './uploads')));
   app.use("/api/rewards", rewardsRoutes);
   app.use("/api/analytics", analyticsRoutes);
   app.use("/api/wallet", walletRoutes);
+  app.use("/api/goodies", goodieRoutes);
   app.use("/api/student", studentRoutes);
   app.use("/api/activity", activityRoutes);
+  app.use("/api/stats", statsRoutes);
   app.use("/api/user", userRoutes);
   app.use("/api/parent", parentRoutes);
   

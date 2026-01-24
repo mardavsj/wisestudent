@@ -203,7 +203,7 @@ export const FeedbackBubble = ({ message, type }) => (
 );
 
 /* --------------------- Game Over Modal --------------------- */
-export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1, maxScore = null, coinsPerLevel = null, totalCoins = null, totalXp = null, badgeName = null, badgeImage = null, isBadgeGame = false, isReplay = false, onClose, nextGamePath = null, nextGameId = null }) => {
+export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1, maxScore = null, coinsPerLevel = null, totalCoins = null, totalXp = null, badgeName = null, badgeImage = null, isBadgeGame = false, isReplay = false, onClose, nextGamePath = null, nextGameId = null, shouldSubmitCompletion = true }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [coinsEarned, setCoinsEarned] = useState(0);
   const [xpEarned, setXpEarned] = useState(0);
@@ -244,6 +244,10 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
 
   useEffect(() => {
     const submitGameCompletion = async () => {
+      if (!shouldSubmitCompletion) {
+        setSubmissionComplete(true);
+        return;
+      }
       if (submissionComplete || !gameId) return;
 
       setIsSubmitting(true);
@@ -375,7 +379,7 @@ export const GameOverModal = ({ score, gameId, gameType = 'ai', totalLevels = 1,
     };
 
     submitGameCompletion();
-  }, [gameId, gameType, scoreAsCoins, normalizedCorrectCount, totalLevels, maxScore, coinsPerLevel, totalCoins, totalXp, isReplay, submissionComplete, isBadgeGameResolved, resolvedBadgeName, resolvedBadgeImage]);
+  }, [gameId, gameType, scoreAsCoins, normalizedCorrectCount, totalLevels, maxScore, coinsPerLevel, totalCoins, totalXp, badgeName, badgeImage, isReplay, submissionComplete, isBadgeGameResolved, resolvedBadgeName, resolvedBadgeImage, shouldSubmitCompletion]);
 
   const showBadgeReward = isBadgeGameResolved && (badgeEarned || badgeAlreadyEarned);
   const getGameIndexFromId = (id) => {
@@ -796,6 +800,7 @@ const GameShell = ({
   nextGameId: nextGameIdFromProp = null, // Optional next game ID prop to override location.state
   nextGamePathProp = null, // Backward-compatible prop name
   nextGameIdProp = null, // Backward-compatible prop name
+  shouldSubmitGameCompletion = true,
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -1031,9 +1036,9 @@ const GameShell = ({
       )} */}
 
       {showGameOver && (
-        <GameOverModal
-          score={scoreAsCoins}
-          gameId={gameId}
+      <GameOverModal
+        score={scoreAsCoins}
+        gameId={gameId}
           gameType={gameType}
           totalLevels={totalLevels}
           maxScore={resolvedMaxScore}
@@ -1051,13 +1056,14 @@ const GameShell = ({
             location?.state?.nextGamePath ||
             null
           }
-          nextGameId={
-            nextGameIdFromProp ||
-            nextGameIdProp ||
-            location?.state?.nextGameId ||
-            null
-          }
-        />
+        nextGameId={
+          nextGameIdFromProp ||
+          nextGameIdProp ||
+          location?.state?.nextGameId ||
+          null
+        }
+        shouldSubmitCompletion={shouldSubmitGameCompletion}
+      />
       )}
 
       {/* Animations */}

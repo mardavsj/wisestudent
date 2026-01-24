@@ -33,6 +33,16 @@ export const mockFeatures = [
     xpReward: 2500
   },
   {
+    id: 100,
+    title: "Young Adult Module",
+    description: "Next-level digital citizenship challenges for young adults",
+    icon: "💼",
+    path: "/games/digital-citizenship/young-adult",
+    color: "bg-fuchsia-500",
+    category: "education",
+    xpReward: 2500
+  },
+  {
     id: 23,
     title: "Adult Module",
     description: "Challenging digital citizenship games for adults",
@@ -60,6 +70,16 @@ export const mockFeatures = [
     icon: "📱",
     path: "/games/financial-literacy/teens",
     color: "bg-blue-500",
+    category: "finance",
+    xpReward: 2500
+  },
+  {
+    id: 101,
+    title: "Young Adult Module",
+    description: "Real-world financial challenges tailored for young adults",
+    icon: "💼",
+    path: "/games/financial-literacy/young-adult",
+    color: "bg-fuchsia-500",
     category: "finance",
     xpReward: 2500
   },
@@ -128,6 +148,16 @@ export const mockFeatures = [
     xpReward: 2500
   },
   {
+    id: 102,
+    title: "Young Adult Module",
+    description: "Advanced brain health practices for young adults",
+    icon: "💼",
+    path: "/games/brain-health/young-adult",
+    color: "bg-fuchsia-500",
+    category: "wellness",
+    xpReward: 2500
+  },
+  {
     id: 17,
     title: "Adult Module",
     description: "Challenging brain health games for adults",
@@ -166,6 +196,16 @@ export const mockFeatures = [
     icon: "📱",
     path: "/games/uvls/teens",
     color: "bg-blue-500",
+    category: "personal",
+    xpReward: 2500
+  },
+  {
+    id: 103,
+    title: "Young Adult Module",
+    description: "Deep life skills challenges for young adults",
+    icon: "💼",
+    path: "/games/uvls/young-adult",
+    color: "bg-fuchsia-500",
     category: "personal",
     xpReward: 2500
   },
@@ -247,6 +287,16 @@ export const mockFeatures = [
     xpReward: 2500
   },
   {
+    id: 104,
+    title: "Young Adult Module",
+    description: "Reflective moral challenges for young adults",
+    icon: "💼",
+    path: "/games/moral-values/young-adult",
+    color: "bg-fuchsia-500",
+    category: "creativity",
+    xpReward: 2500
+  },
+  {
     id: 26,
     title: "Adult Module",
     description: "Challenging moral values games for adults",
@@ -274,6 +324,16 @@ export const mockFeatures = [
     icon: "📱",
     path: "/games/ai-for-all/teens",
     color: "bg-blue-500",
+    category: "entertainment",
+    xpReward: 2500
+  },
+  {
+    id: 105,
+    title: "Young Adult Module",
+    description: "Future-ready AI experiments for young adults",
+    icon: "💼",
+    path: "/games/ai-for-all/young-adult",
+    color: "bg-fuchsia-500",
     category: "entertainment",
     xpReward: 2500
   },
@@ -309,6 +369,16 @@ export const mockFeatures = [
     xpReward: 2500
   },
   {
+    id: 106,
+    title: "Young Adult Module",
+    description: "Wellness & resilience goals for young adult educators",
+    icon: "💼",
+    path: "/games/health-male/young-adult",
+    color: "bg-fuchsia-500",
+    category: "social",
+    xpReward: 2500
+  },
+  {
     id: 32,
     title: "Adult Module",
     description: "Challenging male health games for adults",
@@ -336,6 +406,16 @@ export const mockFeatures = [
     icon: "📱",
     path: "/games/health-female/teens",
     color: "bg-blue-500",
+    category: "competition",
+    xpReward: 2500
+  },
+  {
+    id: 107,
+    title: "Young Adult Module",
+    description: "Female wellness practices tailored for young adults",
+    icon: "💼",
+    path: "/games/health-female/young-adult",
+    color: "bg-fuchsia-500",
     category: "competition",
     xpReward: 2500
   },
@@ -371,6 +451,16 @@ export const mockFeatures = [
     xpReward: 2500
   },
   {
+    id: 108,
+    title: "Young Adult Module",
+    description: "Startup simulations for young adult innovators",
+    icon: "💼",
+    path: "/games/ehe/young-adult",
+    color: "bg-fuchsia-500",
+    category: "rewards",
+    xpReward: 2500
+  },
+  {
     id: 38,
     title: "Adult Module",
     description: "Challenging entrepreneurship games for adults",
@@ -402,6 +492,16 @@ export const mockFeatures = [
     xpReward: 2500
   },
   {
+    id: 109,
+    title: "Young Adult Module",
+    description: "Civic leadership challenges for young adults",
+    icon: "💼",
+    path: "/games/civic-responsibility/young-adult",
+    color: "bg-fuchsia-500",
+    category: "shopping",
+    xpReward: 2500
+  },
+  {
     id: 41,
     title: "Adult Module",
     description: "Challenging civic responsibility games for adults",
@@ -429,6 +529,16 @@ export const mockFeatures = [
     icon: "📱",
     path: "/games/sustainability/teens",
     color: "bg-blue-500",
+    category: "sustainability",
+    xpReward: 2500
+  },
+  {
+    id: 110,
+    title: "Young Adult Module",
+    description: "Sustainability solutions for young adults",
+    icon: "💼",
+    path: "/games/sustainability/young-adult",
+    color: "bg-fuchsia-500",
     category: "sustainability",
     xpReward: 2500
   },

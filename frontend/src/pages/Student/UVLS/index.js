@@ -9,7 +9,7 @@ const uvlsGames = {
 
 export const getUvlsGame = (ageGroup, gameId) => {
   // Normalize age group to match object keys
-  const normalizedAgeGroup = ageGroup === 'teens' ? 'teen' : ageGroup;
+  const normalizedAgeGroup = ["teens", "young-adult"].includes(ageGroup) ? "teen" : ageGroup;
   return uvlsGames[normalizedAgeGroup]?.[gameId];
 };
 

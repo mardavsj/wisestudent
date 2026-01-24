@@ -94,6 +94,8 @@ const gameCategories = {
   }
 };
 
+gameCategories["brain-health"] = gameCategories.brain;
+
 const UniversalGameRenderer = () => {
   const {category, age, game: gameId} = useParams();
   const navigate = useNavigate();
@@ -125,8 +127,10 @@ const UniversalGameRenderer = () => {
     }
 
     // Validate age group
-    if (!['kids', 'teen', 'teens', 'adult'].includes(age)) {
-      setError(`Invalid age group: ${age}. Must be 'kids', 'teen', or 'adult'`);
+    if (!['kids', 'teen', 'teens', 'young-adult', 'adult', 'adults'].includes(age)) {
+      setError(
+        `Invalid age group: ${age}. Must be 'kids', 'teen', 'teens', 'young-adult', or 'adult'`
+      );
       setLoading(false);
       return;
     }

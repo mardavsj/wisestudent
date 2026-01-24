@@ -478,8 +478,12 @@ const App = () => {
     location.pathname.startsWith("/student/games/") ||
     location.pathname.startsWith("/student/finance/kids/") ||
     location.pathname.startsWith("/student/finance/teen/") ||
+    location.pathname.startsWith("/student/finance/young-adult/") ||
+    location.pathname.startsWith("/student/finance/adults/") ||
     location.pathname.startsWith("/student/brain/kids/") ||
     location.pathname.startsWith("/student/brain/teen/") ||
+      location.pathname.startsWith("/student/brain-health/young-adult/") ||
+      location.pathname.startsWith("/student/brain-health/adults/") ||
     location.pathname.startsWith("/student/uvls/kids/") ||
     location.pathname.startsWith("/student/uvls/teen/") ||
     location.pathname.startsWith("/student/health-male/kids/") ||

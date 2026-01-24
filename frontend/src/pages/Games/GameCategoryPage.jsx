@@ -13,8 +13,12 @@ import { toast } from "react-hot-toast";
 import gameCompletionService from "../../services/gameCompletionService";
 import { financegGameIdsKids, getFinanceKidsGames } from "./GameCategories/Finance/kidGamesData";
 import { financegGameIdsTeen, getFinanceTeenGames } from "./GameCategories/Finance/teenGamesData";
+import { financegGameIdsYoungAdult, getFinanceYoungAdultGames } from "./GameCategories/Finance/youngAdultGamesData";
+import { financegGameIdsAdults, getFinanceAdultGames } from "./GameCategories/Finance/adultGamesData";
 import { brainGamesKidsIds, getBrainKidsGames } from "./GameCategories/Brain/kidGamesData";
 import { brainGamesTeenIds, getBrainTeenGames } from "./GameCategories/Brain/teenGamesData";
+import { brainGamesYoungAdultIds, getBrainYoungAdultGames } from "./GameCategories/Brain/youngAdultGamesData";
+import { brainGamesAdultIds, getBrainAdultGames } from "./GameCategories/Brain/adultGamesData";
 import { getUvlsKidsGames, uvlsGamesKidsIds } from "./GameCategories/UVLS/kidGamesData";
 import { getUvlsTeenGames, uvlsGamesTeenIds } from "./GameCategories/UVLS/teenGamesData";
 import {  dcosGamesKidsIds, getDcosKidsGames } from "./GameCategories/DCOS/kidGamesData";
@@ -35,6 +39,8 @@ import { getSustainabilityKidsGames, sustainabilityGameIdsKids } from "./GameCat
 import { getSustainabilityTeenGames, sustainabilityGameIdsTeen } from "./GameCategories/Sustainability/teenGamesData";
 import UpgradePrompt from "../../components/UpgradePrompt";
 import api from "../../utils/api";
+import { calculateUserAge, isModuleAccessible } from "../../utils/ageUtils";
+import { getCategoryPrefix, isPreviouslyUnlocked } from "../../utils/moduleAccessUtils";
 
 const GameCategoryPage = () => {
   const navigate = useNavigate();
@@ -49,6 +55,7 @@ const GameCategoryPage = () => {
   const [completedGames, setCompletedGames] = useState(new Set());
   const [gameCompletionStatus, setGameCompletionStatus] = useState({});
   const [gameProgressData, setGameProgressData] = useState({}); // Store full progress data with coins and XP
+  const [moduleProgressMap, setModuleProgressMap] = useState({});
   //eslint-disable-next-line
   const [replayableGames, setReplayableGames] = useState(new Set()); // Games that have been unlocked for replay
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
@@ -75,27 +82,6 @@ const GameCategoryPage = () => {
     return categorySlugMap[gameCategory] || gameCategory;
   };
 
-  // Calculate user's age from date of birth
-  const calculateUserAge = (dob) => {
-    if (!dob) return null;
-
-    const dobDate = typeof dob === "string" ? new Date(dob) : new Date(dob);
-    if (isNaN(dobDate.getTime())) return null;
-
-    const today = new Date();
-    let age = today.getFullYear() - dobDate.getFullYear();
-    const monthDiff = today.getMonth() - dobDate.getMonth();
-
-    if (
-      monthDiff < 0 ||
-      (monthDiff === 0 && today.getDate() < dobDate.getDate())
-    ) {
-      age--;
-    }
-
-    return age;
-  };
-
   // Check if user can access a specific game based on age
   const canAccessGame = (gameAgeGroup, userAge) => {
     if (userAge === null) return false;
@@ -105,25 +91,18 @@ const GameCategoryPage = () => {
       return true;
     }
 
-    switch (gameAgeGroup) {
-      case "kids":
-        // Kids games: accessible to users under 18, locked for 18+
-        return userAge < 18;
-      case "teens":
-        // Teens games: accessible to users under 18, locked for 18+
-        return userAge < 18;
-      case "adults":
-        // Adult games: only accessible to users 18 and above
-        return userAge >= 18;
-      case "solar-and-city":
-      case "waste-and-recycle":
-      case "carbon-and-climate":
-      case "water-and-energy":
-        // Sustainability subcategories: accessible to all users
-        return true;
-      default:
-        return true;
+    if (
+      [
+        "solar-and-city",
+        "waste-and-recycle",
+        "carbon-and-climate",
+        "water-and-energy",
+      ].includes(gameAgeGroup)
+    ) {
+      return true;
     }
+
+    return isModuleAccessible(gameAgeGroup, userAge);
   };
 
   // Check if a specific game is unlocked based on completion sequence and subscription
@@ -154,6 +133,8 @@ const GameCategoryPage = () => {
       (ageGroup === "kids" ||
         ageGroup === "teens" ||
         ageGroup === "teen" ||
+        ageGroup === "young-adult" ||
+        ageGroup === "adults" ||
         ageGroup === "solar-and-city" ||
         ageGroup === "waste-and-recycle" ||
         ageGroup === "carbon-and-climate" ||
@@ -226,45 +207,6 @@ const GameCategoryPage = () => {
     return titleMap[ageGroup] || ageGroup;
   };
 
-  // Map URL category/ageGroup to gameId prefix for batch API calls
-  const getCategoryPrefix = (category, ageGroup) => {
-    // Normalize ageGroup: "teen" -> "teens"
-    const normalizedAge = ageGroup === "teen" ? "teens" : ageGroup;
-    
-    // Map URL categories to gameId prefix categories
-    const categoryMap = {
-      "financial-literacy": "finance",
-      "brain-health": "brain",
-      "uvls": "uvls",
-      "digital-citizenship": "dcos",
-      "moral-values": "moral",
-      "ai-for-all": "ai",
-      "ehe": "ehe",
-      "civic-responsibility": "civic-responsibility",
-      "health-male": "health-male",
-      "health-female": "health-female",
-      "sustainability": "sustainability"
-    };
-    
-    const prefixCategory = categoryMap[category] || category;
-    
-    // Handle sustainability subcategories
-    if (category === "sustainability") {
-      if (ageGroup === "solar-and-city") {
-        return "sustainability-solar";
-        } else if (ageGroup === "waste-and-recycle") {
-        return "sustainability-waste";
-      } else if (ageGroup === "carbon-and-climate") {
-        return "sustainability-carbon";
-      } else if (ageGroup === "water-and-energy") {
-        return "sustainability-water-energy";
-      }
-    }
-    
-    // Return prefix in format: "{category}-{age}"
-    return `${prefixCategory}-${normalizedAge}`;
-  };
-
   // Load game completion status and progress data using batch API
   const loadGameCompletionStatus = useCallback(async () => {
     setIsLoadingProgress(true); // Start loading
@@ -272,6 +214,7 @@ const GameCategoryPage = () => {
     // Clear existing status when category/ageGroup changes to prevent stale data
     setGameCompletionStatus({});
     setGameProgressData({});
+    setModuleProgressMap({});
     
     try {
       // For finance, brain health, UVLS, DCOS, Moral Values, AI For All, EHE, CRGC, Health Male, Health Female, and Sustainability kids games, load completion status
@@ -290,6 +233,8 @@ const GameCategoryPage = () => {
         (ageGroup === "kids" ||
           ageGroup === "teens" ||
           ageGroup === "teen" ||
+          ageGroup === "young-adult" ||
+          ageGroup === "adults" ||
           ageGroup === "solar-and-city" ||
           ageGroup === "waste-and-recycle" ||
           ageGroup === "carbon-and-climate" ||
@@ -301,9 +246,10 @@ const GameCategoryPage = () => {
         console.log(`📦 Loading batch game progress for: ${categoryPrefix}`);
         
         // Make single batch API call to get all progress for this category
-        const progressMap = await gameCompletionService.getBatchGameProgress(categoryPrefix);
-        
+        const progressMap = (await gameCompletionService.getBatchGameProgress(categoryPrefix)) || {};
+
         console.log(`✅ Loaded progress for ${Object.keys(progressMap).length} games`);
+        setModuleProgressMap(progressMap);
         
         // Process the batch response into status and progressData
         const status = {};
@@ -314,18 +260,21 @@ const GameCategoryPage = () => {
           const progress = progressMap[gameId];
           
           if (progress) {
-            const isCompleted = progress.fullyCompleted || false;
-            status[gameId] = isCompleted;
+            const levelsCompleted = progress.levelsCompleted ?? 0;
+            const totalLevels = progress.totalLevels || 1;
+            const earnedFullLevels = levelsCompleted >= totalLevels && totalLevels > 0;
+            const isFullyCompleted = progress.fullyCompleted === true || earnedFullLevels;
+
+            status[gameId] = isFullyCompleted;
             
             // Store full progress data including coins, XP, and replay status
-            if (isCompleted) {
-              progressData[gameId] = {
-                totalCoinsEarned: progress.totalCoinsEarned || 0,
-                fullyCompleted: progress.fullyCompleted || false,
-                totalLevels: progress.totalLevels || 1,
-                replayUnlocked: progress.replayUnlocked === true // Explicitly check for true, not just truthy
-              };
-            }
+            progressData[gameId] = {
+              totalCoinsEarned: progress.totalCoinsEarned || 0,
+              fullyCompleted: progress.fullyCompleted || false,
+              totalLevels,
+              levelsCompleted,
+              replayUnlocked: progress.replayUnlocked === true // Explicitly check for true, not just truthy
+            };
           } else {
             status[gameId] = false;
           }
@@ -371,6 +320,7 @@ const GameCategoryPage = () => {
         // For categories that don't use batch API, clear status
         setGameCompletionStatus({});
         setGameProgressData({});
+        setModuleProgressMap({});
       }
     } catch (error) {
       console.error("Failed to load game completion status:", error);
@@ -406,6 +356,7 @@ const GameCategoryPage = () => {
         (ageGroup === "kids" ||
           ageGroup === "teens" ||
           ageGroup === "teen" ||
+          ageGroup === "young-adult" ||
           ageGroup === "solar-and-city" ||
           ageGroup === "waste-and-recycle" ||
           ageGroup === "carbon-and-climate" ||
@@ -586,10 +537,11 @@ const GameCategoryPage = () => {
          category === "health-female" ||
          category === "civic-responsibility" ||
          category === "sustainability") &&
-        (ageGroup === "kids" ||
-         ageGroup === "teens" ||
-         ageGroup === "teen" ||
-         ageGroup === "solar-and-city" ||
+      (ageGroup === "kids" ||
+        ageGroup === "teens" ||
+        ageGroup === "teen" ||
+        ageGroup === "young-adult" ||
+        ageGroup === "solar-and-city" ||
          ageGroup === "waste-and-recycle" ||
          ageGroup === "carbon-and-climate" ||
          ageGroup === "water-and-energy");
@@ -719,6 +671,12 @@ const GameCategoryPage = () => {
       
       // Add our real teen games
       games.push(...realTeenGames);
+  } else if (category === 'financial-literacy' && ageGroup === 'young-adult') {
+      const realYoungAdultFinanceGames = getFinanceYoungAdultGames(gameCompletionStatus);
+      games.push(...realYoungAdultFinanceGames);
+  } else if (category === 'financial-literacy' && ageGroup === 'adults') {
+      const realAdultFinanceGames = getFinanceAdultGames(gameCompletionStatus);
+      games.push(...realAdultFinanceGames);
   } else if (category === 'brain-health' && ageGroup === 'kids') {
       // Add our 20 real brain health games for kids
       const realBrainGames = getBrainKidsGames(gameCompletionStatus)
@@ -731,6 +689,12 @@ const GameCategoryPage = () => {
       
       // Add our real teen brain games
       games.push(...realTeenBrainGames);
+  } else if (category === 'brain-health' && ageGroup === 'young-adult') {
+      const realYoungAdultBrainGames = getBrainYoungAdultGames(gameCompletionStatus);
+      games.push(...realYoungAdultBrainGames);
+  } else if (category === 'brain-health' && ageGroup === 'adults') {
+      const realAdultBrainGames = getBrainAdultGames(gameCompletionStatus);
+      games.push(...realAdultBrainGames);
   } else if (category === 'uvls' && ageGroup === 'kids') {
       // Add our 10 real UVLS Kids games
       const realUVLSGames = getUvlsKidsGames(gameCompletionStatus);
@@ -1042,9 +1006,9 @@ const GameCategoryPage = () => {
         const isCompleted = validGameIds.has(game.id) && (gameCompletionStatus[game.id] === true || game.completed === true);
         
         if (!isCompleted) return;
-        
+
         completedGames++;
-        
+
         // Use progress data if available (from loadGameCompletionStatus)
         const progress = gameProgressData[game.id];
         
@@ -1070,7 +1034,15 @@ const GameCategoryPage = () => {
       });
 
       // Ensure completedGames never exceeds totalGames (safety check)
-      const finalCompletedGames = Math.min(completedGames, totalGames);
+      const progressCompleted = Object.values(gameProgressData).reduce((count, progress) => {
+        if (!progress) return count;
+        const totalLvls = progress.totalLevels || 1;
+        const levelsDone = progress.levelsCompleted || 0;
+        const isFullyCompleted = progress.fullyCompleted === true || (totalLvls > 0 && levelsDone >= totalLvls);
+        return count + (isFullyCompleted ? 1 : 0);
+      }, 0);
+
+      const finalCompletedGames = Math.min(Math.max(completedGames, progressCompleted), totalGames);
       
       // Additional validation: log if there's a mismatch
       if (completedGames > totalGames) {
@@ -1096,11 +1068,23 @@ const GameCategoryPage = () => {
     } else if (category === 'financial-literacy' && (ageGroup === 'teens' || ageGroup === 'teen')) {
         const gameIds = financegGameIdsTeen;
         return gameIds[index];
+    } else if (category === 'financial-literacy' && ageGroup === 'young-adult') {
+        const gameIds = financegGameIdsYoungAdult;
+        return gameIds[index];
+    } else if (category === 'financial-literacy' && ageGroup === 'adults') {
+        const gameIds = financegGameIdsAdults;
+        return gameIds[index];
     } else if (category === 'brain-health' && ageGroup === 'kids') {
         const gameIds = brainGamesKidsIds;
         return gameIds[index];
     } else if (category === 'brain-health' && (ageGroup === 'teens' || ageGroup === 'teen')) {
         const gameIds = brainGamesTeenIds;
+        return gameIds[index];
+    } else if (category === 'brain-health' && ageGroup === 'young-adult') {
+        const gameIds = brainGamesYoungAdultIds;
+        return gameIds[index];
+    } else if (category === 'brain-health' && ageGroup === 'adults') {
+        const gameIds = brainGamesAdultIds;
         return gameIds[index];
     } else if (category === 'uvls' && ageGroup === 'kids') {
         const gameIds = uvlsGamesKidsIds;
@@ -1233,18 +1217,22 @@ const GameCategoryPage = () => {
     return games.findIndex((g, idx) => {
       // Check if game is unlocked
       let unlocked = true;
-      if ((category === 'financial-literacy' ||
-           category === 'brain-health' ||
-           category === 'uvls' ||
-           category === 'digital-citizenship' ||
-           category === 'moral-values' ||
-           category === 'ai-for-all' ||
-           category === 'ehe' ||
-           category === 'civic-responsibility' ||
-           category === 'health-male' ||
-           category === 'health-female' ||
-           category === 'sustainability') && 
-           (ageGroup === 'kids' || ageGroup === 'teens' || ageGroup === 'teen')) {
+          if ((category === 'financial-literacy' ||
+               category === 'brain-health' ||
+               category === 'uvls' ||
+               category === 'digital-citizenship' ||
+               category === 'moral-values' ||
+               category === 'ai-for-all' ||
+               category === 'ehe' ||
+               category === 'civic-responsibility' ||
+               category === 'health-male' ||
+               category === 'health-female' ||
+               category === 'sustainability') && 
+          (ageGroup === 'kids' ||
+            ageGroup === 'teens' ||
+            ageGroup === 'teen' ||
+            ageGroup === 'young-adult' ||
+            ageGroup === 'adults')) {
         // First game is always unlocked
         if (idx === 0) {
           unlocked = true;
@@ -1395,9 +1383,12 @@ const GameCategoryPage = () => {
   const isPillarLocked = !pillarAccess.allowed;
   const gamesPerPillar = getGamesPerPillar();
 
+  const modulePreviouslyUnlocked = isPreviouslyUnlocked(moduleProgressMap);
+
   // Check if this age group is accessible
   const isAccessible = canAccessGame(ageGroup, userAge);
-  const isLocked = !isAccessible || isPillarLocked;
+  const canAccessModule = isAccessible || modulePreviouslyUnlocked;
+  const isLocked = !canAccessModule || isPillarLocked;
 
   // Check if unlock requirements are met
   const unlockRequirements = () => {
@@ -1409,7 +1400,7 @@ const GameCategoryPage = () => {
       return "We couldn't verify your age. Update your profile with your date of birth to unlock this section.";
     }
 
-    if (!isAccessible) {
+    if (!canAccessModule) {
       if (ageGroup === "kids" && userAge >= 18) {
         return `Available for learners under 18. You are ${userAge} years old.`;
       }
@@ -1468,7 +1459,10 @@ const GameCategoryPage = () => {
         category === "health-male" ||
         category === "health-female" ||
         category === "sustainability") &&
-      (ageGroup === "kids" || ageGroup === "teens" || ageGroup === "teen")
+    (ageGroup === "kids" ||
+      ageGroup === "teens" ||
+      ageGroup === "teen" ||
+      ageGroup === "young-adult")
     ) {
       if (!isGameUnlocked(game.index)) {
         toast.error("Complete the previous game first to unlock this game!", {
@@ -1745,6 +1739,7 @@ const GameCategoryPage = () => {
   // Get card color based on game state and index
   const getCardColor = (index, isUnlocked, isCompleted, isFullyCompleted, needsReplayUnlock, isLocked, currentlyOpenIndex) => {
     const isCurrentlyOpen = index === currentlyOpenIndex && isUnlocked && !isCompleted && !isFullyCompleted;
+    const isAdultFinance = category === 'financial-literacy' && ageGroup === 'adults';
 
     if (isLocked && !needsReplayUnlock) {
       // Locked games
@@ -1752,7 +1747,9 @@ const GameCategoryPage = () => {
         bg: "bg-white",
         border: "border-gray-200",
         shadow: "shadow-sm",
-        animated: false
+        animated: false,
+        accent: null,
+        textColor: "text-gray-900"
       };
     } else if (isCompleted || isFullyCompleted || needsReplayUnlock) {
       // Completed games - keep green gradient
@@ -1780,6 +1777,14 @@ const GameCategoryPage = () => {
         textColor: "text-white"
       };
     } else if (isUnlocked) {
+      if (isAdultFinance) {
+        return {
+          bg: "bg-white",
+          border: "border-gray-200",
+          shadow: "shadow-sm",
+          animated: false
+        };
+      }
       // Not played yet - minimalistic colorful
       const colors = [
         { bg: "bg-gradient-to-br from-blue-50 to-indigo-50", border: "border-blue-200", accent: "from-blue-400 to-indigo-500" },
@@ -2010,7 +2015,11 @@ const GameCategoryPage = () => {
                 category === 'health-female' ||
                 category === 'ehe' ||
                 category === 'sustainability') && 
-                (ageGroup === 'kids' || ageGroup === 'teens' || ageGroup === 'teen')
+              (ageGroup === 'kids' ||
+                ageGroup === 'teens' ||
+                ageGroup === 'teen' ||
+                ageGroup === 'young-adult' ||
+                ageGroup === 'adults')
 
                 ? Object.values(gameCompletionStatus).filter((status) => status)
                     .length
@@ -2072,7 +2081,11 @@ const GameCategoryPage = () => {
                 category === 'health-female' ||
                 category === 'ehe' ||
                 category === 'sustainability') && 
-                (ageGroup === 'kids' || ageGroup === 'teens' || ageGroup === 'teen')
+              (ageGroup === 'kids' ||
+                ageGroup === 'teens' ||
+                ageGroup === 'teen' ||
+                ageGroup === 'young-adult' ||
+                ageGroup === 'adults')
 
                 ? isGameUnlocked(index) && !isSubscriptionLocked
                 : !isSubscriptionLocked; // For other categories, check subscription only
@@ -2088,7 +2101,11 @@ const GameCategoryPage = () => {
                category === 'health-female' ||
                category === 'ehe' ||
                category === 'sustainability') &&
-              (ageGroup === "kids" || ageGroup === "teens" || ageGroup=== 'teen')
+              (ageGroup === "kids" ||
+                ageGroup === "teens" ||
+                ageGroup === "teen" ||
+                ageGroup === 'young-adult' ||
+                ageGroup === 'adults')
                 ? isGameFullyCompleted(game.id)
                 : false;
             const progress = gameProgressData[game.id];
@@ -2163,8 +2180,10 @@ const GameCategoryPage = () => {
               >
                 {/* Locked overlay for additional visual indication - only show for truly locked games (not completed games needing replay unlock) */}
                 {isLocked && !isFullyCompleted && (
-                  <div className="absolute inset-0 bg-transparent flex items-center justify-center rounded-2xl pointer-events-none">
-                    <Lock className="w-8 h-8 text-gray-500" />
+                  <div className="absolute inset-0 bg-transparent flex items-center justify-center rounded-2xl pointer-events-none z-30">
+                    <div className="w-16 h-16 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center shadow-lg">
+                      <Lock className="w-8 h-8 text-white" />
+                    </div>
                   </div>
                 )}
 

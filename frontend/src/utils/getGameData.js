@@ -6,8 +6,12 @@
 // Import all game category data functions
 import { getFinanceKidsGames } from "../pages/Games/GameCategories/Finance/kidGamesData";
 import { getFinanceTeenGames } from "../pages/Games/GameCategories/Finance/teenGamesData";
+import { getFinanceYoungAdultGames } from "../pages/Games/GameCategories/Finance/youngAdultGamesData";
+import { getFinanceAdultGames } from "../pages/Games/GameCategories/Finance/adultGamesData";
 import { getBrainKidsGames } from "../pages/Games/GameCategories/Brain/kidGamesData";
 import { getBrainTeenGames } from "../pages/Games/GameCategories/Brain/teenGamesData";
+import { getBrainYoungAdultGames } from "../pages/Games/GameCategories/Brain/youngAdultGamesData";
+import { getBrainAdultGames } from "../pages/Games/GameCategories/Brain/adultGamesData";
 import { getUvlsKidsGames } from "../pages/Games/GameCategories/UVLS/kidGamesData";
 import { getUvlsTeenGames } from "../pages/Games/GameCategories/UVLS/teenGamesData";
 import { getDcosKidsGames } from "../pages/Games/GameCategories/DCOS/kidGamesData";
@@ -38,28 +42,28 @@ export const getGameDataById = (gameId) => {
     return null;
   }
 
-  // Parse gameId to extract category and age group
-  // Supports IDs like "ai-kids-1" and "civic-responsibility-teens-12"
-  const parts = gameId.split('-');
-  if (parts.length < 3) {
+  const match = gameId.match(/^(.*)-(kids|teens|teen|young-adult|adult|adults)-(\d+)$/);
+  if (!match) {
     console.warn('Invalid gameId format:', gameId);
     return null;
   }
 
-  // Category can span multiple segments (e.g., "civic-responsibility")
-  const ageGroup = parts[parts.length - 2]; // e.g., "kids", "teens", "teen"
-  const normalizedAge = ageGroup === 'teen' ? 'teens' : ageGroup; // Normalize "teen" to "teens"
-  const category = parts.slice(0, parts.length - 2).join('-'); // join the remaining parts for category
+  const [, category, ageGroup] = match;
+  const normalizedAge = ageGroup === "teen" ? "teens" : ageGroup.replace("adults", "adult");
 
   // Map category names to their data functions
   const categoryMap = {
     finance: {
       kids: getFinanceKidsGames,
       teens: getFinanceTeenGames,
+      "young-adult": getFinanceYoungAdultGames,
+      adults: getFinanceAdultGames,
     },
     brain: {
       kids: getBrainKidsGames,
       teens: getBrainTeenGames,
+      "young-adult": getBrainYoungAdultGames,
+      adults: getBrainAdultGames,
     },
     uvls: {
       kids: getUvlsKidsGames,

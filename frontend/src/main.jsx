@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
+import { toast } from "react-hot-toast";
 
 import { BrowserRouter } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -35,6 +36,37 @@ window.addEventListener("beforeinstallprompt", (e) => {
 });
 
 const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || "";
+
+const IGNORED_TOAST_MESSAGES = new Set(["Recommendations updated!"]);
+const sanitizeToastMessage = (message) => {
+  if (typeof message === "string") {
+    return message;
+  }
+  if (typeof message === "function") {
+    try {
+      return message();
+    } catch {
+      return "";
+    }
+  }
+  return message?.toString?.() ?? "";
+};
+
+const shouldBlockToast = (message) => {
+  const text = sanitizeToastMessage(message);
+  return IGNORED_TOAST_MESSAGES.has(text);
+};
+
+const wrapToastFn = (fn) => (message, ...rest) => {
+  if (shouldBlockToast(message)) {
+    return { id: "__blocked_toast__" };
+  }
+  return fn(message, ...rest);
+};
+
+toast.success = wrapToastFn(toast.success);
+toast.error = wrapToastFn(toast.error);
+toast.loading = wrapToastFn(toast.loading);
 
 // Development warning about Google OAuth configuration
 if (import.meta.env.DEV && !googleClientId) {
