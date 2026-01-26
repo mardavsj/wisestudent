@@ -61,7 +61,7 @@ const STAGES = [
         isCorrect: false,
       },
       {
-        id: "know",
+        id: "credit-score",
         label: "Know Your Credit Score",
         reflection: "KYC stands for Know Your Customer, not Know Your Credit Score.",
         isCorrect: false,

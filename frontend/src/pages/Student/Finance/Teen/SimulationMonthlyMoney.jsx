@@ -242,7 +242,7 @@ const SimulationMonthlyMoney = () => {
       
       gameId="finance-teens-8"
       gameType="finance"
-      totalLevels={20}
+      totalLevels={5}
       currentLevel={8}
       showConfetti={showResult && finalScore >= 3}
       flashPoints={flashPoints}

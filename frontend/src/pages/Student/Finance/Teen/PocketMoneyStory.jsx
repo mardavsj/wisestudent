@@ -209,7 +209,7 @@ const PocketMoneyStory = () => {
       
       gameId="finance-teens-1"
       gameType="finance"
-      totalLevels={20}
+      totalLevels={5}
       currentLevel={1}
       showConfetti={showResult && finalScore >= 3}
       flashPoints={flashPoints}

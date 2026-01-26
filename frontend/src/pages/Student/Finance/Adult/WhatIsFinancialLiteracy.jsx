@@ -72,12 +72,7 @@ const STAGES = [
     id: 3,
     prompt: "How does saving fit into literacy?",
     options: [
-      {
-        id: "save",
-        label: "Reserve part of every income before spending",
-        reflection: "Yes! Paying yourself first is a cornerstone of financial stability.",
-        isCorrect: true,
-      },
+     
       {
         id: "later",
         label: "Save later if anything is left over",
@@ -89,6 +84,12 @@ const STAGES = [
         label: "Never save, spend everything earned",
         reflection: "Without savings, you're vulnerable to unexpected expenses and emergencies.",
         isCorrect: false,
+      },
+       {
+        id: "save",
+        label: "Reserve part of every income before spending",
+        reflection: "Yes! Paying yourself first is a cornerstone of financial stability.",
+        isCorrect: true,
       },
       {
         id: "random",
@@ -103,12 +104,7 @@ const STAGES = [
     id: 4,
     prompt: "Borrowing smartly means:",
     options: [
-      {
-        id: "need",
-        label: "Only borrow when it fits your repayment plan",
-        reflection: "That's right! Responsible borrowing considers your ability to repay.",
-        isCorrect: true,
-      },
+      
       {
         id: "want",
         label: "Borrow for every desire",
@@ -126,6 +122,12 @@ const STAGES = [
         label: "Borrow anyway regardless of ability to repay",
         reflection: "Borrowing without considering repayment ability is financially dangerous.",
         isCorrect: false,
+      },
+      {
+        id: "need",
+        label: "Only borrow when it fits your repayment plan",
+        reflection: "That's right! Responsible borrowing considers your ability to repay.",
+        isCorrect: true,
       },
     ],
     reward: 5,
