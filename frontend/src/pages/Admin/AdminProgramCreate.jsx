@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Plus, AlertCircle, Briefcase, Loader2 } from "lucide-react";
+import { ArrowLeft, Plus, AlertCircle, Briefcase, Loader2, Building2, FileText, MapPin, Calendar } from "lucide-react";
 import toast from "react-hot-toast";
 import programAdminService from "../../services/admin/programAdminService";
 import csrPartnerService from "../../services/admin/csrPartnerService";
@@ -224,37 +224,59 @@ const AdminProgramCreate = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-12">
-      <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
-        {/* HEADER */}
-        <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => navigate("/admin/programs")}
-              className="p-2 rounded-xl border-2 border-gray-100 bg-white hover:bg-slate-50 hover:border-indigo-200 transition-colors"
-            >
-              <ArrowLeft className="w-5 h-5 text-slate-600" />
-            </button>
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Super Admin</p>
-              <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 flex items-center gap-2">
-                <Briefcase className="w-7 h-7 text-indigo-600" />
-                Create Program
-              </h1>
-              <p className="text-sm text-slate-600 mt-1">
-                Add a new CSR program and set scope, duration, and school categories.
+      {/* Hero Section — match Super Admin Dashboard */}
+      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center justify-between flex-wrap gap-4"
+          >
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => navigate("/admin/programs")}
+                className="p-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors"
+                aria-label="Back to programs"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+              <div>
+                <h1 className="text-4xl font-black mb-2 flex items-center gap-3">
+                  <Plus className="w-10 h-10" />
+                  Create Program
+                </h1>
+                <p className="text-lg text-white/90">
+                  Add a new CSR program and set scope, duration, and school categories
+                </p>
+              </div>
+            </div>
+            <div className="text-right hidden sm:block">
+              <p className="text-sm text-white/80">Today&apos;s Date</p>
+              <p className="text-xl font-bold">
+                {new Date().toLocaleDateString("en-US", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
               </p>
             </div>
-          </div>
-        </header>
+          </motion.div>
+        </div>
+      </div>
 
+      <div className="max-w-4xl mx-auto px-6 -mt-8 space-y-6">
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* CSR PARTNER SELECTION */}
           <motion.section
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6 space-y-4"
           >
-            <h2 className="text-lg font-semibold text-slate-900">CSR Partner</h2>
+            <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+              <Building2 className="w-7 h-7 text-indigo-600" />
+              CSR Partner
+            </h2>
 
             <div>
               <label className="text-xs uppercase tracking-wide text-slate-500 font-medium">
@@ -285,12 +307,15 @@ const AdminProgramCreate = () => {
 
           {/* PROGRAM INFORMATION */}
           <motion.section
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
             className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6 space-y-4"
           >
-            <h2 className="text-lg font-semibold text-slate-900">Program Information</h2>
+            <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+              <FileText className="w-7 h-7 text-indigo-600" />
+              Program Information
+            </h2>
 
             <div>
               <label className="text-xs uppercase tracking-wide text-slate-500 font-medium">
@@ -331,12 +356,15 @@ const AdminProgramCreate = () => {
 
           {/* SCOPE */}
           <motion.section
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6 space-y-4"
           >
-            <h2 className="text-lg font-semibold text-slate-900">Scope</h2>
+            <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+              <MapPin className="w-7 h-7 text-indigo-600" />
+              Scope
+            </h2>
 
             {/* States */}
             <div>
@@ -433,12 +461,15 @@ const AdminProgramCreate = () => {
 
           {/* DURATION */}
           <motion.section
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
             className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6 space-y-4"
           >
-            <h2 className="text-lg font-semibold text-slate-900">Duration</h2>
+            <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+              <Calendar className="w-7 h-7 text-indigo-600" />
+              Duration
+            </h2>
 
             <div className="grid gap-4 md:grid-cols-2">
               <div>
@@ -477,7 +508,7 @@ const AdminProgramCreate = () => {
 
           {/* ACTIONS */}
           <motion.section
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4"
@@ -485,14 +516,14 @@ const AdminProgramCreate = () => {
             <button
               type="button"
               onClick={() => navigate("/admin/programs")}
-              className="flex-1 px-6 py-3 rounded-xl border-2 border-gray-100 bg-white text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:border-indigo-200 transition-colors"
+              className="flex-1 px-6 py-3.5 rounded-xl border-2 border-gray-100 bg-white text-sm font-bold text-slate-600 hover:bg-slate-50 hover:border-indigo-200 transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading || partnersLoading}
-              className="flex-1 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-semibold shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-all"
+              className="flex-1 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-bold shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-all"
             >
               {loading ? (
                 <>

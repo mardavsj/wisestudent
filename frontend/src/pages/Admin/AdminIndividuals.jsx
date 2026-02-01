@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Check, Copy, Eye } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Check, Copy, Eye, ArrowLeft, Users } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { fetchAdminAccounts, fetchAccountDetails, updateAccountPlan, deleteAccount } from "../../services/adminService";
 import { useSocket } from "../../context/SocketContext";
 
-const PER_PAGE = 100;
+const PER_PAGE_OPTIONS = [10, 25, 50, 100];
 
 const categories = [
   { label: "All", value: "all" },
@@ -174,9 +175,11 @@ const getPlanTimeLeftText = (planType, endDate) => {
 };
 
 const AdminIndividuals = () => {
+  const navigate = useNavigate();
   const [accounts, setAccounts] = useState([]);
   const [category, setCategory] = useState("all");
   const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(25);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -230,7 +233,7 @@ const AdminIndividuals = () => {
         const response = await fetchAdminAccounts({
           category,
           page: targetPage,
-          perPage: PER_PAGE,
+          perPage,
           search: debouncedSearch,
         });
 
@@ -263,7 +266,7 @@ const AdminIndividuals = () => {
         setLoading(false);
       }
     },
-    [category, debouncedSearch]
+    [category, debouncedSearch, perPage]
   );
 
   const loadPlanModalChildren = useCallback(async (accountId) => {
@@ -441,8 +444,9 @@ const AdminIndividuals = () => {
   useEffect(() => {
     setAccounts([]);
     setTotal(0);
+    setPage(1);
     fetchAccountsForPage(1);
-  }, [category, debouncedSearch, fetchAccountsForPage]);
+  }, [category, debouncedSearch, perPage, fetchAccountsForPage]);
 
   useEffect(() => {
     if (!socket) return undefined;
@@ -467,8 +471,10 @@ const AdminIndividuals = () => {
     () => categories.find((item) => item.value === category)?.label || categories[0].label,
     [category]
   );
-  const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
-  const showPagination = totalPages > 1;
+  const totalPages = Math.max(1, Math.ceil(total / perPage));
+  const startItem = total === 0 ? 0 : (page - 1) * perPage + 1;
+  const endItem = Math.min(page * perPage, total);
+
   const handlePrevPage = () => {
     if (page <= 1 || loading) return;
     fetchAccountsForPage(page - 1);
@@ -477,25 +483,52 @@ const AdminIndividuals = () => {
     if (page >= totalPages || loading) return;
     fetchAccountsForPage(page + 1);
   };
+  const handleFirstPage = () => {
+    if (page <= 1 || loading) return;
+    fetchAccountsForPage(1);
+  };
+  const handleLastPage = () => {
+    if (page >= totalPages || loading) return;
+    fetchAccountsForPage(totalPages);
+  };
+  const handlePerPageChange = (e) => {
+    const value = Number(e.target.value);
+    if (PER_PAGE_OPTIONS.includes(value)) {
+      setPerPage(value);
+      setPage(1);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-white to-slate-50">
-      <header className="w-full bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 shadow-2xl border border-purple-500/30 px-4 py-16">
-        <div className="max-w-7xl mx-auto flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.4em] text-white/80">Platform Directory</p>
-            <h1 className="text-3xl font-black text-white mt-1">All Accounts</h1>
-            <p className="text-sm text-white/80 max-w-2xl mt-1">
-              Monitor and manage every registered account. Filters keep the focus on Schools, Students,
-              Teachers, Parents, and CSR patrons that are live on the platform.
-            </p>
+      <header className="w-full bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 shadow-2xl border border-purple-500/30 px-4 py-12 md:py-14">
+        <div className="max-w-7xl mx-auto flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-start gap-4">
+            <button
+              type="button"
+              onClick={() => navigate("/admin/dashboard")}
+              className="p-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors shrink-0 mt-0.5"
+              aria-label="Back to dashboard"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/80">Platform Directory</p>
+              <h1 className="text-2xl md:text-3xl font-black text-white mt-2 flex items-center gap-3">
+                <Users className="w-8 h-8 shrink-0" />
+                All Accounts
+              </h1>
+              <p className="text-sm text-white/85 max-w-2xl mt-1.5 leading-relaxed">
+                Monitor and manage every registered account. Filter by Schools, Students, Teachers, Parents, or CSR.
+              </p>
+            </div>
           </div>
-          <div className="text-right space-y-1">
-            <p className="text-sm font-semibold text-white/80">
-              Showing: <span className="text-lg text-white font-black">{activeCategoryLabel}</span>
+          <div className="text-right space-y-1 flex-shrink-0 md:pl-4">
+            <p className="text-sm font-medium text-white/90">
+              Filter: <span className="font-bold text-white">{activeCategoryLabel}</span>
             </p>
             <p className="text-xs text-white/70">
-              {lastUpdated ? `Last refreshed ${formatDate(lastUpdated)}` : "Waiting for first refresh…"}
+              {lastUpdated ? `Last refreshed ${formatDate(lastUpdated)}` : "Loading…"}
             </p>
           </div>
         </div>
@@ -633,31 +666,73 @@ const AdminIndividuals = () => {
                     </tbody>
                   </table>
                 </div>
-                {showPagination && (
-                  <div className="flex items-center justify-between px-6 py-4 border-t border-gray-100">
-                    <p className="text-xs uppercase tracking-wide text-gray-500">
-                      Page {page} · Showing {accounts.length.toLocaleString()} / {total.toLocaleString()}
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 px-6 py-4 border-t border-gray-100 bg-white/50">
+                  <div className="flex flex-wrap items-center gap-4">
+                    <p className="text-sm text-gray-600">
+                      Showing <span className="font-semibold text-gray-900">{startItem.toLocaleString()}</span>
+                      –<span className="font-semibold text-gray-900">{endItem.toLocaleString()}</span> of{" "}
+                      <span className="font-semibold text-gray-900">{total.toLocaleString()}</span> accounts
                     </p>
-                    <div className="flex items-center gap-2">
-                      <button
-                        type="button"
-                        onClick={handlePrevPage}
-                        disabled={page <= 1 || loading}
-                        className="px-4 py-2 rounded-xl border border-gray-200 text-xs font-semibold transition disabled:opacity-40 disabled:cursor-not-allowed hover:border-indigo-400 hover:text-indigo-600"
+                    <label className="flex items-center gap-2 text-sm text-gray-600">
+                      Per page
+                      <select
+                        value={perPage}
+                        onChange={handlePerPageChange}
+                        disabled={loading}
+                        className="rounded-lg border border-gray-200 px-2 py-1.5 text-sm font-medium text-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 disabled:opacity-50"
+                        aria-label="Rows per page"
                       >
-                        Previous
-                      </button>
-                      <button
-                        type="button"
-                        onClick={handleNextPage}
-                        disabled={page >= totalPages || loading}
-                        className="px-4 py-2 rounded-xl border border-gray-200 text-xs font-semibold transition disabled:opacity-40 disabled:cursor-not-allowed hover:border-indigo-400 hover:text-indigo-600"
-                      >
-                        Next
-                      </button>
-                    </div>
+                        {PER_PAGE_OPTIONS.map((n) => (
+                          <option key={n} value={n}>
+                            {n}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
                   </div>
-                )}
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-gray-500 mr-2">
+                      Page <span className="font-semibold text-gray-700">{page}</span> of{" "}
+                      <span className="font-semibold text-gray-700">{totalPages}</span>
+                    </span>
+                    <button
+                      type="button"
+                      onClick={handleFirstPage}
+                      disabled={page <= 1 || loading}
+                      className="px-3 py-2 rounded-lg border border-gray-200 text-xs font-semibold transition disabled:opacity-40 disabled:cursor-not-allowed hover:border-indigo-400 hover:text-indigo-600"
+                      aria-label="First page"
+                    >
+                      First
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handlePrevPage}
+                      disabled={page <= 1 || loading}
+                      className="px-3 py-2 rounded-lg border border-gray-200 text-xs font-semibold transition disabled:opacity-40 disabled:cursor-not-allowed hover:border-indigo-400 hover:text-indigo-600"
+                      aria-label="Previous page"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleNextPage}
+                      disabled={page >= totalPages || loading}
+                      className="px-3 py-2 rounded-lg border border-gray-200 text-xs font-semibold transition disabled:opacity-40 disabled:cursor-not-allowed hover:border-indigo-400 hover:text-indigo-600"
+                      aria-label="Next page"
+                    >
+                      Next
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleLastPage}
+                      disabled={page >= totalPages || loading}
+                      className="px-3 py-2 rounded-lg border border-gray-200 text-xs font-semibold transition disabled:opacity-40 disabled:cursor-not-allowed hover:border-indigo-400 hover:text-indigo-600"
+                      aria-label="Last page"
+                    >
+                      Last
+                    </button>
+                  </div>
+                </div>
               </>
             )}
           </section>

@@ -9,6 +9,7 @@ import { scheduleMonthlySummary } from './cronJobs/sendMonthlySummary.js';
 import { schedulePendingNotifications } from './cronJobs/sendPendingNotifications.js';
 import { scheduleTestimonialRequests } from './cronJobs/requestTestimonials.js';
 import { scheduleAgreementExpiryChecks } from './cronJobs/checkAgreementExpiry.js';
+import { scheduleIncidentMonitor } from './cronJobs/incidentMonitorCron.js';
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -20,6 +21,7 @@ import { Server as SocketIOServer } from "socket.io";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import { setIoInstance } from "./utils/socketServer.js";
+import { recordResponseTime, recordApiRequest } from "./utils/apiMetricsStore.js";
 
 // Load environment variables
 dotenv.config();
@@ -53,6 +55,16 @@ setIoInstance(io);
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
+
+// API response time and request tracking (for incident monitoring)
+app.use('/api', (req, res, next) => {
+  recordApiRequest();
+  const start = Date.now();
+  res.on('finish', () => {
+    recordResponseTime(Date.now() - start);
+  });
+  next();
+});
 
 // Ensure API routes always return JSON (prevent HTML responses)
 app.use('/api', (req, res, next) => {
@@ -184,9 +196,6 @@ import contentGovernanceRoutes from "./routes/contentGovernanceRoutes.js";
 import auditTimelineRoutes from "./routes/auditTimelineRoutes.js";
 import configurationControlRoutes from "./routes/configurationControlRoutes.js";
 import communicationRoutes from "./routes/communicationRoutes.js";
-import operationalToolsRoutes from "./routes/operationalToolsRoutes.js";
-import predictiveModelsRoutes from "./routes/predictiveModelsRoutes.js";
-import apiControlPlaneRoutes from "./routes/apiControlPlaneRoutes.js";
 import adminPlatformRoutes from "./routes/adminPlatformRoutes.js";
 import adminJobOpeningRoutes from "./routes/adminJobOpeningRoutes.js";
 import careerRoutes from "./routes/careerRoutes.js";
@@ -373,9 +382,6 @@ app.use('/api/admin/content-governance', contentGovernanceRoutes);
 app.use('/api/admin/audit-timeline', auditTimelineRoutes);
 app.use('/api/admin/configuration', configurationControlRoutes);
 app.use('/api/admin/communication', communicationRoutes);
-app.use('/api/admin/operational', operationalToolsRoutes);
-app.use('/api/admin/predictive', predictiveModelsRoutes);
-app.use('/api/admin/api-control', apiControlPlaneRoutes);
 app.use('/api/admin/platform', adminPlatformRoutes);
 app.use('/api/incidents', incidentRoutes);
 
@@ -442,6 +448,7 @@ server.listen(PORT, () => {
   schedulePendingNotifications();
   scheduleTestimonialRequests();
   scheduleAgreementExpiryChecks();
+  scheduleIncidentMonitor();
 
   // Start real-time notification TTL cleanup (15 days)
   const ttlSeconds = parseInt(process.env.NOTIFICATION_TTL_SECONDS || "1296000", 10);

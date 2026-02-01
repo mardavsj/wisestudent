@@ -7,6 +7,7 @@ const metricsSnapshotSchema = new mongoose.Schema(
     participationRate: { type: Number, default: 0 },
     completionRate: { type: Number, default: 0 },
     schoolsImplemented: { type: Number, default: 0 },
+    regionsCovered: { type: Number, default: 0 },
   },
   { _id: false }
 );

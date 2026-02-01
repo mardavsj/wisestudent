@@ -1,6 +1,10 @@
 import User from '../models/User.js';
 import Organization from '../models/Organization.js';
 import PaymentTransaction from '../models/PaymentTransaction.js';
+import UserSubscription from '../models/UserSubscription.js';
+import CSRPayment from '../models/CSRPayment.js';
+import Subscription from '../models/Subscription.js';
+import Sponsorship from '../models/Sponsorship.js';
 import mongoose from 'mongoose';
 
 // Real-time Revenue Dashboard
@@ -44,25 +48,75 @@ export const getRevenueDashboard = async (filters = {}) => {
     }
 
     const dateFilter = { createdAt: { $gte: startDateObj, $lte: endDateObj } };
+    const db = mongoose.connection.db;
 
-    // Get revenue metrics
-    const [totalRevenue, successfulTransactions, failedTransactions, refundedAmount, 
-           revenueByGateway, revenueByOrganization, dailyRevenue] = await Promise.all([
-      // Total revenue
+    // Aggregate revenue from multiple payment sources
+    const [
+      paymentTxnRevenue,
+      userSubRevenue,
+      csrRevenue,
+      feePaymentRevenue,
+      subscriptionRevenue,
+      sponsorshipRevenue,
+      successfulTransactions,
+      failedTransactions,
+      refundedAmount,
+      revenueByGateway,
+      revenueByOrganization,
+      dailyRevenue
+    ] = await Promise.all([
+      // 1. PaymentTransaction (gateway payments)
       PaymentTransaction.aggregate([
         { $match: { ...dateFilter, status: 'completed' }},
         { $group: { _id: null, total: { $sum: '$amount' }, net: { $sum: '$netAmount' } }}
       ]),
-      // Successful transactions
+      // 2. UserSubscription transactions (subscription payments)
+      UserSubscription.aggregate([
+        { $unwind: '$transactions' },
+        { $match: {
+          'transactions.status': 'completed',
+          $or: [
+            { 'transactions.paymentDate': { $gte: startDateObj, $lte: endDateObj } },
+            { 'transactions.createdAt': { $gte: startDateObj, $lte: endDateObj } }
+          ]
+        }},
+        { $group: { _id: null, total: { $sum: '$transactions.amount' } }}
+      ]),
+      // 3. CSRPayment (CSR fund payments)
+      CSRPayment.aggregate([
+        { $match: { ...dateFilter, status: 'completed' }},
+        { $group: { _id: null, total: { $sum: '$amount' } }}
+      ]),
+      // 4. FeePayment (school fee payments - raw MongoDB to bypass tenantId)
+      db ? db.collection('feepayments').aggregate([
+        { $match: {
+          'paymentDetails.status': 'completed',
+          $or: [
+            { 'paymentDetails.paymentDate': { $gte: startDateObj, $lte: endDateObj } },
+            { createdAt: { $gte: startDateObj, $lte: endDateObj } }
+          ]
+        }},
+        { $group: { _id: null, total: { $sum: '$paymentDetails.amount' } }}
+      ]).toArray() : Promise.resolve([]),
+      // 5. Subscription (school plan value - monthly prorate from annual plan.price)
+      Subscription.aggregate([
+        { $match: { status: { $in: ['active', 'pending'] }, 'plan.price': { $gt: 0 } }},
+        { $group: { _id: null, total: { $sum: { $divide: ['$plan.price', 12] } }}}
+      ]),
+      // 6. Sponsorship (CSR committed/allocated funds)
+      Sponsorship.aggregate([
+        { $match: { status: 'active' }},
+        { $addFields: {
+          revenueValue: { $ifNull: ['$allocatedFunds', { $ifNull: ['$committedFunds', { $ifNull: ['$totalBudget', 0] }] }] }
+        }},
+        { $group: { _id: null, total: { $sum: '$revenueValue' } }}
+      ]),
       PaymentTransaction.countDocuments({ ...dateFilter, status: 'completed' }),
-      // Failed transactions
       PaymentTransaction.countDocuments({ ...dateFilter, status: 'failed' }),
-      // Refunded amount
       PaymentTransaction.aggregate([
         { $match: { ...dateFilter, status: 'refunded' }},
         { $group: { _id: null, total: { $sum: '$amount' } }}
       ]),
-      // Revenue by gateway
       PaymentTransaction.aggregate([
         { $match: { ...dateFilter, status: 'completed' }},
         { $group: {
@@ -73,7 +127,6 @@ export const getRevenueDashboard = async (filters = {}) => {
         }},
         { $sort: { revenue: -1 }}
       ]),
-      // Revenue by organization
       PaymentTransaction.aggregate([
         { $match: { ...dateFilter, status: 'completed' }},
         { $lookup: {
@@ -93,7 +146,6 @@ export const getRevenueDashboard = async (filters = {}) => {
         { $sort: { revenue: -1 }},
         { $limit: 20 }
       ]),
-      // Daily revenue trend
       PaymentTransaction.aggregate([
         { $match: { ...dateFilter, status: 'completed' }},
         { $group: {
@@ -105,23 +157,61 @@ export const getRevenueDashboard = async (filters = {}) => {
       ])
     ]);
 
-    const revenueData = totalRevenue[0] || { total: 0, net: 0 };
+    // Combine revenue from all sources
+    const ptxTotal = paymentTxnRevenue[0]?.total || 0;
+    const ptxNet = paymentTxnRevenue[0]?.net || 0;
+    const userSubTotal = userSubRevenue[0]?.total || 0;
+    const csrTotal = csrRevenue[0]?.total || 0;
+    const feeTotal = Array.isArray(feePaymentRevenue) && feePaymentRevenue[0] ? feePaymentRevenue[0].total || 0 : 0;
+    const subTotal = subscriptionRevenue[0]?.total || 0; // Monthly prorated (plan.price/12)
+    const sponsorTotal = sponsorshipRevenue[0]?.total || 0;
+
+    const combinedTotal = ptxTotal + userSubTotal + csrTotal + feeTotal + subTotal + sponsorTotal;
+    const combinedNet = ptxNet + userSubTotal + csrTotal + feeTotal + subTotal + sponsorTotal;
+
+    const revenueData = { total: combinedTotal, net: combinedNet };
     const refundData = refundedAmount[0] || { total: 0 };
 
-    // Calculate previous period for comparison
+    // Previous period (PaymentTransaction only for growth - other sources would need similar logic)
     const periodDiff = endDateObj - startDateObj;
     const previousStart = new Date(startDateObj.getTime() - periodDiff);
     const previousEnd = new Date(startDateObj);
 
-    const previousRevenue = await PaymentTransaction.aggregate([
-      { $match: { 
-        createdAt: { $gte: previousStart, $lte: previousEnd },
-        status: 'completed'
-      }},
-      { $group: { _id: null, total: { $sum: '$amount' } }}
+    const [prevPaymentTxn, prevUserSub, prevCsr, prevFee] = await Promise.all([
+      PaymentTransaction.aggregate([
+        { $match: { createdAt: { $gte: previousStart, $lte: previousEnd }, status: 'completed' }},
+        { $group: { _id: null, total: { $sum: '$amount' } }}
+      ]),
+      UserSubscription.aggregate([
+        { $unwind: '$transactions' },
+        { $match: {
+          'transactions.status': 'completed',
+          $or: [
+            { 'transactions.paymentDate': { $gte: previousStart, $lte: previousEnd } },
+            { 'transactions.createdAt': { $gte: previousStart, $lte: previousEnd } }
+          ]
+        }},
+        { $group: { _id: null, total: { $sum: '$transactions.amount' } }}
+      ]),
+      CSRPayment.aggregate([
+        { $match: { createdAt: { $gte: previousStart, $lte: previousEnd }, status: 'completed' }},
+        { $group: { _id: null, total: { $sum: '$amount' } }}
+      ]),
+      db ? db.collection('feepayments').aggregate([
+        { $match: {
+          'paymentDetails.status': 'completed',
+          $or: [
+            { 'paymentDetails.paymentDate': { $gte: previousStart, $lte: previousEnd } },
+            { createdAt: { $gte: previousStart, $lte: previousEnd } }
+          ]
+        }},
+        { $group: { _id: null, total: { $sum: '$paymentDetails.amount' } }}
+      ]).toArray() : Promise.resolve([])
     ]);
 
-    const prevRevenue = previousRevenue[0]?.total || 0;
+    const prevTransactional = (prevPaymentTxn[0]?.total || 0) + (prevUserSub[0]?.total || 0) +
+      (prevCsr[0]?.total || 0) + (Array.isArray(prevFee) && prevFee[0] ? prevFee[0].total || 0 : 0);
+    const prevRevenue = prevTransactional + subTotal + sponsorTotal; // Include subscription/sponsorship for comparable growth
     const revenueGrowth = prevRevenue > 0 
       ? ((revenueData.total - prevRevenue) / prevRevenue) * 100 
       : revenueData.total > 0 ? 100 : 0;
@@ -139,6 +229,14 @@ export const getRevenueDashboard = async (filters = {}) => {
       period: {
         start: startDateObj,
         end: endDateObj
+      },
+      bySource: {
+        paymentTransaction: ptxTotal,
+        userSubscription: userSubTotal,
+        csrPayment: csrTotal,
+        feePayment: feeTotal,
+        subscription: subTotal,
+        sponsorship: sponsorTotal
       }
     };
   } catch (error) {
@@ -153,29 +251,29 @@ export const getSchoolMetrics = async (filters = {}) => {
     const { schoolId, timeRange = 'month' } = filters;
     
     const now = new Date();
+    const nowCopy = new Date(now.getTime());
     let startDateObj, endDateObj;
 
     switch (timeRange) {
       case 'month':
-        startDateObj = new Date(now.setMonth(now.getMonth() - 1));
+        startDateObj = new Date(nowCopy.getFullYear(), nowCopy.getMonth() - 1, nowCopy.getDate());
         endDateObj = new Date();
         break;
       case 'quarter':
-        startDateObj = new Date(now.setMonth(now.getMonth() - 3));
+        startDateObj = new Date(nowCopy.getFullYear(), nowCopy.getMonth() - 3, nowCopy.getDate());
         endDateObj = new Date();
         break;
       case 'year':
-        startDateObj = new Date(now.setFullYear(now.getFullYear() - 1));
+        startDateObj = new Date(nowCopy.getFullYear() - 1, nowCopy.getMonth(), nowCopy.getDate());
         endDateObj = new Date();
         break;
       default:
-        startDateObj = new Date(now.setMonth(now.getMonth() - 1));
+        startDateObj = new Date(nowCopy.getFullYear(), nowCopy.getMonth() - 1, nowCopy.getDate());
         endDateObj = new Date();
     }
 
-    const schoolFilter = schoolId 
-      ? { organizationId: new mongoose.Types.ObjectId(schoolId) }
-      : {};
+    const dateFilter = { $gte: startDateObj, $lte: endDateObj };
+    const db = mongoose.connection.db;
 
     // Get all schools
     const schools = await Organization.find({
@@ -185,12 +283,32 @@ export const getSchoolMetrics = async (filters = {}) => {
     });
 
     const schoolMetrics = await Promise.all(schools.map(async (school) => {
-      const [transactions, students, activeStudents] = await Promise.all([
+      const [
+        transactions,
+        feePayments,
+        schoolSubscription,
+        sponsorships,
+        students,
+        activeStudents
+      ] = await Promise.all([
         PaymentTransaction.find({
           organizationId: school._id,
           status: 'completed',
-          createdAt: { $gte: startDateObj, $lte: endDateObj }
+          createdAt: dateFilter
         }),
+        db ? db.collection('feepayments').aggregate([
+          { $match: {
+            organizationId: school._id,
+            'paymentDetails.status': 'completed',
+            $or: [
+              { 'paymentDetails.paymentDate': dateFilter },
+              { createdAt: dateFilter }
+            ]
+          }},
+          { $group: { _id: null, total: { $sum: '$paymentDetails.amount' }, count: { $sum: 1 } }}
+        ]).toArray() : Promise.resolve([]),
+        Subscription.findOne({ orgId: school._id, status: { $in: ['active', 'pending'] } }),
+        Sponsorship.find({ schoolId: school._id, status: 'active' }).lean(),
         User.countDocuments({
           role: 'school_student',
           tenantId: school.tenantId
@@ -201,17 +319,29 @@ export const getSchoolMetrics = async (filters = {}) => {
         })
       ]);
 
-      const totalRevenue = transactions.reduce((sum, t) => sum + (t.amount || 0), 0);
-      const transactionCount = transactions.length;
-      
+      const txnRevenue = transactions.reduce((sum, t) => sum + (t.amount || 0), 0);
+      const feeRevenue = Array.isArray(feePayments) && feePayments[0] ? (feePayments[0].total || 0) : 0;
+      const feeCount = Array.isArray(feePayments) && feePayments[0] ? (feePayments[0].count || 0) : 0;
+
+      // School subscription MRR (plan.price is annual, divide by 12)
+      const subMrr = schoolSubscription?.plan?.price
+        ? (schoolSubscription.plan.price / 12) : 0;
+
+      // Sponsorship committed/allocated funds
+      const sponsorshipRevenue = (sponsorships || []).reduce(
+        (sum, s) => sum + (s.allocatedFunds || s.committedFunds || s.totalBudget || 0),
+        0
+      );
+
+      const totalRevenue = txnRevenue + feeRevenue + sponsorshipRevenue;
+      const transactionCount = transactions.length + feeCount;
+
+      // MRR = subscription recurring + (txn+fee this period as monthly equivalent)
+      const mrr = subMrr + (txnRevenue + feeRevenue);
+      const arr = (subMrr * 12) + sponsorshipRevenue + ((txnRevenue + feeRevenue) * 12);
+
       // ARPU (Average Revenue Per User)
       const arpu = students > 0 ? totalRevenue / students : 0;
-      
-      // MRR (Monthly Recurring Revenue) - assuming monthly subscriptions
-      const mrr = transactionCount > 0 ? totalRevenue / transactionCount : 0;
-      
-      // ARR (Annual Recurring Revenue)
-      const arr = mrr * 12;
 
       // Calculate retention rate (simplified - in real system would check attendance/activity)
       const retentionRate = students > 0 ? (activeStudents / students) * 100 : 0;
@@ -538,17 +668,37 @@ export const getTaxCompliance = async (filters = {}) => {
       'default': { GST: 18, SGST: 9, CGST: 9 }
     };
 
+    const dateFilter = { $gte: startDateObj, $lte: endDateObj };
+    const db = mongoose.connection.db;
+
     const regionTaxData = await Promise.all(organizations.map(async (org) => {
       const state = org.settings?.address?.state || 'Unknown';
       const taxes = taxRates[state] || taxRates['default'];
 
-      const transactions = await PaymentTransaction.find({
-        organizationId: org._id,
-        status: 'completed',
-        createdAt: { $gte: startDateObj, $lte: endDateObj }
-      });
+      const [transactions, feePayments] = await Promise.all([
+        PaymentTransaction.find({
+          organizationId: org._id,
+          status: 'completed',
+          createdAt: dateFilter
+        }),
+        db ? db.collection('feepayments').aggregate([
+          { $match: {
+            organizationId: org._id,
+            'paymentDetails.status': 'completed',
+            $or: [
+              { 'paymentDetails.paymentDate': dateFilter },
+              { createdAt: dateFilter }
+            ]
+          }},
+          { $group: { _id: null, total: { $sum: '$paymentDetails.amount' }, count: { $sum: 1 } }}
+        ]).toArray() : Promise.resolve([])
+      ]);
 
-      const totalRevenue = transactions.reduce((sum, t) => sum + (t.amount || 0), 0);
+      const txnRevenue = transactions.reduce((sum, t) => sum + (t.amount || 0), 0);
+      const feeResult = Array.isArray(feePayments) && feePayments[0] ? feePayments[0] : null;
+      const feeRevenue = feeResult ? (feeResult.total || 0) : 0;
+      const feeCount = feeResult ? (feeResult.count || 0) : 0;
+      const totalRevenue = txnRevenue + feeRevenue;
       const gstAmount = totalRevenue * (taxes.GST / 100);
       const sgstAmount = totalRevenue * (taxes.SGST / 100);
       const cgstAmount = totalRevenue * (taxes.CGST / 100);
@@ -565,7 +715,7 @@ export const getTaxCompliance = async (filters = {}) => {
           cgst: Math.round(cgstAmount * 100) / 100,
           total: Math.round(gstAmount * 100) / 100
         },
-        transactions: transactions.length
+        transactions: transactions.length + feeCount
       };
     }));
 

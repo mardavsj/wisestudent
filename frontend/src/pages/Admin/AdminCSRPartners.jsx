@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSocket } from "../../context/SocketContext";
@@ -94,6 +95,7 @@ const AdminCSRPartners = () => {
   const [editingPartner, setEditingPartner] = useState(false);
   const [editForm, setEditForm] = useState({ companyName: "", contactName: "", email: "", phone: "", website: "" });
   const [savingPartner, setSavingPartner] = useState(false);
+  const [detailActionModal, setDetailActionModal] = useState(null); // "deactivate" | "reactivate" | null
 
   const fetchPartners = async (options = {}) => {
     const { showToast = false, resetPage = false } = options;
@@ -137,6 +139,19 @@ const AdminCSRPartners = () => {
     }
   };
 
+  const normalizePartnerDetail = (res) => {
+    const result = res?.data ?? res;
+    const partner = result?.partner ?? result;
+    const programs = result?.programs ?? [];
+    if (!partner || !partner._id) return null;
+    return {
+      ...partner,
+      programs,
+      programCount: programs.length,
+      approvalStatus: partner.userId?.approvalStatus ?? partner.approvalStatus ?? "pending",
+    };
+  };
+
   useEffect(() => {
     if (!partnerId) return;
     const load = async () => {
@@ -144,19 +159,12 @@ const AdminCSRPartners = () => {
       setDetailError(null);
       try {
         const res = await csrPartnerService.getPartnerDetails(partnerId);
-        const result = res?.data ?? res;
-        const partner = result?.partner ?? result;
-        const programs = result?.programs ?? [];
-        if (!partner || !partner._id) {
+        const normalized = normalizePartnerDetail(res);
+        if (!normalized) {
           setDetailError("Partner not found");
           return;
         }
-        setPartnerDetail({
-          ...partner,
-          programs,
-          programCount: programs.length,
-          approvalStatus: partner.userId?.approvalStatus ?? partner.approvalStatus ?? "pending",
-        });
+        setPartnerDetail(normalized);
       } catch (err) {
         console.error("Failed to load partner:", err);
         setDetailError(err?.response?.data?.message || "Failed to load partner");
@@ -204,7 +212,8 @@ const AdminCSRPartners = () => {
       await csrPartnerService.approvePartner(partnerDetail._id);
       toast.success("Partner approved successfully");
       const res = await csrPartnerService.getPartnerDetails(partnerId);
-      setPartnerDetail(res?.data ?? res);
+      const normalized = normalizePartnerDetail(res);
+      if (normalized) setPartnerDetail(normalized);
     } catch (err) {
       toast.error(err?.response?.data?.message || "Failed to approve partner");
     } finally {
@@ -230,26 +239,36 @@ const AdminCSRPartners = () => {
   };
 
   const handleDetailDeactivate = async () => {
-    if (!partnerDetail || !confirm(`Deactivate ${partnerDetail.companyName}?`)) return;
+    if (!partnerDetail) return;
+    setProcessing(true);
     try {
       await csrPartnerService.deactivatePartner(partnerDetail._id);
       toast.success("Partner deactivated");
+      setDetailActionModal(null);
       const res = await csrPartnerService.getPartnerDetails(partnerId);
-      setPartnerDetail(res?.data ?? res);
+      const normalized = normalizePartnerDetail(res);
+      if (normalized) setPartnerDetail(normalized);
     } catch (err) {
       toast.error(err?.response?.data?.message || "Failed to deactivate");
+    } finally {
+      setProcessing(false);
     }
   };
 
   const handleDetailReactivate = async () => {
-    if (!partnerDetail || !confirm(`Reactivate ${partnerDetail.companyName}?`)) return;
+    if (!partnerDetail) return;
+    setProcessing(true);
     try {
       await csrPartnerService.reactivatePartner(partnerDetail._id);
       toast.success("Partner reactivated");
+      setDetailActionModal(null);
       const res = await csrPartnerService.getPartnerDetails(partnerId);
-      setPartnerDetail(res?.data ?? res);
+      const normalized = normalizePartnerDetail(res);
+      if (normalized) setPartnerDetail(normalized);
     } catch (err) {
       toast.error(err?.response?.data?.message || "Failed to reactivate");
+    } finally {
+      setProcessing(false);
     }
   };
 
@@ -289,25 +308,33 @@ const AdminCSRPartners = () => {
     }
   };
 
-  const handleDeactivate = async (partner) => {
-    if (!confirm(`Deactivate ${partner.companyName}?`)) return;
+  const handleConfirmDeactivate = async () => {
+    if (!selectedPartner) return;
+    setProcessing(true);
     try {
-      await csrPartnerService.deactivatePartner(partner._id);
+      await csrPartnerService.deactivatePartner(selectedPartner._id);
       toast.success("Partner deactivated");
+      closeModal();
       fetchPartners({ resetPage: false });
     } catch (err) {
       toast.error(err?.response?.data?.message || "Failed to deactivate");
+    } finally {
+      setProcessing(false);
     }
   };
 
-  const handleReactivate = async (partner) => {
-    if (!confirm(`Reactivate ${partner.companyName}?`)) return;
+  const handleConfirmReactivate = async () => {
+    if (!selectedPartner) return;
+    setProcessing(true);
     try {
-      await csrPartnerService.reactivatePartner(partner._id);
+      await csrPartnerService.reactivatePartner(selectedPartner._id);
       toast.success("Partner reactivated");
+      closeModal();
       fetchPartners({ resetPage: false });
     } catch (err) {
       toast.error(err?.response?.data?.message || "Failed to reactivate");
+    } finally {
+      setProcessing(false);
     }
   };
 
@@ -391,39 +418,74 @@ const AdminCSRPartners = () => {
       );
     }
     const status = approvalStatus(partnerDetail);
+    const isInactive = partnerDetail.status === "inactive" || partnerDetail.isInactive;
     return (
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-12">
-        <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
-          <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => navigate("/admin/csr/partners")}
-                className="p-2 rounded-xl border-2 border-gray-100 bg-white hover:bg-slate-50 hover:border-indigo-200 transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5 text-slate-600" />
-              </button>
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Super Admin</p>
-                <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-                  <Building2 className="w-7 h-7 text-indigo-600" />
-                  {partnerDetail.companyName ?? "—"}
-                </h1>
-                <p className="text-sm text-slate-600 mt-1">CSR Partner details</p>
+        {/* Hero — Pending (amber), Approved (green), Inactive (grey) */}
+        <div
+          className={`text-white py-8 px-6 ${
+            status === "pending"
+              ? "bg-gradient-to-r from-amber-500 to-amber-600"
+              : isInactive
+              ? "bg-gradient-to-r from-slate-500 to-slate-600"
+              : "bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600"
+          }`}
+        >
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  onClick={() => navigate("/admin/csr/partners")}
+                  className="p-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors"
+                  aria-label="Back to partners"
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                </button>
+                <div>
+                  <h1 className="text-2xl sm:text-3xl font-bold flex items-center gap-2">
+                    <Building2 className="w-8 h-8" />
+                    {partnerDetail.companyName ?? "—"}
+                  </h1>
+                  <p className="text-white/90 mt-1">
+                    {status === "pending"
+                      ? "Awaiting approval — Approve or reject below"
+                      : isInactive
+                      ? "Account suspended — Reactivate to restore access"
+                      : "CSR Partner — Active"}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <button
+                  type="button"
+                  onClick={startEditPartner}
+                  className="inline-flex items-center gap-2 rounded-xl bg-white/20 hover:bg-white/30 px-4 py-2.5 text-sm font-semibold text-white transition-colors"
+                >
+                  <Edit3 className="w-4 h-4" />
+                  Edit
+                </button>
+                <span
+                  className={`inline-flex px-3 py-1.5 rounded-xl text-sm font-semibold ${
+                    status === "pending"
+                      ? "bg-amber-400/30 text-white border border-amber-300"
+                      : isInactive
+                      ? "bg-slate-400/30 text-white border border-slate-300"
+                      : "bg-white/20 text-white border border-white/30"
+                  }`}
+                >
+                  {status.charAt(0).toUpperCase() + status.slice(1)}
+                  {isInactive && status === "approved" ? " (Inactive)" : ""}
+                </span>
+                <p className="text-sm text-white/80 hidden sm:block ml-2 pl-4 border-l border-white/30">
+                  {new Date().toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" })}
+                </p>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={startEditPartner}
-                className="inline-flex items-center gap-2 rounded-xl border-2 border-gray-100 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:border-indigo-200"
-              >
-                <Edit3 className="w-4 h-4" />
-                Edit
-              </button>
-              <span className={`inline-flex px-3 py-1.5 rounded-xl text-sm font-semibold ${getStatusColor(status)}`}>
-                {status.charAt(0).toUpperCase() + status.slice(1)}
-              </span>
-            </div>
-          </header>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 -mt-4 space-y-6">
 
           {editingPartner && (
             <motion.section
@@ -574,32 +636,37 @@ const AdminCSRPartners = () => {
             </motion.section>
           )}
 
-          {status === "approved" && (partnerDetail.status !== "inactive") && (
+          {status === "approved" && !isInactive && (
             <motion.section
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
             >
+              <h2 className="text-lg font-semibold text-slate-900 mb-3">Account actions</h2>
               <button
-                onClick={handleDetailDeactivate}
+                type="button"
+                onClick={() => setDetailActionModal("deactivate")}
                 className="inline-flex items-center gap-2 rounded-xl border-2 border-amber-200 text-amber-700 px-4 py-2.5 text-sm font-semibold hover:bg-amber-50"
               >
                 <PowerOff className="w-4 h-4" />
-                Deactivate
+                Deactivate (suspend access)
               </button>
             </motion.section>
           )}
 
-          {(partnerDetail.status === "inactive" || partnerDetail.isInactive) && (
+          {isInactive && (
             <motion.section
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
             >
+              <h2 className="text-lg font-semibold text-slate-900 mb-3">Account suspended</h2>
+              <p className="text-sm text-slate-600 mb-3">Restore access for this CSR partner.</p>
               <button
-                onClick={handleDetailReactivate}
+                type="button"
+                onClick={() => setDetailActionModal("reactivate")}
                 className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 text-white px-4 py-2.5 text-sm font-semibold hover:bg-emerald-700"
               >
                 <Power className="w-4 h-4" />
@@ -607,6 +674,85 @@ const AdminCSRPartners = () => {
               </button>
             </motion.section>
           )}
+
+          {/* Detail page Deactivate/Reactivate modals */}
+          {detailActionModal && typeof document !== "undefined" &&
+            createPortal(
+              <div
+                className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/50 p-4"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="detail-action-modal-title"
+              >
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="bg-white rounded-2xl shadow-xl border-2 border-gray-100 max-w-md w-full overflow-hidden"
+                >
+                  <div className="flex items-center justify-between p-5 border-b border-slate-100">
+                    <h3 id="detail-action-modal-title" className="text-lg font-bold text-slate-900">
+                      {detailActionModal === "deactivate" ? "Deactivate Partner?" : "Reactivate Partner?"}
+                    </h3>
+                    <button
+                      type="button"
+                      onClick={() => !processing && setDetailActionModal(null)}
+                      disabled={processing}
+                      className="p-2 rounded-xl hover:bg-slate-100 text-slate-500 disabled:opacity-50"
+                      aria-label="Close"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="p-5 space-y-4">
+                    {detailActionModal === "deactivate" ? (
+                      <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
+                        <p className="text-sm text-amber-900">
+                          Deactivate <span className="font-semibold">&quot;{partnerDetail.companyName}&quot;</span>? They will not be able to access the portal until you reactivate them.
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200">
+                        <p className="text-sm text-emerald-900">
+                          Reactivate <span className="font-semibold">&quot;{partnerDetail.companyName}&quot;</span>? They will be able to use the portal again.
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex gap-3 p-5 border-t border-slate-100 bg-slate-50/50">
+                    <button
+                      type="button"
+                      onClick={() => !processing && setDetailActionModal(null)}
+                      disabled={processing}
+                      className="flex-1 px-4 py-2.5 rounded-xl border-2 border-gray-100 bg-white text-sm font-semibold text-slate-600 hover:bg-slate-50 disabled:opacity-50"
+                    >
+                      Cancel
+                    </button>
+                    {detailActionModal === "deactivate" ? (
+                      <button
+                        type="button"
+                        onClick={handleDetailDeactivate}
+                        disabled={processing}
+                        className="flex-1 px-4 py-2.5 rounded-xl bg-amber-600 text-white text-sm font-semibold hover:bg-amber-700 disabled:opacity-50 flex items-center justify-center gap-2"
+                      >
+                        {processing ? <RefreshCw className="w-4 h-4 animate-spin" /> : <PowerOff className="w-4 h-4" />}
+                        {processing ? "Deactivating..." : "Deactivate"}
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={handleDetailReactivate}
+                        disabled={processing}
+                        className="flex-1 px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700 disabled:opacity-50 flex items-center justify-center gap-2"
+                      >
+                        {processing ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Power className="w-4 h-4" />}
+                        {processing ? "Reactivating..." : "Reactivate"}
+                      </button>
+                    )}
+                  </div>
+                </motion.div>
+              </div>,
+              document.body
+            )}
         </div>
       </div>
     );
@@ -660,53 +806,69 @@ const AdminCSRPartners = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-12">
-      <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
-        {/* HEADER */}
-        <header className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Super Admin</p>
-            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 flex items-center gap-2">
-              <Building2 className="w-7 h-7 text-indigo-600" />
-              CSR Partners
-            </h1>
-            <p className="text-sm text-slate-600 mt-1">
-              Review and approve CSR partner registrations.
-            </p>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-              <input
-                type="text"
-                value={search}
-                onChange={(e) => {
-                  setSearch(e.target.value);
-                  setPage(1);
-                }}
-                placeholder="Search by name or email..."
-                className="pl-10 pr-4 py-2.5 rounded-xl border-2 border-gray-100 bg-white text-sm w-full lg:w-64 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-              />
+      {/* Hero — match Super Admin / Programs */}
+      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center justify-between flex-wrap gap-4"
+          >
+            <div className="flex items-center gap-4">
+              <button
+                type="button"
+                onClick={() => navigate("/admin/dashboard")}
+                className="p-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors"
+                aria-label="Back to dashboard"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+              <div>
+                <h1 className="text-4xl font-black mb-2 flex items-center gap-3">
+                  <Building2 className="w-10 h-10" />
+                  CSR Partners
+                </h1>
+                <p className="text-lg text-white/90">
+                  Review and approve CSR partner registrations
+                </p>
+              </div>
             </div>
-            <button
-              type="button"
-              onClick={() => navigate("/admin/csr/notifications")}
-              className="inline-flex items-center gap-2 rounded-xl bg-white border-2 border-gray-100 px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all"
-            >
-              <Bell className="w-4 h-4" />
-              Notifications
-            </button>
-            <button
-              onClick={handleRefresh}
-              disabled={refreshing}
-              className="inline-flex items-center gap-2 rounded-xl bg-white border-2 border-gray-100 px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:shadow-md hover:border-indigo-200 disabled:opacity-50 transition-all"
-            >
-              <RefreshCw className={`w-4 h-4 ${refreshing ? "animate-spin" : ""}`} />
-              Refresh
-            </button>
-          </div>
-        </header>
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                onClick={handleRefresh}
+                disabled={refreshing}
+                className="inline-flex items-center gap-2 rounded-xl bg-white/20 hover:bg-white/30 px-4 py-2.5 text-sm font-semibold text-white transition-all disabled:opacity-50"
+              >
+                <RefreshCw className={`w-4 h-4 ${refreshing ? "animate-spin" : ""}`} />
+                Refresh
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate("/admin/csr/notifications")}
+                className="inline-flex items-center gap-2 rounded-xl bg-white/20 hover:bg-white/30 px-4 py-2.5 text-sm font-semibold text-white transition-colors"
+              >
+                <Bell className="w-4 h-4" />
+                Notifications
+              </button>
+              <div className="text-right hidden sm:block ml-2 pl-4 border-l border-white/30">
+                <p className="text-sm text-white/80">Today&apos;s Date</p>
+                <p className="text-xl font-bold">
+                  {new Date().toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
 
-        {/* SUMMARY CARDS */}
+      <div className="max-w-7xl mx-auto px-6 -mt-8 space-y-6">
+        {/* Summary cards */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {summaryCards.map((card, i) => (
             <motion.div
@@ -727,41 +889,62 @@ const AdminCSRPartners = () => {
           ))}
         </section>
 
-        {/* TABS */}
-        <div className="flex gap-2 overflow-x-auto pb-2">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => {
-                setActiveTab(tab.id);
-                setPage(1);
-              }}
-              className={`px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap transition-all border-2 ${
-                activeTab === tab.id
-                  ? "bg-indigo-600 text-white border-indigo-600 shadow-md"
-                  : "bg-white text-slate-600 border-gray-100 hover:border-indigo-200 hover:bg-slate-50"
-              }`}
-            >
-              {tab.label}
-              {tab.id !== "all" && counts[tab.id] > 0 && (
-                <span
-                  className={`ml-2 px-2 py-0.5 rounded-lg text-xs font-bold ${
-                    activeTab === tab.id ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600"
-                  }`}
-                >
-                  {counts[tab.id]}
-                </span>
-              )}
-            </button>
-          ))}
-        </div>
-
-        {/* TABLE CARD */}
+        {/* Partners list card — search, tabs, table */}
         <motion.section
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 overflow-hidden"
         >
+          <div className="px-6 py-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
+              <Building2 className="w-7 h-7 text-indigo-600" />
+              Partners List
+            </h2>
+            <div className="relative flex-1 max-w-xs sm:max-w-sm">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                  setPage(1);
+                }}
+                placeholder="Search by name or email..."
+                className="pl-10 pr-4 py-2.5 rounded-xl border-2 border-gray-100 bg-slate-50/50 text-sm w-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              />
+            </div>
+          </div>
+
+          {/* Tabs */}
+          <div className="px-6 py-3 border-b border-slate-100 flex gap-2 overflow-x-auto">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => {
+                  setActiveTab(tab.id);
+                  setPage(1);
+                }}
+                className={`px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap transition-all border-2 ${
+                  activeTab === tab.id
+                    ? "bg-indigo-600 text-white border-indigo-600 shadow-md"
+                    : "bg-slate-50/50 text-slate-600 border-gray-100 hover:border-indigo-200 hover:bg-slate-100"
+                }`}
+              >
+                {tab.label}
+                {tab.id !== "all" && counts[tab.id] > 0 && (
+                  <span
+                    className={`ml-2 px-2 py-0.5 rounded-lg text-xs font-bold ${
+                      activeTab === tab.id ? "bg-white/20 text-white" : "bg-slate-200 text-slate-600"
+                    }`}
+                  >
+                    {counts[tab.id]}
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
+
           {loading ? (
             <div className="flex items-center justify-center py-16">
               <div className="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin" />
@@ -848,7 +1031,12 @@ const AdminCSRPartners = () => {
                             )}
                             {approvalStatus(partner) === "approved" && (
                               <button
-                                onClick={() => handleDeactivate(partner)}
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  openModal(partner, "deactivate");
+                                }}
                                 className="p-2 rounded-lg text-amber-600 hover:bg-amber-50 transition-colors"
                                 title="Deactivate"
                               >
@@ -857,7 +1045,12 @@ const AdminCSRPartners = () => {
                             )}
                             {partner.status === "inactive" && (
                               <button
-                                onClick={() => handleReactivate(partner)}
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  openModal(partner, "reactivate");
+                                }}
                                 className="p-2 rounded-lg text-emerald-600 hover:bg-emerald-50 transition-colors"
                                 title="Reactivate"
                               >
@@ -899,28 +1092,41 @@ const AdminCSRPartners = () => {
         </motion.section>
       </div>
 
-      {/* MODAL */}
-      {selectedPartner && modalMode && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-2xl shadow-xl border-2 border-gray-100 max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col"
+      {/* MODAL — deactivate/reactivate/approve/reject/view */}
+      {selectedPartner && modalMode && typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/50 p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="csr-partner-modal-title"
           >
-            <div className="flex items-center justify-between p-5 border-b border-slate-100">
-              <h3 className="text-lg font-bold text-slate-900">
-                {modalMode === "view" && "Partner Details"}
-                {modalMode === "approve" && "Approve Partner"}
-                {modalMode === "reject" && "Reject Partner"}
-              </h3>
-              <button
-                onClick={closeModal}
-                className="p-2 rounded-xl hover:bg-slate-100 text-slate-500"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-white rounded-2xl shadow-xl border-2 border-gray-100 max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col"
+            >
+              <div className="flex items-center justify-between p-5 border-b border-slate-100">
+                <h3 id="csr-partner-modal-title" className="text-lg font-bold text-slate-900">
+                  {modalMode === "view" && "Partner Details"}
+                  {modalMode === "approve" && "Approve Partner"}
+                  {modalMode === "reject" && "Reject Partner"}
+                  {modalMode === "deactivate" && "Deactivate Partner"}
+                  {modalMode === "reactivate" && "Reactivate Partner"}
+                </h3>
+                <button
+                  type="button"
+                  onClick={closeModal}
+                  disabled={processing}
+                  className="p-2 rounded-xl hover:bg-slate-100 text-slate-500 disabled:opacity-50"
+                  aria-label="Close"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
             <div className="p-5 space-y-4 overflow-y-auto flex-1">
+              {/* Partner details card — hide for deactivate/reactivate (use focused confirmation only) */}
+              {modalMode !== "deactivate" && modalMode !== "reactivate" && (
               <div className="bg-slate-50 rounded-xl p-4 space-y-3">
                 {[
                   { label: "Company", value: selectedPartner.companyName },
@@ -956,6 +1162,7 @@ const AdminCSRPartners = () => {
                   </div>
                 )}
               </div>
+              )}
               {modalMode === "reject" && (
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -981,16 +1188,51 @@ const AdminCSRPartners = () => {
                   </div>
                 </div>
               )}
+              {modalMode === "deactivate" && (
+                <div className="bg-amber-50 rounded-xl p-4 border border-amber-200 space-y-3">
+                  <div className="flex items-start gap-2">
+                    <PowerOff className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-sm font-semibold text-amber-900">
+                        Deactivate &quot;{selectedPartner.companyName}&quot;?
+                      </p>
+                      <p className="text-sm text-amber-800 mt-1">
+                        This will suspend the CSR partner. They will not be able to access the portal
+                        until you reactivate them. You can reactivate at any time.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {modalMode === "reactivate" && (
+                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200 space-y-3">
+                  <div className="flex items-start gap-2">
+                    <Power className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-sm font-semibold text-emerald-900">
+                        Reactivate &quot;{selectedPartner.companyName}&quot;?
+                      </p>
+                      <p className="text-sm text-emerald-800 mt-1">
+                        This will restore access for the CSR partner. They will be able to use the
+                        portal again.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="flex gap-3 p-5 border-t border-slate-100 bg-slate-50/50">
               <button
+                type="button"
                 onClick={closeModal}
-                className="flex-1 px-4 py-2.5 rounded-xl border-2 border-gray-100 bg-white text-sm font-semibold text-slate-600 hover:bg-slate-50"
+                disabled={processing}
+                className="flex-1 px-4 py-2.5 rounded-xl border-2 border-gray-100 bg-white text-sm font-semibold text-slate-600 hover:bg-slate-50 disabled:opacity-50"
               >
                 {modalMode === "view" ? "Close" : "Cancel"}
               </button>
               {modalMode === "approve" && (
                 <button
+                  type="button"
                   onClick={handleApprove}
                   disabled={processing}
                   className="flex-1 px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700 disabled:opacity-50 flex items-center justify-center gap-2"
@@ -1003,6 +1245,7 @@ const AdminCSRPartners = () => {
               )}
               {modalMode === "reject" && (
                 <button
+                  type="button"
                   onClick={handleReject}
                   disabled={processing || !rejectionReason.trim()}
                   className="flex-1 px-4 py-2.5 rounded-xl bg-rose-600 text-white text-sm font-semibold hover:bg-rose-700 disabled:opacity-50 flex items-center justify-center gap-2"
@@ -1013,9 +1256,40 @@ const AdminCSRPartners = () => {
                   {processing ? "Rejecting..." : "Reject Partner"}
                 </button>
               )}
+              {modalMode === "deactivate" && (
+                <button
+                  type="button"
+                  onClick={handleConfirmDeactivate}
+                  disabled={processing}
+                  className="flex-1 px-4 py-2.5 rounded-xl bg-amber-600 text-white text-sm font-semibold hover:bg-amber-700 disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  {processing ? (
+                    <RefreshCw className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <PowerOff className="w-4 h-4" />
+                  )}
+                  {processing ? "Deactivating..." : "Deactivate"}
+                </button>
+              )}
+              {modalMode === "reactivate" && (
+                <button
+                  type="button"
+                  onClick={handleConfirmReactivate}
+                  disabled={processing}
+                  className="flex-1 px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700 disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  {processing ? (
+                    <RefreshCw className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Power className="w-4 h-4" />
+                  )}
+                  {processing ? "Reactivating..." : "Reactivate"}
+                </button>
+              )}
             </div>
           </motion.div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

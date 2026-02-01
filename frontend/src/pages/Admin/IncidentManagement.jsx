@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
-  AlertTriangle, CheckCircle, Clock, XCircle, Shield, Activity,
-  TrendingUp, Eye, User, Calendar, Flag, Plus, Filter, Search,
-  ExternalLink, Send, Check, X, Bell, Zap, Flame
+  AlertTriangle, ArrowLeft, CheckCircle, Clock, XCircle, Shield, Activity,
+  User, Calendar, Flag, Plus, Filter, ExternalLink, Check, X, Zap
 } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 import api from '../../utils/api';
@@ -12,6 +11,7 @@ import { useSocket } from '../../context/SocketContext';
 
 const IncidentManagement = () => {
   const { ticketNumber } = useParams();
+  const navigate = useNavigate();
   const [incidents, setIncidents] = useState([]);
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -80,9 +80,9 @@ const IncidentManagement = () => {
       };
 
       const handleNewIncident = (data) => {
-        setIncidents(prev => [data, ...prev]);
+        fetchIncidents(); // Refetch to get full incident data
         fetchStats();
-        toast.success(`New ${data.severity} incident: ${data.ticketNumber}`);
+        toast.success(`New ${data.severity || 'platform'} incident: ${data.ticketNumber || data._id || 'created'}`);
       };
 
       socket.socket.on('admin:incident:update', handleIncidentUpdate);
@@ -92,7 +92,7 @@ const IncidentManagement = () => {
         socket.socket.off('admin:incident:new', handleNewIncident);
       };
     }
-  }, [socket, fetchStats]);
+  }, [socket, fetchStats, fetchIncidents]);
 
   const handleResolveIncident = async (incidentId) => {
     const notes = prompt('Enter resolution notes:');
@@ -150,6 +150,16 @@ const IncidentManagement = () => {
     }
   };
 
+  const getSeverityBorderLeft = (severity) => {
+    switch (severity) {
+      case 'critical': return 'border-l-red-500';
+      case 'high': return 'border-l-orange-500';
+      case 'medium': return 'border-l-yellow-500';
+      case 'low': return 'border-l-blue-500';
+      default: return 'border-l-gray-400';
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center">
@@ -162,118 +172,130 @@ const IncidentManagement = () => {
     );
   }
 
+  const openCount = stats?.open ?? 0;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-12">
-      {/* Hero Header */}
-      <div className="bg-gradient-to-r from-red-600 via-orange-600 to-pink-600 text-white py-16 px-6 mb-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-4">
-              <div className="p-4 bg-white/20 backdrop-blur-lg rounded-2xl">
-                <Activity className="w-12 h-12" />
-              </div>
-              <div>
-                <h1 className="text-4xl font-black mb-2">Incident Management</h1>
-                <p className="text-lg text-white/90">Monitor and respond to platform incidents in real-time</p>
-              </div>
+      <header className="w-full bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 shadow-2xl border border-purple-500/30 px-4 py-12 md:py-14">
+        <div className="max-w-7xl mx-auto flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-start gap-4">
+            <button
+              type="button"
+              onClick={() => navigate('/admin/dashboard')}
+              className="p-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors shrink-0 mt-0.5"
+              aria-label="Back to dashboard"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/80">Support & operations</p>
+              <h1 className="text-2xl md:text-3xl font-black text-white mt-2 flex items-center gap-3">
+                <AlertTriangle className="w-8 h-8 shrink-0" />
+                Incident Management
+              </h1>
+              <p className="text-sm text-white/85 max-w-2xl mt-1.5 leading-relaxed">
+                Monitor and respond to platform incidents in real-time. Filter by status and severity.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 flex-shrink-0 md:pl-4">
+            <div className="text-right space-y-0.5">
+              <p className="text-sm font-medium text-white/90">
+                Open: <span className="font-bold text-white">{openCount}</span> incidents
+              </p>
+              <p className="text-xs text-white/70">
+                {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+              </p>
             </div>
             <button
+              type="button"
               onClick={() => setShowCreateModal(true)}
-              className="flex items-center gap-3 px-6 py-4 bg-white/20 backdrop-blur-lg hover:bg-white/30 text-white rounded-xl font-bold transition-all shadow-lg hover:shadow-xl"
+              className="flex items-center gap-2 px-4 py-2.5 bg-white/20 hover:bg-white/30 text-white rounded-xl font-semibold transition border border-white/20"
+              aria-label="Create incident"
             >
-              <Plus className="w-6 h-6" />
+              <Plus className="w-5 h-5" />
               Create Incident
             </button>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 -mt-8">
         {/* Stats */}
         {stats && (
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-2xl shadow-xl p-6 border-2 border-indigo-200"
+              className="bg-white rounded-2xl shadow-sm p-5 border border-slate-200"
             >
-              <div className="flex items-center gap-4">
-                <div className="p-4 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl">
-                  <Activity className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <div className="text-3xl font-black text-gray-900">{stats.total}</div>
-                  <div className="text-sm text-gray-600 font-semibold">Total</div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">Total</span>
+                <div className="p-2 rounded-lg bg-indigo-100">
+                  <Activity className="w-4 h-4 text-indigo-600" />
                 </div>
               </div>
+              <p className="text-2xl font-bold text-slate-900">{stats.total}</p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.05 }}
+              className="bg-white rounded-2xl shadow-sm p-5 border border-slate-200"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">Open</span>
+                <div className="p-2 rounded-lg bg-red-100">
+                  <AlertTriangle className="w-4 h-4 text-red-600" />
+                </div>
+              </div>
+              <p className="text-2xl font-bold text-slate-900">{stats.open}</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-2xl shadow-xl p-6 border-2 border-red-200"
+              className="bg-white rounded-2xl shadow-sm p-5 border border-slate-200"
             >
-              <div className="flex items-center gap-4">
-                <div className="p-4 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl">
-                  <AlertTriangle className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <div className="text-3xl font-black text-red-600">{stats.open}</div>
-                  <div className="text-sm text-gray-600 font-semibold">Open</div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">Investigating</span>
+                <div className="p-2 rounded-lg bg-amber-100">
+                  <Clock className="w-4 h-4 text-amber-600" />
                 </div>
               </div>
+              <p className="text-2xl font-bold text-slate-900">{stats.investigating}</p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="bg-white rounded-2xl shadow-sm p-5 border border-slate-200"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">Resolved</span>
+                <div className="p-2 rounded-lg bg-emerald-100">
+                  <CheckCircle className="w-4 h-4 text-emerald-600" />
+                </div>
+              </div>
+              <p className="text-2xl font-bold text-slate-900">{stats.resolved}</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-white rounded-2xl shadow-xl p-6 border-2 border-yellow-200"
+              className="bg-white rounded-2xl shadow-sm p-5 border border-slate-200"
             >
-              <div className="flex items-center gap-4">
-                <div className="p-4 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl">
-                  <Clock className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <div className="text-3xl font-black text-yellow-600">{stats.investigating}</div>
-                  <div className="text-sm text-gray-600 font-semibold">Investigating</div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">Critical</span>
+                <div className="p-2 rounded-lg bg-rose-100">
+                  <Flag className="w-4 h-4 text-rose-600" />
                 </div>
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="bg-white rounded-2xl shadow-xl p-6 border-2 border-green-200"
-            >
-              <div className="flex items-center gap-4">
-                <div className="p-4 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl">
-                  <CheckCircle className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <div className="text-3xl font-black text-green-600">{stats.resolved}</div>
-                  <div className="text-sm text-gray-600 font-semibold">Resolved</div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="bg-white rounded-2xl shadow-xl p-6 border-2 border-purple-200"
-            >
-              <div className="flex items-center gap-4">
-                <div className="p-4 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl">
-                  <Flag className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <div className="text-3xl font-black text-purple-600">{stats.critical}</div>
-                  <div className="text-sm text-gray-600 font-semibold">Critical</div>
-                </div>
-              </div>
+              <p className="text-2xl font-bold text-slate-900">{stats.critical}</p>
             </motion.div>
           </div>
         )}
@@ -283,34 +305,45 @@ const IncidentManagement = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="bg-white rounded-2xl shadow-xl p-6 mb-8 border-2 border-gray-100"
+          className="bg-white rounded-2xl shadow-sm p-5 mb-8 border border-slate-200"
         >
-          <div className="flex items-center gap-4">
-            <div className="p-3 bg-red-100 rounded-xl">
-              <Filter className="w-6 h-6 text-red-600" />
+          <div className="flex flex-col sm:flex-row sm:items-end gap-4">
+            <div className="flex items-center gap-2 text-slate-700 mb-1 sm:mb-0">
+              <Filter className="w-5 h-5 text-indigo-500 shrink-0" />
+              <span className="text-sm font-semibold">Filters</span>
             </div>
-            <select
-              value={filterStatus}
-              onChange={(e) => setFilterStatus(e.target.value)}
-              className="flex-1 border-2 border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold focus:border-red-500 focus:ring-4 focus:ring-red-200 transition-all"
-            >
-              <option value="all">All Status</option>
-              <option value="open">Open</option>
-              <option value="investigating">Investigating</option>
-              <option value="resolved">Resolved</option>
-              <option value="closed">Closed</option>
-            </select>
-            <select
-              value={filterSeverity}
-              onChange={(e) => setFilterSeverity(e.target.value)}
-              className="flex-1 border-2 border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold focus:border-red-500 focus:ring-4 focus:ring-red-200 transition-all"
-            >
-              <option value="all">All Severities</option>
-              <option value="critical">Critical</option>
-              <option value="high">High</option>
-              <option value="medium">Medium</option>
-              <option value="low">Low</option>
-            </select>
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label className="block">
+                <span className="block text-xs font-medium text-slate-500 uppercase tracking-wide mb-1.5">Status</span>
+                <select
+                  value={filterStatus}
+                  onChange={(e) => setFilterStatus(e.target.value)}
+                  className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all"
+                  aria-label="Filter by status"
+                >
+                  <option value="all">All statuses</option>
+                  <option value="open">Open</option>
+                  <option value="investigating">Investigating</option>
+                  <option value="resolved">Resolved</option>
+                  <option value="closed">Closed</option>
+                </select>
+              </label>
+              <label className="block">
+                <span className="block text-xs font-medium text-slate-500 uppercase tracking-wide mb-1.5">Severity</span>
+                <select
+                  value={filterSeverity}
+                  onChange={(e) => setFilterSeverity(e.target.value)}
+                  className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all"
+                  aria-label="Filter by severity"
+                >
+                  <option value="all">All severities</option>
+                  <option value="critical">Critical</option>
+                  <option value="high">High</option>
+                  <option value="medium">Medium</option>
+                  <option value="low">Low</option>
+                </select>
+              </label>
+            </div>
           </div>
         </motion.div>
 
@@ -326,10 +359,10 @@ const IncidentManagement = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.05 }}
                 whileHover={{ y: -4, scale: 1.01 }}
-                className={`bg-white rounded-2xl shadow-lg p-6 cursor-pointer hover:shadow-2xl transition-all border-l-4 bg-gradient-to-r ${
-                  isExpanded 
-                    ? `border-l-indigo-500 from-indigo-50 to-white` 
-                    : `border-l-${getSeverityColor(incident.severity).split(' ')[1]}`
+                className={`bg-white rounded-2xl shadow-lg p-6 cursor-pointer hover:shadow-xl transition-all border-l-4 ${
+                  isExpanded
+                    ? 'border-l-indigo-500 bg-gradient-to-r from-indigo-50/80 to-white'
+                    : `${getSeverityBorderLeft(incident.severity)} bg-gradient-to-r from-white to-slate-50/50`
                 }`}
                 onClick={() => setExpandedIncident(isExpanded ? null : incident._id)}
               >
@@ -507,12 +540,22 @@ const IncidentManagement = () => {
           })}
 
           {incidents.length === 0 && (
-            <div className="bg-white rounded-2xl shadow-xl p-20 text-center border-2 border-gray-100">
-              <div className="w-32 h-32 bg-gradient-to-br from-red-100 to-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Activity className="w-16 h-16 text-red-600" />
+            <div className="bg-white rounded-2xl shadow-sm p-12 text-center border border-slate-200">
+              <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-emerald-600" />
               </div>
-              <h3 className="text-2xl font-black text-gray-900 mb-3">No Incidents Found</h3>
-              <p className="text-gray-600 text-lg">All systems operational</p>
+              <h3 className="text-lg font-semibold text-slate-900 mb-1">No incidents found</h3>
+              <p className="text-sm text-slate-500 mb-6 max-w-sm mx-auto">
+                No incidents match the current filters, or all systems are operational.
+              </p>
+              <button
+                type="button"
+                onClick={() => setShowCreateModal(true)}
+                className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl transition"
+              >
+                <Plus className="w-4 h-4" />
+                Create incident
+              </button>
             </div>
           )}
         </div>
@@ -549,29 +592,47 @@ const CreateIncidentModal = ({ onClose, onSuccess }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <div
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="create-incident-title"
+    >
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white rounded-3xl p-8 max-w-2xl w-full border-4 border-red-300 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white rounded-2xl p-6 max-w-lg w-full border border-slate-200 shadow-xl"
       >
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-3xl font-black text-gray-900 flex items-center gap-3">
-            <Flame className="w-8 h-8 text-red-600" />
+        <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-200">
+          <h2 id="create-incident-title" className="text-xl font-semibold text-slate-900 flex items-center gap-2">
+            <span className="p-2 rounded-lg bg-indigo-100">
+              <Plus className="w-5 h-5 text-indigo-600" />
+            </span>
             Create Incident
-          </h3>
-          <button onClick={onClose} className="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all">
-            <X className="w-6 h-6 text-gray-700" />
+          </h2>
+          <button
+            type="button"
+            onClick={onClose}
+            className="p-2 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition"
+            aria-label="Close"
+          >
+            <X className="w-5 h-5" />
           </button>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-bold text-gray-900 mb-2">Incident Type</label>
+            <label htmlFor="incident-type" className="block text-xs font-medium text-slate-500 uppercase tracking-wide mb-1.5">
+              Incident type
+            </label>
             <select
+              id="incident-type"
               required
               value={formData.incidentType}
-              onChange={(e) => setFormData({...formData, incidentType: e.target.value})}
-              className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-red-500 focus:ring-4 focus:ring-red-200 transition-all font-semibold"
+              onChange={(e) => setFormData({ ...formData, incidentType: e.target.value })}
+              className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition outline-none"
+              aria-label="Incident type"
             >
               <option value="sla_breach">SLA Breach</option>
               <option value="privacy_incident">Privacy Incident</option>
@@ -582,12 +643,16 @@ const CreateIncidentModal = ({ onClose, onSuccess }) => {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-bold text-gray-900 mb-2">Severity</label>
+            <label htmlFor="incident-severity" className="block text-xs font-medium text-slate-500 uppercase tracking-wide mb-1.5">
+              Severity
+            </label>
             <select
+              id="incident-severity"
               required
               value={formData.severity}
-              onChange={(e) => setFormData({...formData, severity: e.target.value})}
-              className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-red-500 focus:ring-4 focus:ring-red-200 transition-all font-semibold"
+              onChange={(e) => setFormData({ ...formData, severity: e.target.value })}
+              className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition outline-none"
+              aria-label="Severity"
             >
               <option value="low">Low</option>
               <option value="medium">Medium</option>
@@ -596,41 +661,49 @@ const CreateIncidentModal = ({ onClose, onSuccess }) => {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-bold text-gray-900 mb-2">Title</label>
+            <label htmlFor="incident-title" className="block text-xs font-medium text-slate-500 uppercase tracking-wide mb-1.5">
+              Title
+            </label>
             <input
+              id="incident-title"
               type="text"
               required
               value={formData.title}
-              onChange={(e) => setFormData({...formData, title: e.target.value})}
-              className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-red-500 focus:ring-4 focus:ring-red-200 transition-all"
+              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+              className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition outline-none"
               placeholder="Brief incident description"
+              aria-label="Incident title"
             />
           </div>
           <div>
-            <label className="block text-sm font-bold text-gray-900 mb-2">Description</label>
+            <label htmlFor="incident-description" className="block text-xs font-medium text-slate-500 uppercase tracking-wide mb-1.5">
+              Description
+            </label>
             <textarea
+              id="incident-description"
               required
               value={formData.description}
-              onChange={(e) => setFormData({...formData, description: e.target.value})}
+              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               rows={4}
-              className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-red-500 focus:ring-4 focus:ring-red-200 transition-all"
+              className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition outline-none resize-none"
               placeholder="Detailed incident description"
+              aria-label="Incident description"
             />
           </div>
-          <div className="flex gap-4">
-            <button
-              type="submit"
-              className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-red-600 to-pink-600 text-white rounded-xl hover:shadow-xl transition-all font-bold"
-            >
-              <Plus className="w-5 h-5" />
-              Create Incident
-            </button>
+          <div className="flex gap-3 pt-2">
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-6 py-4 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition-colors font-bold"
+              className="flex-1 px-4 py-2.5 text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition"
             >
               Cancel
+            </button>
+            <button
+              type="submit"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl transition"
+            >
+              <Plus className="w-4 h-4" />
+              Create Incident
             </button>
           </div>
         </form>

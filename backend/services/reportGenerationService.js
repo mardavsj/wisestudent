@@ -1,10 +1,250 @@
+import mongoose from "mongoose";
 import PDFDocument from "pdfkit";
 import ExcelJS from "exceljs";
 import Program from "../models/Program.js";
 import ProgramSchool from "../models/ProgramSchool.js";
 import ProgramMetrics from "../models/ProgramMetrics.js";
 import ProgramCheckpoint from "../models/ProgramCheckpoint.js";
+import SchoolStudent from "../models/School/SchoolStudent.js";
+import Organization from "../models/Organization.js";
+import UnifiedGameProgress from "../models/UnifiedGameProgress.js";
 import CSRSponsor from "../models/CSRSponsor.js";
+import { READINESS_PILLAR_DEFS, scoreToLevel, READINESS_EXPOSURE_DISCLAIMER } from "../constants/readinessPillars.js";
+
+/** Normalize programId to ObjectId for aggregate match */
+const toObjectId = (id) =>
+  id && mongoose.Types.ObjectId.isValid(id) ? new mongoose.Types.ObjectId(id) : id;
+
+/**
+ * Get school ID string from a ProgramSchool doc (works when schoolId is populated or raw ObjectId).
+ */
+const getSchoolIdStr = (ps) => {
+  const sid = ps.schoolId;
+  if (!sid) return "";
+  return (sid._id ?? sid).toString();
+};
+
+/**
+ * Get real student/school counts for reports (from SchoolStudent and ProgramSchool).
+ * @param {ObjectId|string} programId - Program ID
+ * @returns {Promise<{ totalStudents, totalSchools, studentCountBySchoolId }>}
+ */
+const getReportMetrics = async (programId) => {
+  const pid = toObjectId(programId);
+  const [schoolStats, studentCounts] = await Promise.all([
+    ProgramSchool.aggregate([
+      { $match: { programId: pid } },
+      { $group: { _id: null, totalSchools: { $sum: 1 }, schoolIds: { $push: "$schoolId" } } },
+    ]),
+    ProgramSchool.aggregate([
+      { $match: { programId: pid } },
+      {
+        $lookup: {
+          from: "schoolstudents",
+          localField: "schoolId",
+          foreignField: "orgId",
+          as: "students",
+        },
+      },
+      { $project: { schoolId: 1, count: { $size: "$students" } } },
+    ]),
+  ]);
+
+  const studentCountBySchoolId = {};
+  let totalStudents = 0;
+  (studentCounts || []).forEach((row) => {
+    const count = row.count ?? 0;
+    const key = row.schoolId?.toString?.() ?? (row.schoolId && row.schoolId.toString?.()) ?? "";
+    if (key) studentCountBySchoolId[key] = count;
+    totalStudents += count;
+  });
+
+  const schoolIds = schoolStats[0]?.schoolIds || [];
+  if (totalStudents === 0 && schoolIds.length > 0) {
+    const byOrg = await SchoolStudent.aggregate([
+      { $match: { orgId: { $in: schoolIds } } },
+      { $group: { _id: "$orgId", count: { $sum: 1 } } },
+    ]);
+    byOrg.forEach((row) => {
+      const key = row._id?.toString?.() ?? "";
+      if (key) {
+        studentCountBySchoolId[key] = row.count ?? 0;
+        totalStudents += row.count ?? 0;
+      }
+    });
+  }
+
+  return {
+    totalStudents,
+    totalSchools: schoolStats[0]?.totalSchools ?? 0,
+    studentCountBySchoolId,
+  };
+};
+
+/**
+ * Get recognition metrics for reports (aligned with CSR getRecognition).
+ * Certificate issued = sum certificatesDelivered; Kits in progress = sum certificatesInProgress; Badges from UnifiedGameProgress.
+ * @param {ObjectId|string} programId - Program ID
+ * @returns {Promise<{ certificatesIssued, badgesIssued, recognitionKitsInProgress, completionBasedRecognition }>}
+ */
+const getReportRecognitionMetrics = async (programId) => {
+  const pid = toObjectId(programId);
+  const assignedSchools = await ProgramSchool.find({ programId: pid }).select("schoolId").lean();
+  const schoolIds = assignedSchools.map((ps) => ps.schoolId).filter(Boolean);
+  if (schoolIds.length === 0) {
+    return {
+      certificatesIssued: 0,
+      badgesIssued: 0,
+      recognitionKitsInProgress: 0,
+      completionBasedRecognition: 0,
+    };
+  }
+  const orgs = await Organization.find({ _id: { $in: schoolIds } }).select("tenantId").lean();
+  const tenantIds = orgs.map((o) => o.tenantId).filter(Boolean);
+  const baseMatch =
+    tenantIds.length > 0
+      ? { $or: [{ orgId: { $in: schoolIds } }, { tenantId: { $in: tenantIds } }] }
+      : { orgId: { $in: schoolIds } };
+
+  const studentAgg = await SchoolStudent.aggregate([
+    { $match: baseMatch },
+    {
+      $group: {
+        _id: null,
+        userIds: { $addToSet: "$userId" },
+        count: { $sum: 1 },
+        certificatesDeliveredSum: { $sum: { $ifNull: ["$certificatesDelivered", 0] } },
+        certificatesInProgressSum: { $sum: { $ifNull: ["$certificatesInProgress", 0] } },
+      },
+    },
+  ]);
+  const row = studentAgg[0];
+  const studentUserIds = (row?.userIds || []).filter(Boolean);
+  const totalStudents = row?.count ?? 0;
+  let certificatesIssued = row?.certificatesDeliveredSum ?? 0;
+  let recognitionKitsInProgress = row?.certificatesInProgressSum ?? 0;
+  let badgesIssued = 0;
+  let completionBasedRecognition = 0;
+
+  if (studentUserIds.length > 0) {
+    const [badgeCount, completerIds] = await Promise.all([
+      UnifiedGameProgress.countDocuments({ userId: { $in: studentUserIds }, badgeAwarded: true }),
+      UnifiedGameProgress.distinct("userId", { userId: { $in: studentUserIds }, fullyCompleted: true }),
+    ]);
+    badgesIssued = badgeCount;
+    const completersCount = completerIds?.length ?? 0;
+    completionBasedRecognition = totalStudents > 0 ? Math.round((completersCount / totalStudents) * 100) : 0;
+  }
+
+  return {
+    certificatesIssued,
+    badgesIssued,
+    recognitionKitsInProgress,
+    completionBasedRecognition,
+  };
+};
+
+/**
+ * Get readiness exposure data for reports — same structure as CSR page /programs/:programId/readiness-exposure.
+ * Pillar definitions: constants/readinessPillars.js (single source of truth).
+ * @param {ObjectId|string} programId - Program ID
+ * @returns {Promise<{ pillars: Array<{ id, name, level, trend, hasData }>, disclaimer: string }>}
+ */
+const getReportReadinessExposure = async (programId) => {
+  const pid = toObjectId(programId);
+  const metrics = await ProgramMetrics.findOne({ programId: pid }).lean();
+  const assignedSchools = await ProgramSchool.find({ programId: pid }).select("schoolId").lean();
+  const schoolIds = assignedSchools.map((ps) => ps.schoolId).filter(Boolean);
+
+  let pillarAverages = {};
+  let gameTypeCounts = {};
+  let totalStudents = 0;
+
+  if (schoolIds.length > 0) {
+    const orgs = await Organization.find({ _id: { $in: schoolIds } }).select("tenantId").lean();
+    const tenantIds = orgs.map((o) => o.tenantId).filter(Boolean);
+    const baseMatch =
+      tenantIds.length > 0
+        ? { $or: [{ orgId: { $in: schoolIds } }, { tenantId: { $in: tenantIds } }] }
+        : { orgId: { $in: schoolIds } };
+    const baseMatchWithLegacy = { ...baseMatch, allowLegacy: true };
+
+    const agg = await SchoolStudent.aggregate([
+      { $match: baseMatch },
+      {
+        $group: {
+          _id: null,
+          avgUvls: { $avg: { $ifNull: ["$pillars.uvls", 0] } },
+          avgDcos: { $avg: { $ifNull: ["$pillars.dcos", 0] } },
+          avgMoral: { $avg: { $ifNull: ["$pillars.moral", 0] } },
+          avgEhe: { $avg: { $ifNull: ["$pillars.ehe", 0] } },
+          avgCrgc: { $avg: { $ifNull: ["$pillars.crgc", 0] } },
+          count: { $sum: 1 },
+        },
+      },
+    ]);
+    const row = agg[0];
+    if (row && row.count > 0) {
+      totalStudents = row.count;
+      pillarAverages = {
+        uvls: row.avgUvls,
+        dcos: row.avgDcos,
+        moral: row.avgMoral,
+        ehe: row.avgEhe,
+        crgc: row.avgCrgc,
+      };
+    }
+
+    if (totalStudents > 0) {
+      const studentUserIds = await SchoolStudent.find(baseMatchWithLegacy)
+        .select("userId")
+        .lean()
+        .then((docs) => docs.map((d) => d.userId).filter(Boolean));
+      if (studentUserIds.length > 0) {
+        for (const def of READINESS_PILLAR_DEFS) {
+          if (def.source !== "game" || !def.gameTypes) continue;
+          const uniqueUserIds = await UnifiedGameProgress.distinct("userId", {
+            userId: { $in: studentUserIds },
+            gameType: { $in: def.gameTypes },
+          });
+          gameTypeCounts[def.id] = uniqueUserIds?.length ?? 0;
+        }
+      }
+    }
+  }
+
+  const pillars = READINESS_PILLAR_DEFS.map((pillar) => {
+    const stored = metrics?.readinessExposure?.[pillar.id];
+    let level = null;
+    let hasData = false;
+    if (pillar.source === "schoolstudent" && pillar.pillarKey) {
+      const avg = pillarAverages[pillar.pillarKey];
+      level = scoreToLevel(avg);
+      hasData = avg != null;
+    } else if (pillar.source === "game" && totalStudents > 0) {
+      const count = gameTypeCounts[pillar.id] ?? 0;
+      const pct = totalStudents > 0 ? (count / totalStudents) * 100 : 0;
+      level = scoreToLevel(pct);
+      hasData = true;
+    }
+    if (!hasData && stored?.level != null && stored?.level !== "low") {
+      hasData = true;
+      level = stored.level;
+    }
+    return {
+      id: pillar.id,
+      name: pillar.name,
+      level: hasData ? (level ?? stored?.level ?? null) : null,
+      trend: hasData ? "stable" : (stored?.trend ?? "stable"),
+      hasData,
+    };
+  });
+
+  return {
+    pillars,
+    disclaimer: READINESS_EXPOSURE_DISCLAIMER,
+  };
+};
 
 /**
  * Format date for display
@@ -84,10 +324,21 @@ export const generateImpactSummaryPDF = async (programId) => {
     throw new Error("Program not found");
   }
 
-  const metrics = await ProgramMetrics.findOne({ programId });
-  const checkpoints = await ProgramCheckpoint.find({ programId }).sort({
-    checkpointNumber: 1,
-  });
+  const [metrics, reportMetrics, recognitionMetrics, readinessExposure] = await Promise.all([
+    ProgramMetrics.findOne({ programId }).lean(),
+    getReportMetrics(programId),
+    getReportRecognitionMetrics(programId),
+    getReportReadinessExposure(programId),
+  ]);
+
+  const totalStudents =
+    reportMetrics.totalStudents > 0
+      ? reportMetrics.totalStudents
+      : (metrics?.studentReach?.totalOnboarded ?? 0);
+  const activeStudents =
+    reportMetrics.totalStudents > 0
+      ? reportMetrics.totalStudents
+      : (metrics?.studentReach?.activeStudents ?? 0);
 
   return new Promise((resolve, reject) => {
     try {
@@ -177,13 +428,13 @@ export const generateImpactSummaryPDF = async (programId) => {
       doc.addPage();
       createHeader(doc, "Reach & Engagement Metrics");
 
-      if (metrics?.studentReach) {
+      {
         const reachData = [
           ["Metric", "Value"],
-          ["Total Students Onboarded", formatNumber(metrics.studentReach.totalOnboarded)],
-          ["Active Students", formatNumber(metrics.studentReach.activeStudents)],
-          ["Active Percentage", `${metrics.studentReach.activePercentage || 0}%`],
-          ["Completion Rate", `${metrics.studentReach.completionRate || 0}%`],
+          ["Total Students Onboarded", formatNumber(totalStudents)],
+          ["Active Students", formatNumber(activeStudents)],
+          ["Active Percentage", `${totalStudents > 0 ? 100 : (metrics?.studentReach?.activePercentage ?? 0)}%`],
+          ["Completion Rate", `${metrics?.studentReach?.completionRate ?? 0}%`],
         ];
 
         let startY = doc.y;
@@ -217,47 +468,93 @@ export const generateImpactSummaryPDF = async (programId) => {
         });
       }
 
-      // PAGE 4: Readiness Exposure
+      // PAGE 4: Recognition (Certificate issued, Badges, Kits in progress)
       doc.addPage();
-      createHeader(doc, "Readiness Exposure - 10 Pillars");
+      createHeader(doc, "Recognition Metrics");
 
-      if (metrics?.readinessExposure) {
-        const pillars = [
-          { name: "Financial Awareness", key: "financialAwareness" },
-          { name: "Decision Awareness", key: "decisionAwareness" },
-          { name: "Pressure Handling", key: "pressureHandling" },
-          { name: "Emotional Regulation", key: "emotionalRegulation" },
-          { name: "Goal Setting", key: "goalSetting" },
-          { name: "Time Management", key: "timeManagement" },
-          { name: "Social Awareness", key: "socialAwareness" },
-          { name: "Critical Thinking", key: "criticalThinking" },
-          { name: "Self Awareness", key: "selfAwareness" },
-          { name: "Adaptability", key: "adaptability" },
+      {
+        const rec = recognitionMetrics || {};
+        const recognitionData = [
+          ["Metric", "Value"],
+          ["Certificates issued", formatNumber(rec.certificatesIssued)],
+          ["Badges issued", formatNumber(rec.badgesIssued)],
+          ["Kits in progress", formatNumber(rec.recognitionKitsInProgress)],
+          ["Completion recognition (%)", `${rec.completionBasedRecognition ?? 0}%`],
         ];
-
         let startY = doc.y;
-        doc.fontSize(9);
+        doc.fontSize(10);
+        recognitionData.forEach((row, index) => {
+          const y = startY + index * 20;
+          doc.font(index === 0 ? "Helvetica-Bold" : "Helvetica").fillColor(index === 0 ? "#1e293b" : "#475569");
+          doc.text(row[0], 50, y);
+          doc.text(row[1], 350, y, { align: "right" });
+        });
+        doc.moveDown(1);
+        doc.font("Helvetica").fontSize(9).fillColor("#64748b");
+        doc.text(
+          "Certificates issued and kits in progress are updated when Super Admin marks delivery. Badges are earned from pillar games.",
+          50,
+          doc.y,
+          { width: 500, lineGap: 3 }
+        );
+        doc.moveDown(2);
+      }
+
+      // PAGE 5: Readiness Exposure (pillars from constants/readinessPillars.js — single source of truth)
+      doc.addPage();
+      createHeader(doc, "Readiness Exposure");
+
+      const pillars = readinessExposure?.pillars ?? [];
+      const disclaimerText = readinessExposure?.disclaimer ?? READINESS_EXPOSURE_DISCLAIMER;
+
+      if (pillars.length > 0) {
+        let startY = doc.y;
+        doc.fontSize(10);
 
         pillars.forEach((pillar, index) => {
           if (startY > 700) {
             doc.addPage();
-            startY = 50;
+            createHeader(doc, "Readiness Exposure (continued)");
+            startY = doc.y;
           }
 
-          const pillarData = metrics.readinessExposure[pillar.key];
-          const level = pillarData?.level || "low";
-          const trend = pillarData?.trend || "stable";
+          const level = pillar.hasData && pillar.level ? String(pillar.level) : "No data yet";
+          const trend = pillar.hasData ? (pillar.trend || "stable") : "—";
 
           doc.font("Helvetica-Bold").fillColor("#1e293b");
-          doc.text(`${index + 1}. ${pillar.name}`, 50, startY);
+          doc.text(`${index + 1}. ${pillar.name || pillar.id || "—"}`, 50, startY);
           doc.font("Helvetica").fillColor("#64748b");
-          doc.text(`   Exposure Level: ${level} | Trend: ${trend}`, 70, startY + 15);
-          startY += 40;
+          doc.text(`   Exposure Level: ${level} | Trend: ${trend}`, 70, startY + 14);
+          startY += 36;
         });
+        doc.moveDown(0.5);
+      } else {
+        doc.font("Helvetica").fontSize(10).fillColor("#64748b");
+        doc.text(
+          "No readiness exposure data yet. Pillar exposure levels will appear here as program data is collected.",
+          50,
+          doc.y,
+          { width: 500, lineGap: 3 }
+        );
       }
 
-      // Add mandatory disclaimer
-      addDisclaimer(doc);
+      // Same disclaimer as CSR Readiness Exposure page
+      doc.addPage();
+      doc
+        .fontSize(10)
+        .font("Helvetica-Bold")
+        .fillColor("#92400e")
+        .text("Important Disclaimer", 50, doc.y, { align: "left" });
+      doc.moveDown(0.3);
+      doc
+        .fontSize(9)
+        .font("Helvetica")
+        .fillColor("#78350f")
+        .text(disclaimerText, 50, doc.y, {
+          align: "left",
+          width: 500,
+          lineGap: 2,
+        });
 
       doc.end();
     } catch (error) {
@@ -277,10 +574,17 @@ export const generateSchoolCoverageExcel = async (programId) => {
     throw new Error("Program not found");
   }
 
-  const programSchools = await ProgramSchool.find({ programId }).populate({
-    path: "schoolId",
-    select: "name settings.address district state",
-  });
+  const [programSchools, reportMetrics] = await Promise.all([
+    ProgramSchool.find({ programId }).populate({
+      path: "schoolId",
+      select: "name settings.address district state",
+    }),
+    getReportMetrics(programId),
+  ]);
+
+  const studentCount = (ps) =>
+    reportMetrics.studentCountBySchoolId[getSchoolIdStr(ps)] ?? ps.studentsCovered ?? 0;
+  const totalStudentsSum = programSchools.reduce((sum, ps) => sum + studentCount(ps), 0);
 
   const workbook = new ExcelJS.Workbook();
 
@@ -311,7 +615,7 @@ export const generateSchoolCoverageExcel = async (programId) => {
   });
   summarySheet.addRow({
     field: "Total Students",
-    value: programSchools.reduce((sum, ps) => sum + (ps.studentsCovered || 0), 0),
+    value: totalStudentsSum,
   });
 
   // Sheet 2: School Table
@@ -326,16 +630,15 @@ export const generateSchoolCoverageExcel = async (programId) => {
 
   programSchools.forEach((ps) => {
     const school = ps.schoolId || {};
-    // Handle both populated and non-populated school data
     const schoolName = school.name || school.schoolName || "N/A";
     const district = school.district || school.settings?.address?.city || "N/A";
     const state = school.state || school.settings?.address?.state || "N/A";
-    
+
     schoolSheet.addRow({
       schoolName,
       district,
       state,
-      studentsCovered: ps.studentsCovered || 0,
+      studentsCovered: studentCount(ps),
       status: ps.implementationStatus || "pending",
     });
   });
@@ -356,7 +659,7 @@ export const generateSchoolCoverageExcel = async (programId) => {
       districtMap[district] = { schools: 0, students: 0 };
     }
     districtMap[district].schools++;
-    districtMap[district].students += ps.studentsCovered || 0;
+    districtMap[district].students += studentCount(ps);
   });
 
   Object.entries(districtMap).forEach(([district, data]) => {
@@ -382,10 +685,17 @@ export const generateSchoolCoveragePDF = async (programId) => {
     throw new Error("Program not found");
   }
 
-  const programSchools = await ProgramSchool.find({ programId }).populate({
-    path: "schoolId",
-    select: "name settings.address district state",
-  });
+  const [programSchools, reportMetrics] = await Promise.all([
+    ProgramSchool.find({ programId }).populate({
+      path: "schoolId",
+      select: "name settings.address district state",
+    }),
+    getReportMetrics(programId),
+  ]);
+
+  const studentCount = (ps) =>
+    reportMetrics.studentCountBySchoolId[getSchoolIdStr(ps)] ?? ps.studentsCovered ?? 0;
+  const totalStudentsSum = programSchools.reduce((sum, ps) => sum + studentCount(ps), 0);
 
   return new Promise((resolve, reject) => {
     try {
@@ -410,9 +720,7 @@ export const generateSchoolCoveragePDF = async (programId) => {
       doc.moveDown(1);
       doc.fontSize(12).fillColor("#64748b");
       doc.text(
-        `Total Schools: ${programSchools.length} | Total Students: ${formatNumber(
-          programSchools.reduce((sum, ps) => sum + (ps.studentsCovered || 0), 0)
-        )}`,
+        `Total Schools: ${programSchools.length} | Total Students: ${formatNumber(totalStudentsSum)}`,
         50,
         doc.y,
         { align: "center" }
@@ -430,7 +738,7 @@ export const generateSchoolCoveragePDF = async (programId) => {
           districtMap[district] = { schools: 0, students: 0 };
         }
         districtMap[district].schools++;
-        districtMap[district].students += ps.studentsCovered || 0;
+        districtMap[district].students += studentCount(ps);
       });
 
       let startY = doc.y;
@@ -472,9 +780,7 @@ export const generateSchoolCoveragePDF = async (programId) => {
         doc.text(`${index + 1}. ${schoolName}`, 50, y);
         doc.font("Helvetica").fillColor("#64748b");
         doc.text(
-          `   ${district}, ${state} | Students: ${formatNumber(
-            ps.studentsCovered || 0
-          )} | Status: ${ps.implementationStatus || "pending"}`,
+          `   ${district}, ${state} | Students: ${formatNumber(studentCount(ps))} | Status: ${ps.implementationStatus || "pending"}`,
           70,
           y + 12
         );

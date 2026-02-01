@@ -152,20 +152,37 @@ const CSRRecognition = () => {
         </header>
 
         {/* METRIC CARDS */}
-        <section className="grid gap-4 md:grid-cols-3">
+        <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <article className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+            <div className="p-3 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100">
+              <Award className="w-5 h-5 text-blue-600" />
+            </div>
+            <div className="flex-1">
+              <p className="text-xs uppercase tracking-wide text-slate-400">
+                Certificate Issued
+              </p>
+              <p className="text-2xl font-bold text-slate-900 mt-1">
+                {formatNumber(data?.certificatesIssued)}
+              </p>
+              <p className="text-xs text-slate-500 mt-2">
+                Module certificates (all games in a pillar-module completed)
+              </p>
+            </div>
+          </article>
+
           <article className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
             <div className="p-3 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100">
               <Award className="w-5 h-5 text-amber-600" />
             </div>
             <div className="flex-1">
               <p className="text-xs uppercase tracking-wide text-slate-400">
-                Certificates Issued
+                Badges Issued
               </p>
               <p className="text-2xl font-bold text-slate-900 mt-1">
-                {formatNumber(data?.certificatesIssued)}
+                {formatNumber(data?.badgesIssued)}
               </p>
               <p className="text-xs text-slate-500 mt-2">
-                Digital certificates awarded to students
+                Badges earned by students from pillar games
               </p>
             </div>
           </article>
@@ -176,13 +193,13 @@ const CSRRecognition = () => {
             </div>
             <div className="flex-1">
               <p className="text-xs uppercase tracking-wide text-slate-400">
-                Kits Dispatched
+                Kits in progress
               </p>
               <p className="text-2xl font-bold text-slate-900 mt-1">
-                {formatNumber(data?.recognitionKitsDispatched)}
+                {formatNumber(data?.recognitionKitsInProgress)}
               </p>
               <p className="text-xs text-slate-500 mt-2">
-                Physical recognition kits sent
+                Physical recognition kits in progress
               </p>
             </div>
           </article>
@@ -218,6 +235,33 @@ const CSRRecognition = () => {
           </div>
         </section>
 
+        {/* BADGES BY PILLAR */}
+        {Array.isArray(data?.badgesByPillar) && data.badgesByPillar.length > 0 && (
+          <section className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-slate-900 mb-2">
+              Badges Issued by Pillar
+            </h2>
+            <p className="text-xs text-slate-500 mb-4">
+              Badges earned by students from games in each pillar
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {data.badgesByPillar.map((item) => (
+                <div
+                  key={item.pillarKey || item.pillarName}
+                  className="flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-slate-100/80 transition-colors border border-slate-100"
+                >
+                  <span className="text-sm font-medium text-slate-700 truncate pr-2">
+                    {item.pillarName || item.pillarKey}
+                  </span>
+                  <span className="text-sm font-semibold text-amber-600 whitespace-nowrap">
+                    {formatNumber(item.count)} badges
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* RECOGNITION SUMMARY */}
         <section className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
           <h2 className="text-lg font-semibold text-slate-900 mb-4">
@@ -226,9 +270,9 @@ const CSRRecognition = () => {
           <div className="space-y-4">
             <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-slate-100/80 transition-colors">
               <div className="flex items-center gap-3">
-                <Award className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                <Award className="w-5 h-5 text-blue-500 flex-shrink-0" />
                 <span className="text-sm font-medium text-slate-700">
-                  Digital Certificates
+                  Certificate Issued
                 </span>
               </div>
               <span className="text-sm font-semibold text-slate-900">
@@ -237,13 +281,24 @@ const CSRRecognition = () => {
             </div>
             <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-slate-100/80 transition-colors">
               <div className="flex items-center gap-3">
-                <Gift className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                <Award className="w-5 h-5 text-amber-500 flex-shrink-0" />
                 <span className="text-sm font-medium text-slate-700">
-                  Physical Recognition Kits
+                  Badges Issued
                 </span>
               </div>
               <span className="text-sm font-semibold text-slate-900">
-                {formatNumber(data?.recognitionKitsDispatched)} dispatched
+                {formatNumber(data?.badgesIssued)} issued
+              </span>
+            </div>
+            <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-slate-100/80 transition-colors">
+              <div className="flex items-center gap-3">
+                <Gift className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                <span className="text-sm font-medium text-slate-700">
+                  Kits in progress
+                </span>
+              </div>
+              <span className="text-sm font-semibold text-slate-900">
+                {formatNumber(data?.recognitionKitsInProgress)} in progress
               </span>
             </div>
             <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-slate-100/80 transition-colors">

@@ -1,6 +1,7 @@
 import Program from "../models/Program.js";
 import ProgramSchool from "../models/ProgramSchool.js";
 import Organization from "../models/Organization.js";
+import SchoolStudent from "../models/School/SchoolStudent.js";
 
 /**
  * Get available schools that match program scope and aren't already assigned
@@ -46,13 +47,27 @@ export const getAvailableSchools = async (programId) => {
     .select("name settings.address userCount")
     .lean();
 
+  if (schools.length === 0) {
+    return [];
+  }
+
+  const schoolIds = schools.map((s) => s._id);
+  const studentCounts = await SchoolStudent.aggregate([
+    { $match: { orgId: { $in: schoolIds } } },
+    { $group: { _id: "$orgId", count: { $sum: 1 } } },
+  ]);
+  const studentMap = studentCounts.reduce((acc, entry) => {
+    acc[entry._id.toString()] = entry.count;
+    return acc;
+  }, {});
+
   return schools.map((school) => ({
     _id: school._id,
     name: school.name,
     district: school.settings?.address?.city || "",
     state: school.settings?.address?.state || "",
     pincode: school.settings?.address?.pincode || "",
-    studentCount: school.userCount || 0,
+    studentCount: studentMap[school._id.toString()] ?? school.userCount ?? 0,
   }));
 };
 
@@ -288,20 +303,38 @@ export const getAssignedSchools = async (programId, filters = {}) => {
     );
   }
 
-  const schools = filteredSchools.map((ps) => ({
-    _id: ps._id,
-    programSchoolId: ps._id,
-    schoolId: ps.schoolId?._id,
-    schoolName: ps.schoolId?.name || "Unknown School",
-    district: ps.schoolId?.settings?.address?.city || "",
-    state: ps.schoolId?.settings?.address?.state || "",
-    studentsCovered: ps.studentsCovered,
-    implementationStatus: ps.implementationStatus,
-    assignedAt: ps.assignedAt,
-    onboardingStartedAt: ps.onboardingStartedAt,
-    onboardingCompletedAt: ps.onboardingCompletedAt,
-    metrics: ps.metrics,
-  }));
+  // Enrich with actual student count from SchoolStudent (orgId = school)
+  const schoolIds = filteredSchools.map((ps) => ps.schoolId?._id).filter(Boolean);
+  let studentMap = {};
+  if (schoolIds.length > 0) {
+    const studentCounts = await SchoolStudent.aggregate([
+      { $match: { orgId: { $in: schoolIds } } },
+      { $group: { _id: "$orgId", count: { $sum: 1 } } },
+    ]);
+    studentMap = studentCounts.reduce((acc, entry) => {
+      acc[entry._id.toString()] = entry.count;
+      return acc;
+    }, {});
+  }
+
+  const schools = filteredSchools.map((ps) => {
+    const orgId = ps.schoolId?._id;
+    const actualStudents = orgId ? studentMap[orgId.toString()] : undefined;
+    return {
+      _id: ps._id,
+      programSchoolId: ps._id,
+      schoolId: orgId,
+      schoolName: ps.schoolId?.name || "Unknown School",
+      district: ps.schoolId?.settings?.address?.city || "",
+      state: ps.schoolId?.settings?.address?.state || "",
+      studentsCovered: actualStudents ?? ps.studentsCovered ?? 0,
+      implementationStatus: ps.implementationStatus,
+      assignedAt: ps.assignedAt,
+      onboardingStartedAt: ps.onboardingStartedAt,
+      onboardingCompletedAt: ps.onboardingCompletedAt,
+      metrics: ps.metrics,
+    };
+  });
 
   return {
     schools,

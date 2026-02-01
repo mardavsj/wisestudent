@@ -1,6 +1,7 @@
 import Incident from '../models/Incident.js';
 import User from '../models/User.js';
 import { createNotification } from './notificationService.js';
+import { getIoInstance } from '../utils/socketServer.js';
 
 // SLA Thresholds
 const SLA_THRESHOLDS = {
@@ -104,6 +105,12 @@ const createLatencyIncident = async (metrics, duration) => {
 
   await notifyOnCallTeam(incident);
 
+  // Emit real-time update for admin dashboard
+  const io = getIoInstance();
+  if (io) {
+    io.emit('admin:incident:new', incident.toObject ? incident.toObject() : incident);
+  }
+
   return incident;
 };
 
@@ -135,6 +142,12 @@ const createErrorRateIncident = async (metrics, duration) => {
   });
 
   await notifyOnCallTeam(incident);
+
+  // Emit real-time update for admin dashboard
+  const io = getIoInstance();
+  if (io) {
+    io.emit('admin:incident:new', incident.toObject ? incident.toObject() : incident);
+  }
 
   return incident;
 };

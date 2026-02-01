@@ -83,9 +83,6 @@ import ContentGovernance from "./pages/Admin/ContentGovernance";
 import AuditTimeline from "./pages/Admin/AuditTimeline";
 import ConfigurationControlCenter from "./pages/Admin/ConfigurationControlCenter";
 import CommunicationSuite from "./pages/Admin/CommunicationSuite";
-import OperationalTools from "./pages/Admin/OperationalTools";
-import PredictiveModels from "./pages/Admin/PredictiveModels";
-import APIControlPlane from "./pages/Admin/APIControlPlane";
 import AdminPlatform from "./pages/Admin/AdminPlatform";
 import GoodieOrders from "./pages/Admin/GoodieOrders";
 // Admin CSR & Program Management
@@ -373,9 +370,6 @@ const App = () => {
       if (pathname === "/admin/audit-timeline") return "Audit Timeline";
       if (pathname === "/admin/configuration") return "Configuration";
       if (pathname === "/admin/communication") return "Communication Suite";
-      if (pathname === "/admin/operational") return "Operational Tools";
-      if (pathname === "/admin/predictive") return "Predictive Models";
-      if (pathname === "/admin/api-control") return "API Control Plane";
       if (pathname === "/admin/platform") return "Admin Platform";
       // Admin CSR & Program Management routes
       if (pathname === "/admin/csr/partners") return "CSR Partners";
@@ -1656,30 +1650,6 @@ const App = () => {
             element={
               <ProtectedRoute roles={["admin"]}>
                 <CommunicationSuite />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/operational"
-            element={
-              <ProtectedRoute roles={["admin"]}>
-                <OperationalTools />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/predictive"
-            element={
-              <ProtectedRoute roles={["admin"]}>
-                <PredictiveModels />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/api-control"
-            element={
-              <ProtectedRoute roles={["admin"]}>
-                <APIControlPlane />
               </ProtectedRoute>
             }
           />

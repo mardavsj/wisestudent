@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Notification from "../models/Notification.js";
 import Assignment from "../models/Assignment.js";
 import User from "../models/User.js";
@@ -59,6 +60,9 @@ export const markAllAsRead = async (req, res, next) => {
 export const markAsRead = async (req, res, next) => {
   try {
     const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      throw new ErrorResponse("Invalid notification ID", 400);
+    }
 
     const notification = await Notification.findOneAndUpdate(
       { _id: id, userId: req.user._id },
@@ -80,6 +84,9 @@ export const markAsRead = async (req, res, next) => {
 export const deleteNotification = async (req, res, next) => {
   try {
     const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      throw new ErrorResponse("Invalid notification ID", 400);
+    }
 
     const deleted = await Notification.findOneAndDelete({
       _id: id,

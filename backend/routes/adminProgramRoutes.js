@@ -7,6 +7,7 @@ import {
   getProgram,
   listPrograms,
   archiveProgram,
+  deleteProgramPermanent,
   getAvailableSchools,
   getAssignedSchools,
   assignSchools,
@@ -21,6 +22,12 @@ import {
   updateProgramStatus,
   getProgramMetrics,
   refreshProgramMetrics,
+  updateRecognitionMetrics,
+  getProgramStudents,
+  markCertificateInProgress,
+  markCertificatesInProgressBulk,
+  markCertificateDelivered,
+  markCertificatesDeliveredBulk,
   listProgramReports,
   generateProgramReports,
   publishReport,
@@ -51,6 +58,7 @@ router.post("/", createProgram);
 // ============================================
 router.get("/:programId/metrics", getProgramMetrics);
 router.post("/:programId/metrics/refresh", refreshProgramMetrics);
+router.patch("/:programId/metrics/recognition", updateRecognitionMetrics);
 
 // ============================================
 // Reports (must be before /:programId)
@@ -68,7 +76,10 @@ router.get("/:programId", getProgram);
 // Update program
 router.put("/:programId", updateProgram);
 
-// Archive/delete program
+// Permanent delete (must be before /:programId so "permanent" is not used as programId)
+router.delete("/:programId/permanent", deleteProgramPermanent);
+
+// Archive program (marks as completed; program still visible to CSR as completed)
 router.delete("/:programId", archiveProgram);
 
 // Update program status
@@ -98,6 +109,15 @@ router.delete("/:programId/schools/:schoolId", removeSchool);
 
 // Update school implementation status
 router.put("/:programId/schools/:programSchoolId/status", updateSchoolStatus);
+
+// ============================================
+// Program Students (certificate delivered)
+// ============================================
+router.get("/:programId/students", getProgramStudents);
+router.post("/:programId/students/certificates-in-progress", markCertificatesInProgressBulk);
+router.patch("/:programId/students/:userId/certificate-in-progress", markCertificateInProgress);
+router.post("/:programId/students/certificates-delivered", markCertificatesDeliveredBulk);
+router.patch("/:programId/students/:userId/certificate-delivered", markCertificateDelivered);
 
 // ============================================
 // Checkpoint Management

@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { motion } from "framer-motion";
 import { toast } from "react-hot-toast";
 import {
+  ArrowLeft,
   Building2,
   CheckCircle2,
   Clock,
@@ -11,7 +12,6 @@ import {
   Phone,
   Filter,
   Search,
-  Sparkles,
   Layers,
   LayoutGrid,
   Rows,
@@ -19,6 +19,7 @@ import {
 import { fetchAdminSchools } from "../../services/adminSchoolsService";
 import { useSocket } from "../../context/SocketContext";
 import { useNavigate } from "react-router-dom";
+import api from "../../utils/api";
 
 const statusTokens = {
   approved: {
@@ -95,6 +96,7 @@ const AdminSchools = () => {
   const navigate = useNavigate();
   const { socket } = useSocket();
   const [loading, setLoading] = useState(true);
+  const [schoolsByRegion, setSchoolsByRegion] = useState([]);
   const [schools, setSchools] = useState([]);
   const [groupedSchools, setGroupedSchools] = useState({
     approved: [],
@@ -102,7 +104,7 @@ const AdminSchools = () => {
     rejected: [],
   });
   const [summary, setSummary] = useState({ total: 0, approved: 0, pending: 0, rejected: 0 });
-  const [filters, setFilters] = useState({ status: "all", search: "", sort: "recent" });
+  const [filters, setFilters] = useState({ status: "all", search: "", sort: "recent", region: "" });
   const [pagination, setPagination] = useState({ page: 1, limit: 18, total: 0, pages: 1 });
   const [searchDraft, setSearchDraft] = useState("");
   const [viewMode, setViewMode] = useState("rows");
@@ -126,6 +128,7 @@ const AdminSchools = () => {
         status: overrides.status ?? currentFilters.status,
         search: overrides.search ?? currentFilters.search,
         sort: overrides.sort ?? currentFilters.sort,
+        region: overrides.region ?? currentFilters.region,
         page: overrides.page ?? currentPagination.page,
         limit: overrides.limit ?? currentPagination.limit,
       };
@@ -161,13 +164,26 @@ const AdminSchools = () => {
   }, [loadSchools]);
 
   useEffect(() => {
+    const fetchRegions = async () => {
+      try {
+        const res = await api.get("/api/admin/schools-by-region");
+        const data = res?.data?.data ?? res?.data ?? [];
+        setSchoolsByRegion(Array.isArray(data) ? data : []);
+      } catch (err) {
+        console.error("Failed to load schools by region:", err);
+      }
+    };
+    fetchRegions();
+  }, []);
+
+  useEffect(() => {
     setPagination((prev) => {
       const next = { ...prev, page: 1 };
       paginationRef.current = next;
       return next;
     });
     loadSchools({ page: 1 });
-  }, [filters.status, filters.sort, filters.search, loadSchools]);
+  }, [filters.status, filters.sort, filters.search, filters.region, loadSchools]);
 
   useEffect(() => {
     if (!socket?.socket) return;
@@ -203,21 +219,21 @@ const AdminSchools = () => {
         value: formatNumber(summary.total),
         subtitle: `${formatNumber(summary.pending)} awaiting review`,
         icon: Building2,
-        gradient: "from-sky-400/70 via-blue-500/70 to-indigo-600/70",
+        iconBg: "bg-indigo-100 text-indigo-600",
       },
       {
         title: "Approved",
         value: formatNumber(summary.approved),
         subtitle: `${formatNumber(summary.rejected)} rejected overall`,
         icon: CheckCircle2,
-        gradient: "from-emerald-400/70 via-green-500/70 to-teal-600/70",
+        iconBg: "bg-emerald-100 text-emerald-600",
       },
       {
         title: "Pending",
         value: formatNumber(summary.pending),
         subtitle: "Active onboarding pipeline",
         icon: Clock,
-        gradient: "from-amber-400/70 via-orange-500/70 to-rose-500/70",
+        iconBg: "bg-amber-100 text-amber-600",
       },
     ],
     [summary]
@@ -230,6 +246,10 @@ const AdminSchools = () => {
   const handleSortChange = (event) => {
     const value = event.target.value;
     setFilters((prev) => (prev.sort === value ? prev : { ...prev, sort: value }));
+  };
+
+  const handleRegionFilter = (region) => {
+    setFilters((prev) => (prev.region === region ? prev : { ...prev, region: region || "" }));
   };
 
   const handleCardSelect = (school) => {
@@ -247,125 +267,317 @@ const AdminSchools = () => {
     loadSchools({ page: target });
   };
 
+  const handleFirstPage = () => {
+    if (pagination.page <= 1) return;
+    paginationRef.current = { ...paginationRef.current, page: 1 };
+    setPagination((prev) => ({ ...prev, page: 1 }));
+    loadSchools({ page: 1 });
+  };
+
+  const handleLastPage = () => {
+    const last = Math.max(1, pagination.pages);
+    if (pagination.page >= last) return;
+    paginationRef.current = { ...paginationRef.current, page: last };
+    setPagination((prev) => ({ ...prev, page: last }));
+    loadSchools({ page: last });
+  };
+
+  const handleLimitChange = (e) => {
+    const newLimit = Math.min(Math.max(parseInt(e.target.value, 10) || 18, 10), 50);
+    setPagination((prev) => ({ ...prev, page: 1, limit: newLimit }));
+    paginationRef.current = { ...paginationRef.current, page: 1, limit: newLimit };
+    loadSchools({ page: 1, limit: newLimit });
+  };
+
+  const paginationStart = pagination.total === 0 ? 0 : (pagination.page - 1) * pagination.limit + 1;
+  const paginationEnd = Math.min(pagination.page * pagination.limit, pagination.total);
+
   const gridClass =
     viewMode === "grid"
       ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
       : "grid grid-cols-1 gap-6";
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/40 to-sky-50 pb-24">
-      <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-600 text-white py-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col md:flex-row md:items-center md:justify-between gap-8"
-          >
-            <div>
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-white/20 rounded-2xl backdrop-blur-lg">
-                  <Building2 className="w-10 h-10" />
-                </div>
-                <div>
-                  <h1 className="text-4xl font-black leading-tight">
-                    Schools Intelligence Board
-                  </h1>
-                  <p className="text-white/80 text-base font-medium mt-1">
-                    Track every institution across onboarding, approvals, and active delivery.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:min-w-[520px]">
-              {statusSummaryCards.map((card) => (
-                <OverviewCard key={card.title} {...card} />
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </div>
+  const regionCardColors = [
+    "border-indigo-200 bg-indigo-50/70 hover:border-indigo-300 hover:bg-indigo-100/50",
+    "border-blue-200 bg-blue-50/60 hover:border-blue-300 hover:bg-blue-100/40",
+    "border-purple-200 bg-purple-50/60 hover:border-purple-300 hover:bg-purple-100/40",
+    "border-teal-200 bg-teal-50/60 hover:border-teal-300 hover:bg-teal-100/40",
+  ];
 
-      <div className="max-w-7xl mx-auto px-6 -mt-14 space-y-12 relative z-10">
-        <div className="rounded-3xl bg-white shadow-2xl border border-slate-100 px-8 py-6">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
-            <div className="flex flex-wrap items-center gap-3">
-              {[
-                { key: "all", label: "All", count: summary.total },
-                { key: "approved", label: "Approved", count: summary.approved },
-                { key: "pending", label: "Pending", count: summary.pending },
-                { key: "rejected", label: "Rejected", count: summary.rejected },
-              ].map((item) => {
-                const isActive = filters.status === item.key;
-                return (
-                  <button
-                    key={item.key}
-                    type="button"
-                    onClick={() => handleStatusFilter(item.key)}
-                    className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all border ${
-                      isActive
-                        ? "bg-emerald-100 border-emerald-300 text-emerald-700 shadow-sm"
-                        : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
-                    }`}
-                  >
-                    <span>{item.label}</span>
-                    <span className="inline-flex items-center justify-center text-xs font-bold px-2 py-0.5 rounded-full bg-white border border-slate-200">
-                      {formatNumber(item.count)}
-                    </span>
-                  </button>
-                );
-              })}
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-12">
+      <header className="w-full bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 shadow-2xl border border-purple-500/30 px-4 py-12 md:py-14">
+        <div className="max-w-7xl mx-auto flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-start gap-4">
+            <button
+              type="button"
+              onClick={() => navigate("/admin/dashboard")}
+              className="p-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors shrink-0 mt-0.5"
+              aria-label="Back to dashboard"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/80">School directory</p>
+              <h1 className="text-2xl md:text-3xl font-black text-white mt-2 flex items-center gap-3">
+                <Building2 className="w-8 h-8 shrink-0" />
+                Schools
+              </h1>
+              <p className="text-sm text-white/85 max-w-2xl mt-1.5 leading-relaxed">
+                Schools grouped by state/region. Filter by status, search, and export.
+              </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-              <div className="relative flex-1 min-w-[240px]">
-                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3.5" />
-                <input
-                  type="text"
-                  value={searchDraft}
-                  onChange={(event) => setSearchDraft(event.target.value)}
-                  placeholder="Search by name, city, or contact"
-                  className="w-full border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400 transition-all"
-                />
+          </div>
+          <div className="text-right space-y-1 flex-shrink-0 md:pl-4">
+            <p className="text-sm font-medium text-white/90">
+              Total: <span className="font-bold text-white">{formatNumber(summary.total)}</span> schools
+            </p>
+            <p className="text-xs text-white/70">
+              {new Date().toLocaleDateString("en-US", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <div className="max-w-7xl mx-auto px-6 -mt-8 space-y-6">
+        {/* Summary cards */}
+        <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {statusSummaryCards.map((card, i) => {
+            const Icon = card.icon;
+            return (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                className="bg-white rounded-2xl shadow-sm p-5 border border-slate-200"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">{card.title}</span>
+                  <div className={`p-2 rounded-lg ${card.iconBg}`}>
+                    <Icon className="w-4 h-4" />
+                  </div>
+                </div>
+                <p className="text-2xl font-bold text-slate-900">{card.value}</p>
+                {card.subtitle && <p className="text-xs text-slate-500 mt-1.5">{card.subtitle}</p>}
+              </motion.div>
+            );
+          })}
+        </section>
+
+        {/* Schools by Region */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
+        >
+          <div className="px-6 py-4 border-b border-slate-200 bg-slate-50/50">
+            <h2 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
+              <span className="w-1 h-6 rounded-full bg-indigo-500" />
+              <MapPin className="w-5 h-5 text-indigo-600" />
+              Schools by Region
+            </h2>
+            <p className="text-sm text-slate-500 mt-1 ml-7">Schools grouped by state/region</p>
+          </div>
+          <div className="p-6 bg-slate-50/30">
+            {schoolsByRegion.length > 0 ? (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {schoolsByRegion.slice(0, 8).map((region, idx) => {
+                  const regionName = region.region || "Unknown";
+                  const isSelected = filters.region && regionName.toLowerCase() === filters.region.toLowerCase();
+                  return (
+                    <button
+                      type="button"
+                      key={region.region || idx}
+                      onClick={() => handleRegionFilter(isSelected ? "" : regionName)}
+                      className={`p-4 rounded-xl border-2 text-left transition-all hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
+                        isSelected
+                          ? "ring-2 ring-indigo-500 ring-offset-2 border-indigo-400 bg-indigo-100/80 shadow-md"
+                          : regionCardColors[idx % regionCardColors.length]
+                      }`}
+                      title={isSelected ? `Clear region filter (${regionName})` : `Show schools in ${regionName}`}
+                    >
+                      <p className="text-2xl font-black text-slate-900 tabular-nums">
+                        {region.activeSchools ?? region.totalSchools ?? 0}
+                      </p>
+                      <p className="text-sm font-semibold text-slate-700 mt-1">
+                        {regionName}
+                      </p>
+                      <p className="text-xs text-slate-500 mt-0.5">
+                        {(region.totalSchools ?? 0)} total schools
+                      </p>
+                    </button>
+                  );
+                })}
               </div>
-              <div className="flex items-center gap-2">
-                <Filter className="w-4 h-4 text-slate-400" />
-                <select
-                  value={filters.sort}
-                  onChange={handleSortChange}
-                  className="border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
-                >
-                  <option value="recent">Recently updated</option>
-                  <option value="name">Alphabetical</option>
-                  <option value="oldest">Oldest first</option>
-                  <option value="students">Most students</option>
-                </select>
+            ) : (
+              <div className="text-center py-10 text-slate-500">
+                <Building2 className="w-12 h-12 mx-auto text-slate-300 mb-2" />
+                <p className="text-sm font-medium">No schools data available</p>
               </div>
-              <div className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-2 py-1">
-                <button
-                  type="button"
-                  onClick={() => setViewMode("rows")}
-                  className={`p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors ${
-                    viewMode === "rows" ? "bg-slate-100 text-slate-700" : ""
-                  }`}
-                  aria-label="Show rows"
-                >
-                  <Rows className="w-4 h-4" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setViewMode("grid")}
-                  className={`p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors ${
-                    viewMode === "grid" ? "bg-slate-100 text-slate-700" : ""
-                  }`}
-                  aria-label="Show grid"
-                >
-                  <LayoutGrid className="w-4 h-4" />
-                </button>
+            )}
+          </div>
+        </motion.div>
+
+        {/* Filters + Schools list */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
+        >
+          <div className="px-6 py-4 border-b border-slate-200 bg-slate-50/50">
+            <h2 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
+              <span className="w-1 h-6 rounded-full bg-indigo-500" />
+              <Building2 className="w-5 h-5 text-indigo-600" />
+              Schools List
+            </h2>
+            <p className="text-sm text-slate-500 mt-1 ml-7">Filter and search schools</p>
+          </div>
+
+          {/* Filters bar */}
+          <div className="px-6 py-5 border-b border-slate-200 bg-white">
+            <div className="flex flex-col gap-5">
+              {/* Status pills */}
+              <div>
+                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Status</p>
+                <div className="flex flex-wrap items-center gap-2">
+                  {[
+                    { key: "all", label: "All", count: summary.total },
+                    { key: "approved", label: "Approved", count: summary.approved },
+                    { key: "pending", label: "Pending", count: summary.pending },
+                    { key: "rejected", label: "Rejected", count: summary.rejected },
+                  ].map((item) => {
+                    const isActive = filters.status === item.key;
+                    return (
+                      <button
+                        key={item.key}
+                        type="button"
+                        onClick={() => handleStatusFilter(item.key)}
+                        className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all border-2 ${
+                          isActive
+                            ? "bg-indigo-100 border-indigo-300 text-indigo-700 shadow-sm"
+                            : "bg-slate-50/80 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-indigo-200"
+                        }`}
+                      >
+                        <span>{item.label}</span>
+                        <span
+                          className={`inline-flex min-w-[1.5rem] justify-center text-xs font-bold px-2 py-0.5 rounded-lg ${
+                            isActive ? "bg-indigo-200/80 text-indigo-800" : "bg-white border border-slate-200 text-slate-600"
+                          }`}
+                        >
+                          {formatNumber(item.count)}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Search + Sort + Region + View */}
+              <div className="flex flex-col sm:flex-row sm:items-end gap-4 flex-wrap">
+                <div className="flex-1 min-w-[200px] max-w-md">
+                  <label htmlFor="schools-search" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                    Search
+                  </label>
+                  <div className="relative">
+                    <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <input
+                      id="schools-search"
+                      type="text"
+                      value={searchDraft}
+                      onChange={(e) => setSearchDraft(e.target.value)}
+                      placeholder="Name, city, or contact"
+                      className="w-full border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
+                      aria-label="Search schools by name, city, or contact"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-wrap items-end gap-4">
+                  <div>
+                    <label htmlFor="schools-sort" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                      Sort by
+                    </label>
+                    <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                      <Filter className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                      <select
+                        id="schools-sort"
+                        value={filters.sort}
+                        onChange={handleSortChange}
+                        className="flex-1 min-w-[160px] text-sm text-slate-800 bg-transparent focus:outline-none border-0 p-0"
+                        aria-label="Sort schools"
+                      >
+                        <option value="recent">Recently updated</option>
+                        <option value="name">Alphabetical</option>
+                        <option value="oldest">Oldest first</option>
+                        <option value="students">Most students</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="schools-region" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                      Region
+                    </label>
+                    <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                      <MapPin className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                      <select
+                        id="schools-region"
+                        value={filters.region}
+                        onChange={(e) => handleRegionFilter(e.target.value)}
+                        className="flex-1 min-w-[140px] text-sm text-slate-800 bg-transparent focus:outline-none border-0 p-0"
+                        aria-label="Filter schools by region"
+                        title="Filter by state/region"
+                      >
+                        <option value="">All regions</option>
+                        {schoolsByRegion.slice(0, 20).map((r) => (
+                          <option key={r.region || r} value={r.region || ""}>
+                            {r.region || "Unknown"} ({r.activeSchools ?? r.totalSchools ?? 0})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">View</span>
+                    <div className="inline-flex items-center rounded-xl border-2 border-slate-200 bg-white p-1">
+                      <button
+                        type="button"
+                        onClick={() => setViewMode("rows")}
+                        className={`p-2 rounded-lg transition-colors ${
+                          viewMode === "rows"
+                            ? "bg-indigo-100 text-indigo-700"
+                            : "text-slate-500 hover:bg-slate-100 hover:text-slate-700"
+                        }`}
+                        aria-label="List view"
+                        title="List view"
+                      >
+                        <Rows className="w-4 h-4" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setViewMode("grid")}
+                        className={`p-2 rounded-lg transition-colors ${
+                          viewMode === "grid"
+                            ? "bg-indigo-100 text-indigo-700"
+                            : "text-slate-500 hover:bg-slate-100 hover:text-slate-700"
+                        }`}
+                        aria-label="Grid view"
+                        title="Grid view"
+                      >
+                        <LayoutGrid className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="rounded-3xl bg-white shadow-2xl border border-slate-100 px-8 py-10">
+          <div className="px-6 pb-6">
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {Array.from({ length: 6 }).map((_, index) => (
@@ -374,12 +586,14 @@ const AdminSchools = () => {
             </div>
           ) : visibleSchools.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-20 text-center">
-              <div className="w-20 h-20 rounded-full bg-emerald-50 flex items-center justify-center mb-6">
-                <Sparkles className="w-10 h-10 text-emerald-500" />
+              <div className="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center mb-4">
+                <CheckCircle2 className="w-8 h-8 text-emerald-500" />
               </div>
-              <h3 className="text-xl font-black text-slate-900">No schools match the selected filters</h3>
-              <p className="text-slate-500 mt-2">
-                Try adjusting your status filters or search keywords to broaden the results.
+              <h3 className="text-lg font-semibold text-slate-900">No schools match your filters</h3>
+              <p className="text-slate-500 mt-2 text-sm max-w-sm">
+                {filters.region
+                  ? `No schools in "${filters.region}". Try another region or clear the region filter.`
+                  : "Adjust status, region, or search to see more results."}
               </p>
             </div>
           ) : (
@@ -403,7 +617,7 @@ const AdminSchools = () => {
                     layout
                     onClick={() => handleCardSelect(school)}
                     whileHover={{ y: -4 }}
-                    className={`rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition-all ${
+                    className={`rounded-2xl border-2 border-gray-100 bg-white shadow-sm hover:shadow-lg hover:border-indigo-200 transition-all ${
                       isRow ? "flex flex-col md:flex-row md:items-center md:justify-between" : "text-left"
                     }`}
                   >
@@ -415,7 +629,7 @@ const AdminSchools = () => {
                       }`}
                     >
                       <div className="flex items-start gap-3 min-w-[220px] max-w-[260px]">
-                        <div className="p-2 rounded-xl bg-emerald-50 text-emerald-600 flex-shrink-0">
+                        <div className="p-2 rounded-xl bg-indigo-50 text-indigo-600 flex-shrink-0">
                           <Building2 className="w-5 h-5" />
                         </div>
                         <div className="min-w-0">
@@ -439,7 +653,7 @@ const AdminSchools = () => {
                       {isRow ? (
                         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-600 md:justify-end md:flex-1 md:min-w-[220px]">
                           <span className="inline-flex items-center gap-2 max-w-[220px] truncate">
-                            <MapPin className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                            <MapPin className="w-4 h-4 text-indigo-500 flex-shrink-0" />
                             {[
                               school.contactInfo?.city,
                               school.contactInfo?.state,
@@ -501,7 +715,7 @@ const AdminSchools = () => {
                           </div>
                           <div className="mt-4 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3 text-sm text-slate-600 flex flex-wrap items-center gap-3">
                             <span className="inline-flex items-center gap-2 min-w-[160px]">
-                              <MapPin className="w-4 h-4 text-emerald-500" />
+                              <MapPin className="w-4 h-4 text-indigo-500" />
                               {[
                                 school.contactInfo?.city,
                                 school.contactInfo?.state,
@@ -517,7 +731,7 @@ const AdminSchools = () => {
                       )}
                     </div>
                     <div
-                      className={`border-t border-slate-100 px-6 py-3 text-xs font-semibold text-emerald-600 ${
+                      className={`border-t border-slate-100 px-6 py-3 text-xs font-semibold text-indigo-600 ${
                         isRow
                           ? "md:border-t-0 md:border-l md:flex md:flex-col md:justify-center md:px-6 md:min-w-[150px]"
                           : "text-center"
@@ -531,32 +745,77 @@ const AdminSchools = () => {
             </div>
           )}
 
-          {!loading && pagination.pages > 1 && (
-            <div className="mt-12 flex items-center justify-between border-t border-slate-100 pt-6">
-              <span className="text-sm text-slate-500">
-                Page {pagination.page} of {pagination.pages} • {formatNumber(pagination.total)} schools
-              </span>
+          {/* Pagination — always visible for consistent layout */}
+          {!loading && (
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-slate-200 pt-6">
+              <div className="flex flex-wrap items-center gap-4">
+                <span className="text-sm text-slate-600">
+                  Showing <span className="font-semibold text-slate-900">{formatNumber(paginationStart)}</span>
+                  –<span className="font-semibold text-slate-900">{formatNumber(paginationEnd)}</span> of{" "}
+                  <span className="font-semibold text-slate-900">{formatNumber(pagination.total)}</span> schools
+                </span>
+                <label className="flex items-center gap-2 text-sm text-slate-600">
+                  <span>Per page</span>
+                  <select
+                    value={pagination.limit}
+                    onChange={handleLimitChange}
+                    className="border border-slate-200 rounded-lg px-2.5 py-1.5 text-sm font-medium text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    aria-label="Schools per page"
+                  >
+                    {[10, 18, 30, 50].map((n) => (
+                      <option key={n} value={n}>
+                        {n}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
               <div className="flex items-center gap-2">
+                <span className="text-sm text-slate-500 mr-1">
+                  Page <span className="font-semibold text-slate-700">{pagination.page}</span> of{" "}
+                  {Math.max(1, pagination.pages)}
+                </span>
+                <button
+                  type="button"
+                  onClick={handleFirstPage}
+                  disabled={pagination.page <= 1}
+                  className="inline-flex items-center justify-center min-w-[2.5rem] px-2.5 py-2 border border-slate-200 rounded-lg text-sm font-medium text-slate-600 bg-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50 hover:border-indigo-200 transition-colors"
+                  aria-label="First page"
+                >
+                  First
+                </button>
                 <button
                   type="button"
                   onClick={() => handlePageChange("prev")}
-                  disabled={pagination.page === 1}
-                  className="px-4 py-2 border border-slate-200 rounded-xl text-sm font-semibold text-slate-600 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors"
+                  disabled={pagination.page <= 1}
+                  className="inline-flex items-center justify-center min-w-[2.5rem] px-2.5 py-2 border border-slate-200 rounded-lg text-sm font-medium text-slate-600 bg-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50 hover:border-indigo-200 transition-colors"
+                  aria-label="Previous page"
                 >
                   Previous
                 </button>
                 <button
                   type="button"
                   onClick={() => handlePageChange("next")}
-                  disabled={pagination.page === pagination.pages}
-                  className="px-4 py-2 border border-slate-200 rounded-xl text-sm font-semibold text-slate-600 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors"
+                  disabled={pagination.page >= Math.max(1, pagination.pages)}
+                  className="inline-flex items-center justify-center min-w-[2.5rem] px-2.5 py-2 border border-slate-200 rounded-lg text-sm font-medium text-slate-600 bg-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50 hover:border-indigo-200 transition-colors"
+                  aria-label="Next page"
                 >
                   Next
+                </button>
+                <button
+                  type="button"
+                  onClick={handleLastPage}
+                  disabled={pagination.page >= Math.max(1, pagination.pages)}
+                  className="inline-flex items-center justify-center min-w-[2.5rem] px-2.5 py-2 border border-slate-200 rounded-lg text-sm font-medium text-slate-600 bg-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50 hover:border-indigo-200 transition-colors"
+                  aria-label="Last page"
+                >
+                  Last
                 </button>
               </div>
             </div>
           )}
-        </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );

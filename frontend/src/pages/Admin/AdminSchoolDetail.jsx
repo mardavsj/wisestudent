@@ -109,16 +109,24 @@ const buildFormState = (detail) => ({
   },
 });
 
-const MetricsChip = ({ icon, label, value, accent = "from-emerald-500 to-teal-500" }) => {
+const chipAccents = {
+  indigo: "bg-indigo-100 text-indigo-600",
+  emerald: "bg-emerald-100 text-emerald-600",
+  blue: "bg-blue-100 text-blue-600",
+  purple: "bg-purple-100 text-purple-600",
+};
+
+const MetricsChip = ({ icon, label, value, accent = "indigo" }) => {
   const IconComponent = icon;
+  const accentClass = chipAccents[accent] || chipAccents.indigo;
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
-      <div className={`p-2 rounded-lg bg-gradient-to-br ${accent} text-white`}>
+    <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3 shadow-sm">
+      <div className={`p-2 rounded-lg ${accentClass}`}>
         <IconComponent className="w-4 h-4" />
       </div>
       <div>
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">{label}</p>
-        <p className="text-lg font-black text-slate-900">{value}</p>
+        <p className="text-xs font-medium text-slate-500">{label}</p>
+        <p className="text-base font-semibold text-slate-900">{value}</p>
       </div>
     </div>
   );
@@ -350,103 +358,92 @@ const AdminSchoolDetail = () => {
   const PlanStatusIcon = planDetails.status === "active" ? CheckCircle2 : planDetails.status === "pending" ? Clock : X;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/40 to-sky-50 pb-24">
-      <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-600 text-white py-16 px-6">
-        <div className="max-w-6xl mx-auto flex items-center gap-4">
-          <button
-            type="button"
-            onClick={() => navigate(-1)}
-            className="p-3 rounded-xl bg-white/20 hover:bg-white/30 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </button>
-          <div>
-            <h1 className="text-4xl font-black">
-              {detail?.name || "School detail"}
-            </h1>
-            <p className="text-white/80 text-base font-medium mt-1">
-              Institution ID: {detail?.institutionId || "Not assigned"}
-            </p>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50/40 via-slate-50 to-purple-50/30 pb-12">
+      {/* Hero */}
+      <div className="bg-gradient-to-r from-indigo-600/95 via-purple-600/95 to-pink-600/90 text-white border-b border-indigo-200/20 shadow-sm">
+        <div className="max-w-4xl mx-auto px-6 py-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <button
+                type="button"
+                onClick={() => navigate("/admin/schools")}
+                className="p-2.5 rounded-xl bg-white/20 text-white hover:bg-white/30 transition-colors"
+                aria-label="Back to schools"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+              <div>
+                <h1 className="text-2xl font-bold text-white">
+                  {detail?.name || "School detail"}
+                </h1>
+                <p className="text-sm text-white/85 mt-0.5">
+                  {detail?.institutionId || "—"} · Updated {formatRelativeTime(detail?.updatedAt)}
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              {detail?.approvalStatus && (
+                <span
+                  className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium ${
+                    statusTokens[detail.approvalStatus]?.className || "bg-white/20 text-white"
+                  }`}
+                >
+                  <ShieldCheck className="w-4 h-4" />
+                  {statusTokens[detail.approvalStatus]?.label || detail.approvalStatus}
+                </span>
+              )}
+              <button
+                type="button"
+                onClick={() => setEditMode((prev) => !prev)}
+                className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium bg-white/20 text-white hover:bg-white/30 border border-white/30"
+              >
+                {editMode ? <X className="w-4 h-4" /> : <Edit3 className="w-4 h-4" />}
+                {editMode ? "Cancel" : "Edit"}
+              </button>
+              {editMode && (
+                <button
+                  type="button"
+                  onClick={handleSave}
+                  disabled={saving}
+                  className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-indigo-600 bg-white hover:bg-white/90 disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {saving ? <Clock className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
+                  {saving ? "Saving..." : "Save"}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 -mt-14 space-y-10 relative z-10">
-        <div className="rounded-3xl bg-white shadow-2xl border border-slate-100 px-8 py-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-          <div className="flex items-center gap-3 flex-wrap">
-            {detail?.approvalStatus && (
-              <span
-                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold ${
-                  statusTokens[detail.approvalStatus]?.className || "bg-slate-100 text-slate-700"
-                }`}
-              >
-                <ShieldCheck className="w-4 h-4" />
-                {statusTokens[detail.approvalStatus]?.label || detail.approvalStatus}
-              </span>
-            )}
-            <span className="text-sm text-slate-500 font-medium">
-              Last updated {formatRelativeTime(detail?.updatedAt)}
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => setEditMode((prev) => !prev)}
-              className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold border border-emerald-200 text-emerald-600 bg-emerald-50 hover:bg-emerald-100 transition-all"
-            >
-              {editMode ? (
-                <>
-                  <X className="w-4 h-4" /> Cancel
-                </>
-              ) : (
-                <>
-                  <Edit3 className="w-4 h-4" /> Edit
-                </>
-              )}
-            </button>
-            {editMode && (
-              <button
-                type="button"
-                onClick={handleSave}
-                disabled={saving}
-                className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                {saving ? (
-                  <>
-                    <Clock className="w-4 h-4 animate-spin" /> Saving...
-                  </>
-                ) : (
-                  <>
-                    <Save className="w-4 h-4" /> Save changes
-                  </>
-                )}
-              </button>
-            )}
-          </div>
-        </div>
-
+      <div className="max-w-4xl mx-auto px-6 py-8 space-y-6">
         {loading ? (
-          <div className="rounded-3xl bg-white shadow-2xl border border-slate-100 px-8 py-10">
-            <div className="animate-pulse h-72 bg-slate-100 rounded-2xl" />
+          <div className="rounded-xl border border-slate-200 bg-white p-8">
+            <div className="animate-pulse h-64 bg-slate-100 rounded-lg" />
           </div>
         ) : !detail ? (
-          <div className="rounded-3xl bg-white shadow-2xl border border-slate-100 px-8 py-16 text-center">
-            <div className="w-20 h-20 rounded-full bg-emerald-50 mx-auto flex items-center justify-center">
-              <Sparkles className="w-10 h-10 text-emerald-500" />
-            </div>
-            <h3 className="text-xl font-black text-slate-900 mt-4">School information unavailable</h3>
-            <p className="text-slate-500 mt-2">This record could not be loaded. Please return to the schools list.</p>
+          <div className="rounded-xl border border-slate-200 bg-white p-12 text-center">
+            <Sparkles className="w-12 h-12 text-slate-300 mx-auto" />
+            <h2 className="text-lg font-semibold text-slate-900 mt-4">School not found</h2>
+            <p className="text-sm text-slate-500 mt-1">This record could not be loaded.</p>
+            <button
+              type="button"
+              onClick={() => navigate("/admin/schools")}
+              className="mt-4 text-sm font-medium text-indigo-600 hover:text-indigo-700"
+            >
+              Back to schools
+            </button>
           </div>
         ) : (
-          <div className="space-y-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2 space-y-6">
-                <section className="rounded-2xl border border-slate-200 shadow-sm bg-white">
-                  <header className="border-b border-slate-100 px-6 py-4">
-                    <h2 className="text-lg font-bold text-slate-900">Core Profile</h2>
-                    <p className="text-sm text-slate-500">Ownership, contact, and communication footprint</p>
-                  </header>
-                  <div className="px-6 py-5 space-y-5">
+          <div className="space-y-6">
+            <section className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+              <div className="px-6 py-4 border-b border-indigo-100 bg-gradient-to-r from-indigo-50/80 to-transparent">
+                <h2 className="text-base font-semibold text-slate-900 flex items-center gap-2">
+                  <span className="w-1 h-5 rounded-full bg-indigo-500" />
+                  Profile & contact
+                </h2>
+              </div>
+              <div className="px-6 py-5 space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">School Name</label>
@@ -455,11 +452,11 @@ const AdminSchoolDetail = () => {
                             type="text"
                             value={formState?.name || ""}
                             onChange={(event) => handleFormFieldChange("name", event.target.value)}
-                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                           />
                         ) : (
-                          <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3">
-                            <Building2 className="w-5 h-5 text-emerald-600" />
+                          <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2">
+                            <Building2 className="w-5 h-5 text-indigo-600" />
                             <p className="text-sm font-semibold text-slate-800 truncate">
                               {detail?.name || "—"}
                             </p>
@@ -473,11 +470,11 @@ const AdminSchoolDetail = () => {
                             type="email"
                             value={formState?.email || ""}
                             onChange={(event) => handleFormFieldChange("email", event.target.value)}
-                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                           />
                         ) : (
-                          <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3">
-                            <Mail className="w-5 h-5 text-emerald-600" />
+                          <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2">
+                            <Mail className="w-5 h-5 text-indigo-600" />
                             <p className="text-sm font-semibold text-slate-800 truncate">
                               {detail?.email || "—"}
                             </p>
@@ -493,11 +490,11 @@ const AdminSchoolDetail = () => {
                             type="text"
                             value={formState?.contactInfo?.phone || ""}
                             onChange={(event) => handleNestedFieldChange("contactInfo", "phone", event.target.value)}
-                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                           />
                         ) : (
-                          <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3">
-                            <Phone className="w-5 h-5 text-emerald-600" />
+                          <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2">
+                            <Phone className="w-5 h-5 text-indigo-600" />
                             <p className="text-sm font-semibold text-slate-800">
                               {detail?.contactInfo?.phone || "—"}
                             </p>
@@ -511,11 +508,11 @@ const AdminSchoolDetail = () => {
                             type="text"
                             value={formState?.contactInfo?.website || ""}
                             onChange={(event) => handleNestedFieldChange("contactInfo", "website", event.target.value)}
-                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                           />
                         ) : (
-                          <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3">
-                            <Globe className="w-5 h-5 text-emerald-600" />
+                          <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2">
+                            <Globe className="w-5 h-5 text-indigo-600" />
                             <p className="text-sm font-semibold text-slate-800 truncate">
                               {detail?.contactInfo?.website || "—"}
                             </p>
@@ -530,7 +527,7 @@ const AdminSchoolDetail = () => {
                           rows={3}
                           value={formState?.contactInfo?.address || ""}
                           onChange={(event) => handleNestedFieldChange("contactInfo", "address", event.target.value)}
-                          className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                          className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                         />
                       ) : (
                         <div className="rounded-xl border border-slate-100 bg-slate-50 px-4 py-3 text-sm text-slate-700">
@@ -551,7 +548,7 @@ const AdminSchoolDetail = () => {
                               type="text"
                               value={formState?.contactInfo?.[field] || ""}
                               onChange={(event) => handleNestedFieldChange("contactInfo", field, event.target.value)}
-                              className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                              className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                             />
                           ) : (
                             <p className="text-sm font-semibold text-slate-700">
@@ -564,12 +561,14 @@ const AdminSchoolDetail = () => {
                   </div>
                 </section>
 
-                <section className="rounded-2xl border border-slate-200 shadow-sm bg-white">
-                  <header className="border-b border-slate-100 px-6 py-4">
-                    <h2 className="text-lg font-bold text-slate-900">Academic & Capacity</h2>
-                    <p className="text-sm text-slate-500">Snapshot of academic profile and headcount</p>
-                  </header>
-                  <div className="px-6 py-5 space-y-6">
+                <section className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+                  <div className="px-6 py-4 border-b border-blue-100 bg-gradient-to-r from-blue-50/80 to-transparent">
+                    <h2 className="text-base font-semibold text-slate-900 flex items-center gap-2">
+                      <span className="w-1 h-5 rounded-full bg-blue-500" />
+                      Academic & capacity
+                    </h2>
+                  </div>
+                  <div className="px-6 py-5 space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Board</label>
@@ -578,13 +577,12 @@ const AdminSchoolDetail = () => {
                             type="text"
                             value={formState?.academicInfo?.board || ""}
                             onChange={(event) => handleNestedFieldChange("academicInfo", "board", event.target.value)}
-                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                           />
                         ) : (
-                          <div className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
-                            <GraduationCap className="w-4 h-4 text-slate-400" />
+                          <p className="text-sm font-semibold text-slate-700">
                             {detail?.academicInfo?.board || "—"}
-                          </div>
+                          </p>
                         )}
                       </div>
                       <div className="space-y-2">
@@ -594,7 +592,7 @@ const AdminSchoolDetail = () => {
                             type="number"
                             value={formState?.academicInfo?.establishedYear || ""}
                             onChange={(event) => handleNestedFieldChange("academicInfo", "establishedYear", event.target.value)}
-                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                           />
                         ) : (
                           <p className="text-sm font-semibold text-slate-700">
@@ -611,7 +609,7 @@ const AdminSchoolDetail = () => {
                             type="number"
                             value={formState?.academicInfo?.totalStudents ?? ""}
                             onChange={(event) => handleNestedFieldChange("academicInfo", "totalStudents", event.target.value)}
-                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                           />
                         ) : (
                           <p className="text-sm font-semibold text-slate-700">
@@ -626,7 +624,7 @@ const AdminSchoolDetail = () => {
                             type="number"
                             value={formState?.academicInfo?.totalTeachers ?? ""}
                             onChange={(event) => handleNestedFieldChange("academicInfo", "totalTeachers", event.target.value)}
-                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                            className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                           />
                         ) : (
                           <p className="text-sm font-semibold text-slate-700">
@@ -636,18 +634,20 @@ const AdminSchoolDetail = () => {
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <MetricsChip icon={Users} label="Students" value={statusSummary.students} />
-                      <MetricsChip icon={UserCircle} label="Teachers" value={statusSummary.teachers} accent="from-slate-500 to-slate-700" />
-                      <MetricsChip icon={Layers} label="Classes" value={statusSummary.classes} accent="from-indigo-500 to-purple-500" />
+                      <MetricsChip icon={Users} label="Students" value={statusSummary.students} accent="emerald" />
+                      <MetricsChip icon={UserCircle} label="Teachers" value={statusSummary.teachers} accent="blue" />
+                      <MetricsChip icon={Layers} label="Classes" value={statusSummary.classes} accent="purple" />
                     </div>
                   </div>
                 </section>
 
-                <section className="rounded-2xl border border-slate-200 shadow-sm bg-white">
-                  <header className="border-b border-slate-100 px-6 py-4">
-                    <h2 className="text-lg font-bold text-slate-900">Review Notes</h2>
-                    <p className="text-sm text-slate-500">Track the decision log and add internal updates</p>
-                  </header>
+                <section className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+                  <div className="px-6 py-4 border-b border-purple-100 bg-gradient-to-r from-purple-50/80 to-transparent">
+                    <h2 className="text-base font-semibold text-slate-900 flex items-center gap-2">
+                      <span className="w-1 h-5 rounded-full bg-purple-500" />
+                      Review notes
+                    </h2>
+                  </div>
                   <div className="px-6 py-5 space-y-4">
                     {editMode && (
                       <div className="space-y-2">
@@ -657,7 +657,7 @@ const AdminSchoolDetail = () => {
                           value={formState?.note || ""}
                           onChange={(event) => handleFormFieldChange("note", event.target.value)}
                           placeholder="Capture a note for the decision timeline"
-                          className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                          className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                         />
                       </div>
                     )}
@@ -699,22 +699,22 @@ const AdminSchoolDetail = () => {
                     </div>
                   </div>
                 </section>
-              </div>
 
-              <div className="space-y-6">
-                <section className="rounded-2xl border border-slate-200 shadow-sm bg-white">
-                  <header className="border-b border-slate-100 px-6 py-4">
-                    <h2 className="text-lg font-bold text-slate-900">Status & Workflow</h2>
-                    <p className="text-sm text-slate-500">Control the lifecycle and communication state</p>
-                  </header>
-                  <div className="px-6 py-5 space-y-4">
+              <section className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+                <div className="px-6 py-4 border-b border-teal-100 bg-gradient-to-r from-teal-50/80 to-transparent">
+                  <h2 className="text-base font-semibold text-slate-900 flex items-center gap-2">
+                    <span className="w-1 h-5 rounded-full bg-teal-500" />
+                    Status & workflow
+                  </h2>
+                </div>
+                <div className="px-6 py-5 space-y-4">
                     <div className="space-y-2">
                       <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide mr-4 ">Approval Status</label>
                       {editMode ? (
                         <select
                           value={formState?.approvalStatus || "pending"}
                           onChange={(event) => handleFormFieldChange("approvalStatus", event.target.value)}
-                          className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                          className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                         >
                           <option value="approved">Approved</option>
                           <option value="pending">Pending</option>
@@ -738,7 +738,7 @@ const AdminSchoolDetail = () => {
                           rows={3}
                           value={formState?.approvalNotes || ""}
                           onChange={(event) => handleFormFieldChange("approvalNotes", event.target.value)}
-                          className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400"
+                          className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                         />
                       ) : (
                         <p className="text-sm text-slate-600">
@@ -747,42 +747,18 @@ const AdminSchoolDetail = () => {
                       )}
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Subscription Plan</label>
-                      <div className="rounded-2xl border border-emerald-100 bg-emerald-50/70 px-4 py-4 shadow-inner">
-                        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                          <div className="flex items-center gap-3">
-                            <Sparkles className="w-5 h-5 text-emerald-600" />
-                            <div>
-                              <p className="text-sm font-bold text-emerald-900">{planDetails.planName}</p>
-                              <p className="text-xs text-emerald-700/80">
-                                Plan access activates immediately on approval and renews yearly.
-                              </p>
-                            </div>
-                          </div>
-                          <span
-                            className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ${planStatusDisplay.badgeClass}`}
-                          >
-                            <PlanStatusIcon className="w-4 h-4" />
+                      <label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Subscription</label>
+                      <div className="rounded-lg border border-teal-200 bg-teal-50/50 px-4 py-3">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <p className="text-sm font-medium text-slate-900">{planDetails.planName}</p>
+                          <span className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium ${planStatusDisplay.badgeClass}`}>
+                            <PlanStatusIcon className="w-3.5 h-3.5" />
                             {planStatusDisplay.label}
                           </span>
                         </div>
-                        <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                          <div className="rounded-xl border border-emerald-100 bg-white px-3 py-2">
-                            <p className="text-[11px] font-semibold text-emerald-600 uppercase tracking-wide">
-                              {detail?.subscription?.lastRenewedAt || detail?.subscription?.currentCycleStartDate 
-                                ? "Renewed On" 
-                                : "Activated On"}
-                            </p>
-                            <p className="text-sm font-semibold text-emerald-900">
-                              {formatAbsoluteDateTime(planDetails.activatedAt)}
-                            </p>
-                          </div>
-                          <div className="rounded-xl border border-emerald-100 bg-white px-3 py-2">
-                            <p className="text-[11px] font-semibold text-emerald-600 uppercase tracking-wide">Expires On</p>
-                            <p className="text-sm font-semibold text-emerald-900">
-                              {formatAbsoluteDate(planDetails.expiresAt)}
-                            </p>
-                          </div>
+                        <div className="mt-3 flex flex-wrap gap-4 text-xs text-slate-600">
+                          <span>Activated: {formatAbsoluteDate(planDetails.activatedAt)}</span>
+                          <span>Expires: {formatAbsoluteDate(planDetails.expiresAt)}</span>
                         </div>
                       </div>
                     </div>
@@ -806,17 +782,19 @@ const AdminSchoolDetail = () => {
                   </div>
                 </section>
 
-                <section className="rounded-2xl border border-slate-200 shadow-sm bg-white">
-                  <header className="border-b border-slate-100 px-6 py-4">
-                    <h2 className="text-lg font-bold text-slate-900">Analytics Snapshot</h2>
-                    <p className="text-sm text-slate-500">Engagement signals for this institution</p>
-                  </header>
-                  <div className="px-6 py-5 space-y-4">
+              <section className="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+                <div className="px-6 py-4 border-b border-slate-200 bg-gradient-to-r from-slate-100 to-transparent">
+                  <h2 className="text-base font-semibold text-slate-900 flex items-center gap-2">
+                    <span className="w-1 h-5 rounded-full bg-slate-500" />
+                    Analytics
+                  </h2>
+                </div>
+                <div className="px-6 py-5 space-y-4">
                     <MetricsChip
                       icon={BarChart2}
                       label="Active Teachers (7d)"
                       value={formatNumber(analytics?.activeTeachers7d)}
-                      accent="from-blue-500 to-indigo-500"
+                      accent="blue"
                     />
                     <div className="space-y-3">
                       <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">
@@ -840,8 +818,6 @@ const AdminSchoolDetail = () => {
                     </div>
                   </div>
                 </section>
-              </div>
-            </div>
           </div>
         )}
       </div>

@@ -31,7 +31,8 @@ const AdminProgramReports = () => {
         programAdminService.listReports(programId),
       ]);
       setProgram(programRes?.data);
-      setReports(reportsRes?.data?.reports ?? reportsRes?.reports ?? []);
+      const reportsList = reportsRes?.data?.reports ?? reportsRes?.reports;
+      setReports(Array.isArray(reportsList) ? reportsList : []);
     } catch (err) {
       console.error("Failed to fetch data:", err);
       toast.error("Failed to load data");
@@ -97,7 +98,7 @@ const AdminProgramReports = () => {
     try {
       await programAdminService.publishReport(programId, reportType);
       toast.success("Report published. CSR can now see it.");
-      fetchData();
+      await fetchData();
     } catch (err) {
       toast.error(err?.response?.data?.message || "Publish failed");
     } finally {
@@ -121,23 +122,33 @@ const AdminProgramReports = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-12">
-      <div className="max-w-3xl mx-auto px-4 py-6 space-y-6">
-        {/* HEADER */}
-        <header className="flex items-center gap-4">
-          <button
-            onClick={() => navigate(`/admin/programs/${programId}`)}
-            className="p-2 rounded-xl border-2 border-gray-100 bg-white hover:bg-slate-50 hover:border-indigo-200 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5 text-slate-600" />
-          </button>
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Super Admin</p>
-            <p className="text-sm text-slate-600">{program?.name || "Program"}</p>
-            <h1 className="text-2xl font-bold text-slate-900">Reports</h1>
+      {/* Hero — match other program pages */}
+      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-8 px-6">
+        <div className="max-w-3xl mx-auto flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => navigate(`/admin/programs/${programId}`)}
+              className="p-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors"
+              aria-label="Back to program"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <div>
+              <h1 className="text-2xl font-bold flex items-center gap-2">
+                <FileText className="w-7 h-7" />
+                Reports
+              </h1>
+              <p className="text-sm text-white/90 mt-0.5">{program?.name || "Program"}</p>
+            </div>
           </div>
-        </header>
+          <p className="text-sm text-white/80 hidden sm:block">
+            {new Date().toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric", year: "numeric" })}
+          </p>
+        </div>
+      </div>
 
-        <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-4 mb-4 flex items-start gap-3 text-slate-600 text-sm">
+      <div className="max-w-3xl mx-auto px-6 -mt-4 space-y-6">
+        <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-4 flex items-start gap-3 text-slate-600 text-sm">
           <Info className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" />
           <p>
             Preview opens in a new tab. Download to save. Publish to make the report available to CSR.
@@ -152,7 +163,7 @@ const AdminProgramReports = () => {
                 <FileText className="w-6 h-6 text-indigo-600" />
               </div>
               <div className="flex-1 min-w-0">
-                <h2 className="text-lg font-semibold text-slate-900">Impact Summary</h2>
+                <h2 className="text-xl font-bold text-slate-900">Impact Summary</h2>
                 <p className="text-sm text-slate-500 mt-1">
                   2-4 page summary for CSR/ESG reports
                 </p>
@@ -165,7 +176,7 @@ const AdminProgramReports = () => {
                   <button
                     onClick={() => handlePreview("impact_summary")}
                     disabled={!!previewingReport}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-gray-200 text-slate-700 text-sm font-semibold hover:bg-slate-50 disabled:opacity-50"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-gray-100 text-slate-700 text-sm font-semibold hover:bg-slate-50 disabled:opacity-50"
                   >
                     {previewingReport === "impact_summary" ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Eye className="w-4 h-4" />}
                     Preview
@@ -198,7 +209,7 @@ const AdminProgramReports = () => {
                 <FileSpreadsheet className="w-6 h-6 text-purple-600" />
               </div>
               <div className="flex-1 min-w-0">
-                <h2 className="text-lg font-semibold text-slate-900">School Coverage Report</h2>
+                <h2 className="text-xl font-bold text-slate-900">School Coverage Report</h2>
                 <p className="text-sm text-slate-500 mt-1">
                   Detailed school-level coverage for audits
                 </p>
@@ -211,7 +222,7 @@ const AdminProgramReports = () => {
                   <button
                     onClick={() => handlePreview("school_coverage", "pdf")}
                     disabled={!!previewingReport}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-gray-200 text-slate-700 text-sm font-semibold hover:bg-slate-50 disabled:opacity-50"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-gray-100 text-slate-700 text-sm font-semibold hover:bg-slate-50 disabled:opacity-50"
                   >
                     {previewingReport === "school_coverage" ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Eye className="w-4 h-4" />}
                     Preview PDF
@@ -252,7 +263,7 @@ const AdminProgramReports = () => {
                 <FileText className="w-6 h-6 text-amber-600" />
               </div>
               <div className="flex-1 min-w-0">
-                <h2 className="text-lg font-semibold text-slate-900">Compliance Summary</h2>
+                <h2 className="text-xl font-bold text-slate-900">Compliance Summary</h2>
                 <p className="text-sm text-slate-500 mt-1">
                   Compliance and governance documentation
                 </p>
@@ -265,7 +276,7 @@ const AdminProgramReports = () => {
                   <button
                     onClick={() => handlePreview("compliance")}
                     disabled={!!previewingReport}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-gray-200 text-slate-700 text-sm font-semibold hover:bg-slate-50 disabled:opacity-50"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-gray-100 text-slate-700 text-sm font-semibold hover:bg-slate-50 disabled:opacity-50"
                   >
                     {previewingReport === "compliance" ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Eye className="w-4 h-4" />}
                     Preview

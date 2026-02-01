@@ -1,12 +1,15 @@
 import mongoose from 'mongoose';
 import Organization from '../models/Organization.js';
 import User from '../models/User.js';
+import CSRSponsor from '../models/CSRSponsor.js';
+import Program from '../models/Program.js';
 import UserSubscription from '../models/UserSubscription.js';
 import Subscription from '../models/Subscription.js';
 import ActivityLog from '../models/ActivityLog.js';
 import Company from '../models/Company.js';
 import SchoolClass from '../models/School/SchoolClass.js';
 import SchoolStudent from '../models/School/SchoolStudent.js';
+import { getCanonicalRegion } from '../constants/regionCanonical.js';
 
 const PLAN_FEATURES = {
   free: {
@@ -234,36 +237,36 @@ const ensureSchoolCapacity = async (organization, roleType, options = {}) => {
   }
 };
 
-// Get schools onboarded/active per region
+// Same status filter as admin schools list so counts match summary
+const SCHOOL_APPROVAL_STATUSES = ['approved', 'pending', 'rejected'];
+
+// Get schools onboarded/active per region (uses Company = same source as admin schools list)
 export const getSchoolsByRegion = async (req, res) => {
   try {
-    const schools = await Organization.find({ type: 'school' }).select('settings.address state isActive createdAt');
+    const schools = await Company.find({
+      type: 'school',
+      approvalStatus: { $in: SCHOOL_APPROVAL_STATUSES }
+    }).select('contactInfo.state isActive createdAt').lean();
 
-    // Group by state/region
     const regionData = {};
-    
     schools.forEach(school => {
-      const region = school.settings?.address?.state || school.state || 'Unknown';
-      
+      const raw = school.contactInfo?.state;
+      const region = getCanonicalRegion(raw);
       if (!regionData[region]) {
         regionData[region] = {
           region,
           totalSchools: 0,
           activeSchools: 0,
           inactiveSchools: 0,
-          recentOnboarding: 0 // Last 30 days
+          recentOnboarding: 0
         };
       }
-      
       regionData[region].totalSchools++;
-      
       if (school.isActive) {
         regionData[region].activeSchools++;
       } else {
         regionData[region].inactiveSchools++;
       }
-      
-      // Check if onboarded in last 30 days
       const thirtyDaysAgo = new Date();
       thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
       if (school.createdAt >= thirtyDaysAgo) {
@@ -271,7 +274,7 @@ export const getSchoolsByRegion = async (req, res) => {
       }
     });
 
-    const formattedData = Object.values(regionData);
+    const formattedData = Object.values(regionData).sort((a, b) => (b.totalSchools - a.totalSchools));
 
     res.json({
       success: true,
@@ -282,8 +285,8 @@ export const getSchoolsByRegion = async (req, res) => {
     });
   } catch (error) {
     console.error('Error fetching schools by region:', error);
-    res.status(500).json({ 
-      success: false, 
+    res.status(500).json({
+      success: false,
       message: 'Error fetching schools by region',
       data: []
     });
@@ -513,12 +516,12 @@ export const getPrivacyCompliance = async (req, res) => {
 // Get comprehensive admin dashboard data
 export const getAdminDashboard = async (req, res) => {
   try {
-    const [schoolsByRegion, activeRate, pillarPerformance, platformHealth, privacyCompliance] = await Promise.all([
+    const [schoolsByRegion, activeRate, pillarPerformance, privacyCompliance, csrStats] = await Promise.all([
       getSchoolsByRegionData(),
       getStudentActiveRateData(),
       getPillarPerformanceData(),
-      getPlatformHealthData(),
-      getPrivacyComplianceData()
+      getPrivacyComplianceData(),
+      getCsrStatsData()
     ]);
 
     res.json({
@@ -527,8 +530,9 @@ export const getAdminDashboard = async (req, res) => {
         schoolsByRegion: schoolsByRegion.data,
         studentActiveRate: activeRate.data,
         pillarPerformance: pillarPerformance.data,
-        platformHealth: platformHealth.data,
-        privacyCompliance: privacyCompliance.data
+        privacyCompliance: privacyCompliance.data,
+        csrPartners: { total: csrStats.data.total },
+        csrPrograms: { total: csrStats.data.totalPrograms, active: csrStats.data.activePrograms }
       },
       timestamp: new Date().toISOString()
     });
@@ -544,29 +548,62 @@ export const getAdminDashboard = async (req, res) => {
 };
 
 // Helper functions
+async function getCsrStatsData() {
+  try {
+    const now = new Date();
+    const activeProgramStatuses = ['approved', 'implementation_in_progress', 'mid_program_review_completed'];
+
+    const [totalPartners, totalPrograms, activePrograms] = await Promise.all([
+      CSRSponsor.countDocuments({}),
+      Program.countDocuments({}),
+      Program.countDocuments({
+        status: { $in: activeProgramStatuses },
+        'duration.startDate': { $lte: now },
+        'duration.endDate': { $gte: now }
+      })
+    ]);
+
+    return {
+      data: {
+        total: totalPartners,
+        totalPrograms,
+        activePrograms
+      }
+    };
+  } catch (error) {
+    console.error('Error in getCsrStatsData:', error);
+    return {
+      data: {
+        total: 0,
+        totalPrograms: 0,
+        activePrograms: 0
+      }
+    };
+  }
+}
+
 async function getSchoolsByRegionData() {
   try {
-    const schools = await Organization.find({ type: 'school' }).select('settings.address state isActive createdAt');
-
+    const schools = await Company.find({
+      type: 'school',
+      approvalStatus: { $in: SCHOOL_APPROVAL_STATUSES }
+    }).select('contactInfo.state isActive createdAt').lean();
     if (!schools || schools.length === 0) {
       return { data: [] };
     }
-
     const regionData = {};
     schools.forEach(school => {
-      const region = school.settings?.address?.state || school.state || 'Unknown';
+      const region = getCanonicalRegion(school.contactInfo?.state);
       if (!regionData[region]) {
         regionData[region] = { region, totalSchools: 0, activeSchools: 0, inactiveSchools: 0, recentOnboarding: 0 };
       }
       regionData[region].totalSchools++;
       if (school.isActive) regionData[region].activeSchools++;
       else regionData[region].inactiveSchools++;
-
       const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
       if (school.createdAt >= thirtyDaysAgo) regionData[region].recentOnboarding++;
     });
-
-    return { data: Object.values(regionData) };
+    return { data: Object.values(regionData).sort((a, b) => (b.totalSchools - a.totalSchools)) };
   } catch (error) {
     console.error('Error in getSchoolsByRegionData:', error);
     return { data: [] };
@@ -653,50 +690,6 @@ async function getPillarPerformanceData() {
   } catch (error) {
     console.error('Error in getPillarPerformanceData:', error);
     return { data: [] };
-  }
-}
-
-async function getPlatformHealthData() {
-  try {
-    const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
-    const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
-
-    const [recentErrors, dailyErrors, recentActivity] = await Promise.all([
-      ActivityLog.countDocuments({ activityType: 'error', timestamp: { $gte: oneHourAgo } }),
-      ActivityLog.countDocuments({ activityType: 'error', timestamp: { $gte: oneDayAgo } }),
-      ActivityLog.countDocuments({ timestamp: { $gte: oneHourAgo } })
-    ]);
-
-    const uptime = 99.9;
-    const averageLatency = 150;
-    const errorRate = recentActivity > 0 ? ((recentErrors / recentActivity) * 100).toFixed(3) : 0;
-
-    return {
-      data: {
-        uptime,
-        uptimeStatus: uptime >= 99 ? 'healthy' : uptime >= 95 ? 'degraded' : 'critical',
-        averageLatency,
-        latencyStatus: averageLatency < 200 ? 'good' : averageLatency < 500 ? 'moderate' : 'slow',
-        errorRate: parseFloat(errorRate),
-        recentErrors,
-        dailyErrors,
-        healthScore: calculateHealthScore(uptime, averageLatency, parseFloat(errorRate))
-      }
-    };
-  } catch (error) {
-    console.error('Error in getPlatformHealthData:', error);
-    return {
-      data: {
-        uptime: 0,
-        uptimeStatus: 'critical',
-        averageLatency: 0,
-        latencyStatus: 'slow',
-        errorRate: 0,
-        recentErrors: 0,
-        dailyErrors: 0,
-        healthScore: 0
-      }
-    };
   }
 }
 

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 import {
   ShieldCheck,
@@ -6,6 +7,7 @@ import {
   Clock,
   CheckCircle2,
   XCircle,
+  TrendingUp,
   Users,
   MapPin,
   Mail,
@@ -13,15 +15,10 @@ import {
   Globe,
   Search,
   Filter,
-  Sparkles,
-  LayoutDashboard,
-  BarChart3,
   History as HistoryIcon,
   AlertTriangle,
-  Info,
   Loader2,
-  TrendingUp,
-  TrendingDown
+  ArrowLeft
 } from "lucide-react";
 import { toast } from "react-hot-toast";
 import {
@@ -100,6 +97,7 @@ const enhanceSchool = (school) => {
 };
 
 const AdminSchoolApprovals = () => {
+  const navigate = useNavigate();
   const socket = useSocket();
 
   const [initialLoading, setInitialLoading] = useState(true);
@@ -107,7 +105,6 @@ const AdminSchoolApprovals = () => {
   const [pendingSchools, setPendingSchools] = useState([]);
   const [renewalRequests, setRenewalRequests] = useState([]);
   const [renewalLoading, setRenewalLoading] = useState(false);
-  const [selectedRenewalRequest, setSelectedRenewalRequest] = useState(null);
   const [renewalActionModal, setRenewalActionModal] = useState(null);
   const [renewalActionNote, setRenewalActionNote] = useState("");
   const [history, setHistory] = useState({ data: [], meta: { total: 0, page: 1, pages: 1, limit: historyPageSize } });
@@ -157,6 +154,29 @@ const AdminSchoolApprovals = () => {
       };
     }
   }, [detailModalOpen]);
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key !== "Escape") return;
+      if (confirmAction) {
+        setConfirmAction(null);
+        return;
+      }
+      if (renewalActionModal) {
+        setRenewalActionModal(null);
+        setRenewalActionNote("");
+        return;
+      }
+      if (detailModalOpen && selectedSchool) {
+        setDetailModalOpen(false);
+        setSelectedSchool(null);
+        setEditing(false);
+        setEditDirty(false);
+      }
+    };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [detailModalOpen, selectedSchool, confirmAction, renewalActionModal]);
 
   const updateEditField = (field, value) => {
     setEditForm((prev) => ({ ...prev, [field]: value }));
@@ -429,70 +449,39 @@ const AdminSchoolApprovals = () => {
   const summaryCards = useMemo(() => {
     const summary = dashboard?.summary || {};
     const pendingCount = summary.pending || 0;
-    const approvalRate = summary.approvalRate ?? 0;
-    const rejectionRate = approvalRate ? 100 - approvalRate : summary.rejectedLast30 || 0;
+    const approvalRate = summary.approvalRate ?? null;
+    const rejectionRatePct = approvalRate != null ? 100 - approvalRate : null;
     const avgDecision = summary.averageDecisionHours ?? 0;
+    const rejectedCount = summary.rejectedLast30 || 0;
 
     return [
       {
         title: "Pending Schools",
         value: formatNumber(pendingCount),
         icon: Building2,
-        color: "from-indigo-500 to-purple-600",
-        subtitle: `${formatNumber(summary.agingBacklog || 0)} waiting >72h`,
-        decorator: pendingCount > 0 ? (
-          <span className="inline-flex items-center text-sm font-semibold text-indigo-600">
-            <TrendingUp className="w-4 h-4 mr-1" /> pipeline active
-          </span>
-        ) : null
+        iconBg: "bg-indigo-100 text-indigo-600",
+        subtitle: `${formatNumber(summary.agingBacklog || 0)} waiting >72h`
       },
       {
         title: "Approval Rate (30d)",
-        value: approvalRate ? `${approvalRate}%` : "—",
+        value: approvalRate != null ? `${approvalRate}%` : "—",
         icon: CheckCircle2,
-        color: "from-emerald-500 to-teal-600",
-        subtitle: `${formatNumber(summary.approvedLast30 || 0)} approved`,
-        decorator: approvalRate >= 80 ? (
-          <span className="inline-flex items-center text-sm font-semibold text-emerald-600">
-            <Sparkles className="w-4 h-4 mr-1" /> healthy pipeline
-          </span>
-        ) : (
-          <span className="inline-flex items-center text-sm font-semibold text-emerald-600/70">
-            <TrendingDown className="w-4 h-4 mr-1" /> improvement needed
-          </span>
-        )
+        iconBg: "bg-emerald-100 text-emerald-600",
+        subtitle: `${formatNumber(summary.approvedLast30 || 0)} approved`
       },
       {
         title: "Avg Decision Time",
         value: avgDecision ? `${avgDecision}h` : "—",
         icon: Clock,
-        color: "from-cyan-500 to-blue-600",
-        subtitle: "Target < 48h",
-        decorator: avgDecision && avgDecision <= 48 ? (
-          <span className="inline-flex items-center text-sm font-semibold text-cyan-600">
-            <TrendingDown className="w-4 h-4 mr-1" /> on target
-          </span>
-        ) : (
-          <span className="inline-flex items-center text-sm font-semibold text-cyan-600/70">
-            <AlertTriangle className="w-4 h-4 mr-1" /> above target
-          </span>
-        )
+        iconBg: "bg-cyan-100 text-cyan-600",
+        subtitle: "Target < 48h"
       },
       {
         title: "Rejections (30d)",
-        value: formatNumber(summary.rejectedLast30 || 0),
+        value: formatNumber(rejectedCount),
         icon: XCircle,
-        color: "from-rose-500 to-pink-600",
-        subtitle: `${formatNumber(rejectionRate)}% rejection rate`,
-        decorator: rejectionRate >= 40 ? (
-          <span className="inline-flex items-center text-sm font-semibold text-rose-600">
-            <AlertTriangle className="w-4 h-4 mr-1" /> review policy
-          </span>
-        ) : (
-          <span className="inline-flex items-center text-sm font-semibold text-rose-600/70">
-            <Sparkles className="w-4 h-4 mr-1" /> healthy threshold
-          </span>
-        )
+        iconBg: "bg-rose-100 text-rose-600",
+        subtitle: rejectionRatePct != null ? `${rejectionRatePct}% rejection rate` : `${formatNumber(rejectedCount)} rejected`
       }
     ];
   }, [dashboard]);
@@ -560,17 +549,19 @@ const AdminSchoolApprovals = () => {
         setDetailModalOpen(true);
       }}
     >
-      <div className="flex items-start justify-between">
-        <div>
+      <div className="flex items-start justify-between gap-2">
+        <div className="min-w-0">
           <h3 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
-            <Building2 className="w-5 h-5 text-indigo-500" />
-            {school.name}
+            <Building2 className="w-5 h-5 text-indigo-500 shrink-0" />
+            <span className="truncate">{school.name}</span>
           </h3>
           <p className="text-sm text-slate-500 mt-1">{school.institutionId || "—"}</p>
         </div>
-        <span className={`px-3 py-1 text-xs font-semibold rounded-full ${priorityStyles[school.priority]}`}>
-          {school.priority?.toUpperCase()}
-        </span>
+        {school.priority && (
+          <span className={`shrink-0 px-2.5 py-1 text-xs font-semibold rounded-full ${priorityStyles[school.priority] || "bg-slate-100 text-slate-700 border border-slate-200"}`}>
+            {school.priority}
+          </span>
+        )}
       </div>
       <div className="mt-4 grid grid-cols-2 gap-3 text-sm text-slate-600">
         <div className="flex items-center gap-2">
@@ -597,89 +588,21 @@ const AdminSchoolApprovals = () => {
           <span>{school.submittedAgoHuman || "—"}</span>
         </div>
       </div>
-      <div className="mt-4 flex items-center gap-2 flex-wrap">
-        {school.tags?.map((tag) => (
-          <span key={tag} className="px-2.5 py-1 text-xs bg-slate-100 border border-slate-200 text-slate-600 rounded-full">
-            {tag}
-          </span>
-        ))}
-        <span className="px-2.5 py-1 text-xs bg-emerald-100 border border-emerald-200 text-emerald-700 rounded-full">
-          Readiness {school.metrics?.readinessScore || 0}%
-        </span>
-      </div>
+      {(school.tags?.length > 0 || (school.metrics?.readinessScore != null && school.metrics.readinessScore !== undefined)) && (
+        <div className="mt-4 flex items-center gap-2 flex-wrap">
+          {school.tags?.map((tag) => (
+            <span key={tag} className="px-2.5 py-1 text-xs bg-slate-100 border border-slate-200 text-slate-600 rounded-full">
+              {tag}
+            </span>
+          ))}
+          {school.metrics?.readinessScore != null && (
+            <span className="px-2.5 py-1 text-xs bg-emerald-100 border border-emerald-200 text-emerald-700 rounded-full">
+              Readiness {school.metrics.readinessScore}%
+            </span>
+          )}
+        </div>
+      )}
     </Motion.div>
-  );
-
-  const renderTimeline = () => (
-    <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <h3 className="text-slate-900 text-lg font-semibold flex items-center gap-2">
-            <BarChart3 className="w-5 h-5 text-cyan-500" />
-            Submission velocity (7 days)
-          </h3>
-          <p className="text-xs text-slate-500">Track daily intake to forecast review capacity</p>
-        </div>
-      </div>
-      <div className="space-y-3">
-        {(dashboard?.submissionTimeline || []).map((item) => (
-          <div key={item.date}>
-            <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
-              <span>{item.label}</span>
-              <span>{item.submissions} submissions</span>
-            </div>
-            <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-              <Motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${Math.min(100, (item.submissions || 0) * 20)}%` }}
-                className="h-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-pink-500"
-              />
-            </div>
-          </div>
-        ))}
-        {!dashboard?.submissionTimeline?.length && (
-          <p className="text-sm text-slate-500 text-center py-4">No submission activity in the last week</p>
-        )}
-      </div>
-    </div>
-  );
-
-  const renderPendingHighlights = () => (
-    <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <h3 className="text-slate-900 text-lg font-semibold flex items-center gap-2">
-            <LayoutDashboard className="w-5 h-5 text-indigo-500" />
-            Fast-track pipeline
-          </h3>
-          <p className="text-xs text-slate-500">Schools with highest readiness scores and aging submissions</p>
-        </div>
-      </div>
-      <div className="space-y-3">
-        {(dashboard?.pendingHighlights || []).map((highlight) => (
-          <div
-            key={highlight.id}
-            className="flex items-center justify-between bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-700"
-          >
-            <div>
-              <p className="font-semibold text-slate-900">{highlight.name}</p>
-              <p className="text-xs text-slate-500">{highlight.contactInfo?.state || "Unknown state"}</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-indigo-600 font-semibold">
-                {highlight.metrics?.readinessScore || 0}% readiness
-              </span>
-              <span className="px-2 py-1 text-xs rounded-full bg-white border border-slate-200 text-slate-600">
-                {highlight.submittedAgoHuman || "—"}
-              </span>
-            </div>
-          </div>
-        ))}
-        {!dashboard?.pendingHighlights?.length && (
-          <p className="text-sm text-slate-500 text-center py-4">No highlights available</p>
-        )}
-      </div>
-    </div>
   );
 
   if (initialLoading) {
@@ -694,120 +617,147 @@ const AdminSchoolApprovals = () => {
     );
   }
 
+  const pendingCount = dashboard?.summary?.pending ?? 0;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-16">
-      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-14 px-6 shadow-lg">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-start justify-between gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/20 text-xs font-semibold uppercase tracking-[0.35em]">
-              School onboarding
+      <header className="w-full bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 shadow-xl border border-purple-500/30 px-4 py-12 md:py-14">
+        <div className="max-w-7xl mx-auto flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-start gap-4">
+            <button
+              type="button"
+              onClick={() => navigate("/admin/dashboard")}
+              className="p-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors shrink-0 mt-0.5"
+              aria-label="Back to dashboard"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/80">School onboarding</p>
+              <h1 className="text-2xl md:text-3xl font-black text-white mt-2 flex items-center gap-3">
+                <ShieldCheck className="w-8 h-8 shrink-0" />
+                Approval Operations
+              </h1>
+              <p className="text-sm text-white/85 max-w-2xl mt-1.5 leading-relaxed">
+                Review pending schools, approve or reject with notes, and manage subscription renewals.
+              </p>
             </div>
-            <h1 className="text-3xl md:text-4xl font-black mt-4 flex items-center gap-3">
-              <ShieldCheck className="w-8 h-8" />
-              Approval Operations Hub
-            </h1>
-            <p className="text-sm md:text-base text-white/80 mt-3 max-w-2xl">
-              Manage the entire lifecycle of school onboarding—evaluate readiness, log reviewer notes, and make
-              confident decisions with real-time context and analytics.
+          </div>
+          <div className="text-right space-y-1 flex-shrink-0 md:pl-4">
+            <p className="text-sm font-medium text-white/90">
+              Pending: <span className="font-bold text-white">{pendingCount.toLocaleString()}</span> schools
+            </p>
+            <p className="text-xs text-white/70">
+              {new Date().toLocaleDateString("en-US", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
             </p>
           </div>
-          <div className="bg-white/15 border border-white/20 rounded-2xl px-6 py-4 flex flex-col items-start gap-2 text-sm backdrop-blur-md">
-            <span className="text-xs uppercase tracking-widest text-white/70">Live monitors</span>
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4" />
-              SLA target: 48h
-            </div>
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4" />
-              Review squad: Ops Specialists
-            </div>
-            <div className="flex items-center gap-2">
-              <Info className="w-4 h-4" />
-              Workflows auto-sync with onboarding CRM
-            </div>
-          </div>
         </div>
-      </div>
+      </header>
 
-      <div className="max-w-7xl mx-auto px-6 -mt-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-          {summaryCards.map((card) => (
-            <Motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="rounded-3xl border border-slate-200 bg-white shadow-xl p-6"
-            >
-              <div className="flex items-center justify-between mb-5">
-                <div className={`p-3 rounded-2xl bg-gradient-to-br ${card.color} text-white shadow-md`}>
-                  <card.icon className="w-6 h-6" />
+      <div className="max-w-7xl mx-auto px-6 -mt-8 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          {summaryCards.map((card) => {
+            const Icon = card.icon;
+            return (
+              <Motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.05 }}
+                className="rounded-2xl border border-slate-200 bg-white shadow-sm p-5"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">{card.title}</span>
+                  <div className={`p-2 rounded-lg ${card.iconBg}`}>
+                    <Icon className="w-4 h-4" />
+                  </div>
                 </div>
-                {card.decorator}
-              </div>
-              <p className="text-sm text-slate-500">{card.title}</p>
-              <p className="text-3xl font-black mt-2 text-slate-900">{card.value}</p>
-              <p className="text-xs text-slate-400 mt-3">{card.subtitle}</p>
-            </Motion.div>
-          ))}
+                <p className="text-2xl font-bold text-slate-900">{card.value}</p>
+                {card.subtitle && <p className="text-xs text-slate-500 mt-1.5">{card.subtitle}</p>}
+              </Motion.div>
+            );
+          })}
         </div>
 
         <div className="mt-12 space-y-6">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-4 bg-white border border-slate-200 rounded-2xl px-5 py-4 shadow-sm">
-              <div className="flex-1 relative">
-                <Search className="w-4 h-4 text-slate-400 absolute top-3 left-3" />
-                <input
-                  type="text"
-                  placeholder="Search by school, email, city, or institution ID"
-                  value={filters.search}
-                  onChange={(event) => setFilters((prev) => ({ ...prev, search: event.target.value }))}
-                  className="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                />
-              </div>
-              <div className="flex items-center gap-3">
+            <div className="flex flex-col lg:flex-row lg:items-end gap-4 bg-white border border-slate-200 rounded-2xl px-5 py-4 shadow-sm">
+              <div className="flex-1 min-w-0">
+                <label htmlFor="approvals-search" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                  Search
+                </label>
                 <div className="relative">
-                  <Filter className="w-4 h-4 text-slate-400 absolute top-3 left-3" />
+                  <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                   <input
+                    id="approvals-search"
                     type="text"
-                    placeholder="Filter by state"
-                    value={filters.state}
-                    onChange={(event) => setFilters((prev) => ({ ...prev, state: event.target.value }))}
-                    className="bg-white border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                    placeholder="School, email, city, or institution ID"
+                    value={filters.search}
+                    onChange={(event) => setFilters((prev) => ({ ...prev, search: event.target.value }))}
+                    className="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    aria-label="Search pending schools"
                   />
                 </div>
-                <select
-                  value={filters.sort}
-                  onChange={(event) => setFilters((prev) => ({ ...prev, sort: event.target.value }))}
-                  className="bg-white border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                >
-                  <option value="oldest">Oldest first</option>
-                  <option value="newest">Newest first</option>
-                </select>
+              </div>
+              <div className="flex flex-wrap items-end gap-4">
+                <div>
+                  <label htmlFor="approvals-state" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                    State
+                  </label>
+                  <div className="relative flex items-center rounded-xl border border-slate-200 bg-white focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                    <Filter className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
+                    <input
+                      id="approvals-state"
+                      type="text"
+                      placeholder="Filter by state"
+                      value={filters.state}
+                      onChange={(event) => setFilters((prev) => ({ ...prev, state: event.target.value }))}
+                      className="w-full min-w-[140px] bg-transparent border-0 rounded-xl pl-9 pr-3 py-2.5 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none"
+                      aria-label="Filter by state"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="approvals-sort" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                    Sort
+                  </label>
+                  <select
+                    id="approvals-sort"
+                    value={filters.sort}
+                    onChange={(event) => setFilters((prev) => ({ ...prev, sort: event.target.value }))}
+                    className="bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 min-w-[140px]"
+                    aria-label="Sort pending schools"
+                  >
+                    <option value="oldest">Oldest first</option>
+                    <option value="newest">Newest first</option>
+                  </select>
+                </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-[2fr,1fr] gap-6">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
-                    <Users className="w-5 h-5 text-indigo-500" />
-                    Pending schools ({pendingSchools.length})
-                  </h2>
-                  <span className="text-xs text-slate-500">Prioritized by readiness score and waiting time</span>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {pendingSchools.map(renderPendingCard)}
-                  {!pendingSchools.length && (
-                    <div className="col-span-full bg-white border border-slate-200 rounded-2xl p-6 text-center text-slate-500 shadow-sm">
-                      <Sparkles className="w-6 h-6 text-indigo-400 mx-auto mb-3" />
-                      <p className="text-sm">No pending schools awaiting review</p>
+            <div className="space-y-4">
+              <h2 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
+                <span className="w-1 h-6 rounded-full bg-indigo-500" />
+                <Users className="w-5 h-5 text-indigo-600" />
+                Pending schools ({pendingSchools.length})
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {pendingSchools.map(renderPendingCard)}
+                {!pendingSchools.length && (
+                  <div className="col-span-full bg-white border border-slate-200 rounded-2xl p-10 text-center shadow-sm">
+                    <div className="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle2 className="w-8 h-8 text-emerald-500" />
                     </div>
-                  )}
-                </div>
-              </div>
-              <div className="space-y-4">
-                {renderTimeline()}
-                {renderPendingHighlights()}
+                    <h3 className="text-lg font-semibold text-slate-900">No pending schools</h3>
+                    <p className="text-sm text-slate-500 mt-2 max-w-sm mx-auto">
+                      All caught up. New submissions will appear here for review.
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -816,10 +766,11 @@ const AdminSchoolApprovals = () => {
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h2 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-emerald-500" />
+                    <span className="w-1 h-6 rounded-full bg-emerald-500" />
+                    <TrendingUp className="w-5 h-5 text-emerald-600" />
                     Subscription Renewal Requests ({renewalRequests.length})
                   </h2>
-                  <p className="text-sm text-slate-500 mt-1">Pending subscription renewal requests from schools</p>
+                  <p className="text-sm text-slate-500 mt-1 ml-7">Pending subscription renewal requests from schools</p>
                 </div>
                 <button
                   onClick={loadRenewalRequests}
@@ -833,9 +784,12 @@ const AdminSchoolApprovals = () => {
               {renewalLoading && renewalRequests.length === 0 ? (
                 <div className="text-center py-8 text-slate-500">Loading renewal requests...</div>
               ) : renewalRequests.length === 0 ? (
-                <div className="text-center py-8 text-slate-500">
-                  <Sparkles className="w-6 h-6 text-indigo-400 mx-auto mb-3" />
-                  <p className="text-sm">No pending renewal requests</p>
+                <div className="text-center py-10">
+                  <div className="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle2 className="w-8 h-8 text-emerald-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-slate-900">No pending renewal requests</h3>
+                  <p className="text-sm text-slate-500 mt-2">New renewal requests will appear here.</p>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -890,7 +844,6 @@ const AdminSchoolApprovals = () => {
                       <div className="flex gap-2 pt-4 border-t border-slate-200">
                         <button
                           onClick={() => {
-                            setSelectedRenewalRequest(request);
                             setRenewalActionModal({ mode: 'approve', request });
                             setRenewalActionNote("");
                           }}
@@ -900,7 +853,6 @@ const AdminSchoolApprovals = () => {
                         </button>
                         <button
                           onClick={() => {
-                            setSelectedRenewalRequest(request);
                             setRenewalActionModal({ mode: 'reject', request });
                             setRenewalActionNote("");
                           }}
@@ -919,10 +871,11 @@ const AdminSchoolApprovals = () => {
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
                   <h2 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
-                    <HistoryIcon className="w-5 h-5 text-indigo-500" />
+                    <span className="w-1 h-6 rounded-full bg-indigo-500" />
+                    <HistoryIcon className="w-5 h-5 text-indigo-600" />
                     Recent approval decisions
                   </h2>
-                  <p className="text-sm text-slate-500">Audit trail of approvals and rejections with reviewer notes</p>
+                  <p className="text-sm text-slate-500 mt-1 ml-7">Audit trail of approvals and rejections with reviewer notes</p>
                 </div>
                 <div className="flex items-center gap-2">
                   {[
@@ -989,8 +942,11 @@ const AdminSchoolApprovals = () => {
                       ))
                     ) : (
                       <tr>
-                        <td colSpan={5} className="px-4 py-12 text-center text-sm text-slate-500">
-                          No approval history available for the selected filters.
+                        <td colSpan={5} className="px-4 py-12 text-center">
+                          <div className="flex flex-col items-center gap-2">
+                            <CheckCircle2 className="w-10 h-10 text-slate-300" />
+                            <p className="text-sm text-slate-500">No approval history for the selected filters.</p>
+                          </div>
                         </td>
                       </tr>
                     )}
@@ -1100,13 +1056,14 @@ const AdminSchoolApprovals = () => {
                   )}
                   <button
                     type="button"
-                    className="text-slate-400 hover:text-slate-600"
+                    className="text-slate-400 hover:text-slate-600 p-1 rounded"
                     onClick={() => {
                       setDetailModalOpen(false);
                       setSelectedSchool(null);
                       setEditing(false);
                       setEditDirty(false);
                     }}
+                    aria-label="Close school detail"
                   >
                     ✕
                   </button>

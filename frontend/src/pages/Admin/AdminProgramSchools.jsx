@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
@@ -8,8 +9,6 @@ import {
   ChevronLeft,
   RefreshCw,
   Users,
-  Check,
-  X,
 } from "lucide-react";
 import toast from "react-hot-toast";
 import programAdminService from "../../services/admin/programAdminService";
@@ -40,6 +39,35 @@ const AdminProgramSchools = () => {
   // Processing
   const [assigning, setAssigning] = useState(false);
   const [removing, setRemoving] = useState(false);
+  const [updatingStatusId, setUpdatingStatusId] = useState(null);
+
+  const IMPLEMENTATION_STATUS_OPTIONS = [
+    { value: "pending", label: "Pending" },
+    { value: "in_progress", label: "In progress" },
+    { value: "active", label: "Active" },
+    { value: "completed", label: "Completed" },
+  ];
+
+  const handleStatusChange = async (school, newStatus) => {
+    const psId = school.programSchoolId || school._id;
+    if (!psId || school.implementationStatus === newStatus) return;
+    setUpdatingStatusId(psId);
+    try {
+      await programAdminService.updateSchoolStatus(programId, psId, newStatus);
+      toast.success("Status updated");
+      setAssignedSchools((prev) =>
+        prev.map((s) =>
+          (s.programSchoolId || s._id) === psId
+            ? { ...s, implementationStatus: newStatus }
+            : s
+        )
+      );
+    } catch (err) {
+      toast.error(err?.response?.data?.message || "Failed to update status");
+    } finally {
+      setUpdatingStatusId(null);
+    }
+  };
 
   const fetchData = async () => {
     setLoading(true);
@@ -52,7 +80,10 @@ const AdminProgramSchools = () => {
 
       setProgram(programRes?.data);
       setAvailableSchools(availableRes?.data || []);
-      setAssignedSchools(assignedRes?.data?.schools || []);
+      // API returns { data: schoolsArray, pagination }; data is the array, not data.schools
+      setAssignedSchools(
+        Array.isArray(assignedRes?.data) ? assignedRes.data : (assignedRes?.data?.schools || [])
+      );
     } catch (err) {
       console.error("Failed to fetch data:", err);
       toast.error("Failed to load data");
@@ -183,36 +214,75 @@ const AdminProgramSchools = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center">
-        <div className="flex items-center gap-2 text-slate-500">
-          <RefreshCw className="w-5 h-5 animate-spin" />
-          <span>Loading...</span>
-        </div>
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+        <motion.div
+          animate={{ rotate: 360, scale: [1, 1.2, 1] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          className="w-20 h-20 border-4 border-purple-500 border-t-transparent rounded-full"
+        />
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-12">
-      <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
-        {/* HEADER */}
-        <header className="flex items-center gap-4">
-          <button
-            onClick={() => navigate(`/admin/programs/${programId}`)}
-            className="p-2 rounded-xl border-2 border-gray-100 bg-white hover:bg-slate-50 hover:border-indigo-200 transition-colors"
+      {/* Hero Section — match Super Admin Dashboard */}
+      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center justify-between flex-wrap gap-4"
           >
-            <ArrowLeft className="w-5 h-5 text-slate-600" />
-          </button>
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Super Admin</p>
-            <p className="text-sm text-slate-600">{program?.name || "Program"}</p>
-            <h1 className="text-2xl font-bold text-slate-900">School Assignment</h1>
-          </div>
-        </header>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => navigate(`/admin/programs/${programId}`)}
+                className="p-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors"
+                aria-label="Back to program"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+              <div>
+                <h1 className="text-4xl font-black mb-2 flex items-center gap-3">
+                  <School className="w-10 h-10" />
+                  School Assignment
+                </h1>
+                <p className="text-lg text-white/90">
+                  {program?.name || "Program"} — assign or remove schools
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => navigate(`/admin/programs/${programId}`)}
+                className="inline-flex items-center gap-2 rounded-xl bg-white text-indigo-600 px-5 py-2.5 text-sm font-bold shadow-lg hover:bg-gray-50 transition-colors"
+              >
+                Done
+              </button>
+              <div className="text-right hidden lg:block ml-2 pl-4 border-l border-white/30">
+                <p className="text-sm text-white/80">Today&apos;s Date</p>
+                <p className="text-xl font-bold">
+                  {new Date().toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto px-6 -mt-8 space-y-6">
         {/* PROGRESS BAR */}
         {targetStudents > 0 && (
-          <section className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-4">
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
+          >
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium text-slate-700">Student Coverage Progress</span>
               <span className="text-sm text-slate-500">
@@ -226,16 +296,24 @@ const AdminProgramSchools = () => {
               />
             </div>
             <p className="text-xs text-slate-400 mt-1">{Math.round(progress)}% of target reached</p>
-          </section>
+          </motion.section>
         )}
 
         {/* DUAL LIST */}
         <div className="grid gap-6 lg:grid-cols-[1fr,auto,1fr]">
           {/* AVAILABLE SCHOOLS */}
-          <section className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 overflow-hidden">
-            <div className="p-4 border-b border-slate-100">
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.05 }}
+            className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 overflow-hidden"
+          >
+            <div className="p-6 border-b border-slate-100">
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-lg font-semibold text-slate-900">Available Schools</h2>
+                <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                  <School className="w-7 h-7 text-indigo-600" />
+                  Available Schools
+                </h2>
                 <span className="text-xs text-slate-500">
                   {filteredAvailable.length} school(s)
                 </span>
@@ -246,9 +324,9 @@ const AdminProgramSchools = () => {
                   type="text"
                   value={availableSearch}
                   onChange={(e) => setAvailableSearch(e.target.value)}
-                  placeholder="Search schools..."
-                  className="pl-10 pr-4 py-2 w-full rounded-lg border border-slate-200 text-sm"
-                />
+                placeholder="Search schools..."
+                className="pl-10 pr-4 py-2.5 w-full rounded-xl border-2 border-gray-100 bg-slate-50/50 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              />
               </div>
               {availableDistricts.length > 0 && (
                 <div className="flex flex-wrap items-center gap-2">
@@ -256,7 +334,7 @@ const AdminProgramSchools = () => {
                   <select
                     value={selectedDistrictBulk}
                     onChange={(e) => setSelectedDistrictBulk(e.target.value)}
-                    className="text-sm border border-slate-200 rounded-lg px-3 py-1.5 bg-white min-w-[140px]"
+                    className="text-sm border-2 border-gray-100 rounded-xl px-3 py-2 bg-white min-w-[140px] focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   >
                     <option value="">Select district</option>
                     {availableDistricts.map((d) => (
@@ -269,7 +347,7 @@ const AdminProgramSchools = () => {
                   <button
                     onClick={handleBulkAssignByDistrict}
                     disabled={!selectedDistrictBulk || assigningByDistrict}
-                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 disabled:opacity-50"
+                    className="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 disabled:opacity-50"
                   >
                     {assigningByDistrict ? (
                       <RefreshCw className="w-3 h-3 animate-spin" />
@@ -321,7 +399,7 @@ const AdminProgramSchools = () => {
                 ))
               )}
             </div>
-          </section>
+          </motion.section>
 
           {/* ACTION BUTTONS */}
           <div className="flex lg:flex-col items-center justify-center gap-3 py-4">
@@ -357,10 +435,18 @@ const AdminProgramSchools = () => {
           </div>
 
           {/* ASSIGNED SCHOOLS */}
-          <section className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 overflow-hidden">
-            <div className="p-4 border-b border-slate-100">
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 overflow-hidden"
+          >
+            <div className="p-6 border-b border-slate-100">
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-lg font-semibold text-slate-900">Assigned Schools</h2>
+                <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                  <Users className="w-7 h-7 text-indigo-600" />
+                  Assigned Schools
+                </h2>
                 <span className="text-xs text-slate-500">
                   {filteredAssigned.length} school(s)
                 </span>
@@ -372,7 +458,7 @@ const AdminProgramSchools = () => {
                   value={assignedSearch}
                   onChange={(e) => setAssignedSearch(e.target.value)}
                   placeholder="Search assigned..."
-                  className="pl-10 pr-4 py-2 w-full rounded-lg border border-slate-200 text-sm"
+                  className="pl-10 pr-4 py-2.5 w-full rounded-xl border-2 border-gray-100 bg-slate-50/50 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                 />
               </div>
             </div>
@@ -419,43 +505,61 @@ const AdminProgramSchools = () => {
                           {district} • {formatNumber(school.studentsCovered || 0)} students
                         </p>
                       </div>
-                      <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">
-                        {school.implementationStatus || "Active"}
-                      </span>
+                      <div onClick={(e) => e.stopPropagation()} className="flex-shrink-0">
+                        <select
+                          value={school.implementationStatus || "pending"}
+                          onChange={(e) => handleStatusChange(school, e.target.value)}
+                          disabled={updatingStatusId === (school.programSchoolId || school._id)}
+                          className="rounded-lg border border-slate-200 bg-white px-2 py-1 text-xs font-semibold text-slate-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 disabled:opacity-60"
+                        >
+                          {IMPLEMENTATION_STATUS_OPTIONS.map((opt) => (
+                            <option key={opt.value} value={opt.value}>
+                              {opt.label}
+                            </option>
+                          ))}
+                        </select>
+                        {updatingStatusId === (school.programSchoolId || school._id) && (
+                          <RefreshCw className="ml-1 inline-block h-3 w-3 animate-spin text-slate-400" />
+                        )}
+                      </div>
                     </label>
                   );
                 })
               )}
             </div>
-          </section>
+          </motion.section>
         </div>
 
         {/* SUMMARY */}
-        <section className="bg-white rounded-2xl border border-slate-100 p-4 shadow-sm">
-          <div className="flex items-center justify-between">
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+          className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6"
+        >
+          <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <School className="w-5 h-5 text-indigo-500" />
-                <span className="text-sm font-medium text-slate-700">
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-indigo-50 border-2 border-indigo-100">
+                <School className="w-6 h-6 text-indigo-600" />
+                <span className="text-sm font-bold text-slate-800">
                   {assignedSchools.length} Schools Assigned
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-purple-500" />
-                <span className="text-sm font-medium text-slate-700">
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-purple-50 border-2 border-purple-100">
+                <Users className="w-6 h-6 text-purple-600" />
+                <span className="text-sm font-bold text-slate-800">
                   {formatNumber(totalAssignedStudents)} Students Covered
                 </span>
               </div>
             </div>
-
             <button
               onClick={() => navigate(`/admin/programs/${programId}`)}
-              className="px-4 py-2 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700"
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-bold shadow-lg hover:shadow-xl transition-all"
             >
-              Done
+              Back to Program
             </button>
           </div>
-        </section>
+        </motion.section>
       </div>
     </div>
   );

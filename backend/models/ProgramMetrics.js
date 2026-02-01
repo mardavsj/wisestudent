@@ -97,6 +97,7 @@ const recognitionSchema = new mongoose.Schema(
   {
     certificatesIssued: { type: Number, default: 0 },
     recognitionKitsDispatched: { type: Number, default: 0 },
+    recognitionKitsInProgress: { type: Number, default: 0 },
     completionBasedRecognition: { type: Number, default: 0 },
   },
   { _id: false }

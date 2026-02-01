@@ -2,6 +2,7 @@ import Program from "../models/Program.js";
 import ProgramSchool from "../models/ProgramSchool.js";
 import ProgramCheckpoint from "../models/ProgramCheckpoint.js";
 import ProgramMetrics from "../models/ProgramMetrics.js";
+import SchoolStudent from "../models/School/SchoolStudent.js";
 import CSRSponsor from "../models/CSRSponsor.js";
 import Organization from "../models/Organization.js";
 
@@ -241,13 +242,49 @@ export const listPrograms = async (filters = {}) => {
     Program.countDocuments(query),
   ]);
 
-  // Get school counts for each program
-  const programsWithCounts = await Promise.all(
-    programs.map(async (program) => {
-      const schoolCount = await ProgramSchool.countDocuments({ programId: program._id });
-      return { ...program, schoolsAssigned: schoolCount };
-    })
-  );
+  const programIds = programs.map((p) => p._id);
+
+  const programSchoolsList = await ProgramSchool.find({ programId: { $in: programIds } })
+    .select("programId schoolId")
+    .lean();
+
+  const schoolIds = [...new Set(programSchoolsList.map((ps) => ps.schoolId).filter(Boolean))];
+  let studentCountsByOrg = {};
+  if (schoolIds.length > 0) {
+    const agg = await SchoolStudent.aggregate([
+      { $match: { orgId: { $in: schoolIds } } },
+      { $group: { _id: "$orgId", count: { $sum: 1 } } },
+    ]);
+    agg.forEach((row) => {
+      studentCountsByOrg[row._id?.toString()] = row.count ?? 0;
+    });
+  }
+
+  const programIdToSchoolIds = {};
+  const programIdToSchoolCount = {};
+  programSchoolsList.forEach((ps) => {
+    const pid = ps.programId?.toString();
+    if (!pid) return;
+    if (!programIdToSchoolIds[pid]) programIdToSchoolIds[pid] = [];
+    programIdToSchoolIds[pid].push(ps.schoolId);
+    programIdToSchoolCount[pid] = (programIdToSchoolCount[pid] || 0) + 1;
+  });
+
+  const programsWithCounts = programs.map((program) => {
+    const pid = program._id.toString();
+    const schoolIds = programIdToSchoolIds[pid] || [];
+    const schoolCount = programIdToSchoolCount[pid] ?? 0;
+    let totalStudents = 0;
+    schoolIds.forEach((sid) => {
+      totalStudents += studentCountsByOrg[sid?.toString()] ?? 0;
+    });
+    const metrics = {
+      ...(program.metrics || {}),
+      totalStudents,
+      studentsOnboarded: totalStudents > 0 ? totalStudents : (program.metrics?.studentsOnboarded ?? 0),
+    };
+    return { ...program, schoolsAssigned: schoolCount, metrics };
+  });
 
   return {
     programs: programsWithCounts,
@@ -282,6 +319,35 @@ export const archiveProgram = async (programId) => {
     .populate("csrPartnerId", "companyName contactName email")
     .populate("createdBy", "name email")
     .lean();
+};
+
+/**
+ * Permanently delete a program and all related data (schools, metrics, checkpoints).
+ * The program will no longer appear for the assigned CSR.
+ * @param {String} programId - Program ID or ObjectId
+ * @returns {Object} { deleted: true, programId }
+ */
+export const deleteProgramPermanent = async (programId) => {
+  const program = await Program.findOne({
+    $or: [{ _id: programId }, { programId }],
+  });
+
+  if (!program) {
+    const error = new Error("Program not found");
+    error.status = 404;
+    throw error;
+  }
+
+  const id = program._id;
+
+  await Promise.all([
+    ProgramSchool.deleteMany({ programId: id }),
+    ProgramMetrics.deleteOne({ programId: id }),
+    ProgramCheckpoint.deleteMany({ programId: id }),
+  ]);
+  await Program.findByIdAndDelete(id);
+
+  return { deleted: true, programId: id };
 };
 
 /**
@@ -489,6 +555,7 @@ export {
   getProgram as get,
   listPrograms as list,
   archiveProgram as archive,
+  deleteProgramPermanent as deletePermanent,
   getProgramsByCSR as getByCSR,
   assignSchools as assign,
   getProgramSchools as getSchools,
@@ -502,6 +569,7 @@ const programService = {
   getProgram,
   listPrograms,
   archiveProgram,
+  deleteProgramPermanent,
   getProgramsByCSR,
   assignSchools,
   getProgramSchools,

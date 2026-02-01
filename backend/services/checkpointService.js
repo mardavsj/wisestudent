@@ -2,10 +2,12 @@ import Program from "../models/Program.js";
 import ProgramCheckpoint from "../models/ProgramCheckpoint.js";
 import ProgramMetrics from "../models/ProgramMetrics.js";
 import ProgramSchool from "../models/ProgramSchool.js";
+import SchoolStudent from "../models/School/SchoolStudent.js";
 import CSRSponsor from "../models/CSRSponsor.js";
 
 /**
- * Get all checkpoints for a program
+ * Get all checkpoints for a program.
+ * Enriches metricsSnapshot with current program stats when stored snapshot has 0 students (so existing checkpoints show real data).
  * @param {String} programId - Program ID or ObjectId
  * @returns {Array} Checkpoints sorted by number
  */
@@ -20,27 +22,46 @@ export const getCheckpoints = async (programId) => {
     throw error;
   }
 
-  const checkpoints = await ProgramCheckpoint.find({ programId: program._id })
-    .sort({ checkpointNumber: 1 })
-    .populate("triggeredBy", "name email")
-    .populate("acknowledgedBy", "name email")
-    .lean();
+  const [checkpoints, currentSnapshot] = await Promise.all([
+    ProgramCheckpoint.find({ programId: program._id })
+      .sort({ checkpointNumber: 1 })
+      .populate("triggeredBy", "name email")
+      .populate("acknowledgedBy", "name email")
+      .lean(),
+    getMetricsSnapshot(program._id),
+  ]);
 
-  return checkpoints.map((cp) => ({
-    ...cp,
-    label: ProgramCheckpoint.getCheckpointLabel(cp.checkpointNumber),
-    canAcknowledge: cp.status === "ready",
-    isComplete: cp.status === "completed",
-  }));
+  return checkpoints.map((cp) => {
+    const snapshot = cp.metricsSnapshot || {};
+    const needsEnrich =
+      snapshot.studentsOnboarded == null || snapshot.studentsOnboarded === 0;
+    const metricsSnapshot = needsEnrich
+      ? {
+          ...snapshot,
+          studentsOnboarded: currentSnapshot.studentsOnboarded ?? snapshot.studentsOnboarded ?? 0,
+          activeStudents: currentSnapshot.activeStudents ?? snapshot.activeStudents ?? 0,
+          schoolsImplemented: currentSnapshot.schoolsImplemented ?? snapshot.schoolsImplemented ?? 0,
+          regionsCovered: currentSnapshot.regionsCovered ?? snapshot.regionsCovered ?? 0,
+        }
+      : { ...snapshot, regionsCovered: snapshot.regionsCovered ?? currentSnapshot.regionsCovered ?? 0 };
+
+    return {
+      ...cp,
+      metricsSnapshot,
+      label: ProgramCheckpoint.getCheckpointLabel(cp.checkpointNumber),
+      canAcknowledge: cp.status === "ready",
+      isComplete: cp.status === "completed",
+    };
+  });
 };
 
 /**
- * Get current metrics snapshot for a program
+ * Get current metrics snapshot for a program (real student count from SchoolStudent, regions from assigned schools).
  * @param {ObjectId} programId - Program ObjectId
  * @returns {Object} Metrics snapshot
  */
 const getMetricsSnapshot = async (programId) => {
-  const [metrics, schoolStats] = await Promise.all([
+  const [metrics, schoolStatsAgg, regionsAgg] = await Promise.all([
     ProgramMetrics.findOne({ programId }).lean(),
     ProgramSchool.aggregate([
       { $match: { programId } },
@@ -48,23 +69,58 @@ const getMetricsSnapshot = async (programId) => {
         $group: {
           _id: null,
           totalSchools: { $sum: 1 },
-          totalStudents: { $sum: "$studentsCovered" },
-          activeSchools: {
-            $sum: { $cond: [{ $in: ["$implementationStatus", ["active", "in_progress"]] }, 1, 0] },
-          },
+          totalStudentsFromCovered: { $sum: "$studentsCovered" },
+          schoolIds: { $push: "$schoolId" },
         },
       },
     ]),
+    ProgramSchool.aggregate([
+      { $match: { programId } },
+      {
+        $lookup: {
+          from: "organizations",
+          localField: "schoolId",
+          foreignField: "_id",
+          as: "org",
+          pipeline: [{ $project: { city: "$settings.address.city" } }],
+        },
+      },
+      { $unwind: { path: "$org", preserveNullAndEmptyArrays: true } },
+      { $group: { _id: "$org.city" } },
+      { $count: "regionsCovered" },
+    ]),
   ]);
 
-  const stats = schoolStats[0] || { totalSchools: 0, totalStudents: 0, activeSchools: 0 };
+  const schoolStats = schoolStatsAgg[0] || {
+    totalSchools: 0,
+    totalStudentsFromCovered: 0,
+    schoolIds: [],
+  };
+  const schoolIds = schoolStats.schoolIds || [];
+  const totalSchools = schoolStats.totalSchools ?? 0;
+
+  let actualStudents = 0;
+  if (schoolIds.length > 0) {
+    const studentAgg = await SchoolStudent.aggregate([
+      { $match: { orgId: { $in: schoolIds } } },
+      { $group: { _id: null, count: { $sum: 1 } } },
+    ]);
+    actualStudents = studentAgg[0]?.count ?? 0;
+  }
+
+  const studentsOnboarded =
+    actualStudents > 0
+      ? actualStudents
+      : (metrics?.studentReach?.totalOnboarded ?? schoolStats.totalStudentsFromCovered ?? 0);
+  const regionsCovered = regionsAgg[0]?.regionsCovered ?? 0;
 
   return {
-    studentsOnboarded: metrics?.studentReach?.totalOnboarded || stats.totalStudents,
-    activeStudents: metrics?.studentReach?.activeStudents || 0,
-    participationRate: metrics?.engagement?.participationRate || 0,
-    completionRate: metrics?.studentReach?.completionRate || 0,
-    schoolsImplemented: stats.totalSchools,
+    studentsOnboarded,
+    activeStudents: actualStudents > 0 ? actualStudents : (metrics?.studentReach?.activeStudents ?? 0),
+    participationRate: metrics?.engagement?.participationRate ?? 0,
+    completionRate: metrics?.studentReach?.completionRate ?? 0,
+    schoolsImplemented: totalSchools,
+    regionsCovered,
   };
 };
 

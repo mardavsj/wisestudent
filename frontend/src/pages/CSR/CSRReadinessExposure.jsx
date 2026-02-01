@@ -9,12 +9,14 @@ import {
   DollarSign,
   Brain,
   Heart,
-  Flag,
-  Clock,
+  BookOpen,
+  Monitor,
+  Scale,
+  Cpu,
   Users,
-  Lightbulb,
-  Eye,
-  Shuffle,
+  GraduationCap,
+  Globe,
+  Leaf,
   RefreshCw,
   AlertCircle,
 } from "lucide-react";
@@ -22,27 +24,29 @@ import toast from "react-hot-toast";
 import csrProgramService from "../../services/csr/programService";
 
 const pillarIcons = {
-  financialAwareness: DollarSign,
-  decisionAwareness: Brain,
-  pressureHandling: Target,
-  emotionalRegulation: Heart,
-  goalSetting: Flag,
-  timeManagement: Clock,
-  socialAwareness: Users,
-  criticalThinking: Lightbulb,
-  selfAwareness: Eye,
-  adaptability: Shuffle,
+  financialLiteracy: DollarSign,
+  brainHealth: Brain,
+  uvls: BookOpen,
+  dcos: Monitor,
+  moralValues: Scale,
+  aiForAll: Cpu,
+  healthMale: Users,
+  healthFemale: Heart,
+  entrepreneurshipHigherEd: GraduationCap,
+  civicResponsibility: Globe,
+  sustainability: Leaf,
 };
 
 const getLevelColor = (level) => {
-  switch ((level || "low").toLowerCase()) {
+  switch ((level || "").toLowerCase()) {
     case "high":
       return { bg: "bg-emerald-100", text: "text-emerald-700", bar: "bg-emerald-500" };
     case "medium":
       return { bg: "bg-amber-100", text: "text-amber-700", bar: "bg-amber-500" };
     case "low":
-    default:
       return { bg: "bg-slate-100", text: "text-slate-600", bar: "bg-slate-400" };
+    default:
+      return { bg: "bg-slate-100", text: "text-slate-500", bar: "bg-slate-200" };
   }
 };
 
@@ -58,10 +62,11 @@ const getTrendIcon = (trend) => {
 };
 
 const PillarIndicator = ({ pillar }) => {
-  const level = (pillar?.level || "low").toLowerCase();
-  const colors = getLevelColor(level);
+  const hasData = pillar?.hasData === true && pillar?.level != null;
+  const level = (pillar?.level || "").toLowerCase();
+  const colors = getLevelColor(hasData ? level : "");
   const levelWidth =
-    level === "high" ? "100%" : level === "medium" ? "66%" : "33%";
+    level === "high" ? "100%" : level === "medium" ? "66%" : level === "low" ? "33%" : "0%";
   const Icon = pillarIcons[pillar?.id] || Target;
 
   return (
@@ -78,14 +83,16 @@ const PillarIndicator = ({ pillar }) => {
             <p className="text-xs text-slate-500">Exposure Level</p>
           </div>
         </div>
-        <div className="flex items-center gap-1">{getTrendIcon(pillar?.trend)}</div>
+        <div className="flex items-center gap-1">
+          {hasData ? getTrendIcon(pillar?.trend) : null}
+        </div>
       </div>
       <div className="mt-4">
         <div className="flex items-center justify-between mb-2">
           <span
             className={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${colors.bg} ${colors.text}`}
           >
-            {level}
+            {hasData ? level : "No data yet"}
           </span>
         </div>
         <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
@@ -247,7 +254,7 @@ const CSRReadinessExposure = () => {
           </div>
         </section>
 
-        {/* 10 PILLARS GRID */}
+        {/* PILLARS GRID */}
         <section className="grid gap-4 md:grid-cols-2">
           {pillars.length > 0 ? (
             pillars.map((pillar, index) => (

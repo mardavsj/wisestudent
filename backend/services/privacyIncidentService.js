@@ -1,6 +1,7 @@
 import Incident from '../models/Incident.js';
 import User from '../models/User.js';
 import { createNotification } from './notificationService.js';
+import { getIoInstance } from '../utils/socketServer.js';
 
 /**
  * Create and triage privacy incident
@@ -48,6 +49,12 @@ export const createPrivacyIncident = async (incidentData) => {
 
   // Notify compliance team
   await notifyComplianceTeam(incident);
+
+  // Emit real-time update for admin dashboard
+  const io = getIoInstance();
+  if (io) {
+    io.emit('admin:incident:new', incident.toObject ? incident.toObject() : incident);
+  }
 
   return incident;
 };

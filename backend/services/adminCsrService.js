@@ -107,7 +107,7 @@ export const listAllPartners = async (filters = {}) => {
  */
 export const getPartnerDetails = async (partnerId) => {
   const partner = await CSRSponsor.findById(partnerId)
-    .populate("userId", "name email")
+    .populate("userId", "name email approvalStatus")
     .lean();
 
   if (!partner) {

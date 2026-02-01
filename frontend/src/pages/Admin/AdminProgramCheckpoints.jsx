@@ -78,6 +78,8 @@ const AdminProgramCheckpoints = () => {
   const [checkpoints, setCheckpoints] = useState([]);
   const [selectedCheckpoint, setSelectedCheckpoint] = useState(null);
   const [triggeringCheckpoint, setTriggeringCheckpoint] = useState(null);
+  const [triggerConfirmCheckpoint, setTriggerConfirmCheckpoint] = useState(null);
+  const [pageMessage, setPageMessage] = useState(null);
   const [editingNotes, setEditingNotes] = useState(false);
   const [adminNotesDraft, setAdminNotesDraft] = useState("");
   const [savingNotes, setSavingNotes] = useState(false);
@@ -107,17 +109,21 @@ const AdminProgramCheckpoints = () => {
   }, [programId]);
 
   const handleTriggerCheckpoint = async (checkpointNumber) => {
-    if (!confirm(`Trigger checkpoint ${checkpointNumber}: ${CHECKPOINT_NAMES[checkpointNumber]}?`)) {
-      return;
-    }
-
+    setTriggerConfirmCheckpoint(null);
     setTriggeringCheckpoint(checkpointNumber);
+    setPageMessage(null);
     try {
       await programAdminService.triggerCheckpoint(programId, checkpointNumber);
-      toast.success(`Checkpoint ${checkpointNumber} triggered successfully`);
+      setPageMessage({
+        type: "success",
+        text: `Checkpoint ${checkpointNumber}: ${CHECKPOINT_NAMES[checkpointNumber]} has been triggered. The CSR partner will be notified to review and acknowledge.`,
+      });
       fetchData();
     } catch (err) {
-      toast.error(err?.response?.data?.message || "Failed to trigger checkpoint");
+      setPageMessage({
+        type: "error",
+        text: err?.response?.data?.message || "Failed to trigger checkpoint. Please try again.",
+      });
     } finally {
       setTriggeringCheckpoint(null);
     }
@@ -184,25 +190,67 @@ const AdminProgramCheckpoints = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pb-12">
-      <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
-        {/* HEADER */}
-        <header className="flex items-center gap-4">
-          <button
-            onClick={() => navigate(`/admin/programs/${programId}`)}
-            className="p-2 rounded-xl border-2 border-gray-100 bg-white hover:bg-slate-50 hover:border-indigo-200 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5 text-slate-600" />
-          </button>
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Super Admin</p>
-            <p className="text-sm text-slate-600">{program?.name || "Program"}</p>
-            <h1 className="text-2xl font-bold text-slate-900">Checkpoint Management</h1>
+      {/* Minimal hero — matches other program pages, no extra animation */}
+      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-8 px-6">
+        <div className="max-w-4xl mx-auto flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => navigate(`/admin/programs/${programId}`)}
+              className="p-2 rounded-xl bg-white/20 hover:bg-white/30 text-white transition-colors"
+              aria-label="Back to program"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <div>
+              <h1 className="text-2xl font-bold flex items-center gap-2">
+                <CheckCircle className="w-7 h-7" />
+                Checkpoint Management
+              </h1>
+              <p className="text-sm text-white/90 mt-0.5">{program?.name || "Program"}</p>
+            </div>
           </div>
-        </header>
+          <p className="text-sm text-white/80 hidden sm:block">
+            {new Date().toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric", year: "numeric" })}
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 -mt-4 space-y-6">
+
+        {/* In-page success/error message (replaces toast for trigger) */}
+        {pageMessage && (
+          <div
+            className={`rounded-xl border-2 p-4 flex items-start justify-between gap-4 ${
+              pageMessage.type === "success"
+                ? "bg-emerald-50 border-emerald-200 text-emerald-800"
+                : "bg-red-50 border-red-200 text-red-800"
+            }`}
+          >
+            <div className="flex items-start gap-3 flex-1 min-w-0">
+              {pageMessage.type === "success" ? (
+                <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+              ) : (
+                <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+              )}
+              <p className="text-sm font-medium">{pageMessage.text}</p>
+            </div>
+            <button
+              onClick={() => setPageMessage(null)}
+              className="p-1 rounded-xl hover:bg-black/5 flex-shrink-0"
+              aria-label="Dismiss"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+        )}
 
         {/* CHECKPOINT TIMELINE */}
-        <section className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 p-6">
-          <div className="relative">
+        <section className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 overflow-hidden">
+          <div className="px-6 py-4 border-b border-slate-100">
+            <h2 className="text-lg font-semibold text-slate-900">Checkpoint timeline</h2>
+            <p className="text-xs text-slate-500 mt-0.5">Trigger checkpoints and view status. CSR is notified when you trigger.</p>
+          </div>
+          <div className="relative p-6">
             {/* Vertical line */}
             <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-200" />
 
@@ -332,9 +380,9 @@ const AdminProgramCheckpoints = () => {
                         <div className="flex flex-col gap-2 ml-4">
                           {canTrigger && (
                             <button
-                              onClick={() => handleTriggerCheckpoint(num)}
+                              onClick={() => setTriggerConfirmCheckpoint(num)}
                               disabled={triggeringCheckpoint === num}
-                              className="px-4 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2 whitespace-nowrap"
+                              className="px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2 whitespace-nowrap"
                             >
                               {triggeringCheckpoint === num ? (
                                 <RefreshCw className="w-3 h-3 animate-spin" />
@@ -346,7 +394,7 @@ const AdminProgramCheckpoints = () => {
                           )}
 
                           {checkpoint?.status === "ready" && (
-                            <span className="px-4 py-2 rounded-lg bg-blue-50 text-blue-600 text-xs font-semibold flex items-center gap-2 whitespace-nowrap">
+                            <span className="px-4 py-2 rounded-xl bg-blue-50 text-blue-600 text-xs font-semibold flex items-center gap-2 whitespace-nowrap">
                               <Clock className="w-3 h-3" />
                               Waiting for CSR
                             </span>
@@ -355,7 +403,7 @@ const AdminProgramCheckpoints = () => {
                           {checkpoint && (
                             <button
                               onClick={() => setSelectedCheckpoint(checkpoint)}
-                              className="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 text-xs font-semibold hover:bg-slate-50 flex items-center gap-2 whitespace-nowrap"
+                              className="px-4 py-2 rounded-xl border-2 border-gray-100 text-slate-600 text-xs font-semibold hover:bg-slate-50 flex items-center gap-2 whitespace-nowrap"
                             >
                               <Eye className="w-3 h-3" />
                               View Details
@@ -372,10 +420,57 @@ const AdminProgramCheckpoints = () => {
         </section>
       </div>
 
+      {/* TRIGGER CONFIRMATION MODAL */}
+      {triggerConfirmCheckpoint != null && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+          <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 max-w-md w-full p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center">
+                <Play className="w-5 h-5 text-indigo-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-slate-900">Trigger checkpoint?</h3>
+            </div>
+            <p className="text-sm text-slate-600 mb-2">
+              <span className="font-semibold text-slate-800">
+                Checkpoint {triggerConfirmCheckpoint}: {CHECKPOINT_NAMES[triggerConfirmCheckpoint]}
+              </span>
+            </p>
+            <p className="text-sm text-slate-600 mb-6">
+              This will notify the CSR partner to review and acknowledge this checkpoint. The checkpoint status will move to &quot;ready&quot; and the CSR will see it in their dashboard.
+            </p>
+            <div className="flex gap-3 justify-end">
+              <button
+                onClick={() => setTriggerConfirmCheckpoint(null)}
+                className="px-4 py-2 rounded-xl border-2 border-gray-100 text-slate-700 text-sm font-semibold hover:bg-slate-50"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => handleTriggerCheckpoint(triggerConfirmCheckpoint)}
+                disabled={triggeringCheckpoint === triggerConfirmCheckpoint}
+                className="px-4 py-2 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2"
+              >
+                {triggeringCheckpoint === triggerConfirmCheckpoint ? (
+                  <>
+                    <RefreshCw className="w-4 h-4 animate-spin" />
+                    Triggering…
+                  </>
+                ) : (
+                  <>
+                    <Play className="w-4 h-4" />
+                    Confirm trigger
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* CHECKPOINT DETAILS MODAL */}
       {selectedCheckpoint && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+          <div className="bg-white rounded-2xl shadow-lg border-2 border-gray-100 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             {/* Modal Header */}
             <div className="flex items-center justify-between p-4 border-b border-slate-100">
               <h3 className="text-lg font-semibold text-slate-900">
@@ -511,20 +606,20 @@ const AdminProgramCheckpoints = () => {
                       onChange={(e) => setAdminNotesDraft(e.target.value)}
                       placeholder="Add admin-only notes for this checkpoint..."
                       rows={4}
-                      className="w-full text-sm border border-slate-200 rounded-lg p-3 bg-indigo-50/50 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300"
+                      className="w-full text-sm border-2 border-gray-100 rounded-xl p-3 bg-slate-50 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300"
                     />
                     <div className="flex gap-2">
                       <button
                         onClick={saveCheckpointNotes}
                         disabled={savingNotes}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 disabled:opacity-50"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 disabled:opacity-50"
                       >
                         {savingNotes ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
                         Save
                       </button>
                       <button
                         onClick={cancelEditNotes}
-                        className="px-4 py-2 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50"
+                        className="px-4 py-2 rounded-xl border-2 border-gray-100 text-sm font-semibold text-slate-600 hover:bg-slate-50"
                       >
                         Cancel
                       </button>

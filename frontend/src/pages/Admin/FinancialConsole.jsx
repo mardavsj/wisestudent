@@ -108,11 +108,6 @@ const FinancialConsole = () => {
 
   useEffect(() => {
     fetchAllData();
-    
-    // Auto-refresh every 30 seconds for financial data
-    const interval = setInterval(fetchAllData, 30000);
-    
-    return () => clearInterval(interval);
   }, [fetchAllData]);
 
   // Socket.IO real-time updates
@@ -120,17 +115,14 @@ const FinancialConsole = () => {
     if (socket?.socket) {
       const handleRevenueUpdate = (data) => {
         setRevenue(data);
-        fetchAllData();
       };
 
       const handleSchoolMetricsUpdate = (data) => {
         setSchoolMetrics(data);
-        fetchAllData();
       };
 
       const handleRetriesUpdate = (data) => {
         setRetries(data);
-        fetchAllData();
       };
 
       const handleRetryAlert = (data) => {

@@ -4,6 +4,8 @@ import checkpointService from "../services/checkpointService.js";
 import Program from "../models/Program.js";
 import ProgramMetrics from "../models/ProgramMetrics.js";
 import ProgramSchool from "../models/ProgramSchool.js";
+import SchoolStudent from "../models/School/SchoolStudent.js";
+import Organization from "../models/Organization.js";
 import reportGenerationService from "../services/reportGenerationService.js";
 
 /**
@@ -107,6 +109,25 @@ export const archiveProgram = async (req, res) => {
     console.error("Archive program error:", error);
     res.status(error.status || 500).json({
       message: error.message || "Failed to archive program",
+    });
+  }
+};
+
+/**
+ * Permanently delete a program and all related data (schools, metrics, checkpoints).
+ * Program will no longer appear for the assigned CSR.
+ */
+export const deleteProgramPermanent = async (req, res) => {
+  try {
+    const { programId } = req.params;
+    await programService.deleteProgramPermanent(programId);
+    res.json({
+      message: "Program deleted permanently. It has been removed from the CSR partner.",
+    });
+  } catch (error) {
+    console.error("Delete program permanent error:", error);
+    res.status(error.status || 500).json({
+      message: error.message || "Failed to delete program permanently",
     });
   }
 };
@@ -358,7 +379,8 @@ export const updateProgramStatus = async (req, res) => {
 };
 
 /**
- * Get program metrics (admin view)
+ * Get program metrics (admin view).
+ * Enriches schoolStats and studentReach with actual student count from SchoolStudent when stored values are 0.
  */
 export const getProgramMetrics = async (req, res) => {
   try {
@@ -370,28 +392,98 @@ export const getProgramMetrics = async (req, res) => {
       return res.status(404).json({ message: "Program not found" });
     }
     const metrics = await ProgramMetrics.findOne({ programId: program._id }).lean();
-    const schoolStats = await ProgramSchool.aggregate([
+    const schoolStatsAgg = await ProgramSchool.aggregate([
       { $match: { programId: program._id } },
       {
         $group: {
           _id: null,
           totalSchools: { $sum: 1 },
-          totalStudents: { $sum: "$studentsCovered" },
+          totalStudentsFromCovered: { $sum: "$studentsCovered" },
+          schoolIds: { $push: "$schoolId" },
         },
       },
     ]);
-    const stats = schoolStats[0] || { totalSchools: 0, totalStudents: 0 };
+    const statsFromProgramSchool = schoolStatsAgg[0] || {
+      totalSchools: 0,
+      totalStudentsFromCovered: 0,
+      schoolIds: [],
+    };
+    const schoolIds = statsFromProgramSchool.schoolIds || [];
+
+    // Actual student count from SchoolStudent (orgId = program's assigned schools)
+    let actualTotalStudents = 0;
+    if (schoolIds.length > 0) {
+      const studentCountAgg = await SchoolStudent.aggregate([
+        { $match: { orgId: { $in: schoolIds } } },
+        { $group: { _id: null, count: { $sum: 1 } } },
+      ]);
+      actualTotalStudents = studentCountAgg[0]?.count ?? 0;
+    }
+
+    const totalStudents = actualTotalStudents > 0
+      ? actualTotalStudents
+      : (statsFromProgramSchool.totalStudentsFromCovered ?? 0);
+
+    const schoolStats = {
+      totalSchools: statsFromProgramSchool.totalSchools ?? 0,
+      totalStudents,
+    };
+
+    const existingReach = metrics?.studentReach || {};
+    const studentReach = {
+      ...existingReach,
+      totalOnboarded: totalStudents > 0 ? totalStudents : (existingReach.totalOnboarded ?? 0),
+      activeStudents: totalStudents > 0 ? totalStudents : (existingReach.activeStudents ?? 0),
+      activePercentage:
+        existingReach.activePercentage ??
+        (totalStudents > 0 ? 100 : 0),
+    };
+
+    // Certificates issued = sum certificatesDelivered; in progress = sum certificatesInProgress (program's students)
+    let certificatesIssued = metrics?.recognition?.certificatesIssued ?? 0;
+    let certificatesInProgress = 0;
+    if (schoolIds.length > 0) {
+      const orgs = await Organization.find({ _id: { $in: schoolIds } })
+        .select("tenantId")
+        .lean();
+      const tenantIds = orgs.map((o) => o.tenantId).filter(Boolean);
+      const baseMatch =
+        tenantIds.length > 0
+          ? { $or: [{ orgId: { $in: schoolIds } }, { tenantId: { $in: tenantIds } }] }
+          : { orgId: { $in: schoolIds } };
+      const certAgg = await SchoolStudent.aggregate([
+        { $match: baseMatch },
+        {
+          $group: {
+            _id: null,
+            deliveredSum: { $sum: { $ifNull: ["$certificatesDelivered", 0] } },
+            inProgressSum: { $sum: { $ifNull: ["$certificatesInProgress", 0] } },
+          },
+        },
+      ]);
+      if (certAgg[0]) {
+        certificatesIssued = certAgg[0].deliveredSum ?? 0;
+        certificatesInProgress = certAgg[0].inProgressSum ?? 0;
+      }
+    }
+
+    const recognition = {
+      ...(metrics?.recognition || {}),
+      certificatesIssued,
+      certificatesInProgress,
+      recognitionKitsInProgress: certificatesInProgress,
+    };
+
     res.json({
       data: {
         ...(metrics || {}),
+        recognition,
+        studentReach,
         programId: program._id,
         programName: program.name,
         lastComputedAt: metrics?.lastComputedAt || null,
         computedBy: metrics?.computedBy || "system",
-        schoolStats: {
-          totalSchools: stats.totalSchools,
-          totalStudents: stats.totalStudents,
-        },
+        schoolStats,
       },
     });
   } catch (error) {
@@ -452,9 +544,291 @@ export const refreshProgramMetrics = async (req, res) => {
   }
 };
 
+/**
+ * Update recognition metrics (Super Admin only).
+ * Kits: in progress (add when dispatched) → mark as delivered when confirmed.
+ * Body: recognitionKitsDispatched, addKitsDispatched, addKitsInProgress, markKitsDelivered.
+ */
+export const updateRecognitionMetrics = async (req, res) => {
+  try {
+    const { programId } = req.params;
+    const {
+      recognitionKitsDispatched,
+      addKitsDispatched,
+      addKitsInProgress,
+      markKitsDelivered,
+    } = req.body || {};
+
+    const program = await Program.findOne({
+      $or: [{ _id: programId }, { programId }],
+    });
+    if (!program) {
+      return res.status(404).json({ message: "Program not found" });
+    }
+
+    let metrics = await ProgramMetrics.findOne({ programId: program._id });
+    if (!metrics) {
+      metrics = new ProgramMetrics({ programId: program._id });
+    }
+    if (!metrics.recognition) metrics.recognition = {};
+    if (metrics.recognition.recognitionKitsInProgress == null) {
+      metrics.recognition.recognitionKitsInProgress = 0;
+    }
+
+    if (typeof recognitionKitsDispatched === "number" && recognitionKitsDispatched >= 0) {
+      metrics.recognition.recognitionKitsDispatched = recognitionKitsDispatched;
+    }
+    if (typeof addKitsDispatched === "number" && addKitsDispatched > 0) {
+      const current = metrics.recognition.recognitionKitsDispatched ?? 0;
+      metrics.recognition.recognitionKitsDispatched = current + addKitsDispatched;
+    }
+    if (typeof addKitsInProgress === "number" && addKitsInProgress > 0) {
+      const current = metrics.recognition.recognitionKitsInProgress ?? 0;
+      metrics.recognition.recognitionKitsInProgress = current + addKitsInProgress;
+    }
+    if (typeof markKitsDelivered === "number" && markKitsDelivered > 0) {
+      const inProgress = metrics.recognition.recognitionKitsInProgress ?? 0;
+      const move = Math.min(markKitsDelivered, inProgress);
+      metrics.recognition.recognitionKitsInProgress = Math.max(0, inProgress - move);
+      metrics.recognition.recognitionKitsDispatched =
+        (metrics.recognition.recognitionKitsDispatched ?? 0) + move;
+    }
+
+    await metrics.save();
+    const updated = await ProgramMetrics.findOne({ programId: program._id }).lean();
+    res.json({
+      message: "Recognition metrics updated",
+      data: updated,
+    });
+  } catch (error) {
+    console.error("Update recognition metrics error:", error);
+    res.status(error.status || 500).json({
+      message: error.message || "Failed to update recognition metrics",
+    });
+  }
+};
+
 const getPublishedAt = (program, reportType) => {
   const entry = (program.publishedReports || []).find((r) => r.reportType === reportType);
   return entry?.publishedAt || null;
+};
+
+/** Get program school IDs and tenant IDs for student queries (certificate delivered) */
+const getProgramSchoolAndTenantIds = async (programId) => {
+  const program = await Program.findOne({
+    $or: [{ _id: programId }, { programId }],
+  });
+  if (!program) return { schoolIds: [], tenantIds: [] };
+  const assignedSchools = await ProgramSchool.find({ programId: program._id })
+    .select("schoolId")
+    .lean();
+  const schoolIds = assignedSchools.map((ps) => ps.schoolId).filter(Boolean);
+  if (schoolIds.length === 0) return { schoolIds: [], tenantIds: [] };
+  const orgs = await Organization.find({ _id: { $in: schoolIds } })
+    .select("tenantId")
+    .lean();
+  const tenantIds = orgs.map((o) => o.tenantId).filter(Boolean);
+  return { schoolIds, tenantIds };
+};
+
+/**
+ * List students in program schools (for Super Admin certificate-delivered UI).
+ * Returns userId, name, school name, certificatesDelivered.
+ */
+export const getProgramStudents = async (req, res) => {
+  try {
+    const { programId } = req.params;
+    const { schoolIds, tenantIds } = await getProgramSchoolAndTenantIds(programId);
+    if (schoolIds.length === 0) {
+      return res.json({ data: [], pagination: { total: 0 } });
+    }
+    const baseMatch =
+      tenantIds.length > 0
+        ? { $or: [{ orgId: { $in: schoolIds } }, { tenantId: { $in: tenantIds } }] }
+        : { orgId: { $in: schoolIds } };
+    const students = await SchoolStudent.aggregate([
+      { $match: baseMatch },
+      { $project: { userId: 1, orgId: 1, certificatesInProgress: 1, certificatesDelivered: 1, certificatesDeliveredUpdatedAt: 1 } },
+      { $lookup: { from: "users", localField: "userId", foreignField: "_id", as: "user" } },
+      { $unwind: { path: "$user", preserveNullAndEmptyArrays: true } },
+      { $lookup: { from: "organizations", localField: "orgId", foreignField: "_id", as: "org" } },
+      { $unwind: { path: "$org", preserveNullAndEmptyArrays: true } },
+      {
+        $project: {
+          userId: 1,
+          name: { $ifNull: ["$user.name", "$user.email"] },
+          email: { $ifNull: ["$user.email", ""] },
+          schoolName: { $ifNull: ["$org.name", ""] },
+          certificatesInProgress: { $ifNull: ["$certificatesInProgress", 0] },
+          certificatesDelivered: { $ifNull: ["$certificatesDelivered", 0] },
+          certificatesDeliveredUpdatedAt: 1,
+        },
+      },
+    ]);
+    res.json({ data: students, pagination: { total: students.length } });
+  } catch (error) {
+    console.error("Get program students error:", error);
+    res.status(error.status || 500).json({
+      message: error.message || "Failed to get program students",
+    });
+  }
+};
+
+/**
+ * Mark one certificate in progress for a single student (Super Admin only).
+ * PATCH /admin/programs/:programId/students/:userId/certificate-in-progress
+ */
+export const markCertificateInProgress = async (req, res) => {
+  try {
+    const { programId, userId: studentUserId } = req.params;
+    const { schoolIds, tenantIds } = await getProgramSchoolAndTenantIds(programId);
+    if (schoolIds.length === 0) {
+      return res.status(400).json({ message: "Program has no assigned schools" });
+    }
+    const baseMatch =
+      tenantIds.length > 0
+        ? { $or: [{ orgId: { $in: schoolIds } }, { tenantId: { $in: tenantIds } }] }
+        : { orgId: { $in: schoolIds } };
+    const filter = { ...baseMatch, userId: studentUserId, allowLegacy: true };
+    const doc = await SchoolStudent.findOne(filter);
+    if (!doc) {
+      return res.status(404).json({ message: "Student not found in this program" });
+    }
+    doc.certificatesInProgress = (doc.certificatesInProgress || 0) + 1;
+    await doc.save();
+    res.json({
+      message: "Certificate marked as in progress",
+      data: { certificatesInProgress: doc.certificatesInProgress },
+    });
+  } catch (error) {
+    console.error("Mark certificate in progress error:", error);
+    res.status(error.status || 500).json({
+      message: error.message || "Failed to mark certificate in progress",
+    });
+  }
+};
+
+/**
+ * Mark certificates in progress for multiple students (Super Admin only).
+ * POST /admin/programs/:programId/students/certificates-in-progress
+ * Body: { studentIds: [userId, ...] }
+ */
+export const markCertificatesInProgressBulk = async (req, res) => {
+  try {
+    const { programId } = req.params;
+    const { studentIds } = req.body || {};
+    if (!Array.isArray(studentIds) || studentIds.length === 0) {
+      return res.status(400).json({ message: "studentIds array is required and must not be empty" });
+    }
+    const { schoolIds, tenantIds } = await getProgramSchoolAndTenantIds(programId);
+    if (schoolIds.length === 0) {
+      return res.status(400).json({ message: "Program has no assigned schools" });
+    }
+    const baseMatch =
+      tenantIds.length > 0
+        ? { $or: [{ orgId: { $in: schoolIds } }, { tenantId: { $in: tenantIds } }] }
+        : { orgId: { $in: schoolIds } };
+    let updated = 0;
+    for (const uid of studentIds) {
+      if (!uid) continue;
+      const filter = { ...baseMatch, userId: uid, allowLegacy: true };
+      const result = await SchoolStudent.findOneAndUpdate(
+        filter,
+        { $inc: { certificatesInProgress: 1 } },
+        { new: true }
+      );
+      if (result) updated += 1;
+    }
+    res.json({
+      message: `Certificates marked as in progress for ${updated} student(s)`,
+      data: { updated },
+    });
+  } catch (error) {
+    console.error("Mark certificates in progress bulk error:", error);
+    res.status(error.status || 500).json({
+      message: error.message || "Failed to mark certificates in progress",
+    });
+  }
+};
+
+/**
+ * Mark one certificate delivered for a single student (Super Admin only).
+ * PATCH /admin/programs/:programId/students/:userId/certificate-delivered
+ */
+export const markCertificateDelivered = async (req, res) => {
+  try {
+    const { programId, userId: studentUserId } = req.params;
+    const { schoolIds, tenantIds } = await getProgramSchoolAndTenantIds(programId);
+    if (schoolIds.length === 0) {
+      return res.status(400).json({ message: "Program has no assigned schools" });
+    }
+    const baseMatch =
+      tenantIds.length > 0
+        ? { $or: [{ orgId: { $in: schoolIds } }, { tenantId: { $in: tenantIds } }] }
+        : { orgId: { $in: schoolIds } };
+    const filter = { ...baseMatch, userId: studentUserId, allowLegacy: true };
+    const doc = await SchoolStudent.findOne(filter);
+    if (!doc) {
+      return res.status(404).json({ message: "Student not found in this program" });
+    }
+    doc.certificatesDelivered = (doc.certificatesDelivered || 0) + 1;
+    doc.certificatesInProgress = Math.max(0, (doc.certificatesInProgress || 0) - 1);
+    doc.certificatesDeliveredUpdatedAt = new Date();
+    await doc.save();
+    res.json({
+      message: "Certificate marked as delivered",
+      data: { certificatesDelivered: doc.certificatesDelivered },
+    });
+  } catch (error) {
+    console.error("Mark certificate delivered error:", error);
+    res.status(error.status || 500).json({
+      message: error.message || "Failed to mark certificate delivered",
+    });
+  }
+};
+
+/**
+ * Mark certificates delivered for multiple students (Super Admin only).
+ * POST /admin/programs/:programId/students/certificates-delivered
+ * Body: { studentIds: [userId, ...] }
+ */
+export const markCertificatesDeliveredBulk = async (req, res) => {
+  try {
+    const { programId } = req.params;
+    const { studentIds } = req.body || {};
+    if (!Array.isArray(studentIds) || studentIds.length === 0) {
+      return res.status(400).json({ message: "studentIds array is required and must not be empty" });
+    }
+    const { schoolIds, tenantIds } = await getProgramSchoolAndTenantIds(programId);
+    if (schoolIds.length === 0) {
+      return res.status(400).json({ message: "Program has no assigned schools" });
+    }
+    const baseMatch =
+      tenantIds.length > 0
+        ? { $or: [{ orgId: { $in: schoolIds } }, { tenantId: { $in: tenantIds } }] }
+        : { orgId: { $in: schoolIds } };
+    let updated = 0;
+    for (const uid of studentIds) {
+      if (!uid) continue;
+      const filter = { ...baseMatch, userId: uid, allowLegacy: true };
+      const doc = await SchoolStudent.findOne(filter);
+      if (!doc) continue;
+      doc.certificatesDelivered = (doc.certificatesDelivered || 0) + 1;
+      doc.certificatesInProgress = Math.max(0, (doc.certificatesInProgress || 0) - 1);
+      doc.certificatesDeliveredUpdatedAt = new Date();
+      await doc.save();
+      updated += 1;
+    }
+    res.json({
+      message: `Certificates marked as delivered for ${updated} student(s)`,
+      data: { updated },
+    });
+  } catch (error) {
+    console.error("Mark certificates delivered bulk error:", error);
+    res.status(error.status || 500).json({
+      message: error.message || "Failed to mark certificates delivered",
+    });
+  }
 };
 
 /**
@@ -696,6 +1070,7 @@ export default {
   getProgram,
   listPrograms,
   archiveProgram,
+  deleteProgramPermanent,
   getAvailableSchools,
   getAssignedSchools,
   assignSchools,
@@ -710,6 +1085,12 @@ export default {
   updateProgramStatus,
   getProgramMetrics,
   refreshProgramMetrics,
+  updateRecognitionMetrics,
+  getProgramStudents,
+  markCertificateInProgress,
+  markCertificatesInProgressBulk,
+  markCertificateDelivered,
+  markCertificatesDeliveredBulk,
   listProgramReports,
   generateProgramReports,
   publishReport,

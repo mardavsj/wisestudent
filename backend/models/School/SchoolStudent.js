@@ -186,6 +186,10 @@ const schoolStudentSchema = new mongoose.Schema(
         max: 100,
       },
     }],
+    // Certificate in progress / delivered: Super Admin marks from Certificate delivered section
+    certificatesInProgress: { type: Number, default: 0 },
+    certificatesDelivered: { type: Number, default: 0 },
+    certificatesDeliveredUpdatedAt: { type: Date },
   },
   {
     timestamps: true,

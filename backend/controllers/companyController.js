@@ -8,6 +8,7 @@ import assignUserSubscription from "../utils/subscriptionAssignments.js";
 import SchoolStudent from "../models/School/SchoolStudent.js";
 import SchoolClass from "../models/School/SchoolClass.js";
 import { generateToken } from "../utils/jwt.js";
+import { getRegionAliases } from "../constants/regionCanonical.js";
 import mongoose from "mongoose";
 
 const toPlain = (doc) => (doc && typeof doc.toObject === "function" ? doc.toObject() : doc);
@@ -1909,6 +1910,7 @@ export const getAdminSchools = async (req, res) => {
       status = 'all',
       search = '',
       sort = 'recent',
+      region: regionParam = '',
       page: pageParam = 1,
       limit: limitParam = 18
     } = req.query;
@@ -1942,6 +1944,15 @@ export const getAdminSchools = async (req, res) => {
       ];
     }
 
+    // Filter by state/region (canonical region = all aliases, e.g. Delhi includes New Delhi)
+    const region = typeof regionParam === 'string' ? regionParam.trim() : '';
+    if (region) {
+      const aliases = getRegionAliases(region);
+      const escaped = aliases.map((a) => a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+      const pattern = escaped.length > 1 ? `^(${escaped.join('|')})$` : `^${escaped[0]}$`;
+      query['contactInfo.state'] = new RegExp(pattern, 'i');
+    }
+
     const sortOption = (() => {
       switch (sort) {
         case 'name':
@@ -1972,12 +1983,14 @@ export const getAdminSchools = async (req, res) => {
         ])
     ]);
 
-    const [approvedCount, pendingCount, rejectedCount, totalSchools] = await Promise.all([
+    const [approvedCount, pendingCount, rejectedCount] = await Promise.all([
       Company.countDocuments({ type: 'school', approvalStatus: 'approved' }),
       Company.countDocuments({ type: 'school', approvalStatus: 'pending' }),
-      Company.countDocuments({ type: 'school', approvalStatus: 'rejected' }),
-      Company.countDocuments({ type: 'school' })
+      Company.countDocuments({ type: 'school', approvalStatus: 'rejected' })
     ]);
+
+    // Total = sum of approved + pending + rejected so summary always adds up (excludes invalid/null status)
+    const totalSchools = approvedCount + pendingCount + rejectedCount;
 
     const hydrated = await hydrateSchoolData(companies);
 
@@ -2011,7 +2024,8 @@ export const getAdminSchools = async (req, res) => {
       filters: {
         status: normalizedStatus,
         search,
-        sort
+        sort,
+        region
       }
     });
   } catch (error) {

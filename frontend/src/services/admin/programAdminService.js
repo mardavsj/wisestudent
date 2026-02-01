@@ -40,11 +40,20 @@ export const updateProgram = async (programId, updates) => {
 };
 
 /**
- * Archive/complete a program
+ * Archive/complete a program (status → completed; program still visible to CSR)
  * @param {String} programId - Program ID
  */
 export const archiveProgram = async (programId) => {
   const response = await api.delete(`${API_URL}/${programId}`);
+  return response.data;
+};
+
+/**
+ * Permanently delete a program and all related data. Program is removed from the CSR partner.
+ * @param {String} programId - Program ID
+ */
+export const deleteProgramPermanent = async (programId) => {
+  const response = await api.delete(`${API_URL}/${programId}/permanent`);
   return response.data;
 };
 
@@ -98,15 +107,16 @@ export const assignSchoolsBulk = async (programId, schoolIds) => {
 };
 
 /**
- * Update a school's status in a program
+ * Update a school's implementation status in a program
  * @param {String} programId - Program ID
- * @param {String} schoolId - School ID
- * @param {String} status - New status
+ * @param {String} programSchoolId - ProgramSchool document ID (_id of the assignment)
+ * @param {String} status - New status: pending | in_progress | active | completed
  */
-export const updateSchoolStatus = async (programId, schoolId, status) => {
-  const response = await api.put(`${API_URL}/${programId}/schools/${schoolId}/status`, {
-    status,
-  });
+export const updateSchoolStatus = async (programId, programSchoolId, status) => {
+  const response = await api.put(
+    `${API_URL}/${programId}/schools/${programSchoolId}/status`,
+    { status }
+  );
   return response.data;
 };
 
@@ -177,6 +187,76 @@ export const getMetrics = async (programId) => {
  */
 export const refreshMetrics = async (programId) => {
   const response = await api.post(`${API_URL}/${programId}/metrics/refresh`);
+  return response.data;
+};
+
+/**
+ * Update recognition metrics (Super Admin only).
+ * Kits Dispatched: only increases when Super Admin confirms physical kits have been sent.
+ * @param {String} programId - Program ID
+ * @param {Object} payload - { recognitionKitsDispatched?: number } to set, or { addKitsDispatched?: number } to add
+ */
+export const updateRecognitionMetrics = async (programId, payload) => {
+  const response = await api.patch(`${API_URL}/${programId}/metrics/recognition`, payload);
+  return response.data;
+};
+
+/**
+ * Get students in program schools (for certificate delivered UI)
+ * @param {String} programId - Program ID
+ */
+export const getProgramStudents = async (programId) => {
+  const response = await api.get(`${API_URL}/${programId}/students`);
+  return response.data;
+};
+
+/**
+ * Mark one certificate in progress for a single student
+ * @param {String} programId - Program ID
+ * @param {String} userId - Student user ID
+ */
+export const markCertificateInProgress = async (programId, userId) => {
+  const response = await api.patch(
+    `${API_URL}/${programId}/students/${userId}/certificate-in-progress`
+  );
+  return response.data;
+};
+
+/**
+ * Mark certificates in progress for multiple students (bulk)
+ * @param {String} programId - Program ID
+ * @param {String[]} studentIds - Array of student user IDs
+ */
+export const markCertificatesInProgressBulk = async (programId, studentIds) => {
+  const response = await api.post(
+    `${API_URL}/${programId}/students/certificates-in-progress`,
+    { studentIds }
+  );
+  return response.data;
+};
+
+/**
+ * Mark one certificate delivered for a single student
+ * @param {String} programId - Program ID
+ * @param {String} userId - Student user ID
+ */
+export const markCertificateDelivered = async (programId, userId) => {
+  const response = await api.patch(
+    `${API_URL}/${programId}/students/${userId}/certificate-delivered`
+  );
+  return response.data;
+};
+
+/**
+ * Mark certificates delivered for multiple students (bulk)
+ * @param {String} programId - Program ID
+ * @param {String[]} studentIds - Array of student user IDs
+ */
+export const markCertificatesDeliveredBulk = async (programId, studentIds) => {
+  const response = await api.post(
+    `${API_URL}/${programId}/students/certificates-delivered`,
+    { studentIds }
+  );
   return response.data;
 };
 
@@ -307,6 +387,7 @@ const programAdminService = {
   getProgram,
   updateProgram,
   archiveProgram,
+  deleteProgramPermanent,
   getAvailableSchools,
   getAssignedSchools,
   assignSchools,
@@ -320,6 +401,12 @@ const programAdminService = {
   updateProgramStatus,
   getMetrics,
   refreshMetrics,
+  updateRecognitionMetrics,
+  getProgramStudents,
+  markCertificateInProgress,
+  markCertificatesInProgressBulk,
+  markCertificateDelivered,
+  markCertificatesDeliveredBulk,
   listReports,
   generateReports,
   previewReport,
