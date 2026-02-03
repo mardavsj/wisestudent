@@ -15,13 +15,13 @@ const SimulationCommunitySustainabilityPlan = () => {
   const nextGamePath = nextGame ? nextGame.path : "/games/sustainability/teens";
   const nextGameId = nextGame ? nextGame.id : null;
 
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  // Hardcode rewards to align with rule: 4 coins per question, 20 total coins, 10 total XP
+  const coinsPerLevel = 4;
+  const totalCoins = 20;
+  const totalXp = 40;
 
   const [currentScenario, setCurrentScenario] = useState(0);
-  const [coins, setCoins] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
 
   const questions = [
@@ -81,8 +81,28 @@ const SimulationCommunitySustainabilityPlan = () => {
     const selectedOption = questions[currentScenario].options.find(opt => opt.id === optionId);
     
     if (selectedOption.isCorrect) {
-      setCoins(prev => prev + 1);
-      showCorrectAnswerFeedback(1, true);
+      // Temporarily override global multiplier to show correct points
+      const originalMultiplier = typeof window !== "undefined" ? window.__flashPointsMultiplier : undefined;
+      const originalTotalCoins = typeof window !== "undefined" ? window.__flashTotalCoins : undefined;
+      const originalQuestionCount = typeof window !== "undefined" ? window.__flashQuestionCount : undefined;
+      
+      if (typeof window !== "undefined") {
+        window.__flashPointsMultiplier = 1;
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+      }
+      
+      showCorrectAnswerFeedback(coinsPerLevel, true);
+      setCorrectAnswers(prev => prev + 1); // Increment correct answers count
+      
+      // Restore original values after a short delay
+      setTimeout(() => {
+        if (typeof window !== "undefined") {
+          window.__flashPointsMultiplier = originalMultiplier;
+          window.__flashTotalCoins = originalTotalCoins;
+          window.__flashQuestionCount = originalQuestionCount;
+        }
+      }, 100);
     } else {
       showCorrectAnswerFeedback(0, false);
     }
@@ -105,17 +125,18 @@ const SimulationCommunitySustainabilityPlan = () => {
       title="Simulation: Community Sustainability Plan"
       subtitle={`Scenario ${currentScenario + 1} of ${questions.length}`}
       showGameOver={gameFinished}
-      score={coins}
+      score={correctAnswers}
       gameId={gameId}
       gameType="sustainability"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
-      maxScore={questions.length}
+      maxScore={totalCoins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
+      totalLevels={questions.length}
     
       nextGamePathProp="/student/sustainability/teens/badge-master-sustainability-leader"
       nextGameIdProp="sustainability-teens-100">
@@ -124,7 +145,7 @@ const SimulationCommunitySustainabilityPlan = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
             <div className="flex justify-between items-center mb-4">
               <span className="text-white/80">Scenario {currentScenario + 1}/{questions.length}</span>
-              <span className="text-yellow-400 font-bold">Coins: {coins}</span>
+              <span className="text-yellow-400 font-bold">Coins: {correctAnswers * coinsPerLevel}</span>
             </div>
             <p className="text-white text-lg mb-6">{currentQuestionData.text}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -146,7 +167,7 @@ const SimulationCommunitySustainabilityPlan = () => {
           <div className="text-center">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 max-w-2xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Simulation Complete!</h2>
-              <p className="text-white/90 mb-2">You earned {coins} coins</p>
+              <p className="text-white/90 mb-2">You earned {correctAnswers * coinsPerLevel} coins</p>
               <p className="text-white/70 mb-6">Great job developing your community sustainability plan!</p>
               <div className="flex justify-center gap-4">
                 <button

@@ -12,20 +12,26 @@ const ReflexPubertyHealthTeen = () => {
     // Get game data from game category folder (source of truth)
     const gameId = "health-male-teen-33";
 
-    // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-    const coinsPerLevel = 1;
-    const totalCoins = 5;
-    const totalXp = 10;
+    // Hardcode rewards to align with rule: 2 coins per question, 10 total coins, 20 total XP
+    const coinsPerLevel = 2;
+    const totalCoins = 10;
+    const totalXp = 20;
 
     const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
     const [gameState, setGameState] = useState("ready"); // ready, playing, finished
-    const [score, setScore] = useState(0);
+    const [correctAnswers, setCorrectAnswers] = useState(0);
+    const [coins, setCoins] = useState(0);
     const [currentRound, setCurrentRound] = useState(0);
     const [timeLeft, setTimeLeft] = useState(ROUND_TIME);
     const [answered, setAnswered] = useState(false);
     const timerRef = useRef(null);
     const currentRoundRef = useRef(0);
+
+    // Debug logging to track state changes
+    useEffect(() => {
+        console.log('State update:', { correctAnswers, coins, currentRound, gameState });
+    }, [correctAnswers, coins, currentRound, gameState]);
 
    const questions = [
   {
@@ -111,6 +117,7 @@ const ReflexPubertyHealthTeen = () => {
                 setGameState("finished");
             } else {
                 setCurrentRound((prev) => prev + 1);
+                setAnswered(false); // Reset answered state for next round
             }
         }, 1000);
     }, []);
@@ -165,7 +172,8 @@ const ReflexPubertyHealthTeen = () => {
     const startGame = () => {
         setGameState("playing");
         setTimeLeft(ROUND_TIME);
-        setScore(0);
+        setCorrectAnswers(0);
+        setCoins(0);
         setCurrentRound(1);
         resetFeedback();
     };
@@ -183,8 +191,29 @@ const ReflexPubertyHealthTeen = () => {
         resetFeedback();
 
         if (option.isCorrect) {
-            setScore((prev) => prev + 1);
-            showCorrectAnswerFeedback(1, true);
+            const newCorrectAnswers = correctAnswers + 1; // Track correct answers
+            const newCoins = coins + 2; // Award 2 coins per correct answer
+            setCorrectAnswers(newCorrectAnswers);
+            setCoins(newCoins);
+            
+            // Temporarily clear global variables to prevent scaling
+            const savedTotalCoins = window.__flashTotalCoins;
+            const savedQuestionCount = window.__flashQuestionCount;
+            const savedMultiplier = window.__flashPointsMultiplier;
+            
+            // Clear global state that might affect the calculation
+            if (typeof window !== "undefined") {
+                delete window.__flashTotalCoins;
+                delete window.__flashQuestionCount;
+                delete window.__flashPointsMultiplier;
+            }
+            
+            showCorrectAnswerFeedback(2, true); // Show feedback for 2 points
+            
+            // Restore original values after the call
+            if (savedTotalCoins !== undefined) window.__flashTotalCoins = savedTotalCoins;
+            if (savedQuestionCount !== undefined) window.__flashQuestionCount = savedQuestionCount;
+            if (savedMultiplier !== undefined) window.__flashPointsMultiplier = savedMultiplier;
         }
 
         // Move to next round or show results after a short delay
@@ -193,6 +222,7 @@ const ReflexPubertyHealthTeen = () => {
                 setGameState("finished");
             } else {
                 setCurrentRound((prev) => prev + 1);
+                setAnswered(false); // Reset answered state for next round
             }
         }, 500);
     };
@@ -206,18 +236,21 @@ const ReflexPubertyHealthTeen = () => {
     return (
         <GameShell
             title="Reflex Puberty Health"
-            subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Stay healthy!` : "Stay healthy!"}
+            subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Stay healthy!` : 
+                      gameState === "finished" ? `You finished the game with ${correctAnswers} out of ${TOTAL_ROUNDS} correct!` : 
+                      "Stay healthy!"}
             onNext={handleNext}
             nextEnabled={gameState === "finished"}
             showGameOver={gameState === "finished"}
-            score={score}
+            score={coins}
             gameId={gameId}
             nextGamePathProp="/student/health-male/teens/puberty-health-puzzle-teen"
             nextGameIdProp="health-male-teen-34"
             gameType="health-male"
             flashPoints={flashPoints}
+            totalLevels={5}
             showAnswerConfetti={showAnswerConfetti}
-            maxScore={TOTAL_ROUNDS}
+            maxScore={TOTAL_ROUNDS * coinsPerLevel} // Total possible coins (5 questions * 2 coins each = 10)
             coinsPerLevel={coinsPerLevel}
             totalCoins={totalCoins}
             totalXp={totalXp}
@@ -254,7 +287,7 @@ const ReflexPubertyHealthTeen = () => {
                                 <span className="text-white">Time:</span> {timeLeft}s
                             </div>
                             <div className="text-white">
-                                <span className="font-bold">Score:</span> {score}
+                                <span className="font-bold">Coins:</span> {coins}
                             </div>
                         </div>
 

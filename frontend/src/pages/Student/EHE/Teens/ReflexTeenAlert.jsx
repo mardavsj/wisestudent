@@ -24,67 +24,67 @@ const ReflexTeenAlert = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Adapt to Change",
-      emoji: "🔄",
-      correctAnswer: "Right future readiness action",
-      options: [
-        { text: "Refuse Learning", isCorrect: false },
-        { text: "Ignore Trends", isCorrect: false },
-        { text: "Right future readiness action", isCorrect: true },
-        { text: "Avoid Challenges", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Embrace New Tech",
-      emoji: "💻",
-      correctAnswer: "Right future readiness action",
-      options: [
-        { text: "Ignore Trends", isCorrect: false },
-        { text: "Right future readiness action", isCorrect: true },
-        { text: "Stay Static", isCorrect: false },
-        { text: "Refuse Learning", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Continuous Growth",
-      emoji: "📈",
-      correctAnswer: "Right future readiness action",
-      options: [
-        { text: "Right future readiness action", isCorrect: true },
-        { text: "Stay Static", isCorrect: false },
-        { text: "Refuse Learning", isCorrect: false },
-        { text: "Avoid Challenges", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Learn Skills",
-      emoji: "📚",
-      correctAnswer: "Right future readiness action",
-      options: [
-        { text: "Avoid Challenges", isCorrect: false },
-        { text: "Ignore Trends", isCorrect: false },
-        { text: "Stay Static", isCorrect: false },
-        { text: "Right future readiness action", isCorrect: true },
-      ]
-    },
-    {
-      id: 5,
-      action: "Stay Informed",
-      emoji: "📰",
-      correctAnswer: "Right future readiness action",
-      options: [
-        { text: "Refuse Learning", isCorrect: false },
-        { text: "Right future readiness action", isCorrect: true },
-        { text: "Ignore Trends", isCorrect: false },
-        { text: "Stay Static", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Adapt to Change",
+    emoji: "🔄",
+    question: "Your school introduces a new digital learning system. What should you do?",
+    options: [
+      { text: "Refuse to use it and complain", isCorrect: false },
+      { text: "Ignore it and stick to old notes", isCorrect: false },
+      { text: "Learn how it works and use it daily", isCorrect: true },
+      { text: "Wait until someone forces you", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Embrace New Tech",
+    emoji: "💻",
+    question: "A new technology is trending and may help future jobs. What is the best response?",
+    options: [
+      { text: "Say it’s useless without trying", isCorrect: false },
+      { text: "Avoid it because it looks hard", isCorrect: false },
+      { text: "Wait for others to decide for you", isCorrect: false },
+      { text: "Explore it through videos or small practice", isCorrect: true },
+    ]
+  },
+  {
+    id: 3,
+    action: "Continuous Growth",
+    emoji: "📈",
+    question: "You realize your skills may not be enough for future careers. What should you do?",
+    options: [
+      { text: "Stay comfortable and do nothing", isCorrect: false },
+      { text: "Learn new skills step by step", isCorrect: true },
+      { text: "Blame the education system", isCorrect: false },
+      { text: "Hope things work out automatically", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Learn Skills",
+    emoji: "📚",
+    question: "You have free time after school. What is the smartest use of it?",
+    options: [
+      { text: "Practice a useful skill or course", isCorrect: true },
+      { text: "Scroll endlessly without learning", isCorrect: false },
+      { text: "Avoid anything challenging", isCorrect: false },
+      { text: "Copy others instead of learning", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Stay Informed",
+    emoji: "📰",
+    question: "Career trends are changing fast. How should you stay prepared?",
+    options: [
+      { text: "Ignore changes until adulthood", isCorrect: false },
+      { text: "Rely only on random social media posts", isCorrect: false },
+      { text: "Assume one career will never change", isCorrect: false },
+      { text: "Follow trusted news, mentors, and updates", isCorrect: true },
+    ]
+  }
+];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

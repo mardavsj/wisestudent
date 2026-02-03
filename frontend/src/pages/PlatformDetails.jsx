@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import MainNavbar from "../components/MainNavbar";
 import MainFooter from "../components/MainFooter";
 import InstallPWA from "../components/InstallPWA";
@@ -544,6 +545,7 @@ const FAQCard = ({ question, answer, index }) => {
 };
 
 const PlatformDetails = () => {
+  const navigate = useNavigate();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [, setScrollY] = useState(0);
 
@@ -553,7 +555,18 @@ const PlatformDetails = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const navigateToLandingSection = (section) => {
+    navigate("/", {
+      state: {
+        landingScrollTarget: section,
+      },
+    });
+  };
+
+  const handlePillarsClick = () => navigateToLandingSection("pillars");
+  const handleWhyChooseClick = () => navigateToLandingSection("whyChoose");
+  const handlePricingClick = () => navigateToLandingSection("pricing");
+
   const scrollToFooter = () =>
     window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 
@@ -605,9 +618,9 @@ const PlatformDetails = () => {
 
       <InstallPWA />
       <MainNavbar
-        handlePillarsClick={scrollToTop}
-        handleWhyChooseClick={scrollToTop}
-        handlePricingClick={scrollToTop}
+        handlePillarsClick={handlePillarsClick}
+        handleWhyChooseClick={handleWhyChooseClick}
+        handlePricingClick={handlePricingClick}
         handleFooterClick={scrollToFooter}
         showMobileMenu={showMobileMenu}
         setShowMobileMenu={setShowMobileMenu}

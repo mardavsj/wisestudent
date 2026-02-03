@@ -65,10 +65,10 @@ const ReflexDangerAlert = () => {
       question: "Is Energy drinks for kids?",
       correctAnswer: "No",
       options: [
+        { text: "No", isCorrect: true, emoji: "👎" },
         { text: "Yes", isCorrect: false, emoji: "👍" },
         { text: "Maybe", isCorrect: false, emoji: "🤷" },
         { text: "Sometimes", isCorrect: false, emoji: "🕰️" },
-        { text: "No", isCorrect: true, emoji: "👎" }
       ]
     },
     {
@@ -78,8 +78,8 @@ const ReflexDangerAlert = () => {
       options: [
         { text: "It's yummy", isCorrect: false, emoji: "😋" },
         { text: "It's healthy", isCorrect: false, emoji: "💪" },
+        { text: "No way", isCorrect: true, emoji: "🙅‍♀️" },
         { text: "I love it", isCorrect: false, emoji: "❤️" },
-        { text: "No way", isCorrect: true, emoji: "🙅‍♀️" }
       ]
     }
   ];

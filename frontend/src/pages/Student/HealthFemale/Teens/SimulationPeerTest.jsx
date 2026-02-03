@@ -7,9 +7,9 @@ const SimulationPeerTest = () => {
   const navigate = useNavigate();
   const location = useLocation();
   // Get coinsPerLevel, totalCoins, and totalXp from navigation state (from game card) or use default
-  const coinsPerLevel = location.state?.coinsPerLevel || 5; // Default 5 coins per question (for backward compatibility)
-  const totalCoins = location.state?.totalCoins || 5; // Total coins from game card
-  const totalXp = location.state?.totalXp || 10; // Total XP from game card
+  const coinsPerLevel = location.state?.coinsPerLevel || 3; // Default 5 coins per question (for backward compatibility)
+  const totalCoins = location.state?.totalCoins || 15; // Total coins from game card
+  const totalXp = location.state?.totalXp || 30; // Total XP from game card
   const [currentScenario, setCurrentScenario] = useState(0);
   const [choices, setChoices] = useState([]);
   const [gameFinished, setGameFinished] = useState(false);
@@ -213,7 +213,7 @@ const SimulationPeerTest = () => {
       totalXp={totalXp}
       gameId="health-female-teen-68"
       gameType="health-female"
-      totalLevels={5}
+      totalLevels={scenarios.length} /* Use actual scenario count to ensure correct "out of" display */
       currentLevel={8}
       showConfetti={gameFinished}
       flashPoints={flashPoints}

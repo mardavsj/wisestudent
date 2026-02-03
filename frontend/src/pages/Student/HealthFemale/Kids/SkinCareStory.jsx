@@ -30,18 +30,19 @@ const SkinCareStory = () => {
           emoji: "🧥",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "Put on Sunscreen",
-          emoji: "🧴",
-          isCorrect: true
-        },
+       
         {
           id: "c",
           text: "Do nothing",
           emoji: "☀️",
           isCorrect: false
-        }
+        },
+         {
+          id: "b",
+          text: "Put on Sunscreen",
+          emoji: "🧴",
+          isCorrect: true
+        },
       ]
     },
     {
@@ -73,6 +74,12 @@ const SkinCareStory = () => {
       text: "You notice a small pimple on your nose. Should you pop it?",
       options: [
         {
+          id: "b",
+          text: "No, keep it clean and gentle",
+          emoji: "🫧",
+          isCorrect: true
+        },
+        {
           id: "a",
           text: "Yes, pop it!",
           emoji: "💥",
@@ -84,12 +91,7 @@ const SkinCareStory = () => {
           emoji: "🪥",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "No, keep it clean and gentle",
-          emoji: "🫧",
-          isCorrect: true
-        }
+        
       ]
     },
     {
@@ -102,18 +104,19 @@ const SkinCareStory = () => {
           emoji: "🥤",
           isCorrect: false
         },
+         {
+          id: "a",
+          text: "Drinking Water",
+          emoji: "💧",
+          isCorrect: true
+        },
         {
           id: "c",
           text: "Eating Pizza daily",
           emoji: "🍕",
           isCorrect: false
         },
-        {
-          id: "a",
-          text: "Drinking Water",
-          emoji: "💧",
-          isCorrect: true
-        }
+       
       ]
     },
     {
@@ -218,7 +221,7 @@ const SkinCareStory = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4 md:mb-6">
                 <span className="text-white/80 text-sm md:text-base">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold text-sm md:text-base">Coins: {coins}</span>
+                <span className="text-yellow-400 font-bold text-sm md:text-base">score: {coins}</span>
               </div>
               
               <h2 className="text-white text-base md:text-lg lg:text-xl mb-4 md:mb-6 text-center">

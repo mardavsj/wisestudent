@@ -123,11 +123,7 @@ const BadgeEmotionSmartTeenGirl = () => {
       title: "Building Empathy",
       question: "How can you better understand your friend's feelings?",
       options: [
-        { 
-          text: "Listen actively without judging", 
-          emoji: "👂", 
-          isCorrect: true
-        },
+        
         { 
           text: "Tell them what to do immediately", 
           emoji: "📢", 
@@ -142,7 +138,12 @@ const BadgeEmotionSmartTeenGirl = () => {
           text: "Ignore their concerns", 
           emoji: "😴", 
           isCorrect: false
-        }
+        },
+        { 
+          text: "Listen actively without judging", 
+          emoji: "👂", 
+          isCorrect: true
+        },
       ],
       feedback: {
         correct: "Exactly! Active listening shows you care and helps you understand others better!",
@@ -154,11 +155,7 @@ const BadgeEmotionSmartTeenGirl = () => {
       title: "Boosting Happiness",
       question: "What activity can improve your mood?",
       options: [
-        { 
-          text: "Helping others in your community", 
-          emoji: "🤝", 
-          isCorrect: true
-        },
+        
         { 
           text: "Spending all day on social media", 
           emoji: "📱", 
@@ -168,6 +165,11 @@ const BadgeEmotionSmartTeenGirl = () => {
           text: "Complaining about everything", 
           emoji: "😤", 
           isCorrect: false
+        },
+        { 
+          text: "Helping others in your community", 
+          emoji: "🤝", 
+          isCorrect: true
         },
         { 
           text: "Avoiding all social interactions", 

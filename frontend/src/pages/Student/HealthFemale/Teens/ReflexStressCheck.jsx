@@ -43,8 +43,8 @@ const ReflexStressCheck = () => {
       id: 2,
       question: "Which technique helps with anxiety?",
       options: [
-        { text: "Panic", emoji: "😰", isCorrect: false },
         { text: "Deep Breathing", emoji: "💨", isCorrect: true },
+        { text: "Panic", emoji: "😰", isCorrect: false },
         { text: "Bottle Emotions", emoji: "❌", isCorrect: false },
         { text: "Cry Alone", emoji: "😢", isCorrect: false }
       ]
@@ -64,8 +64,8 @@ const ReflexStressCheck = () => {
       question: "How can you relax after a tough day?",
       options: [
         { text: "Cry Alone", emoji: "😢", isCorrect: false },
-        { text: "Listen to Music", emoji: "🎵", isCorrect: true },
         { text: "Panic", emoji: "😰", isCorrect: false },
+        { text: "Listen to Music", emoji: "🎵", isCorrect: true },
         { text: "Isolate Self", emoji: "🚪", isCorrect: false }
       ]
     },
@@ -74,9 +74,9 @@ const ReflexStressCheck = () => {
       question: "What's a positive stress management technique?",
       options: [
         { text: "Isolate Self", emoji: "🚪", isCorrect: false },
-        { text: "Deep Breathing", emoji: "💨", isCorrect: true },
         { text: "Bottle Emotions", emoji: "❌", isCorrect: false },
-        { text: "Cry Alone", emoji: "😢", isCorrect: false }
+        { text: "Cry Alone", emoji: "😢", isCorrect: false },
+        { text: "Deep Breathing", emoji: "💨", isCorrect: true },
       ]
     }
   ];

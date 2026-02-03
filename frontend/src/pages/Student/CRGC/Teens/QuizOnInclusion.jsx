@@ -175,7 +175,7 @@ const QuizOnInclusion = () => {
       } else {
         setGameFinished(true);
       }
-    }, isCorrect ? 1000 : 800);
+    }, isCorrect ? 5000 : 5000);
   };
 
   const handleNext = () => {

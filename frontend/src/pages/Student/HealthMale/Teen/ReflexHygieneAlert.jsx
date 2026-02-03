@@ -22,11 +22,39 @@ const ReflexHygieneAlert = () => {
 
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const [gameState, setGameState] = useState("ready"); // ready, playing, finished
+  // Set global window variables for useGameFeedback to ensure correct +1 popup
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Force cleanup first to prevent interference from other games
+      window.__flashTotalCoins = null;
+      window.__flashQuestionCount = null;
+      window.__flashPointsMultiplier = 1;
+      
+      // Small delay to ensure cleanup
+      setTimeout(() => {
+        // Then set the correct values for this game
+        window.__flashTotalCoins = totalCoins;        // 5
+        window.__flashQuestionCount = questions.length; // 5
+        window.__flashPointsMultiplier = coinsPerLevel; // 1
+      }, 50);
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel]);
+
+  const [gameState, setGameState] = useState("ready"); // ready, playing, showResult
   const [score, setScore] = useState(0);
+  const [coins, setCoins] = useState(0);
   const [currentRound, setCurrentRound] = useState(0);
   const [timeLeft, setTimeLeft] = useState(ROUND_TIME);
   const [answered, setAnswered] = useState(false);
+  const [showResult, setShowResult] = useState(false);
+  const [finalScore, setFinalScore] = useState(0);
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
@@ -110,12 +138,13 @@ const ReflexHygieneAlert = () => {
 
     setTimeout(() => {
       if (isLastQuestion) {
-        setGameState("finished");
+        setFinalScore(score);
+        setShowResult(true);
       } else {
         setCurrentRound((prev) => prev + 1);
       }
     }, 1000);
-  }, []);
+  }, [score]);
 
   // Timer effect - countdown from 10 seconds for each question
   useEffect(() => {
@@ -171,7 +200,20 @@ const ReflexHygieneAlert = () => {
     setGameState("playing");
     setTimeLeft(ROUND_TIME);
     setScore(0);
+    setCoins(0);
     setCurrentRound(1);
+    setShowResult(false);
+    setFinalScore(0);
+    resetFeedback();
+  };
+
+  const handleTryAgain = () => {
+    setShowResult(false);
+    setGameState("ready");
+    setScore(0);
+    setCoins(0);
+    setCurrentRound(0);
+    setFinalScore(0);
     resetFeedback();
   };
 
@@ -189,13 +231,15 @@ const ReflexHygieneAlert = () => {
 
     if (option.isCorrect) {
       setScore((prev) => prev + 1);
+      setCoins((prev) => prev + 1);
       showCorrectAnswerFeedback(1, true);
     }
 
     // Move to next round or show results after a short delay
     setTimeout(() => {
       if (currentRound >= TOTAL_ROUNDS) {
-        setGameState("finished");
+        setFinalScore(score + (option.isCorrect ? 1 : 0));
+        setShowResult(true);
       } else {
         setCurrentRound((prev) => prev + 1);
       }
@@ -211,23 +255,27 @@ const ReflexHygieneAlert = () => {
   return (
     <GameShell
       title="Reflex Hygiene Alert"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Spot the hygienic choice!` : "Spot the hygienic choice!"}
-      onNext={handleNext}
-      nextEnabled={gameState === "finished"}
-      showGameOver={gameState === "finished"}
-      score={score}
+      score={coins}
+      subtitle={showResult ? "Game Complete!" : gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Spot the hygienic choice!` : "Spot the hygienic choice!"}
+      showGameOver={showResult}
       gameId={gameId}
       nextGamePathProp="/student/health-male/teens/hygiene-pro-badge"
       nextGameIdProp="health-male-teen-10"
       gameType="health-male"
+      totalLevels={TOTAL_ROUNDS}
+      currentLevel={currentRound}
+      showConfetti={showResult}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
+      onNext={handleNext}
+      nextEnabled={showResult}
+      backPath="/games/health-male/teens"
       maxScore={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
     >
-      <div className="space-y-8">
+      <div className="min-h-[calc(100vh-200px)] flex flex-col justify-center max-w-4xl mx-auto px-4 py-4">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🚨</div>
@@ -259,7 +307,7 @@ const ReflexHygieneAlert = () => {
                 <span className="text-white">Time:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">Coins:</span> {coins}
               </div>
             </div>
 
@@ -282,6 +330,45 @@ const ReflexHygieneAlert = () => {
                 ))}
               </div>
             </div>
+          </div>
+        )}
+
+        {showResult && (
+          <div className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/20 text-center flex-1 flex flex-col justify-center">
+            {finalScore >= 3 ? (
+              <div>
+                <div className="text-4xl md:text-5xl mb-4">🚨</div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Hygiene Reflex Champion!</h3>
+                <p className="text-white/90 text-base md:text-lg mb-4">
+                  You got {finalScore} out of {TOTAL_ROUNDS} reflexes correct!
+                  You have quick hygiene instincts!
+                </p>
+                <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-2 md:py-3 px-4 md:px-6 rounded-full inline-flex items-center gap-2 mb-4 text-sm md:text-base">
+                  <span>+{coins} Coins</span>
+                </div>
+                <p className="text-white/80 text-sm md:text-base">
+                  Great job! You know how to make quick, healthy hygiene decisions!
+                </p>
+              </div>
+            ) : (
+              <div>
+                <div className="text-4xl md:text-5xl mb-4">😔</div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Keep Practicing!</h3>
+                <p className="text-white/90 text-base md:text-lg mb-4">
+                  You got {finalScore} out of {TOTAL_ROUNDS} reflexes correct.
+                  Practice makes perfect for building quick hygiene habits!
+                </p>
+                <button
+                  onClick={handleTryAgain}
+                  className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-2 md:py-3 px-4 md:px-6 rounded-full font-bold transition-all mb-4 text-sm md:text-base"
+                >
+                  Try Again
+                </button>
+                <p className="text-white/80 text-xs md:text-sm">
+                  Try to choose the hygienic option as quickly as possible.
+                </p>
+              </div>
+            )}
           </div>
         )}
       </div>

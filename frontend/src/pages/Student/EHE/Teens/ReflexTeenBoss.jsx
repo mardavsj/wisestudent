@@ -24,67 +24,68 @@ const ReflexTeenBoss = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Learn & Grow",
-      emoji: "📈",
-      correctAnswer: "Right leadership action",
-      options: [
-        { text: "Right leadership action", isCorrect: true },
-        { text: "Stay Idle", isCorrect: false },
-        { text: "Ignore Advice", isCorrect: false },
-        { text: "Work Alone", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Take Feedback",
-      emoji: "💬",
-      correctAnswer: "Right leadership action",
-      options: [
-        { text: "Ignore Advice", isCorrect: false },
-        { text: "Right leadership action", isCorrect: true },
-        { text: "Act Randomly", isCorrect: false },
-        { text: "Stay Idle", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Plan Ahead",
-      emoji: "📝",
-      correctAnswer: "Right leadership action",
-      options: [
-        { text: "Right leadership action", isCorrect: true },
-        { text: "Act Randomly", isCorrect: false },
-        { text: "Stay Idle", isCorrect: false },
-        { text: "Work Alone", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Lead Team",
-      emoji: "👥",
-      correctAnswer: "Right leadership action",
-      options: [
-        { text: "Work Alone", isCorrect: false },
-        { text: "Right leadership action", isCorrect: true },
-        { text: "Ignore Advice", isCorrect: false },
-        { text: "Act Randomly", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Delegate Tasks",
-      emoji: "📋",
-      correctAnswer: "Right leadership action",
-      options: [
-        { text: "Stay Idle", isCorrect: false },
-        { text: "Right leadership action", isCorrect: true },
-        { text: "Ignore Advice", isCorrect: false },
-        { text: "Act Randomly", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Learn & Grow",
+    emoji: "📈",
+    question: "You are leading a student startup and lack experience in finance. What should you do?",
+    options: [
+      { text: "Ignore finances and hope it works out", isCorrect: false },
+      { text: "Learn from mentors, books, or online courses", isCorrect: true },
+      { text: "Avoid making any decisions", isCorrect: false },
+      { text: "Blame the team if things fail", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Take Feedback",
+    emoji: "💬",
+    question: "Your team says your communication is unclear. How should you respond?",
+    options: [
+      { text: "Listen carefully and improve your communication style", isCorrect: true },
+      { text: "Ignore the feedback completely", isCorrect: false },
+      { text: "Get defensive and argue", isCorrect: false },
+      { text: "Stop talking to the team", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Plan Ahead",
+    emoji: "📝",
+    question: "You have an upcoming product launch. What is the best leadership move?",
+    options: [
+      { text: "Decide everything at the last minute", isCorrect: false },
+      { text: "Let everyone do whatever they want", isCorrect: false },
+      { text: "Wait and see what happens", isCorrect: false },
+      { text: "Create a clear plan with deadlines and responsibilities", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    action: "Lead Team",
+    emoji: "👥",
+    question: "Two team members disagree strongly on an idea. What should you do?",
+    options: [
+      { text: "Pick one side without listening", isCorrect: false },
+      { text: "Ignore the conflict", isCorrect: false },
+      { text: "Listen to both sides and guide them to a solution", isCorrect: true },
+      { text: "Ask them to stop discussing completely", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Delegate Tasks",
+    emoji: "📋",
+    question: "Your workload is too heavy to manage alone. What’s the smartest move?",
+    options: [
+      { text: "Assign tasks based on each member’s strengths", isCorrect: true },
+      { text: "Try to do everything yourself", isCorrect: false },
+      { text: "Delay work until later", isCorrect: false },
+      { text: "Give random tasks without explanation", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

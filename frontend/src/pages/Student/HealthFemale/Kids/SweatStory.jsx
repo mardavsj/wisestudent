@@ -96,6 +96,12 @@ const SweatStory = () => {
       id: 4,
       text: "When is it important to wash your face?",
       options: [
+         {
+          id: "b",
+          text: "After sweating or playing",
+          emoji: "⚽",
+          isCorrect: true
+        },
         {
           id: "a",
           text: "Never",
@@ -108,12 +114,7 @@ const SweatStory = () => {
           emoji: "🎂",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "After sweating or playing",
-          emoji: "⚽",
-          isCorrect: true
-        }
+       
       ]
     },
     {

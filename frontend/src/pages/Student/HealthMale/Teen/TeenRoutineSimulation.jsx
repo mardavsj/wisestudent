@@ -79,6 +79,9 @@ const TeenRoutineSimulation = () => {
 
 
   const handleChoice = (optionId) => {
+    // Prevent choices after game is finished
+    if (currentScenario >= scenarios.length) return;
+    
     const selectedOption = scenarios[currentScenario].options.find(opt => opt.id === optionId);
     const isCorrect = selectedOption.isCorrect;
 
@@ -113,6 +116,7 @@ const TeenRoutineSimulation = () => {
       nextGameIdProp="health-male-teen-29"
       gameType="health-male"
       flashPoints={flashPoints}
+       totalLevels={5}
       showAnswerConfetti={showAnswerConfetti}
       maxScore={scenarios.length}
       coinsPerLevel={coinsPerLevel}
@@ -127,19 +131,24 @@ const TeenRoutineSimulation = () => {
           </div>
 
           <h2 className="text-xl font-semibold text-white mb-4">
-            {scenarios[currentScenario].time}
+            {currentScenario < scenarios.length ? scenarios[currentScenario].time : "Game Complete!"}
           </h2>
           
           <p className="text-white/90 mb-6">
-            {scenarios[currentScenario].situation}
+            {currentScenario < scenarios.length ? scenarios[currentScenario].situation : "Congratulations! You've completed all scenarios."}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {scenarios[currentScenario].options.map(option => (
+            {currentScenario < scenarios.length && scenarios[currentScenario].options.map(option => (
               <button
                 key={option.id}
                 onClick={() => handleChoice(option.id)}
-                className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white p-6 rounded-2xl shadow-lg transition-all transform hover:scale-105 text-left"
+                disabled={currentScenario >= scenarios.length}
+                className={`p-6 rounded-2xl shadow-lg transition-all transform hover:scale-105 text-left ${
+                  currentScenario >= scenarios.length 
+                    ? "bg-gray-400 cursor-not-allowed" 
+                    : "bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white"
+                }`}
               >
                 <div className="flex items-center">
                   <div className="text-2xl mr-4">{option.emoji}</div>

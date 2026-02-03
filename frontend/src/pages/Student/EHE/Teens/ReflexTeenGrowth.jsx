@@ -24,67 +24,68 @@ const ReflexTeenGrowth = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Skill Upgrade",
-      emoji: "📚",
-      correctAnswer: "Right growth action",
-      options: [
-        { text: "Right growth action", isCorrect: true },
-        { text: "No Learning", isCorrect: false },
-        { text: "Skip Learning", isCorrect: false },
-        { text: "Avoid Practice", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Take Course",
-      emoji: "📖",
-      correctAnswer: "Right growth action",
-      options: [
-        { text: "Skip Learning", isCorrect: false },
-        { text: "Right growth action", isCorrect: true },
-        { text: "Ignore Feedback", isCorrect: false },
-        { text: "No Learning", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Practice Skills",
-      emoji: "💪",
-      correctAnswer: "Right growth action",
-      options: [
-        { text: "Right growth action", isCorrect: true },
-        { text: "Ignore Feedback", isCorrect: false },
-        { text: "No Learning", isCorrect: false },
-        { text: "Avoid Practice", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Seek Feedback",
-      emoji: "🔄",
-      correctAnswer: "Right growth action",
-      options: [
-        { text: "Avoid Practice", isCorrect: false },
-        { text: "Right growth action", isCorrect: true },
-        { text: "Skip Learning", isCorrect: false },
-        { text: "Ignore Feedback", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Set Goals",
-      emoji: "🎯",
-      correctAnswer: "Right growth action",
-      options: [
-        { text: "No Learning", isCorrect: false },
-        { text: "Right growth action", isCorrect: true },
-        { text: "Skip Learning", isCorrect: false },
-        { text: "Ignore Feedback", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Skill Upgrade",
+    emoji: "📚",
+    question: "You realize your chosen career needs better communication skills. What should you do?",
+    options: [
+      { text: "Practice speaking and writing regularly", isCorrect: true },
+      { text: "Hope skills improve automatically", isCorrect: false },
+      { text: "Avoid situations that need communication", isCorrect: false },
+      { text: "Blame school for not teaching it", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Take Course",
+    emoji: "📖",
+    question: "You want to learn coding for future studies. What is the smartest step?",
+    options: [
+      { text: "Wait until college to start", isCorrect: false },
+      { text: "Copy code without understanding", isCorrect: false },
+      { text: "Give up because it looks hard", isCorrect: false },
+      { text: "Enroll in a beginner-friendly online course", isCorrect: true },
+    ]
+  },
+  {
+    id: 3,
+    action: "Practice Skills",
+    emoji: "💪",
+    question: "You learned a new skill but feel unsure about it. What helps most?",
+    options: [
+      { text: "Use it only during exams", isCorrect: false },
+      { text: "Practice regularly with small challenges", isCorrect: true },
+      { text: "Stop because mistakes feel uncomfortable", isCorrect: false },
+      { text: "Compare yourself constantly to experts", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Seek Feedback",
+    emoji: "🔄",
+    question: "Your project received suggestions for improvement. What should you do?",
+    options: [
+      { text: "Ignore feedback completely", isCorrect: false },
+      { text: "Get defensive and argue", isCorrect: false },
+      { text: "Use feedback to improve your work", isCorrect: true },
+      { text: "Delete the project", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Set Goals",
+    emoji: "🎯",
+    question: "You want steady growth in studies and skills. What is the best approach?",
+    options: [
+      { text: "Set clear short-term and long-term goals", isCorrect: true },
+      { text: "Study only when exams are near", isCorrect: false },
+      { text: "Follow others without planning", isCorrect: false },
+      { text: "Avoid goals to reduce pressure", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

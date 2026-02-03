@@ -96,8 +96,8 @@ const ReflexTeenDuty = () => {
       options: [
         { text: "Add to the litter since everyone else is doing it", isCorrect: false },
         { text: "Complain about others' mess but leave your own trash", isCorrect: false },
+        { text: "Ignore it since park maintenance will clean it up", isCorrect: false },
         { text: "Pick up the litter yourself and encourage others to dispose of waste properly", isCorrect: true },
-        { text: "Ignore it since park maintenance will clean it up", isCorrect: false }
       ],
       feedback: {
         correct: "Awesome! Taking personal responsibility for environmental protection sets a positive example for others!",
@@ -219,7 +219,7 @@ const ReflexTeenDuty = () => {
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-            <div className="text-5xl mb-6">🇮🇳🗳️🏫💰🌱</div>
+            <div className="text-5xl mb-6">🗳️🏫💰🌱</div>
             <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
             <p className="text-white/90 text-lg mb-6">
               Quick duty choices!<br />

@@ -116,12 +116,7 @@ const SimulationTeenJusticeAct = () => {
       title: "Online Harassment",
       description: "The teen sees someone being cyberbullied for their political views on social media. How should they respond?",
       options: [
-        {
-          id: "a",
-          text: "Stand up for the person and report harassment",
-          emoji: "🛡️",
-          isCorrect: true
-        },
+        
         {
           id: "b",
           text: "Join in since everyone else is doing it",
@@ -139,7 +134,13 @@ const SimulationTeenJusticeAct = () => {
           text: "Privately message the person being bullied to offer support",
           emoji: "💬",
           isCorrect: false
-        }
+        },
+        {
+          id: "a",
+          text: "Stand up for the person and report harassment",
+          emoji: "🛡️",
+          isCorrect: true
+        },
       ]
     },
     {
@@ -147,12 +148,7 @@ const SimulationTeenJusticeAct = () => {
       title: "Systemic Bias",
       description: "The teen learns about systemic bias in their school's disciplinary system. What should be their response?",
       options: [
-        {
-          id: "a",
-          text: "Research the issue and propose reforms",
-          emoji: "🔍",
-          isCorrect: true
-        },
+       
         {
           id: "b",
           text: "Assume the system must be fair",
@@ -164,6 +160,12 @@ const SimulationTeenJusticeAct = () => {
           text: "Rebel against all authority",
           emoji: "💣",
           isCorrect: false
+        },
+         {
+          id: "a",
+          text: "Research the issue and propose reforms",
+          emoji: "🔍",
+          isCorrect: true
         },
         {
           id: "d",
@@ -227,7 +229,7 @@ const SimulationTeenJusticeAct = () => {
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
           <div className="flex justify-between items-center mb-4">
             <span className="text-white/80">Scenario {currentScenario + 1}/{scenarios.length}</span>
-            <span className="text-yellow-400 font-bold">Coins: {choices.filter(c => c.isCorrect).length}</span>
+            <span className="text-yellow-400 font-bold">Score: {choices.filter(c => c.isCorrect).length}</span>
           </div>
           
           <h2 className="text-xl font-semibold text-white mb-4">

@@ -62,8 +62,8 @@ const ReflexCultureBasics = () => {
       emoji: "📚",
       correctAnswer: "Ask respectful questions and research authentic sources",
       options: [
-        { text: "Rely only on stereotypes from movies", isCorrect: false },
         { text: "Ask respectful questions and research authentic sources", isCorrect: true },
+        { text: "Rely only on stereotypes from movies", isCorrect: false },
         { text: "Make assumptions based on appearances", isCorrect: false },
         { text: "Copy practices without understanding meaning", isCorrect: false }
       ],

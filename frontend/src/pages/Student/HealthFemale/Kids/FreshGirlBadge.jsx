@@ -124,6 +124,11 @@ const FreshGirlBadge = () => {
       question: "How do you get the 'Fresh Clothes' badge?",
       options: [
         { 
+          text: "Changing all clothes regularly", 
+          emoji: "👚", 
+          isCorrect: true
+        },
+        { 
           text: "Wearing the same socks for a week", 
           emoji: "🧦", 
           isCorrect: false
@@ -138,11 +143,7 @@ const FreshGirlBadge = () => {
           emoji: "👕", 
           isCorrect: false
         },
-        { 
-          text: "Changing all clothes regularly", 
-          emoji: "👚", 
-          isCorrect: true
-        }
+        
       ],
       feedback: {
         correct: "Exactly! Changing all clothes regularly keeps you fresh!",

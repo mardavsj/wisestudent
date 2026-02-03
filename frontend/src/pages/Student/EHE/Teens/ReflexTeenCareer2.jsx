@@ -24,67 +24,68 @@ const ReflexTeenCareer2 = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Choose Path",
-      emoji: "🎯",
-      correctAnswer: "Right career action",
-      options: [
-        { text: "No Direction", isCorrect: false },
-        { text: "Wander Aimlessly", isCorrect: false },
-        { text: "Copy Others", isCorrect: false },
-        { text: "Right career action", isCorrect: true },
-      ]
-    },
-    {
-      id: 2,
-      action: "Set Goals",
-      emoji: "🏁",
-      correctAnswer: "Right career action",
-      options: [
-        { text: "Wander Aimlessly", isCorrect: false },
-        { text: "Right career action", isCorrect: true },
-        { text: "Make Random Choices", isCorrect: false },
-        { text: "No Direction", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Plan Ahead",
-      emoji: "📅",
-      correctAnswer: "Right career action",
-      options: [
-        { text: "Right career action", isCorrect: true },
-        { text: "Make Random Choices", isCorrect: false },
-        { text: "No Direction", isCorrect: false },
-        { text: "Copy Others", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Research Options",
-      emoji: "🔍",
-      correctAnswer: "Right career action",
-      options: [
-        { text: "Copy Others", isCorrect: false },
-        { text: "Right career action", isCorrect: true },
-        { text: "Wander Aimlessly", isCorrect: false },
-        { text: "Make Random Choices", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Network Building",
-      emoji: "🤝",
-      correctAnswer: "Right career action",
-      options: [
-        { text: "No Direction", isCorrect: false },
-        { text: "Right career action", isCorrect: true },
-        { text: "Wander Aimlessly", isCorrect: false },
-        { text: "Make Random Choices", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Choose Path",
+    emoji: "🎯",
+    question: "You enjoy both coding and design, but must choose a career focus after school. What should you do?",
+    options: [
+      { text: "Explore both through short courses or projects before deciding", isCorrect: true },
+      { text: "Pick randomly without thinking", isCorrect: false },
+      { text: "Choose what friends are choosing", isCorrect: false },
+      { text: "Avoid deciding for now", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Set Goals",
+    emoji: "🏁",
+    question: "You want to get into a good college or startup role. What’s the best next step?",
+    options: [
+      { text: "Wait and see what happens", isCorrect: false },
+      { text: "Change goals every week", isCorrect: false },
+      { text: "Only focus on fun activities", isCorrect: false },
+      { text: "Set clear short-term and long-term goals", isCorrect: true },
+    ]
+  },
+  {
+    id: 3,
+    action: "Plan Ahead",
+    emoji: "📅",
+    question: "You have exams, skill learning, and internships to manage. What should you do?",
+    options: [
+      { text: "Do everything at the last moment", isCorrect: false },
+      { text: "Ignore planning completely", isCorrect: false },
+      { text: "Create a realistic schedule and prioritize tasks", isCorrect: true },
+      { text: "Copy someone else’s routine blindly", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Research Options",
+    emoji: "🔍",
+    question: "You’re confused between higher studies and starting a business. What helps most?",
+    options: [
+      { text: "Follow social media trends only", isCorrect: false },
+      { text: "Research careers, talk to professionals, and compare options", isCorrect: true },
+      { text: "Decide based on money alone", isCorrect: false },
+      { text: "Choose whatever sounds easiest", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Network Building",
+    emoji: "🤝",
+    question: "You want better career opportunities while studying. What should you focus on?",
+    options: [
+      { text: "Build connections through events, mentors, and internships", isCorrect: true },
+      { text: "Avoid talking to new people", isCorrect: false },
+      { text: "Only rely on close friends", isCorrect: false },
+      { text: "Wait for opportunities to come automatically", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

@@ -14,6 +14,7 @@ const SimulationDailyRoutine = () => {
   const [choices, setChoices] = useState([]);
   const [gameFinished, setGameFinished] = useState(false);
   const [coins, setCoins] = useState(0); // Add coins state
+
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const scenarios = [
@@ -178,12 +179,18 @@ const SimulationDailyRoutine = () => {
     const selectedOption = scenarios[currentScenario].options.find(opt => opt.id === optionId);
     const isCorrect = selectedOption.isCorrect;
 
-    if (isCorrect) {
+    // Check if this scenario has already been answered to prevent duplicate scoring
+    const alreadyAnswered = choices.some(choice => choice.scenario === currentScenario);
+    
+    if (isCorrect && !alreadyAnswered) {
       showCorrectAnswerFeedback(1, true);
-      setCoins(prev => prev + 1); // Increment coins when correct
+      setCoins(prev => prev + 1); // Increment by 1 coin when correct (matching reference)
     }
 
-    setChoices([...choices, { scenario: currentScenario, optionId, isCorrect }]);
+    // Only add to choices if not already answered
+    if (!alreadyAnswered) {
+      setChoices(prev => [...prev, { scenario: currentScenario, optionId, isCorrect }]);
+    }
 
     setTimeout(() => {
       if (currentScenario < scenarios.length - 1) {
@@ -226,7 +233,7 @@ const SimulationDailyRoutine = () => {
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
           <div className="flex justify-between items-center mb-4">
             <span className="text-white/80">Scenario {currentScenario + 1}/{scenarios.length}</span>
-            <span className="text-yellow-400 font-bold">Coins: {choices.filter(c => c.isCorrect).length}</span>
+            
           </div>
 
           <p className="text-white text-lg mb-6">

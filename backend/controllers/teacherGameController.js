@@ -128,6 +128,7 @@ export const completeTeacherGame = async (req, res) => {
         reason: 'full-completion',
         earnedAt: new Date()
       });
+      gameProgress.fullyCompleted = true;
     } else if (isReplayAttempt) {
       // Replay - no coins awarded, lock game again
       gameProgress.replayUnlocked = false;
@@ -143,7 +144,7 @@ export const completeTeacherGame = async (req, res) => {
     }
 
     // Update game progress
-    gameProgress.fullyCompleted = true;
+    
     gameProgress.levelsCompleted = Math.max(gameProgress.levelsCompleted, totalLevels);
     gameProgress.highestScore = Math.max(gameProgress.highestScore, score);
     gameProgress.lastPlayedAt = new Date();

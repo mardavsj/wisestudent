@@ -37,8 +37,8 @@ const GreenEnergyStory = () => {
       id: 2,
       text: "Why is green energy important for our future?",
       options: [
-        { id: "b", text: "Creates more pollution", correct: false, emoji: "☁️" },
         { id: "a", text: "Reduces pollution and climate change", correct: true, emoji: "🌍" },
+        { id: "b", text: "Creates more pollution", correct: false, emoji: "☁️" },
         { id: "c", text: "Is not important", correct: false, emoji: "❌" }
       ]
     },
@@ -65,8 +65,8 @@ const GreenEnergyStory = () => {
       text: "What opportunities exist in the green energy sector?",
       options: [
         { id: "b", text: "Declining industry", correct: false, emoji: "📉" },
+        { id: "c", text: "No opportunities", correct: false, emoji: "❌" },
         { id: "a", text: "Growing job market and innovation potential", correct: true, emoji: "📈" },
-        { id: "c", text: "No opportunities", correct: false, emoji: "❌" }
       ]
     }
   ];

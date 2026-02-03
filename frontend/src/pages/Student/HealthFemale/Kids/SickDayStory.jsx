@@ -24,18 +24,19 @@ const SickDayStory = () => {
       id: 1,
       text: "You wake up feeling hot and tired (fever).",
       options: [
+         {
+          id: "b",
+          text: "Tell a parent and stay home",
+          emoji: "🛌",
+          isCorrect: true
+        },
         {
           id: "a",
           text: "Go to school anyway",
           emoji: "🏫",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "Tell a parent and stay home",
-          emoji: "🛌",
-          isCorrect: true
-        },
+       
         {
           id: "c",
           text: "Play outside in the cold",
@@ -97,6 +98,12 @@ const SickDayStory = () => {
       text: "You need to throw up.",
       options: [
         {
+          id: "b",
+          text: "Go to the bathroom or use a bucket",
+          emoji: "🚽",
+          isCorrect: true
+        },
+        {
           id: "a",
           text: "Do it on the floor",
           emoji: "🤢",
@@ -108,12 +115,7 @@ const SickDayStory = () => {
           emoji: "🤐",
           isCorrect: false
         },
-        {
-          id: "b",
-          text: "Go to the bathroom or use a bucket",
-          emoji: "🚽",
-          isCorrect: true
-        }
+        
       ]
     },
     {

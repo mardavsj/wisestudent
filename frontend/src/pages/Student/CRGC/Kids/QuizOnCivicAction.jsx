@@ -129,18 +129,19 @@ const QuizOnCivicAction = () => {
           emoji: "🗑️",
           isCorrect: false
         },
+        
+        {
+          id: "c",
+          text: "Using more plastic bags",
+          emoji: "🛍️",
+          isCorrect: false
+        },
         {
           id: "b",
           text: "Planting trees in your community",
           emoji: "🌳",
           isCorrect: true
         },
-        {
-          id: "c",
-          text: "Using more plastic bags",
-          emoji: "🛍️",
-          isCorrect: false
-        }
       ]
     }
   ];
@@ -173,7 +174,7 @@ const QuizOnCivicAction = () => {
       } else {
         setGameFinished(true);
       }
-    }, isCorrect ? 1000 : 800);
+    }, isCorrect ? 3000 : 3000);
   };
 
   const handleNext = () => {

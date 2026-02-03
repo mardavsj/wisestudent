@@ -23,12 +23,7 @@ const QuizOnGlobalCitizenship = () => {
       text: "What does global citizenship mean?",
       emoji: "🌍",
       options: [
-        {
-          id: "a",
-          text: "Caring for the whole world",
-          emoji: "❤️",
-          isCorrect: true
-        },
+        
         {
           id: "b",
           text: "Only caring about yourself",
@@ -40,7 +35,13 @@ const QuizOnGlobalCitizenship = () => {
           text: "Ignoring other countries",
           emoji: "🚫",
           isCorrect: false
-        }
+        },
+        {
+          id: "a",
+          text: "Caring for the whole world",
+          emoji: "❤️",
+          isCorrect: true
+        },
       ]
     },
     {
@@ -48,17 +49,18 @@ const QuizOnGlobalCitizenship = () => {
       text: "Which is a responsibility of a global citizen?",
       emoji: "🎯",
       options: [
-        {
-          id: "a",
-          text: "Respecting different cultures",
-          emoji: "🤝",
-          isCorrect: true
-        },
+        
         {
           id: "b",
           text: "Judging others based on stereotypes",
           emoji: "🧐",
           isCorrect: false
+        },
+        {
+          id: "a",
+          text: "Respecting different cultures",
+          emoji: "🤝",
+          isCorrect: true
         },
         {
           id: "c",
@@ -98,12 +100,7 @@ const QuizOnGlobalCitizenship = () => {
       text: "What is cultural awareness?",
       emoji: "🧠",
       options: [
-        {
-          id: "a",
-          text: "Understanding and appreciating different cultures",
-          emoji: "🌐",
-          isCorrect: true
-        },
+        
         {
           id: "b",
           text: "Thinking one's own culture is superior",
@@ -115,7 +112,13 @@ const QuizOnGlobalCitizenship = () => {
           text: "Ignoring cultural differences",
           emoji: "😶",
           isCorrect: false
-        }
+        },
+        {
+          id: "a",
+          text: "Understanding and appreciating different cultures",
+          emoji: "🩵",
+          isCorrect: true
+        },
       ]
     },
     {

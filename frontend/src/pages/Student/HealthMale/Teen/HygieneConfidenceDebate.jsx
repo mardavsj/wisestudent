@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -19,10 +19,35 @@ const HygieneConfidenceDebate = () => {
 
   const [coins, setCoins] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [showFeedback, setShowFeedback] = useState(false);
-  const [gameFinished, setGameFinished] = useState(false);
+  const [choices, setChoices] = useState([]);
+  const [showResult, setShowResult] = useState(false);
+  const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
+
+  // Set global window variables for useGameFeedback to ensure correct +1 popup
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Force cleanup first to prevent interference from other games
+      window.__flashTotalCoins = null;
+      window.__flashQuestionCount = null;
+      window.__flashPointsMultiplier = 1;
+      
+      // Small delay to ensure cleanup
+      setTimeout(() => {
+        // Then set the correct values for this game
+        window.__flashTotalCoins = totalCoins;        // 5
+        window.__flashQuestionCount = questions.length; // 5
+        window.__flashPointsMultiplier = coinsPerLevel; // 1
+      }, 50);
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel]);
 
   const questions = [
   {
@@ -144,30 +169,46 @@ const HygieneConfidenceDebate = () => {
   }
 ];
 
-  const handleOptionSelect = (optionId) => {
-    if (selectedOption || showFeedback) return;
+  const handleChoice = (optionId) => {
+    const newChoices = [...choices, { 
+      questionId: questions[currentQuestion].id, 
+      choice: optionId,
+      isCorrect: optionId === questions[currentQuestion].correctAnswer
+    }];
     
-    resetFeedback(); // Reset any existing feedback
+    setChoices(newChoices);
     
-    setSelectedOption(optionId);
+    // If the choice is correct, add coins and show flash/confetti
     const isCorrect = optionId === questions[currentQuestion].correctAnswer;
-    
     if (isCorrect) {
-      setCoins(prev => prev + 1); // 1 coin per correct answer
+      setCoins(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
-    setShowFeedback(true);
-    
-    setTimeout(() => {
-      if (currentQuestion < questions.length - 1) {
+    // Move to next question or show results
+    if (currentQuestion < questions.length - 1) {
+      setTimeout(() => {
         setCurrentQuestion(prev => prev + 1);
-        setSelectedOption(null);
-        setShowFeedback(false);
-      } else {
-        setGameFinished(true);
-      }
-    }, 5000);
+      }, isCorrect ? 1000 : 800);
+    } else {
+      // Calculate final score
+      const correctAnswers = newChoices.filter(choice => choice.isCorrect).length;
+      setFinalScore(correctAnswers);
+      setTimeout(() => {
+        setShowResult(true);
+      }, isCorrect ? 1000 : 800);
+    }
+  };
+
+  const handleTryAgain = () => {
+    setShowResult(false);
+    setCurrentQuestion(0);
+    setChoices([]);
+    setCoins(0);
+    setFinalScore(0);
+    resetFeedback();
   };
 
   const handleNext = () => {
@@ -179,104 +220,88 @@ const HygieneConfidenceDebate = () => {
   return (
     <GameShell
       title="Hygiene Confidence Debate"
-subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}` : "Debate Complete!"}
-      onNext={handleNext}
-      nextEnabled={gameFinished}
-      showGameOver={gameFinished}
       score={coins}
+      subtitle={showResult ? "Debate Complete!" : `Debate ${currentQuestion + 1} of ${questions.length}`}
+      showGameOver={showResult}
       gameId={gameId}
       nextGamePathProp="/student/health-male/teens/self-care-journal"
       nextGameIdProp="health-male-teen-7"
       gameType="health-male"
+      totalLevels={questions.length}
+      currentLevel={currentQuestion + 1}
+      showConfetti={showResult}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
+      onNext={handleNext}
+      nextEnabled={showResult}
+      backPath="/games/health-male/teens"
       maxScore={questions.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
     >
-      <div className="space-y-8">
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-          <div className="flex justify-between items-center mb-4">
-            <span className="text-white/80">Debate {currentQuestion + 1}/{questions.length}</span>
-            <span className="text-yellow-400 font-bold">Score: {coins}</span>
-          </div>
-
-          <div className="text-center mb-6">
-            <div className="text-5xl mb-4">🧼</div>
-            <h3 className="text-2xl font-bold text-white mb-2">Hygiene & Confidence Debate</h3>
-          </div>
-
-          <p className="text-white text-lg mb-6">
-            {getCurrentQuestion().text}
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {getCurrentQuestion().options.map(option => {
-              const isSelected = selectedOption === option.id;
-              const isCorrect = option.id === getCurrentQuestion().correctAnswer;
-              const showCorrect = showFeedback && isCorrect;
-              const showIncorrect = showFeedback && isSelected && !isCorrect;
+      <div className="min-h-[calc(100vh-200px)] flex flex-col justify-center max-w-4xl mx-auto px-4 py-4">
+        {!showResult ? (
+          <div className="space-y-4 md:space-y-6">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4 md:mb-6">
+                <span className="text-white/80 text-sm md:text-base">Debate {currentQuestion + 1}/{questions.length}</span>
+                <span className="text-yellow-400 font-bold text-sm md:text-base">Coins: {coins}</span>
+              </div>
               
-
+              <h2 className="text-white text-base md:text-lg lg:text-xl mb-4 md:mb-6 text-center">
+                {getCurrentQuestion().text}
+              </h2>
               
-              return (
-                <button
-                  key={option.id}
-                  onClick={() => handleOptionSelect(option.id)}
-                  disabled={showFeedback}
-                  className={`bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white p-6 rounded-2xl shadow-lg transition-all transform hover:scale-105 text-left ${
-                    showFeedback ? (isCorrect ? 'ring-4 ring-green-500' : isSelected ? 'ring-4 ring-red-500' : '') : ''
-                  }`}
-                >
-                  <div className="flex items-center">
-                    <div className="text-2xl mr-4">{option.emoji}</div>
-                    <div>
-                      <h3 className="font-bold text-xl mb-1">{option.text}</h3>
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          {showFeedback && (
-            <div className={`mt-6 p-4 rounded-xl ${
-              selectedOption === getCurrentQuestion().correctAnswer
-                ? 'bg-green-500/20 border border-green-500/30'
-                : 'bg-red-500/20 border border-red-500/30'
-            }`}>
-              <p className={`font-semibold ${
-                selectedOption === getCurrentQuestion().correctAnswer
-                  ? 'text-green-300'
-                  : 'text-red-300'
-              }`}>
-                {selectedOption === getCurrentQuestion().correctAnswer
-                  ? 'Correct! 🎉'
-                  : 'Not quite right!'}
-              </p>
-              <p className="text-white/90 mt-2">
-                {getCurrentQuestion().explanation}
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+                {getCurrentQuestion().options.map(option => (
+                  <button
+                    key={option.id}
+                    onClick={() => handleChoice(option.id)}
+                    className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg transition-all transform hover:scale-105"
+                  >
+                    <div className="text-2xl md:text-3xl mb-2">{option.emoji}</div>
+                    <h3 className="font-bold text-base md:text-xl mb-2">{option.text}</h3>
+                  </button>
+                ))}
+              </div>
             </div>
-          )}
-        </div>
-        
-        {gameFinished && (
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-            <h3 className="text-3xl font-bold text-white mb-4">Debate Complete!</h3>
-            <p className="text-xl text-white/90 mb-6">
-              You scored {coins} out of {questions.length}!
-            </p>
-            <p className="text-white/80 mb-8">
-              Good hygiene habits boost confidence and social connections.
-            </p>
-            <button
-              onClick={handleNext}
-              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-8 rounded-full font-bold text-lg transition-all transform hover:scale-105"
-            >
-              Next Challenge
-            </button>
+          </div>
+        ) : (
+          <div className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/20 text-center flex-1 flex flex-col justify-center">
+            {finalScore >= 3 ? (
+              <div>
+                <div className="text-4xl md:text-5xl mb-4">🧼</div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Hygiene Confidence Champion!</h3>
+                <p className="text-white/90 text-base md:text-lg mb-4">
+                  You got {finalScore} out of {questions.length} debates correct!
+                  You understand how hygiene affects confidence and social interactions!
+                </p>
+                <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-2 md:py-3 px-4 md:px-6 rounded-full inline-flex items-center gap-2 mb-4 text-sm md:text-base">
+                  <span>+{coins} Coins</span>
+                </div>
+                <p className="text-white/80 text-sm md:text-base">
+                  Great job! You know how proper hygiene boosts confidence and improves social connections!
+                </p>
+              </div>
+            ) : (
+              <div>
+                <div className="text-4xl md:text-5xl mb-4">😔</div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <p className="text-white/90 text-base md:text-lg mb-4">
+                  You got {finalScore} out of {questions.length} debates correct.
+                  Remember, good hygiene builds confidence and stronger relationships!
+                </p>
+                <button
+                  onClick={handleTryAgain}
+                  className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-2 md:py-3 px-4 md:px-6 rounded-full font-bold transition-all mb-4 text-sm md:text-base">
+                  Try Again
+                </button>
+                <p className="text-white/80 text-xs md:text-sm">
+                  Try to choose the option that shows how hygiene affects confidence and social interactions.
+                </p>
+              </div>
+            )}
           </div>
         )}
       </div>

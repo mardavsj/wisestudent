@@ -139,7 +139,7 @@ const QuizWildlifeProtection = () => {
           showAnswerConfetti();
         }
       }
-    }, option.isCorrect ? 1000 : 800);
+    }, option.isCorrect ? 5000 : 5000);
   };
 
   const currentQuestionData = questions[currentQuestion];

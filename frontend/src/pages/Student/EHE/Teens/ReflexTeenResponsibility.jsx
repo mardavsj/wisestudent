@@ -24,67 +24,68 @@ const ReflexTeenResponsibility = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Eco-Friendly Business",
-      emoji: "♻️",
-      correctAnswer: "Responsible business action",
-      options: [
-        { text: "Polluting Business", isCorrect: false },
-        { text: "Exploitative Labor", isCorrect: false },
-        { text: "Responsible business action", isCorrect: true },
-        { text: "Ignore Stakeholders", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Ethical Practices",
-      emoji: "✅",
-      correctAnswer: "Responsible business action",
-      options: [
-        { text: "Exploitative Labor", isCorrect: false },
-        { text: "Responsible business action", isCorrect: true },
-        { text: "Short-term Profits", isCorrect: false },
-        { text: "Polluting Business", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Community Support",
-      emoji: "🤝",
-      correctAnswer: "Responsible business action",
-      options: [
-        { text: "Short-term Profits", isCorrect: false },
-        { text: "Polluting Business", isCorrect: false },
-        { text: "Responsible business action", isCorrect: true },
-        { text: "Ignore Stakeholders", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Sustainable Growth",
-      emoji: "🌱",
-      correctAnswer: "Responsible business action",
-      options: [
-        { text: "Ignore Stakeholders", isCorrect: false },
-        { text: "Exploitative Labor", isCorrect: false },
-        { text: "Short-term Profits", isCorrect: false },
-        { text: "Responsible business action", isCorrect: true },
-      ]
-    },
-    {
-      id: 5,
-      action: "Transparency",
-      emoji: "🔍",
-      correctAnswer: "Responsible business action",
-      options: [
-        { text: "Polluting Business", isCorrect: false },
-        { text: "Responsible business action", isCorrect: true },
-        { text: "Exploitative Labor", isCorrect: false },
-        { text: "Short-term Profits", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Eco-Friendly Business",
+    emoji: "♻️",
+    question: "You are starting a small school merchandise business. What is the most responsible choice?",
+    options: [
+      { text: "Use recyclable or cloth-based materials", isCorrect: true },
+      { text: "Use cheap plastic to maximize profit", isCorrect: false },
+      { text: "Ignore waste management completely", isCorrect: false },
+      { text: "Burn leftover materials", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Ethical Practices",
+    emoji: "✅",
+    question: "Your friend helps you in your startup project. How should you treat their contribution?",
+    options: [
+      { text: "Take full credit yourself", isCorrect: false },
+      { text: "Give fair credit and share benefits", isCorrect: true },
+      { text: "Promise rewards but never give them", isCorrect: false },
+      { text: "Use their work without permission", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Community Support",
+    emoji: "🤝",
+    question: "Your startup earns some profit from a local event. What is a responsible step?",
+    options: [
+      { text: "Keep profits secret and avoid community help", isCorrect: false },
+      { text: "Increase prices unfairly next time", isCorrect: false },
+      { text: "Support a local cause or school initiative", isCorrect: true },
+      { text: "Ignore feedback from the community", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Sustainable Growth",
+    emoji: "🌱",
+    question: "Your business is growing faster than expected. What should you focus on?",
+    options: [
+      { text: "Expand rapidly without planning", isCorrect: false },
+      { text: "Cut quality to grow faster", isCorrect: false },
+      { text: "Ignore long-term consequences", isCorrect: false },
+      { text: "Balanced growth without harming people or nature", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    action: "Transparency",
+    emoji: "🔍",
+    question: "Customers ask how you price your product. What is the responsible response?",
+    options: [
+      { text: "Clearly explain costs and pricing honestly", isCorrect: true },
+      { text: "Hide real costs to avoid questions", isCorrect: false },
+      { text: "Give misleading information", isCorrect: false },
+      { text: "Avoid answering at all", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

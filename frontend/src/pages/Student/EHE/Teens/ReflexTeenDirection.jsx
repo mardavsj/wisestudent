@@ -24,67 +24,68 @@ const ReflexTeenDirection = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Career Planning",
-      emoji: "🗺️",
-      correctAnswer: "Right career direction",
-      options: [
-        { text: "Right career direction", isCorrect: true },
-        { text: "No Planning", isCorrect: false },
-        { text: "Wander Aimlessly", isCorrect: false },
-        { text: "Ignore Advice", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Set Goals",
-      emoji: "🏁",
-      correctAnswer: "Right career direction",
-      options: [
-        { text: "Wander Aimlessly", isCorrect: false },
-        { text: "Make Random Choices", isCorrect: false },
-        { text: "Right career direction", isCorrect: true },
-        { text: "No Planning", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Research Options",
-      emoji: "🔍",
-      correctAnswer: "Right career direction",
-      options: [
-        { text: "Make Random Choices", isCorrect: false },
-        { text: "Right career direction", isCorrect: true },
-        { text: "No Planning", isCorrect: false },
-        { text: "Ignore Advice", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Seek Guidance",
-      emoji: "👥",
-      correctAnswer: "Right career direction",
-      options: [
-        { text: "Right career direction", isCorrect: true },
-        { text: "Ignore Advice", isCorrect: false },
-        { text: "Wander Aimlessly", isCorrect: false },
-        { text: "Make Random Choices", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Continuous Learning",
-      emoji: "📚",
-      correctAnswer: "Right career direction",
-      options: [
-        { text: "No Planning", isCorrect: false },
-        { text: "Right career direction", isCorrect: true },
-        { text: "Wander Aimlessly", isCorrect: false },
-        { text: "Make Random Choices", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Career Planning",
+    emoji: "🗺️",
+    question: "You are in Class 9 and thinking about your future. What is the best first step?",
+    options: [
+      { text: "Choose a career only because friends chose it", isCorrect: false },
+      { text: "Ignore the future and think later", isCorrect: false },
+      { text: "Explore different careers and understand your interests", isCorrect: true },
+      { text: "Pick a job without knowing anything about it", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Set Goals",
+    emoji: "🏁",
+    question: "You want to become a software engineer. What should you do first?",
+    options: [
+      { text: "Set study goals like learning coding basics", isCorrect: true },
+      { text: "Wait and hope it happens automatically", isCorrect: false },
+      { text: "Change goals every week", isCorrect: false },
+      { text: "Avoid studying and just dream about success", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Research Options",
+    emoji: "🔍",
+    question: "You are confused between science and commerce. What is the smartest action?",
+    options: [
+      { text: "Choose randomly without thinking", isCorrect: false },
+      { text: "Copy what your cousin chose", isCorrect: false },
+      { text: "Avoid making any decision at all", isCorrect: false },
+      { text: "Research subjects, careers, and future opportunities", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    action: "Seek Guidance",
+    emoji: "👥",
+    question: "You feel unsure about your career path. Who should you talk to?",
+    options: [
+      { text: "Strangers on social media", isCorrect: false },
+      { text: "Teachers, parents, or career counselors", isCorrect: true },
+      { text: "No one — keep everything to yourself", isCorrect: false },
+      { text: "Only classmates who are also confused", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Continuous Learning",
+    emoji: "📚",
+    question: "You chose a career goal but realize skills keep changing. What should you do?",
+    options: [
+      { text: "Keep learning new skills and updating knowledge", isCorrect: true },
+      { text: "Stop learning after school", isCorrect: false },
+      { text: "Rely only on old textbooks", isCorrect: false },
+      { text: "Avoid learning anything new", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

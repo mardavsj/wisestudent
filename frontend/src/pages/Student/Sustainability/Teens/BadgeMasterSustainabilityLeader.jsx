@@ -177,7 +177,7 @@ const BadgeMasterSustainabilityLeader = () => {
               
               <p className="text-white text-lg mb-6">{currentChallenge.question}</p>
               
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {currentChallenge.options.map((option) => (
                   <button
                     key={option.id}

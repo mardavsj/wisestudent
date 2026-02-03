@@ -54,17 +54,18 @@ const SweatControlStory = () => {
           isCorrect: false
         },
         {
+          id: "c",
+          text: "Pat skin gently with a clean towel",
+          emoji: "✋",
+          isCorrect: true
+        },
+        {
           id: "b",
           text: "Air dry without towel",
           emoji: "💨",
           isCorrect: false
         },
-        {
-          id: "c",
-          text: "Pat skin gently with a clean towel",
-          emoji: "✋",
-          isCorrect: true
-        }
+        
       ]
     },
     {

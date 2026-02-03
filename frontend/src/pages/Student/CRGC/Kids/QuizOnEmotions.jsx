@@ -51,7 +51,7 @@ const QuizOnEmotions = () => {
         {
           id: "b",
           text: "Surprise",
-          emoji: "😲",
+          emoji: "🎁",
           isCorrect: true
         },
         {

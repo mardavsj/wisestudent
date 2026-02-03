@@ -31,8 +31,8 @@ const ReflexGlobalRespect = () => {
       correctAnswer: "Approach with curiosity and ask respectful questions",
       options: [
         { text: "Make fun of it immediately", isCorrect: false },
-        { text: "Avoid anyone who practices it", isCorrect: false },
         { text: "Approach with curiosity and ask respectful questions", isCorrect: true },
+        { text: "Avoid anyone who practices it", isCorrect: false },
         { text: "Pretend it doesn't exist", isCorrect: false }
       ],
       feedback: {
@@ -94,8 +94,8 @@ const ReflexGlobalRespect = () => {
       emoji: "✊",
       correctAnswer: "Stand up against discrimination and support the person being targeted",
       options: [
-        { text: "Stay silent to avoid getting involved", isCorrect: false },
         { text: "Stand up against discrimination and support the person being targeted", isCorrect: true },
+        { text: "Stay silent to avoid getting involved", isCorrect: false },
         { text: "Join in the discriminatory behavior", isCorrect: false },
         { text: "Tell others to mind their own business", isCorrect: false }
       ],
