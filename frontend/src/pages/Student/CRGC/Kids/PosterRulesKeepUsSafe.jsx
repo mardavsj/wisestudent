@@ -28,9 +28,9 @@ const PosterRulesKeepUsSafe = () => {
     {
       question: 'Which poster would best show "School Safety Rules"?',
       choices: [
+        { text: "Poster showing walking quietly in classrooms 🏫", correct: true },
         { text: "Poster showing running in hallways 🚫", correct: false },
         { text: "Poster showing school rules don't matter 😔", correct: false },
-        { text: "Poster showing walking quietly in classrooms 🏫", correct: true },
       ],
     },
     {

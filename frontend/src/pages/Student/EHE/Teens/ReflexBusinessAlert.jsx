@@ -24,67 +24,68 @@ const ReflexBusinessAlert = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Budget Plan",
-      emoji: "📊",
-      correctAnswer: "Smart business approach",
-      options: [
-        { text: "Smart business approach", isCorrect: true },
-        { text: "Random Spend", isCorrect: false },
-        { text: "Ignore Costs", isCorrect: false },
-        { text: "Impulse Buy", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Track Expenses",
-      emoji: "🧾",
-      correctAnswer: "Smart business approach",
-      options: [
-        { text: "Ignore Costs", isCorrect: false },
-        { text: "Smart business approach", isCorrect: true },
-        { text: "Overspend", isCorrect: false },
-        { text: "Random Spend", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Save Money",
-      emoji: "💰",
-      correctAnswer: "Smart business approach",
-      options: [
-        { text: "Overspend", isCorrect: false },
-        { text: "Random Spend", isCorrect: false },
-        { text: "Smart business approach", isCorrect: true },
-        { text: "Impulse Buy", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Plan Purchases",
-      emoji: "📝",
-      correctAnswer: "Smart business approach",
-      options: [
-        { text: "Impulse Buy", isCorrect: false },
-        { text: "Smart business approach", isCorrect: true },
-        { text: "Ignore Costs", isCorrect: false },
-        { text: "Random Spend", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Invest Wisely",
-      emoji: "📈",
-      correctAnswer: "Smart business approach",
-      options: [
-        { text: "Random Spend", isCorrect: false },
-        { text: "Ignore Costs", isCorrect: false },
-        { text: "Overspend", isCorrect: false },
-        { text: "Smart business approach", isCorrect: true },
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Budget Plan",
+    emoji: "📊",
+    question: "You are starting a small school-based business with limited money. What is the smartest first step?",
+    options: [
+      { text: "Spend money as needs come up", isCorrect: false },
+      { text: "Create a simple budget for costs and savings", isCorrect: true },
+      { text: "Use all money on marketing immediately", isCorrect: false },
+      { text: "Avoid planning and rely on luck", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Track Expenses",
+    emoji: "🧾",
+    question: "Your business is earning some money, but profits are unclear. What should you do?",
+    options: [
+      { text: "Only track big expenses", isCorrect: false },
+      { text: "Guess profits at the end of the month", isCorrect: false },
+      { text: "Record all expenses and income regularly", isCorrect: true },
+      { text: "Ignore expenses until money runs out", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Save Money",
+    emoji: "💰",
+    question: "Your business makes extra profit this month. What is the best decision?",
+    options: [
+      { text: "Save a portion for future needs or emergencies", isCorrect: true },
+      { text: "Spend everything to celebrate", isCorrect: false },
+      { text: "Increase prices without reason", isCorrect: false },
+      { text: "Stop tracking money since profit is good", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Plan Purchases",
+    emoji: "📝",
+    question: "You want to buy new equipment for your business. What should you do first?",
+    options: [
+      { text: "Buy the first option you see", isCorrect: false },
+      { text: "Borrow money without planning", isCorrect: false },
+      { text: "Purchase based on trends, not needs", isCorrect: false },
+      { text: "Compare prices and check if it’s really needed", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    action: "Invest Wisely",
+    emoji: "📈",
+    question: "You have money to grow your business. Where should you invest it?",
+    options: [
+      { text: "Risky ideas without research", isCorrect: false },
+      { text: "Skills, tools, or marketing that increase value", isCorrect: true },
+      { text: "Personal luxury items", isCorrect: false },
+      { text: "Random opportunities suggested by others", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

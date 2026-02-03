@@ -29,10 +29,7 @@ const BadgeRightsKid = () => {
       title: "Children's Rights Violation",
       question: "Which situation shows a violation of children's rights?",
       options: [
-        { 
-          text: "A child being denied education because of their gender", 
-          isCorrect: true
-        },
+        
         { 
           text: "A child receiving good grades in school", 
           isCorrect: false
@@ -44,7 +41,11 @@ const BadgeRightsKid = () => {
         { 
           text: "A child expressing their opinion in class", 
           isCorrect: false
-        }
+        },
+        { 
+          text: "A child being denied education because of their gender", 
+          isCorrect: true
+        },
       ],
       feedback: {
         correct: "Denying education based on gender violates the fundamental right to education for all children!",
@@ -56,10 +57,7 @@ const BadgeRightsKid = () => {
       title: "Freedom of Expression",
       question: "All children have the right to express their opinions.",
       options: [
-        { 
-          text: "True", 
-          isCorrect: true
-        },
+       
         { 
           text: "False", 
           isCorrect: false
@@ -67,6 +65,10 @@ const BadgeRightsKid = () => {
         { 
           text: "Only if adults agree", 
           isCorrect: false
+        },
+         { 
+          text: "True", 
+          isCorrect: true
         },
         { 
           text: "Only in private", 

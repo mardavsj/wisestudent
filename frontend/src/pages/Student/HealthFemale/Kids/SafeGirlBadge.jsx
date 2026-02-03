@@ -155,10 +155,16 @@ const SafeGirlBadge = () => {
       question: "You are a 'Permission Pro' if you...",
       options: [
         { 
+          text: "Always ask for permission first", 
+          emoji: "✋", 
+          isCorrect: true
+        },
+        { 
           text: "Take things without asking", 
           emoji: "👐", 
           isCorrect: false
         },
+        
         { 
           text: "Guess if it's okay", 
           emoji: "🤔", 
@@ -169,11 +175,7 @@ const SafeGirlBadge = () => {
           emoji: "🙋‍♀️", 
           isCorrect: false
         },
-        { 
-          text: "Always ask for permission first", 
-          emoji: "✋", 
-          isCorrect: true
-        }
+        
       ],
       feedback: {
         correct: "Correct! Always ask for permission.",

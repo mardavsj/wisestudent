@@ -24,67 +24,68 @@ const ReflexTeenFutureCheck = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Cybersecurity Jobs",
-      emoji: "🛡️",
-      correctAnswer: "Real future career",
-      options: [
-        { text: "Ghost Hunters", isCorrect: false },
-        { text: "Real future career", isCorrect: true },
-        { text: "Dinosaur Hunters", isCorrect: false },
-        { text: "Alien Communicators", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "AI Development",
-      emoji: "🤖",
-      correctAnswer: "Real future career",
-      options: [
-        { text: "Dinosaur Hunters", isCorrect: false },
-        { text: "Time Travel Guides", isCorrect: false },
-        { text: "Real future career", isCorrect: true },
-        { text: "Ghost Hunters", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Green Energy",
-      emoji: "☀️",
-      correctAnswer: "Real future career",
-      options: [
-        { text: "Real future career", isCorrect: true },
-        { text: "Time Travel Guides", isCorrect: false },
-        { text: "Ghost Hunters", isCorrect: false },
-        { text: "Alien Communicators", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Data Science",
-      emoji: "📊",
-      correctAnswer: "Real future career",
-      options: [
-        { text: "Alien Communicators", isCorrect: false },
-        { text: "Real future career", isCorrect: true },
-        { text: "Dinosaur Hunters", isCorrect: false },
-        { text: "Time Travel Guides", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Biotechnology",
-      emoji: "🧬",
-      correctAnswer: "Real future career",
-      options: [
-        { text: "Real future career", isCorrect: true },
-        { text: "Ghost Hunters", isCorrect: false },
-        { text: "Dinosaur Hunters", isCorrect: false },
-        { text: "Time Travel Guides", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Cybersecurity Jobs",
+    emoji: "🛡️",
+    question: "Companies are facing online attacks and data theft. Which career helps protect systems?",
+    options: [
+      { text: "Ghost hunter", isCorrect: false },
+      { text: "Cybersecurity analyst", isCorrect: true },
+      { text: "Dinosaur tracker", isCorrect: false },
+      { text: "Alien communicator", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "AI Development",
+    emoji: "🤖",
+    question: "Apps that chat, recommend videos, and drive cars use which future-focused career?",
+    options: [
+      { text: "AI / Machine Learning engineer", isCorrect: true },
+      { text: "Time travel guide", isCorrect: false },
+      { text: "Treasure map reader", isCorrect: false },
+      { text: "Mythical creature trainer", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Green Energy",
+    emoji: "☀️",
+    question: "The world wants clean energy instead of pollution. Which career supports this future?",
+    options: [
+      { text: "Coal treasure hunter", isCorrect: false },
+      { text: "Weather magician", isCorrect: false },
+      { text: "Sun worship leader", isCorrect: false },
+      { text: "Renewable energy engineer", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    action: "Data Science",
+    emoji: "📊",
+    question: "Companies use data to predict trends and make decisions. Who does this work?",
+    options: [
+      { text: "Fortune teller", isCorrect: false },
+      { text: "Mind reader", isCorrect: false },
+      { text: "Data scientist", isCorrect: true },
+      { text: "Time loop analyst", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Biotechnology",
+    emoji: "🧬",
+    question: "Developing new medicines and improving health depends on which career?",
+    options: [
+      { text: "Immortality seeker", isCorrect: false },
+      { text: "Biotechnology researcher", isCorrect: true },
+      { text: "DNA magician", isCorrect: false },
+      { text: "Time travel doctor", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

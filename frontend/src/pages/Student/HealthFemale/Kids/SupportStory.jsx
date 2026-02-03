@@ -78,24 +78,31 @@ const SupportStory = () => {
                     emoji: "📄",
                     isCorrect: false
                 },
+                  {
+                    id: "b",
+                    text: "Ask for help",
+                    emoji: "🙋‍♀️",
+                    isCorrect: true
+                },
                 {
                     id: "c",
                     text: "Guess all the answers",
                     emoji: "🎲",
                     isCorrect: false
                 },
-                {
-                    id: "b",
-                    text: "Ask for help",
-                    emoji: "🙋‍♀️",
-                    isCorrect: true
-                }
+              
             ]
         },
         {
             id: 4,
             text: "Who is part of your 'Support Team'?",
             options: [
+                {
+                    id: "b",
+                    text: "Family, teachers, and doctors",
+                    emoji: "👨‍👩‍👧‍👦",
+                    isCorrect: true
+                },
                 {
                     id: "a",
                     text: "Strangers in the park",
@@ -108,12 +115,7 @@ const SupportStory = () => {
                     emoji: "🐶",
                     isCorrect: false
                 },
-                {
-                    id: "b",
-                    text: "Family, teachers, and doctors",
-                    emoji: "👨‍👩‍👧‍👦",
-                    isCorrect: true
-                }
+                
             ]
         },
         {

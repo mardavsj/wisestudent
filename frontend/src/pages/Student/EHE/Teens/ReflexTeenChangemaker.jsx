@@ -24,67 +24,68 @@ const ReflexTeenChangemaker = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Solve Problems",
-      emoji: "🌍",
-      correctAnswer: "Right changemaker action",
-      options: [
-        { text: "Ignore Society", isCorrect: false },
-        { text: "Create Waste", isCorrect: false },
-        { text: "Right changemaker action", isCorrect: true },
-        { text: "Cause Harm", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Help Communities",
-      emoji: "🤝",
-      correctAnswer: "Right changemaker action",
-      options: [
-        { text: "Create Waste", isCorrect: false },
-        { text: "Right changemaker action", isCorrect: true },
-        { text: "Spread Negativity", isCorrect: false },
-        { text: "Ignore Society", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Build Solutions",
-      emoji: "🔧",
-      correctAnswer: "Right changemaker action",
-      options: [
-        { text: "Right changemaker action", isCorrect: true },
-        { text: "Spread Negativity", isCorrect: false },
-        { text: "Ignore Society", isCorrect: false },
-        { text: "Cause Harm", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Make Impact",
-      emoji: "✨",
-      correctAnswer: "Right changemaker action",
-      options: [
-        { text: "Cause Harm", isCorrect: false },
-        { text: "Right changemaker action", isCorrect: true },
-        { text: "Create Waste", isCorrect: false },
-        { text: "Spread Negativity", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Collaborate",
-      emoji: "👥",
-      correctAnswer: "Right changemaker action",
-      options: [
-        { text: "Ignore Society", isCorrect: false },
-        { text: "Right changemaker action", isCorrect: true },
-        { text: "Create Waste", isCorrect: false },
-        { text: "Spread Negativity", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Solve Problems",
+    emoji: "🌍",
+    question: "You notice your school produces a lot of plastic waste every day. What should you do?",
+    options: [
+      { text: "Ignore it because it’s not your job", isCorrect: false },
+      { text: "Suggest recycling bins and awareness posters", isCorrect: true },
+      { text: "Add more waste since others do it", isCorrect: false },
+      { text: "Complain but take no action", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Help Communities",
+    emoji: "🤝",
+    question: "Some students struggle to understand a subject you are good at. What is the best response?",
+    options: [
+      { text: "Start a small peer study group", isCorrect: true },
+      { text: "Make fun of their weakness", isCorrect: false },
+      { text: "Ignore them completely", isCorrect: false },
+      { text: "Help only if you get something in return", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Build Solutions",
+    emoji: "🔧",
+    question: "Your neighborhood has poor access to clean drinking water. What could a changemaker do?",
+    options: [
+      { text: "Blame the government and do nothing", isCorrect: false },
+      { text: "Spread negative messages online", isCorrect: false },
+      { text: "Research and propose simple water filters", isCorrect: true },
+      { text: "Assume the problem can’t be fixed", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Make Impact",
+    emoji: "✨",
+    question: "You want to create a positive impact as a teenager. Which action makes sense?",
+    options: [
+      { text: "Wait until adulthood to care", isCorrect: false },
+      { text: "Post only opinions without action", isCorrect: false },
+      { text: "Criticize others who try to help", isCorrect: false },
+      { text: "Start a small initiative and grow it slowly", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    action: "Collaborate",
+    emoji: "👥",
+    question: "You have an idea to improve your school, but you can’t do it alone. What should you do?",
+    options: [
+      { text: "Try to control everything yourself", isCorrect: false },
+      { text: "Give up because it’s hard", isCorrect: false },
+      { text: "Form a team with students and teachers", isCorrect: true },
+      { text: "Copy someone else’s project blindly", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

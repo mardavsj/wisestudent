@@ -83,7 +83,7 @@ const QuizOnDangers = () => {
         {
           id: "a",
           text: "Liver",
-          emoji: "🍺",
+          emoji: "🫁",
           // description: "The liver processes alcohol and can be damaged by it",
           isCorrect: true
         },
@@ -135,7 +135,7 @@ const QuizOnDangers = () => {
     {
       id: 5,
       text: "Why are teens particularly vulnerable to substance use?",
-      emoji: "🧠",
+      emoji: "🛄",
       options: [
         
         {
@@ -191,7 +191,7 @@ const QuizOnDangers = () => {
       } else {
         setGameFinished(true);
       }
-    }, isCorrect ? 1000 : 800);
+    }, isCorrect ? 3000 : 3000);
   };
 
   const getCurrentQuestion = () => questions[currentQuestion];

@@ -19,7 +19,6 @@ import JournalOfSpending from './JournalOfSpending';
 import SimulationShoppingMall from './SimulationShoppingMall';
 import ReflexControl from './ReflexControl';
 import BadgeSmartSpenderTeen from './BadgeSmartSpenderTeen';
-import Allowance from './Allowance';
 import BudgetQuiz from './BudgetQuiz';
 import ReflexBudgett from './ReflexBudgett';
 import PuzzlePriorities from './PuzzlePriorities';
@@ -115,7 +114,7 @@ const teenFinanceGames = {
   'badge-smart-saver': BadgeSmartSaver,
 
   // Second set of 10 games (spending focused)
-  'allowance-story': AllowanceStory,
+  'savings-saga': SavingsSaga,
   'spending-quiz': SpendingQuiz,
   'reflex-wise-choices': ReflexWiseChoices,
   'puzzle-smart-spending': PuzzleSmartSpending,
@@ -127,15 +126,13 @@ const teenFinanceGames = {
   'badge-smart-spender-teen': BadgeSmartSpenderTeen,
 
   // Third set of 10 games (budgeting focused)
-  'allowance': Allowance,
+   'allowance-story': AllowanceStory,
   'budget-quiz': BudgetQuiz,
   'reflex-budget-check': ReflexBudgett,
   'puzzle-priorities': PuzzlePriorities,
   'college-story': CollegeStory,
   'debate-budget-freedom': DebateBudgetFreedom,
-  'journal-monthly-budget': JournalMonthlyBudget,
   'journal-planning': JournalMonthlyBudget,
-  'simulation-monthly-allowance': SimulationMonthlyAllowance,
   'simulation-allowance': SimulationMonthlyAllowance,
   'reflex-budget-smarts': ReflexBudgetSmarts,
   'badge-budget-hero': BadgeBudgetHero,
@@ -146,10 +143,8 @@ const teenFinanceGames = {
   'reflex-decision': ReflexDecision,
   'puzzle-real-priorities': PuzzleRealPriorities,
   'exam-prep-story': ExamPrepStory,
-  'debate-wants-matter': DebateWantsMatter,
   'debate-wants-matter-too': DebateWantsMatter,
   'journal-of-balance': JournalOfBalance,
-  'savings-saga': SavingsSaga,
   'simulation-monthly-budget': SimulationMonthlyBudget,
   'reflex-smart-spend': ReflexSmartSpend,
   'badge-wise-chooser': BadgeWiseChooser,
@@ -193,10 +188,8 @@ const teenFinanceGames = {
   // Eighth set of 10 games (entrepreneurship focused)
   'startup-idea-story': StartupIdeaStory,
   'quiz-on-entrepreneurship': QuizOnEntrepreneurship,
-  'quiz-entrepreneurship': QuizOnEntrepreneurship,
   'reflex-entrepreneur-traits': ReflexEntrepreneurTraits,
   'puzzle-of-entrepreneurs': PuzzleOfEntrepreneurs,
-  'puzzle-entrepreneurs': PuzzleOfEntrepreneurs,
   'business-risk-story': BusinessRiskStory,
   'debate-job-vs-business': DebateJobVsBusiness,
   'journal-entrepreneur-dream': JournalOfEntrepreneurDream,

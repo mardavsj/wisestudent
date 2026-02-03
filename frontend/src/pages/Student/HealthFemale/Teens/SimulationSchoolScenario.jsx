@@ -111,6 +111,12 @@ const SimulationSchoolScenario = () => {
       id: 4,
       text: "A classmate makes an embarrassing comment about periods. How do you respond?",
       options: [
+         {
+          id: "c",
+          text: "Politely educate them about period normalization",
+          emoji: "📚",
+          isCorrect: true
+        },
         {
           id: "a",
           text: "Laugh along to fit in with the group",
@@ -123,12 +129,7 @@ const SimulationSchoolScenario = () => {
           emoji: "😠",
           isCorrect: false
         },
-        {
-          id: "c",
-          text: "Politely educate them about period normalization",
-          emoji: "📚",
-          isCorrect: true
-        },
+       
         {
           id: "d",
           text: "Change the subject to defuse the situation",

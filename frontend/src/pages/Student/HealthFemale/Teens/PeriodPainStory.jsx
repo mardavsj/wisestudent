@@ -127,18 +127,19 @@ const PeriodPainStory = () => {
           emoji: "🔇",
           isCorrect: false
         },
+        
+        {
+          id: "c",
+          text: "Avoiding all social interactions",
+          emoji: "🙅",
+          isCorrect: false
+        },
         {
           id: "b",
           text: "Talking to trusted friends or family",
           emoji: "💬",
           isCorrect: true
         },
-        {
-          id: "c",
-          text: "Avoiding all social interactions",
-          emoji: "🙅",
-          isCorrect: false
-        }
       ]
     }
   ];

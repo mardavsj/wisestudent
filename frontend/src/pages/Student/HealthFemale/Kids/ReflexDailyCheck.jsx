@@ -136,13 +136,14 @@ const ReflexDailyCheck = () => {
         score={score}
         gameId={gameId}
         gameType="health-female"
-        totalLevels={5}
+        totalLevels={questions.length}
         currentLevel={39}
         showConfetti={true}
         backPath="/games/health-female/kids"
         coinsPerLevel={coinsPerLevel}
         totalCoins={totalCoins}
         totalXp={totalXp}
+        maxScore={questions.length}
       
         nextGamePathProp="/student/health-female/kids/healthy-routine-kid-badge"
         nextGameIdProp="health-female-kids-40">
@@ -167,12 +168,13 @@ const ReflexDailyCheck = () => {
       title="Reflex: Daily Check"
       subtitle={gameState === 'ready' ? "Get Ready!" : `Round ${currentRound + 1}/${questions.length}`}
       currentLevel={99}
-      totalLevels={5} // Just for the bar
+      totalLevels={questions.length}
       score={score}
       backPath="/games/health-female/kids"
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      maxScore={questions.length}
     >
       <div className="space-y-6 max-w-4xl mx-auto">
         {/* HUD */}

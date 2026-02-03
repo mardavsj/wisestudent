@@ -21,7 +21,7 @@ const QuizOnStressRelief = () => {
     {
       id: 1,
       text: "Which combination reduces stress effectively?",
-      emoji: "🧘",
+      emoji: "😧",
       options: [
         {
           id: "a",
@@ -46,7 +46,7 @@ const QuizOnStressRelief = () => {
     {
       id: 2,
       text: "What's the benefit of deep breathing exercises?",
-      emoji: "💨",
+      emoji: "💪",
       options: [
         
         {
@@ -72,7 +72,7 @@ const QuizOnStressRelief = () => {
     {
       id: 3,
       text: "How does regular exercise help with stress?",
-      emoji: "🏃",
+      emoji: "😟",
       options: [
         {
           id: "a",
@@ -97,7 +97,7 @@ const QuizOnStressRelief = () => {
     {
       id: 4,
       text: "Why is maintaining a consistent sleep schedule important?",
-      emoji: "😴",
+      emoji: "🌙",
       options: [
         
         {
@@ -141,7 +141,7 @@ const QuizOnStressRelief = () => {
         {
           id: "a",
           text: "Talk to trusted friends or family",
-          emoji: "💬",
+          emoji: "👭",
           isCorrect: true
         },
       ]

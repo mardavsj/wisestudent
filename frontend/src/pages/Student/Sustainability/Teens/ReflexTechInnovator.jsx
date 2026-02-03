@@ -98,7 +98,7 @@ const ReflexTechInnovator = () => {
         { id: 'b', text: "Biodegradable Packaging Solutions", emoji: "📦", isCorrect: false },
         { id: 'c', text: "Energy Recovery Systems", emoji: "♻️", isCorrect: false },
         { id: 'd', text: "Robotics for Assembly Lines", emoji: "🤖", isCorrect: false },
-        { id: 'a', text: "3D Printing with Recycled Materials and AI Optimization", emoji: "🖨️", isCorrect: true },
+        { id: 'a', text: "3D Printing with Recycled Materials", emoji: "🖨️", isCorrect: true },
       ]
     }
   ];

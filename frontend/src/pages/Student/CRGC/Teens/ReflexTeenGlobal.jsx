@@ -30,9 +30,9 @@ const ReflexTeenGlobal = () => {
       emoji: "🤝",
       correctAnswer: "Research reputable organizations and consider donating or volunteering",
       options: [
+        { text: "Research reputable organizations and consider donating or volunteering", isCorrect: true },
         { text: "Ignore it since it's far away and doesn't affect you directly", isCorrect: false },
         { text: "Share sensationalized posts on social media without verifying facts", isCorrect: false },
-        { text: "Research reputable organizations and consider donating or volunteering", isCorrect: true },
         { text: "Blame the affected population for their own misfortune", isCorrect: false }
       ],
       feedback: {
@@ -62,10 +62,10 @@ const ReflexTeenGlobal = () => {
       emoji: "📚",
       correctAnswer: "Verify information through credible sources and promote accurate understanding",
       options: [
-        { text: "Verify information through credible sources and promote accurate understanding", isCorrect: true },
         { text: "Share the misinformation since it confirms your existing beliefs", isCorrect: false },
         { text: "Attack anyone who shares different cultural perspectives", isCorrect: false },
-        { text: "Withdraw from cross-cultural interactions entirely", isCorrect: false }
+        { text: "Withdraw from cross-cultural interactions entirely", isCorrect: false },
+        { text: "Verify information through credible sources and promote accurate understanding", isCorrect: true },
       ],
       feedback: {
         correct: "Perfect! Verifying information and promoting accurate understanding builds bridges between cultures!",

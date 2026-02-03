@@ -33,10 +33,7 @@ const BadgeBullyStopperKid = () => {
           text: "Join in for fun", 
           isCorrect: false
         },
-        { 
-          text: "Tell a trusted adult", 
-          isCorrect: true
-        },
+       
         { 
           text: "Ignore it completely", 
           isCorrect: false
@@ -44,7 +41,11 @@ const BadgeBullyStopperKid = () => {
         { 
           text: "Record it to post online", 
           isCorrect: false
-        }
+        },
+         { 
+          text: "Tell a trusted adult", 
+          isCorrect: true
+        },
       ],
       feedback: {
         correct: "Telling a trusted adult is the best way to help stop bullying and keep everyone safe!",
@@ -114,13 +115,14 @@ const BadgeBullyStopperKid = () => {
           text: "Leave them out too", 
           isCorrect: false
         },
-        { 
-          text: "Include them in activities", 
-          isCorrect: true
-        },
+        
         { 
           text: "Make fun of them for being left out", 
           isCorrect: false
+        },
+        { 
+          text: "Include them in activities", 
+          isCorrect: true
         },
         { 
           text: "Tell others to exclude them more", 

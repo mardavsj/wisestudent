@@ -24,67 +24,68 @@ const ReflexCareerAlert = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Adapt & Learn",
-      emoji: "🚀",
-      correctAnswer: "Right career action",
-      options: [
-        { text: "Right career action", isCorrect: true },
-        { text: "Stay Stuck", isCorrect: false },
-        { text: "Resist Growth", isCorrect: false },
-        { text: "Avoid Challenges", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Embrace Change",
-      emoji: "🔄",
-      correctAnswer: "Right career action",
-      options: [
-        { text: "Resist Growth", isCorrect: false },
-        { text: "Right career action", isCorrect: true },
-        { text: "Ignore Trends", isCorrect: false },
-        { text: "Stay Stuck", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Seek Opportunities",
-      emoji: "🔍",
-      correctAnswer: "Right career action",
-      options: [
-        { text: "Ignore Trends", isCorrect: false },
-        { text: "Right career action", isCorrect: true },
-        { text: "Stay Stuck", isCorrect: false },
-        { text: "Avoid Challenges", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Upgrade Skills",
-      emoji: "📈",
-      correctAnswer: "Right career action",
-      options: [
-        { text: "Avoid Challenges", isCorrect: false },
-        { text: "Resist Growth", isCorrect: false },
-        { text: "Ignore Trends", isCorrect: false },
-        { text: "Right career action", isCorrect: true },
-      ]
-    },
-    {
-      id: 5,
-      action: "Network",
-      emoji: "👥",
-      correctAnswer: "Right career action",
-      options: [
-        { text: "Stay Stuck", isCorrect: false },
-        { text: "Resist Growth", isCorrect: false },
-        { text: "Right career action", isCorrect: true },
-        { text: "Ignore Trends", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Adapt & Learn",
+    emoji: "🚀",
+    question: "Your future career field is changing fast due to new technology. What should you do?",
+    options: [
+      { text: "Stick only to what you already know", isCorrect: false },
+      { text: "Ignore changes and hope they stop", isCorrect: false },
+      { text: "Learn new skills related to the changes", isCorrect: true },
+      { text: "Quit planning for the future", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Embrace Change",
+    emoji: "🔄",
+    question: "A new career option becomes popular in your field of interest. What is the best response?",
+    options: [
+      { text: "Research the option and see if it fits you", isCorrect: true },
+      { text: "Reject it without learning about it", isCorrect: false },
+      { text: "Follow it blindly because others are doing it", isCorrect: false },
+      { text: "Avoid thinking about careers altogether", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Seek Opportunities",
+    emoji: "🔍",
+    question: "You want real-world experience before college. What should you look for?",
+    options: [
+      { text: "Only high-paying jobs immediately", isCorrect: false },
+      { text: "Internships, workshops, or volunteering", isCorrect: true },
+      { text: "Wait until someone offers you a role", isCorrect: false },
+      { text: "Avoid experience and focus only on marks", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Upgrade Skills",
+    emoji: "📈",
+    question: "You notice your classmates are learning new tools and skills. What is a smart move?",
+    options: [
+      { text: "Start learning relevant skills step by step", isCorrect: true },
+      { text: "Feel discouraged and stop trying", isCorrect: false },
+      { text: "Assume skills don’t matter", isCorrect: false },
+      { text: "Complain instead of improving", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Network",
+    emoji: "👥",
+    question: "You meet seniors and professionals from your dream field. What should you do?",
+    options: [
+      { text: "Ignore them completely", isCorrect: false },
+      { text: "Pretend to know everything already", isCorrect: false },
+      { text: "Avoid conversations about careers", isCorrect: false },
+      { text: "Ask questions and learn from their experiences", isCorrect: true },
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

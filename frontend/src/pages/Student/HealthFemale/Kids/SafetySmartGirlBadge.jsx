@@ -124,6 +124,11 @@ const SafetySmartGirlBadge = () => {
       question: "What makes you a 'Prevention Pro'?",
       options: [
         { 
+          text: "Maintaining healthy habits daily", 
+          emoji: "🥗", 
+          isCorrect: true
+        },
+        { 
           text: "Sleeping only 1 hour", 
           emoji: "🕐", 
           isCorrect: false
@@ -138,11 +143,7 @@ const SafetySmartGirlBadge = () => {
           emoji: "🌟", 
           isCorrect: false
         },
-        { 
-          text: "Maintaining healthy habits daily", 
-          emoji: "🥗", 
-          isCorrect: true
-        }
+        
       ],
       feedback: {
         correct: "Yes! Healthy habits prevent sickness.",

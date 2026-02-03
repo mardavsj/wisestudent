@@ -34,7 +34,7 @@ const QuizTeenPaths = () => {
         {
           id: "b",
           text: "Both college and vocational training",
-          emoji: "🎓",
+          emoji: "🏫",
           isCorrect: true
         },
         {
@@ -111,7 +111,7 @@ const QuizTeenPaths = () => {
         {
           id: "b",
           text: "Practical skills for specific jobs",
-          emoji: "🛠️",
+          emoji: "🔖",
           isCorrect: true
         },
         {
@@ -178,7 +178,7 @@ const QuizTeenPaths = () => {
       } else {
         setGameFinished(true);
       }
-    }, isCorrect ? 1000 : 800);
+    }, isCorrect ? 3000 : 3000);
   };
 
   const handleNext = () => {

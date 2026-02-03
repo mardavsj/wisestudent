@@ -103,7 +103,7 @@ const QuizOnRightsDuties = () => {
         {
           id: "a",
           text: "Voting in elections",
-          emoji: "✅",
+          emoji: "👈",
           isCorrect: true
         },
         {

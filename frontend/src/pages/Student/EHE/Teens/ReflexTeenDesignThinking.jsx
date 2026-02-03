@@ -24,67 +24,68 @@ const ReflexTeenDesignThinking = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Improve After Feedback",
-      emoji: "🔄",
-      correctAnswer: "Design thinking approach",
-      options: [
-        { text: "Never Change Idea", isCorrect: false },
-        { text: "Ignore All Input", isCorrect: false },
-        { text: "Reject All Criticism", isCorrect: false },
-        { text: "Design thinking approach", isCorrect: true },
-      ]
-    },
-    {
-      id: 2,
-      action: "Test with Users",
-      emoji: "🧪",
-      correctAnswer: "Design thinking approach",
-      options: [
-        { text: "Ignore All Input", isCorrect: false },
-        { text: "Stick to First Draft", isCorrect: false },
-        { text: "Design thinking approach", isCorrect: true },
-        { text: "Never Change Idea", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Iterate Solution",
-      emoji: "🔁",
-      correctAnswer: "Design thinking approach",
-      options: [
-        { text: "Stick to First Draft", isCorrect: false },
-        { text: "Design thinking approach", isCorrect: true },
-        { text: "Never Change Idea", isCorrect: false },
-        { text: "Reject All Criticism", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Refine Based on Data",
-      emoji: "📊",
-      correctAnswer: "Design thinking approach",
-      options: [
-        { text: "Design thinking approach", isCorrect: true },
-        { text: "Reject All Criticism", isCorrect: false },
-        { text: "Ignore All Input", isCorrect: false },
-        { text: "Stick to First Draft", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Empathize with Users",
-      emoji: "❤️",
-      correctAnswer: "Design thinking approach",
-      options: [
-        { text: "Never Change Idea", isCorrect: false },
-        { text: "Design thinking approach", isCorrect: true },
-        { text: "Ignore All Input", isCorrect: false },
-        { text: "Stick to First Draft", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Improve After Feedback",
+    emoji: "🔄",
+    question: "Students say your study-planner app is useful but confusing. What should you do next?",
+    options: [
+      { text: "Keep the design exactly the same", isCorrect: false },
+      { text: "Remove features without asking users", isCorrect: false },
+      { text: "Redesign the interface based on student feedback", isCorrect: true },
+      { text: "Stop the project completely", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Test with Users",
+    emoji: "🧪",
+    question: "You designed a new school canteen ordering system. How do you validate it?",
+    options: [
+      { text: "Test it with a small group of real students", isCorrect: true },
+      { text: "Assume it works because teachers like it", isCorrect: false },
+      { text: "Launch it for everyone without testing", isCorrect: false },
+      { text: "Only test it yourself", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Iterate Solution",
+    emoji: "🔁",
+    question: "Users struggle to find key features in your website. What shows good design thinking?",
+    options: [
+      { text: "Blame users for not understanding", isCorrect: false },
+      { text: "Make small improvements and test again", isCorrect: true },
+      { text: "Stick to the first version forever", isCorrect: false },
+      { text: "Add more features without fixing issues", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Refine Based on Data",
+    emoji: "📊",
+    question: "App data shows most users quit after the first screen. What should guide your decision?",
+    options: [
+      { text: "Ignore data and follow personal opinion", isCorrect: false },
+      { text: "Add ads to keep users engaged", isCorrect: false },
+      { text: "Remove the app from the store", isCorrect: false },
+      { text: "Use data to simplify the onboarding experience", isCorrect: true },
+    ]
+  },
+  {
+    id: 5,
+    action: "Empathize with Users",
+    emoji: "❤️",
+    question: "You’re designing a product for visually impaired users. What is the first step?",
+    options: [
+      { text: "Design based only on assumptions", isCorrect: false },
+      { text: "Copy an existing product without research", isCorrect: false },
+      { text: "Talk to users and understand their daily challenges", isCorrect: true },
+      { text: "Focus only on appearance", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

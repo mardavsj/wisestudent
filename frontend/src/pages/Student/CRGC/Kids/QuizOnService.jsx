@@ -54,18 +54,19 @@ const QuizOnService = () => {
           emoji: "😞",
           isCorrect: false
         },
+        
+        {
+          id: "c",
+          text: "Getting bored",
+          emoji: "🥱",
+          isCorrect: false
+        },
         {
           id: "b",
           text: "Learning new skills",
           emoji: "🧠",
           isCorrect: true
         },
-        {
-          id: "c",
-          text: "Getting bored",
-          emoji: "🥱",
-          isCorrect: false
-        }
       ]
     },
     {
@@ -73,6 +74,12 @@ const QuizOnService = () => {
       text: "Where can you volunteer?",
       emoji: "📍",
       options: [
+        {
+          id: "c",
+          text: "At various places like hospitals, parks, and community centers",
+          emoji: "🏥",
+          isCorrect: true
+        },
         {
           id: "a",
           text: "Only at school",
@@ -85,12 +92,7 @@ const QuizOnService = () => {
           emoji: "🏠",
           isCorrect: false
         },
-        {
-          id: "c",
-          text: "At various places like hospitals, parks, and community centers",
-          emoji: "🏥",
-          isCorrect: true
-        }
+        
       ]
     },
     {
@@ -129,18 +131,19 @@ const QuizOnService = () => {
           emoji: "💵",
           isCorrect: false
         },
+        
+        {
+          id: "c",
+          text: "Show up without telling anyone",
+          emoji: "🏃",
+          isCorrect: false
+        },
         {
           id: "b",
           text: "Research the organization and understand your role",
           emoji: "🔍",
           isCorrect: true
         },
-        {
-          id: "c",
-          text: "Show up without telling anyone",
-          emoji: "🏃",
-          isCorrect: false
-        }
       ]
     }
   ];

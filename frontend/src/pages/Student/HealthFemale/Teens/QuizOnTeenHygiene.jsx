@@ -26,7 +26,7 @@ const QuizOnTeenHygiene = () => {
         {
           id: "a",
           text: "Gentle wash with mild soap",
-          emoji: "🧴",
+          emoji: "💧",
           isCorrect: true
         },
         {
@@ -63,7 +63,7 @@ const QuizOnTeenHygiene = () => {
         {
           id: "c",
           text: "Every other day or daily if oily",
-          emoji: "💇",
+          emoji: "🚿",
           isCorrect: true
         }
       ]
@@ -82,7 +82,7 @@ const QuizOnTeenHygiene = () => {
         {
           id: "b",
           text: "Regular bathing and clean clothes",
-          emoji: "🛁",
+          emoji: "🧼",
           isCorrect: true
         },
         {
@@ -113,7 +113,7 @@ const QuizOnTeenHygiene = () => {
         {
           id: "c",
           text: "Wash twice daily with gentle cleanser",
-          emoji: "💧",
+          emoji: "🆑",
           isCorrect: true
         }
       ]
@@ -138,7 +138,7 @@ const QuizOnTeenHygiene = () => {
         {
           id: "c",
           text: "Use antiperspirant and wear breathable clothes",
-          emoji: "👕",
+          emoji: "🍶",
           isCorrect: true
         }
       ]

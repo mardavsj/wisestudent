@@ -24,67 +24,68 @@ const ReflexTeenInnovator2 = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Prototype",
-      emoji: "🛠️",
-      correctAnswer: "Innovative approach",
-      options: [
-        { text: "Innovative approach", isCorrect: true },
-        { text: "Ignore Ideas", isCorrect: false },
-        { text: "Copy Exactly", isCorrect: false },
-        { text: "Never Improve", isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      action: "Test Concept",
-      emoji: "🧪",
-      correctAnswer: "Innovative approach",
-      options: [
-        { text: "Copy Exactly", isCorrect: false },
-        { text: "Innovative approach", isCorrect: true },
-        { text: "Give Up", isCorrect: false },
-        { text: "Ignore Ideas", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Build Model",
-      emoji: "🏗️",
-      correctAnswer: "Innovative approach",
-      options: [
-        { text: "Give Up", isCorrect: false },
-        { text: "Ignore Ideas", isCorrect: false },
-        { text: "Never Improve", isCorrect: false },
-        { text: "Innovative approach", isCorrect: true },
-      ]
-    },
-    {
-      id: 4,
-      action: "Create Version",
-      emoji: "🔧",
-      correctAnswer: "Innovative approach",
-      options: [
-        { text: "Innovative approach", isCorrect: true },
-        { text: "Never Improve", isCorrect: false },
-        { text: "Copy Exactly", isCorrect: false },
-        { text: "Give Up", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Iterate Design",
-      emoji: "🔄",
-      correctAnswer: "Innovative approach",
-      options: [
-        { text: "Ignore Ideas", isCorrect: false },
-        { text: "Copy Exactly", isCorrect: false },
-        { text: "Innovative approach", isCorrect: true },
-        { text: "Give Up", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Prototype",
+    emoji: "🛠️",
+    question: "You have an idea for a low-cost water purifier for villages. What should you do first?",
+    options: [
+      { text: "Wait until you get full funding", isCorrect: false },
+      { text: "Build a basic prototype using affordable materials", isCorrect: true },
+      { text: "Launch ads before building anything", isCorrect: false },
+      { text: "Copy an expensive existing product exactly", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Test Concept",
+    emoji: "🧪",
+    question: "You created a prototype app for students. How do you check if it actually works?",
+    options: [
+      { text: "Test it with a small group of real users", isCorrect: true },
+      { text: "Assume it works because you like it", isCorrect: false },
+      { text: "Release it publicly without testing", isCorrect: false },
+      { text: "Stop working after first version", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Build Model",
+    emoji: "🏗️",
+    question: "Your idea is approved for a college innovation challenge. What is the next smart step?",
+    options: [
+      { text: "Only explain the idea verbally", isCorrect: false },
+      { text: "Focus on logo and branding only", isCorrect: false },
+      { text: "Wait for others to build it for you", isCorrect: false },
+      { text: "Create a working model to demonstrate functionality", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    action: "Create Version",
+    emoji: "🔧",
+    question: "Users say your product is useful but confusing. What should you do?",
+    options: [
+      { text: "Ignore feedback and keep it the same", isCorrect: false },
+      { text: "Shut down the project immediately", isCorrect: false },
+      { text: "Release an improved version based on feedback", isCorrect: true },
+      { text: "Blame users for not understanding", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Iterate Design",
+    emoji: "🔄",
+    question: "After multiple tests, your product still has issues. What shows true innovation?",
+    options: [
+      { text: "Continuously refine the design and retest", isCorrect: true },
+      { text: "Give up because it’s difficult", isCorrect: false },
+      { text: "Copy a competitor without changes", isCorrect: false },
+      { text: "Stop improving after first success", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

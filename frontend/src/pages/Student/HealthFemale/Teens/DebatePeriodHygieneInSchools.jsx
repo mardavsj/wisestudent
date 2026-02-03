@@ -8,9 +8,9 @@ const DebatePeriodHygieneInSchools = () => {
   const location = useLocation();
   
   // Set to 1 for +1 coin per correct answer
-  const coinsPerLevel = 1;
-  const totalCoins = location.state?.totalCoins || 5; // Total coins from game card
-  const totalXp = location.state?.totalXp || 10; // Total XP from game card
+  const coinsPerLevel = 2;
+  const totalCoins = location.state?.totalCoins || 10; // Total coins from game card
+  const totalXp = location.state?.totalXp || 20; // Total XP from game card
   
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [coins, setCoins] = useState(0);
@@ -50,7 +50,7 @@ const DebatePeriodHygieneInSchools = () => {
         {
           id: "b",
           text: "Expect students to manage on their own",
-          emoji: "自理",
+          emoji: "💪",
           correct: false
         },
         {

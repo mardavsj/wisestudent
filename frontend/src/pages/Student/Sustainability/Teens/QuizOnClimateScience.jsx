@@ -139,7 +139,7 @@ const QuizOnClimateScience = () => {
         setSelectedOption(null);
         setShowFeedback(false);
       }
-    }, option.isCorrect ? 1000 : 800);
+    }, option.isCorrect ? 5000 : 5000);
   };
 
   const handleTryAgain = () => {

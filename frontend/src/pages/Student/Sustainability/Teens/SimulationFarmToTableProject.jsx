@@ -9,14 +9,14 @@ const SimulationFarmToTableProject = () => {
   const location = useLocation();
   const gameData = getGameDataById("sustainability-teens-83");
   const gameId = gameData?.id || "sustainability-teens-83";
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  // Hardcode rewards to align with rule: 4 coins per question, 20 total coins, 10 total XP
+  const coinsPerLevel = 4;
+  const totalCoins = 20;
+  const totalXp = 40;
   const [currentScenario, setCurrentScenario] = useState(0);
   const [choices, setChoices] = useState([]);
   const [gameFinished, setGameFinished] = useState(false);
-  const [coins, setCoins] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   // Find next game path and ID if not provided in location.state
@@ -46,7 +46,7 @@ const SimulationFarmToTableProject = () => {
   // Log when game completes and update location state with nextGameId
   useEffect(() => {
     if (gameFinished) {
-      console.log(`🎮 Simulation: Farm-to-Table Project game completed! Score: ${coins}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
+      console.log(`🎮 Simulation: Farm-to-Table Project game completed! Score: ${correctAnswers}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
       if (nextGameId && window.history && window.history.replaceState) {
         const currentState = window.history.state || {};
         window.history.replaceState({
@@ -55,7 +55,7 @@ const SimulationFarmToTableProject = () => {
         }, '');
       }
     }
-  }, [gameFinished, coins, gameId, nextGamePath, nextGameId]);
+  }, [gameFinished, correctAnswers, gameId, nextGamePath, nextGameId]);
 
   const questions = [
     {
@@ -115,8 +115,28 @@ const SimulationFarmToTableProject = () => {
     const isCorrect = selectedOption.isCorrect;
 
     if (isCorrect) {
-      showCorrectAnswerFeedback(1, true);
-      setCoins(prev => prev + 1); // Increment coins when correct
+      // Temporarily override global multiplier to show correct points
+      const originalMultiplier = typeof window !== "undefined" ? window.__flashPointsMultiplier : undefined;
+      const originalTotalCoins = typeof window !== "undefined" ? window.__flashTotalCoins : undefined;
+      const originalQuestionCount = typeof window !== "undefined" ? window.__flashQuestionCount : undefined;
+      
+      if (typeof window !== "undefined") {
+        window.__flashPointsMultiplier = 1;
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+      }
+      
+      showCorrectAnswerFeedback(coinsPerLevel, true);
+      setCorrectAnswers(prev => prev + 1); // Increment correct answers count
+      
+      // Restore original values after a short delay
+      setTimeout(() => {
+        if (typeof window !== "undefined") {
+          window.__flashPointsMultiplier = originalMultiplier;
+          window.__flashTotalCoins = originalTotalCoins;
+          window.__flashQuestionCount = originalQuestionCount;
+        }
+      }, 100);
     }
 
     setChoices([...choices, { scenario: currentScenario, optionId, isCorrect }]);
@@ -137,15 +157,16 @@ const SimulationFarmToTableProject = () => {
       title="Simulation: Farm-to-Table Project"
       subtitle={`Scenario ${currentScenario + 1} of ${questions.length}`}
       showGameOver={gameFinished}
-      score={coins}
+      score={correctAnswers}
       gameId={gameId}
       gameType="sustainability"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
-      maxScore={questions.length}
+      maxScore={totalCoins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      totalLevels={questions.length}
       nextGamePath={nextGamePath}
       nextGameId={nextGameId}
     
@@ -156,7 +177,7 @@ const SimulationFarmToTableProject = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
             <div className="flex justify-between items-center mb-4">
               <span className="text-white/80">Scenario {currentScenario + 1}/{questions.length}</span>
-              <span className="text-yellow-400 font-bold">Coins: {coins}</span>
+              <span className="text-yellow-400 font-bold">Coins: {correctAnswers * coinsPerLevel}</span>
             </div>
             <p className="text-white text-lg mb-6">{currentQuestionData.text}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

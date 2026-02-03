@@ -24,67 +24,68 @@ const ReflexTeenHigherEd = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Choose Based on Interests",
-      emoji: "🎓",
-      correctAnswer: "Right higher education action",
-      options: [
-        { text: "Copy Friends", isCorrect: false },
-        { text: "Guess Randomly", isCorrect: false },
-        { text: "Ignore Advice", isCorrect: false },
-        { text: "Right higher education action", isCorrect: true },
-      ]
-    },
-    {
-      id: 2,
-      action: "Research Thoroughly",
-      emoji: "🔍",
-      correctAnswer: "Right higher education action",
-      options: [
-        { text: "Right higher education action", isCorrect: true },
-        { text: "Guess Randomly", isCorrect: false },
-        { text: "Procrastinate", isCorrect: false },
-        { text: "Copy Friends", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Plan Ahead",
-      emoji: "📅",
-      correctAnswer: "Right higher education action",
-      options: [
-        { text: "Procrastinate", isCorrect: false },
-        { text: "Right higher education action", isCorrect: true },
-        { text: "Copy Friends", isCorrect: false },
-        { text: "Ignore Advice", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Seek Guidance",
-      emoji: "👨‍🏫",
-      correctAnswer: "Right higher education action",
-      options: [
-        { text: "Ignore Advice", isCorrect: false },
-        { text: "Guess Randomly", isCorrect: false },
-        { text: "Procrastinate", isCorrect: false },
-        { text: "Right higher education action", isCorrect: true },
-      ]
-    },
-    {
-      id: 5,
-      action: "Consider Finances",
-      emoji: "💰",
-      correctAnswer: "Right higher education action",
-      options: [
-        { text: "Copy Friends", isCorrect: false },
-        { text: "Right higher education action", isCorrect: true },
-        { text: "Guess Randomly", isCorrect: false },
-        { text: "Procrastinate", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Choose Based on Interests",
+    emoji: "🎓",
+    question: "You are finishing school and thinking about college. What is the best way to choose a course?",
+    options: [
+      { text: "Choose a course that matches your interests and strengths", isCorrect: true },
+      { text: "Pick the course your best friend chose", isCorrect: false },
+      { text: "Select a course only because it sounds popular", isCorrect: false },
+      { text: "Choose without checking what the course is about", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Research Thoroughly",
+    emoji: "🔍",
+    question: "You found two colleges offering the same degree. What should you do next?",
+    options: [
+      { text: "Pick the one with a cooler name", isCorrect: false },
+      { text: "Compare colleges by faculty, fees, placements, and reviews", isCorrect: true },
+      { text: "Decide at the last moment without research", isCorrect: false },
+      { text: "Let someone else decide for you", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Plan Ahead",
+    emoji: "📅",
+    question: "College entrance exams are coming in 6 months. What is the smartest plan?",
+    options: [
+      { text: "Start studying one week before the exam", isCorrect: false },
+      { text: "Completely ignore exam preparation", isCorrect: false },
+      { text: "Depend only on luck", isCorrect: false },
+      { text: "Create a study schedule and prepare step by step", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    action: "Seek Guidance",
+    emoji: "👨‍🏫",
+    question: "You are confused about career options after 12th grade. Who should you approach?",
+    options: [
+      { text: "Rely only on social media comments", isCorrect: false },
+      { text: "Avoid asking anyone for help", isCorrect: false },
+      { text: "Talk to teachers, counselors, or experienced professionals", isCorrect: true },
+      { text: "Follow random advice from strangers", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Consider Finances",
+    emoji: "💰",
+    question: "Your dream college is expensive. What is the most practical step?",
+    options: [
+      { text: "Ignore the cost and hope money appears", isCorrect: false },
+      { text: "Check scholarships, loans, and affordable alternatives", isCorrect: true },
+      { text: "Drop education completely", isCorrect: false },
+      { text: "Spend without planning", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

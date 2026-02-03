@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import MainNavbar from "../components/MainNavbar";
 import MainFooter from "../components/MainFooter";
@@ -639,66 +639,32 @@ const LandingPage = () => {
     userTypesRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handlePillarsClick = () => {
-    if (featuresRef.current) {
-      const element = featuresRef.current;
-      const headerOffset = 80; // Account for fixed header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  const scrollToSection = useCallback((ref) => {
+    if (!ref?.current) return;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
+    const element = ref.current;
+    const headerOffset = 80; // Account for fixed header
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }, []);
+
+  const handlePillarsClick = () => scrollToSection(featuresRef);
 
   const handleSeeHowItWorks = () => {
     navigate("/platform-details");
   };
 
   // Add this function for pricing scroll
-  const handlePricingClick = () => {
-    if (pricingRef.current) {
-      const element = pricingRef.current;
-      const headerOffset = 80; // Account for fixed header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  const handlePricingClick = () => scrollToSection(pricingRef);
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
+  const handleWhyChooseClick = () => scrollToSection(whyChooseRef);
 
-  const handleWhyChooseClick = () => {
-    if (whyChooseRef.current) {
-      const element = whyChooseRef.current;
-      const headerOffset = 80; // Account for fixed header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
-
-  const handleStudentServicesClick = () => {
-    if (studentServicesRef.current) {
-      const element = studentServicesRef.current;
-      const headerOffset = 80; // Account for fixed header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
+  const handleStudentServicesClick = () => scrollToSection(studentServicesRef);
 
   const handleFooterClick = () => {
     // Navigate to contact page instead of scrolling to footer
@@ -816,6 +782,30 @@ const LandingPage = () => {
       document.head.removeChild(style);
     };
   }, [showModal]);
+
+  useEffect(() => {
+    const targetKey = location.state?.landingScrollTarget;
+    if (!targetKey) return;
+
+    const sectionMap = {
+      pillars: featuresRef,
+      whyChoose: whyChooseRef,
+      pricing: pricingRef,
+    };
+
+    const targetRef = sectionMap[targetKey];
+    if (!targetRef) {
+      navigate(location.pathname, { replace: true, state: {} });
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      scrollToSection(targetRef);
+      navigate(location.pathname, { replace: true, state: {} });
+    }, 150);
+
+    return () => clearTimeout(timer);
+  }, [location.state?.landingScrollTarget, location.pathname, navigate, scrollToSection]);
 
   const openModal = (feature) => {
     setSelectedFeature(feature);

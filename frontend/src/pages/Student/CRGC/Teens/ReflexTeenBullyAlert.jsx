@@ -44,10 +44,10 @@ const ReflexTeenBullyAlert = () => {
       id: 2,
       question: "How should you respond if you witness someone being cyberbullied in a group chat?",
       emoji: "💬",
-      correctAnswer: "Defend the victim, report the bullying, and encourage others to do the same",
+      correctAnswer: "Defend the victim, report the bullying",
       options: [
         { text: "Join in to fit in with the group", isCorrect: false },
-        { text: "Defend the victim, report the bullying, and encourage others to do the same", isCorrect: true },
+        { text: "Defend the victim, report the bullying", isCorrect: true },
         { text: "Stay silent to avoid becoming a target", isCorrect: false },
         { text: "Leave the group chat and ignore it", isCorrect: false }
       ],
@@ -60,9 +60,9 @@ const ReflexTeenBullyAlert = () => {
       id: 3,
       question: "What's the best approach if you accidentally share something embarrassing about yourself online?",
       emoji: "😬",
-      correctAnswer: "Apologize if needed, learn from the mistake, and adjust privacy settings",
+      correctAnswer: "Apologize if needed, learn from the mistake",
       options: [
-        { text: "Apologize if needed, learn from the mistake, and adjust privacy settings", isCorrect: true },
+        { text: "Apologize if needed, learn from the mistake", isCorrect: true },
         { text: "Delete the post and pretend it never happened", isCorrect: false },
         { text: "Blame others for pressuring you to share it", isCorrect: false },
         { text: "Post an angry rant about your embarrassment", isCorrect: false }
@@ -92,12 +92,12 @@ const ReflexTeenBullyAlert = () => {
       id: 5,
       question: "What should you do if you notice a classmate posting concerning messages about self-harm?",
       emoji: "🆘",
-      correctAnswer: "Take it seriously, tell a trusted adult immediately, and offer support to the person",
+      correctAnswer: "Take it seriously, tell a trusted adult immediately",
       options: [
         { text: "Dismiss it as attention-seeking behavior", isCorrect: false },
         { text: "Share screenshots with friends to discuss", isCorrect: false },
         { text: "Confront the person directly about their posts", isCorrect: false },
-        { text: "Take it seriously, tell a trusted adult immediately, and offer support to the person", isCorrect: true },
+        { text: "Take it seriously, tell a trusted adult immediately", isCorrect: true },
       ],
       feedback: {
         correct: "Awesome! Taking concerning messages seriously and involving adults can save lives!",

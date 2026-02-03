@@ -24,67 +24,68 @@ const ReflexTeenEntrepreneur = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Start Early",
-      emoji: "🚀",
-      correctAnswer: "Right entrepreneurial action",
-      options: [
-        { text: "Wait Forever", isCorrect: false },
-        { text: "Procrastinate", isCorrect: false },
-        { text: "Work Alone", isCorrect: false },
-        { text: "Right entrepreneurial action", isCorrect: true },
-      ]
-    },
-    {
-      id: 2,
-      action: "Take Action",
-      emoji: "💪",
-      correctAnswer: "Right entrepreneurial action",
-      options: [
-        { text: "Procrastinate", isCorrect: false },
-        { text: "Right entrepreneurial action", isCorrect: true },
-        { text: "Stay Ignorant", isCorrect: false },
-        { text: "Wait Forever", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Learn Skills",
-      emoji: "📚",
-      correctAnswer: "Right entrepreneurial action",
-      options: [
-        { text: "Right entrepreneurial action", isCorrect: true },
-        { text: "Stay Ignorant", isCorrect: false },
-        { text: "Wait Forever", isCorrect: false },
-        { text: "Work Alone", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Build Network",
-      emoji: "🤝",
-      correctAnswer: "Right entrepreneurial action",
-      options: [
-        { text: "Work Alone", isCorrect: false },
-        { text: "Right entrepreneurial action", isCorrect: true },
-        { text: "Procrastinate", isCorrect: false },
-        { text: "Stay Ignorant", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Adapt Quickly",
-      emoji: "🔄",
-      correctAnswer: "Right entrepreneurial action",
-      options: [
-        { text: "Wait Forever", isCorrect: false },
-        { text: "Right entrepreneurial action", isCorrect: true },
-        { text: "Procrastinate", isCorrect: false },
-        { text: "Stay Ignorant", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Start Early",
+    emoji: "🚀",
+    question: "You have an idea for a student-focused tutoring service. What should you do first?",
+    options: [
+      { text: "Create a small pilot and test it with a few students", isCorrect: true },
+      { text: "Wait until you have unlimited money", isCorrect: false },
+      { text: "Keep the idea secret and never try it", isCorrect: false },
+      { text: "Assume it will work without testing", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Take Action",
+    emoji: "💪",
+    question: "You’re unsure if your startup idea is perfect. What’s the smartest move?",
+    options: [
+      { text: "Delay until everything feels perfect", isCorrect: false },
+      { text: "Start with a basic version and improve later", isCorrect: true },
+      { text: "Give up because of fear of failure", isCorrect: false },
+      { text: "Wait for someone else to do it first", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Learn Skills",
+    emoji: "📚",
+    question: "You want to run an online business but lack marketing skills. What should you do?",
+    options: [
+      { text: "Ignore marketing completely", isCorrect: false },
+      { text: "Rely only on luck", isCorrect: false },
+      { text: "Learn digital marketing through courses or practice", isCorrect: true },
+      { text: "Quit because skills take time", isCorrect: false }
+    ]
+  },
+  {
+    id: 4,
+    action: "Build Network",
+    emoji: "🤝",
+    question: "You want mentorship and opportunities for your startup. What helps most?",
+    options: [
+      { text: "Connect with mentors, peers, and startup communities", isCorrect: true },
+      { text: "Work in isolation and avoid people", isCorrect: false },
+      { text: "Only follow influencers online", isCorrect: false },
+      { text: "Wait for opportunities to find you", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Adapt Quickly",
+    emoji: "🔄",
+    question: "Customers aren’t using one feature of your app. What should you do?",
+    options: [
+      { text: "Force users to use it", isCorrect: false },
+      { text: "Ignore the problem completely", isCorrect: false },
+      { text: "Shut down the entire app immediately", isCorrect: false },
+      { text: "Analyze feedback and improve or remove the feature", isCorrect: true },
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

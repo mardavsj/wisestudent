@@ -44,8 +44,8 @@ const ReflexTeenAwareness = () => {
       question: "How should you approach questions about reproductive health?",
       options: [
         { text: "Avoid", emoji: "🙈", isCorrect: false },
-        { text: "Ask Openly", emoji: "💬", isCorrect: true },
         { text: "Feel Ashamed", emoji: "😳", isCorrect: false },
+        { text: "Ask Openly", emoji: "💬", isCorrect: true },
         { text: "Ignore", emoji: "🔇", isCorrect: false }
       ]
     },
@@ -64,9 +64,9 @@ const ReflexTeenAwareness = () => {
       question: "What's the best way to discuss reproductive health topics?",
       options: [
         { text: "Secretly", emoji: "🕵️", isCorrect: false },
-        { text: "Respectfully", emoji: "🤝", isCorrect: true },
         { text: "Avoid Discussion", emoji: "🤐", isCorrect: false },
-        { text: "Spread Rumors", emoji: "📢", isCorrect: false }
+        { text: "Spread Rumors", emoji: "📢", isCorrect: false },
+        { text: "Respectfully", emoji: "🤝", isCorrect: true },
       ]
     },
     {

@@ -64,9 +64,9 @@ const ReflexTeenFreshness = () => {
       question: "What contributes to a clean sleeping environment?",
       options: [
         { text: "Dirty Sheets", emoji: "🛋️", isCorrect: false },
-        { text: "Clean Sheets", emoji: "🛏️", isCorrect: true },
         { text: "Old Pad", emoji: "📎", isCorrect: false },
-        { text: "Dirty Clothes", emoji: "👕", isCorrect: false }
+        { text: "Dirty Clothes", emoji: "👕", isCorrect: false },
+        { text: "Clean Sheets", emoji: "🛏️", isCorrect: true },
       ]
     },
     {
@@ -74,8 +74,8 @@ const ReflexTeenFreshness = () => {
       question: "Which choice maintains personal freshness?",
       options: [
         { text: "Old Pad", emoji: "📎", isCorrect: false },
-        { text: "Fresh Clothes", emoji: "👚", isCorrect: true },
         { text: "Used Towel", emoji: "🧴", isCorrect: false },
+        { text: "Fresh Clothes", emoji: "👚", isCorrect: true },
         { text: "Dirty Sheets", emoji: "🛋️", isCorrect: false }
       ]
     }

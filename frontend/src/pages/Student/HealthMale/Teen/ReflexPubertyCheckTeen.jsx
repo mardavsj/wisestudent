@@ -20,6 +20,8 @@ const ReflexPubertyCheckTeen = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
+  const [showResult, setShowResult] = useState(false);
+  const [finalScore, setFinalScore] = useState(0);
   const [score, setScore] = useState(0);
   const [currentRound, setCurrentRound] = useState(0);
   const [timeLeft, setTimeLeft] = useState(ROUND_TIME);
@@ -85,6 +87,31 @@ const ReflexPubertyCheckTeen = () => {
   }
 ];
 
+  // Set global window variables for useGameFeedback to ensure correct +1 popup
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Force cleanup first to prevent interference from other games
+      window.__flashTotalCoins = null;
+      window.__flashQuestionCount = null;
+      window.__flashPointsMultiplier = 1;
+      
+      // Small delay to ensure cleanup
+      setTimeout(() => {
+        // Then set the correct values for this game
+        window.__flashTotalCoins = totalCoins;        // 5
+        window.__flashQuestionCount = TOTAL_ROUNDS;   // 5
+        window.__flashPointsMultiplier = coinsPerLevel; // 1
+      }, 50);
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel]);
+
   // Update ref when currentRound changes
   useEffect(() => {
     currentRoundRef.current = currentRound;
@@ -107,12 +134,13 @@ const ReflexPubertyCheckTeen = () => {
 
     setTimeout(() => {
       if (isLastQuestion) {
-        setGameState("finished");
+        setFinalScore(score);
+        setShowResult(true);
       } else {
         setCurrentRound((prev) => prev + 1);
       }
     }, 1000);
-  }, []);
+  }, [score]);
 
   // Timer effect - countdown from 10 seconds for each question
   useEffect(() => {
@@ -183,11 +211,23 @@ const ReflexPubertyCheckTeen = () => {
     // Move to next round or show results after a short delay
     setTimeout(() => {
       if (currentRound >= TOTAL_ROUNDS) {
-        setGameState("finished");
+        setFinalScore(score + (option.isCorrect ? 1 : 0));
+        setShowResult(true);
       } else {
         setCurrentRound((prev) => prev + 1);
       }
     }, 500);
+  };
+
+  const handleTryAgain = () => {
+    setShowResult(false);
+    setGameState("ready");
+    setScore(0);
+    setCurrentRound(0);
+    setFinalScore(0);
+    setTimeLeft(ROUND_TIME);
+    setAnswered(false);
+    resetFeedback();
   };
 
   const handleNext = () => {
@@ -199,23 +239,27 @@ const ReflexPubertyCheckTeen = () => {
   return (
     <GameShell
       title="Reflex Puberty Check"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: React to changes!` : "React to changes!"}
-      onNext={handleNext}
-      nextEnabled={gameState === "finished"}
-      showGameOver={gameState === "finished"}
       score={score}
+      subtitle={showResult ? "Game Complete!" : gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: React to changes!` : "React to changes!"}
+      showGameOver={showResult}
       gameId={gameId}
       nextGamePathProp="/student/health-male/teens/puberty-signs-puzzle-teen"
       nextGameIdProp="health-male-teen-24"
       gameType="health-male"
+      totalLevels={TOTAL_ROUNDS}
+      currentLevel={currentRound}
+      showConfetti={showResult}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
+      onNext={handleNext}
+      nextEnabled={showResult}
+      backPath="/games/health-male/teens"
       maxScore={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
     >
-      <div className="space-y-8">
+      <div className="min-h-[calc(100vh-200px)] flex flex-col justify-center max-w-4xl mx-auto px-4 py-4">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">⚡</div>
@@ -270,6 +314,45 @@ const ReflexPubertyCheckTeen = () => {
                 ))}
               </div>
             </div>
+          </div>
+        )}
+
+        {showResult && (
+          <div className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/20 text-center flex-1 flex flex-col justify-center">
+            {finalScore >= 3 ? (
+              <div>
+                <div className="text-4xl md:text-5xl mb-4">⚡</div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Puberty Pro!</h3>
+                <p className="text-white/90 text-base md:text-lg mb-4">
+                  You got {finalScore} out of {TOTAL_ROUNDS} challenges correct!
+                  You understand how to handle puberty changes smartly!
+                </p>
+                <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-2 md:py-3 px-4 md:px-6 rounded-full inline-flex items-center gap-2 mb-4 text-sm md:text-base">
+                  <span>+{score} Coins</span>
+                </div>
+                <p className="text-white/80 text-sm md:text-base">
+                  Great job! You know how to respond to puberty changes in healthy ways!
+                </p>
+              </div>
+            ) : (
+              <div>
+                <div className="text-4xl md:text-5xl mb-4">😔</div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <p className="text-white/90 text-base md:text-lg mb-4">
+                  You got {finalScore} out of {TOTAL_ROUNDS} challenges correct.
+                  Remember, understanding puberty changes helps you navigate them better!
+                </p>
+                <button
+                  onClick={handleTryAgain}
+                  className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-2 md:py-3 px-4 md:px-6 rounded-full font-bold transition-all mb-4 text-sm md:text-base"
+                >
+                  Try Again
+                </button>
+                <p className="text-white/80 text-xs md:text-sm">
+                  Try to choose responses that show healthy ways to handle puberty changes.
+                </p>
+              </div>
+            )}
           </div>
         )}
       </div>

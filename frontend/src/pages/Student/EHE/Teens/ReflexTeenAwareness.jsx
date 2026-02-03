@@ -24,67 +24,68 @@ const ReflexTeenAwareness = () => {
   const currentRoundRef = useRef(0);
 
   const questions = [
-    {
-      id: 1,
-      action: "Scholarships Help",
-      emoji: "💸",
-      correctAnswer: "Right educational awareness action",
-      options: [
-        { text: "Give Up on Dreams", isCorrect: false },
-        { text: "Ignore Options", isCorrect: false },
-        { text: "Avoid Guidance", isCorrect: false },
-        { text: "Right educational awareness action", isCorrect: true },
-      ]
-    },
-    {
-      id: 2,
-      action: "Research Opportunities",
-      emoji: "🔍",
-      correctAnswer: "Right educational awareness action",
-      options: [
-        { text: "Ignore Options", isCorrect: false },
-        { text: "Right educational awareness action", isCorrect: true },
-        { text: "Spend Recklessly", isCorrect: false },
-        { text: "Give Up on Dreams", isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      action: "Plan Financially",
-      emoji: "📊",
-      correctAnswer: "Right educational awareness action",
-      options: [
-        { text: "Right educational awareness action", isCorrect: true },
-        { text: "Spend Recklessly", isCorrect: false },
-        { text: "Give Up on Dreams", isCorrect: false },
-        { text: "Avoid Guidance", isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      action: "Seek Mentorship",
-      emoji: "👨‍🏫",
-      correctAnswer: "Right educational awareness action",
-      options: [
-        { text: "Avoid Guidance", isCorrect: false },
-        { text: "Right educational awareness action", isCorrect: true },
-        { text: "Ignore Options", isCorrect: false },
-        { text: "Spend Recklessly", isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      action: "Stay Informed",
-      emoji: "📚",
-      correctAnswer: "Right educational awareness action",
-      options: [
-        { text: "Give Up on Dreams", isCorrect: false },
-        { text: "Ignore Options", isCorrect: false },
-        { text: "Right educational awareness action", isCorrect: true },
-        { text: "Spend Recklessly", isCorrect: false }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    action: "Scholarships Help",
+    emoji: "💸",
+    question: "You want to go to college, but your family is worried about fees. What should you do?",
+    options: [
+      { text: "Give up on higher education completely", isCorrect: false },
+      { text: "Ignore the cost and hope money appears", isCorrect: false },
+      { text: "Look for scholarships, grants, and financial aid programs", isCorrect: true },
+      { text: "Decide not to discuss finances at all", isCorrect: false }
+    ]
+  },
+  {
+    id: 2,
+    action: "Research Opportunities",
+    emoji: "🔍",
+    question: "You hear about multiple career paths after school. What is the smartest move?",
+    options: [
+      { text: "Research courses, careers, and future job opportunities", isCorrect: true },
+      { text: "Choose whatever sounds easiest", isCorrect: false },
+      { text: "Follow only what friends are doing", isCorrect: false },
+      { text: "Avoid thinking about the future for now", isCorrect: false }
+    ]
+  },
+  {
+    id: 3,
+    action: "Plan Financially",
+    emoji: "📊",
+    question: "You will need money for college, books, and exams. What shows good awareness?",
+    options: [
+      { text: "Spend money without checking your budget", isCorrect: false },
+      { text: "Rely completely on others to manage money", isCorrect: false },
+      { text: "Ignore costs until the last moment", isCorrect: false },
+      { text: "Plan expenses early and track costs carefully", isCorrect: true },
+    ]
+  },
+  {
+    id: 4,
+    action: "Seek Mentorship",
+    emoji: "👨‍🏫",
+    question: "You are confused about streams and careers. Who can help you best?",
+    options: [
+      { text: "Random social media influencers", isCorrect: false },
+      { text: "Teachers, mentors, or career counselors", isCorrect: true },
+      { text: "No one — decide everything alone", isCorrect: false },
+      { text: "Only classmates with no experience", isCorrect: false }
+    ]
+  },
+  {
+    id: 5,
+    action: "Stay Informed",
+    emoji: "📚",
+    question: "Education rules and exams keep changing. What should you do?",
+    options: [
+      { text: "Stay updated through official websites and trusted sources", isCorrect: true },
+      { text: "Ignore updates and hope nothing changes", isCorrect: false },
+      { text: "Rely only on rumors", isCorrect: false },
+      { text: "Stop planning for higher education", isCorrect: false }
+    ]
+  }
+];
+
 
   useEffect(() => {
     currentRoundRef.current = currentRound;

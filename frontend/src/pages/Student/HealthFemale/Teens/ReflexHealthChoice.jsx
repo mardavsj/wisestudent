@@ -43,9 +43,9 @@ const ReflexHealthChoice = () => {
       id: 2,
       question: "How should you manage menstrual cramps?",
       options: [
+        { text: "doctor prescribed medicines", emoji: "🧑‍⚕️", isCorrect: true },
         { text: "Ignore completely", emoji: "❌", isCorrect: false },
         { text: "Take unprescribed drugs", emoji: "💊", isCorrect: false },
-        { text: "doctor prescribed medicines", emoji: "🧑‍⚕️", isCorrect: true },
         { text: "Suffer without help", emoji: "😣", isCorrect: false }
       ]
     },
@@ -75,8 +75,8 @@ const ReflexHealthChoice = () => {
       options: [
         { text: "Hide feelings from everyone", emoji: "🎭", isCorrect: false },
         { text: "Isolate from others", emoji: "🚪", isCorrect: false },
+        { text: "Suppress all emotions", emoji: "🤐", isCorrect: false },
         { text: "Seek support when needed", emoji: "🤝", isCorrect: true },
-        { text: "Suppress all emotions", emoji: "🤐", isCorrect: false }
       ]
     }
   ];
