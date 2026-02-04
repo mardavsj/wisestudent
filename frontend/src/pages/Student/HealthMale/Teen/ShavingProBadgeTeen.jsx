@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Shield, AlertTriangle, Heart, UserCheck, CheckCircle, Badge } from "lucide-react";
 import GameShell from "../../Finance/GameShell";
@@ -10,14 +10,16 @@ const ShavingProBadgeTeen = () => {
     // Get game data from game category folder (source of truth)
     const gameId = "health-male-teen-40";
 
-    // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-    const coinsPerLevel = 1;
-    const totalCoins = 5;
-    const totalXp = 10;
+    // Hardcode rewards: 2 coins per question, 10 total coins, 20 total XP
+    const coinsPerLevel = 2;
+    const totalCoins = 10;
+    const totalXp = 20;
 
     const { showCorrectAnswerFeedback, flashPoints, showAnswerConfetti, resetFeedback } = useGameFeedback();
     const [currentLevel, setCurrentLevel] = useState(1);
     const [score, setScore] = useState(0);
+    const [coins, setCoins] = useState(0);
+    const [correctAnswers, setCorrectAnswers] = useState(0); // Track number of correct answers for score
     const [answered, setAnswered] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [showResult, setShowResult] = useState(false);
@@ -105,9 +107,40 @@ const ShavingProBadgeTeen = () => {
     }
 ];
 
+    // Set global window variables for useGameFeedback
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            window.__flashTotalCoins = totalCoins;
+            window.__flashQuestionCount = levels.length;
+            window.__flashPointsMultiplier = coinsPerLevel;
+            
+            return () => {
+                // Clean up on unmount
+                window.__flashTotalCoins = null;
+                window.__flashQuestionCount = null;
+                window.__flashPointsMultiplier = 1;
+            };
+        }
+    }, [totalCoins, coinsPerLevel, levels.length]);
+
 
     const currentLevelData = levels[currentLevel - 1];
     const Icon = currentLevelData?.icon;
+
+    // Debug logging for GameShell props
+    useEffect(() => {
+        if (showResult) {
+            console.log('🎮 GameShell props for ShavingProBadgeTeen:', {
+                score: coins,
+                correctAnswers,
+                maxScore: totalCoins,
+                coinsPerLevel,
+                totalCoins,
+                totalXp,
+                totalLevels: levels.length
+            });
+        }
+    }, [showResult, coins, correctAnswers, coinsPerLevel, totalCoins, totalXp, levels.length]);
 
     const handleAnswer = (optionIndex) => {
         if (answered) return;
@@ -121,7 +154,8 @@ const ShavingProBadgeTeen = () => {
         const isLastQuestion = currentLevel === 5;
 
         if (isCorrect) {
-            setScore(prev => prev + 1);
+            setCoins(prev => prev + 2); // 2 coins per correct answer
+            setCorrectAnswers(prev => prev + 1); // Increment correct answers count
             showCorrectAnswerFeedback(1, true);
         }
 
@@ -148,14 +182,15 @@ const ShavingProBadgeTeen = () => {
             onNext={handleNext}
             nextEnabled={showResult}
             showGameOver={showResult}
-            score={score}
+            score={correctAnswers}
             gameId={gameId}
             nextGamePathProp="/student/health-male/teens/sweat-control-story"
             nextGameIdProp="health-male-teen-41"
             gameType="health-male"
             flashPoints={flashPoints}
             showAnswerConfetti={showAnswerConfetti}
-            maxScore={levels.length}
+            maxScore={totalCoins}
+            totalLevels={levels.length}
             coinsPerLevel={coinsPerLevel}
             totalCoins={totalCoins}
             totalXp={totalXp}
@@ -168,7 +203,7 @@ const ShavingProBadgeTeen = () => {
                         </div>
                         <div className="flex justify-between items-center mb-4">
                             <span className="text-white/80">Challenge {currentLevel} of 5</span>
-                            <span className="text-yellow-400 font-bold">Coins: {score}</span>
+                            <span className="text-yellow-400 font-bold">Coins: {coins}</span>
                         </div>
 
                         <h3 className="text-2xl font-bold mb-2">{currentLevelData.title}</h3>
@@ -224,12 +259,12 @@ const ShavingProBadgeTeen = () => {
 
                 {showResult && (
                     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-                        {score >= 4 ? (
+                        {correctAnswers >= 4 ? (
                             <div>
                                 <div className="text-6xl mb-4">🏆</div>
                                 <h3 className="text-3xl font-bold text-white mb-4">Shaving Pro Badge Earned!</h3>
                                 <p className="text-white/90 text-lg mb-6">
-                                    You demonstrated excellent knowledge about shaving safety with {score} correct answers out of {levels.length}!
+                                    You demonstrated excellent knowledge about shaving safety with {correctAnswers} correct answers out of {levels.length}!
                                 </p>
                                                 
                                 <div className="bg-gradient-to-br from-purple-500 to-pink-600 text-white p-6 rounded-2xl mb-6">
@@ -264,7 +299,7 @@ const ShavingProBadgeTeen = () => {
                                 <div className="text-5xl mb-4">💪</div>
                                 <h3 className="text-2xl font-bold text-white mb-4">Keep Learning About Shaving Safety!</h3>
                                 <p className="text-white/90 text-lg mb-4">
-                                    You answered {score} questions correctly out of {levels.length}.
+                                    You answered {correctAnswers} questions correctly out of {levels.length}.
                                 </p>
                                 <p className="text-white/90 mb-6">
                                     Review shaving safety topics to strengthen your knowledge and earn your badge.
@@ -273,6 +308,8 @@ const ShavingProBadgeTeen = () => {
                                     onClick={() => {
                                         setCurrentLevel(1);
                                         setScore(0);
+                                        setCoins(0);
+                                        setCorrectAnswers(0);
                                         setAnswered(false);
                                         setSelectedAnswer(null);
                                         setShowResult(false);

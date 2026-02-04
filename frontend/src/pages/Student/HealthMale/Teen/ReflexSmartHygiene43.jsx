@@ -12,15 +12,17 @@ const ReflexSmartHygiene43 = () => {
   // Get game data from game category folder (source of truth)
   const gameId = "health-male-teen-43";
 
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  // Hardcode rewards: 2 coins per question, 10 total coins, 20 total XP
+  const coinsPerLevel = 2;
+  const totalCoins = 10;
+  const totalXp = 20;
 
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
   const [score, setScore] = useState(0);
+  const [coins, setCoins] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0); // Track number of correct answers for score
   const [currentRound, setCurrentRound] = useState(0);
   const [timeLeft, setTimeLeft] = useState(ROUND_TIME);
   const [answered, setAnswered] = useState(false);
@@ -85,6 +87,21 @@ const ReflexSmartHygiene43 = () => {
   }
 ];
 
+  // Set global window variables for useGameFeedback
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__flashTotalCoins = totalCoins;
+      window.__flashQuestionCount = questions.length;
+      window.__flashPointsMultiplier = coinsPerLevel;
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel, questions.length]);
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -101,19 +118,25 @@ const ReflexSmartHygiene43 = () => {
 
   // Handle time up - move to next question or show results
   const handleTimeUp = useCallback(() => {
+    console.log('⏰ Time up handler called - Current state:', { currentRound: currentRoundRef.current, coins, correctAnswers });
     setAnswered(true);
     resetFeedback();
 
     const isLastQuestion = currentRoundRef.current >= TOTAL_ROUNDS;
 
     setTimeout(() => {
+      console.log('⏰ Timeout in handleTimeUp executed - Current round:', currentRoundRef.current);
       if (isLastQuestion) {
+        console.log('🏁 Time up - Setting game state to finished - Final state:', { coins, correctAnswers, round: currentRoundRef.current });
         setGameState("finished");
       } else {
-        setCurrentRound((prev) => prev + 1);
+        setCurrentRound((prev) => {
+          console.log('➡️ Time up - Moving to next round:', prev + 1);
+          return prev + 1;
+        });
       }
     }, 1000);
-  }, []);
+  }, [coins, correctAnswers]);
 
   // Timer effect - countdown from 5 seconds for each question
   useEffect(() => {
@@ -166,11 +189,14 @@ const ReflexSmartHygiene43 = () => {
     setGameState("playing");
     setTimeLeft(ROUND_TIME);
     setScore(0);
+    setCoins(0);
+    setCorrectAnswers(0);
     setCurrentRound(1);
     resetFeedback();
   };
 
   const handleAnswer = (option) => {
+    console.log('🎯 handleAnswer called - Current state:', { currentRound, answered, gameState, coins, correctAnswers });
     if (gameState !== "playing" || answered || currentRound > TOTAL_ROUNDS) return;
 
     // Clear the timer immediately when user answers
@@ -183,16 +209,33 @@ const ReflexSmartHygiene43 = () => {
     resetFeedback();
 
     if (option.isCorrect) {
-      setScore((prev) => prev + 1);
+      console.log('🎯 Correct answer detected for round', currentRound);
+      setCoins(prev => {
+        const newCoins = prev + 2;
+        console.log('🏆 Coin increment: ', prev, '->', newCoins);
+        return newCoins;
+      }); // 2 coins per correct answer
+      setCorrectAnswers(prev => {
+        const newCorrect = prev + 1;
+        console.log('✅ Correct answers increment: ', prev, '->', newCorrect);
+        return newCorrect;
+      }); // Increment correct answers count
       showCorrectAnswerFeedback(1, true);
+    } else {
+      console.log('❌ Wrong answer for round', currentRound);
     }
 
     // Move to next round or show results after a short delay
     setTimeout(() => {
+      console.log('⏱️ Timeout executed - Moving from round', currentRound, 'to next');
       if (currentRound >= TOTAL_ROUNDS) {
+        console.log('🏁 Setting game state to finished - Final state:', { coins, correctAnswers, currentRound });
         setGameState("finished");
       } else {
-        setCurrentRound((prev) => prev + 1);
+        setCurrentRound((prev) => {
+          console.log('➡️ Moving to next round:', prev + 1);
+          return prev + 1;
+        });
       }
     }, 500);
   };
@@ -203,6 +246,26 @@ const ReflexSmartHygiene43 = () => {
 
   const currentQuestion = questions[currentRound - 1];
 
+  // Debug logging for state changes
+  useEffect(() => {
+    console.log('🔄 State update - Round:', currentRound, 'Coins:', coins, 'Correct:', correctAnswers, 'Time left:', timeLeft);
+  }, [currentRound, coins, correctAnswers, timeLeft]);
+
+  // Debug logging for GameShell props
+  useEffect(() => {
+    if (gameState === "finished") {
+      console.log('🎮 GameShell props for ReflexSmartHygiene43:', {
+        score: coins,
+        correctAnswers,
+        maxScore: TOTAL_ROUNDS,
+        coinsPerLevel,
+        totalCoins,
+        totalXp,
+        totalLevels: TOTAL_ROUNDS
+      });
+    }
+  }, [gameState, coins, correctAnswers, coinsPerLevel, totalCoins, totalXp, TOTAL_ROUNDS]);
+
   return (
     <GameShell
       title="Reflex Smart Hygiene"
@@ -210,17 +273,18 @@ const ReflexSmartHygiene43 = () => {
       onNext={handleNext}
       nextEnabled={gameState === "finished"}
       showGameOver={gameState === "finished"}
-      score={score}
+      score={correctAnswers}
       gameId={gameId}
       nextGamePathProp="/student/health-male/teens/hygiene-tools-puzzle-44"
       nextGameIdProp="health-male-teen-44"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
-      maxScore={TOTAL_ROUNDS}
+       maxScore={totalCoins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      totalLevels={TOTAL_ROUNDS}
     >
       <div className="space-y-8">
         {gameState === "ready" && (
@@ -254,7 +318,7 @@ const ReflexSmartHygiene43 = () => {
                 <span className="text-white">Time:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+         {coins} coins
               </div>
             </div>
 

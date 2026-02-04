@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -9,12 +9,13 @@ const TeenStressDaySimulation = () => {
   const [choices, setChoices] = useState([]);
   const [gameFinished, setGameFinished] = useState(false);
   const [coins, setCoins] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0); // Track number of correct answers for score
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Hardcode rewards
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  // Hardcode rewards: 3 coins per question, 15 total coins, 10 total XP
+  const coinsPerLevel = 3;
+  const totalCoins = 15;
+  const totalXp = 30;
 
   const scenarios = [
   {
@@ -68,6 +69,48 @@ const TeenStressDaySimulation = () => {
     ]
   }
 ];
+  
+  // Set global window variables for useGameFeedback
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__flashTotalCoins = totalCoins;
+      window.__flashQuestionCount = scenarios.length;
+      window.__flashPointsMultiplier = coinsPerLevel;
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel, scenarios.length]);
+
+  // Debug logging
+  useEffect(() => {
+    console.log('🎮 TeenStressDaySimulation debug:', {
+      correctAnswers,
+      coins,
+      coinsPerLevel,
+      totalCoins,
+      questionsLength: scenarios.length,
+      gameFinished
+    });
+  }, [correctAnswers, coins, coinsPerLevel, totalCoins, gameFinished, scenarios.length]);
+
+  // Debug: Log GameShell props
+  useEffect(() => {
+    if (gameFinished) {
+      console.log('🎮 GameShell props:', {
+        score: correctAnswers,
+        maxScore: scenarios.length,
+        coinsPerLevel,
+        totalCoins,
+        totalXp,
+        totalLevels: scenarios.length
+      });
+    }
+  }, [gameFinished, correctAnswers, coinsPerLevel, totalCoins, totalXp, scenarios.length]);
 
 
   const handleChoice = (optionId) => {
@@ -75,8 +118,12 @@ const TeenStressDaySimulation = () => {
     const isCorrect = selectedOption.isCorrect;
 
     if (isCorrect) {
-      showCorrectAnswerFeedback(1, true);
-      setCoins(prev => prev + 1); // Increment coins when correct
+      setCoins(prev => prev + 3); // Increment coins when correct (3 coins per question)
+      setCorrectAnswers(prev => prev + 1); // Increment correct answers count
+      // Show feedback after state updates
+      setTimeout(() => {
+        showCorrectAnswerFeedback(1, true);
+      }, 50);
     }
 
     setChoices([...choices, { scenario: currentScenario, optionId, isCorrect }]);
@@ -103,7 +150,7 @@ const TeenStressDaySimulation = () => {
       onNext={handleNext}
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
-      score={coins}
+      score={correctAnswers}
       gameId="health-male-teen-58"
       nextGamePathProp="/student/health-male/teens/reflex-emotional-health"
       nextGameIdProp="health-male-teen-59"
@@ -114,6 +161,7 @@ const TeenStressDaySimulation = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      totalLevels={scenarios.length}
     >
       <div className="space-y-8">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
@@ -151,6 +199,9 @@ const TeenStressDaySimulation = () => {
       {gameFinished && (
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
           <h3 className="text-3xl font-bold text-white mb-4">Simulation Complete!</h3>
+          <p className="text-xl text-white/90 mb-6">
+            You finished the game with {correctAnswers} out of {scenarios.length} correct
+          </p>
           <p className="text-xl text-white/90 mb-6">
             You earned {coins} coins!
           </p>

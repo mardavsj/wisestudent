@@ -29,7 +29,7 @@ const HygieneMatchPuzzle = () => {
     { id: 2, name: "Deodorant", emoji: "🧴",  },
     { id: 3, name: "Face Wash", emoji: "🍶",  },
     { id: 4, name: "Toothbrush", emoji: "🪥",  },
-    { id: 5, name: "Shampoo", emoji: "👱‍♀️",  },
+    { id: 5, name: "Shampoo", emoji: "🍶",  },
   ];
 
   // Uses (right side) - 5 items

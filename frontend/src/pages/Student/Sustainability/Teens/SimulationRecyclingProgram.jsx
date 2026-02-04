@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -17,6 +17,7 @@ const SimulationRecyclingProgram = () => {
   const [choices, setChoices] = useState([]);
   const [gameFinished, setGameFinished] = useState(false);
   const [coins, setCoins] = useState(0);
+  const coinsRef = useRef(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   // Set global window variables for useGameFeedback to ensure correct +1 popup
@@ -150,29 +151,34 @@ const SimulationRecyclingProgram = () => {
     const selectedOption = questions[currentScenario].options.find(opt => opt.id === optionId);
     const isCorrect = selectedOption.isCorrect;
     const isLastQuestion = currentScenario === questions.length - 1;
-    const newCoins = coins + 1;
-
-    console.log(`Question ${currentScenario + 1}: isCorrect=${isCorrect}, isLastQuestion=${isLastQuestion}, current coins=${coins}, new coins will be=${newCoins}`);
 
     if (isCorrect) {
-      // For the last question, we want to show the total coins earned
+      // Use functional update to avoid stale state
+      setCoins((prev) => {
+        const updated = prev + coinsPerLevel;
+        coinsRef.current = updated;
+        console.log(`Question ${currentScenario + 1}: isCorrect=${isCorrect}, isLastQuestion=${isLastQuestion}, previous coins=${prev}, new coins will be=${updated}`);
+        return updated;
+      });
+
       if (isLastQuestion) {
-        console.log(`Showing final feedback with ${newCoins} coins`);
-        showCorrectAnswerFeedback(newCoins, true); // Show total coins
+        console.log(`Final question: showing incremental +${coinsPerLevel} coin (backend may award remaining)`);
+        showCorrectAnswerFeedback(1, true);
       } else {
         console.log(`Showing intermediate feedback with +1 coin`);
-        showCorrectAnswerFeedback(1, true); // Show +1 for intermediate questions
+        showCorrectAnswerFeedback(1, true);
       }
-      setCoins(newCoins); // Increment coins when correct
+    } else {
+      console.log(`Question ${currentScenario + 1}: isCorrect=${isCorrect}, isLastQuestion=${isLastQuestion}, coins remain=${coinsRef.current}`);
     }
 
-    setChoices([...choices, { scenario: currentScenario, optionId, isCorrect }]);
+    setChoices((prev) => [...prev, { scenario: currentScenario, optionId, isCorrect }]);
 
     setTimeout(() => {
       if (currentScenario < questions.length - 1) {
         setCurrentScenario(prev => prev + 1);
       } else {
-        console.log(`Game finished! Final coins: ${newCoins}`);
+        console.log(`Game finished! Final coins: ${coinsRef.current}`);
         setGameFinished(true);
       }
     }, 1500);

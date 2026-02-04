@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -9,17 +9,23 @@ const HygieneConfidenceDebate46 = () => {
   // Get game data from game category folder (source of truth)
   const gameId = "health-male-teen-46";
 
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  // Hardcode rewards: 2 coins per question, 10 total coins, 20 total XP
+  const coinsPerLevel = 2;
+  const totalCoins = 10;
+  const totalXp = 20;
 
   const [coins, setCoins] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
+  const [correctAnswers, setCorrectAnswers] = useState(0); // Track number of correct answers for score
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
+
+  // Debug logging to track state changes
+  useEffect(() => {
+    console.log('HygieneConfidenceDebate46 state:', { coins, correctAnswers, currentQuestion, showFeedback, gameFinished });
+  }, [coins, correctAnswers, currentQuestion, showFeedback, gameFinished]);
 
   const questions = [
   {
@@ -143,17 +149,53 @@ const HygieneConfidenceDebate46 = () => {
   }
 ];
 
+  // Set global window variables for useGameFeedback
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__flashTotalCoins = totalCoins;
+      window.__flashQuestionCount = questions.length;
+      window.__flashPointsMultiplier = coinsPerLevel;
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel, questions.length]);
+
+  // Debug logging to see what values are being passed
+  useEffect(() => {
+    console.log('🎮 HygieneConfidenceDebate46 debug:', {
+      totalCoins,
+      coinsPerLevel,
+      questionsLength: questions.length,
+      windowVars: {
+        __flashTotalCoins: window.__flashTotalCoins,
+        __flashQuestionCount: window.__flashQuestionCount,
+        __flashPointsMultiplier: window.__flashPointsMultiplier
+      }
+    });
+  }, [totalCoins, coinsPerLevel, questions.length]);
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || showFeedback) return;
     
     resetFeedback(); // Reset any existing feedback
     
-    setSelectedOption(optionId);
     const isCorrect = optionId === questions[currentQuestion].correctAnswer;
     
+    console.log(`Choice made - question=${currentQuestion + 1}, optionId=${optionId}, isCorrect=${isCorrect}, prevCoins=${coins}, prevCorrectAnswers=${correctAnswers}`);
+    
+    setSelectedOption(optionId);
+    
     if (isCorrect) {
-      setCoins(prev => prev + 1); // 1 coin per correct answer
+      const newCoins = coins + 2;
+      const newCorrect = correctAnswers + 1;
+      console.log(`Awarding points -> newCoins=${newCoins}, newCorrectAnswers=${newCorrect}`);
+      setCoins(prev => prev + 2); // 2 coins per correct answer
+      setCorrectAnswers(prev => prev + 1); // Increment correct answers count
       showCorrectAnswerFeedback(1, true);
     }
     
@@ -165,6 +207,7 @@ const HygieneConfidenceDebate46 = () => {
         setSelectedOption(null);
         setShowFeedback(false);
       } else {
+        console.log('Game finishing - final:', { coins: isCorrect ? coins + 2 : coins, correctAnswers: isCorrect ? correctAnswers + 1 : correctAnswers });
         setGameFinished(true);
       }
     }, 5000);
@@ -176,6 +219,21 @@ const HygieneConfidenceDebate46 = () => {
 
   const getCurrentQuestion = () => questions[currentQuestion];
 
+  // Debug logging for GameShell props
+  useEffect(() => {
+    if (gameFinished) {
+      console.log('🎮 GameShell props for HygieneConfidenceDebate46:', {
+        score: coins,
+        correctAnswers,
+        maxScore: questions.length,
+        coinsPerLevel,
+        totalCoins,
+        totalXp,
+        totalLevels: questions.length
+      });
+    }
+  }, [gameFinished, correctAnswers, coinsPerLevel, totalCoins, totalXp, questions.length]);
+
   return (
     <GameShell
       title="Hygiene Confidence Debate"
@@ -183,14 +241,15 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
       onNext={handleNext}
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
-      score={coins}
+      score={correctAnswers}
       gameId={gameId}
       nextGamePathProp="/student/health-male/teens/journal-of-care"
       nextGameIdProp="health-male-teen-47"
       gameType="health-male"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
-      maxScore={questions.length}
+      maxScore={totalCoins}
+      totalLevels={questions.length}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -199,7 +258,10 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
           <div className="flex justify-between items-center mb-4">
             <span className="text-white/80">Debate {currentQuestion + 1}/{questions.length}</span>
-            <span className="text-yellow-400 font-bold">Score: {coins}</span>
+            <div>
+              <span className="text-yellow-400 font-bold mr-4">Coins: {coins}</span>
+              <span className="text-green-400 font-bold">Score: {correctAnswers}/{questions.length}</span>
+            </div>
           </div>
 
           <div className="text-center mb-6">
@@ -266,7 +328,10 @@ subtitle={!gameFinished ? `Debate ${currentQuestion + 1} of ${questions.length}`
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <h3 className="text-3xl font-bold text-white mb-4">Debate Complete!</h3>
             <p className="text-xl text-white/90 mb-6">
-              You scored {coins} out of {questions.length}!
+              You finished the game with {correctAnswers} out of {questions.length} correct
+            </p>
+            <p className="text-xl text-white/90 mb-6">
+              You earned {coins} coins!
             </p>
             <p className="text-white/80 mb-8">
               Good hygiene habits boost confidence and social connections.

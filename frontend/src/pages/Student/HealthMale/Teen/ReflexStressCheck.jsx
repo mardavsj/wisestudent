@@ -12,10 +12,10 @@ const ReflexStressCheck = () => {
   // Get game data from game category folder (source of truth)
   const gameId = "health-male-teen-53";
 
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  // Hardcode rewards: 3 coins per question, 15 total coins, 30 total XP
+  const coinsPerLevel = 3;
+  const totalCoins = 15;
+  const totalXp = 30;
 
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
@@ -24,6 +24,8 @@ const ReflexStressCheck = () => {
   const [currentRound, setCurrentRound] = useState(0);
   const [timeLeft, setTimeLeft] = useState(ROUND_TIME);
   const [answered, setAnswered] = useState(false);
+  const [coins, setCoins] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0); // Track number of correct answers for score
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
@@ -84,6 +86,49 @@ const ReflexStressCheck = () => {
     ]
   }
 ];
+  
+  // Set global window variables for useGameFeedback
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__flashTotalCoins = totalCoins;
+      window.__flashQuestionCount = TOTAL_ROUNDS;
+      window.__flashPointsMultiplier = coinsPerLevel;
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel, TOTAL_ROUNDS]);
+
+  // Debug logging
+  useEffect(() => {
+    console.log('🎮 ReflexStressCheck debug:', {
+      correctAnswers,
+      coins,
+      coinsPerLevel,
+      totalCoins,
+      questionsLength: TOTAL_ROUNDS,
+      gameState
+    });
+  }, [correctAnswers, coins, coinsPerLevel, totalCoins, gameState, TOTAL_ROUNDS]);
+
+  // Debug: Log GameShell props
+  useEffect(() => {
+    if (gameState === "finished") {
+      console.log('🎮 GameShell props:', {
+        score: correctAnswers,
+        maxScore: TOTAL_ROUNDS,
+        coinsPerLevel,
+        totalCoins,
+        totalXp,
+        totalLevels: TOTAL_ROUNDS
+      });
+    }
+  }, [gameState, correctAnswers, coinsPerLevel, totalCoins, totalXp, TOTAL_ROUNDS]);
+
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -166,6 +211,8 @@ const ReflexStressCheck = () => {
     setTimeLeft(ROUND_TIME);
     setScore(0);
     setCurrentRound(1);
+    setCoins(0);
+    setCorrectAnswers(0);
     resetFeedback();
   };
 
@@ -182,8 +229,12 @@ const ReflexStressCheck = () => {
     resetFeedback();
 
     if (option.isCorrect) {
-      setScore((prev) => prev + 1);
-      showCorrectAnswerFeedback(1, true);
+      setCoins(prev => prev + 3); // Increment coins when correct (3 coins per question)
+      setCorrectAnswers(prev => prev + 1); // Increment correct answers count
+      // Show feedback after state updates
+      setTimeout(() => {
+        showCorrectAnswerFeedback(1, true);
+      }, 50);
     }
 
     // Move to next round or show results after a short delay
@@ -209,7 +260,7 @@ const ReflexStressCheck = () => {
       onNext={handleNext}
       nextEnabled={gameState === "finished"}
       showGameOver={gameState === "finished"}
-      score={score}
+      score={correctAnswers}
       gameId={gameId}
       nextGamePathProp="/student/health-male/teens/mind-body-match-puzzle"
       nextGameIdProp="health-male-teen-54"
@@ -220,6 +271,7 @@ const ReflexStressCheck = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      totalLevels={TOTAL_ROUNDS}
     >
       <div className="space-y-8">
         {gameState === "ready" && (
@@ -253,7 +305,7 @@ const ReflexStressCheck = () => {
                 <span className="text-white">Time:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">Score:</span> {correctAnswers}
               </div>
             </div>
 
@@ -276,6 +328,27 @@ const ReflexStressCheck = () => {
                 ))}
               </div>
             </div>
+          </div>
+        )}
+        
+        {gameState === "finished" && (
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
+            <h3 className="text-3xl font-bold text-white mb-4">Stress Check Complete!</h3>
+            <p className="text-xl text-white/90 mb-6">
+              You finished the game with {correctAnswers} out of {TOTAL_ROUNDS} correct
+            </p>
+            <p className="text-xl text-white/90 mb-6">
+              You earned {coins} coins!
+            </p>
+            <p className="text-white/80 mb-8">
+              Great job practicing stress management skills!
+            </p>
+            <button
+              onClick={handleNext}
+              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-8 rounded-full font-bold text-lg transition-all transform hover:scale-105"
+            >
+              Next Challenge
+            </button>
           </div>
         )}
       </div>

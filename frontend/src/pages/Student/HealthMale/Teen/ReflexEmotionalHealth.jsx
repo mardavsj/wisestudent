@@ -12,10 +12,11 @@ const ReflexEmotionalHealth = () => {
   // Get game data from game category folder (source of truth)
   const gameId = "health-male-teen-59";
 
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  // Hardcode rewards: 3 coins per question, 15 total coins, 30 total XP
+  const coinsPerLevel = 3;
+  const totalCoins = 15;
+  const totalXp = 30;
+  const [correctAnswers, setCorrectAnswers] = useState(0); // Track number of correct answers for score
 
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
@@ -84,6 +85,48 @@ const ReflexEmotionalHealth = () => {
     ]
   }
 ];
+  
+  // Set global window variables for useGameFeedback
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__flashTotalCoins = totalCoins;
+      window.__flashQuestionCount = questions.length;
+      window.__flashPointsMultiplier = coinsPerLevel;
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel, questions.length]);
+
+  // Debug logging
+  useEffect(() => {
+    console.log('🎮 ReflexEmotionalHealth debug:', {
+      correctAnswers,
+      score,
+      coinsPerLevel,
+      totalCoins,
+      questionsLength: questions.length,
+      gameState
+    });
+  }, [correctAnswers, score, coinsPerLevel, totalCoins, gameState, questions.length]);
+
+  // Debug: Log GameShell props
+  useEffect(() => {
+    if (gameState === "finished") {
+      console.log('🎮 GameShell props:', {
+        score: correctAnswers,
+        maxScore: questions.length,
+        coinsPerLevel,
+        totalCoins,
+        totalXp,
+        totalLevels: questions.length
+      });
+    }
+  }, [gameState, correctAnswers, coinsPerLevel, totalCoins, totalXp, questions.length]);
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -183,7 +226,8 @@ const ReflexEmotionalHealth = () => {
 
     if (option.isCorrect) {
       setScore((prev) => prev + 1);
-      showCorrectAnswerFeedback(1, true);
+      setCorrectAnswers(prev => prev + 1); // Increment correct answers count
+      showCorrectAnswerFeedback(1, true); // Show +1 in popup for correct answer
     }
 
     // Move to next round or show results after a short delay
@@ -209,7 +253,7 @@ const ReflexEmotionalHealth = () => {
       onNext={handleNext}
       nextEnabled={gameState === "finished"}
       showGameOver={gameState === "finished"}
-      score={score}
+      score={correctAnswers}
       gameId={gameId}
       nextGamePathProp="/student/health-male/teens/emotion-smart-teen-badge"
       nextGameIdProp="health-male-teen-60"
@@ -220,6 +264,7 @@ const ReflexEmotionalHealth = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      totalLevels={questions.length}
     >
       <div className="space-y-8">
         {gameState === "ready" && (
@@ -253,7 +298,7 @@ const ReflexEmotionalHealth = () => {
                 <span className="text-white">Time:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">Score:</span> {score} | <span className="text-yellow-400 font-bold">Coins: {correctAnswers * 3}</span>
               </div>
             </div>
 
@@ -276,6 +321,27 @@ const ReflexEmotionalHealth = () => {
                 ))}
               </div>
             </div>
+          </div>
+        )}
+        
+        {gameState === "finished" && (
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
+            <h3 className="text-3xl font-bold text-white mb-4">Game Completed!</h3>
+            <p className="text-xl text-white/90 mb-6">
+              You finished the game with {correctAnswers} out of {TOTAL_ROUNDS} correct
+            </p>
+            <p className="text-xl text-white/90 mb-6">
+              You earned {correctAnswers * 3} coins!
+            </p>
+            <p className="text-white/80 mb-8">
+              Great job managing your emotional health!
+            </p>
+            <button
+              onClick={handleNext}
+              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-8 rounded-full font-bold text-lg transition-all transform hover:scale-105"
+            >
+              Next Challenge
+            </button>
           </div>
         )}
       </div>

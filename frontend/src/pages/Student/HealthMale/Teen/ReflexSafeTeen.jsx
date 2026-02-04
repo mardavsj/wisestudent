@@ -223,7 +223,7 @@ const ReflexSafeTeen = () => {
                 ⏱️ {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold text-yellow-400">Coins:</span> {score}
+                <span className="font-bold text-yellow-400">Score:</span> {score}
               </div>
             </div>
 

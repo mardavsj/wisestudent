@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -12,14 +12,15 @@ const PreventionFirstPoster = () => {
   const gameId = "health-male-kids-76";
   const gameData = getGameDataById(gameId);
 
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  // Hardcode rewards: 4 coins per question, 20 total coins, 40 total XP
+  const coinsPerLevel = 4;
+  const totalCoins = 20;
+  const totalXp = 40;
 
   const [coins, setCoins] = useState(0);
   const [currentStage, setCurrentStage] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
+  const [correctAnswers, setCorrectAnswers] = useState(0); // Track number of correct answers for score
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
   const stages = [
@@ -151,11 +152,57 @@ const PreventionFirstPoster = () => {
       ]
     }
   ];
+  
+  // Set global window variables for useGameFeedback
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__flashTotalCoins = totalCoins;
+      window.__flashQuestionCount = stages.length;
+      window.__flashPointsMultiplier = coinsPerLevel;
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel, stages.length]);
+
+  // Debug logging
+  useEffect(() => {
+    console.log('🎮 PreventionFirstPoster debug:', {
+      correctAnswers,
+      coins,
+      coinsPerLevel,
+      totalCoins,
+      questionsLength: stages.length,
+      gameFinished
+    });
+  }, [correctAnswers, coins, coinsPerLevel, totalCoins, gameFinished, stages.length]);
+
+  // Debug: Log GameShell props
+  useEffect(() => {
+    if (gameFinished) {
+      console.log('🎮 GameShell props:', {
+        score: correctAnswers,
+        maxScore: stages.length,
+        coinsPerLevel,
+        totalCoins,
+        totalXp,
+        totalLevels: stages.length
+      });
+    }
+  }, [gameFinished, correctAnswers, coinsPerLevel, totalCoins, totalXp, stages.length]);
 
   const handleOptionSelect = (option) => {
     if (option.isCorrect) {
-      setCoins(prev => prev + 1);
-      showCorrectAnswerFeedback(1, true);
+      setCoins(prev => prev + 4); // Increment coins when correct (4 coins per question)
+      setCorrectAnswers(prev => prev + 1); // Increment correct answers count
+      // Show feedback after state updates
+      setTimeout(() => {
+        showCorrectAnswerFeedback(1, true);
+      }, 50);
 
       setTimeout(() => {
         if (currentStage < stages.length - 1) {
@@ -191,7 +238,7 @@ const PreventionFirstPoster = () => {
       onNext={handleNext}
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
-      score={coins}
+      score={correctAnswers}
       gameId={gameId}
       nextGamePathProp="/student/health-male/kids/safety-journal"
       nextGameIdProp="health-male-kids-77"
@@ -202,6 +249,7 @@ const PreventionFirstPoster = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      totalLevels={stages.length}
     >
       <div className="space-y-8">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
@@ -230,6 +278,26 @@ const PreventionFirstPoster = () => {
           </div>
         </div>
       </div>
+      {gameFinished && (
+        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
+          <h3 className="text-3xl font-bold text-white mb-4">Poster Complete!</h3>
+          <p className="text-xl text-white/90 mb-6">
+            You finished the game with {correctAnswers} out of {stages.length} correct
+          </p>
+          <p className="text-xl text-white/90 mb-6">
+            You earned {coins} coins!
+          </p>
+          <p className="text-white/80 mb-8">
+            Great job learning about prevention and staying healthy!
+          </p>
+          <button
+            onClick={handleNext}
+            className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-8 rounded-full font-bold text-lg transition-all transform hover:scale-105"
+          >
+            Next Challenge
+          </button>
+        </div>
+      )}
     </GameShell>
   );
 };

@@ -72,12 +72,7 @@ const QuizPreventiveHealth = () => {
     id: 3,
     text: "Why are early screenings important even when no symptoms are present?",
     options: [
-      {
-        id: "a",
-        text: "Many conditions develop silently",
-        emoji: "🔍",
-        isCorrect: true
-      },
+     
       {
         id: "b",
         text: "Doctors require routine tests",
@@ -89,13 +84,25 @@ const QuizPreventiveHealth = () => {
         text: "Symptoms always appear late",
         emoji: "⏳",
         isCorrect: false
-      }
+      },
+       {
+        id: "a",
+        text: "Many conditions develop silently",
+        emoji: "🔍",
+        isCorrect: true
+      },
     ]
   },
   {
     id: 4,
     text: "Which mental habit supports preventive health the MOST?",
     options: [
+       {
+        id: "b",
+        text: "Self-monitoring mood and energy levels",
+        emoji: "📊",
+        isCorrect: true
+      },
       {
         id: "a",
         text: "Ignoring stress until exams end",
@@ -109,12 +116,7 @@ const QuizPreventiveHealth = () => {
         emoji: "📱",
         isCorrect: false
       },
-      {
-        id: "b",
-        text: "Self-monitoring mood and energy levels",
-        emoji: "📊",
-        isCorrect: true
-      },
+     
     ]
   },
   {
@@ -172,7 +174,7 @@ const QuizPreventiveHealth = () => {
       } else {
         setGameFinished(true);
       }
-    }, isCorrect ? 1000 : 800);
+    }, isCorrect ? 3000 : 3000);
   };
 
   const handleNext = () => {

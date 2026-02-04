@@ -12,15 +12,17 @@ const ReflexRespectCheck = () => {
   // Get game data from game category folder (source of truth)
   const gameId = "health-male-teen-69";
 
-  // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  // Hardcode rewards: 3 coins per question, 15 total coins, 30 total XP
+  const coinsPerLevel = 3;
+  const totalCoins = 15;
+  const totalXp = 30;
 
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
   const [score, setScore] = useState(0);
+  const [coins, setCoins] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0); // Track number of correct answers for score
   const [currentRound, setCurrentRound] = useState(0);
   const [timeLeft, setTimeLeft] = useState(ROUND_TIME);
   const [answered, setAnswered] = useState(false);
@@ -84,6 +86,48 @@ const ReflexRespectCheck = () => {
     ]
   }
 ];
+  
+  // Set global window variables for useGameFeedback
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__flashTotalCoins = totalCoins;
+      window.__flashQuestionCount = TOTAL_ROUNDS;
+      window.__flashPointsMultiplier = coinsPerLevel;
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel, TOTAL_ROUNDS]);
+
+  // Debug logging
+  useEffect(() => {
+    console.log('🎮 ReflexRespectCheck debug:', {
+      correctAnswers,
+      coins,
+      coinsPerLevel,
+      totalCoins,
+      questionsLength: TOTAL_ROUNDS,
+      gameState
+    });
+  }, [correctAnswers, coins, coinsPerLevel, totalCoins, gameState, TOTAL_ROUNDS]);
+
+  // Debug: Log GameShell props
+  useEffect(() => {
+    if (gameState === "finished") {
+      console.log('🎮 GameShell props:', {
+        score: correctAnswers,
+        maxScore: TOTAL_ROUNDS,
+        coinsPerLevel,
+        totalCoins,
+        totalXp,
+        totalLevels: TOTAL_ROUNDS
+      });
+    }
+  }, [gameState, correctAnswers, coinsPerLevel, totalCoins, totalXp, TOTAL_ROUNDS]);
 
 
   // Update ref when currentRound changes
@@ -166,6 +210,8 @@ const ReflexRespectCheck = () => {
     setGameState("playing");
     setTimeLeft(ROUND_TIME);
     setScore(0);
+    setCoins(0);
+    setCorrectAnswers(0);
     setCurrentRound(1);
     resetFeedback();
   };
@@ -183,8 +229,12 @@ const ReflexRespectCheck = () => {
     resetFeedback();
 
     if (option.isCorrect) {
-      setScore((prev) => prev + 1);
-      showCorrectAnswerFeedback(1, true);
+      setCoins(prev => prev + 3); // Increment coins when correct (3 coins per question)
+      setCorrectAnswers(prev => prev + 1); // Increment correct answers count
+      // Show feedback after state updates
+      setTimeout(() => {
+        showCorrectAnswerFeedback(1, true);
+      }, 50);
     }
 
     // Move to next round or show results after a short delay
@@ -210,7 +260,7 @@ const ReflexRespectCheck = () => {
       onNext={handleNext}
       nextEnabled={gameState === "finished"}
       showGameOver={gameState === "finished"}
-      score={score}
+      score={correctAnswers}
       gameId={gameId}
       nextGamePathProp="/student/health-male/teens/healthy-man-teen-badge"
       nextGameIdProp="health-male-teen-70"
@@ -221,6 +271,7 @@ const ReflexRespectCheck = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      totalLevels={TOTAL_ROUNDS}
     >
       <div className="space-y-8">
         {gameState === "ready" && (
@@ -239,6 +290,27 @@ const ReflexRespectCheck = () => {
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
               Start Game
+            </button>
+          </div>
+        )}
+
+        {gameState === "finished" && (
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
+            <h3 className="text-3xl font-bold text-white mb-4">Game Complete!</h3>
+            <p className="text-xl text-white/90 mb-6">
+              You finished the game with {correctAnswers} out of {TOTAL_ROUNDS} correct
+            </p>
+            <p className="text-xl text-white/90 mb-6">
+              You earned {coins} coins!
+            </p>
+            <p className="text-white/80 mb-8">
+              Great job practicing respectful responses!
+            </p>
+            <button
+              onClick={handleNext}
+              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-8 rounded-full font-bold text-lg transition-all transform hover:scale-105"
+            >
+              Next Challenge
             </button>
           </div>
         )}

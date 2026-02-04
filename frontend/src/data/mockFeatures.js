@@ -553,14 +553,4 @@ export const mockFeatures = [
     xpReward: 2500
   },
   // Sustainability Games - Added before challenges
-  {
-    id: 42,
-    title: "Sustainability",
-    description: "Learn about environmental sustainability through interactive games",
-    icon: "🌱",
-    path: "/games/sustainability",
-    color: "bg-green-600",
-    category: "sustainability",
-    xpReward: 45
-  },
 ];

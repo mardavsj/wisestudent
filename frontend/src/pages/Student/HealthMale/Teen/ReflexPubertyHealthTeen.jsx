@@ -242,7 +242,7 @@ const ReflexPubertyHealthTeen = () => {
             onNext={handleNext}
             nextEnabled={gameState === "finished"}
             showGameOver={gameState === "finished"}
-            score={coins}
+            score={correctAnswers}
             gameId={gameId}
             nextGamePathProp="/student/health-male/teens/puberty-health-puzzle-teen"
             nextGameIdProp="health-male-teen-34"

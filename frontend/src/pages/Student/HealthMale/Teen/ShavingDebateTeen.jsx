@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -9,10 +9,10 @@ const ShavingDebateTeen = () => {
     // Get game data from game category folder (source of truth)
     const gameId = "health-male-teen-36";
 
-    // Hardcode rewards to align with rule: 1 coin per question, 5 total coins, 10 total XP
-    const coinsPerLevel = 1;
-    const totalCoins = 5;
-    const totalXp = 10;
+    // Hardcode rewards: 2 coins per question, 10 total coins, 20 total XP
+    const coinsPerLevel = 2;
+    const totalCoins = 10;
+    const totalXp = 20;
 
     const [coins, setCoins] = useState(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -20,6 +20,11 @@ const ShavingDebateTeen = () => {
     const [showFeedback, setShowFeedback] = useState(false);
     const [score, setScore] = useState(0);
     const [gameFinished, setGameFinished] = useState(false);
+    
+    // Debug logging for state changes
+    useEffect(() => {
+        console.log('🔄 State update - Coins:', coins, 'Question:', currentQuestionIndex + 1, 'Selected:', selectedOption, 'Feedback:', showFeedback);
+    }, [coins, currentQuestionIndex, selectedOption, showFeedback]);
     const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
     const questions = [
@@ -141,16 +146,50 @@ const ShavingDebateTeen = () => {
     }
 ];
 
+    // Set global window variables for useGameFeedback
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            window.__flashTotalCoins = totalCoins;
+            window.__flashQuestionCount = questions.length;
+            window.__flashPointsMultiplier = coinsPerLevel;
+            console.log('useGameFeedback globals set', {
+                __flashTotalCoins: window.__flashTotalCoins,
+                __flashQuestionCount: window.__flashQuestionCount,
+                __flashPointsMultiplier: window.__flashPointsMultiplier
+            });
+
+            return () => {
+                // Clean up on unmount
+                window.__flashTotalCoins = null;
+                window.__flashQuestionCount = null;
+                window.__flashPointsMultiplier = 1;
+            };
+        }
+    }, [totalCoins, coinsPerLevel, questions.length]);
+
 
     const handleOptionSelect = (optionId) => {
+        // Prevent multiple executions for the same question
+        if (showFeedback || selectedOption) {
+            console.log('⚠️ handleOptionSelect blocked - already processing');
+            return;
+        }
+        
         const currentQuestion = questions[currentQuestionIndex];
         const isCorrect = optionId === currentQuestion.correctAnswer;
+        
+        console.log('🎯 handleOptionSelect called for option:', optionId, 'Question:', currentQuestionIndex + 1, { coins, score });
         
         setSelectedOption(optionId);
         setShowFeedback(true);
         
         if (isCorrect) {
-            setCoins(prev => prev + 1);
+            console.log('✅ Correct answer! Current coins:', coins, 'Adding 2 coins');
+            setCoins(prev => {
+                const newCoins = prev + 2;
+                console.log('💰 Coin increment:', prev, '->', newCoins);
+                return newCoins;
+            }); // 2 coins per correct answer
             setScore(prev => prev + 1);
             showCorrectAnswerFeedback(1, true);
         } else {
@@ -175,6 +214,36 @@ const ShavingDebateTeen = () => {
     };
 
     const currentQuestion = questions[currentQuestionIndex];
+    
+    // Debug logging for GameShell props
+    useEffect(() => {
+        console.log('🎮 GameShell props:', {
+            score: coins,
+            maxScore: totalCoins,
+            totalLevels: questions.length,
+            coinsPerLevel,
+            totalCoins,
+            currentQuestion: currentQuestionIndex + 1
+        });
+    }, [coins, totalCoins, coinsPerLevel, currentQuestionIndex]);
+
+    // Final results logging
+    useEffect(() => {
+        if (gameFinished) {
+            console.log('🏁 ShavingDebateTeen finished', {
+                gameId,
+                finalScore: score,
+                finalCoins: coins,
+                totalCoins,
+                coinsPerLevel,
+                windowFlash: {
+                    totalCoins: typeof window !== 'undefined' ? window.__flashTotalCoins : undefined,
+                    questionCount: typeof window !== 'undefined' ? window.__flashQuestionCount : undefined,
+                    multiplier: typeof window !== 'undefined' ? window.__flashPointsMultiplier : undefined
+                }
+            });
+        }
+    }, [gameFinished, score, coins, gameId, totalCoins, coinsPerLevel]);
 
     return (
         <GameShell
@@ -183,15 +252,16 @@ const ShavingDebateTeen = () => {
             onNext={handleNext}
             nextEnabled={gameFinished}
             showGameOver={gameFinished}
-            score={coins}
+            score={score}
             gameId={gameId}
             nextGamePathProp="/student/health-male/teens/teen-hygiene-journal"
             nextGameIdProp="health-male-teen-37"
             gameType="health-male"
             flashPoints={flashPoints}
             showAnswerConfetti={showAnswerConfetti}
-            maxScore={questions.length}
+            maxScore={totalCoins}
             coinsPerLevel={coinsPerLevel}
+            totalLevels={questions.length}
             totalCoins={totalCoins}
             totalXp={totalXp}
         >

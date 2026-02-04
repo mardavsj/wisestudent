@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -7,15 +7,17 @@ const CoolOrFoolDebate = () => {
   const navigate = useNavigate();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
+  const [coins, setCoins] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0); // Track number of correct answers for score
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Hardcode rewards
-  const coinsPerLevel = 1;
-  const totalCoins = 5;
-  const totalXp = 10;
+  // Hardcode rewards: 4 coins per question, 20 total coins, 40 total XP
+  const coinsPerLevel = 4;
+  const totalCoins = 20;
+  const totalXp = 40;
 
   const questions = [
   {
@@ -74,6 +76,49 @@ const CoolOrFoolDebate = () => {
     explanation: "Public health data shows teen substance use is risky. Awareness campaigns highlight the dangers to prevent addiction and long-term health consequences."
   }
 ];
+  
+  // Set global window variables for useGameFeedback
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__flashTotalCoins = totalCoins;
+      window.__flashQuestionCount = questions.length;
+      window.__flashPointsMultiplier = coinsPerLevel;
+      
+      return () => {
+        // Clean up on unmount
+        window.__flashTotalCoins = null;
+        window.__flashQuestionCount = null;
+        window.__flashPointsMultiplier = 1;
+      };
+    }
+  }, [totalCoins, coinsPerLevel, questions.length]);
+
+  // Debug logging
+  useEffect(() => {
+    console.log('🎮 CoolOrFoolDebate debug:', {
+      correctAnswers,
+      coins,
+      coinsPerLevel,
+      totalCoins,
+      questionsLength: questions.length,
+      gameFinished
+    });
+  }, [correctAnswers, coins, coinsPerLevel, totalCoins, gameFinished, questions.length]);
+
+  // Debug: Log GameShell props
+  useEffect(() => {
+    if (gameFinished) {
+      console.log('🎮 GameShell props:', {
+        score: correctAnswers,
+        maxScore: questions.length,
+        coinsPerLevel,
+        totalCoins,
+        totalXp,
+        totalLevels: questions.length
+      });
+    }
+  }, [gameFinished, correctAnswers, coinsPerLevel, totalCoins, totalXp, questions.length]);
+
 
   const handleOptionSelect = (optionId) => {
     if (selectedOption || showFeedback) return;
@@ -84,8 +129,12 @@ const CoolOrFoolDebate = () => {
     const isCorrect = optionId === questions[currentQuestion].correctAnswer;
     
     if (isCorrect) {
-      setScore(prev => prev + 1); // 1 point per correct answer
-      showCorrectAnswerFeedback(1, true);
+      setCoins(prev => prev + 4); // Increment coins when correct (4 coins per question)
+      setCorrectAnswers(prev => prev + 1); // Increment correct answers count
+      // Show feedback after state updates
+      setTimeout(() => {
+        showCorrectAnswerFeedback(1, true);
+      }, 50);
     }
     
     setShowFeedback(true);
@@ -114,7 +163,7 @@ const CoolOrFoolDebate = () => {
       onNext={handleNext}
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
-      score={score}
+      score={correctAnswers}
       gameId="health-male-teen-86"
       nextGamePathProp="/student/health-male/teens/journal-of-awareness"
       nextGameIdProp="health-male-teen-87"
@@ -123,6 +172,7 @@ const CoolOrFoolDebate = () => {
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      totalLevels={questions.length}
       showConfetti={gameFinished}
       flashPoints={flashPoints}
       backPath="/games/health-male/teens"
@@ -132,7 +182,7 @@ const CoolOrFoolDebate = () => {
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
           <div className="flex justify-between items-center mb-4">
             <span className="text-white/80">Debate {currentQuestion + 1}/{questions.length}</span>
-            <span className="text-yellow-400 font-bold">Score: {score}</span>
+            <span className="text-yellow-400 font-bold">Score: {correctAnswers}</span>
           </div>
 
           <div className="text-center mb-6">
@@ -195,6 +245,26 @@ const CoolOrFoolDebate = () => {
           )}
         </div>
       </div>
+      {gameFinished && (
+        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
+          <h3 className="text-3xl font-bold text-white mb-4">Debate Complete!</h3>
+          <p className="text-xl text-white/90 mb-6">
+            You finished the game with {correctAnswers} out of {questions.length} correct
+          </p>
+          <p className="text-xl text-white/90 mb-6">
+            You earned {coins} coins!
+          </p>
+          <p className="text-white/80 mb-8">
+            Great job understanding the importance of making wise choices!
+          </p>
+          <button
+            onClick={handleNext}
+            className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-8 rounded-full font-bold text-lg transition-all transform hover:scale-105"
+          >
+            Next Challenge
+          </button>
+        </div>
+      )}
     </GameShell>
   );
 };

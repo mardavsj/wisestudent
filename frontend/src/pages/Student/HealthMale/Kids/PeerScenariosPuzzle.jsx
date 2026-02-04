@@ -25,20 +25,20 @@ const PeerScenariosPuzzle = () => {
 
   // Peer Pressure Scenarios (left side) - 5 items
   const scenarios = [
-    { id: 1, name: "Skip Homework", emoji: "📚", description: "Friends pressure you to skip studying" },
-    { id: 2, name: "Try Smoking", emoji: "🚬", description: "Someone offers you a cigarette" },
-    { id: 3, name: "Cheat on Test", emoji: "📝", description: "Classmate suggests copying answers" },
-    { id: 4, name: "Steal Items", emoji: "🏪", description: "Friend wants to shoplift" },
-    { id: 5, name: "Bully Someone", emoji: "😢", description: "Group wants to tease a classmate" }
+    { id: 1, name: "Skip Homework", emoji: "📚",  },
+    { id: 2, name: "Try Smoking", emoji: "🚬" },
+    { id: 3, name: "Cheat on Test", emoji: "📝" },
+    { id: 4, name: "Steal Items", emoji: "🏪" },
+    { id: 5, name: "Bully Someone", emoji: "😢" },
   ];
 
   // Appropriate Responses (right side) - 5 items
   const responses = [
-    { id: 1, name: "Say No Firmly", emoji: "🙅", description: "Politely but firmly refuse" },
-    { id: 2, name: "Walk Away", emoji: "🚶", description: "Remove yourself from the situation" },
-    { id: 3, name: "Suggest Alternative", emoji: "💡", description: "Propose a better activity" },
-    { id: 5, name: "Get Help", emoji: "🆘", description: "Tell a trusted adult" },
-    { id: 4, name: "Explain Why", emoji: "💬", description: "Share your reasons for not participating" },
+    { id: 1, name: "Say No Firmly", emoji: "🙅" },
+    { id: 2, name: "Walk Away", emoji: "🚶" },
+    { id: 3, name: "Suggest Alternative", emoji: "💡" },
+    { id: 5, name: "Get Help", emoji: "🆘" },
+    { id: 4, name: "Explain Why", emoji: "💬" },
   ];
 
   // Correct matches
