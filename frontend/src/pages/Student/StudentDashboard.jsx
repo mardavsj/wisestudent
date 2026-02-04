@@ -118,19 +118,6 @@ export default function StudentDashboard() {
     const [dismissedRecommendations, setDismissedRecommendations] = useState(new Set()); // Track dismissed recommendation IDs
     const [leaderboardData, setLeaderboardData] = useState(null);
     const [achievementTimeline, setAchievementTimeline] = useState(null);
-    const [lightboxBadge, setLightboxBadge] = useState(null);
-
-    useEffect(() => {
-        if (lightboxBadge) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-
-        return () => {
-            document.body.style.overflow = "";
-        };
-    }, [lightboxBadge]);
     const [dailyActions, setDailyActions] = useState(null);
     const [newAchievementIds, setNewAchievementIds] = useState(new Set());
     const [sponsorBadge, setSponsorBadge] = useState(null);
@@ -3183,7 +3170,7 @@ export default function StudentDashboard() {
                             </div>
                             <div className="space-y-3 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
                                 {achievementTimeline.achievements.length > 0 ? (
-                                    achievementTimeline.achievements.map((achievement, index) => {
+                                    achievementTimeline.achievements.slice(0, 4).map((achievement, index) => {
                                         const achievementId = achievement.id || `${achievement.badgeName}-${achievement.earnedAt}`;
                                         const isNew = newAchievementIds.has(achievementId);
                                         const subtitle = achievement.pillarName
@@ -3202,10 +3189,9 @@ export default function StudentDashboard() {
                                                     damping: 15
                                                 }}
                                                 whileHover={{ scale: 1.03, x: 5, y: -2 }}
-                                                className={`flex items-center gap-4 bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-md hover:shadow-xl transition-all border ${
-                                                    isNew ? 'border-yellow-400 border-2 shadow-yellow-200' : 'border-white/50'
-                                                } group relative overflow-hidden`}
-                                                onClick={() => setLightboxBadge(achievement)}
+                                            className={`flex items-center gap-4 bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-md hover:shadow-xl transition-all border ${
+                                                isNew ? 'border-yellow-400 border-2 shadow-yellow-200' : 'border-white/50'
+                                            } group relative overflow-hidden`}
                                             >
                                                 {achievement.badgeImage ? (
                                                     <img
@@ -3255,35 +3241,6 @@ export default function StudentDashboard() {
                                         {achievementTimeline.totalAchievements} total achievements earned! 🎉
                                     </p>
                                             </div>
-                            )}
-                            {lightboxBadge && (
-                                <div
-                                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
-                                    onClick={() => setLightboxBadge(null)}
-                                >
-                                    <button
-                                        onClick={() => setLightboxBadge(null)}
-                                        className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-white/80 flex items-center justify-center hover:bg-white transition"
-                                    >
-                                        ×
-                                    </button>
-                                    <div
-                                        onClick={(event) => event.stopPropagation()}
-                                        className="relative h-full w-full max-w-4xl max-h-[90vh] rounded-3xl overflow-hidden"
-                                    >
-                                        {lightboxBadge.badgeImage ? (
-                                            <img
-                                                src={lightboxBadge.badgeImage}
-                                                alt={lightboxBadge.badgeName || "Badge"}
-                                                className="h-full w-full object-contain"
-                                            />
-                                        ) : (
-                                            <div className="h-full w-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white text-3xl font-bold">
-                                                ✪
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
                             )}
                         </motion.div>
                     )}
