@@ -101,7 +101,17 @@ export const getSponsorProfile = async (user) => {
 
 export const updateProfile = async (user, updates) => {
   const sponsor = await findOrCreateSponsor(user);
-  Object.assign(sponsor, updates);
+  
+  // Handle nested address object properly
+  if (updates.address) {
+    sponsor.address = { ...(sponsor.address || {}), ...updates.address };
+    sponsor.markModified('address');
+  }
+  
+  // Handle other fields
+  const { address, ...otherUpdates } = updates;
+  Object.assign(sponsor, otherUpdates);
+  
   sponsor.autoCreated = false;
   await sponsor.save();
   return sponsor.toObject();

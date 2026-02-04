@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Lock, Bell, LogOut, Eye, EyeOff, RefreshCw, Check, AlertCircle } from "lucide-react";
+import { Lock, Bell, Eye, EyeOff, RefreshCw, Check, AlertCircle } from "lucide-react";
 import toast from "react-hot-toast";
-import { useAuth } from "../../context/AuthUtils";
 import api from "../../utils/api";
 
 const CSRSettings = () => {
-  const { logoutUser } = useAuth();
 
   // Notification preferences
   const [notifications, setNotifications] = useState({
@@ -156,12 +154,6 @@ const CSRSettings = () => {
     }
   };
 
-  const handleLogout = () => {
-    if (window.confirm("Are you sure you want to logout?")) {
-      logoutUser();
-      toast.success("Logged out successfully");
-    }
-  };
 
   const togglePasswordVisibility = (field) => {
     setShowPasswords((prev) => ({ ...prev, [field]: !prev[field] }));
@@ -181,7 +173,9 @@ const CSRSettings = () => {
         <header className="flex flex-col gap-2">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Account</p>
           <h1 className="text-3xl font-bold text-slate-900">Settings</h1>
-          <p className="text-sm text-slate-500">Manage your account security and preferences.</p>
+          <p className="text-sm text-slate-500">
+            Manage your account security and notification preferences. Update your password and choose how you want to receive notifications.
+          </p>
         </header>
 
         {/* ACCOUNT SECURITY - CHANGE PASSWORD */}
@@ -427,23 +421,6 @@ const CSRSettings = () => {
               </button>
             </>
           )}
-        </section>
-
-        {/* LOGOUT */}
-        <section className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-lg font-semibold text-slate-900">Logout</h2>
-              <p className="text-sm text-slate-500">End your current session.</p>
-            </div>
-            <button
-              onClick={handleLogout}
-              className="inline-flex items-center gap-2 rounded-xl border border-rose-200 px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-rose-600 hover:bg-rose-50 transition-colors"
-            >
-              <LogOut className="w-4 h-4" />
-              Logout
-            </button>
-          </div>
         </section>
 
         {/* SUPPORT NOTE */}

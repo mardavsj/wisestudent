@@ -222,7 +222,7 @@ const CSRImpactReports = () => {
                   Impact Summary
                 </h3>
                 <p className="text-sm text-slate-500 mt-1">
-                  WiseStudent Impact & Readiness Summary: cover, program overview, objectives, reach & access, engagement, readiness exposure, school snapshot, recognition, ethical safeguards, impact statement, conclusion. Format: PDF.
+                  2–4 page summary: reach, engagement, recognition (certificates issued, badges issued, kits in progress), readiness exposure
                 </p>
               </div>
             </div>

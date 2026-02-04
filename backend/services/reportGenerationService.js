@@ -464,14 +464,10 @@ export const generateImpactSummaryPDF = async (programId) => {
       });
       doc.moveDown(1.5);
 
-      doc.fontSize(11).font("Helvetica").fillColor("#1e293b");
-      doc.text("Cover Page", 50, doc.y);
-      doc.moveDown(0.8);
-
       const coverLines = [
         ["Program Name:", "WiseStudent Student Readiness Initiative"],
         ["CSR Partner:", program.csrPartnerId?.companyName || "—"],
-        ["Implementation Partner:", "WiseStudent (Magorix Private Limited)"],
+        ["Implementation Partner:", "WiseStudent (Magorix- Private Limited)"],
         ["Program Duration:", programDuration],
         ["Geographic Coverage:", geographicCoverage],
         ["Report Date:", formatDate(new Date())],
@@ -515,20 +511,50 @@ export const generateImpactSummaryPDF = async (programId) => {
 
       // ————— 3. Reach & Access Summary —————
       sectionTitle(3, "Reach & Access Summary");
-      doc.font("Helvetica").fillColor("#475569");
-      doc.text(`Total Students Covered: ${formatNumber(totalStudents)}`, 50, doc.y);
-      doc.moveDown(0.3);
-      doc.text(`Total Schools Implemented: ${formatNumber(totalSchools)}`, 50, doc.y);
-      doc.moveDown(0.3);
-      doc.text(`Regions / Districts Covered: ${geographicCoverage}`, 50, doc.y);
-      doc.moveDown(0.6);
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
+      
+      // Total Students Covered
+      let yPos = doc.y;
+      doc.text("Total Students Covered:", 50, yPos, { width: 420 });
+      doc.text(formatNumber(totalStudents), 480, yPos, { align: "right", width: 70 });
+      doc.y = yPos + 14;
+      doc.moveDown(0.1);
+      
+      // Total Schools Implemented
+      yPos = doc.y;
+      doc.text("Total Schools Implemented:", 50, yPos, { width: 420 });
+      doc.text(formatNumber(totalSchools), 480, yPos, { align: "right", width: 70 });
+      doc.y = yPos + 14;
+      doc.moveDown(0.1);
+      
+      // Regions / Districts Covered
+      yPos = doc.y;
+      doc.text("Regions / Districts Covered:", 50, yPos, { width: 420 });
+      doc.text(geographicCoverage, 480, yPos, { align: "right", width: 70 });
+      doc.y = yPos + 14;
+      doc.moveDown(0.4);
+      
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
       doc.text("Participation Indicators", 50, doc.y);
       doc.moveDown(0.2);
-      doc.text(`• Active Participation Rate: ${formatNumber(activePct)} %`, 60, doc.y);
-      doc.moveDown(0.2);
-      doc.text(`• Program Completion Rate: ${formatNumber(completionRate)} %`, 60, doc.y);
-      doc.moveDown(0.5);
-      doc.fontSize(9).fillColor("#64748b").text("All participation data is presented in aggregate form.", 50, doc.y);
+      
+      // Active Participation Rate
+      yPos = doc.y;
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
+      doc.text(`• Active Participation Rate:`, 60, yPos, { width: 400 });
+      doc.text(`${formatNumber(activePct)} %`, 480, yPos, { align: "right", width: 70 });
+      doc.y = yPos + 14;
+      doc.moveDown(0.1);
+      
+      // Program Completion Rate
+      yPos = doc.y;
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
+      doc.text(`• Program Completion Rate:`, 60, yPos, { width: 400 });
+      doc.text(`${formatNumber(completionRate)} %`, 480, yPos, { align: "right", width: 70 });
+      doc.y = yPos + 14;
+      doc.moveDown(0.3);
+      
+      doc.fontSize(9).font("Helvetica").fillColor("#64748b").text("All participation data is presented in aggregate form.", 50, doc.y);
       doc.moveDown(0.5);
 
       // ————— 4. Engagement Overview —————
@@ -536,12 +562,24 @@ export const generateImpactSummaryPDF = async (programId) => {
       body(
         "The program tracked overall student participation and consistency throughout the implementation period."
       );
-      doc.font("Helvetica").fillColor("#475569").text("Key Engagement Indicators", 50, doc.y);
+      doc.fontSize(10).font("Helvetica").fillColor("#475569").text("Key Engagement Indicators", 50, doc.y);
       doc.moveDown(0.3);
-      doc.text(`• Average Engagement Sessions per Student: ${formatNumber(avgSessions)}`, 60, doc.y);
+      
+      // Average Engagement Sessions per Student
+      yPos = doc.y;
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
+      doc.text(`• Average Engagement Sessions per Student:`, 60, yPos, { width: 400 });
+      doc.text(formatNumber(avgSessions), 480, yPos, { align: "right", width: 70 });
+      doc.y = yPos + 14;
+      doc.moveDown(0.1);
+      
+      // Overall Engagement Trend
+      yPos = doc.y;
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
+      doc.text(`• Overall Engagement Trend:`, 60, yPos, { width: 400 });
+      doc.text(engagementTrend, 480, yPos, { align: "right", width: 70 });
+      doc.y = yPos + 14;
       doc.moveDown(0.2);
-      doc.text(`• Overall Engagement Trend: ${engagementTrend}`, 60, doc.y);
-      doc.moveDown(0.4);
       doc.text(
         "Engagement Observation (Auto-generated):",
         50,
@@ -563,15 +601,42 @@ export const generateImpactSummaryPDF = async (programId) => {
       body(
         "WiseStudent measures exposure to readiness concepts, not performance or outcomes. These indicators reflect the type of structured scenarios students were exposed to during the program."
       );
-      doc.font("Helvetica").fillColor("#475569").text("Aggregate Readiness Exposure", 50, doc.y);
+      doc.fontSize(10).font("Helvetica").fillColor("#475569").text("Aggregate Readiness Exposure", 50, doc.y);
       doc.moveDown(0.3);
-      doc.text(`• Decision Awareness Exposure: ${decisionLevel}`, 60, doc.y);
-      doc.moveDown(0.2);
-      doc.text(`• Financial Awareness Exposure: ${financialLevel}`, 60, doc.y);
-      doc.moveDown(0.2);
-      doc.text(`• Pressure Handling Exposure: ${pressureLevel}`, 60, doc.y);
+      
+      // Show all pillars that have data
+      const pillarsWithData = pillars.filter((p) => p.hasData && p.level != null);
+      if (pillarsWithData.length > 0) {
+        pillarsWithData.forEach((pillar) => {
+          const levelText = pillar.level ? String(pillar.level).charAt(0).toUpperCase() + String(pillar.level).slice(1).toLowerCase() : "—";
+          const yPos = doc.y;
+          doc.fontSize(10).font("Helvetica").fillColor("#475569");
+          // Pillar name on the left
+          doc.text(`• ${pillar.name}`, 60, yPos, { width: 420 });
+          // Level on the right
+          doc.text(levelText, 480, yPos, { align: "right", width: 70 });
+          doc.y = yPos + 14; // Move to next line
+          doc.moveDown(0.1);
+        });
+      } else {
+        // Fallback if no pillar data available
+        doc.fontSize(10).font("Helvetica").fillColor("#475569");
+        const fallbackPillars = [
+          { name: "Decision Awareness Exposure", level: decisionLevel },
+          { name: "Financial Awareness Exposure", level: financialLevel },
+          { name: "Pressure Handling Exposure", level: pressureLevel },
+        ];
+        fallbackPillars.forEach((item) => {
+          const yPos = doc.y;
+          doc.text(`• ${item.name}`, 60, yPos, { width: 420 });
+          doc.text(item.level || "—", 480, yPos, { align: "right", width: 70 });
+          doc.y = yPos + 14;
+          doc.moveDown(0.1);
+        });
+      }
+      
       doc.moveDown(0.5);
-      doc.fontSize(9).fillColor("#64748b").text(disclaimerText, 50, doc.y, { width: 500, lineGap: 2 });
+      doc.fontSize(9).font("Helvetica").fillColor("#64748b").text(disclaimerText, 50, doc.y, { width: 500, lineGap: 2 });
       doc.moveDown(0.5);
 
       // ————— 6. School Implementation Snapshot —————
@@ -604,12 +669,24 @@ export const generateImpactSummaryPDF = async (programId) => {
       body(
         "Students who completed the program received participation-based recognition."
       );
-      doc.font("Helvetica").fillColor("#475569").text("Recognition Summary", 50, doc.y);
+      doc.fontSize(10).font("Helvetica").fillColor("#475569").text("Recognition Summary", 50, doc.y);
       doc.moveDown(0.3);
-      doc.text(`• Certificates Issued: ${formatNumber(rec.certificatesIssued)}`, 60, doc.y);
-      doc.moveDown(0.2);
-      doc.text(`• Recognition Kits Dispatched: ${formatNumber(rec.recognitionKitsInProgress)}`, 60, doc.y);
-      doc.moveDown(0.5);
+      
+      // Certificates Issued
+      yPos = doc.y;
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
+      doc.text(`• Certificates Issued:`, 60, yPos, { width: 400 });
+      doc.text(formatNumber(rec.certificatesIssued), 480, yPos, { align: "right", width: 70 });
+      doc.y = yPos + 14;
+      doc.moveDown(0.1);
+      
+      // Recognition Kits Dispatched
+      yPos = doc.y;
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
+      doc.text(`• Recognition Kits Dispatched:`, 60, yPos, { width: 400 });
+      doc.text(formatNumber(rec.recognitionKitsInProgress), 480, yPos, { align: "right", width: 70 });
+      doc.y = yPos + 14;
+      doc.moveDown(0.3);
       doc
         .fontSize(9)
         .fillColor("#64748b")
@@ -657,27 +734,38 @@ export const generateImpactSummaryPDF = async (programId) => {
         "WiseStudent remains committed to responsible, ethical, and transparent delivery of student readiness programs. This report is intended to support CSR reporting, audit reference, and governance review."
       );
       doc.moveDown(1);
-      const issuedByY = doc.y;
       doc.font("Helvetica").fillColor("#64748b").text("Issued by:", 50, doc.y);
       doc.moveDown(0.3);
-      doc.text("WiseStudent (Magorix Private Limited)", 60, doc.y);
-      doc.text("Designation: Authorized Signatory", 60, doc.y + 14);
-      doc.text(`Date: ${formatDate(new Date())}`, 60, doc.y + 28);
-
-      // Platform stamp (Magorix / Director) on the right of "Issued by" and Date block
+      const baseY = doc.y;
+      doc.text("WiseStudent (Magorix- Private Limited)", 60, doc.y);
+      doc.text("Designation: Authorized Signatory (Dhilip J)", 60, doc.y + 14);
+      
+      // Platform stamp (Magorix / Director) between Designation and Date
       const stampDir = path.join(process.cwd(), "uploads", "csr");
       const stampPath = [path.join(stampDir, "stamp.png"), path.join(stampDir, "stamp.jpg")].find((p) =>
         fs.existsSync(p)
       );
+      
       if (stampPath) {
         try {
-          const stampWidth = 230;
-          const stampX = 310; // right of "Issued by" / Date text (text ends ~280)
-          doc.image(stampPath, stampX, issuedByY, { width: stampWidth });
+          // Position stamp immediately below Designation line (baseY + 14 for Designation, minimal spacing)
+          const stampY = baseY + 15;
+          const stampWidth = 200;
+          const stampX = 50; // left-aligned with text
+          doc.image(stampPath, stampX, stampY, { width: stampWidth });
+          // Estimate stamp height (assuming aspect ratio ~0.6:1) and add spacing
+          const estimatedStampHeight = stampWidth * 0.6;
+          // Position Date below stamp with proper spacing
+          doc.y = stampY + estimatedStampHeight + 8;
         } catch (imgErr) {
           console.warn("[Impact Summary] Stamp image could not be embedded:", imgErr.message);
+          doc.y = baseY + 28 + 8; // If stamp fails, position Date below Designation
         }
+      } else {
+        doc.y = baseY + 28 + 8; // If no stamp, position Date below Designation
       }
+      
+      doc.text(`Date: ${formatDate(new Date())}`, 60, doc.y);
 
       doc.end();
     } catch (error) {
@@ -700,7 +788,7 @@ export const generateSchoolCoverageExcel = async (programId) => {
   const [programSchools, reportMetrics] = await Promise.all([
     ProgramSchool.find({ programId }).populate({
       path: "schoolId",
-      select: "name settings.address district state",
+      select: "name settings.address district state settings.schoolCategory",
     }),
     getReportMetrics(programId),
   ]);
@@ -709,60 +797,185 @@ export const generateSchoolCoverageExcel = async (programId) => {
     reportMetrics.studentCountBySchoolId[getSchoolIdStr(ps)] ?? ps.studentsCovered ?? 0;
   const totalStudentsSum = programSchools.reduce((sum, ps) => sum + studentCount(ps), 0);
 
+  const programDuration =
+    program.duration?.startDate && program.duration?.endDate
+      ? `${formatDate(program.duration.startDate)} – ${formatDate(program.duration.endDate)}`
+      : "—";
+  const geographicCoverage =
+    program.scope?.geography?.states?.length > 0
+      ? program.scope.geography.states.join(", ")
+      : "—";
+
   const workbook = new ExcelJS.Workbook();
+  workbook.creator = "WiseStudent";
+  workbook.created = new Date();
+
+  // Define styles
+  const headerStyle = {
+    font: { bold: true, size: 11, color: { argb: "FFFFFFFF" } },
+    fill: { type: "pattern", pattern: "solid", fgColor: { argb: "FF6366F1" } },
+    alignment: { vertical: "middle", horizontal: "center" },
+    border: {
+      top: { style: "thin", color: { argb: "FF475569" } },
+      bottom: { style: "thin", color: { argb: "FF475569" } },
+      left: { style: "thin", color: { argb: "FF475569" } },
+      right: { style: "thin", color: { argb: "FF475569" } },
+    },
+  };
+
+  const titleStyle = {
+    font: { bold: true, size: 14, color: { argb: "FF1E293B" } },
+    alignment: { vertical: "middle", horizontal: "left" },
+  };
+
+  const labelStyle = {
+    font: { bold: true, size: 10, color: { argb: "FF64748B" } },
+    alignment: { vertical: "middle", horizontal: "left" },
+  };
+
+  const valueStyle = {
+    font: { size: 10, color: { argb: "FF1E293B" } },
+    alignment: { vertical: "middle", horizontal: "left" },
+  };
+
+  const cellStyle = {
+    font: { size: 10, color: { argb: "FF1E293B" } },
+    alignment: { vertical: "middle", horizontal: "left" },
+    border: {
+      top: { style: "thin", color: { argb: "FFE2E8F0" } },
+      bottom: { style: "thin", color: { argb: "FFE2E8F0" } },
+      left: { style: "thin", color: { argb: "FFE2E8F0" } },
+      right: { style: "thin", color: { argb: "FFE2E8F0" } },
+    },
+  };
+
+  const numberStyle = {
+    ...cellStyle,
+    alignment: { vertical: "middle", horizontal: "right" },
+  };
 
   // Sheet 1: Program Summary
   const summarySheet = workbook.addWorksheet("Program Summary");
-  summarySheet.columns = [
-    { header: "Field", key: "field", width: 25 },
-    { header: "Value", key: "value", width: 40 },
+  summarySheet.getColumn(1).width = 28;
+  summarySheet.getColumn(2).width = 45;
+
+  // Title
+  summarySheet.mergeCells("A1:B1");
+  summarySheet.getCell("A1").value = "SCHOOL COVERAGE REPORT";
+  summarySheet.getCell("A1").style = titleStyle;
+  summarySheet.getRow(1).height = 25;
+
+  summarySheet.getRow(3).height = 5; // Spacing
+
+  // Program metadata
+  const summaryData = [
+    ["Program Name:", program.name || "—"],
+    ["CSR Partner:", program.csrPartnerId?.companyName || "—"],
+    ["Implementation Partner:", "WiseStudent (Magorix- Private Limited)"],
+    ["Program Duration:", programDuration],
+    ["Geographic Coverage:", geographicCoverage],
+    ["Report Date:", formatDate(new Date())],
+    [],
+    ["Total Schools:", programSchools.length],
+    ["Total Students:", formatNumber(totalStudentsSum)],
   ];
 
-  summarySheet.addRow({ field: "Program Name", value: program.name });
-  summarySheet.addRow({ field: "CSR Partner", value: program.csrPartnerId?.companyName || "N/A" });
-  summarySheet.addRow({
-    field: "Start Date",
-    value: formatDate(program.duration?.startDate),
+  let rowNum = 4;
+  summaryData.forEach(([label, value]) => {
+    if (label && value !== undefined) {
+      summarySheet.getCell(`A${rowNum}`).value = label;
+      summarySheet.getCell(`A${rowNum}`).style = labelStyle;
+      summarySheet.getCell(`B${rowNum}`).value = value;
+      summarySheet.getCell(`B${rowNum}`).style = valueStyle;
+      summarySheet.getRow(rowNum).height = 20;
+    } else {
+      summarySheet.getRow(rowNum).height = 10; // Spacing
+    }
+    rowNum++;
   });
-  summarySheet.addRow({
-    field: "End Date",
-    value: formatDate(program.duration?.endDate),
-  });
-  summarySheet.addRow({
-    field: "States",
-    value: program.scope?.geography?.states?.join(", ") || "All",
-  });
-  summarySheet.addRow({
-    field: "Total Schools",
-    value: programSchools.length,
-  });
-  summarySheet.addRow({
-    field: "Total Students",
-    value: totalStudentsSum,
-  });
+
+  // Notes section
+  rowNum += 2;
+  summarySheet.mergeCells(`A${rowNum}:B${rowNum}`);
+  summarySheet.getCell(`A${rowNum}`).value = "Notes:";
+  summarySheet.getCell(`A${rowNum}`).style = { ...labelStyle, font: { ...labelStyle.font, size: 11 } };
+  summarySheet.getRow(rowNum).height = 20;
+  rowNum++;
+  summarySheet.mergeCells(`A${rowNum}:B${rowNum}`);
+  summarySheet.getCell(`A${rowNum}`).value =
+    "• Student counts reflect onboarding at the time of reporting";
+  summarySheet.getCell(`A${rowNum}`).style = { ...valueStyle, font: { ...valueStyle.font, size: 9 } };
+  summarySheet.getRow(rowNum).height = 18;
+  rowNum++;
+  summarySheet.mergeCells(`A${rowNum}:B${rowNum}`);
+  summarySheet.getCell(`A${rowNum}`).value = "• No individual student information is included";
+  summarySheet.getCell(`A${rowNum}`).style = { ...valueStyle, font: { ...valueStyle.font, size: 9 } };
+  summarySheet.getRow(rowNum).height = 18;
+  rowNum++;
+  summarySheet.mergeCells(`A${rowNum}:B${rowNum}`);
+  summarySheet.getCell(`A${rowNum}`).value =
+    "• Program status reflects implementation stage as of report date";
+  summarySheet.getCell(`A${rowNum}`).style = { ...valueStyle, font: { ...valueStyle.font, size: 9 } };
+  summarySheet.getRow(rowNum).height = 18;
 
   // Sheet 2: School Table
-  const schoolSheet = workbook.addWorksheet("Schools");
+  const schoolSheet = workbook.addWorksheet("School Coverage");
   schoolSheet.columns = [
-    { header: "School Name", key: "schoolName", width: 30 },
-    { header: "District", key: "district", width: 25 },
+    { header: "School Name", key: "schoolName", width: 35 },
+    { header: "District / City", key: "district", width: 25 },
     { header: "State", key: "state", width: 20 },
+    { header: "School Category", key: "category", width: 22 },
     { header: "Students Covered", key: "studentsCovered", width: 18 },
-    { header: "Status", key: "status", width: 15 },
+    { header: "Program Status", key: "status", width: 18 },
   ];
 
+  // Header row
+  schoolSheet.getRow(1).values = [
+    "School Name",
+    "District / City",
+    "State",
+    "School Category",
+    "Students Covered",
+    "Program Status",
+  ];
+  schoolSheet.getRow(1).eachCell((cell) => {
+    cell.style = headerStyle;
+  });
+  schoolSheet.getRow(1).height = 25;
+
+  // Freeze header row
+  schoolSheet.views = [{ state: "frozen", ySplit: 1 }];
+
+  // Data rows
   programSchools.forEach((ps) => {
     const school = ps.schoolId || {};
     const schoolName = school.name || school.schoolName || "N/A";
     const district = school.district || school.settings?.address?.city || "N/A";
     const state = school.state || school.settings?.address?.state || "N/A";
+    const category =
+      school.settings?.schoolCategory ||
+      (program.scope?.schoolCategory?.length === 1 ? program.scope.schoolCategory[0] : "—") ||
+      "—";
+    const status = (ps.implementationStatus || "pending").charAt(0).toUpperCase() + (ps.implementationStatus || "pending").slice(1);
 
-    schoolSheet.addRow({
+    const row = schoolSheet.addRow({
       schoolName,
       district,
       state,
+      category,
       studentsCovered: studentCount(ps),
-      status: ps.implementationStatus || "pending",
+      status,
+    });
+
+    row.height = 20;
+    row.eachCell((cell, colNumber) => {
+      if (colNumber === 5) {
+        // Students Covered column
+        cell.style = numberStyle;
+        cell.numFmt = "#,##0";
+      } else {
+        cell.style = cellStyle;
+      }
     });
   });
 
@@ -771,8 +984,18 @@ export const generateSchoolCoverageExcel = async (programId) => {
   districtSheet.columns = [
     { header: "District", key: "district", width: 30 },
     { header: "Schools", key: "schools", width: 15 },
-    { header: "Students", key: "students", width: 15 },
+    { header: "Students", key: "students", width: 18 },
   ];
+
+  // Header row
+  districtSheet.getRow(1).values = ["District", "Schools", "Students"];
+  districtSheet.getRow(1).eachCell((cell) => {
+    cell.style = headerStyle;
+  });
+  districtSheet.getRow(1).height = 25;
+
+  // Freeze header row
+  districtSheet.views = [{ state: "frozen", ySplit: 1 }];
 
   const districtMap = {};
   programSchools.forEach((ps) => {
@@ -785,13 +1008,25 @@ export const generateSchoolCoverageExcel = async (programId) => {
     districtMap[district].students += studentCount(ps);
   });
 
-  Object.entries(districtMap).forEach(([district, data]) => {
-    districtSheet.addRow({
-      district,
-      schools: data.schools,
-      students: data.students,
+  Object.entries(districtMap)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .forEach(([district, data]) => {
+      const row = districtSheet.addRow({
+        district,
+        schools: data.schools,
+        students: data.students,
+      });
+
+      row.height = 20;
+      row.eachCell((cell, colNumber) => {
+        if (colNumber === 1) {
+          cell.style = cellStyle;
+        } else {
+          cell.style = numberStyle;
+          cell.numFmt = "#,##0";
+        }
+      });
     });
-  });
 
   const buffer = await workbook.xlsx.writeBuffer();
   return Buffer.from(buffer);
@@ -820,6 +1055,15 @@ export const generateSchoolCoveragePDF = async (programId) => {
     reportMetrics.studentCountBySchoolId[getSchoolIdStr(ps)] ?? ps.studentsCovered ?? 0;
   const totalStudentsSum = programSchools.reduce((sum, ps) => sum + studentCount(ps), 0);
 
+  const programDuration =
+    program.duration?.startDate && program.duration?.endDate
+      ? `${formatDate(program.duration.startDate)} – ${formatDate(program.duration.endDate)}`
+      : "—";
+  const geographicCoverage =
+    program.scope?.geography?.states?.length > 0
+      ? program.scope.geography.states.join(", ")
+      : "—";
+
   return new Promise((resolve, reject) => {
     try {
       const doc = new PDFDocument({
@@ -832,26 +1076,96 @@ export const generateSchoolCoveragePDF = async (programId) => {
       doc.on("end", () => resolve(Buffer.concat(buffers)));
       doc.on("error", reject);
 
-      // Cover Page
-      doc.fontSize(24).font("Helvetica-Bold").fillColor("#6366f1");
-      doc.text("School Coverage Report", 50, 100, { align: "center" });
+      // Layout helper functions (same as Impact Summary)
+      const headerDir = path.join(process.cwd(), "uploads", "csr");
+      const headerPath = [
+        path.join(headerDir, "header.png"),
+        path.join(headerDir, "header.jpg"),
+        path.join(headerDir, "cover.png"),
+      ].find((p) => fs.existsSync(p));
+      const layoutPath = [
+        path.join(headerDir, "layout2.png"),
+        path.join(headerDir, "layout.png"),
+      ].find((p) => fs.existsSync(p));
+      const contentWidth = 495;
+      let coverStartY = 50;
 
-      doc.moveDown(2);
-      doc.fontSize(16).fillColor("#1e293b");
-      doc.text(program.name || "Program Report", 50, doc.y, { align: "center" });
+      const drawSectionLayout = () => {
+        if (layoutPath) {
+          try {
+            doc.image(layoutPath, 0, 0, { width: 595.28, height: 841.89 });
+          } catch (e) {
+            console.warn("[School Coverage] Layout image could not be embedded:", e?.message);
+          }
+        }
+      };
+      const ensureSpaceSection = (d, minLines = 8) => {
+        const lineHeight = 14;
+        if (d.y + minLines * lineHeight > 700) {
+          d.addPage();
+          drawSectionLayout();
+          d.y = 50;
+        }
+      };
+
+      // Cover Page with header image
+      if (headerPath) {
+        try {
+          doc.image(headerPath, 50, 50, { width: contentWidth });
+          coverStartY = 50 + 155;
+        } catch (imgErr) {
+          console.warn("[School Coverage] Header image could not be embedded:", imgErr.message);
+        }
+      }
+
+      doc.y = coverStartY;
+      doc.moveDown(0.8);
+      doc.fontSize(18).font("Helvetica-Bold").fillColor("#1e293b");
+      doc.text("SCHOOL COVERAGE REPORT", 50, doc.y, {
+        align: "center",
+        width: contentWidth,
+      });
+      doc.moveDown(1.5);
+
+      // Program metadata
+      const coverLines = [
+        ["Program Name:", program.name || "—"],
+        ["CSR Partner:", program.csrPartnerId?.companyName || "—"],
+        ["Implementation Partner:", "WiseStudent (Magorix- Private Limited)"],
+        ["Program Duration:", programDuration],
+        ["Geographic Coverage:", geographicCoverage],
+        ["Report Date:", formatDate(new Date())],
+      ];
+      coverLines.forEach(([label, value]) => {
+        const y = doc.y;
+        doc.fontSize(10).font("Helvetica").fillColor("#64748b");
+        doc.text(label, 50, y, { width: 200 });
+        doc.font("Helvetica-Bold").fillColor("#1e293b");
+        doc.text(String(value), 260, y, { width: 285 });
+        doc.y = y + 18;
+      });
 
       doc.moveDown(1);
-      doc.fontSize(12).fillColor("#64748b");
-      doc.text(
-        `Total Schools: ${programSchools.length} | Total Students: ${formatNumber(totalStudentsSum)}`,
-        50,
-        doc.y,
-        { align: "center" }
-      );
+      let yPos = doc.y;
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
+      doc.text("Total Schools:", 50, yPos, { width: 420 });
+      doc.text(formatNumber(programSchools.length), 480, yPos, { align: "right", width: 70 });
+      doc.y = yPos + 14;
+      doc.moveDown(0.1);
+      
+      yPos = doc.y;
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
+      doc.text("Total Students:", 50, yPos, { width: 420 });
+      doc.text(formatNumber(totalStudentsSum), 480, yPos, { align: "right", width: 70 });
+      doc.y = yPos + 14;
 
-      // Summary by District
+      // Summary by District (section page with layout)
       doc.addPage();
-      createHeader(doc, "Summary by District");
+      drawSectionLayout();
+      doc.y = 50;
+      doc.fontSize(14).font("Helvetica-Bold").fillColor("#1e293b");
+      doc.text("Summary by District", 50, doc.y);
+      doc.moveDown(0.8);
 
       const districtMap = {};
       programSchools.forEach((ps) => {
@@ -864,50 +1178,72 @@ export const generateSchoolCoveragePDF = async (programId) => {
         districtMap[district].students += studentCount(ps);
       });
 
-      let startY = doc.y;
-      doc.fontSize(10);
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
       Object.entries(districtMap).forEach(([district, data]) => {
-        if (startY > 700) {
-          doc.addPage();
-          startY = 50;
-        }
+        ensureSpaceSection(doc, 3);
+        yPos = doc.y;
         doc.font("Helvetica-Bold").fillColor("#1e293b");
-        doc.text(district, 50, startY);
-        doc.font("Helvetica").fillColor("#64748b");
-        doc.text(
-          `Schools: ${data.schools} | Students: ${formatNumber(data.students)}`,
-          70,
-          startY + 15
-        );
-        startY += 35;
+        doc.text(district, 50, yPos, { width: 420 });
+        doc.font("Helvetica").fillColor("#475569");
+        doc.text(`Schools: ${data.schools}`, 480, yPos, { align: "right", width: 70 });
+        doc.y = yPos + 14;
+        yPos = doc.y;
+        doc.font("Helvetica").fillColor("#475569");
+        doc.text(`Students: ${formatNumber(data.students)}`, 480, yPos, { align: "right", width: 70 });
+        doc.y = yPos + 20;
       });
 
-      // School List
+      // School List (section page with layout)
       doc.addPage();
-      createHeader(doc, "School Details");
+      drawSectionLayout();
+      doc.y = 50;
+      doc.fontSize(14).font("Helvetica-Bold").fillColor("#1e293b");
+      doc.text("School Details", 50, doc.y);
+      doc.moveDown(0.8);
 
-      let y = doc.y;
-      doc.fontSize(9);
+      doc.fontSize(10).font("Helvetica").fillColor("#475569");
       programSchools.forEach((ps, index) => {
-        if (y > 700) {
-          doc.addPage();
-          y = 50;
-        }
-
+        ensureSpaceSection(doc, 4);
+        
         const school = ps.schoolId || {};
         const schoolName = school.name || school.schoolName || "N/A";
         const district = school.district || school.settings?.address?.city || "N/A";
         const state = school.state || school.settings?.address?.state || "N/A";
+        const status = ps.implementationStatus || "pending";
         
+        // School name and number
+        yPos = doc.y;
         doc.font("Helvetica-Bold").fillColor("#1e293b");
-        doc.text(`${index + 1}. ${schoolName}`, 50, y);
-        doc.font("Helvetica").fillColor("#64748b");
-        doc.text(
-          `   ${district}, ${state} | Students: ${formatNumber(studentCount(ps))} | Status: ${ps.implementationStatus || "pending"}`,
-          70,
-          y + 12
-        );
-        y += 30;
+        doc.text(`${index + 1}. ${schoolName}`, 50, yPos, { width: 420 });
+        doc.y = yPos + 14;
+        
+        // District/City
+        yPos = doc.y;
+        doc.font("Helvetica").fillColor("#475569");
+        doc.text(`District / City:`, 60, yPos, { width: 400 });
+        doc.text(`${district}`, 480, yPos, { align: "right", width: 70 });
+        doc.y = yPos + 14;
+        
+        // State
+        yPos = doc.y;
+        doc.font("Helvetica").fillColor("#475569");
+        doc.text(`State:`, 60, yPos, { width: 400 });
+        doc.text(state, 480, yPos, { align: "right", width: 70 });
+        doc.y = yPos + 14;
+        
+        // Students Covered
+        yPos = doc.y;
+        doc.font("Helvetica").fillColor("#475569");
+        doc.text(`Students Covered:`, 60, yPos, { width: 400 });
+        doc.text(formatNumber(studentCount(ps)), 480, yPos, { align: "right", width: 70 });
+        doc.y = yPos + 14;
+        
+        // Program Status
+        yPos = doc.y;
+        doc.font("Helvetica").fillColor("#475569");
+        doc.text(`Program Status:`, 60, yPos, { width: 400 });
+        doc.text(status.charAt(0).toUpperCase() + status.slice(1), 480, yPos, { align: "right", width: 70 });
+        doc.y = yPos + 20;
       });
 
       doc.end();

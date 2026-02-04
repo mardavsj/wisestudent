@@ -358,7 +358,6 @@ const CSRProgramOverview = () => {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={[
-                  { name: "Students Covered", value: metrics?.studentsOnboarded || 0, fill: "#6366f1" },
                   { name: "Schools", value: metrics?.schoolsImplemented || 0, fill: "#8b5cf6" },
                   { name: "Regions", value: metrics?.regionsCovered || 0, fill: "#14b8a6" },
                 ]}
@@ -375,7 +374,6 @@ const CSRProgramOverview = () => {
                 />
                 <Bar dataKey="value" radius={[0, 6, 6, 0]} maxBarSize={48}>
                   {[
-                    { name: "Students Covered", value: metrics?.studentsOnboarded || 0, fill: "#6366f1" },
                     { name: "Schools", value: metrics?.schoolsImplemented || 0, fill: "#8b5cf6" },
                     { name: "Regions", value: metrics?.regionsCovered || 0, fill: "#14b8a6" },
                   ].map((entry, index) => (
@@ -388,7 +386,7 @@ const CSRProgramOverview = () => {
         </section>
 
         {/* REACH DISTRIBUTION DONUT */}
-        {(metrics?.studentsOnboarded > 0 || metrics?.schoolsImplemented > 0 || metrics?.regionsCovered > 0) && (
+        {(metrics?.schoolsImplemented > 0 || metrics?.regionsCovered > 0) && (
           <section className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
             <div className="flex items-center gap-2 mb-4">
               <TrendingUp className="w-5 h-5 text-emerald-600" />
@@ -399,7 +397,6 @@ const CSRProgramOverview = () => {
                 <PieChart>
                   <Pie
                     data={[
-                      { name: "Students", value: metrics?.studentsOnboarded || 0, fill: "#6366f1" },
                       { name: "Schools", value: metrics?.schoolsImplemented || 0, fill: "#8b5cf6" },
                       { name: "Regions", value: metrics?.regionsCovered || 0, fill: "#14b8a6" },
                     ].filter((d) => d.value > 0)}
@@ -412,7 +409,6 @@ const CSRProgramOverview = () => {
                     nameKey="name"
                   >
                     {[
-                      { name: "Students", value: metrics?.studentsOnboarded || 0, fill: "#6366f1" },
                       { name: "Schools", value: metrics?.schoolsImplemented || 0, fill: "#8b5cf6" },
                       { name: "Regions", value: metrics?.regionsCovered || 0, fill: "#14b8a6" },
                     ]
@@ -476,25 +472,58 @@ const CSRProgramOverview = () => {
               </div>
 
               <div className="flex-1 min-w-0 w-full">
-                {/* Progress bar */}
-                <div className="h-3 bg-slate-100 rounded-full overflow-hidden mb-3">
-                  <div
-                    className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-500"
-                    style={{
-                      width: `${Math.min(((checkpoint.completed || 0) / (checkpoint.total || 5)) * 100, 100)}%`,
-                    }}
-                  />
+                {/* Progress bar with markers */}
+                <div className="relative py-2 mb-3">
+                  <div className="relative h-3 bg-slate-100 rounded-full overflow-visible">
+                    <div
+                      className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-500"
+                      style={{
+                        width: `${Math.min(((checkpoint.completed || 0) / (checkpoint.total || 5)) * 100, 100)}%`,
+                      }}
+                    />
+                    {/* Checkpoint markers */}
+                    {[1, 2, 3, 4, 5].map((num) => {
+                      const position = ((num - 0.5) / 5) * 100;
+                      const isCompleted = num <= (checkpoint.completed || 0);
+                      return (
+                        <div
+                          key={num}
+                          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 z-10"
+                          style={{ left: `${position}%` }}
+                        >
+                          <div
+                            className={`w-4 h-4 rounded-full border-2 shadow-sm ${
+                              isCompleted
+                                ? "bg-indigo-600 border-indigo-600"
+                                : "bg-white border-slate-300"
+                            }`}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
                 <p className="text-sm text-slate-600 mb-4">
                   <span className="font-semibold text-slate-900">{checkpoint.completed || 0}</span> of{" "}
                   <span className="font-semibold text-slate-900">{checkpoint.total || 5}</span> checkpoints
                   completed
                 </p>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">
-                  <span>Program Approval</span>
-                  <span>Onboarding</span>
-                  <span>Mid-Program</span>
-                  <span>Completion</span>
+                <div className="flex flex-wrap gap-x-3 gap-y-2 text-xs">
+                  <span className={1 <= (checkpoint.completed || 0) ? "text-indigo-600 font-medium" : "text-slate-500"}>
+                    Program Approval
+                  </span>
+                  <span className={2 <= (checkpoint.completed || 0) ? "text-indigo-600 font-medium" : "text-slate-500"}>
+                    Onboarding Confirmation
+                  </span>
+                  <span className={3 <= (checkpoint.completed || 0) ? "text-indigo-600 font-medium" : "text-slate-500"}>
+                    Mid-Program Review
+                  </span>
+                  <span className={4 <= (checkpoint.completed || 0) ? "text-indigo-600 font-medium" : "text-slate-500"}>
+                    Completion Review
+                  </span>
+                  <span className={5 <= (checkpoint.completed || 0) ? "text-indigo-600 font-medium" : "text-slate-500"}>
+                    Extension/Renewal
+                  </span>
                 </div>
               </div>
             </div>
