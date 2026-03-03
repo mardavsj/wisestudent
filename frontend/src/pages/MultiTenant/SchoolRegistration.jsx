@@ -809,12 +809,17 @@ const SchoolRegistration = () => {
                 <div className="text-center mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-white/10">
                   <p className="text-gray-300 text-xs sm:text-sm">
                     Already have a School account?{' '}
-                    <button
+                    <motion.button
                       onClick={() => navigate('/login')}
-                      className="text-purple-400 hover:text-purple-300 font-semibold transition-colors relative group text-xs sm:text-sm"
+                      className="text-cyan-400 hover:text-cyan-300 font-semibold transition-colors relative group text-xs sm:text-sm"
+                      whileHover={{ scale: 1.05 }}
                     >
                       Sign In
-                    </button>
+                      <motion.span
+                        className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"
+                        layoutId="underline"
+                      />
+                    </motion.button>
                   </p>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion"; //eslint-disable-line
 import { Eye, EyeOff, Mail, Lock, User, UserCheck, ArrowRight, Building, Phone, Globe, MapPin, Briefcase, FileText, ArrowLeft, CheckCircle2 } from "lucide-react";
 import api from "../../utils/api";
 import { useAuth } from "../../context/AuthUtils";
@@ -34,7 +34,7 @@ const StakeholderRegister = () => {
     const [errors, setErrors] = useState({});
 
     const navigate = useNavigate();
-    const { fetchUser, setUser } = useAuth();
+    const { setUser } = useAuth();
 
     // Step definitions
     const steps = [
@@ -176,7 +176,7 @@ const StakeholderRegister = () => {
             const registerUrl = formData.role === "csr"
                 ? "/api/csr/register"
                 : `/api/auth/register-stakeholder?t=${Date.now()}`;
-            const response = await api.post(registerUrl, requestData);
+            await api.post(registerUrl, requestData);
 
             // Auto-login after successful registration
             try {
@@ -905,19 +905,19 @@ const StakeholderRegister = () => {
 
                         {/* Login Link */}
                         <motion.div
-                            className="text-center px-5 sm:px-8 pb-5 sm:pb-6 pt-4 border-t border-white/10"
+                            className="text-center mt-6 pt-5 pb-6 border-t border-white/10"
                             variants={itemVariants}
                         >
-                            <p className="text-gray-300 text-xs">
+                            <p className="text-gray-300 text-xs sm:text-sm">
                                 Already have an account?{' '}
                                 <motion.button
                                     onClick={() => navigate('/login')}
-                                    className="text-purple-400 hover:text-purple-300 font-semibold transition-colors relative group"
+                                    className="text-cyan-400 hover:text-cyan-300 font-semibold transition-colors relative group"
                                     whileHover={{ scale: 1.05 }}
                                 >
                                     Sign In
                                     <motion.span
-                                        className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all duration-300"
+                                        className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"
                                         layoutId="underline"
                                     />
                                 </motion.button>

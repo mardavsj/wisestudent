@@ -613,11 +613,24 @@ const ParentRegister = () => {
               </button>
             </form>
 
-            <div className="text-center mt-3 sm:mt-4">
-              <button onClick={() => navigate("/login")} className="text-purple-300 hover:underline text-xs sm:text-sm">
-                Already have a parent account? Sign in
-              </button>
-            </div>
+            <motion.div
+              className="text-center mt-6 pt-5 border-t border-white/10"
+            >
+              <p className="text-gray-300 text-xs sm:text-sm">
+                Already have a parent account?{' '}
+                <motion.button
+                  onClick={() => navigate("/login")}
+                  className="text-cyan-400 hover:text-cyan-300 font-semibold transition-colors relative group"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  Sign in
+                  <motion.span
+                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"
+                    layoutId="underline"
+                  />
+                </motion.button>
+              </p>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

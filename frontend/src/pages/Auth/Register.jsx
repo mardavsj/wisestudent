@@ -1316,6 +1316,11 @@ const Register = () => {
                             </motion.button>
                         </motion.form>
 
+                        {/* Warning Note - Simple Highlight */}
+                        <p className="text-xs sm:text-sm text-amber-400 text-center py-2">
+                            📌 <span className="font-semibold">Your date of birth and gender cannot be changed after registration, Choose it wisely.</span>
+                        </p>
+
                         {/* Login Link */}
                         <motion.div
                             className="text-center mt-6 pt-5 border-t border-white/10"
