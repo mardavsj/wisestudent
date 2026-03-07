@@ -24,6 +24,7 @@ import { getAiTeenGames } from "../pages/Games/GameCategories/AiForAll/teenGames
 import { getEheKidsGames } from "../pages/Games/GameCategories/EHE/kidGamesData";
 import { getEheTeenGames } from "../pages/Games/GameCategories/EHE/teenGamesData";
 import { getEheYoungAdultGames } from "../pages/Games/GameCategories/EHE/youngAdultGamesData";
+import { getEheAdultGames } from "../pages/Games/GameCategories/EHE/adultGamesData";
 import { getCrgcKidsGames } from "../pages/Games/GameCategories/CRGC/kidGamesData";
 import { getCrgcTeensGames } from "../pages/Games/GameCategories/CRGC/teenGamesData";
 import { getHealthMaleKidsGames } from "../pages/Games/GameCategories/HealthMale/kidGamesData";
@@ -94,6 +95,7 @@ export const getGameDataById = (gameId) => {
       kids: getEheKidsGames,
       teens: getEheTeenGames,
       "young-adult": getEheYoungAdultGames,
+      adults: getEheAdultGames,
     },
     'civic-responsibility': {
       kids: getCrgcKidsGames,

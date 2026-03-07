@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Trophy } from "lucide-react";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -11,155 +10,120 @@ const JOB_VS_CAREER_STAGES = [
     prompt: "What is the core difference between a job and a career?",
     options: [
       {
-        id: "a",
-        label: "A job is always temporary while a career is permanent",
-        reflection: "Not quite. Both jobs and careers can be temporary or permanent. The real difference lies in intent and approach to growth, not duration.",
+        id: "opt1",
+        text: "A job is always temporary while a career is permanent",
+        outcome: "Not quite. Both can be temporary or permanent. The real difference lies in intent and approach to growth, not duration.",
         isCorrect: false,
       },
       {
-        id: "b",
-        label: "A job is work you do for income; a career is work you do for growth and long-term impact",
-        reflection: "Exactly! A job is often viewed as a means to earn money, while a career is an intentional journey of skill-building, reputation development, and meaningful progression.",
+        id: "opt2",
+        text: "A job is work for income; a career is work for growth and long-term impact",
+        outcome: "Exactly! A job earns money, while a career is an intentional journey of skill-building and meaningful progression.",
         isCorrect: true,
       },
       {
-        id: "c",
-        label: "A job requires less education than a career",
-        reflection: "Not necessarily. Education level doesn't define the difference. You can have a career-mindset at any job level, and many highly educated people treat their work as just a job.",
-        isCorrect: false,
-      },
-      {
-        id: "d",
-        label: "A career is only for people who work in professional fields",
-        reflection: "False. Anyone in any field—skilled trades, creative work, service industries—can build a career with intention and commitment to continuous growth.",
+        id: "opt3",
+        text: "A job requires less education than a career",
+        outcome: "Not necessarily. You can have a career-mindset at any job level. Education level doesn't define the difference.",
         isCorrect: false,
       },
     ],
-    reward: 20,
   },
   {
     id: 2,
     prompt: "When you receive your first job offer, what mindset matters most for building a career?",
     options: [
       {
-        id: "a",
-        label: "Focus only on the salary and benefits package",
-        reflection: "While salary matters, focusing only on it ignores the bigger picture. The skills you'll gain, people you'll meet, and experience you'll build are often more valuable long-term.",
-        isCorrect: false,
-      },
-      {
-        id: "b",
-        label: "Ask 'What can I learn here that will make me more valuable over time?'",
-        reflection: "Perfect! This career-mindset question reframes your first job from just income to an investment in yourself. It shifts focus to skill-building and reputation.",
+        id: "opt2",
+        text: "Ask 'What can I learn here that will make me more valuable over time?'",
+        outcome: "Perfect! This career-mindset reframes your first job from just income to an investment in yourself.",
         isCorrect: true,
       },
       {
-        id: "c",
-        label: "Take any job that pays immediately without thinking ahead",
-        reflection: "This job-mindset approach prioritizes immediate needs over long-term positioning. While understandable, it limits your ability to shape your career trajectory.",
+        id: "opt1",
+        text: "Focus only on the salary and benefits package",
+        outcome: "While salary matters, ignoring the bigger picture limits growth. Skills, connections, and experience are more valuable long-term.",
         isCorrect: false,
       },
       {
-        id: "d",
-        label: "Wait for the 'perfect' job before starting any work",
-        reflection: "Waiting for perfection often leads to missed opportunities. Even imperfect first jobs teach valuable lessons and build momentum for career growth.",
+        id: "opt3",
+        text: "Take any job that pays immediately without thinking ahead",
+        outcome: "This job-mindset prioritizes immediate needs over long-term positioning, limiting your career trajectory.",
         isCorrect: false,
       },
     ],
-    reward: 20,
   },
   {
     id: 3,
     prompt: "How does a career mindset show itself in daily work?",
     options: [
       {
-        id: "a",
-        label: "You do only what's required in your job description",
-        reflection: "This is a job-focused approach. While staying within scope matters, career-builders often go beyond to develop new skills and demonstrate impact.",
+        id: "opt1",
+        text: "You do only what's required in your job description",
+        outcome: "This is a job-focused approach. Career-builders often go beyond to develop new skills and demonstrate impact.",
         isCorrect: false,
       },
       {
-        id: "b",
-        label: "You seek feedback, volunteer for challenging projects, and document your growth",
-        reflection: "Exactly! Career-minded people actively pursue learning opportunities, ask for feedback, and build a visible record of their development and contributions.",
+        id: "opt3",
+        text: "You focus on being liked by your manager rather than building skills",
+        outcome: "This prioritizes short-term approval over long-term value. Genuine career growth builds respect based on competence.",
+        isCorrect: false,
+      },
+      {
+        id: "opt2",
+        text: "You seek feedback, volunteer for challenges, and document your growth",
+        outcome: "Exactly! Career-minded people actively pursue learning opportunities and build a visible record of their development.",
         isCorrect: true,
       },
-      {
-        id: "c",
-        label: "You avoid extra responsibilities to keep work-life balance",
-        reflection: "Balance is important, but career-builders find ways to grow without burning out. It's not about doing more—it's about doing things intentionally.",
-        isCorrect: false,
-      },
-      {
-        id: "d",
-        label: "You focus on being liked by your manager rather than building skills",
-        reflection: "This prioritizes short-term approval over long-term value creation. Genuine career growth builds respect based on competence and contribution.",
-        isCorrect: false,
-      },
     ],
-    reward: 20,
   },
   {
     id: 4,
     prompt: "When facing a setback or failure at work, what's the career-building response?",
     options: [
       {
-        id: "a",
-        label: "View it as proof you're not good enough and quit",
-        reflection: "Setbacks happen at every career stage. Career-builders see failures as learning opportunities, not evidence of inadequacy.",
+        id: "opt1",
+        text: "View it as proof you're not good enough and quit",
+        outcome: "Setbacks happen at every career stage. Career-builders see failures as learning opportunities, not evidence of inadequacy.",
         isCorrect: false,
       },
       {
-        id: "b",
-        label: "Analyze what went wrong, extract the lesson, and apply it next time",
-        reflection: "Perfect! This is true career-thinking. Each setback becomes data that makes you more skilled and resilient for future challenges.",
+        id: "opt2",
+        text: "Analyze what went wrong, extract the lesson, and apply it next time",
+        outcome: "Perfect! Each setback becomes data that makes you more skilled and resilient for future challenges.",
         isCorrect: true,
       },
       {
-        id: "c",
-        label: "Pretend it didn't happen and move on to the next task",
-        reflection: "Ignoring failures means missing the learning opportunity. Career growth requires reflection and intentional improvement.",
-        isCorrect: false,
-      },
-      {
-        id: "d",
-        label: "Blame others and move to a different job",
-        reflection: "Blaming externals prevents you from taking control of your development. This stops career building before it starts.",
+        id: "opt3",
+        text: "Pretend it didn't happen and move on to the next task",
+        outcome: "Ignoring failures means missing the learning opportunity. Career growth requires reflection and intentional improvement.",
         isCorrect: false,
       },
     ],
-    reward: 20,
   },
   {
     id: 5,
     prompt: "How does the job vs. career mindset affect your long-term opportunities?",
     options: [
       {
-        id: "a",
-        label: "Job mindset keeps you employable; career mindset makes you positioned for leadership",
-        reflection: "Great insight! Job-focused work keeps you afloat, but career-focused development opens doors to growth, influence, and new opportunities.",
+        id: "opt1",
+        text: "Job mindset keeps you employable; career mindset positions you for leadership",
+        outcome: "Great insight! Job-focused work keeps you afloat, but career-focused development opens doors to influence and new opportunities.",
         isCorrect: true,
       },
       {
-        id: "b",
-        label: "They're the same thing—it doesn't matter which mindset you adopt",
-        reflection: "They're actually very different. Over 5-10 years, the person with a career mindset will have accumulated more skills, connections, and opportunities.",
+        id: "opt2",
+        text: "They're the same thing — it doesn't matter which mindset you adopt",
+        outcome: "They're very different. Over 5–10 years, a career mindset accumulates more skills, connections, and opportunities.",
         isCorrect: false,
       },
       {
-        id: "c",
-        label: "Career mindset makes you overqualified and harder to work with",
-        reflection: "False. Career-builders who grow well develop both expertise AND collaboration skills. They become more valuable, not more difficult.",
-        isCorrect: false,
-      },
-      {
-        id: "d",
-        label: "Only people with specific job titles can build careers",
-        reflection: "Careers can be built in any role. The difference is mindset, not title. A commitment to growth applies everywhere.",
+        id: "opt3",
+        text: "Career mindset makes you overqualified and harder to work with",
+        outcome: "False. Career-builders develop both expertise AND collaboration skills. They become more valuable, not more difficult.",
         isCorrect: false,
       },
     ],
-    reward: 20,
   },
 ];
 
@@ -167,107 +131,147 @@ const JobVsCareer = () => {
   const location = useLocation();
   const gameId = "ehe-young-adult-1";
   const gameData = getGameDataById(gameId);
+  const totalStages = JOB_VS_CAREER_STAGES.length;
 
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
-  const coinsPerLevel = Math.floor(totalCoins / JOB_VS_CAREER_STAGES.length);
+  const coinsPerLevel = Math.max(1, Math.floor(totalCoins / totalStages));
 
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [coins, setCoins] = useState(0);
+  const [currentStageIndex, setCurrentStageIndex] = useState(0);
+  const [selectedChoice, setSelectedChoice] = useState(null);
   const [showResult, setShowResult] = useState(false);
-  const [finalScore, setFinalScore] = useState(0);
+  const [score, setScore] = useState(0);
 
-  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
+  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const handleAnswerSelect = (option) => {
-    resetFeedback();
+  const stage = JOB_VS_CAREER_STAGES[currentStageIndex];
 
+  const handleChoice = (option) => {
+    if (selectedChoice) return;
+    setSelectedChoice(option);
     if (option.isCorrect) {
-      const newCoins = coins + coinsPerLevel;
-      setCoins(newCoins);
-      setFinalScore(finalScore + 1);
+      setScore((s) => s + 1);
       showCorrectAnswerFeedback(coinsPerLevel, true);
     }
-
-    setTimeout(() => {
-      if (currentQuestion < JOB_VS_CAREER_STAGES.length - 1) {
-        setCurrentQuestion(currentQuestion + 1);
-      } else {
-        setShowResult(true);
-      }
-    }, 1500);
   };
 
-  const currentStage = JOB_VS_CAREER_STAGES[currentQuestion];
+  const handleNext = () => {
+    if (currentStageIndex === totalStages - 1) {
+      setShowResult(true);
+    } else {
+      setCurrentStageIndex((i) => i + 1);
+    }
+    setSelectedChoice(null);
+  };
+
+  const progressLabel = `${currentStageIndex + 1}/${totalStages}`;
 
   return (
     <GameShell
       title="Job vs Career"
-      score={coins}
-      currentLevel={currentQuestion + 1}
-      totalLevels={JOB_VS_CAREER_STAGES.length}
+      subtitle={
+        showResult
+          ? "Well done! You've explored the career mindset."
+          : `Question ${currentStageIndex + 1} of ${totalStages}`
+      }
+      currentLevel={currentStageIndex + 1}
+      totalLevels={totalStages}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      gameId={gameId}
-      gameType="ehe"
       showGameOver={showResult}
-      maxScore={finalScore}
-      showConfetti={showAnswerConfetti}
+      score={score}
+      showConfetti={showResult && score === totalStages}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
+      gameId={gameId}
+      gameType="ehe"
+      nextGamePath={location.state?.nextGamePath}
+      nextGameId={location.state?.nextGameId}
+      backPath={location.state?.returnPath}
     >
-      <div className="space-y-6 max-w-4xl mx-auto p-4">
-        {!showResult ? (
-          <>
-            {/* Question */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-white">
-                Question {currentQuestion + 1 } of {JOB_VS_CAREER_STAGES.length}
-              </h3>
-              <p className="text-lg text-white/90 leading-relaxed">
-                {currentStage.prompt}
-              </p>
-            </div>
+      <div className="space-y-8 max-w-4xl mx-auto">
+        {!showResult && stage && (
+          <div className="space-y-6">
+            <div className="bg-slate-900/60 backdrop-blur-xl rounded-3xl p-6 md:p-10 border border-slate-700 shadow-2xl relative overflow-hidden">
 
-            {/* Options */}
-            <div className="space-y-3">
-              {currentStage.options.map((option) => (
-                <button
-                  key={option.id}
-                  onClick={() => handleAnswerSelect(option)}
-                  className="w-full text-left p-4 rounded-lg border border-white/20 bg-white/5 hover:border-white/40 hover:bg-white/10 transition-all group"
-                >
-                  <div className="flex items-start gap-3">
-                    <span className="text-lg font-bold text-white/70 group-hover:text-white mt-0.5">
-                      {option.id.toUpperCase()}
-                    </span>
-                    <span className="text-white/90 group-hover:text-white">
-                      {option.label}
-                    </span>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </>
-        ) : (
-          <div className="text-center space-y-6">
-            <Trophy className="w-16 h-16 text-yellow-400 mx-auto" />
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-2">Great Job!</h2>
-              <p className="text-xl text-white/80">
-                You answered {finalScore} out of {JOB_VS_CAREER_STAGES.length} questions correctly!
-              </p>
-            </div>
-            <div className="bg-white/10 border border-white/20 rounded-lg p-6">
-              <p className="text-white/80 mb-4">
-                ✓ Skill Unlocked: <span className="font-semibold text-green-300">Career Mindset vs Job Mindset</span>
-              </p>
-              <p className="text-white/70 text-sm leading-relaxed">
-                A career is built through intentional learning, skill development, and reputation building. 
-                Each job is an opportunity to strengthen your value in the market and move closer to your 
-                professional goals.
-              </p>
+              {/* Top accent bar */}
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-violet-500 to-indigo-600"></div>
+
+              <div className="flex items-center justify-between text-sm font-semibold uppercase tracking-[0.2em] text-slate-400 mb-8 border-b border-slate-700 pb-4">
+                <span>Question {progressLabel}</span>
+                <span className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Score: {score}/{totalStages}
+                </span>
+              </div>
+
+              <div className="text-center mb-10">
+                <span className="inline-block py-1 px-3 rounded-full bg-violet-900/50 text-violet-300 text-xs font-bold uppercase tracking-wider mb-4 border border-violet-500/30">
+                  Career Insight
+                </span>
+                <p className="text-white text-xl md:text-2xl font-bold leading-relaxed">
+                  "{stage.prompt}"
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {stage.options.map((option) => {
+                  const isSelected = selectedChoice?.id === option.id;
+
+                  let baseStyle = "from-slate-800 to-slate-900 border-slate-700 hover:border-violet-500 hover:from-slate-800 hover:to-violet-900/40 text-slate-200";
+
+                  if (isSelected) {
+                    baseStyle = option.isCorrect
+                      ? "from-emerald-900/80 to-emerald-800 border-emerald-500 text-emerald-100 shadow-[0_0_20px_rgba(16,185,129,0.3)] scale-[1.02]"
+                      : "from-rose-900/80 to-rose-800 border-rose-500 text-rose-100 shadow-[0_0_20px_rgba(244,63,94,0.3)] scale-[1.02]";
+                  } else if (selectedChoice && option.isCorrect && !isSelected) {
+                    baseStyle = "from-emerald-900/30 to-slate-900 border-emerald-500/50 text-emerald-400/80 ring-1 ring-emerald-500/30 opacity-80";
+                  } else if (selectedChoice) {
+                    baseStyle = "from-slate-900 to-slate-900 border-slate-800 text-slate-600 opacity-40";
+                  }
+
+                  return (
+                    <button
+                      key={option.id}
+                      onClick={() => handleChoice(option)}
+                      disabled={Boolean(selectedChoice)}
+                      className={`relative rounded-xl bg-gradient-to-r ${baseStyle} border-2 p-5 text-left font-medium transition-all duration-300 disabled:cursor-not-allowed`}
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className={`mt-0.5 flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center ${isSelected ? (option.isCorrect ? 'border-emerald-400 bg-emerald-500/20' : 'border-rose-400 bg-rose-500/20') : 'border-slate-600'}`}>
+                          {isSelected && <div className={`w-2.5 h-2.5 rounded-full ${option.isCorrect ? 'bg-emerald-400' : 'bg-rose-400'}`}></div>}
+                        </div>
+                        <div className="flex-1">
+                          <span className="block text-lg">{option.text}</span>
+
+                          {/* Reveal outcome with animation */}
+                          <div className={`overflow-hidden transition-all duration-500 ${isSelected ? 'max-h-24 mt-3 opacity-100' : 'max-h-0 opacity-0'}`}>
+                            <div className={`text-sm font-semibold p-3 rounded-lg ${option.isCorrect ? 'bg-emerald-500/20 text-emerald-300' : 'bg-rose-500/20 text-rose-300'}`}>
+                              <span className="uppercase text-xs tracking-wider opacity-70 block mb-1">
+                                {option.isCorrect ? '✅ Correct' : '❌ Incorrect'}
+                              </span>
+                              {option.outcome}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Next Button — appears after selecting an option */}
+              {selectedChoice && (
+                <div className="flex justify-end mt-8">
+                  <button
+                    onClick={handleNext}
+                    className="px-8 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-bold text-lg shadow-lg shadow-violet-500/25 transition-all duration-300 hover:scale-105 hover:shadow-violet-500/40"
+                  >
+                    {currentStageIndex === totalStages - 1 ? "See Results" : "Next →"}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         )}

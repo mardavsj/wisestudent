@@ -137,7 +137,7 @@ const DebateSmallVsBig = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {stage.options.map((option) => {
                   const isSelected = selectedChoice?.id === option.id;
                   

@@ -1060,7 +1060,7 @@ const GameShell = ({
 
       {showGameOver && (
       <GameOverModal
-        score={scoreAsCoins}
+        score={score}
         gameId={gameId}
           gameType={gameType}
           totalLevels={totalLevels}
