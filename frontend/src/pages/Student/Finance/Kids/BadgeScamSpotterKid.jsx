@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BadgeScamSpotterKid = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-90";
@@ -22,167 +24,8 @@ const BadgeScamSpotterKid = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Phone Scam",
-      question: "A stranger says 'Win FREE iPhone! Just give me your parent's phone number!' What do you do?",
-      options: [
-        
-        { 
-          text: "Give phone number for free gift", 
-          emoji: "📱", 
-          isCorrect: false
-        },
-        { 
-          text: "Say NO and tell parents immediately", 
-          emoji: "🚫", 
-          isCorrect: true
-        },
-        { 
-          text: "Ask friends to give their numbers", 
-          emoji: "👥", 
-          isCorrect: false
-        },
-        { 
-          text: "Give the number but ask for proof first", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Excellent! Never give personal information to strangers! Always tell your parents!",
-        wrong: "Never give personal information to strangers, even for free gifts! Always tell your parents!"
-      }
-    },
-    {
-      id: 2,
-      title: "Website Scam",
-      question: "A website looks like your favorite game but asks for parent's credit card. What's wrong?",
-      options: [
-        { 
-          text: "It's a SCAM! Real games don't ask for this", 
-          emoji: "🛡️", 
-          isCorrect: true
-        },
-        { 
-          text: "It's okay because I know the game", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          text: "Enter card details to unlock levels", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          text: "Check if the URL is correct before entering details", 
-          emoji: "🔍", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Perfect! Fake websites copy real ones to steal information. Always be cautious!",
-        wrong: "Real games and websites never ask for credit card details. Be very careful!"
-      }
-    },
-    {
-      id: 3,
-      title: "Friend in Trouble",
-      question: "You get a message: 'Your friend is in trouble! Send money now!' What should you do?",
-      options: [
-       
-        { 
-          text: "Send money immediately to help", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-         { 
-          text: "Call friend directly and tell parents", 
-          emoji: "📞", 
-          isCorrect: true
-        },
-        { 
-          text: "Forward message to other friends", 
-          emoji: "📤", 
-          isCorrect: false
-        },
-        { 
-          text: "Ignore the message and do nothing", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Amazing! Always verify by calling your friend directly. Scammers pretend to be friends!",
-        wrong: "Always call your friend directly to verify. Scammers often pretend to be friends in need!"
-      }
-    },
-    {
-      id: 4,
-      title: "Email Scam",
-      question: "Email says 'You won 1 Lakh rupees! Click link and enter OTP.' What do you do?",
-      options: [
-        
-        { 
-          text: "Click link to see if it's real", 
-          emoji: "🔗", 
-          isCorrect: false
-        },
-        { 
-          text: "Enter OTP to claim prize", 
-          emoji: "🔒", 
-          isCorrect: false
-        },
-        { 
-          text: "Reply to ask for more details", 
-          emoji: "📧", 
-          isCorrect: false
-        },
-        { 
-          text: "Delete immediately and tell parents", 
-          emoji: "🗑️", 
-          isCorrect: true
-        },
-      ],
-      feedback: {
-        correct: "Great! Never click suspicious links or enter OTPs. Always tell your parents!",
-        wrong: "Never click suspicious links or enter OTPs. These are common scams to steal your information!"
-      }
-    },
-    {
-      id: 5,
-      title: "Online Stranger",
-      question: "Online stranger offers 'Easy money - just share your school details!' What's your response?",
-      options: [
-       
-        { 
-          text: "Share details for easy money", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          text: "Ask what kind of work first", 
-          emoji: "❓", 
-          isCorrect: false
-        },
-         { 
-          text: "Block them and report to parents/teacher", 
-          emoji: "🚫", 
-          isCorrect: true
-        },
-        { 
-          text: "Ask for more details about the offer", 
-          emoji: "🔍", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Wonderful! Never share personal information with strangers online. Block and report them!",
-        wrong: "Never share personal information with strangers online, even for 'easy money'!"
-      }
-    }
-  ];
+  const gameContent = t("financial-literacy.kids.badge-scam-spotter-kid", { returnObjects: true });
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleAnswer = (isCorrect, optionIndex) => {
     if (answered) return;
@@ -223,8 +66,8 @@ const BadgeScamSpotterKid = () => {
 
   return (
     <GameShell
-      title="Badge: Scam Spotter Kid"
-      subtitle={showResult ? "Badge Earned!" : `Challenge ${challenge + 1} of ${challenges.length}`}
+      title={gameContent?.title || "Badge: Scam Spotter Kid"}
+      subtitle={showResult ? gameContent?.subtitleComplete : t("financial-literacy.kids.badge-scam-spotter-kid.challengeLabel", { current: challenge + 1, total: challenges.length })}
       showGameOver={showResult}
       score={finalScore}
       gameId={gameId}
@@ -289,49 +132,47 @@ const BadgeScamSpotterKid = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {finalScore >= 4 ? (
               <div>
-                <div className="text-6xl mb-4">🏆</div>
-                <h3 className="text-3xl font-bold text-white mb-4">Scam Spotter Badge Earned!</h3>
+                <div className="text-6xl mb-4">{gameContent?.badgeEmoji || "🏆"}</div>
+                <h3 className="text-3xl font-bold text-white mb-4">{gameContent?.badgeTitle || "Scam Spotter Badge Earned!"}</h3>
                 <p className="text-white/90 text-lg mb-6">
-                  You made {finalScore} smart scam spotting decisions out of {challenges.length} challenges!
+                  {t("financial-literacy.kids.badge-scam-spotter-kid.resultGreatDescription", { finalScore, total: challenges.length })}
                 </p>
                 
                 <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-6 rounded-2xl mb-6">
-                  <h4 className="text-2xl font-bold mb-2">🎉 Achievement Unlocked!</h4>
-                  <p className="text-xl">Badge: Scam Spotter Kid</p>
+                  <h4 className="text-2xl font-bold mb-2">{gameContent?.achievementTitle || "🎉 Achievement Unlocked!"}</h4>
+                  <p className="text-xl">{gameContent?.badgeName || "Badge: Scam Spotter Kid"}</p>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div className="bg-green-500/20 p-4 rounded-xl">
-                    <h4 className="font-bold text-green-300 mb-2">Scam Awareness</h4>
+                    <h4 className="font-bold text-green-300 mb-2">{gameContent?.scamAwarenessTitle || "Scam Awareness"}</h4>
                     <p className="text-white/90 text-sm">
-                      You learned to recognize phone scams, fake websites, 
-                      suspicious messages, and online strangers!
+                      {gameContent?.scamAwarenessDescription || "You learned to recognize phone scams, fake websites, suspicious messages, and online strangers!"}
                     </p>
                   </div>
                   <div className="bg-blue-500/20 p-4 rounded-xl">
-                    <h4 className="font-bold text-blue-300 mb-2">Safety Skills</h4>
+                    <h4 className="font-bold text-blue-300 mb-2">{gameContent?.safetySkillsTitle || "Safety Skills"}</h4>
                     <p className="text-white/90 text-sm">
-                      These skills will help keep you and your family safe from online and offline scams!
+                      {gameContent?.safetySkillsDescription || "These skills will help keep you and your family safe from online and offline scams!"}
                     </p>
                   </div>
                 </div>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.practiceEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.practiceTitle || "Keep Learning!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You made {finalScore} smart scam spotting decisions out of {challenges.length} challenges.
+                  {t("financial-literacy.kids.badge-scam-spotter-kid.resultPracticeDescription", { finalScore, total: challenges.length })}
                 </p>
                 <p className="text-white/90 mb-6">
-                  Remember, scammers often pretend to offer free gifts, 
-                  fake prizes, or emergency help to trick you. Always check with your parents!
+                  {gameContent?.practiceTip || "Remember, scammers often pretend to offer free gifts, fake prizes, or emergency help to trick you. Always check with your parents!"}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.tryAgainButton || "Try Again"}
                 </button>
               </div>
             )}

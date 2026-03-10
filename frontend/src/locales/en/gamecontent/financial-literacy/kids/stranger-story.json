@@ -1,0 +1,55 @@
+{
+  "title": "Stranger Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "questionCounter": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Stranger offers a toy for your address. What do you do?",
+      "options": [
+        { "id": "refuse", "text": "Refuse", "emoji": "❌", "description": "", "isCorrect": true },
+        { "id": "accept", "text": "Accept", "emoji": "🎁", "description": "", "isCorrect": false },
+        { "id": "delay", "text": "Delay Decision", "emoji": "⏰", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Someone asks for your bank details. What now?",
+      "options": [
+        { "id": "give", "text": "Give Info", "emoji": "💳", "description": "", "isCorrect": false },
+        { "id": "partial", "text": "Give Partial Info", "emoji": "🤷", "description": "", "isCorrect": false },
+        { "id": "no", "text": "Say No", "emoji": "🚫", "description": "", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Stranger offers a deal. What's safer?",
+      "options": [
+        { "id": "walk", "text": "Walk Away", "emoji": "🚶", "description": "", "isCorrect": true },
+        { "id": "engage", "text": "Engage", "emoji": "💬", "description": "", "isCorrect": false },
+        { "id": "wait", "text": "Wait & See", "emoji": "⏳", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You see a suspicious offer. What do you do?",
+      "options": [
+        { "id": "tell", "text": "Tell Adult", "emoji": "👨‍👩‍👧", "description": "", "isCorrect": true },
+        { "id": "quiet", "text": "Stay Quiet", "emoji": "🤫", "description": "", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore It", "emoji": "🙈", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You get a strange message. What's best?",
+      "options": [
+        { "id": "reply", "text": "Reply", "emoji": "💬", "description": "", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore", "emoji": "🚫", "description": "", "isCorrect": true },
+        { "id": "forward", "text": "Forward to Friends", "emoji": "📤", "description": "", "isCorrect": false }
+      ]
+    }
+  ]
+}

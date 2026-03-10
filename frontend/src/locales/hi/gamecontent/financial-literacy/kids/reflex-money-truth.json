@@ -1,0 +1,72 @@
+{
+  "title": "रिफ्लेक्स: पैसा सच्चाई",
+  "subtitleComplete": "गेम पूरा हुआ!",
+  "roundLabel": "राउंड {{current}}/{{total}}",
+  "timeUp": "समय समाप्त!",
+  "readyEmoji": "💰",
+  "readyTitle": "तैयार हो जाओ!",
+  "readyDescription": "पैसे की सच्चाई और ईमानदारी के बारे में प्रश्नों के उत्तर दें!",
+  "readyTimeInfo": "आपके पास प्रत्येक प्रश्न के लिए {{time}} सेकंड हैं।",
+  "readyQuestionInfo": "आपके पास {{total}} प्रश्न हैं जिनमें से प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "गेम शुरू करें",
+  "gameRoundLabel": "राउंड:",
+  "gameTimeLabel": "समय:",
+  "gameScoreLabel": "स्कोर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "आपको स्कूल की मंजिल पर एक सिक्का मिलता है। सही पहली कार्रवाई क्या है?",
+      "correctAnswer": "पूछें कि किसी ने खोया है या नहीं",
+      "options": [
+        { "text": "जल्दी से रख लें", "isCorrect": false, "emoji": "🏃" },
+        { "text": "पूछें कि किसी ने खोया है या नहीं", "isCorrect": true, "emoji": "🙋" },
+        { "text": "स्नैक्स खरीदें", "isCorrect": false, "emoji": "🍿" },
+        { "text": "छिपा दें", "isCorrect": false, "emoji": "🙈" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "कोई आपको उस कार्य के लिए पैसा देता है जिसे आपने पूरा नहीं किया। आपको क्या करना चाहिए?",
+      "correctAnswer": "सच्चाई समझाएं",
+      "options": [
+        { "text": "सच्चाई समझाएं", "isCorrect": true, "emoji": "🗣️" },
+        { "text": "कुछ न कहें", "isCorrect": false, "emoji": "🤫" },
+        { "text": "दूसरों को दोष दें", "isCorrect": false, "emoji": "👉" },
+        { "text": "चले जाएं", "isCorrect": false, "emoji": "🚶" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "आपने और आपके दोस्त ने साथ मिलकर पैसा कमाया। समस्याओं से बचने में क्या मदद करता है?",
+      "correctAnswer": "जल्दी साझा करने पर सहमत हों",
+      "options": [
+        { "text": "अधिक खुद लें", "isCorrect": false, "emoji": "🤑" },
+        { "text": "बाद में इंतजार करें और तर्क करें", "isCorrect": false, "emoji": "💢" },
+        { "text": "किस्मत पर छोड़ दें", "isCorrect": false, "emoji": "🎲" },
+        { "text": "जल्दी साझा करने पर सहमत हों", "isCorrect": true, "emoji": "🤝" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "आप उधार लिए हुए पैसे को वापस करने का वादा करते हैं लेकिन भूल जाते हैं। इसे सबसे अच्छे से क्या ठीक करता है?",
+      "correctAnswer": "माफी मांगें और वापस लौटाएं",
+      "options": [
+        { "text": "माफी मांगें और वापस लौटाएं", "isCorrect": true, "emoji": "🙏" },
+        { "text": "व्यक्ति से बचें", "isCorrect": false, "emoji": "🙄" },
+        { "text": "नाटक करें कि आपने भुगतान किया", "isCorrect": false, "emoji": "🎭" },
+        { "text": "इसे हंसी में उड़ा दें", "isCorrect": false, "emoji": "😅" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "लोग आपको पैसे के साथ फिर से क्यों भरोसा करते हैं?",
+      "correctAnswer": "वादे निभाना",
+      "options": [
+        { "text": "जोर से बोलना", "isCorrect": false, "emoji": "📢" },
+        { "text": "बहाने बनाना", "isCorrect": false, "emoji": "🌀" },
+        { "text": "वादे निभाना", "isCorrect": true, "emoji": "📌" },
+        { "text": "अधिक मांगना", "isCorrect": false, "emoji": "💸" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Ethics Journal",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "minLengthPrompt": "Write at least {{minLength}} characters",
+  "textareaPlaceholder": "Write your journal entry here...",
+  "charactersLabel": "characters",
+  "submitFinalButton": "Submit Final Entry",
+  "submitContinueButton": "Submit & Continue",
+  "stages": [
+    {
+      "question": "Write: \"One time I used money honestly was ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "Write: \"I helped someone with money by ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "Write: \"A time I felt good about saving money was ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "Write: \"I avoided spending money wrongly by ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "Write: \"Being honest with money makes me feel ___.\"",
+      "minLength": 10
+    }
+  ]
+}

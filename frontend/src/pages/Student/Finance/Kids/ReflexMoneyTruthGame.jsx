@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,9 +8,10 @@ import { getGameDataById } from "../../../../utils/getGameData";
 const TOTAL_ROUNDS = 5;
 const ROUND_TIME = 10;
 
-const ReflexMoneyTruthGame = () => {
-  const location = useLocation();
-
+const ReflexMoneyTruthGame= () => {
+ const location = useLocation();
+const { t } = useTranslation("gamecontent");
+  
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-99";
   const gameData = getGameDataById(gameId);
@@ -28,67 +30,9 @@ const ReflexMoneyTruthGame = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-  {
-    id: 1,
-    question: "You find a coin on the school floor. What is the right first action?",
-    correctAnswer: "Ask if someone lost it",
-    options: [
-      { text: "Keep it quickly", isCorrect: false, emoji: "🏃" },
-      { text: "Ask if someone lost it", isCorrect: true, emoji: "🙋" },
-      { text: "Buy snacks", isCorrect: false, emoji: "🍿" },
-      { text: "Hide it", isCorrect: false, emoji: "🙈" }
-    ]
-  },
-  {
-    id: 2,
-    question: "Someone gives you money for a task you didn’t finish. What should you do?",
-    correctAnswer: "Explain the truth",
-    options: [
-      { text: "Explain the truth", isCorrect: true, emoji: "🗣️" },
-      { text: "Say nothing", isCorrect: false, emoji: "🤫" },
-      
-      { text: "Blame others", isCorrect: false, emoji: "👉" },
-      { text: "Walk away", isCorrect: false, emoji: "🚶" }
-    ]
-  },
-  {
-    id: 3,
-    question: "You and your friend earned money together. What helps avoid problems?",
-    correctAnswer: "Agree on sharing early",
-    options: [
-      { text: "Take more yourself", isCorrect: false, emoji: "🤑" },
-      { text: "Wait and argue later", isCorrect: false, emoji: "💢" },
-      
-      { text: "Let luck decide", isCorrect: false, emoji: "🎲" },
-      { text: "Agree on sharing early", isCorrect: true, emoji: "🤝" },
-    ]
-  },
-  {
-    id: 4,
-    question: "You promise to return borrowed money but forget. What fixes it best?",
-    correctAnswer: "Apologize and return it",
-    options: [
-       { text: "Apologize and return it", isCorrect: true, emoji: "🙏" },
-      { text: "Avoid the person", isCorrect: false, emoji: "🙄" },
-      { text: "Pretend you paid", isCorrect: false, emoji: "🎭" },
-     
-      { text: "Laugh it off", isCorrect: false, emoji: "😅" }
-    ]
-  },
-  {
-    id: 5,
-    question: "What makes people trust you with money again?",
-    correctAnswer: "Keeping promises",
-    options: [
-      { text: "Talking loudly", isCorrect: false, emoji: "📢" },
-      { text: "Making excuses", isCorrect: false, emoji: "🌀" },
-      { text: "Keeping promises", isCorrect: true, emoji: "📌" },
-      { text: "Asking for more", isCorrect: false, emoji: "💸" }
-    ]
-  }
-];
-
+  const gameContent = t("financial-literacy.kids.reflex-money-truth", { returnObjects: true });
+const QUESTIONS_DATA = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  
   useEffect(() => {
     currentRoundRef.current = currentRound;
   }, [currentRound]);

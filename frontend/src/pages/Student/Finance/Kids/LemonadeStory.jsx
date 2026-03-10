@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,6 +8,7 @@ import { getGameDataById } from "../../../../utils/getGameData";
 const LemonadeStory = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-71";
@@ -16,136 +18,16 @@ const LemonadeStory = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
+  const gameContent = t("financial-literacy.kids.lemonade-story", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  
   const [coins, setCoins] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [choices, setChoices] = useState([]);
   const [showResult, setShowResult] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
-
-  const questions = [
-    {
-      id: 1,
-      text: "You earn ₹50 from a lemonade stand. What's the smart choice?",
-      options: [
-        { 
-          id: "toys", 
-          text: "Spend all on toys", 
-          emoji: "🧸", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "snacks", 
-          text: "Buy snacks", 
-          emoji: "🍟", 
-          isCorrect: false
-        },
-        {
-          id: "save",
-          text: "Save half for supplies",
-          emoji: "💰",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "You need ₹20 for lemons. You have ₹15. What do you do?",
-      options: [
-        { 
-          id: "save", 
-          text: "Save ₹5 more", 
-          emoji: "🙂", 
-          isCorrect: true
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow ₹5", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          id: "skip", 
-          text: "Skip buying lemons", 
-          emoji: "🍋", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "A customer pays ₹10 instead of ₹5. What's honest?",
-      options: [
-        { 
-          id: "keep", 
-          text: "Keep the ₹10", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        {
-          id: "return",
-          text: "Return extra ₹5",
-          emoji: "🤝",
-          isCorrect: true
-        },
-        { 
-          id: "candy", 
-          text: "Spend it on candy", 
-          emoji: "🍬", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You earn ₹30. Should you spend it all today?",
-      options: [
-        { 
-          id: "no", 
-          text: "No, save for next stand", 
-          emoji: "🙅", 
-          isCorrect: true
-        },
-        { 
-          id: "games", 
-          text: "Yes, buy games", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          id: "give", 
-          text: "Give it away", 
-          emoji: "🎁", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why is planning your lemonade stand earnings smart?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Lets you spend more", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        {
-          id: "running",
-          text: "Keeps your stand running",
-          emoji: "☀️",
-          isCorrect: true
-        },
-        { 
-          id: "customers", 
-          text: "Gets you more customers", 
-          emoji: "👥", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {
@@ -202,8 +84,8 @@ const LemonadeStory = () => {
 
   return (
     <GameShell
-      title="Lemonade Story"
-      subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
+      title={gameContent?.title || "Lemonade Story"}
+      subtitle={showResult ? gameContent?.subtitleComplete : t("financial-literacy.kids.lemonade-story.subtitleProgress", { current: currentQuestion + 1, total: questions.length })}
       currentLevel={5}
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -226,11 +108,11 @@ const LemonadeStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {coins}/{questions.length}</span>
+                <span className="text-white/80">{t("financial-literacy.kids.lemonade-story.questionCounter", { current: currentQuestion + 1, total: questions.length })}</span>
+                <span className="text-yellow-400 font-bold">{t("financial-literacy.kids.lemonade-story.scoreLabel", { score: coins, total: questions.length })}</span>
               </div>
               
-              <div className="text-4xl mb-4 text-center">🍋</div>
+              <div className="text-4xl mb-4 text-center">{gameContent?.stageEmoji}</div>
               <p className="text-white text-lg mb-6 text-center">
                 {currentQuestionData.text}
               </p>

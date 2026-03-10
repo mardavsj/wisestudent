@@ -1,0 +1,70 @@
+{
+  "title": "Reflex Small Business",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your small business reflexes!",
+  "subtitleReady": "Test your small business reflexes!",
+  "readyEmoji": "🏪",
+  "readyTitle": "Ready to Test Small Business Skills?",
+  "readyDescription": "Answer questions about starting and running a small business.",
+  "readyInfo": "You have {{total}} questions with {{seconds}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a good way to start a small business?",
+      "correctAnswer": "Bake & Sell",
+      "options": [
+        { "text": "Buy & Waste", "isCorrect": false, "emoji": "💸" },
+        { "text": "Spend All", "isCorrect": false, "emoji": "🛍️" },
+        { "text": "Bake & Sell", "isCorrect": true, "emoji": "🍰" },
+        { "text": "Do Nothing", "isCorrect": false, "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "How can you earn money from your skills?",
+      "correctAnswer": "Make Crafts",
+      "options": [
+        { "text": "Make Crafts", "isCorrect": true, "emoji": "🎨" },
+        { "text": "Spend All", "isCorrect": false, "emoji": "💸" },
+        { "text": "Waste Time", "isCorrect": false, "emoji": "⏰" },
+        { "text": "Ignore Skills", "isCorrect": false, "emoji": "🙈" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What helps you earn money from others?",
+      "correctAnswer": "Offer Service",
+      "options": [
+        { "text": "Do Nothing", "isCorrect": false, "emoji": "😴" },
+        { "text": "Wait Forever", "isCorrect": false, "emoji": "⏳" },
+        { "text": "Avoid Work", "isCorrect": false, "emoji": "🚫" },
+        { "text": "Offer Service", "isCorrect": true, "emoji": "🛠️" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should you do with business profits?",
+      "correctAnswer": "Save Profits",
+      "options": [
+        { "text": "Save Profits", "isCorrect": true, "emoji": "💰" },
+        { "text": "Spend Profits", "isCorrect": false, "emoji": "💸" },
+        { "text": "Waste Money", "isCorrect": false, "emoji": "🔥" },
+        { "text": "Lose It", "isCorrect": false, "emoji": "😞" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What helps your business succeed?",
+      "correctAnswer": "Grow Business",
+      "options": [
+        { "text": "Waste Money", "isCorrect": false, "emoji": "🔥" },
+        { "text": "Grow Business", "isCorrect": true, "emoji": "📈" },
+        { "text": "Give Up", "isCorrect": false, "emoji": "😞" },
+        { "text": "Stay Small", "isCorrect": false, "emoji": "📉" }
+      ]
+    }
+  ]
+}

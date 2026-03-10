@@ -1,0 +1,54 @@
+{
+  "title": "Shop Story Game",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Shopkeeper gives extra change. What do you do?",
+      "options": [
+        { "id": "return", "text": "Return Extra Change", "emoji": "💸", "isCorrect": true },
+        { "id": "keep", "text": "Keep It Quietly", "emoji": "🤫", "isCorrect": false },
+        { "id": "spend", "text": "Spend Immediately", "emoji": "🛍️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You find a cheaper item. What's next?",
+      "options": [
+        { "id": "lie", "text": "Lie About Price", "emoji": "🙊", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore It", "emoji": "🙈", "isCorrect": false },
+        { "id": "honest", "text": "Be Honest", "emoji": "🤗", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Seller quotes a price. What's next?",
+      "options": [
+        { "id": "bargain", "text": "Bargain Unfairly", "emoji": "😈", "isCorrect": false },
+        { "id": "refuse", "text": "Refuse to Pay", "emoji": "🚫", "isCorrect": false },
+        { "id": "pay", "text": "Pay Fairly", "emoji": "⚖️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You get a receipt. What do you do?",
+      "options": [
+        { "id": "check", "text": "Check Receipt", "emoji": "🧾", "isCorrect": true },
+        { "id": "ignore", "text": "Ignore Bill", "emoji": "🙈", "isCorrect": false },
+        { "id": "throw", "text": "Throw Away", "emoji": "🗑️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Store overcharges you. What now?",
+      "options": [
+        { "id": "silent", "text": "Stay Silent", "emoji": "😶", "isCorrect": false },
+        { "id": "report", "text": "Report Error", "emoji": "🗣️", "isCorrect": true },
+        { "id": "accept", "text": "Accept It", "emoji": "😔", "isCorrect": false }
+      ]
+    }
+  ]
+}

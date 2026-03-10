@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,6 +8,7 @@ import { getGameDataById } from "../../../../utils/getGameData";
 const PetSittingStory = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-78";
@@ -16,139 +18,16 @@ const PetSittingStory = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
+  const gameContent = t("financial-literacy.kids.pet-sitting-story", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  
   const [coins, setCoins] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [choices, setChoices] = useState([]);
   const [showResult, setShowResult] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
-
-  const questions = [
-  {
-    id: 1,
-    text: "You make a daily routine for feeding and walking a pet. What skill are you practicing?",
-    options: [
-      
-      {
-        id: "playing",
-        text: "Only playing with animals",
-        emoji: "🎾",
-        isCorrect: false
-      },
-      {
-        id: "luck",
-        text: "Depending on luck",
-        emoji: "🍀",
-        isCorrect: false
-      },
-      {
-        id: "planning",
-        text: "Planning and organization",
-        emoji: "📋",
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 2,
-    text: "You earn money from pet sitting over time. What is a wise next step?",
-    options: [
-      {
-        id: "track",
-        text: "Track how much you earn",
-        emoji: "📊",
-        isCorrect: true
-      },
-      {
-        id: "spend",
-        text: "Spend it immediately",
-        emoji: "⚡",
-        isCorrect: false
-      },
-      {
-        id: "forget",
-        text: "Forget about it",
-        emoji: "🤷",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    text: "The pet seems unwell while under your care. What should you do first?",
-    options: [
-      
-      {
-        id: "wait",
-        text: "Wait and hope it improves",
-        emoji: "⏳",
-        isCorrect: false
-      },
-      {
-        id: "inform",
-        text: "Inform the owner quickly",
-        emoji: "📞",
-        isCorrect: true
-      },
-      {
-        id: "ignore",
-        text: "Ignore the signs",
-        emoji: "🙈",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 4,
-    text: "You finish pet sitting successfully. What helps you get trusted again?",
-    options: [
-      
-      {
-        id: "ask",
-        text: "Asking for more money",
-        emoji: "💸",
-        isCorrect: false
-      },
-      {
-        id: "rush",
-        text: "Rushing through tasks",
-        emoji: "🏃",
-        isCorrect: false
-      },
-      {
-        id: "reliable",
-        text: "Being reliable and careful",
-        emoji: "⭐",
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 5,
-    text: "Pet sitting teaches you that earning money also means?",
-    options: [
-      {
-        id: "care",
-        text: "Caring for others responsibly",
-        emoji: "❤️",
-        isCorrect: true
-      },
-      {
-        id: "fun",
-        text: "Only having fun",
-        emoji: "😄",
-        isCorrect: false
-      },
-      {
-        id: "spending",
-        text: "Spending more money",
-        emoji: "🛍️",
-        isCorrect: false
-      }
-    ]
-  }
-];
-
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {
@@ -205,8 +84,8 @@ const PetSittingStory = () => {
 
   return (
     <GameShell
-      title="Pet Sitting Story"
-      subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
+      title={gameContent?.title || "Pet Sitting Story"}
+      subtitle={showResult ? gameContent?.subtitleComplete : t("financial-literacy.kids.pet-sitting-story.subtitleProgress", { current: currentQuestion + 1, total: questions.length })}
       currentLevel={5}
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -215,25 +94,25 @@ const PetSittingStory = () => {
       showGameOver={showResult}
       score={coins}
       gameId="finance-kids-78"
-      nextGamePathProp="/student/finance/kids/reflex-small-business"
-      nextGameIdProp="finance-kids-79"
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       maxScore={5}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === 5}
+      nextGamePathProp="/student/finance/kids/reflex-small-business"
+      nextGameIdProp="finance-kids-79">
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {coins}/{questions.length}</span>
+                <span className="text-white/80">{t("financial-literacy.kids.pet-sitting-story.questionCounter", { current: currentQuestion + 1, total: questions.length })}</span>
+                <span className="text-yellow-400 font-bold">{t("financial-literacy.kids.pet-sitting-story.scoreLabel", { score: coins, total: questions.length })}</span>
               </div>
               
-              <div className="text-4xl mb-4 text-center">🐶</div>
+              <div className="text-4xl mb-4 text-center">{gameContent?.stageEmoji}</div>
               <p className="text-white text-lg mb-6 text-center">
                 {currentQuestionData.text}
               </p>
@@ -243,7 +122,7 @@ const PetSittingStory = () => {
                   <button
                     key={option.id}
                     onClick={() => handleChoice(option.id)}
-                    className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white p-6 rounded-xl text-lg font-semibold transition-all transform hover:scale-105"
+                    className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white p-6 rounded-xl text-lg font-semibold transition-all transform hover:scale-105"
                   >
                     <div className="text-2xl mb-2">{option.emoji}</div>
                     <h3 className="font-bold text-xl mb-2">{option.text}</h3>

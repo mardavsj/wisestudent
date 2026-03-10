@@ -1,0 +1,96 @@
+{
+  "title": "Badge: Young Earner",
+  "subtitleComplete": "Badge Earned!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "resultGreatEmoji": "🏆",
+  "resultGreatTitle": "Young Earner Badge Earned!",
+  "resultGreatDescription": "You made {{score}} smart earning decisions out of {{total}} challenges!",
+  "achievementTitle": "🎉 Achievement Unlocked!",
+  "achievementBadge": "Badge: Young Earner",
+  "skillsTitle": "Earning Skills",
+  "skillsDescription": "You learned to earn money through chores, selling items, teaching skills, and honest work!",
+  "wisdomTitle": "Financial Wisdom",
+  "wisdomDescription": "These habits will help you build a strong foundation for financial success!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "Keep Learning!",
+  "resultKeepDescription": "You made {{score}} smart earning decisions out of {{total}} challenges.",
+  "resultKeepTip": "Remember, earning money through honest work, chores, and using your skills is the best way to build financial success!",
+  "tryAgainButton": "Try Again",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Chores",
+      "question": "What's a good way to earn pocket money at home?",
+      "options": [
+        { "text": "Demand money for nothing", "emoji": "😤", "isCorrect": false },
+        { "text": "Take from parents' wallet", "emoji": "💰", "isCorrect": false },
+        { "text": "Ask for money without working", "emoji": "😢", "isCorrect": false },
+        { "text": "Do chores like cleaning room", "emoji": "🧹", "isCorrect": true }
+      ],
+      "feedback": {
+        "correct": "Excellent! Doing chores teaches responsibility and earns money fairly!",
+        "wrong": "Earning money through work like chores is the right way - not demanding or taking!"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Selling",
+      "question": "You have toys you don't use. What's smart?",
+      "options": [
+        { "text": "Sell them to earn money", "emoji": "🛒", "isCorrect": true },
+        { "text": "Throw them in trash", "emoji": "🗑️", "isCorrect": false },
+        { "text": "Hoard them forever", "emoji": "🔒", "isCorrect": false },
+        { "text": "Give them away for free", "emoji": "🎁", "isCorrect": false }
+      ],
+      "feedback": {
+        "correct": "Perfect! Selling unused items is a smart way to earn money and declutter!",
+        "wrong": "Selling unused toys is better than throwing them away or hoarding them!"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Teaching",
+      "question": "You're good at drawing. How can you earn?",
+      "options": [
+        { "text": "Keep skills to myself", "emoji": "🤫", "isCorrect": false },
+        { "text": "Copy others' work", "emoji": "📚", "isCorrect": false },
+        { "text": "Teach friends for small fee", "emoji": "🎨", "isCorrect": true },
+        { "text": "Sell my drawings", "emoji": "🖼️", "isCorrect": false }
+      ],
+      "feedback": {
+        "correct": "Amazing! Using your skills to teach others is a great way to earn money!",
+        "wrong": "Sharing your skills by teaching others is a smart way to earn money!"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Crafts",
+      "question": "School fair is coming. What's a good earning idea?",
+      "options": [
+        { "text": "Do nothing and watch", "emoji": "👀", "isCorrect": false },
+        { "text": "Make crafts and sell them", "emoji": "✂️", "isCorrect": true },
+        { "text": "Steal others' ideas", "emoji": "🚫", "isCorrect": false },
+        { "text": "Buy crafts to resell", "emoji": "🛍️", "isCorrect": false }
+      ],
+      "feedback": {
+        "correct": "Great! Making and selling crafts at school fairs is a fun way to earn money!",
+        "wrong": "Creating and selling your own crafts is a creative way to earn money!"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Studying",
+      "question": "Parents offer money for good grades. What do you do?",
+      "options": [
+        { "text": "Cheat on tests", "emoji": "📝", "isCorrect": false },
+        { "text": "Make excuses for bad grades", "emoji": "🤐", "isCorrect": false },
+        { "text": "Study hard and earn fairly", "emoji": "📚", "isCorrect": true },
+        { "text": "Copy from friends", "emoji": "👀", "isCorrect": false }
+      ],
+      "feedback": {
+        "correct": "Wonderful! Earning money through honest hard work and good grades is the right way!",
+        "wrong": "Always earn money honestly through hard work, not by cheating or making excuses!"
+      }
+    }
+  ]
+}

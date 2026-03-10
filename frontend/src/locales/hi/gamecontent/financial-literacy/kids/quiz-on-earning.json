@@ -1,0 +1,144 @@
+{
+    "title": "कमाई पर क्विज",
+    "subtitleComplete": "क्विज पूरा हुआ!",
+    "subtitleProgress": "प्रश्न {{current}} में से {{total}}",
+    "questionCounter": "प्रश्न {{current}}/{{total}}",
+    "scoreLabel": "स्कोर: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "पैसे कमाने का सही तरीका क्या है?",
+            "options": [
+                {
+                    "id": "working",
+                    "text": "काम करके",
+                    "emoji": "💼",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "wasting",
+                    "text": "बर्बाद करके",
+                    "emoji": "💸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "sleeping",
+                    "text": "सोकर",
+                    "emoji": "😴",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "एक किसान पैसे कैसे कमाता है?",
+            "options": [
+                {
+                    "id": "games",
+                    "text": "गेम खेलकर",
+                    "emoji": "🎮",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "crops",
+                    "text": "फसल बेचकर",
+                    "emoji": "🌾",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "give",
+                    "text": "खाना दे कर",
+                    "emoji": "🎁",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "कौन सी नौकरी सिखाने से पैसे कमाती है?",
+            "options": [
+                {
+                    "id": "toymaker",
+                    "text": "खिलौना बनाने वाला",
+                    "emoji": "🧸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "candy",
+                    "text": "कैंडी बेचने वाला",
+                    "emoji": "🍬",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "teacher",
+                    "text": "शिक्षक",
+                    "emoji": "👨‍🏫",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "बच्चे पैसे कैसे कमा सकते हैं?",
+            "options": [
+                {
+                    "id": "chores",
+                    "text": "घरेलू काम करके",
+                    "emoji": "🧹",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "tv",
+                    "text": "टीवी देखकर",
+                    "emoji": "📺",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "snacks",
+                    "text": "नाश्ता खाकर",
+                    "emoji": "🍪",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "पैसे कमाना क्यों महत्वपूर्ण है?",
+            "options": [
+                {
+                    "id": "toys",
+                    "text": "आपको मुफ्त खिलौने मिलते हैं",
+                    "emoji": "🧸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "needs",
+                    "text": "आपकी जरूरतें पूरी करता है",
+                    "emoji": "😊",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "sleep",
+                    "text": "आपको बेहतर नींद आती है",
+                    "emoji": "😴",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

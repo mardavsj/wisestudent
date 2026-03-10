@@ -1,0 +1,54 @@
+{
+  "title": "ईमानदारी पर प्रश्नोत्तरी",
+  "subtitleComplete": "प्रश्नोत्तरी पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{current}} में से {{total}}",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "कौन ईमानदार है?",
+      "options": [
+        { "id": "cheat", "text": "ग्राहक को धोखा देता है", "emoji": "😈", "description": "", "isCorrect": false },
+        { "id": "change", "text": "सही बदलाव देता है", "emoji": "💰", "description": "", "isCorrect": true },
+        { "id": "lies", "text": "झूठ बोलता है", "emoji": "🙊", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "एक ईमानदार दुकानदार क्या करता है?",
+      "options": [
+        { "id": "fair", "text": "उचित कीमत वसूलता है", "emoji": "⚖️", "description": "", "isCorrect": true },
+        { "id": "overcharge", "text": "अधिक चार्ज करता है", "emoji": "💸", "description": "", "isCorrect": false },
+        { "id": "hide", "text": "उत्पादों को छुपाता है", "emoji": "🫥", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "खरीदारी में ईमानदारी कैसे मदद करती है?",
+      "options": [
+        { "id": "free", "text": "आपको मुफ्त आइटम मिलते हैं", "emoji": "🎁", "description": "", "isCorrect": false },
+        { "id": "spend", "text": "आपको अधिक खर्च करने के लिए मजबूर करता है", "emoji": "🛍️", "description": "", "isCorrect": false },
+        { "id": "trust", "text": "विश्वास बनाता है", "emoji": "🤝", "description": "", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "उधार लेने का एक ईमानदार तरीका क्या है?",
+      "options": [
+        { "id": "return", "text": "समय पर लौटाएं", "emoji": "⏰", "description": "", "isCorrect": true },
+        { "id": "keep", "text": "हमेशा के लिए रखें", "emoji": "🙈", "description": "", "isCorrect": false },
+        { "id": "more", "text": "अधिक उधार लें", "emoji": "📈", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "पैसे के मामले में ईमानदारी क्यों महत्वपूर्ण है?",
+      "options": [
+        { "id": "toys", "text": "यह आपको खिलौने दिलाता है", "emoji": "🧸", "description": "", "isCorrect": false },
+        { "id": "famous", "text": "यह आपको प्रसिद्ध बनाता है", "emoji": "⭐", "description": "", "isCorrect": false },
+        { "id": "trust", "text": "यह विश्वास अर्जित करता है", "emoji": "🤝", "description": "", "isCorrect": true }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+    "title": "रिफ्लेक्स काम बनाम खेल",
+    "subtitlePlaying": "राउंड {{current}}/{{total}}: काम बनाम खेल रिफ्लेक्स का परीक्षण करें!",
+    "subtitleReady": "काम बनाम खेल रिफ्लेक्स का परीक्षण करें!",
+    "readyEmoji": "💼",
+    "readyTitle": "काम बनाम खेल का परीक्षण करने के लिए तैयार हैं?",
+    "readyDescription": "काम और खेल के बीच सही कार्य चुनें।",
+    "readyInfo": "आपके पास {{total}} प्रश्न हैं, प्रत्येक {{seconds}} सेकंड के साथ!",
+    "startButton": "गेम शुरू करें",
+    "roundLabel": "राउंड:",
+    "timeLabel": "समय:",
+    "scoreLabel": "स्कोर:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "क्या आपको पैसे कमाने में मदद करता है?",
+            "correctAnswer": "काम",
+            "options": [
+                {
+                    "text": "समय बर्बाद करें",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                },
+                {
+                    "text": "पूरे दिन खेलें",
+                    "isCorrect": false,
+                    "emoji": "🎮"
+                },
+                {
+                    "text": "काम",
+                    "isCorrect": true,
+                    "emoji": "💼"
+                },
+                {
+                    "text": "कुछ न करें",
+                    "isCorrect": false,
+                    "emoji": "🤷"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "सीखने और बढ़ने के लिए आपको क्या करना चाहिए?",
+            "correctAnswer": "पढ़ाई करें",
+            "options": [
+                {
+                    "text": "पढ़ाई करें",
+                    "isCorrect": true,
+                    "emoji": "📚"
+                },
+                {
+                    "text": "पूरे दिन खेलें",
+                    "isCorrect": false,
+                    "emoji": "🎮"
+                },
+                {
+                    "text": "सीखना छोड़ें",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "शिक्षा को अनदेखा करें",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "अपनी कमाई के साथ आपको क्या करना चाहिए?",
+            "correctAnswer": "कमाई बचाएं",
+            "options": [
+                {
+                    "text": "सब खर्च करें",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "कमाई बचाएं",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "पैसे बर्बाद करें",
+                    "isCorrect": false,
+                    "emoji": "🔥"
+                },
+                {
+                    "text": "खो दें",
+                    "isCorrect": false,
+                    "emoji": "😞"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "घर पर मदद करने के लिए आपको क्या करना चाहिए?",
+            "correctAnswer": "घरेलू काम करें",
+            "options": [
+                {
+                    "text": "घरेलू काम करें",
+                    "isCorrect": true,
+                    "emoji": "🧹"
+                },
+                {
+                    "text": "घरेलू काम छोड़ें",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "काम से बचें",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "आलसी बनें",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "उत्पादक होने में क्या मदद करता है?",
+            "correctAnswer": "काम की योजना बनाएं",
+            "options": [
+                {
+                    "text": "निष्क्रिय रहें",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                },
+                {
+                    "text": "समय बर्बाद करें",
+                    "isCorrect": false,
+                    "emoji": "⏰"
+                },
+                {
+                    "text": "कुछ न करें",
+                    "isCorrect": false,
+                    "emoji": "🤷"
+                },
+                {
+                    "text": "काम की योजना बनाएं",
+                    "isCorrect": true,
+                    "emoji": "📋"
+                }
+            ]
+        }
+    ]
+}

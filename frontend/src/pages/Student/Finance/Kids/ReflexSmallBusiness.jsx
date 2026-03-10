@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -9,6 +10,7 @@ const ROUND_TIME = 10;
 
 const ReflexSmallBusiness = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-79";
@@ -18,6 +20,10 @@ const ReflexSmallBusiness = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
+  const gameContent = t("financial-literacy.kids.reflex-small-business", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
@@ -27,64 +33,6 @@ const ReflexSmallBusiness = () => {
   const [answered, setAnswered] = useState(false);
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
-
-  const questions = [
-    {
-      id: 1,
-      question: "What is a good way to start a small business?",
-      correctAnswer: "Bake & Sell",
-      options: [
-        { text: "Buy & Waste", isCorrect: false, emoji: "💸" },
-        { text: "Spend All", isCorrect: false, emoji: "🛍️" },
-        { text: "Bake & Sell", isCorrect: true, emoji: "🍰" },
-        { text: "Do Nothing", isCorrect: false, emoji: "😴" }
-      ]
-    },
-    {
-      id: 2,
-      question: "How can you earn money from your skills?",
-      correctAnswer: "Make Crafts",
-      options: [
-        { text: "Make Crafts", isCorrect: true, emoji: "🎨" },
-        { text: "Spend All", isCorrect: false, emoji: "💸" },
-        { text: "Waste Time", isCorrect: false, emoji: "⏰" },
-        { text: "Ignore Skills", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What helps you earn money from others?",
-      correctAnswer: "Offer Service",
-      options: [
-        { text: "Do Nothing", isCorrect: false, emoji: "😴" },
-        { text: "Wait Forever", isCorrect: false, emoji: "⏳" },
-        { text: "Avoid Work", isCorrect: false, emoji: "🚫" },
-        { text: "Offer Service", isCorrect: true, emoji: "🛠️" },
-      ]
-    },
-    {
-      id: 4,
-      question: "What should you do with business profits?",
-      correctAnswer: "Save Profits",
-      options: [
-        { text: "Save Profits", isCorrect: true, emoji: "💰" },
-        { text: "Spend Profits", isCorrect: false, emoji: "💸" },
-        { text: "Waste Money", isCorrect: false, emoji: "🔥" },
-        { text: "Lose It", isCorrect: false, emoji: "😞" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What helps your business succeed?",
-      correctAnswer: "Grow Business",
-      options: [
-        { text: "Waste Money", isCorrect: false, emoji: "🔥" },
-        { text: "Grow Business", isCorrect: true, emoji: "📈" },
-        { text: "Give Up", isCorrect: false, emoji: "😞" },
-        { text: "Stay Small", isCorrect: false, emoji: "📉" }
-      ]
-    }
-  ];
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -209,8 +157,8 @@ const ReflexSmallBusiness = () => {
 
   return (
     <GameShell
-      title="Reflex Small Business"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your small business reflexes!` : "Test your small business reflexes!"}
+      title={gameContent?.title || "Reflex Small Business"}
+      subtitle={gameState === "playing" ? t("financial-literacy.kids.reflex-small-business.subtitlePlaying", { current: currentRound, total: TOTAL_ROUNDS }) : gameContent?.subtitleReady}
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -229,19 +177,15 @@ const ReflexSmallBusiness = () => {
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-            <div className="text-5xl mb-6">🏪</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Small Business Skills?</h3>
-            <p className="text-white/90 text-lg mb-6">
-              Answer questions about starting and running a small business.
-            </p>
-            <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
-            </p>
+            <div className="text-5xl mb-6">{gameContent?.readyEmoji}</div>
+            <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.readyTitle}</h3>
+            <p className="text-white/90 text-lg mb-6">{gameContent?.readyDescription}</p>
+            <p className="text-white/80 mb-6">{t("financial-literacy.kids.reflex-small-business.readyInfo", { total: TOTAL_ROUNDS, seconds: ROUND_TIME })}</p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton}
             </button>
           </div>
         )}
@@ -250,13 +194,13 @@ const ReflexSmallBusiness = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel}</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel}</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel}</span> {score}
               </div>
             </div>
 

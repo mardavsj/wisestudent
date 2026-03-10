@@ -1,0 +1,87 @@
+{
+  "title": "रिफ्लेक्स: पहले चेक करें",
+  "subtitleComplete": "गेम पूरा हुआ!",
+  "roundLabel": "राउंड {{current}}/{{total}}",
+  "timeUp": "समय समाप्त!",
+  "readyEmoji": "🔍",
+  "readyTitle": "तैयार हो जाओ!",
+  "readyDescription": "खरीदारी से पहले चेक करने के बारे में प्रश्नों के उत्तर दें!",
+  "readyTimeInfo": "आपके पास प्रत्येक प्रश्न के लिए {{time}} सेकंड हैं।",
+  "readyQuestionInfo": "आपके पास {{total}} प्रश्न हैं जिनमें से प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "गेम शुरू करें",
+  "gameRoundLabel": "राउंड:",
+  "gameTimeLabel": "समय:",
+  "gameScoreLabel": "स्कोर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "कुछ खरीदने से पहले आपको क्या करना चाहिए?",
+      "correctAnswer": "कीमत पूछें",
+      "options": [
+        { "text": "कीमत पूछें", "isCorrect": true, "emoji": "💰" },
+        { "text": "अंधाधुंध विश्वास करें", "isCorrect": false, "emoji": "🙈" },
+        { "text": "तुरंत खरीदें", "isCorrect": false, "emoji": "⚡" },
+        { "text": "लागत को नजरअंदाज करें", "isCorrect": false, "emoji": "🚫" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "खरीदारी करने से पहले आपको क्या चेक करना चाहिए?",
+      "correctAnswer": "लागत चेक करें",
+      "options": [
+        { "text": "अभी खरीदें", "isCorrect": false, "emoji": "🛒" },
+        { "text": "जांच छोड़ दें", "isCorrect": false, "emoji": "⏭️" },
+        { "text": "लागत चेक करें", "isCorrect": true, "emoji": "💵" },
+        { "text": "कीमत का अनुमान लगाएं", "isCorrect": false, "emoji": "🎲" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "खरीदारी करने का स्मार्ट तरीका क्या है?",
+      "correctAnswer": "कीमतों की तुलना करें",
+      "options": [
+        { "text": "जल्दी भुगतान करें", "isCorrect": false, "emoji": "💸" },
+        { "text": "कीमतों की तुलना करें", "isCorrect": true, "emoji": "⚖️" },
+        { "text": "पहली दुकान से खरीदें", "isCorrect": false, "emoji": "🏪" },
+        { "text": "तुलना न करें", "isCorrect": false, "emoji": "🙈" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "खरीदने से पहले आपको क्या सत्यापित करना चाहिए?",
+      "correctAnswer": "गुणवत्ता सत्यापित करें",
+      "options": [
+        { "text": "गुणवत्ता सत्यापित करें", "isCorrect": true, "emoji": "🔍" },
+        { "text": "नजरअंदाज करें", "isCorrect": false, "emoji": "🙈" },
+        { "text": "बिना जांचे खरीदें", "isCorrect": false, "emoji": "⚡" },
+        { "text": "केवल विक्रेता पर विश्वास करें", "isCorrect": false, "emoji": "🤝" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ऑनलाइन खरीदने से पहले आपको क्या करना चाहिए?",
+      "correctAnswer": "समीक्षाएं पढ़ें",
+      "options": [
+        { "text": "जल्दी करें", "isCorrect": false, "emoji": "⚡" },
+        { "text": "समीक्षाएं छोड़ दें", "isCorrect": false, "emoji": "⏭️" },
+        { "text": "तुरंत खरीदें", "isCorrect": false, "emoji": "🛒" },
+        { "text": "समीक्षाएं पढ़ें", "isCorrect": true, "emoji": "⭐" }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "स्मार्ट शॉपर!",
+    "description": "अद्भुत! आपको {{score}}/{{total}} सही मिले! आप हमेशा खरीदने से पहले चेक करते हैं!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "अच्छी आदतें!",
+    "description": "शाबाश! आपको {{score}}/{{total}} स्कोर मिला! स्मार्ट खरीदारी की आदतों का अभ्यास करते रहें!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "अभ्यास करते रहें!",
+    "description": "आपको {{score}}/{{total}} स्कोर मिला। खरीदने से पहले हमेशा चेक और तुलना करना याद रखें!"
+  }
+}

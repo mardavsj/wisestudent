@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,6 +8,7 @@ import { getGameDataById } from "../../../../utils/getGameData";
 const QuizOnHonesty = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-82";
@@ -23,132 +25,9 @@ const QuizOnHonesty = () => {
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Who is honest?",
-      options: [
-        { 
-          id: "cheat", 
-          text: "Cheats customer", 
-          emoji: "😈", 
-          
-          isCorrect: false
-        },
-        {
-          id: "change",
-          text: "Gives correct change",
-          emoji: "💰",
-          
-          isCorrect: true
-        },
-        { 
-          id: "lies", 
-          text: "Lies", 
-          emoji: "🙊", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What does an honest shopkeeper do?",
-      options: [
-        { 
-          id: "fair", 
-          text: "Charges fair prices", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          id: "overcharge", 
-          text: "Overcharges", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "hide", 
-          text: "Hides products", 
-          emoji: "🫥", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How does honesty help in shopping?",
-      options: [
-        { 
-          id: "free", 
-          text: "Gets you free items", 
-          emoji: "🎁", 
-          isCorrect: false
-        },
-        { 
-          id: "spend", 
-          text: "Makes you spend more", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        {
-          id: "trust",
-          text: "Builds trust",
-          emoji: "🤝",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "What's an honest way to borrow?",
-      options: [
-        { 
-          id: "return", 
-          text: "Return on time", 
-          emoji: "⏰", 
-          isCorrect: true
-        },
-        { 
-          id: "keep", 
-          text: "Keep it forever", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          id: "more", 
-          text: "Borrow more", 
-          emoji: "📈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why is honesty important in money matters?",
-      options: [
-        { 
-          id: "toys", 
-          text: "It gets you toys", 
-          emoji: "🧸", 
-          isCorrect: false
-        },
-        { 
-          id: "famous", 
-          text: "It makes you famous", 
-          emoji: "⭐", 
-          isCorrect: false
-        },
-        {
-          id: "trust",
-          text: "It earns trust",
-          emoji: "🤝",
-          
-          isCorrect: true
-        },
-      ]
-    }
-  ];
-
+  const gameContent = t("financial-literacy.kids.quiz-on-honesty", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {
       return;
@@ -204,8 +83,8 @@ const QuizOnHonesty = () => {
 
   return (
     <GameShell
-      title="Quiz on Honesty"
-      subtitle={showResult ? "Quiz Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
+      title={gameContent?.title || "Quiz on Honesty"}
+      subtitle={showResult ? gameContent?.subtitleComplete : t("financial-literacy.kids.quiz-on-honesty.subtitleProgress", { current: currentQuestion + 1, total: questions.length })}
       currentLevel={5}
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -228,8 +107,8 @@ const QuizOnHonesty = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {coins}/{questions.length}</span>
+                <span className="text-white/80">{t("financial-literacy.kids.quiz-on-honesty.questionCounter", { current: currentQuestion + 1, total: questions.length })}</span>
+                <span className="text-yellow-400 font-bold">{t("financial-literacy.kids.quiz-on-honesty.scoreLabel", { score: coins, total: questions.length })}</span>
               </div>
               
               <p className="text-white text-lg mb-6 text-center">

@@ -1,0 +1,150 @@
+{
+    "title": "रिफ्लेक्स छोटा व्यापार",
+    "subtitlePlaying": "राउंड {{current}}/{{total}}: अपने छोटे व्यापार रिफ्लेक्स का परीक्षण करें!",
+    "subtitleReady": "अपने छोटे व्यापार रिफ्लेक्स का परीक्षण करें!",
+    "readyEmoji": "🏪",
+    "readyTitle": "छोटे व्यापार कौशल का परीक्षण करने के लिए तैयार हैं?",
+    "readyDescription": "छोटा व्यापार शुरू करने और चलाने के बारे में प्रश्नों के जवाब दें।",
+    "readyInfo": "आपके पास {{total}} प्रश्न हैं, प्रत्येक {{seconds}} सेकंड के साथ!",
+    "startButton": "गेम शुरू करें",
+    "roundLabel": "राउंड:",
+    "timeLabel": "समय:",
+    "scoreLabel": "स्कोर:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "छोटा व्यापार शुरू करने का एक अच्छा तरीका क्या है?",
+            "correctAnswer": "बेक करें और बेचें",
+            "options": [
+                {
+                    "text": "खरीदें और बर्बाद करें",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "सब खर्च करें",
+                    "isCorrect": false,
+                    "emoji": "🛍️"
+                },
+                {
+                    "text": "बेक करें और बेचें",
+                    "isCorrect": true,
+                    "emoji": "🍰"
+                },
+                {
+                    "text": "कुछ न करें",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "आप अपने कौशल से पैसे कैसे कमा सकते हैं?",
+            "correctAnswer": "हस्तशिल्प बनाएं",
+            "options": [
+                {
+                    "text": "हस्तशिल्प बनाएं",
+                    "isCorrect": true,
+                    "emoji": "🎨"
+                },
+                {
+                    "text": "सब खर्च करें",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "समय बर्बाद करें",
+                    "isCorrect": false,
+                    "emoji": "⏰"
+                },
+                {
+                    "text": "कौशल को अनदेखा करें",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "क्या आपको दूसरों से पैसे कमाने में मदद करता है?",
+            "correctAnswer": "सेवा प्रदान करें",
+            "options": [
+                {
+                    "text": "कुछ न करें",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                },
+                {
+                    "text": "हमेशा प्रतीक्षा करें",
+                    "isCorrect": false,
+                    "emoji": "⏳"
+                },
+                {
+                    "text": "काम से बचें",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "सेवा प्रदान करें",
+                    "isCorrect": true,
+                    "emoji": "🛠️"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "व्यापार लाभ के साथ आपको क्या करना चाहिए?",
+            "correctAnswer": "लाभ बचाएं",
+            "options": [
+                {
+                    "text": "लाभ बचाएं",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "लाभ खर्च करें",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "पैसे बर्बाद करें",
+                    "isCorrect": false,
+                    "emoji": "🔥"
+                },
+                {
+                    "text": "खो दें",
+                    "isCorrect": false,
+                    "emoji": "😞"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "आपके व्यापार को सफल होने में क्या मदद करता है?",
+            "correctAnswer": "व्यापार बढ़ाएं",
+            "options": [
+                {
+                    "text": "पैसे बर्बाद करें",
+                    "isCorrect": false,
+                    "emoji": "🔥"
+                },
+                {
+                    "text": "व्यापार बढ़ाएं",
+                    "isCorrect": true,
+                    "emoji": "📈"
+                },
+                {
+                    "text": "हाथ खड़े करें",
+                    "isCorrect": false,
+                    "emoji": "😞"
+                },
+                {
+                    "text": "छोटा रहें",
+                    "isCorrect": false,
+                    "emoji": "📉"
+                }
+            ]
+        }
+    ]
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,6 +8,7 @@ import { getGameDataById } from "../../../../utils/getGameData";
 const HelpingParentsStory = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-75";
@@ -16,137 +18,16 @@ const HelpingParentsStory = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
+  const gameContent = t("financial-literacy.kids.helping-parents-story", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  
   const [coins, setCoins] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [choices, setChoices] = useState([]);
   const [showResult, setShowResult] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
-
-  const questions = [
-    {
-      id: 1,
-      text: "Your parents need ₹50 for groceries. You have ₹20. What do you do?",
-      options: [
-        { 
-          id: "give", 
-          text: "Give your ₹20 to help", 
-          emoji: "🥕", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "candy", 
-          text: "Keep it for candy", 
-          emoji: "🍬", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore their request", 
-          emoji: "😐", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You earn ₹10 helping at home. Should you save it?",
-      options: [
-        { 
-          id: "toys", 
-          text: "Spend it on toys", 
-          emoji: "🧸", 
-          isCorrect: false
-        },
-        {
-          id: "save",
-          text: "Yes, add to savings",
-          emoji: "💰",
-          isCorrect: true
-        },
-        { 
-          id: "give", 
-          text: "Give it away", 
-          emoji: "🎁", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Your parents ask you to buy milk for ₹15. You have ₹20. What's next?",
-      options: [
-        { 
-          id: "change", 
-          text: "Buy milk and return change", 
-          emoji: "🧀", 
-          isCorrect: true
-        },
-        { 
-          id: "candy", 
-          text: "Buy candy with change", 
-          emoji: "🍭", 
-          isCorrect: false
-        },
-        { 
-          id: "keep", 
-          text: "Keep all ₹20", 
-          emoji: "🤫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You find ₹10. Parents say to be honest. What do you do?",
-      options: [
-        { 
-          id: "snacks", 
-          text: "Spend it on snacks", 
-          emoji: "🍟", 
-          isCorrect: false
-        },
-        { 
-          id: "hide", 
-          text: "Hide it in your pocket", 
-          emoji: "🧥", 
-          isCorrect: false
-        },
-        {
-          id: "find",
-          text: "Try to find the owner",
-          emoji: "🕵️",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "Helping parents with money makes you feel…",
-      options: [
-        { 
-          id: "proud", 
-          text: "Proud and responsible", 
-          emoji: "😊", 
-          isCorrect: true
-        },
-        { 
-          id: "sad", 
-          text: "Sad for less money", 
-          emoji: "😔", 
-          isCorrect: false
-        },
-        { 
-          id: "nothing", 
-          text: "Nothing special", 
-          emoji: "😐", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {
@@ -203,8 +84,8 @@ const HelpingParentsStory = () => {
 
   return (
     <GameShell
-      title="Helping Parents Story"
-      subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
+      title={gameContent?.title || "Helping Parents Story"}
+      subtitle={showResult ? gameContent?.subtitleComplete : t("financial-literacy.kids.helping-parents-story.subtitleProgress", { current: currentQuestion + 1, total: questions.length })}
       currentLevel={5}
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -227,8 +108,8 @@ const HelpingParentsStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {coins}/{questions.length}</span>
+                <span className="text-white/80">{t("financial-literacy.kids.helping-parents-story.questionCounter", { current: currentQuestion + 1, total: questions.length })}</span>
+                <span className="text-yellow-400 font-bold">{t("financial-literacy.kids.helping-parents-story.scoreLabel", { score: coins, total: questions.length })}</span>
               </div>
               
               <p className="text-white text-lg mb-6 text-center">

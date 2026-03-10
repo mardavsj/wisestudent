@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -9,6 +10,7 @@ const ROUND_TIME = 10;
 
 const ReflexCheckFirst = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-89";
@@ -28,63 +30,8 @@ const ReflexCheckFirst = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      question: "What should you do before buying something?",
-      correctAnswer: "Ask Price",
-      options: [
-        { text: "Ask Price", isCorrect: true, emoji: "💰" },
-        { text: "Trust Blindly", isCorrect: false, emoji: "🙈" },
-        { text: "Buy Immediately", isCorrect: false, emoji: "⚡" },
-        { text: "Ignore Cost", isCorrect: false, emoji: "🚫" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What should you check before making a purchase?",
-      correctAnswer: "Check Cost",
-      options: [
-        { text: "Buy Now", isCorrect: false, emoji: "🛒" },
-        { text: "Skip Checking", isCorrect: false, emoji: "⏭️" },
-        { text: "Check Cost", isCorrect: true, emoji: "💵" },
-        { text: "Guess Price", isCorrect: false, emoji: "🎲" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What's the smart way to shop?",
-      correctAnswer: "Compare Prices",
-      options: [
-        { text: "Pay Fast", isCorrect: false, emoji: "💸" },
-        { text: "Compare Prices", isCorrect: true, emoji: "⚖️" },
-        { text: "Buy First Store", isCorrect: false, emoji: "🏪" },
-        { text: "Don't Compare", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What should you verify before buying?",
-      correctAnswer: "Verify Quality",
-      options: [
-        { text: "Verify Quality", isCorrect: true, emoji: "🔍" },
-        { text: "Ignore", isCorrect: false, emoji: "🙈" },
-        { text: "Buy Without Checking", isCorrect: false, emoji: "⚡" },
-        { text: "Trust Seller Only", isCorrect: false, emoji: "🤝" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What should you do before buying online?",
-      correctAnswer: "Read Reviews",
-      options: [
-        { text: "Rush", isCorrect: false, emoji: "⚡" },
-        { text: "Skip Reviews", isCorrect: false, emoji: "⏭️" },
-        { text: "Buy Instantly", isCorrect: false, emoji: "🛒" },
-        { text: "Read Reviews", isCorrect: true, emoji: "⭐" },
-      ]
-    }
-  ];
+  const gameContent = t("financial-literacy.kids.reflex-check-first", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;
@@ -197,8 +144,8 @@ const ReflexCheckFirst = () => {
 
   return (
     <GameShell
-      title="Reflex Check First"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your checking reflexes!` : "Test your checking reflexes!"}
+      title={gameContent?.title || "Reflex Check First"}
+      subtitle={gameState === "playing" ? t("financial-literacy.kids.reflex-check-first.roundLabel", { current: currentRound, total: TOTAL_ROUNDS }) : gameContent?.subtitleComplete}
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -217,20 +164,20 @@ const ReflexCheckFirst = () => {
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-            <div className="text-5xl mb-6">🔍</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
+            <div className="text-5xl mb-6">{gameContent?.readyEmoji || "🔍"}</div>
+            <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.readyTitle || "Get Ready!"}</h3>
             <p className="text-white/90 text-lg mb-6">
-              Answer questions about checking before buying!<br />
-              You have {ROUND_TIME} seconds for each question.
+              {t("financial-literacy.kids.reflex-check-first.readyDescription")}<br />
+              {t("financial-literacy.kids.reflex-check-first.readyTimeInfo", { time: ROUND_TIME })}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("financial-literacy.kids.reflex-check-first.readyQuestionInfo", { total: TOTAL_ROUNDS, time: ROUND_TIME })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -239,13 +186,13 @@ const ReflexCheckFirst = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{t("financial-literacy.kids.reflex-check-first.gameRoundLabel")}</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{t("financial-literacy.kids.reflex-check-first.gameTimeLabel")}</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{t("financial-literacy.kids.reflex-check-first.gameScoreLabel")}</span> {score}
               </div>
             </div>
 

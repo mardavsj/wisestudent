@@ -1,0 +1,145 @@
+{
+    "title": "पेट सिटिंग की कहानी",
+    "subtitleComplete": "कहानी पूरी हुई!",
+    "subtitleProgress": "प्रश्न {{current}} में से {{total}}",
+    "questionCounter": "प्रश्न {{current}}/{{total}}",
+    "scoreLabel": "स्कोर: {{score}}/{{total}}",
+    "stageEmoji": "🐶",
+    "questions": [
+        {
+            "id": 1,
+            "text": "आप पेट को खिलाने और घुमाने के लिए दैनिक दिनचर्या बनाते हैं। आप कौन सा कौशल अभ्यास कर रहे हैं?",
+            "options": [
+                {
+                    "id": "playing",
+                    "text": "केवल जानवरों के साथ खेलना",
+                    "emoji": "🎾",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "luck",
+                    "text": "भाग्य पर निर्भर रहना",
+                    "emoji": "🍀",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "planning",
+                    "text": "योजना और संगठन",
+                    "emoji": "📋",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "आप समय के साथ पेट सिटिंग से पैसे कमाते हैं। बुद्धिमानी भरा अगला कदम क्या है?",
+            "options": [
+                {
+                    "id": "track",
+                    "text": "ट्रैक करें कि आप कितना कमाते हैं",
+                    "emoji": "📊",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "spend",
+                    "text": "तुरंत खर्च करें",
+                    "emoji": "⚡",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "forget",
+                    "text": "इसके बारे में भूल जाएं",
+                    "emoji": "🤷",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "पेट आपकी देखभाल में बीमार लग रहा है। आपको सबसे पहले क्या करना चाहिए?",
+            "options": [
+                {
+                    "id": "wait",
+                    "text": "प्रतीक्षा करें और आशा करें कि यह बेहतर हो जाएगा",
+                    "emoji": "⏳",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "inform",
+                    "text": "मालिक को जल्दी सूचित करें",
+                    "emoji": "📞",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "ignore",
+                    "text": "संकेतों को अनदेखा करें",
+                    "emoji": "🙈",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "आप पेट सिटिंग सफलतापूर्वक पूरा करते हैं। क्या आपको फिर से विश्वास दिलाने में मदद करता है?",
+            "options": [
+                {
+                    "id": "ask",
+                    "text": "अधिक पैसे मांगना",
+                    "emoji": "💸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "rush",
+                    "text": "कार्यों को जल्दी से पूरा करना",
+                    "emoji": "🏃",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "reliable",
+                    "text": "विश्वसनीय और सावधान होना",
+                    "emoji": "⭐",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "पेट सिटिंग आपको सिखाती है कि पैसे कमाना भी मतलब है?",
+            "options": [
+                {
+                    "id": "care",
+                    "text": "दूसरों की जिम्मेदारी से देखभाल करना",
+                    "emoji": "❤️",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "fun",
+                    "text": "केवल मजा करना",
+                    "emoji": "😄",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "spending",
+                    "text": "अधिक पैसे खर्च करना",
+                    "emoji": "🛍️",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+  "title": "पज़ल: ईमानदार बनाम धोखा",
+  "subtitleComplete": "पज़ल पूरा हुआ!",
+  "subtitleProgress": "मिलान {{current}} में से {{total}}: ईमानदार/धोखाधड़ी की दुकानों को उनके परिणामों से जोड़ें!",
+  "leftTitle": "दुकान के प्रकार",
+  "rightTitle": "परिणाम",
+  "instruction": "एक दुकान का चयन करें, फिर मिलान करने के लिए एक परिणाम का चयन करें!",
+  "items": [
+    { "id": 1, "name": "निष्पक्ष दुकान", "emoji": "🏪" },
+    { "id": 2, "name": "धोखा दुकान", "emoji": "🍬" },
+    { "id": 3, "name": "ईमानदार विक्रेता", "emoji": "🙋" },
+    { "id": 4, "name": "धोखाधड़ी दुकान", "emoji": "🎭" },
+    { "id": 5, "name": "स्थानीय बाजार", "emoji": "🛍️" }
+  ],
+  "outcomes": [
+    { "id": 6, "name": "विश्वास", "emoji": "🤝" },
+    { "id": 7, "name": "नुकसान", "emoji": "😞" },
+    { "id": 8, "name": "लाभ", "emoji": "💰" },
+    { "id": 9, "name": "स्कैम", "emoji": "🚨" },
+    { "id": 10, "name": "बचत", "emoji": "💸" }
+  ],
+  "correctMatches": [
+    { "itemId": 1, "outcomeId": 6 },
+    { "itemId": 2, "outcomeId": 7 },
+    { "itemId": 3, "outcomeId": 8 },
+    { "itemId": 4, "outcomeId": 9 },
+    { "itemId": 5, "outcomeId": 10 }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "मिलान मास्टर!",
+    "description": "बेहतरीन! आपने सभी {{score}}/{{total}} सही मिलान किए! आप ईमानदारी और धोखाधड़ी को अच्छी तरह समझते हैं!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "अच्छा काम!",
+    "description": "शाबाश! आपने {{score}}/{{total}} सही मिलान किए! ईमानदार व्यापार प्रथाओं के बारे में सीखते रहें!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "अभ्यास करते रहें!",
+    "description": "आपने {{score}}/{{total}} मिलान किए। कार्यों और परिणामों के बीच के संबंधों की समीक्षा करें, और फिर से प्रयास करें!"
+  }
+}

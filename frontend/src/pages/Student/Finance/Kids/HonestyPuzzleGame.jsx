@@ -1,12 +1,14 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getFinanceKidsGames } from "../../../../pages/Games/GameCategories/Finance/kidGamesData";
 
-const HonestyPuzzleGame = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+const HonestyPuzzleGame= () => {
+ const navigate = useNavigate();
+const location = useLocation();
+const { t } = useTranslation("gamecontent");
   
   const { nextGamePath, nextGameId } = useMemo(() => {
     if (location.state?.nextGamePath) {
@@ -45,6 +47,9 @@ const HonestyPuzzleGame = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
+  const gameContent = t("financial-literacy.kids.honesty-puzzle", { returnObjects: true });
+const scenarios = Array.isArray(gameContent?.scenarios) ? gameContent.scenarios : [];
+  
   // Items (left side) - 5 items
   const items = [
   { id: 1, name: "Return Lost Money", emoji: "💸" },

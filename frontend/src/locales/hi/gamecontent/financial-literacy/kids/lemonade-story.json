@@ -1,0 +1,145 @@
+{
+    "title": "नींबू पानी की कहानी",
+    "subtitleComplete": "कहानी पूरी हुई!",
+    "subtitleProgress": "प्रश्न {{current}} में से {{total}}",
+    "questionCounter": "प्रश्न {{current}}/{{total}}",
+    "scoreLabel": "स्कोर: {{score}}/{{total}}",
+    "stageEmoji": "🍋",
+    "questions": [
+        {
+            "id": 1,
+            "text": "आप नींबू पानी के स्टैंड से ₹50 कमाते हैं। स्मार्ट चुनाव क्या है?",
+            "options": [
+                {
+                    "id": "toys",
+                    "text": "सभी को खिलौनों पर खर्च करें",
+                    "emoji": "🧸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "snacks",
+                    "text": "नाश्ता खरीदें",
+                    "emoji": "🍟",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "save",
+                    "text": "आधा सामान के लिए बचाएं",
+                    "emoji": "💰",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "आपको नींबू के लिए ₹20 चाहिए। आपके पास ₹15 हैं। आप क्या करते हैं?",
+            "options": [
+                {
+                    "id": "save",
+                    "text": "₹5 और बचाएं",
+                    "emoji": "🙂",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "borrow",
+                    "text": "₹5 उधार लें",
+                    "emoji": "🙈",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "skip",
+                    "text": "नींबू खरीदना छोड़ें",
+                    "emoji": "🍋",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "एक ग्राहक ₹5 के बजाय ₹10 देता है। ईमानदार क्या है?",
+            "options": [
+                {
+                    "id": "keep",
+                    "text": "₹10 रखें",
+                    "emoji": "💸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "return",
+                    "text": "अतिरिक्त ₹5 लौटाएं",
+                    "emoji": "🤝",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "candy",
+                    "text": "कैंडी पर खर्च करें",
+                    "emoji": "🍬",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "आप ₹30 कमाते हैं। क्या आपको आज सब खर्च करना चाहिए?",
+            "options": [
+                {
+                    "id": "no",
+                    "text": "नहीं, अगले स्टैंड के लिए बचाएं",
+                    "emoji": "🙅",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "games",
+                    "text": "हाँ, गेम खरीदें",
+                    "emoji": "🎮",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "give",
+                    "text": "दे दें",
+                    "emoji": "🎁",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "नींबू पानी के स्टैंड की कमाई की योजना बनाना क्यों स्मार्ट है?",
+            "options": [
+                {
+                    "id": "spend",
+                    "text": "आपको अधिक खर्च करने देता है",
+                    "emoji": "🛍️",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "running",
+                    "text": "आपके स्टैंड को चलाता रखता है",
+                    "emoji": "☀️",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "customers",
+                    "text": "आपको अधिक ग्राहक मिलते हैं",
+                    "emoji": "👥",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

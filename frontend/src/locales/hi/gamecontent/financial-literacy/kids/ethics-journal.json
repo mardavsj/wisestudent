@@ -1,0 +1,33 @@
+{
+  "title": "नैतिकता पत्रिका",
+  "subtitleComplete": "पत्रिका पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{current}} में से {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "minLengthPrompt": "कम से कम {{minLength}} अक्षर लिखें",
+  "textareaPlaceholder": "अपनी पत्रिका प्रविष्टि यहाँ लिखें...",
+  "charactersLabel": "अक्षर",
+  "submitFinalButton": "अंतिम एंट्री सबमिट करें",
+  "submitContinueButton": "सबमिट करें और जारी रखें",
+  "stages": [
+    {
+      "question": "लिखें: \"एक बार जब मैंने पैसे का ईमानदारी से उपयोग किया था ___।\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिखें: \"मैंने किसी की मदद पैसे से ___ द्वारा की।\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिखें: \"एक बार जब मुझे पैसा बचाने के बारे में अच्छा लगा था ___।\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिखें: \"मैंने गलत तरीके से पैसा खर्च करने से ___ द्वारा बचा।\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिखें: \"पैसे के साथ ईमानदार होने से मुझे ___ महसूस होता है।\"",
+      "minLength": 10
+    }
+  ]
+}

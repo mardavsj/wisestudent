@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const FriendsMoneyStoryGame = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+const FriendsMoneyStoryGame= () => {
+ const navigate = useNavigate();
+const location = useLocation();
+const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-95";
@@ -23,132 +25,8 @@ const FriendsMoneyStoryGame = () => {
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const questions = [
-  {
-    id: 1,
-    text: "Your friend is saving money for a toy. They ask for advice. What do you suggest?",
-    options: [
-      
-      {
-        id: "spend",
-        text: "Spend all your money together",
-        emoji: "💸",
-        isCorrect: false
-      },
-      {
-        id: "ignore",
-        text: "Ignore their request",
-        emoji: "🙈",
-        isCorrect: false
-      },
-      {
-        id: "save",
-        text: "Help them plan their savings",
-        emoji: "📋",
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 2,
-    text: "Your friend wants to buy a snack but has no money. How can you help responsibly?",
-    options: [
-      {
-        id: "share",
-        text: "Share small change and teach saving",
-        emoji: "🪙",
-        isCorrect: true
-      },
-      {
-        id: "lend",
-        text: "Give all your money",
-        emoji: "💰",
-        isCorrect: false
-      },
-      {
-        id: "buy",
-        text: "Buy snack for them every day",
-        emoji: "🍿",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    text: "You and a friend found coins on the playground. What is fair?",
-    options: [
-      
-      {
-        id: "take",
-        text: "Keep all for yourself",
-        emoji: "🤑",
-        isCorrect: false
-      },
-      {
-        id: "split",
-        text: "Split the money equally",
-        emoji: "⚖️",
-        isCorrect: true
-      },
-      {
-        id: "ignore",
-        text: "Leave the coins there",
-        emoji: "🍂",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 4,
-    text: "Your friend asks to borrow money for a project. You only have a little. What is wise?",
-    options: [
-      {
-        id: "share_part",
-        text: "Lend a small part and explain your limit",
-        emoji: "🤲",
-        isCorrect: true
-      },
-      {
-        id: "refuse",
-        text: "Say no rudely",
-        emoji: "😠",
-        isCorrect: false
-      },
-      {
-        id: "give_all",
-        text: "Give all your money",
-        emoji: "💸",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 5,
-    text: "Why is handling money honestly with friends important?",
-    options: [
-      
-      {
-        id: "fun",
-        text: "It makes games more fun",
-        emoji: "🎲",
-        isCorrect: false
-      },
-      {
-        id: "snacks",
-        text: "It helps get more snacks",
-        emoji: "🍬",
-        isCorrect: false
-      },
-      {
-        id: "trust",
-        text: "It builds trust and respect",
-        emoji: "🤝",
-        isCorrect: true
-      },
-    ]
-  }
-];
-
+ const gameContent = t("financial-literacy.kids.friends-money-story", { returnObjects: true });
+const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

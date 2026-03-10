@@ -1,0 +1,42 @@
+{
+  "title": "Puzzle of Jobs",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match Jobs with What They Provide ({{matched}}/{{total}} matched)",
+  "jobsTitle": "Jobs",
+  "providedTitle": "What They Provide",
+  "selectedLabel": "Selected: {{name}}",
+  "selectJob": "Select a Job",
+  "matchButton": "Match",
+  "scoreLabel": "Score:",
+  "matchedLabel": "Matched:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "Great Job!",
+  "resultGreatDescription": "You correctly matched {{score}} out of {{total}} jobs with what they provide!",
+  "coinsLabel": "Coins",
+  "resultLesson": "Lesson: Every job provides value by meeting people's needs!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "Keep Practicing!",
+  "resultKeepDescription": "You matched {{score}} out of {{total}} jobs correctly.",
+  "resultTip": "Tip: Think about what each job creates or provides to society!",
+  "jobs": [
+    { "id": 1, "name": "Farmer", "emoji": "🌾" },
+    { "id": 2, "name": "Teacher", "emoji": "📚" },
+    { "id": 3, "name": "Doctor", "emoji": "🩺" },
+    { "id": 4, "name": "Chef", "emoji": "👩‍🍳" },
+    { "id": 5, "name": "Engineer", "emoji": "🔧" }
+  ],
+  "provided": [
+    { "id": 8, "name": "Healthcare", "emoji": "💊", "description": "" },
+    { "id": 10, "name": "Infrastructure", "emoji": "🏗️", "description": "" },
+    { "id": 7, "name": "Education", "emoji": "📖", "description": "" },
+    { "id": 6, "name": "Food", "emoji": "🍎", "description": "" },
+    { "id": 9, "name": "Meals", "emoji": "🍽️", "description": "" }
+  ],
+  "correctMatches": [
+    { "jobId": 1, "providedId": 6 },
+    { "jobId": 2, "providedId": 7 },
+    { "jobId": 3, "providedId": 8 },
+    { "jobId": 4, "providedId": 9 },
+    { "jobId": 5, "providedId": 10 }
+  ]
+}

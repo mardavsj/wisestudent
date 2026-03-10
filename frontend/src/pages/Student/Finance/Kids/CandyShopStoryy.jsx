@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,6 +8,7 @@ import { getGameDataById } from "../../../../utils/getGameData";
 const CandyShopStoryy = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-81";
@@ -23,130 +25,8 @@ const CandyShopStoryy = () => {
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Shopkeeper charges ₹20 instead of ₹10. Do you check the bill?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, I check the bill", 
-          emoji: "📜", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No, I just pay", 
-          emoji: "💸", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "friend", 
-          text: "Ask a friend to check", 
-          emoji: "👥", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You have ₹50. The candy costs ₹15. How much change should you get?",
-      options: [
-        { 
-          id: "25", 
-          text: "₹25", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "40", 
-          text: "₹40", 
-          emoji: "💵", 
-          isCorrect: false
-        },
-        {
-          id: "35",
-          text: "₹35",
-          emoji: "💰",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "The shopkeeper gives ₹30 change instead of ₹35. What do you do?",
-      options: [
-        { 
-          id: "ask", 
-          text: "Politely ask for the correct change", 
-          emoji: "🗣️", 
-          isCorrect: true
-        },
-        { 
-          id: "take", 
-          text: "Take the ₹30 and leave", 
-          emoji: "🚶", 
-          isCorrect: false
-        },
-        { 
-          id: "buy", 
-          text: "Buy more candy", 
-          emoji: "🍬", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You want to buy two candies at ₹10 each. Can you afford it with ₹15?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, I have enough", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        {
-          id: "no",
-          text: "No, I need ₹20",
-          emoji: "💰",
-          isCorrect: true
-        },
-        { 
-          id: "discount", 
-          text: "Ask for a discount", 
-          emoji: "🎟️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What's the best way to shop smartly?",
-      options: [
-        { 
-          id: "everything", 
-          text: "Buy everything you see", 
-          emoji: "🛒", 
-          isCorrect: false
-        },
-        {
-          id: "check",
-          text: "Check prices and bills carefully",
-          emoji: "🧾",
-          isCorrect: true
-        },
-        { 
-          id: "friends", 
-          text: "Only shop with friends", 
-          emoji: "👨‍👩‍👧", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const gameContent = t("financial-literacy.kids.candy-shop-story", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {
@@ -203,8 +83,8 @@ const CandyShopStoryy = () => {
 
   return (
     <GameShell
-      title="Candy Shop Story"
-      subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
+      title={gameContent?.title || "Candy Shop Story"}
+      subtitle={showResult ? gameContent?.subtitleComplete : t("financial-literacy.kids.candy-shop-story.subtitleProgress", { current: currentQuestion + 1, total: questions.length })}
       currentLevel={5}
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -227,11 +107,11 @@ const CandyShopStoryy = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {coins}/{questions.length}</span>
+                <span className="text-white/80">{t("financial-literacy.kids.candy-shop-story.questionCounter", { current: currentQuestion + 1, total: questions.length })}</span>
+                <span className="text-yellow-400 font-bold">{t("financial-literacy.kids.candy-shop-story.scoreLabel", { score: coins, total: questions.length })}</span>
               </div>
               
-              <div className="text-4xl mb-4 text-center">🍬</div>
+              <div className="text-4xl mb-4 text-center">{gameContent?.stageEmoji}</div>
               <p className="text-white text-lg mb-6 text-center">
                 {currentQuestionData.text}
               </p>

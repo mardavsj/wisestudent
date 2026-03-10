@@ -1,0 +1,50 @@
+{
+  "title": "Journal of Safety",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}: Reflect on staying safe with money!",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "minLengthPrompt": "Write at least {{minLength}} characters",
+  "textareaPlaceholder": "Write your journal entry here...",
+  "charactersLabel": "characters",
+  "submitFinalButton": "Submit Final Entry",
+  "submitContinueButton": "Submit & Continue",
+  "entryLabel": "Your Answer:",
+  "minLengthLabel": "Minimum {{min}} characters",
+  "stages": [
+    {
+      "question": "Write: \"One way I can avoid being cheated is ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "Write: \"I stay safe with money by ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "Write: \"A time I avoided a money scam was ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "Write: \"I learned ___ about keeping money safe.\"",
+      "minLength": 10
+    },
+    {
+      "question": "Write: \"Being careful with money makes me feel ___.\"",
+      "minLength": 10
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "Safety Expert!",
+    "description": "Excellent! You scored {{score}}/{{total}}! Your reflections show great awareness about financial safety!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "Good Reflections!",
+    "description": "Well done! You scored {{score}}/{{total}}! Keep thinking about how to stay safe with money!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "Keep Reflecting!",
+    "description": "You scored {{score}}/{{total}}. Continue journaling about financial safety to build your awareness!"
+  }
+}

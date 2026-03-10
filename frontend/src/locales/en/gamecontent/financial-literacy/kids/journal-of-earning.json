@@ -1,0 +1,18 @@
+{
+  "title": "Journal of Earning",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}: Reflect on ways to earn money!",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "minLengthLabel": "Write at least {{min}} characters",
+  "placeholder": "Write your journal entry here...",
+  "charCountLabel": "{{current}}/{{min}} characters",
+  "submitFinalButton": "Submit Final Entry",
+  "submitContinueButton": "Submit & Continue",
+  "stages": [
+    { "question": "Write: \"One way I can earn money is ___.\"", "minLength": 10 },
+    { "question": "Write: \"Earning money makes me feel ___.\"", "minLength": 10 },
+    { "question": "Write: \"I earned money by ___ and learned ___.\"", "minLength": 10 },
+    { "question": "Write: \"A good thing about earning money is ___.\"", "minLength": 10 },
+    { "question": "Write: \"Earning money taught me ___ about responsibility.\"", "minLength": 10 }
+  ]
+}

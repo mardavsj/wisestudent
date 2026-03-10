@@ -1,0 +1,47 @@
+{
+  "title": "Poster: Work to Earn",
+  "subtitleProgress": "Question {{current}} of {{total}}: Choose posters that promote hard work!",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "stages": [
+    {
+      "question": "Which poster would best teach kids about earning money?",
+      "choices": [
+        { "text": "Effort Today, Rewards Tomorrow! 🌱", "correct": true },
+        { "text": "Money Grows on Trees! 🌳", "correct": false },
+        { "text": "Parents' Wallets = My Money! 👛", "correct": false }
+      ]
+    },
+    {
+      "question": "What poster would best show the value of hard work?",
+      "choices": [
+        { "text": "Work is Boring, Just Play! 🎮", "correct": false },
+        { "text": "Why Work When You Can Get Free Stuff? 🎁", "correct": false },
+        { "text": "Sweat + Time = Success! ⏳", "correct": true }
+      ]
+    },
+    {
+      "question": "Which poster teaches the best work ethic?",
+      "choices": [
+        { "text": "Work is for Grown-ups Only! 👨‍💼", "correct": false },
+        { "text": "Small Jobs Lead to Big Dreams! ✨", "correct": true },
+        { "text": "Too Young to Work, Just Ask for Money! 💸", "correct": false }
+      ]
+    },
+    {
+      "question": "What poster would best encourage saving earned money?",
+      "choices": [
+        { "text": "Work Hard, Save Smart, Dream Big! 🏆", "correct": true },
+        { "text": "Earn It, Burn It, Repeat! 🔥", "correct": false },
+        { "text": "Money is for Spending, Not Saving! 🛒", "correct": false }
+      ]
+    },
+    {
+      "question": "Which poster best explains why we work?",
+      "choices": [
+        { "text": "Work is Just Something Grown-ups Do! 🤷", "correct": false },
+        { "text": "Work = Pride + Money + Future! 🚀", "correct": true },
+        { "text": "Why Work When You Can Win the Lottery? 🎰", "correct": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "title": "Helping Parents Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionCounter": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Your parents need ₹50 for groceries. You have ₹20. What do you do?",
+      "options": [
+        { "id": "give", "text": "Give your ₹20 to help", "emoji": "🥕", "description": "", "isCorrect": true },
+        { "id": "candy", "text": "Keep it for candy", "emoji": "🍬", "description": "", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore their request", "emoji": "😐", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You earn ₹10 helping at home. Should you save it?",
+      "options": [
+        { "id": "toys", "text": "Spend it on toys", "emoji": "🧸", "description": "", "isCorrect": false },
+        { "id": "save", "text": "Yes, add to savings", "emoji": "💰", "description": "", "isCorrect": true },
+        { "id": "give", "text": "Give it away", "emoji": "🎁", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Your parents ask you to buy milk for ₹15. You have ₹20. What's next?",
+      "options": [
+        { "id": "change", "text": "Buy milk and return change", "emoji": "🧾", "description": "", "isCorrect": true },
+        { "id": "candy", "text": "Buy candy with change", "emoji": "🍭", "description": "", "isCorrect": false },
+        { "id": "keep", "text": "Keep all ₹20", "emoji": "🤫", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You find ₹10. Parents say to be honest. What do you do?",
+      "options": [
+        { "id": "snacks", "text": "Spend it on snacks", "emoji": "🍟", "description": "", "isCorrect": false },
+        { "id": "hide", "text": "Hide it in your pocket", "emoji": "🧥", "description": "", "isCorrect": false },
+        { "id": "find", "text": "Try to find the owner", "emoji": "🕵️", "description": "", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Helping parents with money makes you feel...",
+      "options": [
+        { "id": "proud", "text": "Proud and responsible", "emoji": "😊", "description": "", "isCorrect": true },
+        { "id": "sad", "text": "Sad for less money", "emoji": "😔", "description": "", "isCorrect": false },
+        { "id": "nothing", "text": "Nothing special", "emoji": "😐", "description": "", "isCorrect": false }
+      ]
+    }
+  ]
+}

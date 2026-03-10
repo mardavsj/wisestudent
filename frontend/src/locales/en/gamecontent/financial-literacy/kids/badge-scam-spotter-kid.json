@@ -1,0 +1,98 @@
+{
+  "title": "Badge: Scam Spotter Kid",
+  "subtitleComplete": "Challenges Complete!",
+  "challengeLabel": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Phone Scam",
+      "question": "A stranger calls asking for your phone number to give you a free gift. What do you do?",
+      "options": [
+        { "text": "Give phone number for free gift", "emoji": "📱", "isCorrect": false },
+        { "text": "Say NO and tell parents immediately", "emoji": "🚫", "isCorrect": true },
+        { "text": "Ask friends to give their numbers", "emoji": "👥", "isCorrect": false },
+        { "text": "Give the number but ask for proof first", "emoji": "🤔", "isCorrect": false }
+      ],
+      "feedback": {
+        "correct": "Excellent! Never give personal information to strangers! Always tell your parents!",
+        "wrong": "Never give personal information to strangers, even for free gifts! Always tell your parents!"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Website Scam",
+      "question": "A website looks like your favorite game but asks for parent's credit card. What's wrong?",
+      "options": [
+        { "text": "It's a SCAM! Real games don't ask for this", "emoji": "🛡️", "isCorrect": true },
+        { "text": "It's okay because I know the game", "emoji": "🎮", "isCorrect": false },
+        { "text": "Enter card details to unlock levels", "emoji": "💳", "isCorrect": false },
+        { "text": "Check if the URL is correct before entering details", "emoji": "🔍", "isCorrect": false }
+      ],
+      "feedback": {
+        "correct": "Perfect! Fake websites copy real ones to steal information. Always be cautious!",
+        "wrong": "Real games and websites never ask for credit card details. Be very careful!"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Friend in Trouble",
+      "question": "You get a message: 'Your friend is in trouble! Send money now!' What should you do?",
+      "options": [
+        { "text": "Send money immediately to help", "emoji": "💸", "isCorrect": false },
+        { "text": "Call friend directly and tell parents", "emoji": "📞", "isCorrect": true },
+        { "text": "Forward message to other friends", "emoji": "📤", "isCorrect": false },
+        { "text": "Ignore the message and do nothing", "emoji": "🙈", "isCorrect": false }
+      ],
+      "feedback": {
+        "correct": "Amazing! Always verify by calling your friend directly. Scammers pretend to be friends!",
+        "wrong": "Always call your friend directly to verify. Scammers often pretend to be friends in need!"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Email Scam",
+      "question": "Email says 'You won 1 Lakh rupees! Click link and enter OTP.' What do you do?",
+      "options": [
+        { "text": "Click link to see if it's real", "emoji": "🔗", "isCorrect": false },
+        { "text": "Enter OTP to claim prize", "emoji": "🔒", "isCorrect": false },
+        { "text": "Reply to ask for more details", "emoji": "📧", "isCorrect": false },
+        { "text": "Delete immediately and tell parents", "emoji": "🗑️", "isCorrect": true }
+      ],
+      "feedback": {
+        "correct": "Great! Never click suspicious links or enter OTPs. Always tell your parents!",
+        "wrong": "Never click suspicious links or enter OTPs. These are common scams to steal your information!"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Online Stranger",
+      "question": "Online stranger offers 'Easy money - just share your school details!' What's your response?",
+      "options": [
+        { "text": "Share details for easy money", "emoji": "💰", "isCorrect": false },
+        { "text": "Ask what kind of work first", "emoji": "❓", "isCorrect": false },
+        { "text": "Block them and report to parents/teacher", "emoji": "🚫", "isCorrect": true },
+        { "text": "Ask for more details about the offer", "emoji": "🔍", "isCorrect": false }
+      ],
+      "feedback": {
+        "correct": "Wonderful! Never share personal information with strangers online. Block and report them!",
+        "wrong": "Never share personal information with strangers online, even for 'easy money'!"
+      }
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🏆",
+    "title": "Scam-Spotting Champion!",
+    "description": "Outstanding! You scored {{score}}/{{total}}! You've earned the Scam Spotter Badge!"
+  },
+  "resultGood": {
+    "emoji": "🎖️",
+    "title": "Great Awareness!",
+    "description": "Well done! You scored {{score}}/{{total}}! You're becoming a scam detection expert!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "Keep Learning!",
+    "description": "You scored {{score}}/{{total}}. Review the scam warning signs and try again to earn your badge!"
+  }
+}

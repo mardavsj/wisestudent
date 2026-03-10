@@ -1,0 +1,54 @@
+{
+  "title": "पैसे ईमानदारी प्रश्नोत्तरी",
+  "subtitleComplete": "प्रश्नोत्तरी पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{current}} में से {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "यदि आपको ₹10 मिलें तो ईमानदार विकल्प कौन सा है?",
+      "options": [
+        { "id": "keep", "text": "चुपचाप रख लें", "emoji": "🤫", "isCorrect": false },
+        { "id": "snacks", "text": "स्नैक्स पर खर्च करें", "emoji": "🍟", "isCorrect": false },
+        { "id": "return", "text": "मालिक को वापस लौटाएं", "emoji": "🤝", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "आपको ₹5 अतिरिक्त मिलते हैं। सही काम क्या है?",
+      "options": [
+        { "id": "give", "text": "अतिरिक्त वापस दें", "emoji": "💸", "isCorrect": true },
+        { "id": "candy", "text": "कैंडी खरीदें", "emoji": "🍬", "isCorrect": false },
+        { "id": "nothing", "text": "कुछ न कहें", "emoji": "😶", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "आप ₹20 उधार लेते हैं। ईमानदार क्या है?",
+      "options": [
+        { "id": "never", "text": "कभी वापस न दें", "emoji": "😞", "isCorrect": false },
+        { "id": "repay", "text": "समय पर वापस करें", "emoji": "✅", "isCorrect": true },
+        { "id": "spend", "text": "अधिक खर्च करें", "emoji": "🛍️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आप ₹15 का खिलौना तोड़ देते हैं। आप क्या करते हैं?",
+      "options": [
+        { "id": "tell", "text": "बताएं और भुगतान की पेशकश करें", "emoji": "🗣️", "isCorrect": true },
+        { "id": "hide", "text": "छिपा दें", "emoji": "🧸", "isCorrect": false },
+        { "id": "blame", "text": "किसी और को दोष दें", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "पैसे के साथ ईमानदारी क्यों महत्वपूर्ण है?",
+      "options": [
+        { "id": "trust", "text": "यह विश्वास अर्जित करता है", "emoji": "😊", "isCorrect": true },
+        { "id": "money", "text": "यह आपको अधिक पैसा दिलाता है", "emoji": "💰", "isCorrect": false },
+        { "id": "spend", "text": "यह आपको अधिक खर्च करने देता है", "emoji": "🛒", "isCorrect": false }
+      ]
+    }
+  ]
+}

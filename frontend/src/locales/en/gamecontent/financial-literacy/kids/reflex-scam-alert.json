@@ -1,0 +1,85 @@
+{
+  "title": "Reflex: Scam Alert",
+  "subtitleComplete": "Game Complete!",
+  "roundLabel": "Round {{current}}/{{total}}",
+  "timeUp": "Time's Up!",
+  "readyTitle": "Ready to Test Your Scam Alertness?",
+  "readyDescription": "Answer questions about staying safe from scams and fraud.",
+  "readyInfo": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "gameRoundLabel": "Round:",
+  "gameTimeLabel": "Time:",
+  "gameScoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What should you do when you receive a bill?",
+      "correctAnswer": "Check Bill",
+      "options": [
+        { "text": "Check Bill", "isCorrect": true, "emoji": "🔍" },
+        { "text": "Ignore", "isCorrect": false, "emoji": "🙈" },
+        { "text": "Pay Immediately", "isCorrect": false, "emoji": "💸" },
+        { "text": "Delete It", "isCorrect": false, "emoji": "🗑️" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What should you do with a suspicious offer?",
+      "correctAnswer": "Verify Offer",
+      "options": [
+        { "text": "Accept Fast", "isCorrect": false, "emoji": "⚡" },
+        { "text": "Verify Offer", "isCorrect": true, "emoji": "✅" },
+        { "text": "Trust Immediately", "isCorrect": false, "emoji": "🤝" },
+        { "text": "Ignore Warning", "isCorrect": false, "emoji": "🚫" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What should you do when something seems too good to be true?",
+      "correctAnswer": "Ask Questions",
+      "options": [
+        { "text": "Trust Blindly", "isCorrect": false, "emoji": "😴" },
+        { "text": "Accept Quickly", "isCorrect": false, "emoji": "⚡" },
+        { "text": "Ignore Doubts", "isCorrect": false, "emoji": "🙈" },
+        { "text": "Ask Questions", "isCorrect": true, "emoji": "❓" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should you do before making a payment?",
+      "correctAnswer": "Confirm Details",
+      "options": [
+        { "text": "Pay Now", "isCorrect": false, "emoji": "💸" },
+        { "text": "Skip Verification", "isCorrect": false, "emoji": "⏭️" },
+        { "text": "Confirm Details", "isCorrect": true, "emoji": "📋" },
+        { "text": "Trust Without Check", "isCorrect": false, "emoji": "🤝" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What should you do if you discover a scam?",
+      "correctAnswer": "Report Scam",
+      "options": [
+        { "text": "Do Nothing", "isCorrect": false, "emoji": "😴" },
+        { "text": "Ignore It", "isCorrect": false, "emoji": "🙈" },
+        { "text": "Keep Quiet", "isCorrect": false, "emoji": "🤫" },
+        { "text": "Report Scam", "isCorrect": true, "emoji": "🚨" }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "Scam-Spotting Pro!",
+    "description": "Amazing! You got {{score}}/{{total}} correct! You're excellent at spotting scams!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "Good Awareness!",
+    "description": "Well done! You scored {{score}}/{{total}}! Keep practicing to become a scam expert!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "Keep Practicing!",
+    "description": "You scored {{score}}/{{total}}. Review the tips and try again to improve your scam-spotting skills!"
+  }
+}

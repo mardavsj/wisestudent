@@ -155,6 +155,36 @@ import enFinancialLiteracyKidsJournalOfGrowth from "../locales/en/gamecontent/fi
 import enFinancialLiteracyKidsToyVsSavingStory from "../locales/en/gamecontent/financial-literacy/kids/toy-vs-saving-story.json";
 import enFinancialLiteracyKidsReflexGrowthCheck from "../locales/en/gamecontent/financial-literacy/kids/reflex-growth-check.json";
 import enFinancialLiteracyKidsBadgeMoneyGardener from "../locales/en/gamecontent/financial-literacy/kids/badge-money-gardener.json";
+import enFinancialLiteracyKidsLemonadeStory from "../locales/en/gamecontent/financial-literacy/kids/lemonade-story.json";
+import enFinancialLiteracyKidsQuizOnEarning from "../locales/en/gamecontent/financial-literacy/kids/quiz-on-earning.json";
+import enFinancialLiteracyKidsReflexWorkVsPlay from "../locales/en/gamecontent/financial-literacy/kids/reflex-work-vs-play.json";
+import enFinancialLiteracyKidsPuzzleOfJobs from "../locales/en/gamecontent/financial-literacy/kids/puzzle-of-jobs.json";
+import enFinancialLiteracyKidsHelpingParentsStory from "../locales/en/gamecontent/financial-literacy/kids/helping-parents-story.json";
+import enFinancialLiteracyKidsPosterWorkToEarn from "../locales/en/gamecontent/financial-literacy/kids/poster-work-to-earn.json";
+import enFinancialLiteracyKidsJournalOfEarning from "../locales/en/gamecontent/financial-literacy/kids/journal-of-earning.json";
+import enFinancialLiteracyKidsPetSittingStory from "../locales/en/gamecontent/financial-literacy/kids/pet-sitting-story.json";
+import enFinancialLiteracyKidsReflexSmallBusiness from "../locales/en/gamecontent/financial-literacy/kids/reflex-small-business.json";
+import enFinancialLiteracyKidsBadgeYoungEarner from "../locales/en/gamecontent/financial-literacy/kids/badge-young-earner.json";
+import enFinancialLiteracyKidsCandyShopStory from "../locales/en/gamecontent/financial-literacy/kids/candy-shop-story.json";
+import enFinancialLiteracyKidsQuizOnHonesty from "../locales/en/gamecontent/financial-literacy/kids/quiz-on-honesty.json";
+import enFinancialLiteracyKidsReflexScamAlert from "../locales/en/gamecontent/financial-literacy/kids/reflex-scam-alert.json";
+import enFinancialLiteracyKidsPuzzleHonestVsFraud from "../locales/en/gamecontent/financial-literacy/kids/puzzle-honest-vs-fraud.json";
+import enFinancialLiteracyKidsStrangerStory from "../locales/en/gamecontent/financial-literacy/kids/stranger-story.json";
+import enFinancialLiteracyKidsPosterBeAlert from "../locales/en/gamecontent/financial-literacy/kids/poster-be-alert.json";
+import enFinancialLiteracyKidsJournalSafety from "../locales/en/gamecontent/financial-literacy/kids/journal-safety.json";
+import enFinancialLiteracyKidsToyShopStory from "../locales/en/gamecontent/financial-literacy/kids/toy-shop-story.json";
+import enFinancialLiteracyKidsReflexCheckFirst from "../locales/en/gamecontent/financial-literacy/kids/reflex-check-first.json";
+import enFinancialLiteracyKidsBadgeScamSpotterKid from "../locales/en/gamecontent/financial-literacy/kids/badge-scam-spotter-kid.json";
+import enFinancialLiteracyKidsLostCoinStory from "../locales/en/gamecontent/financial-literacy/kids/lost-coin-story.json";
+import enFinancialLiteracyKidsMoneyHonestyQuiz from "../locales/en/gamecontent/financial-literacy/kids/money-honesty-quiz.json";
+import enFinancialLiteracyKidsReflexEthics from "../locales/en/gamecontent/financial-literacy/kids/reflex-ethics.json";
+import enFinancialLiteracyKidsHonestyPuzzle from "../locales/en/gamecontent/financial-literacy/kids/honesty-puzzle.json";
+import enFinancialLiteracyKidsFriendsMoneyStory from "../locales/en/gamecontent/financial-literacy/kids/friends-money-story.json";
+import enFinancialLiteracyKidsHonestyPoster from "../locales/en/gamecontent/financial-literacy/kids/honesty-poster.json";
+import enFinancialLiteracyKidsEthicsJournal from "../locales/en/gamecontent/financial-literacy/kids/ethics-journal.json";
+import enFinancialLiteracyKidsShopStoryGame from "../locales/en/gamecontent/financial-literacy/kids/shop-story-game.json";
+import enFinancialLiteracyKidsReflexMoneyTruth from "../locales/en/gamecontent/financial-literacy/kids/reflex-money-truth.json";
+import enFinancialLiteracyKidsHonestKidBadge from "../locales/en/gamecontent/financial-literacy/kids/honest-kid-badge.json";
 
 import hiFinancialLiteracyTeens from "../locales/hi/pages/games/financial-literacy/teens.json";
 import hiFinancialLiteracyTeensCards from "../locales/hi/pages/cardcontent/financial-literacy/teens.json";
@@ -310,6 +340,36 @@ import hiFinancialLiteracyKidsJournalOfGrowth from "../locales/hi/gamecontent/fi
 import hiFinancialLiteracyKidsToyVsSavingStory from "../locales/hi/gamecontent/financial-literacy/kids/toy-vs-saving-story.json";
 import hiFinancialLiteracyKidsReflexGrowthCheck from "../locales/hi/gamecontent/financial-literacy/kids/reflex-growth-check.json";
 import hiFinancialLiteracyKidsBadgeMoneyGardener from "../locales/hi/gamecontent/financial-literacy/kids/badge-money-gardener.json";
+import hiFinancialLiteracyKidsLemonadeStory from "../locales/hi/gamecontent/financial-literacy/kids/lemonade-story.json";
+import hiFinancialLiteracyKidsQuizOnEarning from "../locales/hi/gamecontent/financial-literacy/kids/quiz-on-earning.json";
+import hiFinancialLiteracyKidsReflexWorkVsPlay from "../locales/hi/gamecontent/financial-literacy/kids/reflex-work-vs-play.json";
+import hiFinancialLiteracyKidsPuzzleOfJobs from "../locales/hi/gamecontent/financial-literacy/kids/puzzle-of-jobs.json";
+import hiFinancialLiteracyKidsHelpingParentsStory from "../locales/hi/gamecontent/financial-literacy/kids/helping-parents-story.json";
+import hiFinancialLiteracyKidsPosterWorkToEarn from "../locales/hi/gamecontent/financial-literacy/kids/poster-work-to-earn.json";
+import hiFinancialLiteracyKidsJournalOfEarning from "../locales/hi/gamecontent/financial-literacy/kids/journal-of-earning.json";
+import hiFinancialLiteracyKidsPetSittingStory from "../locales/hi/gamecontent/financial-literacy/kids/pet-sitting-story.json";
+import hiFinancialLiteracyKidsReflexSmallBusiness from "../locales/hi/gamecontent/financial-literacy/kids/reflex-small-business.json";
+import hiFinancialLiteracyKidsBadgeYoungEarner from "../locales/hi/gamecontent/financial-literacy/kids/badge-young-earner.json";
+import hiFinancialLiteracyKidsCandyShopStory from "../locales/hi/gamecontent/financial-literacy/kids/candy-shop-story.json";
+import hiFinancialLiteracyKidsQuizOnHonesty from "../locales/hi/gamecontent/financial-literacy/kids/quiz-on-honesty.json";
+import hiFinancialLiteracyKidsReflexScamAlert from "../locales/hi/gamecontent/financial-literacy/kids/reflex-scam-alert.json";
+import hiFinancialLiteracyKidsPuzzleHonestVsFraud from "../locales/hi/gamecontent/financial-literacy/kids/puzzle-honest-vs-fraud.json";
+import hiFinancialLiteracyKidsStrangerStory from "../locales/hi/gamecontent/financial-literacy/kids/stranger-story.json";
+import hiFinancialLiteracyKidsPosterBeAlert from "../locales/hi/gamecontent/financial-literacy/kids/poster-be-alert.json";
+import hiFinancialLiteracyKidsJournalSafety from "../locales/hi/gamecontent/financial-literacy/kids/journal-safety.json";
+import hiFinancialLiteracyKidsToyShopStory from "../locales/hi/gamecontent/financial-literacy/kids/toy-shop-story.json";
+import hiFinancialLiteracyKidsReflexCheckFirst from "../locales/hi/gamecontent/financial-literacy/kids/reflex-check-first.json";
+import hiFinancialLiteracyKidsBadgeScamSpotterKid from "../locales/hi/gamecontent/financial-literacy/kids/badge-scam-spotter-kid.json";
+import hiFinancialLiteracyKidsLostCoinStory from "../locales/hi/gamecontent/financial-literacy/kids/lost-coin-story.json";
+import hiFinancialLiteracyKidsMoneyHonestyQuiz from "../locales/hi/gamecontent/financial-literacy/kids/money-honesty-quiz.json";
+import hiFinancialLiteracyKidsReflexEthics from "../locales/hi/gamecontent/financial-literacy/kids/reflex-ethics.json";
+import hiFinancialLiteracyKidsHonestyPuzzle from "../locales/hi/gamecontent/financial-literacy/kids/honesty-puzzle.json";
+import hiFinancialLiteracyKidsFriendsMoneyStory from "../locales/hi/gamecontent/financial-literacy/kids/friends-money-story.json";
+import hiFinancialLiteracyKidsHonestyPoster from "../locales/hi/gamecontent/financial-literacy/kids/honesty-poster.json";
+import hiFinancialLiteracyKidsEthicsJournal from "../locales/hi/gamecontent/financial-literacy/kids/ethics-journal.json";
+import hiFinancialLiteracyKidsShopStoryGame from "../locales/hi/gamecontent/financial-literacy/kids/shop-story-game.json";
+import hiFinancialLiteracyKidsReflexMoneyTruth from "../locales/hi/gamecontent/financial-literacy/kids/reflex-money-truth.json";
+import hiFinancialLiteracyKidsHonestKidBadge from "../locales/hi/gamecontent/financial-literacy/kids/honest-kid-badge.json";
 
 const LANGUAGE_STORAGE_KEY = "app_language";
 const savedLanguage = typeof window !== "undefined"
@@ -477,6 +537,36 @@ const resources = {
           "toy-vs-saving-story": enFinancialLiteracyKidsToyVsSavingStory,
           "reflex-growth-check": enFinancialLiteracyKidsReflexGrowthCheck,
           "badge-money-gardener": enFinancialLiteracyKidsBadgeMoneyGardener,
+          "lemonade-story": enFinancialLiteracyKidsLemonadeStory,
+          "quiz-on-earning": enFinancialLiteracyKidsQuizOnEarning,
+          "reflex-work-vs-play": enFinancialLiteracyKidsReflexWorkVsPlay,
+          "puzzle-of-jobs": enFinancialLiteracyKidsPuzzleOfJobs,
+          "helping-parents-story": enFinancialLiteracyKidsHelpingParentsStory,
+          "poster-work-to-earn": enFinancialLiteracyKidsPosterWorkToEarn,
+          "journal-of-earning": enFinancialLiteracyKidsJournalOfEarning,
+          "pet-sitting-story": enFinancialLiteracyKidsPetSittingStory,
+          "reflex-small-business": enFinancialLiteracyKidsReflexSmallBusiness,
+          "badge-young-earner": enFinancialLiteracyKidsBadgeYoungEarner,
+          "candy-shop-story": enFinancialLiteracyKidsCandyShopStory,
+          "quiz-on-honesty": enFinancialLiteracyKidsQuizOnHonesty,
+          "reflex-scam-alert": enFinancialLiteracyKidsReflexScamAlert,
+          "puzzle-honest-vs-fraud": enFinancialLiteracyKidsPuzzleHonestVsFraud,
+          "stranger-story": enFinancialLiteracyKidsStrangerStory,
+          "poster-be-alert": enFinancialLiteracyKidsPosterBeAlert,
+          "journal-safety": enFinancialLiteracyKidsJournalSafety,
+          "toy-shop-story": enFinancialLiteracyKidsToyShopStory,
+          "reflex-check-first": enFinancialLiteracyKidsReflexCheckFirst,
+          "badge-scam-spotter-kid": enFinancialLiteracyKidsBadgeScamSpotterKid,
+          "lost-coin-story": enFinancialLiteracyKidsLostCoinStory,
+          "money-honesty-quiz": enFinancialLiteracyKidsMoneyHonestyQuiz,
+          "reflex-ethics": enFinancialLiteracyKidsReflexEthics,
+          "honesty-puzzle": enFinancialLiteracyKidsHonestyPuzzle,
+          "friends-money-story": enFinancialLiteracyKidsFriendsMoneyStory,
+          "honesty-poster": enFinancialLiteracyKidsHonestyPoster,
+          "ethics-journal": enFinancialLiteracyKidsEthicsJournal,
+          "shop-story-game": enFinancialLiteracyKidsShopStoryGame,
+          "reflex-money-truth": enFinancialLiteracyKidsReflexMoneyTruth,
+          "honest-kid-badge": enFinancialLiteracyKidsHonestKidBadge,
         },
       },
     },
@@ -633,6 +723,36 @@ const resources = {
           "toy-vs-saving-story": hiFinancialLiteracyKidsToyVsSavingStory,
           "reflex-growth-check": hiFinancialLiteracyKidsReflexGrowthCheck,
           "badge-money-gardener": hiFinancialLiteracyKidsBadgeMoneyGardener,
+          "lemonade-story": hiFinancialLiteracyKidsLemonadeStory,
+          "quiz-on-earning": hiFinancialLiteracyKidsQuizOnEarning,
+          "reflex-work-vs-play": hiFinancialLiteracyKidsReflexWorkVsPlay,
+          "puzzle-of-jobs": hiFinancialLiteracyKidsPuzzleOfJobs,
+          "helping-parents-story": hiFinancialLiteracyKidsHelpingParentsStory,
+          "poster-work-to-earn": hiFinancialLiteracyKidsPosterWorkToEarn,
+          "journal-of-earning": hiFinancialLiteracyKidsJournalOfEarning,
+          "pet-sitting-story": hiFinancialLiteracyKidsPetSittingStory,
+          "reflex-small-business": hiFinancialLiteracyKidsReflexSmallBusiness,
+          "badge-young-earner": hiFinancialLiteracyKidsBadgeYoungEarner,
+          "candy-shop-story": hiFinancialLiteracyKidsCandyShopStory,
+          "quiz-on-honesty": hiFinancialLiteracyKidsQuizOnHonesty,
+          "reflex-scam-alert": hiFinancialLiteracyKidsReflexScamAlert,
+          "puzzle-honest-vs-fraud": hiFinancialLiteracyKidsPuzzleHonestVsFraud,
+          "stranger-story": hiFinancialLiteracyKidsStrangerStory,
+          "poster-be-alert": hiFinancialLiteracyKidsPosterBeAlert,
+          "journal-safety": hiFinancialLiteracyKidsJournalSafety,
+          "toy-shop-story": hiFinancialLiteracyKidsToyShopStory,
+          "reflex-check-first": hiFinancialLiteracyKidsReflexCheckFirst,
+          "badge-scam-spotter-kid": hiFinancialLiteracyKidsBadgeScamSpotterKid,
+          "lost-coin-story": hiFinancialLiteracyKidsLostCoinStory,
+          "money-honesty-quiz": hiFinancialLiteracyKidsMoneyHonestyQuiz,
+          "reflex-ethics": hiFinancialLiteracyKidsReflexEthics,
+          "honesty-puzzle": hiFinancialLiteracyKidsHonestyPuzzle,
+          "friends-money-story": hiFinancialLiteracyKidsFriendsMoneyStory,
+          "honesty-poster": hiFinancialLiteracyKidsHonestyPoster,
+          "ethics-journal": hiFinancialLiteracyKidsEthicsJournal,
+          "shop-story-game": hiFinancialLiteracyKidsShopStoryGame,
+          "reflex-money-truth": hiFinancialLiteracyKidsReflexMoneyTruth,
+          "honest-kid-badge": hiFinancialLiteracyKidsHonestKidBadge,
         },
       },
     },

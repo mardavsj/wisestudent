@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const MoneyHonestyQuizGame = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+const MoneyHonestyQuizGame= () => {
+ const navigate = useNavigate();
+ const location = useLocation();
+ const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-92";
@@ -23,130 +25,8 @@ const MoneyHonestyQuizGame = () => {
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Which is the honest choice if you find ₹10?",
-      options: [
-        { 
-          id: "keep", 
-          text: "Keep it quietly", 
-          emoji: "🤫", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "snacks", 
-          text: "Spend it on snacks", 
-          emoji: "🍟", 
-          
-          isCorrect: false
-        },
-        {
-          id: "return",
-          text: "Return it to the owner",
-          emoji: "🤝",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "You get ₹5 extra change. What's the right thing to do?",
-      options: [
-        { 
-          id: "give", 
-          text: "Give back the extra", 
-          emoji: "💸", 
-          isCorrect: true
-        },
-        { 
-          id: "candy", 
-          text: "Buy candy", 
-          emoji: "🍬", 
-          isCorrect: false
-        },
-        { 
-          id: "nothing", 
-          text: "Say nothing", 
-          emoji: "😶", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You borrow ₹20. What's honest?",
-      options: [
-        { 
-          id: "never", 
-          text: "Never repay", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        {
-          id: "repay",
-          text: "Repay it on time",
-          emoji: "✅",
-          isCorrect: true
-        },
-        { 
-          id: "spend", 
-          text: "Spend more instead", 
-          emoji: "🛍️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You break a ₹15 toy. What do you do?",
-      options: [
-        { 
-          id: "tell", 
-          text: "Tell and offer to pay", 
-          emoji: "🗣️", 
-          isCorrect: true
-        },
-        { 
-          id: "hide", 
-          text: "Hide it", 
-          emoji: "🧸", 
-          isCorrect: false
-        },
-        { 
-          id: "blame", 
-          text: "Blame someone else", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why is honesty with money important?",
-      options: [
-        { 
-          id: "trust", 
-          text: "It earns trust", 
-          emoji: "😊", 
-          isCorrect: true
-        },
-        { 
-          id: "money", 
-          text: "It gets you more money", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "spend", 
-          text: "It lets you spend more", 
-          emoji: "🛒", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const gameContent = t("financial-literacy.kids.money-honesty-quiz", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

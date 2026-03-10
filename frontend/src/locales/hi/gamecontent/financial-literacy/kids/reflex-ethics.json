@@ -1,0 +1,72 @@
+{
+  "title": "रिफ्लेक्स: नैतिकता",
+  "subtitleComplete": "गेम पूरा हुआ!",
+  "roundLabel": "राउंड {{current}}/{{total}}",
+  "timeUp": "समय समाप्त!",
+  "readyEmoji": "🎯",
+  "readyTitle": "तैयार हो जाओ!",
+  "readyDescription": "नैतिक पैसे व्यवहार के बारे में प्रश्नों के उत्तर दें!",
+  "readyTimeInfo": "आपके पास प्रत्येक प्रश्न के लिए {{time}} सेकंड हैं।",
+  "readyQuestionInfo": "आपके पास {{total}} प्रश्न हैं जिनमें से प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "गेम शुरू करें",
+  "gameRoundLabel": "राउंड:",
+  "gameTimeLabel": "समय:",
+  "gameScoreLabel": "स्कोर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "आपको पैसे के साथ हमेशा क्या होना चाहिए?",
+      "correctAnswer": "सच्चाई",
+      "options": [
+        { "text": "सच्चाई", "isCorrect": true, "emoji": "🗣️" },
+        { "text": "धोखा", "isCorrect": false, "emoji": "🚫" },
+        { "text": "झूठ", "isCorrect": false, "emoji": "🤥" },
+        { "text": "देceive", "isCorrect": false, "emoji": "😈" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "आपको वित्तीय मामलों को कैसे संभालना चाहिए?",
+      "correctAnswer": "ईमानदार",
+      "options": [
+        { "text": "झूठ", "isCorrect": false, "emoji": "🤥" },
+        { "text": "ईमानदार", "isCorrect": true, "emoji": "💯" },
+        { "text": "धोखा", "isCorrect": false, "emoji": "🎭" },
+        { "text": "चाल", "isCorrect": false, "emoji": "🃏" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "आपके वित्तीय निर्णय क्या होने चाहिए?",
+      "correctAnswer": "निष्पक्ष",
+      "options": [
+        { "text": "अनुचित", "isCorrect": false, "emoji": "❌" },
+        { "text": "पक्षपाती", "isCorrect": false, "emoji": "🎯" },
+        { "text": "निष्पक्ष", "isCorrect": true, "emoji": "⚖️" },
+        { "text": "आंशिक", "isCorrect": false, "emoji": "📊" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "आपको वित्तीय रिश्तों में क्या बनाना चाहिए?",
+      "correctAnswer": "विश्वास",
+      "options": [
+        { "text": "विश्वास", "isCorrect": true, "emoji": "🤝" },
+        { "text": "धोखा", "isCorrect": false, "emoji": "😈" },
+        { "text": "हेरफेर", "isCorrect": false, "emoji": "🎭" },
+        { "text": "शोषण", "isCorrect": false, "emoji": "💔" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "आपको पैसे के साथ कैसे व्यवहार करना चाहिए?",
+      "correctAnswer": "नैतिक",
+      "options": [
+        { "text": "बेईमान", "isCorrect": false, "emoji": "🚫" },
+        { "text": "अनुचित", "isCorrect": false, "emoji": "❌" },
+        { "text": "भ्रष्ट", "isCorrect": false, "emoji": "💸" },
+        { "text": "नैतिक", "isCorrect": true, "emoji": "🌟" }
+      ]
+    }
+  ]
+}

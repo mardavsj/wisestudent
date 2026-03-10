@@ -1,0 +1,55 @@
+{
+  "title": "अजनबी कहानी",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{current}} में से {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "अजनबी आपके पते के बदले खिलौना देता है। आप क्या करते हैं?",
+      "options": [
+        { "id": "refuse", "text": "मना करें", "emoji": "❌", "description": "", "isCorrect": true },
+        { "id": "accept", "text": "स्वीकार करें", "emoji": "🎁", "description": "", "isCorrect": false },
+        { "id": "delay", "text": "निर्णय स्थगित करें", "emoji": "⏰", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "कोई आपके बैंक विवरण मांगता है। अब क्या करें?",
+      "options": [
+        { "id": "give", "text": "जानकारी दें", "emoji": "💳", "description": "", "isCorrect": false },
+        { "id": "partial", "text": "आंशिक जानकारी दें", "emoji": "🤷", "description": "", "isCorrect": false },
+        { "id": "no", "text": "ना कहें", "emoji": "🚫", "description": "", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "अजनबी सौदा देता है। क्या सुरक्षित है?",
+      "options": [
+        { "id": "walk", "text": "चले जाएं", "emoji": "🚶", "description": "", "isCorrect": true },
+        { "id": "engage", "text": "जुड़ें", "emoji": "💬", "description": "", "isCorrect": false },
+        { "id": "wait", "text": "प्रतीक्षा करें और देखें", "emoji": "⏳", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आपको संदिग्ध ऑफर दिखता है। आप क्या करते हैं?",
+      "options": [
+        { "id": "tell", "text": "वयस्क को बताएं", "emoji": "👨‍👩‍👧", "description": "", "isCorrect": true },
+        { "id": "quiet", "text": "चुप रहें", "emoji": "🤫", "description": "", "isCorrect": false },
+        { "id": "ignore", "text": "इसे नजरअंदाज करें", "emoji": "🙈", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "आपको अजीब संदेश मिलता है। क्या सबसे अच्छा है?",
+      "options": [
+        { "id": "reply", "text": "जवाब दें", "emoji": "💬", "description": "", "isCorrect": false },
+        { "id": "ignore", "text": "नजरअंदाज करें", "emoji": "🚫", "description": "", "isCorrect": true },
+        { "id": "forward", "text": "दोस्तों को फॉरवर्ड करें", "emoji": "📤", "description": "", "isCorrect": false }
+      ]
+    }
+  ]
+}

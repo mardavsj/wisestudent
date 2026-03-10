@@ -1,0 +1,70 @@
+{
+  "title": "Reflex Work vs Play",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your work vs play reflexes!",
+  "subtitleReady": "Test your work vs play reflexes!",
+  "readyEmoji": "💼",
+  "readyTitle": "Ready to Test Work vs Play?",
+  "readyDescription": "Choose the right action between work and play.",
+  "readyInfo": "You have {{total}} questions with {{seconds}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What helps you earn money?",
+      "correctAnswer": "Work",
+      "options": [
+        { "text": "Waste Time", "isCorrect": false, "emoji": "😴" },
+        { "text": "Play All Day", "isCorrect": false, "emoji": "🎮" },
+        { "text": "Work", "isCorrect": true, "emoji": "💼" },
+        { "text": "Do Nothing", "isCorrect": false, "emoji": "🤷" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What should you do to learn and grow?",
+      "correctAnswer": "Study",
+      "options": [
+        { "text": "Study", "isCorrect": true, "emoji": "📚" },
+        { "text": "Play All Day", "isCorrect": false, "emoji": "🎮" },
+        { "text": "Skip Learning", "isCorrect": false, "emoji": "🚫" },
+        { "text": "Ignore Education", "isCorrect": false, "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What should you do with your earnings?",
+      "correctAnswer": "Save Earnings",
+      "options": [
+        { "text": "Spend All", "isCorrect": false, "emoji": "💸" },
+        { "text": "Save Earnings", "isCorrect": true, "emoji": "💰" },
+        { "text": "Waste Money", "isCorrect": false, "emoji": "🔥" },
+        { "text": "Lose It", "isCorrect": false, "emoji": "😞" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should you do to help at home?",
+      "correctAnswer": "Do Chores",
+      "options": [
+        { "text": "Do Chores", "isCorrect": true, "emoji": "🧹" },
+        { "text": "Skip Chores", "isCorrect": false, "emoji": "🚫" },
+        { "text": "Avoid Work", "isCorrect": false, "emoji": "🙈" },
+        { "text": "Be Lazy", "isCorrect": false, "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What helps you be productive?",
+      "correctAnswer": "Plan Work",
+      "options": [
+        { "text": "Be Idle", "isCorrect": false, "emoji": "😴" },
+        { "text": "Waste Time", "isCorrect": false, "emoji": "⏰" },
+        { "text": "Do Nothing", "isCorrect": false, "emoji": "🤷" },
+        { "text": "Plan Work", "isCorrect": true, "emoji": "📋" }
+      ]
+    }
+  ]
+}

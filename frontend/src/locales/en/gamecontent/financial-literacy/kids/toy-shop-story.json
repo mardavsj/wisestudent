@@ -1,0 +1,56 @@
+{
+  "title": "Toy Shop Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "questionIndicator": "Question {{current}}/{{total}}",
+  "questionCounter": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Seller says, 'Hurry or lose toy!' What do you do?",
+      "options": [
+        { "id": "quick", "text": "Buy Quickly", "emoji": "⚡", "description": "", "isCorrect": false },
+        { "id": "check", "text": "Check Price", "emoji": "💰", "description": "", "isCorrect": true },
+        { "id": "ignore", "text": "Ignore Seller", "emoji": "🤷", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You see two toy stores. What's smarter?",
+      "options": [
+        { "id": "compare", "text": "Compare Prices", "emoji": "⚖️", "description": "", "isCorrect": true },
+        { "id": "pay", "text": "Pay Now", "emoji": "💸", "description": "", "isCorrect": false },
+        { "id": "skip", "text": "Skip Both", "emoji": "🚶", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Toy looks cool. What do you check?",
+      "options": [
+        { "id": "fast", "text": "Buy Fast", "emoji": "🏃", "description": "", "isCorrect": false },
+        { "id": "quality", "text": "Ask Quality", "emoji": "🔍", "description": "", "isCorrect": true },
+        { "id": "guess", "text": "Guess Quality", "emoji": "🎲", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Online toy sale. What's first?",
+      "options": [
+        { "id": "reviews", "text": "Read Reviews", "emoji": "⭐", "description": "", "isCorrect": true },
+        { "id": "rush", "text": "Rush", "emoji": "⚡", "description": "", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore Sale", "emoji": "🙈", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You want a toy. What's the plan?",
+      "options": [
+        { "id": "spend", "text": "Spend All", "emoji": "💸", "description": "", "isCorrect": false },
+        { "id": "borrow", "text": "Borrow Money", "emoji": "💳", "description": "", "isCorrect": false },
+        { "id": "budget", "text": "Budget First", "emoji": "📊", "description": "", "isCorrect": true }
+      ]
+    }
+  ]
+}

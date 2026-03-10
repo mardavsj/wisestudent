@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const LostCoinStoryGame = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+const LostCoinStoryGame= () => {
+ const navigate = useNavigate();
+ const location = useLocation();
+ const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-91";
@@ -23,132 +25,8 @@ const LostCoinStoryGame = () => {
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const questions = [
-  {
-    id: 1,
-    text: "You find a shiny coin near the playground. What is the right thing to do?",
-    options: [
-      { 
-        id: "keep", 
-        text: "Keep it for yourself", 
-        emoji: "🤫", 
-        isCorrect: false
-      },
-      {
-        id: "ask_teacher",
-        text: "Give it to the teacher",
-        emoji: "🧑‍🏫",
-        isCorrect: true
-      },
-      { 
-        id: "ignore", 
-        text: "Leave it on the ground", 
-        emoji: "🍂", 
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 2,
-    text: "You find ₹15 in the library. No one is around. What should you do?",
-    options: [
-      {
-        id: "return",
-        text: "Give it to the librarian",
-        emoji: "📚",
-        isCorrect: true
-      },
-      { 
-        id: "hide", 
-        text: "Hide it in your bag", 
-        emoji: "🎒", 
-        isCorrect: false
-      },
-      
-      { 
-        id: "spend", 
-        text: "Buy snacks immediately", 
-        emoji: "🍿", 
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    text: "A friend finds ₹20 and wants to keep it. What do you suggest?",
-    options: [
-      { 
-        id: "keep", 
-        text: "Keep it quietly", 
-        emoji: "😶", 
-        isCorrect: false
-      },
-     
-      { 
-        id: "spend", 
-        text: "Spend it on games", 
-        emoji: "🎮", 
-        isCorrect: false
-      },
-       { 
-        id: "return", 
-        text: "Try to find the owner together", 
-        emoji: "🕵️‍♂️", 
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 4,
-    text: "You receive extra change by mistake at a shop. What is the honest choice?",
-    options: [
-      { 
-        id: "keep", 
-        text: "Keep the extra money", 
-        emoji: "🤑", 
-        isCorrect: false
-      },
-      { 
-        id: "return", 
-        text: "Return it to the shopkeeper", 
-        emoji: "💵", 
-        isCorrect: true
-      },
-      { 
-        id: "gift", 
-        text: "Give it to a friend", 
-        emoji: "🎁", 
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 5,
-    text: "Why should you act honestly with found money?",
-    options: [
-      {
-        id: "respect",
-        text: "It builds trust and shows responsibility",
-        emoji: "🤝",
-        isCorrect: true
-      },
-      { 
-        id: "buy_more", 
-        text: "You can buy more things", 
-        emoji: "🛍️", 
-        isCorrect: false
-      },
-      
-      { 
-        id: "luck", 
-        text: "It brings instant luck", 
-        emoji: "🍀", 
-        isCorrect: false
-      }
-    ]
-  }
-];
-
+  const gameContent = t("financial-literacy.kids.lost-coin-story", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {
@@ -229,8 +107,8 @@ const LostCoinStoryGame = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {coins}/{questions.length}</span>
+                <span className="text-white/80">{t("financial-literacy.kids.lost-coin-story.questionLabel", { current: currentQuestion + 1, total: questions.length })}</span>
+                <span className="text-yellow-400 font-bold">{t("financial-literacy.kids.lost-coin-story.scoreLabel", { score: coins, total: questions.length })}</span>
               </div>
               
               <p className="text-white text-lg mb-6 text-center">

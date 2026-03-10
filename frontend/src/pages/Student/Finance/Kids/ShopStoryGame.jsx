@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const ShopStoryGame = () => {
-  const location = useLocation();
+const ShopStoryGame= () => {
+ const location = useLocation();
+const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-98";
@@ -22,129 +24,8 @@ const ShopStoryGame = () => {
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Shopkeeper gives extra change. What do you do?",
-      options: [
-        { 
-          id: "return", 
-          text: "Return Extra Change", 
-          emoji: "💸", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "keep", 
-          text: "Keep It Quietly", 
-          emoji: "🤫", 
-          isCorrect: false
-        },
-        { 
-          id: "spend", 
-          text: "Spend Immediately", 
-          emoji: "🛍️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You find a cheaper item. What do you do?",
-      options: [
-        { 
-          id: "lie", 
-          text: "Lie About Price", 
-          emoji: "🙊", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore It", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        {
-          id: "honest",
-          text: "Be Honest",
-          emoji: "🤗",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "Seller quotes a price. What's next?",
-      options: [
-        { 
-          id: "bargain", 
-          text: "Bargain Unfairly", 
-          emoji: "😈", 
-          isCorrect: false
-        },
-        { 
-          id: "refuse", 
-          text: "Refuse to Pay", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        {
-          id: "pay",
-          text: "Pay Fairly",
-          emoji: "⚖️",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "You get a receipt. What do you do?",
-      options: [
-        { 
-          id: "check", 
-          text: "Check Receipt", 
-          emoji: "🧾", 
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore Bill", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          id: "throw", 
-          text: "Throw Away", 
-          emoji: "🗑️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Store overcharges you. What now?",
-      options: [
-        { 
-          id: "silent", 
-          text: "Stay Silent", 
-          emoji: "😶", 
-          isCorrect: false
-        },
-        {
-          id: "report",
-          text: "Report Error",
-          emoji: "🗣️",
-          isCorrect: true
-        },
-        { 
-          id: "accept", 
-          text: "Accept It", 
-          emoji: "😔", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+ const gameContent = t("financial-literacy.kids.shop-story", { returnObjects: true });
+const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {

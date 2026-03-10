@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Paintbrush } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const HonestyPosterGame = () => {
-  const location = useLocation();
+const HonestyPosterGame= () => {
+ const location = useLocation();
+const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-96";
@@ -22,49 +24,8 @@ const HonestyPosterGame = () => {
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
 
-  const stages = [
-    {
-      question: "Which poster would best encourage kids to be honest with money?",
-      choices: [
-        { text: "Hide money from others! 🙈", correct: false },
-        { text: "Always tell the truth about money! 💰", correct: true },
-        { text: "Spend without telling anyone! 🎉", correct: false },
-      ],
-    },
-    {
-      question: "What poster would best show the importance of honesty with money?",
-      choices: [
-        { text: "Honesty brings trust and respect! ✅", correct: true },
-        { text: "Hiding money is smart! 🕳️", correct: false },
-        { text: "Trick others with money! 🎭", correct: false },
-      ],
-    },
-    {
-      question: "Which poster teaches the best honesty habit with money?",
-      choices: [
-        { text: "Lie about how much money you have! 🤥", correct: false },
-        { text: "Keep money secrets always! 🔐", correct: false },
-        { text: "Always share the truth about money! 🤝", correct: true },
-      ],
-    },
-    {
-      question: "What poster would best show how money and honesty connect?",
-      choices: [
-        { text: "Honest money choices build good character! 🌟", correct: true },
-        { text: "It's OK to lie about money! 🙊", correct: false },
-        { text: "Money tricks are harmless! 🃏", correct: false },
-      ],
-    },
-    {
-      question: "Which poster best explains the result of honest money choices?",
-      choices: [
-        
-        { text: "Hiding money makes me safe! 🏠", correct: false },
-        { text: "Honest money choices make me trustworthy! 🌟", correct: true },
-        { text: "Money secrets make me rich! 💎", correct: false },
-      ],
-    },
-  ];
+ const gameContent = t("financial-literacy.kids.honesty-poster", { returnObjects: true });
+const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
 
   const handleSelect = (isCorrect) => {
     resetFeedback();

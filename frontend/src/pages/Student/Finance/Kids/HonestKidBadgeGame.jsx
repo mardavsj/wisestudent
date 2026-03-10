@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const HonestKidBadgeGame = () => {
-  const location = useLocation();
+const HonestKidBadgeGame= () => {
+ const location = useLocation();
+const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-100";
@@ -22,167 +24,8 @@ const HonestKidBadgeGame = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Found Money",
-      question: "You find ₹10 on the playground. What’s the honest choice?",
-      options: [
-        
-        { 
-          text: "Keep it for yourself ", 
-          emoji: "🤫", 
-          isCorrect: false
-        },
-        { 
-          text: "Give it to a teacher ", 
-          emoji: "🎓", 
-          isCorrect: true
-        },
-        { 
-          text: "Spend it on snacks ", 
-          emoji: "🍟", 
-          isCorrect: false
-        },
-        { 
-          text: "Ask friends if they lost it", 
-          emoji: "🔍", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Excellent! Giving found money to a teacher is the honest choice!",
-        wrong: "Remember, found money should be returned to its owner or given to a trusted adult!"
-      }
-    },
-    {
-      id: 2,
-      title: "Extra Change",
-      question: "You're given extra change at a shop. What do you do?",
-      options: [
-        
-        { 
-          text: "Buy more candy ", 
-          emoji: "🍬", 
-          isCorrect: false
-        },
-        { 
-          text: "Say nothing ", 
-          emoji: "😶", 
-          isCorrect: false
-        },
-        { 
-          text: "Return the extra change ", 
-          emoji: "🪙", 
-          isCorrect: true
-        },
-        { 
-          text: "Keep it as a gift from the shopkeeper", 
-          emoji: "🎁", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Perfect! Returning extra change shows honesty and integrity!",
-        wrong: "Returning extra change is the honest thing to do, even if it's tempting to keep it!"
-      }
-    },
-    {
-      id: 3,
-      title: "Lending Money",
-      question: "Your friend asks to borrow ₹5. What’s a fair deal?",
-      options: [
-       
-        { 
-          text: "Give it without expecting back ", 
-          emoji: "🎁", 
-          isCorrect: false
-        },
-         { 
-          text: "Lend and agree on repayment ", 
-          emoji: "🤝", 
-          isCorrect: true
-        },
-        { 
-          text: "Refuse to lend ", 
-          emoji: "😐", 
-          isCorrect: false
-        },
-        { 
-          text: "Lend but don't discuss repayment", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Amazing! Clear agreements about repayment help maintain friendships!",
-        wrong: "When lending money, it's important to have clear agreements to maintain trust!"
-      }
-    },
-    {
-      id: 4,
-      title: "Broken Toy",
-      question: "You break a toy worth ₹20. What’s honest?",
-      options: [
-        
-        { 
-          text: "Hide the broken toy ", 
-          emoji: "🧸", 
-          isCorrect: false
-        },
-        { 
-          text: "Blame someone else ", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          text: "Tell your parents and offer to pay ", 
-          emoji: "🗣️", 
-          isCorrect: true
-        },
-        { 
-          text: "Say it was already broken", 
-          emoji: "💥", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Great! Taking responsibility shows maturity and honesty!",
-        wrong: "Taking responsibility for damage is the honest way to handle the situation!"
-      }
-    },
-    {
-      id: 5,
-      title: "Honesty Value",
-      question: "Why does honesty with money matter?",
-      options: [
-        { 
-          text: "It earns trust and respect ", 
-          emoji: "😊", 
-          isCorrect: true
-        },
-        { 
-          text: "It gets you more money ", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          text: "It lets you spend more ", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          text: "It helps avoid consequences", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Wonderful! Honesty builds trust and respect, which are invaluable!",
-        wrong: "Honesty with money builds trust and respect, which are more valuable than any amount of money!"
-      }
-    }
-  ];
+ const gameContent = t("financial-literacy.kids.honest-kid-badge", { returnObjects: true });
+const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleAnswer = (isCorrect, optionIndex) => {
     if (answered) return;

@@ -1,0 +1,55 @@
+{
+  "title": "कैंडी शॉप स्टोरी",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{current}} में से {{total}}",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "stageEmoji": "🍬",
+  "questions": [
+    {
+      "id": 1,
+      "text": "दुकानदार ₹10 के बजाय ₹20 चार्ज करता है। क्या आप बिल चेक करते हैं?",
+      "options": [
+        { "id": "yes", "text": "हाँ, मैं बिल चेक करता हूँ", "emoji": "📜", "description": "", "isCorrect": true },
+        { "id": "no", "text": "नहीं, मैं बस भुगतान करता हूँ", "emoji": "💸", "description": "", "isCorrect": false },
+        { "id": "friend", "text": "दोस्त से चेक करने को कहें", "emoji": "👥", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "आपके पास ₹50 हैं। कैंडी की कीमत ₹15 है। आपको कितना बदलाव मिलना चाहिए?",
+      "options": [
+        { "id": "25", "text": "₹25", "emoji": "💸", "description": "", "isCorrect": false },
+        { "id": "40", "text": "₹40", "emoji": "💵", "description": "", "isCorrect": false },
+        { "id": "35", "text": "₹35", "emoji": "💰", "description": "", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "दुकानदार ₹35 के बजाय ₹30 बदलाव देता है। आप क्या करते हैं?",
+      "options": [
+        { "id": "ask", "text": "विनम्रता से सही बदलाव मांगें", "emoji": "🗣️", "description": "", "isCorrect": true },
+        { "id": "take", "text": "₹30 लें और चले जाएं", "emoji": "🚶", "description": "", "isCorrect": false },
+        { "id": "buy", "text": "और कैंडी खरीदें", "emoji": "🍬", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आप ₹10 प्रति की दो कैंडी खरीदना चाहते हैं। क्या आप ₹15 में खरीद सकते हैं?",
+      "options": [
+        { "id": "yes", "text": "हाँ, मेरे पास पर्याप्त है", "emoji": "😊", "description": "", "isCorrect": false },
+        { "id": "no", "text": "नहीं, मुझे ₹20 चाहिए", "emoji": "💰", "description": "", "isCorrect": true },
+        { "id": "discount", "text": "छूट के लिए पूछें", "emoji": "🎟️", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "स्मार्ट तरीके से खरीदारी करने का सबसे अच्छा तरीका क्या है?",
+      "options": [
+        { "id": "everything", "text": "जो दिखे उसे खरीदें", "emoji": "🛒", "description": "", "isCorrect": false },
+        { "id": "check", "text": "कीमत और बिल सावधानीपूर्वक चेक करें", "emoji": "🧾", "description": "", "isCorrect": true },
+        { "id": "friends", "text": "केवल दोस्तों के साथ खरीदारी करें", "emoji": "👨‍👩‍👧", "description": "", "isCorrect": false }
+      ]
+    }
+  ]
+}

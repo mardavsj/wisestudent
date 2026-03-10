@@ -1,0 +1,54 @@
+{
+  "title": "Quiz on Honesty",
+  "subtitleComplete": "Quiz Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionCounter": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Who is honest?",
+      "options": [
+        { "id": "cheat", "text": "Cheats customer", "emoji": "😈", "description": "", "isCorrect": false },
+        { "id": "change", "text": "Gives correct change", "emoji": "💰", "description": "", "isCorrect": true },
+        { "id": "lies", "text": "Lies", "emoji": "🙊", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What does an honest shopkeeper do?",
+      "options": [
+        { "id": "fair", "text": "Charges fair prices", "emoji": "⚖️", "description": "", "isCorrect": true },
+        { "id": "overcharge", "text": "Overcharges", "emoji": "💸", "description": "", "isCorrect": false },
+        { "id": "hide", "text": "Hides products", "emoji": "🫥", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "How does honesty help in shopping?",
+      "options": [
+        { "id": "free", "text": "Gets you free items", "emoji": "🎁", "description": "", "isCorrect": false },
+        { "id": "spend", "text": "Makes you spend more", "emoji": "🛍️", "description": "", "isCorrect": false },
+        { "id": "trust", "text": "Builds trust", "emoji": "🤝", "description": "", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What's an honest way to borrow?",
+      "options": [
+        { "id": "return", "text": "Return on time", "emoji": "⏰", "description": "", "isCorrect": true },
+        { "id": "keep", "text": "Keep it forever", "emoji": "🙈", "description": "", "isCorrect": false },
+        { "id": "more", "text": "Borrow more", "emoji": "📈", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Why is honesty important in money matters?",
+      "options": [
+        { "id": "toys", "text": "It gets you toys", "emoji": "🧸", "description": "", "isCorrect": false },
+        { "id": "famous", "text": "It makes you famous", "emoji": "⭐", "description": "", "isCorrect": false },
+        { "id": "trust", "text": "It earns trust", "emoji": "🤝", "description": "", "isCorrect": true }
+      ]
+    }
+  ]
+}

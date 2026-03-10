@@ -1,0 +1,54 @@
+{
+  "title": "Quiz on Earning",
+  "subtitleComplete": "Quiz Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionCounter": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "What's the correct way to earn money?",
+      "options": [
+        { "id": "working", "text": "By working", "emoji": "💼", "description": "", "isCorrect": true },
+        { "id": "wasting", "text": "By wasting", "emoji": "💸", "description": "", "isCorrect": false },
+        { "id": "sleeping", "text": "By sleeping", "emoji": "😴", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "How does a farmer earn money?",
+      "options": [
+        { "id": "games", "text": "Playing games", "emoji": "🎮", "description": "", "isCorrect": false },
+        { "id": "crops", "text": "Selling crops", "emoji": "🌾", "description": "", "isCorrect": true },
+        { "id": "give", "text": "Giving away food", "emoji": "🎁", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What job earns money by teaching?",
+      "options": [
+        { "id": "toymaker", "text": "Toy maker", "emoji": "🧸", "description": "", "isCorrect": false },
+        { "id": "candy", "text": "Candy seller", "emoji": "🍬", "description": "", "isCorrect": false },
+        { "id": "teacher", "text": "Teacher", "emoji": "👨‍🏫", "description": "", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "How can kids earn money?",
+      "options": [
+        { "id": "chores", "text": "Doing chores", "emoji": "🧹", "description": "", "isCorrect": true },
+        { "id": "tv", "text": "Watching TV", "emoji": "📺", "description": "", "isCorrect": false },
+        { "id": "snacks", "text": "Eating snacks", "emoji": "🍪", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Why is earning money important?",
+      "options": [
+        { "id": "toys", "text": "Gets you free toys", "emoji": "🧸", "description": "", "isCorrect": false },
+        { "id": "needs", "text": "Meets your needs", "emoji": "😊", "description": "", "isCorrect": true },
+        { "id": "sleep", "text": "Makes you sleep better", "emoji": "😴", "description": "", "isCorrect": false }
+      ]
+    }
+  ]
+}

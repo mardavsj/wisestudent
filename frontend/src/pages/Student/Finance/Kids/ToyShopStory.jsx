@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const ToyShopStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-88";
@@ -22,129 +24,8 @@ const ToyShopStory = () => {
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Seller says, 'Hurry or lose toy!' What do you do?",
-      options: [
-        { 
-          id: "quick", 
-          text: "Buy Quickly", 
-          emoji: "⚡", 
-          
-          isCorrect: false
-        },
-        {
-          id: "check",
-          text: "Check Price",
-          emoji: "💰",
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore Seller", 
-          emoji: "🤷", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You see two toy stores. What's smarter?",
-      options: [
-        { 
-          id: "compare", 
-          text: "Compare Prices", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          id: "pay", 
-          text: "Pay Now", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "skip", 
-          text: "Skip Both", 
-          emoji: "🚶", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Toy looks cool. What do you check?",
-      options: [
-        { 
-          id: "fast", 
-          text: "Buy Fast", 
-          emoji: "🏃", 
-          isCorrect: false
-        },
-        {
-          id: "quality",
-          text: "Ask Quality",
-          emoji: "🔍",
-          isCorrect: true
-        },
-        { 
-          id: "guess", 
-          text: "Guess Quality", 
-          emoji: "🎲", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Online toy sale. What's first?",
-      options: [
-        { 
-          id: "reviews", 
-          text: "Read Reviews", 
-          emoji: "⭐", 
-          isCorrect: true
-        },
-        { 
-          id: "rush", 
-          text: "Rush", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore Sale", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You want a toy. What's the plan?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Spend All", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow Money", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        {
-          id: "budget",
-          text: "Budget First",
-          emoji: "📊",
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  const gameContent = t("financial-literacy.kids.toy-shop-story", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {
@@ -197,10 +78,10 @@ const ToyShopStory = () => {
 
   return (
     <GameShell
-      title="Toy Shop Story"
-      subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
+      title={gameContent?.title || "Toy Shop Story"}
+      subtitle={showResult ? gameContent?.subtitleComplete : t("financial-literacy.kids.toy-shop-story.questionLabel", { current: currentQuestion + 1, total: questions.length })}
       currentLevel={currentQuestion + 1}
-      totalLevels={5}
+      totalLevels={questions.length}
       coinsPerLevel={coinsPerLevel}
       showGameOver={showResult}
       score={coins}
@@ -210,17 +91,17 @@ const ToyShopStory = () => {
       gameType="finance"
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
-      maxScore={5}
+      maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === questions.length}>
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {coins}/{questions.length}</span>
+                <span className="text-white/80">{t("financial-literacy.kids.toy-shop-story.questionIndicator", { current: currentQuestion + 1, total: questions.length })}</span>
+                <span className="text-yellow-400 font-bold">{t("financial-literacy.kids.toy-shop-story.scoreLabel", { score: coins, total: questions.length })}</span>
               </div>
               
               <p className="text-white text-lg mb-6 text-center">

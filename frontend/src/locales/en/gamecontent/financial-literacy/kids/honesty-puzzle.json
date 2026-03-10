@@ -1,0 +1,38 @@
+{
+  "title": "Honesty Puzzle",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match {{current}} of {{total}}",
+  "instruction": "Match honest scenarios with their outcomes!",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "Found Money",
+      "honestAction": "Return to owner",
+      "outcome": "Builds trust"
+    },
+    {
+      "id": 2,
+      "title": "Extra Change",
+      "honestAction": "Return extra",
+      "outcome": "Earns respect"
+    },
+    {
+      "id": 3,
+      "title": "Borrowed Money",
+      "honestAction": "Repay on time",
+      "outcome": "Strengthens relationships"
+    },
+    {
+      "id": 4,
+      "title": "Broken Item",
+      "honestAction": "Admit and pay",
+      "outcome": "Shows responsibility"
+    },
+    {
+      "id": 5,
+      "title": "Shopping Error",
+      "honestAction": "Report mistake",
+      "outcome": "Builds integrity"
+    }
+  ]
+}

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { PenSquare } from "lucide-react";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const EthicsJournalGame = () => {
-  const location = useLocation();
+const EthicsJournalGame= () => {
+ const location = useLocation();
+const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-97";
@@ -23,29 +25,9 @@ const EthicsJournalGame = () => {
   const [entry, setEntry] = useState("");
   const [showResult, setShowResult] = useState(false);
 
-  const stages = [
-    {
-      question: 'Write: "One time I used money honestly was ___."',
-      minLength: 10,
-    },
-    {
-      question: 'Write: "I helped someone with money by ___."',
-      minLength: 10,
-    },
-    {
-      question: 'Write: "A time I felt good about saving money was ___."',
-      minLength: 10,
-    },
-    {
-      question: 'Write: "I avoided spending money wrongly by ___."',
-      minLength: 10,
-    },
-    {
-      question: 'Write: "Being honest with money makes me feel ___."',
-      minLength: 10,
-    },
-  ];
-
+ const gameContent = t("financial-literacy.kids.ethics-journal", { returnObjects: true });
+const stages = Array.isArray(gameContent?.stages) ? gameContent.stages: [];
+  
   const handleSubmit = () => {
     if (showResult) return; // Prevent multiple submissions
     

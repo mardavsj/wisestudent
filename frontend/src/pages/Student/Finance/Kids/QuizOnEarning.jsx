@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,6 +8,7 @@ import { getGameDataById } from "../../../../utils/getGameData";
 const QuizOnEarning = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-72";
@@ -16,136 +18,16 @@ const QuizOnEarning = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
+  const gameContent = t("financial-literacy.kids.quiz-on-earning", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  
   const [coins, setCoins] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [choices, setChoices] = useState([]);
   const [showResult, setShowResult] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
-
-  const questions = [
-    {
-      id: 1,
-      text: "What's the correct way to earn money?",
-      options: [
-        { 
-          id: "working", 
-          text: "By working", 
-          emoji: "💼", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "wasting", 
-          text: "By wasting", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "sleeping", 
-          text: "By sleeping", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "How does a farmer earn money?",
-      options: [
-        { 
-          id: "games", 
-          text: "Playing games", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        {
-          id: "crops",
-          text: "Selling crops",
-          emoji: "🌾",
-          isCorrect: true
-        },
-        { 
-          id: "give", 
-          text: "Giving away food", 
-          emoji: "🎁", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What job earns money by teaching?",
-      options: [
-        { 
-          id: "toymaker", 
-          text: "Toy maker", 
-          emoji: "🧸", 
-          isCorrect: false
-        },
-        { 
-          id: "candy", 
-          text: "Candy seller", 
-          emoji: "🍬", 
-          isCorrect: false
-        },
-        {
-          id: "teacher",
-          text: "Teacher",
-          emoji: "👨‍🏫",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "How can kids earn money?",
-      options: [
-        { 
-          id: "chores", 
-          text: "Doing chores", 
-          emoji: "🧹", 
-          isCorrect: true
-        },
-        { 
-          id: "tv", 
-          text: "Watching TV", 
-          emoji: "📺", 
-          isCorrect: false
-        },
-        { 
-          id: "snacks", 
-          text: "Eating snacks", 
-          emoji: "🍪", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why is earning money important?",
-      options: [
-        { 
-          id: "toys", 
-          text: "Gets you free toys", 
-          emoji: "🧸", 
-          isCorrect: false
-        },
-        {
-          id: "needs",
-          text: "Meets your needs",
-          emoji: "😊",
-          isCorrect: true
-        },
-        { 
-          id: "sleep", 
-          text: "Makes you sleep better", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {
@@ -202,8 +84,8 @@ const QuizOnEarning = () => {
 
   return (
     <GameShell
-      title="Quiz on Earning"
-      subtitle={showResult ? "Quiz Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
+      title={gameContent?.title || "Quiz on Earning"}
+      subtitle={showResult ? gameContent?.subtitleComplete : t("financial-literacy.kids.quiz-on-earning.subtitleProgress", { current: currentQuestion + 1, total: questions.length })}
       currentLevel={5}
       totalLevels={5}
       coinsPerLevel={coinsPerLevel}
@@ -226,8 +108,8 @@ const QuizOnEarning = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {coins}/{questions.length}</span>
+                <span className="text-white/80">{t("financial-literacy.kids.quiz-on-earning.questionCounter", { current: currentQuestion + 1, total: questions.length })}</span>
+                <span className="text-yellow-400 font-bold">{t("financial-literacy.kids.quiz-on-earning.scoreLabel", { score: coins, total: questions.length })}</span>
               </div>
               
               <p className="text-white text-lg mb-6 text-center">

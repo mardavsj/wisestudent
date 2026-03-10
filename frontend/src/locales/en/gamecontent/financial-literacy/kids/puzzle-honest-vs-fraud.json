@@ -1,0 +1,44 @@
+{
+  "title": "Puzzle: Honest vs Fraud",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match {{current}} of {{total}}: Connect honest/fraud shops with their outcomes!",
+  "leftTitle": "Shop Types",
+  "rightTitle": "Outcomes",
+  "instruction": "Select a shop, then select an outcome to match!",
+  "items": [
+    { "id": 1, "name": "Fair Shop", "emoji": "🏪" },
+    { "id": 2, "name": "Cheat Shop", "emoji": "🍬" },
+    { "id": 3, "name": "Honest Seller", "emoji": "🙋" },
+    { "id": 4, "name": "Fraud Shop", "emoji": "🎭" },
+    { "id": 5, "name": "Local Market", "emoji": "🛍️" }
+  ],
+  "outcomes": [
+    { "id": 6, "name": "Trust", "emoji": "🤝" },
+    { "id": 7, "name": "Loss", "emoji": "😞" },
+    { "id": 8, "name": "Gain", "emoji": "💰" },
+    { "id": 9, "name": "Scam", "emoji": "🚨" },
+    { "id": 10, "name": "Savings", "emoji": "💸" }
+  ],
+  "correctMatches": [
+    { "itemId": 1, "outcomeId": 6 },
+    { "itemId": 2, "outcomeId": 7 },
+    { "itemId": 3, "outcomeId": 8 },
+    { "itemId": 4, "outcomeId": 9 },
+    { "itemId": 5, "outcomeId": 10 }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "Matching Master!",
+    "description": "Perfect! You matched all {{score}}/{{total}} correctly! You understand honesty and fraud well!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "Good Job!",
+    "description": "Well done! You matched {{score}}/{{total}} correctly! Keep learning about honest business practices!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "Keep Practicing!",
+    "description": "You matched {{score}}/{{total}}. Review the connections between actions and outcomes, then try again!"
+  }
+}

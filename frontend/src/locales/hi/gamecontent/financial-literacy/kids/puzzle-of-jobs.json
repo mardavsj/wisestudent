@@ -1,0 +1,102 @@
+{
+    "title": "नौकरियों का पहेली",
+    "subtitleComplete": "पहेली पूरी हुई!",
+    "subtitleProgress": "नौकरियों को उनके प्रदान करने वाली चीजों से मिलाएं ({{matched}}/{{total}} मिले)",
+    "jobsTitle": "नौकरियाँ",
+    "providedTitle": "वे क्या प्रदान करते हैं",
+    "selectedLabel": "चयनित: {{name}}",
+    "selectJob": "एक नौकरी चुनें",
+    "matchButton": "मिलाएं",
+    "scoreLabel": "स्कोर:",
+    "matchedLabel": "मिले:",
+    "resultGreatEmoji": "🎉",
+    "resultGreatTitle": "बेहतरीन काम!",
+    "resultGreatDescription": "आपने {{total}} नौकरियों में से {{score}} को सही ढंग से उनके प्रदान करने वाली चीजों से मिलाया!",
+    "coinsLabel": "सिक्के",
+    "resultLesson": "सबक: हर नौकरी लोगों की जरूरतों को पूरा करके मूल्य प्रदान करती है!",
+    "resultKeepEmoji": "💪",
+    "resultKeepTitle": "अभ्यास करते रहें!",
+    "resultKeepDescription": "आपने {{total}} में से {{score}} नौकरियों को सही ढंग से मिलाया।",
+    "resultTip": "टिप: सोचें कि हर नौकरी समाज को क्या बनाती या प्रदान करती है!",
+    "jobs": [
+        {
+            "id": 1,
+            "name": "किसान",
+            "emoji": "🌾"
+        },
+        {
+            "id": 2,
+            "name": "शिक्षक",
+            "emoji": "📚"
+        },
+        {
+            "id": 3,
+            "name": "डॉक्टर",
+            "emoji": "🩺"
+        },
+        {
+            "id": 4,
+            "name": "रसोइया",
+            "emoji": "👩‍🍳"
+        },
+        {
+            "id": 5,
+            "name": "इंजीनियर",
+            "emoji": "🔧"
+        }
+    ],
+    "provided": [
+        {
+            "id": 8,
+            "name": "स्वास्थ्य सेवा",
+            "emoji": "💊",
+            "description": ""
+        },
+        {
+            "id": 10,
+            "name": "बुनियादी ढाँचा",
+            "emoji": "🏗️",
+            "description": ""
+        },
+        {
+            "id": 7,
+            "name": "शिक्षा",
+            "emoji": "📖",
+            "description": ""
+        },
+        {
+            "id": 6,
+            "name": "खाना",
+            "emoji": "🍎",
+            "description": ""
+        },
+        {
+            "id": 9,
+            "name": "भोजन",
+            "emoji": "🍽️",
+            "description": ""
+        }
+    ],
+    "correctMatches": [
+        {
+            "jobId": 1,
+            "providedId": 6
+        },
+        {
+            "jobId": 2,
+            "providedId": 7
+        },
+        {
+            "jobId": 3,
+            "providedId": 8
+        },
+        {
+            "jobId": 4,
+            "providedId": 9
+        },
+        {
+            "jobId": 5,
+            "providedId": 10
+        }
+    ]
+}

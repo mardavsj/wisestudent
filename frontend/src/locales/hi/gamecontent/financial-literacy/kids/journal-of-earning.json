@@ -1,0 +1,33 @@
+{
+    "title": "कमाई का जर्नल",
+    "subtitleComplete": "जर्नल पूरा हुआ!",
+    "subtitleProgress": "प्रश्न {{current}} में से {{total}}: पैसे कमाने के तरीकों पर विचार करें!",
+    "scoreLabel": "स्कोर: {{score}}/{{total}}",
+    "minLengthLabel": "कम से कम {{min}} अक्षर लिखें",
+    "placeholder": "यहाँ अपना जर्नल एंट्री लिखें...",
+    "charCountLabel": "{{current}}/{{min}} अक्षर",
+    "submitFinalButton": "अंतिम एंट्री सबमिट करें",
+    "submitContinueButton": "सबमिट करें और जारी रखें",
+    "stages": [
+        {
+            "question": "\"मैं पैसे कमाने का एक तरीका ___ है।\" लिखें:",
+            "minLength": 10
+        },
+        {
+            "question": "\"पैसे कमाना मुझे ___ महसूस कराता है।\" लिखें:",
+            "minLength": 10
+        },
+        {
+            "question": "\"मैंने ___ करके पैसे कमाए और ___ सीखा।\" लिखें:",
+            "minLength": 10
+        },
+        {
+            "question": "\"पैसे कमाने की एक अच्छी बात ___ है।\" लिखें:",
+            "minLength": 10
+        },
+        {
+            "question": "\"पैसे कमाने ने मुझे जिम्मेदारी के बारे में ___ सिखाया।\" लिखें:",
+            "minLength": 10
+        }
+    ]
+}

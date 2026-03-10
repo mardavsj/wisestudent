@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getFinanceKidsGames } from "../../../../pages/Games/GameCategories/Finance/kidGamesData";
@@ -7,6 +8,7 @@ import { getFinanceKidsGames } from "../../../../pages/Games/GameCategories/Fina
 const PuzzleOfJobs = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   const { nextGamePath, nextGameId } = useMemo(() => {
     if (location.state?.nextGamePath) {
@@ -38,50 +40,17 @@ const PuzzleOfJobs = () => {
   const totalCoins = 5;
   const totalXp = 10;
 
+  const gameContent = t("financial-literacy.kids.puzzle-of-jobs", { returnObjects: true });
+  const jobs = Array.isArray(gameContent?.jobs) ? gameContent.jobs : [];
+  const provided = Array.isArray(gameContent?.provided) ? gameContent.provided : [];
+  const correctMatches = Array.isArray(gameContent?.correctMatches) ? gameContent.correctMatches : [];
+  
   const [score, setScore] = useState(0);
   const [matches, setMatches] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [selectedProvided, setSelectedProvided] = useState(null);
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
-
-  // Jobs (left side) - 5 items
-  const jobs = [
-    { id: 1, name: "Farmer", emoji: "🌾",  },
-    { id: 2, name: "Teacher", emoji: "📚",  },
-    { id: 3, name: "Doctor", emoji: "🩺",  },
-    { id: 4, name: "Chef", emoji: "👩‍🍳",  },
-    { id: 5, name: "Engineer", emoji: "🔧",  }
-  ];
-
-  // What they provide (right side) - 5 items
-  const provided = [
-    { id: 6, name: "Food", emoji: "🍎",  },
-    { id: 7, name: "Education", emoji: "📖",  },
-    { id: 8, name: "Healthcare", emoji: "💊",  },
-    { id: 9, name: "Meals", emoji: "🍽️",  },
-    { id: 10, name: "Infrastructure", emoji: "🏗️",  }
-  ];
-
-  // Manually rearrange positions to prevent positional matching
-  // Original order was [6,7,8,9,10], rearranged to [8,10,7,6,9]
-  const rearrangedProvided = [
-    provided[2], // Healthcare (id: 8)
-    provided[4], // Infrastructure (id: 10)
-    provided[1], // Education (id: 7)
-    provided[0], // Food (id: 6)
-    provided[3]  // Meals (id: 9)
-  ];
-
-  // Correct matches using proper IDs, not positional order
-  // Each job has a unique correct match for true one-to-one mapping
-  const correctMatches = [
-    { jobId: 1, providedId: 6 }, // Farmer → Food
-    { jobId: 2, providedId: 7 }, // Teacher → Education
-    { jobId: 3, providedId: 8 }, // Doctor → Healthcare
-    { jobId: 4, providedId: 9 }, // Chef → Meals
-    { jobId: 5, providedId: 10 } // Engineer → Infrastructure
-  ];
 
   const handleJobSelect = (job) => {
     if (gameFinished) return;
@@ -147,8 +116,8 @@ const PuzzleOfJobs = () => {
 
   return (
     <GameShell
-      title="Puzzle of Jobs"
-      subtitle={gameFinished ? "Puzzle Complete!" : `Match Jobs with What They Provide (${matches.length}/${jobs.length} matched)`}
+      title={gameContent?.title || "Puzzle of Jobs"}
+      subtitle={gameFinished ? gameContent?.subtitleComplete : t("financial-literacy.kids.puzzle-of-jobs.subtitleProgress", { matched: matches.length, total: jobs.length })}
       showGameOver={gameFinished}
       score={score}
       gameId="finance-kids-74"
@@ -171,7 +140,7 @@ const PuzzleOfJobs = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left column - Jobs */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Jobs</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">{gameContent?.jobsTitle}</h3>
               <div className="space-y-4">
                 {jobs.map(job => (
                   <button
@@ -205,8 +174,8 @@ const PuzzleOfJobs = () => {
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
                 <p className="text-white/80 mb-4">
                   {selectedJob 
-                    ? `Selected: ${selectedJob.name}` 
-                    : "Select a Job"}
+                    ? t("financial-literacy.kids.puzzle-of-jobs.selectedLabel", { name: selectedJob.name })
+                    : gameContent?.selectJob}
                 </p>
                 <button
                   onClick={handleMatch}
@@ -217,20 +186,20 @@ const PuzzleOfJobs = () => {
                       : "bg-gray-500/30 text-gray-400 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton}
                 </button>
                 <div className="mt-4 text-white/80">
-                  <p>Score: {score}/{jobs.length}</p>
-                  <p>Matched: {matches.length}/{jobs.length}</p>
+                  <p>{gameContent?.scoreLabel} {score}/{jobs.length}</p>
+                  <p>{gameContent?.matchedLabel} {matches.length}/{jobs.length}</p>
                 </div>
               </div>
             </div>
 
             {/* Right column - What They Provide */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">What They Provide</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">{gameContent?.providedTitle}</h3>
               <div className="space-y-4">
-                {rearrangedProvided.map(providedItem => (
+                {provided.map(providedItem => (
                   <button
                     key={providedItem.id}
                     onClick={() => handleProvidedSelect(providedItem)}
@@ -259,28 +228,20 @@ const PuzzleOfJobs = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
-                <p className="text-white/90 text-lg mb-4">
-                  You correctly matched {score} out of {jobs.length} jobs with what they provide!
-                </p>
+                <div className="text-5xl mb-4">{gameContent?.resultGreatEmoji}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.resultGreatTitle}</h3>
+                <p className="text-white/90 text-lg mb-4">{t("financial-literacy.kids.puzzle-of-jobs.resultGreatDescription", { score, total: jobs.length })}</p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>+{score} {gameContent?.coinsLabel}</span>
                 </div>
-                <p className="text-white/80">
-                  Lesson: Every job provides value by meeting people's needs!
-                </p>
+                <p className="text-white/80">{gameContent?.resultLesson}</p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Practicing!</h3>
-                <p className="text-white/90 text-lg mb-4">
-                  You matched {score} out of {jobs.length} jobs correctly.
-                </p>
-                <p className="text-white/80 text-sm">
-                  Tip: Think about what each job creates or provides to society!
-                </p>
+                <div className="text-5xl mb-4">{gameContent?.resultKeepEmoji}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.resultKeepTitle}</h3>
+                <p className="text-white/90 text-lg mb-4">{t("financial-literacy.kids.puzzle-of-jobs.resultKeepDescription", { score, total: jobs.length })}</p>
+                <p className="text-white/80 text-sm">{gameContent?.resultTip}</p>
               </div>
             )}
           </div>

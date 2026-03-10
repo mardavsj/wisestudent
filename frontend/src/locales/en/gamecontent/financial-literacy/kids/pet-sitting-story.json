@@ -1,0 +1,55 @@
+{
+  "title": "Pet Sitting Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionCounter": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "stageEmoji": "🐶",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You make a daily routine for feeding and walking a pet. What skill are you practicing?",
+      "options": [
+        { "id": "playing", "text": "Only playing with animals", "emoji": "🎾", "description": "", "isCorrect": false },
+        { "id": "luck", "text": "Depending on luck", "emoji": "🍀", "description": "", "isCorrect": false },
+        { "id": "planning", "text": "Planning and organization", "emoji": "📋", "description": "", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You earn money from pet sitting over time. What is a wise next step?",
+      "options": [
+        { "id": "track", "text": "Track how much you earn", "emoji": "📊", "description": "", "isCorrect": true },
+        { "id": "spend", "text": "Spend it immediately", "emoji": "⚡", "description": "", "isCorrect": false },
+        { "id": "forget", "text": "Forget about it", "emoji": "🤷", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "The pet seems unwell while under your care. What should you do first?",
+      "options": [
+        { "id": "wait", "text": "Wait and hope it improves", "emoji": "⏳", "description": "", "isCorrect": false },
+        { "id": "inform", "text": "Inform the owner quickly", "emoji": "📞", "description": "", "isCorrect": true },
+        { "id": "ignore", "text": "Ignore the signs", "emoji": "🙈", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You finish pet sitting successfully. What helps you get trusted again?",
+      "options": [
+        { "id": "ask", "text": "Asking for more money", "emoji": "💸", "description": "", "isCorrect": false },
+        { "id": "rush", "text": "Rushing through tasks", "emoji": "🏃", "description": "", "isCorrect": false },
+        { "id": "reliable", "text": "Being reliable and careful", "emoji": "⭐", "description": "", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Pet sitting teaches you that earning money also means?",
+      "options": [
+        { "id": "care", "text": "Caring for others responsibly", "emoji": "❤️", "description": "", "isCorrect": true },
+        { "id": "fun", "text": "Only having fun", "emoji": "😄", "description": "", "isCorrect": false },
+        { "id": "spending", "text": "Spending more money", "emoji": "🛍️", "description": "", "isCorrect": false }
+      ]
+    }
+  ]
+}

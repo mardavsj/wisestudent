@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getFinanceKidsGames } from "../../../../pages/Games/GameCategories/Finance/kidGamesData";
@@ -7,6 +8,7 @@ import { getFinanceKidsGames } from "../../../../pages/Games/GameCategories/Fina
 const PuzzleHonestVsFraud = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   const { nextGamePath, nextGameId } = useMemo(() => {
     if (location.state?.nextGamePath) {
@@ -45,23 +47,10 @@ const PuzzleHonestVsFraud = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Shop types (left side) - 5 items
-  const items = [
-    { id: 1, name: "Fair Shop", emoji: "🏪",  },
-    { id: 2, name: "Cheat Shop", emoji: "🍬",  },
-    { id: 3, name: "Honest Seller", emoji: "🙋",  },
-    { id: 4, name: "Fraud Shop", emoji: "🎭",  },
-    { id: 5, name: "Local Market", emoji: "🛍️",  }
-  ];
-
-  // Outcomes (right side) - 5 items
-  const outcomes = [
-    { id: 6, name: "Trust", emoji: "🤝",  },
-    { id: 7, name: "Loss", emoji: "😞",  },
-    { id: 8, name: "Gain", emoji: "💰",  },
-    { id: 9, name: "Scam", emoji: "🚨",  },
-    { id: 10, name: "Savings", emoji: "💸",  }
-  ];
+  const gameContent = t("financial-literacy.kids.puzzle-honest-vs-fraud", { returnObjects: true });
+  const items = Array.isArray(gameContent?.items) ? gameContent.items : [];
+  const outcomes = Array.isArray(gameContent?.outcomes) ? gameContent.outcomes : [];
+  const correctMatches = Array.isArray(gameContent?.correctMatches) ? gameContent.correctMatches : [];
 
   // Manually rearrange positions to prevent positional matching
   // Original order was [6,7,8,9,10], rearranged to [8,10,7,6,9]
@@ -71,16 +60,6 @@ const PuzzleHonestVsFraud = () => {
     outcomes[1], // Loss (id: 7)
     outcomes[0], // Trust (id: 6)
     outcomes[3]  // Scam (id: 9)
-  ];
-
-  // Correct matches using proper IDs, not positional order
-  // Each item has a unique correct match for true one-to-one mapping
-  const correctMatches = [
-    { itemId: 1, outcomeId: 6 }, // Fair Shop → Trust
-    { itemId: 2, outcomeId: 7 }, // Cheat Shop → Loss
-    { itemId: 3, outcomeId: 8 }, // Honest Seller → Gain
-    { itemId: 4, outcomeId: 9 }, // Fraud Shop → Scam
-    { itemId: 5, outcomeId: 10 } // Local Market → Savings
   ];
 
   const handleItemSelect = (item) => {
@@ -147,8 +126,8 @@ const PuzzleHonestVsFraud = () => {
 
   return (
     <GameShell
-      title="Puzzle: Honest vs Fraud"
-      subtitle={gameFinished ? "Puzzle Complete!" : `Match Shops with Outcomes (${matches.length}/${items.length} matched)`}
+      title={gameContent?.title || "Puzzle: Honest vs Fraud"}
+      subtitle={gameFinished ? gameContent?.subtitleComplete : t("financial-literacy.kids.puzzle-honest-vs-fraud.subtitleProgress", { current: matches.length + 1, total: items.length })}
       showGameOver={gameFinished}
       score={score}
       gameId="finance-kids-84"
@@ -171,7 +150,7 @@ const PuzzleHonestVsFraud = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left column - Shop Types */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Shop Types</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">{gameContent?.leftTitle || "Shop Types"}</h3>
               <div className="space-y-4">
                 {items.map(item => (
                   <button
@@ -206,7 +185,7 @@ const PuzzleHonestVsFraud = () => {
                 <p className="text-white/80 mb-4">
                   {selectedItem 
                     ? `Selected: ${selectedItem.name}` 
-                    : "Select a Shop Type"}
+                    : gameContent?.selectPrompt || "Select a Shop Type"}
                 </p>
                 <button
                   onClick={handleMatch}
@@ -217,7 +196,7 @@ const PuzzleHonestVsFraud = () => {
                       : "bg-gray-500/30 text-gray-400 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton || "Match"}
                 </button>
                 <div className="mt-4 text-white/80">
                   <p>Score: {score}/{items.length}</p>
@@ -228,7 +207,7 @@ const PuzzleHonestVsFraud = () => {
 
             {/* Right column - Outcomes */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Outcomes</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">{gameContent?.rightTitle || "Outcomes"}</h3>
               <div className="space-y-4">
                 {rearrangedOutcomes.map(outcome => (
                   <button
@@ -259,27 +238,27 @@ const PuzzleHonestVsFraud = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <div className="text-5xl mb-4">{gameContent?.resultGreatEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.resultGreatTitle || "Great Job!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You correctly matched {score} out of {items.length} shops with their outcomes!
+                  {t("financial-literacy.kids.puzzle-honest-vs-fraud.resultGreatDescription", { score, total: items.length })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
                   <span>+{score} Coins</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Shopping at honest stores builds trust and protects your money!
+                  {gameContent?.resultLesson || "Lesson: Shopping at honest stores builds trust and protects your money!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Practicing!</h3>
+                <div className="text-5xl mb-4">{gameContent?.resultPracticeEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.resultPracticeTitle || "Keep Practicing!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You matched {score} out of {items.length} shops correctly.
+                  {t("financial-literacy.kids.puzzle-honest-vs-fraud.resultPracticeDescription", { score, total: items.length })}
                 </p>
                 <p className="text-white/80 text-sm">
-                  Tip: Think about whether each shop type leads to positive or negative outcomes!
+                  {gameContent?.resultPracticeTip || "Tip: Think about whether each shop type leads to positive or negative outcomes!"}
                 </p>
               </div>
             )}

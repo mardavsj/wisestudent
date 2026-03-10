@@ -1,0 +1,87 @@
+{
+  "title": "Reflex: Check First",
+  "subtitleComplete": "Game Complete!",
+  "roundLabel": "Round {{current}}/{{total}}",
+  "timeUp": "Time's Up!",
+  "readyEmoji": "🔍",
+  "readyTitle": "Get Ready!",
+  "readyDescription": "Answer questions about checking before buying!",
+  "readyTimeInfo": "You have {{time}} seconds for each question.",
+  "readyQuestionInfo": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "gameRoundLabel": "Round:",
+  "gameTimeLabel": "Time:",
+  "gameScoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What should you do before buying something?",
+      "correctAnswer": "Ask Price",
+      "options": [
+        { "text": "Ask Price", "isCorrect": true, "emoji": "💰" },
+        { "text": "Trust Blindly", "isCorrect": false, "emoji": "🙈" },
+        { "text": "Buy Immediately", "isCorrect": false, "emoji": "⚡" },
+        { "text": "Ignore Cost", "isCorrect": false, "emoji": "🚫" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What should you check before making a purchase?",
+      "correctAnswer": "Check Cost",
+      "options": [
+        { "text": "Buy Now", "isCorrect": false, "emoji": "🛒" },
+        { "text": "Skip Checking", "isCorrect": false, "emoji": "⏭️" },
+        { "text": "Check Cost", "isCorrect": true, "emoji": "💵" },
+        { "text": "Guess Price", "isCorrect": false, "emoji": "🎲" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What's the smart way to shop?",
+      "correctAnswer": "Compare Prices",
+      "options": [
+        { "text": "Pay Fast", "isCorrect": false, "emoji": "💸" },
+        { "text": "Compare Prices", "isCorrect": true, "emoji": "⚖️" },
+        { "text": "Buy First Store", "isCorrect": false, "emoji": "🏪" },
+        { "text": "Don't Compare", "isCorrect": false, "emoji": "🙈" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should you verify before buying?",
+      "correctAnswer": "Verify Quality",
+      "options": [
+        { "text": "Verify Quality", "isCorrect": true, "emoji": "🔍" },
+        { "text": "Ignore", "isCorrect": false, "emoji": "🙈" },
+        { "text": "Buy Without Checking", "isCorrect": false, "emoji": "⚡" },
+        { "text": "Trust Seller Only", "isCorrect": false, "emoji": "🤝" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What should you do before buying online?",
+      "correctAnswer": "Read Reviews",
+      "options": [
+        { "text": "Rush", "isCorrect": false, "emoji": "⚡" },
+        { "text": "Skip Reviews", "isCorrect": false, "emoji": "⏭️" },
+        { "text": "Buy Instantly", "isCorrect": false, "emoji": "🛒" },
+        { "text": "Read Reviews", "isCorrect": true, "emoji": "⭐" }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "Smart Shopper!",
+    "description": "Amazing! You got {{score}}/{{total}} correct! You always check before buying!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "Good Habits!",
+    "description": "Well done! You scored {{score}}/{{total}}! Keep practicing smart shopping habits!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "Keep Practicing!",
+    "description": "You scored {{score}}/{{total}}. Remember to always check and compare before buying!"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "title": "Lemonade Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionCounter": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "stageEmoji": "🍋",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You earn ₹50 from a lemonade stand. What's the smart choice?",
+      "options": [
+        { "id": "toys", "text": "Spend all on toys", "emoji": "🧸", "description": "", "isCorrect": false },
+        { "id": "snacks", "text": "Buy snacks", "emoji": "🍟", "description": "", "isCorrect": false },
+        { "id": "save", "text": "Save half for supplies", "emoji": "💰", "description": "", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You need ₹20 for lemons. You have ₹15. What do you do?",
+      "options": [
+        { "id": "save", "text": "Save ₹5 more", "emoji": "🙂", "description": "", "isCorrect": true },
+        { "id": "borrow", "text": "Borrow ₹5", "emoji": "🙈", "description": "", "isCorrect": false },
+        { "id": "skip", "text": "Skip buying lemons", "emoji": "🍋", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "A customer pays ₹10 instead of ₹5. What's honest?",
+      "options": [
+        { "id": "keep", "text": "Keep the ₹10", "emoji": "💸", "description": "", "isCorrect": false },
+        { "id": "return", "text": "Return extra ₹5", "emoji": "🤝", "description": "", "isCorrect": true },
+        { "id": "candy", "text": "Spend it on candy", "emoji": "🍬", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You earn ₹30. Should you spend it all today?",
+      "options": [
+        { "id": "no", "text": "No, save for next stand", "emoji": "🙅", "description": "", "isCorrect": true },
+        { "id": "games", "text": "Yes, buy games", "emoji": "🎮", "description": "", "isCorrect": false },
+        { "id": "give", "text": "Give it away", "emoji": "🎁", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Why is planning your lemonade stand earnings smart?",
+      "options": [
+        { "id": "spend", "text": "Lets you spend more", "emoji": "🛍️", "description": "", "isCorrect": false },
+        { "id": "running", "text": "Keeps your stand running", "emoji": "☀️", "description": "", "isCorrect": true },
+        { "id": "customers", "text": "Gets you more customers", "emoji": "👥", "description": "", "isCorrect": false }
+      ]
+    }
+  ]
+}

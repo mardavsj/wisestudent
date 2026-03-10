@@ -1,0 +1,49 @@
+{
+  "title": "Poster: Be Alert",
+  "subtitleComplete": "Quiz Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}: Choose posters to stop scams!",
+  "questionCounter": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "stages": [
+    {
+      "question": "Which poster would best warn about online scams?",
+      "choices": [
+        { "text": "Think Before You Click!", "correct": true },
+        { "text": "Free Money Inside!", "correct": false },
+        { "text": "Share Your Password!", "correct": false }
+      ]
+    },
+    {
+      "question": "What poster would best teach about safe online shopping?",
+      "choices": [
+        { "text": "Click Every Link!", "correct": false },
+        { "text": "Use Public WiFi for Banking!", "correct": false },
+        { "text": "Look for the Lock!", "correct": true }
+      ]
+    },
+    {
+      "question": "Which poster would help spot a phishing attempt?",
+      "choices": [
+        { "text": "Urgent! Your Account is Hacked!", "correct": false },
+        { "text": "Verify Before You Trust!", "correct": true },
+        { "text": "Winners Don't Need to Verify!", "correct": false }
+      ]
+    },
+    {
+      "question": "What poster would best protect personal information?",
+      "choices": [
+        { "text": "Share Everything Online!", "correct": false },
+        { "text": "Privacy is Priceless!", "correct": true },
+        { "text": "Post Your ID Publicly!", "correct": false }
+      ]
+    },
+    {
+      "question": "Which poster best explains online safety?",
+      "choices": [
+        { "text": "If It's Too Good to Be True...", "correct": true },
+        { "text": "Free Stuff is Always Real!", "correct": false },
+        { "text": "Strangers Give Best Deals!", "correct": false }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -9,6 +10,7 @@ const ROUND_TIME = 10;
 
 const ReflexWorkVsPlay = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-73";
@@ -18,6 +20,10 @@ const ReflexWorkVsPlay = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
+  const gameContent = t("financial-literacy.kids.reflex-work-vs-play", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
@@ -27,64 +33,6 @@ const ReflexWorkVsPlay = () => {
   const [answered, setAnswered] = useState(false);
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
-
-  const questions = [
-    {
-      id: 1,
-      question: "What helps you earn money?",
-      correctAnswer: "Work",
-      options: [
-        { text: "Waste Time", isCorrect: false, emoji: "😴" },
-        { text: "Play All Day", isCorrect: false, emoji: "🎮" },
-        { text: "Work", isCorrect: true, emoji: "💼" },
-        { text: "Do Nothing", isCorrect: false, emoji: "🤷" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What should you do to learn and grow?",
-      correctAnswer: "Study",
-      options: [
-        { text: "Study", isCorrect: true, emoji: "📚" },
-        { text: "Play All Day", isCorrect: false, emoji: "🎮" },
-        { text: "Skip Learning", isCorrect: false, emoji: "🚫" },
-        { text: "Ignore Education", isCorrect: false, emoji: "😴" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What should you do with your earnings?",
-      correctAnswer: "Save Earnings",
-      options: [
-        { text: "Spend All", isCorrect: false, emoji: "💸" },
-        { text: "Save Earnings", isCorrect: true, emoji: "💰" },
-        { text: "Waste Money", isCorrect: false, emoji: "🔥" },
-        { text: "Lose It", isCorrect: false, emoji: "😞" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What should you do to help at home?",
-      correctAnswer: "Do Chores",
-      options: [
-        { text: "Do Chores", isCorrect: true, emoji: "🧹" },
-        { text: "Skip Chores", isCorrect: false, emoji: "🚫" },
-        { text: "Avoid Work", isCorrect: false, emoji: "🙈" },
-        { text: "Be Lazy", isCorrect: false, emoji: "😴" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What helps you be productive?",
-      correctAnswer: "Plan Work",
-      options: [
-        { text: "Be Idle", isCorrect: false, emoji: "😴" },
-        { text: "Waste Time", isCorrect: false, emoji: "⏰" },
-        { text: "Do Nothing", isCorrect: false, emoji: "🤷" },
-        { text: "Plan Work", isCorrect: true, emoji: "📋" },
-      ]
-    }
-  ];
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -209,8 +157,8 @@ const ReflexWorkVsPlay = () => {
 
   return (
     <GameShell
-      title="Reflex Work vs Play"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your work vs play reflexes!` : "Test your work vs play reflexes!"}
+      title={gameContent?.title || "Reflex Work vs Play"}
+      subtitle={gameState === "playing" ? t("financial-literacy.kids.reflex-work-vs-play.subtitlePlaying", { current: currentRound, total: TOTAL_ROUNDS }) : gameContent?.subtitleReady}
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -229,19 +177,15 @@ const ReflexWorkVsPlay = () => {
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-            <div className="text-5xl mb-6">💼</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Work vs Play?</h3>
-            <p className="text-white/90 text-lg mb-6">
-              Choose the right action between work and play.
-            </p>
-            <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
-            </p>
+            <div className="text-5xl mb-6">{gameContent?.readyEmoji}</div>
+            <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.readyTitle}</h3>
+            <p className="text-white/90 text-lg mb-6">{gameContent?.readyDescription}</p>
+            <p className="text-white/80 mb-6">{t("financial-literacy.kids.reflex-work-vs-play.readyInfo", { total: TOTAL_ROUNDS, seconds: ROUND_TIME })}</p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton}
             </button>
           </div>
         )}
@@ -250,13 +194,13 @@ const ReflexWorkVsPlay = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel}</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel}</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel}</span> {score}
               </div>
             </div>
 

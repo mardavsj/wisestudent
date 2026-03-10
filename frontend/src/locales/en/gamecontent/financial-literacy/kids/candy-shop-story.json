@@ -1,0 +1,55 @@
+{
+  "title": "Candy Shop Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionCounter": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "stageEmoji": "🍬",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Shopkeeper charges ₹20 instead of ₹10. Do you check the bill?",
+      "options": [
+        { "id": "yes", "text": "Yes, I check the bill", "emoji": "📜", "description": "", "isCorrect": true },
+        { "id": "no", "text": "No, I just pay", "emoji": "💸", "description": "", "isCorrect": false },
+        { "id": "friend", "text": "Ask a friend to check", "emoji": "👥", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You have ₹50. The candy costs ₹15. How much change should you get?",
+      "options": [
+        { "id": "25", "text": "₹25", "emoji": "💸", "description": "", "isCorrect": false },
+        { "id": "40", "text": "₹40", "emoji": "💵", "description": "", "isCorrect": false },
+        { "id": "35", "text": "₹35", "emoji": "💰", "description": "", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "The shopkeeper gives ₹30 change instead of ₹35. What do you do?",
+      "options": [
+        { "id": "ask", "text": "Politely ask for the correct change", "emoji": "🗣️", "description": "", "isCorrect": true },
+        { "id": "take", "text": "Take the ₹30 and leave", "emoji": "🚶", "description": "", "isCorrect": false },
+        { "id": "buy", "text": "Buy more candy", "emoji": "🍬", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You want to buy two candies at ₹10 each. Can you afford it with ₹15?",
+      "options": [
+        { "id": "yes", "text": "Yes, I have enough", "emoji": "😊", "description": "", "isCorrect": false },
+        { "id": "no", "text": "No, I need ₹20", "emoji": "💰", "description": "", "isCorrect": true },
+        { "id": "discount", "text": "Ask for a discount", "emoji": "🎟️", "description": "", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What's the best way to shop smartly?",
+      "options": [
+        { "id": "everything", "text": "Buy everything you see", "emoji": "🛒", "description": "", "isCorrect": false },
+        { "id": "check", "text": "Check prices and bills carefully", "emoji": "🧾", "description": "", "isCorrect": true },
+        { "id": "friends", "text": "Only shop with friends", "emoji": "👨‍👩‍👧", "description": "", "isCorrect": false }
+      ]
+    }
+  ]
+}

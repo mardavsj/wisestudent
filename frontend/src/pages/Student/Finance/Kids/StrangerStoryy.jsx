@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const StrangerStoryy = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-85";
@@ -22,129 +24,8 @@ const StrangerStoryy = () => {
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Stranger offers a toy for your address. What do you do?",
-      options: [
-        { 
-          id: "refuse", 
-          text: "Refuse", 
-          emoji: "❌", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "accept", 
-          text: "Accept", 
-          emoji: "🎁", 
-          isCorrect: false
-        },
-        { 
-          id: "delay", 
-          text: "Delay Decision", 
-          emoji: "⏰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Someone asks for your bank details. What now?",
-      options: [
-        { 
-          id: "give", 
-          text: "Give Info", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "partial", 
-          text: "Give Partial Info", 
-          emoji: "🤷", 
-          isCorrect: false
-        },
-        {
-          id: "no",
-          text: "Say No",
-          emoji: "🚫",
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "Stranger offers a deal. What's safer?",
-      options: [
-        { 
-          id: "walk", 
-          text: "Walk Away", 
-          emoji: "🚶", 
-          isCorrect: true
-        },
-        { 
-          id: "engage", 
-          text: "Engage", 
-          emoji: "💬", 
-          isCorrect: false
-        },
-        { 
-          id: "wait", 
-          text: "Wait & See", 
-          emoji: "⏳", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You see a suspicious offer. What do you do?",
-      options: [
-        { 
-          id: "tell", 
-          text: "Tell Adult", 
-          emoji: "👨‍👩‍👧", 
-          isCorrect: true
-        },
-        { 
-          id: "quiet", 
-          text: "Stay Quiet", 
-          emoji: "🤫", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore It", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You get a strange message. What's best?",
-      options: [
-        { 
-          id: "reply", 
-          text: "Reply", 
-          emoji: "💬", 
-          isCorrect: false
-        },
-        {
-          id: "ignore",
-          text: "Ignore",
-          emoji: "🚫",
-          isCorrect: true
-        },
-        { 
-          id: "forward", 
-          text: "Forward to Friends", 
-          emoji: "📤", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const gameContent = t("financial-literacy.kids.stranger-story", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (selectedChoice) => {
     if (currentQuestion < 0 || currentQuestion >= questions.length) {
@@ -197,10 +78,10 @@ const StrangerStoryy = () => {
 
   return (
     <GameShell
-      title="Stranger Story"
-      subtitle={showResult ? "Story Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
+      title={gameContent?.title || "Stranger Story"}
+      subtitle={showResult ? gameContent?.subtitleComplete : t("financial-literacy.kids.stranger-story.questionLabel", { current: currentQuestion + 1, total: questions.length })}
       currentLevel={currentQuestion + 1}
-      totalLevels={5}
+      totalLevels={questions.length}
       coinsPerLevel={coinsPerLevel}
       showGameOver={showResult}
       score={coins}
@@ -219,8 +100,8 @@ const StrangerStoryy = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {coins}/{questions.length}</span>
+                <span className="text-white/80">{t("financial-literacy.kids.stranger-story.questionLabel", { current: currentQuestion + 1, total: questions.length })}</span>
+                <span className="text-yellow-400 font-bold">{t("financial-literacy.kids.stranger-story.scoreLabel", { score: coins, total: questions.length })}</span>
               </div>
               
               <p className="text-white text-lg mb-6 text-center">

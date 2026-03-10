@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,8 +8,9 @@ import { getGameDataById } from "../../../../utils/getGameData";
 const TOTAL_ROUNDS = 5;
 const ROUND_TIME = 10;
 
-const ReflexEthicsGame = () => {
-  const location = useLocation();
+const ReflexEthicsGame= () => {
+ const location = useLocation();
+ const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-kids-93";
@@ -28,64 +30,9 @@ const ReflexEthicsGame = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      question: "What should you always be with money?",
-      correctAnswer: "Truth",
-      options: [
-        { text: "Truth", isCorrect: true, emoji: "🗣️" },
-        { text: "Cheat", isCorrect: false, emoji: "🚫" },
-        { text: "Lie", isCorrect: false, emoji: "🤥" },
-        { text: "Deceive", isCorrect: false, emoji: "😈" }
-      ]
-    },
-    {
-      id: 2,
-      question: "How should you handle financial matters?",
-      correctAnswer: "Honest",
-      options: [
-        { text: "Lie", isCorrect: false, emoji: "🤥" },
-        { text: "Honest", isCorrect: true, emoji: "💯" },
-        { text: "Cheat", isCorrect: false, emoji: "🎭" },
-        { text: "Trick", isCorrect: false, emoji: "🃏" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What should your financial decisions be?",
-      correctAnswer: "Fair",
-      options: [
-        { text: "Unfair", isCorrect: false, emoji: "❌" },
-        { text: "Biased", isCorrect: false, emoji: "🎯" },
-        { text: "Fair", isCorrect: true, emoji: "⚖️" },
-        { text: "Partial", isCorrect: false, emoji: "📊" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What should you build in financial relationships?",
-      correctAnswer: "Trust",
-      options: [
-        { text: "Trust", isCorrect: true, emoji: "🤝" },
-        { text: "Deceive", isCorrect: false, emoji: "😈" },
-        { text: "Manipulate", isCorrect: false, emoji: "🎭" },
-        { text: "Exploit", isCorrect: false, emoji: "💔" }
-      ]
-    },
-    {
-      id: 5,
-      question: "How should you behave with money?",
-      correctAnswer: "Ethical",
-      options: [
-        { text: "Dishonest", isCorrect: false, emoji: "🚫" },
-        { text: "Unfair", isCorrect: false, emoji: "❌" },
-        { text: "Corrupt", isCorrect: false, emoji: "💸" },
-        { text: "Ethical", isCorrect: true, emoji: "🌟" },
-      ]
-    }
-  ];
-
+  const gameContent = t("financial-literacy.kids.reflex-ethics", { returnObjects: true });
+ const QUESTIONS_DATA = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  
   useEffect(() => {
     currentRoundRef.current = currentRound;
   }, [currentRound]);

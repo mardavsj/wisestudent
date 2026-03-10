@@ -1,0 +1,85 @@
+{
+  "title": "रिफ्लेक्स: स्कैम अलर्ट",
+  "subtitleComplete": "गेम पूरा हुआ!",
+  "roundLabel": "राउंड {{current}}/{{total}}",
+  "timeUp": "समय समाप्त!",
+  "readyTitle": "क्या आप अपनी स्कैम सतर्कता का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "स्कैम और धोखाधड़ी से सुरक्षित रहने के बारे में प्रश्नों के उत्तर दें।",
+  "readyInfo": "आपके पास {{total}} प्रश्न हैं जिनमें से प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "गेम शुरू करें",
+  "gameRoundLabel": "राउंड:",
+  "gameTimeLabel": "समय:",
+  "gameScoreLabel": "स्कोर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "जब आपको बिल मिले तो आपको क्या करना चाहिए?",
+      "correctAnswer": "बिल चेक करें",
+      "options": [
+        { "text": "बिल चेक करें", "isCorrect": true, "emoji": "🔍" },
+        { "text": "नजरअंदाज करें", "isCorrect": false, "emoji": "🙈" },
+        { "text": "तुरंत भुगतान करें", "isCorrect": false, "emoji": "💸" },
+        { "text": "इसे हटा दें", "isCorrect": false, "emoji": "🗑️" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "संदेहास्पद ऑफर के साथ आपको क्या करना चाहिए?",
+      "correctAnswer": "ऑफर सत्यापित करें",
+      "options": [
+        { "text": "जल्दी स्वीकार करें", "isCorrect": false, "emoji": "⚡" },
+        { "text": "ऑफर सत्यापित करें", "isCorrect": true, "emoji": "✅" },
+        { "text": "तुरंत विश्वास करें", "isCorrect": false, "emoji": "🤝" },
+        { "text": "चेतावनी को नजरअंदाज करें", "isCorrect": false, "emoji": "🚫" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "जब कुछ बहुत अच्छा लगे जो सत्य होने के लिए बहुत अच्छा है तो आपको क्या करना चाहिए?",
+      "correctAnswer": "प्रश्न पूछें",
+      "options": [
+        { "text": "अंधाधुंध विश्वास करें", "isCorrect": false, "emoji": "😴" },
+        { "text": "जल्दी स्वीकार करें", "isCorrect": false, "emoji": "⚡" },
+        { "text": "संदेह को नजरअंदाज करें", "isCorrect": false, "emoji": "🙈" },
+        { "text": "प्रश्न पूछें", "isCorrect": true, "emoji": "❓" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "भुगतान करने से पहले आपको क्या करना चाहिए?",
+      "correctAnswer": "विवरण पुष्टि करें",
+      "options": [
+        { "text": "अभी भुगतान करें", "isCorrect": false, "emoji": "💸" },
+        { "text": "सत्यापन छोड़ दें", "isCorrect": false, "emoji": "⏭️" },
+        { "text": "विवरण पुष्टि करें", "isCorrect": true, "emoji": "📋" },
+        { "text": "जांच के बिना विश्वास करें", "isCorrect": false, "emoji": "🤝" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "यदि आपको स्कैम का पता चले तो आपको क्या करना चाहिए?",
+      "correctAnswer": "स्कैम रिपोर्ट करें",
+      "options": [
+        { "text": "कुछ नहीं करें", "isCorrect": false, "emoji": "😴" },
+        { "text": "इसे नजरअंदाज करें", "isCorrect": false, "emoji": "🙈" },
+        { "text": "चुप रहें", "isCorrect": false, "emoji": "🤫" },
+        { "text": "स्कैम रिपोर्ट करें", "isCorrect": true, "emoji": "🚨" }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "स्कैम-स्पॉटिंग प्रो!",
+    "description": "अद्भुत! आपको {{score}}/{{total}} सही मिले! आप स्कैम को पहचानने में उत्कृष्ट हैं!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "अच्छी जागरूकता!",
+    "description": "शाबाश! आपको {{score}}/{{total}} स्कोर मिला! स्कैम विशेषज्ञ बनने के लिए अभ्यास करते रहें!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "अभ्यास करते रहें!",
+    "description": "आपको {{score}}/{{total}} स्कोर मिला। अपने स्कैम-स्पॉटिंग कौशल को बेहतर बनाने के लिए टिप्स की समीक्षा करें और पुनः प्रयास करें!"
+  }
+}
