@@ -1,0 +1,33 @@
+{
+  "title": "Puzzle: Real Priorities",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match Items with Categories ({{current}}/{{total}} matched)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchButton": "Match",
+  "selectItemLabel": "Select an Item",
+  "selectedItemLabel": "Selected: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "Matched: {{current}}/{{total}}",
+  "resultSuccessHeader": "Great Job!",
+  "resultSuccessSubheader": "You correctly matched {{score}} out of {{total}} items with their categories!",
+  "resultSuccessLesson": "Lesson: Understanding financial priorities helps make smart decisions!",
+  "resultTryAgainHeader": "Keep Practicing!",
+  "resultTryAgainSubheader": "You matched {{score}} out of {{total}} items correctly.",
+  "resultTryAgainTip": "Tip: Think about whether each item is essential or discretionary!",
+  "coinsEarned": "+{{coins}} Coins",
+  "items": [
+    { "id": 1, "name": "Healthy Breakfast", "emoji": "🍳" },
+    { "id": 2, "name": "Stationery Kit", "emoji": "✏️" },
+    { "id": 3, "name": "After-School Classes", "emoji": "📚" },
+    { "id": 4, "name": "Vitamin Supplements", "emoji": "💊" },
+    { "id": 5, "name": "Bus Pass", "emoji": "🚌" }
+  ],
+  "categories": [
+    { "id": 6, "name": "Daily Need", "emoji": "😅" },
+    { "id": 7, "name": "Optional Activity", "emoji": "🎯"},
+    { "id": 8, "name": "Smart Spending", "emoji": "💰"},
+    { "id": 9, "name": "Health Priority", "emoji": "❤️"},
+    { "id": 10, "name": "Transport Expense", "emoji": "🚌"}
+  ]
+}

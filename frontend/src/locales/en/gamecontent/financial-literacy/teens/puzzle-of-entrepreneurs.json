@@ -1,0 +1,33 @@
+{
+  "title": "Puzzle of Entrepreneurs",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match Entrepreneurs with Fields ({{current}}/{{total}} matched)",
+  "itemsTitle": "Entrepreneurs",
+  "fieldsTitle": "Fields",
+  "matchButton": "Match",
+  "selectItemLabel": "Select an Entrepreneur",
+  "selectedItemLabel": "Selected: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "Matched: {{current}}/{{total}}",
+  "resultSuccessHeader": "Great Job!",
+  "resultSuccessSubheader": "You correctly matched {{score}} out of {{total}} entrepreneurs with their fields!",
+  "resultSuccessLesson": "Lesson: Understanding entrepreneurial fields helps inspire innovation!",
+  "resultTryAgainHeader": "Keep Practicing!",
+  "resultTryAgainSubheader": "You matched {{score}} out of {{total}} entrepreneurs correctly.",
+  "resultTryAgainTip": "Tip: Think about which field each entrepreneur is most known for!",
+  "coinsEarned": "+{{coins}} Coins",
+  "items": [
+    { "id": 1, "name": "Ratan Tata", "emoji": "👔" },
+    { "id": 2, "name": "Elon Musk", "emoji": "🚀" },
+    { "id": 3, "name": "Narayana Murthy", "emoji": "💻" },
+    { "id": 4, "name": "Kiran Mazumdar", "emoji": "🔬" },
+    { "id": 5, "name": "Falguni Nayar", "emoji": "💄" }
+  ],
+  "fields": [
+    { "id": 6, "name": "Industry", "emoji": "🏭" },
+    { "id": 7, "name": "Innovation", "emoji": "💡" },
+    { "id": 8, "name": "IT", "emoji": "💻" },
+    { "id": 9, "name": "Biotech", "emoji": "🧬" },
+    { "id": 10, "name": "E-commerce", "emoji": "🛒" }
+  ]
+}

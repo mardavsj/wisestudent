@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Finance/teenGamesData";
@@ -7,6 +8,10 @@ import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Fina
 const PuzzleSmartSpending = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
+
+  const gameId = "finance-teens-14";
+  const gameContent = t("financial-literacy.teens.puzzle-smart-spending", { returnObjects: true });
   
   const { nextGamePath, nextGameId } = useMemo(() => {
     if (location.state?.nextGamePath) {
@@ -18,7 +23,7 @@ const PuzzleSmartSpending = () => {
     
     try {
       const games = getFinanceTeenGames({});
-      const currentGame = games.find(g => g.id === "finance-teens-14");
+      const currentGame = games.find(g => g.id === gameId);
       if (currentGame && currentGame.index !== undefined) {
         const nextGame = games.find(g => g.index === currentGame.index + 1 && g.isSpecial && g.path);
         return {
@@ -45,36 +50,25 @@ const PuzzleSmartSpending = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Spending concepts (left side) - 5 items
-  const concepts = [
-    { id: 1, name: "Budget", emoji: "📋",  },
-    { id: 2, name: "Waste", emoji: "🗑️",  },
-    { id: 3, name: "Needs", emoji: "🎯",  },
-    { id: 4, name: "Wants", emoji: "🎁",  },
-    { id: 5, name: "Emergency Fund", emoji: "🛡️",  }
-  ];
+  // Spending concepts (left side) - 5 items from translation
+  const concepts = Array.isArray(gameContent?.concepts) ? gameContent.concepts : [];
 
-  // Financial meanings (right side) - 5 items
-  const meanings = [
-    { id: 6, name: "Financial Planning", emoji: "📝",  },
-    { id: 7, name: "Resource Misuse", emoji: "⚠️",  },
-    { id: 8, name: "Essential Priorities", emoji: "⭐",  },
-    { id: 9, name: "Discretionary Spending", emoji: "💎",  },
-    { id: 10, name: "Risk Protection", emoji: "🔒",  }
-  ];
+  // Financial meanings (right side) - 5 items from translation
+  const meanings = Array.isArray(gameContent?.meanings) ? gameContent.meanings : [];
 
   // Manually rearrange positions to prevent positional matching
-  // Original order was [6,7,8,9,10], rearranged to [8,10,7,6,9]
-  const rearrangedMeanings = [
-    meanings[2], // Essential Priorities (id: 8)
-    meanings[4], // Risk Protection (id: 10)
-    meanings[1], // Resource Misuse (id: 7)
-    meanings[0], // Financial Planning (id: 6)
-    meanings[3]  // Discretionary Spending (id: 9)
-  ];
+  const rearrangedMeanings = useMemo(() => {
+    if (meanings.length < 5) return meanings;
+    return [
+      meanings[2], // Essential Priorities (id: 8)
+      meanings[4], // Risk Protection (id: 10)
+      meanings[1], // Resource Misuse (id: 7)
+      meanings[0], // Financial Planning (id: 6)
+      meanings[3]  // Discretionary Spending (id: 9)
+    ];
+  }, [meanings]);
 
   // Correct matches using proper IDs, not positional order
-  // Each concept has a unique correct match for true one-to-one mapping
   const correctMatches = [
     { conceptId: 1, meaningId: 6 }, // Budget → Financial Planning
     { conceptId: 2, meaningId: 7 }, // Waste → Resource Misuse
@@ -147,12 +141,20 @@ const PuzzleSmartSpending = () => {
 
   return (
     <GameShell
-      title="Puzzle: Smart Spending"
-      subtitle={gameFinished ? "Puzzle Complete!" : `Match Concepts with Meanings (${matches.length}/${concepts.length} matched)`}
+      title={gameContent?.title || "Puzzle: Smart Spending"}
+      subtitle={
+        gameFinished 
+          ? gameContent?.subtitleComplete || "Puzzle Complete!" 
+          : t("financial-literacy.teens.puzzle-smart-spending.subtitleProgress", { 
+                  current: matches.length, 
+                  total: concepts.length,
+                  defaultValue: `Match Concepts with Meanings (${matches.length}/${concepts.length} matched)`
+                })
+      }
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
       score={score}
-      gameId="finance-teens-14"
+      gameId={gameId}
       gameType="finance"
       totalLevels={concepts.length}
       currentLevel={matches.length + 1}
@@ -172,7 +174,9 @@ const PuzzleSmartSpending = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left column - Spending Concepts */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Spending Concepts</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.conceptsTitle || "Spending Concepts"}
+              </h3>
               <div className="space-y-4">
                 {concepts.map(concept => (
                   <button
@@ -193,7 +197,6 @@ const PuzzleSmartSpending = () => {
                       <div className="text-2xl mr-3">{concept.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{concept.name}</h4>
-                        
                       </div>
                     </div>
                   </button>
@@ -204,10 +207,13 @@ const PuzzleSmartSpending = () => {
             {/* Middle column - Match button */}
             <div className="flex flex-col items-center justify-center">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
-                <p className="text-white/80 mb-4">
+                <p className="text-white/80 mb-4 h-12 flex items-center justify-center">
                   {selectedConcept 
-                    ? `Selected: ${selectedConcept.name}` 
-                    : "Select a Spending Concept"}
+                    ? t("financial-literacy.teens.puzzle-smart-spending.selectedConceptLabel", { 
+                        name: selectedConcept.name,
+                        defaultValue: `Selected: ${selectedConcept.name}`
+                      }) 
+                    : gameContent?.selectConceptLabel || "Select a Spending Concept"}
                 </p>
                 <button
                   onClick={handleMatch}
@@ -218,18 +224,32 @@ const PuzzleSmartSpending = () => {
                       : "bg-gray-500/30 text-gray-400 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton || "Match"}
                 </button>
                 <div className="mt-4 text-white/80">
-                  <p>Score: {score}/{concepts.length}</p>
-                  <p>Matched: {matches.length}/{concepts.length}</p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-smart-spending.scoreLabel", { 
+                      score, 
+                      total: concepts.length,
+                      defaultValue: `Score: ${score}/${concepts.length}`
+                    })}
+                  </p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-smart-spending.matchedLabel", { 
+                      current: matches.length, 
+                      total: concepts.length,
+                      defaultValue: `Matched: ${matches.length}/${concepts.length}`
+                    })}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Right column - Financial Meanings */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Financial Meanings</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.meaningsTitle || "Financial Meanings"}
+              </h3>
               <div className="space-y-4">
                 {rearrangedMeanings.map(meaning => (
                   <button
@@ -261,26 +281,43 @@ const PuzzleSmartSpending = () => {
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessHeader || "Great Job!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You correctly matched {score} out of {concepts.length} spending concepts with their meanings!
+                  {t("financial-literacy.teens.puzzle-smart-spending.resultSuccessSubheader", { 
+                    score, 
+                    total: concepts.length,
+                    defaultValue: `You correctly matched ${score} out of ${concepts.length} spending concepts with their meanings!`
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.puzzle-smart-spending.coinsEarned", { 
+                      coins: score,
+                      defaultValue: `+${score} Coins`
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Understanding spending concepts leads to better financial decisions!
+                  {gameContent?.resultSuccessLesson || "Lesson: Understanding spending concepts leads to better financial decisions!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Practicing!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultTryAgainHeader || "Keep Practicing!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You matched {score} out of {concepts.length} spending concepts correctly.
+                  {t("financial-literacy.teens.puzzle-smart-spending.resultTryAgainSubheader", { 
+                    score, 
+                    total: concepts.length,
+                    defaultValue: `You matched ${score} out of ${concepts.length} spending concepts correctly.`
+                  })}
                 </p>
                 <p className="text-white/80 text-sm">
-                  Tip: Think about what each spending concept actually represents!
+                  {gameContent?.resultTryAgainTip || "Tip: Think about what each spending concept actually represents!"}
                 </p>
               </div>
             )}

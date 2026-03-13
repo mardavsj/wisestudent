@@ -1,0 +1,54 @@
+{
+  "title": "Debate: Save vs Spend",
+  "subtitleComplete": "Debate Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Is it better to save money or spend all of it?",
+      "options": [
+        { "id": "spend", "text": "Spend all", "emoji": "🛍️", "isCorrect": false },
+        { "id": "save", "text": "Save money", "emoji": "💰", "isCorrect": true },
+        { "id": "waste", "text": "Waste it", "emoji": "💸", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Should teenagers focus on saving or enjoying their money now?",
+      "options": [
+        { "id": "save", "text": "Focus on saving", "emoji": "🏦", "isCorrect": true },
+        { "id": "spend", "text": "Enjoy now", "emoji": "🎉", "isCorrect": false },
+        { "id": "ignore", "text": "Don't think about it", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "When you get a bonus or extra money, what should you do?",
+      "options": [
+        { "id": "spend", "text": "Spend it all", "emoji": "💸", "isCorrect": false },
+        { "id": "waste", "text": "Waste it", "emoji": "🗑️", "isCorrect": false },
+        { "id": "save", "text": "Save most of it", "emoji": "📈", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Is it better to buy expensive branded items or affordable quality items?",
+      "options": [
+        { "id": "spend", "text": "Buy branded items", "emoji": "💎", "isCorrect": false },
+        { "id": "save", "text": "Choose quality over brand", "emoji": "🎯", "isCorrect": true },
+        { "id": "cheap", "text": "Buy cheapest", "emoji": "💵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Should you use credit cards to buy things you can't afford?",
+      "options": [
+        { "id": "spend", "text": "Yes, use credit", "emoji": "💳", "isCorrect": false },
+        { "id": "borrow", "text": "Borrow money", "emoji": "🤲", "isCorrect": false },
+        { "id": "save", "text": "No, avoid debt", "emoji": "🛡️", "isCorrect": true }
+      ]
+    }
+  ]
+}

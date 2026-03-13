@@ -1,0 +1,68 @@
+{
+  "title": "रिफ्लेक्स उद्यमी लक्षण",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपने उद्यमशीलता रिफ्लेक्स का परीक्षण करें!",
+  "subtitleReady": "अपने उद्यमशीलता रिफ्लेक्स का परीक्षण करें!",
+  "readyHeader": "क्या आप अपने उद्यमशीलता कौशल का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "प्रमुख उद्यमशीलता लक्षणों और मानसिकता के बारे में सवालों के जवाब दें।",
+  "readyTip": "आपके पास {{total}} प्रश्न हैं और प्रत्येक प्रश्न के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड:",
+  "timeLabel": "समय:",
+  "scoreLabel": "स्कोर:",
+  "greatJob": "बहुत बढ़िया!",
+  "finalScore": "आपने {{total}} में से {{score}} स्कोर किया!",
+  "thinkingSkills": "आप मजबूत उद्यमशीलता सोच कौशल विकसित कर रहे हैं!",
+  "playAgain": "फिर से खेलें",
+  "questions": [
+    {
+      "id": 1,
+      "question": "सफल उद्यमियों के लिए कौन सा लक्षण आवश्यक है?",
+      "options": [
+        { "text": "जोखिम से बचाव", "id": "risk_avoidance", "emoji": "🛡️" },
+        { "text": "नवाचार", "id": "innovation", "emoji": "💡" },
+        { "text": "ट्रेंड्स का पालन करना", "id": "following_trends", "emoji": "📈" },
+        { "text": "अवसरों का इंतजार करना", "id": "waiting_opportunities", "emoji": "⏳" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "चुनौतियों का सामना करते समय उद्यमियों को क्या करना चाहिए?",
+      "options": [
+        { "text": "जल्दी हार मान लें", "id": "give_up", "emoji": "😔" },
+        { "text": "दूसरों को दोष दें", "id": "blame_others", "emoji": "😠" },
+        { "text": "दृढ़ रहें और अनुकूल बनें", "id": "persist_adapt", "emoji": "💪" },
+        { "text": "चुनौतियों से बचें", "id": "avoid_challenges", "emoji": "🏃" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "सफल उद्यमी समस्या-समाधान के प्रति क्या दृष्टिकोण अपनाते हैं?",
+      "options": [
+        { "text": "समस्याओं को नजरअंदाज करें", "id": "ignore_problems", "emoji": "🙈" },
+        { "text": "मुद्दों के बारे में शिकायत करें", "id": "complain_issues", "emoji": "😤" },
+        { "text": "रचनात्मक समाधान", "id": "creative_solutions", "emoji": "🔧" },
+        { "text": "दूसरों के तरीकों की नकल करें", "id": "copy_others", "emoji": "📋" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "उद्यमी आमतौर पर कौन सी मानसिकता अपनाते हैं?",
+      "options": [
+        { "text": "स्थिर मानसिकता", "id": "fixed_mindset", "emoji": "🔒" },
+        { "text": "विकास की मानसिकता", "id": "growth_mindset", "emoji": "🌱" },
+        { "text": "नकारात्मक सोच", "id": "negative_thinking", "emoji": "😞" },
+        { "text": "सीखने से बचना", "id": "avoid_learning", "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "गणना किए गए जोखिमों के प्रति उद्यमियों को क्या दृष्टिकोण अपनाना चाहिए?",
+      "options": [
+        { "text": "सभी जोखिमों से बचें", "id": "avoid_all_risks", "emoji": "🛡️" },
+        { "text": "लापरवाही से काम करें", "id": "act_recklessly", "emoji": "🤯" },
+        { "text": "जोखिम भरे व्यवहारों की नकल करें", "id": "copy_risky", "emoji": "🔁" },
+        { "text": "मूल्यांकन करें और स्मार्ट जोखिम उठाएं", "id": "smart_risks", "emoji": "🎲" }
+      ]
+    }
+  ]
+}

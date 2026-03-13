@@ -1,0 +1,141 @@
+{
+  "title": "College Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You get ₹1000 for college expenses. How should you manage it?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "Spend all on outings",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "text": "Budget for needs first",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "Save everything",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You need books and want snacks. What should you do first?",
+      "options": [
+        {
+          "id": "books",
+          "text": "Buy books first",
+          "emoji": "📖",
+          "isCorrect": true
+        },
+        {
+          "id": "snacks",
+          "text": "Buy snacks first",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "Buy both equally",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "You get ₹500 extra money. What's the best choice?",
+      "options": [
+        {
+          "id": "clothes",
+          "text": "Buy new clothes",
+          "emoji": "👗",
+          "isCorrect": false
+        },
+        {
+          "id": "party",
+          "text": "Spend on party",
+          "emoji": "🎊",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "Save for emergencies",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You want a new phone but have college fees due. What should you do?",
+      "options": [
+        {
+          "id": "fees",
+          "text": "Pay fees first",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "phone",
+          "text": "Buy the phone",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "Buy both on credit",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You get a part-time job earning ₹2000/month. How should you manage it?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "Spend all immediately",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "Save everything",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "text": "Budget for needs and savings",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Great Job!",
+    "winMessage": "You got {{score}} out of {{total}} questions correct! You're making smart financial decisions in college!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Prioritize essential expenses like books and fees over wants like entertainment!",
+    "loseEmoji": "😔",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} questions correct. Remember to prioritize needs over wants in college!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Always prioritize essential expenses like books, fees, and groceries over entertainment and wants."
+  }
+}

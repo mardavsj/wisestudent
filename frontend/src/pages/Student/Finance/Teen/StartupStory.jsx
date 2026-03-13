@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -6,10 +7,12 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const StartupStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-65");
   const gameId = gameData?.id || "finance-teens-65";
+  const gameContent = t("financial-literacy.teens.startup-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,129 +29,7 @@ const StartupStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Friend invests ₹100 in a lemonade stand. Earns ₹150. Smart?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, good return", 
-          emoji: "👍", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No, too risky", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What makes a startup investment smart?",
-      options: [
-        { 
-          id: "research", 
-          text: "Research and planning", 
-          emoji: "🔍", 
-          isCorrect: true
-        },
-        { 
-          id: "luck", 
-          text: "Pure luck", 
-          emoji: "🍀", 
-          isCorrect: false
-        },
-        { 
-          id: "quick", 
-          text: "Quick decision", 
-          emoji: "⚡", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Should you invest all your money in one startup?",
-      options: [
-        { 
-          id: "all", 
-          text: "Yes, go all in", 
-          emoji: "🎯", 
-          isCorrect: false
-        },
-        { 
-          id: "diversify", 
-          text: "No, diversify", 
-          emoji: "📊", 
-          isCorrect: true
-        },
-        { 
-          id: "avoid", 
-          text: "Avoid startups", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What's a good return on startup investment?",
-      options: [
-        { 
-          id: "high", 
-          text: "High return potential", 
-          emoji: "📈", 
-          isCorrect: true
-        },
-        { 
-          id: "guaranteed", 
-          text: "Guaranteed return", 
-          emoji: "🛡️", 
-          isCorrect: false
-        },
-        { 
-          id: "low", 
-          text: "Low return only", 
-          emoji: "📉", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "When is investing in a startup a good idea?",
-      options: [
-        { 
-          id: "never", 
-          text: "Never", 
-          emoji: "🤦", 
-          isCorrect: false
-        },
-        { 
-          id: "planned", 
-          text: "When well-planned", 
-          emoji: "📋", 
-          isCorrect: true
-        },
-        { 
-          id: "always", 
-          text: "Always", 
-          emoji: "🙂", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -191,8 +72,16 @@ const StartupStory = () => {
 
   return (
     <GameShell
-      title="Startup Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Startup Story"}
+      subtitle={
+        !showResult 
+          ? t("financial-literacy.teens.startup-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: "Question {{current}} of {{total}}"
+            })
+          : gameContent?.subtitleComplete || "Story Complete!"
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -214,8 +103,20 @@ const StartupStory = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.startup-story.subtitleProgress", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}} of {{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.startup-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -246,44 +147,54 @@ const StartupStory = () => {
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Story Complete!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.perfectScoreTitle || "Story Complete!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct!
-                  You understand startup investments!
+                  {t("financial-literacy.teens.startup-story.perfectScoreMsg", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You understand startup investments!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>{t("financial-literacy.teens.startup-story.coinsLabel", { count: score })}</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Startup investments can be smart when well-researched and planned, but always diversify and understand the risks!
+                  {gameContent?.lessonLabel || "Lesson: Startup investments can be smart when well-researched and planned, but always diversify and understand the risks!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.keepLearningTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct.
-                  Remember, startup investments need research, planning, and diversification!
+                  {t("financial-literacy.teens.startup-story.lowScoreMsg", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember, startup investments need research, planning, and diversification!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Startup investments can be smart when you research, plan, and diversify. A 50% return like ₹100→₹150 is good!
+                  {gameContent?.tipLabel || "Tip: Startup investments can be smart when you research, plan, and diversify. A 50% return like ₹100→₹150 is good!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

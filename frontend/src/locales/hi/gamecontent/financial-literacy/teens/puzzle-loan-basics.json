@@ -1,0 +1,33 @@
+{
+  "title": "पहेली: ऋण की बुनियादी बातें",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "ऋण शर्तों को अवधारणाओं के साथ मिलाएँ ({{current}}/{{total}} मिलान)",
+  "termsTitle": "ऋण की शर्तें",
+  "conceptsTitle": "ऋण अवधारणाएं",
+  "matchButton": "मिलान करें",
+  "selectTermLabel": "एक ऋण शब्द चुनें",
+  "selectedTermLabel": "चुना गया: {{name}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "resultSuccessHeader": "बहुत अच्छा!",
+  "resultSuccessSubheader": "आपने {{total}} में से {{score}} ऋण शर्तों का उनकी अवधारणाओं के साथ सही मिलान किया है!",
+  "resultSuccessLesson": "सबक: ऋण की बुनियादी बातों को समझने से सूचित उधार लेने के निर्णय लेने में मदद मिलती है!",
+  "resultTryAgainHeader": "अभ्यास जारी रखें!",
+  "resultTryAgainSubheader": "आपने {{score}} ऋण शर्तों को सही ढंग से मिलाया है।",
+  "resultTryAgainTip": "सुझाव: सोचें कि प्रत्येक ऋण शब्द वास्तव में क्या दर्शाता है!",
+  "coinsEarned": "+{{coins}} सिक्के",
+  "terms": [
+    { "id": 1, "name": "मूलधन", "emoji": "💵" },
+    { "id": 2, "name": "ब्याज", "emoji": "💰" },
+    { "id": 3, "name": "ऋण अवधि", "emoji": "📅" },
+    { "id": 4, "name": "ईएमआई", "emoji": "📊" },
+    { "id": 5, "name": "चूक", "emoji": "⚠️" }
+  ],
+  "concepts": [
+    { "id": 6, "name": "मूल राशि", "emoji": "📝" },
+    { "id": 7, "name": "अतिरिक्त लागत", "emoji": "➕" },
+    { "id": 8, "name": "समय अवधि", "emoji": "⏱️" },
+    { "id": 9, "name": "नियमित भुगतान", "emoji": "💳" },
+    { "id": 10, "name": "छूटा हुआ भुगतान", "emoji": "🚫" }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "title": "बहस: बचत बनाम खर्च",
+  "subtitleComplete": "बहस पूरी!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "क्या पैसे बचाना बेहतर है या सब खर्च कर देना?",
+      "options": [
+        { "id": "spend", "text": "सब खर्च करें", "emoji": "🛍️", "isCorrect": false },
+        { "id": "save", "text": "पैसे बचाएं", "emoji": "💰", "isCorrect": true },
+        { "id": "waste", "text": "इसे बर्बाद करें", "emoji": "💸", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "क्या किशोरों को अभी बचत करने पर या अपने पैसों का आनंद लेने पर ध्यान देना चाहिए?",
+      "options": [
+        { "id": "save", "text": "बचत पर ध्यान दें", "emoji": "🏦", "isCorrect": true },
+        { "id": "spend", "text": "अभी आनंद लें", "emoji": "🎉", "isCorrect": false },
+        { "id": "ignore", "text": "इसके बारे में मत सोचो", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "जब आपको बोनस या अतिरिक्त पैसा मिलता है, तो आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "spend", "text": "यह सब खर्च करें", "emoji": "💸", "isCorrect": false },
+        { "id": "waste", "text": "इसे बर्बाद करें", "emoji": "🗑️", "isCorrect": false },
+        { "id": "save", "text": "इसमें से अधिकांश बचाएं", "emoji": "📈", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "महंगे ब्रांडेड आइटम खरीदना बेहतर है या किफायती गुणवत्ता वाले आइटम?",
+      "options": [
+        { "id": "spend", "text": "ब्रांडेड आइटम खरीदें", "emoji": "💎", "isCorrect": false },
+        { "id": "save", "text": "ब्रांड के बजाय गुणवत्ता चुनें", "emoji": "🎯", "isCorrect": true },
+        { "id": "cheap", "text": "सबसे सस्ता खरीदें", "emoji": "💵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "क्या आपको उन चीजों को खरीदने के लिए क्रेडिट कार्ड का उपयोग करना चाहिए जिन्हें आप वहन नहीं कर सकते?",
+      "options": [
+        { "id": "spend", "text": "हाँ, क्रेडिट का उपयोग करें", "emoji": "💳", "isCorrect": false },
+        { "id": "borrow", "text": "पैसे उधार लें", "emoji": "🤲", "isCorrect": false },
+        { "id": "save", "text": "नहीं, कर्ज से बचें", "emoji": "🛡️", "isCorrect": true }
+      ]
+    }
+  ]
+}

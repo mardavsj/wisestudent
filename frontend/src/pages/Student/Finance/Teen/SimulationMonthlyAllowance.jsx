@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -6,10 +7,12 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const SimulationMonthlyAllowance = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-28");
   const gameId = gameData?.id || "finance-teens-28";
+  const gameContent = t("financial-literacy.teens.simulation-monthly-allowance", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -21,170 +24,7 @@ const SimulationMonthlyAllowance = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const scenarios = [
-  {
-    id: 1,
-    title: "Monthly Allowance Choices",
-    description: "You get ₹1000 as allowance. How can you use it wisely?",
-    amount: 1000,
-    options: [
-      { 
-        id: "splurge", 
-        text: "Buy only trending items", 
-        emoji: "🛍️", 
-        isCorrect: false
-      },
-      { 
-        id: "budget-smart", 
-        text: "Set aside for essentials, fun, and saving", 
-        emoji: "📊", 
-        isCorrect: true
-      },
-      { 
-        id: "hide", 
-        text: "Keep all cash hidden at home", 
-        emoji: "🛏️", 
-        isCorrect: false
-      },
-      { 
-        id: "random-spending", 
-        text: "Spend without thinking", 
-        emoji: "🎲", 
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: "Part-time Job Earnings",
-    description: "You earn ₹1500 from a weekend job. What's a smart approach?",
-    amount: 1500,
-    options: [
-      { 
-        id: "plan-smart", 
-        text: "Divide for goals, needs, and fun", 
-        emoji: "🎯", 
-        isCorrect: true
-      },
-      { 
-        id: "luxury-only", 
-        text: "Spend only on gadgets or clothes", 
-        emoji: "💎", 
-        isCorrect: false
-      },
-      { 
-        id: "forget", 
-        text: "Forget it exists", 
-        emoji: "😴", 
-        isCorrect: false
-      },
-      { 
-        id: "invest-all", 
-        text: "Invest without research", 
-        emoji: "📈", 
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Scholarship Bonus",
-    description: "You receive ₹2000 scholarship. What’s the smartest way to use it?",
-    amount: 2000,
-    options: [
-      { 
-        id: "trip", 
-        text: "Go on a luxury trip", 
-        emoji: "✈️", 
-        isCorrect: false
-      },
-      { 
-        id: "hide-money", 
-        text: "Hide it at home", 
-        emoji: "🛏️", 
-        isCorrect: false
-      },
-      { 
-        id: "donate", 
-        text: "Donate it all immediately", 
-        emoji: "💝", 
-        isCorrect: false
-      },
-      { 
-        id: "self-invest", 
-        text: "Buy books, courses, or tools for learning", 
-        emoji: "🎓", 
-        isCorrect: true
-      }
-    ]
-  },
-  {
-    id: 4,
-    title: "Birthday Gift Money",
-    description: "You get ₹800 as birthday money. What's a thoughtful choice?",
-    amount: 800,
-    options: [
-      { 
-        id: "impulse-buy", 
-        text: "Spend on instant fun only", 
-        emoji: "🎁", 
-        isCorrect: false
-      },
-      { 
-        id: "random", 
-        text: "Buy whatever looks fun", 
-        emoji: "🎲", 
-        isCorrect: false
-      },
-      { 
-        id: "plan-future", 
-        text: "Save for a bigger goal or need", 
-        emoji: "📅", 
-        isCorrect: true
-      },
-      { 
-        id: "share-friends", 
-        text: "Give it all to friends", 
-        emoji: "🤝", 
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "Summer Job Windfall",
-    description: "You earn ₹2500 from a summer job. How to maximize benefits?",
-    amount: 2500,
-    options: [
-       { 
-        id: "balanced-plan", 
-        text: "Split for saving, learning, and small treats", 
-        emoji: "📈", 
-        isCorrect: true
-      },
-      { 
-        id: "debt-payment", 
-        text: "Rush to pay debts you don’t fully understand", 
-        emoji: "💳", 
-        isCorrect: false
-      },
-     
-      { 
-        id: "impulse-buying", 
-        text: "Spend on impulse purchases", 
-        emoji: "🛒", 
-        isCorrect: false
-      },
-      { 
-        id: "save-all", 
-        text: "Save all without any plan", 
-        emoji: "💰", 
-        isCorrect: false
-      }
-    ]
-  }
-];
-
+  const scenarios = Array.isArray(gameContent?.scenarios) ? gameContent.scenarios : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -194,7 +34,7 @@ const SimulationMonthlyAllowance = () => {
     
     const scenario = scenarios[currentScenario];
     const selectedOption = scenario.options.find(opt => opt.id === optionId);
-    const isCorrect = selectedOption?.isCorrect;
+    const isCorrect = !!selectedOption?.isCorrect;
 
     if (isCorrect) {
       setScore(prev => prev + 1);
@@ -227,8 +67,16 @@ const SimulationMonthlyAllowance = () => {
 
   return (
     <GameShell
-      title="Simulation: Monthly Allowance"
-      subtitle={!showResult ? `Scenario ${currentScenario + 1} of ${scenarios.length}` : "Simulation Complete!"}
+      title={gameContent?.title || "Simulation: Monthly Allowance"}
+      subtitle={
+        !showResult 
+          ? t("financial-literacy.teens.simulation-monthly-allowance.subtitleProgress", {
+              current: currentScenario + 1,
+              total: scenarios.length,
+              defaultValue: "Scenario {{current}} of {{total}}"
+            })
+          : gameContent?.subtitleComplete || "Simulation Complete!"
+      }
       score={score}
       currentLevel={currentScenario + 1}
       totalLevels={scenarios.length}
@@ -250,8 +98,20 @@ const SimulationMonthlyAllowance = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Scenario {currentScenario + 1}/{scenarios.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{scenarios.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.simulation-monthly-allowance.subtitleProgress", {
+                    current: currentScenario + 1,
+                    total: scenarios.length,
+                    defaultValue: "Scenario {{current}} of {{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.simulation-monthly-allowance.scoreLabel", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{current.title}</h3>
@@ -261,7 +121,7 @@ const SimulationMonthlyAllowance = () => {
               
               <div className="bg-white/5 rounded-lg p-4 mb-6">
                 <div className="text-center">
-                  <span className="text-white font-semibold text-lg">Amount: </span>
+                  <span className="text-white font-semibold text-lg">{gameContent?.amountLabel || "Amount: "}</span>
                   <span className="text-green-400 font-bold text-2xl">₹{current.amount}</span>
                 </div>
               </div>
@@ -289,44 +149,54 @@ const SimulationMonthlyAllowance = () => {
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Excellent Budgeting!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.perfectScoreTitle || "Excellent Budgeting!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {scenarios.length} scenarios correct!
-                  You're mastering the art of balanced budgeting!
+                  {t("financial-literacy.teens.simulation-monthly-allowance.perfectScoreMsg", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "You got {{score}} out of {{total}} scenarios correct! You're mastering the art of balanced budgeting!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>{t("financial-literacy.teens.simulation-monthly-allowance.coinsLabel", { count: score })}</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: A balanced budget prioritizes needs (food, transport) while saving for the future and allowing some fun!
+                  {gameContent?.lessonLabel || "Lesson: A balanced budget prioritizes needs (food, transport) while saving for the future and allowing some fun!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.keepLearningTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {scenarios.length} scenarios correct.
-                  Remember the balanced budget formula: 40% food, 30% transport, 20% savings, 10% fun!
+                  {t("financial-literacy.teens.simulation-monthly-allowance.lowScoreMsg", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "You got {{score}} out of {{total}} scenarios correct. Remember the balanced budget formula: 40% food, 30% transport, 20% savings, 10% fun!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Allocate money to cover essential needs first, then save, and finally allow some fun money.
+                  {gameContent?.tipLabel || "Tip: Allocate money to cover essential needs first, then save, and finally allow some fun money."}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

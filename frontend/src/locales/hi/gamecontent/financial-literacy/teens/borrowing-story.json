@@ -1,0 +1,141 @@
+{
+  "title": "उधार की कहानी",
+  "subtitleComplete": "कहानी पूरी!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "किशोर नए फ़ोन के लिए उधार लेता है। चुका नहीं सकता? परिणाम →",
+      "options": [
+        {
+          "id": "free",
+          "text": "मुफ़्त पैसे",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "कर्ज़",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "कुछ नहीं होता",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "आपने ₹500 उधार लिए लेकिन चुका नहीं सकते। क्या परिणाम होगा?",
+      "options": [
+        {
+          "id": "forgiven",
+          "text": "कर्ज़ माफ़ हो जाता है",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "ignored",
+          "text": "अनदेखा किया जा सकता है",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ब्याज और जुर्माना बढ़ता है",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "इच्छा पूरी करने के लिए उधार लेने से पहले आपको क्या करना चाहिए?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "पहले चुकाने की योजना बनाएँ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-first",
+          "text": "पहले उधार लो, बाद में सोचो",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "चुकाने की योजना को अनदेखा करो",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "बिना चुकाने की योजना के उधार लेने से क्या होता है?",
+      "options": [
+        {
+          "id": "success",
+          "text": "वित्तीय सफलता",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "text": "वित्तीय स्वतंत्रता",
+          "emoji": "🕊️",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "कर्ज़ की समस्या",
+          "emoji": "⚠️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "उधार लेने का सबसे अच्छा तरीका क्या है?",
+      "options": [
+        {
+          "id": "borrow-often",
+          "text": "इच्छाओं के लिए बार-बार उधार लो",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-wisely",
+          "text": "सिर्फ़ ज़रूरत पर उधार लो और चुकाने की योजना बनाओ",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "never-repay",
+          "text": "उधार लो लेकिन कभी चुकाओ मत",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "उधार की कहानी पूरी!",
+    "winMessage": "आपने {{total}} में से {{score}} सही किए! ज़िम्मेदार उधारी सीखने में बढ़िया काम!",
+    "coinsEarned": "+{{score}} सिक्के",
+    "lesson": "सीख: बिना चुकाने की योजना के उधार लेना कर्ज़ में डालता है। उधार लेने से पहले हमेशा चुकाने की योजना बनाएँ, खासकर इच्छाओं के लिए!",
+    "loseEmoji": "💪",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} सही किए। याद रखें, बिना योजना के उधार लेना कर्ज़ की समस्या पैदा करता है!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "सुझाव: उधार लेने से पहले हमेशा चुकाने की योजना बनाएँ। बिना योजना के उधार लेना कर्ज़ और वित्तीय परेशानी का कारण बनता है!"
+  }
+}

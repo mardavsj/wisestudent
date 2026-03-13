@@ -1,0 +1,136 @@
+{
+  "title": "स्टार्टअप कहानी",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{total}} का {{current}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "perfectScoreTitle": "कहानी पूरी हुई!",
+  "perfectScoreMsg": "आपने {{total}} में से {{score}} सही पाए! आप स्टार्टअप निवेश (Startup Investments) को समझते हैं!",
+  "coinsLabel": "+{{count}} सिक्के",
+  "lessonLabel": "सबक: स्टार्टअप निवेश (Startup Investments) तब स्मार्ट हो सकते हैं जब वे अच्छी तरह से शोधित और योजनाबद्ध हों, लेकिन हमेशा विविधता लाएँ और जोखिमों को समझें!",
+  "keepLearningTitle": "सीखते रहें!",
+  "lowScoreMsg": "आपने {{total}} में से {{score}} सही पाए। याद रखें, स्टार्टअप निवेश के लिए शोध, योजना और विविधीकरण की आवश्यकता होती है!",
+  "tryAgain": "फिर से प्रयास करें",
+  "tipLabel": "टिप: स्टार्टअप निवेश तब स्मार्ट हो सकते हैं जब आप शोध, योजना और विविधीकरण करते हैं। ₹100→₹150 जैसा 50% रिटर्न अच्छा है!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "दोस्त नींबू पानी स्टैंड में ₹100 निवेश करता है। ₹150 कमाता है। क्या यह स्मार्ट है?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "हाँ, अच्छा रिटर्न",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "नहीं, बहुत जोखिम भरा",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "शायद, निर्भर करता है",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "एक स्टार्टअप निवेश को क्या स्मार्ट बनाता है?",
+      "options": [
+        {
+          "id": "research",
+          "text": "अनुसंधान और योजना",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "शुद्ध भाग्य",
+          "emoji": "🍀",
+          "isCorrect": false
+        },
+        {
+          "id": "quick",
+          "text": "त्वरित निर्णय",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "क्या आपको अपना सारा पैसा एक स्टार्टअप में निवेश करना चाहिए?",
+      "options": [
+        {
+          "id": "all",
+          "text": "हाँ, सब कुछ लगा दें",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "diversify",
+          "text": "नहीं, विविधीकरण करें",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "स्टार्टअप से बचें",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "स्टार्टअप निवेश पर अच्छा रिटर्न क्या है?",
+      "options": [
+        {
+          "id": "high",
+          "text": "उच्च रिटर्न क्षमता",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "guaranteed",
+          "text": "गारंटीड रिटर्न",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "low",
+          "text": "केवल कम रिटर्न",
+          "emoji": "📉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "स्टार्टअप में निवेश करना कब एक अच्छा विचार है?",
+      "options": [
+        {
+          "id": "never",
+          "text": "कभी नहीं",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "planned",
+          "text": "जब अच्छी तरह से योजनाबद्ध हो",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "हमेशा",
+          "emoji": "🙂",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const DebateBorrowGoodOrBad = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-56");
   const gameId = gameData?.id || "finance-teens-56";
+  const gameContent = t("financial-literacy.teens.debate-borrow-good-or-bad", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -28,53 +31,7 @@ const DebateBorrowGoodOrBad = () => {
   const [answered, setAnswered] = useState(false);
   const [gameComplete, setGameComplete] = useState(false);
 
-  const debateTopics = [
-    {
-      id: 1,
-      scenario: "Is borrowing always bad?",
-      positions: [
-        { id: "planned", text: "Planned borrowing works", emoji: "💡", points: ["Helps in emergencies", "Enables big purchases", "When planned properly"], isCorrect: true },
-        { id: "balanced", text: "Borrow with caution", emoji: "⚠️", points: ["For needs, not wants", "Plan repayment", "Use responsibly"], isCorrect: false },
-        { id: "bad", text: "Avoid borrowing", emoji: "🚫", points: ["Creates debt", "Adds interest cost", "Financial burden"], isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      scenario: "Should you borrow for wants or needs?",
-      positions: [
-        { id: "balanced", text: "Borrow for essentials", emoji: "📋", points: ["Needs: education, health", "Avoid wants", "Prioritize essentials"], isCorrect: false },
-        { id: "needs", text: "Needs over wants", emoji: "🎓", points: ["Education is investment", "Health is essential", "Wants can wait"], isCorrect: true },
-        { id: "wants", text: "Borrow for anything", emoji: "🎯", points: ["Borrow for fun", "No planning needed", "Repay later"], isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      scenario: "Is it okay to borrow without a repayment plan?",
-      positions: [
-        { id: "no-plan", text: "No planning needed", emoji: "🌀", points: ["Worry later", "No planning", "Spend freely"], isCorrect: false },
-        { id: "balanced", text: "Sometimes plan", emoji: "⏳", points: ["Plan for big loans", "Skip for small", "Partial planning"], isCorrect: false },
-        { id: "plan", text: "Always plan repayment", emoji: "📝", points: ["Know how to repay", "Avoid debt trap", "Stay in control"], isCorrect: true },
-      ]
-    },
-    {
-      id: 4,
-      scenario: "Can borrowing help achieve goals?",
-      positions: [
-        { id: "help", text: "Yes, when used wisely", emoji: "🚀", points: ["Education loans help", "Business loans enable growth", "Smart borrowing works"], isCorrect: true },
-        { id: "balanced", text: "Depends on purpose", emoji: "🔍", points: ["Good for education", "Bad for wants", "Case by case"], isCorrect: false },
-        { id: "never", text: "Never helps", emoji: "🛑", points: ["Always creates problems", "Never worth it", "Avoid completely"], isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      scenario: "What's the key to good borrowing?",
-      positions: [
-        { id: "balanced", text: "Moderate borrowing", emoji: "📊", points: ["Borrow sometimes", "Not too much", "Keep it simple"], isCorrect: false },
-        { id: "plan-repay", text: "Plan and repay on time", emoji: "⏱️", points: ["Plan before borrowing", "Repay as promised", "Stay disciplined"], isCorrect: true },
-        { id: "ignore", text: "Ignore repayment", emoji: "💸", points: ["Borrow freely", "No repayment", "Worry later"], isCorrect: false }
-      ]
-    }
-  ];
+  const debateTopics = Array.isArray(gameContent?.debateTopics) ? gameContent.debateTopics : [];
 
   const handlePositionSelect = (positionId) => {
     if (answered) return;
@@ -120,8 +77,15 @@ const DebateBorrowGoodOrBad = () => {
 
   return (
     <GameShell
-      title="Debate: Borrow Good or Bad?"
-      subtitle={!showResult ? `Round ${currentRound + 1} of ${debateTopics.length}` : "Debate Complete!"}
+      title={gameContent?.title || "Debate: Borrow Good or Bad?"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.debate-borrow-good-or-bad.subtitleProgress", {
+            current: currentRound + 1,
+            total: debateTopics.length,
+            defaultValue: "Round {{current}} of {{total}}",
+          })
+        : (gameContent?.subtitleComplete || "Debate Complete!")
+      }
       score={score}
       currentLevel={currentRound + 1}
       totalLevels={debateTopics.length}
@@ -143,8 +107,20 @@ const DebateBorrowGoodOrBad = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Round {currentRound + 1}/{debateTopics.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{debateTopics.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.debate-borrow-good-or-bad.roundLabel", {
+                    current: currentRound + 1,
+                    total: debateTopics.length,
+                    defaultValue: "Round {{current}}/{{total}}",
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.debate-borrow-good-or-bad.scoreLabel", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "Score: {{score}}/{{total}}",
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -185,35 +161,46 @@ const DebateBorrowGoodOrBad = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Debate Complete!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.winTitle || "Debate Complete!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {debateTopics.length} correct!
-                  You understand when borrowing is good or bad!
+                  {t("financial-literacy.teens.debate-borrow-good-or-bad.result.winMessage", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You understand when borrowing is good or bad!",
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.debate-borrow-good-or-bad.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins",
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Borrowing is good when planned and repaid on time, especially for needs like education. It's bad when done without a plan or for unnecessary wants!
+                  {gameContent?.result?.lesson || "Lesson: Borrowing is good when planned and repaid on time, especially for needs like education. It's bad when done without a plan or for unnecessary wants!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.loseTitle || "Keep Learning!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {debateTopics.length} correct.
-                  Remember, borrowing is good if planned and repaid, bad if done carelessly!
+                  {t("financial-literacy.teens.debate-borrow-good-or-bad.result.loseMessage", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember, borrowing is good if planned and repaid, bad if done carelessly!",
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Borrowing is good when you plan repayment and use it for needs. It's bad when done without planning or for unnecessary wants!
+                  {gameContent?.result?.tip || "Tip: Borrowing is good when you plan repayment and use it for needs. It's bad when done without planning or for unnecessary wants!"}
                 </p>
               </div>
             )}
@@ -225,4 +212,3 @@ const DebateBorrowGoodOrBad = () => {
 };
 
 export default DebateBorrowGoodOrBad;
-

@@ -1,0 +1,141 @@
+{
+  "title": "मूवी बनाम बस किराया कहानी",
+  "subtitleComplete": "कहानी पूरी!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "आपके पास ₹100 हैं। आपको इसका उपयोग कैसे करना चाहिए?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "बस पास के लिए बचत करें",
+          "emoji": "🚌",
+          "isCorrect": true
+        },
+        {
+          "id": "movie",
+          "text": "मूवी पर खर्च करें",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "दोनों के बीच विभाजित करें",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "आपके पास ₹150 हैं। सबसे अच्छा विकल्प क्या है?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "एक स्नैक खरीदें",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "बस किराए की बचत में जोड़ें",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "सब कुछ बचाएं",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "आपके पास ₹200 हैं। आपको क्या प्राथमिकता देनी चाहिए?",
+      "options": [
+        {
+          "id": "movie",
+          "text": "मूवी नाइट",
+          "emoji": "🎥",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "दोनों के बीच विभाजित करें",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "साप्ताहिक बस पास",
+          "emoji": "🎫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आपके पास ₹120 हैं। समझदारी भरा फैसला क्या है?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "बस टिकट",
+          "emoji": "🎟️",
+          "isCorrect": true
+        },
+        {
+          "id": "popcorn",
+          "text": "मूवी में पॉपकॉर्न",
+          "emoji": "🍿",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "यह सब बचाएं",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "आपके पास ₹300 हैं। सबसे अच्छा उपयोग क्या है?",
+      "options": [
+        {
+          "id": "cinema",
+          "text": "सिनेमा टिकट",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "मासिक बस पास",
+          "emoji": "Ⓜ️",
+          "isCorrect": true
+        },
+        {
+          "id": "split",
+          "text": "दोनों के बीच विभाजित करें",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "बहुत बढ़िया!",
+    "winMessage": "आपने {{total}} में से {{score}} प्रश्नों के सही उत्तर दिए! आप आवश्यक खर्चों को प्राथमिकता देने के महत्व को समझते हैं!",
+    "coinsEarned": "+{{score}} सिक्के",
+    "lesson": "सीख: मनोरंजन की जरूरतों से ज़्यादा परिवहन जैसे आवश्यक खर्चों को प्राथमिकता दें!",
+    "loseEmoji": "😔",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} प्रश्नों के सही उत्तर दिए। याद रखें कि अपनी ज़रूरतों (wants) से ज़्यादा परिवहन जैसे आवश्यक खर्चों को प्राथमिकता दें!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "सुझाव: हमेशा मनोरंजन की ज़रूरतों पर परिवहन जैसे आवश्यक खर्चों को प्राथमिकता दें।"
+  }
+}

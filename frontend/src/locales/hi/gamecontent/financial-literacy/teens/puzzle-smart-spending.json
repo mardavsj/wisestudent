@@ -1,0 +1,33 @@
+{
+  "title": "पहेली: स्मार्ट खर्च",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "अर्थों के साथ अवधारणाओं का मिलान करें ({{current}}/{{total}} मिलान)",
+  "conceptsTitle": "खर्च की अवधारणाएं",
+  "meaningsTitle": "वित्तीय अर्थ",
+  "matchButton": "मिलान करें",
+  "selectConceptLabel": "एक खर्च की अवधारणा चुनें",
+  "selectedConceptLabel": "चुना गया: {{name}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "resultSuccessHeader": "बहुत अच्छा!",
+  "resultSuccessSubheader": "आपने {{total}} में से {{score}} खर्च की अवधारणाओं का उनके अर्थों के साथ सही मिलान किया है!",
+  "resultSuccessLesson": "सबक: खर्च की अवधारणाओं को समझने से बेहतर वित्तीय निर्णय लेने में मदद मिलती है!",
+  "resultTryAgainHeader": "अभ्यास जारी रखें!",
+  "resultTryAgainSubheader": "आपने {{score}} खर्च की अवधारणाओं को सही ढंग से मिलाया है।",
+  "resultTryAgainTip": "सुझाव: सोचें कि प्रत्येक खर्च की अवधारणा वास्तव में क्या दर्शाती है!",
+  "coinsEarned": "+{{coins}} सिक्के",
+  "concepts": [
+    { "id": 1, "name": "बजट", "emoji": "📋" },
+    { "id": 2, "name": "अपव्यय", "emoji": "🗑️" },
+    { "id": 3, "name": "आवश्यकताएं", "emoji": "🎯" },
+    { "id": 4, "name": "इच्छाएं", "emoji": "🎁" },
+    { "id": 5, "name": "आपातकालीन निधि", "emoji": "🛡️" }
+  ],
+  "meanings": [
+    { "id": 6, "name": "वित्तीय योजना", "emoji": "📝"},
+    { "id": 7, "name": "संसाधन का दुरुपयोग", "emoji": "⚠️"},
+    { "id": 8, "name": "आवश्यक प्राथमिकताएं", "emoji": "⭐"},
+    { "id": 9, "name": "विवेकाधीन खर्च", "emoji": "💎"},
+    { "id": 10, "name": "जोखिम सुरक्षा", "emoji": "🔒"}
+  ]
+}

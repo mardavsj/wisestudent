@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -6,10 +7,12 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const StartupIdeaStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-71");
   const gameId = gameData?.id || "finance-teens-71";
+  const gameContent = t("financial-literacy.teens.startup-idea-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,131 +29,7 @@ const StartupIdeaStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Teen sells handmade crafts online. Is this entrepreneurship?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, it's entrepreneurship", 
-          emoji: "🙂", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No, it's just selling", 
-          emoji: "👎", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What makes someone an entrepreneur?",
-      options: [
-        { 
-          id: "spends", 
-          text: "Only spends money", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "creates", 
-          text: "Creates new business", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-        { 
-          id: "nothing", 
-          text: "Does nothing", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Can teens be entrepreneurs?",
-      options: [
-        { 
-          id: "no2", 
-          text: "No, only adults", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe2", 
-          text: "Maybe, with permission", 
-          emoji: "🤷", 
-          isCorrect: false
-        },
-        { 
-          id: "yes2", 
-          text: "Yes, age doesn't matter", 
-          emoji: "👍", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What's needed to start a business?",
-      options: [
-        { 
-          id: "money", 
-          text: "Lots of money only", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "idea", 
-          text: "Good idea and effort", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-        { 
-          id: "luck", 
-          text: "Just luck", 
-          emoji: "🍀", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Is selling online a form of entrepreneurship?",
-      options: [
-        { 
-          id: "no3", 
-          text: "No, not real business", 
-          emoji: "👎", 
-          isCorrect: false
-        },
-        { 
-          id: "yes3", 
-          text: "Yes, it's a business", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: "maybe3", 
-          text: "Maybe, if profitable", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -193,8 +72,16 @@ const StartupIdeaStory = () => {
 
   return (
     <GameShell
-      title="Startup Idea Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Startup Idea Story"}
+      subtitle={
+        !showResult 
+          ? t("financial-literacy.teens.startup-idea-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: "Question {{current}} of {{total}}"
+            })
+          : gameContent?.subtitleComplete || "Story Complete!"
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -216,8 +103,20 @@ const StartupIdeaStory = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.startup-idea-story.subtitleProgress", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}} of {{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.startup-idea-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -248,44 +147,54 @@ const StartupIdeaStory = () => {
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Story Complete!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.perfectScoreTitle || "Story Complete!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct!
-                  You understand entrepreneurship!
+                  {t("financial-literacy.teens.startup-idea-story.perfectScoreMsg", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You understand entrepreneurship!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>{t("financial-literacy.teens.startup-idea-story.coinsLabel", { count: score })}</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Entrepreneurship is creating and running a business. Anyone, including teens, can be entrepreneurs with good ideas and effort!
+                  {gameContent?.lessonLabel || "Lesson: Entrepreneurship is creating and running a business. Anyone, including teens, can be entrepreneurs with good ideas and effort!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.keepLearningTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct.
-                  Remember, entrepreneurship is creating a new business, and anyone can do it!
+                  {t("financial-literacy.teens.startup-idea-story.lowScoreMsg", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember, entrepreneurship is creating a new business, and anyone can do it!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: An entrepreneur is someone who creates and runs a new business. Selling handmade crafts online is entrepreneurship!
+                  {gameContent?.tipLabel || "Tip: An entrepreneur is someone who creates and runs a new business. Selling handmade crafts online is entrepreneurship!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

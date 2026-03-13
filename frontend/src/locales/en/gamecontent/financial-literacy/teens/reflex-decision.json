@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Decision",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your financial decision skills!",
+  "subtitleReady": "Test your financial decision skills!",
+  "readyHeader": "Ready to Test Your Financial Decisions?",
+  "readyDescription": "Answer questions about smart financial choices.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "developingSkills": "You're developing strong financial decision-making skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "You have money. Should you pay fees or skip for gadgets?",
+      "options": [
+        { "text": "Pay Fees", "id": "pay_fees", "emoji": "💰" },
+        { "text": "Skip for Gadgets", "id": "skip_gadgets", "emoji": "🎮" },
+        { "text": "Save everything", "id": "save_everything", "emoji": "🏦" },
+        { "text": "Spend on both", "id": "spend_both", "emoji": "💸" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What should you do with extra money?",
+      "options": [
+        { "text": "Buy Games", "id": "buy_games", "emoji": "🎮" },
+        { "text": "Save Money", "id": "save_money", "emoji": "💰" },
+        { "text": "Spend immediately", "id": "spend_immediately", "emoji": "🛒" },
+        { "text": "Lend to friends", "id": "lend_friends", "emoji": "👥" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How should you manage your budget?",
+      "options": [
+        { "text": "Track Budget", "id": "track_budget", "emoji": "📊" },
+        { "text": "Ignore Budget", "id": "ignore_budget", "emoji": "🙈" },
+        { "text": "Guess expenses", "id": "guess_expenses", "emoji": "🎲" },
+        { "text": "Track sometimes", "id": "track_sometimes", "emoji": "📅" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What's the priority when you have bills?",
+      "options": [
+        { "text": "Spend on Party", "id": "spend_party", "emoji": "🎉" },
+        { "text": "Pay Rent", "id": "pay_rent", "emoji": "🏠" },
+        { "text": "Buy clothes", "id": "buy_clothes", "emoji": "👕" },
+        { "text": "Save for later", "id": "save_later", "emoji": "💵" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What should you do with money for education?",
+      "options": [
+        { "text": "Buy Snacks", "id": "buy_snacks", "emoji": "🍕" },
+        { "text": "Spend on entertainment", "id": "spend_entertainment", "emoji": "🎬" },
+        { "text": "Save for Books", "id": "save_books", "emoji": "📚" },
+        { "text": "Give away", "id": "give_away", "emoji": "🎁" }
+      ]
+    }
+  ]
+}

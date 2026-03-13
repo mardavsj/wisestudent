@@ -1,0 +1,141 @@
+{
+  "title": "Business Risk Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You invest ₹200 in snacks to sell. Earn ₹300. Good?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "Yes, 50% profit",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "No, too risky",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "Maybe, depends",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What's a good profit margin for a small business?",
+      "options": [
+        {
+          "id": "low",
+          "text": "5% profit",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "high",
+          "text": "30-50% profit",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "loss",
+          "text": "Loss is okay",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Should you take risks in business?",
+      "options": [
+        {
+          "id": "all",
+          "text": "Take all risks",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "Avoid all risks",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "calculated",
+          "text": "Yes, calculated risks",
+          "emoji": "🎯",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What's important before starting a business?",
+      "options": [
+        {
+          "id": "jump",
+          "text": "Jump in immediately",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "Plan and research",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "Wait forever",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Is ₹200→₹300 a good business result?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "No, too small",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "Maybe, if consistent",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "Yes, 50% return",
+          "emoji": "🙂",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Story Complete!",
+    "winMessage": "You got {{score}} out of {{total}} correct! You understand business risks and profits!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: A 50% profit (₹200→₹300) is excellent! Take calculated risks, plan before starting, and aim for healthy profit margins!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} correct. Remember, a 50% profit is excellent, and calculated risks with planning are key!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Investing ₹200 and earning ₹300 (50% profit) is excellent! Always plan before starting a business and take calculated risks!"
+  }
+}

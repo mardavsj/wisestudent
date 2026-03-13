@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Smart Growth",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your smart growth reflexes!",
+  "subtitleReady": "Test your smart growth reflexes!",
+  "readyHeader": "Ready to Test Your Smart Growth Reflexes?",
+  "readyDescription": "Answer questions about smart financial growth strategies.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "growthSkills": "You're developing strong financial decision-making skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the smartest financial growth strategy?",
+      "options": [
+        { "id": "long_term", "text": "Long-term Invest", "emoji": "📈" },
+        { "id": "instant", "text": "Instant Spend", "emoji": "💸" },
+        { "id": "cash", "text": "Save in cash", "emoji": "💰" },
+        { "id": "spend_all", "text": "Spend all earnings", "emoji": "🛍️" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What should be your primary financial focus?",
+      "options": [
+        { "id": "spend_everything", "text": "Spend everything", "emoji": "🛒" },
+        { "id": "plan_future", "text": "Plan for Future", "emoji": "🎯" },
+        { "id": "ignore", "text": "Ignore savings", "emoji": "😴" },
+        { "id": "paycheck", "text": "Live paycheck to paycheck", "emoji": "📅" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which approach leads to exponential growth?",
+      "options": [
+        { "id": "quick_profit", "text": "Quick profit", "emoji": "⚡" },
+        { "id": "no_invest", "text": "No investment", "emoji": "🚫" },
+        { "id": "compound", "text": "Compound Growth", "emoji": "🌱" },
+        { "id": "gambling", "text": "High-risk gambling", "emoji": "🎲" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "When is the best time to begin investing?",
+      "options": [
+        { "id": "start_early", "text": "Start Early", "emoji": "⏰" },
+        { "id": "wait", "text": "Wait forever", "emoji": "⏳" },
+        { "id": "never", "text": "Never invest", "emoji": "❌" },
+        { "id": "after_retirement", "text": "After retirement", "emoji": "👵" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the ultimate financial goal?",
+      "options": [
+        { "id": "spend_all_credit", "text": "Spend all", "emoji": "💳" },
+        { "id": "build_wealth", "text": "Build Wealth", "emoji": "🏆" },
+        { "id": "avoid", "text": "Avoid growth", "emoji": "📉" },
+        { "id": "debt", "text": "Stay in debt", "emoji": "🧾" }
+      ]
+    }
+  ]
+}

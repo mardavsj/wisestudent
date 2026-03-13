@@ -1,0 +1,68 @@
+{
+  "title": "रिफ्लेक्स स्मार्ट खर्च",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपने खर्च सजगता का परीक्षण करें!",
+  "subtitleReady": "अपने खर्च सजगता का परीक्षण करें!",
+  "readyHeader": "क्या आप अपने स्मार्ट खर्च सजगता का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "स्मार्ट खर्च विकल्पों के बारे में सवालों के जवाब दें।",
+  "readyTip": "आपके पास {{total}} प्रश्न हैं और प्रत्येक प्रश्न के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड:",
+  "timeLabel": "समय:",
+  "scoreLabel": "स्कोर:",
+  "greatJob": "बहुत बढ़िया!",
+  "finalScore": "आपने {{total}} में से {{score}} स्कोर किया!",
+  "growthSkills": "आप मजबूत वित्तीय निर्णय लेने का कौशल विकसित कर रहे हैं!",
+  "playAgain": "फिर से खेलें",
+  "questions": [
+    {
+      "id": 1,
+      "question": "सबसे स्मार्ट खर्च विकल्प क्या है?",
+      "options": [
+        { "id": "pay_rent", "text": "किराया दें", "emoji": "🏠" },
+        { "id": "luxury_party", "text": "लक्जरी पार्टी", "emoji": "🎉" },
+        { "id": "designer_shoes", "text": "डिजाइनर जूते खरीदें", "emoji": "👟" },
+        { "id": "impulse_purchase", "text": "आवेगपूर्ण खरीदारी", "emoji": "💸" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "कौन सा खर्च सबसे पहले आना चाहिए?",
+      "options": [
+        { "id": "new_gadgets", "text": "नए गैजेट्स", "emoji": "📱" },
+        { "id": "buy_groceries", "text": "किराने का सामान खरीदें", "emoji": "🛒" },
+        { "id": "expensive_restaurant", "text": "महंगा रेस्टोरेंट", "emoji": "🍽️" },
+        { "id": "entertainment", "text": "मनोरंजन", "emoji": "🎬" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "अतिरिक्त पैसे के साथ आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "movie_night", "text": "फिल्म की रात", "emoji": "🎬" },
+        { "id": "buy_video_games", "text": "वीडियो गेम खरीदें", "emoji": "🎮" },
+        { "id": "save_money", "text": "पैसे बचाएं", "emoji": "💰" },
+        { "id": "shopping_spree", "text": "शॉपिंग स्प्री", "emoji": "🛍️" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "कौन सा प्राथमिकता वाला खर्च है?",
+      "options": [
+        { "id": "pay_bills", "text": "बिल का भुगतान करें", "emoji": "📄" },
+        { "id": "designer_clothes", "text": "डिजाइनर कपड़े", "emoji": "👔" },
+        { "id": "weekend_trip", "text": "वीकेंड ट्रिप", "emoji": "✈️" },
+        { "id": "gourmet_dinner", "text": "भव्य रात्रिभोज", "emoji": "🍷" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "क्या दीर्घकालिक वित्तीय सुरक्षा बनाता है?",
+      "options": [
+        { "id": "concert_ticket", "text": "कंसर्ट टिकट", "emoji": "🎫" },
+        { "id": "fund_education", "text": "शिक्षा के लिए फंड", "emoji": "📚" },
+        { "id": "buy_jewelry", "text": "गहने खरीदें", "emoji": "💍" },
+        { "id": "luxury_vacation", "text": "लक्जरी छुट्टियां", "emoji": "🏖️" }
+      ]
+    }
+  ]
+}

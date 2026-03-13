@@ -1,0 +1,69 @@
+{
+  "title": "बैज: नैतिक फाइनेंसर",
+  "subtitleComplete": "बैज पूरा हुआ!",
+  "subtitleProgress": "चुनौती {{current}} / {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "resultSuccessTitle": "नैतिक फाइनेंसर बैज अर्जित किया!",
+  "resultSuccessText": "आपने {{total}} में से {{score}} चुनौतियाँ सही कीं! आप एक सच्चे नैतिक फाइनेंसर हैं!",
+  "resultSuccessLesson": "सबक: वित्तीय लेनदेन में ईमानदारी और नैतिकता विश्वास और एक मजबूत प्रतिष्ठा बनाती है।",
+  "resultFailTitle": "सीखते रहें!",
+  "resultFailText": "आपने {{total}} में से {{score}} चुनौतियाँ सही कीं। नैतिक विकल्प चुनने का अभ्यास करें!",
+  "resultFailTip": "टिप: हमेशा त्वरित लाभ के बजाय ईमानदारी चुनें, और आपके सामने आने वाले किसी भी अनैतिक व्यवहार की रिपोर्ट करें!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "नैतिक दुविधा 1",
+      "question": "आपको अतिरिक्त पैसे मिलते हैं। आप क्या करते हैं?",
+      "options": [
+        { "text": "मालिक को लौटाएं", "emoji": "🤗", "isCorrect": true },
+        { "text": "इसे रखें", "emoji": "💰", "isCorrect": false },
+        { "text": "इसे खर्च करें", "emoji": "💸", "isCorrect": false },
+        { "text": "दोस्तों के साथ साझा करें", "emoji": "👥", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "नैतिक दुविधा 2",
+      "question": "दोस्त आपसे वित्तीय लाभ के लिए झूठ बोलने को कहता है। आपकी प्रतिक्रिया?",
+      "options": [
+        { "text": "झूठ बोलने के लिए सहमत हों", "emoji": "😈", "isCorrect": false },
+        { "text": "झूठ बोलने से मना करें", "emoji": "🚫", "isCorrect": true },
+        { "text": "शायद मदद करें", "emoji": "🤔", "isCorrect": false },
+        { "text": "हिस्सा मांगें", "emoji": "💵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "नैतिक दुविधा 3",
+      "question": "आप किसी को वित्तीय लेनदेन में धोखाधड़ी करते हुए देखते हैं। आप क्या करते हैं?",
+      "options": [
+        { "text": "इसे नज़रअंदाज़ करें", "emoji": "😴", "isCorrect": false },
+        { "text": "उनके साथ जुड़ें", "emoji": "😈", "isCorrect": false },
+        { "text": "इसकी रिपोर्ट करें", "emoji": "🚨", "isCorrect": true },
+        { "text": "चुपचाप देखें", "emoji": "👀", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "नैतिक दुविधा 4",
+      "question": "आपको कुछ अनैतिक करने के लिए पैसे दिए जाते हैं। आपकी पसंद?",
+      "options": [
+        { "text": "इसे स्वीकार करें", "emoji": "💳", "isCorrect": false },
+        { "text": "अधिक बातचीत करें", "emoji": "💬", "isCorrect": false },
+        { "text": "इसके बारे में सोचें", "emoji": "🤔", "isCorrect": false },
+        { "text": "प्रस्ताव को अस्वीकार करें", "emoji": "🛑", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "नैतिक दुविधा 5",
+      "question": "आप बेईमान होकर पैसे कमा सकते हैं। आपका निर्णय क्या है?",
+      "options": [
+        { "text": "ईमानदारी चुनें", "emoji": "✨", "isCorrect": true },
+        { "text": "पैसा चुनें", "emoji": "💰", "isCorrect": false },
+        { "text": "दोनों करें", "emoji": "🎭", "isCorrect": false },
+        { "text": "निर्णय से बचें", "emoji": "🚫", "isCorrect": false }
+      ]
+    }
+  ]
+}

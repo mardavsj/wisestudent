@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Fraud Alert",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your fraud detection reflexes!",
+  "subtitleReady": "Test your fraud detection reflexes!",
+  "readyHeader": "Ready to Test Your Fraud Detection Reflexes?",
+  "readyDescription": "Answer questions about safe online practices.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "fraudSkills": "You're developing strong fraud detection skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What should you do if you receive a suspicious email?",
+      "options": [
+        { "text": "Delete it immediately", "id": "delete", "emoji": "🗑️" },
+        { "text": "Open all attachments", "id": "open", "emoji": "📂" },
+        { "text": "Reply asking for more info", "id": "reply", "emoji": "📩" },
+        { "text": "Forward to all contacts", "id": "forward", "emoji": "📤" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Someone calls claiming to be from your bank. What should you do?",
+      "options": [
+        { "text": "Give them your account details", "id": "give_details", "emoji": "💳" },
+        { "text": "Follow their instructions", "id": "follow_instructions", "emoji": "👂" },
+        { "text": "Hang up and call your bank directly", "id": "hang_up", "emoji": "📞" },
+        { "text": "Ask for their employee ID", "id": "ask_id", "emoji": "👤" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which is the safest way to shop online?",
+      "options": [
+        { "text": "Use secure websites with HTTPS", "id": "https", "emoji": "🔒" },
+        { "text": "Save payment info on websites", "id": "save_info", "emoji": "💾" },
+        { "text": "Use public Wi-Fi for purchases", "id": "public_wifi", "emoji": "📶" },
+        { "text": "Click pop-up ads for deals", "id": "ads", "emoji": "💥" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should you do with suspicious text messages?",
+      "options": [
+        { "text": "Click all links in the message", "id": "click_links", "emoji": "🔗" },
+        { "text": "Report and delete them", "id": "report", "emoji": "🚨" },
+        { "text": "Share with friends to verify", "id": "share", "emoji": "👥" },
+        { "text": "Respond asking for clarification", "id": "respond", "emoji": "💬" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "How should you protect your personal information online?",
+      "options": [
+        { "text": "Post everything on social media", "id": "post_social", "emoji": "📱" },
+        { "text": "Use the same password everywhere", "id": "same_password", "emoji": "🔑" },
+        { "text": "Share only with trusted, verified sources", "id": "trusted_sources", "emoji": "✅" },
+        { "text": "Give info to anyone who asks", "id": "give_anyone", "emoji": "🙋" }
+      ]
+    }
+  ]
+}

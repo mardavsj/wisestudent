@@ -1,0 +1,66 @@
+{
+  "title": "Online Payment Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You buy a book online. Pay with cash or UPI safely?",
+      "options": [
+        { "id": "upi", "text": "Choose UPI safely", "emoji": "📱", "isCorrect": true },
+        { "id": "cash", "text": "Pay with cash", "emoji": "💸", "isCorrect": false },
+        { "id": "both", "text": "Use both methods", "emoji": "⚖️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Ordering food online. Use debit card or cash on delivery?",
+      "options": [
+        { "id": "cash", "text": "Cash on delivery", "emoji": "💵", "isCorrect": false },
+        { "id": "debit", "text": "Use debit card", "emoji": "💳", "isCorrect": true },
+        { "id": "skip", "text": "Skip payment", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Buying a gadget online. Pay via UPI or bank transfer?",
+      "options": [
+        { "id": "bank", "text": "Bank transfer", "emoji": "🏦", "isCorrect": false },
+        { "id": "upi", "text": "Pay via UPI", "emoji": "📱", "isCorrect": true },
+        { "id": "cash", "text": "Send cash by mail", "emoji": "✉️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Paying for a subscription. Use credit card or cash?",
+      "options": [
+        { "id": "credit", "text": "Use credit card", "emoji": "💳", "isCorrect": true },
+        { "id": "cash", "text": "Pay with cash", "emoji": "💵", "isCorrect": false },
+        { "id": "check", "text": "Send a check", "emoji": "📄", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Shopping online. Use UPI with OTP or share PIN?",
+      "options": [
+        { "id": "pin", "text": "Share PIN", "emoji": "🔓", "isCorrect": false },
+        { "id": "upi", "text": "Use UPI with OTP", "emoji": "🔒", "isCorrect": true },
+        { "id": "skip", "text": "Skip verification", "emoji": "⚠️", "isCorrect": false }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Online Payment Star!",
+    "winMessage": "You got {{score}} out of {{total}} correct! Great job learning about secure online payments!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Always use secure digital payment methods like UPI, debit/credit cards with OTP for online purchases!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} correct. Remember to use secure payment methods for online transactions!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: UPI, debit/credit cards with OTP are the safest methods for online payments. Never share your PIN!"
+  }
+}

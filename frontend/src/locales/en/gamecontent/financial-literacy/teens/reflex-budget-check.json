@@ -1,0 +1,69 @@
+{
+  "title": "Reflex Budget Check",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your budget reflexes!",
+  "subtitleReady": "Test your budget reflexes!",
+  "readyHeader": "Get Ready!",
+  "readyDescription": "Answer questions about budgeting habits!<br />You have {{time}} seconds for each question.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What's the best way to track your spending?",
+      "options": [
+        { "text": "Record all expenses daily", "id": "record_daily", "emoji": "📝" },
+        { "text": "Ignore small purchases", "id": "ignore_small", "emoji": "🙈" },
+        { "text": "Only track monthly totals", "id": "monthly_only", "emoji": "📊" },
+        { "text": "Guess your spending", "id": "guess", "emoji": "🎲" }
+      ],
+      "explanation": "Tracking daily expenses helps you understand where your money goes and stay within budget"
+    },
+    {
+      "id": 2,
+      "question": "How often should you check your budget?",
+      "options": [
+        { "text": "Never check it", "id": "never", "emoji": "🚫" },
+        { "text": "Weekly or monthly", "id": "weekly_monthly", "emoji": "📅" },
+        { "text": "Only when you run out of money", "id": "out_of_money", "emoji": "💸" },
+        { "text": "Once a year", "id": "year", "emoji": "📆" }
+      ],
+      "explanation": "Regular budget reviews help you stay on track and adjust spending as needed"
+    },
+    {
+      "id": 3,
+      "question": "What should you do with receipts?",
+      "options": [
+        { "text": "Throw them away immediately", "id": "throw", "emoji": "🗑️" },
+        { "text": "Only keep expensive receipts", "id": "expensive", "emoji": "💎" },
+        { "text": "Save them for tracking expenses", "id": "save", "emoji": "💼" },
+        { "text": "Give them to friends", "id": "friends", "emoji": "👥" }
+      ],
+      "explanation": "Saving receipts helps you verify expenses and track your spending accurately"
+    },
+    {
+      "id": 4,
+      "question": "What's the first step in planning expenses?",
+      "options": [
+        { "text": "List all income sources", "id": "income", "emoji": "💰" },
+        { "text": "Spend freely first", "id": "spend", "emoji": "🛍️" },
+        { "text": "Borrow money", "id": "borrow", "emoji": "💳" },
+        { "text": "Ignore planning", "id": "ignore", "emoji": "🙅" }
+      ],
+      "explanation": "Knowing your income is essential before planning how to allocate your money"
+    },
+    {
+      "id": 5,
+      "question": "When should you update your budget?",
+      "options": [
+        { "text": "Never update it", "id": "never", "emoji": "🚫" },
+        { "text": "Only at year end", "id": "year", "emoji": "🎉" },
+        { "text": "When income or expenses change", "id": "change", "emoji": "🔄" },
+        { "text": "When you feel like it", "id": "feel", "emoji": "😊" }
+      ],
+      "explanation": "Updating your budget when circumstances change keeps it relevant and useful"
+    }
+  ]
+}

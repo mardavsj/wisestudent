@@ -1,0 +1,33 @@
+{
+  "title": "पहेली: डिजिटल उपकरण",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "डिजिटल उपकरणों को कार्यों के साथ मिलाएँ ({{current}}/{{total}} मिलान)",
+  "toolsTitle": "डिजिटल उपकरण",
+  "functionsTitle": "डिजिटल कार्य",
+  "matchButton": "मिलान करें",
+  "selectToolLabel": "एक डिजिटल उपकरण चुनें",
+  "selectedToolLabel": "चुना गया: {{name}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "resultSuccessHeader": "बहुत अच्छा!",
+  "resultSuccessSubheader": "आपने {{total}} में से {{score}} डिजिटल उपकरणों का उनके कार्यों के साथ सही मिलान किया है!",
+  "resultSuccessLesson": "सबक: डिजिटल उपकरणों को समझने से आपको सुरक्षित ऑनलाइन लेनदेन करने में मदद मिलती है!",
+  "resultTryAgainHeader": "अभ्यास जारी रखें!",
+  "resultTryAgainSubheader": "आपने {{score}} डिजिटल उपकरणों को सही ढंग से मिलाया है।",
+  "resultTryAgainTip": "सुझाव: सोचें कि प्रत्येक डिजिटल उपकरण वास्तव में क्या करता है!",
+  "coinsEarned": "+{{coins}} सिक्के",
+  "tools": [
+    { "id": 1, "name": "UPI", "emoji": "📱" },
+    { "id": 2, "name": "डेबिट कार्ड", "emoji": "💳" },
+    { "id": 3, "name": "OTP", "emoji": "🔐" },
+    { "id": 4, "name": "QR कोड", "emoji": "📷" },
+    { "id": 5, "name": "CVV", "emoji": "🔒" }
+  ],
+  "functions": [
+    { "id": 6, "name": "त्वरित स्थानांतरण", "emoji": "⚡" },
+    { "id": 7, "name": "बैंक खर्च", "emoji": "🏦" },
+    { "id": 8, "name": "सुरक्षा कोड", "emoji": "🛡️" },
+    { "id": 9, "name": "स्कैन और भुगतान", "emoji": "📲" },
+    { "id": 10, "name": "कार्ड सुरक्षा", "emoji": "🧾" }
+  ]
+}

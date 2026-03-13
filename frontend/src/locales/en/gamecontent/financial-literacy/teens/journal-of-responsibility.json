@@ -1,0 +1,51 @@
+{
+  "title": "Journal of Responsibility",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "journalEntryHeader": "Journal Entry",
+  "placeholder": "Type your response here...",
+  "minCharsRequired": "Minimum {{min}} characters required",
+  "buttonSubmit": "Submit & Continue",
+  "buttonComplete": "Complete Journal",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "One way I will use money responsibly is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "One time I made a responsible financial decision was ___.",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "One way to avoid wasting money is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "One ethical way to earn money is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "One way I will help others with money is ___.",
+      "minLength": 10
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Journal Complete!",
+    "winMessage": "You completed {{score}} out of {{total}} entries! Great job reflecting on financial responsibility!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Being responsible with money means making ethical choices, avoiding waste, and helping others when possible!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You completed {{score}} out of {{total}} entries. Remember, financial responsibility is a key skill for life!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Think about how your financial choices impact yourself and others around you!"
+  }
+}

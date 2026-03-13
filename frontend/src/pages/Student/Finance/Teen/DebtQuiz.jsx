@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const DebtQuiz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-52");
   const gameId = gameData?.id || "finance-teens-52";
+  const gameContent = t("financial-literacy.teens.debt-quiz", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,133 +29,7 @@ const DebtQuiz = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const questions = [
-    {
-      id: 1,
-      text: "Borrow ₹100, repay ₹120. What is extra ₹20 called?",
-      options: [
-       
-        { 
-          id: "principal", 
-          text: "Principal", 
-          emoji: "💵", 
-           
-          isCorrect: false 
-        },
-        { 
-          id: "fee", 
-          text: "Fee", 
-          emoji: "💸", 
-          
-          isCorrect: false 
-        },
-         { 
-          id: "interest", 
-          text: "Interest", 
-          emoji: "💰", 
-          isCorrect: true 
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "What happens if you don't repay debt on time?",
-      options: [
-        { 
-          id: "nothing", 
-          text: "Nothing happens", 
-          emoji: "😊", 
-          isCorrect: false 
-        },
-        { 
-          id: "penalty", 
-          text: "Penalty fees and interest increase", 
-          emoji: "⚠️", 
-          isCorrect: true 
-        },
-        { 
-          id: "free", 
-          text: "Debt becomes free", 
-          emoji: "🎁", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What is the original amount borrowed called?",
-      options: [
-        { 
-          id: "interest", 
-          text: "Interest", 
-          emoji: "💰", 
-          isCorrect: false 
-        },
-        { 
-          id: "principal", 
-          text: "Principal", 
-          emoji: "💵", 
-          isCorrect: true 
-        },
-        
-        { 
-          id: "total", 
-          text: "Total debt", 
-          emoji: "📊", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What should you do before borrowing money?",
-      options: [
-         { 
-          id: "plan", 
-          text: "Plan how to repay", 
-          emoji: "📋", 
-          isCorrect: true 
-        },
-        { 
-          id: "borrow-first", 
-          text: "Borrow first, think later", 
-          emoji: "💸", 
-          isCorrect: false 
-        },
-       
-        { 
-          id: "ignore", 
-          text: "Ignore repayment", 
-          emoji: "😴", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What is the best way to avoid debt problems?",
-      options: [
-        { 
-          id: "borrow-more", 
-          text: "Borrow more to pay old debt", 
-          emoji: "🔄", 
-          isCorrect: false 
-        },
-        { 
-          id: "avoid", 
-          text: "Avoid unnecessary borrowing and repay on time", 
-          emoji: "👍", 
-          isCorrect: true 
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore all debts", 
-          emoji: "🚫", 
-          isCorrect: false 
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;
@@ -189,8 +66,15 @@ const DebtQuiz = () => {
 
   return (
     <GameShell
-      title="Debt Quiz"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      title={gameContent?.title || "Debt Quiz"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.debt-quiz.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Quiz Complete!")
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -212,8 +96,20 @@ const DebtQuiz = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.debt-quiz.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.debt-quiz.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -237,55 +133,69 @@ const DebtQuiz = () => {
                     <div className="flex flex-col items-center justify-center gap-3">
                       <span className="text-4xl">{option.emoji}</span>
                       <span className="font-semibold text-lg">{option.text}</span>
-                      <span className="text-sm opacity-90">{option.description}</span>
+                      {option.description && <span className="text-sm opacity-90">{option.description}</span>}
                     </div>
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Debt Quiz Star!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Debt Quiz Star!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct!
-                  You understand debt and borrowing!
+                  {t("financial-literacy.teens.debt-quiz.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You understand debt and borrowing!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.debt-quiz.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Interest is the extra cost of borrowing. Always plan how to repay, avoid unnecessary debt, and repay on time to avoid penalties!
+                  {gameContent?.result?.lesson || "Lesson: Interest is the extra cost of borrowing. Always plan how to repay, avoid unnecessary debt, and repay on time to avoid penalties!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct.
-                  Remember: Interest is the extra cost of borrowing money!
+                  {t("financial-literacy.teens.debt-quiz.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember: Interest is the extra cost of borrowing money!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Interest is the extra amount you pay when borrowing. Always plan repayment, avoid unnecessary debt, and repay on time!
+                  {gameContent?.result?.tip || "Tip: Interest is the extra amount you pay when borrowing. Always plan repayment, avoid unnecessary debt, and repay on time!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );
 };
 
 export default DebtQuiz;
-

@@ -1,0 +1,72 @@
+{
+  "title": "Reflex Wise Use",
+  "subtitleReady": "Test your financial wisdom!",
+  "challengeTitle": "Reflex Wise Use Challenge",
+  "challengeDescription": "Answer questions about wise money use. You have {{time}} seconds per question!",
+  "wiseChoicesLabel": "Wise Choices",
+  "wiseChoicesList": "Invest for Growth, Emergency Fund, Compound Interest, Financial Plan, Long-term Goals",
+  "poorChoicesLabel": "Poor Choices",
+  "poorChoicesList": "Waste on Junk, Impulse Buy, Spend on FOMO, Luxury Splurge, Peer Pressure",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "gameComplete": "Game Complete!",
+  "perfectScore": "Perfect! You're a financial wisdom master!",
+  "goodScore": "Great job! You understand wise money use!",
+  "lowScore": "Keep learning about wise financial decisions!",
+  "coinsLabel": "+{{count}} Coins",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the wisest way to use your money?",
+      "options": [
+        { "id": "invest", "text": "Invest for Growth", "emoji": "📈" },
+        { "id": "waste", "text": "Waste on Junk", "emoji": "🗑️" },
+        { "id": "impulse", "text": "Impulse Buy", "emoji": "⚡" },
+        { "id": "fomo", "text": "Spend on FOMO", "emoji": "😱" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What should you prioritize for financial security?",
+      "options": [
+        { "id": "luxury", "text": "Luxury Splurge", "emoji": "💎" },
+        { "id": "emergency", "text": "Emergency Fund", "emoji": "🛡️" },
+        { "id": "peer", "text": "Peer Pressure", "emoji": "👥" },
+        { "id": "spend_all", "text": "Spend All", "emoji": "💸" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What helps your money grow over time?",
+      "options": [
+        { "id": "no_plan", "text": "No Planning", "emoji": "🚫" },
+        { "id": "compound", "text": "Compound Interest", "emoji": "💰" },
+        { "id": "quick_spend", "text": "Quick Spending", "emoji": "⚡" },
+        { "id": "ignore", "text": "Ignore Savings", "emoji": "🙈" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should guide your financial decisions?",
+      "options": [
+        { "id": "plan", "text": "Financial Plan", "emoji": "📋" },
+        { "id": "emotions", "text": "Emotions", "emoji": "😢" },
+        { "id": "peer", "text": "Peer Pressure", "emoji": "👥" },
+        { "id": "impulse", "text": "Impulse", "emoji": "🎲" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What should you focus on for long-term success?",
+      "options": [
+        { "id": "instant", "text": "Instant Gratification", "emoji": "🎁" },
+        { "id": "short_term", "text": "Short-term Wants", "emoji": "🛍️" },
+        { "id": "long_term", "text": "Long-term Goals", "emoji": "🎯" },
+        { "id": "no_plan", "text": "No Planning", "emoji": "🚫" }
+      ]
+    }
+  ]
+}

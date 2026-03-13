@@ -1,0 +1,141 @@
+{
+  "title": "उपभोक्ता क्विज़",
+  "subtitleComplete": "क्विज़ पूरी!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "अगर दुकानदार धोखा दे, तो शिकायत कहाँ करें?",
+      "options": [
+        {
+          "id": "court",
+          "text": "उपभोक्ता अदालत",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "playground",
+          "text": "खेल का मैदान",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "nowhere",
+          "text": "कहीं नहीं",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "उपभोक्ता अधिकार क्या हैं?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "कोई अधिकार नहीं",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "protection",
+          "text": "धोखाधड़ी से सुरक्षा",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "खर्च करने का अधिकार",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "अगर आपको खराब उत्पाद मिले तो क्या करना चाहिए?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "स्वीकार करो",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "अनदेखा करो",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "विक्रेता से शिकायत करो",
+          "emoji": "📢",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "सूचना का अधिकार क्या है?",
+      "options": [
+        {
+          "id": "know",
+          "text": "उत्पाद की जानकारी जानना",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "जानकारी छिपाना",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "lie",
+          "text": "झूठ स्वीकार करना",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "उपभोक्ता शिकायत कहाँ दर्ज कर सकते हैं?",
+      "options": [
+        {
+          "id": "police",
+          "text": "पुलिस स्टेशन",
+          "emoji": "🚔",
+          "isCorrect": false
+        },
+        {
+          "id": "court2",
+          "text": "उपभोक्ता अदालत",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "school",
+          "text": "स्कूल",
+          "emoji": "🏫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "क्विज़ पूरी!",
+    "winMessage": "आपने {{total}} में से {{score}} सही किए! आप उपभोक्ता अधिकार समझते हैं!",
+    "coinsEarned": "+{{score}} सिक्के",
+    "lesson": "सीख: उपभोक्ताओं के अधिकार हैं! धोखा होने पर उपभोक्ता अदालत में शिकायत कर सकते हैं, सुरक्षित उत्पाद माँग सकते हैं, और सही जानकारी पा सकते हैं!",
+    "loseEmoji": "💪",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} सही किए। याद रखें, दुकानदार धोखा दे तो उपभोक्ता अदालत में शिकायत करें!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "सुझाव: अगर दुकानदार धोखा दे, तो आप उपभोक्ता अदालत में शिकायत दर्ज कर सकते हैं, खेल के मैदान में नहीं! उपभोक्ताओं के अधिकार हैं!"
+  }
+}

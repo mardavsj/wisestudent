@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const SimulationDigitalSpend = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-48");
   const gameId = gameData?.id || "finance-teens-48";
-  
-  // Ensure gameId is always set correctly
-  if (!gameData || !gameData.id) {
-    console.warn("Game data not found for SimulationDigitalSpend, using fallback ID");
-  }
+  const gameContent = t("financial-literacy.teens.simulation-digital-spend", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -26,167 +24,7 @@ const SimulationDigitalSpend = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const scenarios = [
-  {
-    id: 1,
-    title: "Subscription Trap",
-    description: "You have ₹1000. Multiple apps offer free trials then ₹300/month. What’s smart?",
-    options: [
-      { 
-        id: "all-trials", 
-        text: "Sign up for all trials blindly", 
-        emoji: "📱", 
-        isCorrect: false
-      },
-      { 
-        id: "plan-trials", 
-        text: "Check app value, subscribe only if useful", 
-        emoji: "🧠", 
-        isCorrect: true
-      },
-      { 
-        id: "ignore", 
-        text: "Avoid all digital services", 
-        emoji: "🙈", 
-        isCorrect: false
-      },
-      { 
-        id: "auto-renew", 
-        text: "Auto-renew all trials to avoid missing benefits", 
-        emoji: "🔄", 
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: "Impulse Purchase Challenge",
-    description: "You see a cool gadget online for ₹700, wallet has ₹1000. What’s smart?",
-    options: [
-      { 
-        id: "review", 
-        text: "Review need vs budget, wait 24 hrs", 
-        emoji: "⏳", 
-        isCorrect: true
-      },
-      { 
-        id: "buy-now", 
-        text: "Buy immediately for fun", 
-        emoji: "🛒", 
-        isCorrect: false
-      },
-      
-      { 
-        id: "borrow", 
-        text: "Borrow extra money to buy it", 
-        emoji: "💳", 
-        isCorrect: false
-      },
-      { 
-        id: "ignore-forever", 
-        text: "Ignore it completely, even if useful later", 
-        emoji: "🚫", 
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Digital Gift Dilemma",
-    description: "Friend asks for ₹500 gift via an app. Wallet has ₹800. What’s smart?",
-    options: [
-      { 
-        id: "send-all", 
-        text: "Send without thinking, just to please", 
-        emoji: "🎁", 
-        isCorrect: false
-      },
-      
-      { 
-        id: "ignore-friend", 
-        text: "Ignore request completely", 
-        emoji: "🙅", 
-        isCorrect: false
-      },
-      { 
-        id: "borrow-money", 
-        text: "Borrow to give more than wallet", 
-        emoji: "💳", 
-        isCorrect: false
-      },
-      { 
-        id: "check-budget", 
-        text: "Check budget, balance social kindness & savings", 
-        emoji: "⚖️", 
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 4,
-    title: "Online Game Coins",
-    description: "Game offers ₹100 coins pack for ₹200. Wallet ₹1000. How to act wisely?",
-    options: [
-      { 
-        id: "buy-many", 
-        text: "Buy as many as possible", 
-        emoji: "🎮", 
-        isCorrect: false
-      },
-      
-      { 
-        id: "ignore-entirely", 
-        text: "Avoid games completely", 
-        emoji: "🚫", 
-        isCorrect: false
-      },
-      { 
-        id: "limit-purchase", 
-        text: "Set limit, buy only if fun + affordable", 
-        emoji: "📊", 
-        isCorrect: true
-      },
-      { 
-        id: "borrow", 
-        text: "Borrow money to buy more coins", 
-        emoji: "💳", 
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "Digital Privacy Spending",
-    description: "App wants ₹500 for premium feature but requires all personal data. Wallet ₹1200. Decision?",
-    options: [
-      { 
-        id: "pay", 
-        text: "Pay without reading terms", 
-        emoji: "💸", 
-        isCorrect: false
-      },
-      { 
-        id: "research", 
-        text: "Check privacy, decide if worth it", 
-        emoji: "🔍", 
-        isCorrect: true
-      },
-      { 
-        id: "ignore", 
-        text: "Never pay for anything digital", 
-        emoji: "🙈", 
-        isCorrect: false
-      },
-      { 
-        id: "share-data", 
-        text: "Share unnecessary data for convenience", 
-        emoji: "📲", 
-        isCorrect: false
-      }
-    ]
-  }
-];
-
+  const scenarios = Array.isArray(gameContent?.scenarios) ? gameContent.scenarios : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -196,7 +34,7 @@ const SimulationDigitalSpend = () => {
     
     const scenario = scenarios[currentScenario];
     const selectedOption = scenario.options.find(opt => opt.id === optionId);
-    const isCorrect = selectedOption?.isCorrect;
+    const isCorrect = !!selectedOption?.isCorrect;
 
     if (isCorrect) {
       setScore(prev => prev + 1);
@@ -229,8 +67,16 @@ const SimulationDigitalSpend = () => {
 
   return (
     <GameShell
-      title="Simulation: Digital Spend"
-      subtitle={!showResult ? `Scenario ${currentScenario + 1} of ${scenarios.length}` : "Simulation Complete!"}
+      title={gameContent?.title || "Simulation: Digital Spend"}
+      subtitle={
+        !showResult 
+          ? t("financial-literacy.teens.simulation-digital-spend.subtitleProgress", {
+              current: currentScenario + 1,
+              total: scenarios.length,
+              defaultValue: "Scenario {{current}} of {{total}}"
+            })
+          : gameContent?.subtitleComplete || "Simulation Complete!"
+      }
       score={score}
       currentLevel={currentScenario + 1}
       totalLevels={scenarios.length}
@@ -252,16 +98,26 @@ const SimulationDigitalSpend = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Scenario {currentScenario + 1}/{scenarios.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{scenarios.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.simulation-digital-spend.subtitleProgress", {
+                    current: currentScenario + 1,
+                    total: scenarios.length,
+                    defaultValue: "Scenario {{current}} of {{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.simulation-digital-spend.scoreLabel", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{current.title}</h3>
               <p className="text-white text-lg mb-6">
                 {current.description}
               </p>
-              
-            
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {current.options.map((option) => (
@@ -286,44 +142,54 @@ const SimulationDigitalSpend = () => {
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Excellent Digital Finance Skills!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.excellentTitle || "Excellent Digital Finance Skills!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {scenarios.length} scenarios correct!
-                  You're mastering digital spending strategies!
+                  {t("financial-literacy.teens.simulation-digital-spend.perfectScoreMsg", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "You got {{score}} out of {{total}} scenarios correct! You're mastering digital spending strategies!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>{t("financial-literacy.teens.simulation-digital-spend.coinsLabel", { count: score })}</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Always track your digital spending and plan expenses to stay within budget!
+                  {gameContent?.lessonLabel || "Lesson: Always track your digital spending and plan expenses to stay within budget!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.keepLearningTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {scenarios.length} scenarios correct.
-                  Remember to track and plan your digital expenses!
+                  {t("financial-literacy.teens.simulation-digital-spend.lowScoreMsg", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "You got {{score}} out of {{total}} scenarios correct. Remember to track and plan your digital expenses!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Plan your digital expenses and track them regularly to maintain financial health!
+                  {gameContent?.tipLabel || "Tip: Plan your digital expenses and track them regularly to maintain financial health!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

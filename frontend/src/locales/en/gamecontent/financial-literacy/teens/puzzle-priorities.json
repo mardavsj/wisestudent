@@ -1,0 +1,33 @@
+{
+  "title": "Puzzle of Priorities",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match Expenses with Priorities ({{current}}/{{total}} matched)",
+  "itemsTitle": "Expenses",
+  "prioritiesTitle": "Priorities",
+  "matchButton": "Match",
+  "selectItemLabel": "Select an Expense",
+  "selectedItemLabel": "Selected: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "Matched: {{current}}/{{total}}",
+  "resultSuccessHeader": "Great Job!",
+  "resultSuccessSubheader": "You correctly matched {{score}} out of {{total}} expenses with their priorities!",
+  "resultSuccessLesson": "Lesson: Understanding expense priorities helps make smart financial decisions!",
+  "resultTryAgainHeader": "Keep Practicing!",
+  "resultTryAgainSubheader": "You matched {{score}} out of {{total}} expenses correctly.",
+  "resultTryAgainTip": "Tip: Think about whether each expense is essential or discretionary!",
+  "coinsEarned": "+{{coins}} Coins",
+  "items": [
+    { "id": 1, "name": "School Fees", "emoji": "🎓" },
+    { "id": 2, "name": "Groceries", "emoji": "🛒" },
+    { "id": 3, "name": "Rent", "emoji": "🏠" },
+    { "id": 4, "name": "Medicine", "emoji": "💊" },
+    { "id": 5, "name": "Electricity", "emoji": "💡" }
+  ],
+  "priorities": [
+    { "id": 6, "name": "Need", "emoji": "✅"},
+    { "id": 7, "name": "Want", "emoji": "🎁" },
+    { "id": 8, "name": "Save", "emoji": "💰" },
+    { "id": 9, "name": "Invest", "emoji": "📈" },
+    { "id": 10, "name": "Share", "emoji": "🤲" }
+  ]
+}

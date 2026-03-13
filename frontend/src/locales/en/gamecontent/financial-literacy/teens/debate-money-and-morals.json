@@ -1,0 +1,54 @@
+{
+  "title": "Debate: Money & Morals",
+  "subtitleComplete": "Debate Complete!",
+  "subtitleProgress": "Round {{current}} of {{total}}",
+  "roundLabel": "Round {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "Does money test character?",
+      "options": [
+        { "id": "yes", "text": "Yes, ethics matter more", "emoji": "🙂", "isCorrect": true },
+        { "id": "no", "text": "No, money doesn't matter", "emoji": "🤷", "isCorrect": false },
+        { "id": "maybe", "text": "Maybe, depends", "emoji": "🤔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "Should you compromise ethics for money?",
+      "options": [
+        { "id": "sometimes", "text": "Sometimes okay", "emoji": "🤷", "isCorrect": false },
+        { "id": "never", "text": "Never compromise", "emoji": "🛡️", "isCorrect": true },
+        { "id": "always", "text": "Money is priority", "emoji": "💰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "What's more important: wealth or integrity?",
+      "options": [
+        { "id": "wealth", "text": "Wealth", "emoji": "💵", "isCorrect": false },
+        { "id": "both", "text": "Both equally", "emoji": "⚖️", "isCorrect": false },
+        { "id": "integrity", "text": "Integrity", "emoji": "💎", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "Can you be rich and ethical?",
+      "options": [
+        { "id": "yes2", "text": "Yes, absolutely", "emoji": "✨", "isCorrect": true },
+        { "id": "no2", "text": "No, impossible", "emoji": "🚫", "isCorrect": false },
+        { "id": "rarely", "text": "Rarely possible", "emoji": "😕", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "What builds lasting success?",
+      "options": [
+        { "id": "shortcuts", "text": "Shortcuts and tricks", "emoji": "⚡", "isCorrect": false },
+        { "id": "ethics", "text": "Ethics and honesty", "emoji": "🏆", "isCorrect": true },
+        { "id": "luck", "text": "Luck only", "emoji": "🍀", "isCorrect": false }
+      ]
+    }
+  ]
+}

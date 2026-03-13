@@ -1,0 +1,136 @@
+{
+  "title": "Startup Idea Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "perfectScoreTitle": "Story Complete!",
+  "perfectScoreMsg": "You got {{score}} out of {{total}} correct! You understand entrepreneurship!",
+  "coinsLabel": "+{{count}} Coins",
+  "lessonLabel": "Lesson: Entrepreneurship is creating and running a business. Anyone, including teens, can be entrepreneurs with good ideas and effort!",
+  "keepLearningTitle": "Keep Learning!",
+  "lowScoreMsg": "You got {{score}} out of {{total}} correct. Remember, entrepreneurship is creating a new business, and anyone can do it!",
+  "tryAgain": "Try Again",
+  "tipLabel": "Tip: An entrepreneur is someone who creates and runs a new business. Selling handmade crafts online is entrepreneurship!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Teen sells handmade crafts online. Is this entrepreneurship?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "Yes, it's entrepreneurship",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "No, it's just selling",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "Maybe, depends",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What makes someone an entrepreneur?",
+      "options": [
+        {
+          "id": "spends",
+          "text": "Only spends money",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "creates",
+          "text": "Creates new business",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "Does nothing",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Can teens be entrepreneurs?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "No, only adults",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "Maybe, with permission",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "Yes, age doesn't matter",
+          "emoji": "👍",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What's needed to start a business?",
+      "options": [
+        {
+          "id": "money",
+          "text": "Lots of money only",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "idea",
+          "text": "Good idea and effort",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "Just luck",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Is selling online a form of entrepreneurship?",
+      "options": [
+        {
+          "id": "no3",
+          "text": "No, not real business",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "yes3",
+          "text": "Yes, it's a business",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe3",
+          "text": "Maybe, if profitable",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

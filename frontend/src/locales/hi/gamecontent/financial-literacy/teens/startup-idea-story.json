@@ -1,0 +1,136 @@
+{
+  "title": "स्टार्टअप आइडिया कहानी",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{total}} का {{current}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "perfectScoreTitle": "कहानी पूरी हुई!",
+  "perfectScoreMsg": "आपने {{total}} में से {{score}} सही पाए! आप उद्यमिता (Entrepreneurship) को समझते हैं!",
+  "coinsLabel": "+{{count}} सिक्के",
+  "lessonLabel": "सबक: उद्यमिता (Entrepreneurship) एक व्यवसाय बनाना और चलाना है। किशोरों सहित कोई भी, अच्छे विचारों और प्रयास के साथ उद्यमी बन सकता है!",
+  "keepLearningTitle": "सीखते रहें!",
+  "lowScoreMsg": "आपने {{total}} में से {{score}} सही पाए। याद रखें, उद्यमिता एक नया व्यवसाय बनाना है, और कोई भी इसे कर सकता है!",
+  "tryAgain": "फिर से प्रयास करें",
+  "tipLabel": "टिप: एक उद्यमी वह है जो एक नया व्यवसाय बनाता और चलाता है। हस्तशिल्प ऑनलाइन बेचना उद्यमिता है!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "एक किशोर ऑनलाइन हस्तशिल्प बेचता है। क्या यह उद्यमिता है?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "हाँ, यह उद्यमिता है",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "नहीं, यह सिर्फ बेचना है",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "शायद, निर्भर करता है",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "किसी को उद्यमी क्या बनाता है?",
+      "options": [
+        {
+          "id": "spends",
+          "text": "केवल पैसा खर्च करता है",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "creates",
+          "text": "नया व्यवसाय बनाता है",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "कुछ नहीं करता",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "क्या किशोर उद्यमी हो सकते हैं?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "नहीं, केवल वयस्क",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "शायद, अनुमति के साथ",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "हाँ, उम्र मायने नहीं रखती",
+          "emoji": "👍",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "व्यवसाय शुरू करने के लिए क्या आवश्यक है?",
+      "options": [
+        {
+          "id": "money",
+          "text": "केवल बहुत सारा पैसा",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "idea",
+          "text": "अच्छा विचार और प्रयास",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "सिर्फ किस्मत",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "क्या ऑनलाइन बेचना उद्यमिता का एक रूप है?",
+      "options": [
+        {
+          "id": "no3",
+          "text": "नहीं, वास्तविक व्यवसाय नहीं",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "yes3",
+          "text": "हाँ, यह एक व्यवसाय है",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe3",
+          "text": "शायद, यदि लाभदायक हो",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

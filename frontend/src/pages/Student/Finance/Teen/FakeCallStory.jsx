@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const FakeCallStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-85");
   const gameId = gameData?.id || "finance-teens-85";
+  const gameContent = t("financial-literacy.teens.fake-call-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,132 +29,7 @@ const FakeCallStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Caller asks for your bank details. What should you do?",
-      options: [
-        { 
-          id: "share", 
-          text: "Share details", 
-          emoji: "💳", 
-          
-          isCorrect: false
-        },
-        
-        { 
-          id: "maybe", 
-          text: "Maybe, if they sound official", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          id: "refuse", 
-          text: "Refuse, never share", 
-          emoji: "🚫", 
-         
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "What's a sign of a fake call?",
-      options: [
-        { 
-          id: "urgent", 
-          text: "Urgent pressure to act", 
-          emoji: "⚠️", 
-          isCorrect: true
-        },
-        { 
-          id: "polite", 
-          text: "Polite and patient", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        { 
-          id: "normal", 
-          text: "Normal conversation", 
-          emoji: "💬", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What should you do if someone asks for OTP?",
-      options: [
-        { 
-          id: "give", 
-          text: "Give OTP", 
-          emoji: "🔢", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Never share OTP", 
-          emoji: "🔒", 
-          isCorrect: true
-        },
-        { 
-          id: "maybe2", 
-          text: "Share if they ask nicely", 
-          emoji: "🤷", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How can you verify a bank call?",
-      options: [
-        { 
-          id: "call-back", 
-          text: "Call bank directly", 
-          emoji: "📞", 
-          isCorrect: true
-        },
-        { 
-          id: "trust", 
-          text: "Trust the caller", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore-all", 
-          text: "Ignore all calls", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What's the safest response to suspicious calls?",
-      options: [
-      
-        { 
-          id: "engage", 
-          text: "Keep talking", 
-          emoji: "💬", 
-          isCorrect: false
-        },
-        { 
-          id: "share-info", 
-          text: "Share some info", 
-          emoji: "📝", 
-          isCorrect: false
-        },
-          { 
-          id: "hang-up", 
-          text: "Hang up and report", 
-          emoji: "📞", 
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -186,8 +64,15 @@ const FakeCallStory = () => {
 
   return (
     <GameShell
-      title="Fake Call Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Fake Call Story"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.fake-call-story.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Story Complete!")
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -209,8 +94,20 @@ const FakeCallStory = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.fake-call-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.fake-call-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -234,12 +131,70 @@ const FakeCallStory = () => {
                     <div className="flex flex-col items-center justify-center gap-3">
                       <span className="text-4xl">{option.emoji}</span>
                       <span className="font-semibold text-lg">{option.text}</span>
-                      <p className="text-sm opacity-90">{option.description}</p>
+                      {option.description && <p className="text-sm opacity-90">{option.description}</p>}
                     </div>
                   </button>
                 ))}
               </div>
             </div>
+          </div>
+        ) : showResult ? (
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
+            {score >= 3 ? (
+              <div>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Great Job!"}
+                </h3>
+                <p className="text-white/90 text-lg mb-4">
+                  {t("financial-literacy.teens.fake-call-story.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct! You know how to handle suspicious calls!"
+                  })}
+                </p>
+                <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
+                  <span>
+                    {t("financial-literacy.teens.fake-call-story.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
+                </div>
+                <p className="text-white/80">
+                  {gameContent?.result?.lesson || "Lesson: Never share sensitive info like OTPs or bank details over phone. Always hang up and call the official bank number if suspicious."}
+                </p>
+              </div>
+            ) : (
+              <div>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "😔"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
+                <p className="text-white/90 text-lg mb-4">
+                  {t("financial-literacy.teens.fake-call-story.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct. Remember to be cautious with phone calls!"
+                  })}
+                </p>
+                <button
+                  onClick={() => {
+                    setShowResult(false);
+                    setCurrentQuestion(0);
+                    setScore(0);
+                    setAnswered(false);
+                    resetFeedback();
+                  }}
+                  className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
+                >
+                  {gameContent?.result?.tryAgain || "Try Again"}
+                </button>
+                <p className="text-white/80 text-sm">
+                  {gameContent?.result?.tip || "Tip: Scam callers often create artificial urgency. Never share OTPs or bank details. Hang up and contact your bank directly."}
+                </p>
+              </div>
+            )}
           </div>
         ) : null}
       </div>
@@ -248,4 +203,3 @@ const FakeCallStory = () => {
 };
 
 export default FakeCallStory;
-

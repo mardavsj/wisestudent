@@ -1,0 +1,171 @@
+{
+  "title": "Simulation: Digital Spend",
+  "subtitleComplete": "Simulation Complete!",
+  "subtitleProgress": "Scenario {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "perfectScoreMsg": "You got {{score}} out of {{total}} scenarios correct! You're mastering digital spending strategies!",
+  "lowScoreMsg": "You got {{score}} out of {{total}} scenarios correct. Remember to track and plan your digital expenses!",
+  "lessonLabel": "Lesson: Always track your digital spending and plan expenses to stay within budget!",
+  "tryAgain": "Try Again",
+  "tipLabel": "Tip: Plan your digital expenses and track them regularly to maintain financial health!",
+  "coinsLabel": "+{{count}} Coins",
+  "excellentTitle": "Excellent Digital Finance Skills!",
+  "keepLearningTitle": "Keep Learning!",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "Subscription Trap",
+      "description": "You have ₹1000. Multiple apps offer free trials then ₹300/month. What’s smart?",
+      "options": [
+        {
+          "id": "all-trials",
+          "text": "Sign up for all trials blindly",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "plan-trials",
+          "text": "Check app value, subscribe only if useful",
+          "emoji": "🧠",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "Avoid all digital services",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "auto-renew",
+          "text": "Auto-renew all trials to avoid missing benefits",
+          "emoji": "🔄",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Impulse Purchase Challenge",
+      "description": "You see a cool gadget online for ₹700, wallet has ₹1000. What’s smart?",
+      "options": [
+        {
+          "id": "review",
+          "text": "Review need vs budget, wait 24 hrs",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "buy-now",
+          "text": "Buy immediately for fun",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "Borrow extra money to buy it",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-forever",
+          "text": "Ignore it completely, even if useful later",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Digital Gift Dilemma",
+      "description": "Friend asks for ₹500 gift via an app. Wallet has ₹800. What’s smart?",
+      "options": [
+        {
+          "id": "send-all",
+          "text": "Send without thinking, just to please",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-friend",
+          "text": "Ignore request completely",
+          "emoji": "🙅",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-money",
+          "text": "Borrow to give more than wallet",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "check-budget",
+          "text": "Check budget, balance social kindness & savings",
+          "emoji": "⚖️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Online Game Coins",
+      "description": "Game offers ₹100 coins pack for ₹200. Wallet ₹1000. How to act wisely?",
+      "options": [
+        {
+          "id": "buy-many",
+          "text": "Buy as many as possible",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-entirely",
+          "text": "Avoid games completely",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "limit-purchase",
+          "text": "Set limit, buy only if fun + affordable",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "Borrow money to buy more coins",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Digital Privacy Spending",
+      "description": "App wants ₹500 for premium feature but requires all personal data. Wallet ₹1200. Decision?",
+      "options": [
+        {
+          "id": "pay",
+          "text": "Pay without reading terms",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "text": "Check privacy, decide if worth it",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "Never pay for anything digital",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "share-data",
+          "text": "Share unnecessary data for convenience",
+          "emoji": "📲",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const FakeOnlineOfferStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-81");
   const gameId = gameData?.id || "finance-teens-81";
+  const gameContent = t("financial-literacy.teens.fake-online-offer-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,129 +29,7 @@ const FakeOnlineOfferStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Website offers free phone if you pay ₹100. What should you do?",
-      options: [
-        { 
-          id: "refuse", 
-          text: "Refuse, it's a scam", 
-          emoji: "🚫", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "pay", 
-          text: "Pay ₹100", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, check first", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What's a sign of a fake online offer?",
-      options: [
-        { 
-          id: "normal", 
-          text: "Normal prices", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "too-good", 
-          text: "Too good to be true", 
-          emoji: "⚠️", 
-          isCorrect: true
-        },
-        { 
-          id: "expensive", 
-          text: "Very expensive", 
-          emoji: "💎", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What should you do with suspicious offers?",
-      options: [
-        { 
-          id: "try", 
-          text: "Try it anyway", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        { 
-          id: "share", 
-          text: "Share with friends", 
-          emoji: "📢", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore and report", 
-          emoji: "🚫", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Why are 'free' offers often scams?",
-      options: [
-        { 
-          id: "trick", 
-          text: "They trick you to pay", 
-          emoji: "🎭", 
-          isCorrect: true
-        },
-        { 
-          id: "real", 
-          text: "They're always real", 
-          emoji: "✅", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe2", 
-          text: "Sometimes real", 
-          emoji: "🤷", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What's the safest action with online offers?",
-      options: [
-        { 
-          id: "pay-fast", 
-          text: "Pay quickly", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "verify", 
-          text: "Verify before paying", 
-          emoji: "🔍", 
-          isCorrect: true
-        },
-        { 
-          id: "ignore-all", 
-          text: "Ignore all offers", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -191,8 +72,15 @@ const FakeOnlineOfferStory = () => {
 
   return (
     <GameShell
-      title="Fake Online Offer Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Fake Online Offer Story"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.fake-online-offer-story.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Story Complete!")
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -214,8 +102,20 @@ const FakeOnlineOfferStory = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.fake-online-offer-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.fake-online-offer-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -239,55 +139,69 @@ const FakeOnlineOfferStory = () => {
                     <div className="flex flex-col items-center justify-center gap-3">
                       <span className="text-4xl">{option.emoji}</span>
                       <span className="font-semibold text-lg">{option.text}</span>
-                      <p className="text-sm opacity-90">{option.description}</p>
+                      {option.description && <p className="text-sm opacity-90">{option.description}</p>}
                     </div>
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Story Complete!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Story Complete!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct!
-                  You know how to spot fake offers!
+                  {t("financial-literacy.teens.fake-online-offer-story.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You know how to spot fake offers!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.fake-online-offer-story.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Fake online offers often seem too good to be true. Always verify before paying, and refuse suspicious offers!
+                  {gameContent?.result?.lesson || "Lesson: Fake online offers often seem too good to be true. Always verify before paying, and refuse suspicious offers!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct.
-                  Remember, if an offer seems too good to be true, it's probably a scam!
+                  {t("financial-literacy.teens.fake-online-offer-story.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember, if an offer seems too good to be true, it's probably a scam!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: If a website offers a free phone for just ₹100, it's likely a scam. Always verify offers and refuse suspicious ones!
+                  {gameContent?.result?.tip || "Tip: If a website offers a free phone for just ₹100, it's likely a scam. Always verify offers and refuse suspicious ones!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );
 };
 
 export default FakeOnlineOfferStory;
-

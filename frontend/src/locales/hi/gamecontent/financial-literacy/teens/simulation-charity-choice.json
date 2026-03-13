@@ -1,0 +1,163 @@
+{
+  "title": "सिमुलेशन: चैरिटी का चुनाव",
+  "subtitleComplete": "सिमुलेशन पूरा हुआ!",
+  "subtitleProgress": "परिदृश्य {{current}} का {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "प्रभाव बनाम भावना",
+      "description": "आप ₹1000 दान करना चाहते हैं। कौन सा विकल्प सबसे वास्तविक प्रभाव डालता है?",
+      "options": [
+        {
+          "id": "street",
+          "text": "सड़क पर बिना सोचे-समझे नकद देना",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "trusted",
+          "text": "स्पष्ट रिपोर्ट वाले सत्यापित चैरिटी को दान करना",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "viral",
+          "text": "ट्रेंडिंग ऑनलाइन अभियानों में दान करना",
+          "emoji": "🔥",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "सही समय का हमेशा इंतज़ार करना",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "अल्पकालिक मदद बनाम दीर्घकालिक परिवर्तन",
+      "description": "एक चैरिटी या तो आज भोजन प्रदान कर सकती है या महीनों तक शिक्षा सहायता। क्या अधिक समझदारी है?",
+      "options": [
+        {
+          "id": "education",
+          "text": "शिक्षा और कौशल निर्माण का समर्थन",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "meals",
+          "text": "एक बार भोजन वितरण",
+          "emoji": "🍱",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "बेतरतीब ढंग से पैसे बांटें",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "दान करने से बचें",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "प्रसार जांच (Transparency Check)",
+      "description": "दान करने से पहले, आपको सबसे पहले क्या जांचना चाहिए?",
+      "options": [
+        {
+          "id": "celebrity",
+          "text": "सेलिब्रिटी समर्थन",
+          "emoji": "🌟",
+          "isCorrect": false
+        },
+        {
+          "id": "emotional",
+          "text": "केवल भावनात्मक कहानियां",
+          "emoji": "😢",
+          "isCorrect": false
+        },
+        {
+          "id": "pressure",
+          "text": "सामाजिक दबाव",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "reports",
+          "text": "वित्तीय पारदर्शिता और प्रभाव रिपोर्ट",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "चैरिटी बनाम व्यक्तिगत विकास",
+      "description": "आपके पास सीमित पैसा है। सहानुभूति और वित्तीय समझ दोनों का निर्माण क्या करता है?",
+      "options": [
+        {
+          "id": "donate-blind",
+          "text": "बिना समझे दान करें",
+          "emoji": "🙃",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "सब कुछ खुद पर खर्च करें",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "कारणों के बारे में जानें, फिर सोच-समझकर दान करें",
+          "emoji": "🧠",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "चैरिटी से पूरी तरह बचें",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "सतत दान (Sustainable Giving)",
+      "description": "कौन सी आदत चैरिटी को जीवन भर प्रभावी बनाती है?",
+      "options": [
+        {
+          "id": "big-once",
+          "text": "एक बार में एक बड़ा दान",
+          "emoji": "💥",
+          "isCorrect": false
+        },
+        {
+          "id": "consistent",
+          "text": "छोटा, नियमित, नियोजित दान",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "guilt",
+          "text": "केवल दोषी महसूस होने पर दान करें",
+          "emoji": "😬",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "आवेगपूर्ण दान",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -6,10 +7,12 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const SimulationShoppingMall = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-teens-18";
   const gameData = getGameDataById(gameId);
+  const gameContent = t("financial-literacy.teens.simulation-shopping-mall", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -21,172 +24,7 @@ const SimulationShoppingMall = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const scenarios = [
-    {
-      id: 1,
-      title: "Back to School Shopping",
-      description: "You have ₹150 for school supplies. What's the best approach?",
-      budget: 150,
-      options: [
-        
-        { 
-          id: "everything", 
-          text: "Buy everything I want", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          id: "needs-only", 
-          text: "Buy only essentials", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          id: "nothing", 
-          text: "Buy nothing, save all", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "random", 
-          text: "Buy random items", 
-          emoji: "🎲", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Holiday Gift Shopping",
-      description: "You have ₹100 for holiday gifts. What's the smartest choice?",
-      budget: 100,
-      options: [
-        { 
-          id: "thoughtful", 
-          text: "Thoughtful gifts within budget", 
-          emoji: "💝", 
-          isCorrect: true
-        },
-        { 
-          id: "expensive", 
-          text: "Most expensive gifts possible", 
-          emoji: "💎", 
-          isCorrect: false
-        },
-        { 
-          id: "cheap", 
-          text: "Cheapest gifts to save money", 
-          emoji: "🏷️", 
-          isCorrect: false
-        },
-        { 
-          id: "none", 
-          text: "No gifts, keep money", 
-          emoji: "🤐", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Emergency Clothing Needs",
-      description: "You need new clothes after an accident. How do you prioritize?",
-      budget: 110,
-      options: [
-        
-        { 
-          id: "brand-new", 
-          text: "All brand new designer clothes", 
-          emoji: "👗", 
-          isCorrect: false
-        },
-        { 
-          id: "essentials-first", 
-          text: "Essential items first, then extras", 
-          emoji: "👕", 
-          isCorrect: true
-        },
-        { 
-          id: "secondhand", 
-          text: "All secondhand to save money", 
-          emoji: "📦", 
-          isCorrect: false
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow from friends", 
-          emoji: "🤝", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Entertainment and Socializing",
-      description: "You have ₹60 for entertainment. How do you balance fun and finances?",
-      budget: 60,
-      options: [
-        
-        { 
-          id: "all-fun", 
-          text: "Spend all on entertainment", 
-          emoji: "🎉", 
-          isCorrect: false
-        },
-        { 
-          id: "no-fun", 
-          text: "Save all, no entertainment", 
-          emoji: "📵", 
-          isCorrect: false
-        },
-        { 
-          id: "balanced-fun", 
-          text: "Some fun, some savings", 
-          emoji: "🎬", 
-          isCorrect: true
-        },
-        { 
-          id: "borrow-fun", 
-          text: "Borrow money for fun", 
-          emoji: "💳", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Balanced Shopping Day",
-      description: "You have ₹200 for various needs. What's the best allocation?",
-      budget: 200,
-      options: [
-       
-        { 
-          id: "all-needs", 
-          text: "All needs, no wants or savings", 
-          emoji: "🧾", 
-          isCorrect: false
-        },
-        { 
-          id: "impulse", 
-          text: "Impulse buying whatever I like", 
-          emoji: "🛒", 
-          isCorrect: false
-        },
-        { 
-          id: "all-wants", 
-          text: "All wants, no needs", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-         { 
-          id: "smart-mix", 
-          text: "Mix of needs, some wants, save rest", 
-          emoji: "🛒", 
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  const scenarios = Array.isArray(gameContent?.scenarios) ? gameContent.scenarios : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -196,7 +34,7 @@ const SimulationShoppingMall = () => {
     
     const scenario = scenarios[currentScenario];
     const selectedOption = scenario.options.find(opt => opt.id === optionId);
-    const isCorrect = selectedOption?.isCorrect;
+    const isCorrect = !!selectedOption?.isCorrect;
 
     if (isCorrect) {
       setScore(prev => prev + 1);
@@ -229,8 +67,16 @@ const SimulationShoppingMall = () => {
 
   return (
     <GameShell
-      title="Simulation: Shopping Mall"
-      subtitle={!showResult ? `Scenario ${currentScenario + 1} of ${scenarios.length}` : "Simulation Complete!"}
+      title={gameContent?.title || "Simulation: Shopping Mall"}
+      subtitle={
+        !showResult 
+          ? t("financial-literacy.teens.simulation-shopping-mall.subtitleProgress", {
+              current: currentScenario + 1,
+              total: scenarios.length,
+              defaultValue: "Scenario {{current}} of {{total}}"
+            })
+          : gameContent?.subtitleComplete || "Simulation Complete!"
+      }
       score={score}
       currentLevel={currentScenario + 1}
       totalLevels={scenarios.length}
@@ -252,8 +98,20 @@ const SimulationShoppingMall = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Scenario {currentScenario + 1}/{scenarios.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{scenarios.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.simulation-shopping-mall.subtitleProgress", {
+                    current: currentScenario + 1,
+                    total: scenarios.length,
+                    defaultValue: "Scenario {{current}} of {{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.simulation-shopping-mall.scoreLabel", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{current.title}</h3>
@@ -263,7 +121,7 @@ const SimulationShoppingMall = () => {
               
               <div className="bg-white/5 rounded-lg p-4 mb-6">
                 <div className="text-center">
-                  <span className="text-white font-semibold text-lg">Budget: </span>
+                  <span className="text-white font-semibold text-lg">{gameContent?.budgetLabel || "Budget: "}</span>
                   <span className="text-green-400 font-bold text-2xl">₹{current.budget}</span>
                 </div>
               </div>
@@ -291,44 +149,54 @@ const SimulationShoppingMall = () => {
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Financial Decisions!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.perfectScoreTitle || "Great Financial Decisions!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {scenarios.length} scenarios correct!
-                  You understand smart shopping decisions!
+                  {t("financial-literacy.teens.simulation-shopping-mall.perfectScoreMsg", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "You got {{score}} out of {{total}} scenarios correct! You understand smart shopping decisions!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>{t("financial-literacy.teens.simulation-shopping-mall.coinsLabel", { count: score })}</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Balancing needs, wants, and savings leads to smart financial choices!
+                  {gameContent?.lessonLabel || "Lesson: Balancing needs, wants, and savings leads to smart financial choices!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                   {gameContent?.keepLearningTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {scenarios.length} scenarios correct.
-                  Remember to balance needs, wants, and savings!
+                  {t("financial-literacy.teens.simulation-shopping-mall.lowScoreMsg", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "You got {{score}} out of {{total}} scenarios correct. Remember to balance needs, wants, and savings!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Always prioritize needs first, then some wants, and save the rest!
+                  {gameContent?.tipLabel || "Tip: Always prioritize needs first, then some wants, and save the rest!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

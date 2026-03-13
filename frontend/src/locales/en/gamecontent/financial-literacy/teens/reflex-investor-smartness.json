@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Investor Smartness",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your investment reflexes!",
+  "subtitleReady": "Test your investment reflexes!",
+  "readyHeader": "Ready to Test Your Investment Reflexes?",
+  "readyDescription": "Answer questions about smart investment strategies.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "investmentSkills": "You're developing strong investment decision-making skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the most important principle of smart investing?",
+      "options": [
+        { "text": "Diversify", "id": "diversify", "emoji": "📊" },
+        { "text": "Put All in One", "id": "all_in_one", "emoji": "🎯" },
+        { "text": "Avoid Investing", "id": "avoid", "emoji": "🚫" },
+        { "text": "Follow Trends", "id": "trends", "emoji": "📈" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What should you do before making any investment?",
+      "options": [
+        { "text": "Invest Blindly", "id": "blindly", "emoji": "🙈" },
+        { "text": "Research First", "id": "research", "emoji": "🔍" },
+        { "text": "Follow Hype", "id": "hype", "emoji": "📢" },
+        { "text": "Ask Friends", "id": "friends", "emoji": "👥" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is the best approach to investment planning?",
+      "options": [
+        { "text": "Quick Profit", "id": "quick_profit", "emoji": "⚡" },
+        { "text": "No Plan", "id": "no_plan", "emoji": "😴" },
+        { "text": "Long Term Plan", "id": "long_term", "emoji": "📅" },
+        { "text": "Day Trading", "id": "day_trading", "emoji": "⏱️" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "How should you balance your investment portfolio?",
+      "options": [
+        { "text": "Mix Safe & Risky", "id": "mix", "emoji": "⚖️" },
+        { "text": "Only Risky", "id": "only_risky", "emoji": "🎲" },
+        { "text": "Only Safe", "id": "only_safe", "emoji": "🛡️" },
+        { "text": "Copy Others", "id": "copy", "emoji": "📋" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "When is the best time to begin investing?",
+      "options": [
+        { "text": "Wait Forever", "id": "wait", "emoji": "⏳" },
+        { "text": "Start Early", "id": "start_early", "emoji": "🌱" },
+        { "text": "Never Invest", "id": "never", "emoji": "❌" },
+        { "text": "When Rich", "id": "when_rich", "emoji": "💰" }
+      ]
+    }
+  ]
+}

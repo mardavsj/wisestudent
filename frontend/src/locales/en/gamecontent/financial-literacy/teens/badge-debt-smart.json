@@ -1,0 +1,69 @@
+{
+  "title": "Badge: Debt Smart",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessTitle": "Debt Smart Badge Earned!",
+  "resultSuccessText": "You got {{score}} out of {{total}} challenges correct! You're a true Debt Smart expert!",
+  "resultSuccessLesson": "Lesson: Handle borrowing responsibly by planning repayment, borrowing only when necessary, communicating with lenders, and avoiding debt traps!",
+  "resultFailTitle": "Keep Learning!",
+  "resultFailText": "You got {{score}} out of {{total}} challenges correct. Practice makes perfect with responsible borrowing!",
+  "resultFailTip": "Tip: Always plan repayment before borrowing, borrow only when necessary, communicate with lenders if you can't pay, and avoid unnecessary debt!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Borrowing for Education",
+      "question": "You need money for education. What's the responsible approach?",
+      "options": [
+        { "text": "Plan repayment and borrow responsibly", "emoji": "📚", "isCorrect": true },
+        { "text": "Borrow without planning repayment", "emoji": "🚫", "isCorrect": false },
+        { "text": "Borrow more than needed", "emoji": "💸", "isCorrect": false },
+        { "text": "Ignore the need for education", "emoji": "😴", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Repayment Planning",
+      "question": "You borrowed ₹1000. What should you do?",
+      "options": [
+        { "text": "Forget about repayment", "emoji": "😴", "isCorrect": false },
+        { "text": "Borrow more to pay old debt", "emoji": "🔄", "isCorrect": false },
+        { "text": "Create a repayment plan and stick to it", "emoji": "📋", "isCorrect": true },
+        { "text": "Ignore payment dates", "emoji": "📅", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Borrowing for Wants",
+      "question": "You want a new gadget but can't afford it. What should you do?",
+      "options": [
+        { "text": "Borrow immediately without plan", "emoji": "💸", "isCorrect": false },
+        { "text": "Borrow and worry later", "emoji": "😊", "isCorrect": false },
+        { "text": "Borrow from multiple sources", "emoji": "🔄", "isCorrect": false },
+        { "text": "Save first or borrow only if you can repay", "emoji": "💰", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Communication with Lender",
+      "question": "You can't repay on time. What's the best action?",
+      "options": [
+        { "text": "Communicate honestly and explain situation", "emoji": "💬", "isCorrect": true },
+        { "text": "Hide and avoid lender", "emoji": "🙈", "isCorrect": false },
+        { "text": "Ignore the lender completely", "emoji": "📵", "isCorrect": false },
+        { "text": "Borrow more to pay", "emoji": "🔄", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Avoiding Debt Trap",
+      "question": "How can you avoid falling into a debt trap?",
+      "options": [
+        { "text": "Borrow often for wants", "emoji": "🔄", "isCorrect": false },
+        { "text": "Ignore repayment plans", "emoji": "🚫", "isCorrect": false },
+        { "text": "Borrow only when necessary and always repay on time", "emoji": "⏰", "isCorrect": true },
+        { "text": "Borrow without thinking", "emoji": "💸", "isCorrect": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "title": "Scholarship Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "perfectScoreMsg": "You got {{score}} out of {{total}} correct! You understand the importance of honesty in applications!",
+  "lowScoreMsg": "You got {{score}} out of {{total}} correct. Remember, honesty is the best policy for scholarships!",
+  "lessonLabel": "Lesson: Honesty and integrity are crucial when applying for scholarships and other opportunities.",
+  "tryAgain": "Try Again",
+  "tipLabel": "Tip: Always provide accurate and truthful information on your scholarship applications to build trust.",
+  "coinsLabel": "+{{count}} Coins",
+  "questions": [
+    {
+      "id": 1,
+      "text": "A student lies to get an extra scholarship. What's the correct action?",
+      "options": [
+        {
+          "id": "lie",
+          "text": "Lie to get money",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "truthful",
+          "text": "Be truthful",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "Maybe, if needed",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What happens if you lie on a scholarship application?",
+      "options": [
+        {
+          "id": "get-money",
+          "text": "Get more money",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-opportunity",
+          "text": "Lose opportunity and trust",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "Nothing happens",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Why is honesty important in applications?",
+      "options": [
+        {
+          "id": "builds-trust",
+          "text": "Builds trust and integrity",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "not-important",
+          "text": "Not important",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "waste-time",
+          "text": "Wastes time",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What should you do if you make a mistake in an application?",
+      "options": [
+        {
+          "id": "hide-mistake",
+          "text": "Hide the mistake",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "correct-it",
+          "text": "Correct it honestly",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore it",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What's the best approach for a scholarship?",
+      "options": [
+        {
+          "id": "honest-application",
+          "text": "Honest and complete application",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "exaggerate",
+          "text": "Exaggerate achievements",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "copy-others",
+          "text": "Copy from others",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

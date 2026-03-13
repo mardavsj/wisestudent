@@ -1,0 +1,68 @@
+{
+  "title": "रिफ्लेक्स स्मार्ट विकास",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपने स्मार्ट विकास सजगता का परीक्षण करें!",
+  "subtitleReady": "अपने स्मार्ट विकास सजगता का परीक्षण करें!",
+  "readyHeader": "क्या आप अपने स्मार्ट विकास सजगता का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "स्मार्ट वित्तीय विकास रणनीतियों के बारे में सवालों के जवाब दें।",
+  "readyTip": "आपके पास {{total}} प्रश्न हैं और प्रत्येक प्रश्न के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड:",
+  "timeLabel": "समय:",
+  "scoreLabel": "स्कोर:",
+  "greatJob": "बहुत बढ़िया!",
+  "finalScore": "आपने {{total}} में से {{score}} स्कोर किया!",
+  "growthSkills": "आप मजबूत वित्तीय निर्णय लेने का कौशल विकसित कर रहे हैं!",
+  "playAgain": "फिर से खेलें",
+  "questions": [
+    {
+      "id": 1,
+      "question": "सबसे स्मार्ट वित्तीय विकास रणनीति क्या है?",
+      "options": [
+        { "id": "long_term", "text": "दीर्घकालिक निवेश", "emoji": "📈" },
+        { "id": "instant", "text": "तत्काल खर्च", "emoji": "💸" },
+        { "id": "cash", "text": "नकद में बचत करें", "emoji": "💰" },
+        { "id": "spend_all", "text": "सारी कमाई खर्च करें", "emoji": "🛍️" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "आपका प्राथमिक वित्तीय ध्यान क्या होना चाहिए?",
+      "options": [
+        { "id": "spend_everything", "text": "सब कुछ खर्च करें", "emoji": "🛒" },
+        { "id": "plan_future", "text": "भविष्य के लिए योजना", "emoji": "🎯" },
+        { "id": "ignore", "text": "बचत को नजरअंदाज करें", "emoji": "😴" },
+        { "id": "paycheck", "text": "पेचेक से पेचेक जिएं", "emoji": "📅" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "कौन सा दृष्टिकोण घातीय वृद्धि की ओर ले जाता है?",
+      "options": [
+        { "id": "quick_profit", "text": "त्वरित लाभ", "emoji": "⚡" },
+        { "id": "no_invest", "text": "कोई निवेश नहीं", "emoji": "🚫" },
+        { "id": "compound", "text": "चक्रवृद्धि विकास", "emoji": "🌱" },
+        { "id": "gambling", "text": "उच्च जोखिम वाला जुआ", "emoji": "🎲" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "निवेश शुरू करने का सबसे अच्छा समय कब है?",
+      "options": [
+        { "id": "start_early", "text": "जल्दी शुरुआत करें", "emoji": "⏰" },
+        { "id": "wait", "text": "हमेशा इंतजार करें", "emoji": "⏳" },
+        { "id": "never", "text": "कभी निवेश न करें", "emoji": "❌" },
+        { "id": "after_retirement", "text": "सेवानिवृत्ति के बाद", "emoji": "👵" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "अंतिम वित्तीय लक्ष्य क्या है?",
+      "options": [
+        { "id": "spend_all_credit", "text": "सब खर्च करें", "emoji": "💳" },
+        { "id": "build_wealth", "text": "धन का निर्माण", "emoji": "🏆" },
+        { "id": "avoid", "text": "विकास से बचें", "emoji": "📉" },
+        { "id": "debt", "text": "कर्ज में रहें", "emoji": "🧾" }
+      ]
+    }
+  ]
+}

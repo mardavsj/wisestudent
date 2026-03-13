@@ -1,0 +1,33 @@
+{
+  "title": "पहेली: सही बनाम गलत",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "परिणामों के साथ कार्यों का मिलान करें ({{current}}/{{total}} मिलान)",
+  "actionsTitle": "वित्तीय कार्य",
+  "outcomesTitle": "वित्तीय परिणाम",
+  "matchButton": "मिलान करें",
+  "selectActionLabel": "एक वित्तीय कार्य चुनें",
+  "selectedActionLabel": "चुना गया: {{name}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "resultSuccessHeader": "बहुत अच्छा!",
+  "resultSuccessSubheader": "आपने {{total}} में से {{score}} वित्तीय कार्यों का उनके परिणामों के साथ सही मिलान किया है!",
+  "resultSuccessLesson": "सबक: नैतिक वित्तीय निर्णय सभी के लिए सकारात्मक परिणाम लाते हैं!",
+  "resultTryAgainHeader": "अभ्यास जारी रखें!",
+  "resultTryAgainSubheader": "आपने {{score}} वित्तीय कार्यों को सही ढंग से मिलाया है।",
+  "resultTryAgainTip": "सुझाव: प्रत्येक वित्तीय कार्य के परिणामों के बारे में सोचें!",
+  "coinsEarned": "+{{coins}} सिक्के",
+  "actions": [
+    { "id": 1, "name": "दान देना", "emoji": "💝" },
+    { "id": 2, "name": "पैसे चुराना", "emoji": "😈" },
+    { "id": 3, "name": "ईमानदार रिपोर्टिंग", "emoji": "✅" },
+    { "id": 4, "name": "रिश्वत देना", "emoji": "💰" },
+    { "id": 5, "name": "निष्पक्ष सौदा", "emoji": "🤝" }
+  ],
+  "outcomes": [
+    { "id": 6, "name": "सकारात्मक प्रभाव", "emoji": "🌟"},
+    { "id": 7, "name": "कानूनी परिणाम", "emoji": "⛓️"},
+    { "id": 8, "name": "विश्वास निर्माण", "emoji": "🤝"},
+    { "id": 9, "name": "भ्रष्टाचार", "emoji": "🐍"},
+    { "id": 10, "name": "पारस्परिक लाभ", "emoji": "🤝"}
+  ]
+}

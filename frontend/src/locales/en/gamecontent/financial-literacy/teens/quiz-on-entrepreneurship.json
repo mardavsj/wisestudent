@@ -1,0 +1,62 @@
+{
+  "title": "Quiz on Entrepreneurship",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Quiz Complete!",
+  "questionCount": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessHeader": "Quiz Complete!",
+  "resultSuccessSubheader": "You got {{score}} out of {{total}} correct! You understand entrepreneurship!",
+  "coinsEarned": "+{{coins}} Coins",
+  "resultSuccessLesson": "Lesson: An entrepreneur creates and runs a new business to make profit. Anyone can become an entrepreneur with good ideas and hard work!",
+  "resultTryAgainHeader": "Keep Learning!",
+  "resultTryAgainSubheader": "You got {{score}} out of {{total}} correct. Remember, an entrepreneur creates new business, not just spends or does nothing!",
+  "tryAgainButton": "Try Again",
+  "resultTryAgainTip": "Tip: An entrepreneur is someone who creates and runs a new business to make profit. Anyone can become one with good ideas and effort!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Who is an entrepreneur?",
+      "options": [
+        { "id": "creates", "text": "Creates new business", "emoji": "💡" },
+        { "id": "spends", "text": "Only spends", "emoji": "💸" },
+        { "id": "nothing", "text": "Does nothing", "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What's the main goal of an entrepreneur?",
+      "options": [
+        { "id": "spend", "text": "Spend money", "emoji": "🛍️" },
+        { "id": "profit", "text": "Make profit", "emoji": "💰" },
+        { "id": "avoid", "text": "Avoid work", "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What do entrepreneurs need?",
+      "options": [
+        { "id": "luck", "text": "Just luck", "emoji": "🍀" },
+        { "id": "money", "text": "Only money", "emoji": "💰" },
+        { "id": "idea", "text": "Good idea and hard work", "emoji": "💪" }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Can anyone become an entrepreneur?",
+      "options": [
+        { "id": "no", "text": "No, only special people", "emoji": "👑" },
+        { "id": "yes", "text": "Yes, with effort", "emoji": "💪" },
+        { "id": "maybe", "text": "Maybe, if rich", "emoji": "💎" }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What's entrepreneurship?",
+      "options": [
+        { "id": "job", "text": "Working for others", "emoji": "💼" },
+        { "id": "business", "text": "Creating and running business", "emoji": "🏢" },
+        { "id": "spending", "text": "Spending money", "emoji": "💳" }
+      ]
+    }
+  ]
+}

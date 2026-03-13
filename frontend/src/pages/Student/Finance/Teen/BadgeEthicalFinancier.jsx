@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BadgeEthicalFinancier = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-100");
   const gameId = gameData?.id || "finance-teens-100";
-  
-  // Ensure gameId is always set correctly
-  if (!gameData || !gameData.id) {
-    console.warn("Game data not found for BadgeEthicalFinancier, using fallback ID");
-  }
+  const gameContent = t("financial-literacy.teens.badge-ethical-financier", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+
   const [challenge, setChallenge] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
@@ -27,143 +26,7 @@ const BadgeEthicalFinancier = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Ethical Dilemma 1",
-      question: "You find extra money. What do you do?",
-      options: [
-        { 
-          text: "Return to owner", 
-          emoji: "🤗", 
-          isCorrect: true
-        },
-        { 
-          text: "Keep it", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          text: "Spend it", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          text: "Share with friends", 
-          emoji: "👥", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Ethical Dilemma 2",
-      question: "Friend asks you to lie for financial gain. Your response?",
-      options: [
-        { 
-          text: "Agree to lie", 
-          emoji: "😈", 
-          isCorrect: false
-        },
-        { 
-          text: "Refuse to lie", 
-          emoji: "🚫", 
-          isCorrect: true
-        },
-        { 
-          text: "Maybe help", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          text: "Ask for share", 
-          emoji: "💵", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Ethical Dilemma 3",
-      question: "You see someone cheating in a financial transaction. What do you do?",
-      options: [
-        { 
-          text: "Ignore it", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Join them", 
-          emoji: "😈", 
-          isCorrect: false
-        },
-        { 
-          text: "Report it", 
-          emoji: "🚨", 
-          isCorrect: true
-        },
-        { 
-          text: "Watch silently", 
-          emoji: "👀", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Ethical Dilemma 4",
-      question: "You're offered money to do something unethical. Your choice?",
-      options: [
-        { 
-          text: "Accept it", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          text: "Negotiate more", 
-          emoji: "💬", 
-          isCorrect: false
-        },
-        { 
-          text: "Think about it", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          text: "Refuse the offer", 
-          emoji: "🛑", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Ethical Dilemma 5",
-      question: "You can make money by being dishonest. What's your decision?",
-      options: [
-        { 
-          text: "Choose honesty", 
-          emoji: "✨", 
-          isCorrect: true
-        },
-        { 
-          text: "Choose money", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          text: "Do both", 
-          emoji: "🎭", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid decision", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;
@@ -200,10 +63,20 @@ const BadgeEthicalFinancier = () => {
     resetFeedback();
   };
 
+  const currentChallengeData = challenges[challenge];
+
   return (
     <GameShell
-      title="Badge: Ethical Financier"
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      title={gameContent?.title || "Badge: Ethical Financier"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("financial-literacy.teens.badge-ethical-financier.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       score={score}
       currentLevel={challenge + 1}
       totalLevels={challenges.length}
@@ -219,21 +92,33 @@ const BadgeEthicalFinancier = () => {
       gameType="finance"
     >
       <div className="space-y-8">
-        {!showResult && challenges[challenge] ? (
+        {!showResult && currentChallengeData ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.badge-ethical-financier.subtitleProgress", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.badge-ethical-financier.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+                </span>
               </div>
               
-              <h3 className="text-xl font-bold text-white mb-2">{challenges[challenge].title}</h3>
+              <h3 className="text-xl font-bold text-white mb-2">{currentChallengeData.title}</h3>
               <p className="text-white text-lg mb-6">
-                {challenges[challenge].question}
+                {currentChallengeData.question}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {challenges[challenge].options.map((option, idx) => (
+                {currentChallengeData.options.map((option, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
@@ -259,6 +144,53 @@ const BadgeEthicalFinancier = () => {
                 ))}
               </div>
             </div>
+          </div>
+        ) : showResult ? (
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
+            {score >= 3 ? (
+              <div>
+                <div className="text-5xl mb-4">🏆</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessTitle || "Ethical Financier Badge Earned!"}
+                </h3>
+                <p className="text-white/90 text-lg mb-4">
+                  {t("financial-literacy.teens.badge-ethical-financier.resultSuccessText", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct! You're a true Ethical Financier!`,
+                  })}
+                </p>
+                <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
+                  <span>+{score} Coins</span>
+                </div>
+                <p className="text-white/80">
+                  {gameContent?.resultSuccessLesson || "Lesson: Honesty and ethics in financial transactions build trust and a strong reputation."}
+                </p>
+              </div>
+            ) : (
+              <div>
+                <div className="text-5xl mb-4">💪</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultFailTitle || "Keep Learning!"}
+                </h3>
+                <p className="text-white/90 text-lg mb-4">
+                  {t("financial-literacy.teens.badge-ethical-financier.resultFailText", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct. Practice making ethical choices!`,
+                  })}
+                </p>
+                <button
+                  onClick={handleTryAgain}
+                  className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
+                >
+                  Try Again
+                </button>
+                <p className="text-white/80 text-sm">
+                  {gameContent?.resultFailTip || "Tip: Always choose honesty over quick gains, and report any unethical behavior you encounter!"}
+                </p>
+              </div>
+            )}
           </div>
         ) : null}
       </div>

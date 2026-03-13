@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Ethical Choice",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your ethical decision-making reflexes!",
+  "subtitleReady": "Test your ethical decision-making reflexes!",
+  "readyHeader": "Ready to Test Your Ethical Decision-Making Reflexes?",
+  "readyDescription": "Answer questions about moral dilemmas and ethical choices.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "ethicalSkills": "You're developing strong ethical decision-making skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What should you do if you find a wallet full of cash on the street?",
+      "options": [
+        { "text": "Keep it since you found it", "id": "keep_it", "emoji": "💰" },
+        { "text": "Try to find the owner or turn it in", "id": "find_owner", "emoji": "🔍" },
+        { "text": "Leave it where it is", "id": "leave_it", "emoji": "🚶" },
+        { "text": "Split it with friends", "id": "split_friends", "emoji": "🤝" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Your friend is cheating on a test. What's the ethical response?",
+      "options": [
+        { "text": "Ignore it to avoid conflict", "id": "ignore_it", "emoji": "🙈" },
+        { "text": "Join in to not be left out", "id": "join_in", "emoji": "👥" },
+        { "text": "Encourage them to stop and be honest", "id": "encourage_honesty", "emoji": "💬" },
+        { "text": "Tell everyone to get revenge", "id": "tell_everyone", "emoji": "📢" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How should you treat a classmate who is different from you?",
+      "options": [
+        { "text": "With respect and kindness", "id": "respect_kindness", "emoji": "😊" },
+        { "text": "Exclude them from activities", "id": "exclude_them", "emoji": "🚫" },
+        { "text": "Make fun of their differences", "id": "make_fun", "emoji": "😆" },
+        { "text": "Avoid them completely", "id": "avoid_them", "emoji": "😶" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should you do if you witness someone being bullied?",
+      "options": [
+        { "text": "Stay silent to avoid getting involved", "id": "stay_silent", "emoji": "🤫" },
+        { "text": "Support the victim and report the bullying", "id": "support_report", "emoji": "🦸" },
+        { "text": "Join in to fit in with the crowd", "id": "join_bullying", "emoji": "👥" },
+        { "text": "Laugh along to seem cool", "id": "laugh_along", "emoji": "😂" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "A store clerk gives you too much change by mistake. What should you do?",
+      "options": [
+        { "text": "Keep the extra money", "id": "keep_extra", "emoji": "🤑" },
+        { "text": "Say nothing and spend it", "id": "say_nothing", "emoji": "🛍️" },
+        { "text": "Ask for even more money", "id": "ask_more", "emoji": "💵" },
+        { "text": "Return the extra money", "id": "return_extra", "emoji": "💸" }
+      ]
+    }
+  ]
+}

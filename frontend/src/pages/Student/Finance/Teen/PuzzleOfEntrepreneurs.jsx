@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Finance/teenGamesData";
@@ -7,6 +8,10 @@ import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Fina
 const PuzzleOfEntrepreneurs = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
+
+  const gameId = "finance-teens-74";
+  const gameContent = t("financial-literacy.teens.puzzle-of-entrepreneurs", { returnObjects: true });
   
   const { nextGamePath, nextGameId } = useMemo(() => {
     if (location.state?.nextGamePath) {
@@ -18,7 +23,7 @@ const PuzzleOfEntrepreneurs = () => {
     
     try {
       const games = getFinanceTeenGames({});
-      const currentGame = games.find(g => g.id === "finance-teens-74");
+      const currentGame = games.find(g => g.id === gameId);
       if (currentGame && currentGame.index !== undefined) {
         const nextGame = games.find(g => g.index === currentGame.index + 1 && g.isSpecial && g.path);
         return {
@@ -45,36 +50,25 @@ const PuzzleOfEntrepreneurs = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Entrepreneurs (left side) - 5 items
-  const items = [
-    { id: 1, name: "Ratan Tata", emoji: "👔",  },
-    { id: 2, name: "Elon Musk", emoji: "🚀",  },
-    { id: 3, name: "Narayana Murthy", emoji: "💻",  },
-    { id: 4, name: "Kiran Mazumdar", emoji: "🔬",  },
-    { id: 5, name: "Falguni Nayar", emoji: "💄",  }
-  ];
+  // Entrepreneurs (left side) - 5 items from translation
+  const items = Array.isArray(gameContent?.items) ? gameContent.items : [];
 
-  // Fields (right side) - 5 items
-  const fields = [
-    { id: 6, name: "Industry", emoji: "🏭",  },
-    { id: 7, name: "Innovation", emoji: "💡",  },
-    { id: 8, name: "IT", emoji: "💻",  },
-    { id: 9, name: "Biotech", emoji: "🧬",  },
-    { id: 10, name: "E-commerce", emoji: "🛒",  }
-  ];
+  // Fields (right side) - 5 items from translation
+  const fields = Array.isArray(gameContent?.fields) ? gameContent.fields : [];
 
   // Manually rearrange positions to prevent positional matching
-  // Original order was [6,7,8,9,10], rearranged to [8,10,7,6,9]
-  const rearrangedFields = [
-    fields[2], // IT (id: 8)
-    fields[4], // E-commerce (id: 10)
-    fields[1], // Innovation (id: 7)
-    fields[0], // Industry (id: 6)
-    fields[3]  // Biotech (id: 9)
-  ];
+  const rearrangedFields = useMemo(() => {
+    if (fields.length < 5) return fields;
+    return [
+      fields[2], // IT (id: 8)
+      fields[4], // E-commerce (id: 10)
+      fields[1], // Innovation (id: 7)
+      fields[0], // Industry (id: 6)
+      fields[3]  // Biotech (id: 9)
+    ];
+  }, [fields]);
 
   // Correct matches using proper IDs, not positional order
-  // Each item has a unique correct match for true one-to-one mapping
   const correctMatches = [
     { itemId: 1, fieldId: 6 }, // Ratan Tata → Industry
     { itemId: 2, fieldId: 7 }, // Elon Musk → Innovation
@@ -147,12 +141,20 @@ const PuzzleOfEntrepreneurs = () => {
 
   return (
     <GameShell
-      title="Puzzle of Entrepreneurs"
-      subtitle={gameFinished ? "Puzzle Complete!" : `Match Entrepreneurs with Fields (${matches.length}/${items.length} matched)`}
+      title={gameContent?.title || "Puzzle of Entrepreneurs"}
+      subtitle={
+        gameFinished 
+          ? gameContent?.subtitleComplete || "Puzzle Complete!" 
+          : t("financial-literacy.teens.puzzle-of-entrepreneurs.subtitleProgress", { 
+                  current: matches.length, 
+                  total: items.length,
+                  defaultValue: `Match Entrepreneurs with Fields (${matches.length}/${items.length} matched)`
+                })
+      }
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
       score={score}
-      gameId="finance-teens-74"
+      gameId={gameId}
       gameType="finance"
       totalLevels={items.length}
       currentLevel={matches.length + 1}
@@ -172,7 +174,9 @@ const PuzzleOfEntrepreneurs = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left column - Entrepreneurs */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Entrepreneurs</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.itemsTitle || "Entrepreneurs"}
+              </h3>
               <div className="space-y-4">
                 {items.map(item => (
                   <button
@@ -193,7 +197,6 @@ const PuzzleOfEntrepreneurs = () => {
                       <div className="text-2xl mr-3">{item.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{item.name}</h4>
-                        
                       </div>
                     </div>
                   </button>
@@ -204,10 +207,13 @@ const PuzzleOfEntrepreneurs = () => {
             {/* Middle column - Match button */}
             <div className="flex flex-col items-center justify-center">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
-                <p className="text-white/80 mb-4">
+                <p className="text-white/80 mb-4 h-12 flex items-center justify-center">
                   {selectedItem 
-                    ? `Selected: ${selectedItem.name}` 
-                    : "Select an Entrepreneur"}
+                    ? t("financial-literacy.teens.puzzle-of-entrepreneurs.selectedItemLabel", { 
+                        name: selectedItem.name,
+                        defaultValue: `Selected: ${selectedItem.name}`
+                      }) 
+                    : gameContent?.selectItemLabel || "Select an Entrepreneur"}
                 </p>
                 <button
                   onClick={handleMatch}
@@ -218,18 +224,32 @@ const PuzzleOfEntrepreneurs = () => {
                       : "bg-gray-500/30 text-gray-400 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton || "Match"}
                 </button>
                 <div className="mt-4 text-white/80">
-                  <p>Score: {score}/{items.length}</p>
-                  <p>Matched: {matches.length}/{items.length}</p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-of-entrepreneurs.scoreLabel", { 
+                      score, 
+                      total: items.length,
+                      defaultValue: `Score: ${score}/${items.length}`
+                    })}
+                  </p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-of-entrepreneurs.matchedLabel", { 
+                      current: matches.length, 
+                      total: items.length,
+                      defaultValue: `Matched: ${matches.length}/${items.length}`
+                    })}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Right column - Fields */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Fields</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.fieldsTitle || "Fields"}
+              </h3>
               <div className="space-y-4">
                 {rearrangedFields.map(field => (
                   <button
@@ -261,26 +281,43 @@ const PuzzleOfEntrepreneurs = () => {
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessHeader || "Great Job!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You correctly matched {score} out of {items.length} entrepreneurs with their fields!
+                  {t("financial-literacy.teens.puzzle-of-entrepreneurs.resultSuccessSubheader", { 
+                    score, 
+                    total: items.length,
+                    defaultValue: `You correctly matched ${score} out of ${items.length} entrepreneurs with their fields!`
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.puzzle-of-entrepreneurs.coinsEarned", { 
+                      coins: score,
+                      defaultValue: `+${score} Coins`
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Understanding entrepreneurial fields helps inspire innovation!
+                  {gameContent?.resultSuccessLesson || "Lesson: Understanding entrepreneurial fields helps inspire innovation!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Practicing!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultTryAgainHeader || "Keep Practicing!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You matched {score} out of {items.length} entrepreneurs correctly.
+                  {t("financial-literacy.teens.puzzle-of-entrepreneurs.resultTryAgainSubheader", { 
+                    score, 
+                    total: items.length,
+                    defaultValue: `You matched ${score} out of ${items.length} entrepreneurs correctly.`
+                  })}
                 </p>
                 <p className="text-white/80 text-sm">
-                  Tip: Think about which field each entrepreneur is most known for!
+                  {gameContent?.resultTryAgainTip || "Tip: Think about which field each entrepreneur is most known for!"}
                 </p>
               </div>
             )}

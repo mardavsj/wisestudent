@@ -1,0 +1,51 @@
+{
+  "title": "Journal of Balance",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "journalEntryHeader": "Journal Entry",
+  "placeholder": "Type your response here...",
+  "minCharsRequired": "Minimum {{min}} characters required",
+  "buttonSubmit": "Submit & Continue",
+  "buttonComplete": "Complete Journal",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "One want I sacrificed for a need was ___.",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "One need I prioritized over a want was ___.",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "One way I can balance needs and wants is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "One benefit of prioritizing needs is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "One want I can budget for is ___.",
+      "minLength": 10
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Journal Complete!",
+    "winMessage": "You completed {{score}} out of {{total}} entries! Great job reflecting on balancing needs and wants!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Reflecting on your choices helps you balance needs and wants wisely!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You completed {{score}} out of {{total}} entries. Remember, balancing needs and wants is key to financial wellness!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Think about times when you chose needs over wants, and how that helped you achieve your goals."
+  }
+}

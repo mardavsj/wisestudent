@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Scam Check",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your scam detection reflexes!",
+  "subtitleReady": "Test your scam detection reflexes!",
+  "readyHeader": "Ready to Test Your Scam Detection Skills?",
+  "readyDescription": "Answer questions about identifying and responding to scams.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "scamSkills": "You're developing strong scam detection skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What should you do when you receive a suspicious email?",
+      "options": [
+        { "id": "report", "text": "Report Scam", "emoji": "🚨" },
+        { "id": "ignore", "text": "Ignore Fraud", "emoji": "😴" },
+        { "id": "wait", "text": "Wait and see", "emoji": "🤔" },
+        { "id": "forward", "text": "Forward to friends", "emoji": "📤" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the safest approach when someone claims to be from your bank?",
+      "options": [
+        { "id": "trust", "text": "Trust Immediately", "emoji": "😊" },
+        { "id": "verify", "text": "Verify First", "emoji": "🔍" },
+        { "id": "ignore_bank", "text": "Ignore completely", "emoji": "🚫" },
+        { "id": "provide", "text": "Provide information", "emoji": "📝" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What should you do with suspicious messages or emails?",
+      "options": [
+        { "id": "delete", "text": "Delete Suspicious", "emoji": "🗑️" },
+        { "id": "click", "text": "Click Link", "emoji": "🔗" },
+        { "id": "forward_msg", "text": "Forward to others", "emoji": "📤" },
+        { "id": "save", "text": "Save for later", "emoji": "💾" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should you do if someone asks for your OTP?",
+      "options": [
+        { "id": "never_share", "text": "Never Share OTP", "emoji": "🔒" },
+        { "id": "share", "text": "Share OTP", "emoji": "🔢" },
+        { "id": "share_nice", "text": "Share if asked nicely", "emoji": "🤷" },
+        { "id": "partial", "text": "Give partial code", "emoji": "🔢" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What should you do if you suspect a phone scam?",
+      "options": [
+        { "id": "continue", "text": "Continue Call", "emoji": "📞" },
+        { "id": "hang_up", "text": "Hang Up Safely", "emoji": "📴" },
+        { "id": "give_info", "text": "Give some information", "emoji": "📝" },
+        { "id": "ask_cred", "text": "Ask for credentials", "emoji": "🔐" }
+      ]
+    }
+  ]
+}

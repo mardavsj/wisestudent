@@ -1,0 +1,33 @@
+{
+  "title": "Puzzle: Digital Tools",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match Digital Tools with Functions ({{current}}/{{total}} matched)",
+  "toolsTitle": "Digital Tools",
+  "functionsTitle": "Digital Functions",
+  "matchButton": "Match",
+  "selectToolLabel": "Select a Digital Tool",
+  "selectedToolLabel": "Selected: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "Matched: {{current}}/{{total}}",
+  "resultSuccessHeader": "Great Job!",
+  "resultSuccessSubheader": "You correctly matched {{score}} out of {{total}} digital tools with their functions!",
+  "resultSuccessLesson": "Lesson: Understanding digital tools helps you make secure online transactions!",
+  "resultTryAgainHeader": "Keep Practicing!",
+  "resultTryAgainSubheader": "You matched {{score}} out of {{total}} digital tools correctly.",
+  "resultTryAgainTip": "Tip: Think about what each digital tool actually does!",
+  "coinsEarned": "+{{coins}} Coins",
+  "tools": [
+    { "id": 1, "name": "UPI", "emoji": "📱" },
+    { "id": 2, "name": "Debit Card", "emoji": "💳" },
+    { "id": 3, "name": "OTP", "emoji": "🔐" },
+    { "id": 4, "name": "QR Code", "emoji": "📷" },
+    { "id": 5, "name": "CVV", "emoji": "🔒" }
+  ],
+  "functions": [
+    { "id": 6, "name": "Instant Transfer", "emoji": "⚡" },
+    { "id": 7, "name": "Bank Spending", "emoji": "🏦" },
+    { "id": 8, "name": "Security Code", "emoji": "🛡️" },
+    { "id": 9, "name": "Scan & Pay", "emoji": "📲" },
+    { "id": 10, "name": "Card Protection", "emoji": "🧾" }
+  ]
+}

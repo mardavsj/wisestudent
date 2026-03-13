@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BadgeSmartSaver = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-teens-10";
+  const gameContent = t("financial-literacy.teens.badge-smart-saver", { returnObjects: true });
   const gameData = getGameDataById(gameId);
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
@@ -22,166 +25,7 @@ const BadgeSmartSaver = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Emergency Situation",
-      question: "Your bike needs urgent repairs costing ₹500. You have ₹300 saved. What do you do?",
-      options: [
-        
-        { 
-          text: "Borrow from friends", 
-          emoji: "👥", 
-          isCorrect: false
-        },
-        { 
-          text: "Use credit card", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          text: "Use savings + earn more", 
-          emoji: "🛠️", 
-          isCorrect: true
-        },
-        { 
-          text: "Ignore the repair", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Smart choice! Using savings and earning more shows financial responsibility!",
-        wrong: "Remember: Use your savings first and earn more rather than borrowing unnecessarily."
-      }
-    },
-    {
-      id: 2,
-      title: "Investment Opportunity",
-      question: "A friend offers 50% return on ₹1000 investment in 1 month. What's your choice?",
-      options: [
-       
-        { 
-          text: "Invest the money", 
-          emoji: "🎰", 
-          isCorrect: false
-        },
-         { 
-          text: "Decline risky offer", 
-          emoji: "🛡️", 
-          isCorrect: true
-        },
-        { 
-          text: "Invest half", 
-          emoji: "⚖️", 
-          isCorrect: false
-        },
-        { 
-          text: "Ask for more details", 
-          emoji: "❓", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Excellent! High returns in short time are usually too good to be true!",
-        wrong: "Be cautious! Unrealistic returns often indicate scams or high risk."
-      }
-    },
-    {
-      id: 3,
-      title: "Shopping Temptation",
-      question: "You see a ₹2000 gadget you want, but you're saving for college fees. Do you buy it?",
-      options: [
-        { 
-          text: "Stick to college goal", 
-          emoji: "🎓", 
-          isCorrect: true
-        },
-        { 
-          text: "Buy the gadget", 
-          emoji: "📱", 
-          isCorrect: false
-        },
-        { 
-          text: "Buy on credit", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          text: "Borrow money", 
-          emoji: "💸", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Perfect! Prioritizing important goals over wants is smart saving!",
-        wrong: "Remember: Important goals like education should come before wants."
-      }
-    },
-    {
-      id: 4,
-      title: "Bonus Dilemma",
-      question: "You receive ₹1000 bonus. Should you save it all or spend some?",
-      options: [
-        
-        { 
-          text: "Spend 50% on fun", 
-          emoji: "🎉", 
-          isCorrect: false
-        },
-        { 
-          text: "Spend it all", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          text: "Save 80%, spend 20%", 
-          emoji: "💰", 
-          isCorrect: true
-        },
-        { 
-          text: "Save it all", 
-          emoji: "🏦", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Great balance! Saving most while enjoying a small reward is wise!",
-        wrong: "A good rule: Save most of unexpected money, but allow a small reward for motivation."
-      }
-    },
-    {
-      id: 5,
-      title: "Peer Pressure",
-      question: "Friends are planning an expensive trip. You can't afford it but don't want to miss out. What do you do?",
-      options: [
-        { 
-          text: "Plan affordable alternative", 
-          emoji: "🧭", 
-          isCorrect: true
-        },
-        { 
-          text: "Borrow to join", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          text: "Use credit card", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          text: "Skip and stay home", 
-          emoji: "🏠", 
-          isCorrect: false
-        }
-      ],
-      feedback: {
-        correct: "Smart! Finding affordable alternatives shows financial maturity!",
-        wrong: "Don't let peer pressure lead to poor financial decisions. Suggest affordable options!"
-      }
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleAnswer = (isCorrect, optionIndex) => {
     if (answered) return;
@@ -221,8 +65,15 @@ const BadgeSmartSaver = () => {
 
   return (
     <GameShell
-      title="Badge: Smart Saver"
-      subtitle={showResult ? "Badge Earned!" : `Challenge ${challenge + 1} of ${challenges.length}`}
+      title={gameContent?.title || "Badge: Smart Saver"}
+      subtitle={showResult 
+        ? (gameContent?.subtitleComplete || "Badge Earned!") 
+        : t("financial-literacy.teens.badge-smart-saver.subtitleProgress", {
+            current: challenge + 1,
+            total: challenges.length,
+            defaultValue: "Challenge {{current}} of {{total}}",
+          })
+      }
       showGameOver={showResult}
       score={score}
       gameId={gameId}
@@ -251,7 +102,7 @@ const BadgeSmartSaver = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {currentChallenge.options.map((option, idx) => (
                   <button
-                    key={idx}
+                    key={option.id || idx}
                     onClick={() => handleAnswer(option.isCorrect, idx)}
                     disabled={answered}
                     className={`bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white p-6 rounded-2xl shadow-lg transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none min-h-[60px] flex items-center justify-center gap-3 ${
@@ -287,49 +138,55 @@ const BadgeSmartSaver = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 4 ? (
               <div>
-                <div className="text-6xl mb-4">🏆</div>
-                <h3 className="text-3xl font-bold text-white mb-4">Smart Saver Badge Earned!</h3>
+                <div className="text-6xl mb-4">{gameContent?.result?.winEmoji || "🏆"}</div>
+                <h3 className="text-3xl font-bold text-white mb-4">{gameContent?.result?.winTitle || "Smart Saver Badge Earned!"}</h3>
                 <p className="text-white/90 text-lg mb-6">
-                  You made {score} smart saving decisions out of {challenges.length} challenges!
+                  {t("financial-literacy.teens.badge-smart-saver.result.winMessage", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: "You made {{score}} smart saving decisions out of {{total}} challenges!",
+                  })}
                 </p>
                 
                 <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-6 rounded-2xl mb-6">
-                  <h4 className="text-2xl font-bold mb-2">🎉 Achievement Unlocked!</h4>
-                  <p className="text-xl">Badge: Smart Saver</p>
+                  <h4 className="text-2xl font-bold mb-2">{gameContent?.result?.achievementTitle || "🎉 Achievement Unlocked!"}</h4>
+                  <p className="text-xl">{gameContent?.result?.achievementText || "Badge: Smart Saver"}</p>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div className="bg-green-500/20 p-4 rounded-xl">
-                    <h4 className="font-bold text-green-300 mb-2">Smart Choices</h4>
+                    <h4 className="font-bold text-green-300 mb-2">{gameContent?.result?.smartChoicesTitle || "Smart Choices"}</h4>
                     <p className="text-white/90 text-sm">
-                      You chose to save for emergencies, avoid risky investments, prioritize important goals, 
-                      and resist peer pressure spending.
+                      {gameContent?.result?.smartChoicesText || "You chose to save for emergencies, avoid risky investments, prioritize important goals, and resist peer pressure spending."}
                     </p>
                   </div>
                   <div className="bg-blue-500/20 p-4 rounded-xl">
-                    <h4 className="font-bold text-blue-300 mb-2">Financial Wisdom</h4>
+                    <h4 className="font-bold text-blue-300 mb-2">{gameContent?.result?.wisdomTitle || "Financial Wisdom"}</h4>
                     <p className="text-white/90 text-sm">
-                      These habits will help you build wealth and achieve your long-term financial goals!
+                      {gameContent?.result?.wisdomText || "These habits will help you build wealth and achieve your long-term financial goals!"}
                     </p>
                   </div>
                 </div>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.loseTitle || "Keep Learning!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You made {score} smart saving decisions out of {challenges.length} challenges.
+                  {t("financial-literacy.teens.badge-smart-saver.result.loseMessage", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: "You made {{score}} smart saving decisions out of {{total}} challenges.",
+                  })}
                 </p>
                 <p className="text-white/90 mb-6">
-                  Remember, smart saving means prioritizing important goals, avoiding risky investments, 
-                  and making thoughtful financial decisions.
+                  {gameContent?.result?.loseAdvice || "Remember, smart saving means prioritizing important goals, avoiding risky investments, and making thoughtful financial decisions."}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
               </div>
             )}

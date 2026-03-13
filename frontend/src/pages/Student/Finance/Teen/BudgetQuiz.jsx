@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BudgetQuiz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-22");
   const gameId = gameData?.id || "finance-teens-22";
+  const gameContent = t("financial-literacy.teens.budget-quiz", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -21,128 +24,7 @@ const BudgetQuiz = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "You earn ₹1000, spend ₹400 on food. What % is spent on food?",
-      options: [
-        { 
-          id: "60", 
-          text: "60%", 
-          emoji: "📊", 
-          isCorrect: false 
-        },
-        { 
-          id: "40", 
-          text: "40%", 
-          emoji: "🍽️", 
-          isCorrect: true 
-        },
-        { 
-          id: "35", 
-          text: "35%", 
-          emoji: "📈", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You save ₹300 from ₹600. What % is saved?",
-      options: [
-        { 
-          id: "50", 
-          text: "50%", 
-          emoji: "🏦", 
-          isCorrect: true 
-        },
-        { 
-          id: "25", 
-          text: "25%", 
-          emoji: "💵", 
-          isCorrect: false 
-        },
-        { 
-          id: "40", 
-          text: "40%", 
-          emoji: "💰", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You spend ₹150 of ₹500 on transport. What % is spent?",
-      options: [
-        { 
-          id: "20", 
-          text: "20%", 
-          emoji: "🚗", 
-          isCorrect: false 
-        },
-        { 
-          id: "35", 
-          text: "35%", 
-          emoji: "🚲", 
-          isCorrect: false 
-        },
-        { 
-          id: "30", 
-          text: "30%", 
-          emoji: "🚍", 
-          isCorrect: true 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You save ₹200 out of ₹800. What % is saved?",
-      options: [
-        { 
-          id: "30", 
-          text: "30%", 
-          emoji: "💳", 
-          isCorrect: false 
-        },
-        { 
-          id: "25", 
-          text: "25%", 
-          emoji: "💰", 
-          isCorrect: true 
-        },
-        { 
-          id: "50", 
-          text: "50%", 
-          emoji: "💸", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You spend ₹240 of ₹600 on clothes. What % is spent?",
-      options: [
-        { 
-          id: "35", 
-          text: "35%", 
-          emoji: "👔", 
-          isCorrect: false 
-        },
-        { 
-          id: "45", 
-          text: "45%", 
-          emoji: "🛍️", 
-          isCorrect: false 
-        },
-        { 
-          id: "40", 
-          text: "40%", 
-          emoji: "👗", 
-          isCorrect: true 
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -177,9 +59,16 @@ const BudgetQuiz = () => {
 
   return (
     <GameShell
-      title="Budget Quiz"
+      title={gameContent?.title || "Budget Quiz"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.budget-quiz.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}",
+          })
+        : (gameContent?.subtitleComplete || "Quiz Complete!")
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -200,8 +89,20 @@ const BudgetQuiz = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.budget-quiz.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}",
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.budget-quiz.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}",
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -227,35 +128,46 @@ const BudgetQuiz = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.winTitle || "Great Job!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct!
-                  You understand budget percentages well!
+                  {t("financial-literacy.teens.budget-quiz.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct! You understand budget percentages well!",
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.budget-quiz.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins",
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Understanding percentages helps you budget better and track your spending!
+                  {gameContent?.result?.lesson || "Lesson: Understanding percentages helps you budget better and track your spending!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">😔</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Practicing!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "😔"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.loseTitle || "Keep Practicing!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct.
-                  Remember, percentages help you understand how much you're spending or saving!
+                  {t("financial-literacy.teens.budget-quiz.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct. Remember, percentages help you understand how much you're spending or saving!",
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: To calculate percentage, divide the part by the whole and multiply by 100.
+                  {gameContent?.result?.tip || "Tip: To calculate percentage, divide the part by the whole and multiply by 100."}
                 </p>
               </div>
             )}

@@ -1,0 +1,66 @@
+{
+  "title": "Party Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You're planning a birthday party with a ₹2000 budget. Which approach shows responsible financial planning?",
+      "options": [
+        { "id": "a", "text": "Allocate ₹1000 for venue, ₹500 for food, ₹300 for decorations, ₹200 for contingencies", "emoji": "📋", "isCorrect": true },
+        { "id": "b", "text": "Spend all ₹2000 on decorations", "emoji": "🎨", "isCorrect": false },
+        { "id": "c", "text": "Ask parents to cover extra costs", "emoji": "💸", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You receive ₹1500 in gifts for your party. How should you handle the monetary gifts?",
+      "options": [
+        { "id": "a", "text": "Spend it all immediately", "emoji": "🛍️", "isCorrect": false },
+        { "id": "b", "text": "Split it: save 60% (₹900) and spend 40% (₹600)", "emoji": "💰", "isCorrect": true },
+        { "id": "c", "text": "Give it all to friends", "emoji": "👥", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "After the party, you realize you spent ₹500 more than planned. What's the best way to handle this?",
+      "options": [
+        { "id": "a", "text": "Ignore it since it was special", "emoji": "🙈", "isCorrect": false },
+        { "id": "b", "text": "Review what caused overspending and adjust future budgets", "emoji": "📊", "isCorrect": true },
+        { "id": "c", "text": "Cancel your next social event", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "A friend asks you to host another party. Your monthly entertainment budget is ₹750. What should you do?",
+      "options": [
+        { "id": "a", "text": "Host a small gathering within your budget (₹750)", "emoji": "🎉", "isCorrect": true },
+        { "id": "b", "text": "Host a big party anyway", "emoji": "💸", "isCorrect": false },
+        { "id": "c", "text": "Ask parents to sponsor it", "emoji": "👨‍👩‍👧‍👦", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You saved ₹1000 from your part-time job for a party. How should you evaluate if hosting is worth it?",
+      "options": [
+        { "id": "b", "text": "Focus only on having fun", "emoji": "🎉", "isCorrect": false },
+        { "id": "c", "text": "Host the biggest party to impress", "emoji": "💎", "isCorrect": false },
+        { "id": "a", "text": "Compare the joy of hosting with alternative uses of ₹1000", "emoji": "⚖️", "isCorrect": true }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Great Job!",
+    "winMessage": "You got {{score}} out of {{total}} questions correct! You're learning smart party planning and financial decisions!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "You understand the importance of budgeting, saving, and making thoughtful financial decisions for parties!",
+    "loseEmoji": "😔",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} questions correct. Remember, smart party planning means budgeting and making thoughtful financial decisions!",
+    "tryAgain": "Try Again",
+    "tip": "Try to choose the option that shows responsible budgeting and financial planning."
+  }
+}

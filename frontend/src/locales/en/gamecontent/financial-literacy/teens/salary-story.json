@@ -1,0 +1,128 @@
+{
+  "title": "Salary Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "A young worker earns ₹2000 per month. What should they do with their salary?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "Spend all",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "Save ₹400 (20%)",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "Waste money",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "The worker gets a ₹500 bonus. How should they handle it?",
+      "options": [
+        {
+          "id": "save",
+          "text": "Save most of it",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "Spend all on luxury",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore bonus",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "The worker's expenses increase to ₹1800 per month. What's the smart approach?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "Stop saving",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "Spend more",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "Maintain savings",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "The worker gets a 10% salary raise. What should they do with the extra money?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "Upgrade lifestyle",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "Increase savings",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "Waste it all",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "The worker wants to buy a ₹10,000 gadget. What's the best approach?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "Buy on EMI",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "Borrow money",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "Save over time",
+          "emoji": "⏳",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "title": "Savings Account Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "perfectScoreMsg": "You got {{score}} out of {{total}} correct! You understand how savings accounts work!",
+  "lowScoreMsg": "You got {{score}} out of {{total}} correct. Remember, savings accounts pay interest, which helps your money grow!",
+  "lessonLabel": "Lesson: Savings accounts keep your money safe and pay interest, helping your money grow over time!",
+  "tryAgain": "Try Again",
+  "tipLabel": "Tip: When you deposit money in a savings account, the bank pays you interest, making your money grow over time!",
+  "coinsLabel": "+{{count}} Coins",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You deposit ₹1000. After a year, it becomes ₹1050. Why?",
+      "options": [
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "magic",
+          "text": "Magic",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "error",
+          "text": "Bank error",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What happens when you keep money in a savings account?",
+      "options": [
+        {
+          "id": "loses",
+          "text": "It loses value",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grows",
+          "text": "It grows with interest",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "stays",
+          "text": "It stays the same",
+          "emoji": "➡️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Why do banks pay interest on savings?",
+      "options": [
+        {
+          "id": "use",
+          "text": "They use your money to lend",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "gift",
+          "text": "It's a gift",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "rule",
+          "text": "Government rule",
+          "emoji": "📜",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What's the benefit of a savings account?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "Safe and earns interest",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "quick",
+          "text": "Quick access only",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "free",
+          "text": "Free money",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "If you deposit ₹500 and get ₹525 after a year, what's the extra ₹25?",
+      "options": [
+        {
+          "id": "bonus",
+          "text": "Bonus payment",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "interest2",
+          "text": "Interest earned",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "fee",
+          "text": "Bank fee",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

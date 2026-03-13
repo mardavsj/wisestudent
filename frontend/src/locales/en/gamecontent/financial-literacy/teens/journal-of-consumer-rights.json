@@ -1,0 +1,51 @@
+{
+  "title": "Journal of Consumer Rights",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "journalEntryHeader": "Journal Entry",
+  "placeholder": "Type your response here...",
+  "minCharsRequired": "Minimum {{min}} characters required",
+  "buttonSubmit": "Submit & Continue",
+  "buttonComplete": "Complete Journal",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "One right I know as a consumer is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "One time I used my consumer rights was ___.",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "One way to protect myself as a consumer is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "One place I can complain if cheated is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "One thing I learned about consumer protection is ___.",
+      "minLength": 10
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Journal Complete!",
+    "winMessage": "You completed {{score}} out of {{total}} entries! Great job reflecting on your consumer rights!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Reflecting on consumer rights helps you protect yourself and make informed choices!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You completed {{score}} out of {{total}} entries. Remember, knowing your consumer rights is key to protecting yourself!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Think about times when you had to use your consumer rights, and how that helped you get a fair deal!"
+  }
+}

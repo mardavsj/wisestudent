@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Fraud Safety",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your fraud safety reflexes!",
+  "subtitleReady": "Test your fraud safety reflexes!",
+  "readyHeader": "Ready to Test Your Fraud Safety Reflexes?",
+  "readyDescription": "Answer questions about safe online practices.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "fraudAwareness": "You're developing strong fraud safety awareness!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What should you do if someone asks for your OTP?",
+      "options": [
+        { "text": "Share it immediately", "id": "share_immediately", "emoji": "🔓" },
+        { "text": "Never share it", "id": "never_share", "emoji": "🔒" },
+        { "text": "Share with trusted friends", "id": "share_friends", "emoji": "👥" },
+        { "text": "Give it if they seem legit", "id": "give_if_legit", "emoji": "🤔" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Before making an online payment, what should you do?",
+      "options": [
+        { "text": "Pay immediately", "id": "pay_immediately", "emoji": "⚡" },
+        { "text": "Verify the website", "id": "verify_website", "emoji": "🔍" },
+        { "text": "Trust the email", "id": "trust_email", "emoji": "📧" },
+        { "text": "Ignore security warnings", "id": "ignore_warnings", "emoji": "⚠️" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How should you protect your banking PIN?",
+      "options": [
+        { "text": "Write it on the card", "id": "write_on_card", "emoji": "📝" },
+        { "text": "Share it with family", "id": "share_family", "emoji": "👨‍👩‍👧‍👦" },
+        { "text": "Memorize and never write it down", "id": "memorize", "emoji": "🧠" },
+        { "text": "Use simple numbers like 1234", "id": "simple_numbers", "emoji": "🔢" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should you do if you receive a suspicious email?",
+      "options": [
+        { "text": "Click all links", "id": "click_links", "emoji": "🔗" },
+        { "text": "Reply asking for more info", "id": "reply_info", "emoji": "💬" },
+        { "text": "Delete and report it", "id": "delete_report", "emoji": "🗑️" },
+        { "text": "Forward to friends", "id": "forward_friends", "emoji": "📤" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What's the safest way to handle personal information online?",
+      "options": [
+        { "text": "Share freely on social media", "id": "share_social", "emoji": "📱" },
+        { "text": "Share only with verified sites", "id": "verified_sites", "emoji": "✅" },
+        { "text": "Use the same password everywhere", "id": "same_password", "emoji": "🔑" },
+        { "text": "Post everything publicly", "id": "post_publicly", "emoji": "📢" }
+      ]
+    }
+  ]
+}

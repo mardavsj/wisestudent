@@ -1,0 +1,65 @@
+{
+  "title": "Pocket Money Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You receive ₹500 as monthly pocket money. What should you do with it?",
+      "options": [
+        { "id": "save", "text": "Save 20% (₹100)", "emoji": "💰", "isCorrect": true },
+        { "id": "spend", "text": "Spend all", "emoji": "🛍️", "isCorrect": false },
+        { "id": "save50", "text": "Save 50% (₹250)", "emoji": "💵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You want to buy a ₹2000 gadget but only have ₹500 saved. What's the smart approach?",
+      "options": [
+        { "id": "borrow", "text": "Borrow from friends", "emoji": "🤝", "isCorrect": false },
+        { "id": "spend", "text": "Buy on credit", "emoji": "💳", "isCorrect": false },
+        { "id": "save", "text": "Save monthly", "emoji": "📅", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Your friends spend all their pocket money on expensive items. What should you do?",
+      "options": [
+        { "id": "save", "text": "Stick to your plan", "emoji": "📝", "isCorrect": true },
+        { "id": "spend", "text": "Spend like them", "emoji": "👥", "isCorrect": false },
+        { "id": "compromise", "text": "Spend half to fit in", "emoji": "⚖️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You saved ₹1000 but see a limited-time offer for a ₹1500 item. What's wise?",
+      "options": [
+        { "id": "spend", "text": "Buy with partial payment", "emoji": "🛒", "isCorrect": false },
+        { "id": "save", "text": "Wait and save more", "emoji": "⏳", "isCorrect": true },
+        { "id": "impulse", "text": "Buy something cheaper", "emoji": "🛍️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You have ₹800 saved and want to buy a ₹1000 phone. What should you do?",
+      "options": [
+        { "id": "spend", "text": "Buy now with credit", "emoji": "💸", "isCorrect": false },
+        { "id": "borrow", "text": "Borrow ₹200", "emoji": "💳", "isCorrect": false },
+        { "id": "save", "text": "Save ₹200 more", "emoji": "🎯", "isCorrect": true }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Great Job!",
+    "winMessage": "You got {{score}} out of {{total}} questions correct! You're learning smart financial decisions!",
+    "coinsEarned": "+{{coins}} Coins",
+    "lesson": "You understand the importance of saving a portion of your income for future needs!",
+    "loseEmoji": "😔",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} questions correct. Remember, saving some money for later is usually a smart choice!",
+    "tryAgain": "Try Again",
+    "tip": "Try to choose the option that saves money for later in most situations."
+  }
+}

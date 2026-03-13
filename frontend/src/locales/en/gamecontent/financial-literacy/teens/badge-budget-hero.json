@@ -1,0 +1,69 @@
+{
+  "title": "Badge: Budget Hero",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessTitle": "Budget Hero Badge Earned!",
+  "resultSuccessText": "You got {{score}} out of {{total}} challenges correct! You're a true Budget Hero!",
+  "resultSuccessLesson": "Lesson: Smart budgeting helps you achieve your financial goals and build a secure future!",
+  "resultFailTitle": "Keep Learning!",
+  "resultFailText": "You got {{score}} out of {{total}} challenges correct. Practice makes perfect with budgeting!",
+  "resultFailTip": "Tip: Remember to plan your budget, prioritize needs, save first, track regularly, and adjust as needed!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Budget Planning",
+      "question": "What should you do first when creating a budget?",
+      "options": [
+        { "text": "Spend money on wants first", "emoji": "🛍️", "isCorrect": false },
+        { "text": "Ignore your expenses", "emoji": "📝", "isCorrect": false },
+        { "text": "Save everything without planning", "emoji": "🏦", "isCorrect": false },
+        { "text": "List all your income and expenses", "emoji": "📋", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Prioritizing Expenses",
+      "question": "What should you prioritize in your budget?",
+      "options": [
+        { "text": "Buy wants before needs", "emoji": "🎮", "isCorrect": false },
+        { "text": "Cover essential needs first, then wants", "emoji": "📋", "isCorrect": true },
+        { "text": "Spend equally on everything", "emoji": "⚖️", "isCorrect": false },
+        { "text": "Only spend on wants", "emoji": "💸", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Saving Strategy",
+      "question": "What's the best way to save money?",
+      "options": [
+        { "text": "Save whatever is left after spending", "emoji": "📊", "isCorrect": false },
+        { "text": "Never save anything", "emoji": "❌", "isCorrect": false },
+        { "text": "Save first, then spend the rest", "emoji": "🔐", "isCorrect": true },
+        { "text": "Save only when you have extra", "emoji": "📈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Budget Tracking",
+      "question": "How often should you review your budget?",
+      "options": [
+        { "text": "Never review it", "emoji": "🚫", "isCorrect": false },
+        { "text": "Review it regularly (weekly or monthly)", "emoji": "📅", "isCorrect": true },
+        { "text": "Review it only once a year", "emoji": "📆", "isCorrect": false },
+        { "text": "Review it only when you run out of money", "emoji": "📉", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Budget Flexibility",
+      "question": "What should you do if you overspend in one category?",
+      "options": [
+        { "text": "Adjust other categories to stay within budget", "emoji": "🔄", "isCorrect": true },
+        { "text": "Ignore it and continue spending", "emoji": "🙈", "isCorrect": false },
+        { "text": "Spend even more", "emoji": "💳", "isCorrect": false },
+        { "text": "Give up on budgeting", "emoji": "😔", "isCorrect": false }
+      ]
+    }
+  ]
+}

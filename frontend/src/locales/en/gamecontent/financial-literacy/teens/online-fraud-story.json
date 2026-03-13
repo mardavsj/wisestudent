@@ -1,0 +1,66 @@
+{
+  "title": "Online Fraud Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "A stranger asks for your bank PIN. Do you share?",
+      "options": [
+        { "id": "no", "text": "No, never share PIN", "emoji": "🚫", "isCorrect": true },
+        { "id": "yes", "text": "Yes, share it", "emoji": "🔓", "isCorrect": false },
+        { "id": "maybe", "text": "Maybe, if they seem nice", "emoji": "🤔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Someone calls claiming to be from your bank and asks for OTP. What do you do?",
+      "options": [
+        { "id": "share", "text": "Share the OTP", "emoji": "📢", "isCorrect": false },
+        { "id": "refuse", "text": "Refuse and hang up", "emoji": "📞", "isCorrect": true },
+        { "id": "verify", "text": "Verify first then share", "emoji": "🔍", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "You receive an email asking to click a link to verify your account. What should you do?",
+      "options": [
+        { "id": "click", "text": "Click the link", "emoji": "🔗", "isCorrect": false },
+        { "id": "forward", "text": "Forward to friends", "emoji": "📤", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore and delete", "emoji": "🗑️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "A website asks for your CVV to complete a purchase. Is this safe?",
+      "options": [
+        { "id": "safe", "text": "Yes, it's safe", "emoji": "✅", "isCorrect": false },
+        { "id": "unsafe", "text": "No, never share CVV", "emoji": "🛡️", "isCorrect": true },
+        { "id": "sometimes", "text": "Sometimes it's okay", "emoji": "🤷", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You get a message saying you won a prize and need to pay a fee to claim it. What do you do?",
+      "options": [
+        { "id": "ignore", "text": "Ignore it - it's a scam", "emoji": "🚫", "isCorrect": true },
+        { "id": "pay", "text": "Pay the fee", "emoji": "💸", "isCorrect": false },
+        { "id": "check", "text": "Check with friends first", "emoji": "👥", "isCorrect": false }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Fraud Prevention Star!",
+    "winMessage": "You got {{score}} out of {{total}} correct! Great job learning about online fraud prevention!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Never share your PIN, OTP, or CVV. Always be cautious of suspicious emails, calls, and messages!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} correct. Remember to stay safe online and never share sensitive information!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Never share PIN, OTP, or CVV with anyone. Banks and legitimate companies never ask for these details!"
+  }
+}

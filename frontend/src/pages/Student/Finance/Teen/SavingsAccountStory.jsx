@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const SavingsAccountStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-61");
   const gameId = gameData?.id || "finance-teens-61";
-  
-  // Ensure gameId is always set correctly
-  if (!gameData || !gameData.id) {
-    console.warn("Game data not found for SavingsAccountStory, using fallback ID");
-  }
+  const gameContent = t("financial-literacy.teens.savings-account-story", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -26,130 +24,7 @@ const SavingsAccountStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "You deposit ₹1000. After a year, it becomes ₹1050. Why?",
-      options: [
-        { 
-          id: "interest", 
-          text: "Interest", 
-          emoji: "💰", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "magic", 
-          text: "Magic", 
-          emoji: "✨", 
-          isCorrect: false
-        },
-        { 
-          id: "error", 
-          text: "Bank error", 
-          emoji: "❌", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What happens when you keep money in a savings account?",
-      options: [
-        { 
-          id: "loses", 
-          text: "It loses value", 
-          emoji: "📉", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "grows", 
-          text: "It grows with interest", 
-          emoji: "📈", 
-          isCorrect: true
-        },
-        { 
-          id: "stays", 
-          text: "It stays the same", 
-          emoji: "➡️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Why do banks pay interest on savings?",
-      options: [
-        { 
-          id: "use", 
-          text: "They use your money to lend", 
-          emoji: "🏦", 
-          isCorrect: true
-        },
-        { 
-          id: "gift", 
-          text: "It's a gift", 
-          emoji: "🎁", 
-          isCorrect: false
-        },
-        { 
-          id: "rule", 
-          text: "Government rule", 
-          emoji: "📜", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What's the benefit of a savings account?",
-      options: [
-        { 
-          id: "safe", 
-          text: "Safe and earns interest", 
-          emoji: "🛡️", 
-          isCorrect: true
-        },
-        { 
-          id: "quick", 
-          text: "Quick access only", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "free", 
-          text: "Free money", 
-          emoji: "💸", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "If you deposit ₹500 and get ₹525 after a year, what's the extra ₹25?",
-      options: [
-        { 
-          id: "bonus", 
-          text: "Bonus payment", 
-          emoji: "🎁", 
-          isCorrect: false
-        },
-        { 
-          id: "interest2", 
-          text: "Interest earned", 
-          emoji: "💵", 
-          isCorrect: true
-        },
-        { 
-          id: "fee", 
-          text: "Bank fee", 
-          emoji: "💳", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -159,7 +34,7 @@ const SavingsAccountStory = () => {
     
     const question = questions[currentQuestion];
     const selectedOption = question.options.find(opt => opt.id === optionId);
-    const isCorrect = selectedOption?.isCorrect;
+    const isCorrect = !!selectedOption?.isCorrect;
 
     if (isCorrect) {
       setScore(prev => prev + 1);
@@ -192,8 +67,16 @@ const SavingsAccountStory = () => {
 
   return (
     <GameShell
-      title="Savings Account Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Savings Account Story"}
+      subtitle={
+        !showResult 
+          ? t("financial-literacy.teens.savings-account-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: "Question {{current}} of {{total}}"
+            })
+          : gameContent?.subtitleComplete || "Story Complete!"
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -215,8 +98,20 @@ const SavingsAccountStory = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.savings-account-story.subtitleProgress", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}} of {{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.savings-account-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -240,7 +135,9 @@ const SavingsAccountStory = () => {
                     <div className="flex flex-col items-center justify-center gap-3">
                       <span className="text-4xl">{option.emoji}</span>
                       <span className="font-semibold text-lg">{option.text}</span>
-                      <p className="text-sm opacity-90">{option.description}</p>
+                      {option.description ? (
+                        <p className="text-sm opacity-90">{option.description}</p>
+                      ) : null}
                     </div>
                   </button>
                 ))}
@@ -252,16 +149,21 @@ const SavingsAccountStory = () => {
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Story Complete!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.subtitleComplete || "Story Complete!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct!
-                  You understand how savings accounts work!
+                  {t("financial-literacy.teens.savings-account-story.perfectScoreMsg", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `You got {{score}} out of {{total}} correct! You understand how savings accounts work!`
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>{t("financial-literacy.teens.savings-account-story.coinsLabel", { count: score })}</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Savings accounts keep your money safe and pay interest, helping your money grow over time!
+                  {gameContent?.lessonLabel || "Lesson: Savings accounts keep your money safe and pay interest, helping your money grow over time!"}
                 </p>
               </div>
             ) : (
@@ -269,17 +171,20 @@ const SavingsAccountStory = () => {
                 <div className="text-5xl mb-4">💪</div>
                 <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct.
-                  Remember, savings accounts pay interest, which helps your money grow!
+                  {t("financial-literacy.teens.savings-account-story.lowScoreMsg", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `You got {{score}} out of {{total}} correct. Remember, savings accounts pay interest, which helps your money grow!`
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: When you deposit money in a savings account, the bank pays you interest, making your money grow over time!
+                  {gameContent?.tipLabel || "Tip: When you deposit money in a savings account, the bank pays you interest, making your money grow over time!"}
                 </p>
               </div>
             )}

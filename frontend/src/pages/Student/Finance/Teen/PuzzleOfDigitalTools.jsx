@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Finance/teenGamesData";
@@ -7,6 +8,10 @@ import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Fina
 const PuzzleOfDigitalTools = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
+
+  const gameId = "finance-teens-44";
+  const gameContent = t("financial-literacy.teens.puzzle-of-digital-tools", { returnObjects: true });
   
   const { nextGamePath, nextGameId } = useMemo(() => {
     if (location.state?.nextGamePath) {
@@ -18,7 +23,7 @@ const PuzzleOfDigitalTools = () => {
     
     try {
       const games = getFinanceTeenGames({});
-      const currentGame = games.find(g => g.id === "finance-teens-44");
+      const currentGame = games.find(g => g.id === gameId);
       if (currentGame && currentGame.index !== undefined) {
         const nextGame = games.find(g => g.index === currentGame.index + 1 && g.isSpecial && g.path);
         return {
@@ -45,36 +50,25 @@ const PuzzleOfDigitalTools = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Digital tools (left side) - 5 items
-  const tools = [
-    { id: 1, name: "UPI", emoji: "📱",  },
-    { id: 2, name: "Debit Card", emoji: "💳",  },
-    { id: 3, name: "OTP", emoji: "🔐",  },
-    { id: 4, name: "QR Code", emoji: "📷",  },
-    { id: 5, name: "CVV", emoji: "🔒",  }
-  ];
+  // Digital tools (left side) - 5 items from translation
+  const tools = Array.isArray(gameContent?.tools) ? gameContent.tools : [];
 
-  // Digital functions (right side) - 5 items
-  const functions = [
-    { id: 6, name: "Instant Transfer", emoji: "⚡",  },
-    { id: 7, name: "Bank Spending", emoji: "🏦",  },
-    { id: 8, name: "Security Code", emoji: "🛡️",  },
-    { id: 9, name: "Scan & Pay", emoji: "📲",  },
-    { id: 10, name: "Card Protection", emoji: "🧾",  }
-  ];
+  // Digital functions (right side) - 5 items from translation
+  const functions = Array.isArray(gameContent?.functions) ? gameContent.functions : [];
 
   // Manually rearrange positions to prevent positional matching
-  // Original order was [6,7,8,9,10], rearranged to [8,10,7,6,9]
-  const rearrangedFunctions = [
-    functions[2], // Security Code (id: 8)
-    functions[4], // Card Protection (id: 10)
-    functions[1], // Bank Spending (id: 7)
-    functions[0], // Instant Transfer (id: 6)
-    functions[3]  // Scan & Pay (id: 9)
-  ];
+  const rearrangedFunctions = useMemo(() => {
+    if (functions.length < 5) return functions;
+    return [
+      functions[2], // Security Code (id: 8)
+      functions[4], // Card Protection (id: 10)
+      functions[1], // Bank Spending (id: 7)
+      functions[0], // Instant Transfer (id: 6)
+      functions[3]  // Scan & Pay (id: 9)
+    ];
+  }, [functions]);
 
   // Correct matches using proper IDs, not positional order
-  // Each tool has a unique correct match for true one-to-one mapping
   const correctMatches = [
     { toolId: 1, functionId: 6 }, // UPI → Instant Transfer
     { toolId: 2, functionId: 7 }, // Debit Card → Bank Spending
@@ -147,12 +141,20 @@ const PuzzleOfDigitalTools = () => {
 
   return (
     <GameShell
-      title="Puzzle: Digital Tools"
-      subtitle={gameFinished ? "Puzzle Complete!" : `Match Digital Tools with Functions (${matches.length}/${tools.length} matched)`}
+      title={gameContent?.title || "Puzzle: Digital Tools"}
+      subtitle={
+        gameFinished 
+          ? gameContent?.subtitleComplete || "Puzzle Complete!" 
+          : t("financial-literacy.teens.puzzle-of-digital-tools.subtitleProgress", { 
+                  current: matches.length, 
+                  total: tools.length,
+                  defaultValue: `Match Digital Tools with Functions (${matches.length}/${tools.length} matched)`
+                })
+      }
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
       score={score}
-      gameId="finance-teens-44"
+      gameId={gameId}
       gameType="finance"
       totalLevels={tools.length}
       currentLevel={matches.length + 1}
@@ -172,7 +174,9 @@ const PuzzleOfDigitalTools = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left column - Digital Tools */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Digital Tools</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.toolsTitle || "Digital Tools"}
+              </h3>
               <div className="space-y-4">
                 {tools.map(tool => (
                   <button
@@ -193,7 +197,6 @@ const PuzzleOfDigitalTools = () => {
                       <div className="text-2xl mr-3">{tool.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{tool.name}</h4>
-                        
                       </div>
                     </div>
                   </button>
@@ -204,10 +207,13 @@ const PuzzleOfDigitalTools = () => {
             {/* Middle column - Match button */}
             <div className="flex flex-col items-center justify-center">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
-                <p className="text-white/80 mb-4">
+                <p className="text-white/80 mb-4 h-12 flex items-center justify-center">
                   {selectedTool 
-                    ? `Selected: ${selectedTool.name}` 
-                    : "Select a Digital Tool"}
+                    ? t("financial-literacy.teens.puzzle-of-digital-tools.selectedToolLabel", { 
+                        name: selectedTool.name,
+                        defaultValue: `Selected: ${selectedTool.name}`
+                      }) 
+                    : gameContent?.selectToolLabel || "Select a Digital Tool"}
                 </p>
                 <button
                   onClick={handleMatch}
@@ -218,18 +224,32 @@ const PuzzleOfDigitalTools = () => {
                       : "bg-gray-500/30 text-gray-400 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton || "Match"}
                 </button>
                 <div className="mt-4 text-white/80">
-                  <p>Score: {score}/{tools.length}</p>
-                  <p>Matched: {matches.length}/{tools.length}</p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-of-digital-tools.scoreLabel", { 
+                      score, 
+                      total: tools.length,
+                      defaultValue: `Score: ${score}/${tools.length}`
+                    })}
+                  </p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-of-digital-tools.matchedLabel", { 
+                      current: matches.length, 
+                      total: tools.length,
+                      defaultValue: `Matched: ${matches.length}/${tools.length}`
+                    })}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Right column - Digital Functions */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Digital Functions</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.functionsTitle || "Digital Functions"}
+              </h3>
               <div className="space-y-4">
                 {rearrangedFunctions.map(func => (
                   <button
@@ -261,26 +281,43 @@ const PuzzleOfDigitalTools = () => {
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessHeader || "Great Job!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You correctly matched {score} out of {tools.length} digital tools with their functions!
+                  {t("financial-literacy.teens.puzzle-of-digital-tools.resultSuccessSubheader", { 
+                    score, 
+                    total: tools.length,
+                    defaultValue: `You correctly matched ${score} out of ${tools.length} digital tools with their functions!`
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.puzzle-of-digital-tools.coinsEarned", { 
+                      coins: score,
+                      defaultValue: `+${score} Coins`
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Understanding digital tools helps you make secure online transactions!
+                  {gameContent?.resultSuccessLesson || "Lesson: Understanding digital tools helps you make secure online transactions!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Practicing!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultTryAgainHeader || "Keep Practicing!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You matched {score} out of {tools.length} digital tools correctly.
+                  {t("financial-literacy.teens.puzzle-of-digital-tools.resultTryAgainSubheader", { 
+                    score, 
+                    total: tools.length,
+                    defaultValue: `You matched ${score} out of ${tools.length} digital tools correctly.`
+                  })}
                 </p>
                 <p className="text-white/80 text-sm">
-                  Tip: Think about what each digital tool actually does!
+                  {gameContent?.resultTryAgainTip || "Tip: Think about what each digital tool actually does!"}
                 </p>
               </div>
             )}

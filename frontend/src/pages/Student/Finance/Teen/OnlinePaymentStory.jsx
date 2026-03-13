@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const OnlinePaymentStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-41");
   const gameId = gameData?.id || "finance-teens-41";
+  const gameContent = t("financial-literacy.teens.online-payment-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,129 +29,7 @@ const OnlinePaymentStory = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const questions = [
-    {
-      id: 1,
-      text: "You buy a book online. Pay with cash or UPI safely?",
-      options: [
-        { 
-          id: "upi", 
-          text: "Choose UPI safely", 
-          emoji: "📱", 
-           
-          isCorrect: true 
-        },
-        { 
-          id: "cash", 
-          text: "Pay with cash", 
-          emoji: "💸", 
-          isCorrect: false 
-        },
-        { 
-          id: "both", 
-          text: "Use both methods", 
-          emoji: "⚖️", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Ordering food online. Use debit card or cash on delivery?",
-      options: [
-        { 
-          id: "cash", 
-          text: "Cash on delivery", 
-          emoji: "💵", 
-          isCorrect: false 
-        },
-        { 
-          id: "debit", 
-          text: "Use debit card", 
-          emoji: "💳", 
-          isCorrect: true 
-        },
-        { 
-          id: "skip", 
-          text: "Skip payment", 
-          emoji: "🚫", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Buying a gadget online. Pay via UPI or bank transfer?",
-      options: [
-        { 
-          id: "bank", 
-          text: "Bank transfer", 
-          emoji: "🏦", 
-          isCorrect: false 
-        },
-        { 
-          id: "upi", 
-          text: "Pay via UPI", 
-          emoji: "📱", 
-          isCorrect: true 
-        },
-        { 
-          id: "cash", 
-          text: "Send cash by mail", 
-          emoji: "✉️", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Paying for a subscription. Use credit card or cash?",
-      options: [
-        { 
-          id: "credit", 
-          text: "Use credit card", 
-          emoji: "💳", 
-          isCorrect: true 
-        },
-        { 
-          id: "cash", 
-          text: "Pay with cash", 
-          emoji: "💵", 
-          isCorrect: false 
-        },
-        { 
-          id: "check", 
-          text: "Send a check", 
-          emoji: "📄", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Shopping online. Use UPI with OTP or share PIN?",
-      options: [
-        { 
-          id: "pin", 
-          text: "Share PIN", 
-          emoji: "🔓", 
-          isCorrect: false 
-        },
-        { 
-          id: "upi", 
-          text: "Use UPI with OTP", 
-          emoji: "🔒", 
-          isCorrect: true 
-        },
-        { 
-          id: "skip", 
-          text: "Skip verification", 
-          emoji: "⚠️", 
-          isCorrect: false 
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;
@@ -185,14 +66,21 @@ const OnlinePaymentStory = () => {
 
   return (
     <GameShell
-      title="Online Payment Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Online Payment Story"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.online-payment-story.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Story Complete!")
+      }
       score={score}
       currentLevel={currentQuestion + 1}
-      totalLevels={questions.length}
+      totalLevels={questions.length || 5}
       coinsPerLevel={coinsPerLevel}
       showGameOver={showResult}
-      maxScore={questions.length}
+      maxScore={questions.length || 5}
       totalCoins={totalCoins}
       totalXp={totalXp}
       nextGamePathProp="/student/finance/teen/quiz-on-digital-money"
@@ -208,8 +96,20 @@ const OnlinePaymentStory = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.online-payment-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.online-payment-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -233,55 +133,71 @@ const OnlinePaymentStory = () => {
                     <div className="flex flex-col items-center justify-center gap-3">
                       <span className="text-4xl">{option.emoji}</span>
                       <span className="font-semibold text-lg">{option.text}</span>
-                      <span className="text-sm opacity-90">{option.description}</span>
+                      {option.description && (
+                         <span className="text-sm opacity-90">{option.description}</span>
+                      )}
                     </div>
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Online Payment Star!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Online Payment Star!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct!
-                  Great job learning about secure online payments!
+                  {t("financial-literacy.teens.online-payment-story.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! Great job learning about secure online payments!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.online-payment-story.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Always use secure digital payment methods like UPI, debit/credit cards with OTP for online purchases!
+                  {gameContent?.result?.lesson || "Lesson: Always use secure digital payment methods like UPI, debit/credit cards with OTP for online purchases!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct.
-                  Remember to use secure payment methods for online transactions!
+                  {t("financial-literacy.teens.online-payment-story.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember to use secure payment methods for online transactions!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: UPI, debit/credit cards with OTP are the safest methods for online payments. Never share your PIN!
+                  {gameContent?.result?.tip || "Tip: UPI, debit/credit cards with OTP are the safest methods for online payments. Never share your PIN!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );
 };
 
 export default OnlinePaymentStory;
-

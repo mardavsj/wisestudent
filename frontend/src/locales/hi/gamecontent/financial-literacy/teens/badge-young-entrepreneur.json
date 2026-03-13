@@ -1,0 +1,176 @@
+{
+  "title": "बैज: युवा उद्यमी",
+  "subtitleComplete": "बैज पूरा!",
+  "subtitleProgress": "चुनौती {{current}} / {{total}}",
+  "challengeLabel": "चुनौती {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "व्यापार शुरू करना",
+      "question": "व्यापार शुरू करने का पहला कदम क्या है?",
+      "options": [
+        {
+          "id": "good-idea",
+          "text": "एक अच्छा विचार और योजना बनाना",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "spend-all",
+          "text": "अपने सारे पैसे खर्च कर देना",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "हमेशा इंतज़ार करना",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "copy",
+          "text": "दूसरों की हूबहू नकल करना",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "व्यापार योजना",
+      "question": "शुरू करने से पहले आपको क्या करना चाहिए?",
+      "options": [
+        {
+          "id": "start-now",
+          "text": "तुरंत शुरू कर देना",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "text": "बाज़ार और लागत की रिसर्च करना",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "योजना को अनदेखा करना",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "बिना सोचे-समझे खर्च करना",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "पैसों का प्रबंधन",
+      "question": "व्यापार के पैसों को कैसे संभालना चाहिए?",
+      "options": [
+        {
+          "id": "spend-everything",
+          "text": "सब कुछ खर्च कर देना",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-finances",
+          "text": "वित्त को अनदेखा करना",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "text": "आय और खर्चों का हिसाब रखना",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "no-tracking",
+          "text": "हिसाब रखने की ज़रूरत नहीं",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ग्राहक सेवा",
+      "question": "व्यापार की सफलता के लिए क्या ज़रूरी है?",
+      "options": [
+        {
+          "id": "ignore-customers",
+          "text": "ग्राहकों को अनदेखा करना",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "ग्राहकों को धोखा देना",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "no-service",
+          "text": "सेवा की ज़रूरत नहीं",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "satisfy",
+          "text": "ग्राहकों को संतुष्ट करना",
+          "emoji": "😊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "व्यापार बढ़ाना",
+      "question": "अपना व्यापार कैसे बढ़ाना चाहिए?",
+      "options": [
+        {
+          "id": "start-small",
+          "text": "छोटे से शुरू करें और धीरे-धीरे बढ़ाएँ",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "start-huge",
+          "text": "तुरंत बहुत बड़े पैमाने पर शुरू करें",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "never-grow",
+          "text": "कभी मत बढ़ाओ",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow-no-plan",
+          "text": "बिना योजना के बढ़ाओ",
+          "emoji": "🚀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "युवा उद्यमी बैज अर्जित!",
+    "winMessage": "आपने {{total}} में से {{score}} चुनौतियाँ सही की! आप सच्चे युवा उद्यमी विशेषज्ञ हैं!",
+    "coinsEarned": "+{{score}} सिक्के",
+    "lesson": "सीख: युवा उद्यमी अच्छे विचार रखते हैं, सावधानी से योजना बनाते हैं, वित्त का हिसाब रखते हैं, ग्राहकों को संतुष्ट करते हैं और धीरे-धीरे बढ़ते हैं!",
+    "loseEmoji": "💪",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} चुनौतियाँ सही की। अभ्यास से उद्यमिता में महारत आएगी!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "सुझाव: हमेशा अच्छा विचार और योजना रखें, बाज़ार और लागत की रिसर्च करें, वित्त का हिसाब रखें, ग्राहकों को संतुष्ट करें और छोटे से शुरू करें!"
+  }
+}

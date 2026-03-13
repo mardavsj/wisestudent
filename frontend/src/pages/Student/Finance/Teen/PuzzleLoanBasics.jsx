@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Finance/teenGamesData";
@@ -7,6 +8,10 @@ import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Fina
 const PuzzleLoanBasics = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
+
+  const gameId = "finance-teens-54";
+  const gameContent = t("financial-literacy.teens.puzzle-loan-basics", { returnObjects: true });
   
   const { nextGamePath, nextGameId } = useMemo(() => {
     if (location.state?.nextGamePath) {
@@ -18,7 +23,7 @@ const PuzzleLoanBasics = () => {
     
     try {
       const games = getFinanceTeenGames({});
-      const currentGame = games.find(g => g.id === "finance-teens-54");
+      const currentGame = games.find(g => g.id === gameId);
       if (currentGame && currentGame.index !== undefined) {
         const nextGame = games.find(g => g.index === currentGame.index + 1 && g.isSpecial && g.path);
         return {
@@ -45,36 +50,25 @@ const PuzzleLoanBasics = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Loan terms (left side) - 5 items
-  const terms = [
-    { id: 1, name: "Principal", emoji: "💵",  },
-    { id: 2, name: "Interest", emoji: "💰",  },
-    { id: 3, name: "Loan Term", emoji: "📅",  },
-    { id: 4, name: "EMI", emoji: "📊",  },
-    { id: 5, name: "Default", emoji: "⚠️",  }
-  ];
+  // Loan terms (left side) - 5 items from translation
+  const terms = Array.isArray(gameContent?.terms) ? gameContent.terms : [];
 
-  // Loan concepts (right side) - 5 items
-  const concepts = [
-    { id: 6, name: "Original Amount", emoji: "📝",  },
-    { id: 7, name: "Extra Cost", emoji: "➕",  },
-    { id: 8, name: "Time Period", emoji: "⏱️",  },
-    { id: 9, name: "Regular Payment", emoji: "💳",  },
-    { id: 10, name: "Missed Payments", emoji: "🚫",  }
-  ];
+  // Loan concepts (right side) - 5 items from translation
+  const concepts = Array.isArray(gameContent?.concepts) ? gameContent.concepts : [];
 
   // Manually rearrange positions to prevent positional matching
-  // Original order was [6,7,8,9,10], rearranged to [8,10,7,6,9]
-  const rearrangedConcepts = [
-    concepts[2], // Time Period (id: 8)
-    concepts[4], // Missed Payments (id: 10)
-    concepts[1], // Extra Cost (id: 7)
-    concepts[0], // Original Amount (id: 6)
-    concepts[3]  // Regular Payment (id: 9)
-  ];
+  const rearrangedConcepts = useMemo(() => {
+    if (concepts.length < 5) return concepts;
+    return [
+      concepts[2], // Time Period (id: 8)
+      concepts[4], // Missed Payments (id: 10)
+      concepts[1], // Extra Cost (id: 7)
+      concepts[0], // Original Amount (id: 6)
+      concepts[3]  // Regular Payment (id: 9)
+    ];
+  }, [concepts]);
 
   // Correct matches using proper IDs, not positional order
-  // Each term has a unique correct match for true one-to-one mapping
   const correctMatches = [
     { termId: 1, conceptId: 6 }, // Principal → Original Amount
     { termId: 2, conceptId: 7 }, // Interest → Extra Cost
@@ -147,12 +141,20 @@ const PuzzleLoanBasics = () => {
 
   return (
     <GameShell
-      title="Puzzle: Loan Basics"
-      subtitle={gameFinished ? "Puzzle Complete!" : `Match Loan Terms with Concepts (${matches.length}/${terms.length} matched)`}
+      title={gameContent?.title || "Puzzle: Loan Basics"}
+      subtitle={
+        gameFinished 
+          ? gameContent?.subtitleComplete || "Puzzle Complete!" 
+          : t("financial-literacy.teens.puzzle-loan-basics.subtitleProgress", { 
+                  current: matches.length, 
+                  total: terms.length,
+                  defaultValue: `Match Loan Terms with Concepts (${matches.length}/${terms.length} matched)`
+                })
+      }
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
       score={score}
-      gameId="finance-teens-54"
+      gameId={gameId}
       gameType="finance"
       totalLevels={terms.length}
       currentLevel={matches.length + 1}
@@ -172,7 +174,9 @@ const PuzzleLoanBasics = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left column - Loan Terms */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Loan Terms</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.termsTitle || "Loan Terms"}
+              </h3>
               <div className="space-y-4">
                 {terms.map(term => (
                   <button
@@ -193,7 +197,6 @@ const PuzzleLoanBasics = () => {
                       <div className="text-2xl mr-3">{term.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{term.name}</h4>
-                        
                       </div>
                     </div>
                   </button>
@@ -204,10 +207,13 @@ const PuzzleLoanBasics = () => {
             {/* Middle column - Match button */}
             <div className="flex flex-col items-center justify-center">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
-                <p className="text-white/80 mb-4">
+                <p className="text-white/80 mb-4 h-12 flex items-center justify-center">
                   {selectedTerm 
-                    ? `Selected: ${selectedTerm.name}` 
-                    : "Select a Loan Term"}
+                    ? t("financial-literacy.teens.puzzle-loan-basics.selectedTermLabel", { 
+                        name: selectedTerm.name,
+                        defaultValue: `Selected: ${selectedTerm.name}`
+                      }) 
+                    : gameContent?.selectTermLabel || "Select a Loan Term"}
                 </p>
                 <button
                   onClick={handleMatch}
@@ -218,18 +224,32 @@ const PuzzleLoanBasics = () => {
                       : "bg-gray-500/30 text-gray-400 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton || "Match"}
                 </button>
                 <div className="mt-4 text-white/80">
-                  <p>Score: {score}/{terms.length}</p>
-                  <p>Matched: {matches.length}/{terms.length}</p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-loan-basics.scoreLabel", { 
+                      score, 
+                      total: terms.length,
+                      defaultValue: `Score: ${score}/${terms.length}`
+                    })}
+                  </p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-loan-basics.matchedLabel", { 
+                      current: matches.length, 
+                      total: terms.length,
+                      defaultValue: `Matched: ${matches.length}/${terms.length}`
+                    })}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Right column - Loan Concepts */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Loan Concepts</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.conceptsTitle || "Loan Concepts"}
+              </h3>
               <div className="space-y-4">
                 {rearrangedConcepts.map(concept => (
                   <button
@@ -261,26 +281,43 @@ const PuzzleLoanBasics = () => {
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessHeader || "Great Job!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You correctly matched {score} out of {terms.length} loan terms with their concepts!
+                  {t("financial-literacy.teens.puzzle-loan-basics.resultSuccessSubheader", { 
+                    score, 
+                    total: terms.length,
+                    defaultValue: `You correctly matched ${score} out of ${terms.length} loan terms with their concepts!`
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.puzzle-loan-basics.coinsEarned", { 
+                      coins: score,
+                      defaultValue: `+${score} Coins`
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Understanding loan basics helps make informed borrowing decisions!
+                  {gameContent?.resultSuccessLesson || "Lesson: Understanding loan basics helps make informed borrowing decisions!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Practicing!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultTryAgainHeader || "Keep Practicing!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You matched {score} out of {terms.length} loan terms correctly.
+                  {t("financial-literacy.teens.puzzle-loan-basics.resultTryAgainSubheader", { 
+                    score, 
+                    total: terms.length,
+                    defaultValue: `You matched ${score} out of ${terms.length} loan terms correctly.`
+                  })}
                 </p>
                 <p className="text-white/80 text-sm">
-                  Tip: Think about what each loan term actually represents!
+                  {gameContent?.resultTryAgainTip || "Tip: Think about what each loan term actually represents!"}
                 </p>
               </div>
             )}

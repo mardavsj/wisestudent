@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const NeedsVsWantsQuiz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-32");
   const gameId = gameData?.id || "finance-teens-32";
+  const gameContent = t("financial-literacy.teens.needs-vs-wants-quiz", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,53 +29,7 @@ const NeedsVsWantsQuiz = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const questions = [
-    {
-      id: 1,
-      text: "Which is a want?",
-      options: [
-        { id: "watch", text: "Luxury watch", emoji: "⌚",  isCorrect: true },
-        { id: "medicine", text: "Medicine", emoji: "💊",  isCorrect: false },
-        { id: "clothes", text: "School clothes", emoji: "👕",  isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which is a need?",
-      options: [
-        { id: "game", text: "Video game", emoji: "🎮",  isCorrect: false },
-        { id: "food", text: "Groceries", emoji: "🍎",  isCorrect: true },
-        { id: "phone", text: "New smartphone", emoji: "📱",  isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which is a want?",
-      options: [
-        { id: "rent", text: "Rent", emoji: "🏠",  isCorrect: false },
-        { id: "books", text: "Textbooks", emoji: "📚",  isCorrect: false },
-        { id: "concert", text: "Concert ticket", emoji: "🎤",  isCorrect: true }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which is a need?",
-      options: [
-        { id: "water", text: "Water bill", emoji: "💧",  isCorrect: true },
-        { id: "shoes", text: "Designer shoes", emoji: "👟",  isCorrect: false },
-        { id: "party", text: "Party supplies", emoji: "🎉",  isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which is a want?",
-      options: [
-        { id: "internet", text: "Internet bill", emoji: "🌐",  isCorrect: false },
-        { id: "headphones", text: "Wireless headphones", emoji: "🎧",  isCorrect: true },
-        { id: "transport", text: "Bus pass", emoji: "🚌",  isCorrect: false }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -109,9 +66,16 @@ const NeedsVsWantsQuiz = () => {
 
   return (
     <GameShell
-      title="Needs vs Wants Quiz"
+      title={gameContent?.title || "Needs vs Wants Quiz"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.needs-vs-wants-quiz.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Quiz Complete!")
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -120,9 +84,9 @@ const NeedsVsWantsQuiz = () => {
       nextGamePathProp="/student/finance/teen/reflex-decision"
       nextGameIdProp="finance-teens-33"
       gameType="finance"
-      totalLevels={questions.length}
+      totalLevels={questions.length || 5}
       currentLevel={currentQuestion + 1}
-      maxScore={questions.length}
+      maxScore={questions.length || 5}
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -132,11 +96,23 @@ const NeedsVsWantsQuiz = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.needs-vs-wants-quiz.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.needs-vs-wants-quiz.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
-              <p className="text-white text-lg mb-6">
+              <p className="text-white text-lg mb-6 text-center font-bold">
                 {questions[currentQuestion].text}
               </p>
               
@@ -151,51 +127,68 @@ const NeedsVsWantsQuiz = () => {
                     <div className="flex flex-col items-center justify-center text-center">
                       <div className="text-3xl mb-3">{option.emoji}</div>
                       <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                      <p className="text-white/90 text-sm">{option.description}</p>
+                      {option.description && (
+                        <p className="text-white/90 text-sm">{option.description}</p>
+                      )}
                     </div>
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Great Job!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct!
-                  You understand the difference between needs and wants!
+                  {t("financial-literacy.teens.needs-vs-wants-quiz.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct! You understand the difference between needs and wants!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.needs-vs-wants-quiz.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Needs are essential for survival and learning, while wants are things we'd like to have but don't need!
+                  {gameContent?.result?.lesson || "Lesson: Needs are essential for survival and learning, while wants are things we'd like to have but don't need!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">😔</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "😔"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct.
-                  Remember, needs are essential items like food, clothes, and utilities!
+                  {t("financial-literacy.teens.needs-vs-wants-quiz.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct. Remember, needs are essential items like food, clothes, and utilities!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Needs are things you must have to survive and learn, while wants are optional luxuries.
+                  {gameContent?.result?.tip || "Tip: Needs are things you must have to survive and learn, while wants are optional luxuries."}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

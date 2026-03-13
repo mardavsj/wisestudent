@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const EthicsQuiz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-92");
   const gameId = gameData?.id || "finance-teens-92";
+  const gameContent = t("financial-literacy.teens.ethics-quiz", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,131 +29,7 @@ const EthicsQuiz = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const questions = [
-    {
-      id: 1,
-      text: "Is bribing for marks ethical?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, if needed", 
-          emoji: "💰", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No, it's wrong", 
-          emoji: "❌", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What's wrong with bribing?",
-      options: [
-        { 
-          id: "unfair", 
-          text: "It's unfair and dishonest", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          id: "nothing", 
-          text: "Nothing wrong", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        { 
-          id: "expensive", 
-          text: "Too expensive", 
-          emoji: "💸", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "How should you earn good marks?",
-      options: [
-        { 
-          id: "study", 
-          text: "Study and work hard", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          id: "bribe", 
-          text: "Pay for marks", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "cheat", 
-          text: "Cheat in exams", 
-          emoji: "📋", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What are the consequences of bribing?",
-      options: [
-        { 
-          id: "no-consequences", 
-          text: "No consequences", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        { 
-          id: "lose-trust", 
-          text: "Lose trust and face punishment", 
-          emoji: "🚫", 
-          isCorrect: true
-        },
-        { 
-          id: "get-reward", 
-          text: "Get rewarded", 
-          emoji: "🎁", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What's the ethical way to succeed?",
-      options: [
-        { 
-          id: "honest-effort", 
-          text: "Honest effort and integrity", 
-          emoji: "🙂‍↔️", 
-          isCorrect: true
-        },
-        { 
-          id: "shortcuts", 
-          text: "Take shortcuts", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "cheat-way", 
-          text: "Cheat your way", 
-          emoji: "😈", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -185,8 +64,15 @@ const EthicsQuiz = () => {
 
   return (
     <GameShell
-      title="Ethics Quiz"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      title={gameContent?.title || "Ethics Quiz"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.ethics-quiz.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Quiz Complete!")
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -208,8 +94,20 @@ const EthicsQuiz = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.ethics-quiz.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.ethics-quiz.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -233,12 +131,70 @@ const EthicsQuiz = () => {
                     <div className="flex flex-col items-center justify-center gap-3">
                       <span className="text-4xl">{option.emoji}</span>
                       <span className="font-semibold text-lg">{option.text}</span>
-                      <p className="text-sm opacity-90">{option.description}</p>
+                      {option.description && <p className="text-sm opacity-90">{option.description}</p>}
                     </div>
                   </button>
                 ))}
               </div>
             </div>
+          </div>
+        ) : showResult ? (
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
+            {score >= 3 ? (
+              <div>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Great Job!"}
+                </h3>
+                <p className="text-white/90 text-lg mb-4">
+                  {t("financial-literacy.teens.ethics-quiz.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You are an ethical champion!"
+                  })}
+                </p>
+                <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
+                  <span>
+                    {t("financial-literacy.teens.ethics-quiz.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
+                </div>
+                <p className="text-white/80">
+                  {gameContent?.result?.lesson || "Lesson: Integrity and honest effort are the only true ways to succeed. Bribing leads to loss of trust and consequences."}
+                </p>
+              </div>
+            ) : (
+              <div>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "😔"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
+                <p className="text-white/90 text-lg mb-4">
+                  {t("financial-literacy.teens.ethics-quiz.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember, honesty is the best policy!"
+                  })}
+                </p>
+                <button
+                  onClick={() => {
+                    setShowResult(false);
+                    setCurrentQuestion(0);
+                    setScore(0);
+                    setAnswered(false);
+                    resetFeedback();
+                  }}
+                  className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
+                >
+                  {gameContent?.result?.tryAgain || "Try Again"}
+                </button>
+                <p className="text-white/80 text-sm">
+                  {gameContent?.result?.tip || "Tip: Success earned through hard work and honesty is the most rewarding. Never take unethical shortcuts."}
+                </p>
+              </div>
+            )}
           </div>
         ) : null}
       </div>
@@ -247,4 +203,3 @@ const EthicsQuiz = () => {
 };
 
 export default EthicsQuiz;
-

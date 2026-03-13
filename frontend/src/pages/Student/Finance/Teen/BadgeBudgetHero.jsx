@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BadgeBudgetHero = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
-  // Get game data from game category folder (source of truth)
-  const gameData = getGameDataById("finance-teens-30");
-  const gameId = gameData?.id || "finance-teens-30";
+  const gameId = "finance-teens-30";
+  const gameContent = t("financial-literacy.teens.badge-budget-hero", { returnObjects: true });
+  const gameData = getGameDataById(gameId);
   
-  // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+
   const [challenge, setChallenge] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
@@ -22,146 +24,7 @@ const BadgeBudgetHero = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Budget Planning",
-      question: "What should you do first when creating a budget?",
-      options: [
-        
-        { 
-          text: "Spend money on wants first", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          text: "Ignore your expenses", 
-          emoji: "📝", 
-          isCorrect: false
-        },
-        { 
-          text: "Save everything without planning", 
-          emoji: "🏦", 
-          isCorrect: false
-        },
-        { 
-          text: "List all your income and expenses", 
-          emoji: "📋", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      title: "Prioritizing Expenses",
-      question: "What should you prioritize in your budget?",
-      options: [
-        { 
-          text: "Buy wants before needs", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          text: "Cover essential needs first, then wants", 
-          emoji: "📋", 
-          isCorrect: true
-        },
-        { 
-          text: "Spend equally on everything", 
-          emoji: "⚖️", 
-          isCorrect: false
-        },
-        { 
-          text: "Only spend on wants", 
-          emoji: "💸", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Saving Strategy",
-      question: "What's the best way to save money?",
-      options: [
-        { 
-          text: "Save whatever is left after spending", 
-          emoji: "📊", 
-          isCorrect: false
-        },
-        
-        { 
-          text: "Never save anything", 
-          emoji: "❌", 
-          isCorrect: false
-        },
-        { 
-          text: "Save first, then spend the rest", 
-          emoji: "🔐", 
-          isCorrect: true
-        },
-        { 
-          text: "Save only when you have extra", 
-          emoji: "📈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Budget Tracking",
-      question: "How often should you review your budget?",
-      options: [
-        { 
-          text: "Never review it", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          text: "Review it regularly (weekly or monthly)", 
-          emoji: "📅", 
-          isCorrect: true
-        },
-        { 
-          text: "Review it only once a year", 
-          emoji: "📆", 
-          isCorrect: false
-        },
-        { 
-          text: "Review it only when you run out of money", 
-          emoji: "📉", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Budget Flexibility",
-      question: "What should you do if you overspend in one category?",
-      options: [
-        { 
-          text: "Adjust other categories to stay within budget", 
-          emoji: "🔄", 
-          isCorrect: true
-        },
-        { 
-          text: "Ignore it and continue spending", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        
-        { 
-          text: "Spend even more", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          text: "Give up on budgeting", 
-          emoji: "😔", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;
@@ -198,10 +61,20 @@ const BadgeBudgetHero = () => {
     resetFeedback();
   };
 
+  const currentChallengeData = challenges[challenge];
+
   return (
     <GameShell
-      title="Badge: Budget Hero"
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      title={gameContent?.title || "Badge: Budget Hero"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("financial-literacy.teens.badge-budget-hero.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       score={score}
       currentLevel={challenge + 1}
       totalLevels={challenges.length}
@@ -219,21 +92,33 @@ const BadgeBudgetHero = () => {
       gameType="finance"
     >
       <div className="space-y-8">
-        {!showResult && challenges[challenge] ? (
+        {!showResult && currentChallengeData ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.badge-budget-hero.subtitleProgress", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.badge-budget-hero.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+                </span>
               </div>
               
-              <h3 className="text-xl font-bold text-white mb-2">{challenges[challenge].title}</h3>
+              <h3 className="text-xl font-bold text-white mb-2">{currentChallengeData.title}</h3>
               <p className="text-white text-lg mb-6">
-                {challenges[challenge].question}
+                {currentChallengeData.question}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {challenges[challenge].options.map((option, idx) => (
+                {currentChallengeData.options.map((option, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
@@ -260,30 +145,40 @@ const BadgeBudgetHero = () => {
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🏆</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Budget Hero Badge Earned!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessTitle || "Budget Hero Badge Earned!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {challenges.length} challenges correct!
-                  You're a true Budget Hero!
+                  {t("financial-literacy.teens.badge-budget-hero.resultSuccessText", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct! You're a true Budget Hero!`,
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
                   <span>+{score} Coins</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Smart budgeting helps you achieve your financial goals and build a secure future!
+                  {gameContent?.resultSuccessLesson || "Lesson: Smart budgeting helps you achieve your financial goals and build a secure future!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultFailTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {challenges.length} challenges correct.
-                  Practice makes perfect with budgeting!
+                  {t("financial-literacy.teens.badge-budget-hero.resultFailText", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct. Practice makes perfect with budgeting!`,
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
@@ -292,12 +187,12 @@ const BadgeBudgetHero = () => {
                   Try Again
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Remember to plan your budget, prioritize needs, save first, track regularly, and adjust as needed!
+                  {gameContent?.resultFailTip || "Tip: Remember to plan your budget, prioritize needs, save first, track regularly, and adjust as needed!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { PenSquare } from "lucide-react";
@@ -7,10 +8,12 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const JournalOfSavingGoal = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-teens-7";
   const gameData = getGameDataById(gameId);
+  const gameContent = t("financial-literacy.teens.journal-of-saving-goal", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -22,28 +25,7 @@ const JournalOfSavingGoal = () => {
   const [entry, setEntry] = useState("");
   const [showResult, setShowResult] = useState(false);
 
-  const stages = [
-    {
-      question: 'Write: "One big thing I want to save for is ___."',
-      minLength: 10,
-    },
-    {
-      question: 'Write: "I will achieve this saving goal by ___."',
-      minLength: 10,
-    },
-    {
-      question: 'Write: "This goal is important to me because ___."',
-      minLength: 10,
-    },
-    {
-      question: 'Write: "I plan to save ₹___ per month for this goal."',
-      minLength: 10,
-    },
-    {
-      question: 'Write: "When I reach this goal, I will feel ___."',
-      minLength: 10,
-    },
-  ];
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
 
   const handleSubmit = () => {
     if (showResult) return; // Prevent multiple submissions
@@ -72,10 +54,17 @@ const JournalOfSavingGoal = () => {
 
   return (
     <GameShell
-      title="Journal of Saving Goal"
-      subtitle={!showResult ? `Question ${currentStage + 1} of ${stages.length}: Reflect on your saving goals!` : "Journal Complete!"}
+      title={gameContent?.title || "Journal of Saving Goal"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.journal-of-saving-goal.subtitleProgress", {
+            current: currentStage + 1,
+            total: stages.length,
+            defaultValue: "Question {{current}} of {{total}}: Reflect on your saving goals!"
+          })
+        : (gameContent?.subtitleComplete || "Journal Complete!")
+      }
       currentLevel={currentStage + 1}
-      totalLevels={5}
+      totalLevels={stages.length || 5}
       coinsPerLevel={coinsPerLevel}
       showGameOver={showResult}
       flashPoints={flashPoints}
@@ -85,28 +74,41 @@ const JournalOfSavingGoal = () => {
       nextGamePathProp="/student/finance/teen/simulation-monthly-money"
       nextGameIdProp="finance-teens-8"
       gameType="finance"
-      maxScore={5}
+      maxScore={stages.length || 5}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      showConfetti={showResult && finalScore === 5}>
+      showConfetti={showResult && finalScore === (stages.length || 5)}>
       <div className="text-center text-white space-y-8">
         {!showResult && stages[currentStage] && (
           <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
             <PenSquare className="mx-auto mb-4 w-10 h-10 text-yellow-300" />
-            <h3 className="text-2xl font-bold mb-4">{stages[currentStage].question}</h3>
-            <p className="text-white/70 mb-4">Score: {score}/{stages.length}</p>
+            <h3 className="text-2xl font-bold mb-4">{stages[currentStage].prompt}</h3>
+            <p className="text-white/70 mb-4">
+              {t("financial-literacy.teens.journal-of-saving-goal.scoreLabel", {
+                score,
+                total: stages.length,
+                defaultValue: "Score: {{score}}/{{total}}"
+              })}
+            </p>
             <p className="text-white/60 text-sm mb-4">
-              Write at least {stages[currentStage].minLength} characters
+              {t("financial-literacy.teens.journal-of-saving-goal.minCharsRequired", {
+                min: stages[currentStage].minLength,
+                defaultValue: "Write at least {{min}} characters"
+              })}
             </p>
             <textarea
               value={entry}
               onChange={(e) => setEntry(e.target.value)}
-              placeholder="Write your journal entry here..."
+              placeholder={gameContent?.placeholder || "Write your journal entry here..."}
               className="w-full max-w-xl p-4 rounded-xl text-black text-lg bg-white/90"
               disabled={showResult}
             />
             <div className="mt-2 text-white/50 text-sm">
-              {entry.trim().length}/{stages[currentStage].minLength} characters
+              {t("financial-literacy.teens.journal-of-saving-goal.charsCount", {
+                current: entry.trim().length,
+                min: stages[currentStage].minLength,
+                defaultValue: "{{current}}/{{min}} characters"
+              })}
             </div>
             <button
               onClick={handleSubmit}
@@ -117,7 +119,10 @@ const JournalOfSavingGoal = () => {
               }`}
               disabled={entry.trim().length < stages[currentStage].minLength || showResult}
             >
-              {currentStage === stages.length - 1 ? 'Submit Final Entry' : 'Submit & Continue'}
+              {currentStage === stages.length - 1 
+                ? (gameContent?.buttonComplete || 'Submit Final Entry')
+                : (gameContent?.buttonSubmit || 'Submit & Continue')
+              }
             </button>
           </div>
         )}
@@ -127,4 +132,3 @@ const JournalOfSavingGoal = () => {
 };
 
 export default JournalOfSavingGoal;
-

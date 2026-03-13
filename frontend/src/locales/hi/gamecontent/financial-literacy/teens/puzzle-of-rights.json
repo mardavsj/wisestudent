@@ -1,0 +1,33 @@
+{
+  "title": "पहेली: उपभोक्ता अधिकार",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "अधिकारों को अर्थों के साथ मिलाएँ ({{current}}/{{total}} मिलान)",
+  "rightsTitle": "उपभोक्ता अधिकार",
+  "meaningsTitle": "अर्थ",
+  "matchButton": "मिलान करें",
+  "selectRightLabel": "एक उपभोक्ता अधिकार चुनें",
+  "selectedRightLabel": "चुना गया: {{name}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "resultSuccessHeader": "बहुत अच्छा!",
+  "resultSuccessSubheader": "आपने {{total}} में से {{score}} उपभोक्ता अधिकारों का उनके अर्थों के साथ सही मिलान किया है!",
+  "resultSuccessLesson": "सबक: उपभोक्ता अधिकारों को समझना आपको अनुचित प्रथाओं से बचाता है!",
+  "resultTryAgainHeader": "अभ्यास जारी रखें!",
+  "resultTryAgainSubheader": "आपने {{score}} उपभोक्ता अधिकारों को सही ढंग से मिलाया है।",
+  "resultTryAgainTip": "सुझाव: सोचें कि प्रत्येक उपभोक्ता अधिकार क्या सुरक्षा प्रदान करता है!",
+  "coinsEarned": "+{{coins}} सिक्के",
+  "rights": [
+    { "id": 1, "name": "सुरक्षा का अधिकार", "emoji": "🛡️" },
+    { "id": 2, "name": "सूचना का अधिकार", "emoji": "📋" },
+    { "id": 3, "name": "चुनने का अधिकार", "emoji": "✅" },
+    { "id": 4, "name": "निवारण का अधिकार", "emoji": "⚖️" },
+    { "id": 5, "name": "उपभोक्ता शिक्षा का अधिकार", "emoji": "📚" }
+  ],
+  "meanings": [
+    { "id": 6, "name": "सुरक्षित उत्पाद", "emoji": "🛒" },
+    { "id": 7, "name": "सच्ची जानकारी", "emoji": "📝" },
+    { "id": 8, "name": "विकल्पों की विविधता", "emoji": "🛒" },
+    { "id": 9, "name": "मुद्दों का समाधान", "emoji": "💰" },
+    { "id": 10, "name": "जागरूकता बढ़ाना", "emoji": "🎓" }
+  ]
+}

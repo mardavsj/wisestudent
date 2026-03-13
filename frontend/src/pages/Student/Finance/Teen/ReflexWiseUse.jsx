@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -9,10 +10,12 @@ const ROUND_TIME = 10;
 
 const ReflexWiseUse = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-teens-9";
   const gameData = getGameDataById(gameId);
+  const gameContent = t("financial-literacy.teens.reflex-wise-use", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -28,63 +31,18 @@ const ReflexWiseUse = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      question: "What is the wisest way to use your money?",
-      correctAnswer: "Invest for Growth",
-      options: [
-        { text: "Invest for Growth", isCorrect: true, emoji: "📈" },
-        { text: "Waste on Junk", isCorrect: false, emoji: "🗑️" },
-        { text: "Impulse Buy", isCorrect: false, emoji: "⚡" },
-        { text: "Spend on FOMO", isCorrect: false, emoji: "😱" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What should you prioritize for financial security?",
-      correctAnswer: "Emergency Fund",
-      options: [
-        { text: "Luxury Splurge", isCorrect: false, emoji: "💎" },
-        { text: "Emergency Fund", isCorrect: true, emoji: "🛡️" },
-        { text: "Peer Pressure", isCorrect: false, emoji: "👥" },
-        { text: "Spend All", isCorrect: false, emoji: "💸" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What helps your money grow over time?",
-      correctAnswer: "Compound Interest",
-      options: [
-        { text: "No Planning", isCorrect: false, emoji: "🚫" },
-        { text: "Compound Interest", isCorrect: true, emoji: "💰" },
-        { text: "Quick Spending", isCorrect: false, emoji: "⚡" },
-        { text: "Ignore Savings", isCorrect: false, emoji: "🙈" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What should guide your financial decisions?",
-      correctAnswer: "Financial Plan",
-      options: [
-        { text: "Financial Plan", isCorrect: true, emoji: "📋" },
-        { text: "Emotions", isCorrect: false, emoji: "😢" },
-        { text: "Peer Pressure", isCorrect: false, emoji: "👥" },
-        { text: "Impulse", isCorrect: false, emoji: "🎲" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What should you focus on for long-term success?",
-      correctAnswer: "Long-term Goals",
-      options: [
-        { text: "Instant Gratification", isCorrect: false, emoji: "🎁" },
-        { text: "Short-term Wants", isCorrect: false, emoji: "🛍️" },
-        { text: "Long-term Goals", isCorrect: true, emoji: "🎯" },
-        { text: "No Planning", isCorrect: false, emoji: "🚫" }
-      ]
-    }
-  ];
+  const questions = useMemo(() => {
+    return Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  }, [gameContent]);
+
+  // Map correct answers
+  const correctAnswers = {
+    1: "invest",
+    2: "emergency",
+    3: "compound",
+    4: "plan",
+    5: "long_term"
+  };
 
   useEffect(() => {
     currentRoundRef.current = currentRound;
@@ -130,15 +88,19 @@ const ReflexWiseUse = () => {
     };
   }, [gameState, answered, timeLeft, handleTimeUp]);
 
-  const handleAnswer = (isCorrect) => {
+  const handleAnswer = (option, questionId) => {
     if (answered || gameState !== "playing") return;
     
     setAnswered(true);
     resetFeedback();
     
+    const isCorrect = correctAnswers[questionId] === option.id;
+    
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     setTimeout(() => {
@@ -169,13 +131,13 @@ const ReflexWiseUse = () => {
 
   return (
     <GameShell
-      title="Reflex Wise Use"
+      title={gameContent?.title || "Reflex Wise Use"}
       subtitle={
         gameState === "ready" 
-          ? "Test your financial wisdom!" 
+          ? gameContent?.subtitleReady || "Test your financial wisdom!" 
           : gameState === "playing" 
-          ? `Round ${currentRound}/${TOTAL_ROUNDS} | Time: ${timeLeft}s | Score: ${score}` 
-          : "Game Complete!"
+          ? `${t("financial-literacy.teens.reflex-wise-use.roundLabel")} ${currentRound}/${TOTAL_ROUNDS} | ${t("financial-literacy.teens.reflex-wise-use.timeLabel")} ${timeLeft}s | ${t("financial-literacy.teens.reflex-wise-use.scoreLabel")} ${score}` 
+          : gameContent?.gameComplete || "Game Complete!"
       }
       showGameOver={gameState === "finished"}
       score={score}
@@ -196,25 +158,35 @@ const ReflexWiseUse = () => {
       <div className="space-y-6 max-w-4xl mx-auto">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Reflex Wise Use Challenge</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {gameContent?.challengeTitle || "Reflex Wise Use Challenge"}
+            </h2>
             <p className="text-white/90 text-lg mb-6">
-              Answer questions about wise money use. You have {ROUND_TIME} seconds per question!
+              {t("financial-literacy.teens.reflex-wise-use.challengeDescription", { time: ROUND_TIME })}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               <div className="bg-green-500/20 p-4 rounded-xl border border-green-500/30">
-                <h3 className="font-bold text-green-300 mb-2 text-lg">Wise Choices</h3>
-                <p className="text-white/80 text-sm">Invest for Growth, Emergency Fund, Compound Interest, Financial Plan, Long-term Goals</p>
+                <h3 className="font-bold text-green-300 mb-2 text-lg">
+                  {gameContent?.wiseChoicesLabel || "Wise Choices"}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {gameContent?.wiseChoicesList || "Invest for Growth, Emergency Fund, Compound Interest, Financial Plan, Long-term Goals"}
+                </p>
               </div>
               <div className="bg-red-500/20 p-4 rounded-xl border border-red-500/30">
-                <h3 className="font-bold text-red-300 mb-2 text-lg">Poor Choices</h3>
-                <p className="text-white/80 text-sm">Waste on Junk, Impulse Buy, Spend on FOMO, Luxury Splurge, Peer Pressure</p>
+                <h3 className="font-bold text-red-300 mb-2 text-lg">
+                  {gameContent?.poorChoicesLabel || "Poor Choices"}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {gameContent?.poorChoicesList || "Waste on Junk, Impulse Buy, Spend on FOMO, Luxury Splurge, Peer Pressure"}
+                </p>
               </div>
             </div>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full font-bold text-lg shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -225,18 +197,24 @@ const ReflexWiseUse = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="flex justify-between items-center text-white">
                 <div className="flex items-center gap-2">
-                  <span className="font-bold">Round:</span>
+                  <span className="font-bold">
+                    {gameContent?.roundLabel || "Round:"}
+                  </span>
                   <span>{currentRound}/{TOTAL_ROUNDS}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="font-bold">Time:</span>
+                  <span className="font-bold">
+                    {gameContent?.timeLabel || "Time:"}
+                  </span>
                   <div className="flex items-center gap-2">
                     <div className={`w-3 h-3 rounded-full ${getTimerColor()}`}></div>
                     <span className={timeLeft <= 3 ? "text-red-400 font-bold" : ""}>{timeLeft}s</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="font-bold">Score:</span>
+                  <span className="font-bold">
+                    {gameContent?.scoreLabel || "Score:"}
+                  </span>
                   <span className="text-yellow-400">{score}/{TOTAL_ROUNDS}</span>
                 </div>
               </div>
@@ -251,17 +229,26 @@ const ReflexWiseUse = () => {
               
               {/* Options */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {currentQuestion.options.map((option, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleAnswer(option.isCorrect)}
-                    disabled={answered}
-                    className="bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white p-6 rounded-2xl shadow-lg transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none min-h-[80px] flex items-center justify-center gap-3"
-                  >
-                    <span className="text-3xl">{option.emoji}</span>
-                    <span className="text-lg font-semibold">{option.text}</span>
-                  </button>
-                ))}
+                {currentQuestion.options.map((option, idx) => {
+                  const isCorrect = correctAnswers[currentQuestion.id] === option.id;
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => handleAnswer(option, currentQuestion.id)}
+                      disabled={answered}
+                      className={`text-white p-6 rounded-2xl shadow-lg transition-all transform hover:scale-105 disabled:cursor-not-allowed disabled:transform-none min-h-[80px] flex items-center justify-center gap-3 ${
+                        answered
+                          ? isCorrect
+                            ? "bg-green-500/30 border-4 border-green-400 ring-4 ring-green-400"
+                            : "bg-red-500/20 border-2 border-red-400 opacity-75"
+                          : "bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700"
+                      }`}
+                    >
+                      <span className="text-3xl">{option.emoji}</span>
+                      <span className="text-lg font-semibold">{option.text}</span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -269,27 +256,29 @@ const ReflexWiseUse = () => {
 
         {gameState === "finished" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">Game Complete!</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">
+              {gameContent?.gameComplete || "Game Complete!"}
+            </h2>
             
             <div className="mb-6">
               <div className="text-6xl mb-4">
                 {score === TOTAL_ROUNDS ? "🏆" : score >= 3 ? "👍" : "💪"}
               </div>
               <p className="text-2xl font-bold text-white mb-2">
-                Score: {score}/{TOTAL_ROUNDS}
+                {gameContent?.scoreLabel || "Score:"} {score}/{TOTAL_ROUNDS}
               </p>
               <p className="text-white/90 text-lg">
                 {score === TOTAL_ROUNDS 
-                  ? "Perfect! You're a financial wisdom master!" 
+                  ? gameContent?.perfectScore || "Perfect! You're a financial wisdom master!" 
                   : score >= 3 
-                  ? "Great job! You understand wise money use!" 
-                  : "Keep learning about wise financial decisions!"}
+                  ? gameContent?.goodScore || "Great job! You understand wise money use!" 
+                  : gameContent?.lowScore || "Keep learning about wise financial decisions!"}
               </p>
             </div>
             
             {score >= 3 && (
               <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-6">
-                <span>+{score} Coins</span>
+                <span>{t("financial-literacy.teens.reflex-wise-use.coinsLabel", { count: score })}</span>
               </div>
             )}
             
@@ -297,7 +286,7 @@ const ReflexWiseUse = () => {
               onClick={startGame}
               className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all"
             >
-              Play Again
+              {gameContent?.playAgain || "Play Again"}
             </button>
           </div>
         )}

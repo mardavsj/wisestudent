@@ -1,0 +1,163 @@
+{
+  "title": "सिमुलेशन: धोखाधड़ी चेतावनी",
+  "subtitleComplete": "सिमुलेशन पूरा हुआ!",
+  "subtitleProgress": "परिदृश्य {{current}} का {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "संदिग्ध ऐप अनुरोध",
+      "description": "एक नया ऐप 'अकाउंट सत्यापित करने' के लिए आपका बैंक ओटीपी मांगता है। वॉलेट ₹500। क्या समझदारी है?",
+      "options": [
+        {
+          "id": "share-otp",
+          "text": "तुरंत ओटीपी साझा करें",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "check-forum",
+          "text": "निर्णय लेने से पहले ऐप समीक्षाएं और फ़ोरम देखें",
+          "emoji": "🧐",
+          "isCorrect": false
+        },
+        {
+          "id": "install-anyway",
+          "text": "इंस्टॉल करें और देखें कि यह काम करता है या नहीं",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-app",
+          "text": "ऐप को अनदेखा करें और इसे अनइंस्टॉल करें",
+          "emoji": "📴",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "फर्जी छात्रवृत्ति ईमेल",
+      "description": "ईमेल दावा करता है 'छात्रवृत्ति ₹50,000, पंजीकरण करने के लिए क्लिक करें।' क्या सुरक्षित है?",
+      "options": [
+        {
+          "id": "click-link",
+          "text": "तेजी से पंजीकरण करने के लिए लिंक पर क्लिक करें",
+          "emoji": "🔗",
+          "isCorrect": false
+        },
+        {
+          "id": "verify-university",
+          "text": "आधिकारिक विश्वविद्यालय साइट के साथ ईमेल सत्यापित करें",
+          "emoji": "🏫",
+          "isCorrect": true
+        },
+        {
+          "id": "share-email",
+          "text": "दोस्तों के साथ ईमेल साझा करें",
+          "emoji": "📤",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-and-forget",
+          "text": "बिना जांचे इसे पूरी तरह अनदेखा करें",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "फर्जी मित्र अनुरोध",
+      "description": "कोई अज्ञात व्यक्ति 'मुफ्त गेम पॉइंट' की पेशकश करते हुए मित्र अनुरोध भेजता है। सुरक्षित विकल्प?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "पॉइंट पाने के लिए स्वीकार करें",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "share-data",
+          "text": "पॉइंट के लिए अपने गेम क्रेडेंशियल भेजें",
+          "emoji": "🔑",
+          "isCorrect": false
+        },
+        {
+          "id": "block-report",
+          "text": "अकाउंट को ब्लॉक और रिपोर्ट करें",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore-only",
+          "text": "बिना रिपोर्ट किए अनदेखा करें",
+          "emoji": "🙅",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ऑनलाइन स्टोर घोटाला",
+      "description": "वेबसाइट 90% छूट पर फोन दे रही है। केवल यूपीआई के माध्यम से भुगतान। किशोर का निर्णय?",
+      "options": [
+        {
+          "id": "research-store",
+          "text": "किसी भी भुगतान से पहले वेबसाइट की वैधता और समीक्षाएं जांचें",
+          "emoji": "🧐",
+          "isCorrect": true
+        },
+        {
+          "id": "pay-now",
+          "text": "तुरंत भुगतान करें, सौदा चूकने के लिए बहुत अच्छा है",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-money",
+          "text": "तेजी से खरीदने के लिए अतिरिक्त उधार लें",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "share-link",
+          "text": "दोस्तों के साथ डील साझा करें",
+          "emoji": "📤",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "सोशल मीडिया निवेश घोटाला",
+      "description": "इन्फ्लुएंसर एक सप्ताह में 200% रिटर्न का वादा करता है, पेटीएम के माध्यम से ₹500 मांगता है। क्या सही है?",
+      "options": [
+        {
+          "id": "invest-quick",
+          "text": "पैसे जल्दी भेजें",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "consult-unknown",
+          "text": "सत्यापित करने के लिए अज्ञात मित्र से पूछें",
+          "emoji": "👤",
+          "isCorrect": false
+        },
+        {
+          "id": "verify-source",
+          "text": "वैधता सत्यापित करें, निवेश करने से पहले शोध करें",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "share-link",
+          "text": "दूसरों को लिंक फॉरवर्ड करें",
+          "emoji": "📤",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

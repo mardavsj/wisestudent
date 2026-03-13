@@ -1,154 +1,30 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const AllowanceStory = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { t } = useTranslation("gamecontent");
   
-  // Get game data from game category folder (source of truth)
-  const gameData = getGameDataById("finance-teens-21");
-  const gameId = gameData?.id || "finance-teens-21";
+  const gameId = "finance-teens-21";
+  const gameContent = t("financial-literacy.teens.allowance-story", { returnObjects: true });
+  const gameData = getGameDataById(gameId);
   
-  // Ensure gameId is always set correctly
-  if (!gameData || !gameData.id) {
-    console.warn("Game data not found for AllowanceStory, using fallback ID");
-  }
-  
-  // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "You receive ₹500 as weekly allowance. How should you manage it?",
-      options: [
-        { 
-          id: "save", 
-          text: "Keep for books", 
-          emoji: "📚", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "spend", 
-          text: "Spend all on clothes", 
-          emoji: "👕", 
-          isCorrect: false
-        },
-        { 
-          id: "waste", 
-          text: "Waste it all", 
-          emoji: "💸", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You want to buy a ₹300 game but need ₹200 for school supplies. What's the smart choice?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Buy the game", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Buy supplies first", 
-          emoji: "✏️", 
-          isCorrect: true
-        },
-        { 
-          id: "waste", 
-          text: "Buy both on credit", 
-          emoji: "💳", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Your friends are buying expensive snacks every day. You can't afford that. What do you do?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Buy expensive snacks", 
-          emoji: "🍕", 
-          isCorrect: false
-        },
-        { 
-          id: "waste", 
-          text: "Borrow money", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Bring homemade snacks", 
-          emoji: "🍱", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You saved ₹400 but see a limited-time offer for a ₹600 item. What should you do?",
-      options: [
-        { 
-          id: "save", 
-          text: "Wait and save more", 
-          emoji: "⏳", 
-          isCorrect: true
-        },
-        { 
-          id: "spend", 
-          text: "Buy with partial payment", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "waste", 
-          text: "Ignore savings", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You get a ₹100 bonus for helping with chores. How should you use it?",
-      options: [
-        { 
-          id: "waste", 
-          text: "Waste it", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Add to savings", 
-          emoji: "🏦", 
-          isCorrect: true
-        },
-        { 
-          id: "spend", 
-          text: "Spend on treats", 
-          emoji: "🍭", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -181,18 +57,29 @@ const AllowanceStory = () => {
     resetFeedback();
   };
 
+  const handleNext = () => navigate("/student/finance/teen/budget-quiz");
+
   const currentQuestionData = questions[currentQuestion];
 
   return (
     <GameShell
-      title="Allowance Story"
+      title={gameContent?.title || "Allowance Story"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Story Complete!"
+          : t("financial-literacy.teens.allowance-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
+      onNext={handleNext}
       nextGamePathProp="/student/finance/teen/budget-quiz"
       nextGameIdProp="finance-teens-22"
       gameType="finance"
@@ -208,11 +95,23 @@ const AllowanceStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.allowance-story.subtitleProgress", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.allowance-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
-              <p className="text-white text-lg mb-6">
+              <p className="text-white text-lg mb-6 text-center">
                 {currentQuestionData.text}
               </p>
               
@@ -226,13 +125,15 @@ const AllowanceStory = () => {
                   >
                     <div className="text-3xl mb-3">{option.emoji}</div>
                     <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
+                    {option.description && (
+                      <p className="text-white/90 text-sm">{option.description}</p>
+                    )}
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
@@ -269,7 +170,7 @@ const AllowanceStory = () => {
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

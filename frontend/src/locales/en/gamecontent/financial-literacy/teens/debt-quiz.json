@@ -1,0 +1,66 @@
+{
+  "title": "Debt Quiz",
+  "subtitleComplete": "Quiz Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Borrow ₹100, repay ₹120. What is extra ₹20 called?",
+      "options": [
+        { "id": "principal", "text": "Principal", "emoji": "💵", "isCorrect": false },
+        { "id": "fee", "text": "Fee", "emoji": "💸", "isCorrect": false },
+        { "id": "interest", "text": "Interest", "emoji": "💰", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What happens if you don't repay debt on time?",
+      "options": [
+        { "id": "nothing", "text": "Nothing happens", "emoji": "😊", "isCorrect": false },
+        { "id": "penalty", "text": "Penalty fees and interest increase", "emoji": "⚠️", "isCorrect": true },
+        { "id": "free", "text": "Debt becomes free", "emoji": "🎁", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What is the original amount borrowed called?",
+      "options": [
+        { "id": "interest", "text": "Interest", "emoji": "💰", "isCorrect": false },
+        { "id": "principal", "text": "Principal", "emoji": "💵", "isCorrect": true },
+        { "id": "total", "text": "Total debt", "emoji": "📊", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What should you do before borrowing money?",
+      "options": [
+        { "id": "plan", "text": "Plan how to repay", "emoji": "📋", "isCorrect": true },
+        { "id": "borrow-first", "text": "Borrow first, think later", "emoji": "💸", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore repayment", "emoji": "😴", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What is the best way to avoid debt problems?",
+      "options": [
+        { "id": "borrow-more", "text": "Borrow more to pay old debt", "emoji": "🔄", "isCorrect": false },
+        { "id": "avoid", "text": "Avoid unnecessary borrowing and repay on time", "emoji": "👍", "isCorrect": true },
+        { "id": "ignore", "text": "Ignore all debts", "emoji": "🚫", "isCorrect": false }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Debt Quiz Star!",
+    "winMessage": "You got {{score}} out of {{total}} correct! You understand debt and borrowing!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Interest is the extra cost of borrowing. Always plan how to repay, avoid unnecessary debt, and repay on time to avoid penalties!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} correct. Remember: Interest is the extra cost of borrowing money!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Interest is the extra amount you pay when borrowing. Always plan repayment, avoid unnecessary debt, and repay on time!"
+  }
+}

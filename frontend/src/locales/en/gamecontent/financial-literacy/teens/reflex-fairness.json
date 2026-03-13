@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Fairness",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your fairness reflexes!",
+  "subtitleReady": "Test your fairness reflexes!",
+  "readyHeader": "Ready to Test Your Fairness Reflexes?",
+  "readyDescription": "Answer questions about ethical decision-making and fairness.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "ethicalSkills": "You're developing strong ethical decision-making skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the fairest way to divide resources among team members?",
+      "options": [
+        { "text": "Give more to favorites", "id": "favorites", "emoji": "😊" },
+        { "text": "Equal distribution based on contribution", "id": "contribution", "emoji": "⚖️" },
+        { "text": "Random allocation", "id": "random", "emoji": "🎲" },
+        { "text": "Whoever asks first gets more", "id": "first_ask", "emoji": "✋" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "When making decisions that affect others, what approach is most fair?",
+      "options": [
+        { "text": "Consider everyone's perspective", "id": "perspective", "emoji": "🤔" },
+        { "text": "Make decisions unilaterally", "id": "unilateral", "emoji": "👑" },
+        { "text": "Only consider your own needs", "id": "own_needs", "emoji": "👤" },
+        { "text": "Let the loudest person decide", "id": "loudest", "emoji": "📢" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How should you handle a situation where a friend is cheating?",
+      "options": [
+        { "text": "Ignore it to avoid conflict", "id": "ignore_it", "emoji": "🙈" },
+        { "text": "Join in to not be left out", "id": "join_in", "emoji": "👥" },
+        { "text": "Address it honestly and fairly", "id": "address_honestly", "emoji": "💬" },
+        { "text": "Tell everyone to get revenge", "id": "revenge", "emoji": "📢" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What's the most ethical response to finding money on the ground?",
+      "options": [
+        { "text": "Try to find the owner or turn it in", "id": "find_owner", "emoji": "🔍" },
+        { "text": "Keep it since you found it", "id": "keep_it", "emoji": "💰" },
+        { "text": "Leave it where it is", "id": "leave_it", "emoji": "🚶" },
+        { "text": "Split it with friends", "id": "split_friends", "emoji": "🤝" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "In a group project, how should workload be distributed?",
+      "options": [
+        { "text": "Let one person do everything", "id": "one_person", "emoji": "😤" },
+        { "text": "Based on each person's strengths and availability", "id": "strengths", "emoji": "🛠️" },
+        { "text": "Everyone does the same regardless of skill", "id": "same_regardless", "emoji": "🔄" },
+        { "text": "Whoever complains least does more", "id": "least_complain", "emoji": "🤐" }
+      ]
+    }
+  ]
+}

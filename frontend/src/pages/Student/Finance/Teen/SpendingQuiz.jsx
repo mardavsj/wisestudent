@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -6,10 +7,12 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const SpendingQuiz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-teens-12";
   const gameData = getGameDataById(gameId);
+  const gameContent = t("financial-literacy.teens.spending-quiz", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -21,129 +24,7 @@ const SpendingQuiz = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Which is the smartest spending approach?",
-      options: [
-        { 
-          id: "a", 
-          text: "Comparing price + quality", 
-          emoji: "🔍", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Buying branded shoes always", 
-          emoji: "👟", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Buying whatever is cheap", 
-          emoji: "💰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What should you do before making a big purchase?",
-      options: [
-        { 
-          id: "a", 
-          text: "Buy immediately", 
-          emoji: "🛒", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Research and compare", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Ask friends only", 
-          emoji: "👥", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which spending habit helps build wealth?",
-      options: [
-        { 
-          id: "a", 
-          text: "Impulse buying", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Keeping up with trends", 
-          emoji: "📈", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Budgeting first", 
-          emoji: "📋", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What's the best approach to shopping lists?",
-      options: [
-        { 
-          id: "a", 
-          text: "Stick to the list", 
-          emoji: "🛒", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Buy what looks good", 
-          emoji: "👀", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Forget the list", 
-          emoji: "🗑️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "How should you handle sales and discounts?",
-      options: [
-        { 
-          id: "a", 
-          text: "Buy everything on sale", 
-          emoji: "🎉", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Ignore all sales", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Buy only needed items", 
-          emoji: "🎯", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -154,6 +35,8 @@ const SpendingQuiz = () => {
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     const isLastQuestion = currentQuestion === questions.length - 1;
@@ -180,9 +63,17 @@ const SpendingQuiz = () => {
 
   return (
     <GameShell
-      title="Spending Quiz"
+      title={gameContent?.title || "Spending Quiz"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      subtitle={
+        !showResult 
+          ? t("financial-literacy.teens.spending-quiz.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: "Question {{current}} of {{total}}"
+            })
+          : gameContent?.subtitleComplete || "Quiz Complete!"
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -203,8 +94,20 @@ const SpendingQuiz = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.spending-quiz.subtitleProgress", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}} of {{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.spending-quiz.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -229,47 +132,56 @@ const SpendingQuiz = () => {
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Excellent!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.perfectScoreTitle || "Excellent!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct!
-                  You know how to make smart spending choices!
+                  {t("financial-literacy.teens.spending-quiz.perfectScoreMsg", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct! You know how to make smart spending choices!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>{t("financial-literacy.teens.spending-quiz.coinsLabel", { count: score })}</span>
                 </div>
                 <p className="text-white/80">
-                  You understand the importance of comparing options, budgeting, and making thoughtful purchases!
+                  {gameContent?.lessonLabel || "You understand the importance of comparing options, budgeting, and making thoughtful purchases!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">😔</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.keepLearningTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct.
-                  Remember, smart spending means thinking before you buy!
+                  {t("financial-literacy.teens.spending-quiz.lowScoreMsg", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct. Remember, smart spending means thinking before you buy!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Try to choose the option that involves planning and comparing before spending.
+                  {gameContent?.tipLabel || "Try to choose the option that involves planning and comparing before spending."}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );
 };
-
 export default SpendingQuiz;

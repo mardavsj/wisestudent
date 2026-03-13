@@ -1,0 +1,134 @@
+{
+  "title": "सेविंग्स अकाउंट स्टोरी",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{current}} का {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "perfectScoreMsg": "आपने {{total}} में से {{score}} सही पाए! आप समझते हैं कि बचत खाते कैसे काम करते हैं!",
+  "lowScoreMsg": "आपने {{total}} में से {{score}} सही पाए। याद रखें, बचत खाते ब्याज देते हैं, जो आपके पैसे को बढ़ने में मदद करता है!",
+  "lessonLabel": "सबक: बचत खाते आपके पैसे को सुरक्षित रखते हैं और ब्याज देते हैं, जिससे समय के साथ आपका पैसा बढ़ता है!",
+  "tryAgain": "फिर से प्रयास करें",
+  "tipLabel": "टिप: जब आप बचत खाते में पैसा जमा करते हैं, तो बैंक आपको ब्याज देता है, जिससे आपका पैसा बढ़ता है!",
+  "coinsLabel": "+{{count}} सिक्के",
+  "questions": [
+    {
+      "id": 1,
+      "text": "आप ₹1000 जमा करते हैं। एक साल बाद, यह ₹1050 हो जाता है। क्यों?",
+      "options": [
+        {
+          "id": "interest",
+          "text": "ब्याज",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "magic",
+          "text": "जादू",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "error",
+          "text": "बैंक की गलती",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "जब आप बचत खाते में पैसा रखते हैं तो क्या होता है?",
+      "options": [
+        {
+          "id": "loses",
+          "text": "यह मूल्य खो देता है",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grows",
+          "text": "यह ब्याज के साथ बढ़ता है",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "stays",
+          "text": "यह वैसा ही रहता है",
+          "emoji": "➡️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "बैंक बचत पर ब्याज क्यों देते हैं?",
+      "options": [
+        {
+          "id": "use",
+          "text": "वे आपके पैसे का उपयोग उधार देने के लिए करते हैं",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "gift",
+          "text": "यह एक उपहार है",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "rule",
+          "text": "सरकारी नियम",
+          "emoji": "📜",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "बचत खाते का क्या लाभ है?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "सुरक्षित और ब्याज मिलता है",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "quick",
+          "text": "केवल त्वरित पहुंच",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "free",
+          "text": "मुफ्त पैसा",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "यदि आप ₹500 जमा करते हैं और एक साल बाद ₹525 प्राप्त करते हैं, तो अतिरिक्त ₹25 क्या है?",
+      "options": [
+        {
+          "id": "bonus",
+          "text": "बोनस भुगतान",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "interest2",
+          "text": "अर्जित ब्याज",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "fee",
+          "text": "बैंक शुल्क",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

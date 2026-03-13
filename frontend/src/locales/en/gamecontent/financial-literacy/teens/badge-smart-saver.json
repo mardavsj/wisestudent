@@ -1,0 +1,198 @@
+{
+  "title": "Badge: Smart Saver",
+  "subtitleComplete": "Badge Earned!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Emergency Situation",
+      "question": "Your bike needs urgent repairs costing ₹500. You have ₹300 saved. What do you do?",
+      "options": [
+        {
+          "id": "borrow",
+          "text": "Borrow from friends",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "credit",
+          "text": "Use credit card",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "savings-earn",
+          "text": "Use savings + earn more",
+          "emoji": "🛠️",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore the repair",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "Smart choice! Using savings and earning more shows financial responsibility!",
+        "wrong": "Remember: Use your savings first and earn more rather than borrowing unnecessarily."
+      }
+    },
+    {
+      "id": 2,
+      "title": "Investment Opportunity",
+      "question": "A friend offers 50% return on ₹1000 investment in 1 month. What's your choice?",
+      "options": [
+        {
+          "id": "invest",
+          "text": "Invest the money",
+          "emoji": "🎰",
+          "isCorrect": false
+        },
+        {
+          "id": "decline",
+          "text": "Decline risky offer",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "invest-half",
+          "text": "Invest half",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "ask-details",
+          "text": "Ask for more details",
+          "emoji": "❓",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "Excellent! High returns in short time are usually too good to be true!",
+        "wrong": "Be cautious! Unrealistic returns often indicate scams or high risk."
+      }
+    },
+    {
+      "id": 3,
+      "title": "Shopping Temptation",
+      "question": "You see a ₹2000 gadget you want, but you're saving for college fees. Do you buy it?",
+      "options": [
+        {
+          "id": "college",
+          "text": "Stick to college goal",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "buy-gadget",
+          "text": "Buy the gadget",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "buy-credit",
+          "text": "Buy on credit",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-money",
+          "text": "Borrow money",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "Perfect! Prioritizing important goals over wants is smart saving!",
+        "wrong": "Remember: Important goals like education should come before wants."
+      }
+    },
+    {
+      "id": 4,
+      "title": "Bonus Dilemma",
+      "question": "You receive ₹1000 bonus. Should you save it all or spend some?",
+      "options": [
+        {
+          "id": "spend-half",
+          "text": "Spend 50% on fun",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "spend-all",
+          "text": "Spend it all",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save-80",
+          "text": "Save 80%, spend 20%",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "save-all",
+          "text": "Save it all",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "Great balance! Saving most while enjoying a small reward is wise!",
+        "wrong": "A good rule: Save most of unexpected money, but allow a small reward for motivation."
+      }
+    },
+    {
+      "id": 5,
+      "title": "Peer Pressure",
+      "question": "Friends are planning an expensive trip. You can't afford it but don't want to miss out. What do you do?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "Plan affordable alternative",
+          "emoji": "🧭",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-join",
+          "text": "Borrow to join",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "use-credit",
+          "text": "Use credit card",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "Skip and stay home",
+          "emoji": "🏠",
+          "isCorrect": false
+        }
+      ],
+      "feedback": {
+        "correct": "Smart! Finding affordable alternatives shows financial maturity!",
+        "wrong": "Don't let peer pressure lead to poor financial decisions. Suggest affordable options!"
+      }
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "Smart Saver Badge Earned!",
+    "winMessage": "You made {{score}} smart saving decisions out of {{total}} challenges!",
+    "achievementTitle": "🎉 Achievement Unlocked!",
+    "achievementText": "Badge: Smart Saver",
+    "smartChoicesTitle": "Smart Choices",
+    "smartChoicesText": "You chose to save for emergencies, avoid risky investments, prioritize important goals, and resist peer pressure spending.",
+    "wisdomTitle": "Financial Wisdom",
+    "wisdomText": "These habits will help you build wealth and achieve your long-term financial goals!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You made {{score}} smart saving decisions out of {{total}} challenges.",
+    "loseAdvice": "Remember, smart saving means prioritizing important goals, avoiding risky investments, and making thoughtful financial decisions.",
+    "tryAgain": "Try Again"
+  }
+}

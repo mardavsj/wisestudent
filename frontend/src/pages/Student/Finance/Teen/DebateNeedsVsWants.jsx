@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import GameShell from '../GameShell';
 import useGameFeedback from '../../../../hooks/useGameFeedback';
 import { getGameDataById } from '../../../../utils/getGameData';
 
 const DebateNeedsVsWants = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-teens-16";
   const gameData = getGameDataById(gameId);
+  const gameContent = t("financial-literacy.teens.debate-needs-vs-wants", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -23,118 +26,7 @@ const DebateNeedsVsWants = () => {
   const [answered, setAnswered] = useState(false);
   const [gameComplete, setGameComplete] = useState(false);
 
-  const debateTopics = [
-    {
-      id: 1,
-      scenario: "Should a teenager buy the latest smartphone or use their current phone that works fine?",
-      positions: [
-        { id: 'latest', text: "Buy the latest smartphone", points: [
-          "Staying connected with friends and family is important",
-          "Newer phones have better cameras for documenting memories",
-          "Technology skills are important for future careers"
-        ], isCorrect: true},
-        { id: 'upgrade', text: "Upgrade when truly needed", points: [
-          "Wait until current phone has significant limitations",
-          "Research if new features justify the cost",
-          "Consider refurbished or previous generation models"
-        ], isCorrect: false},
-        { id: 'keep', text: "Keep using the current phone", points: [
-          "The current phone meets basic communication needs",
-          "Money could be saved for more important future goals",
-          "Frequent upgrades contribute to electronic waste"
-        ], isCorrect: false}
-      ],
-      reflection: "Consider both staying connected AND financial responsibility. A newer phone might help with career preparation, but your current phone likely meets essential needs."
-    },
-    {
-      id: 2,
-      scenario: "Is joining an expensive sports team worth the cost if it improves physical fitness and social connections?",
-      positions: [
-        { id: 'middle', text: "Find middle ground", points: [
-          "Look for moderately priced sports programs",
-          "Consider seasonal participation instead of year-round",
-          "Explore scholarship or financial aid options"
-        ], isCorrect: false},
-        { id: 'expensive', text: "Join the expensive sports team", points: [
-          "Physical fitness is crucial for long-term health",
-          "Team participation builds valuable social skills",
-          "Sports can lead to college scholarships"
-        ], isCorrect: true},
-        { id: 'free', text: "Choose free/low-cost fitness activities", points: [
-          "Many free activities provide similar fitness benefits",
-          "Expensive commitments can strain family finances",
-          "Community sports leagues offer social connections too"
-        ], isCorrect: false}
-      ],
-      reflection: "Both physical health and financial stability matter. Consider if the benefits justify the cost compared to alternatives."
-    },
-    {
-      id: 3,
-      scenario: "Should teenagers prioritize saving for college or enjoying experiences now?",
-      positions: [
-        { id: 'enjoy', text: "Enjoy experiences while young", points: [
-          "Memories from experiences last longer than material possessions",
-          "Learning financial balance includes reasonable enjoyment",
-          "Future earning potential may offset current savings"
-        ], isCorrect: false},
-        { id: 'mix', text: "Save some, enjoy some", points: [
-          "Allocate a percentage for savings and experiences",
-          "Prioritize meaningful experiences over impulse spending",
-          "Build savings while still creating valuable memories"
-        ], isCorrect: true},
-        { id: 'save', text: "Prioritize saving for college", points: [
-          "College costs continue rising and require significant savings",
-          "Starting early maximizes compound interest benefits",
-          "Financial stress during college affects academic performance"
-        ], isCorrect: false}
-      ],
-      reflection: "Finding balance is key. Both saving for future goals and enjoying present moments contribute to well-being."
-    },
-    {
-      id: 4,
-      scenario: "Is eating out regularly a reasonable expense or financial waste?",
-      positions: [
-        { id: 'home', text: "Cooking at home most of the time", points: [
-          "Home-cooked meals are typically much more economical",
-          "Cooking develops life skills and promotes healthier eating",
-          "Regular restaurant spending can quickly deplete budgets"
-        ], isCorrect: true},
-        { id: 'out', text: "Eating out regularly", points: [
-          "Cooking skills take time to develop and aren't always practical",
-          "Social dining strengthens relationships with friends/family",
-          "Supporting local businesses contributes to community economy"
-        ], isCorrect: false},
-        { id: 'both', text: "Mix of both approaches", points: [
-          "Cook at home for regular meals, dine out for special occasions",
-          "Learn basic cooking skills to reduce restaurant dependency",
-          "Set a monthly dining out budget to control spending"
-        ], isCorrect: false}
-      ],
-      reflection: "Balance convenience and social connection with financial responsibility. Occasional dining out can fit in a healthy budget."
-    },
-    {
-      id: 5,
-      scenario: "Should teenagers invest in branded clothing or choose affordable alternatives?",
-      positions: [
-        { id: 'mix', text: "Mix quality and affordability", points: [
-          "Invest in key pieces that need durability",
-          "Choose affordable options for trendy items",
-          "Focus on style and fit rather than brand names"
-        ], isCorrect: true},
-        { id: 'affordable', text: "Choose affordable clothing", points: [
-          "Personal style matters more than brand labels",
-          "Money saved can be invested in experiences or education",
-          "Brand loyalty often reflects marketing influence rather than value"
-        ], isCorrect: false},
-        { id: 'branded', text: "Invest in branded clothing", points: [
-          "Quality branded items last longer, offering better value over time",
-          "Professional appearance can impact job interviews and opportunities",
-          "Self-confidence from looking good can improve performance"
-        ], isCorrect: false}
-      ],
-      reflection: "Consider both self-expression and financial prudence. Quality matters, but brand names don't guarantee value."
-    }
-  ];
+  const debateTopics = Array.isArray(gameContent?.debateTopics) ? gameContent.debateTopics : [];
 
   const handlePositionSelect = (positionId) => {
     if (answered) return;
@@ -168,7 +60,7 @@ const DebateNeedsVsWants = () => {
         setSelectedPosition(null);
         setAnswered(false);
       }
-    }, 8000);
+    }, 8000); // Same delay as original
   };
 
   const currentTopic = debateTopics[currentRound];
@@ -176,8 +68,15 @@ const DebateNeedsVsWants = () => {
 
   return (
     <GameShell
-      title="Debate: Needs vs Wants"
-      subtitle={isGameComplete ? "Debate Complete!" : `Scenario ${currentRound + 1} of ${debateTopics.length}`}
+      title={gameContent?.title || "Debate: Needs vs Wants"}
+      subtitle={isGameComplete 
+        ? (gameContent?.subtitleComplete || "Debate Complete!")
+        : t("financial-literacy.teens.debate-needs-vs-wants.subtitleProgress", {
+            current: currentRound + 1,
+            total: debateTopics.length,
+            defaultValue: "Scenario {{current}} of {{total}}"
+          })
+      }
       gameId={gameId}
       nextGamePathProp="/student/finance/teen/journal-of-spending"
       nextGameIdProp="finance-teens-17"
@@ -198,10 +97,14 @@ const DebateNeedsVsWants = () => {
         {!isGameComplete && currentTopic && (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold mb-4 text-white">Scenario:</h3>
+              <h3 className="text-xl font-bold mb-4 text-white">
+                {gameContent?.scenarioLabel || "Scenario:"}
+              </h3>
               <p className="mb-6 text-white/90 text-lg">{currentTopic.scenario}</p>
               
-              <h4 className="text-lg font-semibold mb-4 text-white">Take a Position:</h4>
+              <h4 className="text-lg font-semibold mb-4 text-white">
+                {gameContent?.takePositionLabel || "Take a Position:"}
+              </h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 {currentTopic.positions.map((position) => (
                   <button
@@ -232,7 +135,9 @@ const DebateNeedsVsWants = () => {
               
               {showReflection && (
                 <div className="bg-yellow-500/20 border border-yellow-400/50 rounded-lg p-4">
-                  <h4 className="font-semibold text-yellow-300 mb-2">Reflection:</h4>
+                  <h4 className="font-semibold text-yellow-300 mb-2">
+                    {gameContent?.reflectionLabel || "Reflection:"}
+                  </h4>
                   <p className="text-yellow-200">{currentTopic.reflection}</p>
                 </div>
               )}
@@ -240,10 +145,18 @@ const DebateNeedsVsWants = () => {
             
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <span className="text-white/80">
-                Scenario {currentRound + 1} of {debateTopics.length}
+                {t("financial-literacy.teens.debate-needs-vs-wants.roundLabel", {
+                  current: currentRound + 1,
+                  total: debateTopics.length,
+                  defaultValue: "Scenario {{current}} of {{total}}"
+                })}
               </span>
               <span className="font-medium text-yellow-400">
-                Score: {score}/{debateTopics.length}
+                {t("financial-literacy.teens.debate-needs-vs-wants.scoreLabel", {
+                  score,
+                  total: debateTopics.length,
+                  defaultValue: "Score: {{score}}/{{total}}"
+                })}
               </span>
             </div>
           </div>
@@ -254,25 +167,39 @@ const DebateNeedsVsWants = () => {
             <div className="text-6xl mb-4">
               {score === debateTopics.length ? "🏆" : score >= 3 ? "🎉" : "💪"}
             </div>
-            <h2 className="text-3xl font-bold text-white mb-4">Debate Complete!</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {gameContent?.subtitleComplete || "Debate Complete!"}
+            </h2>
             <p className="text-white/90 text-lg mb-6">
-              You completed all {debateTopics.length} scenarios!
+              {t("financial-literacy.teens.debate-needs-vs-wants.result.completionMessage", {
+                total: debateTopics.length,
+                defaultValue: "You completed all {{total}} scenarios!"
+              })}
             </p>
             <div className="mb-6">
               <p className="text-2xl font-bold text-white mb-2">
-                Final Score: {score}/{debateTopics.length}
+                {t("financial-literacy.teens.debate-needs-vs-wants.result.finalScoreLabel", {
+                  score,
+                  total: debateTopics.length,
+                  defaultValue: "Final Score: {{score}}/{{total}}"
+                })}
               </p>
               <p className="text-white/90 text-lg">
                 {score === debateTopics.length 
-                  ? "Perfect! You've thought through all the scenarios!" 
+                  ? (gameContent?.result?.perfectScoreMessage || "Perfect! You've thought through all the scenarios!") 
                   : score >= 3 
-                  ? "Great job! You understand the balance between needs and wants!" 
-                  : "Keep learning about balancing needs and wants!"}
+                  ? (gameContent?.result?.goodScoreMessage || "Great job! You understand the balance between needs and wants!") 
+                  : (gameContent?.result?.lowScoreMessage || "Keep learning about balancing needs and wants!")}
               </p>
             </div>
             {score >= 3 && (
               <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-6">
-                <span>+{score} Coins</span>
+                <span>
+                  {t("financial-literacy.teens.debate-needs-vs-wants.result.coinsEarned", {
+                    score,
+                    defaultValue: "+{{score}} Coins"
+                  })}
+                </span>
               </div>
             )}
           </div>

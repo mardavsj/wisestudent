@@ -1,0 +1,33 @@
+{
+  "title": "प्राथमिकताओं की पहेली",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "प्राथमिकताओं के साथ खर्चों का मिलान करें ({{current}}/{{total}} मिलान)",
+  "itemsTitle": "खर्च",
+  "prioritiesTitle": "प्राथमिकताएं",
+  "matchButton": "मिलान करें",
+  "selectItemLabel": "एक खर्च चुनें",
+  "selectedItemLabel": "चुना गया: {{name}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "resultSuccessHeader": "बहुत अच्छा!",
+  "resultSuccessSubheader": "आपने {{total}} में से {{score}} खर्चों का उनकी प्राथमिकताओं के साथ सही मिलान किया है!",
+  "resultSuccessLesson": "सबक: खर्च की प्राथमिकताओं को समझने से स्मार्ट वित्तीय निर्णय लेने में मदद मिलती है!",
+  "resultTryAgainHeader": "अभ्यास जारी रखें!",
+  "resultTryAgainSubheader": "आपने {{score}} खर्चों को सही ढंग से मिलाया है।",
+  "resultTryAgainTip": "सुझाव: सोचें कि क्या प्रत्येक खर्च आवश्यक है या विवेकाधीन!",
+  "coinsEarned": "+{{coins}} सिक्के",
+  "items": [
+    { "id": 1, "name": "स्कूल की फीस", "emoji": "🎓" },
+    { "id": 2, "name": "किराने का सामान", "emoji": "🛒" },
+    { "id": 3, "name": "किराया", "emoji": "🏠" },
+    { "id": 4, "name": "दवा", "emoji": "💊" },
+    { "id": 5, "name": "बिजली", "emoji": "💡" }
+  ],
+  "priorities": [
+    { "id": 6, "name": "जरूरत", "emoji": "✅" },
+    { "id": 7, "name": "चाहत", "emoji": "🎁" },
+    { "id": 8, "name": "बचत", "emoji": "💰" },
+    { "id": 9, "name": "निवेश", "emoji": "📈" },
+    { "id": 10, "name": "साझा करना", "emoji": "🤲" }
+  ]
+}

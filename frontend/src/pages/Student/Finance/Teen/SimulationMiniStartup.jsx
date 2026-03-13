@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -6,15 +7,12 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const SimulationMiniStartup = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-78");
   const gameId = gameData?.id || "finance-teens-78";
-  
-  // Ensure gameId is always set correctly
-  if (!gameData || !gameData.id) {
-    console.warn("Game data not found for SimulationMiniStartup, using fallback ID");
-  }
+  const gameContent = t("financial-literacy.teens.simulation-mini-startup", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -26,173 +24,7 @@ const SimulationMiniStartup = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const scenarios = [
-  {
-    id: 1,
-    title: "Mini Startup: Online Snack Delivery",
-    description: "You have ₹500. Which strategy maximizes profit safely?",
-    amount: 500,
-    options: [
-      { 
-        id: "invest-all", 
-        text: "Invest entire ₹500 in ingredients without market check", 
-        emoji: "💸", 
-        isCorrect: false
-      },
-      
-      { 
-        id: "borrow-more", 
-        text: "Borrow extra ₹500 to buy more stock", 
-        emoji: "💳", 
-        isCorrect: false
-      },
-      { 
-        id: "wait", 
-        text: "Wait and save more before starting", 
-        emoji: "⏳", 
-        isCorrect: false
-      },
-      { 
-        id: "market-test", 
-        text: "Test small batch, learn demand, then expand", 
-        emoji: "📊", 
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 2,
-    title: "Mini Startup: Handmade Crafts",
-    description: "You have ₹400. What's the smart approach?",
-    amount: 400,
-    options: [
-      { 
-        id: "overspend", 
-        text: "Spend all ₹400 on materials without profit estimate", 
-        emoji: "🎨", 
-        isCorrect: false
-      },
-      
-      { 
-        id: "scale-fast", 
-        text: "Produce large quantity hoping to sell quickly", 
-        emoji: "⚡", 
-        isCorrect: false
-      },
-      { 
-        id: "calculate-profit", 
-        text: "Estimate cost vs selling price, start small batch", 
-        emoji: "🧮", 
-        isCorrect: true
-      },
-      { 
-        id: "delay", 
-        text: "Wait for trend to become popular", 
-        emoji: "⏳", 
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Mini Startup: Lemonade Stand",
-    description: "You have ₹300. What's the most strategic move?",
-    amount: 300,
-    options: [
-      { 
-        id: "random-location", 
-        text: "Set up anywhere without checking foot traffic", 
-        emoji: "📍", 
-        isCorrect: false
-      },
-      { 
-        id: "smart-location", 
-        text: "Choose high foot-traffic area, budget ingredients wisely", 
-        emoji: "🛒", 
-        isCorrect: true
-      },
-      { 
-        id: "borrow-extra", 
-        text: "Borrow ₹500 more to expand immediately", 
-        emoji: "💳", 
-        isCorrect: false
-      },
-      { 
-        id: "save-instead", 
-        text: "Save ₹300 instead of starting", 
-        emoji: "💰", 
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 4,
-    title: "Mini Startup: Book Resale",
-    description: "You have ₹600. How do you minimize risk?",
-    amount: 600,
-    options: [
-      { 
-        id: "bulk-buy", 
-        text: "Buy all books from seller without quality check", 
-        emoji: "📚", 
-        isCorrect: false
-      },
-      
-      { 
-        id: "borrow-more", 
-        text: "Borrow extra ₹400 to stock quickly", 
-        emoji: "💳", 
-        isCorrect: false
-      },
-      { 
-        id: "wait", 
-        text: "Wait for better deal later", 
-        emoji: "⏳", 
-        isCorrect: false
-      },
-      { 
-        id: "inspect-sample", 
-        text: "Inspect sample books, estimate demand, buy accordingly", 
-        emoji: "🔍", 
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 5,
-    title: "Mini Startup: Tutoring Service",
-    description: "You have ₹500. How do you maximize success?",
-    amount: 500,
-    options: [
-      { 
-        id: "targeted-plan", 
-        text: "Create a skill-focused plan, target audience, advertise smartly", 
-        emoji: "🎯", 
-        isCorrect: true
-      },
-      { 
-        id: "random-ad", 
-        text: "Spend all on random ads without targeting", 
-        emoji: "📢", 
-        isCorrect: false
-      },
-      
-      { 
-        id: "hire-random", 
-        text: "Hire someone without checking skills", 
-        emoji: "👥", 
-        isCorrect: false
-      },
-      { 
-        id: "save", 
-        text: "Save money instead of starting business", 
-        emoji: "💰", 
-        isCorrect: false
-      }
-    ]
-  }
-];
-
+  const scenarios = Array.isArray(gameContent?.scenarios) ? gameContent.scenarios : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -202,7 +34,7 @@ const SimulationMiniStartup = () => {
     
     const scenario = scenarios[currentScenario];
     const selectedOption = scenario.options.find(opt => opt.id === optionId);
-    const isCorrect = selectedOption?.isCorrect;
+    const isCorrect = !!selectedOption?.isCorrect;
 
     if (isCorrect) {
       setScore(prev => prev + 1);
@@ -235,8 +67,16 @@ const SimulationMiniStartup = () => {
 
   return (
     <GameShell
-      title="Simulation: Mini Startup"
-      subtitle={!showResult ? `Scenario ${currentScenario + 1} of ${scenarios.length}` : "Simulation Complete!"}
+      title={gameContent?.title || "Simulation: Mini Startup"}
+      subtitle={
+        !showResult 
+          ? t("financial-literacy.teens.simulation-mini-startup.subtitleProgress", {
+              current: currentScenario + 1,
+              total: scenarios.length,
+              defaultValue: "Scenario {{current}} of {{total}}"
+            })
+          : gameContent?.subtitleComplete || "Simulation Complete!"
+      }
       score={score}
       currentLevel={currentScenario + 1}
       totalLevels={scenarios.length}
@@ -258,8 +98,20 @@ const SimulationMiniStartup = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Scenario {currentScenario + 1}/{scenarios.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{scenarios.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.simulation-mini-startup.subtitleProgress", {
+                    current: currentScenario + 1,
+                    total: scenarios.length,
+                    defaultValue: "Scenario {{current}} of {{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.simulation-mini-startup.scoreLabel", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{current.title}</h3>
@@ -269,7 +121,7 @@ const SimulationMiniStartup = () => {
               
               <div className="bg-white/5 rounded-lg p-4 mb-6">
                 <div className="text-center">
-                  <span className="text-white font-semibold text-lg">Amount: </span>
+                  <span className="text-white font-semibold text-lg">{gameContent?.amountLabel || "Amount: "}</span>
                   <span className="text-green-400 font-bold text-2xl">₹{current.amount}</span>
                 </div>
               </div>
@@ -297,44 +149,54 @@ const SimulationMiniStartup = () => {
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Excellent Decision!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.perfectScoreTitle || "Excellent Decision!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {scenarios.length} scenarios correct!
-                  You understand mini startup economics!
+                  {t("financial-literacy.teens.simulation-mini-startup.perfectScoreMsg", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "You got {{score}} out of {{total}} scenarios correct! You understand mini startup economics!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>{t("financial-literacy.teens.simulation-mini-startup.coinsLabel", { count: score })}</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Mini startups can be smart investments when you have good profit margins (40%+). Always calculate profit = Revenue - Cost!
+                  {gameContent?.lessonLabel || "Lesson: Mini startups can be smart investments when you have good profit margins (40%+). Always calculate profit = Revenue - Cost!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.keepLearningTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {scenarios.length} scenarios correct.
-                  Remember, profit = Revenue - Cost, and 40%+ profit is good!
+                  {t("financial-literacy.teens.simulation-mini-startup.lowScoreMsg", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "You got {{score}} out of {{total}} scenarios correct. Remember, profit = Revenue - Cost, and 40%+ profit is good!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Calculate profit = Revenue - Cost. If you invest ₹300 and earn ₹500, that's ₹200 profit (67% return) - that's smart!
+                  {gameContent?.tipLabel || "Tip: Calculate profit = Revenue - Cost. If you invest ₹300 and earn ₹500, that's ₹200 profit (67% return) - that's smart!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BadgeDigitalMoneySmart = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-50");
   const gameId = gameData?.id || "finance-teens-50";
-  
-  // Ensure gameId is always set correctly
-  if (!gameData || !gameData.id) {
-    console.warn("Game data not found for BadgeDigitalMoneySmart, using fallback ID");
-  }
+  const gameContent = t("financial-literacy.teens.badge-digital-money-smart", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+
   const [challenge, setChallenge] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
@@ -27,145 +26,7 @@ const BadgeDigitalMoneySmart = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Safe Online Payment",
-      question: "What's the safest way to pay online?",
-      options: [
-        { 
-          text: "Use UPI with OTP verification", 
-          emoji: "🔒", 
-          isCorrect: true
-        },
-        { 
-          text: "Share PIN with seller", 
-          emoji: "🔓", 
-          isCorrect: false
-        },
-        { 
-          text: "Send card details via email", 
-          emoji: "📧", 
-          isCorrect: false
-        },
-        { 
-          text: "Skip verification steps", 
-          emoji: "⏭️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Protecting Card Information",
-      question: "How should you protect your card details?",
-      options: [
-        { 
-          text: "Share CVV with friends", 
-          emoji: "👥", 
-          isCorrect: false
-        },
-        { 
-          text: "Hide CVV and never share", 
-          emoji: "🛡️", 
-          isCorrect: true
-        },
-        { 
-          text: "Post card photo online", 
-          emoji: "📸", 
-          isCorrect: false
-        },
-        { 
-          text: "Write PIN on card", 
-          emoji: "✍️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Verifying Website Security",
-      question: "What should you check before entering payment details?",
-      options: [
-        { 
-          text: "Ignore website security", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        
-        { 
-          text: "Enter details on any site", 
-          emoji: "🌐", 
-          isCorrect: false
-        },
-        { 
-          text: "Trust all websites", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        { 
-          text: "Check for HTTPS and padlock", 
-          emoji: "🔒", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      title: "Handling Suspicious Messages",
-      question: "What should you do with suspicious payment requests?",
-      options: [
-        { 
-          text: "Click suspicious links", 
-          emoji: "🔗", 
-          isCorrect: false
-        },
-        { 
-          text: "Ignore and delete suspicious messages", 
-          emoji: "🗑️", 
-          isCorrect: true
-        },
-        { 
-          text: "Share OTP immediately", 
-          emoji: "📢", 
-          isCorrect: false
-        },
-        { 
-          text: "Forward to everyone", 
-          emoji: "📤", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Secure Password Practice",
-      question: "What's the best practice for digital payment passwords?",
-      options: [
-        { 
-          text: "Use '1234' as password", 
-          emoji: "🔓", 
-          isCorrect: false
-        },
-        
-        { 
-          text: "Share password with friends", 
-          emoji: "👥", 
-          isCorrect: false
-        },
-        { 
-          text: "Create strong, unique passwords", 
-          emoji: "🔑", 
-          isCorrect: true
-        },
-        { 
-          text: "Never change password", 
-          emoji: "📜", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;
@@ -202,10 +63,20 @@ const BadgeDigitalMoneySmart = () => {
     resetFeedback();
   };
 
+  const currentChallengeData = challenges[challenge];
+
   return (
     <GameShell
-      title="Badge: Digital Money Smart"
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      title={gameContent?.title || "Badge: Digital Money Smart"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("financial-literacy.teens.badge-digital-money-smart.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       score={score}
       currentLevel={challenge + 1}
       totalLevels={challenges.length}
@@ -223,21 +94,33 @@ const BadgeDigitalMoneySmart = () => {
       gameType="finance"
     >
       <div className="space-y-8">
-        {!showResult && challenges[challenge] ? (
+        {!showResult && currentChallengeData ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.badge-digital-money-smart.subtitleProgress", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.badge-digital-money-smart.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+                </span>
               </div>
               
-              <h3 className="text-xl font-bold text-white mb-2">{challenges[challenge].title}</h3>
+              <h3 className="text-xl font-bold text-white mb-2">{currentChallengeData.title}</h3>
               <p className="text-white text-lg mb-6">
-                {challenges[challenge].question}
+                {currentChallengeData.question}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {challenges[challenge].options.map((option, idx) => (
+                {currentChallengeData.options.map((option, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
@@ -264,30 +147,40 @@ const BadgeDigitalMoneySmart = () => {
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🏆</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Digital Money Smart Badge Earned!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessTitle || "Digital Money Smart Badge Earned!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {challenges.length} challenges correct!
-                  You're a true Digital Money Smart expert!
+                  {t("financial-literacy.teens.badge-digital-money-smart.resultSuccessText", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct! You're a true Digital Money Smart expert!`,
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
                   <span>+{score} Coins</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Safely using digital money means using UPI with OTP, protecting card details, verifying website security, ignoring suspicious messages, and using strong passwords!
+                  {gameContent?.resultSuccessLesson || "Lesson: Safely using digital money means using UPI with OTP, protecting card details, verifying website security, ignoring suspicious messages, and using strong passwords!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultFailTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {challenges.length} challenges correct.
-                  Practice makes perfect with digital money safety!
+                  {t("financial-literacy.teens.badge-digital-money-smart.resultFailText", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct. Practice makes perfect with digital money safety!`,
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
@@ -296,16 +189,15 @@ const BadgeDigitalMoneySmart = () => {
                   Try Again
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Always use UPI with OTP, hide CVV, check HTTPS, ignore suspicious messages, and create strong passwords for safe digital payments!
+                  {gameContent?.resultFailTip || "Tip: Always use UPI with OTP, hide CVV, check HTTPS, ignore suspicious messages, and create strong passwords for safe digital payments!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );
 };
 
 export default BadgeDigitalMoneySmart;
-

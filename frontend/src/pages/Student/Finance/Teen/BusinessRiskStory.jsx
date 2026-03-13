@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BusinessRiskStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-75");
   const gameId = gameData?.id || "finance-teens-75";
+  const gameContent = t("financial-literacy.teens.business-risk-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,132 +29,7 @@ const BusinessRiskStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "You invest ₹200 in snacks to sell. Earn ₹300. Good?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, 50% profit", 
-          emoji: "🙂", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No, too risky", 
-          emoji: "🤦", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What's a good profit margin for a small business?",
-      options: [
-        { 
-          id: "low", 
-          text: "5% profit", 
-          emoji: "📉", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "high", 
-          text: "30-50% profit", 
-          emoji: "📈", 
-          isCorrect: true
-        },
-        { 
-          id: "loss", 
-          text: "Loss is okay", 
-          emoji: "💸", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Should you take risks in business?",
-      options: [
-        { 
-          id: "all", 
-          text: "Take all risks", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        { 
-          id: "none", 
-          text: "Avoid all risks", 
-          emoji: "🛡️", 
-          isCorrect: false
-        },
-        { 
-          id: "calculated", 
-          text: "Yes, calculated risks", 
-          emoji: "🎯", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What's important before starting a business?",
-      options: [
-        { 
-          id: "jump", 
-          text: "Jump in immediately", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "plan", 
-          text: "Plan and research", 
-          emoji: "📋", 
-          isCorrect: true
-        },
-        { 
-          id: "wait", 
-          text: "Wait forever", 
-          emoji: "⏳", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Is ₹200→₹300 a good business result?",
-      options: [
-        { 
-          id: "no2", 
-          text: "No, too small", 
-          emoji: "❌", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe2", 
-          text: "Maybe, if consistent", 
-          emoji: "🤷", 
-          isCorrect: false
-        },
-        { 
-          id: "yes2", 
-          text: "Yes, 50% return", 
-          emoji: "🙂", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -194,8 +72,15 @@ const BusinessRiskStory = () => {
 
   return (
     <GameShell
-      title="Business Risk Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Business Risk Story"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.business-risk-story.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}",
+          })
+        : (gameContent?.subtitleComplete || "Story Complete!")
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -217,8 +102,20 @@ const BusinessRiskStory = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.business-risk-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}",
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.business-risk-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}",
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -253,35 +150,46 @@ const BusinessRiskStory = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Story Complete!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.winTitle || "Story Complete!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct!
-                  You understand business risks and profits!
+                  {t("financial-literacy.teens.business-risk-story.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You understand business risks and profits!",
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.business-risk-story.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins",
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: A 50% profit (₹200→₹300) is excellent! Take calculated risks, plan before starting, and aim for healthy profit margins!
+                  {gameContent?.result?.lesson || "Lesson: A 50% profit (₹200→₹300) is excellent! Take calculated risks, plan before starting, and aim for healthy profit margins!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.loseTitle || "Keep Learning!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct.
-                  Remember, a 50% profit is excellent, and calculated risks with planning are key!
+                  {t("financial-literacy.teens.business-risk-story.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember, a 50% profit is excellent, and calculated risks with planning are key!",
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Investing ₹200 and earning ₹300 (50% profit) is excellent! Always plan before starting a business and take calculated risks!
+                  {gameContent?.result?.tip || "Tip: Investing ₹200 and earning ₹300 (50% profit) is excellent! Always plan before starting a business and take calculated risks!"}
                 </p>
               </div>
             )}
@@ -293,4 +201,3 @@ const BusinessRiskStory = () => {
 };
 
 export default BusinessRiskStory;
-

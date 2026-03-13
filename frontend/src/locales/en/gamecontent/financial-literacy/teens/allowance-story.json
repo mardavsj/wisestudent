@@ -1,0 +1,53 @@
+{
+  "title": "Allowance Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You receive ₹500 as weekly allowance. How should you manage it?",
+      "options": [
+        { "id": "save", "text": "Keep for books", "emoji": "📚", "isCorrect": true },
+        { "id": "spend", "text": "Spend all on clothes", "emoji": "👕", "isCorrect": false },
+        { "id": "waste", "text": "Waste it all", "emoji": "💸", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You want to buy a ₹300 game but need ₹200 for school supplies. What's the smart choice?",
+      "options": [
+        { "id": "spend", "text": "Buy the game", "emoji": "🎮", "isCorrect": false },
+        { "id": "save", "text": "Buy supplies first", "emoji": "✏️", "isCorrect": true },
+        { "id": "waste", "text": "Buy both on credit", "emoji": "💳", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Your friends are buying expensive snacks every day. You can't afford that. What do you do?",
+      "options": [
+        { "id": "spend", "text": "Buy expensive snacks", "emoji": "🍕", "isCorrect": false },
+        { "id": "waste", "text": "Borrow money", "emoji": "💸", "isCorrect": false },
+        { "id": "save", "text": "Bring homemade snacks", "emoji": "🍱", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You saved ₹400 but see a limited-time offer for a ₹600 item. What should you do?",
+      "options": [
+        { "id": "save", "text": "Wait and save more", "emoji": "⏳", "isCorrect": true },
+        { "id": "spend", "text": "Buy with partial payment", "emoji": "💳", "isCorrect": false },
+        { "id": "waste", "text": "Ignore savings", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You get a ₹100 bonus for helping with chores. How should you use it?",
+      "options": [
+        { "id": "waste", "text": "Waste it", "emoji": "💸", "isCorrect": false },
+        { "id": "save", "text": "Add to savings", "emoji": "🏦", "isCorrect": true },
+        { "id": "spend", "text": "Spend on treats", "emoji": "🍭", "isCorrect": false }
+      ]
+    }
+  ]
+}

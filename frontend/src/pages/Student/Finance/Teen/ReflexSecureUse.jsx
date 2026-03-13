@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -9,15 +10,12 @@ const ROUND_TIME = 10;
 
 const ReflexSecureUse = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-43");
   const gameId = gameData?.id || "finance-teens-43";
-  
-  // Ensure gameId is always set correctly
-  if (!gameData || !gameData.id) {
-    console.warn("Game data not found for ReflexSecureUse, using fallback ID");
-  }
+  const gameContent = t("financial-literacy.teens.reflex-secure-use", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -33,63 +31,18 @@ const ReflexSecureUse = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      question: "What is the most secure password practice?",
-      correctAnswer: "Strong Password",
-      options: [
-        { text: "Strong Password", isCorrect: true, emoji: "🔒" },
-        { text: "1234", isCorrect: false, emoji: "🔓" },
-        { text: "password", isCorrect: false, emoji: "⚠️" },
-        { text: "Reuse passwords", isCorrect: false, emoji: "🔁" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What adds an extra layer of security to accounts?",
-      correctAnswer: "Use OTP",
-      options: [
-        { text: "Skip OTP", isCorrect: false, emoji: "🚫" },
-        { text: "Use OTP", isCorrect: true, emoji: "🔐" },
-        { text: "Ignore verification", isCorrect: false, emoji: "😊" },
-        { text: "Disable 2FA", isCorrect: false, emoji: "❌" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What should you verify before entering sensitive data online?",
-      correctAnswer: "Check HTTPS",
-      options: [
-        { text: "Ignore HTTPS", isCorrect: false, emoji: "🌐" },
-        { text: "Trust all sites", isCorrect: false, emoji: "😊" },
-        { text: "Check HTTPS", isCorrect: true, emoji: "🔒" },
-        { text: "Use public WiFi", isCorrect: false, emoji: "📶" }
-      ]
-    },
-    {
-      id: 4,
-      question: "How should you protect your payment information?",
-      correctAnswer: "Hide CVV",
-      options: [
-        { text: "Hide CVV", isCorrect: true, emoji: "🛡️" },
-        { text: "Share CVV", isCorrect: false, emoji: "📢" },
-        { text: "Post CVV online", isCorrect: false, emoji: "🌐" },
-        { text: "Save card details", isCorrect: false, emoji: "💾" }
-      ]
-    },
-    {
-      id: 5,
-      question: "How often should you change your passwords?",
-      correctAnswer: "Update Password",
-      options: [
-        { text: "Keep Old Password", isCorrect: false, emoji: "📜" },
-        { text: "Update Password", isCorrect: true, emoji: "🔄" },
-        { text: "Never change password", isCorrect: false, emoji: "❌" },
-        { text: "Change yearly", isCorrect: false, emoji: "📅" }
-      ]
-    }
-  ];
+  const questions = useMemo(() => {
+    return Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  }, [gameContent]);
+
+  // Map correct answers
+  const correctAnswers = {
+    1: "strong",
+    2: "use_otp",
+    3: "check_https",
+    4: "hide_cvv",
+    5: "update"
+  };
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -177,7 +130,7 @@ const ReflexSecureUse = () => {
     resetFeedback();
   };
 
-  const handleAnswer = (option) => {
+  const handleAnswer = (option, questionId) => {
     if (answered || gameState !== "playing") return;
 
     // Clear the timer immediately when user answers
@@ -189,12 +142,14 @@ const ReflexSecureUse = () => {
     setAnswered(true);
     resetFeedback();
 
-    const isCorrect = option.isCorrect;
+    const isCorrect = correctAnswers[questionId] === option.id;
     const isLastQuestion = currentRound === questions.length;
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
 
     // Move to next round or show results after a short delay
@@ -221,8 +176,16 @@ const ReflexSecureUse = () => {
 
   return (
     <GameShell
-      title="Reflex Secure Use"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your security reflexes!` : "Test your security reflexes!"}
+      title={gameContent?.title || "Reflex Secure Use"}
+      subtitle={
+        gameState === "playing" 
+          ? t("financial-literacy.teens.reflex-secure-use.subtitlePlaying", { 
+              current: currentRound, 
+              total: TOTAL_ROUNDS, 
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your security reflexes!` 
+            })
+          : gameContent?.subtitleReady || "Test your security reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -242,18 +205,24 @@ const ReflexSecureUse = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">⚡</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Security Reflexes?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyHeader || "Ready to Test Your Security Reflexes?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Answer questions about secure digital practices.
+              {gameContent?.readyDescription || "Answer questions about secure digital practices."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("financial-literacy.teens.reflex-secure-use.readyTip", { 
+                total: TOTAL_ROUNDS, 
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -262,13 +231,19 @@ const ReflexSecureUse = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">
+                  {gameContent?.roundLabel || "Round:"}
+                </span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">
+                  {gameContent?.timeLabel || "Time:"}
+                </span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">
+                  {gameContent?.scoreLabel || "Score:"}
+                </span> {score}
               </div>
             </div>
 
@@ -278,16 +253,25 @@ const ReflexSecureUse = () => {
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {currentQuestion.options.map((option, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleAnswer(option)}
-                    disabled={answered}
-                    className="w-full min-h-[80px] bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 px-6 py-4 rounded-xl text-white font-bold text-lg transition-transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                  >
-                    <span className="text-3xl mr-2">{option.emoji}</span> {option.text}
-                  </button>
-                ))}
+                {currentQuestion.options.map((option, index) => {
+                  const isCorrect = correctAnswers[currentQuestion.id] === option.id;
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => handleAnswer(option, currentQuestion.id)}
+                      disabled={answered}
+                      className={`w-full min-h-[80px] px-6 py-4 rounded-xl text-white font-bold text-lg transition-transform hover:scale-105 disabled:cursor-not-allowed flex items-center justify-center ${
+                        answered
+                          ? isCorrect
+                            ? "bg-green-500/30 border-4 border-green-400 ring-4 ring-green-400"
+                            : "bg-red-500/20 border-2 border-red-400 opacity-75"
+                          : "bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700"
+                      }`}
+                    >
+                      <span className="text-3xl mr-2">{option.emoji}</span> {option.text}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -296,18 +280,24 @@ const ReflexSecureUse = () => {
         {gameState === "finished" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">⚡</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.greatJob || "Great Job!"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              You scored {score} out of {TOTAL_ROUNDS}!
+              {t("financial-literacy.teens.reflex-secure-use.finalScore", { 
+                score: score, 
+                total: TOTAL_ROUNDS,
+                defaultValue: `You scored ${score} out of ${TOTAL_ROUNDS}!` 
+              })}
             </p>
             <p className="text-white/80 mb-6">
-              You're developing strong cybersecurity awareness skills!
+              {gameContent?.securitySkills || "You're developing strong cybersecurity awareness skills!"}
             </p>
             <button
               onClick={handleTryAgain}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
             >
-              Play Again
+              {gameContent?.playAgain || "Play Again"}
             </button>
           </div>
         )}

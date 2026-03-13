@@ -1,0 +1,38 @@
+{
+  "title": "Journal of Spending",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}: Reflect on your spending habits!",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "placeholder": "Write your journal entry here...",
+  "minCharsRequired": "Write at least {{min}} characters",
+  "charsCount": "{{current}}/{{min}} characters",
+  "buttonSubmit": "Submit & Continue",
+  "buttonComplete": "Submit Final Entry",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Describe a recent purchase you made. What influenced your decision? Was it a need or a want? How did you feel before, during, and after the purchase?",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Track your spending for one day. List all purchases, no matter how small. What patterns do you notice? Which expenses surprised you?",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "Think about a time you spent money impulsively. What were the circumstances? How did you feel afterward? What would you do differently now?",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "Compare your spending habits with your financial goals. Where are you aligning well? Where might adjustments be needed?",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "Describe your ideal approach to money management. What habits would support this vision? What steps can you take this week to move toward this ideal?",
+      "minLength": 10
+    }
+  ]
+}

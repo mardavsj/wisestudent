@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Smart Spend",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your spending reflexes!",
+  "subtitleReady": "Test your spending reflexes!",
+  "readyHeader": "Ready to Test Your Spending Reflexes?",
+  "readyDescription": "Answer questions about smart spending choices.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "growthSkills": "You're developing strong financial decision-making skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the smartest spending choice?",
+      "options": [
+        { "id": "pay_rent", "text": "Pay Rent", "emoji": "🏠" },
+        { "id": "luxury_party", "text": "Luxury Party", "emoji": "🎉" },
+        { "id": "designer_shoes", "text": "Buy Designer Shoes", "emoji": "👟" },
+        { "id": "impulse_purchase", "text": "Impulse Purchase", "emoji": "💸" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which expense should come first?",
+      "options": [
+        { "id": "new_gadgets", "text": "New Gadgets", "emoji": "📱" },
+        { "id": "buy_groceries", "text": "Buy Groceries", "emoji": "🛒" },
+        { "id": "expensive_restaurant", "text": "Expensive Restaurant", "emoji": "🍽️" },
+        { "id": "entertainment", "text": "Entertainment", "emoji": "🎬" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What should you do with extra money?",
+      "options": [
+        { "id": "movie_night", "text": "Movie Night", "emoji": "🎬" },
+        { "id": "buy_video_games", "text": "Buy Video Games", "emoji": "🎮" },
+        { "id": "save_money", "text": "Save Money", "emoji": "💰" },
+        { "id": "shopping_spree", "text": "Shopping Spree", "emoji": "🛍️" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which is a priority expense?",
+      "options": [
+        { "id": "pay_bills", "text": "Pay Bills", "emoji": "📄" },
+        { "id": "designer_clothes", "text": "Designer Clothes", "emoji": "👔" },
+        { "id": "weekend_trip", "text": "Weekend Trip", "emoji": "✈️" },
+        { "id": "gourmet_dinner", "text": "Gourmet Dinner", "emoji": "🍷" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What builds long-term financial security?",
+      "options": [
+        { "id": "concert_ticket", "text": "Concert Ticket", "emoji": "🎫" },
+        { "id": "fund_education", "text": "Fund Education", "emoji": "📚" },
+        { "id": "buy_jewelry", "text": "Buy Jewelry", "emoji": "💍" },
+        { "id": "luxury_vacation", "text": "Luxury Vacation", "emoji": "🏖️" }
+      ]
+    }
+  ]
+}

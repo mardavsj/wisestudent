@@ -1,0 +1,136 @@
+{
+  "title": "Spending Quiz",
+  "subtitleComplete": "Quiz Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "perfectScoreTitle": "Excellent!",
+  "perfectScoreMsg": "You got {{score}} out of {{total}} questions correct! You know how to make smart spending choices!",
+  "coinsLabel": "+{{count}} Coins",
+  "lessonLabel": "You understand the importance of comparing options, budgeting, and making thoughtful purchases!",
+  "keepLearningTitle": "Keep Learning!",
+  "lowScoreMsg": "You got {{score}} out of {{total}} questions correct. Remember, smart spending means thinking before you buy!",
+  "tryAgain": "Try Again",
+  "tipLabel": "Try to choose the option that involves planning and comparing before spending.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which is the smartest spending approach?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Comparing price + quality",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Buying branded shoes always",
+          "emoji": "👟",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Buying whatever is cheap",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What should you do before making a big purchase?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Buy immediately",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Research and compare",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Ask friends only",
+          "emoji": "👥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Which spending habit helps build wealth?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Impulse buying",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Keeping up with trends",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Budgeting first",
+          "emoji": "📋",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What's the best approach to shopping lists?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stick to the list",
+          "emoji": "🛒",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Buy what looks good",
+          "emoji": "👀",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Forget the list",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "How should you handle sales and discounts?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Buy everything on sale",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Ignore all sales",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Buy only needed items",
+          "emoji": "🎯",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

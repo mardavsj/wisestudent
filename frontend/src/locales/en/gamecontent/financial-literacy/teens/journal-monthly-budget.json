@@ -1,0 +1,51 @@
+{
+  "title": "Journal of Planning",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "journalEntryHeader": "Journal Entry",
+  "placeholder": "Type your response here...",
+  "minCharsRequired": "Minimum {{min}} characters required",
+  "buttonSubmit": "Submit & Continue",
+  "buttonComplete": "Complete Journal",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Write one goal for your monthly budget (e.g., save ₹200).",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "List one expense you can cut to save money.",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "Name one need you'll prioritize in your budget.",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "Write one way to track your spending.",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "Describe one long-term benefit of budgeting.",
+      "minLength": 10
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Journal Complete!",
+    "winMessage": "You completed {{score}} out of {{total}} entries! Great job planning your monthly budget!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Journaling helps you plan your finances and achieve your goals!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You completed {{score}} out of {{total}} entries. Remember, planning your budget helps you achieve your financial goals!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Take time to think about your financial goals and how budgeting can help you achieve them."
+  }
+}

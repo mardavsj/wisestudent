@@ -1,0 +1,33 @@
+{
+  "title": "Puzzle: Right vs Wrong",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match Actions with Outcomes ({{current}}/{{total}} matched)",
+  "actionsTitle": "Financial Actions",
+  "outcomesTitle": "Financial Outcomes",
+  "matchButton": "Match",
+  "selectActionLabel": "Select a Financial Action",
+  "selectedActionLabel": "Selected: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "Matched: {{current}}/{{total}}",
+  "resultSuccessHeader": "Great Job!",
+  "resultSuccessSubheader": "You correctly matched {{score}} out of {{total}} financial actions with their outcomes!",
+  "resultSuccessLesson": "Lesson: Ethical financial decisions lead to positive outcomes for everyone!",
+  "resultTryAgainHeader": "Keep Practicing!",
+  "resultTryAgainSubheader": "You matched {{score}} out of {{total}} financial actions correctly.",
+  "resultTryAgainTip": "Tip: Think about the consequences of each financial action!",
+  "coinsEarned": "+{{coins}} Coins",
+  "actions": [
+    { "id": 1, "name": "Donating to Charity", "emoji": "💝" },
+    { "id": 2, "name": "Stealing Money", "emoji": "😈" },
+    { "id": 3, "name": "Honest Reporting", "emoji": "✅" },
+    { "id": 4, "name": "Paying Bribes", "emoji": "💰" },
+    { "id": 5, "name": "Fair Deal", "emoji": "🤝" }
+  ],
+  "outcomes": [
+    { "id": 6, "name": "Positive Impact", "emoji": "🌟"},
+    { "id": 7, "name": "Legal Consequences", "emoji": "⛓️"},
+    { "id": 8, "name": "Trust Building", "emoji": "🤝"},
+    { "id": 9, "name": "Corruption", "emoji": "🐍"},
+    { "id": 10, "name": "Mutual Benefit", "emoji": "🤝"}
+  ]
+}

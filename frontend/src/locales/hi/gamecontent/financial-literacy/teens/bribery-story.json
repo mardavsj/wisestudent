@@ -1,0 +1,129 @@
+{
+  "title": "रिश्वत की कहानी",
+  "subtitleComplete": "कहानी पूरी!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "अधिकारी आवेदन प्रक्रिया के लिए रिश्वत माँगता है। आप क्या करेंगे?",
+      "options": [
+        {
+          "id": "pay",
+          "text": "रिश्वत दो",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "मना करो",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "शायद",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "क्लर्क तेज़ सेवा के लिए ₹500 माँगता है। आपकी कार्रवाई?",
+      "options": [
+        {
+          "id": "refuse2",
+          "text": "मना करो",
+          "emoji": "🛑",
+          "isCorrect": true
+        },
+        {
+          "id": "pay2",
+          "text": "₹500 दो",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "negotiate",
+          "text": "मोल-भाव करो",
+          "emoji": "💬",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "अधिकारी मंज़ूरी के लिए रिश्वत का इशारा करता है। आपका चुनाव?",
+      "options": [
+        {
+          "id": "pay3",
+          "text": "रिश्वत दो",
+          "emoji": "📜",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "इंतज़ार करो",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse3",
+          "text": "मना करो",
+          "emoji": "🙅",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "एजेंट कागज़ात पूरे करने के लिए अतिरिक्त शुल्क माँगता है। क्या आप देंगे?",
+      "options": [
+        {
+          "id": "refuse4",
+          "text": "मना करो",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "pay4",
+          "text": "शुल्क दो",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "बाद में शिकायत करो",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "अधिकारी लाइसेंस के लिए ₹1000 माँगता है। आपका कदम?",
+      "options": [
+        {
+          "id": "pay5",
+          "text": "₹1000 दो",
+          "emoji": "📝",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse5",
+          "text": "मना करो",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "id": "partial",
+          "text": "आंशिक भुगतान करो",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

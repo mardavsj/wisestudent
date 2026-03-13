@@ -1,0 +1,141 @@
+{
+  "title": "Movie vs Bus Fare Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You have ₹100. How should you use it?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "Save for bus pass",
+          "emoji": "🚌",
+          "isCorrect": true
+        },
+        {
+          "id": "movie",
+          "text": "Spend on movie",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "Split between both",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You have ₹150. What's the best choice?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "Buy a snack",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "Add to bus fare savings",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "Save everything",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "You have ₹200. What should you prioritize?",
+      "options": [
+        {
+          "id": "movie",
+          "text": "Movie night",
+          "emoji": "🎥",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "Split between both",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "Weekly bus pass",
+          "emoji": "🎫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You have ₹120. What's the smart decision?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "Bus ticket",
+          "emoji": "🎟️",
+          "isCorrect": true
+        },
+        {
+          "id": "popcorn",
+          "text": "Popcorn at movies",
+          "emoji": "🍿",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "Save all of it",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You have ₹300. What's the best use?",
+      "options": [
+        {
+          "id": "cinema",
+          "text": "Cinema tickets",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "Monthly bus pass",
+          "emoji": "Ⓜ️",
+          "isCorrect": true
+        },
+        {
+          "id": "split",
+          "text": "Split between both",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Great Job!",
+    "winMessage": "You got {{score}} out of {{total}} questions correct! You understand the importance of prioritizing essential expenses!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Prioritize essential expenses like transport over entertainment wants!",
+    "loseEmoji": "😔",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} questions correct. Remember to prioritize essential expenses like transport over wants!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Always prioritize essential expenses like transportation over entertainment wants."
+  }
+}

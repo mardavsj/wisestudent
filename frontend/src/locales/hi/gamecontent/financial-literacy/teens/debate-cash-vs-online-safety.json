@@ -1,0 +1,54 @@
+{
+  "title": "बहस: नकद बनाम ऑनलाइन सुरक्षा",
+  "subtitleComplete": "बहस पूरी!",
+  "subtitleProgress": "राउंड {{current}} / {{total}}",
+  "roundLabel": "राउंड {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "क्या ऑनलाइन पैसा नकद से ज़्यादा जोखिम भरा है?",
+      "options": [
+        { "id": "online-riskier", "text": "ऑनलाइन ज़्यादा जोखिम भरा है", "emoji": "💻", "isCorrect": false },
+        { "id": "both-safe", "text": "दोनों को सुरक्षा चाहिए", "emoji": "🛡️", "isCorrect": true },
+        { "id": "cash-riskier", "text": "नकद ज़्यादा जोखिम भरा है", "emoji": "💵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "बड़ी रकम के लिए कौन ज़्यादा सुरक्षित है?",
+      "options": [
+        { "id": "both-safe2", "text": "सावधानी के साथ दोनों", "emoji": "🔒", "isCorrect": true },
+        { "id": "only-cash", "text": "सिर्फ़ नकद", "emoji": "💰", "isCorrect": false },
+        { "id": "only-online", "text": "सिर्फ़ ऑनलाइन", "emoji": "📱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "ऑनलाइन पैसे के साथ मुख्य जोखिम क्या है?",
+      "options": [
+        { "id": "no-risk", "text": "कोई जोखिम नहीं", "emoji": "😓", "isCorrect": false },
+        { "id": "too-easy", "text": "उपयोग में बहुत आसान", "emoji": "😊", "isCorrect": false },
+        { "id": "hacking", "text": "हैकिंग और धोखाधड़ी", "emoji": "👾", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "आप ऑनलाइन पैसे की सुरक्षा कैसे कर सकते हैं?",
+      "options": [
+        { "id": "strong-password", "text": "मज़बूत पासवर्ड और OTP", "emoji": "🔐", "isCorrect": true },
+        { "id": "no-protection", "text": "सुरक्षा की ज़रूरत नहीं", "emoji": "😴", "isCorrect": false },
+        { "id": "share-details", "text": "जानकारी आज़ादी से शेयर करें", "emoji": "📢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "सबसे अच्छा तरीका क्या है?",
+      "options": [
+        { "id": "only-one", "text": "सिर्फ़ एक तरीका इस्तेमाल करें", "emoji": "🎯", "isCorrect": false },
+        { "id": "balance", "text": "दोनों को सुरक्षित रूप से संतुलित करें", "emoji": "⚖️", "isCorrect": true },
+        { "id": "avoid-all", "text": "पैसे से बचें", "emoji": "🚫", "isCorrect": false }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -9,10 +10,12 @@ const ROUND_TIME = 10;
 
 const ReflexFraudAlert = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
 
   // Get game data from game category folder (source of truth)
   const gameId = "finance-teens-49";
   const gameData = getGameDataById(gameId);
+  const gameContent = t("financial-literacy.teens.reflex-fraud-alert", { returnObjects: true });
 
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -28,63 +31,18 @@ const ReflexFraudAlert = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      question: "What should you do if you receive a suspicious email?",
-      correctAnswer: "Delete it immediately",
-      options: [
-        { text: "Delete it immediately", isCorrect: true, emoji: "🗑️" },
-        { text: "Open all attachments", isCorrect: false, emoji: "📂" },
-        { text: "Reply asking for more info", isCorrect: false, emoji: "📩" },
-        { text: "Forward to all contacts", isCorrect: false, emoji: "📤" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Someone calls claiming to be from your bank. What should you do?",
-      correctAnswer: "Hang up and call your bank directly",
-      options: [
-        { text: "Give them your account details", isCorrect: false, emoji: "💳" },
-        { text: "Follow their instructions", isCorrect: false, emoji: "👂" },
-        { text: "Hang up and call your bank directly", isCorrect: true, emoji: "📞" },
-        { text: "Ask for their employee ID", isCorrect: false, emoji: "👤" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Which is the safest way to shop online?",
-      correctAnswer: "Use secure websites with HTTPS",
-      options: [
-        { text: "Use secure websites with HTTPS", isCorrect: true, emoji: "🔒" },
-        { text: "Save payment info on websites", isCorrect: false, emoji: "💾" },
-        { text: "Use public Wi-Fi for purchases", isCorrect: false, emoji: "📶" },
-        { text: "Click pop-up ads for deals", isCorrect: false, emoji: "💥" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What should you do with suspicious text messages?",
-      correctAnswer: "Report and delete them",
-      options: [
-        { text: "Click all links in the message", isCorrect: false, emoji: "🔗" },
-        { text: "Report and delete them", isCorrect: true, emoji: "🚨" },
-        { text: "Share with friends to verify", isCorrect: false, emoji: "👥" },
-        { text: "Respond asking for clarification", isCorrect: false, emoji: "💬" }
-      ]
-    },
-    {
-      id: 5,
-      question: "How should you protect your personal information online?",
-      correctAnswer: "Share only with trusted, verified sources",
-      options: [
-        { text: "Post everything on social media", isCorrect: false, emoji: "📱" },
-        { text: "Use the same password everywhere", isCorrect: false, emoji: "🔑" },
-        { text: "Share only with trusted, verified sources", isCorrect: true, emoji: "✅" },
-        { text: "Give info to anyone who asks", isCorrect: false, emoji: "🙋" }
-      ]
-    }
-  ];
+  const questions = useMemo(() => {
+    return Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  }, [gameContent]);
+
+  // Map correct answers
+  const correctAnswers = {
+    1: "delete",
+    2: "hang_up",
+    3: "https",
+    4: "report",
+    5: "trusted_sources"
+  };
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -172,7 +130,7 @@ const ReflexFraudAlert = () => {
     resetFeedback();
   };
 
-  const handleAnswer = (option) => {
+  const handleAnswer = (option, questionId) => {
     if (answered || gameState !== "playing") return;
 
     // Clear the timer immediately when user answers
@@ -184,12 +142,14 @@ const ReflexFraudAlert = () => {
     setAnswered(true);
     resetFeedback();
 
-    const isCorrect = option.isCorrect;
+    const isCorrect = correctAnswers[questionId] === option.id;
     const isLastQuestion = currentRound === questions.length;
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
 
     // Move to next round or show results after a short delay
@@ -204,13 +164,20 @@ const ReflexFraudAlert = () => {
   };
 
   const finalScore = score;
-
   const currentQuestion = questions[currentRound - 1];
 
   return (
     <GameShell
-      title="Reflex Fraud Alert"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your fraud detection reflexes!` : "Test your fraud detection reflexes!"}
+      title={gameContent?.title || "Reflex Fraud Alert"}
+      subtitle={
+        gameState === "playing" 
+          ? t("financial-literacy.teens.reflex-fraud-alert.subtitlePlaying", { 
+              current: currentRound, 
+              total: TOTAL_ROUNDS, 
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your fraud detection reflexes!` 
+            })
+          : gameContent?.subtitleReady || "Test your fraud detection reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -230,18 +197,24 @@ const ReflexFraudAlert = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">⚡</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Fraud Detection Reflexes?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyHeader || "Ready to Test Your Fraud Detection Reflexes?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Answer questions about safe online practices.
+              {gameContent?.readyDescription || "Answer questions about safe online practices."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("financial-literacy.teens.reflex-fraud-alert.readyTip", { 
+                total: TOTAL_ROUNDS, 
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -250,13 +223,19 @@ const ReflexFraudAlert = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">
+                  {gameContent?.roundLabel || "Round:"}
+                </span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">
+                  {gameContent?.timeLabel || "Time:"}
+                </span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">
+                  {gameContent?.scoreLabel || "Score:"}
+                </span> {score}
               </div>
             </div>
 
@@ -266,16 +245,25 @@ const ReflexFraudAlert = () => {
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {currentQuestion.options.map((option, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleAnswer(option)}
-                    disabled={answered}
-                    className="w-full min-h-[80px] bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 px-6 py-4 rounded-xl text-white font-bold text-lg transition-transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                  >
-                    <span className="text-3xl mr-2">{option.emoji}</span> {option.text}
-                  </button>
-                ))}
+                {currentQuestion.options.map((option, index) => {
+                  const isCorrect = correctAnswers[currentQuestion.id] === option.id;
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => handleAnswer(option, currentQuestion.id)}
+                      disabled={answered}
+                      className={`w-full min-h-[80px] px-6 py-4 rounded-xl text-white font-bold text-lg transition-transform hover:scale-105 disabled:cursor-not-allowed flex items-center justify-center ${
+                        answered
+                          ? isCorrect
+                            ? "bg-green-500/30 border-4 border-green-400 ring-4 ring-green-400"
+                            : "bg-red-500/20 border-2 border-red-400 opacity-75"
+                          : "bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700"
+                      }`}
+                    >
+                      <span className="text-3xl mr-2">{option.emoji}</span> {option.text}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -284,18 +272,24 @@ const ReflexFraudAlert = () => {
         {gameState === "finished" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">⚡</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.greatJob || "Great Job!"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              You scored {finalScore} out of {TOTAL_ROUNDS}!
+              {t("financial-literacy.teens.reflex-fraud-alert.finalScore", { 
+                score: finalScore, 
+                total: TOTAL_ROUNDS,
+                defaultValue: `You scored ${finalScore} out of ${TOTAL_ROUNDS}!` 
+              })}
             </p>
             <p className="text-white/80 mb-6">
-              You're developing strong fraud detection skills!
+              {gameContent?.fraudSkills || "You're developing strong fraud detection skills!"}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
             >
-              Play Again
+              {gameContent?.playAgain || "Play Again"}
             </button>
           </div>
         )}

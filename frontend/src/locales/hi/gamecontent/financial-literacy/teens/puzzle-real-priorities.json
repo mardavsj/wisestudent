@@ -1,0 +1,33 @@
+{
+  "title": "पहेली: वास्तविक प्राथमिकताएं",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "कैटेगरीज के साथ वस्तुओं का मिलान करें ({{current}}/{{total}} मिलान)",
+  "itemsTitle": "वस्तुएं",
+  "categoriesTitle": "कैटेगरीज",
+  "matchButton": "मिलान करें",
+  "selectItemLabel": "एक वस्तु चुनें",
+  "selectedItemLabel": "चुना गया: {{name}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "resultSuccessHeader": "बहुत अच्छा!",
+  "resultSuccessSubheader": "आपने {{total}} में से {{score}} वस्तुओं का उनकी कैटेगरीज के साथ सही मिलान किया है!",
+  "resultSuccessLesson": "सबक: वित्तीय प्राथमिकताओं को समझने से स्मार्ट निर्णय लेने में मदद मिलती है!",
+  "resultTryAgainHeader": "अभ्यास जारी रखें!",
+  "resultTryAgainSubheader": "आपने {{score}} वस्तुओं को सही ढंग से मिलाया है।",
+  "resultTryAgainTip": "सुझाव: सोचें कि क्या प्रत्येक वस्तु आवश्यक है या विवेकाधीन!",
+  "coinsEarned": "+{{coins}} सिक्के",
+  "items": [
+    { "id": 1, "name": "स्वस्थ नाश्ता", "emoji": "🍳" },
+    { "id": 2, "name": "स्टेशनरी किट", "emoji": "✏️" },
+    { "id": 3, "name": "स्कूल के बाद की कक्षाएं", "emoji": "📚" },
+    { "id": 4, "name": "विटामिन सप्लीमेंट", "emoji": "💊" },
+    { "id": 5, "name": "बस पास", "emoji": "🚌" }
+  ],
+  "categories": [
+    { "id": 6, "name": "दैनिक आवश्यकता", "emoji": "😅"},
+    { "id": 7, "name": "वैकल्पिक गतिविधि", "emoji": "🎯"},
+    { "id": 8, "name": "स्मार्ट खर्च", "emoji": "💰"},
+    { "id": 9, "name": "स्वास्थ्य प्राथमिकता", "emoji": "❤️"},
+    { "id": 10, "name": "परिवहन खर्च", "emoji": "🚌"}
+  ]
+}

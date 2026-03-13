@@ -1,0 +1,66 @@
+{
+  "title": "नैतिकता प्रश्नोत्तरी",
+  "subtitleComplete": "प्रश्नोत्तरी पूरी!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "क्या अंकों के लिए रिश्वत देना नैतिक है?",
+      "options": [
+        { "id": "yes", "text": "हाँ, यदि आवश्यक हो", "emoji": "💰", "isCorrect": false },
+        { "id": "no", "text": "नहीं, यह गलत है", "emoji": "❌", "isCorrect": true },
+        { "id": "maybe", "text": "शायद, निर्भर करता है", "emoji": "🤔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "रिश्वत देने में क्या गलत है?",
+      "options": [
+        { "id": "unfair", "text": "यह अनुचित और बेईमानी है", "emoji": "⚖️", "isCorrect": true },
+        { "id": "nothing", "text": "कुछ भी गलत नहीं", "emoji": "😊", "isCorrect": false },
+        { "id": "expensive", "text": "बहुत महंगा है", "emoji": "💸", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "आपको अच्छे अंक कैसे प्राप्त करने चाहिए?",
+      "options": [
+        { "id": "study", "text": "पढ़ाई और कड़ी मेहनत", "emoji": "📚", "isCorrect": true },
+        { "id": "bribe", "text": "अंकों के लिए भुगतान करें", "emoji": "💳", "isCorrect": false },
+        { "id": "cheat", "text": "परीक्षा में नकल करें", "emoji": "📋", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "रिश्वत देने के क्या परिणाम होते हैं?",
+      "options": [
+        { "id": "no-consequences", "text": "कोई परिणाम नहीं", "emoji": "😊", "isCorrect": false },
+        { "id": "lose-trust", "text": "विश्वास खोना और सजा मिलना", "emoji": "🚫", "isCorrect": true },
+        { "id": "get-reward", "text": "इनाम प्राप्त करना", "emoji": "🎁", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "सफल होने का नैतिक तरीका क्या है?",
+      "options": [
+        { "id": "honest-effort", "text": "ईमानदार प्रयास और सत्यनिष्ठा", "emoji": "🙂‍↔️", "isCorrect": true },
+        { "id": "shortcuts", "text": "शॉर्टकट अपनाएं", "emoji": "⚡", "isCorrect": false },
+        { "id": "cheat-way", "text": "धोखा देकर आगे बढ़ें", "emoji": "😈", "isCorrect": false }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "बहुत बढ़िया!",
+    "winMessage": "आपने {{total}} में से {{score}} सही किए! आप एक नैतिक चैंपियन हैं!",
+    "coinsEarned": "+{{score}} सिक्के",
+    "lesson": "सीख: सत्यनिष्ठा और ईमानदार प्रयास ही सफल होने के एकमात्र सच्चे तरीके हैं। रिश्वत देने से विश्वास की हानि और परिणाम भुगतने पड़ते हैं।",
+    "loseEmoji": "😔",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} सही किए। याद रखें, ईमानदारी ही सबसे अच्छी नीति है!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "सुझाव: कड़ी मेहनत और ईमानदारी से अर्जित सफलता सबसे अधिक फायदेमंद होती है। कभी भी अनैतिक शॉर्टकट न अपनाएं।"
+  }
+}

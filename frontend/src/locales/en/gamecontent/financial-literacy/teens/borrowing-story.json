@@ -1,0 +1,141 @@
+{
+  "title": "Borrowing Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Teen borrows for a new phone. Can't repay? Result →",
+      "options": [
+        {
+          "id": "free",
+          "text": "Free money",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "Debt",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "Nothing happens",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You borrow ₹500 but can't repay. What's the consequence?",
+      "options": [
+        {
+          "id": "forgiven",
+          "text": "Debt is forgiven",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "ignored",
+          "text": "Can be ignored",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "Interest and penalties increase",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What should you do before borrowing for a want?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "Plan how to repay first",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-first",
+          "text": "Borrow first, think later",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore repayment plan",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Borrowing without a repayment plan leads to?",
+      "options": [
+        {
+          "id": "success",
+          "text": "Financial success",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "text": "Financial freedom",
+          "emoji": "🕊️",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "Debt problems",
+          "emoji": "⚠️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What's the best approach to borrowing?",
+      "options": [
+        {
+          "id": "borrow-often",
+          "text": "Borrow often for wants",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-wisely",
+          "text": "Borrow only when necessary and plan repayment",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "never-repay",
+          "text": "Borrow but never repay",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Borrowing Story Complete!",
+    "winMessage": "You got {{score}} out of {{total}} correct! Great job learning about responsible borrowing!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Borrowing without a repayment plan leads to debt. Always plan how to repay before borrowing, especially for wants!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} correct. Remember, borrowing without a plan leads to debt problems!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Always plan how to repay before borrowing. Borrowing without a repayment plan leads to debt and financial trouble!"
+  }
+}

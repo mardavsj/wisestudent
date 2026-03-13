@@ -1,0 +1,68 @@
+{
+  "title": "रिफ्लेक्स निर्णय",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपने वित्तीय निर्णय कौशल का परीक्षण करें!",
+  "subtitleReady": "अपने वित्तीय निर्णय कौशल का परीक्षण करें!",
+  "readyHeader": "क्या आप अपने वित्तीय निर्णयों का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "स्मार्ट वित्तीय विकल्पों के बारे में सवालों के जवाब दें।",
+  "readyTip": "आपके पास {{total}} प्रश्न हैं और प्रत्येक प्रश्न के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड:",
+  "timeLabel": "समय:",
+  "scoreLabel": "स्कोर:",
+  "greatJob": "बहुत बढ़िया!",
+  "finalScore": "आपने {{total}} में से {{score}} स्कोर किया!",
+  "developingSkills": "आप मजबूत वित्तीय निर्णय लेने का कौशल विकसित कर रहे हैं!",
+  "playAgain": "फिर से खेलें",
+  "questions": [
+    {
+      "id": 1,
+      "question": "आपके पास पैसे हैं। क्या आपको फीस चुकानी चाहिए या गैजेट्स के लिए छोड़ देनी चाहिए?",
+      "options": [
+        { "text": "फीस भरें", "id": "pay_fees", "emoji": "💰" },
+        { "text": "गैजेट्स के लिए छोड़ें", "id": "skip_gadgets", "emoji": "🎮" },
+        { "text": "सब कुछ बचाएं", "id": "save_everything", "emoji": "🏦" },
+        { "text": "दोनों पर खर्च करें", "id": "spend_both", "emoji": "💸" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "फालतू पैसों का आपको क्या करना चाहिए?",
+      "options": [
+        { "text": "गेम खरीदें", "id": "buy_games", "emoji": "🎮" },
+        { "text": "पैसे बचाएं", "id": "save_money", "emoji": "💰" },
+        { "text": "तुरंत खर्च करें", "id": "spend_immediately", "emoji": "🛒" },
+        { "text": "दोस्तों को उधार दें", "id": "lend_friends", "emoji": "👥" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "आपको अपना बजट कैसे प्रबंधित करना चाहिए?",
+      "options": [
+        { "text": "बजट ट्रैक करें", "id": "track_budget", "emoji": "📊" },
+        { "text": "बजट को नजरअंदाज करें", "id": "ignore_budget", "emoji": "🙈" },
+        { "text": "खर्चों का अनुमान लगाएं", "id": "guess_expenses", "emoji": "🎲" },
+        { "text": "कभी-कभी ट्रैक करें", "id": "track_sometimes", "emoji": "📅" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "जब आपके पास बिल हों तो प्राथमिकता क्या होनी चाहिए?",
+      "options": [
+        { "text": "पार्टी पर खर्च करें", "id": "spend_party", "emoji": "🎉" },
+        { "text": "किराया भरें", "id": "pay_rent", "emoji": "🏠" },
+        { "text": "कपड़े खरीदें", "id": "buy_clothes", "emoji": "👕" },
+        { "text": "बाद के लिए बचाएं", "id": "save_later", "emoji": "💵" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "शिक्षा के लिए मिले पैसों का आपको क्या करना चाहिए?",
+      "options": [
+        { "text": "नाश्ता खरीदें", "id": "buy_snacks", "emoji": "🍕" },
+        { "text": "मनोरंजन पर खर्च करें", "id": "spend_entertainment", "emoji": "🎬" },
+        { "text": "किताबों के लिए बचाएं", "id": "save_books", "emoji": "📚" },
+        { "text": "दान कर दें", "id": "give_away", "emoji": "🎁" }
+      ]
+    }
+  ]
+}

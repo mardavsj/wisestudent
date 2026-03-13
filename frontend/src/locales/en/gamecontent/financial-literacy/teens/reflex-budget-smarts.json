@@ -1,0 +1,64 @@
+{
+  "title": "Reflex Budget Smarts",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your budget reflexes!",
+  "subtitleReady": "Test your budget reflexes!",
+  "readyHeader": "Get Ready!",
+  "readyDescription": "Answer questions about budgeting habits!<br />You have {{time}} seconds for each question.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What should you do before making a purchase?",
+      "options": [
+        { "text": "Plan ahead and check your budget", "id": "plan", "emoji": "📋" },
+        { "text": "Spend all your money immediately", "id": "spend", "emoji": "💸" },
+        { "text": "Ignore your budget completely", "id": "ignore", "emoji": "🚫" },
+        { "text": "Buy without thinking", "id": "buy", "emoji": "⚡" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What's the smartest approach to managing money?",
+      "options": [
+        { "text": "Waste money on unnecessary items", "id": "waste", "emoji": "🗑️" },
+        { "text": "Save first, then spend", "id": "save", "emoji": "💰" },
+        { "text": "Spend everything you have", "id": "spend_all", "emoji": "💳" },
+        { "text": "Never save anything", "id": "never", "emoji": "❌" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How should you track your expenses?",
+      "options": [
+        { "text": "Ignore costs completely", "id": "ignore", "emoji": "🙈" },
+        { "text": "Track costs only sometimes", "id": "sometimes", "emoji": "📝" },
+        { "text": "Track costs regularly", "id": "regularly", "emoji": "✅" },
+        { "text": "Never track anything", "id": "never", "emoji": "🚫" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should you prioritize in your budget?",
+      "options": [
+        { "text": "Buy wants before needs", "id": "wants", "emoji": "🛍️" },
+        { "text": "Prioritize needs over wants", "id": "needs", "emoji": "🎯" },
+        { "text": "Only buy wants", "id": "only_wants", "emoji": "💸" },
+        { "text": "Ignore priorities", "id": "ignore", "emoji": "❌" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What should you do to stay on budget?",
+      "options": [
+        { "text": "Forget balance completely", "id": "forget", "emoji": "🙈" },
+        { "text": "Check balance rarely", "id": "rarely", "emoji": "👀" },
+        { "text": "Check balance regularly", "id": "regularly", "emoji": "✅" },
+        { "text": "Never check balance", "id": "never", "emoji": "🚫" }
+      ]
+    }
+  ]
+}

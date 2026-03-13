@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Entrepreneur Traits",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your entrepreneurial reflexes!",
+  "subtitleReady": "Test your entrepreneurial reflexes!",
+  "readyHeader": "Ready to Test Your Entrepreneurial Skills?",
+  "readyDescription": "Answer questions about key entrepreneurial traits and mindset.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "thinkingSkills": "You're developing strong entrepreneurial thinking skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which trait is essential for successful entrepreneurs?",
+      "options": [
+        { "text": "Risk Avoidance", "id": "risk_avoidance", "emoji": "🛡️" },
+        { "text": "Innovation", "id": "innovation", "emoji": "💡" },
+        { "text": "Following Trends", "id": "following_trends", "emoji": "📈" },
+        { "text": "Waiting for Opportunities", "id": "waiting_opportunities", "emoji": "⏳" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What should entrepreneurs do when facing challenges?",
+      "options": [
+        { "text": "Give Up Quickly", "id": "give_up", "emoji": "😔" },
+        { "text": "Blame Others", "id": "blame_others", "emoji": "😠" },
+        { "text": "Persist and Adapt", "id": "persist_adapt", "emoji": "💪" },
+        { "text": "Avoid Challenges", "id": "avoid_challenges", "emoji": "跑" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How do successful entrepreneurs approach problem-solving?",
+      "options": [
+        { "text": "Ignore Problems", "id": "ignore_problems", "emoji": "🙈" },
+        { "text": "Complain About Issues", "id": "complain_issues", "emoji": "😤" },
+        { "text": "Creative Solutions", "id": "creative_solutions", "emoji": "🔧" },
+        { "text": "Copy Others' Methods", "id": "copy_others", "emoji": "📋" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What mindset do entrepreneurs typically embrace?",
+      "options": [
+        { "text": "Fixed Mindset", "id": "fixed_mindset", "emoji": "🔒" },
+        { "text": "Growth Mindset", "id": "growth_mindset", "emoji": "🌱" },
+        { "text": "Negative Thinking", "id": "negative_thinking", "emoji": "😞" },
+        { "text": "Avoiding Learning", "id": "avoid_learning", "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What approach should entrepreneurs take toward calculated risks?",
+      "options": [
+        { "text": "Avoid All Risks", "id": "avoid_all_risks", "emoji": "🛡️" },
+        { "text": "Act Recklessly", "id": "act_recklessly", "emoji": "🤯" },
+        { "text": "Copy Risky Behaviors", "id": "copy_risky", "emoji": "🔁" },
+        { "text": "Evaluate and Take Smart Risks", "id": "smart_risks", "emoji": "🎲" }
+      ]
+    }
+  ]
+}

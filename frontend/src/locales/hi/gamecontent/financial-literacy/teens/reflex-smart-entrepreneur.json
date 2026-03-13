@@ -1,0 +1,68 @@
+{
+  "title": "रिफ्लेक्स स्मार्ट उद्यमी",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपने स्मार्ट उद्यमी सजगता का परीक्षण करें!",
+  "subtitleReady": "अपने स्मार्ट उद्यमी सजगता का परीक्षण करें!",
+  "readyHeader": "क्या आप अपने स्मार्ट उद्यमी सजगता का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "स्मार्ट उद्यमी निर्णयों के बारे में सवालों के जवाब दें।",
+  "readyTip": "आपके पास {{total}} प्रश्न हैं और प्रत्येक प्रश्न के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड:",
+  "timeLabel": "समय:",
+  "scoreLabel": "स्कोर:",
+  "greatJob": "बहुत बढ़िया!",
+  "finalScore": "आपने {{total}} में से {{score}} स्कोर किया!",
+  "securitySkills": "आप मजबूत उद्यमी निर्णय लेने का कौशल विकसित कर रहे हैं!",
+  "playAgain": "फिर से खेलें",
+  "questions": [
+    {
+      "id": 1,
+      "question": "सफल उद्यमियों का सबसे महत्वपूर्ण गुण क्या है?",
+      "options": [
+        { "id": "plan_risk", "text": "योजना + जोखिम ", "emoji": "📋" },
+        { "id": "spend_all", "text": "सब खर्च करें", "emoji": "💸" },
+        { "id": "do_nothing", "text": "कुछ न करें", "emoji": "😴" },
+        { "id": "copy_others", "text": "दूसरों की नकल करें", "emoji": "📋" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "उद्यमियों को उत्पाद लॉन्च करने से पहले क्या करना चाहिए?",
+      "options": [
+        { "id": "jump_blindly", "text": "आंखें मूंदकर कूदें", "emoji": "🙈" },
+        { "id": "research_market", "text": "बाजार अनुसंधान ", "emoji": "🔍" },
+        { "id": "ignore_customers", "text": "ग्राहकों को नजरअंदाज करें", "emoji": "🚫" },
+        { "id": "guess_demand", "text": "मांग का अनुमान लगाएं", "emoji": "❓" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "उद्यमियों को अपने व्यक्तिगत वित्त का प्रबंधन कैसे करना चाहिए?",
+      "options": [
+        { "id": "spend_on_wants", "text": "इच्छाओं पर खर्च करें", "emoji": "🛍️" },
+        { "id": "waste_money", "text": "पैसे बर्बाद करें", "emoji": "💸" },
+        { "id": "save_for_business", "text": "व्यवसाय के लिए बचत करें", "emoji": "💰" },
+        { "id": "borrow_heavily", "text": "भारी कर्ज लें", "emoji": "💳" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "कौन सी निरंतर गतिविधि उद्यमियों को बढ़ने में मदद करती है?",
+      "options": [
+        { "id": "learn_skills", "text": "कौशल सीखें", "emoji": "📚" },
+        { "id": "avoid_learning", "text": "सीखने से बचें", "emoji": "😴" },
+        { "id": "copy_only", "text": "केवल नकल करें", "emoji": "📋" },
+        { "id": "stop_improving", "text": "सुधार करना बंद करें", "emoji": "🛑" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "व्यवसाय शुरू करने के लिए अनुशंसित दृष्टिकोण क्या है?",
+      "options": [
+        { "id": "start_huge", "text": "बहुत बड़े स्तर पर शुरू करें", "emoji": "🎯" },
+        { "id": "start_small", "text": "छोटी शुरुआत करें", "emoji": "🌱" },
+        { "id": "never_start", "text": "कभी शुरू न करें", "emoji": "❌" },
+        { "id": "wait_perfectly", "text": "परफेक्ट समय का इंतजार करें", "emoji": "⏰" }
+      ]
+    }
+  ]
+}

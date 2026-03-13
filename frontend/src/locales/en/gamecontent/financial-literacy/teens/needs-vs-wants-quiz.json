@@ -1,0 +1,66 @@
+{
+  "title": "Needs vs Wants Quiz",
+  "subtitleComplete": "Quiz Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which is a want?",
+      "options": [
+        { "id": "watch", "text": "Luxury watch", "emoji": "⌚", "isCorrect": true },
+        { "id": "medicine", "text": "Medicine", "emoji": "💊", "isCorrect": false },
+        { "id": "clothes", "text": "School clothes", "emoji": "👕", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Which is a need?",
+      "options": [
+        { "id": "game", "text": "Video game", "emoji": "🎮", "isCorrect": false },
+        { "id": "food", "text": "Groceries", "emoji": "🍎", "isCorrect": true },
+        { "id": "phone", "text": "New smartphone", "emoji": "📱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Which is a want?",
+      "options": [
+        { "id": "rent", "text": "Rent", "emoji": "🏠", "isCorrect": false },
+        { "id": "books", "text": "Textbooks", "emoji": "📚", "isCorrect": false },
+        { "id": "concert", "text": "Concert ticket", "emoji": "🎤", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Which is a need?",
+      "options": [
+        { "id": "water", "text": "Water bill", "emoji": "💧", "isCorrect": true },
+        { "id": "shoes", "text": "Designer shoes", "emoji": "👟", "isCorrect": false },
+        { "id": "party", "text": "Party supplies", "emoji": "🎉", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Which is a want?",
+      "options": [
+        { "id": "internet", "text": "Internet bill", "emoji": "🌐", "isCorrect": false },
+        { "id": "headphones", "text": "Wireless headphones", "emoji": "🎧", "isCorrect": true },
+        { "id": "transport", "text": "Bus pass", "emoji": "🚌", "isCorrect": false }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Great Job!",
+    "winMessage": "You got {{score}} out of {{total}} questions correct! You understand the difference between needs and wants!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Needs are essential for survival and learning, while wants are things we'd like to have but don't need!",
+    "loseEmoji": "😔",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} questions correct. Remember, needs are essential items like food, clothes, and utilities!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Needs are things you must have to survive and learn, while wants are optional luxuries."
+  }
+}

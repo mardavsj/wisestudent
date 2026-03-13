@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Debt Dangers",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your debt management reflexes!",
+  "subtitleReady": "Test your debt management reflexes!",
+  "readyHeader": "Ready to Test Your Debt Management Skills?",
+  "readyDescription": "Answer questions about responsible debt management.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "developingSkills": "You're developing strong debt management skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What should you do if you can't make a loan payment on time?",
+      "options": [
+        { "text": "Ignore the payment", "id": "ignore_payment", "emoji": "🙈" },
+        { "text": "Contact your lender immediately", "id": "contact_lender", "emoji": "📞" },
+        { "text": "Borrow more money", "id": "borrow_more", "emoji": "💳" },
+        { "text": "Hope it goes away", "id": "hope_it_gone", "emoji": "💭" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What's the best approach to managing credit cards?",
+      "options": [
+        { "text": "Pay the full balance monthly", "id": "pay_full", "emoji": "💰" },
+        { "text": "Make only minimum payments", "id": "min_payment", "emoji": "📉" },
+        { "text": "Max out your cards", "id": "max_out", "emoji": "📈" },
+        { "text": "Avoid paying interest", "id": "avoid_interest", "emoji": "💸" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How should you prioritize debt payments?",
+      "options": [
+        { "text": "Pay oldest debts first", "id": "oldest", "emoji": "📅" },
+        { "text": "Pay smallest amounts first", "id": "smallest", "emoji": "🔢" },
+        { "text": "Pay whatever feels right", "id": "random", "emoji": "🎲" },
+        { "text": "Pay high-interest debts first", "id": "high_interest", "emoji": "🔥" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should you avoid when taking on debt?",
+      "options": [
+        { "text": "Borrowing for non-essential items", "id": "non_essential", "emoji": "🛍️" },
+        { "text": "Having a payment plan", "id": "payment_plan", "emoji": "📋" },
+        { "text": "Understanding interest rates", "id": "understand_rates", "emoji": "📊" },
+        { "text": "Reading loan terms", "id": "read_terms", "emoji": "📖" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What's a key principle of responsible borrowing?",
+      "options": [
+        { "text": "Borrow as much as possible", "id": "borrow_max", "emoji": "🏦" },
+        { "text": "Borrow only what you can afford to repay", "id": "afford_repay", "emoji": "✅" },
+        { "text": "Never borrow money", "id": "never_borrow", "emoji": "🚫" },
+        { "text": "Borrow from multiple sources", "id": "multi_source", "emoji": "🔄" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "title": "व्यापार जोखिम की कहानी",
+  "subtitleComplete": "कहानी पूरी!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "आपने नाश्ता बेचने के लिए ₹200 लगाए। ₹300 कमाए। अच्छा है?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "हाँ, 50% मुनाफ़ा",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "नहीं, बहुत जोखिम भरा",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "शायद, निर्भर करता है",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "छोटे व्यापार के लिए अच्छा मुनाफ़ा मार्जिन क्या है?",
+      "options": [
+        {
+          "id": "low",
+          "text": "5% मुनाफ़ा",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "high",
+          "text": "30-50% मुनाफ़ा",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "loss",
+          "text": "नुकसान ठीक है",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "क्या व्यापार में जोखिम लेना चाहिए?",
+      "options": [
+        {
+          "id": "all",
+          "text": "सारे जोखिम लो",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "सारे जोखिम से बचो",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "calculated",
+          "text": "हाँ, सोच-समझकर जोखिम",
+          "emoji": "🎯",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "व्यापार शुरू करने से पहले क्या ज़रूरी है?",
+      "options": [
+        {
+          "id": "jump",
+          "text": "तुरंत शुरू करो",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "योजना और रिसर्च करो",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "हमेशा इंतज़ार करो",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "क्या ₹200→₹300 एक अच्छा व्यापारिक परिणाम है?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "नहीं, बहुत कम",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "शायद, अगर लगातार हो",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "हाँ, 50% रिटर्न",
+          "emoji": "🙂",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "कहानी पूरी!",
+    "winMessage": "आपने {{total}} में से {{score}} सही किए! आप व्यापार के जोखिम और मुनाफ़े को समझते हैं!",
+    "coinsEarned": "+{{score}} सिक्के",
+    "lesson": "सीख: 50% मुनाफ़ा (₹200→₹300) बहुत बढ़िया है! सोच-समझकर जोखिम लें, शुरू करने से पहले योजना बनाएँ, और स्वस्थ मुनाफ़ा मार्जिन का लक्ष्य रखें!",
+    "loseEmoji": "💪",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} सही किए। याद रखें, 50% मुनाफ़ा बहुत बढ़िया है, और योजना के साथ सोच-समझकर जोखिम लेना ज़रूरी है!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "सुझाव: ₹200 लगाकर ₹300 कमाना (50% मुनाफ़ा) बहुत बढ़िया है! व्यापार शुरू करने से पहले हमेशा योजना बनाएँ और सोच-समझकर जोखिम लें!"
+  }
+}

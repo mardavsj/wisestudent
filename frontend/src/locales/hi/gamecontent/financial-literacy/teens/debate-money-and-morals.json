@@ -1,0 +1,54 @@
+{
+  "title": "बहस: पैसा और नैतिकता",
+  "subtitleComplete": "बहस पूरी!",
+  "subtitleProgress": "राउंड {{current}} / {{total}}",
+  "roundLabel": "राउंड {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "क्या पैसा चरित्र की परीक्षा लेता है?",
+      "options": [
+        { "id": "yes", "text": "हाँ, नैतिकता ज़्यादा मायने रखती है", "emoji": "🙂", "isCorrect": true },
+        { "id": "no", "text": "नहीं, पैसे से कोई फ़र्क नहीं पड़ता", "emoji": "🤷", "isCorrect": false },
+        { "id": "maybe", "text": "शायद, निर्भर करता है", "emoji": "🤔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "क्या आपको पैसे के लिए नैतिकता से समझौता करना चाहिए?",
+      "options": [
+        { "id": "sometimes", "text": "कभी-कभी ठीक है", "emoji": "🤷", "isCorrect": false },
+        { "id": "never", "text": "कभी समझौता न करें", "emoji": "🛡️", "isCorrect": true },
+        { "id": "always", "text": "पैसे को प्राथमिकता दें", "emoji": "💰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "क्या ज़्यादा महत्वपूर्ण है: दौलत या सत्यनिष्ठा?",
+      "options": [
+        { "id": "wealth", "text": "दौलत", "emoji": "💵", "isCorrect": false },
+        { "id": "both", "text": "दोनों समान रूप से", "emoji": "⚖️", "isCorrect": false },
+        { "id": "integrity", "text": "सत्यनिष्ठा", "emoji": "💎", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "क्या आप अमीर और नैतिक हो सकते हैं?",
+      "options": [
+        { "id": "yes2", "text": "हाँ, बिल्कुल", "emoji": "✨", "isCorrect": true },
+        { "id": "no2", "text": "नहीं, असंभव", "emoji": "🚫", "isCorrect": false },
+        { "id": "rarely", "text": "शायद ही कभी संभव", "emoji": "😕", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "स्थायी सफलता किससे मिलती है?",
+      "options": [
+        { "id": "shortcuts", "text": "शॉर्टकट और चालें", "emoji": "⚡", "isCorrect": false },
+        { "id": "ethics", "text": "नैतिकता और ईमानदारी", "emoji": "🏆", "isCorrect": true },
+        { "id": "luck", "text": "सिर्फ़ किस्मत", "emoji": "🍀", "isCorrect": false }
+      ]
+    }
+  ]
+}

@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import GameShell from '../GameShell';
 import useGameFeedback from '../../../../hooks/useGameFeedback';
 import { getGameDataById } from '../../../../utils/getGameData';
 
 const PartyStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-teens-15";
   const gameData = getGameDataById(gameId);
+  const gameContent = t("financial-literacy.teens.party-story", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -21,132 +24,7 @@ const PartyStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "You're planning a birthday party with a ₹2000 budget. Which approach shows responsible financial planning?",
-      options: [
-        { 
-          id: "a", 
-          text: "Allocate ₹1000 for venue, ₹500 for food, ₹300 for decorations, ₹200 for contingencies", 
-          emoji: "📋", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Spend all ₹2000 on decorations", 
-          emoji: "🎨", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Ask parents to cover extra costs", 
-          emoji: "💸", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You receive ₹1500 in gifts for your party. How should you handle the monetary gifts?",
-      options: [
-        { 
-          id: "a", 
-          text: "Spend it all immediately", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Split it: save 60% (₹900) and spend 40% (₹600)", 
-          emoji: "💰", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Give it all to friends", 
-          emoji: "👥", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "After the party, you realize you spent ₹500 more than planned. What's the best way to handle this?",
-      options: [
-        { 
-          id: "a", 
-          text: "Ignore it since it was special", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Review what caused overspending and adjust future budgets", 
-          emoji: "📊", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Cancel your next social event", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "A friend asks you to host another party. Your monthly entertainment budget is ₹750. What should you do?",
-      options: [
-        { 
-          id: "a", 
-          text: "Host a small gathering within your budget (₹750)", 
-          emoji: "🎉", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Host a big party anyway", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Ask parents to sponsor it", 
-          emoji: "👨‍👩‍👧‍👦", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You saved ₹1000 from your part-time job for a party. How should you evaluate if hosting is worth it?",
-      options: [
-        
-        { 
-          id: "b", 
-          text: "Focus only on having fun", 
-          emoji: "🎉", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Host the biggest party to impress", 
-          emoji: "💎", 
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: "Compare the joy of hosting with alternative uses of ₹1000", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -183,9 +61,16 @@ const PartyStory = () => {
 
   return (
     <GameShell
-      title="Party Story"
+      title={gameContent?.title || "Party Story"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.party-story.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Story Complete!")
+      }
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -194,9 +79,9 @@ const PartyStory = () => {
       nextGamePathProp="/student/finance/teen/debate-needs-vs-wants"
       nextGameIdProp="finance-teens-16"
       gameType="finance"
-      totalLevels={questions.length}
+      totalLevels={questions.length || 5}
       currentLevel={currentQuestion + 1}
-      maxScore={questions.length}
+      maxScore={questions.length || 5}
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -206,8 +91,20 @@ const PartyStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.party-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.party-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -215,7 +112,7 @@ const PartyStory = () => {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {currentQuestionData.options.map((option, idx) => (
+                {currentQuestionData.options.map((option) => (
                   <button
                     key={option.id}
                     onClick={() => handleChoice(option.isCorrect)}
@@ -224,50 +121,67 @@ const PartyStory = () => {
                   >
                     <div className="text-3xl mb-3">{option.emoji}</div>
                     <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
+                    {option.description && (
+                      <p className="text-white/90 text-sm">{option.description}</p>
+                    )}
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Great Job!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct!
-                  You're learning smart party planning and financial decisions!
+                  {t("financial-literacy.teens.party-story.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct! You're learning smart party planning and financial decisions!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.party-story.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  You understand the importance of budgeting, saving, and making thoughtful financial decisions for parties!
+                  {gameContent?.result?.lesson || "You understand the importance of budgeting, saving, and making thoughtful financial decisions for parties!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">😔</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "😔"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct.
-                  Remember, smart party planning means budgeting and making thoughtful financial decisions!
+                  {t("financial-literacy.teens.party-story.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct. Remember, smart party planning means budgeting and making thoughtful financial decisions!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Try to choose the option that shows responsible budgeting and financial planning.
+                  {gameContent?.result?.tip || "Try to choose the option that shows responsible budgeting and financial planning."}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

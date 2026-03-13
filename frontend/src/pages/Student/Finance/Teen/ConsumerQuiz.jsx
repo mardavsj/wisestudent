@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const ConsumerQuiz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-82");
   const gameId = gameData?.id || "finance-teens-82";
+  const gameContent = t("financial-literacy.teens.consumer-quiz", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,129 +29,7 @@ const ConsumerQuiz = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const questions = [
-    {
-      id: 1,
-      text: "If shopkeeper cheats, where can you complain?",
-      options: [
-        { 
-          id: "court", 
-          text: "Consumer Court", 
-          emoji: "⚖️", 
-          
-          isCorrect: true 
-        },
-        { 
-          id: "playground", 
-          text: "Playground", 
-          emoji: "🏃", 
-          isCorrect: false 
-        },
-        { 
-          id: "nowhere", 
-          text: "Nowhere", 
-          emoji: "😔", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What are consumer rights?",
-      options: [
-        { 
-          id: "nothing", 
-          text: "No rights", 
-          emoji: "❌", 
-          isCorrect: false 
-        },
-        { 
-          id: "protection", 
-          text: "Protection from fraud", 
-          emoji: "🛡️", 
-          isCorrect: true 
-        },
-        { 
-          id: "spend", 
-          text: "Right to spend", 
-          emoji: "💸", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What should you do if you get a defective product?",
-      options: [
-        { 
-          id: "accept", 
-          text: "Accept it", 
-          emoji: "😔", 
-          isCorrect: false 
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore it", 
-          emoji: "😴", 
-          isCorrect: false 
-        },
-        { 
-          id: "complain", 
-          text: "Complain to seller", 
-          emoji: "📢", 
-          isCorrect: true 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What's the right to information?",
-      options: [
-        { 
-          id: "know", 
-          text: "Know product details", 
-          emoji: "📋", 
-          isCorrect: true 
-        },
-        { 
-          id: "hide", 
-          text: "Hide information", 
-          emoji: "🙈", 
-          isCorrect: false 
-        },
-        { 
-          id: "lie", 
-          text: "Accept lies", 
-          emoji: "😈", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Where can you file a consumer complaint?",
-      options: [
-        { 
-          id: "police", 
-          text: "Police Station", 
-          emoji: "🚔", 
-          isCorrect: false 
-        },
-        { 
-          id: "court2", 
-          text: "Consumer Court", 
-          emoji: "⚖️", 
-          isCorrect: true 
-        },
-        { 
-          id: "school", 
-          text: "School", 
-          emoji: "🏫", 
-          isCorrect: false 
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -191,8 +72,15 @@ const ConsumerQuiz = () => {
 
   return (
     <GameShell
-      title="Consumer Quiz"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      title={gameContent?.title || "Consumer Quiz"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.consumer-quiz.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}",
+          })
+        : (gameContent?.subtitleComplete || "Quiz Complete!")
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -214,8 +102,20 @@ const ConsumerQuiz = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.consumer-quiz.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}",
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.consumer-quiz.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}",
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -250,35 +150,46 @@ const ConsumerQuiz = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Quiz Complete!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.winTitle || "Quiz Complete!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct!
-                  You understand consumer rights!
+                  {t("financial-literacy.teens.consumer-quiz.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You understand consumer rights!",
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.consumer-quiz.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins",
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Consumers have rights! You can complain to Consumer Court if cheated, demand safe products, and get honest information!
+                  {gameContent?.result?.lesson || "Lesson: Consumers have rights! You can complain to Consumer Court if cheated, demand safe products, and get honest information!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.loseTitle || "Keep Learning!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct.
-                  Remember, Consumer Court is where you complain if shopkeeper cheats!
+                  {t("financial-literacy.teens.consumer-quiz.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember, Consumer Court is where you complain if shopkeeper cheats!",
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: If a shopkeeper cheats you, you can file a complaint at Consumer Court, not playground! Consumers have rights!
+                  {gameContent?.result?.tip || "Tip: If a shopkeeper cheats you, you can file a complaint at Consumer Court, not playground! Consumers have rights!"}
                 </p>
               </div>
             )}
@@ -290,4 +201,3 @@ const ConsumerQuiz = () => {
 };
 
 export default ConsumerQuiz;
-

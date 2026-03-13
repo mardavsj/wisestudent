@@ -1,0 +1,33 @@
+{
+  "title": "उद्यमियों की पहेली",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "उद्यमियों को उनके क्षेत्रों के साथ मिलाएँ ({{current}}/{{total}} मिलान)",
+  "itemsTitle": "उद्यमी",
+  "fieldsTitle": "क्षेत्र",
+  "matchButton": "मिलान करें",
+  "selectItemLabel": "एक उद्यमी चुनें",
+  "selectedItemLabel": "चुना गया: {{name}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "resultSuccessHeader": "बहुत अच्छा!",
+  "resultSuccessSubheader": "आपने {{total}} में से {{score}} उद्यमियों का उनके क्षेत्रों के साथ सही मिलान किया है!",
+  "resultSuccessLesson": "सबक: उद्यमशीलता के क्षेत्रों को समझने से नवाचार को प्रेरित करने में मदद मिलती है!",
+  "resultTryAgainHeader": "अभ्यास जारी रखें!",
+  "resultTryAgainSubheader": "आपने {{score}} उद्यमियों को सही ढंग से मिलाया है।",
+  "resultTryAgainTip": "सुझाव: सोचें कि प्रत्येक उद्यमी किस क्षेत्र के लिए सबसे अधिक जाना जाता है!",
+  "coinsEarned": "+{{coins}} सिक्के",
+  "items": [
+    { "id": 1, "name": "रतन टाटा", "emoji": "👔" },
+    { "id": 2, "name": "एलोन मस्क", "emoji": "🚀" },
+    { "id": 3, "name": "नारायण मूर्ति", "emoji": "💻" },
+    { "id": 4, "name": "किरण मजूमदार", "emoji": "🔬" },
+    { "id": 5, "name": "फाल्गुनी नायर", "emoji": "💄" }
+  ],
+  "fields": [
+    { "id": 6, "name": "उद्योग", "emoji": "🏭" },
+    { "id": 7, "name": "नवाचार", "emoji": "💡" },
+    { "id": 8, "name": "आईटी (IT)", "emoji": "💻" },
+    { "id": 9, "name": "बायोटेक", "emoji": "🧬" },
+    { "id": 10, "name": "ई-कॉमर्स", "emoji": "🛒" }
+  ]
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { PenSquare } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -7,10 +8,12 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const JournalOfDigitalUse = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-47");
   const gameId = gameData?.id || "finance-teens-47";
+  const gameContent = t("financial-literacy.teens.journal-of-digital-use", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -28,13 +31,7 @@ const JournalOfDigitalUse = () => {
   const [entry, setEntry] = useState("");
   const [answered, setAnswered] = useState(false);
 
-  const stages = [
-    { id: 1, prompt: "One safe way I used online money was ___.", minLength: 10 },
-    { id: 2, prompt: "One benefit of digital payments I experienced was ___.", minLength: 10 },
-    { id: 3, prompt: "One security practice I follow for digital money is ___.", minLength: 10 },
-    { id: 4, prompt: "One time I avoided a digital fraud by ___.", minLength: 10 },
-    { id: 5, prompt: "One way I can improve my digital payment safety is ___.", minLength: 10 }
-  ];
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
 
   const handleSubmit = () => {
     if (answered) return;
@@ -69,8 +66,15 @@ const JournalOfDigitalUse = () => {
 
   return (
     <GameShell
-      title="Journal of Digital Use"
-      subtitle={!showResult ? `Entry ${currentStage + 1} of ${stages.length}` : "Journal Complete!"}
+      title={gameContent?.title || "Journal of Digital Use"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.journal-of-digital-use.subtitleProgress", {
+            current: currentStage + 1,
+            total: stages.length,
+            defaultValue: "Entry {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Journal Complete!")
+      }
       score={score}
       currentLevel={currentStage + 1}
       totalLevels={stages.length}
@@ -92,13 +96,27 @@ const JournalOfDigitalUse = () => {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Entry {currentStage + 1}/{stages.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{stages.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.journal-of-digital-use.entryLabel", {
+                    current: currentStage + 1,
+                    total: stages.length,
+                    defaultValue: "Entry {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.journal-of-digital-use.scoreLabel", {
+                    score,
+                    total: stages.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <div className="flex items-center gap-3 mb-4">
                 <PenSquare className="w-8 h-8 text-blue-400" />
-                <h3 className="text-xl font-bold text-white">Journal Entry</h3>
+                <h3 className="text-xl font-bold text-white">
+                  {gameContent?.journalEntryHeader || "Journal Entry"}
+                </h3>
               </div>
               
               <p className="text-white text-lg mb-4">
@@ -110,13 +128,16 @@ const JournalOfDigitalUse = () => {
                   className="w-full max-w-md mx-auto border border-white/20 rounded-lg p-3 bg-white/5 text-white placeholder-white/50 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={entry}
                   onChange={handleInputChange}
-                  placeholder="Type your response here..."
+                  placeholder={gameContent?.placeholder || "Type your response here..."}
                   rows={6}
                   disabled={answered}
                 />
                 <div className="flex justify-between items-center mt-2 text-xs text-white/60">
                   <span>
-                    Minimum {stages[currentStage].minLength} characters required
+                    {t("financial-literacy.teens.journal-of-digital-use.minCharsRequired", {
+                      min: stages[currentStage].minLength,
+                      defaultValue: "Minimum {{min}} characters required"
+                    })}
                   </span>
                   <span className={entry.length >= stages[currentStage].minLength ? "text-green-400" : "text-red-400"}>
                     {entry.length}/{stages[currentStage].minLength}
@@ -133,34 +154,51 @@ const JournalOfDigitalUse = () => {
                     : "bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white transform hover:scale-105"
                 }`}
               >
-                {currentStage === stages.length - 1 ? "Complete Journal" : "Submit & Continue"}
+                {currentStage === stages.length - 1 
+                  ? (gameContent?.buttonComplete || "Complete Journal") 
+                  : (gameContent?.buttonSubmit || "Submit & Continue")}
               </button>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Journal Complete!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Journal Complete!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You completed {score} out of {stages.length} entries!
-                  Great job reflecting on your digital payment experiences!
+                  {t("financial-literacy.teens.journal-of-digital-use.result.winMessage", {
+                    score,
+                    total: stages.length,
+                    defaultValue: "You completed {{score}} out of {{total}} entries! Great job reflecting on your digital payment experiences!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.journal-of-digital-use.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Reflecting on your digital payment experiences helps you learn safe practices and avoid fraud!
+                  {gameContent?.result?.lesson || "Lesson: Reflecting on your digital payment experiences helps you learn safe practices and avoid fraud!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You completed {score} out of {stages.length} entries.
-                  Remember, safe digital payment practices protect your money!
+                  {t("financial-literacy.teens.journal-of-digital-use.result.loseMessage", {
+                    score,
+                    total: stages.length,
+                    defaultValue: "You completed {{score}} out of {{total}} entries. Remember, safe digital payment practices protect your money!"
+                  })}
                 </p>
                 <button
                   onClick={() => {
@@ -173,19 +211,18 @@ const JournalOfDigitalUse = () => {
                   }}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Think about times when you used digital payments safely, and how you can improve your security practices!
+                  {gameContent?.result?.tip || "Tip: Think about times when you used digital payments safely, and how you can improve your security practices!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );
 };
 
 export default JournalOfDigitalUse;
-

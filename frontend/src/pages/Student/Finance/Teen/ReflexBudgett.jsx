@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,155 +8,14 @@ import { getGameDataById } from "../../../../utils/getGameData";
 const TOTAL_ROUNDS = 5;
 const ROUND_TIME = 10;
 
-const questions = [
-  {
-    id: 1,
-    question: "What's the best way to track your spending?",
-    correctAnswer: "Record all expenses daily",
-    options: [
-      { 
-        text: "Record all expenses daily", 
-        isCorrect: true, 
-        emoji: "📝" 
-      },
-      { 
-        text: "Ignore small purchases", 
-        isCorrect: false, 
-        emoji: "🙈" 
-      },
-      { 
-        text: "Only track monthly totals", 
-        isCorrect: false, 
-        emoji: "📊" 
-      },
-      { 
-        text: "Guess your spending", 
-        isCorrect: false, 
-        emoji: "🎲" 
-      }
-    ],
-    explanation: "Tracking daily expenses helps you understand where your money goes and stay within budget"
-  },
-  {
-    id: 2,
-    question: "How often should you check your budget?",
-    correctAnswer: "Weekly or monthly",
-    options: [
-      { 
-        text: "Never check it", 
-        isCorrect: false, 
-        emoji: "🚫" 
-      },
-      { 
-        text: "Weekly or monthly", 
-        isCorrect: true, 
-        emoji: "📅" 
-      },
-      { 
-        text: "Only when you run out of money", 
-        isCorrect: false, 
-        emoji: "💸" 
-      },
-      { 
-        text: "Once a year", 
-        isCorrect: false, 
-        emoji: "📆" 
-      }
-    ],
-    explanation: "Regular budget reviews help you stay on track and adjust spending as needed"
-  },
-  {
-    id: 3,
-    question: "What should you do with receipts?",
-    correctAnswer: "Save them for tracking expenses",
-    options: [
-      { 
-        text: "Throw them away immediately", 
-        isCorrect: false, 
-        emoji: "🗑️" 
-      },
-      { 
-        text: "Only keep expensive receipts", 
-        isCorrect: false, 
-        emoji: "💎" 
-      },
-      { 
-        text: "Save them for tracking expenses", 
-        isCorrect: true, 
-        emoji: "💼" 
-      },
-      { 
-        text: "Give them to friends", 
-        isCorrect: false, 
-        emoji: "👥" 
-      }
-    ],
-    explanation: "Saving receipts helps you verify expenses and track your spending accurately"
-  },
-  {
-    id: 4,
-    question: "What's the first step in planning expenses?",
-    correctAnswer: "List all income sources",
-    options: [
-      { 
-        text: "List all income sources", 
-        isCorrect: true, 
-        emoji: "💰" 
-      },
-      { 
-        text: "Spend freely first", 
-        isCorrect: false, 
-        emoji: "🛍️" 
-      },
-      { 
-        text: "Borrow money", 
-        isCorrect: false, 
-        emoji: "💳" 
-      },
-      { 
-        text: "Ignore planning", 
-        isCorrect: false, 
-        emoji: "🙅" 
-      }
-    ],
-    explanation: "Knowing your income is essential before planning how to allocate your money"
-  },
-  {
-    id: 5,
-    question: "When should you update your budget?",
-    correctAnswer: "When income or expenses change",
-    options: [
-      { 
-        text: "Never update it", 
-        isCorrect: false, 
-        emoji: "🚫" 
-      },
-      { 
-        text: "Only at year end", 
-        isCorrect: false, 
-        emoji: "🎉" 
-      },
-      { 
-        text: "When income or expenses change", 
-        isCorrect: true, 
-        emoji: "🔄" 
-      },
-      { 
-        text: "When you feel like it", 
-        isCorrect: false, 
-        emoji: "😊" 
-      }
-    ],
-    explanation: "Updating your budget when circumstances change keeps it relevant and useful"
-  }
-];
-
 const ReflexBudgett = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-23");
   const gameId = gameData?.id || "finance-teens-23";
+  const gameContent = t("financial-literacy.teens.reflex-budget-check", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -170,6 +30,19 @@ const ReflexBudgett = () => {
   const [answered, setAnswered] = useState(false);
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
+
+  const questions = useMemo(() => {
+    return Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  }, [gameContent]);
+
+  // Map correct answers
+  const correctAnswers = {
+    1: "record_daily",
+    2: "weekly_monthly",
+    3: "save",
+    4: "income",
+    5: "change"
+  };
 
   useEffect(() => {
     currentRoundRef.current = currentRound;
@@ -227,13 +100,13 @@ const ReflexBudgett = () => {
     resetFeedback();
   };
 
-  const handleAnswer = (option) => {
+  const handleAnswer = (option, questionId) => {
     if (answered || gameState !== "playing") return;
     
     setAnswered(true);
     resetFeedback();
     
-    const isCorrect = option.isCorrect;
+    const isCorrect = correctAnswers[questionId] === option.id;
     
     if (isCorrect) {
       setScore((prev) => prev + 1);
@@ -252,13 +125,20 @@ const ReflexBudgett = () => {
   };
 
   const finalScore = score;
-
   const currentQuestion = questions[currentRound - 1];
 
   return (
     <GameShell
-      title="Reflex Budget Check"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your budget reflexes!` : "Test your budget reflexes!"}
+      title={gameContent?.title || "Reflex Budget Check"}
+      subtitle={
+        gameState === "playing" 
+          ? t("financial-literacy.teens.reflex-budget-check.subtitlePlaying", { 
+              current: currentRound, 
+              total: TOTAL_ROUNDS, 
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your budget reflexes!` 
+            })
+          : gameContent?.subtitleReady || "Test your budget reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -278,19 +158,30 @@ const ReflexBudgett = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">💰</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
-            <p className="text-white/90 text-lg mb-6">
-              Answer questions about budgeting habits!<br />
-              You have {ROUND_TIME} seconds for each question.
-            </p>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyHeader || "Get Ready!"}
+            </h3>
+            <p 
+              className="text-white/90 text-lg mb-6"
+              dangerouslySetInnerHTML={{ 
+                __html: t("financial-literacy.teens.reflex-budget-check.readyDescription", { 
+                  time: ROUND_TIME, 
+                  defaultValue: `Answer questions about budgeting habits!<br />You have ${ROUND_TIME} seconds for each question.` 
+                }) 
+              }}
+            />
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("financial-literacy.teens.reflex-budget-check.readyTip", { 
+                total: TOTAL_ROUNDS, 
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -299,13 +190,19 @@ const ReflexBudgett = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">
+                  {gameContent?.roundLabel || "Round:"}
+                </span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">
+                  {gameContent?.timeLabel || "Time:"}
+                </span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">
+                  {gameContent?.scoreLabel || "Score:"}
+                </span> {score}
               </div>
             </div>
 
@@ -315,16 +212,25 @@ const ReflexBudgett = () => {
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {currentQuestion.options.map((option, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleAnswer(option)}
-                    disabled={answered}
-                    className="w-full min-h-[80px] bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 px-6 py-4 rounded-xl text-white font-bold text-lg transition-transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                  >
-                    <span className="text-3xl mr-2">{option.emoji}</span> {option.text}
-                  </button>
-                ))}
+                {currentQuestion.options.map((option, index) => {
+                  const isCorrect = correctAnswers[currentQuestion.id] === option.id;
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => handleAnswer(option, currentQuestion.id)}
+                      disabled={answered}
+                      className={`w-full min-h-[80px] px-6 py-4 rounded-xl text-white font-bold text-lg transition-transform hover:scale-105 disabled:cursor-not-allowed flex items-center justify-center ${
+                        answered
+                          ? isCorrect
+                            ? "bg-green-500/30 border-4 border-green-400 ring-4 ring-green-400"
+                            : "bg-red-500/20 border-2 border-red-400 opacity-75"
+                          : "bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700"
+                      }`}
+                    >
+                      <span className="text-3xl mr-2">{option.emoji}</span> {option.text}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>

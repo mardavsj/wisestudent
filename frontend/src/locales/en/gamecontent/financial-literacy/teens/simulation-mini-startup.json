@@ -1,0 +1,177 @@
+{
+  "title": "Simulation: Mini Startup",
+  "subtitleComplete": "Simulation Complete!",
+  "subtitleProgress": "Scenario {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "amountLabel": "Amount: ",
+  "perfectScoreTitle": "Excellent Decision!",
+  "perfectScoreMsg": "You got {{score}} out of {{total}} scenarios correct! You understand mini startup economics!",
+  "lessonLabel": "Lesson: Mini startups can be smart investments when you have good profit margins (40%+). Always calculate profit = Revenue - Cost!",
+  "keepLearningTitle": "Keep Learning!",
+  "lowScoreMsg": "You got {{score}} out of {{total}} scenarios correct. Remember, profit = Revenue - Cost, and 40%+ profit is good!",
+  "tipLabel": "Tip: Calculate profit = Revenue - Cost. If you invest ₹300 and earn ₹500, that's ₹200 profit (67% return) - that's smart!",
+  "tryAgain": "Try Again",
+  "coinsLabel": "+{{count}} Coins",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "Mini Startup: Online Snack Delivery",
+      "description": "You have ₹500. Which strategy maximizes profit safely?",
+      "amount": 500,
+      "options": [
+        {
+          "id": "invest-all",
+          "text": "Invest entire ₹500 in ingredients without market check",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-more",
+          "text": "Borrow extra ₹500 to buy more stock",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "Wait and save more before starting",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "market-test",
+          "text": "Test small batch, learn demand, then expand",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Mini Startup: Handmade Crafts",
+      "description": "You have ₹400. What's the smart approach?",
+      "amount": 400,
+      "options": [
+        {
+          "id": "overspend",
+          "text": "Spend all ₹400 on materials without profit estimate",
+          "emoji": "🎨",
+          "isCorrect": false
+        },
+        {
+          "id": "scale-fast",
+          "text": "Produce large quantity hoping to sell quickly",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "calculate-profit",
+          "text": "Estimate cost vs selling price, start small batch",
+          "emoji": "🧮",
+          "isCorrect": true
+        },
+        {
+          "id": "delay",
+          "text": "Wait for trend to become popular",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Mini Startup: Lemonade Stand",
+      "description": "You have ₹300. What's the most strategic move?",
+      "amount": 300,
+      "options": [
+        {
+          "id": "random-location",
+          "text": "Set up anywhere without checking foot traffic",
+          "emoji": "📍",
+          "isCorrect": false
+        },
+        {
+          "id": "smart-location",
+          "text": "Choose high foot-traffic area, budget ingredients wisely",
+          "emoji": "🛒",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-extra",
+          "text": "Borrow ₹500 more to expand immediately",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "save-instead",
+          "text": "Save ₹300 instead of starting",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Mini Startup: Book Resale",
+      "description": "You have ₹600. How do you minimize risk?",
+      "amount": 600,
+      "options": [
+        {
+          "id": "bulk-buy",
+          "text": "Buy all books from seller without quality check",
+          "emoji": "📚",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-more",
+          "text": "Borrow extra ₹400 to stock quickly",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "Wait for better deal later",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "inspect-sample",
+          "text": "Inspect sample books, estimate demand, buy accordingly",
+          "emoji": "🔍",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Mini Startup: Tutoring Service",
+      "description": "You have ₹500. How do you maximize success?",
+      "amount": 500,
+      "options": [
+        {
+          "id": "targeted-plan",
+          "text": "Create a skill-focused plan, target audience, advertise smartly",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "random-ad",
+          "text": "Spend all on random ads without targeting",
+          "emoji": "📢",
+          "isCorrect": false
+        },
+        {
+          "id": "hire-random",
+          "text": "Hire someone without checking skills",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "Save money instead of starting business",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

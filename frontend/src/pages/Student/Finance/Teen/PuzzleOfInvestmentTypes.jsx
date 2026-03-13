@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Finance/teenGamesData";
@@ -7,6 +8,10 @@ import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Fina
 const PuzzleOfInvestmentTypes = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
+
+  const gameId = "finance-teens-64";
+  const gameContent = t("financial-literacy.teens.puzzle-of-investment-types", { returnObjects: true });
   
   const { nextGamePath, nextGameId } = useMemo(() => {
     if (location.state?.nextGamePath) {
@@ -18,7 +23,7 @@ const PuzzleOfInvestmentTypes = () => {
     
     try {
       const games = getFinanceTeenGames({});
-      const currentGame = games.find(g => g.id === "finance-teens-64");
+      const currentGame = games.find(g => g.id === gameId);
       if (currentGame && currentGame.index !== undefined) {
         const nextGame = games.find(g => g.index === currentGame.index + 1 && g.isSpecial && g.path);
         return {
@@ -45,36 +50,25 @@ const PuzzleOfInvestmentTypes = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Investment types (left side) - 5 items
-  const investments = [
-    { id: 1, name: "Fixed Deposit", emoji: "🏦",  },
-    { id: 2, name: "Stocks", emoji: "📈",  },
-    { id: 3, name: "Mutual Fund", emoji: "📊",  },
-    { id: 4, name: "Bonds", emoji: "📜",  },
-    { id: 5, name: "Real Estate", emoji: "🏠",  }
-  ];
+  // Investment types (left side) - 5 items from translation
+  const investments = Array.isArray(gameContent?.investments) ? gameContent.investments : [];
 
-  // Investment characteristics (right side) - 5 items
-  const characteristics = [
-    { id: 6, name: "Safe", emoji: "🛡️",  },
-    { id: 7, name: "Risky", emoji: "⚠️",  },
-    { id: 8, name: "Diversified", emoji: "🔄",  },
-    { id: 9, name: "Stable", emoji: "💰",  },
-    { id: 10, name: "Long-term", emoji: "⏳",  }
-  ];
+  // Investment characteristics (right side) - 5 items from translation
+  const characteristics = Array.isArray(gameContent?.characteristics) ? gameContent.characteristics : [];
 
   // Manually rearrange positions to prevent positional matching
-  // Original order was [6,7,8,9,10], rearranged to [8,10,7,6,9]
-  const rearrangedCharacteristics = [
-    characteristics[2], // Diversified (id: 8)
-    characteristics[4], // Long-term (id: 10)
-    characteristics[1], // Risky (id: 7)
-    characteristics[0], // Safe (id: 6)
-    characteristics[3]  // Stable (id: 9)
-  ];
+  const rearrangedCharacteristics = useMemo(() => {
+    if (characteristics.length < 5) return characteristics;
+    return [
+      characteristics[2], // Diversified (id: 8)
+      characteristics[4], // Long-term (id: 10)
+      characteristics[1], // Risky (id: 7)
+      characteristics[0], // Safe (id: 6)
+      characteristics[3]  // Stable (id: 9)
+    ];
+  }, [characteristics]);
 
   // Correct matches using proper IDs, not positional order
-  // Each investment has a unique correct match for true one-to-one mapping
   const correctMatches = [
     { investmentId: 1, characteristicId: 6 }, // Fixed Deposit → Safe
     { investmentId: 2, characteristicId: 7 }, // Stocks → Risky
@@ -147,12 +141,20 @@ const PuzzleOfInvestmentTypes = () => {
 
   return (
     <GameShell
-      title="Puzzle: Investment Types"
-      subtitle={gameFinished ? "Puzzle Complete!" : `Match Investments with Characteristics (${matches.length}/${investments.length} matched)`}
+      title={gameContent?.title || "Puzzle: Investment Types"}
+      subtitle={
+        gameFinished 
+          ? gameContent?.subtitleComplete || "Puzzle Complete!" 
+          : t("financial-literacy.teens.puzzle-of-investment-types.subtitleProgress", { 
+                  current: matches.length, 
+                  total: investments.length,
+                  defaultValue: `Match Investments with Characteristics (${matches.length}/${investments.length} matched)`
+                })
+      }
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
       score={score}
-      gameId="finance-teens-64"
+      gameId={gameId}
       gameType="finance"
       totalLevels={investments.length}
       currentLevel={matches.length + 1}
@@ -172,7 +174,9 @@ const PuzzleOfInvestmentTypes = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left column - Investment Types */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Investment Types</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.investmentsTitle || "Investment Types"}
+              </h3>
               <div className="space-y-4">
                 {investments.map(investment => (
                   <button
@@ -193,7 +197,6 @@ const PuzzleOfInvestmentTypes = () => {
                       <div className="text-2xl mr-3">{investment.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{investment.name}</h4>
-                        
                       </div>
                     </div>
                   </button>
@@ -204,10 +207,13 @@ const PuzzleOfInvestmentTypes = () => {
             {/* Middle column - Match button */}
             <div className="flex flex-col items-center justify-center">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
-                <p className="text-white/80 mb-4">
+                <p className="text-white/80 mb-4 h-12 flex items-center justify-center">
                   {selectedInvestment 
-                    ? `Selected: ${selectedInvestment.name}` 
-                    : "Select an Investment Type"}
+                    ? t("financial-literacy.teens.puzzle-of-investment-types.selectedInvestmentLabel", { 
+                        name: selectedInvestment.name,
+                        defaultValue: `Selected: ${selectedInvestment.name}`
+                      }) 
+                    : gameContent?.selectInvestmentLabel || "Select an Investment Type"}
                 </p>
                 <button
                   onClick={handleMatch}
@@ -218,18 +224,32 @@ const PuzzleOfInvestmentTypes = () => {
                       : "bg-gray-500/30 text-gray-400 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton || "Match"}
                 </button>
                 <div className="mt-4 text-white/80">
-                  <p>Score: {score}/{investments.length}</p>
-                  <p>Matched: {matches.length}/{investments.length}</p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-of-investment-types.scoreLabel", { 
+                      score, 
+                      total: investments.length,
+                      defaultValue: `Score: ${score}/${investments.length}`
+                    })}
+                  </p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-of-investment-types.matchedLabel", { 
+                      current: matches.length, 
+                      total: investments.length,
+                      defaultValue: `Matched: ${matches.length}/${investments.length}`
+                    })}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Right column - Investment Characteristics */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Characteristics</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.characteristicsTitle || "Characteristics"}
+              </h3>
               <div className="space-y-4">
                 {rearrangedCharacteristics.map(characteristic => (
                   <button
@@ -261,26 +281,43 @@ const PuzzleOfInvestmentTypes = () => {
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessHeader || "Great Job!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You correctly matched {score} out of {investments.length} investment types with their characteristics!
+                  {t("financial-literacy.teens.puzzle-of-investment-types.resultSuccessSubheader", { 
+                    score, 
+                    total: investments.length,
+                    defaultValue: `You correctly matched ${score} out of ${investments.length} investment types with their characteristics!`
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.puzzle-of-investment-types.coinsEarned", { 
+                      coins: score,
+                      defaultValue: `+${score} Coins`
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Understanding investment characteristics helps make informed financial decisions!
+                  {gameContent?.resultSuccessLesson || "Lesson: Understanding investment characteristics helps make informed financial decisions!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Practicing!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultTryAgainHeader || "Keep Practicing!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You matched {score} out of {investments.length} investment types correctly.
+                  {t("financial-literacy.teens.puzzle-of-investment-types.resultTryAgainSubheader", { 
+                    score, 
+                    total: investments.length,
+                    defaultValue: `You matched ${score} out of ${investments.length} investment types correctly.`
+                  })}
                 </p>
                 <p className="text-white/80 text-sm">
-                  Tip: Think about the risk level and nature of each investment type!
+                  {gameContent?.resultTryAgainTip || "Tip: Think about the risk level and nature of each investment type!"}
                 </p>
               </div>
             )}

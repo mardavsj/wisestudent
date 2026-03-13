@@ -1,0 +1,176 @@
+{
+  "title": "बैज: समझदार चुनाव",
+  "subtitleComplete": "बैज पूरा!",
+  "subtitleProgress": "चुनौती {{current}} / {{total}}",
+  "challengeLabel": "चुनौती {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "स्कूल सामान की दुविधा",
+      "question": "आपको स्कूल का सामान चाहिए। समझदार विकल्प कौन-सा है?",
+      "options": [
+        {
+          "id": "designer",
+          "text": "डिज़ाइनर बैग और ट्रेंडी एक्सेसरीज़",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "दोनों - जो मन चाहे सब खरीदो",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "कुछ भी मत खरीदो",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "basic",
+          "text": "ज़रूरी स्कूल सामान (पेन, कॉपी)",
+          "emoji": "📝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "फ़ोन अपग्रेड की दुविधा",
+      "question": "आपका फ़ोन पुराना और धीमा है। समझदार विकल्प क्या है?",
+      "options": [
+        {
+          "id": "wants-first",
+          "text": "ज़रूरत से पहले इच्छाएँ पूरी करो",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "basic-phone",
+          "text": "कॉल और मैसेज के लिए बेसिक फ़ोन",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "latest",
+          "text": "सारे फ़ीचर वाला नवीनतम स्मार्टफ़ोन",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "no-phone",
+          "text": "कोई फ़ोन मत खरीदो",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "फ़िटनेस की दुविधा",
+      "question": "आप फ़िट रहना चाहते हैं। समझदार विकल्प कौन-सा है?",
+      "options": [
+        {
+          "id": "gym",
+          "text": "नियमित व्यायाम के लिए जिम मेम्बरशिप",
+          "emoji": "💪",
+          "isCorrect": true
+        },
+        {
+          "id": "tracker",
+          "text": "महँगा फ़िटनेस ट्रैकर और स्मार्टवॉच",
+          "emoji": "⌚",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "जिम और ट्रैकर दोनों",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "skip-fitness",
+          "text": "फ़िटनेस पूरी तरह छोड़ दो",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "पढ़ाई सेटअप की दुविधा",
+      "question": "आप परीक्षा की तैयारी कर रहे हैं। समझदार विकल्प क्या है?",
+      "options": [
+        {
+          "id": "premium-setup",
+          "text": "नॉइज़-कैंसलिंग हेडफ़ोन और प्रीमियम डेस्क सेटअप",
+          "emoji": "🎧",
+          "isCorrect": false
+        },
+        {
+          "id": "buy-premium",
+          "text": "सब कुछ प्रीमियम खरीदो",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "quiet-study",
+          "text": "शांत पढ़ाई की जगह और किताबें",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "no-materials",
+          "text": "बिना किसी सामग्री के पढ़ो",
+          "emoji": "📖",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "कपड़ों की दुविधा",
+      "question": "आपको स्कूल के लिए कपड़े चाहिए। समझदार विकल्प कौन-सा है?",
+      "options": [
+        {
+          "id": "designer-clothes",
+          "text": "डिज़ाइनर कपड़े और ट्रेंडी फ़ैशन आइटम",
+          "emoji": "👔",
+          "isCorrect": false
+        },
+        {
+          "id": "only-designer",
+          "text": "सिर्फ़ डिज़ाइनर आइटम खरीदो",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "no-clothes",
+          "text": "कोई कपड़े मत खरीदो",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "essential",
+          "text": "स्कूल और मौसम के लिए ज़रूरी कपड़े",
+          "emoji": "👕",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "समझदार चुनाव बैज अर्जित!",
+    "winMessage": "आपने {{total}} में से {{score}} चुनौतियाँ सही की! आप सच्चे समझदार चुनावकर्ता हैं!",
+    "coinsEarned": "+{{score}} सिक्के",
+    "lesson": "सीख: समझदार विकल्प इच्छाओं से पहले ज़रूरतों को प्राथमिकता देते हैं, जो वित्तीय कल्याण और सुरक्षित भविष्य बनाने में मदद करते हैं!",
+    "loseEmoji": "💪",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} चुनौतियाँ सही की। अभ्यास से समझदार चुनाव और बेहतर होंगे!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "सुझाव: समझदार वित्तीय फ़ैसले लेने के लिए इच्छाओं (luxury आइटम) से पहले ज़रूरतों (essential आइटम) को प्राथमिकता देना याद रखें!"
+  }
+}

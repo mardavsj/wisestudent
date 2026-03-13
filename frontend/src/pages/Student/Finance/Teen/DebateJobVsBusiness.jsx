@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const DebateJobVsBusiness = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-76");
   const gameId = gameData?.id || "finance-teens-76";
+  const gameContent = t("financial-literacy.teens.debate-job-vs-business", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -28,53 +31,7 @@ const DebateJobVsBusiness = () => {
   const [answered, setAnswered] = useState(false);
   const [gameComplete, setGameComplete] = useState(false);
 
-  const debateTopics = [
-    {
-      id: 1,
-      scenario: "Is it better to do a job or start a business?",
-      positions: [
-        { id: "business", text: "Business builds independence", emoji: "💡", points: ["Own your time", "Unlimited earning", "Build wealth"], isCorrect: true },
-        { id: "balanced", text: "Depends on person", emoji: "⚠️", points: ["Job for security", "Business for growth", "Choose wisely"], isCorrect: false },
-        { id: "job", text: "Job is always better", emoji: "🚫", points: ["Guaranteed income", "Less risk", "Stable life"], isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      scenario: "Which offers more financial freedom?",
-      positions: [
-        { id: "balanced2", text: "Both can work", emoji: "📋", points: ["Job provides security", "Business provides growth", "Depends on goals"], isCorrect: false },
-        { id: "business2", text: "Business wins", emoji: "🎓", points: ["Unlimited income", "Own decisions", "Build assets"], isCorrect: true },
-        { id: "job2", text: "Job wins", emoji: "🎯", points: ["Fixed salary", "Limited growth", "Dependent on employer"], isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      scenario: "Which has more risk?",
-      positions: [
-        { id: "business3", text: "Business has more risk", emoji: "📈", points: ["Can lose money", "No guaranteed income", "Market risks"], isCorrect: true },
-        { id: "same", text: "Both equal risk", emoji: "📊", points: ["Equal risk", "No difference", "Same challenges"], isCorrect: false },
-        { id: "job3", text: "Job has more risk", emoji: "🏦", points: ["Job is riskier", "Can be fired", "Less secure"], isCorrect: false }
-      ]
-    },
-    {
-      id: 4,
-      scenario: "What's better for long-term wealth?",
-      positions: [
-        { id: "business4", text: "Business for wealth", emoji: "💼", points: ["Build assets", "Scalable income", "Create value"], isCorrect: true },
-        { id: "balanced3", text: "Both can work", emoji: "🔐", points: ["Job with savings", "Business with risk", "Mix both"], isCorrect: false },
-        { id: "job4", text: "Job for wealth", emoji: "🎲", points: ["Fixed income", "Limited growth", "Salary only"], isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      scenario: "Which requires more responsibility?",
-      positions: [
-        { id: "balanced4", text: "Both have responsibility", emoji: "⏱️", points: ["Job: work duties", "Business: everything", "Both matter"], isCorrect: false },
-        { id: "business5", text: "Business requires more", emoji: "⏰", points: ["Full responsibility", "All decisions", "Success or failure"], isCorrect: true },
-        { id: "job5", text: "Job requires more", emoji: "💸", points: ["Less responsibility", "Follow orders", "Limited scope"], isCorrect: false }
-      ]
-    }
-  ];
+  const debateTopics = Array.isArray(gameContent?.debateTopics) ? gameContent.debateTopics : [];
 
   const handlePositionSelect = (positionId) => {
     if (answered) return;
@@ -120,8 +77,15 @@ const DebateJobVsBusiness = () => {
 
   return (
     <GameShell
-      title="Debate: Job vs Business"
-      subtitle={!showResult ? `Round ${currentRound + 1} of ${debateTopics.length}` : "Debate Complete!"}
+      title={gameContent?.title || "Debate: Job vs Business"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.debate-job-vs-business.subtitleProgress", {
+            current: currentRound + 1,
+            total: debateTopics.length,
+            defaultValue: "Round {{current}} of {{total}}",
+          })
+        : (gameContent?.subtitleComplete || "Debate Complete!")
+      }
       score={score}
       currentLevel={currentRound + 1}
       totalLevels={debateTopics.length}
@@ -143,8 +107,20 @@ const DebateJobVsBusiness = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Round {currentRound + 1}/{debateTopics.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{debateTopics.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.debate-job-vs-business.roundLabel", {
+                    current: currentRound + 1,
+                    total: debateTopics.length,
+                    defaultValue: "Round {{current}}/{{total}}",
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.debate-job-vs-business.scoreLabel", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "Score: {{score}}/{{total}}",
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -185,35 +161,46 @@ const DebateJobVsBusiness = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Debate Complete!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.winTitle || "Debate Complete!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {debateTopics.length} correct!
-                  You understand the job vs business debate!
+                  {t("financial-literacy.teens.debate-job-vs-business.result.winMessage", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You understand the job vs business debate!",
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.debate-job-vs-business.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins",
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Business builds independence and wealth but has more risk. Jobs offer security but limited growth. The best choice depends on your goals and risk tolerance!
+                  {gameContent?.result?.lesson || "Lesson: Business builds independence and wealth but has more risk. Jobs offer security but limited growth. The best choice depends on your goals and risk tolerance!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.loseTitle || "Keep Learning!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {debateTopics.length} correct.
-                  Remember, business builds independence but has more risk. Jobs offer security but limited growth!
+                  {t("financial-literacy.teens.debate-job-vs-business.result.loseMessage", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember, business builds independence but has more risk. Jobs offer security but limited growth!",
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Business offers independence and unlimited earning potential but has more risk. Jobs offer security but limited growth. Choose based on your goals!
+                  {gameContent?.result?.tip || "Tip: Business offers independence and unlimited earning potential but has more risk. Jobs offer security but limited growth. Choose based on your goals!"}
                 </p>
               </div>
             )}
@@ -225,4 +212,3 @@ const DebateJobVsBusiness = () => {
 };
 
 export default DebateJobVsBusiness;
-

@@ -1,0 +1,33 @@
+{
+  "title": "पहेली: बचत के लक्ष्य",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "लक्ष्यों को उद्देश्यों के साथ मिलाएँ ({{current}}/{{total}} मिलान)",
+  "goalsTitle": "बचत के लक्ष्य",
+  "purposesTitle": "बचत के उद्देश्य",
+  "matchButton": "मिलान करें",
+  "selectGoalLabel": "एक बचत लक्ष्य चुनें",
+  "selectedGoalLabel": "चुना गया: {{name}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "resultSuccessHeader": "बहुत अच्छा!",
+  "resultSuccessSubheader": "आपने {{total}} में से {{score}} बचत लक्ष्यों का उनके उद्देश्यों के साथ सही मिलान किया है!",
+  "resultSuccessLesson": "सबक: स्पष्ट बचत लक्ष्य निर्धारित करने से वित्तीय सुरक्षा प्राप्त करने में मदद मिलती है!",
+  "resultTryAgainHeader": "अभ्यास जारी रखें!",
+  "resultTryAgainSubheader": "आपने {{score}} बचत लक्ष्यों को सही ढंग से मिलाया है।",
+  "resultTryAgainTip": "सुझाव: प्रत्येक बचत लक्ष्य के प्राथमिक लाभ के बारे में सोचें!",
+  "coinsEarned": "+{{coins}} सिक्के",
+  "goals": [
+    { "id": 1, "name": "शिक्षा", "emoji": "📚" },
+    { "id": 2, "name": "आपातकालीन कोष", "emoji": "🚑" },
+    { "id": 3, "name": "कार", "emoji": "🚗" },
+    { "id": 4, "name": "घर", "emoji": "🏠" },
+    { "id": 5, "name": "सेवानिवृत्ति ", "emoji": "🌅" }
+  ],
+  "purposes": [
+    { "id": 6, "name": "भविष्य का विकास", "emoji": "📈" },
+    { "id": 7, "name": "सुरक्षा जाल", "emoji": "🛡️" },
+    { "id": 8, "name": "गतिशीलता ", "emoji": "🛣️" },
+    { "id": 9, "name": "स्थिरता", "emoji": "🏛️" },
+    { "id": 10, "name": "मानसिक शांति", "emoji": "🧘" }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Secure Use",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your security reflexes!",
+  "subtitleReady": "Test your security reflexes!",
+  "readyHeader": "Ready to Test Your Security Reflexes?",
+  "readyDescription": "Answer questions about secure digital practices.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "securitySkills": "You're developing strong cybersecurity awareness skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the most secure password practice?",
+      "options": [
+        { "id": "strong", "text": "Strong Password", "emoji": "🔒" },
+        { "id": "1234", "text": "1234", "emoji": "🔓" },
+        { "id": "password", "text": "password", "emoji": "⚠️" },
+        { "id": "reuse", "text": "Reuse passwords", "emoji": "🔁" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What adds an extra layer of security to accounts?",
+      "options": [
+        { "id": "skip", "text": "Skip OTP", "emoji": "🚫" },
+        { "id": "use_otp", "text": "Use OTP", "emoji": "🔐" },
+        { "id": "ignore", "text": "Ignore verification", "emoji": "😊" },
+        { "id": "disable", "text": "Disable 2FA", "emoji": "❌" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What should you verify before entering sensitive data online?",
+      "options": [
+        { "id": "ignore_https", "text": "Ignore HTTPS", "emoji": "🌐" },
+        { "id": "trust", "text": "Trust all sites", "emoji": "😊" },
+        { "id": "check_https", "text": "Check HTTPS", "emoji": "🔒" },
+        { "id": "public_wifi", "text": "Use public WiFi", "emoji": "📶" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "How should you protect your payment information?",
+      "options": [
+        { "id": "hide_cvv", "text": "Hide CVV", "emoji": "🛡️" },
+        { "id": "share_cvv", "text": "Share CVV", "emoji": "📢" },
+        { "id": "post_cvv", "text": "Post CVV online", "emoji": "🌐" },
+        { "id": "save_card", "text": "Save card details", "emoji": "💾" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "How often should you change your passwords?",
+      "options": [
+        { "id": "keep_old", "text": "Keep Old Password", "emoji": "📜" },
+        { "id": "update", "text": "Update Password", "emoji": "🔄" },
+        { "id": "never", "text": "Never change password", "emoji": "❌" },
+        { "id": "yearly", "text": "Change yearly", "emoji": "📅" }
+      ]
+    }
+  ]
+}

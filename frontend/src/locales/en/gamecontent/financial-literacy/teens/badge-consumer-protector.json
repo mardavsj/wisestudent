@@ -1,0 +1,69 @@
+{
+  "title": "Badge: Consumer Protector",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessTitle": "Consumer Protector Badge Earned!",
+  "resultSuccessText": "You got {{score}} out of {{total}} challenges correct! You're a true Consumer Protector!",
+  "resultSuccessLesson": "Lesson: Being aware of consumer rights and fraud risks helps you protect your hard-earned money.",
+  "resultFailTitle": "Keep Learning!",
+  "resultFailText": "You got {{score}} out of {{total}} challenges correct. Learn more about consumer safety!",
+  "resultFailTip": "Tip: Never share sensitive details like OTP or bank info, and always report suspicious links and calls!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Fraud Case 1",
+      "question": "You receive a fake call asking for bank details. What do you do?",
+      "options": [
+        { "text": "Refuse and report", "emoji": "🚫", "isCorrect": true },
+        { "text": "Share details", "emoji": "💳", "isCorrect": false },
+        { "text": "Ignore the call", "emoji": "😴", "isCorrect": false },
+        { "text": "Ask for more info", "emoji": "🤔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Fraud Case 2",
+      "question": "You get a suspicious message with a link. What's your action?",
+      "options": [
+        { "text": "Click the link", "emoji": "🔗", "isCorrect": false },
+        { "text": "Delete and report", "emoji": "🗑️", "isCorrect": true },
+        { "text": "Forward to friends", "emoji": "📤", "isCorrect": false },
+        { "text": "Save for later", "emoji": "💾", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Fraud Case 3",
+      "question": "Someone asks for your OTP. How do you respond?",
+      "options": [
+        { "text": "Never share OTP", "emoji": "🔒", "isCorrect": true },
+        { "text": "Share if they ask nicely", "emoji": "😊", "isCorrect": false },
+        { "text": "Give partial OTP", "emoji": "🔢", "isCorrect": false },
+        { "text": "Share with everyone", "emoji": "📢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Fraud Case 4",
+      "question": "You get a defective product. What should you do?",
+      "options": [
+        { "text": "Accept it", "emoji": "😔", "isCorrect": false },
+        { "text": "Complain to Consumer Court", "emoji": "⚖️", "isCorrect": true },
+        { "text": "Ignore it", "emoji": "😴", "isCorrect": false },
+        { "text": "Throw it away", "emoji": "🗑️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Fraud Case 5",
+      "question": "You see an unrealistic investment offer. What's your response?",
+      "options": [
+        { "text": "Invest immediately", "emoji": "💰", "isCorrect": false },
+        { "text": "Refuse and report scam", "emoji": "🚨", "isCorrect": true },
+        { "text": "Think about it", "emoji": "🤔", "isCorrect": false },
+        { "text": "Share with others", "emoji": "📢", "isCorrect": false }
+      ]
+    }
+  ]
+}

@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BadgeSmartInvestor = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-70");
   const gameId = gameData?.id || "finance-teens-70";
-  
-  // Ensure gameId is always set correctly
-  if (!gameData || !gameData.id) {
-    console.warn("Game data not found for BadgeSmartInvestor, using fallback ID");
-  }
+  const gameContent = t("financial-literacy.teens.badge-smart-investor", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+
   const [challenge, setChallenge] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
@@ -27,143 +26,7 @@ const BadgeSmartInvestor = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Investment Strategy",
-      question: "What's the best investment strategy?",
-      options: [
-        { 
-          text: "Diversify investments", 
-          emoji: "📊", 
-          isCorrect: true
-        },
-        { 
-          text: "Put all in one place", 
-          emoji: "🎯", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid all investments", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          text: "Invest without research", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Long-term Planning",
-      question: "When should you start investing?",
-      options: [
-        { 
-          text: "Wait until you're old", 
-          emoji: "⏳", 
-          isCorrect: false
-        },
-        { 
-          text: "Start early and consistently", 
-          emoji: "🌱", 
-          isCorrect: true
-        },
-        { 
-          text: "Never invest", 
-          emoji: "❌", 
-          isCorrect: false
-        },
-        { 
-          text: "Only when rich", 
-          emoji: "💰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Risk Management",
-      question: "How should you handle investment risk?",
-      options: [
-        { 
-          text: "Take maximum risk", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid all risk", 
-          emoji: "🛡️", 
-          isCorrect: false
-        },
-        { 
-          text: "Balance risk and return", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          text: "Ignore risk completely", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Research Before Investing",
-      question: "What should you do before investing?",
-      options: [
-        { 
-          text: "Research and understand", 
-          emoji: "🔍", 
-          isCorrect: true
-        },
-        { 
-          text: "Invest blindly", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          text: "Follow others blindly", 
-          emoji: "👥", 
-          isCorrect: false
-        },
-        { 
-          text: "Invest without thinking", 
-          emoji: "⚡", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Investment Goals",
-      question: "What's important for smart investing?",
-      options: [
-        { 
-          text: "No goals needed", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Invest randomly", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        { 
-          text: "Set clear goals and plan", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-        { 
-          text: "Ignore planning", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;
@@ -200,10 +63,20 @@ const BadgeSmartInvestor = () => {
     resetFeedback();
   };
 
+  const currentChallengeData = challenges[challenge];
+
   return (
     <GameShell
-      title="Badge: Smart Investor"
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      title={gameContent?.title || "Badge: Smart Investor"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("financial-literacy.teens.badge-smart-investor.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       score={score}
       currentLevel={challenge + 1}
       totalLevels={challenges.length}
@@ -221,21 +94,33 @@ const BadgeSmartInvestor = () => {
       gameType="finance"
     >
       <div className="space-y-8">
-        {!showResult && challenges[challenge] ? (
+        {!showResult && currentChallengeData ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.badge-smart-investor.subtitleProgress", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.badge-smart-investor.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+                </span>
               </div>
               
-              <h3 className="text-xl font-bold text-white mb-2">{challenges[challenge].title}</h3>
+              <h3 className="text-xl font-bold text-white mb-2">{currentChallengeData.title}</h3>
               <p className="text-white text-lg mb-6">
-                {challenges[challenge].question}
+                {currentChallengeData.question}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {challenges[challenge].options.map((option, idx) => (
+                {currentChallengeData.options.map((option, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
@@ -262,30 +147,40 @@ const BadgeSmartInvestor = () => {
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🏆</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Smart Investor Badge Earned!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessTitle || "Smart Investor Badge Earned!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {challenges.length} challenges correct!
-                  You're a true Smart Investor expert!
+                  {t("financial-literacy.teens.badge-smart-investor.resultSuccessText", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct! You're a true Smart Investor expert!`,
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
                   <span>+{score} Coins</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Smart investing means diversifying, starting early, balancing risk, researching before investing, and setting clear goals!
+                  {gameContent?.resultSuccessLesson || "Lesson: Smart investing means diversifying, starting early, balancing risk, researching before investing, and setting clear goals!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultFailTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {challenges.length} challenges correct.
-                  Practice makes perfect with smart investing!
+                  {t("financial-literacy.teens.badge-smart-investor.resultFailText", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct. Practice makes perfect with smart investing!`,
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
@@ -294,16 +189,15 @@ const BadgeSmartInvestor = () => {
                   Try Again
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Always diversify investments, start early, balance risk and return, research before investing, and set clear goals!
+                  {gameContent?.resultFailTip || "Tip: Always diversify investments, start early, balance risk and return, research before investing, and set clear goals!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );
 };
 
 export default BadgeSmartInvestor;
-

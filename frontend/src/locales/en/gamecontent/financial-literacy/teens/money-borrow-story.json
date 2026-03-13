@@ -1,0 +1,141 @@
+{
+  "title": "Money Borrow Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Teen borrows ₹100 from a friend. Forgetting to repay?",
+      "options": [
+        {
+          "id": "wrong",
+          "text": "Wrong - Always repay",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "okay",
+          "text": "Okay to forget",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "Maybe later",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You borrowed ₹200. When should you repay?",
+      "options": [
+        {
+          "id": "never",
+          "text": "Never repay",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "on-time",
+          "text": "On time as promised",
+          "emoji": "🙂‍↔️",
+          "isCorrect": true
+        },
+        {
+          "id": "whenever",
+          "text": "Whenever you feel like",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Friend asks to borrow ₹50. What should you consider?",
+      "options": [
+        {
+          "id": "lend",
+          "text": "Lend if you can afford",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "Always lend everything",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "Never lend to anyone",
+          "emoji": "🔒",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You can't repay on time. What should you do?",
+      "options": [
+        {
+          "id": "hide",
+          "text": "Hide and avoid friend",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "communicate",
+          "text": "Communicate and explain",
+          "emoji": "💬",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore the debt",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What's the best practice for borrowing money?",
+      "options": [
+        {
+          "id": "borrow-often",
+          "text": "Borrow often from friends",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-wisely",
+          "text": "Borrow only when necessary and repay promptly",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "never-repay",
+          "text": "Borrow but never repay",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Borrowing Star!",
+    "winMessage": "You got {{score}} out of {{total}} correct! Great job learning about responsible borrowing!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Always repay borrowed money on time, communicate if you can't, and borrow only when necessary. This builds trust and maintains relationships!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} correct. Remember to always repay borrowed money on time!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Always repay borrowed money on time, communicate honestly if you can't repay, and borrow only when necessary and affordable!"
+  }
+}

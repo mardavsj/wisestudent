@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BadgeWiseChooser = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-40");
   const gameId = gameData?.id || "finance-teens-40";
+  const gameContent = t("financial-literacy.teens.badge-wise-chooser", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,146 +30,7 @@ const BadgeWiseChooser = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "School Supplies Dilemma",
-      question: "You need school supplies. Which is the wise choice?",
-      options: [
-        
-        { 
-          text: "Designer backpack and trendy accessories", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          text: "Both - buy everything you want", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          text: "Skip buying anything", 
-          emoji: "❌", 
-          isCorrect: false
-        },
-        { 
-          text: "Basic school supplies (pens, notebooks)", 
-          emoji: "📝", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      title: "Phone Upgrade Dilemma",
-      question: "Your phone is old and slow. What's the wise choice?",
-      options: [
-        { 
-          text: "Buy wants before needs", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          text: "Basic phone for calls and messages", 
-          emoji: "📱", 
-          isCorrect: true
-        },
-        { 
-          text: "Latest smartphone with all features", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          text: "Don't buy any phone", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Fitness Dilemma",
-      question: "You want to stay fit. Which is the wise choice?",
-      options: [
-        { 
-          text: "Gym membership for regular exercise", 
-          emoji: "💪", 
-          isCorrect: true
-        },
-        { 
-          text: "Expensive fitness tracker and smartwatch", 
-          emoji: "⌚", 
-          isCorrect: false
-        },
-        { 
-          text: "Both gym and tracker", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          text: "Skip fitness entirely", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Study Setup Dilemma",
-      question: "You're preparing for an exam. What's the wise choice?",
-      options: [
-        
-        { 
-          text: "Noise-canceling headphones and premium desk setup", 
-          emoji: "🎧", 
-          isCorrect: false
-        },
-        { 
-          text: "Buy everything premium", 
-          emoji: "💎", 
-          isCorrect: false
-        },
-        { 
-          text: "Quiet study space and textbooks", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          text: "Study without any materials", 
-          emoji: "📖", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Clothing Dilemma",
-      question: "You need clothing for school. Which is the wise choice?",
-      options: [
-        
-        { 
-          text: "Designer clothes and trendy fashion items", 
-          emoji: "👔", 
-          isCorrect: false
-        },
-        { 
-          text: "Buy only designer items", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          text: "Don't buy any clothes", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          text: "Essential clothing for school and weather", 
-          emoji: "👕", 
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;
@@ -205,8 +69,15 @@ const BadgeWiseChooser = () => {
 
   return (
     <GameShell
-      title="Badge: Wise Chooser"
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      title={gameContent?.title || "Badge: Wise Chooser"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.badge-wise-chooser.subtitleProgress", {
+            current: challenge + 1,
+            total: challenges.length,
+            defaultValue: "Challenge {{current}} of {{total}}",
+          })
+        : (gameContent?.subtitleComplete || "Badge Complete!")
+      }
       score={score}
       currentLevel={challenge + 1}
       totalLevels={challenges.length}
@@ -228,8 +99,20 @@ const BadgeWiseChooser = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.badge-wise-chooser.challengeLabel", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: "Challenge {{current}}/{{total}}",
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.badge-wise-chooser.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: "Score: {{score}}/{{total}}",
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{challenges[challenge].title}</h3>
@@ -240,7 +123,7 @@ const BadgeWiseChooser = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {challenges[challenge].options.map((option, idx) => (
                   <button
-                    key={idx}
+                    key={option.id || idx}
                     onClick={() => {
                       setSelectedAnswer(idx);
                       handleAnswer(option.isCorrect);
@@ -269,35 +152,46 @@ const BadgeWiseChooser = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🏆</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Wise Chooser Badge Earned!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🏆"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.winTitle || "Wise Chooser Badge Earned!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {challenges.length} challenges correct!
-                  You're a true Wise Chooser!
+                  {t("financial-literacy.teens.badge-wise-chooser.result.winMessage", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: "You got {{score}} out of {{total}} challenges correct! You're a true Wise Chooser!",
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.badge-wise-chooser.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins",
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Wise choices prioritize needs over wants, helping you achieve financial wellness and build a secure future!
+                  {gameContent?.result?.lesson || "Lesson: Wise choices prioritize needs over wants, helping you achieve financial wellness and build a secure future!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.loseTitle || "Keep Learning!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {challenges.length} challenges correct.
-                  Practice makes perfect with wise choosing!
+                  {t("financial-literacy.teens.badge-wise-chooser.result.loseMessage", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: "You got {{score}} out of {{total}} challenges correct. Practice makes perfect with wise choosing!",
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Remember to prioritize needs (essential items) over wants (luxury items) to make wise financial choices!
+                  {gameContent?.result?.tip || "Tip: Remember to prioritize needs (essential items) over wants (luxury items) to make wise financial choices!"}
                 </p>
               </div>
             )}
@@ -309,4 +203,3 @@ const BadgeWiseChooser = () => {
 };
 
 export default BadgeWiseChooser;
-

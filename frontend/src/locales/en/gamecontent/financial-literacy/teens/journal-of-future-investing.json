@@ -1,0 +1,51 @@
+{
+  "title": "Journal of Future Investing",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "journalEntryHeader": "Journal Entry",
+  "placeholder": "Type your response here...",
+  "minCharsRequired": "Minimum {{min}} characters required",
+  "buttonSubmit": "Submit & Continue",
+  "buttonComplete": "Complete Journal",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "One investment I'd like to try when older is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "One reason I want to invest is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "One way I'll prepare to invest is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "One investment goal I have is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "One thing I learned about investing is ___.",
+      "minLength": 10
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Journal Complete!",
+    "winMessage": "You completed {{score}} out of {{total}} entries! Great job planning your investment future!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Planning your investment future helps you set goals, prepare, and make smart investment decisions when you're ready!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You completed {{score}} out of {{total}} entries. Remember, planning your investment future helps you make better decisions!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Think about what investments you'd like to try, why you want to invest, and how you'll prepare for investing in the future!"
+  }
+}

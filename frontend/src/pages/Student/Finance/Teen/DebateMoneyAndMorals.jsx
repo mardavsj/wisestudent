@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const DebateMoneyAndMorals = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-96");
   const gameId = gameData?.id || "finance-teens-96";
+  const gameContent = t("financial-literacy.teens.debate-money-and-morals", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,138 +29,7 @@ const DebateMoneyAndMorals = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const rounds = [
-    {
-      id: 1,
-      statement: "Does money test character?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes, ethics matter more", 
-          emoji: "🙂", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No, money doesn't matter", 
-          emoji: "🤷", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe, depends", 
-          emoji: "🤔", 
-         
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      statement: "Should you compromise ethics for money?",
-      options: [
-        { 
-          id: "sometimes", 
-          text: "Sometimes okay", 
-          emoji: "🤷", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "never", 
-          text: "Never compromise", 
-          emoji: "🛡️", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "always", 
-          text: "Money is priority", 
-          emoji: "💰", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      statement: "What's more important: wealth or integrity?",
-      options: [
-        { 
-          id: "wealth", 
-          text: "Wealth", 
-          emoji: "💵", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "both", 
-          text: "Both equally", 
-          emoji: "⚖️", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "integrity", 
-          text: "Integrity", 
-          emoji: "💎", 
-          
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      statement: "Can you be rich and ethical?",
-      options: [
-        { 
-          id: "yes2", 
-          text: "Yes, absolutely", 
-          emoji: "✨", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "no2", 
-          text: "No, impossible", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          id: "rarely", 
-          text: "Rarely possible", 
-          emoji: "😕", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      statement: "What builds lasting success?",
-      options: [
-        { 
-          id: "shortcuts", 
-          text: "Shortcuts and tricks", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "ethics", 
-          text: "Ethics and honesty", 
-          emoji: "🏆", 
-          isCorrect: true
-        },
-        { 
-          id: "luck", 
-          text: "Luck only", 
-          emoji: "🍀", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const rounds = Array.isArray(gameContent?.rounds) ? gameContent.rounds : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -192,8 +64,15 @@ const DebateMoneyAndMorals = () => {
 
   return (
     <GameShell
-      title="Debate: Money & Morals"
-      subtitle={!showResult ? `Round ${currentRound + 1} of ${rounds.length}` : "Debate Complete!"}
+      title={gameContent?.title || "Debate: Money & Morals"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.debate-money-and-morals.subtitleProgress", {
+            current: currentRound + 1,
+            total: rounds.length,
+            defaultValue: "Round {{current}} of {{total}}",
+          })
+        : (gameContent?.subtitleComplete || "Debate Complete!")
+      }
       score={score}
       currentLevel={currentRound + 1}
       totalLevels={rounds.length}
@@ -215,8 +94,20 @@ const DebateMoneyAndMorals = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Round {currentRound + 1}/{rounds.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{rounds.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.debate-money-and-morals.roundLabel", {
+                    current: currentRound + 1,
+                    total: rounds.length,
+                    defaultValue: "Round {{current}}/{{total}}",
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.debate-money-and-morals.scoreLabel", {
+                    score,
+                    total: rounds.length,
+                    defaultValue: "Score: {{score}}/{{total}}",
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -240,7 +131,7 @@ const DebateMoneyAndMorals = () => {
                     <div className="flex flex-col items-center justify-center gap-3">
                       <span className="text-4xl">{option.emoji}</span>
                       <span className="font-semibold text-lg">{option.text}</span>
-                      <p className="text-sm opacity-90">{option.description}</p>
+                      {option.description && <p className="text-sm opacity-90">{option.description}</p>}
                     </div>
                   </button>
                 ))}
@@ -254,4 +145,3 @@ const DebateMoneyAndMorals = () => {
 };
 
 export default DebateMoneyAndMorals;
-

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const DebateCashVsDigital = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-46");
   const gameId = gameData?.id || "finance-teens-46";
+  const gameContent = t("financial-literacy.teens.debate-cash-vs-digital", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -28,53 +31,7 @@ const DebateCashVsDigital = () => {
   const [answered, setAnswered] = useState(false);
   const [gameComplete, setGameComplete] = useState(false);
 
-  const debateTopics = [
-    {
-      id: 1,
-      scenario: "Which is better for the future — cash or digital money?",
-      positions: [
-        { id: "digital", text: "FOR: Digital with safety", emoji: "📱", points: ["Convenient", "Trackable", "Secure with precautions"], isCorrect: true },
-        { id: "balanced", text: "BALANCED: Use both wisely", emoji: "⚖️", points: ["Cash for small purchases", "Digital for online", "Balance both methods"], isCorrect: false },
-        { id: "cash", text: "AGAINST: Cash is better", emoji: "💵", points: ["No tech needed", "Physical control", "Traditional"], isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      scenario: "Is digital money safer than cash?",
-      positions: [
-        { id: "balanced", text: "BALANCED: Both have risks", emoji: "⚖️", points: ["Digital: cyber risks", "Cash: physical theft", "Use both carefully"], isCorrect: false },
-        { id: "digital", text: "FOR: Digital is safer", emoji: "🔒", points: ["Can be tracked", "Protected by banks", "Can be frozen if stolen"], isCorrect: true },
-        { id: "cash", text: "AGAINST: Cash is safer", emoji: "💰", points: ["No hacking risk", "Physical control", "No digital fraud"], isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      scenario: "Should we move completely to digital payments?",
-      positions: [
-        { id: "cash", text: "AGAINST: Keep cash", emoji: "💵", points: ["Not everyone has tech", "Backup option", "Privacy concerns"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Transition gradually", emoji: "⚖️", points: ["Support both methods", "Educate people", "Gradual change"], isCorrect: false },
-        { id: "digital", text: "FOR: Go fully digital", emoji: "📱", points: ["Modern and efficient", "Better tracking", "Future-ready"], isCorrect: true }
-      ]
-    },
-    {
-      id: 4,
-      scenario: "Which is more convenient for daily use?",
-      positions: [
-        { id: "digital", text: "FOR: Digital is convenient", emoji: "📲", points: ["Quick transactions", "No need for change", "Works everywhere"], isCorrect: true },
-        { id: "cash", text: "AGAINST: Cash is convenient", emoji: "💵", points: ["No battery needed", "Works offline", "Simple to use"], isCorrect: false },
-        { id: "balanced", text: "BALANCED: Both have benefits", emoji: "⚖️", points: ["Digital for online", "Cash for offline", "Use what works"], isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      scenario: "Can digital money replace cash completely?",
-      positions: [
-        { id: "balanced", text: "BALANCED: Coexist together", emoji: "⚖️", points: ["Digital for most", "Cash as backup", "Both have roles"], isCorrect: false },
-        { id: "digital", text: "FOR: Yes, with safety", emoji: "🔐", points: ["Technology advances", "Better security", "More efficient"], isCorrect: true },
-        { id: "cash", text: "AGAINST: Cash is essential", emoji: "💰", points: ["Universal acceptance", "No tech barriers", "Always available"], isCorrect: false }
-      ]
-    }
-  ];
+  const debateTopics = Array.isArray(gameContent?.debateTopics) ? gameContent.debateTopics : [];
 
   const handlePositionSelect = (positionId) => {
     if (answered) return;
@@ -120,8 +77,15 @@ const DebateCashVsDigital = () => {
 
   return (
     <GameShell
-      title="Debate: Cash vs Digital"
-      subtitle={!showResult ? `Round ${currentRound + 1} of ${debateTopics.length}` : "Debate Complete!"}
+      title={gameContent?.title || "Debate: Cash vs Digital"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.debate-cash-vs-digital.subtitleProgress", {
+            current: currentRound + 1,
+            total: debateTopics.length,
+            defaultValue: "Round {{current}} of {{total}}",
+          })
+        : (gameContent?.subtitleComplete || "Debate Complete!")
+      }
       score={score}
       currentLevel={currentRound + 1}
       totalLevels={debateTopics.length}
@@ -143,8 +107,20 @@ const DebateCashVsDigital = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Round {currentRound + 1}/{debateTopics.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{debateTopics.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.debate-cash-vs-digital.roundLabel", {
+                    current: currentRound + 1,
+                    total: debateTopics.length,
+                    defaultValue: "Round {{current}}/{{total}}",
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.debate-cash-vs-digital.scoreLabel", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "Score: {{score}}/{{total}}",
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -185,35 +161,46 @@ const DebateCashVsDigital = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Debate Complete!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.winTitle || "Debate Complete!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {debateTopics.length} correct!
-                  You understand the future of digital money!
+                  {t("financial-literacy.teens.debate-cash-vs-digital.result.winMessage", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You understand the future of digital money!",
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.debate-cash-vs-digital.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins",
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Digital money with proper safety measures is the future, offering convenience, tracking, and security!
+                  {gameContent?.result?.lesson || "Lesson: Digital money with proper safety measures is the future, offering convenience, tracking, and security!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.loseTitle || "Keep Learning!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {debateTopics.length} correct.
-                  Remember, digital money with safety is the way forward!
+                  {t("financial-literacy.teens.debate-cash-vs-digital.result.loseMessage", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember, digital money with safety is the way forward!",
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Digital money offers convenience, tracking, and security when used safely. It's the future of payments!
+                  {gameContent?.result?.tip || "Tip: Digital money offers convenience, tracking, and security when used safely. It's the future of payments!"}
                 </p>
               </div>
             )}
@@ -225,4 +212,3 @@ const DebateCashVsDigital = () => {
 };
 
 export default DebateCashVsDigital;
-

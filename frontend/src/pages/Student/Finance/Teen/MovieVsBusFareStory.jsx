@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const MovieVsBusFareStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-31");
   const gameId = gameData?.id || "finance-teens-31";
+  const gameContent = t("financial-literacy.teens.movie-vs-bus-fare-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,131 +29,7 @@ const MovieVsBusFareStory = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const questions = [
-    {
-      id: 1,
-      text: "You have ₹100. How should you use it?",
-      options: [
-        { 
-          id: "bus", 
-          text: "Save for bus pass", 
-          emoji: "🚌", 
-          
-          isCorrect: true 
-        },
-        { 
-          id: "movie", 
-          text: "Spend on movie", 
-          emoji: "🎬", 
-         
-          isCorrect: false 
-        },
-        { 
-          id: "split", 
-          text: "Split between both", 
-          emoji: "⚖️", 
-           
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You have ₹150. What's the best choice?",
-      options: [
-        { 
-          id: "snack", 
-          text: "Buy a snack", 
-          emoji: "🍟", 
-          isCorrect: false 
-        },
-        { 
-          id: "bus", 
-          text: "Add to bus fare savings", 
-          emoji: "🛡️", 
-          isCorrect: true 
-        },
-        { 
-          id: "save", 
-          text: "Save everything", 
-          emoji: "💰", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You have ₹200. What should you prioritize?",
-      options: [
-        { 
-          id: "movie", 
-          text: "Movie night", 
-          emoji: "🎥", 
-          isCorrect: false 
-        },
-        { 
-          id: "split", 
-          text: "Split between both", 
-          emoji: "⚖️", 
-          isCorrect: false 
-        },
-        { 
-          id: "bus", 
-          text: "Weekly bus pass", 
-          emoji: "�️", 
-          isCorrect: true 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You have ₹120. What's the smart decision?",
-      options: [
-        { 
-          id: "bus", 
-          text: "Bus ticket", 
-          emoji: "🎟️", 
-          isCorrect: true 
-        },
-        { 
-          id: "popcorn", 
-          text: "Popcorn at movies", 
-          emoji: "🍿", 
-          isCorrect: false 
-        },
-        { 
-          id: "save", 
-          text: "Save all of it", 
-          emoji: "💰", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You have ₹300. What's the best use?",
-      options: [
-        { 
-          id: "cinema", 
-          text: "Cinema tickets", 
-          emoji: "🎬", 
-          isCorrect: false 
-        },
-        { 
-          id: "bus", 
-          text: "Monthly bus pass", 
-          emoji: "Ⓜ️", 
-          isCorrect: true 
-        },
-        { 
-          id: "split", 
-          text: "Split between both", 
-          emoji: "⚖️", 
-          isCorrect: false 
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -187,9 +66,16 @@ const MovieVsBusFareStory = () => {
 
   return (
     <GameShell
-      title="Movie vs Bus Fare Story"
+      title={gameContent?.title || "Movie vs Bus Fare Story"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.movie-vs-bus-fare-story.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Story Complete!")
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -198,9 +84,9 @@ const MovieVsBusFareStory = () => {
       nextGamePathProp="/student/finance/teen/needs-vs-wants-quiz"
       nextGameIdProp="finance-teens-32"
       gameType="finance"
-      totalLevels={questions.length}
+      totalLevels={questions.length || 5}
       currentLevel={currentQuestion + 1}
-      maxScore={questions.length}
+      maxScore={questions.length || 5}
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
@@ -210,11 +96,23 @@ const MovieVsBusFareStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.movie-vs-bus-fare-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.movie-vs-bus-fare-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
-              <p className="text-white text-lg mb-6">
+              <p className="text-white text-lg mb-6 text-center font-bold">
                 {questions[currentQuestion].text}
               </p>
               
@@ -228,50 +126,67 @@ const MovieVsBusFareStory = () => {
                   >
                     <div className="text-3xl mb-3">{option.emoji}</div>
                     <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
+                    {option.description && (
+                      <p className="text-white/90 text-sm">{option.description}</p>
+                    )}
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Great Job!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct!
-                  You understand the importance of prioritizing essential expenses!
+                  {t("financial-literacy.teens.movie-vs-bus-fare-story.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct! You understand the importance of prioritizing essential expenses!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.movie-vs-bus-fare-story.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Prioritize essential expenses like transport over entertainment wants!
+                  {gameContent?.result?.lesson || "Lesson: Prioritize essential expenses like transport over entertainment wants!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">😔</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "😔"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct.
-                  Remember to prioritize essential expenses like transport over wants!
+                  {t("financial-literacy.teens.movie-vs-bus-fare-story.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct. Remember to prioritize essential expenses like transport over wants!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Always prioritize essential expenses like transportation over entertainment wants.
+                  {gameContent?.result?.tip || "Tip: Always prioritize essential expenses like transportation over entertainment wants."}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

@@ -1,0 +1,69 @@
+{
+  "title": "Badge: Smart Investor",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessTitle": "Smart Investor Badge Earned!",
+  "resultSuccessText": "You got {{score}} out of {{total}} challenges correct! You're a true Smart Investor expert!",
+  "resultSuccessLesson": "Lesson: Smart investing means diversifying, starting early, balancing risk, researching before investing, and setting clear goals!",
+  "resultFailTitle": "Keep Learning!",
+  "resultFailText": "You got {{score}} out of {{total}} challenges correct. Practice makes perfect with smart investing!",
+  "resultFailTip": "Tip: Always diversify investments, start early, balance risk and return, research before investing, and set clear goals!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Investment Strategy",
+      "question": "What's the best investment strategy?",
+      "options": [
+        { "text": "Diversify investments", "emoji": "📊", "isCorrect": true },
+        { "text": "Put all in one place", "emoji": "🎯", "isCorrect": false },
+        { "text": "Avoid all investments", "emoji": "🚫", "isCorrect": false },
+        { "text": "Invest without research", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Long-term Planning",
+      "question": "When should you start investing?",
+      "options": [
+        { "text": "Wait until you're old", "emoji": "⏳", "isCorrect": false },
+        { "text": "Start early and consistently", "emoji": "🌱", "isCorrect": true },
+        { "text": "Never invest", "emoji": "❌", "isCorrect": false },
+        { "text": "Only when rich", "emoji": "💰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Risk Management",
+      "question": "How should you handle investment risk?",
+      "options": [
+        { "text": "Take maximum risk", "emoji": "🎲", "isCorrect": false },
+        { "text": "Avoid all risk", "emoji": "🛡️", "isCorrect": false },
+        { "text": "Balance risk and return", "emoji": "⚖️", "isCorrect": true },
+        { "text": "Ignore risk completely", "emoji": "😴", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Research Before Investing",
+      "question": "What should you do before investing?",
+      "options": [
+        { "text": "Research and understand", "emoji": "🔍", "isCorrect": true },
+        { "text": "Invest blindly", "emoji": "🙈", "isCorrect": false },
+        { "text": "Follow others blindly", "emoji": "👥", "isCorrect": false },
+        { "text": "Invest without thinking", "emoji": "⚡", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Investment Goals",
+      "question": "What's important for smart investing?",
+      "options": [
+        { "text": "No goals needed", "emoji": "😴", "isCorrect": false },
+        { "text": "Invest randomly", "emoji": "🎲", "isCorrect": false },
+        { "text": "Set clear goals and plan", "emoji": "🎯", "isCorrect": true },
+        { "text": "Ignore planning", "emoji": "🚫", "isCorrect": false }
+      ]
+    }
+  ]
+}

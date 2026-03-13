@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Debt Control",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your debt management reflexes!",
+  "subtitleReady": "Test your debt management reflexes!",
+  "readyHeader": "Ready to Test Your Debt Management Skills?",
+  "readyDescription": "Answer questions about responsible debt management.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "developingSkills": "You're developing strong debt management skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What's the best approach to borrowing money?",
+      "options": [
+        { "text": "Borrow as much as possible", "id": "borrow_max", "emoji": "💰" },
+        { "text": "Only borrow what you can afford to repay", "id": "afford_repay", "emoji": "✅" },
+        { "text": "Borrow without a repayment plan", "id": "no_plan", "emoji": "📝" },
+        { "text": "Borrow from multiple sources", "id": "multi_source", "emoji": "🏦" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "How should you prioritize debt payments?",
+      "options": [
+        { "text": "Pay the smallest debts first", "id": "smallest", "emoji": "🔢" },
+        { "text": "Pay oldest debts first", "id": "oldest", "emoji": "📅" },
+        { "text": "Pay high-interest debts first", "id": "high_interest", "emoji": "🔥" },
+        { "text": "Pay whichever debt you want", "id": "random", "emoji": "🎲" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What should you do before taking on new debt?",
+      "options": [
+        { "text": "Evaluate if it's truly necessary", "id": "evaluate_necessity", "emoji": "🧐" },
+        { "text": "Take it without thinking", "id": "impulse", "emoji": "🤔" },
+        { "text": "Borrow for luxury items", "id": "luxury", "emoji": "🛍️" },
+        { "text": "Ignore the interest rate", "id": "ignore_rate", "emoji": "💸" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What's a key strategy for managing existing debt?",
+      "options": [
+        { "text": "Ignore the debt", "id": "ignore_debt", "emoji": "🙈" },
+        { "text": "Just make minimum payments", "id": "min_payment", "emoji": "📉" },
+        { "text": "Take on more debt to cover it", "id": "roll_over", "emoji": "🔄" },
+        { "text": "Create a realistic repayment plan", "id": "repayment_plan", "emoji": "📋" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What's the best way to avoid accumulating problematic debt?",
+      "options": [
+        { "text": "Spend as you please", "id": "spend_freely", "emoji": "💳" },
+        { "text": "Live within your means", "id": "within_means", "emoji": "🏠" },
+        { "text": "Always use credit cards", "id": "credit_always", "emoji": "💳" },
+        { "text": "Borrow for every purchase", "id": "borrow_all", "emoji": "🛒" }
+      ]
+    }
+  ]
+}

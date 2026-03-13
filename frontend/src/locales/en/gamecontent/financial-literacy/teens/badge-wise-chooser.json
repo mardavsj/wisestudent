@@ -1,0 +1,176 @@
+{
+  "title": "Badge: Wise Chooser",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "challengeLabel": "Challenge {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "School Supplies Dilemma",
+      "question": "You need school supplies. Which is the wise choice?",
+      "options": [
+        {
+          "id": "designer",
+          "text": "Designer backpack and trendy accessories",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "Both - buy everything you want",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "Skip buying anything",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "basic",
+          "text": "Basic school supplies (pens, notebooks)",
+          "emoji": "📝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Phone Upgrade Dilemma",
+      "question": "Your phone is old and slow. What's the wise choice?",
+      "options": [
+        {
+          "id": "wants-first",
+          "text": "Buy wants before needs",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "basic-phone",
+          "text": "Basic phone for calls and messages",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "latest",
+          "text": "Latest smartphone with all features",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "no-phone",
+          "text": "Don't buy any phone",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Fitness Dilemma",
+      "question": "You want to stay fit. Which is the wise choice?",
+      "options": [
+        {
+          "id": "gym",
+          "text": "Gym membership for regular exercise",
+          "emoji": "💪",
+          "isCorrect": true
+        },
+        {
+          "id": "tracker",
+          "text": "Expensive fitness tracker and smartwatch",
+          "emoji": "⌚",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "Both gym and tracker",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "skip-fitness",
+          "text": "Skip fitness entirely",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Study Setup Dilemma",
+      "question": "You're preparing for an exam. What's the wise choice?",
+      "options": [
+        {
+          "id": "premium-setup",
+          "text": "Noise-canceling headphones and premium desk setup",
+          "emoji": "🎧",
+          "isCorrect": false
+        },
+        {
+          "id": "buy-premium",
+          "text": "Buy everything premium",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "quiet-study",
+          "text": "Quiet study space and textbooks",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "no-materials",
+          "text": "Study without any materials",
+          "emoji": "📖",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Clothing Dilemma",
+      "question": "You need clothing for school. Which is the wise choice?",
+      "options": [
+        {
+          "id": "designer-clothes",
+          "text": "Designer clothes and trendy fashion items",
+          "emoji": "👔",
+          "isCorrect": false
+        },
+        {
+          "id": "only-designer",
+          "text": "Buy only designer items",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "no-clothes",
+          "text": "Don't buy any clothes",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "essential",
+          "text": "Essential clothing for school and weather",
+          "emoji": "👕",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "Wise Chooser Badge Earned!",
+    "winMessage": "You got {{score}} out of {{total}} challenges correct! You're a true Wise Chooser!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Wise choices prioritize needs over wants, helping you achieve financial wellness and build a secure future!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} challenges correct. Practice makes perfect with wise choosing!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Remember to prioritize needs (essential items) over wants (luxury items) to make wise financial choices!"
+  }
+}

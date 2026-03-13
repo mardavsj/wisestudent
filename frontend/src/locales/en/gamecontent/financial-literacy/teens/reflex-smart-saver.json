@@ -1,0 +1,64 @@
+{
+  "title": "Reflex Smart Saver",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your smart saving reflexes!",
+  "subtitleReady": "Test your smart saving reflexes!",
+  "readyHeader": "Get Ready!",
+  "readyDescription": "Answer questions about smart saving habits!",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What should you do to build savings?",
+      "options": [
+        { "id": "plan", "text": "Plan Savings", "emoji": "📝" },
+        { "id": "spend", "text": "Spend Instantly", "emoji": "💸" },
+        { "id": "ignore", "text": "Ignore Budget", "emoji": "🙈" },
+        { "id": "buy", "text": "Buy Everything", "emoji": "🛍️" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What should you do before spending?",
+      "options": [
+        { "id": "impulse", "text": "Impulse Buy", "emoji": "⚡" },
+        { "id": "budget", "text": "Budget First", "emoji": "📊" },
+        { "id": "random", "text": "Spend Randomly", "emoji": "🎲" },
+        { "id": "no_plan", "text": "No Planning", "emoji": "🚫" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What's the best saving habit?",
+      "options": [
+        { "id": "credit", "text": "Buy on Credit", "emoji": "💳" },
+        { "id": "never", "text": "Never Save", "emoji": "❌" },
+        { "id": "regularly", "text": "Save Regularly", "emoji": "💰" },
+        { "id": "spend_all", "text": "Spend All", "emoji": "💸" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What helps you stay focused on saving?",
+      "options": [
+        { "id": "spend_all", "text": "Spend All", "emoji": "💸" },
+        { "id": "no_direction", "text": "No Direction", "emoji": "🤷" },
+        { "id": "ignore_planning", "text": "Ignore Planning", "emoji": "🙈" },
+        { "id": "set_goals", "text": "Set Goals", "emoji": "🎯" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What should you monitor for smart saving?",
+      "options": [
+        { "id": "track", "text": "Track Expenses", "emoji": "📈" },
+        { "id": "no_plan", "text": "No Plan", "emoji": "🚫" },
+        { "id": "ignore_spending", "text": "Ignore Spending", "emoji": "🙈" },
+        { "id": "forget_budget", "text": "Forget Budget", "emoji": "💭" }
+      ]
+    }
+  ]
+}

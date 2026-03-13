@@ -1,0 +1,66 @@
+{
+  "title": "Investment Quiz",
+  "subtitleComplete": "Quiz Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which is riskier but higher return?",
+      "options": [
+        { "id": "fd", "text": "Fixed Deposit", "emoji": "🏦", "isCorrect": false },
+        { "id": "stocks", "text": "Stock Market", "emoji": "📈", "isCorrect": true },
+        { "id": "savings", "text": "Savings Account", "emoji": "💰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Which investment is safest?",
+      "options": [
+        { "id": "fd2", "text": "Fixed Deposit", "emoji": "🛡️", "isCorrect": true },
+        { "id": "stocks2", "text": "Stocks", "emoji": "📊", "isCorrect": false },
+        { "id": "crypto", "text": "Cryptocurrency", "emoji": "₿", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What is diversification?",
+      "options": [
+        { "id": "one", "text": "Put all in one investment", "emoji": "🎯", "isCorrect": false },
+        { "id": "avoid", "text": "Avoid all investments", "emoji": "🚫", "isCorrect": false },
+        { "id": "spread", "text": "Spread across different investments", "emoji": "📊", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What's a mutual fund?",
+      "options": [
+        { "id": "mix", "text": "Mix of stocks and bonds", "emoji": "📦", "isCorrect": true },
+        { "id": "single", "text": "Single company stock", "emoji": "📄", "isCorrect": false },
+        { "id": "bank", "text": "Bank account", "emoji": "🏦", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Why invest instead of just saving?",
+      "options": [
+        { "id": "same", "text": "Same as saving", "emoji": "➡️", "isCorrect": false },
+        { "id": "lose", "text": "Guaranteed to lose", "emoji": "📉", "isCorrect": false },
+        { "id": "grow", "text": "Potential to grow faster", "emoji": "📈", "isCorrect": true }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Quiz Complete!",
+    "winMessage": "You got {{score}} out of {{total}} correct! You understand investments!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Stocks are riskier but offer higher returns. Fixed deposits are safer but lower returns. Diversification reduces risk!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} correct. Remember, stocks are riskier but higher return, while FDs are safer but lower return!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Stock market is riskier but offers higher returns. Fixed deposits are safer but have lower returns. Diversify to reduce risk!"
+  }
+}

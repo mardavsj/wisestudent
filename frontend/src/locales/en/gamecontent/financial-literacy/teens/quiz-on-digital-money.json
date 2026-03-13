@@ -1,0 +1,62 @@
+{
+  "title": "Quiz on Digital Money",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Quiz Complete!",
+  "questionCount": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessHeader": "Digital Money Quiz Star!",
+  "resultSuccessSubheader": "You got {{score}} out of {{total}} correct! You're mastering digital payment security!",
+  "coinsEarned": "+{{coins}} Coins",
+  "resultSuccessLesson": "Lesson: Keep your PIN secret, use OTP, hide CVV, use strong passwords, and check HTTPS for secure digital payments!",
+  "resultTryAgainHeader": "Keep Learning!",
+  "resultTryAgainSubheader": "You got {{score}} out of {{total}} correct. Practice makes perfect with digital payment security!",
+  "tryAgainButton": "Try Again",
+  "resultTryAgainTip": "Tip: Never share your PIN or CVV, always use OTP verification, create strong passwords, and check for HTTPS on websites!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which is safer?",
+      "options": [
+        { "id": "secret", "text": "Keep PIN secret", "emoji": "🔒" },
+        { "id": "share", "text": "Share PIN", "emoji": "🔓" },
+        { "id": "both", "text": "Share with friends", "emoji": "👥" }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What's safer for online payments?",
+      "options": [
+        { "id": "nootp", "text": "Skip OTP", "emoji": "🚫" },
+        { "id": "otp", "text": "Use OTP", "emoji": "🔐" },
+        { "id": "ignore", "text": "Ignore verification", "emoji": "⚠️" }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Which protects your card?",
+      "options": [
+        { "id": "cvv", "text": "Hide CVV", "emoji": "🛡️" },
+        { "id": "sharecvv", "text": "Share CVV", "emoji": "📢" },
+        { "id": "post", "text": "Post CVV online", "emoji": "🌐" }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What's a safe practice?",
+      "options": [
+        { "id": "weak", "text": "Use '1234'", "emoji": "⚠️" },
+        { "id": "strong", "text": "Strong password", "emoji": "🔑" },
+        { "id": "name", "text": "Use your name", "emoji": "👤" }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "How to verify a website?",
+      "options": [
+        { "id": "nohttps", "text": "Ignore HTTPS", "emoji": "🌐" },
+        { "id": "https", "text": "Check HTTPS", "emoji": "🔒" },
+        { "id": "trust", "text": "Trust all sites", "emoji": "😊" }
+      ]
+    }
+  ]
+}

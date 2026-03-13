@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Smart Entrepreneur",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your smart entrepreneur reflexes!",
+  "subtitleReady": "Test your smart entrepreneur reflexes!",
+  "readyHeader": "Ready to Test Your Smart Entrepreneur Reflexes?",
+  "readyDescription": "Answer questions about smart entrepreneurial decisions.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "securitySkills": "You're developing strong entrepreneurial decision-making skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the most important trait of successful entrepreneurs?",
+      "options": [
+        { "id": "plan_risk", "text": "Plan + Risk", "emoji": "📋" },
+        { "id": "spend_all", "text": "Spend All", "emoji": "💸" },
+        { "id": "do_nothing", "text": "Do Nothing", "emoji": "😴" },
+        { "id": "copy_others", "text": "Copy Others", "emoji": "📋" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What should entrepreneurs do before launching a product?",
+      "options": [
+        { "id": "jump_blindly", "text": "Jump in blindly", "emoji": "🙈" },
+        { "id": "research_market", "text": "Research Market", "emoji": "🔍" },
+        { "id": "ignore_customers", "text": "Ignore customers", "emoji": "🚫" },
+        { "id": "guess_demand", "text": "Guess demand", "emoji": "❓" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How should entrepreneurs manage their personal finances?",
+      "options": [
+        { "id": "spend_on_wants", "text": "Spend on wants", "emoji": "🛍️" },
+        { "id": "waste_money", "text": "Waste money", "emoji": "💸" },
+        { "id": "save_for_business", "text": "Save for Business", "emoji": "💰" },
+        { "id": "borrow_heavily", "text": "Borrow heavily", "emoji": "💳" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What continuous activity helps entrepreneurs grow?",
+      "options": [
+        { "id": "learn_skills", "text": "Learn Skills", "emoji": "📚" },
+        { "id": "avoid_learning", "text": "Avoid learning", "emoji": "😴" },
+        { "id": "copy_only", "text": "Copy only", "emoji": "📋" },
+        { "id": "stop_improving", "text": "Stop improving", "emoji": "🛑" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the recommended approach to launching a business?",
+      "options": [
+        { "id": "start_huge", "text": "Start huge", "emoji": "🎯" },
+        { "id": "start_small", "text": "Start Small", "emoji": "🌱" },
+        { "id": "never_start", "text": "Never start", "emoji": "❌" },
+        { "id": "wait_perfectly", "text": "Wait perfectly", "emoji": "⏰" }
+      ]
+    }
+  ]
+}

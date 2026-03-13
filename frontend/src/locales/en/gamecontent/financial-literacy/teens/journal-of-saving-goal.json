@@ -1,0 +1,38 @@
+{
+  "title": "Journal of Saving Goal",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}: Reflect on your saving goals!",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "placeholder": "Write your journal entry here...",
+  "minCharsRequired": "Write at least {{min}} characters",
+  "charsCount": "{{current}}/{{min}} characters",
+  "buttonSubmit": "Submit & Continue",
+  "buttonComplete": "Submit Final Entry",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Write: \"One big thing I want to save for is ___.\"",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Write: \"I will achieve this saving goal by ___.\"",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "Write: \"This goal is important to me because ___.\"",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "Write: \"I plan to save ₹___ per month for this goal.\"",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "Write: \"When I reach this goal, I will feel ___.\"",
+      "minLength": 10
+    }
+  ]
+}

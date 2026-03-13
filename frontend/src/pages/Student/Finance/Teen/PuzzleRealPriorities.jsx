@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Finance/teenGamesData";
@@ -7,6 +8,10 @@ import { getFinanceTeenGames } from "../../../../pages/Games/GameCategories/Fina
 const PuzzleRealPriorities = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
+
+  const gameId = "finance-teens-34";
+  const gameContent = t("financial-literacy.teens.puzzle-real-priorities", { returnObjects: true });
   
   const { nextGamePath, nextGameId } = useMemo(() => {
     if (location.state?.nextGamePath) {
@@ -18,7 +23,7 @@ const PuzzleRealPriorities = () => {
     
     try {
       const games = getFinanceTeenGames({});
-      const currentGame = games.find(g => g.id === "finance-teens-34");
+      const currentGame = games.find(g => g.id === gameId);
       if (currentGame && currentGame.index !== undefined) {
         const nextGame = games.find(g => g.index === currentGame.index + 1 && g.isSpecial && g.path);
         return {
@@ -45,38 +50,28 @@ const PuzzleRealPriorities = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const items = [
-  { id: 1, name: "Healthy Breakfast", emoji: "🍳" },        // Important for starting the day
-  { id: 2, name: "Stationery Kit", emoji: "✏️" },           // Needed for school
-  { id: 3, name: "After-School Classes", emoji: "📚" },    // Extra learning activity
-  { id: 4, name: "Vitamin Supplements", emoji: "💊" },     // Health-related priority
-  { id: 5, name: "Bus Pass", emoji: "🚌" }                 // Travel to school
-];
+  const items = Array.isArray(gameContent?.items) ? gameContent.items : [];
 
-const categories = [
-  { id: 6, name: "Daily Need", emoji: "😅" },       // Must-have for everyday life
-  { id: 7, name: "Optional Activity", emoji: "🎯" }, // Extra, not mandatory
-  { id: 8, name: "Smart Spending", emoji: "💰" },  // Worth saving for
-  { id: 9, name: "Health Priority", emoji: "❤️" }, // Keeps you healthy
-  { id: 10, name: "Transport Expense", emoji: "🚌" } // Travel-related cost
-];
+  const categories = Array.isArray(gameContent?.categories) ? gameContent.categories : [];
 
+  const rearrangedCategories = useMemo(() => {
+    if (categories.length < 5) return categories;
+    return [
+      categories[2], // Smart Spending (id: 8)
+      categories[4], // Transport Expense (id: 10)
+      categories[1], // Optional Activity (id: 7)
+      categories[0], // Daily Need (id: 6)
+      categories[3]  // Health Priority (id: 9)
+    ];
+  }, [categories]);
 
-  const rearrangedCategories = [
-  categories[2], // Smart Spending (id: 8)
-  categories[4], // Transport Expense (id: 10)
-  categories[1], // Optional Activity (id: 7)
-  categories[0], // Daily Need (id: 6)
-  categories[3]  // Health Priority (id: 9)
-];
-
-const correctMatches = [
-  { itemId: 1, categoryId: 6 },  // Healthy Breakfast → Daily Need
-  { itemId: 2, categoryId: 8 },  // Stationery Kit → Smart Spending
-  { itemId: 3, categoryId: 7 },  // After-School Classes → Optional Activity
-  { itemId: 4, categoryId: 9 },  // Vitamin Supplements → Health Priority
-  { itemId: 5, categoryId: 10 }  // Bus Pass → Transport Expense
-];
+  const correctMatches = [
+    { itemId: 1, categoryId: 6 },  // Healthy Breakfast → Daily Need
+    { itemId: 2, categoryId: 8 },  // Stationery Kit → Smart Spending
+    { itemId: 3, categoryId: 7 },  // After-School Classes → Optional Activity
+    { itemId: 4, categoryId: 9 },  // Vitamin Supplements → Health Priority
+    { itemId: 5, categoryId: 10 }  // Bus Pass → Transport Expense
+  ];
 
   const handleItemSelect = (item) => {
     if (gameFinished) return;
@@ -142,12 +137,20 @@ const correctMatches = [
 
   return (
     <GameShell
-      title="Puzzle: Real Priorities"
-      subtitle={gameFinished ? "Puzzle Complete!" : `Match Items with Categories (${matches.length}/${items.length} matched)`}
+      title={gameContent?.title || "Puzzle: Real Priorities"}
+      subtitle={
+        gameFinished 
+          ? gameContent?.subtitleComplete || "Puzzle Complete!" 
+          : t("financial-literacy.teens.puzzle-real-priorities.subtitleProgress", { 
+                  current: matches.length, 
+                  total: items.length,
+                  defaultValue: `Match Items with Categories (${matches.length}/${items.length} matched)`
+                })
+      }
       nextEnabled={gameFinished}
       showGameOver={gameFinished}
       score={score}
-      gameId="finance-teens-34"
+      gameId={gameId}
       gameType="finance"
       totalLevels={items.length}
       currentLevel={matches.length + 1}
@@ -167,7 +170,9 @@ const correctMatches = [
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left column - Needs/Wants Items */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Items</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.itemsTitle || "Items"}
+              </h3>
               <div className="space-y-4">
                 {items.map(item => (
                   <button
@@ -188,7 +193,6 @@ const correctMatches = [
                       <div className="text-2xl mr-3">{item.emoji}</div>
                       <div>
                         <h4 className="font-bold text-white">{item.name}</h4>
-                       
                       </div>
                     </div>
                   </button>
@@ -199,10 +203,13 @@ const correctMatches = [
             {/* Middle column - Match button */}
             <div className="flex flex-col items-center justify-center">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
-                <p className="text-white/80 mb-4">
+                <p className="text-white/80 mb-4 h-12 flex items-center justify-center">
                   {selectedItem 
-                    ? `Selected: ${selectedItem.name}` 
-                    : "Select an Item"}
+                    ? t("financial-literacy.teens.puzzle-real-priorities.selectedItemLabel", { 
+                        name: selectedItem.name,
+                        defaultValue: `Selected: ${selectedItem.name}`
+                      }) 
+                    : gameContent?.selectItemLabel || "Select an Item"}
                 </p>
                 <button
                   onClick={handleMatch}
@@ -213,18 +220,32 @@ const correctMatches = [
                       : "bg-gray-500/30 text-gray-400 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton || "Match"}
                 </button>
                 <div className="mt-4 text-white/80">
-                  <p>Score: {score}/{items.length}</p>
-                  <p>Matched: {matches.length}/{items.length}</p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-real-priorities.scoreLabel", { 
+                      score, 
+                      total: items.length,
+                      defaultValue: `Score: ${score}/${items.length}`
+                    })}
+                  </p>
+                  <p>
+                    {t("financial-literacy.teens.puzzle-real-priorities.matchedLabel", { 
+                      current: matches.length, 
+                      total: items.length,
+                      defaultValue: `Matched: ${matches.length}/${items.length}`
+                    })}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Right column - Categories */}
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-xl font-bold text-white mb-4 text-center">Categories</h3>
+              <h3 className="text-xl font-bold text-white mb-4 text-center">
+                {gameContent?.categoriesTitle || "Categories"}
+              </h3>
               <div className="space-y-4">
                 {rearrangedCategories.map(category => (
                   <button
@@ -256,26 +277,43 @@ const correctMatches = [
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessHeader || "Great Job!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You correctly matched {score} out of {items.length} items with their categories!
+                  {t("financial-literacy.teens.puzzle-real-priorities.resultSuccessSubheader", { 
+                    score, 
+                    total: items.length,
+                    defaultValue: `You correctly matched ${score} out of ${items.length} items with their categories!`
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.puzzle-real-priorities.coinsEarned", { 
+                      coins: score,
+                      defaultValue: `+${score} Coins`
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Understanding financial priorities helps make smart decisions!
+                  {gameContent?.resultSuccessLesson || "Lesson: Understanding financial priorities helps make smart decisions!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Practicing!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultTryAgainHeader || "Keep Practicing!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You matched {score} out of {items.length} items correctly.
+                  {t("financial-literacy.teens.puzzle-real-priorities.resultTryAgainSubheader", { 
+                    score, 
+                    total: items.length,
+                    defaultValue: `You matched ${score} out of ${items.length} items correctly.`
+                  })}
                 </p>
                 <p className="text-white/80 text-sm">
-                  Tip: Think about whether each item is essential or discretionary!
+                  {gameContent?.resultTryAgainTip || "Tip: Think about whether each item is essential or discretionary!"}
                 </p>
               </div>
             )}

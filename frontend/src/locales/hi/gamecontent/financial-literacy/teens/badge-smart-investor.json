@@ -1,0 +1,69 @@
+{
+  "title": "बैज: स्मार्ट निवेशक",
+  "subtitleComplete": "बैज पूरा हुआ!",
+  "subtitleProgress": "चुनौती {{current}} / {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "resultSuccessTitle": "स्मार्ट निवेशक बैज अर्जित किया!",
+  "resultSuccessText": "आपने {{total}} में से {{score}} चुनौतियाँ सही कीं! आप एक सच्चे स्मार्ट निवेशक विशेषज्ञ हैं!",
+  "resultSuccessLesson": "सबक: स्मार्ट निवेश का मतलब है विविधता लाना, जल्दी शुरू करना, जोखिम को संतुलित करना, निवेश करने से पहले शोध करना और स्पष्ट लक्ष्य निर्धारित करना!",
+  "resultFailTitle": "सीखते रहें!",
+  "resultFailText": "आपने {{total}} में से {{score}} चुनौतियाँ सही कीं। स्मार्ट निवेश के साथ अभ्यास ही पूर्ण बनाता है!",
+  "resultFailTip": "टिप: हमेशा निवेश में विविधता लाएं, जल्दी शुरू करें, जोखिम और लाभ को संतुलित करें, निवेश करने से पहले शोध करें और स्पष्ट लक्ष्य निर्धारित करें!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "निवेश रणनीति",
+      "question": "सबसे अच्छी निवेश रणनीति क्या है?",
+      "options": [
+        { "text": "निवेश में विविधता लाएं", "emoji": "📊", "isCorrect": true },
+        { "text": "सब एक ही जगह लगा दें", "emoji": "🎯", "isCorrect": false },
+        { "text": "सभी निवेशों से बचें", "emoji": "🚫", "isCorrect": false },
+        { "text": "बिना शोध के निवेश करें", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "दीर्घकालिक योजना",
+      "question": "आपको निवेश कब शुरू करना चाहिए?",
+      "options": [
+        { "text": "बूढ़े होने तक इंतज़ार करें", "emoji": "⏳", "isCorrect": false },
+        { "text": "जल्दी और लगातार शुरू करें", "emoji": "🌱", "isCorrect": true },
+        { "text": "कभी निवेश न करें", "emoji": "❌", "isCorrect": false },
+        { "text": "केवल अमीर होने पर", "emoji": "💰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "जोखिम प्रबंधन",
+      "question": "आपको निवेश जोखिम को कैसे संभालना चाहिए?",
+      "options": [
+        { "text": "अधिकतम जोखिम लें", "emoji": "🎲", "isCorrect": false },
+        { "text": "सभी जोखिमों से बचें", "emoji": "🛡️", "isCorrect": false },
+        { "text": "जोखिम और लाभ को संतुलित करें", "emoji": "⚖️", "isCorrect": true },
+        { "text": "जोखिम को पूरी तरह नज़रअंदाज़ करें", "emoji": "😴", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "निवेश से पहले शोध",
+      "question": "निवेश करने से पहले आपको क्या करना चाहिए?",
+      "options": [
+        { "text": "शोध करें और समझें", "emoji": "🔍", "isCorrect": true },
+        { "text": "आंख मूंदकर निवेश करें", "emoji": "🙈", "isCorrect": false },
+        { "text": "दूसरों का आंख मूंदकर अनुसरण करें", "emoji": "👥", "isCorrect": false },
+        { "text": "बिना सोचे-समझे निवेश करें", "emoji": "⚡", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "निवेश लक्ष्य",
+      "question": "स्मार्ट निवेश के लिए क्या महत्वपूर्ण है?",
+      "options": [
+        { "text": "किसी लक्ष्य की आवश्यकता नहीं", "emoji": "😴", "isCorrect": false },
+        { "text": "बेतरतीब ढंग से निवेश करें", "emoji": "🎲", "isCorrect": false },
+        { "text": "स्पष्ट लक्ष्य और योजना निर्धारित करें", "emoji": "🎯", "isCorrect": true },
+        { "text": "योजना को नज़रअंदाज़ करें", "emoji": "🚫", "isCorrect": false }
+      ]
+    }
+  ]
+}

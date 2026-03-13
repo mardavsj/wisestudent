@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,10 +8,12 @@ import { getGameDataById } from "../../../../utils/getGameData";
 const PocketMoneyStory = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-teens-1";
   const gameData = getGameDataById(gameId);
+  const gameContent = t("financial-literacy.teens.pocket-money-story", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -23,143 +26,20 @@ const PocketMoneyStory = () => {
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "You receive ₹500 as monthly pocket money. What should you do with it?",
-      options: [
-        { 
-          id: "save", 
-          text: "Save 20% (₹100)", 
-          emoji: "💰", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "spend", 
-          text: "Spend all", 
-          emoji: "🛍️", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "save50", 
-          text: "Save 50% (₹250)", 
-          emoji: "💵", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You want to buy a ₹2000 gadget but only have ₹500 saved. What's the smart approach?",
-      options: [
-        { 
-          id: "borrow", 
-          text: "Borrow from friends", 
-          emoji: "🤝", 
-          isCorrect: false
-        },
-        { 
-          id: "spend", 
-          text: "Buy on credit", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Save monthly", 
-          emoji: "📅", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Your friends spend all their pocket money on expensive items. What should you do?",
-      options: [
-        { 
-          id: "save", 
-          text: "Stick to your plan", 
-          emoji: "📝", 
-          isCorrect: true
-        },
-        { 
-          id: "spend", 
-          text: "Spend like them", 
-          emoji: "👥", 
-          isCorrect: false
-        },
-        { 
-          id: "compromise", 
-          text: "Spend half to fit in", 
-          emoji: "⚖️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You saved ₹1000 but see a limited-time offer for a ₹1500 item. What's wise?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Buy with partial payment", 
-          emoji: "🛒", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Wait and save more", 
-          emoji: "⏳", 
-          isCorrect: true
-        },
-        { 
-          id: "impulse", 
-          text: "Buy something cheaper", 
-          emoji: "🛍️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You have ₹800 saved and want to buy a ₹1000 phone. What should you do?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Buy now with credit", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow ₹200", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Save ₹200 more", 
-          emoji: "🎯", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (selectedChoice) => {
+    const isCorrect = questions[currentQuestion]?.options.find(opt => opt.id === selectedChoice)?.isCorrect;
+    
     const newChoices = [...choices, { 
-      questionId: questions[currentQuestion].id, 
+      questionId: questions[currentQuestion]?.id, 
       choice: selectedChoice,
-      isCorrect: questions[currentQuestion].options.find(opt => opt.id === selectedChoice)?.isCorrect
+      isCorrect: isCorrect
     }];
     
     setChoices(newChoices);
     
     // If the choice is correct, add coins and show flash/confetti
-    const isCorrect = questions[currentQuestion].options.find(opt => opt.id === selectedChoice)?.isCorrect;
     if (isCorrect) {
       setCoins(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
@@ -195,9 +75,16 @@ const PocketMoneyStory = () => {
 
   return (
     <GameShell
-      title="Pocket Money Story"
+      title={gameContent?.title || "Pocket Money Story"}
       score={coins}
-      subtitle={`Question ${currentQuestion + 1} of ${questions.length}`}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.pocket-money-story.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Story Complete!")
+      }
       onNext={handleNext}
       nextGamePathProp="/student/finance/teen/quiz-on-savings-rate"
       nextGameIdProp="finance-teens-2"
@@ -206,22 +93,32 @@ const PocketMoneyStory = () => {
       totalCoins={totalCoins}
       totalXp={totalXp} // Pass if 3 or more correct
       showGameOver={showResult && finalScore >= 3}
-      
       gameId="finance-teens-1"
       gameType="finance"
-      totalLevels={5}
+      totalLevels={questions.length || 5}
       currentLevel={1}
       showConfetti={showResult && finalScore >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
     >
       <div className="space-y-8">
-        {!showResult ? (
+        {!showResult && getCurrentQuestion() ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {coins}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.pocket-money-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.pocket-money-story.scoreLabel", {
+                    score: coins,
+                    defaultValue: "Score: {{score}}"
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -237,50 +134,67 @@ const PocketMoneyStory = () => {
                   >
                     <div className="text-2xl mb-2">{option.emoji}</div>
                     <h3 className="font-bold text-xl mb-2">{option.text}</h3>
-                    <p className="text-white/90">{option.description}</p>
+                    {option.description && (
+                      <p className="text-white/90">{option.description}</p>
+                    )}
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center">
             {finalScore >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Great Job!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {finalScore} out of {questions.length} questions correct!
-                  You're learning smart financial decisions!
+                  {t("financial-literacy.teens.pocket-money-story.result.winMessage", {
+                    score: finalScore,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct! You're learning smart financial decisions!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{coins} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.pocket-money-story.result.coinsEarned", {
+                      coins,
+                      defaultValue: "+{{coins}} Coins"
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  You understand the importance of saving a portion of your income for future needs!
+                  {gameContent?.result?.lesson || "You understand the importance of saving a portion of your income for future needs!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">😔</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "😔"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {finalScore} out of {questions.length} questions correct.
-                  Remember, saving some money for later is usually a smart choice!
+                  {t("financial-literacy.teens.pocket-money-story.result.loseMessage", {
+                    score: finalScore,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct. Remember, saving some money for later is usually a smart choice!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Try to choose the option that saves money for later in most situations.
+                  {gameContent?.result?.tip || "Try to choose the option that saves money for later in most situations."}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

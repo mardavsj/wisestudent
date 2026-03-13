@@ -1,0 +1,69 @@
+{
+  "title": "Badge: Digital Money Smart",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessTitle": "Digital Money Smart Badge Earned!",
+  "resultSuccessText": "You got {{score}} out of {{total}} challenges correct! You're a true Digital Money Smart expert!",
+  "resultSuccessLesson": "Lesson: Safely using digital money means using UPI with OTP, protecting card details, verifying website security, ignoring suspicious messages, and using strong passwords!",
+  "resultFailTitle": "Keep Learning!",
+  "resultFailText": "You got {{score}} out of {{total}} challenges correct. Practice makes perfect with digital money safety!",
+  "resultFailTip": "Tip: Always use UPI with OTP, hide CVV, check HTTPS, ignore suspicious messages, and create strong passwords for safe digital payments!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Safe Online Payment",
+      "question": "What's the safest way to pay online?",
+      "options": [
+        { "text": "Use UPI with OTP verification", "emoji": "🔒", "isCorrect": true },
+        { "text": "Share PIN with seller", "emoji": "🔓", "isCorrect": false },
+        { "text": "Send card details via email", "emoji": "📧", "isCorrect": false },
+        { "text": "Skip verification steps", "emoji": "⏭️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Protecting Card Information",
+      "question": "How should you protect your card details?",
+      "options": [
+        { "text": "Share CVV with friends", "emoji": "👥", "isCorrect": false },
+        { "text": "Hide CVV and never share", "emoji": "🛡️", "isCorrect": true },
+        { "text": "Post card photo online", "emoji": "📸", "isCorrect": false },
+        { "text": "Write PIN on card", "emoji": "✍️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Verifying Website Security",
+      "question": "What should you check before entering payment details?",
+      "options": [
+        { "text": "Ignore website security", "emoji": "🚫", "isCorrect": false },
+        { "text": "Enter details on any site", "emoji": "🌐", "isCorrect": false },
+        { "text": "Trust all websites", "emoji": "😊", "isCorrect": false },
+        { "text": "Check for HTTPS and padlock", "emoji": "🔒", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Handling Suspicious Messages",
+      "question": "What should you do with suspicious payment requests?",
+      "options": [
+        { "text": "Click suspicious links", "emoji": "🔗", "isCorrect": false },
+        { "text": "Ignore and delete suspicious messages", "emoji": "🗑️", "isCorrect": true },
+        { "text": "Share OTP immediately", "emoji": "📢", "isCorrect": false },
+        { "text": "Forward to everyone", "emoji": "📤", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Secure Password Practice",
+      "question": "What's the best practice for digital payment passwords?",
+      "options": [
+        { "text": "Use '1234' as password", "emoji": "🔓", "isCorrect": false },
+        { "text": "Share password with friends", "emoji": "👥", "isCorrect": false },
+        { "text": "Create strong, unique passwords", "emoji": "🔑", "isCorrect": true },
+        { "text": "Never change password", "emoji": "📜", "isCorrect": false }
+      ]
+    }
+  ]
+}

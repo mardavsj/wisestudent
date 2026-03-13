@@ -1,0 +1,64 @@
+{
+  "title": "रिफ्लेक्स स्मार्ट सेवर",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपने स्मार्ट बचत सजगता का परीक्षण करें!",
+  "subtitleReady": "अपने स्मार्ट बचत सजगता का परीक्षण करें!",
+  "readyHeader": "तैयार हो जाइए!",
+  "readyDescription": "स्मार्ट बचत की आदतों के बारे में सवालों के जवाब दें!",
+  "readyTip": "आपके पास {{total}} प्रश्न हैं और प्रत्येक प्रश्न के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड:",
+  "timeLabel": "समय:",
+  "scoreLabel": "स्कोर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "बचत बढ़ाने के लिए आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "plan", "text": "बचत की योजना बनाएं", "emoji": "📝" },
+        { "id": "spend", "text": "तुरंत खर्च करें", "emoji": "💸" },
+        { "id": "ignore", "text": "बजट को नजरअंदाज करें", "emoji": "🙈" },
+        { "id": "buy", "text": "सब कुछ खरीदें", "emoji": "🛍️" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "खर्च करने से पहले आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "impulse", "text": "आवेग में खरीदारी", "emoji": "⚡" },
+        { "id": "budget", "text": "पहले बजट बनाएं", "emoji": "📊" },
+        { "id": "random", "text": "बेतरतीब ढंग से खर्च करें", "emoji": "🎲" },
+        { "id": "no_plan", "text": "कोई योजना नहीं", "emoji": "🚫" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "बचत की सबसे अच्छी आदत कौन सी है?",
+      "options": [
+        { "id": "credit", "text": "क्रेडिट पर खरीदें", "emoji": "💳" },
+        { "id": "never", "text": "कभी बचत न करें", "emoji": "❌" },
+        { "id": "regularly", "text": "नियमित रूप से बचत करें", "emoji": "💰" },
+        { "id": "spend_all", "text": "सब खर्च करें", "emoji": "💸" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "बचत पर ध्यान केंद्रित रखने में क्या मदद करता है?",
+      "options": [
+        { "id": "spend_all", "text": "सब खर्च करें", "emoji": "💸" },
+        { "id": "no_direction", "text": "कोई दिशा नहीं", "emoji": "🤷" },
+        { "id": "ignore_planning", "text": "योजना को नजरअंदाज करें", "emoji": "🙈" },
+        { "id": "set_goals", "text": "लक्ष्य निर्धारित करें", "emoji": "🎯" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "स्मार्ट बचत के लिए आपको क्या निगरानी करनी चाहिए?",
+      "options": [
+        { "id": "track", "text": "खर्चों पर नज़र रखें", "emoji": "📈" },
+        { "id": "no_plan", "text": "कोई योजना नहीं", "emoji": "🚫" },
+        { "id": "ignore_spending", "text": "खर्च को नजरअंदाज करें", "emoji": "🙈" },
+        { "id": "forget_budget", "text": "बजट भूल जाएं", "emoji": "💭" }
+      ]
+    }
+  ]
+}

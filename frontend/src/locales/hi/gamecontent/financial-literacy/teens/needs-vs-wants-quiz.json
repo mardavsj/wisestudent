@@ -1,0 +1,66 @@
+{
+  "title": "ज़रूरत बनाम इच्छा प्रश्नोत्तरी",
+  "subtitleComplete": "प्रश्नोत्तरी पूरी!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "इनमें से कौन सी एक इच्छा (want) है?",
+      "options": [
+        { "id": "watch", "text": "लक्जरी घड़ी", "emoji": "⌚", "isCorrect": true },
+        { "id": "medicine", "text": "दवा", "emoji": "💊", "isCorrect": false },
+        { "id": "clothes", "text": "स्कूल के कपड़े", "emoji": "👕", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "इनमें से कौन सी एक ज़रूरत (need) है?",
+      "options": [
+        { "id": "game", "text": "वीडियो गेम", "emoji": "🎮", "isCorrect": false },
+        { "id": "food", "text": "किराना", "emoji": "🍎", "isCorrect": true },
+        { "id": "phone", "text": "नया स्मार्टफोन", "emoji": "📱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "इनमें से कौन सी एक इच्छा (want) है?",
+      "options": [
+        { "id": "rent", "text": "किराया", "emoji": "🏠", "isCorrect": false },
+        { "id": "books", "text": "पाठ्यपुस्तकें", "emoji": "📚", "isCorrect": false },
+        { "id": "concert", "text": "कंसर्ट टिकट", "emoji": "🎤", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "इनमें से कौन सी एक ज़रूरत (need) है?",
+      "options": [
+        { "id": "water", "text": "पानी का बिल", "emoji": "💧", "isCorrect": true },
+        { "id": "shoes", "text": "डिज़ाइनर जूते", "emoji": "👟", "isCorrect": false },
+        { "id": "party", "text": "पार्टी का सामान", "emoji": "🎉", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "इनमें से कौन सी एक इच्छा (want) है?",
+      "options": [
+        { "id": "internet", "text": "इंटरनेट बिल", "emoji": "🌐", "isCorrect": false },
+        { "id": "headphones", "text": "वायरलेस हेडफ़ोन", "emoji": "🎧", "isCorrect": true },
+        { "id": "transport", "text": "बस पास", "emoji": "🚌", "isCorrect": false }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "बहुत बढ़िया!",
+    "winMessage": "आपने {{total}} में से {{score}} प्रश्नों के सही उत्तर दिए! आप जरूरतों और इच्छाओं के बीच का अंतर समझते हैं!",
+    "coinsEarned": "+{{score}} सिक्के",
+    "lesson": "सीख: ज़रूरतें जीवित रहने और सीखने के लिए आवश्यक हैं, जबकि इच्छाएँ वे चीज़ें हैं जो हम चाहते हैं लेकिन जिनकी हमें आवश्यकता नहीं है!",
+    "loseEmoji": "😔",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} प्रश्नों के सही उत्तर दिए। याद रखें, ज़रूरतें भोजन, कपड़े और उपयोगिताओं जैसी आवश्यक वस्तुएँ हैं!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "सुझाव: ज़रूरतें वे चीज़ें हैं जो आपको जीवित रहने और सीखने के लिए चाहिए, जबकि इच्छाएँ वैकल्पिक विलासिता हैं।"
+  }
+}

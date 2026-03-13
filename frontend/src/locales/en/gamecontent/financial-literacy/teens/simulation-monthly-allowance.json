@@ -1,0 +1,177 @@
+{
+  "title": "Simulation: Monthly Allowance",
+  "subtitleComplete": "Simulation Complete!",
+  "subtitleProgress": "Scenario {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "amountLabel": "Amount: ",
+  "perfectScoreTitle": "Excellent Budgeting!",
+  "perfectScoreMsg": "You got {{score}} out of {{total}} scenarios correct! You're mastering the art of balanced budgeting!",
+  "lessonLabel": "Lesson: A balanced budget prioritizes needs (food, transport) while saving for the future and allowing some fun!",
+  "keepLearningTitle": "Keep Learning!",
+  "lowScoreMsg": "You got {{score}} out of {{total}} scenarios correct. Remember the balanced budget formula: 40% food, 30% transport, 20% savings, 10% fun!",
+  "tipLabel": "Tip: Allocate money to cover essential needs first, then save, and finally allow some fun money.",
+  "tryAgain": "Try Again",
+  "coinsLabel": "+{{count}} Coins",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "Monthly Allowance Choices",
+      "description": "You get ₹1000 as allowance. How can you use it wisely?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "splurge",
+          "text": "Buy only trending items",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "budget-smart",
+          "text": "Set aside for essentials, fun, and saving",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "Keep all cash hidden at home",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "random-spending",
+          "text": "Spend without thinking",
+          "emoji": "🎲",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Part-time Job Earnings",
+      "description": "You earn ₹1500 from a weekend job. What's a smart approach?",
+      "amount": 1500,
+      "options": [
+        {
+          "id": "plan-smart",
+          "text": "Divide for goals, needs, and fun",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "luxury-only",
+          "text": "Spend only on gadgets or clothes",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "Forget it exists",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "invest-all",
+          "text": "Invest without research",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Scholarship Bonus",
+      "description": "You receive ₹2000 scholarship. What’s the smartest way to use it?",
+      "amount": 2000,
+      "options": [
+        {
+          "id": "trip",
+          "text": "Go on a luxury trip",
+          "emoji": "✈️",
+          "isCorrect": false
+        },
+        {
+          "id": "hide-money",
+          "text": "Hide it at home",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "donate",
+          "text": "Donate it all immediately",
+          "emoji": "💝",
+          "isCorrect": false
+        },
+        {
+          "id": "self-invest",
+          "text": "Buy books, courses, or tools for learning",
+          "emoji": "🎓",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Birthday Gift Money",
+      "description": "You get ₹800 as birthday money. What's a thoughtful choice?",
+      "amount": 800,
+      "options": [
+        {
+          "id": "impulse-buy",
+          "text": "Spend on instant fun only",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "text": "Buy whatever looks fun",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "plan-future",
+          "text": "Save for a bigger goal or need",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "share-friends",
+          "text": "Give it all to friends",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Summer Job Windfall",
+      "description": "You earn ₹2500 from a summer job. How to maximize benefits?",
+      "amount": 2500,
+      "options": [
+        {
+          "id": "balanced-plan",
+          "text": "Split for saving, learning, and small treats",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "debt-payment",
+          "text": "Rush to pay debts you don’t fully understand",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse-buying",
+          "text": "Spend on impulse purchases",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save-all",
+          "text": "Save all without any plan",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

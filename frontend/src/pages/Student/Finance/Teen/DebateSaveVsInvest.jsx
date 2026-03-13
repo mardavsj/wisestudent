@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const DebateSaveVsInvest = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-66");
   const gameId = gameData?.id || "finance-teens-66";
+  const gameContent = t("financial-literacy.teens.debate-save-vs-invest", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -28,53 +31,7 @@ const DebateSaveVsInvest = () => {
   const [answered, setAnswered] = useState(false);
   const [gameComplete, setGameComplete] = useState(false);
 
-  const debateTopics = [
-    {
-      id: 1,
-      scenario: "Is saving enough or should we invest too?",
-      positions: [
-        { id: "invest", text: "Invest wisely", emoji: "💡", points: ["Beat inflation", "Higher returns", "Grow wealth"], isCorrect: true },
-        { id: "balanced", text: "Save and invest mix", emoji: "⚠️", points: ["Save for safety", "Invest for growth", "Mix both"], isCorrect: false },
-        { id: "save", text: "Only save", emoji: "🚫", points: ["Saving is enough", "No risk", "Keep it simple"], isCorrect: false }
-      ]
-    },
-    {
-      id: 2,
-      scenario: "Should you invest all your savings?",
-      positions: [
-        { id: "balanced2", text: "Keep emergency fund", emoji: "📋", points: ["Save for emergencies", "Invest the rest", "Balance both"], isCorrect: false },
-        { id: "invest2", text: "Invest after emergency fund", emoji: "🎓", points: ["Save 3-6 months expenses", "Then invest", "Smart strategy"], isCorrect: true },
-        { id: "all", text: "Invest everything", emoji: "🚀", points: ["Put all in investments", "No savings", "Maximum growth"], isCorrect: false }
-      ]
-    },
-    {
-      id: 3,
-      scenario: "Which grows money faster?",
-      positions: [
-        { id: "same", text: "Both equal", emoji: "📊", points: ["Equal growth", "No difference", "Same result"], isCorrect: false },
-        { id: "save2", text: "Saving wins", emoji: "🏦", points: ["Saving is faster", "No risk", "Guaranteed"], isCorrect: false },
-        { id: "invest3", text: "Investing wins", emoji: "📈", points: ["Higher returns", "Beat inflation", "Compound growth"], isCorrect: true },
-      ]
-    },
-    {
-      id: 4,
-      scenario: "What's the best strategy for long-term wealth?",
-      positions: [
-        { id: "only-save", text: "Only save", emoji: "🔐", points: ["Saving is enough", "Low risk", "Simple approach"], isCorrect: false },
-        { id: "mix", text: "Mix save and invest", emoji: "💼", points: ["Save for security", "Invest for growth", "Best of both"], isCorrect: true },
-        { id: "only-invest", text: "Only invest", emoji: "🎲", points: ["Invest everything", "No savings", "Maximum risk"], isCorrect: false }
-      ]
-    },
-    {
-      id: 5,
-      scenario: "When should you start investing?",
-      positions: [
-        { id: "early", text: "Start early", emoji: "⏱️", points: ["Time is your friend", "Compound interest", "Long-term growth"], isCorrect: true },
-        { id: "later", text: "Wait until older", emoji: "⏰", points: ["Wait for more money", "Start later", "No rush"], isCorrect: false },
-        { id: "never", text: "Never invest", emoji: "💸", points: ["Too risky", "Just save", "Avoid investing"], isCorrect: false }
-      ]
-    }
-  ];
+  const debateTopics = Array.isArray(gameContent?.debateTopics) ? gameContent.debateTopics : [];
 
   const handlePositionSelect = (positionId) => {
     if (answered) return;
@@ -120,8 +77,15 @@ const DebateSaveVsInvest = () => {
 
   return (
     <GameShell
-      title="Debate: Save vs Invest"
-      subtitle={!showResult ? `Round ${currentRound + 1} of ${debateTopics.length}` : "Debate Complete!"}
+      title={gameContent?.title || "Debate: Save vs Invest"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.debate-save-vs-invest.subtitleProgress", {
+            current: currentRound + 1,
+            total: debateTopics.length,
+            defaultValue: "Round {{current}} of {{total}}",
+          })
+        : (gameContent?.subtitleComplete || "Debate Complete!")
+      }
       score={score}
       currentLevel={currentRound + 1}
       totalLevels={debateTopics.length}
@@ -143,8 +107,20 @@ const DebateSaveVsInvest = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Round {currentRound + 1}/{debateTopics.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{debateTopics.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.debate-save-vs-invest.roundLabel", {
+                    current: currentRound + 1,
+                    total: debateTopics.length,
+                    defaultValue: "Round {{current}}/{{total}}",
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.debate-save-vs-invest.scoreLabel", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "Score: {{score}}/{{total}}",
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -185,35 +161,46 @@ const DebateSaveVsInvest = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Debate Complete!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.winTitle || "Debate Complete!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {debateTopics.length} correct!
-                  You understand the balance between saving and investing!
+                  {t("financial-literacy.teens.debate-save-vs-invest.result.winMessage", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You understand the balance between saving and investing!",
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.debate-save-vs-invest.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins",
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Saving is important for security, but investing wisely helps grow wealth and beat inflation. The best strategy is to do both!
+                  {gameContent?.result?.lesson || "Lesson: Saving is important for security, but investing wisely helps grow wealth and beat inflation. The best strategy is to do both!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.loseTitle || "Keep Learning!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {debateTopics.length} correct.
-                  Remember, saving provides security, but investing wisely helps grow wealth!
+                  {t("financial-literacy.teens.debate-save-vs-invest.result.loseMessage", {
+                    score,
+                    total: debateTopics.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember, saving provides security, but investing wisely helps grow wealth!",
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Save for emergencies and security, then invest wisely to grow wealth and beat inflation. Start early for best results!
+                  {gameContent?.result?.tip || "Tip: Save for emergencies and security, then invest wisely to grow wealth and beat inflation. Start early for best results!"}
                 </p>
               </div>
             )}
@@ -225,4 +212,3 @@ const DebateSaveVsInvest = () => {
 };
 
 export default DebateSaveVsInvest;
-

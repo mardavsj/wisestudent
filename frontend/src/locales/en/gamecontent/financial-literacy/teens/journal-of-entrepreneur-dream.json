@@ -1,0 +1,51 @@
+{
+  "title": "Journal of Entrepreneur Dream",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "journalEntryHeader": "Journal Entry",
+  "placeholder": "Type your response here...",
+  "minCharsRequired": "Minimum {{min}} characters required",
+  "buttonSubmit": "Submit & Continue",
+  "buttonComplete": "Complete Journal",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "One business I want to start is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "One reason I want to be an entrepreneur is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "One skill I need to develop for business is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "One challenge I might face as an entrepreneur is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "One way I'll prepare to start my business is ___.",
+      "minLength": 10
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Journal Complete!",
+    "winMessage": "You completed {{score}} out of {{total}} entries! Great job reflecting on your entrepreneurial dreams!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Reflecting on your business goals helps you prepare for the entrepreneurial journey!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You completed {{score}} out of {{total}} entries. Remember, preparing well is the first step to starting a successful business!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Think about what you're passionate about, and how you can turn that into an entrepreneurial dream!"
+  }
+}

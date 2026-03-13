@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Control",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your spending control reflexes!",
+  "subtitleReady": "Test your spending control reflexes!",
+  "readyHeader": "Ready to Test Your Spending Control Skills?",
+  "readyDescription": "Answer questions about controlling spending impulses.",
+  "readyTip": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "greatJob": "Great Job!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "developingSkills": "You're developing strong spending control skills!",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What should you do when you see an impulse purchase you want?",
+      "options": [
+        { "text": "Buy immediately before it sells out", "id": "buy_now", "emoji": "⚡" },
+        { "text": "Wait 24 hours before deciding", "id": "wait_24h", "emoji": "⏳" },
+        { "text": "Ask friends to buy it for you", "id": "ask_friends", "emoji": "👥" },
+        { "text": "Add it to cart and forget about it", "id": "add_to_cart", "emoji": "🛒" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "How should you handle peer pressure to spend money?",
+      "options": [
+        { "text": "Spend to fit in with friends", "id": "fit_in", "emoji": "👥" },
+        { "text": "Borrow money to keep up", "id": "borrow", "emoji": "💳" },
+        { "text": "Stick to your budget and priorities", "id": "stick_to_budget", "emoji": "📋" },
+        { "text": "Avoid friends who spend more", "id": "avoid_friends", "emoji": "🚫" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What's the best approach to social media shopping?",
+      "options": [
+        { "text": "Buy everything that looks interesting", "id": "buy_all", "emoji": "🛍️" },
+        { "text": "Unfollow accounts that trigger impulse buys", "id": "unfollow", "emoji": "📱" },
+        { "text": "Shop during sales only", "id": "sales_only", "emoji": "🏷️" },
+        { "text": "Never shop online", "id": "never_online", "emoji": "💻" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "How should you respond to limited-time offers?",
+      "options": [
+        { "text": "Buy immediately to avoid missing out", "id": "buy_fast", "emoji": "⏰" },
+        { "text": "Share with friends to split cost", "id": "split_cost", "emoji": "👥" },
+        { "text": "Ignore all sales and promotions", "id": "ignore_sales", "emoji": "🙈" },
+        { "text": "Evaluate if you truly need the item", "id": "evaluate_need", "emoji": "🤔" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What should you do before making a significant purchase?",
+      "options": [
+        { "text": "Research alternatives and wait period", "id": "research", "emoji": "🔍" },
+        { "text": "Buy immediately if it's on sale", "id": "buy_on_sale", "emoji": "💸" },
+        { "text": "Ask for opinions on social media", "id": "mask_social", "emoji": "📱" },
+        { "text": "Compare prices at one store only", "id": "one_store", "emoji": "🏪" }
+      ]
+    }
+  ]
+}

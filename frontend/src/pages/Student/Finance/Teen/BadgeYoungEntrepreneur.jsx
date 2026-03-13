@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BadgeYoungEntrepreneur = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-80");
   const gameId = gameData?.id || "finance-teens-80";
+  const gameContent = t("financial-literacy.teens.badge-young-entrepreneur", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,143 +30,7 @@ const BadgeYoungEntrepreneur = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Starting a Business",
-      question: "What's the first step to start a business?",
-      options: [
-        { 
-          text: "Have a good idea and plan", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-        { 
-          text: "Spend all your money", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          text: "Wait forever", 
-          emoji: "⏳", 
-          isCorrect: false
-        },
-        { 
-          text: "Copy others exactly", 
-          emoji: "📋", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Business Planning",
-      question: "What should you do before starting?",
-      options: [
-        { 
-          text: "Start immediately", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          text: "Research market and costs", 
-          emoji: "🔍", 
-          isCorrect: true
-        },
-        { 
-          text: "Ignore planning", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Spend without thinking", 
-          emoji: "💳", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Managing Money",
-      question: "How should you handle business money?",
-      options: [
-        { 
-          text: "Spend everything", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          text: "Ignore finances", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          text: "Track income and expenses", 
-          emoji: "📊", 
-          isCorrect: true
-        },
-        { 
-          text: "No tracking needed", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Customer Service",
-      question: "What's important for business success?",
-      options: [
-        { 
-          text: "Ignore customers", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          text: "Cheat customers", 
-          emoji: "😈", 
-          isCorrect: false
-        },
-        { 
-          text: "No service needed", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Satisfy customers", 
-          emoji: "😊", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Growing Business",
-      question: "How should you grow your business?",
-      options: [
-        { 
-          text: "Start small and expand gradually", 
-          emoji: "🌱", 
-          isCorrect: true
-        },
-        { 
-          text: "Start huge immediately", 
-          emoji: "🎯", 
-          isCorrect: false
-        },
-        { 
-          text: "Never grow", 
-          emoji: "📉", 
-          isCorrect: false
-        },
-        { 
-          text: "Grow without planning", 
-          emoji: "🚀", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;
@@ -202,8 +69,15 @@ const BadgeYoungEntrepreneur = () => {
 
   return (
     <GameShell
-      title="Badge: Young Entrepreneur"
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      title={gameContent?.title || "Badge: Young Entrepreneur"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.badge-young-entrepreneur.subtitleProgress", {
+            current: challenge + 1,
+            total: challenges.length,
+            defaultValue: "Challenge {{current}} of {{total}}",
+          })
+        : (gameContent?.subtitleComplete || "Badge Complete!")
+      }
       score={score}
       currentLevel={challenge + 1}
       totalLevels={challenges.length}
@@ -225,8 +99,20 @@ const BadgeYoungEntrepreneur = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.badge-young-entrepreneur.challengeLabel", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: "Challenge {{current}}/{{total}}",
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.badge-young-entrepreneur.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: "Score: {{score}}/{{total}}",
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{challenges[challenge].title}</h3>
@@ -237,7 +123,7 @@ const BadgeYoungEntrepreneur = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {challenges[challenge].options.map((option, idx) => (
                   <button
-                    key={idx}
+                    key={option.id || idx}
                     onClick={() => {
                       setSelectedAnswer(idx);
                       handleAnswer(option.isCorrect);
@@ -266,35 +152,46 @@ const BadgeYoungEntrepreneur = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🏆</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Young Entrepreneur Badge Earned!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🏆"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.winTitle || "Young Entrepreneur Badge Earned!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {challenges.length} challenges correct!
-                  You're a true Young Entrepreneur expert!
+                  {t("financial-literacy.teens.badge-young-entrepreneur.result.winMessage", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: "You got {{score}} out of {{total}} challenges correct! You're a true Young Entrepreneur expert!",
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.badge-young-entrepreneur.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins",
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Young entrepreneurs have good ideas, plan carefully, track finances, satisfy customers, and grow gradually!
+                  {gameContent?.result?.lesson || "Lesson: Young entrepreneurs have good ideas, plan carefully, track finances, satisfy customers, and grow gradually!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.result?.loseTitle || "Keep Learning!"}</h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {challenges.length} challenges correct.
-                  Practice makes perfect with entrepreneurship!
+                  {t("financial-literacy.teens.badge-young-entrepreneur.result.loseMessage", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: "You got {{score}} out of {{total}} challenges correct. Practice makes perfect with entrepreneurship!",
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Always have a good idea and plan, research market and costs, track finances, satisfy customers, and start small!
+                  {gameContent?.result?.tip || "Tip: Always have a good idea and plan, research market and costs, track finances, satisfy customers, and start small!"}
                 </p>
               </div>
             )}
@@ -306,4 +203,3 @@ const BadgeYoungEntrepreneur = () => {
 };
 
 export default BadgeYoungEntrepreneur;
-

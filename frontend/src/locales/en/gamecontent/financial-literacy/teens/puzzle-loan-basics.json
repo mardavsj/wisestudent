@@ -1,0 +1,33 @@
+{
+  "title": "Puzzle: Loan Basics",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match Loan Terms with Concepts ({{current}}/{{total}} matched)",
+  "termsTitle": "Loan Terms",
+  "conceptsTitle": "Loan Concepts",
+  "matchButton": "Match",
+  "selectTermLabel": "Select a Loan Term",
+  "selectedTermLabel": "Selected: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "Matched: {{current}}/{{total}}",
+  "resultSuccessHeader": "Great Job!",
+  "resultSuccessSubheader": "You correctly matched {{score}} out of {{total}} loan terms with their concepts!",
+  "resultSuccessLesson": "Lesson: Understanding loan basics helps make informed borrowing decisions!",
+  "resultTryAgainHeader": "Keep Practicing!",
+  "resultTryAgainSubheader": "You matched {{score}} out of {{total}} loan terms correctly.",
+  "resultTryAgainTip": "Tip: Think about what each loan term actually represents!",
+  "coinsEarned": "+{{coins}} Coins",
+  "terms": [
+    { "id": 1, "name": "Principal", "emoji": "💵" },
+    { "id": 2, "name": "Interest", "emoji": "💰" },
+    { "id": 3, "name": "Loan Term", "emoji": "📅" },
+    { "id": 4, "name": "EMI", "emoji": "📊" },
+    { "id": 5, "name": "Default", "emoji": "⚠️" }
+  ],
+  "concepts": [
+    { "id": 6, "name": "Original Amount", "emoji": "📝" },
+    { "id": 7, "name": "Extra Cost", "emoji": "➕" },
+    { "id": 8, "name": "Time Period", "emoji": "⏱️" },
+    { "id": 9, "name": "Regular Payment", "emoji": "💳" },
+    { "id": 10, "name": "Missed Payments", "emoji": "🚫" }
+  ]
+}

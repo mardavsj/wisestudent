@@ -1,0 +1,33 @@
+{
+  "title": "Puzzle: Smart Spending",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match Concepts with Meanings ({{current}}/{{total}} matched)",
+  "conceptsTitle": "Spending Concepts",
+  "meaningsTitle": "Financial Meanings",
+  "matchButton": "Match",
+  "selectConceptLabel": "Select a Spending Concept",
+  "selectedConceptLabel": "Selected: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "Matched: {{current}}/{{total}}",
+  "resultSuccessHeader": "Great Job!",
+  "resultSuccessSubheader": "You correctly matched {{score}} out of {{total}} spending concepts with their meanings!",
+  "resultSuccessLesson": "Lesson: Understanding spending concepts leads to better financial decisions!",
+  "resultTryAgainHeader": "Keep Practicing!",
+  "resultTryAgainSubheader": "You matched {{score}} out of {{total}} spending concepts correctly.",
+  "resultTryAgainTip": "Tip: Think about what each spending concept actually represents!",
+  "coinsEarned": "+{{coins}} Coins",
+  "concepts": [
+    { "id": 1, "name": "Budget", "emoji": "📋" },
+    { "id": 2, "name": "Waste", "emoji": "🗑️" },
+    { "id": 3, "name": "Needs", "emoji": "🎯" },
+    { "id": 4, "name": "Wants", "emoji": "🎁" },
+    { "id": 5, "name": "Emergency Fund", "emoji": "🛡️" }
+  ],
+  "meanings": [
+    { "id": 6, "name": "Financial Planning", "emoji": "📝" },
+    { "id": 7, "name": "Resource Misuse", "emoji": "⚠️" },
+    { "id": 8, "name": "Essential Priorities", "emoji": "⭐" },
+    { "id": 9, "name": "Discretionary Spending", "emoji": "💎" },
+    { "id": 10, "name": "Risk Protection", "emoji": "🔒" }
+  ]
+}

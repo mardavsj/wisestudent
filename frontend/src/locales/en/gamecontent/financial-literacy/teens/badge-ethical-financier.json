@@ -1,0 +1,69 @@
+{
+  "title": "Badge: Ethical Financier",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessTitle": "Ethical Financier Badge Earned!",
+  "resultSuccessText": "You got {{score}} out of {{total}} challenges correct! You're a true Ethical Financier!",
+  "resultSuccessLesson": "Lesson: Honesty and ethics in financial transactions build trust and a strong reputation.",
+  "resultFailTitle": "Keep Learning!",
+  "resultFailText": "You got {{score}} out of {{total}} challenges correct. Practice making ethical choices!",
+  "resultFailTip": "Tip: Always choose honesty over quick gains, and report any unethical behavior you encounter!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Ethical Dilemma 1",
+      "question": "You find extra money. What do you do?",
+      "options": [
+        { "text": "Return to owner", "emoji": "🤗", "isCorrect": true },
+        { "text": "Keep it", "emoji": "💰", "isCorrect": false },
+        { "text": "Spend it", "emoji": "💸", "isCorrect": false },
+        { "text": "Share with friends", "emoji": "👥", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Ethical Dilemma 2",
+      "question": "Friend asks you to lie for financial gain. Your response?",
+      "options": [
+        { "text": "Agree to lie", "emoji": "😈", "isCorrect": false },
+        { "text": "Refuse to lie", "emoji": "🚫", "isCorrect": true },
+        { "text": "Maybe help", "emoji": "🤔", "isCorrect": false },
+        { "text": "Ask for share", "emoji": "💵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Ethical Dilemma 3",
+      "question": "You see someone cheating in a financial transaction. What do you do?",
+      "options": [
+        { "text": "Ignore it", "emoji": "😴", "isCorrect": false },
+        { "text": "Join them", "emoji": "😈", "isCorrect": false },
+        { "text": "Report it", "emoji": "🚨", "isCorrect": true },
+        { "text": "Watch silently", "emoji": "👀", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Ethical Dilemma 4",
+      "question": "You're offered money to do something unethical. Your choice?",
+      "options": [
+        { "text": "Accept it", "emoji": "💳", "isCorrect": false },
+        { "text": "Negotiate more", "emoji": "💬", "isCorrect": false },
+        { "text": "Think about it", "emoji": "🤔", "isCorrect": false },
+        { "text": "Refuse the offer", "emoji": "🛑", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Ethical Dilemma 5",
+      "question": "You can make money by being dishonest. What's your decision?",
+      "options": [
+        { "text": "Choose honesty", "emoji": "✨", "isCorrect": true },
+        { "text": "Choose money", "emoji": "💰", "isCorrect": false },
+        { "text": "Do both", "emoji": "🎭", "isCorrect": false },
+        { "text": "Avoid decision", "emoji": "🚫", "isCorrect": false }
+      ]
+    }
+  ]
+}

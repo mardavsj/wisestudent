@@ -1,0 +1,33 @@
+{
+  "title": "Puzzle: Investment Types",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match Investments with Characteristics ({{current}}/{{total}} matched)",
+  "investmentsTitle": "Investment Types",
+  "characteristicsTitle": "Characteristics",
+  "matchButton": "Match",
+  "selectInvestmentLabel": "Select an Investment Type",
+  "selectedInvestmentLabel": "Selected: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "Matched: {{current}}/{{total}}",
+  "resultSuccessHeader": "Great Job!",
+  "resultSuccessSubheader": "You correctly matched {{score}} out of {{total}} investment types with their characteristics!",
+  "resultSuccessLesson": "Lesson: Understanding investment characteristics helps make informed financial decisions!",
+  "resultTryAgainHeader": "Keep Practicing!",
+  "resultTryAgainSubheader": "You matched {{score}} out of {{total}} investment types correctly.",
+  "resultTryAgainTip": "Tip: Think about the risk level and nature of each investment type!",
+  "coinsEarned": "+{{coins}} Coins",
+  "investments": [
+    { "id": 1, "name": "Fixed Deposit", "emoji": "🏦" },
+    { "id": 2, "name": "Stocks", "emoji": "📈" },
+    { "id": 3, "name": "Mutual Fund", "emoji": "📊" },
+    { "id": 4, "name": "Bonds", "emoji": "📜" },
+    { "id": 5, "name": "Real Estate", "emoji": "🏠" }
+  ],
+  "characteristics": [
+    { "id": 6, "name": "Safe", "emoji": "🛡️" },
+    { "id": 7, "name": "Risky", "emoji": "⚠️" },
+    { "id": 8, "name": "Diversified", "emoji": "🔄" },
+    { "id": 9, "name": "Stable", "emoji": "💰" },
+    { "id": 10, "name": "Long-term", "emoji": "⏳" }
+  ]
+}

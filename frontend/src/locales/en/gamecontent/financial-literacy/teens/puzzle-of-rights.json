@@ -1,0 +1,33 @@
+{
+  "title": "Puzzle: Consumer Rights",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match Rights with Meanings ({{current}}/{{total}} matched)",
+  "rightsTitle": "Consumer Rights",
+  "meaningsTitle": "Meanings",
+  "matchButton": "Match",
+  "selectRightLabel": "Select a Consumer Right",
+  "selectedRightLabel": "Selected: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "Matched: {{current}}/{{total}}",
+  "resultSuccessHeader": "Great Job!",
+  "resultSuccessSubheader": "You correctly matched {{score}} out of {{total}} consumer rights with their meanings!",
+  "resultSuccessLesson": "Lesson: Understanding consumer rights protects you from unfair practices!",
+  "resultTryAgainHeader": "Keep Practicing!",
+  "resultTryAgainSubheader": "You matched {{score}} out of {{total}} consumer rights correctly.",
+  "resultTryAgainTip": "Tip: Think about what protection each consumer right provides!",
+  "coinsEarned": "+{{coins}} Coins",
+  "rights": [
+    { "id": 1, "name": "Right to Safety", "emoji": "🛡️" },
+    { "id": 2, "name": "Right to Information", "emoji": "📋" },
+    { "id": 3, "name": "Right to Choose", "emoji": "✅" },
+    { "id": 4, "name": "Right to Redress", "emoji": "⚖️" },
+    { "id": 5, "name": "Right to Consumer Education", "emoji": "📚" }
+  ],
+  "meanings": [
+    { "id": 6, "name": "Safe Products", "emoji": "🛒" },
+    { "id": 7, "name": "Truthful Info", "emoji": "📝" },
+    { "id": 8, "name": "Variety of Choices", "emoji": "🛒" },
+    { "id": 9, "name": "Remedy for Issues", "emoji": "💰" },
+    { "id": 10, "name": "Awareness Building", "emoji": "🎓" }
+  ]
+}

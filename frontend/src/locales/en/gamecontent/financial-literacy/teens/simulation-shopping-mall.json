@@ -1,0 +1,177 @@
+{
+  "title": "Simulation: Shopping Mall",
+  "subtitleComplete": "Simulation Complete!",
+  "subtitleProgress": "Scenario {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "budgetLabel": "Budget: ",
+  "perfectScoreTitle": "Great Financial Decisions!",
+  "perfectScoreMsg": "You got {{score}} out of {{total}} scenarios correct! You understand smart shopping decisions!",
+  "lessonLabel": "Lesson: Balancing needs, wants, and savings leads to smart financial choices!",
+  "keepLearningTitle": "Keep Learning!",
+  "lowScoreMsg": "You got {{score}} out of {{total}} scenarios correct. Remember to balance needs, wants, and savings!",
+  "tipLabel": "Tip: Always prioritize needs first, then some wants, and save the rest!",
+  "tryAgain": "Try Again",
+  "coinsLabel": "+{{count}} Coins",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "Back to School Shopping",
+      "description": "You have ₹150 for school supplies. What's the best approach?",
+      "budget": 150,
+      "options": [
+        {
+          "id": "everything",
+          "text": "Buy everything I want",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "needs-only",
+          "text": "Buy only essentials",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "Buy nothing, save all",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "text": "Buy random items",
+          "emoji": "🎲",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Holiday Gift Shopping",
+      "description": "You have ₹100 for holiday gifts. What's the smartest choice?",
+      "budget": 100,
+      "options": [
+        {
+          "id": "thoughtful",
+          "text": "Thoughtful gifts within budget",
+          "emoji": "💝",
+          "isCorrect": true
+        },
+        {
+          "id": "expensive",
+          "text": "Most expensive gifts possible",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "cheap",
+          "text": "Cheapest gifts to save money",
+          "emoji": "🏷️",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "No gifts, keep money",
+          "emoji": "🤐",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Emergency Clothing Needs",
+      "description": "You need new clothes after an accident. How do you prioritize?",
+      "budget": 110,
+      "options": [
+        {
+          "id": "brand-new",
+          "text": "All brand new designer clothes",
+          "emoji": "👗",
+          "isCorrect": false
+        },
+        {
+          "id": "essentials-first",
+          "text": "Essential items first, then extras",
+          "emoji": "👕",
+          "isCorrect": true
+        },
+        {
+          "id": "secondhand",
+          "text": "All secondhand to save money",
+          "emoji": "📦",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "Borrow from friends",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Entertainment and Socializing",
+      "description": "You have ₹60 for entertainment. How do you balance fun and finances?",
+      "budget": 60,
+      "options": [
+        {
+          "id": "all-fun",
+          "text": "Spend all on entertainment",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "no-fun",
+          "text": "Save all, no entertainment",
+          "emoji": "📵",
+          "isCorrect": false
+        },
+        {
+          "id": "balanced-fun",
+          "text": "Some fun, some savings",
+          "emoji": "🎬",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-fun",
+          "text": "Borrow money for fun",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Balanced Shopping Day",
+      "description": "You have ₹200 for various needs. What's the best allocation?",
+      "budget": 200,
+      "options": [
+        {
+          "id": "all-needs",
+          "text": "All needs, no wants or savings",
+          "emoji": "🧾",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "Impulse buying whatever I like",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "all-wants",
+          "text": "All wants, no needs",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "smart-mix",
+          "text": "Mix of needs, some wants, save rest",
+          "emoji": "🛒",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

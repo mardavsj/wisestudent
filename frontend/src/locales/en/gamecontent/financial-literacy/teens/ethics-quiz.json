@@ -1,0 +1,66 @@
+{
+  "title": "Ethics Quiz",
+  "subtitleComplete": "Quiz Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Is bribing for marks ethical?",
+      "options": [
+        { "id": "yes", "text": "Yes, if needed", "emoji": "💰", "isCorrect": false },
+        { "id": "no", "text": "No, it's wrong", "emoji": "❌", "isCorrect": true },
+        { "id": "maybe", "text": "Maybe, depends", "emoji": "🤔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What's wrong with bribing?",
+      "options": [
+        { "id": "unfair", "text": "It's unfair and dishonest", "emoji": "⚖️", "isCorrect": true },
+        { "id": "nothing", "text": "Nothing wrong", "emoji": "😊", "isCorrect": false },
+        { "id": "expensive", "text": "Too expensive", "emoji": "💸", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "How should you earn good marks?",
+      "options": [
+        { "id": "study", "text": "Study and work hard", "emoji": "📚", "isCorrect": true },
+        { "id": "bribe", "text": "Pay for marks", "emoji": "💳", "isCorrect": false },
+        { "id": "cheat", "text": "Cheat in exams", "emoji": "📋", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What are the consequences of bribing?",
+      "options": [
+        { "id": "no-consequences", "text": "No consequences", "emoji": "😊", "isCorrect": false },
+        { "id": "lose-trust", "text": "Lose trust and face punishment", "emoji": "🚫", "isCorrect": true },
+        { "id": "get-reward", "text": "Get rewarded", "emoji": "🎁", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What's the ethical way to succeed?",
+      "options": [
+        { "id": "honest-effort", "text": "Honest effort and integrity", "emoji": "🙂‍↔️", "isCorrect": true },
+        { "id": "shortcuts", "text": "Take shortcuts", "emoji": "⚡", "isCorrect": false },
+        { "id": "cheat-way", "text": "Cheat your way", "emoji": "😈", "isCorrect": false }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Great Job!",
+    "winMessage": "You got {{score}} out of {{total}} correct! You are an ethical champion!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Integrity and honest effort are the only true ways to succeed. Bribing leads to loss of trust and consequences.",
+    "loseEmoji": "😔",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} correct. Remember, honesty is the best policy!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Success earned through hard work and honesty is the most rewarding. Never take unethical shortcuts."
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "title": "Badge: Young Entrepreneur",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "challengeLabel": "Challenge {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Starting a Business",
+      "question": "What's the first step to start a business?",
+      "options": [
+        {
+          "id": "good-idea",
+          "text": "Have a good idea and plan",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "spend-all",
+          "text": "Spend all your money",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "Wait forever",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "copy",
+          "text": "Copy others exactly",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Business Planning",
+      "question": "What should you do before starting?",
+      "options": [
+        {
+          "id": "start-now",
+          "text": "Start immediately",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "text": "Research market and costs",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore planning",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "Spend without thinking",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Managing Money",
+      "question": "How should you handle business money?",
+      "options": [
+        {
+          "id": "spend-everything",
+          "text": "Spend everything",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-finances",
+          "text": "Ignore finances",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "text": "Track income and expenses",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "no-tracking",
+          "text": "No tracking needed",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Customer Service",
+      "question": "What's important for business success?",
+      "options": [
+        {
+          "id": "ignore-customers",
+          "text": "Ignore customers",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "Cheat customers",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "no-service",
+          "text": "No service needed",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "satisfy",
+          "text": "Satisfy customers",
+          "emoji": "😊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Growing Business",
+      "question": "How should you grow your business?",
+      "options": [
+        {
+          "id": "start-small",
+          "text": "Start small and expand gradually",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "start-huge",
+          "text": "Start huge immediately",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "never-grow",
+          "text": "Never grow",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow-no-plan",
+          "text": "Grow without planning",
+          "emoji": "🚀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "Young Entrepreneur Badge Earned!",
+    "winMessage": "You got {{score}} out of {{total}} challenges correct! You're a true Young Entrepreneur expert!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Young entrepreneurs have good ideas, plan carefully, track finances, satisfy customers, and grow gradually!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} challenges correct. Practice makes perfect with entrepreneurship!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Always have a good idea and plan, research market and costs, track finances, satisfy customers, and start small!"
+  }
+}

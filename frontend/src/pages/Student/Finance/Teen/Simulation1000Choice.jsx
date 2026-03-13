@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const Simulation1000Choice = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-68");
   const gameId = gameData?.id || "finance-teens-68";
-  
-  // Ensure gameId is always set correctly
-  if (!gameData || !gameData.id) {
-    console.warn("Game data not found for Simulation1000Choice, using fallback ID");
-  }
+  const gameContent = t("financial-literacy.teens.simulation-1000-choice", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -26,69 +24,7 @@ const Simulation1000Choice = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const scenarios = [
-  {
-    id: 1,
-    title: "₹1000 & Inflation Reality",
-    description: "You keep ₹1000 in cash for one year while prices rise. What is the smartest move?",
-    amount: 1000,
-    options: [
-      { id: "cash", text: "Keep cash at home", emoji: "💵", isCorrect: false },
-      { id: "spend", text: "Spend immediately", emoji: "🛍️", isCorrect: false },
-      { id: "savings", text: "Savings account only", emoji: "🏦", isCorrect: false },
-      { id: "invest", text: "Invest where returns beat inflation", emoji: "📈", isCorrect: true }
-    ]
-  },
-  {
-    id: 2,
-    title: "Risk vs Safety Choice",
-    description: "You may need this ₹1000 in 3 months. What’s the best option?",
-    amount: 1000,
-    options: [
-      { id: "fd", text: "Short-term safe savings", emoji: "🛡️", isCorrect: true },
-      { id: "stocks", text: "High-risk stocks", emoji: "📉", isCorrect: false },
-      { id: "crypto", text: "Crypto trading", emoji: "🪙", isCorrect: false },
-      { id: "lock", text: "Long-term locked investment", emoji: "🔒", isCorrect: false }
-    ]
-  },
-  {
-    id: 3,
-    title: "Delayed Reward Scenario",
-    description: "You can either enjoy ₹1000 today or grow it slowly. What builds wealth?",
-    amount: 1000,
-    options: [
-      { id: "enjoy", text: "Spend for instant happiness", emoji: "🎮", isCorrect: false },
-      { id: "compound", text: "Invest and let it compound", emoji: "🌱", isCorrect: true },
-      { id: "loan", text: "Lend to friends", emoji: "🤝", isCorrect: false },
-      { id: "idle", text: "Keep idle for safety", emoji: "😐", isCorrect: false }
-    ]
-  },
-  {
-    id: 4,
-    title: "Diversification Test",
-    description: "One investment fails. How do you protect your ₹1000?",
-    amount: 1000,
-    options: [
-      { id: "allone", text: "Put all money in one place", emoji: "🎯", isCorrect: false },
-      { id: "fear", text: "Avoid investing completely", emoji: "🙈", isCorrect: false },
-      { id: "gamble", text: "Increase risk to recover fast", emoji: "🎲", isCorrect: false },
-      { id: "diversify", text: "Split across different assets", emoji: "⚖️", isCorrect: true },
-    ]
-  },
-  {
-    id: 5,
-    title: "Smart Teen Decision",
-    description: "You earn ₹1000 as pocket money. What shows financial maturity?",
-    amount: 1000,
-    options: [
-      { id: "spendall", text: "Spend all on trends", emoji: "🛍️", isCorrect: false },
-      { id: "saveall", text: "Save without learning investing", emoji: "💰", isCorrect: false },
-      { id: "plan", text: "Split: save, invest, learn", emoji: "📊", isCorrect: true },
-      { id: "ignore", text: "Do nothing with money", emoji: "😴", isCorrect: false }
-    ]
-  }
-];
-
+  const scenarios = Array.isArray(gameContent?.scenarios) ? gameContent.scenarios : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -98,7 +34,7 @@ const Simulation1000Choice = () => {
     
     const scenario = scenarios[currentScenario];
     const selectedOption = scenario.options.find(opt => opt.id === optionId);
-    const isCorrect = selectedOption?.isCorrect;
+    const isCorrect = !!selectedOption?.isCorrect;
 
     if (isCorrect) {
       setScore(prev => prev + 1);
@@ -131,8 +67,16 @@ const Simulation1000Choice = () => {
 
   return (
     <GameShell
-      title="Simulation: ₹1000 Choice"
-      subtitle={!showResult ? `Scenario ${currentScenario + 1} of ${scenarios.length}` : "Simulation Complete!"}
+      title={gameContent?.title || "Simulation: ₹1000 Choice"}
+      subtitle={
+        !showResult 
+          ? t("financial-literacy.teens.simulation-1000-choice.subtitleProgress", {
+              current: currentScenario + 1,
+              total: scenarios.length,
+              defaultValue: "Scenario {{current}} of {{total}}"
+            })
+          : gameContent?.subtitleComplete || "Simulation Complete!"
+      }
       score={score}
       currentLevel={currentScenario + 1}
       totalLevels={scenarios.length}
@@ -154,8 +98,20 @@ const Simulation1000Choice = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Scenario {currentScenario + 1}/{scenarios.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{scenarios.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.simulation-1000-choice.subtitleProgress", {
+                    current: currentScenario + 1,
+                    total: scenarios.length,
+                    defaultValue: "Scenario {{current}} of {{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.simulation-1000-choice.scoreLabel", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{current.title}</h3>
@@ -165,7 +121,7 @@ const Simulation1000Choice = () => {
               
               <div className="bg-white/5 rounded-lg p-4 mb-6">
                 <div className="text-center">
-                  <span className="text-white font-semibold text-lg">Amount: </span>
+                  <span className="text-white font-semibold text-lg">{gameContent?.amountLabel || "Amount: "}</span>
                   <span className="text-green-400 font-bold text-2xl">₹{current.amount}</span>
                 </div>
               </div>
@@ -193,44 +149,54 @@ const Simulation1000Choice = () => {
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Excellent Choice!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.excellentTitle || "Excellent Choice!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {scenarios.length} scenarios correct!
-                  You understand smart investment allocation!
+                  {t("financial-literacy.teens.simulation-1000-choice.perfectScoreMsg", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "You got {{score}} out of {{total}} scenarios correct! You understand smart investment allocation!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>{t("financial-literacy.teens.simulation-1000-choice.coinsLabel", { count: score })}</span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: The best strategy is to mix Fixed Deposit (for safety) and Stocks (for growth) to balance risk and return!
+                  {gameContent?.lessonLabel || "Lesson: The best strategy is to mix Fixed Deposit (for safety) and Stocks (for growth) to balance risk and return!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.keepLearningTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {scenarios.length} scenarios correct.
-                  Remember, mixing FD and Stocks is the best strategy!
+                  {t("financial-literacy.teens.simulation-1000-choice.lowScoreMsg", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "You got {{score}} out of {{total}} scenarios correct. Remember, mixing FD and Stocks is the best strategy!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: The best choice is to mix Fixed Deposit (safe, low return) with Stocks (risky, high return) for balanced growth!
+                  {gameContent?.tipLabel || "Tip: The best choice is to mix Fixed Deposit (safe, low return) with Stocks (risky, high return) for balanced growth!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

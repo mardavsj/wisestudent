@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BriberyStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-95");
   const gameId = gameData?.id || "finance-teens-95";
+  const gameContent = t("financial-literacy.teens.bribery-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,131 +29,7 @@ const BriberyStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Official asks for bribe to process application. What do you do?",
-      options: [
-        { 
-          id: "pay", 
-          text: "Pay bribe", 
-          emoji: "💸", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "refuse", 
-          text: "Refuse", 
-          emoji: "🚫", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Clerk demands ₹500 for faster service. Your action?",
-      options: [
-        { 
-          id: "refuse2", 
-          text: "Refuse", 
-          emoji: "🛑", 
-          isCorrect: true
-        },
-        { 
-          id: "pay2", 
-          text: "Pay ₹500", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "negotiate", 
-          text: "Negotiate", 
-          emoji: "💬", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Officer hints at bribe for approval. What's your choice?",
-      options: [
-        { 
-          id: "pay3", 
-          text: "Pay bribe", 
-          emoji: "📜", 
-          isCorrect: false
-        },
-        { 
-          id: "wait", 
-          text: "Wait", 
-          emoji: "⏳", 
-          isCorrect: false
-        },
-        { 
-          id: "refuse3", 
-          text: "Refuse", 
-          emoji: "🙅", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Agent asks for extra fee to clear paperwork. Do you pay?",
-      options: [
-        { 
-          id: "refuse4", 
-          text: "Refuse", 
-          emoji: "❌", 
-          isCorrect: true
-        },
-        { 
-          id: "pay4", 
-          text: "Pay fee", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "complain", 
-          text: "Complain later", 
-          emoji: "📢", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Official demands ₹1000 for license. What's your move?",
-      options: [
-        { 
-          id: "pay5", 
-          text: "Pay ₹1000", 
-          emoji: "📝", 
-          isCorrect: false
-        },
-        { 
-          id: "refuse5", 
-          text: "Refuse", 
-          emoji: "🚨", 
-          isCorrect: true
-        },
-        { 
-          id: "partial", 
-          text: "Pay partial", 
-          emoji: "💵", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -185,8 +64,15 @@ const BriberyStory = () => {
 
   return (
     <GameShell
-      title="Bribery Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Bribery Story"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.bribery-story.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}",
+          })
+        : (gameContent?.subtitleComplete || "Story Complete!")
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -208,8 +94,20 @@ const BriberyStory = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.bribery-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}",
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.bribery-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}",
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -247,4 +145,3 @@ const BriberyStory = () => {
 };
 
 export default BriberyStory;
-

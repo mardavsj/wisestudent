@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,10 +8,12 @@ import { getGameDataById } from "../../../../utils/getGameData";
 const QuizOnSavingsRate = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-2");
   const gameId = gameData?.id || "finance-teens-2";
+  const gameContent = t("financial-literacy.teens.quiz-on-savings-rate", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,137 +30,27 @@ const QuizOnSavingsRate = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "If you earn ₹1000 and save ₹200, what percentage are you saving?",
-      options: [
-        { 
-          id: "a", 
-          text: "10%", 
-          emoji: "🔢", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "20%", 
-          emoji: "📈", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "25%", 
-          emoji: "📊", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "If you want to save 15% of ₹2000, how much should you save?",
-      options: [
-        { 
-          id: "a", 
-          text: "₹300", 
-          emoji: "🏦", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "₹200", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "₹400", 
-          emoji: "💵", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What percentage is saved if you earn ₹5000 and spend ₹4000?",
-      options: [
-        { 
-          id: "a", 
-          text: "10%", 
-          emoji: "📉", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "25%", 
-          emoji: "🎯", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "20%", 
-          emoji: "😓", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "If your savings rate is 25% and you save ₹500, how much do you earn?",
-      options: [
-        { 
-          id: "a", 
-          text: "₹2000", 
-          emoji: "🧮", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "₹1000", 
-          emoji: "🧮", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "₹2500", 
-          emoji: "🧮", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which savings rate is the most sustainable for long-term financial health?",
-      options: [
-        { 
-          id: "a", 
-          text: "5%", 
-          emoji: "🐌", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "50%", 
-          emoji: "⚠️", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "20%", 
-          emoji: "⚖️", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = useMemo(() => {
+    return Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  }, [gameContent]);
 
-  const handleAnswer = (isCorrect) => {
+  // Map correct answers
+  const correctAnswers = {
+    1: "b",
+    2: "a",
+    3: "c",
+    4: "a",
+    5: "c"
+  };
+
+  const handleAnswer = (optionId, questionId) => {
     if (answered) return;
     
     setAnswered(true);
     resetFeedback();
     
+    const isCorrect = correctAnswers[questionId] === optionId;
+
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
@@ -185,12 +78,18 @@ const QuizOnSavingsRate = () => {
     resetFeedback();
   };
 
-
-
   return (
     <GameShell
-      title="Quiz on Savings Rate"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      title={gameContent?.title || "Quiz on Savings Rate"}
+      subtitle={
+        !showResult 
+          ? t("financial-literacy.teens.quiz-on-savings-rate.subtitleProgress", { 
+              current: currentQuestion + 1, 
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`
+            }) 
+          : gameContent?.subtitleComplete || "Quiz Complete!"
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -211,9 +110,21 @@ const QuizOnSavingsRate = () => {
         {!showResult && questions[currentQuestion] ? (
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+              <div className="flex justify-between items-center mb-4 text-white/80">
+                <span>
+                  {t("financial-literacy.teens.quiz-on-savings-rate.questionCount", { 
+                    current: currentQuestion + 1, 
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.quiz-on-savings-rate.scoreLabel", { 
+                    score, 
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -221,26 +132,29 @@ const QuizOnSavingsRate = () => {
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {questions[currentQuestion].options.map((option) => (
-                  <button
-                    key={option.id}
-                    onClick={() => handleAnswer(option.isCorrect)}
-                    disabled={answered}
-                    className={`p-6 rounded-2xl text-center transition-all transform ${
-                      answered
-                        ? option.isCorrect
-                          ? "bg-green-500/30 border-4 border-green-400 ring-4 ring-green-400"
-                          : "bg-red-500/20 border-2 border-red-400 opacity-75"
-                        : "bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white border-2 border-white/20 hover:border-white/40 hover:scale-105"
-                    } ${answered ? "cursor-not-allowed" : ""}`}
-                  >
-                    <div className="flex flex-col items-center justify-center gap-3">
-                      <span className="text-4xl">{option.emoji}</span>
-                      <span className="font-semibold text-lg">{option.text}</span>
-                      <span className="text-sm opacity-90">{option.description}</span>
-                    </div>
-                  </button>
-                ))}
+                {questions[currentQuestion].options.map((option) => {
+                  const isCorrect = correctAnswers[questions[currentQuestion].id] === option.id;
+                  return (
+                    <button
+                      key={option.id}
+                      onClick={() => handleAnswer(option.id, questions[currentQuestion].id)}
+                      disabled={answered}
+                      className={`p-6 rounded-2xl text-center transition-all transform ${
+                        answered
+                          ? isCorrect
+                            ? "bg-green-500/30 border-4 border-green-400 ring-4 ring-green-400"
+                            : "bg-red-500/20 border-2 border-red-400 opacity-75"
+                          : "bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white border-2 border-white/20 hover:border-white/40 hover:scale-105"
+                      } ${answered ? "cursor-not-allowed" : ""}`}
+                    >
+                      <div className="flex flex-col items-center justify-center gap-3">
+                        <span className="text-4xl">{option.emoji}</span>
+                        <span className="font-semibold text-lg">{option.text}</span>
+                        <span className="text-sm opacity-90">{option.description}</span>
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -249,34 +163,49 @@ const QuizOnSavingsRate = () => {
             {score >= 3 ? (
               <div>
                 <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Savings Rate Quiz Star!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessHeader || "Savings Rate Quiz Star!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct!
-                  You're mastering savings rate calculations!
+                  {t("financial-literacy.teens.quiz-on-savings-rate.resultSuccessSubheader", { 
+                    score, 
+                    total: questions.length,
+                    defaultValue: `You got ${score} out of ${questions.length} correct! You're mastering savings rate calculations!`
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.quiz-on-savings-rate.coinsEarned", { 
+                      coins: score,
+                      defaultValue: `+${score} Coins`
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Understanding savings rates helps you plan for your financial future!
+                  {gameContent?.resultSuccessLesson || "Lesson: Understanding savings rates helps you plan for your financial future!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultTryAgainHeader || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct.
-                  Practice makes perfect with savings rate calculations!
+                  {t("financial-literacy.teens.quiz-on-savings-rate.resultTryAgainSubheader", { 
+                    score, 
+                    total: questions.length,
+                    defaultValue: `You got ${score} out of ${questions.length} correct. Practice makes perfect with savings rate calculations!`
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.tryAgainButton || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Remember to calculate percentages and understand the importance of consistent saving rates!
+                  {gameContent?.resultTryAgainTip || "Tip: Remember to calculate percentages and understand the importance of consistent saving rates!"}
                 </p>
               </div>
             )}

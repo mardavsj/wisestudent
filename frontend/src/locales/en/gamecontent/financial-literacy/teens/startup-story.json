@@ -1,0 +1,136 @@
+{
+  "title": "Startup Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "perfectScoreTitle": "Story Complete!",
+  "perfectScoreMsg": "You got {{score}} out of {{total}} correct! You understand startup investments!",
+  "coinsLabel": "+{{count}} Coins",
+  "lessonLabel": "Lesson: Startup investments can be smart when well-researched and planned, but always diversify and understand the risks!",
+  "keepLearningTitle": "Keep Learning!",
+  "lowScoreMsg": "You got {{score}} out of {{total}} correct. Remember, startup investments need research, planning, and diversification!",
+  "tryAgain": "Try Again",
+  "tipLabel": "Tip: Startup investments can be smart when you research, plan, and diversify. A 50% return like ₹100→₹150 is good!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Friend invests ₹100 in a lemonade stand. Earns ₹150. Smart?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "Yes, good return",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "No, too risky",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "Maybe, depends",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What makes a startup investment smart?",
+      "options": [
+        {
+          "id": "research",
+          "text": "Research and planning",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "Pure luck",
+          "emoji": "🍀",
+          "isCorrect": false
+        },
+        {
+          "id": "quick",
+          "text": "Quick decision",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Should you invest all your money in one startup?",
+      "options": [
+        {
+          "id": "all",
+          "text": "Yes, go all in",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "diversify",
+          "text": "No, diversify",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "Avoid startups",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What's a good return on startup investment?",
+      "options": [
+        {
+          "id": "high",
+          "text": "High return potential",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "guaranteed",
+          "text": "Guaranteed return",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "low",
+          "text": "Low return only",
+          "emoji": "📉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "When is investing in a startup a good idea?",
+      "options": [
+        {
+          "id": "never",
+          "text": "Never",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "planned",
+          "text": "When well-planned",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "Always",
+          "emoji": "🙂",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const ExamPrepStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-35");
   const gameId = gameData?.id || "finance-teens-35";
+  const gameContent = t("financial-literacy.teens.exam-prep-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,129 +29,7 @@ const ExamPrepStory = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const questions = [
-    {
-      id: 1,
-      text: "You have ₹200 left. Pay for tuition or buy snacks?",
-      options: [
-        { 
-          id: "tuition", 
-          text: "Pay tuition", 
-          emoji: "📚", 
-           
-          isCorrect: true 
-        },
-        { 
-          id: "snacks", 
-          text: "Buy snacks", 
-          emoji: "🍫", 
-          isCorrect: false 
-        },
-        { 
-          id: "split", 
-          text: "Split between both", 
-          emoji: "⚖️", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You have ₹300. Exam fees or movie ticket?",
-      options: [
-        { 
-          id: "movie", 
-          text: "Movie ticket", 
-          emoji: "🎬", 
-          isCorrect: false 
-        },
-        { 
-          id: "fees", 
-          text: "Pay exam fees", 
-          emoji: "📝", 
-          isCorrect: true 
-        },
-        { 
-          id: "save", 
-          text: "Save everything", 
-          emoji: "💰", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "You have ₹400. Study materials or new clothes?",
-      options: [
-        { 
-          id: "clothes", 
-          text: "Buy clothes", 
-          emoji: "👗", 
-          isCorrect: false 
-        },
-        { 
-          id: "split", 
-          text: "Split between both", 
-          emoji: "⚖️", 
-          isCorrect: false 
-        },
-        { 
-          id: "study", 
-          text: "Buy study materials", 
-          emoji: "📖", 
-          isCorrect: true 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You have ₹250. Tutoring or party snacks?",
-      options: [
-        { 
-          id: "tutoring", 
-          text: "Pay for tutoring", 
-          emoji: "🎓", 
-          isCorrect: true 
-        },
-        { 
-          id: "snacks", 
-          text: "Party snacks", 
-          emoji: "🎉", 
-          isCorrect: false 
-        },
-        { 
-          id: "save", 
-          text: "Save everything", 
-          emoji: "💰", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You have ₹500. Exam prep course or gaming console?",
-      options: [
-        { 
-          id: "console", 
-          text: "Gaming console", 
-          emoji: "🎮", 
-          isCorrect: false 
-        },
-        { 
-          id: "course", 
-          text: "Exam prep course", 
-          emoji: "📚", 
-          isCorrect: true 
-        },
-        { 
-          id: "split", 
-          text: "Split between both", 
-          emoji: "⚖️", 
-          isCorrect: false 
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -185,9 +66,16 @@ const ExamPrepStory = () => {
 
   return (
     <GameShell
-      title="Exam Prep Story"
+      title={gameContent?.title || "Exam Prep Story"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.exam-prep-story.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Story Complete!")
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -208,8 +96,20 @@ const ExamPrepStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.exam-prep-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.exam-prep-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -227,51 +127,66 @@ const ExamPrepStory = () => {
                     <div className="flex flex-col items-center justify-center text-center">
                       <div className="text-3xl mb-3">{option.emoji}</div>
                       <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                      <p className="text-white/90 text-sm">{option.description}</p>
+                      {option.description && <p className="text-white/90 text-sm">{option.description}</p>}
                     </div>
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Great Job!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct!
-                  You understand the importance of prioritizing education expenses!
+                  {t("financial-literacy.teens.exam-prep-story.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct! You understand the importance of prioritizing education expenses!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.exam-prep-story.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Always prioritize education expenses like tuition, exam fees, and study materials over wants like snacks and entertainment!
+                  {gameContent?.result?.lesson || "Lesson: Always prioritize education expenses like tuition, exam fees, and study materials over wants like snacks and entertainment!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">😔</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "😔"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} questions correct.
-                  Remember to prioritize education expenses over wants!
+                  {t("financial-literacy.teens.exam-prep-story.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} questions correct. Remember to prioritize education expenses over wants!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Education expenses (tuition, exam fees, study materials) are investments in your future and should come before wants.
+                  {gameContent?.result?.tip || "Tip: Education expenses (tuition, exam fees, study materials) are investments in your future and should come before wants."}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );

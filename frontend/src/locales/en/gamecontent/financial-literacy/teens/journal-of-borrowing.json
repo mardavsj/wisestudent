@@ -1,0 +1,51 @@
+{
+  "title": "Journal of Borrowing",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "journalEntryHeader": "Journal Entry",
+  "placeholder": "Type your response here...",
+  "minCharsRequired": "Minimum {{min}} characters required",
+  "buttonSubmit": "Submit & Continue",
+  "buttonComplete": "Complete Journal",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "One time I borrowed money and handled it responsibly was ___.",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "One thing I learned about borrowing is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "One way to avoid debt problems is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "One benefit of planning before borrowing is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "One consequence of not repaying borrowed money is ___.",
+      "minLength": 10
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Journal Complete!",
+    "winMessage": "You completed {{score}} out of {{total}} entries! Great job reflecting on responsible borrowing!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Reflecting on borrowing experiences helps you learn to borrow responsibly, plan repayment, and avoid debt problems!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You completed {{score}} out of {{total}} entries. Remember, responsible borrowing means planning repayment and avoiding unnecessary debt!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Think about times when you borrowed money responsibly, and how planning repayment helped you avoid debt problems!"
+  }
+}

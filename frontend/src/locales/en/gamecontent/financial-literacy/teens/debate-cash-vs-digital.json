@@ -1,0 +1,66 @@
+{
+  "title": "Debate: Cash vs Digital",
+  "subtitleComplete": "Debate Complete!",
+  "subtitleProgress": "Round {{current}} of {{total}}",
+  "roundLabel": "Round {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "debateTopics": [
+    {
+      "id": 1,
+      "scenario": "Which is better for the future — cash or digital money?",
+      "positions": [
+        { "id": "digital", "text": "FOR: Digital with safety", "emoji": "📱", "points": ["Convenient", "Trackable", "Secure with precautions"], "isCorrect": true },
+        { "id": "balanced", "text": "BALANCED: Use both wisely", "emoji": "⚖️", "points": ["Cash for small purchases", "Digital for online", "Balance both methods"], "isCorrect": false },
+        { "id": "cash", "text": "AGAINST: Cash is better", "emoji": "💵", "points": ["No tech needed", "Physical control", "Traditional"], "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "scenario": "Is digital money safer than cash?",
+      "positions": [
+        { "id": "balanced", "text": "BALANCED: Both have risks", "emoji": "⚖️", "points": ["Digital: cyber risks", "Cash: physical theft", "Use both carefully"], "isCorrect": false },
+        { "id": "digital", "text": "FOR: Digital is safer", "emoji": "🔒", "points": ["Can be tracked", "Protected by banks", "Can be frozen if stolen"], "isCorrect": true },
+        { "id": "cash", "text": "AGAINST: Cash is safer", "emoji": "💰", "points": ["No hacking risk", "Physical control", "No digital fraud"], "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "scenario": "Should we move completely to digital payments?",
+      "positions": [
+        { "id": "cash", "text": "AGAINST: Keep cash", "emoji": "💵", "points": ["Not everyone has tech", "Backup option", "Privacy concerns"], "isCorrect": false },
+        { "id": "balanced", "text": "BALANCED: Transition gradually", "emoji": "⚖️", "points": ["Support both methods", "Educate people", "Gradual change"], "isCorrect": false },
+        { "id": "digital", "text": "FOR: Go fully digital", "emoji": "📱", "points": ["Modern and efficient", "Better tracking", "Future-ready"], "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "scenario": "Which is more convenient for daily use?",
+      "positions": [
+        { "id": "digital", "text": "FOR: Digital is convenient", "emoji": "📲", "points": ["Quick transactions", "No need for change", "Works everywhere"], "isCorrect": true },
+        { "id": "cash", "text": "AGAINST: Cash is convenient", "emoji": "💵", "points": ["No battery needed", "Works offline", "Simple to use"], "isCorrect": false },
+        { "id": "balanced", "text": "BALANCED: Both have benefits", "emoji": "⚖️", "points": ["Digital for online", "Cash for offline", "Use what works"], "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "scenario": "Can digital money replace cash completely?",
+      "positions": [
+        { "id": "balanced", "text": "BALANCED: Coexist together", "emoji": "⚖️", "points": ["Digital for most", "Cash as backup", "Both have roles"], "isCorrect": false },
+        { "id": "digital", "text": "FOR: Yes, with safety", "emoji": "🔐", "points": ["Technology advances", "Better security", "More efficient"], "isCorrect": true },
+        { "id": "cash", "text": "AGAINST: Cash is essential", "emoji": "💰", "points": ["Universal acceptance", "No tech barriers", "Always available"], "isCorrect": false }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Debate Complete!",
+    "winMessage": "You got {{score}} out of {{total}} correct! You understand the future of digital money!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Digital money with proper safety measures is the future, offering convenience, tracking, and security!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} correct. Remember, digital money with safety is the way forward!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Digital money offers convenience, tracking, and security when used safely. It's the future of payments!"
+  }
+}

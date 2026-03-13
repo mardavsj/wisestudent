@@ -1,0 +1,141 @@
+{
+  "title": "Consumer Quiz",
+  "subtitleComplete": "Quiz Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "If shopkeeper cheats, where can you complain?",
+      "options": [
+        {
+          "id": "court",
+          "text": "Consumer Court",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "playground",
+          "text": "Playground",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "nowhere",
+          "text": "Nowhere",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What are consumer rights?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "No rights",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "protection",
+          "text": "Protection from fraud",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "Right to spend",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What should you do if you get a defective product?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "Accept it",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore it",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "Complain to seller",
+          "emoji": "📢",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What's the right to information?",
+      "options": [
+        {
+          "id": "know",
+          "text": "Know product details",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "Hide information",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "lie",
+          "text": "Accept lies",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Where can you file a consumer complaint?",
+      "options": [
+        {
+          "id": "police",
+          "text": "Police Station",
+          "emoji": "🚔",
+          "isCorrect": false
+        },
+        {
+          "id": "court2",
+          "text": "Consumer Court",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "school",
+          "text": "School",
+          "emoji": "🏫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Quiz Complete!",
+    "winMessage": "You got {{score}} out of {{total}} correct! You understand consumer rights!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Consumers have rights! You can complain to Consumer Court if cheated, demand safe products, and get honest information!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} correct. Remember, Consumer Court is where you complain if shopkeeper cheats!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: If a shopkeeper cheats you, you can file a complaint at Consumer Court, not playground! Consumers have rights!"
+  }
+}

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const MoneyBorrowStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-51");
   const gameId = gameData?.id || "finance-teens-51";
+  const gameContent = t("financial-literacy.teens.money-borrow-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,129 +29,7 @@ const MoneyBorrowStory = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const questions = [
-    {
-      id: 1,
-      text: "Teen borrows ₹100 from a friend. Forgetting to repay?",
-      options: [
-        { 
-          id: "wrong", 
-          text: "Wrong - Always repay", 
-          emoji: "❌", 
-          
-          isCorrect: true 
-        },
-        { 
-          id: "okay", 
-          text: "Okay to forget", 
-          emoji: "😴", 
-          isCorrect: false 
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe later", 
-          emoji: "🤔", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You borrowed ₹200. When should you repay?",
-      options: [
-        { 
-          id: "never", 
-          text: "Never repay", 
-          emoji: "🚫", 
-          isCorrect: false 
-        },
-        { 
-          id: "on-time", 
-          text: "On time as promised", 
-          emoji: "🙂‍↔️", 
-          isCorrect: true 
-        },
-        { 
-          id: "whenever", 
-          text: "Whenever you feel like", 
-          emoji: "😊", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Friend asks to borrow ₹50. What should you consider?",
-      options: [
-        { 
-          id: "lend", 
-          text: "Lend if you can afford", 
-          emoji: "💰", 
-          isCorrect: true 
-        },
-        { 
-          id: "always", 
-          text: "Always lend everything", 
-          emoji: "💸", 
-          isCorrect: false 
-        },
-        { 
-          id: "never", 
-          text: "Never lend to anyone", 
-          emoji: "🔒", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "You can't repay on time. What should you do?",
-      options: [
-        { 
-          id: "hide", 
-          text: "Hide and avoid friend", 
-          emoji: "🙈", 
-          isCorrect: false 
-        },
-        { 
-          id: "communicate", 
-          text: "Communicate and explain", 
-          emoji: "💬", 
-          isCorrect: true 
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore the debt", 
-          emoji: "😴", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What's the best practice for borrowing money?",
-      options: [
-        { 
-          id: "borrow-often", 
-          text: "Borrow often from friends", 
-          emoji: "🔄", 
-          isCorrect: false 
-        },
-        { 
-          id: "borrow-wisely", 
-          text: "Borrow only when necessary and repay promptly", 
-          emoji: "🙂", 
-          isCorrect: true 
-        },
-        { 
-          id: "never-repay", 
-          text: "Borrow but never repay", 
-          emoji: "🚫", 
-          isCorrect: false 
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;
@@ -185,14 +66,21 @@ const MoneyBorrowStory = () => {
 
   return (
     <GameShell
-      title="Money Borrow Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Money Borrow Story"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.money-borrow-story.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Story Complete!")
+      }
       score={score}
       currentLevel={currentQuestion + 1}
-      totalLevels={questions.length}
+      totalLevels={questions.length || 5}
       coinsPerLevel={coinsPerLevel}
       showGameOver={showResult}
-      maxScore={questions.length}
+      maxScore={questions.length || 5}
       totalCoins={totalCoins}
       totalXp={totalXp}
       nextGamePathProp="/student/finance/teen/debt-quiz"
@@ -208,8 +96,20 @@ const MoneyBorrowStory = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.money-borrow-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.money-borrow-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -233,55 +133,71 @@ const MoneyBorrowStory = () => {
                     <div className="flex flex-col items-center justify-center gap-3">
                       <span className="text-4xl">{option.emoji}</span>
                       <span className="font-semibold text-lg">{option.text}</span>
-                      <span className="text-sm opacity-90">{option.description}</span>
+                      {option.description && (
+                         <span className="text-sm opacity-90">{option.description}</span>
+                      )}
                     </div>
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Borrowing Star!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Borrowing Star!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct!
-                  Great job learning about responsible borrowing!
+                  {t("financial-literacy.teens.money-borrow-story.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! Great job learning about responsible borrowing!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.money-borrow-story.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Always repay borrowed money on time, communicate if you can't, and borrow only when necessary. This builds trust and maintains relationships!
+                  {gameContent?.result?.lesson || "Lesson: Always repay borrowed money on time, communicate if you can't, and borrow only when necessary. This builds trust and maintains relationships!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct.
-                  Remember to always repay borrowed money on time!
+                  {t("financial-literacy.teens.money-borrow-story.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember to always repay borrowed money on time!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Always repay borrowed money on time, communicate honestly if you can't repay, and borrow only when necessary and affordable!
+                  {gameContent?.result?.tip || "Tip: Always repay borrowed money on time, communicate honestly if you can't repay, and borrow only when necessary and affordable!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );
 };
 
 export default MoneyBorrowStory;
-

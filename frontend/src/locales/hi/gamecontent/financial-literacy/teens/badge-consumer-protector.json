@@ -1,0 +1,69 @@
+{
+  "title": "बैज: उपभोक्ता रक्षक",
+  "subtitleComplete": "बैज पूरा हुआ!",
+  "subtitleProgress": "चुनौती {{current}} / {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "resultSuccessTitle": "उपभोक्ता रक्षक बैज अर्जित किया!",
+  "resultSuccessText": "आपने {{total}} में से {{score}} चुनौतियाँ सही कीं! आप एक सच्चे उपभोक्ता रक्षक हैं!",
+  "resultSuccessLesson": "सबक: उपभोक्ता अधिकारों और धोखाधड़ी के जोखिमों के बारे में जागरूक होने से आपको अपनी मेहनत की कमाई की रक्षा करने में मदद मिलती है।",
+  "resultFailTitle": "सीखते रहें!",
+  "resultFailText": "आपने {{total}} में से {{score}} चुनौतियाँ सही कीं। उपभोक्ता सुरक्षा के बारे में और जानें!",
+  "resultFailTip": "टिप: ओटीपी या बैंक विवरण जैसी संवेदनशील जानकारी कभी साझा न करें, और हमेशा संदिग्ध लिंक और कॉल की रिपोर्ट करें!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "धोखाधड़ी मामला 1",
+      "question": "आपको बैंक विवरण मांगने वाली एक फर्जी कॉल आती है। आप क्या करते हैं?",
+      "options": [
+        { "text": "मना करें और रिपोर्ट करें", "emoji": "🚫", "isCorrect": true },
+        { "text": "विवरण साझा करें", "emoji": "💳", "isCorrect": false },
+        { "text": "कॉल को नज़रअंदाज़ करें", "emoji": "😴", "isCorrect": false },
+        { "text": "अधिक जानकारी मांगें", "emoji": "🤔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "धोखाधड़ी मामला 2",
+      "question": "आपको एक लिंक वाला संदिग्ध संदेश मिलता है। आपकी कार्रवाई क्या है?",
+      "options": [
+        { "text": "लिंक पर क्लिक करें", "emoji": "🔗", "isCorrect": false },
+        { "text": "हटाएं और रिपोर्ट करें", "emoji": "🗑️", "isCorrect": true },
+        { "text": "दोस्तों को भेजें", "emoji": "📤", "isCorrect": false },
+        { "text": "बाद के लिए सहेजें", "emoji": "💾", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "धोखाधड़ी मामला 3",
+      "question": "कोई आपका ओटीपी मांगता है। आप कैसे प्रतिक्रिया देते हैं?",
+      "options": [
+        { "text": "कभी ओटीपी साझा न करें", "emoji": "🔒", "isCorrect": true },
+        { "text": "यदि वे विनम्रता से पूछें तो साझा करें", "emoji": "😊", "isCorrect": false },
+        { "text": "आंशिक ओटीपी दें", "emoji": "🔢", "isCorrect": false },
+        { "text": "सभी के साथ साझा करें", "emoji": "📢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "धोखाधड़ी मामला 4",
+      "question": "आपको एक दोषपूर्ण उत्पाद मिलता है। आपको क्या करना चाहिए?",
+      "options": [
+        { "text": "इसे स्वीकार करें", "emoji": "😔", "isCorrect": false },
+        { "text": "उपभोक्ता न्यायालय में शिकायत करें", "emoji": "⚖️", "isCorrect": true },
+        { "text": "इसे नज़रअंदाज़ करें", "emoji": "😴", "isCorrect": false },
+        { "text": "इसे फेंक दें", "emoji": "🗑️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "धोखाधड़ी मामला 5",
+      "question": "आप एक अवास्तविक निवेश प्रस्ताव देखते हैं। आपकी प्रतिक्रिया क्या है?",
+      "options": [
+        { "text": "तुरंत निवेश करें", "emoji": "💰", "isCorrect": false },
+        { "text": "मना करें और घोटाले की रिपोर्ट करें", "emoji": "🚨", "isCorrect": true },
+        { "text": "इसके बारे में सोचें", "emoji": "🤔", "isCorrect": false },
+        { "text": "दूसरों के साथ साझा करें", "emoji": "📢", "isCorrect": false }
+      ]
+    }
+  ]
+}

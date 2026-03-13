@@ -1,0 +1,72 @@
+{
+  "title": "Reflex Wise Choices",
+  "subtitleReady": "Test your financial reflexes!",
+  "challengeTitle": "Reflex Wise Choices Challenge",
+  "challengeDescription": "Answer questions about wise financial choices. You have {{time}} seconds per question!",
+  "wiseChoicesLabel": "Wise Choices",
+  "wiseChoicesList": "Budget Plan, Compare Prices, Save First, Needs First, Research Deal",
+  "poorChoicesLabel": "Poor Choices",
+  "poorChoicesList": "Spend Randomly, Impulse Buy, Buy on Credit, Wants First, Peer Pressure",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "gameComplete": "Game Complete!",
+  "perfectScore": "Perfect! You're a financial wisdom master!",
+  "goodScore": "Great job! You understand wise financial choices!",
+  "lowScore": "Keep learning about wise financial decisions!",
+  "coinsLabel": "+{{count}} Coins",
+  "playAgain": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the smartest spending choice?",
+      "options": [
+        { "id": "budget", "text": "Budget Plan", "emoji": "📋" },
+        { "id": "random", "text": "Spend Randomly", "emoji": "🎲" },
+        { "id": "impulse", "text": "Impulse Buy", "emoji": "⚡" },
+        { "id": "credit", "text": "Buy on Credit", "emoji": "💳" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What should you do before making purchases?",
+      "options": [
+        { "id": "wants", "text": "Wants First", "emoji": "🛍️" },
+        { "id": "compare", "text": "Compare Prices", "emoji": "🔍" },
+        { "id": "peer", "text": "Peer Pressure", "emoji": "👥" },
+        { "id": "random", "text": "Spend Randomly", "emoji": "🎲" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What should you prioritize with your money?",
+      "options": [
+        { "id": "credit", "text": "Buy on Credit", "emoji": "💳" },
+        { "id": "impulse", "text": "Impulse Buy", "emoji": "⚡" },
+        { "id": "save", "text": "Save First", "emoji": "💰" },
+        { "id": "wants", "text": "Wants First", "emoji": "🛍️" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What should guide your spending decisions?",
+      "options": [
+        { "id": "needs", "text": "Needs First", "emoji": "🎯" },
+        { "id": "peer", "text": "Peer Pressure", "emoji": "👥" },
+        { "id": "impulse", "text": "Impulse Buy", "emoji": "⚡" },
+        { "id": "random", "text": "Spend Randomly", "emoji": "🎲" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What should you do when you see a good deal?",
+      "options": [
+        { "id": "buy_now", "text": "Buy Immediately", "emoji": "🛒" },
+        { "id": "ignore", "text": "Ignore It", "emoji": "🚫" },
+        { "id": "research", "text": "Research Deal", "emoji": "🔍" },
+        { "id": "credit", "text": "Buy on Credit", "emoji": "💳" }
+      ]
+    }
+  ]
+}

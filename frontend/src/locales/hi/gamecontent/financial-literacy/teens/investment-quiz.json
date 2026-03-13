@@ -1,0 +1,66 @@
+{
+  "title": "निवेश प्रश्नोत्तरी",
+  "subtitleComplete": "प्रश्नोत्तरी पूरी!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "किसमें अधिक जोखिम लेकिन अधिक रिटर्न है?",
+      "options": [
+        { "id": "fd", "text": "सावधि जमा (FD)", "emoji": "🏦", "isCorrect": false },
+        { "id": "stocks", "text": "शेयर बाज़ार", "emoji": "📈", "isCorrect": true },
+        { "id": "savings", "text": "बचत खाता", "emoji": "💰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "कौन सा निवेश सबसे सुरक्षित है?",
+      "options": [
+        { "id": "fd2", "text": "सावधि जमा (FD)", "emoji": "🛡️", "isCorrect": true },
+        { "id": "stocks2", "text": "शेयर", "emoji": "📊", "isCorrect": false },
+        { "id": "crypto", "text": "क्रिप्टोकरेंसी", "emoji": "₿", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "विविधीकरण (Diversification) क्या है?",
+      "options": [
+        { "id": "one", "text": "सारा पैसा एक ही निवेश में लगाना", "emoji": "🎯", "isCorrect": false },
+        { "id": "avoid", "text": "सभी निवेशों से बचना", "emoji": "🚫", "isCorrect": false },
+        { "id": "spread", "text": "विभिन्न निवेशों में फैलाना", "emoji": "📊", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "म्यूचुअल फंड क्या है?",
+      "options": [
+        { "id": "mix", "text": "शेयरों और बॉन्ड का मिश्रण", "emoji": "📦", "isCorrect": true },
+        { "id": "single", "text": "एक ही कंपनी का शेयर", "emoji": "📄", "isCorrect": false },
+        { "id": "bank", "text": "बैंक खाता", "emoji": "🏦", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "सिर्फ बचत करने के बजाय निवेश क्यों करें?",
+      "options": [
+        { "id": "same", "text": "बचत के समान है", "emoji": "➡️", "isCorrect": false },
+        { "id": "lose", "text": "नुकसान होना तय है", "emoji": "📉", "isCorrect": false },
+        { "id": "grow", "text": "तेजी से बढ़ने की संभावना", "emoji": "📈", "isCorrect": true }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "प्रश्नोत्तरी पूरी!",
+    "winMessage": "आपने {{total}} में से {{score}} प्रश्नों के सही उत्तर दिए! आप निवेश को समझते हैं!",
+    "coinsEarned": "+{{score}} सिक्के",
+    "lesson": "सीख: शेयरों में जोखिम अधिक होता है लेकिन रिटर्न भी अधिक मिलता है। सावधि जमा (FD) सुरक्षित हैं लेकिन रिटर्न कम है। विविधीकरण जोखिम को कम करता है!",
+    "loseEmoji": "💪",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} प्रश्नों के सही उत्तर दिए। याद रखें, शेयरों में जोखिम अधिक होता है लेकिन रिटर्न भी अधिक मिलता है, जबकि FD सुरक्षित हैं लेकिन रिटर्न कम है!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "सुझाव: शेयर बाज़ार जोखिम भरा है लेकिन उच्च रिटर्न प्रदान करता है। सावधि जमा सुरक्षित हैं लेकिन रिटर्न कम है। जोखिम कम करने के लिए विविधीकरण करें!"
+  }
+}

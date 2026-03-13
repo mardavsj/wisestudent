@@ -1,0 +1,66 @@
+{
+  "title": "ऋण प्रश्नोत्तरी",
+  "subtitleComplete": "प्रश्नोत्तरी पूरी!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "₹100 उधार लें, ₹120 चुकाएं। अतिरिक्त ₹20 को क्या कहा जाता है?",
+      "options": [
+        { "id": "principal", "text": "मूलधन", "emoji": "💵", "isCorrect": false },
+        { "id": "fee", "text": "शुल्क", "emoji": "💸", "isCorrect": false },
+        { "id": "interest", "text": "ब्याज", "emoji": "💰", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "यदि आप समय पर कर्ज नहीं चुकाते हैं तो क्या होता है?",
+      "options": [
+        { "id": "nothing", "text": "कुछ नहीं होता", "emoji": "😊", "isCorrect": false },
+        { "id": "penalty", "text": "जुर्माना शुल्क और ब्याज बढ़ता है", "emoji": "⚠️", "isCorrect": true },
+        { "id": "free", "text": "कर्ज मुक्त हो जाता है", "emoji": "🎁", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "उधार ली गई मूल राशि को क्या कहा जाता है?",
+      "options": [
+        { "id": "interest", "text": "ब्याज", "emoji": "💰", "isCorrect": false },
+        { "id": "principal", "text": "मूलधन", "emoji": "💵", "isCorrect": true },
+        { "id": "total", "text": "कुल ऋण", "emoji": "📊", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "पैसे उधार लेने से पहले आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "plan", "text": "चुकाने की योजना बनाएं", "emoji": "📋", "isCorrect": true },
+        { "id": "borrow-first", "text": "पहले उधार लें, बाद में सोचें", "emoji": "💸", "isCorrect": false },
+        { "id": "ignore", "text": "चुकौती को नज़रअंदाज़ करें", "emoji": "😴", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "कर्ज की समस्याओं से बचने का सबसे अच्छा तरीका क्या है?",
+      "options": [
+        { "id": "borrow-more", "text": "पुराना कर्ज चुकाने के लिए और उधार लें", "emoji": "🔄", "isCorrect": false },
+        { "id": "avoid", "text": "अनावश्यक उधार लेने से बचें और समय पर चुकाएं", "emoji": "👍", "isCorrect": true },
+        { "id": "ignore", "text": "सभी कर्जों को नज़रअंदाज़ करें", "emoji": "🚫", "isCorrect": false }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ऋण प्रश्नोत्तरी स्टार!",
+    "winMessage": "आपने {{total}} में से {{score}} सही किए! आप ऋण और उधार को समझते हैं!",
+    "coinsEarned": "+{{score}} सिक्के",
+    "lesson": "सीख: ब्याज उधार लेने की अतिरिक्त लागत है। हमेशा चुकाने की योजना बनाएं, अनावश्यक कर्ज से बचें और जुर्माने से बचने के लिए समय पर चुकाएं!",
+    "loseEmoji": "💪",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} सही किए। याद रखें: पैसे उधार लेने की अतिरिक्त लागत ब्याज है!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "सुझाव: जब आप उधार लेते हैं तो ब्याज वह अतिरिक्त राशि होती है जो आप चुकाते हैं। हमेशा चुकाने की योजना बनाएं, अनावश्यक कर्ज से बचें और समय पर चुकाएं!"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "title": "Quiz on Savings Rate",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Quiz Complete!",
+  "questionCount": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessHeader": "Savings Rate Quiz Star!",
+  "resultSuccessSubheader": "You got {{score}} out of {{total}} correct! You're mastering savings rate calculations!",
+  "coinsEarned": "+{{coins}} Coins",
+  "resultSuccessLesson": "Lesson: Understanding savings rates helps you plan for your financial future!",
+  "resultTryAgainHeader": "Keep Learning!",
+  "resultTryAgainSubheader": "You got {{score}} out of {{total}} correct. Practice makes perfect with savings rate calculations!",
+  "tryAgainButton": "Try Again",
+  "resultTryAgainTip": "Tip: Remember to calculate percentages and understand the importance of consistent saving rates!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "If you earn ₹1000 and save ₹200, what percentage are you saving?",
+      "options": [
+        { "id": "a", "text": "10%", "emoji": "🔢" },
+        { "id": "b", "text": "20%", "emoji": "📈" },
+        { "id": "c", "text": "25%", "emoji": "📊" }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "If you want to save 15% of ₹2000, how much should you save?",
+      "options": [
+        { "id": "a", "text": "₹300", "emoji": "🏦" },
+        { "id": "b", "text": "₹200", "emoji": "💰" },
+        { "id": "c", "text": "₹400", "emoji": "💵" }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What percentage is saved if you earn ₹5000 and spend ₹4000?",
+      "options": [
+        { "id": "a", "text": "10%", "emoji": "📉" },
+        { "id": "b", "text": "25%", "emoji": "🎯" },
+        { "id": "c", "text": "20%", "emoji": "😓" }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "If your savings rate is 25% and you save ₹500, how much do you earn?",
+      "options": [
+        { "id": "a", "text": "₹2000", "emoji": "🧮" },
+        { "id": "b", "text": "₹1000", "emoji": "🧮" },
+        { "id": "c", "text": "₹2500", "emoji": "🧮" }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Which savings rate is the most sustainable for long-term financial health?",
+      "options": [
+        { "id": "a", "text": "5%", "emoji": "🐌" },
+        { "id": "b", "text": "50%", "emoji": "⚠️" },
+        { "id": "c", "text": "20%", "emoji": "⚖️" }
+      ]
+    }
+  ]
+}

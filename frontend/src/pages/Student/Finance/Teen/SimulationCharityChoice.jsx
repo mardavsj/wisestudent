@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const SimulationCharityChoice = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-98");
   const gameId = gameData?.id || "finance-teens-98";
-  
-  // Ensure gameId is always set correctly
-  if (!gameData || !gameData.id) {
-    console.warn("Game data not found for SimulationCharityChoice, using fallback ID");
-  }
+  const gameContent = t("financial-literacy.teens.simulation-charity-choice", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -26,168 +24,7 @@ const SimulationCharityChoice = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const scenarios = [
-  {
-    id: 1,
-    title: "Impact vs Emotion",
-    description: "You want to donate ₹1000. Which choice creates the most real impact?",
-    options: [
-      {
-        id: "street",
-        text: "Give cash randomly on the street",
-        emoji: "🤲",
-        isCorrect: false
-      },
-      {
-        id: "trusted",
-        text: "Donate to a verified charity with clear reports",
-        emoji: "📋",
-        isCorrect: true
-      },
-      {
-        id: "viral",
-        text: "Donate to trending online campaigns",
-        emoji: "🔥",
-        isCorrect: false
-      },
-      {
-        id: "delay",
-        text: "Wait forever for the perfect moment",
-        emoji: "⏳",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: "Short-Term Help vs Long-Term Change",
-    description: "A charity can either provide meals today or education support for months. What’s smarter?",
-    options: [
-      {
-        id: "education",
-        text: "Support education & skill-building",
-        emoji: "🎓",
-        isCorrect: true
-      },
-      {
-        id: "meals",
-        text: "One-time food distribution",
-        emoji: "🍱",
-        isCorrect: false
-      },
-      
-      {
-        id: "split",
-        text: "Randomly split money",
-        emoji: "🎲",
-        isCorrect: false
-      },
-      {
-        id: "none",
-        text: "Avoid donating",
-        emoji: "🙈",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Transparency Check",
-    description: "Before donating, what should you check first?",
-    options: [
-      {
-        id: "celebrity",
-        text: "Celebrity endorsement",
-        emoji: "🌟",
-        isCorrect: false
-      },
-      {
-        id: "emotional",
-        text: "Emotional stories only",
-        emoji: "😢",
-        isCorrect: false
-      },
-      
-      {
-        id: "pressure",
-        text: "Social pressure",
-        emoji: "👥",
-        isCorrect: false
-      },
-      {
-        id: "reports",
-        text: "Financial transparency & impact reports",
-        emoji: "📊",
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 4,
-    title: "Charity vs Personal Growth",
-    description: "You have limited money. What builds both empathy and financial sense?",
-    options: [
-      {
-        id: "donate-blind",
-        text: "Donate without understanding",
-        emoji: "🙃",
-        isCorrect: false
-      },
-      
-      {
-        id: "spend",
-        text: "Spend everything on yourself",
-        emoji: "🛍️",
-        isCorrect: false
-      },
-      {
-        id: "learn",
-        text: "Learn about causes, then donate mindfully",
-        emoji: "🧠",
-        isCorrect: true
-      },
-      {
-        id: "avoid",
-        text: "Avoid charity completely",
-        emoji: "🚫",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "Sustainable Giving",
-    description: "Which habit makes charity effective over a lifetime?",
-    options: [
-      {
-        id: "big-once",
-        text: "One big donation once",
-        emoji: "💥",
-        isCorrect: false
-      },
-       {
-        id: "consistent",
-        text: "Small, regular, planned giving",
-        emoji: "📅",
-        isCorrect: true
-      },
-      {
-        id: "guilt",
-        text: "Donate only when feeling guilty",
-        emoji: "😬",
-        isCorrect: false
-      },
-     
-      {
-        id: "impulse",
-        text: "Impulse donations",
-        emoji: "⚡",
-        isCorrect: false
-      }
-    ]
-  }
-];
-
+  const scenarios = Array.isArray(gameContent?.scenarios) ? gameContent.scenarios : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -197,7 +34,7 @@ const SimulationCharityChoice = () => {
     
     const scenario = scenarios[currentScenario];
     const selectedOption = scenario.options.find(opt => opt.id === optionId);
-    const isCorrect = selectedOption?.isCorrect;
+    const isCorrect = !!selectedOption?.isCorrect;
 
     if (isCorrect) {
       setScore(prev => prev + 1);
@@ -222,8 +59,16 @@ const SimulationCharityChoice = () => {
 
   return (
     <GameShell
-      title="Simulation: Charity Choice"
-      subtitle={!showResult ? `Scenario ${currentScenario + 1} of ${scenarios.length}` : "Simulation Complete!"}
+      title={gameContent?.title || "Simulation: Charity Choice"}
+      subtitle={
+        !showResult 
+          ? t("financial-literacy.teens.simulation-charity-choice.subtitleProgress", {
+              current: currentScenario + 1,
+              total: scenarios.length,
+              defaultValue: "Scenario {{current}} of {{total}}"
+            })
+          : gameContent?.subtitleComplete || "Simulation Complete!"
+      }
       score={score}
       currentLevel={currentScenario + 1}
       totalLevels={scenarios.length}
@@ -245,8 +90,20 @@ const SimulationCharityChoice = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Scenario {currentScenario + 1}/{scenarios.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{scenarios.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.simulation-charity-choice.subtitleProgress", {
+                    current: currentScenario + 1,
+                    total: scenarios.length,
+                    defaultValue: "Scenario {{current}} of {{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.simulation-charity-choice.scoreLabel", {
+                    score,
+                    total: scenarios.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{current.title}</h3>
@@ -271,7 +128,6 @@ const SimulationCharityChoice = () => {
                     <div className="flex flex-col items-center justify-center gap-3">
                       <span className="text-4xl">{option.emoji}</span>
                       <span className="font-semibold text-lg">{option.text}</span>
-
                     </div>
                   </button>
                 ))}

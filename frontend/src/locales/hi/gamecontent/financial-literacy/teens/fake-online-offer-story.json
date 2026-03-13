@@ -1,0 +1,66 @@
+{
+  "title": "फर्जी ऑनलाइन ऑफर की कहानी",
+  "subtitleComplete": "कहानी पूरी!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "वेबसाइट ₹100 देने पर मुफ्त फोन की पेशकश करती है। आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "refuse", "text": "मना करें, यह एक घोटाला है", "emoji": "🚫", "isCorrect": true },
+        { "id": "pay", "text": "₹100 चुकाएं", "emoji": "💳", "isCorrect": false },
+        { "id": "maybe", "text": "शायद, पहले जांच करें", "emoji": "🤔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "फर्जी ऑनलाइन ऑफर का संकेत क्या है?",
+      "options": [
+        { "id": "normal", "text": "सामान्य कीमतें", "emoji": "💰", "isCorrect": false },
+        { "id": "too-good", "text": "सच होने के लिए बहुत अच्छा", "emoji": "⚠️", "isCorrect": true },
+        { "id": "expensive", "text": "बहुत महंगा", "emoji": "💎", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "संदिग्ध ऑफरों के साथ आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "try", "text": "वैसे भी प्रयास करें", "emoji": "🎲", "isCorrect": false },
+        { "id": "share", "text": "दोस्तों के साथ साझा करें", "emoji": "📢", "isCorrect": false },
+        { "id": "ignore", "text": "अनदेखा करें और रिपोर्ट करें", "emoji": "🚫", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "'मुफ्त' ऑफर अक्सर घोटाले क्यों होते हैं?",
+      "options": [
+        { "id": "trick", "text": "वे आपको भुगतान करने के लिए धोखा देते हैं", "emoji": "🎭", "isCorrect": true },
+        { "id": "real", "text": "वे हमेशा असली होते हैं", "emoji": "✅", "isCorrect": false },
+        { "id": "maybe2", "text": "कभी-कभी असली", "emoji": "🤷", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ऑनलाइन ऑफरों के साथ सबसे सुरक्षित कदम क्या है?",
+      "options": [
+        { "id": "pay-fast", "text": "जल्दी भुगतान करें", "emoji": "⚡", "isCorrect": false },
+        { "id": "verify", "text": "भुगतान करने से पहले सत्यापित करें", "emoji": "🔍", "isCorrect": true },
+        { "id": "ignore-all", "text": "सभी ऑफरों को अनदेखा करें", "emoji": "😴", "isCorrect": false }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "कहानी पूरी!",
+    "winMessage": "आपने {{total}} में से {{score}} प्रश्नों के सही उत्तर दिए! आप जानते हैं कि फर्जी ऑफरों को कैसे पहचानें!",
+    "coinsEarned": "+{{score}} सिक्के",
+    "lesson": "सीख: फर्जी ऑनलाइन ऑफर अक्सर सच होने के लिए बहुत अच्छे लगते हैं। हमेशा भुगतान करने से पहले सत्यापित करें, और संदिग्ध ऑफरों को अस्वीकार करें!",
+    "loseEmoji": "💪",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} प्रश्नों के सही उत्तर दिए। याद रखें, यदि कोई ऑफर सच होने के लिए बहुत अच्छा लगता है, तो वह संभवतः एक घोटाला है!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "सुझाव: यदि कोई वेबसाइट केवल ₹100 में मुफ्त फोन की पेशकश करती है, तो यह संभवतः एक घोटाला है। हमेशा ऑफरों को सत्यापित करें और संदिग्ध को अस्वीकार करें!"
+  }
+}

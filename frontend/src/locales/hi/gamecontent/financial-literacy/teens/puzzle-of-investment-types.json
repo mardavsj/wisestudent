@@ -1,0 +1,33 @@
+{
+  "title": "पहेली: निवेश के प्रकार",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "निवेश को विशेषताओं के साथ मिलाएँ ({{current}}/{{total}} मिलान)",
+  "investmentsTitle": "निवेश के प्रकार",
+  "characteristicsTitle": "विशेषताएं",
+  "matchButton": "मिलान करें",
+  "selectInvestmentLabel": "एक निवेश प्रकार चुनें",
+  "selectedInvestmentLabel": "चुना गया: {{name}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "resultSuccessHeader": "बहुत अच्छा!",
+  "resultSuccessSubheader": "आपने {{total}} में से {{score}} निवेश प्रकारों का उनकी विशेषताओं के साथ सही मिलान किया है!",
+  "resultSuccessLesson": "सबक: निवेश की विशेषताओं को समझने से सूचित वित्तीय निर्णय लेने में मदद मिलती है!",
+  "resultTryAgainHeader": "अभ्यास जारी रखें!",
+  "resultTryAgainSubheader": "आपने {{score}} निवेश प्रकारों को सही ढंग से मिलाया है।",
+  "resultTryAgainTip": "सुझाव: प्रत्येक निवेश प्रकार के जोखिम स्तर और प्रकृति के बारे में सोचें!",
+  "coinsEarned": "+{{coins}} सिक्के",
+  "investments": [
+    { "id": 1, "name": "सावधि जमा", "emoji": "🏦" },
+    { "id": 2, "name": "शेयर", "emoji": "📈" },
+    { "id": 3, "name": "म्यूचुअल फंड", "emoji": "📊" },
+    { "id": 4, "name": "बॉन्ड", "emoji": "📜" },
+    { "id": 5, "name": "रियल एस्टेट", "emoji": "🏠" }
+  ],
+  "characteristics": [
+    { "id": 6, "name": "सुरक्षित", "emoji": "🛡️" },
+    { "id": 7, "name": "जोखिम भरा", "emoji": "⚠️" },
+    { "id": 8, "name": "विविध", "emoji": "🔄" },
+    { "id": 9, "name": "स्थिर", "emoji": "💰" },
+    { "id": 10, "name": "दीर्घकालिक", "emoji": "⏳" }
+  ]
+}

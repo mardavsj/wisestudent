@@ -1,0 +1,136 @@
+{
+  "title": "Savings Saga",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "perfectScoreMsg": "You got {{score}} out of {{total}} questions correct! You've mastered advanced saving concepts!",
+  "lowScoreMsg": "You got {{score}} out of {{total}} questions correct. Review advanced saving concepts and try again!",
+  "lessonLabel": "Lesson: Smart financial decisions today shape your secure tomorrow!",
+  "tryAgain": "Try Again",
+  "tipLabel": "Tip: Master compound interest, inflation effects, and strategic allocation for financial success!",
+  "coinsLabel": "+{{count}} Coins",
+  "wizardTitle": "Financial Wizard!",
+  "studyTitle": "Study Up!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You receive ₹1000 as monthly allowance. How should you allocate it for optimal financial health?",
+      "options": [
+        {
+          "id": "70-20-10",
+          "text": "70% needs, 20% wants, 10% savings",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "equal",
+          "text": "Equal parts: 33% each",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "50-30-20",
+          "text": "50% needs, 30% wants, 20% savings",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You save ₹500 monthly for 2 years at 6% annual interest, compounded monthly. How much will you have?",
+      "options": [
+        {
+          "id": "12000",
+          "text": "Exactly ₹12,000",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "12600",
+          "text": "Approx. ₹12,600",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "13000",
+          "text": "Around ₹13,000",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "You have ₹2000 saved. Which option preserves your purchasing power against 8% inflation?",
+      "options": [
+        {
+          "id": "fd",
+          "text": "Put in fixed deposit earning 7% annually",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "cash",
+          "text": "Keep as cash at home",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "invest",
+          "text": "Invest in instrument earning 9% annually",
+          "emoji": "💹",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You need ₹50,000 for college in 3 years. How much should you save monthly at 5% interest?",
+      "options": [
+        {
+          "id": "1300",
+          "text": "Approx. ₹1,300 per month",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "1100",
+          "text": "About ₹1,100 per month",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "1500",
+          "text": "Around ₹1,500 per month",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You have ₹10,000. Which is the wisest allocation for a teen's financial future?",
+      "options": [
+        {
+          "id": "allstocks",
+          "text": "Invest all in high-risk stocks",
+          "emoji": "🚀",
+          "isCorrect": false
+        },
+        {
+          "id": "emergency",
+          "text": "30% emergency fund, 50% FD, 20% stocks",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "allfd",
+          "text": "Put all in fixed deposits",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

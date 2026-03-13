@@ -1,0 +1,66 @@
+{
+  "title": "Fake Online Offer Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Website offers free phone if you pay ₹100. What should you do?",
+      "options": [
+        { "id": "refuse", "text": "Refuse, it's a scam", "emoji": "🚫", "isCorrect": true },
+        { "id": "pay", "text": "Pay ₹100", "emoji": "💳", "isCorrect": false },
+        { "id": "maybe", "text": "Maybe, check first", "emoji": "🤔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What's a sign of a fake online offer?",
+      "options": [
+        { "id": "normal", "text": "Normal prices", "emoji": "💰", "isCorrect": false },
+        { "id": "too-good", "text": "Too good to be true", "emoji": "⚠️", "isCorrect": true },
+        { "id": "expensive", "text": "Very expensive", "emoji": "💎", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What should you do with suspicious offers?",
+      "options": [
+        { "id": "try", "text": "Try it anyway", "emoji": "🎲", "isCorrect": false },
+        { "id": "share", "text": "Share with friends", "emoji": "📢", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore and report", "emoji": "🚫", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Why are 'free' offers often scams?",
+      "options": [
+        { "id": "trick", "text": "They trick you to pay", "emoji": "🎭", "isCorrect": true },
+        { "id": "real", "text": "They're always real", "emoji": "✅", "isCorrect": false },
+        { "id": "maybe2", "text": "Sometimes real", "emoji": "🤷", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What's the safest action with online offers?",
+      "options": [
+        { "id": "pay-fast", "text": "Pay quickly", "emoji": "⚡", "isCorrect": false },
+        { "id": "verify", "text": "Verify before paying", "emoji": "🔍", "isCorrect": true },
+        { "id": "ignore-all", "text": "Ignore all offers", "emoji": "😴", "isCorrect": false }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Story Complete!",
+    "winMessage": "You got {{score}} out of {{total}} correct! You know how to spot fake offers!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Fake online offers often seem too good to be true. Always verify before paying, and refuse suspicious offers!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} correct. Remember, if an offer seems too good to be true, it's probably a scam!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: If a website offers a free phone for just ₹100, it's likely a scam. Always verify offers and refuse suspicious ones!"
+  }
+}

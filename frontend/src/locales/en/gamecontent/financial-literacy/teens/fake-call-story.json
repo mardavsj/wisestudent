@@ -1,0 +1,66 @@
+{
+  "title": "Fake Call Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Caller asks for your bank details. What should you do?",
+      "options": [
+        { "id": "share", "text": "Share details", "emoji": "💳", "isCorrect": false },
+        { "id": "maybe", "text": "Maybe, if they sound official", "emoji": "🤔", "isCorrect": false },
+        { "id": "refuse", "text": "Refuse, never share", "emoji": "🚫", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What's a sign of a fake call?",
+      "options": [
+        { "id": "urgent", "text": "Urgent pressure to act", "emoji": "⚠️", "isCorrect": true },
+        { "id": "polite", "text": "Polite and patient", "emoji": "😊", "isCorrect": false },
+        { "id": "normal", "text": "Normal conversation", "emoji": "💬", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What should you do if someone asks for OTP?",
+      "options": [
+        { "id": "give", "text": "Give OTP", "emoji": "🔢", "isCorrect": false },
+        { "id": "ignore", "text": "Never share OTP", "emoji": "🔒", "isCorrect": true },
+        { "id": "maybe2", "text": "Share if they ask nicely", "emoji": "🤷", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "How can you verify a bank call?",
+      "options": [
+        { "id": "call-back", "text": "Call bank directly", "emoji": "📞", "isCorrect": true },
+        { "id": "trust", "text": "Trust the caller", "emoji": "😊", "isCorrect": false },
+        { "id": "ignore-all", "text": "Ignore all calls", "emoji": "😴", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What's the safest response to suspicious calls?",
+      "options": [
+        { "id": "engage", "text": "Keep talking", "emoji": "💬", "isCorrect": false },
+        { "id": "share-info", "text": "Share some info", "emoji": "📝", "isCorrect": false },
+        { "id": "hang-up", "text": "Hang up and report", "emoji": "📞", "isCorrect": true }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Great Job!",
+    "winMessage": "You got {{score}} out of {{total}} questions correct! You know how to handle suspicious calls!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Never share sensitive info like OTPs or bank details over phone. Always hang up and call the official bank number if suspicious.",
+    "loseEmoji": "😔",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You got {{score}} out of {{total}} questions correct. Remember to be cautious with phone calls!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Scam callers often create artificial urgency. Never share OTPs or bank details. Hang up and contact your bank directly."
+  }
+}

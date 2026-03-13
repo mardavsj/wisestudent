@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const InvestmentQuiz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-62");
   const gameId = gameData?.id || "finance-teens-62";
+  const gameContent = t("financial-literacy.teens.investment-quiz", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,134 +29,7 @@ const InvestmentQuiz = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const questions = [
-    {
-      id: 1,
-      text: "Which is riskier but higher return?",
-      options: [
-        { 
-          id: "fd", 
-          text: "Fixed Deposit", 
-          emoji: "🏦", 
-           
-          isCorrect: false 
-        },
-        { 
-          id: "stocks", 
-          text: "Stock Market", 
-          emoji: "📈", 
-           
-          isCorrect: true 
-        },
-        { 
-          id: "savings", 
-          text: "Savings Account", 
-          emoji: "💰", 
-           
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which investment is safest?",
-      options: [
-        { 
-          id: "fd2", 
-          text: "Fixed Deposit", 
-          emoji: "🛡️", 
-          isCorrect: true 
-        },
-        { 
-          id: "stocks2", 
-          text: "Stocks", 
-          emoji: "📊", 
-          isCorrect: false 
-        },
-        
-        { 
-          id: "crypto", 
-          text: "Cryptocurrency", 
-          emoji: "₿", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What is diversification?",
-      options: [
-        { 
-          id: "one", 
-          text: "Put all in one investment", 
-          emoji: "🎯", 
-          isCorrect: false 
-        },
-        
-        { 
-          id: "avoid", 
-          text: "Avoid all investments", 
-          emoji: "🚫", 
-          isCorrect: false 
-        },
-        { 
-          id: "spread", 
-          text: "Spread across different investments", 
-          emoji: "📊", 
-          isCorrect: true 
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "What's a mutual fund?",
-      options: [
-        { 
-          id: "mix", 
-          text: "Mix of stocks and bonds", 
-          emoji: "📦", 
-          isCorrect: true 
-        },
-        { 
-          id: "single", 
-          text: "Single company stock", 
-          emoji: "📄", 
-          isCorrect: false 
-        },
-        { 
-          id: "bank", 
-          text: "Bank account", 
-          emoji: "🏦", 
-          isCorrect: false 
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why invest instead of just saving?",
-      options: [
-       
-        { 
-          id: "same", 
-          text: "Same as saving", 
-          emoji: "➡️", 
-          isCorrect: false 
-        },
-        { 
-          id: "lose", 
-          text: "Guaranteed to lose", 
-          emoji: "📉", 
-          isCorrect: false 
-        },
-         { 
-          id: "grow", 
-          text: "Potential to grow faster", 
-          emoji: "📈", 
-          isCorrect: true 
-        },
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleAnswer = (optionId) => {
     if (answered) return;
@@ -196,8 +72,15 @@ const InvestmentQuiz = () => {
 
   return (
     <GameShell
-      title="Investment Quiz"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      title={gameContent?.title || "Investment Quiz"}
+      subtitle={!showResult 
+        ? t("financial-literacy.teens.investment-quiz.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+        : (gameContent?.subtitleComplete || "Quiz Complete!")
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -219,8 +102,20 @@ const InvestmentQuiz = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.investment-quiz.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.investment-quiz.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -244,55 +139,69 @@ const InvestmentQuiz = () => {
                     <div className="flex flex-col items-center justify-center gap-3">
                       <span className="text-4xl">{option.emoji}</span>
                       <span className="font-semibold text-lg">{option.text}</span>
-                      <p className="text-sm opacity-90">{option.description}</p>
+                      {option.description && <p className="text-sm opacity-90">{option.description}</p>}
                     </div>
                   </button>
                 ))}
               </div>
             </div>
           </div>
-        ) : (
+        ) : showResult ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             {score >= 3 ? (
               <div>
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Quiz Complete!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.winEmoji || "🎉"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.winTitle || "Quiz Complete!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct!
-                  You understand investments!
+                  {t("financial-literacy.teens.investment-quiz.result.winMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct! You understand investments!"
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("financial-literacy.teens.investment-quiz.result.coinsEarned", {
+                      score,
+                      defaultValue: "+{{score}} Coins"
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80">
-                  Lesson: Stocks are riskier but offer higher returns. Fixed deposits are safer but lower returns. Diversification reduces risk!
+                  {gameContent?.result?.lesson || "Lesson: Stocks are riskier but offer higher returns. Fixed deposits are safer but lower returns. Diversification reduces risk!"}
                 </p>
               </div>
             ) : (
               <div>
-                <div className="text-5xl mb-4">💪</div>
-                <h3 className="text-2xl font-bold text-white mb-4">Keep Learning!</h3>
+                <div className="text-5xl mb-4">{gameContent?.result?.loseEmoji || "💪"}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.result?.loseTitle || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-lg mb-4">
-                  You got {score} out of {questions.length} correct.
-                  Remember, stocks are riskier but higher return, while FDs are safer but lower return!
+                  {t("financial-literacy.teens.investment-quiz.result.loseMessage", {
+                    score,
+                    total: questions.length,
+                    defaultValue: "You got {{score}} out of {{total}} correct. Remember, stocks are riskier but higher return, while FDs are safer but lower return!"
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
                 >
-                  Try Again
+                  {gameContent?.result?.tryAgain || "Try Again"}
                 </button>
                 <p className="text-white/80 text-sm">
-                  Tip: Stock market is riskier but offers higher returns. Fixed deposits are safer but have lower returns. Diversify to reduce risk!
+                  {gameContent?.result?.tip || "Tip: Stock market is riskier but offers higher returns. Fixed deposits are safer but have lower returns. Diversify to reduce risk!"}
                 </p>
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </GameShell>
   );
 };
 
 export default InvestmentQuiz;
-

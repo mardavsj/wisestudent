@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const DebateSaveVsSpend = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameId = "finance-teens-6";
   const gameData = getGameDataById(gameId);
+  const gameContent = t("financial-literacy.teens.debate-save-vs-spend", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
@@ -22,145 +25,26 @@ const DebateSaveVsSpend = () => {
   const [finalScore, setFinalScore] = useState(0);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Is it better to save money or spend all of it?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Spend all", 
-          emoji: "🛍️", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Save money", 
-          emoji: "💰", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "waste", 
-          text: "Waste it", 
-          emoji: "💸", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Should teenagers focus on saving or enjoying their money now?",
-      options: [
-        { 
-          id: "save", 
-          text: "Focus on saving", 
-          emoji: "🏦", 
-          isCorrect: true
-        },
-        { 
-          id: "spend", 
-          text: "Enjoy now", 
-          emoji: "🎉", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Don't think about it", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "When you get a bonus or extra money, what should you do?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Spend it all", 
-          emoji: "💸", 
-          isCorrect: false
-        },
-        { 
-          id: "waste", 
-          text: "Waste it", 
-          emoji: "🗑️", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Save most of it", 
-          emoji: "📈", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Is it better to buy expensive branded items or affordable quality items?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Buy branded items", 
-          emoji: "💎", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "Choose quality over brand", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-        { 
-          id: "cheap", 
-          text: "Buy cheapest", 
-          emoji: "💵", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Should you use credit cards to buy things you can't afford?",
-      options: [
-        { 
-          id: "spend", 
-          text: "Yes, use credit", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          id: "borrow", 
-          text: "Borrow money", 
-          emoji: "🤲", 
-          isCorrect: false
-        },
-        { 
-          id: "save", 
-          text: "No, avoid debt", 
-          emoji: "🛡️", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (selectedChoice) => {
+    const question = questions[currentQuestion];
+    const isCorrect = question.options.find(opt => opt.id === selectedChoice)?.isCorrect;
+    
     const newChoices = [...choices, { 
-      questionId: questions[currentQuestion].id, 
+      questionId: question.id, 
       choice: selectedChoice,
-      isCorrect: questions[currentQuestion].options.find(opt => opt.id === selectedChoice)?.isCorrect
+      isCorrect
     }];
     
     setChoices(newChoices);
     
     // If the choice is correct, add coins and show flash/confetti
-    const isCorrect = questions[currentQuestion].options.find(opt => opt.id === selectedChoice)?.isCorrect;
     if (isCorrect) {
       setCoins(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     // Move to next question or show results
@@ -182,9 +66,16 @@ const DebateSaveVsSpend = () => {
 
   return (
     <GameShell
-      title="Debate: Save vs Spend"
+      title={gameContent?.title || "Debate: Save vs Spend"}
       score={coins}
-      subtitle={showResult ? "Debate Complete!" : `Question ${currentQuestion + 1} of ${questions.length}`}
+      subtitle={showResult 
+        ? (gameContent?.subtitleComplete || "Debate Complete!")
+        : t("financial-literacy.teens.debate-save-vs-spend.subtitleProgress", {
+            current: currentQuestion + 1,
+            total: questions.length,
+            defaultValue: "Question {{current}} of {{total}}"
+          })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -193,20 +84,32 @@ const DebateSaveVsSpend = () => {
       nextGamePathProp="/student/finance/teen/journal-of-saving-goal"
       nextGameIdProp="finance-teens-7"
       gameType="finance"
-      totalLevels={5}
+      totalLevels={questions.length || 5}
       currentLevel={currentQuestion + 1}
-      showConfetti={showResult && finalScore === 5}
+      showConfetti={showResult && finalScore === (questions.length || 5)}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
-      maxScore={5}
+      maxScore={questions.length || 5}
     >
       <div className="space-y-8">
-        {!showResult ? (
+        {!showResult && getCurrentQuestion() ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {coins}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.debate-save-vs-spend.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: "Question {{current}}/{{total}}"
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.debate-save-vs-spend.scoreLabel", {
+                    score: coins,
+                    total: questions.length,
+                    defaultValue: "Score: {{score}}/{{total}}"
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -222,7 +125,7 @@ const DebateSaveVsSpend = () => {
                   >
                     <div className="text-2xl mb-2">{option.emoji}</div>
                     <h3 className="font-bold text-xl mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
+                    {option.description && <p className="text-white/90 text-sm">{option.description}</p>}
                   </button>
                 ))}
               </div>

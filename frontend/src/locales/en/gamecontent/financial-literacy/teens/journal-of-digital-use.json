@@ -1,0 +1,51 @@
+{
+  "title": "Journal of Digital Use",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "journalEntryHeader": "Journal Entry",
+  "placeholder": "Type your response here...",
+  "minCharsRequired": "Minimum {{min}} characters required",
+  "buttonSubmit": "Submit & Continue",
+  "buttonComplete": "Complete Journal",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "One safe way I used online money was ___.",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "One benefit of digital payments I experienced was ___.",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "One security practice I follow for digital money is ___.",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "One time I avoided a digital fraud by ___.",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "One way I can improve my digital payment safety is ___.",
+      "minLength": 10
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Journal Complete!",
+    "winMessage": "You completed {{score}} out of {{total}} entries! Great job reflecting on your digital payment experiences!",
+    "coinsEarned": "+{{score}} Coins",
+    "lesson": "Lesson: Reflecting on your digital payment experiences helps you learn safe practices and avoid fraud!",
+    "loseEmoji": "💪",
+    "loseTitle": "Keep Learning!",
+    "loseMessage": "You completed {{score}} out of {{total}} entries. Remember, safe digital payment practices protect your money!",
+    "tryAgain": "Try Again",
+    "tip": "Tip: Think about times when you used digital payments safely, and how you can improve your security practices!"
+  }
+}

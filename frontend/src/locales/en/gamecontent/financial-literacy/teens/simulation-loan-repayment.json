@@ -1,0 +1,171 @@
+{
+  "title": "Simulation: Loan Repayment",
+  "subtitleComplete": "Simulation Complete!",
+  "subtitleProgress": "Scenario {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "perfectScoreMsg": "You got {{score}} out of {{total}} scenarios correct! You're mastering responsible loan practices!",
+  "lowScoreMsg": "You got {{score}} out of {{total}} scenarios correct. Remember to calculate before borrowing!",
+  "excellentTitle": "Excellent Loan Management!",
+  "keepLearningTitle": "Keep Learning!",
+  "lessonLabel": "Lesson: Always calculate loan repayment before borrowing and prioritize needs over wants!",
+  "tryAgain": "Try Again",
+  "tipLabel": "Tip: Only borrow for needs and ensure you can afford the monthly payments!",
+  "coinsLabel": "+{{count}} Coins",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "Smart Borrowing Decision",
+      "description": "You need ₹1000 for a laptop. What's the smartest loan approach?",
+      "options": [
+        {
+          "id": "borrow-all",
+          "text": "Borrow full amount without checking interest",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "multiple-loans",
+          "text": "Take multiple small loans from different lenders",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "Wait indefinitely without plan",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "calculate-interest",
+          "text": "Calculate interest, compare options, borrow wisely",
+          "emoji": "🧮",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Prioritizing Loan Repayment",
+      "description": "You have 2 loans: ₹500 at 5% interest, ₹1000 at 12%. What should you repay first?",
+      "options": [
+        {
+          "id": "small-first",
+          "text": "Repay smaller loan first",
+          "emoji": "📏",
+          "isCorrect": false
+        },
+        {
+          "id": "equal",
+          "text": "Split equally between both",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "high-interest",
+          "text": "Repay high-interest loan first",
+          "emoji": "🔥",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore and pay randomly",
+          "emoji": "🤷",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Impulse vs Planned Loan",
+      "description": "A friend suggests a loan to buy the latest phone. What’s wise?",
+      "options": [
+        {
+          "id": "impulse",
+          "text": "Take loan impulsively to buy immediately",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "planned",
+          "text": "Plan repayment, assess need vs want, borrow if essential",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-more",
+          "text": "Borrow more than needed for extra perks",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "skip-loan",
+          "text": "Skip loan and risk missing opportunity",
+          "emoji": "⏰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Loan for Non-Essentials",
+      "description": "You want a bike worth ₹5000 but have only ₹1000 saved. Smart loan strategy?",
+      "options": [
+        {
+          "id": "save-then-borrow",
+          "text": "Save part amount, borrow remaining with manageable EMI",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-all",
+          "text": "Borrow full ₹5000 immediately",
+          "emoji": "🏍️",
+          "isCorrect": false
+        },
+        {
+          "id": "multiple-lenders",
+          "text": "Borrow small from multiple sources to buy fast",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "Wait without plan until you have full cash",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Emergency Loan Use",
+      "description": "You need ₹1200 for medical emergency. What’s safe borrowing advice?",
+      "options": [
+        {
+          "id": "use-loan-for-wants",
+          "text": "Use emergency loan for non-essential wants",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-large",
+          "text": "Borrow more than needed for safety buffer",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "emergency-only",
+          "text": "Use loans only for genuine emergencies",
+          "emoji": "🚑",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore-loan",
+          "text": "Avoid loan even in emergency",
+          "emoji": "🙅",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

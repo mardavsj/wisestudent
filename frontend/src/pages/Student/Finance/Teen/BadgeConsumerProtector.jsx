@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BadgeConsumerProtector = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("finance-teens-90");
   const gameId = gameData?.id || "finance-teens-90";
-  
-  // Ensure gameId is always set correctly
-  if (!gameData || !gameData.id) {
-    console.warn("Game data not found for BadgeConsumerProtector, using fallback ID");
-  }
+  const gameContent = t("financial-literacy.teens.badge-consumer-protector", { returnObjects: true });
   
   // Get coinsPerLevel, totalCoins, and totalXp from game category data, fallback to location.state, then defaults
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+
   const [challenge, setChallenge] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
@@ -27,143 +26,7 @@ const BadgeConsumerProtector = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Fraud Case 1",
-      question: "You receive a fake call asking for bank details. What do you do?",
-      options: [
-        { 
-          text: "Refuse and report", 
-          emoji: "🚫", 
-          isCorrect: true
-        },
-        { 
-          text: "Share details", 
-          emoji: "💳", 
-          isCorrect: false
-        },
-        { 
-          text: "Ignore the call", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Ask for more info", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Fraud Case 2",
-      question: "You get a suspicious message with a link. What's your action?",
-      options: [
-        { 
-          text: "Click the link", 
-          emoji: "🔗", 
-          isCorrect: false
-        },
-        { 
-          text: "Delete and report", 
-          emoji: "🗑️", 
-          isCorrect: true
-        },
-        { 
-          text: "Forward to friends", 
-          emoji: "📤", 
-          isCorrect: false
-        },
-        { 
-          text: "Save for later", 
-          emoji: "💾", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Fraud Case 3",
-      question: "Someone asks for your OTP. How do you respond?",
-      options: [
-        { 
-          text: "Never share OTP", 
-          emoji: "🔒", 
-          isCorrect: true
-        },
-        { 
-          text: "Share if they ask nicely", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        { 
-          text: "Give partial OTP", 
-          emoji: "🔢", 
-          isCorrect: false
-        },
-        { 
-          text: "Share with everyone", 
-          emoji: "📢", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Fraud Case 4",
-      question: "You get a defective product. What should you do?",
-      options: [
-        { 
-          text: "Accept it", 
-          emoji: "😔", 
-          isCorrect: false
-        },
-        { 
-          text: "Complain to Consumer Court", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          text: "Ignore it", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Throw it away", 
-          emoji: "🗑️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Fraud Case 5",
-      question: "You see an unrealistic investment offer. What's your response?",
-      options: [
-        { 
-          text: "Invest immediately", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          text: "Refuse and report scam", 
-          emoji: "🚨", 
-          isCorrect: true
-        },
-        { 
-          text: "Think about it", 
-          emoji: "🤔", 
-          isCorrect: false
-        },
-        { 
-          text: "Share with others", 
-          emoji: "📢", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;
@@ -200,10 +63,20 @@ const BadgeConsumerProtector = () => {
     resetFeedback();
   };
 
+  const currentChallengeData = challenges[challenge];
+
   return (
     <GameShell
-      title="Badge: Consumer Protector"
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      title={gameContent?.title || "Badge: Consumer Protector"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("financial-literacy.teens.badge-consumer-protector.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       score={score}
       currentLevel={challenge + 1}
       totalLevels={challenges.length}
@@ -221,21 +94,33 @@ const BadgeConsumerProtector = () => {
       gameType="finance"
     >
       <div className="space-y-8">
-        {!showResult && challenges[challenge] ? (
+        {!showResult && currentChallengeData ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("financial-literacy.teens.badge-consumer-protector.subtitleProgress", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("financial-literacy.teens.badge-consumer-protector.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+                </span>
               </div>
               
-              <h3 className="text-xl font-bold text-white mb-2">{challenges[challenge].title}</h3>
+              <h3 className="text-xl font-bold text-white mb-2">{currentChallengeData.title}</h3>
               <p className="text-white text-lg mb-6">
-                {challenges[challenge].question}
+                {currentChallengeData.question}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {challenges[challenge].options.map((option, idx) => (
+                {currentChallengeData.options.map((option, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
@@ -262,6 +147,53 @@ const BadgeConsumerProtector = () => {
               </div>
             </div>
           </div>
+        ) : showResult ? (
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
+            {score >= 3 ? (
+              <div>
+                <div className="text-5xl mb-4">🏆</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultSuccessTitle || "Consumer Protector Badge Earned!"}
+                </h3>
+                <p className="text-white/90 text-lg mb-4">
+                  {t("financial-literacy.teens.badge-consumer-protector.resultSuccessText", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct! You're a true Consumer Protector!`,
+                  })}
+                </p>
+                <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
+                  <span>+{score} Coins</span>
+                </div>
+                <p className="text-white/80">
+                  {gameContent?.resultSuccessLesson || "Lesson: Being aware of consumer rights and fraud risks helps you protect your hard-earned money."}
+                </p>
+              </div>
+            ) : (
+              <div>
+                <div className="text-5xl mb-4">💪</div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {gameContent?.resultFailTitle || "Keep Learning!"}
+                </h3>
+                <p className="text-white/90 text-lg mb-4">
+                  {t("financial-literacy.teens.badge-consumer-protector.resultFailText", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct. Learn more about consumer safety!`,
+                  })}
+                </p>
+                <button
+                  onClick={handleTryAgain}
+                  className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
+                >
+                  Try Again
+                </button>
+                <p className="text-white/80 text-sm">
+                  {gameContent?.resultFailTip || "Tip: Never share sensitive details like OTP or bank info, and always report suspicious links and calls!"}
+                </p>
+              </div>
+            )}
+          </div>
         ) : null}
       </div>
     </GameShell>
@@ -269,4 +201,3 @@ const BadgeConsumerProtector = () => {
 };
 
 export default BadgeConsumerProtector;
-

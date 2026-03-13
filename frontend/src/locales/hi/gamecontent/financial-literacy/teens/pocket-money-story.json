@@ -1,0 +1,65 @@
+{
+  "title": "पॉकेट मनी की कहानी",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "आपको मासिक पॉकेट मनी के रूप में 500 रुपये मिलते हैं। आपको इसका क्या करना चाहिए?",
+      "options": [
+        { "id": "save", "text": "20% (100 रुपये) बचाएं", "emoji": "💰", "isCorrect": true },
+        { "id": "spend", "text": "पूरे खर्च करें", "emoji": "🛍️", "isCorrect": false },
+        { "id": "save50", "text": "50% (250 रुपये) बचाएं", "emoji": "💵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "आप 2000 रुपये का गैजेट खरीदना चाहते हैं लेकिन आपने केवल 500 रुपये बचाए हैं। होशियारी भरा तरीका क्या है?",
+      "options": [
+        { "id": "borrow", "text": "दोस्तों से उधार लें", "emoji": "🤝", "isCorrect": false },
+        { "id": "spend", "text": "क्रेडिट पर खरीदें", "emoji": "💳", "isCorrect": false },
+        { "id": "save", "text": "हर महीने बचत करें", "emoji": "📅", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "आपके दोस्त अपनी सारी पॉकेट मनी महंगी चीज़ों पर खर्च कर देते हैं। आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "save", "text": "अपनी योजना पर टिके रहें", "emoji": "📝", "isCorrect": true },
+        { "id": "spend", "text": "उनकी तरह खर्च करें", "emoji": "👥", "isCorrect": false },
+        { "id": "compromise", "text": "शामिल होने के लिए आधा खर्च करें", "emoji": "⚖️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आपने 1000 रुपये बचाए हैं लेकिन 1500 रुपये की वस्तु के लिए सीमित समय का ऑफर देखते हैं। बुद्धिमानी क्या है?",
+      "options": [
+        { "id": "spend", "text": "आंशिक भुगतान (partial payment) के साथ खरीदें", "emoji": "🛒", "isCorrect": false },
+        { "id": "save", "text": "इंतज़ार करें और अधिक बचत करें", "emoji": "⏳", "isCorrect": true },
+        { "id": "impulse", "text": "कुछ सस्ता खरीदें", "emoji": "🛍️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "आपने 800 रुपये बचाए हैं और 1000 रुपये का फोन खरीदना चाहते हैं। आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "spend", "text": "क्रेडिट के साथ अभी खरीदें", "emoji": "💸", "isCorrect": false },
+        { "id": "borrow", "text": "200 रुपये उधार लें", "emoji": "💳", "isCorrect": false },
+        { "id": "save", "text": "200 रुपये और बचाएं", "emoji": "🎯", "isCorrect": true }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "बहुत बढ़िया!",
+    "winMessage": "आपने {{total}} में से {{score}} प्रश्नों के सही उत्तर दिए! आप समझदारी से वित्तीय निर्णय लेना सीख रहे हैं!",
+    "coinsEarned": "+{{coins}} सिक्के",
+    "lesson": "आप भविष्य की ज़रूरतों के लिए अपनी आय का एक हिस्सा बचाने के महत्व को समझते हैं!",
+    "loseEmoji": "😔",
+    "loseTitle": "सीखते रहो!",
+    "loseMessage": "आपने {{total}} में से {{score}} प्रश्नों के सही उत्तर दिए। याद रखें, बाद के लिए कुछ पैसे बचाना आमतौर पर एक स्मार्ट विकल्प है!",
+    "tryAgain": "फिर से कोशिश करें",
+    "tip": "वह विकल्प चुनने का प्रयास करें जो अधिकांश स्थितियों में बाद के लिए पैसे बचाता है।"
+  }
+}

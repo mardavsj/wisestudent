@@ -1,0 +1,178 @@
+{
+  "title": "सिमुलेशन: ₹1000 का विकल्प",
+  "subtitleComplete": "सिमुलेशन पूरा हुआ!",
+  "subtitleProgress": "परिदृश्य {{current}} का {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "amountLabel": "राशि: ",
+  "perfectScoreMsg": "आपने {{total}} में से {{score}} परिदृश्य सही पाए! आप स्मार्ट निवेश आवंटन को समझते हैं!",
+  "lowScoreMsg": "आपने {{total}} में से {{score}} परिदृश्य सही पाए। याद रखें, एफडी और शेयरों को मिलाना सबसे अच्छी रणनीति है!",
+  "lessonLabel": "सबक: जोखिम और रिटर्न को संतुलित करने के लिए फिक्स्ड डिपॉजिट (सुरक्षा के लिए) और शेयरों (विकास के लिए) को मिलाना सबसे अच्छी रणनीति है!",
+  "tryAgain": "फिर से प्रयास करें",
+  "tipLabel": "टिप: संतुलित विकास के लिए फिक्स्ड डिपॉजिट (सुरक्षित, कम रिटर्न) को शेयरों (जोखिम भरा, उच्च रिटर्न) के साथ मिलाना सबसे अच्छा विकल्प है!",
+  "coinsLabel": "+{{count}} सिक्के",
+  "excellentTitle": "शानदार चुनाव!",
+  "keepLearningTitle": "सीखते रहें!",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "₹1000 और मुद्रास्फीति की वास्तविकता",
+      "description": "आप कीमतें बढ़ने पर एक साल के लिए ₹1000 नकद रखते हैं। सबसे समझदारी वाली चाल क्या है?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "cash",
+          "text": "घर पर नकद रखना",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "तुरंत खर्च करना",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "text": "केवल बचत खाता",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "invest",
+          "text": "वहां निवेश करना जहां रिटर्न मुद्रास्फीति को मात दे",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "जोखिम बनाम सुरक्षा विकल्प",
+      "description": "आपको 3 महीने में इस ₹1000 की ज़रूरत हो सकती है। सबसे अच्छा विकल्प क्या है?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "fd",
+          "text": "अल्पकालिक सुरक्षित बचत",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "stocks",
+          "text": "उच्च जोखिम वाले शेयर",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "crypto",
+          "text": "क्रिप्टो ट्रेडिंग",
+          "emoji": "🪙",
+          "isCorrect": false
+        },
+        {
+          "id": "lock",
+          "text": "दीर्घकालिक लॉक निवेश",
+          "emoji": "🔒",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "विलंबित इनाम परिदृश्य",
+      "description": "आप या तो आज ₹1000 का आनंद ले सकते हैं या इसे धीरे-धीरे बढ़ा सकते हैं। धन का निर्माण क्या करता है?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "enjoy",
+          "text": "तत्काल खुशी के लिए खर्च करना",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "compound",
+          "text": "निवेश करना और इसे बढ़ने देना",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "loan",
+          "text": "दोस्तों को उधार देना",
+          "emoji": "🤝",
+          "isCorrect": false
+        },
+        {
+          "id": "idle",
+          "text": "सुरक्षा के लिए बेकार रखना",
+          "emoji": "😐",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "विविधीकरण परीक्षण",
+      "description": "एक निवेश विफल हो जाता है। आप अपने ₹1000 की रक्षा कैसे करेंगे?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "allone",
+          "text": "सारा पैसा एक ही जगह रखना",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "fear",
+          "text": "पूरी तरह से निवेश करने से बचना",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "gamble",
+          "text": "तेज़ी से उबरने के लिए जोखिम बढ़ाना",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "diversify",
+          "text": "विभिन्न संपत्तियों में विभाजित करना",
+          "emoji": "⚖️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "id_original": 5,
+      "title": "स्मार्ट टीन निर्णय",
+      "description": "आप पॉकेट मनी के रूप में ₹1000 कमाते हैं। वित्तीय परिपक्वता क्या दिखाती है?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "spendall",
+          "text": "सब कुछ ट्रेंड्स पर खर्च करना",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "saveall",
+          "text": "निवेश सीखे बिना बचत करना",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "विभाजित करें: बचत, निवेश, सीखें",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "पैसे के साथ कुछ न करना",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

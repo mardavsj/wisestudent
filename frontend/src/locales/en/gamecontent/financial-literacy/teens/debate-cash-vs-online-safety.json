@@ -1,0 +1,54 @@
+{
+  "title": "Debate: Cash vs Online Safety",
+  "subtitleComplete": "Debate Complete!",
+  "subtitleProgress": "Round {{current}} of {{total}}",
+  "roundLabel": "Round {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "Is online money more risky than cash?",
+      "options": [
+        { "id": "online-riskier", "text": "Online is riskier", "emoji": "💻", "isCorrect": false },
+        { "id": "both-safe", "text": "Both need safety", "emoji": "🛡️", "isCorrect": true },
+        { "id": "cash-riskier", "text": "Cash is riskier", "emoji": "💵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "Which is safer for large amounts?",
+      "options": [
+        { "id": "both-safe2", "text": "Both with precautions", "emoji": "🔒", "isCorrect": true },
+        { "id": "only-cash", "text": "Only cash", "emoji": "💰", "isCorrect": false },
+        { "id": "only-online", "text": "Only online", "emoji": "📱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "What's the main risk with online money?",
+      "options": [
+        { "id": "no-risk", "text": "No risks", "emoji": "😓", "isCorrect": false },
+        { "id": "too-easy", "text": "Too easy to use", "emoji": "😊", "isCorrect": false },
+        { "id": "hacking", "text": "Hacking and fraud", "emoji": "👾", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "How can you protect online money?",
+      "options": [
+        { "id": "strong-password", "text": "Strong passwords and OTP", "emoji": "🔐", "isCorrect": true },
+        { "id": "no-protection", "text": "No protection needed", "emoji": "😴", "isCorrect": false },
+        { "id": "share-details", "text": "Share details freely", "emoji": "📢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "What's the best approach?",
+      "options": [
+        { "id": "only-one", "text": "Use only one method", "emoji": "🎯", "isCorrect": false },
+        { "id": "balance", "text": "Balance both safely", "emoji": "⚖️", "isCorrect": true },
+        { "id": "avoid-all", "text": "Avoid all money", "emoji": "🚫", "isCorrect": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "title": "स्कॉलरशिप स्टोरी",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{current}} का {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "perfectScoreMsg": "आपने {{total}} में से {{score}} सही पाए! आप आवेदनों में ईमानदारी के महत्व को समझते हैं!",
+  "lowScoreMsg": "आपने {{total}} में से {{score}} सही पाए। याद रखें, स्कॉलरशिप के लिए ईमानदारी सबसे अच्छी नीति है!",
+  "lessonLabel": "सबक: छात्रवृत्ति और अन्य अवसरों के लिए आवेदन करते समय ईमानदारी और अखंडता महत्वपूर्ण हैं।",
+  "tryAgain": "फिर से प्रयास करें",
+  "tipLabel": "टिप: विश्वास बनाने के लिए अपने छात्रवृत्ति आवेदनों पर हमेशा सटीक और सच्ची जानकारी प्रदान करें।",
+  "coinsLabel": "+{{count}} सिक्के",
+  "questions": [
+    {
+      "id": 1,
+      "text": "एक छात्र अतिरिक्त छात्रवृत्ति पाने के लिए झूठ बोलता है। सही कार्रवाई क्या है?",
+      "options": [
+        {
+          "id": "lie",
+          "text": "पैसा पाने के लिए झूठ बोलना",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "truthful",
+          "text": "सच्चा होना",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "शायद, अगर ज़रूरत हो",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "यदि आप छात्रवृत्ति आवेदन पर झूठ बोलते हैं तो क्या होता है?",
+      "options": [
+        {
+          "id": "get-money",
+          "text": "ज़्यादा पैसे पाना",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-opportunity",
+          "text": "अवसर और विश्वास खोना",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "कुछ नहीं होता",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "आवेदनों में ईमानदारी क्यों महत्वपूर्ण है?",
+      "options": [
+        {
+          "id": "builds-trust",
+          "text": "विश्वास और अखंडता बनाता है",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "not-important",
+          "text": "महत्वपूर्ण नहीं है",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "waste-time",
+          "text": "समय बर्बाद करता है",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "यदि आप आवेदन में कोई गलती करते हैं तो आपको क्या करना चाहिए?",
+      "options": [
+        {
+          "id": "hide-mistake",
+          "text": "गलती छिपाना",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "correct-it",
+          "text": "इसे ईमानदारी से सुधारें",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "इसे नज़रअंदाज़ करें",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "छात्रवृत्ति के लिए सबसे अच्छा दृष्टिकोण क्या है?",
+      "options": [
+        {
+          "id": "honest-application",
+          "text": "ईमानदार और पूर्ण आवेदन",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "exaggerate",
+          "text": "उपलब्धियों को बढ़ा-चढ़ाकर पेश करना",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "copy-others",
+          "text": "दूसरों से कॉपी करना",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}
