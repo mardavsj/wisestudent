@@ -1,0 +1,176 @@
+{
+  "title": "Budget Frequency",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Budget Review",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Budget review discipline",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can regular budget reviews help you achieve your financial goals faster?",
+    "What review schedule balances effectiveness with practicality for your lifestyle?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "How often should you review your budget?",
+      "options": [
+        {
+          "id": "yearly",
+          "label": "Once a year during annual planning",
+          "reflection": "Annual reviews are too infrequent to catch spending issues and adjust to life changes.",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "label": "Never - set it and forget it",
+          "reflection": "Budgets need regular adjustment to remain relevant and effective for your financial goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "daily",
+          "label": "Every day for maximum control",
+          "reflection": "While thorough, daily budget reviews can become overwhelming and time-consuming.",
+          "isCorrect": false
+        },
+        {
+          "id": "monthly",
+          "label": "Every month to stay current",
+          "reflection": "Exactly! Monthly reviews keep your budget aligned with your actual spending and life circumstances.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "What's the best time to review your budget?",
+      "options": [
+        {
+          "id": "end",
+          "label": "At the end of each month",
+          "reflection": "Good timing! Reviewing at month-end helps you assess performance and plan for the next month.",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "label": "Whenever you remember",
+          "reflection": "Inconsistent timing makes it difficult to build budgeting habits and track progress effectively.",
+          "isCorrect": false
+        },
+        {
+          "id": "beginning",
+          "label": "Beginning of each month for planning",
+          "reflection": "Excellent! Starting each month with a budget review sets clear expectations and goals.",
+          "isCorrect": true
+        },
+        {
+          "id": "crisis",
+          "label": "Only when you run out of money",
+          "reflection": "Crisis-driven reviews are reactive rather than proactive and often too late to be helpful.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "What should you check during budget reviews?",
+      "options": [
+        {
+          "id": "income",
+          "label": "Actual income vs projected income",
+          "reflection": "Important baseline! Verifying income accuracy ensures your entire budget is built on solid foundations.",
+          "isCorrect": false
+        },
+        {
+          "id": "categories",
+          "label": "All spending categories for accuracy",
+          "reflection": "Perfect! Comprehensive category review reveals where money actually goes versus where you planned.",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "label": "What your friends are spending",
+          "reflection": "Comparing to others' spending can lead to poor financial decisions and unnecessary pressure.",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "label": "Nothing - trust your initial plan",
+          "reflection": "Blindly trusting initial plans without review often leads to budget failure and financial stress.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "How should you adjust your budget after review?",
+      "options": [
+        {
+          "id": "minor",
+          "label": "Make small, incremental adjustments",
+          "reflection": "Exactly! Small, thoughtful adjustments maintain budget stability while improving effectiveness.",
+          "isCorrect": true
+        },
+        {
+          "id": "drastic",
+          "label": "Make major changes every month",
+          "reflection": "Frequent drastic changes can create instability and make it hard to establish consistent habits.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore discrepancies and hope for the best",
+          "reflection": "Ignoring budget variances leads to continued overspending and missed financial opportunities.",
+          "isCorrect": false
+        },
+        {
+          "id": "abandon",
+          "label": "Abandon the budget entirely",
+          "reflection": "Giving up after setbacks prevents you from developing essential financial management skills.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What's the benefit of consistent budget reviews?",
+      "options": [
+        {
+          "id": "stress",
+          "label": "Creates more financial stress",
+          "reflection": "Actually, regular reviews reduce stress by preventing financial surprises and maintaining control.",
+          "isCorrect": false
+        },
+        {
+          "id": "restriction",
+          "label": "Makes you feel more restricted",
+          "reflection": "Reviews actually provide freedom by helping you understand your true financial capacity and choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "boredom",
+          "label": "Becomes boring routine work",
+          "reflection": "When done thoughtfully, budget reviews become empowering tools for achieving financial goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "awareness",
+          "label": "Builds spending awareness and control",
+          "reflection": "Perfect! Consistent reviews develop financial literacy and help you make intentional spending choices.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

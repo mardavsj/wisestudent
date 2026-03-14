@@ -1,0 +1,176 @@
+{
+  "title": "Subscription Trap",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Subscription Management",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Subscription management",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you identify subscriptions you're not using regularly?",
+    "What systems can you implement to prevent accumulating unused subscriptions?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You have multiple subscriptions you barely use. What's smarter?",
+      "options": [
+        {
+          "id": "keep",
+          "label": "Keep them all just in case",
+          "reflection": "Keeping unused subscriptions creates ongoing costs that silently drain your money over time without providing value.",
+          "isCorrect": false
+        },
+        {
+          "id": "cancel",
+          "label": "Cancel unused ones",
+          "reflection": "Perfect! Cancelling unused subscriptions frees up money for things you actually value and use regularly.",
+          "isCorrect": true
+        },
+        {
+          "id": "upgrade",
+          "label": "Upgrade to premium versions",
+          "reflection": "Upgrading unused subscriptions compounds the problem by increasing costs for services you weren't even using effectively.",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "label": "Share accounts with friends to justify cost",
+          "reflection": "Sharing accounts might reduce per-person cost, but you're still paying for services you barely use individually.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "Why do subscription costs feel so small individually?",
+      "options": [
+        {
+          "id": "trick",
+          "label": "They're designed to seem insignificant",
+          "reflection": "Exactly! Subscription companies intentionally price services low to make them feel affordable, but they add up significantly over time.",
+          "isCorrect": true
+        },
+        {
+          "id": "real",
+          "label": "They actually are insignificant",
+          "reflection": "While each subscription might seem small, they compound into substantial monthly costs that could be allocated to higher-value expenses.",
+          "isCorrect": false
+        },
+        {
+          "id": "benefit",
+          "label": "The benefits always outweigh the cost",
+          "reflection": "Unused subscriptions provide no benefits while still costing money, making them poor financial choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "tax",
+          "label": "They're mostly tax deductions",
+          "reflection": "Most personal subscriptions don't qualify as tax deductions, so you're paying the full cost without tax benefits.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "What's the best approach to managing subscriptions?",
+      "options": [
+        {
+          "id": "automatic",
+          "label": "Set up automatic renewals for convenience",
+          "reflection": "Automatic renewals make it easy to accumulate unused subscriptions that silently drain your finances without review.",
+          "isCorrect": false
+        },
+        {
+          "id": "annual",
+          "label": "Pay annually to get discounts",
+          "reflection": "Annual payments lock you into unused services for a full year, making cancellation psychologically harder even when not using the service.",
+          "isCorrect": false
+        },
+        {
+          "id": "free",
+          "label": "Only use free trials indefinitely",
+          "reflection": "Constantly switching between free trials is impractical and often doesn't provide the same value as committed services.",
+          "isCorrect": false
+        },
+        {
+          "id": "audit",
+          "label": "Regularly audit and cancel unused ones",
+          "reflection": "Perfect! Regular audits ensure you're only paying for services you actually use and derive value from.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "How do unused subscriptions affect your finances?",
+      "options": [
+        {
+          "id": "credit",
+          "label": "They improve your credit score",
+          "reflection": "Subscriptions don't directly impact credit scores unless payments are missed, so they don't provide financial benefits beyond the service itself.",
+          "isCorrect": false
+        },
+        {
+          "id": "investment",
+          "label": "They're investments in future value",
+          "reflection": "Unused subscriptions are expenses, not investments, since you're not deriving any value from services you don't use.",
+          "isCorrect": false
+        },
+        {
+          "id": "drain",
+          "label": "Small monthly costs silently drain money",
+          "reflection": "Exactly! Over time, unused subscriptions create a significant financial drain that accumulates without providing commensurate value.",
+          "isCorrect": true
+        },
+        {
+          "id": "reward",
+          "label": "They offer cashback rewards",
+          "reflection": "Most subscriptions don't offer cashback rewards, so unused ones are pure expenses without financial incentives.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What should you do before subscribing to something new?",
+      "options": [
+        {
+          "id": "impulse",
+          "label": "Subscribe impulsively when interested",
+          "reflection": "Impulse subscriptions often join the collection of unused services that silently drain your money without providing value.",
+          "isCorrect": false
+        },
+        {
+          "id": "evaluate",
+          "label": "Evaluate if you'll actually use it regularly",
+          "reflection": "Perfect! Assessing actual usage likelihood prevents accumulating more unused subscriptions that drain your finances.",
+          "isCorrect": true
+        },
+        {
+          "id": "collect",
+          "label": "Collect as many as possible for options",
+          "reflection": "Collecting unused subscriptions creates ongoing costs without benefits, making it a poor financial strategy.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore the cost, focus on features",
+          "reflection": "Ignoring costs while focusing only on features leads to accumulating expensive unused subscriptions that strain your budget.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

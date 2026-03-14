@@ -1,0 +1,176 @@
+{
+  "title": "Borrowing to Spend",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Borrowing to Spend",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Debt-free spending awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you enjoy lifestyle improvements while maintaining financial health?",
+    "What strategies help you avoid borrowing for lifestyle spending?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Is borrowing for lifestyle spending safe?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "reflection": "Borrowing for lifestyle spending is rarely safe as it creates debt obligations that can lead to long-term financial stress and reduced flexibility.",
+          "isCorrect": false
+        },
+        {
+          "id": "sometimes",
+          "label": "It depends on the interest rate",
+          "reflection": "Even with low interest rates, borrowing for lifestyle spending can create unnecessary debt obligations and financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "label": "No, it creates long-term stress",
+          "reflection": "Exactly! Borrowing for lifestyle spending creates debt that can lead to long-term financial stress and reduces your financial flexibility.",
+          "isCorrect": true
+        },
+        {
+          "id": "worth",
+          "label": "If it's worth the expense",
+          "reflection": "Lifestyle spending should be funded with income, not debt. Borrowing for lifestyle expenses creates long-term financial obligations.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "What happens when you borrow for lifestyle purchases?",
+      "options": [
+        {
+          "id": "debt",
+          "label": "Creates a cycle of debt and payment obligations",
+          "reflection": "Exactly! Borrowing for lifestyle purchases creates ongoing debt obligations that can trap you in a cycle of payments.",
+          "isCorrect": true
+        },
+        {
+          "id": "freedom",
+          "label": "Increases financial freedom",
+          "reflection": "Borrowing for lifestyle purchases actually reduces financial freedom by creating debt obligations that must be paid.",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "label": "Helps build savings faster",
+          "reflection": "Debt payments reduce the money available for savings, making it harder to build financial security.",
+          "isCorrect": false
+        },
+        {
+          "id": "growth",
+          "label": "Accelerates wealth growth",
+          "reflection": "Borrowing for lifestyle purchases works against wealth growth by creating expenses without generating returns.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "What's the best approach to afford lifestyle improvements?",
+      "options": [
+        {
+          "id": "credit",
+          "label": "Use credit cards for convenience",
+          "reflection": "Using credit cards for lifestyle purchases can lead to debt if balances aren't paid off monthly, creating financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "loan",
+          "label": "Take out personal loans for bigger items",
+          "reflection": "Taking out loans for lifestyle purchases creates long-term debt obligations that can delay financial independence.",
+          "isCorrect": false
+        },
+        {
+          "id": "finance",
+          "label": "Finance purchases with monthly payment plans",
+          "reflection": "Monthly payment plans for lifestyle purchases create ongoing obligations that can delay financial independence.",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "label": "Save up for purchases over time",
+          "reflection": "Perfect! Saving up for lifestyle improvements ensures you can afford them without creating debt obligations.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "How does borrowing for lifestyle affect your financial independence?",
+      "options": [
+        {
+          "id": "speeds",
+          "label": "It speeds up financial independence",
+          "reflection": "Debt obligations slow down the path to financial independence by requiring payments before other financial goals can be pursued.",
+          "isCorrect": false
+        },
+        {
+          "id": "delays",
+          "label": "Lifestyle loans delay financial independence",
+          "reflection": "Exactly! Lifestyle loans create debt obligations that must be paid before achieving true financial independence.",
+          "isCorrect": true
+        },
+        {
+          "id": "helps",
+          "label": "It helps by spreading payments over time",
+          "reflection": "While spreading payments might seem helpful, debt still creates obligations that delay true financial independence.",
+          "isCorrect": false
+        },
+        {
+          "id": "builds",
+          "label": "It builds credit and financial capacity",
+          "reflection": "While credit building has benefits, lifestyle debt still creates obligations that delay financial independence.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What's the wisest approach to lifestyle spending?",
+      "options": [
+        {
+          "id": "afford",
+          "label": "Only spend on lifestyle items you can afford",
+          "reflection": "Perfect! Only spending on lifestyle items you can afford with current income prevents debt and maintains financial independence.",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "label": "Borrow when you need something special",
+          "reflection": "Borrowing for special lifestyle purchases still creates debt obligations that can delay financial independence.",
+          "isCorrect": false
+        },
+        {
+          "id": "credit",
+          "label": "Use credit freely to enjoy life now",
+          "reflection": "Using credit freely for lifestyle enjoyment creates debt obligations that reduce financial flexibility and independence.",
+          "isCorrect": false
+        },
+        {
+          "id": "invest",
+          "label": "Invest borrowed money for returns",
+          "reflection": "Borrowing to invest carries significant risk, especially for lifestyle purposes, and can lead to financial stress.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

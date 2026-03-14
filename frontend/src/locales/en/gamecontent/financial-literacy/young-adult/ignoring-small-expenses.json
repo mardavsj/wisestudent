@@ -1,0 +1,176 @@
+{
+  "title": "Ignoring Small Expenses",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Small Expenses",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Expense tracking awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you track small daily expenses without making budgeting overly burdensome?",
+    "What strategies help maintain awareness of small expenses while still enjoying life?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Small daily spends usually:",
+      "options": [
+        {
+          "id": "addup",
+          "label": "Add up over the month",
+          "reflection": "Exactly! Small daily expenses add up quickly over the course of a month, potentially representing a significant portion of your budget.",
+          "isCorrect": true
+        },
+        {
+          "id": "dontmatter",
+          "label": "Don't matter",
+          "reflection": "Actually, small daily spends do matter. Even small amounts can accumulate significantly over time.",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "label": "Save you money in the long run",
+          "reflection": "Small daily expenses reduce your available funds rather than saving money in the long run.",
+          "isCorrect": false
+        },
+        {
+          "id": "invest",
+          "label": "Provide good investment opportunities",
+          "reflection": "Small daily expenses are typically consumption rather than investments that generate returns.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "What is the cumulative effect of spending ₹20 daily on tea/coffee?",
+      "options": [
+        {
+          "id": "small",
+          "label": "₹600 per month (minimal impact)",
+          "reflection": "Actually, ₹20 daily would be ₹600 per month assuming 30 days, which can represent a significant portion of a young person's budget.",
+          "isCorrect": false
+        },
+        {
+          "id": "insignificant",
+          "label": "Insignificant amount",
+          "reflection": "₹600 per month is a significant sum that could be redirected toward savings or other important goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "zero",
+          "label": "Zero impact on finances",
+          "reflection": "Any spending, regardless of size, has an impact on your overall financial position.",
+          "isCorrect": false
+        },
+        {
+          "id": "significant",
+          "label": "₹600 per month (significant impact)",
+          "reflection": "Perfect! ₹20 daily adds up to ₹600 per month, which is a significant amount that could be allocated elsewhere.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "Why do people often ignore small recurring expenses?",
+      "options": [
+        {
+          "id": "necessity",
+          "label": "They are always necessary expenses",
+          "reflection": "Many small recurring expenses are actually discretionary, not necessary, such as snacks, drinks, or entertainment.",
+          "isCorrect": false
+        },
+        {
+          "id": "priority",
+          "label": "They have higher priority than big expenses",
+          "reflection": "Big expenses are typically prioritized over small ones, but small expenses often add up to be substantial.",
+          "isCorrect": false
+        },
+        {
+          "id": "visibility",
+          "label": "They seem too small to notice individually",
+          "reflection": "Exactly! Small expenses seem insignificant when viewed individually, causing people to overlook their cumulative impact.",
+          "isCorrect": true
+        },
+        {
+          "id": "benefit",
+          "label": "They provide significant financial benefits",
+          "reflection": "Small recurring expenses typically provide personal satisfaction rather than financial benefits.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "What happens when you ignore small daily expenses in budgeting?",
+      "options": [
+        {
+          "id": "simpler",
+          "label": "Budgets become simpler to manage",
+          "reflection": "While excluding small expenses might simplify the budget, it also makes it inaccurate and prone to failure.",
+          "isCorrect": false
+        },
+        {
+          "id": "accuracy",
+          "label": "Budgets become inaccurate and fail",
+          "reflection": "Perfect! Ignoring small daily expenses makes budgets inaccurate and likely to fail, as these expenses accumulate significantly over time.",
+          "isCorrect": true
+        },
+        {
+          "id": "success",
+          "label": "Budgets are more likely to succeed",
+          "reflection": "Ignoring small expenses actually makes budgets less likely to succeed due to unaccounted spending.",
+          "isCorrect": false
+        },
+        {
+          "id": "flexibility",
+          "label": "Budgets have more flexibility",
+          "reflection": "Untracked small expenses reduce flexibility by consuming budgeted funds unexpectedly.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "How can tracking small expenses improve your financial health?",
+      "options": [
+        {
+          "id": "awareness",
+          "label": "Creates awareness of actual spending patterns",
+          "reflection": "Exactly! Tracking small expenses creates awareness of actual spending patterns and helps identify areas where money can be redirected to better uses.",
+          "isCorrect": true
+        },
+        {
+          "id": "complexity",
+          "label": "Makes financial management more complex",
+          "reflection": "While tracking adds some complexity, it provides valuable insights that improve financial management.",
+          "isCorrect": false
+        },
+        {
+          "id": "restriction",
+          "label": "Restricts your ability to enjoy life",
+          "reflection": "Tracking small expenses doesn't restrict enjoyment; it helps ensure you have enough for both necessities and pleasures.",
+          "isCorrect": false
+        },
+        {
+          "id": "inequality",
+          "label": "Creates inequality in spending",
+          "reflection": "Tracking expenses doesn't create inequality; it helps ensure balanced and intentional spending.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

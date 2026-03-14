@@ -1,0 +1,176 @@
+{
+  "title": "Auto-Debit Awareness",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Subscription Management",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Subscription management mastery",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can systematic auto-debit monitoring actually increase your financial flexibility rather than create administrative burden?",
+    "What review system helps you maintain subscription value while preventing unwanted recurring charges from accumulating unnoticed?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Auto-debits are useful when:",
+      "options": [
+        {
+          "id": "forget",
+          "label": "You forget they exist",
+          "reflection": "Forgetting about auto-debits creates financial blind spots and potential overspending - awareness and active management are essential for responsible usage.",
+          "isCorrect": false
+        },
+        {
+          "id": "control",
+          "label": "You monitor and control them",
+          "reflection": "Exactly! Auto-debits work best when you actively track subscriptions, review charges, and maintain clear oversight of automated financial commitments.",
+          "isCorrect": true
+        },
+        {
+          "id": "convenience",
+          "label": "Maximum convenience is needed",
+          "reflection": "While convenience is a benefit, unchecked automation without monitoring can lead to unnoticed charges and budget disruptions.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "You want to avoid manual payments",
+          "reflection": "Automation should supplement rather than replace financial awareness - the goal is efficient management, not avoidance of responsibility.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "What's the main risk of unmonitored auto-debits?",
+      "options": [
+        {
+          "id": "late",
+          "label": "Late payment penalties",
+          "reflection": "Auto-debits typically prevent late payments rather than cause them - the real risk lies in forgotten or unnecessary recurring charges.",
+          "isCorrect": false
+        },
+        {
+          "id": "security",
+          "label": "Increased security vulnerabilities",
+          "reflection": "Security risks relate more to authorization methods than monitoring frequency - the primary issue is financial oversight rather than data protection.",
+          "isCorrect": false
+        },
+        {
+          "id": "complexity",
+          "label": "Too many payment methods",
+          "reflection": "Multiple payment methods create complexity but the core risk is financial unawareness rather than the sheer number of transaction channels.",
+          "isCorrect": false
+        },
+        {
+          "id": "oversight",
+          "label": "Forgotten recurring charges",
+          "reflection": "Perfect! Unmonitored subscriptions accumulate unnoticed, creating budget strain and financial commitments you may no longer want or need.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "How should you manage auto-debit subscriptions?",
+      "options": [
+        {
+          "id": "annual",
+          "label": "Review once per year",
+          "reflection": "Annual reviews are insufficient - monthly monitoring prevents accumulation of unwanted charges and maintains current budget alignment.",
+          "isCorrect": false
+        },
+        {
+          "id": "automatic",
+          "label": "Let them run automatically",
+          "reflection": "Complete automation without oversight leads to financial leakage - active management ensures subscriptions remain valuable and affordable.",
+          "isCorrect": false
+        },
+        {
+          "id": "monthly",
+          "label": "Monthly review and adjustment",
+          "reflection": "Exactly! Regular monthly checks align with billing cycles and enable timely cancellation of services you no longer use or need.",
+          "isCorrect": true
+        },
+        {
+          "id": "cancel",
+          "label": "Cancel all subscriptions",
+          "reflection": "Blanket cancellation isn't optimal - strategic retention of valuable services with proper monitoring provides both convenience and control.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "What's the relationship between auto-debits and budgeting?",
+      "options": [
+        {
+          "id": "independent",
+          "label": "They operate independently",
+          "reflection": "Auto-debits directly impact your available funds and must be integrated into budget planning rather than treated as separate financial activities.",
+          "isCorrect": false
+        },
+        {
+          "id": "integrated",
+          "label": "They should be budget-integrated",
+          "reflection": "Exactly! Auto-debits represent committed expenses that must be planned for in your budget to maintain overall financial stability and awareness.",
+          "isCorrect": true
+        },
+        {
+          "id": "disruptive",
+          "label": "They disrupt budget planning",
+          "reflection": "Well-managed auto-debits actually support budgeting by creating predictable, automated expense patterns rather than causing disruption.",
+          "isCorrect": false
+        },
+        {
+          "id": "unnecessary",
+          "label": "They're unnecessary for budgets",
+          "reflection": "Recurring automatic payments are common financial realities that effective budgeting must account for rather than ignore or treat as exceptions.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "When should you cancel an auto-debit?",
+      "options": [
+        {
+          "id": "unused",
+          "label": "When you haven't used the service",
+          "reflection": "Perfect! Services you don't use represent wasted money - regular evaluation identifies and eliminates these unnecessary recurring financial commitments.",
+          "isCorrect": true
+        },
+        {
+          "id": "expensive",
+          "label": "When the price increases",
+          "reflection": "Price increases warrant review but may not require immediate cancellation - evaluate value proposition and available alternatives before deciding.",
+          "isCorrect": false
+        },
+        {
+          "id": "convenient",
+          "label": "When manual payment is easier",
+          "reflection": "Payment method preference shouldn't drive cancellation decisions - focus on whether the service provides ongoing value relative to cost.",
+          "isCorrect": false
+        },
+        {
+          "id": "temporary",
+          "label": "After temporary usage period",
+          "reflection": "Temporary usage suggests review timing but doesn't automatically justify cancellation - assess continued value and budget impact instead.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

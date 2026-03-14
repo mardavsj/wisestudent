@@ -1,178 +1,22 @@
-import React, { useMemo, useState } from "react";
+﻿import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Trophy } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const FIRST_INCOME_MISTAKE_STAGES = [
-  {
-    id: 1,
-    prompt: "You overspent this month. What's the best response?",
-    options: [
-      {
-        id: "ignore",
-        label: "Ignore it",
-        reflection: "Ignoring financial mistakes prevents learning and often leads to repeating the same errors, creating a cycle of financial stress and poor habits.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "panic",
-        label: "Panic and make drastic cuts",
-        reflection: "While concern is natural, panic-driven decisions often lead to unsustainable changes that are difficult to maintain long-term.",
-        isCorrect: false,
-      },
-      {
-        id: "review",
-        label: "Review and adjust next month",
-        reflection: "Exactly! Acknowledging mistakes and making adjustments creates opportunities for growth and prevents future financial setbacks.",
-        isCorrect: true,
-      },
-      {
-        id: "repeat",
-        label: "Assume it will happen again anyway",
-        reflection: "This defeatist attitude eliminates motivation to improve and prevents the development of better financial management skills.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 2,
-    prompt: "What should you analyze after overspending?",
-    options: [
-      {
-        id: "patterns",
-        label: "Identify spending patterns and triggers",
-        reflection: "Perfect! Understanding what led to overspending helps you recognize warning signs and develop strategies to avoid similar situations.",
-        isCorrect: true,
-      },
-      {
-        id: "blame",
-        label: "Blame external circumstances entirely",
-        reflection: "While circumstances matter, taking responsibility for your financial decisions empowers you to make better choices in the future.",
-        isCorrect: false,
-      },
-      {
-        id: "forget",
-        label: "Forget about it and move on",
-        reflection: "Moving on without analysis means missing valuable learning opportunities that could prevent future financial difficulties.",
-        isCorrect: false,
-      },
-      {
-        id: "extreme",
-        label: "Eliminate all discretionary spending",
-        reflection: "Extreme measures are usually unsustainable and can lead to resentment, making it harder to maintain long-term financial discipline.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 3,
-    prompt: "How can you prevent repeating the same mistake?",
-    options: [
-     
-      {
-        id: "willpower",
-        label: "Rely on willpower alone",
-        reflection: "Willpower is limited and unreliable - systems and habits are much more effective for sustained financial success.",
-        isCorrect: false,
-      },
-       {
-        id: "systems",
-        label: "Create systems and safeguards",
-        reflection: "Excellent! Building automatic savings, budget alerts, and spending limits creates structure that supports better financial decisions consistently.",
-        isCorrect: true,
-      },
-      {
-        id: "avoid",
-        label: "Avoid the situations that caused overspending",
-        reflection: "While avoiding triggers can help, learning to manage them constructively builds resilience and better decision-making skills.",
-        isCorrect: false,
-      },
-      {
-        id: "strict",
-        label: "Implement extremely strict restrictions",
-        reflection: "Overly restrictive approaches often backfire and don't teach the financial skills needed for making balanced decisions.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 4,
-    prompt: "What's the most constructive way to handle the overspending?",
-    options: [
-      
-      {
-        id: "borrow",
-        label: "Borrow money to cover the deficit",
-        reflection: "Borrowing creates additional financial stress and interest costs, making the original problem worse rather than solving it constructively.",
-        isCorrect: false,
-      },
-      {
-        id: "delay",
-        label: "Delay dealing with it until next month",
-        reflection: "Delaying financial problems allows them to grow larger and more stressful, making resolution more difficult and urgent later.",
-        isCorrect: false,
-      },
-      {
-        id: "adjust",
-        label: "Adjust next month's budget to compensate",
-        reflection: "Perfect! Proactive adjustment shows financial responsibility and helps rebuild any shortfalls while maintaining your financial progress.",
-        isCorrect: true,
-      },
-      {
-        id: "minimize",
-        label: "Minimize the significance of overspending",
-        reflection: "Downplaying financial mistakes prevents learning and growth, often leading to repeated patterns of poor financial management.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 5,
-    prompt: "Which mindset helps turn mistakes into growth opportunities?",
-    options: [
-      
-      {
-        id: "failure",
-        label: "See it as personal failure",
-        reflection: "Viewing financial mistakes as personal failures creates shame and discouragement rather than motivation to improve your financial skills.",
-        isCorrect: false,
-      },
-      {
-        id: "ignore",
-        label: "Ignore the emotional impact completely",
-        reflection: "Acknowledging emotions around financial mistakes is important - ignoring them can lead to repeated patterns and unresolved financial anxiety.",
-        isCorrect: false,
-      },
-      {
-        id: "perfect",
-        label: "Believe you should never make mistakes",
-        reflection: "Expecting perfection creates unrealistic pressure and prevents the experimentation and learning necessary for developing strong financial skills.",
-        isCorrect: false,
-      },
-      {
-        id: "learning",
-        label: "View mistakes as learning experiences",
-        reflection: "Perfect! This growth mindset transforms financial setbacks into valuable lessons that build better habits and decision-making skills.",
-        isCorrect: true,
-      },
-    ],
-    reward: 5,
-  },
-];
-
-const totalStages = FIRST_INCOME_MISTAKE_STAGES.length;
-const successThreshold = totalStages;
 
 const FirstIncomeMistake = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   const gameId = "finance-young-adult-8";
+  const gameContent = t("financial-literacy.young-adult.first-income-mistake", { returnObjects: true });
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = stages.length;
+  const successThreshold = totalStages;
+  const reflectionPrompts = Array.isArray(gameContent?.reflectionPrompts) ? gameContent.reflectionPrompts : [];
+
   const gameData = getGameDataById(gameId);
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
@@ -189,19 +33,12 @@ const FirstIncomeMistake = () => {
   const [selectedReflection, setSelectedReflection] = useState(null);
   const [canProceed, setCanProceed] = useState(false);
 
-  const reflectionPrompts = useMemo(
-    () => [
-      "How can financial mistakes become stepping stones to better money management?",
-      "What systems can you put in place to learn from errors without repeating them?",
-    ],
-    []
-  );
-
   const handleChoice = (option) => {
     if (selectedOption || showResult) return;
 
     resetFeedback();
-    const currentStageData = FIRST_INCOME_MISTAKE_STAGES[currentStage];
+    const currentStageData = stages[currentStage];
+    if (!currentStageData) return;
     const updatedHistory = [
       ...history,
       { stageId: currentStageData.id, isCorrect: option.isCorrect },
@@ -250,22 +87,25 @@ const FirstIncomeMistake = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
-  const stage = FIRST_INCOME_MISTAKE_STAGES[Math.min(currentStage, totalStages - 1)];
+  const subtitle = t("financial-literacy.young-adult.first-income-mistake.subtitleProgress", {
+    current: Math.min(currentStage + 1, totalStages),
+    total: totalStages,
+  });
+  const stage = stages[Math.min(currentStage, Math.max(totalStages - 1, 0))];
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="First Income Mistake"
+      title={gameContent?.title}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      maxScore={FIRST_INCOME_MISTAKE_STAGES.length}
-      currentLevel={Math.min(currentStage + 1, FIRST_INCOME_MISTAKE_STAGES.length)}
-      totalLevels={FIRST_INCOME_MISTAKE_STAGES.length}
+      maxScore={totalStages}
+      currentLevel={Math.min(currentStage + 1, totalStages)}
+      totalLevels={totalStages}
       gameId={gameId}
       gameType="finance"
       showGameOver={showResult}
@@ -277,12 +117,12 @@ const FirstIncomeMistake = () => {
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>Learning from Mistakes</span>
+            <span>{gameContent?.scenarioLabel}</span>
+            <span>{gameContent?.scenarioValue}</span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+          <p className="text-lg text-white/90 mb-6">{stage?.prompt}</p>
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {(stage?.options || []).map((option) => {
               const isSelected = selectedOption === option.id;
               return (
                 <button
@@ -297,7 +137,11 @@ const FirstIncomeMistake = () => {
                     }`}
                 >
                   <div className="flex justify-between items-center mb-2 text-sm text-white/70">
-                    <span>Choice {option.id.toUpperCase()}</span>
+                    <span>
+                      {t("financial-literacy.young-adult.first-income-mistake.choiceLabel", {
+                        id: String(option.id || "").toUpperCase(),
+                      })}
+                    </span>
                   </div>
                   <p className="text-white font-semibold">{option.label}</p>
                 </button>
@@ -306,7 +150,7 @@ const FirstIncomeMistake = () => {
           </div>
           {(showResult || showFeedback) && (
             <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-              <h4 className="text-lg font-semibold text-white">Reflection</h4>
+              <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionTitle}</h4>
               {selectedReflection && (
                 <div className="max-h-24 overflow-y-auto pr-2">
                   <p className="text-sm text-white/90">{selectedReflection}</p>
@@ -327,10 +171,12 @@ const FirstIncomeMistake = () => {
                       }}
                       className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Continue
+                      {gameContent?.continueButton}
                     </button>
                   ) : (
-                    <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                    <div className="py-2 px-6 text-white font-semibold">
+                      {gameContent?.readingLabel}
+                    </div>
                   )}
                 </div>
               )}
@@ -348,11 +194,14 @@ const FirstIncomeMistake = () => {
                     ))}
                   </ul>
                   <p className="text-sm text-white/70">
-                    Skill unlocked: <strong>Financial mistake recovery</strong>
+                    {gameContent?.skillUnlockedLabel}{" "}
+                    <strong>{gameContent?.skillName}</strong>
                   </p>
                   {!hasPassed && (
                     <p className="text-xs text-amber-300">
-                      Answer all {totalStages} choices correctly to earn the full reward.
+                      {t("financial-literacy.young-adult.first-income-mistake.fullRewardHint", {
+                        total: totalStages,
+                      })}
                     </p>
                   )}
                   {!hasPassed && (
@@ -360,7 +209,7 @@ const FirstIncomeMistake = () => {
                       onClick={handleRetry}
                       className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Try Again
+                      {gameContent?.tryAgainButton}
                     </button>
                   )}
                 </>
@@ -371,18 +220,21 @@ const FirstIncomeMistake = () => {
         </div>
         {showResult && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection Prompts</h4>
+            <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionPromptsTitle}</h4>
             <ul className="text-sm list-disc list-inside space-y-1">
               {reflectionPrompts.map((prompt) => (
                 <li key={prompt}>{prompt}</li>
               ))}
             </ul>
             <p className="text-sm text-white/70">
-              Skill unlocked: <strong>Financial mistake recovery</strong>
+              {gameContent?.skillUnlockedLabel}{" "}
+              <strong>{gameContent?.skillName}</strong>
             </p>
             {!hasPassed && (
               <p className="text-xs text-amber-300">
-                Answer all {totalStages} choices correctly to earn the full reward.
+                {t("financial-literacy.young-adult.first-income-mistake.fullRewardHint", {
+                  total: totalStages,
+                })}
               </p>
             )}
             {!hasPassed && (
@@ -390,7 +242,7 @@ const FirstIncomeMistake = () => {
                 onClick={handleRetry}
                 className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
               >
-                Try Again
+                {gameContent?.tryAgainButton}
               </button>
             )}
           </div>

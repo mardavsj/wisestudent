@@ -1,0 +1,176 @@
+{
+  "title": "Tracking Lifestyle Costs",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Tracking Costs",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Expense tracking awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can tracking expenses help you maintain your desired lifestyle while staying within budget?",
+    "What tools or methods work best for consistently tracking lifestyle expenses?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Why track lifestyle expenses?",
+      "options": [
+        {
+          "id": "restrict",
+          "label": "To restrict fun",
+          "reflection": "Tracking expenses isn't about restricting fun, but rather about understanding where your money goes to make informed decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "control",
+          "label": "To maintain complete control over spending",
+          "reflection": "While tracking does provide more control, the primary benefit is awareness of spending patterns rather than rigid control.",
+          "isCorrect": false
+        },
+        {
+          "id": "limit",
+          "label": "To limit all discretionary spending",
+          "reflection": "Tracking isn't about limiting all discretionary spending, but rather understanding it to make better financial decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "overspending",
+          "label": "To avoid overspending unknowingly",
+          "reflection": "Exactly! Tracking expenses helps you become aware of your spending patterns and avoid overspending on lifestyle items without realizing it.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "What happens when you don't track lifestyle spending?",
+      "options": [
+        {
+          "id": "savings",
+          "label": "More money gets saved automatically",
+          "reflection": "Without tracking, spending often increases unknowingly, which typically reduces savings rather than increasing them.",
+          "isCorrect": false
+        },
+        {
+          "id": "unawareness",
+          "label": "Overspending occurs without awareness",
+          "reflection": "Exactly! Without tracking, it's easy to overspend on lifestyle items without realizing how much is actually being spent.",
+          "isCorrect": true
+        },
+        {
+          "id": "budgeting",
+          "label": "Better budgeting happens naturally",
+          "reflection": "Effective budgeting requires awareness of spending patterns, which comes from tracking expenses.",
+          "isCorrect": false
+        },
+        {
+          "id": "planning",
+          "label": "Financial planning becomes easier",
+          "reflection": "Financial planning becomes more difficult without awareness of actual spending patterns.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "How does tracking lifestyle expenses help financially?",
+      "options": [
+        {
+          "id": "restriction",
+          "label": "Restricts all non-essential purchases",
+          "reflection": "Tracking doesn't restrict purchases but rather provides insight to make more informed decisions about non-essentials.",
+          "isCorrect": false
+        },
+        {
+          "id": "automation",
+          "label": "Automatically reduces expenses",
+          "reflection": "Tracking itself doesn't reduce expenses, but awareness from tracking can lead to more conscious spending decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "awareness",
+          "label": "Creates awareness of spending patterns",
+          "reflection": "Perfect! Tracking creates awareness of spending patterns, which is the first step toward making more intentional financial decisions.",
+          "isCorrect": true
+        },
+        {
+          "id": "elimination",
+          "label": "Eliminates all lifestyle spending",
+          "reflection": "Tracking doesn't eliminate lifestyle spending but helps ensure it aligns with your financial goals.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "What's the relationship between tracking and financial regret?",
+      "options": [
+        {
+          "id": "causes",
+          "label": "Tracking causes more financial regret",
+          "reflection": "Tracking actually reduces financial regret by helping you understand and control your spending patterns.",
+          "isCorrect": false
+        },
+        {
+          "id": "increases",
+          "label": "Tracking increases regret about spending",
+          "reflection": "Rather than increasing regret, tracking helps prevent regret by providing awareness of spending patterns.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoids",
+          "label": "Avoiding tracking prevents regret",
+          "reflection": "Avoiding tracking often leads to more regret as you may spend more than intended without realizing it.",
+          "isCorrect": false
+        },
+        {
+          "id": "prevents",
+          "label": "Awareness prevents regret",
+          "reflection": "Exactly! Awareness through tracking helps prevent financial regret by enabling you to make conscious decisions about your spending.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What's the best approach to tracking lifestyle expenses?",
+      "options": [
+        {
+          "id": "consistent",
+          "label": "Track consistently to maintain awareness",
+          "reflection": "Perfect! Consistent tracking maintains awareness of spending patterns, helping prevent overspending and financial regret.",
+          "isCorrect": true
+        },
+        {
+          "id": "occasional",
+          "label": "Track only when money feels tight",
+          "reflection": "Waiting until money feels tight means you've likely already overspent. Regular tracking prevents this situation.",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "label": "Track expenses randomly throughout the month",
+          "reflection": "Random tracking doesn't provide a complete picture of spending patterns. Consistency is key for awareness.",
+          "isCorrect": false
+        },
+        {
+          "id": "after",
+          "label": "Track only after making purchases",
+          "reflection": "While post-purchase tracking is better than nothing, real-time tracking provides better awareness and control.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

@@ -1,178 +1,22 @@
-import React, { useMemo, useState } from "react";
+﻿import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Trophy } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const PEER_COMPARISON_STAGES = [
-  {
-    id: 1,
-    prompt: "Friends spend more than you. What should guide your spending?",
-    options: [
-      {
-        id: "lifestyle",
-        label: "Their lifestyle",
-        reflection: "Following others' spending patterns often leads to financial stress and debt, as their circumstances and income may be completely different from yours.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "pressure",
-        label: "Social pressure to keep up",
-        reflection: "Giving in to social pressure compromises your financial security and often leads to lifestyle inflation that's unsustainable long-term.",
-        isCorrect: false,
-      },
-      {
-        id: "goals",
-        label: "Your income and goals",
-        reflection: "Exactly! Your financial decisions should be based on your personal situation, income level, and long-term objectives rather than social comparisons.",
-        isCorrect: true,
-      },
-      {
-        id: "appearances",
-        label: "Appearing successful to others",
-        reflection: "Focusing on appearances over actual financial health creates a facade that ultimately harms your real financial well-being and future options.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 2,
-    prompt: "What's the danger of comparing your spending to friends?",
-    options: [
-      {
-        id: "overspending",
-        label: "Causes overspending beyond your means",
-        reflection: "Exactly! Social comparison often leads to purchasing things you can't afford, creating debt and financial anxiety.",
-        isCorrect: true,
-      },
-      {
-        id: "motivation",
-        label: "Motivates you to earn more money",
-        reflection: "While comparison might provide short-term motivation, it's an unreliable driver that often leads to unhealthy financial behaviors rather than sustainable growth.",
-        isCorrect: false,
-      },
-      {
-        id: "connections",
-        label: "Helps build better social connections",
-        reflection: "True friendships aren't based on matching spending levels - authentic relationships thrive despite financial differences when built on genuine connection.",
-        isCorrect: false,
-      },
-      {
-        id: "normal",
-        label: "Shows you what's normal to spend",
-        reflection: "What's 'normal' varies greatly by individual circumstances, income sources, and life stages - there's no universal spending benchmark that applies to everyone.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 3,
-    prompt: "How should you handle friends who spend more than you?",
-    options: [
-      
-      {
-        id: "match",
-        label: "Try to match their spending level",
-        reflection: "Attempting to match others' spending often means sacrificing your financial goals and security for temporary social acceptance.",
-        isCorrect: false,
-      },
-      {
-        id: "avoid",
-        label: "Avoid friends who spend more",
-        reflection: "Complete avoidance isn't necessary - learning to navigate financial differences while maintaining relationships is a valuable life skill.",
-        isCorrect: false,
-      },
-      {
-        id: "secret",
-        label: "Hide your financial situation",
-        reflection: "Secrecy creates stress and prevents authentic relationships - honest communication about financial priorities builds stronger, more supportive friendships.",
-        isCorrect: false,
-      },
-      {
-        id: "boundaries",
-        label: "Set clear financial boundaries",
-        reflection: "Perfect! Establishing boundaries protects your financial health while maintaining genuine friendships based on mutual respect rather than spending competition.",
-        isCorrect: true,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 4,
-    prompt: "What mindset prevents peer spending pressure?",
-    options: [
-      
-      {
-        id: "competition",
-        label: "View it as a friendly competition",
-        reflection: "Financial competition with friends creates unnecessary stress and often leads to poor decisions that nobody wins from in the long run.",
-        isCorrect: false,
-      },
-      {
-        id: "secrets",
-        label: "Keep your finances secret from everyone",
-        reflection: "While privacy is important, complete secrecy can isolate you from potential support and learning opportunities with trusted friends.",
-        isCorrect: false,
-      },
-      {
-        id: "values",
-        label: "Focus on your personal values and priorities",
-        reflection: "Excellent! When you're clear about what truly matters to you, external spending pressures lose their influence over your financial decisions.",
-        isCorrect: true,
-      },
-      {
-        id: "conformity",
-        label: "Conform to group spending norms",
-        reflection: "Conforming to group norms often means compromising your financial security and personal goals for temporary social acceptance.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 5,
-    prompt: "Which approach builds genuine friendships?",
-    options: [
-      
-      {
-        id: "impress",
-        label: "Impress friends with expensive purchases",
-        reflection: "Trying to impress others through spending creates superficial relationships based on consumption rather than authentic connection and shared values.",
-        isCorrect: false,
-      },
-      {
-        id: "authentic",
-        label: "Be authentic about your financial situation",
-        reflection: "Perfect! Genuine friendships thrive on honesty and mutual respect, not financial competition or pretense about spending abilities.",
-        isCorrect: true,
-      },
-      {
-        id: "borrow",
-        label: "Borrow money to match their lifestyle",
-        reflection: "Borrowing to keep up appearances creates debt stress and damages both your financial health and the authenticity of your relationships.",
-        isCorrect: false,
-      },
-      {
-        id: "distance",
-        label: "Distance yourself from financially different friends",
-        reflection: "Learning to navigate financial differences while maintaining relationships demonstrates maturity and builds stronger, more diverse friendships.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-];
-
-const totalStages = PEER_COMPARISON_STAGES.length;
-const successThreshold = totalStages;
 
 const PeerComparisonTrap = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   const gameId = "finance-young-adult-7";
+  const gameContent = t("financial-literacy.young-adult.peer-comparison-trap", { returnObjects: true });
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = stages.length;
+  const successThreshold = totalStages;
+  const reflectionPrompts = Array.isArray(gameContent?.reflectionPrompts) ? gameContent.reflectionPrompts : [];
+
   const gameData = getGameDataById(gameId);
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
@@ -189,19 +33,12 @@ const PeerComparisonTrap = () => {
   const [selectedReflection, setSelectedReflection] = useState(null);
   const [canProceed, setCanProceed] = useState(false);
 
-  const reflectionPrompts = useMemo(
-    () => [
-      "How can you maintain friendships while staying true to your financial values?",
-      "What personal goals are worth prioritizing over social spending pressure?",
-    ],
-    []
-  );
-
   const handleChoice = (option) => {
     if (selectedOption || showResult) return;
 
     resetFeedback();
-    const currentStageData = PEER_COMPARISON_STAGES[currentStage];
+    const currentStageData = stages[currentStage];
+    if (!currentStageData) return;
     const updatedHistory = [
       ...history,
       { stageId: currentStageData.id, isCorrect: option.isCorrect },
@@ -250,22 +87,25 @@ const PeerComparisonTrap = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
-  const stage = PEER_COMPARISON_STAGES[Math.min(currentStage, totalStages - 1)];
+  const subtitle = t("financial-literacy.young-adult.peer-comparison-trap.subtitleProgress", {
+    current: Math.min(currentStage + 1, totalStages),
+    total: totalStages,
+  });
+  const stage = stages[Math.min(currentStage, Math.max(totalStages - 1, 0))];
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="Peer Comparison Trap"
+      title={gameContent?.title}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      maxScore={PEER_COMPARISON_STAGES.length}
-      currentLevel={Math.min(currentStage + 1, PEER_COMPARISON_STAGES.length)}
-      totalLevels={PEER_COMPARISON_STAGES.length}
+      maxScore={totalStages}
+      currentLevel={Math.min(currentStage + 1, totalStages)}
+      totalLevels={totalStages}
       gameId={gameId}
       gameType="finance"
       showGameOver={showResult}
@@ -277,12 +117,12 @@ const PeerComparisonTrap = () => {
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>Peer Pressure</span>
+            <span>{gameContent?.scenarioLabel}</span>
+            <span>{gameContent?.scenarioValue}</span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+          <p className="text-lg text-white/90 mb-6">{stage?.prompt}</p>
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {(stage?.options || []).map((option) => {
               const isSelected = selectedOption === option.id;
               return (
                 <button
@@ -297,7 +137,11 @@ const PeerComparisonTrap = () => {
                     }`}
                 >
                   <div className="flex justify-between items-center mb-2 text-sm text-white/70">
-                    <span>Choice {option.id.toUpperCase()}</span>
+                    <span>
+                      {t("financial-literacy.young-adult.peer-comparison-trap.choiceLabel", {
+                        id: String(option.id || "").toUpperCase(),
+                      })}
+                    </span>
                   </div>
                   <p className="text-white font-semibold">{option.label}</p>
                 </button>
@@ -306,7 +150,7 @@ const PeerComparisonTrap = () => {
           </div>
           {(showResult || showFeedback) && (
             <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-              <h4 className="text-lg font-semibold text-white">Reflection</h4>
+              <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionTitle}</h4>
               {selectedReflection && (
                 <div className="max-h-24 overflow-y-auto pr-2">
                   <p className="text-sm text-white/90">{selectedReflection}</p>
@@ -327,10 +171,12 @@ const PeerComparisonTrap = () => {
                       }}
                       className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Continue
+                      {gameContent?.continueButton}
                     </button>
                   ) : (
-                    <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                    <div className="py-2 px-6 text-white font-semibold">
+                      {gameContent?.readingLabel}
+                    </div>
                   )}
                 </div>
               )}
@@ -348,11 +194,14 @@ const PeerComparisonTrap = () => {
                     ))}
                   </ul>
                   <p className="text-sm text-white/70">
-                    Skill unlocked: <strong>Social financial independence</strong>
+                    {gameContent?.skillUnlockedLabel}{" "}
+                    <strong>{gameContent?.skillName}</strong>
                   </p>
                   {!hasPassed && (
                     <p className="text-xs text-amber-300">
-                      Answer all {totalStages} choices correctly to earn the full reward.
+                      {t("financial-literacy.young-adult.peer-comparison-trap.fullRewardHint", {
+                        total: totalStages,
+                      })}
                     </p>
                   )}
                   {!hasPassed && (
@@ -360,7 +209,7 @@ const PeerComparisonTrap = () => {
                       onClick={handleRetry}
                       className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Try Again
+                      {gameContent?.tryAgainButton}
                     </button>
                   )}
                 </>
@@ -371,18 +220,21 @@ const PeerComparisonTrap = () => {
         </div>
         {showResult && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection Prompts</h4>
+            <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionPromptsTitle}</h4>
             <ul className="text-sm list-disc list-inside space-y-1">
               {reflectionPrompts.map((prompt) => (
                 <li key={prompt}>{prompt}</li>
               ))}
             </ul>
             <p className="text-sm text-white/70">
-              Skill unlocked: <strong>Social financial independence</strong>
+              {gameContent?.skillUnlockedLabel}{" "}
+              <strong>{gameContent?.skillName}</strong>
             </p>
             {!hasPassed && (
               <p className="text-xs text-amber-300">
-                Answer all {totalStages} choices correctly to earn the full reward.
+                {t("financial-literacy.young-adult.peer-comparison-trap.fullRewardHint", {
+                  total: totalStages,
+                })}
               </p>
             )}
             {!hasPassed && (
@@ -390,7 +242,7 @@ const PeerComparisonTrap = () => {
                 onClick={handleRetry}
                 className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
               >
-                Try Again
+                {gameContent?.tryAgainButton}
               </button>
             )}
           </div>

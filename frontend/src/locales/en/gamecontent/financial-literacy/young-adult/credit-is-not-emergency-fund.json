@@ -1,0 +1,176 @@
+{
+  "title": "Credit Is Not Emergency Fund",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Credit vs Savings",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Emergency fund awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you build an emergency fund while managing regular expenses?",
+    "What strategies help you resist the temptation to use credit for non-emergencies?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Is credit a replacement for savings?",
+      "options": [
+        {
+          "id": "replacement",
+          "label": "Yes, credit can replace savings",
+          "reflection": "While credit can provide temporary relief, it's not a true replacement for savings. Credit creates debt obligations that must be repaid with interest.",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "label": "Both are equally important",
+          "reflection": "While both are important, savings should be the foundation. Credit should be used strategically, not as a substitute for emergency funds.",
+          "isCorrect": false
+        },
+        {
+          "id": "savings-first",
+          "label": "No, savings should come first",
+          "reflection": "Exactly! Savings provide true financial security without the burden of debt or interest payments.",
+          "isCorrect": true
+        },
+        {
+          "id": "credit-only",
+          "label": "Credit is better than savings",
+          "reflection": "Relying solely on credit creates financial vulnerability. Savings provide stability and peace of mind that credit cannot match.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "What happens when you use credit for emergencies?",
+      "options": [
+        {
+          "id": "freedom",
+          "label": "You gain financial freedom",
+          "reflection": "Using credit for emergencies actually reduces financial freedom by creating debt obligations and interest payments.",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "label": "You create debt and interest obligations",
+          "reflection": "Correct! Credit emergencies create long-term financial burdens that can take months or years to resolve.",
+          "isCorrect": true
+        },
+        {
+          "id": "easy",
+          "label": "It's the easiest solution",
+          "reflection": "While credit may seem easy in the moment, it creates complex financial problems that are harder to solve later.",
+          "isCorrect": false
+        },
+        {
+          "id": "no-consequence",
+          "label": "There are no real consequences",
+          "reflection": "Credit always comes with consequences including interest charges, potential damage to credit scores, and ongoing payment obligations.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "How should you build an emergency fund?",
+      "options": [
+        {
+          "id": "small-amounts",
+          "label": "Start with small amounts regularly",
+          "reflection": "Perfect! Building an emergency fund with small, regular contributions creates sustainable financial security over time.",
+          "isCorrect": true
+        },
+        {
+          "id": "credit",
+          "label": "Use credit cards for emergencies",
+          "reflection": "Using credit for emergencies defeats the purpose of having an emergency fund. True emergency funds are built with actual savings.",
+          "isCorrect": false
+        },
+        {
+          "id": "large-lump",
+          "label": "Save a large lump sum immediately",
+          "reflection": "While saving large amounts is ideal, it's not realistic for most people. Starting small and building consistently is more achievable.",
+          "isCorrect": false
+        },
+        {
+          "id": "when-needed",
+          "label": "Save only when you need it",
+          "reflection": "Waiting until you need emergency funds means it's already too late. Emergency funds must be built in advance to be effective.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What's the main difference between savings and credit?",
+      "options": [
+        {
+          "id": "same-thing",
+          "label": "They're basically the same thing",
+          "reflection": "Savings and credit are fundamentally different. Savings represent money you own, while credit represents money you owe.",
+          "isCorrect": false
+        },
+        {
+          "id": "convenience",
+          "label": "Credit is more convenient",
+          "reflection": "Credit may seem more convenient initially, but the long-term costs and obligations make savings the more convenient choice.",
+          "isCorrect": false
+        },
+        {
+          "id": "speed",
+          "label": "Credit provides faster access",
+          "reflection": "While credit provides immediate access, savings offer faster long-term financial freedom without the burden of repayment.",
+          "isCorrect": false
+        },
+        {
+          "id": "ownership",
+          "label": "Savings you own, credit you owe",
+          "reflection": "Exactly! This fundamental difference is why savings provide security while credit creates obligations.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "Why is relying on credit for emergencies risky?",
+      "options": [
+        {
+          "id": "easy-access",
+          "label": "It's too easy to access",
+          "reflection": "Easy access is actually a benefit of credit, but it's the long-term consequences that make it risky for emergencies.",
+          "isCorrect": false
+        },
+        {
+          "id": "credit-score",
+          "label": "It improves your credit score",
+          "reflection": "Using credit responsibly can help your credit score, but relying on it for emergencies often leads to financial stress that hurts your score.",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "label": "You pay interest on borrowed money",
+          "reflection": "Correct! Interest payments make emergencies even more expensive and create long-term financial drag.",
+          "isCorrect": true
+        },
+        {
+          "id": "no-risk",
+          "label": "There's actually no risk involved",
+          "reflection": "There are significant risks including debt accumulation, interest payments, and potential damage to financial stability.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}

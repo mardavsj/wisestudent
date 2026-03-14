@@ -1,0 +1,176 @@
+{
+  "title": "EMI Reality Check",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "EMI Decisions",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "EMI affordability assessment",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you ensure EMI payments enhance rather than hinder your financial goals?",
+    "What strategies can you use to maintain financial flexibility while managing loan obligations?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "EMI payments should be:",
+      "options": [
+        {
+          "id": "high",
+          "label": "As high as possible",
+          "reflection": "Taking on high EMIs can severely limit your financial flexibility and increase stress. It's important to choose EMIs that are manageable within your income.",
+          "isCorrect": false
+        },
+        {
+          "id": "minimum",
+          "label": "The minimum amount to get the loan",
+          "reflection": "While minimum EMIs might seem attractive, they often result in longer repayment periods and higher total interest costs. Balance is key.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Whatever the lender offers",
+          "reflection": "Blindly accepting lender terms without considering your financial capacity can lead to financial distress. Always assess affordability first.",
+          "isCorrect": false
+        },
+        {
+          "id": "comfortable",
+          "label": "Comfortable within income",
+          "reflection": "Exactly! EMI payments should be comfortably affordable within your income, leaving room for other expenses and savings. This ensures financial stability.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "What happens when you take high EMIs?",
+      "options": [
+        {
+          "id": "freedom",
+          "label": "You get more financial freedom",
+          "reflection": "High EMIs actually reduce your financial freedom by limiting your ability to save, invest, or handle unexpected expenses. They create financial pressure.",
+          "isCorrect": false
+        },
+        {
+          "id": "stress",
+          "label": "You face stress during repayment",
+          "reflection": "Perfect! High EMIs can create significant financial stress, especially if your income fluctuates or unexpected expenses arise.",
+          "isCorrect": true
+        },
+        {
+          "id": "benefits",
+          "label": "You get better loan benefits",
+          "reflection": "Higher EMIs don't necessarily mean better loan benefits. They primarily mean faster repayment but also higher monthly financial commitment.",
+          "isCorrect": false
+        },
+        {
+          "id": "growth",
+          "label": "Your credit score improves faster",
+          "reflection": "While timely EMI payments do help credit scores, taking on unaffordable EMIs can actually harm your credit if you struggle to make payments.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "How should you calculate your EMI affordability?",
+      "options": [
+        {
+          "id": "income",
+          "label": "Based on your total monthly income",
+          "reflection": "Using total income without considering other expenses can lead to overcommitment. You need to account for all your financial obligations and savings goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "friends",
+          "label": "What your friends are paying",
+          "reflection": "Everyone's financial situation is different. What's affordable for others may not be for you. Base your decisions on your own financial capacity.",
+          "isCorrect": false
+        },
+        {
+          "id": "disposable",
+          "label": "Based on your disposable income after expenses",
+          "reflection": "Exactly! Calculate EMIs based on what you can afford after covering essential expenses and setting aside some savings. This ensures sustainability.",
+          "isCorrect": true
+        },
+        {
+          "id": "maximum",
+          "label": "The maximum amount the lender approves",
+          "reflection": "Lender approval doesn't guarantee affordability. Just because you're approved for a high EMI doesn't mean you should take it on.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What is a good EMI-to-income ratio?",
+      "options": [
+        {
+          "id": "20",
+          "label": "Ideally 20% or less of monthly income",
+          "reflection": "Perfect! Keeping EMIs at 20% or less of your income ensures you maintain financial flexibility and can handle emergencies or other goals.",
+          "isCorrect": true
+        },
+        {
+          "id": "50",
+          "label": "Up to 50% of monthly income",
+          "reflection": "50% is too high and can severely limit your financial flexibility. This leaves little room for savings or unexpected expenses.",
+          "isCorrect": false
+        },
+        {
+          "id": "30",
+          "label": "Around 30% of monthly income",
+          "reflection": "30% is on the higher side and may strain your finances. It's better to stay closer to 20% for better financial health.",
+          "isCorrect": false
+        },
+        {
+          "id": "flexible",
+          "label": "It doesn't matter as long as I can pay",
+          "reflection": "The EMI amount does matter for your overall financial health. Even if you can pay, high EMIs reduce your financial flexibility and increase risk.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "Before taking a loan, you should:",
+      "options": [
+        {
+          "id": "apply",
+          "label": "Apply first and see if you can manage",
+          "reflection": "This approach is risky. You should assess affordability before applying to avoid getting into a financial commitment you can't handle.",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "label": "Compare interest rates only",
+          "reflection": "While interest rates are important, they're not the only factor. Affordability and your ability to manage the EMI are equally crucial.",
+          "isCorrect": false
+        },
+        {
+          "id": "urgent",
+          "label": "Take it if you need it urgently",
+          "reflection": "Urgent needs shouldn't override financial planning. Even urgent needs should be addressed within your financial capacity to avoid long-term problems.",
+          "isCorrect": false
+        },
+        {
+          "id": "calculate",
+          "label": "Calculate if EMI fits your budget comfortably",
+          "reflection": "Exactly! Always calculate and ensure the EMI fits comfortably within your budget before taking any loan. This prevents future financial stress.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}

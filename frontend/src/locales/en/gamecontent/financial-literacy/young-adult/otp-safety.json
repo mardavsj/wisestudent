@@ -1,0 +1,176 @@
+{
+  "title": "OTP Safety",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Digital Security",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "OTP security mastery",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can strong OTP practices actually increase your financial freedom rather than restrict it?",
+    "What personal protocols help you maintain OTP security without creating unnecessary anxiety about legitimate transactions?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Someone asks for your OTP. What should you do?",
+      "options": [
+        {
+          "id": "share",
+          "label": "Share quickly to help them",
+          "reflection": "Sharing OTPs immediately compromises your financial security - legitimate services never ask for your one-time passwords.",
+          "isCorrect": false
+        },
+        {
+          "id": "verify",
+          "label": "Verify their identity first",
+          "reflection": "Verification is impossible since legitimate organizations never request OTPs - any request should be treated as suspicious regardless of claimed identity.",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "label": "Never share OTPs",
+          "reflection": "Exactly! OTPs are personal security codes that should never be shared, even with people claiming to be from your bank or payment service.",
+          "isCorrect": true
+        },
+        {
+          "id": "partial",
+          "label": "Share only part of the code",
+          "reflection": "Partial sharing still compromises security - even fragments of OTPs can enable fraudulent transactions or account takeover attempts.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Who should legitimately ask for your OTP?",
+      "options": [
+        {
+          "id": "bank",
+          "label": "Your bank customer service",
+          "reflection": "Legitimate banks never request OTPs over phone or chat - they generate OTPs for you to initiate your own secure transactions.",
+          "isCorrect": false
+        },
+        {
+          "id": "payment",
+          "label": "Payment app support team",
+          "reflection": "Official support teams don't need your OTPs - they can assist with account issues without accessing your transaction authorization codes.",
+          "isCorrect": false
+        },
+        {
+          "id": "government",
+          "label": "Government agencies",
+          "reflection": "Government entities don't request personal OTPs - official communications come through verified channels with proper documentation procedures.",
+          "isCorrect": false
+        },
+        {
+          "id": "noone",
+          "label": "No legitimate entity ever",
+          "reflection": "Perfect! OTPs are exclusively for your personal transaction authorization - no legitimate organization should ever request them from you.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "What's the primary purpose of OTPs?",
+      "options": [
+        {
+          "id": "convenience",
+          "label": "Making transactions faster",
+          "reflection": "While OTPs streamline security processes, their primary function is protection rather than convenience enhancement.",
+          "isCorrect": false
+        },
+        {
+          "id": "protection",
+          "label": "Protecting financial transactions",
+          "reflection": "Exactly! OTPs provide time-sensitive, single-use authorization that prevents unauthorized access even if passwords are compromised.",
+          "isCorrect": true
+        },
+        {
+          "id": "verification",
+          "label": "Verifying your phone number",
+          "reflection": "Phone verification is a secondary function - the core purpose is securing financial transactions and account access authorization.",
+          "isCorrect": false
+        },
+        {
+          "id": "tracking",
+          "label": "Tracking spending habits",
+          "reflection": "Spending tracking serves analytical purposes but isn't the fundamental security function that OTPs provide for transaction authorization.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "How should you handle suspicious OTP requests?",
+      "options": [
+        {
+          "id": "ignore",
+          "label": "Ignore and delete messages",
+          "reflection": "Perfect! Suspicious OTP requests should be immediately disregarded and reported to prevent potential fraud escalation attempts.",
+          "isCorrect": true
+        },
+        {
+          "id": "respond",
+          "label": "Ask why they need it",
+          "reflection": "Engaging with suspicious requests can validate contact methods and potentially expose you to more sophisticated social engineering attempts.",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "label": "Wait and see if they call again",
+          "reflection": "Waiting creates vulnerability windows - immediate action prevents fraudsters from refining their approaches or targeting you again.",
+          "isCorrect": false
+        },
+        {
+          "id": "forward",
+          "label": "Forward to friends for advice",
+          "reflection": "Sharing suspicious messages spreads potential threats and may inadvertently help fraudsters refine their targeting methods.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What's the relationship between OTP security and financial safety?",
+      "options": [
+        {
+          "id": "separate",
+          "label": "They're completely separate issues",
+          "reflection": "Actually, OTP security directly impacts financial safety - weak OTP practices create vulnerabilities that fraudsters actively exploit.",
+          "isCorrect": false
+        },
+        {
+          "id": "minimal",
+          "label": "OTP security has minimal impact",
+          "reflection": "OTP security is critical - compromised authorization codes enable direct access to funds and account takeover regardless of other security measures.",
+          "isCorrect": false
+        },
+        {
+          "id": "obstacle",
+          "label": "Security creates user obstacles",
+          "reflection": "While OTPs add steps, they prevent much greater obstacles like account theft, fund loss, and identity compromise that create real problems.",
+          "isCorrect": false
+        },
+        {
+          "id": "foundational",
+          "label": "OTP security is foundational to safety",
+          "reflection": "Exactly! Strong OTP practices create the first line of defense that protects all your digital financial accounts and transactions.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "title": "Budget vs Reality",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Budget Reality",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Resilient budgeting",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you build flexibility into your budget while still maintaining financial discipline?",
+    "What strategies help maintain motivation when budgeting doesn't go as planned initially?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You exceeded your budget this month. What's best?",
+      "options": [
+        {
+          "id": "quit",
+          "label": "Quit budgeting",
+          "reflection": "Quitting budgeting after one setback means losing the benefits of financial planning altogether. It's better to learn from this experience.",
+          "isCorrect": false
+        },
+        {
+          "id": "adjust",
+          "label": "Adjust and try again next month",
+          "reflection": "Exactly! Budgeting is a skill that improves with practice. Adjusting your budget based on reality and continuing is the best approach.",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore the budget and spend freely",
+          "reflection": "Ignoring your budget after exceeding it defeats the purpose of budgeting and can lead to further financial challenges.",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "label": "Blame external factors and give up",
+          "reflection": "While external factors can impact budgets, giving up means missing out on financial control and improvement.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "What is the most important lesson when budgeting doesn't go as planned?",
+      "options": [
+        {
+          "id": "practice",
+          "label": "Budgeting improves with practice",
+          "reflection": "Perfect! Budgeting is a skill that develops over time. Each month provides insights to refine your budgeting approach.",
+          "isCorrect": true
+        },
+        {
+          "id": "rigidity",
+          "label": "Budgets must be rigid and unchangeable",
+          "reflection": "Rigid budgets often fail because they don't account for real-life variations. Flexibility is key to successful budgeting.",
+          "isCorrect": false
+        },
+        {
+          "id": "simpler",
+          "label": "Budgets should be as simple as possible",
+          "reflection": "While simplicity helps, the key is not making budgets overly simplified to the point of being unrealistic.",
+          "isCorrect": false
+        },
+        {
+          "id": "quit",
+          "label": "Stop trying if it doesn't work immediately",
+          "reflection": "Most skills take time to develop. Quitting budgeting after initial challenges means missing out on its long-term benefits.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "How should you approach budgeting after experiencing overspending?",
+      "options": [
+        {
+          "id": "avoid",
+          "label": "Avoid budgeting for the problematic category",
+          "reflection": "Avoiding budgeting for certain categories doesn't solve the underlying issue and may lead to other financial problems.",
+          "isCorrect": false
+        },
+        {
+          "id": "increase",
+          "label": "Increase your budget significantly",
+          "reflection": "Simply increasing the budget without understanding the cause of overspending doesn't address the root problem.",
+          "isCorrect": false
+        },
+        {
+          "id": "reduce",
+          "label": "Reduce your budget to compensate",
+          "reflection": "Reducing the budget without understanding why you overspent doesn't address the underlying issues.",
+          "isCorrect": false
+        },
+        {
+          "id": "analyze",
+          "label": "Analyze what caused the overspending",
+          "reflection": "Exactly! Analyzing overspending helps identify triggers and patterns, leading to better budget planning in the future.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "What role does flexibility play in successful budgeting?",
+      "options": [
+        {
+          "id": "excuse",
+          "label": "Provides an excuse to spend more",
+          "reflection": "Flexibility shouldn't be an excuse for overspending, but rather a tool for realistic budgeting.",
+          "isCorrect": false
+        },
+        {
+          "id": "negotiate",
+          "label": "Allows negotiating with creditors",
+          "reflection": "While negotiating with creditors is useful in some situations, flexibility in budgeting refers to adjusting your spending plan.",
+          "isCorrect": false
+        },
+        {
+          "id": "adaptation",
+          "label": "Allows adaptation to real-life situations",
+          "reflection": "Perfect! Flexibility in budgeting allows you to adapt to unexpected expenses and changing circumstances while staying on track.",
+          "isCorrect": true
+        },
+        {
+          "id": "discretion",
+          "label": "Gives unlimited spending discretion",
+          "reflection": "Flexibility doesn't mean unlimited spending, but rather the ability to adjust within reasonable limits.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "Why might someone exceed their budget in the first few months of budgeting?",
+      "options": [
+        {
+          "id": "impossible",
+          "label": "Budgeting is impossible for most people",
+          "reflection": "Budgeting is challenging initially but achievable with practice and the right approach.",
+          "isCorrect": false
+        },
+        {
+          "id": "learning",
+          "label": "Budgeting is a skill that takes time to master",
+          "reflection": "Exactly! Like any skill, budgeting requires practice. Early overspending is often part of the learning process as you understand your spending patterns.",
+          "isCorrect": true
+        },
+        {
+          "id": "unnecessary",
+          "label": "Budgeting isn't necessary for financial success",
+          "reflection": "Budgeting is a fundamental financial skill that contributes significantly to financial success.",
+          "isCorrect": false
+        },
+        {
+          "id": "ineffective",
+          "label": "Budgeting is ineffective for controlling expenses",
+          "reflection": "Budgeting is effective when done properly and refined over time based on experience.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "title": "Weekend Spending Reality",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Weekend Finances",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Weekend spending awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you enjoy weekends while maintaining financial balance?",
+    "What strategies help you plan weekend activities within your budget?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Frequent weekend outings lead to:",
+      "options": [
+        {
+          "id": "noimpact",
+          "label": "No impact on finances",
+          "reflection": "Even small frequent expenses add up significantly over time, creating a substantial impact on your budget.",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "label": "Increased savings rate",
+          "reflection": "Frequent spending typically reduces savings rather than increasing them, as money is directed toward expenses instead of savings.",
+          "isCorrect": false
+        },
+        {
+          "id": "imbalance",
+          "label": "Budget imbalance over time",
+          "reflection": "Perfect! Frequent weekend spending, though small each time, accumulates and creates budget imbalances over time.",
+          "isCorrect": true
+        },
+        {
+          "id": "wealth",
+          "label": "Long-term wealth building",
+          "reflection": "Regular spending without planning tends to hinder wealth building rather than contribute to it.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "Why do weekend outings seem affordable individually?",
+      "options": [
+        {
+          "id": "free",
+          "label": "They're mostly free activities",
+          "reflection": "Most weekend outings involve some cost, whether for food, transport, or entertainment, so they're rarely completely free.",
+          "isCorrect": false
+        },
+        {
+          "id": "rich",
+          "label": "I'm richer than I think",
+          "reflection": "The affordability of repeated outings depends on your income and overall budget, not a sudden increase in wealth.",
+          "isCorrect": false
+        },
+        {
+          "id": "invisible",
+          "label": "Costs are invisible to me",
+          "reflection": "Outing costs are usually quite visible at the time of purchase, though their cumulative effect over time might be overlooked.",
+          "isCorrect": false
+        },
+        {
+          "id": "small",
+          "label": "Each outing costs little in isolation",
+          "reflection": "Exactly! Individual outings seem affordable, but when repeated regularly they create a significant financial impact.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "What's the best approach to weekend spending?",
+      "options": [
+        {
+          "id": "plan",
+          "label": "Plan and budget for weekend activities",
+          "reflection": "Perfect! Planning ensures your weekend spending fits within your overall financial goals and budget.",
+          "isCorrect": true
+        },
+        {
+          "id": "impulse",
+          "label": "Spend impulsively each weekend",
+          "reflection": "Impulse weekend spending often leads to budget overruns and financial stress when costs accumulate unexpectedly.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore weekend spending in budget",
+          "reflection": "Ignoring planned expenses like weekend outings creates an inaccurate budget and likely leads to overspending.",
+          "isCorrect": false
+        },
+        {
+          "id": "prohibit",
+          "label": "Prohibit all weekend spending",
+          "reflection": "Completely prohibiting weekend spending is unsustainable and may lead to financial rebellion later.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "How do frequent small spends affect your finances?",
+      "options": [
+        {
+          "id": "disappear",
+          "label": "They disappear from your account",
+          "reflection": "Money spent doesn't disappear - it goes to vendors, and the cumulative amount can be substantial.",
+          "isCorrect": false
+        },
+        {
+          "id": "accumulate",
+          "label": "Repeated small spends add up",
+          "reflection": "Exactly! Small amounts spent frequently accumulate into significant sums over weeks, months, and years.",
+          "isCorrect": true
+        },
+        {
+          "id": "compound",
+          "label": "They earn compound interest",
+          "reflection": "Spent money doesn't earn interest - only saved money earns interest and benefits from compounding.",
+          "isCorrect": false
+        },
+        {
+          "id": "multiply",
+          "label": "They multiply magically",
+          "reflection": "Spending doesn't create more money - it reduces your available funds by the amount spent.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What should you do before planning weekend activities?",
+      "options": [
+        {
+          "id": "ignore",
+          "label": "Ignore your budget and spend freely",
+          "reflection": "Ignoring your budget for weekend activities can lead to overspending and financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "guess",
+          "label": "Guess how much you can afford",
+          "reflection": "Guessing can lead to inaccurate estimates and potential overspending. Budgeting provides accurate figures.",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "label": "Check your budget for available funds",
+          "reflection": "Perfect! Checking your budget ensures weekend spending aligns with your financial goals and doesn't cause imbalances.",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "label": "Plan to borrow money for activities",
+          "reflection": "Borrowing for weekend activities can lead to debt accumulation and interest charges, making activities more expensive.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

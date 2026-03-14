@@ -1,0 +1,177 @@
+{
+  "title": "First Income Mistake",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Learning",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Learn-and-adjust mindset",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can financial mistakes become stepping stones to better money management?",
+    "What systems can you put in place to learn from errors without repeating them?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You overspent this month. What's the best response?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "ignore",
+          "label": "Ignore it",
+          "reflection": "Ignoring financial mistakes prevents learning and often leads to repeating the same errors, creating a cycle of financial stress and poor habits.",
+          "isCorrect": false
+        },
+        {
+          "id": "panic",
+          "label": "Panic and make drastic cuts",
+          "reflection": "While concern is natural, panic-driven decisions often lead to unsustainable changes that are difficult to maintain long-term.",
+          "isCorrect": false
+        },
+        {
+          "id": "review",
+          "label": "Review and adjust next month",
+          "reflection": "Exactly! Acknowledging mistakes and making adjustments creates opportunities for growth and prevents future financial setbacks.",
+          "isCorrect": true
+        },
+        {
+          "id": "repeat",
+          "label": "Assume it will happen again anyway",
+          "reflection": "This defeatist attitude eliminates motivation to improve and prevents the development of better financial management skills.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What should you analyze after overspending?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "patterns",
+          "label": "Identify spending patterns and triggers",
+          "reflection": "Perfect! Understanding what led to overspending helps you recognize warning signs and develop strategies to avoid similar situations.",
+          "isCorrect": true
+        },
+        {
+          "id": "blame",
+          "label": "Blame external circumstances entirely",
+          "reflection": "While circumstances matter, taking responsibility for your financial decisions empowers you to make better choices in the future.",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "label": "Forget about it and move on",
+          "reflection": "Moving on without analysis means missing valuable learning opportunities that could prevent future financial difficulties.",
+          "isCorrect": false
+        },
+        {
+          "id": "extreme",
+          "label": "Eliminate all discretionary spending",
+          "reflection": "Extreme measures are usually unsustainable and can lead to resentment, making it harder to maintain long-term financial discipline.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "How can you prevent repeating the same mistake?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "willpower",
+          "label": "Rely on willpower alone",
+          "reflection": "Willpower is limited and unreliable - systems and habits are much more effective for sustained financial success.",
+          "isCorrect": false
+        },
+        {
+          "id": "systems",
+          "label": "Create systems and safeguards",
+          "reflection": "Excellent! Building automatic savings, budget alerts, and spending limits creates structure that supports better financial decisions consistently.",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid the situations that caused overspending",
+          "reflection": "While avoiding triggers can help, learning to manage them constructively builds resilience and better decision-making skills.",
+          "isCorrect": false
+        },
+        {
+          "id": "strict",
+          "label": "Implement extremely strict restrictions",
+          "reflection": "Overly restrictive approaches often backfire and don't teach the financial skills needed for making balanced decisions.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "What's the most constructive way to handle the overspending?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "borrow",
+          "label": "Borrow money to cover the deficit",
+          "reflection": "Borrowing creates additional financial stress and interest costs, making the original problem worse rather than solving it constructively.",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "label": "Delay dealing with it until next month",
+          "reflection": "Delaying financial problems allows them to grow larger and more stressful, making resolution more difficult and urgent later.",
+          "isCorrect": false
+        },
+        {
+          "id": "adjust",
+          "label": "Adjust next month's budget to compensate",
+          "reflection": "Perfect! Proactive adjustment shows financial responsibility and helps rebuild any shortfalls while maintaining your financial progress.",
+          "isCorrect": true
+        },
+        {
+          "id": "minimize",
+          "label": "Minimize the significance of overspending",
+          "reflection": "Downplaying financial mistakes prevents learning and growth, often leading to repeated patterns of poor financial management.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Which mindset helps turn mistakes into growth opportunities?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "failure",
+          "label": "See it as personal failure",
+          "reflection": "Viewing financial mistakes as personal failures creates shame and discouragement rather than motivation to improve your financial skills.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore the emotional impact completely",
+          "reflection": "Acknowledging emotions around financial mistakes is important - ignoring them can lead to repeated patterns and unresolved financial anxiety.",
+          "isCorrect": false
+        },
+        {
+          "id": "perfect",
+          "label": "Believe you should never make mistakes",
+          "reflection": "Expecting perfection creates unrealistic pressure and prevents the experimentation and learning necessary for developing strong financial skills.",
+          "isCorrect": false
+        },
+        {
+          "id": "learning",
+          "label": "View mistakes as learning experiences",
+          "reflection": "Perfect! This growth mindset transforms financial setbacks into valuable lessons that build better habits and decision-making skills.",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}
+

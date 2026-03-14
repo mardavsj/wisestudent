@@ -1,0 +1,176 @@
+{
+  "title": "Public Wi-Fi Risk",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Digital Security",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Network security awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can avoiding public Wi-Fi for financial activities actually increase your transaction flexibility rather than restrict it?",
+    "What personal protocols help you maintain financial security without creating unnecessary anxiety about legitimate mobile data usage?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Is it safe to use banking apps on public Wi-Fi?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes",
+          "reflection": "Public Wi-Fi networks lack security encryption and create significant vulnerability to data interception and financial information theft.",
+          "isCorrect": false
+        },
+        {
+          "id": "sometimes",
+          "label": "Sometimes with precautions",
+          "reflection": "Even with precautions, public Wi-Fi fundamentally lacks the security infrastructure needed to protect sensitive financial transactions adequately.",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "label": "No, it risks data theft",
+          "reflection": "Exactly! Public networks are prime targets for hackers who can intercept sensitive financial data transmitted over unsecured connections.",
+          "isCorrect": true
+        },
+        {
+          "id": "password",
+          "label": "Only with password protection",
+          "reflection": "Password protection secures network access but doesn't encrypt data transmission - financial information remains vulnerable to interception.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "What makes public Wi-Fi particularly dangerous?",
+      "options": [
+        {
+          "id": "crowded",
+          "label": "Many people using the same network",
+          "reflection": "Crowded networks increase exposure but the fundamental danger lies in lacking encryption and authentication security measures.",
+          "isCorrect": false
+        },
+        {
+          "id": "unsecured",
+          "label": "Lack of encryption and security",
+          "reflection": "Perfect! Public Wi-Fi typically lacks end-to-end encryption, allowing hackers to intercept and steal transmitted financial data.",
+          "isCorrect": true
+        },
+        {
+          "id": "slow",
+          "label": "Slower connection speeds",
+          "reflection": "Speed issues affect performance but don't create the security vulnerabilities that make public networks dangerous for financial activities.",
+          "isCorrect": false
+        },
+        {
+          "id": "free",
+          "label": "Being free to use",
+          "reflection": "Cost doesn't determine security - the danger comes from inadequate protection mechanisms rather than the pricing model of the network.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "How do hackers exploit public Wi-Fi?",
+      "options": [
+        {
+          "id": "guessing",
+          "label": "Guessing passwords",
+          "reflection": "Modern banking uses multi-factor authentication that goes beyond simple password guessing on public networks.",
+          "isCorrect": false
+        },
+        {
+          "id": "interception",
+          "label": "Intercepting data transmission",
+          "reflection": "Exactly! Hackers create fake networks or use packet sniffing tools to capture sensitive information transmitted over public connections.",
+          "isCorrect": true
+        },
+        {
+          "id": "malware",
+          "label": "Installing malware remotely",
+          "reflection": "Remote malware installation requires different attack vectors - public Wi-Fi primarily enables data interception during transmission.",
+          "isCorrect": false
+        },
+        {
+          "id": "phishing",
+          "label": "Sending phishing emails",
+          "reflection": "Phishing attacks are delivery method independent - public Wi-Fi specifically enables real-time data capture during legitimate transactions.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "What's the safest alternative to public Wi-Fi banking?",
+      "options": [
+        {
+          "id": "vpn",
+          "label": "Connect through VPN service",
+          "reflection": "VPNs add protection but introduce additional complexity and potential vulnerabilities - direct mobile data is simpler and more reliable.",
+          "isCorrect": false
+        },
+        {
+          "id": "later",
+          "label": "Wait until home network",
+          "reflection": "Delaying transactions creates inconvenience and may miss time-sensitive opportunities - secure mobile data enables immediate safe transactions.",
+          "isCorrect": false
+        },
+        {
+          "id": "caution",
+          "label": "Proceed with extra caution",
+          "reflection": "Extra caution can't overcome fundamental security gaps - the network infrastructure itself lacks necessary protections for financial data.",
+          "isCorrect": false
+        },
+        {
+          "id": "mobile",
+          "label": "Use mobile data network",
+          "reflection": "Perfect! Mobile networks provide encrypted, authenticated connections that are significantly more secure than public Wi-Fi for financial activities.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What should you do if you must use public Wi-Fi?",
+      "options": [
+        {
+          "id": "quick",
+          "label": "Complete transactions quickly",
+          "reflection": "Speed doesn't reduce risk - even brief exposure on unsecured networks creates vulnerability windows for data interception.",
+          "isCorrect": false
+        },
+        {
+          "id": "apps",
+          "label": "Use only trusted apps",
+          "reflection": "App trustworthiness matters but doesn't compensate for network-level security deficiencies that enable data capture regardless of app quality.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid financial activities completely",
+          "reflection": "Exactly! When public Wi-Fi is unavoidable, postponing financial transactions eliminates exposure to interception risks entirely.",
+          "isCorrect": true
+        },
+        {
+          "id": "logout",
+          "label": "Log out immediately after",
+          "reflection": "Logging out protects against session hijacking but doesn't prevent real-time data interception during the actual transaction process.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

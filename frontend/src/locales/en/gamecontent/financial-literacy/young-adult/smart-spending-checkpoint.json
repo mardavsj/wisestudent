@@ -1,0 +1,176 @@
+{
+  "title": "Smart Spending Checkpoint",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Smart Spending",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Smart spending mastery",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you maintain financial discipline while still enjoying life experiences?",
+    "What strategies help you make smart spending decisions consistently?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Before making a purchase, what should you ask yourself first?",
+      "options": [
+        {
+          "id": "impulse",
+          "label": "Do I want this right now?",
+          "reflection": "Asking only if you want something right now can lead to impulse purchases. It's better to consider if you actually need it.",
+          "isCorrect": false
+        },
+        {
+          "id": "need",
+          "label": "Do I actually need this?",
+          "reflection": "Perfect! Asking if you actually need an item helps distinguish between wants and needs, leading to smarter spending decisions.",
+          "isCorrect": true
+        },
+        {
+          "id": "price",
+          "label": "Can I afford it?",
+          "reflection": "While affordability is important, considering whether you need the item is more fundamental to smart spending.",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "label": "Is this cheaper than other options?",
+          "reflection": "Price comparison is useful, but the more important question is whether you need the item at all.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "How should you approach sales and discounts?",
+      "options": [
+        {
+          "id": "value",
+          "label": "Only buy if you were planning to purchase anyway",
+          "reflection": "Exactly! Taking advantage of sales on items you were already planning to buy is a smart financial strategy.",
+          "isCorrect": true
+        },
+        {
+          "id": "sale",
+          "label": "Buy items just because they're on sale",
+          "reflection": "Buying items just because they're on sale can lead to unnecessary purchases. A good deal on something you don't need is still a bad purchase.",
+          "isCorrect": false
+        },
+        {
+          "id": "urgent",
+          "label": "Act quickly before the sale ends",
+          "reflection": "Rushing to buy during sales can lead to poor financial decisions. Take time to consider if you need the item.",
+          "isCorrect": false
+        },
+        {
+          "id": "more",
+          "label": "Buy extra items to save more money",
+          "reflection": "Buying extra items just to save more money can lead to overspending on things you don't need.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "What's the best way to handle peer pressure to spend?",
+      "options": [
+        {
+          "id": "follow",
+          "label": "Follow along to fit in with the group",
+          "reflection": "Following others' spending habits to fit in can lead to financial stress and poor financial decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "boundary",
+          "label": "Set and maintain your spending boundaries",
+          "reflection": "Perfect! Setting and maintaining spending boundaries helps you make decisions based on your financial goals rather than peer pressure.",
+          "isCorrect": true
+        },
+        {
+          "id": "compete",
+          "label": "Spend more to show financial capability",
+          "reflection": "Competing financially with others often leads to overspending and financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid all social spending situations",
+          "reflection": "While setting boundaries is important, avoiding all social spending situations might limit positive experiences.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "How should you handle lifestyle inflation as income increases?",
+      "options": [
+        {
+          "id": "increase",
+          "label": "Increase spending proportionally with income",
+          "reflection": "Increasing spending proportionally with income can lead to lifestyle inflation, where you live paycheck to paycheck despite higher income.",
+          "isCorrect": false
+        },
+        {
+          "id": "upgrade",
+          "label": "Upgrade lifestyle immediately to enjoy more",
+          "reflection": "Immediately upgrading your lifestyle when income increases is a classic case of lifestyle inflation, which can trap earners financially.",
+          "isCorrect": false
+        },
+        {
+          "id": "same",
+          "label": "Keep spending exactly the same as before",
+          "reflection": "While controlling spending is good, it's also reasonable to moderately increase spending on needs while prioritizing savings.",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "label": "Increase savings and investments first",
+          "reflection": "Exactly! Prioritizing savings and investments when income increases helps build wealth and prevents lifestyle inflation.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What should you do when you feel emotional and want to spend?",
+      "options": [
+        {
+          "id": "retail",
+          "label": "Go shopping to feel better",
+          "reflection": "Retail therapy often leads to regrettable purchases and doesn't address the underlying emotions causing the urge to spend.",
+          "isCorrect": false
+        },
+        {
+          "id": "treat",
+          "label": "Buy something small as a treat for yourself",
+          "reflection": "Even small emotional purchases can develop into a habit that impacts your finances over time.",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "label": "Wait 24 hours before making any purchase",
+          "reflection": "Perfect! Waiting 24 hours before making a purchase helps separate emotional reactions from rational financial decisions.",
+          "isCorrect": true
+        },
+        {
+          "id": "big",
+          "label": "Plan a big purchase to feel better",
+          "reflection": "Big purchases driven by emotions often lead to significant financial regret and stress.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

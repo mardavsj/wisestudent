@@ -1,0 +1,177 @@
+{
+  "title": "Peer Comparison Trap",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Peer Pressure",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Spend-with-purpose mindset",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you maintain friendships while staying true to your financial values?",
+    "What personal goals are worth prioritizing over social spending pressure?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Friends spend more than you. What should guide your spending?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "lifestyle",
+          "label": "Their lifestyle",
+          "reflection": "Following others' spending patterns often leads to financial stress and debt, as their circumstances and income may be completely different from yours.",
+          "isCorrect": false
+        },
+        {
+          "id": "pressure",
+          "label": "Social pressure to keep up",
+          "reflection": "Giving in to social pressure compromises your financial security and often leads to lifestyle inflation that's unsustainable long-term.",
+          "isCorrect": false
+        },
+        {
+          "id": "goals",
+          "label": "Your income and goals",
+          "reflection": "Exactly! Your financial decisions should be based on your personal situation, income level, and long-term objectives rather than social comparisons.",
+          "isCorrect": true
+        },
+        {
+          "id": "appearances",
+          "label": "Appearing successful to others",
+          "reflection": "Focusing on appearances over actual financial health creates a facade that ultimately harms your real financial well-being and future options.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What's the danger of comparing your spending to friends?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "overspending",
+          "label": "Causes overspending beyond your means",
+          "reflection": "Exactly! Social comparison often leads to purchasing things you can't afford, creating debt and financial anxiety.",
+          "isCorrect": true
+        },
+        {
+          "id": "motivation",
+          "label": "Motivates you to earn more money",
+          "reflection": "While comparison might provide short-term motivation, it's an unreliable driver that often leads to unhealthy financial behaviors rather than sustainable growth.",
+          "isCorrect": false
+        },
+        {
+          "id": "connections",
+          "label": "Helps build better social connections",
+          "reflection": "True friendships aren't based on matching spending levels - authentic relationships thrive despite financial differences when built on genuine connection.",
+          "isCorrect": false
+        },
+        {
+          "id": "normal",
+          "label": "Shows you what's normal to spend",
+          "reflection": "What's 'normal' varies greatly by individual circumstances, income sources, and life stages - there's no universal spending benchmark that applies to everyone.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "How should you handle friends who spend more than you?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "match",
+          "label": "Try to match their spending level",
+          "reflection": "Attempting to match others' spending often means sacrificing your financial goals and security for temporary social acceptance.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid friends who spend more",
+          "reflection": "Complete avoidance isn't necessary - learning to navigate financial differences while maintaining relationships is a valuable life skill.",
+          "isCorrect": false
+        },
+        {
+          "id": "secret",
+          "label": "Hide your financial situation",
+          "reflection": "Secrecy creates stress and prevents authentic relationships - honest communication about financial priorities builds stronger, more supportive friendships.",
+          "isCorrect": false
+        },
+        {
+          "id": "boundaries",
+          "label": "Set clear financial boundaries",
+          "reflection": "Perfect! Establishing boundaries protects your financial health while maintaining genuine friendships based on mutual respect rather than spending competition.",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "What mindset prevents peer spending pressure?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "competition",
+          "label": "View it as a friendly competition",
+          "reflection": "Financial competition with friends creates unnecessary stress and often leads to poor decisions that nobody wins from in the long run.",
+          "isCorrect": false
+        },
+        {
+          "id": "secrets",
+          "label": "Keep your finances secret from everyone",
+          "reflection": "While privacy is important, complete secrecy can isolate you from potential support and learning opportunities with trusted friends.",
+          "isCorrect": false
+        },
+        {
+          "id": "values",
+          "label": "Focus on your personal values and priorities",
+          "reflection": "Excellent! When you're clear about what truly matters to you, external spending pressures lose their influence over your financial decisions.",
+          "isCorrect": true
+        },
+        {
+          "id": "conformity",
+          "label": "Conform to group spending norms",
+          "reflection": "Conforming to group norms often means compromising your financial security and personal goals for temporary social acceptance.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Which approach builds genuine friendships?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "impress",
+          "label": "Impress friends with expensive purchases",
+          "reflection": "Trying to impress others through spending creates superficial relationships based on consumption rather than authentic connection and shared values.",
+          "isCorrect": false
+        },
+        {
+          "id": "authentic",
+          "label": "Be authentic about your financial situation",
+          "reflection": "Perfect! Genuine friendships thrive on honesty and mutual respect, not financial competition or pretense about spending abilities.",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "label": "Borrow money to match their lifestyle",
+          "reflection": "Borrowing to keep up appearances creates debt stress and damages both your financial health and the authenticity of your relationships.",
+          "isCorrect": false
+        },
+        {
+          "id": "distance",
+          "label": "Distance yourself from financially different friends",
+          "reflection": "Learning to navigate financial differences while maintaining relationships demonstrates maturity and builds stronger, more diverse friendships.",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}
+

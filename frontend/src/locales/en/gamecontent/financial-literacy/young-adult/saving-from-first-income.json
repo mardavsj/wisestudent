@@ -1,0 +1,177 @@
+{
+  "title": "Saving from First Income",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Saving",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Start-saving habit",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can early saving create opportunities you can't imagine today?",
+    "What small saving habit could you start immediately with your next income?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Is saving from first income important?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "wait",
+          "label": "No, savings can wait",
+          "reflection": "While it might seem logical to wait, delaying savings often means never starting due to lifestyle inflation and competing priorities.",
+          "isCorrect": false
+        },
+        {
+          "id": "early",
+          "label": "Yes, habits start early",
+          "reflection": "Exactly! Starting to save from your first income builds lifelong financial discipline and compound growth advantages.",
+          "isCorrect": true
+        },
+        {
+          "id": "later",
+          "label": "Save only after major expenses",
+          "reflection": "Waiting for the 'perfect' time to save often means missing the power of starting early when compound interest works best.",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "label": "Saving isn't necessary for me",
+          "reflection": "Everyone benefits from saving, regardless of income level. It's about building security and opportunities for future choices.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What's the biggest benefit of saving from first income?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "compound",
+          "label": "Compound interest over time",
+          "reflection": "Perfect! The earlier you start saving, the more powerful compound interest becomes in building long-term wealth.",
+          "isCorrect": true
+        },
+        {
+          "id": "flexibility",
+          "label": "Immediate spending flexibility",
+          "reflection": "While having money available feels good, the real flexibility comes from financial security built through consistent saving.",
+          "isCorrect": false
+        },
+        {
+          "id": "status",
+          "label": "Showing financial success to others",
+          "reflection": "True financial success is measured by security and freedom, not by appearances or social comparisons.",
+          "isCorrect": false
+        },
+        {
+          "id": "pressure",
+          "label": "Reducing financial pressure immediately",
+          "reflection": "Saving actually reduces long-term pressure by building the security needed to handle unexpected expenses and opportunities.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "How much should you save from your first income?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "percentage",
+          "label": "Start with 10-15% and increase gradually",
+          "reflection": "Excellent approach! Starting small makes it sustainable while building the habit, with room to increase as income grows.",
+          "isCorrect": true
+        },
+        {
+          "id": "everything",
+          "label": "Save as much as possible always",
+          "reflection": "While saving is important, being too restrictive can lead to burnout and abandoning the habit entirely.",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "label": "Save nothing until I earn more",
+          "reflection": "Higher income doesn't automatically lead to saving - the habit needs to be established regardless of amount earned.",
+          "isCorrect": false
+        },
+        {
+          "id": "fixed",
+          "label": "Save a fixed amount regardless of income",
+          "reflection": "Fixed amounts can become burdensome during low-income periods and miss opportunities to save more when income is higher.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "What mindset prevents saving from first income?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "entitled",
+          "label": "Feeling entitled to spend all earnings",
+          "reflection": "Entitlement thinking undermines financial growth and prevents building the security that gives real freedom and choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "expensive",
+          "label": "Thinking saving is only for wealthy people",
+          "reflection": "Saving is actually more important for those with modest incomes, as it builds the foundation for financial stability and growth.",
+          "isCorrect": false
+        },
+        {
+          "id": "future",
+          "label": "Believing you'll save more in the future",
+          "reflection": "Exactly! Procrastination is the biggest enemy of saving - the habit needs to start now, not someday in the future.",
+          "isCorrect": true
+        },
+        {
+          "id": "difficult",
+          "label": "Assuming saving is too difficult to start",
+          "reflection": "Starting small makes saving achievable for everyone - the difficulty is often in our perception, not the actual practice.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Which habit ensures successful early saving?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "manual",
+          "label": "Manually transfer money when remembering",
+          "reflection": "Manual transfers rely on willpower and memory, which often fail exactly when you need to build consistent saving habits.",
+          "isCorrect": false
+        },
+        {
+          "id": "occasional",
+          "label": "Save only when there's extra money",
+          "reflection": "Waiting for 'extra' money means saving becomes inconsistent and dependent on circumstances rather than being a priority.",
+          "isCorrect": false
+        },
+        {
+          "id": "guilt",
+          "label": "Save based on guilt about spending",
+          "reflection": "Guilt-based saving is emotionally unhealthy and unsustainable - successful saving comes from positive motivation and clear goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "automatic",
+          "label": "Automate savings from the first paycheck",
+          "reflection": "Perfect! Automation removes the emotional struggle and makes saving effortless while building consistent habits.",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}
+

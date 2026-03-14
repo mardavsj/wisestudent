@@ -1,0 +1,176 @@
+{
+  "title": "Monthly Budget Order",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Budget Order",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Budget prioritization",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you ensure essentials and savings are always prioritized in your budget?",
+    "What strategies help maintain proper budget order even when facing financial pressures?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "What should be planned first in a budget?",
+      "options": [
+        {
+          "id": "entertainment",
+          "label": "Entertainment",
+          "reflection": "Entertainment should not be the first priority in a budget. Essential needs and savings should come first.",
+          "isCorrect": false
+        },
+        {
+          "id": "essentials",
+          "label": "Essentials and savings",
+          "reflection": "Exactly! Essentials (like rent, food, utilities) and savings should be planned first in any budget to ensure financial stability.",
+          "isCorrect": true
+        },
+        {
+          "id": "wants",
+          "label": "Wants and desires",
+          "reflection": "Wants and desires should be planned for after essential needs and savings have been secured in your budget.",
+          "isCorrect": false
+        },
+        {
+          "id": "luxury",
+          "label": "Luxury items",
+          "reflection": "Luxury items are not essential and should only be budgeted for after all essential needs and savings have been planned.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "Why is it important to prioritize essentials in a budget?",
+      "options": [
+        {
+          "id": "flexibility",
+          "label": "It provides more spending flexibility",
+          "reflection": "Prioritizing essentials actually reduces flexibility in the short term but provides long-term financial security.",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "label": "It eliminates the need for savings",
+          "reflection": "Prioritizing essentials doesn't eliminate the need for savings - savings should be planned alongside essentials.",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "label": "It leads to more debt",
+          "reflection": "Prioritizing essentials actually helps avoid debt by ensuring you cover your necessary expenses first.",
+          "isCorrect": false
+        },
+        {
+          "id": "stability",
+          "label": "Priorities protect stability",
+          "reflection": "Perfect! Prioritizing essentials protects your financial stability by ensuring your basic needs are always covered.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "What happens if you budget for wants before essentials?",
+      "options": [
+        {
+          "id": "savings",
+          "label": "Savings will increase automatically",
+          "reflection": "Budgeting for wants first often leaves less money available for essentials and savings, not more.",
+          "isCorrect": false
+        },
+        {
+          "id": "stability",
+          "label": "Financial stability improves",
+          "reflection": "Budgeting for wants before essentials actually reduces financial stability by risking that basic needs won't be met.",
+          "isCorrect": false
+        },
+        {
+          "id": "shortage",
+          "label": "Essential needs might not be covered",
+          "reflection": "Exactly! Budgeting for wants before essentials can lead to shortages in covering your basic needs and financial instability.",
+          "isCorrect": true
+        },
+        {
+          "id": "debt",
+          "label": "It prevents all debt",
+          "reflection": "Budgeting for wants first can actually lead to debt if you don't have enough left for essentials.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "How should savings be positioned in a monthly budget?",
+      "options": [
+        {
+          "id": "leftover",
+          "label": "With whatever money is left over",
+          "reflection": "Saving with leftover money often means little or nothing gets saved. Savings should be planned first.",
+          "isCorrect": false
+        },
+        {
+          "id": "payment",
+          "label": "As a non-negotiable payment to yourself",
+          "reflection": "Perfect! Treating savings as a non-negotiable payment to yourself ensures it's prioritized alongside other essentials.",
+          "isCorrect": true
+        },
+        {
+          "id": "optional",
+          "label": "As an optional expense",
+          "reflection": "Savings should not be optional in a budget. It's a critical component for financial security.",
+          "isCorrect": false
+        },
+        {
+          "id": "last",
+          "label": "Planned last in the budget",
+          "reflection": "Savings should be planned first, not last, to ensure it actually happens consistently.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What is the recommended order for budget allocation?",
+      "options": [
+        {
+          "id": "correct",
+          "label": "Essentials, savings, then wants",
+          "reflection": "Exactly! The recommended order is to budget for essentials first, then savings, and finally wants with any remaining money.",
+          "isCorrect": true
+        },
+        {
+          "id": "wrong1",
+          "label": "Wants, essentials, then savings",
+          "reflection": "This order puts wants first, which can lead to insufficient funds for essentials and savings.",
+          "isCorrect": false
+        },
+        {
+          "id": "wrong2",
+          "label": "Savings, wants, then essentials",
+          "reflection": "While savings are important, essentials must come first as they are immediate needs that must be met.",
+          "isCorrect": false
+        },
+        {
+          "id": "wrong3",
+          "label": "Equal amounts to each category",
+          "reflection": "Budgeting equal amounts to each category doesn't account for the varying importance of different expenses.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

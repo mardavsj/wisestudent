@@ -1,0 +1,176 @@
+{
+  "title": "Short-Term Happiness vs Stability",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Future Planning",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Long-term perspective",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can financial stability actually increase your capacity for genuine happiness and meaningful experiences?",
+    "What balance between current enjoyment and future security feels sustainable for your personal goals?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which choice protects your future?",
+      "options": [
+        {
+          "id": "happiness",
+          "label": "Short-term happiness",
+          "reflection": "While enjoyable temporarily, short-term happiness often creates financial stress that limits future opportunities.",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "label": "Both equally important",
+          "reflection": "While both matter, prioritizing stability ensures you can pursue happiness sustainably over the long term.",
+          "isCorrect": false
+        },
+        {
+          "id": "neither",
+          "label": "Neither - focus on experiences",
+          "reflection": "Experiences without financial foundation can create stress that diminishes their enjoyment and long-term value.",
+          "isCorrect": false
+        },
+        {
+          "id": "stability",
+          "label": "Financial stability",
+          "reflection": "Exactly! Stability creates the foundation for sustained happiness and future freedom to make choices.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "How do short-term spending decisions affect long-term goals?",
+      "options": [
+        {
+          "id": "independent",
+          "label": "They're completely independent",
+          "reflection": "Spending choices directly impact your ability to save and invest toward long-term financial objectives.",
+          "isCorrect": false
+        },
+        {
+          "id": "enhance",
+          "label": "Short-term spending enhances long-term wealth",
+          "reflection": "Generally, consumption spending reduces rather than increases long-term financial capacity and security.",
+          "isCorrect": false
+        },
+        {
+          "id": "connected",
+          "label": "Current spending limits future options",
+          "reflection": "Perfect! Every dollar spent on immediate gratification is a dollar not available for future security or goals.",
+          "isCorrect": true
+        },
+        {
+          "id": "unrelated",
+          "label": "They're unrelated to each other",
+          "reflection": "Financial decisions create a continuous chain where present choices directly influence future possibilities.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "What's the relationship between stability and freedom?",
+      "options": [
+        {
+          "id": "restrictive",
+          "label": "Stability restricts personal freedom",
+          "reflection": "Actually, financial stability removes constraints and creates more genuine freedom to pursue meaningful choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "enabling",
+          "label": "Stability enables greater freedom",
+          "reflection": "Exactly! Financial security eliminates stress and creates options that allow authentic personal freedom.",
+          "isCorrect": true
+        },
+        {
+          "id": "opposite",
+          "label": "They're opposite concepts",
+          "reflection": "Stability and freedom complement each other - security provides the foundation for meaningful choice and risk-taking.",
+          "isCorrect": false
+        },
+        {
+          "id": "temporary",
+          "label": "Freedom is more important short-term",
+          "reflection": "While appealing, short-term freedom without stability often leads to long-term limitations and reduced choices.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "How should you balance immediate wants with future security?",
+      "options": [
+        {
+          "id": "balanced",
+          "label": "Create sustainable balance",
+          "reflection": "Perfect! Thoughtful balance ensures current enjoyment while building the foundation for future opportunities.",
+          "isCorrect": true
+        },
+        {
+          "id": "present",
+          "label": "Prioritize present satisfaction",
+          "reflection": "Present-only focus often leads to future financial stress and limited ability to pursue meaningful long-term goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "future",
+          "label": "Sacrifice everything for future",
+          "reflection": "Complete sacrifice often creates resentment and may prevent building the very stability you're working toward.",
+          "isCorrect": false
+        },
+        {
+          "id": "extreme",
+          "label": "Alternate extreme saving and spending",
+          "reflection": "Extreme approaches create unsustainable patterns that are difficult to maintain and often lead to burnout.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What's the true cost of prioritizing short-term happiness?",
+      "options": [
+        {
+          "id": "momentary",
+          "label": "Just momentary pleasure",
+          "reflection": "Momentary pleasure often comes with lasting financial consequences that extend far beyond the initial enjoyment.",
+          "isCorrect": false
+        },
+        {
+          "id": "regret",
+          "label": "Potential future regret",
+          "reflection": "Regret is a significant factor, but the fundamental cost is the lost opportunity to build lasting financial security.",
+          "isCorrect": false
+        },
+        {
+          "id": "flexibility",
+          "label": "Reduced financial flexibility",
+          "reflection": "Reduced flexibility is a major consequence, but the core issue is the lost opportunity for meaningful security.",
+          "isCorrect": false
+        },
+        {
+          "id": "opportunity",
+          "label": "Lost opportunity for security",
+          "reflection": "Exactly! Short-term choices often mean sacrificing the security and options that enable greater long-term fulfillment.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

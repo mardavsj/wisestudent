@@ -1,11 +1,12 @@
-import React, { useMemo, useState } from "react";
+﻿import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Trophy } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const TRAVEL_SAVINGS_STAGES = [
+const stages = [
   {
     id: 1,
     prompt: "You want to travel but have no savings. What's wiser?",
@@ -166,12 +167,15 @@ const TRAVEL_SAVINGS_STAGES = [
   },
 ];
 
-const totalStages = TRAVEL_SAVINGS_STAGES.length;
-const successThreshold = totalStages;
-
 const TravelVsSavings = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   const gameId = "finance-young-adult-32";
+  const gameContent = t("financial-literacy.young-adult.travel-vs-savings", { returnObjects: true });
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = stages.length;
+  const successThreshold = totalStages;
+  const reflectionPrompts = Array.isArray(gameContent?.reflectionPrompts) ? gameContent.reflectionPrompts : [];
   const gameData = getGameDataById(gameId);
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 10;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 10;
@@ -187,20 +191,11 @@ const TravelVsSavings = () => {
   const [showFeedback, setShowFeedback] = useState(false);
   const [selectedReflection, setSelectedReflection] = useState(null);
   const [canProceed, setCanProceed] = useState(false);
-
-  const reflectionPrompts = useMemo(
-    () => [
-      "How can saving for travel actually enhance the experience more than immediate departure?",
-      "What balance between current enjoyment and future experiences feels right for your situation?",
-    ],
-    []
-  );
-
   const handleChoice = (option) => {
     if (selectedOption || showResult) return;
 
     resetFeedback();
-    const currentStageData = TRAVEL_SAVINGS_STAGES[currentStage];
+    const currentStageData = stages[currentStage];
     const updatedHistory = [
       ...history,
       { stageId: currentStageData.id, isCorrect: option.isCorrect },
@@ -245,23 +240,25 @@ const TravelVsSavings = () => {
     setFinalScore(0);
     setShowResult(false);
   };
-
-  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
-  const stage = TRAVEL_SAVINGS_STAGES[Math.min(currentStage, totalStages - 1)];
+  const subtitle = t("financial-literacy.young-adult.travel-vs-savings.subtitleProgress", {
+    current: Math.min(currentStage + 1, totalStages),
+    total: totalStages,
+  });
+  const stage = stages[Math.min(currentStage, totalStages - 1)];
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="Travel vs Savings"
+      title={gameContent?.title}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      maxScore={TRAVEL_SAVINGS_STAGES.length}
-      currentLevel={Math.min(currentStage + 1, TRAVEL_SAVINGS_STAGES.length)}
-      totalLevels={TRAVEL_SAVINGS_STAGES.length}
+      maxScore={totalStages}
+      currentLevel={Math.min(currentStage + 1, totalStages)}
+      totalLevels={totalStages}
       gameId={gameId}
       gameType="finance"
       showGameOver={showResult}
@@ -273,12 +270,12 @@ const TravelVsSavings = () => {
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>Travel Planning</span>
+            <span>{gameContent?.scenarioLabel}</span>
+            <span>{gameContent?.scenarioValue}</span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+          <p className="text-lg text-white/90 mb-6">{stage?.prompt}</p>
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {(stage?.options || []).map((option) => {
               const isSelected = selectedOption === option.id;
               return (
                 <button
@@ -293,7 +290,7 @@ const TravelVsSavings = () => {
                     }`}
                 >
                   <div className="flex justify-between items-center mb-2 text-sm text-white/70">
-                    <span>Choice {option.id.toUpperCase()}</span>
+                    <span>{t("financial-literacy.young-adult.travel-vs-savings.choiceLabel", { id: String(option.id || "").toUpperCase() })}</span>
                   </div>
                   <p className="text-white font-semibold">{option.label}</p>
                 </button>
@@ -302,7 +299,7 @@ const TravelVsSavings = () => {
           </div>
           {(showResult || showFeedback) && (
             <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-              <h4 className="text-lg font-semibold text-white">Reflection</h4>
+              <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionTitle}</h4>
               {selectedReflection && (
                 <div className="max-h-24 overflow-y-auto pr-2">
                   <p className="text-sm text-white/90">{selectedReflection}</p>
@@ -326,7 +323,7 @@ const TravelVsSavings = () => {
                       Continue
                     </button>
                   ) : (
-                    <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                    <div className="py-2 px-6 text-white font-semibold">{gameContent?.readingLabel}</div>
                   )}
                 </div>
               )}
@@ -343,11 +340,11 @@ const TravelVsSavings = () => {
                     ))}
                   </ul>
                   <p className="text-sm text-white/70">
-                    Skill unlocked: <strong>Travel financing wisdom</strong>
+                    {gameContent?.skillUnlockedLabel} <strong>{gameContent?.skillName}</strong>
                   </p>
                   {!hasPassed && (
                     <p className="text-xs text-amber-300">
-                      Answer all {totalStages} choices correctly to earn the full reward.
+                      {t("financial-literacy.young-adult.travel-vs-savings.fullRewardHint", { total: totalStages })}
                     </p>
                   )}
                   {!hasPassed && (
@@ -366,18 +363,18 @@ const TravelVsSavings = () => {
         </div>
         {showResult && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection Prompts</h4>
+            <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionPromptsTitle}</h4>
             <ul className="text-sm list-disc list-inside space-y-1">
               {reflectionPrompts.map((prompt) => (
                 <li key={prompt}>{prompt}</li>
               ))}
             </ul>
             <p className="text-sm text-white/70">
-              Skill unlocked: <strong>Travel financing wisdom</strong>
+              {gameContent?.skillUnlockedLabel} <strong>{gameContent?.skillName}</strong>
             </p>
             {!hasPassed && (
               <p className="text-xs text-amber-300">
-                Answer all {totalStages} choices correctly to earn the full reward.
+                {t("financial-literacy.young-adult.travel-vs-savings.fullRewardHint", { total: totalStages })}
               </p>
             )}
             {!hasPassed && (

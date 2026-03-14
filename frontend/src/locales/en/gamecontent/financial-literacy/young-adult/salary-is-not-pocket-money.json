@@ -1,0 +1,177 @@
+{
+  "title": "Salary Is Not Pocket Money",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "First Income",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Earned income discipline",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you maintain the distinction between earned income and casual spending?",
+    "What systems can you put in place to prevent salary from becoming pocket money?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "How should first income be treated?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "pocket",
+          "label": "Like pocket money",
+          "reflection": "Treating earned income like pocket money without responsibility leads to poor financial habits and quick depletion of funds.",
+          "isCorrect": false
+        },
+        {
+          "id": "unlimited",
+          "label": "Like unlimited free money",
+          "reflection": "Viewing income as unlimited free money ignores the effort required to earn it and leads to unsustainable spending.",
+          "isCorrect": false
+        },
+        {
+          "id": "occasional",
+          "label": "Like occasional windfall to enjoy",
+          "reflection": "Treating regular income as an occasional windfall prevents building consistent financial discipline.",
+          "isCorrect": false
+        },
+        {
+          "id": "earned",
+          "label": "Like earned money with limits",
+          "reflection": "Exactly! Recognizing that income is earned through effort helps establish responsible spending boundaries.",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What's the difference between salary and pocket money?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "same",
+          "label": "There's no real difference",
+          "reflection": "There's actually a significant difference - salary requires work and responsibility, while pocket money is typically given without effort.",
+          "isCorrect": false
+        },
+        {
+          "id": "earned",
+          "label": "Salary is earned through work, pocket money is given",
+          "reflection": "Correct! This fundamental difference means salary should be managed with greater care and planning.",
+          "isCorrect": true
+        },
+        {
+          "id": "amount",
+          "label": "Salary is just larger amounts of pocket money",
+          "reflection": "The distinction isn't about amount but about the responsibility and effort involved in earning income.",
+          "isCorrect": false
+        },
+        {
+          "id": "source",
+          "label": "They come from different sources only",
+          "reflection": "While source is a factor, the key difference is the earned nature of salary versus the given nature of pocket money.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "How should you approach spending your first paycheck?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "freedom",
+          "label": "Spend freely since I worked for it",
+          "reflection": "While you did work for it, approaching spending with complete freedom ignores the need for financial planning and responsibility.",
+          "isCorrect": false
+        },
+        {
+          "id": "splurge",
+          "label": "Splurge on rewards for working hard",
+          "reflection": "While rewarding yourself is reasonable, splurging without planning can undermine your financial stability.",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "label": "Create a budget before any spending",
+          "reflection": "Excellent approach! Budgeting ensures your hard-earned income serves your long-term financial goals.",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore planning and spend intuitively",
+          "reflection": "Intuitive spending without planning often leads to regret and financial stress down the road.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "What mindset prevents treating salary like pocket money?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "investment",
+          "label": "Viewing salary as investment in future self",
+          "reflection": "Perfect! This mindset transforms how you approach every spending decision with long-term thinking.",
+          "isCorrect": true
+        },
+        {
+          "id": "entitlement",
+          "label": "Feeling entitled to spend as I please",
+          "reflection": "Entitlement mindset leads to treating earned income carelessly, similar to how pocket money might be spent.",
+          "isCorrect": false
+        },
+        {
+          "id": "temporary",
+          "label": "Thinking salary won't last anyway",
+          "reflection": "This defeatist attitude actually encourages careless spending rather than responsible management.",
+          "isCorrect": false
+        },
+        {
+          "id": "comparison",
+          "label": "Comparing spending to peers constantly",
+          "reflection": "Constant comparison often leads to competitive spending that treats income like disposable pocket money.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Which habit protects salary from becoming pocket money mentality?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "impulse",
+          "label": "Making spontaneous purchase decisions",
+          "reflection": "Impulse decisions are exactly what turns earned income into casual pocket money spending.",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "label": "Delaying all purchases indefinitely",
+          "reflection": "While delayed gratification has merit, indefinite delay isn't practical and doesn't address the underlying mindset.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignoring bank balances and spending freely",
+          "reflection": "Ignoring financial reality is the fastest way to treat earned income like limitless pocket money.",
+          "isCorrect": false
+        },
+        {
+          "id": "tracking",
+          "label": "Tracking every expense and reviewing regularly",
+          "reflection": "Perfect! Expense tracking creates awareness and accountability that prevents casual spending habits.",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}
+

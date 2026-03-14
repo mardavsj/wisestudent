@@ -1,0 +1,176 @@
+{
+  "title": "Wants Disguised as Needs",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Wants vs Needs",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Wants vs needs recognition",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you identify when a want is disguised as a need?",
+    "What strategies help you prioritize needs over wants in your budget?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which is a want, not a need?",
+      "options": [
+        {
+          "id": "meals",
+          "label": "Daily meals",
+          "reflection": "While daily meals are essential for survival, they would be classified as a need rather than a want since they're fundamental for health and wellbeing.",
+          "isCorrect": false
+        },
+        {
+          "id": "phone",
+          "label": "Upgrading phone every year",
+          "reflection": "Perfect! While phones are important, upgrading annually is a want disguised as a need. Basic communication can be achieved with older devices.",
+          "isCorrect": true
+        },
+        {
+          "id": "transport",
+          "label": "Daily transportation to work",
+          "reflection": "Transportation to work is typically considered a need since it enables you to earn income and maintain employment.",
+          "isCorrect": false
+        },
+        {
+          "id": "shelter",
+          "label": "Basic shelter",
+          "reflection": "Shelter is a fundamental human need for safety and protection from the elements, not a want.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "What makes a want seem like a need?",
+      "options": [
+        {
+          "id": "marketing",
+          "label": "Marketing and social pressure",
+          "reflection": "Exactly! Advertising and social influences often make us believe we need products or services that are actually wants.",
+          "isCorrect": true
+        },
+        {
+          "id": "urgency",
+          "label": "True urgency and necessity",
+          "reflection": "Real needs don't become wants due to urgency - they remain genuine needs regardless of timing.",
+          "isCorrect": false
+        },
+        {
+          "id": "price",
+          "label": "Lower prices make it seem essential",
+          "reflection": "Price doesn't determine if something is a need versus a want - these are based on actual necessity for survival/function.",
+          "isCorrect": false
+        },
+        {
+          "id": "quality",
+          "label": "Higher quality always means necessity",
+          "reflection": "Quality doesn't transform wants into needs - the distinction is based on whether something is essential for basic functioning.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "Why is it important to distinguish between wants and needs?",
+      "options": [
+        {
+          "id": "status",
+          "label": "It increases your social status",
+          "reflection": "While others might notice your financial discipline, the primary benefit is personal financial security, not status.",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "label": "It helps prioritize your budget",
+          "reflection": "Perfect! Distinguishing between wants and needs ensures you cover essentials first before allocating money to non-essentials.",
+          "isCorrect": true
+        },
+        {
+          "id": "complexity",
+          "label": "It makes budgeting more complex",
+          "reflection": "Actually, distinguishing needs from wants simplifies budgeting by creating clear priorities for spending decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "shopping",
+          "label": "It encourages more shopping",
+          "reflection": "Recognizing the difference between wants and needs typically leads to more intentional spending, not more shopping.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "How should you handle wants that feel urgent?",
+      "options": [
+        {
+          "id": "immediate",
+          "label": "Purchase immediately to avoid missing out",
+          "reflection": "Buying immediately based on urgency often leads to regret and unnecessary purchases that strain your budget.",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "label": "Borrow money if you can't afford it",
+          "reflection": "Borrowing for wants can create debt cycles and financial stress that could be avoided by waiting.",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "label": "Wait 24-48 hours before purchasing",
+          "reflection": "Excellent! Waiting helps separate emotional desire from actual need, reducing impulse purchases.",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore the feeling completely",
+          "reflection": "Completely ignoring wants isn't sustainable - it's better to acknowledge them but delay gratification until you can afford them.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What's the best approach to managing wants?",
+      "options": [
+        {
+          "id": "deny",
+          "label": "Deny all wants completely",
+          "reflection": "Completely denying wants is unsustainable and can lead to financial rebellion or stress in the long term.",
+          "isCorrect": false
+        },
+        {
+          "id": "prioritize",
+          "label": "Prioritize wants over needs",
+          "reflection": "Prioritizing wants over needs can lead to financial instability and inability to meet essential obligations.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore the distinction and buy what you want",
+          "reflection": "Ignoring the distinction between wants and needs often leads to financial stress and inability to cover essential expenses.",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "label": "Balance wants with needs after covering essentials",
+          "reflection": "Perfect! Once needs are covered, you can thoughtfully allocate money toward reasonable wants without financial stress.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

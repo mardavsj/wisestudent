@@ -1,0 +1,176 @@
+{
+  "title": "Loan Eligibility Basics",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Loan Eligibility",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Loan eligibility awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you build a strong financial profile to improve loan eligibility?",
+    "What habits should you develop early to ensure future creditworthiness?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You're applying for your first loan. What factor is most important for loan approval?",
+      "options": [
+        {
+          "id": "multiple",
+          "label": "Having multiple loans shows financial activity",
+          "reflection": "Having multiple loans actually increases your debt burden and can hurt your loan eligibility by affecting your debt-to-income ratio.",
+          "isCorrect": false
+        },
+        {
+          "id": "stable",
+          "label": "Stable income and repayment discipline",
+          "reflection": "Exactly! Lenders want to see that you have a consistent income and a track record of managing debt responsibly.",
+          "isCorrect": true
+        },
+        {
+          "id": "assets",
+          "label": "Owning expensive assets like luxury cars",
+          "reflection": "While assets can help, lenders are more concerned with your ability to generate income and manage debt responsibly.",
+          "isCorrect": false
+        },
+        {
+          "id": "friends",
+          "label": "Having friends with good credit scores",
+          "reflection": "Your friends' credit scores don't affect your loan eligibility - lenders focus on your individual financial behavior and capacity.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "Which of these demonstrates good repayment discipline to lenders?",
+      "options": [
+        {
+          "id": "late",
+          "label": "Paying bills a few days late occasionally",
+          "reflection": "Late payments, even by a few days, can negatively impact your credit score and loan eligibility.",
+          "isCorrect": false
+        },
+        {
+          "id": "minimum",
+          "label": "Always paying only the minimum amount due",
+          "reflection": "Paying only minimums suggests you're struggling financially and may not be able to handle additional loan payments.",
+          "isCorrect": false
+        },
+        {
+          "id": "timely",
+          "label": "Paying all bills on time, every time",
+          "reflection": "Perfect! Consistent on-time payments demonstrate reliability and financial discipline to potential lenders.",
+          "isCorrect": true
+        },
+        {
+          "id": "occasional",
+          "label": "Paying when you remember or have extra money",
+          "reflection": "Inconsistent payment behavior signals financial instability and poor money management skills.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "What should you do to improve your chances of loan approval?",
+      "options": [
+        {
+          "id": "spend",
+          "label": "Spend more to show you're financially active",
+          "reflection": "Spending more without increasing income can hurt your debt-to-income ratio and reduce your loan eligibility.",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "label": "Build an emergency fund and maintain low debt",
+          "reflection": "Excellent! Having savings shows financial responsibility, and low debt improves your debt-to-income ratio.",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "label": "Borrow from multiple sources to build credit",
+          "reflection": "Taking on multiple debts simultaneously increases your risk profile and can make you appear over-leveraged to lenders.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore your credit score since it's not important",
+          "reflection": "Your credit score is one of the most important factors lenders consider when evaluating loan applications.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "Why is maintaining a stable employment history important for loans?",
+      "options": [
+        {
+          "id": "income",
+          "label": "It demonstrates reliable income generation over time",
+          "reflection": "Correct! Stable employment shows lenders that you have a consistent source of income to repay your loan.",
+          "isCorrect": true
+        },
+        {
+          "id": "job",
+          "label": "It shows you change jobs frequently for better opportunities",
+          "reflection": "Frequent job changes can signal instability to lenders, making them concerned about your ability to maintain consistent income.",
+          "isCorrect": false
+        },
+        {
+          "id": "networking",
+          "label": "It helps you build professional networking connections",
+          "reflection": "While networking is valuable, lenders are primarily concerned with your ability to generate steady income.",
+          "isCorrect": false
+        },
+        {
+          "id": "experience",
+          "label": "It proves you're gaining diverse work experience",
+          "reflection": "Diverse experience is good, but lenders want to see job stability and consistent income rather than frequent career changes.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What's the impact of having too many credit inquiries in a short period?",
+      "options": [
+        {
+          "id": "approval",
+          "label": "It increases your chances of loan approval",
+          "reflection": "Multiple credit inquiries in a short period actually decrease your approval chances as they signal financial desperation.",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "label": "It shows you're shopping for the best interest rates",
+          "reflection": "While rate shopping is smart, too many inquiries suggest you're applying for credit frequently, which can raise red flags for lenders.",
+          "isCorrect": false
+        },
+        {
+          "id": "no-effect",
+          "label": "It has no effect on your financial profile",
+          "reflection": "Credit inquiries do have an impact on your credit score and loan eligibility - lenders can see all recent inquiries on your credit report.",
+          "isCorrect": false
+        },
+        {
+          "id": "score",
+          "label": "It can temporarily lower your credit score",
+          "reflection": "Exactly! Each credit inquiry can slightly reduce your credit score, and multiple inquiries in a short time can significantly impact your eligibility.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}

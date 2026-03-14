@@ -1,177 +1,22 @@
-import React, { useMemo, useState } from "react";
+﻿import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Trophy } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const LIFESTYLE_UPGRADE_STAGES = [
-  {
-    id: 1,
-    prompt: "After receiving your first income, what temptation do you feel?",
-    options: [
-      {
-        id: "immediate",
-        label: "Upgrade lifestyle immediately",
-        reflection: "While it's natural to want rewards, immediate upgrades can strain your finances and create unsustainable expectations.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "nothing",
-        label: "Don't change anything about my lifestyle",
-        reflection: "While financial discipline is important, completely avoiding lifestyle improvements can lead to feeling deprived.",
-        isCorrect: false,
-      },
-      {
-        id: "everything",
-        label: "Buy everything I've been wanting",
-        reflection: "Impulse purchases based on accumulated wants often lead to buyer's remorse and financial stress.",
-        isCorrect: false,
-      },
-      {
-        id: "careful",
-        label: "Increase spending slowly and carefully",
-        reflection: "Exactly! Gradual improvements ensure financial stability while still allowing you to enjoy your earnings.",
-        isCorrect: true,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 2,
-    prompt: "How should you approach lifestyle improvements with new income?",
-    options: [
-      {
-        id: "percentage",
-        label: "Allocate a small percentage for gradual upgrades",
-        reflection: "Perfect approach! Setting aside a reasonable percentage creates sustainable improvement without financial risk.",
-        isCorrect: true,
-      },
-      {
-        id: "available",
-        label: "Spend whatever is left after bills",
-        reflection: "This reactive approach often leads to either overspending or missed opportunities for planned improvements.",
-        isCorrect: false,
-      },
-      {
-        id: "wait",
-        label: "Wait until I have double my expenses saved",
-        reflection: "While having substantial savings is wise, waiting too long can mean missing reasonable quality-of-life improvements.",
-        isCorrect: false,
-      },
-      {
-        id: "spontaneous",
-        label: "Make spontaneous upgrade decisions when I feel like it",
-        reflection: "Spontaneous decisions often lead to impulsive spending that doesn't align with your financial goals.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 3,
-    prompt: "What's the danger of sudden lifestyle upgrades?",
-    options: [
-      
-      {
-        id: "boring",
-        label: "Makes life feel boring and restricted",
-        reflection: "Gradual improvements actually enhance satisfaction more than dramatic changes that can feel overwhelming.",
-        isCorrect: false,
-      },
-      {
-        id: "cheap",
-        label: "Shows you're being too cheap with yourself",
-        reflection: "Thoughtful financial planning isn't about being cheap—it's about building sustainable prosperity.",
-        isCorrect: false,
-      },
-      {
-        id: "expectations",
-        label: "Creates unrealistic lifestyle expectations",
-        reflection: "Exactly! Sudden upgrades can reset your baseline expectations upward, making previous comfort levels feel inadequate.",
-        isCorrect: true,
-      },
-      {
-        id: "simple",
-        label: "Life should stay simple and basic forever",
-        reflection: "While simplicity has value, reasonable improvements contribute to personal growth and life satisfaction.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 4,
-    prompt: "Which strategy prevents lifestyle inflation?",
-    options: [
-      
-      {
-        id: "match",
-        label: "Match peer spending to fit in socially",
-        reflection: "Trying to keep up with others often leads to financial stress and debt rather than genuine satisfaction.",
-        isCorrect: false,
-      },
-      {
-        id: "baseline",
-        label: "Maintain core lifestyle while upgrading selectively",
-        reflection: "Excellent! This approach preserves financial stability while allowing meaningful improvements in priority areas.",
-        isCorrect: true,
-      },
-      {
-        id: "delay",
-        label: "Delay all non-essential purchases indefinitely",
-        reflection: "Extreme delay can lead to resentment and eventual binge spending rather than sustainable financial habits.",
-        isCorrect: false,
-      },
-      {
-        id: "upgrade",
-        label: "Upgrade everything that brings me joy",
-        reflection: "Without criteria for what truly adds value, this approach often leads to clutter and financial strain.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 5,
-    prompt: "What habit supports healthy lifestyle progression?",
-    options: [
-      {
-        id: "intentional",
-        label: "Plan upgrades intentionally with clear criteria",
-        reflection: "Perfect! Intentional planning ensures improvements align with your values and financial capacity.",
-        isCorrect: true,
-      },
-      {
-        id: "impulse",
-        label: "Buy things that catch my eye in the moment",
-        reflection: "Impulse purchases rarely provide lasting satisfaction and often conflict with long-term financial goals.",
-        isCorrect: false,
-      },
-      {
-        id: "restrict",
-        label: "Restrict myself from all non-essentials permanently",
-        reflection: "Permanent restriction often backfires and doesn't build the financial wisdom needed for sustainable choices.",
-        isCorrect: false,
-      },
-      {
-        id: "follow",
-        label: "Follow what influencers recommend buying",
-        reflection: "External recommendations rarely align with your personal situation and financial capacity.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-];
-
-const totalStages = LIFESTYLE_UPGRADE_STAGES.length;
-const successThreshold = totalStages;
 
 const LifestyleUpgradeTemptation = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   const gameId = "finance-young-adult-3";
+  const gameContent = t("financial-literacy.young-adult.lifestyle-upgrade-temptation", { returnObjects: true });
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = stages.length;
+  const successThreshold = totalStages;
+  const reflectionPrompts = Array.isArray(gameContent?.reflectionPrompts) ? gameContent.reflectionPrompts : [];
+
   const gameData = getGameDataById(gameId);
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
@@ -188,19 +33,12 @@ const LifestyleUpgradeTemptation = () => {
   const [selectedReflection, setSelectedReflection] = useState(null);
   const [canProceed, setCanProceed] = useState(false);
 
-  const reflectionPrompts = useMemo(
-    () => [
-      "How can you enjoy lifestyle improvements while maintaining financial stability?",
-      "What criteria should guide your spending decisions with increased income?",
-    ],
-    []
-  );
-
   const handleChoice = (option) => {
     if (selectedOption || showResult) return;
 
     resetFeedback();
-    const currentStageData = LIFESTYLE_UPGRADE_STAGES[currentStage];
+    const currentStageData = stages[currentStage];
+    if (!currentStageData) return;
     const updatedHistory = [
       ...history,
       { stageId: currentStageData.id, isCorrect: option.isCorrect },
@@ -249,22 +87,25 @@ const LifestyleUpgradeTemptation = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
-  const stage = LIFESTYLE_UPGRADE_STAGES[Math.min(currentStage, totalStages - 1)];
+  const subtitle = t("financial-literacy.young-adult.lifestyle-upgrade-temptation.subtitleProgress", {
+    current: Math.min(currentStage + 1, totalStages),
+    total: totalStages,
+  });
+  const stage = stages[Math.min(currentStage, Math.max(totalStages - 1, 0))];
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="Lifestyle Upgrade Temptation"
+      title={gameContent?.title}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      maxScore={LIFESTYLE_UPGRADE_STAGES.length}
-      currentLevel={Math.min(currentStage + 1, LIFESTYLE_UPGRADE_STAGES.length)}
-      totalLevels={LIFESTYLE_UPGRADE_STAGES.length}
+      maxScore={totalStages}
+      currentLevel={Math.min(currentStage + 1, totalStages)}
+      totalLevels={totalStages}
       gameId={gameId}
       gameType="finance"
       showGameOver={showResult}
@@ -276,12 +117,12 @@ const LifestyleUpgradeTemptation = () => {
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>Lifestyle Upgrades</span>
+            <span>{gameContent?.scenarioLabel}</span>
+            <span>{gameContent?.scenarioValue}</span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+          <p className="text-lg text-white/90 mb-6">{stage?.prompt}</p>
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {(stage?.options || []).map((option) => {
               const isSelected = selectedOption === option.id;
               return (
                 <button
@@ -296,7 +137,11 @@ const LifestyleUpgradeTemptation = () => {
                     }`}
                 >
                   <div className="flex justify-between items-center mb-2 text-sm text-white/70">
-                    <span>Choice {option.id.toUpperCase()}</span>
+                    <span>
+                      {t("financial-literacy.young-adult.lifestyle-upgrade-temptation.choiceLabel", {
+                        id: String(option.id || "").toUpperCase(),
+                      })}
+                    </span>
                   </div>
                   <p className="text-white font-semibold">{option.label}</p>
                 </button>
@@ -305,7 +150,7 @@ const LifestyleUpgradeTemptation = () => {
           </div>
           {(showResult || showFeedback) && (
             <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-              <h4 className="text-lg font-semibold text-white">Reflection</h4>
+              <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionTitle}</h4>
               {selectedReflection && (
                 <div className="max-h-24 overflow-y-auto pr-2">
                   <p className="text-sm text-white/90">{selectedReflection}</p>
@@ -326,10 +171,12 @@ const LifestyleUpgradeTemptation = () => {
                       }}
                       className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Continue
+                      {gameContent?.continueButton}
                     </button>
                   ) : (
-                    <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                    <div className="py-2 px-6 text-white font-semibold">
+                      {gameContent?.readingLabel}
+                    </div>
                   )}
                 </div>
               )}
@@ -347,11 +194,14 @@ const LifestyleUpgradeTemptation = () => {
                     ))}
                   </ul>
                   <p className="text-sm text-white/70">
-                    Skill unlocked: <strong>Balanced lifestyle progression</strong>
+                    {gameContent?.skillUnlockedLabel}{" "}
+                    <strong>{gameContent?.skillName}</strong>
                   </p>
                   {!hasPassed && (
                     <p className="text-xs text-amber-300">
-                      Answer all {totalStages} choices correctly to earn the full reward.
+                      {t("financial-literacy.young-adult.lifestyle-upgrade-temptation.fullRewardHint", {
+                        total: totalStages,
+                      })}
                     </p>
                   )}
                   {!hasPassed && (
@@ -359,7 +209,7 @@ const LifestyleUpgradeTemptation = () => {
                       onClick={handleRetry}
                       className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Try Again
+                      {gameContent?.tryAgainButton}
                     </button>
                   )}
                 </>
@@ -370,18 +220,21 @@ const LifestyleUpgradeTemptation = () => {
         </div>
         {showResult && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection Prompts</h4>
+            <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionPromptsTitle}</h4>
             <ul className="text-sm list-disc list-inside space-y-1">
               {reflectionPrompts.map((prompt) => (
                 <li key={prompt}>{prompt}</li>
               ))}
             </ul>
             <p className="text-sm text-white/70">
-              Skill unlocked: <strong>Balanced lifestyle progression</strong>
+              {gameContent?.skillUnlockedLabel}{" "}
+              <strong>{gameContent?.skillName}</strong>
             </p>
             {!hasPassed && (
               <p className="text-xs text-amber-300">
-                Answer all {totalStages} choices correctly to earn the full reward.
+                {t("financial-literacy.young-adult.lifestyle-upgrade-temptation.fullRewardHint", {
+                  total: totalStages,
+                })}
               </p>
             )}
             {!hasPassed && (
@@ -389,7 +242,7 @@ const LifestyleUpgradeTemptation = () => {
                 onClick={handleRetry}
                 className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
               >
-                Try Again
+                {gameContent?.tryAgainButton}
               </button>
             )}
           </div>

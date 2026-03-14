@@ -1,0 +1,177 @@
+{
+  "title": "Income Growth vs Discipline",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Growth",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Grow-with-discipline mindset",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you maintain discipline while pursuing income growth?",
+    "What balance between spending and saving feels sustainable for your situation?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "What matters more early on?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "growth",
+          "label": "Income growth alone",
+          "reflection": "While increasing income is important, focusing only on growth without discipline often leads to lifestyle inflation and financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "discipline",
+          "label": "Discipline + income growth",
+          "reflection": "Exactly! Combining discipline with income growth creates a foundation for long-term financial success and security.",
+          "isCorrect": true
+        },
+        {
+          "id": "spending",
+          "label": "Spending everything you earn",
+          "reflection": "Spending everything prevents building financial security and eliminates the benefits of income growth for your future self.",
+          "isCorrect": false
+        },
+        {
+          "id": "saving",
+          "label": "Saving everything without growth",
+          "reflection": "While saving is important, focusing only on saving without pursuing income growth limits your financial potential unnecessarily.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Why is discipline important when income increases?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "protection",
+          "label": "It protects your money at all levels",
+          "reflection": "Perfect! Discipline ensures that as your income grows, you're building security and making thoughtful decisions rather than just spending more.",
+          "isCorrect": true
+        },
+        {
+          "id": "restriction",
+          "label": "It restricts your freedom to enjoy money",
+          "reflection": "Actually, discipline creates more freedom by preventing financial stress and building options for your future choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "complexity",
+          "label": "It makes money management more complex",
+          "reflection": "Discipline actually simplifies money management by creating consistent, reliable habits that work at any income level.",
+          "isCorrect": false
+        },
+        {
+          "id": "inequality",
+          "label": "It's only important for lower incomes",
+          "reflection": "Discipline is essential at all income levels - high earners without discipline often face the same financial challenges as low earners without discipline.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "What happens when you focus only on earning more?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "security",
+          "label": "Financial security automatically improves",
+          "reflection": "Security doesn't happen automatically - it requires disciplined saving and spending decisions regardless of income level.",
+          "isCorrect": false
+        },
+        {
+          "id": "satisfaction",
+          "label": "You feel more satisfied with your money",
+          "reflection": "Without discipline, higher income often brings more stress about spending choices rather than satisfaction with financial progress.",
+          "isCorrect": false
+        },
+        {
+          "id": "inflation",
+          "label": "Lifestyle inflation matches income growth",
+          "reflection": "Exactly! Without discipline, people tend to increase spending proportionally to income, eliminating the benefits of growth.",
+          "isCorrect": true
+        },
+        {
+          "id": "skills",
+          "label": "Money management skills develop naturally",
+          "reflection": "Money management skills must be deliberately developed - they don't automatically emerge with higher income.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "How should you handle a significant income increase?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "ratio",
+          "label": "Maintain the same savings and spending ratios",
+          "reflection": "Excellent! Keeping consistent ratios ensures that discipline scales with your income, building security proportional to your earnings.",
+          "isCorrect": true
+        },
+        {
+          "id": "increase",
+          "label": "Increase spending to match your new status",
+          "reflection": "Adjusting spending to 'match status' often leads to lifestyle inflation that eliminates the benefits of your increased income.",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "label": "Save everything until you adjust to the new income",
+          "reflection": "While caution is wise, overly restrictive saving can lead to resentment and make it harder to maintain long-term financial discipline.",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "label": "Delay any changes for several months",
+          "reflection": "Delaying decisions can lead to missed opportunities to build beneficial financial habits during the transition to higher income.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Which approach builds long-term wealth?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "growth",
+          "label": "Focus only on increasing income",
+          "reflection": "Income growth without discipline often leads to spending increases that eliminate the benefits of higher earnings.",
+          "isCorrect": false
+        },
+        {
+          "id": "caution",
+          "label": "Extreme caution with any spending",
+          "reflection": "While discipline is important, extreme caution can prevent enjoying the benefits of your success and building confidence in financial decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "enough",
+          "label": "Decide that current income is enough",
+          "reflection": "Stopping growth efforts limits your potential and may not provide sufficient resources for long-term financial goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "label": "Balanced discipline with growth pursuit",
+          "reflection": "Perfect! This combination ensures you're building good habits while also expanding your earning potential for maximum long-term wealth.",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}
+

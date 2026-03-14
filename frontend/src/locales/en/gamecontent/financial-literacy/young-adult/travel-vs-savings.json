@@ -1,0 +1,176 @@
+{
+  "title": "Travel vs Savings",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Travel Planning",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Travel financing wisdom",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can saving for travel actually enhance the experience more than immediate departure?",
+    "What balance between current enjoyment and future experiences feels right for your situation?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You want to travel but have no savings. What's wiser?",
+      "options": [
+        {
+          "id": "borrow",
+          "label": "Borrow to travel",
+          "reflection": "Borrowing for travel creates debt that diminishes the enjoyment and financial benefits of your experience.",
+          "isCorrect": false
+        },
+        {
+          "id": "credit",
+          "label": "Use credit cards and pay later",
+          "reflection": "Credit card debt for travel accumulates interest and can create long-term financial burden.",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "label": "Save first, then travel",
+          "reflection": "Exactly! Saving first ensures you can fully enjoy your travel experience without financial stress afterward.",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "label": "Skip travel entirely",
+          "reflection": "While financially safe, completely avoiding experiences can limit personal growth and create regret.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "How should you plan for travel expenses?",
+      "options": [
+        {
+          "id": "estimate",
+          "label": "Rough estimate based on dreams",
+          "reflection": "Vague estimates often lead to budget shortfalls and financial stress during your trip.",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "label": "Research actual costs and create savings plan",
+          "reflection": "Perfect! Detailed research and planning ensure realistic expectations and achievable goals.",
+          "isCorrect": true
+        },
+        {
+          "id": "spontaneous",
+          "label": "Save whatever is left over each month",
+          "reflection": "Passive saving without targets often takes too long and may never accumulate enough for your goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "luxury",
+          "label": "Plan for the most expensive options available",
+          "reflection": "Luxury travel goals without corresponding income often lead to disappointment or financial strain.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "What's the benefit of saving before traveling?",
+      "options": [
+        {
+          "id": "restriction",
+          "label": "Creates unnecessary financial restrictions",
+          "reflection": "Actually, saving creates freedom by eliminating debt and allowing full enjoyment of your experience.",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "label": "Unnecessarily delays gratification",
+          "reflection": "Thoughtful timing often enhances appreciation and makes experiences more meaningful.",
+          "isCorrect": false
+        },
+        {
+          "id": "missed",
+          "label": "Causes you to miss opportunities",
+          "reflection": "Well-timed travel experiences are usually more rewarding than rushed or financially stressful trips.",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "label": "Provides financial freedom during travel",
+          "reflection": "Exactly! Having saved money eliminates stress and lets you make spontaneous decisions while traveling.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "How can you make travel savings more achievable?",
+      "options": [
+        {
+          "id": "everything",
+          "label": "Cut everything from your budget",
+          "reflection": "Extreme cuts are unsustainable and can lead to burnout before you even begin traveling.",
+          "isCorrect": false
+        },
+        {
+          "id": "automate",
+          "label": "Automate small, consistent savings amounts",
+          "reflection": "Perfect! Small, regular contributions build substantial amounts over time without major lifestyle disruption.",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "label": "Wait for windfalls or lottery wins",
+          "reflection": "Relying on chance prevents you from taking control of your financial goals and timeline.",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "label": "Borrow from multiple sources to speed up travel",
+          "reflection": "Multiple debts create complex financial obligations that can take years to resolve.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What's the long-term impact of debt-financed travel?",
+      "options": [
+        {
+          "id": "burden",
+          "label": "Creates ongoing financial burden",
+          "reflection": "Exactly! Debt payments reduce future travel possibilities and limit financial flexibility for years.",
+          "isCorrect": true
+        },
+        {
+          "id": "enhanced",
+          "label": "Enhances travel experiences significantly",
+          "reflection": "Debt actually diminishes experiences by creating ongoing financial stress that continues long after the trip.",
+          "isCorrect": false
+        },
+        {
+          "id": "forgettable",
+          "label": "Makes experiences less memorable",
+          "reflection": "Financial stress during and after travel often overshadows positive memories of the actual experience.",
+          "isCorrect": false
+        },
+        {
+          "id": "motivation",
+          "label": "Provides motivation to earn more money",
+          "reflection": "While debt might motivate some, it more commonly creates stress that impedes rather than enhances productivity.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

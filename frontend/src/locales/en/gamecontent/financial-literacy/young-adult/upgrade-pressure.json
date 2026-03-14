@@ -1,0 +1,176 @@
+{
+  "title": "Upgrade Pressure",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Technology Decisions",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Purchase decision wisdom",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you maintain friendships while making financially independent upgrade decisions?",
+    "What criteria make a technology upgrade genuinely worthwhile for your specific situation?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Friends upgrade phones often. What should guide you?",
+      "options": [
+        {
+          "id": "their",
+          "label": "Their upgrades and choices",
+          "reflection": "Following others' upgrade cycles often leads to unnecessary spending and financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "latest",
+          "label": "Always having the latest model",
+          "reflection": "Constantly chasing the newest technology creates expensive habits and financial instability.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid all technology upgrades",
+          "reflection": "While financially safe, completely avoiding necessary upgrades can limit productivity and opportunities.",
+          "isCorrect": false
+        },
+        {
+          "id": "yours",
+          "label": "Your actual need and budget",
+          "reflection": "Exactly! Personal needs and financial capacity should drive purchasing decisions, not social pressure.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "When is a phone upgrade actually justified?",
+      "options": [
+        {
+          "id": "boredom",
+          "label": "When you're bored with current features",
+          "reflection": "Boredom-driven upgrades waste money on functional devices and create unnecessary financial burden.",
+          "isCorrect": false
+        },
+        {
+          "id": "broken",
+          "label": "When current device no longer functions",
+          "reflection": "Perfect! Functional necessity is the legitimate reason for technology replacement investments.",
+          "isCorrect": true
+        },
+        {
+          "id": "status",
+          "label": "To match social status expectations",
+          "reflection": "Status-driven purchases create financial stress and rarely provide proportional personal value.",
+          "isCorrect": false
+        },
+        {
+          "id": "trend",
+          "label": "Because it's trending on social media",
+          "reflection": "Social media trends often promote consumption without considering individual financial circumstances.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "How should you handle peer upgrade pressure?",
+      "options": [
+        {
+          "id": "competitive",
+          "label": "Competitive upgrading to keep up",
+          "reflection": "Competitive consumption creates escalating financial pressure and rarely brings lasting satisfaction.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid friends who upgrade frequently",
+          "reflection": "Social isolation isn't necessary - healthy relationships respect individual financial boundaries.",
+          "isCorrect": false
+        },
+        {
+          "id": "confident",
+          "label": "Confidently stick to your budget",
+          "reflection": "Exactly! Financial confidence includes making decisions based on personal values rather than social pressure.",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "label": "Borrow money to match their upgrades",
+          "reflection": "Borrowing for lifestyle matching creates debt that can take years to resolve and limit future choices.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "What's the real cost of frequent upgrades?",
+      "options": [
+        {
+          "id": "opportunity",
+          "label": "Opportunity cost of other goals",
+          "reflection": "Exactly! Money spent on frequent upgrades could fund education, travel, or emergency savings instead.",
+          "isCorrect": true
+        },
+        {
+          "id": "excitement",
+          "label": "Temporary excitement and novelty",
+          "reflection": "While upgrades provide initial satisfaction, the financial cost often outweighs the brief pleasure period.",
+          "isCorrect": false
+        },
+        {
+          "id": "approval",
+          "label": "Social approval from peers",
+          "reflection": "External validation from purchases is temporary and doesn't create lasting personal or financial security.",
+          "isCorrect": false
+        },
+        {
+          "id": "convenience",
+          "label": "Minor convenience improvements",
+          "reflection": "Most upgrade benefits are marginal compared to the substantial financial investment required.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "How can you make upgrade decisions wisely?",
+      "options": [
+        {
+          "id": "impulse",
+          "label": "Buy immediately when you want it",
+          "reflection": "Impulse purchases often lead to buyer's remorse and financial regret when budget constraints appear.",
+          "isCorrect": false
+        },
+        {
+          "id": "defer",
+          "label": "Always defer purchases indefinitely",
+          "reflection": "Complete deferral can mean missing legitimate needs and opportunities for reasonable improvements.",
+          "isCorrect": false
+        },
+        {
+          "id": "evaluate",
+          "label": "Evaluate need, budget, and timing",
+          "reflection": "Perfect! Systematic evaluation ensures purchases serve genuine purposes rather than emotional impulses.",
+          "isCorrect": true
+        },
+        {
+          "id": "finance",
+          "label": "Finance everything to spread payments",
+          "reflection": "Financing creates long-term obligations and interest costs that make even necessary upgrades expensive.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

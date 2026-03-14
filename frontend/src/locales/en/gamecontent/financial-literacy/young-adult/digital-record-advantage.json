@@ -1,0 +1,176 @@
+{
+  "title": "Digital Record Advantage",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Financial Documentation",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Digital record utilization mastery",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can systematic digital record analysis actually increase your financial opportunities rather than just create administrative work?",
+    "What review system maximizes the value of your digital records while supporting your specific financial goals and credit-building timeline?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Why are digital records helpful?",
+      "options": [
+        {
+          "id": "disappear",
+          "label": "They disappear",
+          "reflection": "Digital records actually provide permanent, searchable documentation rather than disappearing - their persistence is a key advantage for financial management.",
+          "isCorrect": false
+        },
+        {
+          "id": "budgeting",
+          "label": "They help budgeting and future credit access",
+          "reflection": "Exactly! Digital records enable detailed spending analysis for budgeting and provide documented payment history that lenders use to assess creditworthiness.",
+          "isCorrect": true
+        },
+        {
+          "id": "convenience",
+          "label": "They're more convenient to access",
+          "reflection": "While convenience is valuable, the fundamental benefit lies in analytical capabilities and credit-building potential rather than mere accessibility.",
+          "isCorrect": false
+        },
+        {
+          "id": "backup",
+          "label": "They serve as backup copies",
+          "reflection": "Backup functionality is useful but secondary to the primary value of enabling financial analysis and establishing credit history through documented transactions.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "What's the main advantage of digital transaction records?",
+      "options": [
+        {
+          "id": "instant",
+          "label": "Instant access to information",
+          "reflection": "Immediate access is helpful but the deeper value lies in the analytical insights and pattern recognition that digital records enable over time.",
+          "isCorrect": false
+        },
+        {
+          "id": "storage",
+          "label": "Reduced physical storage needs",
+          "reflection": "Storage efficiency benefits users but doesn't capture the primary financial value of having comprehensive, searchable transaction documentation.",
+          "isCorrect": false
+        },
+        {
+          "id": "sharing",
+          "label": "Easy sharing with advisors",
+          "reflection": "Sharing capability supports financial planning but the fundamental advantage is personal insight generation through systematic record analysis.",
+          "isCorrect": false
+        },
+        {
+          "id": "analysis",
+          "label": "Enabling spending pattern analysis",
+          "reflection": "Perfect! Digital records allow detailed examination of spending habits, seasonal trends, and category breakdowns that inform better financial decisions.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "How do digital records impact credit applications?",
+      "options": [
+        {
+          "id": "history",
+          "label": "Demonstrating payment history",
+          "reflection": "Exactly! Lenders rely on documented transaction records to verify income consistency, payment behavior, and overall financial responsibility.",
+          "isCorrect": true
+        },
+        {
+          "id": "speed",
+          "label": "Faster application processing",
+          "reflection": "Processing speed improves but the core impact is in providing comprehensive payment history that demonstrates financial reliability to lenders.",
+          "isCorrect": false
+        },
+        {
+          "id": "automation",
+          "label": "Automated credit scoring",
+          "reflection": "While some automation occurs, human underwriters still review detailed records - the value is in providing evidence rather than triggering algorithms.",
+          "isCorrect": false
+        },
+        {
+          "id": "comparison",
+          "label": "Comparing with industry standards",
+          "reflection": "Benchmarking helps context but lenders primarily need individual transaction evidence to assess personal creditworthiness accurately.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "What should you do with your digital financial records?",
+      "options": [
+        {
+          "id": "ignore",
+          "label": "Store and forget about them",
+          "reflection": "Simply storing records without review misses opportunities for financial insight - active analysis transforms data into actionable budgeting intelligence.",
+          "isCorrect": false
+        },
+        {
+          "id": "print",
+          "label": "Print everything for physical files",
+          "reflection": "Physical printing defeats digital advantages - the power lies in electronic searchability, categorization, and trend analysis capabilities.",
+          "isCorrect": false
+        },
+        {
+          "id": "analyze",
+          "label": "Regularly review and analyze",
+          "reflection": "Exactly! Systematic review of digital records reveals spending patterns, identifies optimization opportunities, and tracks progress toward financial goals.",
+          "isCorrect": true
+        },
+        {
+          "id": "share",
+          "label": "Share with all your contacts",
+          "reflection": "Selective sharing with trusted advisors makes sense, but indiscriminate distribution compromises privacy without necessarily improving financial management.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What's the relationship between record keeping and financial growth?",
+      "options": [
+        {
+          "id": "administrative",
+          "label": "Purely administrative task",
+          "reflection": "Record keeping is strategic rather than merely administrative - it enables informed decision-making that drives actual financial improvement and opportunity access.",
+          "isCorrect": false
+        },
+        {
+          "id": "strategic",
+          "label": "Foundation for informed decisions",
+          "reflection": "Exactly! Comprehensive records provide the data needed for strategic financial planning, opportunity identification, and credit-building activities.",
+          "isCorrect": true
+        },
+        {
+          "id": "burdensome",
+          "label": "Creates unnecessary complexity",
+          "reflection": "Good record systems reduce rather than increase complexity by providing clarity and enabling confident financial management rather than guesswork.",
+          "isCorrect": false
+        },
+        {
+          "id": "optional",
+          "label": "Only needed for businesses",
+          "reflection": "Personal financial management benefits significantly from good record keeping - it's essential for optimizing individual financial health and future opportunities.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

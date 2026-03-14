@@ -1,0 +1,176 @@
+{
+  "title": "Budgeting Checkpoint",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Budget Creation",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Budget creation mastery",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can a well-planned budget actually increase your financial freedom?",
+    "What budget tracking method fits naturally into your daily routine?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "What's the first step in creating a monthly budget?",
+      "options": [
+        {
+          "id": "expenses",
+          "label": "Write down all your expenses first",
+          "reflection": "Listing expenses without knowing your income can lead to unrealistic budgeting.",
+          "isCorrect": false
+        },
+        {
+          "id": "goals",
+          "label": "Set financial goals for the month",
+          "reflection": "Goals are important but should come after understanding your income and basic expenses.",
+          "isCorrect": false
+        },
+        {
+          "id": "income",
+          "label": "List all expected income sources",
+          "reflection": "Perfect! Starting with income gives you the foundation for all spending decisions.",
+          "isCorrect": true
+        },
+        {
+          "id": "apps",
+          "label": "Download budgeting apps immediately",
+          "reflection": "Tools are helpful but shouldn't replace understanding the fundamental budgeting process first.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Which expense category should you prioritize?",
+      "options": [
+        {
+          "id": "entertainment",
+          "label": "Entertainment and dining out",
+          "reflection": "These are discretionary expenses that should be planned after essential needs are covered.",
+          "isCorrect": false
+        },
+        {
+          "id": "housing",
+          "label": "Housing and utilities first",
+          "reflection": "Exactly! Fixed obligations like rent and utilities must be covered before other spending.",
+          "isCorrect": true
+        },
+        {
+          "id": "shopping",
+          "label": "Shopping and personal care",
+          "reflection": "Non-essential purchases should be planned after securing basic living expenses.",
+          "isCorrect": false
+        },
+        {
+          "id": "subscriptions",
+          "label": "Streaming services and subscriptions",
+          "reflection": "These can often be adjusted or cancelled if budget constraints require it.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "How should you handle variable expenses in your budget?",
+      "options": [
+        {
+          "id": "average",
+          "label": "Use average amounts from past months",
+          "reflection": "Excellent! Historical averages provide realistic estimates for planning purposes.",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore them and hope for the best",
+          "reflection": "Ignoring variable expenses leads to budget overruns and financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "maximum",
+          "label": "Always budget the maximum possible amount",
+          "reflection": "While safe, this approach may be unnecessarily restrictive and prevent reasonable spending.",
+          "isCorrect": false
+        },
+        {
+          "id": "zero",
+          "label": "Allocate zero since they're unpredictable",
+          "reflection": "Zero allocation for necessary variable expenses creates unrealistic and unachievable budgets.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "What's the best approach for budget adjustments?",
+      "options": [
+        {
+          "id": "rigid",
+          "label": "Never change the budget once set",
+          "reflection": "Rigid budgets become obsolete and create frustration when life circumstances change.",
+          "isCorrect": false
+        },
+        {
+          "id": "drastic",
+          "label": "Redo the entire budget every week",
+          "reflection": "Frequent major changes create instability and make it hard to establish consistent habits.",
+          "isCorrect": false
+        },
+        {
+          "id": "abandon",
+          "label": "Abandon budgeting when it gets difficult",
+          "reflection": "Giving up during challenges prevents you from developing valuable financial management skills.",
+          "isCorrect": false
+        },
+        {
+          "id": "flexible",
+          "label": "Make small adjustments based on actual spending",
+          "reflection": "Perfect! Regular, thoughtful adjustments keep your budget relevant and effective.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "How can you track budget success?",
+      "options": [
+        {
+          "id": "balance",
+          "label": "End-of-month account balance",
+          "reflection": "Important indicator! Your final balance shows whether your budget matched reality.",
+          "isCorrect": false
+        },
+        {
+          "id": "feelings",
+          "label": "How stressed you feel about money",
+          "reflection": "While emotional indicators matter, objective tracking provides clearer insights for improvement.",
+          "isCorrect": false
+        },
+        {
+          "id": "categories",
+          "label": "Category-by-category spending vs budget",
+          "reflection": "Exactly! Detailed tracking reveals which areas need adjustment and where you're succeeding.",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "label": "Trust that you're doing fine",
+          "reflection": "Assumptions without tracking often lead to financial surprises and missed opportunities.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

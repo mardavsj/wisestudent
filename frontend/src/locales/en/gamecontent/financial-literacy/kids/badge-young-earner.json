@@ -2,6 +2,8 @@
   "title": "Badge: Young Earner",
   "subtitleComplete": "Badge Earned!",
   "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "coinsLabel": "Coins",
   "resultGreatEmoji": "🏆",
   "resultGreatTitle": "Young Earner Badge Earned!",
   "resultGreatDescription": "You made {{score}} smart earning decisions out of {{total}} challenges!",

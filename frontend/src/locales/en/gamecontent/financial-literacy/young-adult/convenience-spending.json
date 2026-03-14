@@ -1,0 +1,176 @@
+{
+  "title": "Convenience Spending",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Convenience Choices",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Convenience cost awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you distinguish between convenience that saves valuable time versus convenience that just costs money?",
+    "What convenience services actually enhance your productivity or well-being enough to justify their cost?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Food delivery every day is:",
+      "options": [
+        {
+          "id": "convenience",
+          "label": "A convenience want",
+          "reflection": "Exactly! Food delivery provides convenience and time-saving benefits, making it a want rather than a need.",
+          "isCorrect": true
+        },
+        {
+          "id": "need",
+          "label": "A need for survival",
+          "reflection": "Daily food delivery is a convenience service, not a survival necessity - basic nutrition can be achieved through cooking.",
+          "isCorrect": false
+        },
+        {
+          "id": "investment",
+          "label": "An investment in health",
+          "reflection": "Delivery food is often less healthy than home-cooked meals and represents spending rather than health investment.",
+          "isCorrect": false
+        },
+        {
+          "id": "luxury",
+          "label": "A luxury lifestyle choice",
+          "reflection": "While convenient, daily delivery is more accurately classified as a recurring convenience expense rather than luxury.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "How should you evaluate convenience spending?",
+      "options": [
+        {
+          "id": "ignore",
+          "label": "Ignore the costs completely",
+          "reflection": "Ignoring convenience costs leads to financial surprise and budget overruns that could be prevented.",
+          "isCorrect": false
+        },
+        {
+          "id": "maximize",
+          "label": "Maximize all convenience services",
+          "reflection": "Maximum convenience often creates unnecessary expenses without proportional value or life improvement.",
+          "isCorrect": false
+        },
+        {
+          "id": "eliminate",
+          "label": "Eliminate all convenience spending",
+          "reflection": "Complete elimination may sacrifice valuable time savings that could be better invested in income-generating activities.",
+          "isCorrect": false
+        },
+        {
+          "id": "calculate",
+          "label": "Calculate time vs money trade-offs",
+          "reflection": "Perfect! Evaluating whether convenience costs are worth the time saved helps make intentional spending decisions.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "What's the hidden cost of daily conveniences?",
+      "options": [
+        {
+          "id": "time",
+          "label": "Time saved is worth any price",
+          "reflection": "Time has value, but paying excessive amounts for convenience can create financial stress that negates time benefits.",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "label": "They increase financial freedom",
+          "reflection": "Regular convenience spending typically reduces rather than increases financial flexibility and future choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "accumulation",
+          "label": "Small daily costs accumulate significantly",
+          "reflection": "Exactly! Daily convenience expenses compound over time, creating substantial financial impact that's easy to overlook.",
+          "isCorrect": true
+        },
+        {
+          "id": "necessity",
+          "label": "They become financial necessities",
+          "reflection": "Conveniences rarely become true necessities - they're habitual spending that can usually be reduced or eliminated.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "How can you manage convenience spending wisely?",
+      "options": [
+        {
+          "id": "unlimited",
+          "label": "Use convenience services unlimitedly",
+          "reflection": "Unlimited use creates habitual spending that becomes financially burdensome and difficult to control.",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "label": "Set specific budgets for convenience categories",
+          "reflection": "Perfect! Budgeting convenience spending maintains awareness while allowing reasonable enjoyment of time-saving services.",
+          "isCorrect": true
+        },
+        {
+          "id": "occasional",
+          "label": "Use only during special occasions",
+          "reflection": "While restrictive, this approach may eliminate beneficial time savings that could enhance productivity in other areas.",
+          "isCorrect": false
+        },
+        {
+          "id": "substitute",
+          "label": "Find free convenience alternatives always",
+          "reflection": "Free alternatives often don't exist or provide inferior quality, potentially wasting more time than they save.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What's the relationship between convenience and financial health?",
+      "options": [
+        {
+          "id": "balance",
+          "label": "Strategic convenience can enhance productivity",
+          "reflection": "Exactly! Well-chosen convenience services can free time for income-generating activities or skill development.",
+          "isCorrect": true
+        },
+        {
+          "id": "improves",
+          "label": "More convenience always improves finances",
+          "reflection": "Increased convenience typically costs more money, creating financial drag rather than improvement.",
+          "isCorrect": false
+        },
+        {
+          "id": "harmful",
+          "label": "All convenience spending is financially harmful",
+          "reflection": "Blanket condemnation ignores that some convenience investments actually improve efficiency and life quality.",
+          "isCorrect": false
+        },
+        {
+          "id": "neutral",
+          "label": "Convenience has no financial impact",
+          "reflection": "Convenience services always involve direct costs and indirect effects on spending habits and financial behavior.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

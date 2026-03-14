@@ -1,0 +1,176 @@
+{
+  "title": "Budgeting with Irregular Income",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Irregular Income",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Irregular income management",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can conservative budgeting with irregular income actually increase your financial freedom?",
+    "What systems can you create to automatically save portions of irregular income?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "If income is irregular, what helps?",
+      "options": [
+        {
+          "id": "spend",
+          "label": "Spend everything when earned",
+          "reflection": "Spending irregular income immediately creates financial instability and stress during lean periods.",
+          "isCorrect": false
+        },
+        {
+          "id": "minimum",
+          "label": "Base budget on minimum expected income",
+          "reflection": "Exactly! Conservative planning with minimum income expectations provides stability and reduces stress.",
+          "isCorrect": true
+        },
+        {
+          "id": "average",
+          "label": "Budget based on average income",
+          "reflection": "While averages seem logical, they can lead to overspending during low-income months.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore budgeting and wing it",
+          "reflection": "Without planning, irregular income leads to financial chaos and missed opportunities for saving.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "How should you handle high-income months?",
+      "options": [
+        {
+          "id": "save",
+          "label": "Save excess for low-income months",
+          "reflection": "Perfect! Banking surplus income creates a buffer that smooths out income variations.",
+          "isCorrect": true
+        },
+        {
+          "id": "luxury",
+          "label": "Upgrade lifestyle permanently",
+          "reflection": "Permanent lifestyle upgrades based on occasional high income create unsustainable expectations.",
+          "isCorrect": false
+        },
+        {
+          "id": "invest",
+          "label": "Invest everything in high-risk opportunities",
+          "reflection": "High-risk investments with irregular income create dangerous financial volatility.",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "label": "Pay down all debt immediately",
+          "reflection": "While debt reduction is good, it shouldn't come at the expense of building income smoothing buffers.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "What's the best approach for irregular income tracking?",
+      "options": [
+        {
+          "id": "separate",
+          "label": "Keep business and personal finances separate",
+          "reflection": "Essential! Separation provides clear visibility into true personal cash flow and spending patterns.",
+          "isCorrect": false
+        },
+        {
+          "id": "last",
+          "label": "Base everything on last month's income",
+          "reflection": "Last month's income may not represent typical earning patterns and can lead to poor planning.",
+          "isCorrect": false
+        },
+        {
+          "id": "guess",
+          "label": "Estimate based on gut feeling",
+          "reflection": "Intuitive estimates are unreliable and often lead to either overly conservative or risky financial decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "rolling",
+          "label": "Use rolling 3-month average for planning",
+          "reflection": "Excellent! Rolling averages smooth out fluctuations and provide more realistic planning benchmarks.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "How much should you save from irregular income?",
+      "options": [
+        {
+          "id": "zero",
+          "label": "Zero - live paycheck to paycheck",
+          "reflection": "Living without buffers creates extreme financial stress during income gaps and emergencies.",
+          "isCorrect": false
+        },
+        {
+          "id": "fifty",
+          "label": "50%+ for maximum security",
+          "reflection": "While thorough, this aggressive saving rate may be unnecessarily restrictive for most lifestyles.",
+          "isCorrect": false
+        },
+        {
+          "id": "twenty",
+          "label": "20-30% for income smoothing",
+          "reflection": "Ideal range! This creates substantial buffers while still allowing for reasonable current spending.",
+          "isCorrect": true
+        },
+        {
+          "id": "everything",
+          "label": "Save everything during high months",
+          "reflection": "Extreme saving prevents enjoying life and can lead to burnout from overly restrictive financial habits.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What's the biggest challenge with irregular income?",
+      "options": [
+        {
+          "id": "spending",
+          "label": "Difficulty controlling spending",
+          "reflection": "While spending discipline is important, it's not the primary challenge with irregular income patterns.",
+          "isCorrect": false
+        },
+        {
+          "id": "predictability",
+          "label": "Unpredictable cash flow timing",
+          "reflection": "Exactly! The timing uncertainty makes planning difficult and creates regular financial anxiety.",
+          "isCorrect": true
+        },
+        {
+          "id": "motivation",
+          "label": "Staying motivated to work",
+          "reflection": "Motivation challenges are personal productivity issues, not inherent to irregular income structures.",
+          "isCorrect": false
+        },
+        {
+          "id": "taxes",
+          "label": "Complicated tax calculations",
+          "reflection": "While taxes can be complex, they're manageable with proper accounting and aren't the main irregular income challenge.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

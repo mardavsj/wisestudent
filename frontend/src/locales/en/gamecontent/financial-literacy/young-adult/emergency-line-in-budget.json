@@ -1,0 +1,176 @@
+{
+  "title": "Emergency Line in Budget",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Emergency Planning",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Emergency fund planning",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can emergency funds provide peace of mind in uncertain times?",
+    "What balance between emergency savings and other financial goals works for your situation?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Why include emergency buffer in your budget?",
+      "options": [
+        {
+          "id": "fun",
+          "label": "For fun spending",
+          "reflection": "Emergency funds are specifically for unexpected expenses, not discretionary spending.",
+          "isCorrect": false
+        },
+        {
+          "id": "surprises",
+          "label": "To handle surprises without debt",
+          "reflection": "Exactly! Emergency buffers prevent you from going into debt when unexpected expenses arise.",
+          "isCorrect": true
+        },
+        {
+          "id": "investment",
+          "label": "To invest in high-risk opportunities",
+          "reflection": "Emergency funds should be kept in safe, liquid accounts for quick access when needed.",
+          "isCorrect": false
+        },
+        {
+          "id": "vacation",
+          "label": "To save for vacation money",
+          "reflection": "Vacations are planned expenses and should be saved for separately from emergency funds.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "What percentage of your income should go to emergency fund?",
+      "options": [
+        {
+          "id": "zero",
+          "label": "0% - I'll borrow when needed",
+          "reflection": "Relying on borrowing creates debt and financial stress during emergencies.",
+          "isCorrect": false
+        },
+        {
+          "id": "three",
+          "label": "3-5% for basic protection",
+          "reflection": "Good start! This provides some cushion for small unexpected expenses.",
+          "isCorrect": false
+        },
+        {
+          "id": "twenty",
+          "label": "20%+ for maximum security",
+          "reflection": "While thorough, this might be excessive for most people's needs and lifestyle.",
+          "isCorrect": false
+        },
+        {
+          "id": "ten",
+          "label": "10-15% for solid emergency fund",
+          "reflection": "Perfect! This builds a robust emergency fund that can handle most unexpected situations.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "When should you tap into your emergency fund?",
+      "options": [
+        {
+          "id": "medical",
+          "label": "Medical emergencies or job loss",
+          "reflection": "Correct! These are exactly the situations emergency funds are designed to cover.",
+          "isCorrect": true
+        },
+        {
+          "id": "anytime",
+          "label": "Anytime I want extra money",
+          "reflection": "Using emergency funds for non-emergencies defeats their purpose and leaves you vulnerable.",
+          "isCorrect": false
+        },
+        {
+          "id": "upgrade",
+          "label": "To upgrade my lifestyle items",
+          "reflection": "Lifestyle upgrades should be planned for separately, not funded by emergency reserves.",
+          "isCorrect": false
+        },
+        {
+          "id": "invest",
+          "label": "To take advantage of investment opportunities",
+          "reflection": "Investment opportunities require planned savings, not emergency fund money.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "How much should your emergency fund cover?",
+      "options": [
+        {
+          "id": "one",
+          "label": "One month of expenses",
+          "reflection": "This provides minimal protection and may not cover larger emergencies adequately.",
+          "isCorrect": false
+        },
+        {
+          "id": "twelve",
+          "label": "Twelve months of expenses",
+          "reflection": "While comprehensive, this might be overkill for most people and tie up too much money.",
+          "isCorrect": false
+        },
+        {
+          "id": "three",
+          "label": "Three to six months of expenses",
+          "reflection": "Ideal! This provides substantial protection against job loss or major medical expenses.",
+          "isCorrect": true
+        },
+        {
+          "id": "lifetime",
+          "label": "Enough to last my entire lifetime",
+          "reflection": "This is impractical and would prevent you from investing and growing your wealth.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "Where should you keep your emergency fund?",
+      "options": [
+        {
+          "id": "stocks",
+          "label": "In volatile stocks for higher returns",
+          "reflection": "Stocks are too risky for emergency funds since you need guaranteed access to the money.",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "label": "In high-yield savings account",
+          "reflection": "Perfect! High-yield savings offer safety, liquidity, and decent interest rates.",
+          "isCorrect": true
+        },
+        {
+          "id": "cryptocurrency",
+          "label": "In cryptocurrency for maximum growth",
+          "reflection": "Cryptocurrency is too volatile and risky for emergency funds that need stability.",
+          "isCorrect": false
+        },
+        {
+          "id": "real",
+          "label": "In real estate investments",
+          "reflection": "Real estate is illiquid and can't be quickly converted to cash during emergencies.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

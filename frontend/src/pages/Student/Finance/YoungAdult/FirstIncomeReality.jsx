@@ -1,177 +1,22 @@
-import React, { useMemo, useState } from "react";
+﻿import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Trophy } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const FIRST_INCOME_STAGES = [
-  {
-    id: 1,
-    prompt: "You just received your stipend/salary. What does this income represent?",
-    options: [
-      {
-        id: "free",
-        label: "Free money to spend however I like",
-        reflection: "While it might feel like free money, it's important to remember that income comes from work and should be managed responsibly.",
-        isCorrect: false,
-      },
-      {
-        id: "responsibility",
-        label: "A responsibility to manage wisely",
-        reflection: "Exactly! Treating income as a responsibility helps build good financial habits for life.",
-        isCorrect: true,
-      },
-      {
-        id: "opportunity",
-        label: "An opportunity to invest in my future",
-        reflection: "Smart thinking! Every income is an opportunity to build wealth through investing and saving.",
-        isCorrect: false,
-      },
-      {
-        id: "luxury",
-        label: "Money for luxury and status items",
-        reflection: "Focusing on luxury items can lead to poor financial habits and debt accumulation.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 2,
-    prompt: "Do you treat this income as only for wants or for building a habit?",
-    options: [
-      {
-        id: "habit",
-        label: "Treat it as the first step to a savings habit",
-        reflection: "Great approach! Building a savings habit early sets the foundation for long-term financial security.",
-        isCorrect: true,
-      },
-      {
-        id: "wants",
-        label: "I earned it—buy whatever I feel like",
-        reflection: "While it's understandable to want to enjoy your earnings, impulsive spending can lead to financial stress.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "celebrate",
-        label: "Celebrate first, then think about saving",
-        reflection: "While celebrating is nice, it's important to prioritize financial planning before indulgence.",
-        isCorrect: false,
-      },
-      {
-        id: "ignore",
-        label: "Ignore the importance of financial planning",
-        reflection: "Ignoring financial planning can lead to unpreparedness for future needs and emergencies.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 3,
-    prompt: "Which plan makes the most sense on payday?",
-    options: [
-      
-      {
-        id: "all",
-        label: "Spend all to celebrate and worry later",
-        reflection: "While celebrations are important, spending everything can lead to financial difficulties.",
-        isCorrect: false,
-      },
-      {
-        id: "random",
-        label: "Spend randomly without any planning",
-        reflection: "Random spending without planning can lead to overspending and financial stress.",
-        isCorrect: false,
-      },
-      {
-        id: "debt",
-        label: "Pay off debts first, then plan spending",
-        reflection: "Paying off debts is important, but having a balanced plan for needs and savings is also crucial.",
-        isCorrect: false,
-      },
-      {
-        id: "plan",
-        label: "Cover needs, automate savings, then allocate fun money",
-        reflection: "Perfect! This approach ensures your needs are met while building financial security.",
-        isCorrect: true,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 4,
-    prompt: "A family or school deadline coincides with a minor want. What do you choose?",
-    options: [
-      
-      {
-        id: "want",
-        label: "Give in now—stress makes you value the treat",
-        reflection: "While treats can provide temporary relief, responsibilities should take priority.",
-        isCorrect: false,
-      },
-      {
-        id: "balance",
-        label: "Try to do both simultaneously",
-        reflection: "Attempting to do both can lead to poor performance in both areas and increased stress.",
-        isCorrect: false,
-      },
-      {
-        id: "deadline",
-        label: "Handle responsibilities first, postpone the want",
-        reflection: "Excellent! Prioritizing responsibilities over wants shows financial maturity.",
-        isCorrect: true,
-      },
-      {
-        id: "avoid",
-        label: "Avoid both and do something else",
-        reflection: "Avoiding responsibilities can lead to bigger problems later.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 5,
-    prompt: "Which reminder keeps this first income meaningful?",
-    options: [
-      {
-        id: "privacy",
-        label: "Keep a log of spending and review weekly",
-        reflection: "Perfect! Tracking spending builds awareness and helps prevent surprise expenses.",
-        isCorrect: true,
-      },
-      {
-        id: "just",
-        label: "Spend without thinking—you deserve it",
-        reflection: "While you do deserve rewards, mindful spending prevents future financial stress.",
-        isCorrect: false,
-      },
-      {
-        id: "compare",
-        label: "Compare my spending to others",
-        reflection: "Comparing spending to others can lead to unnecessary purchases and financial pressure.",
-        isCorrect: false,
-      },
-      {
-        id: "impulse",
-        label: "Make impulse purchases regularly",
-        reflection: "Regular impulse purchases can quickly deplete your income and build poor financial habits.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-];
-
-const totalStages = FIRST_INCOME_STAGES.length;
-const successThreshold = totalStages;
 
 const FirstIncomeReality = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   const gameId = "finance-young-adult-1";
+  const gameContent = t("financial-literacy.young-adult.first-income-reality", { returnObjects: true });
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = stages.length;
+  const successThreshold = totalStages;
+  const reflectionPrompts = Array.isArray(gameContent?.reflectionPrompts) ? gameContent.reflectionPrompts : [];
+
   const gameData = getGameDataById(gameId);
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
@@ -188,19 +33,12 @@ const FirstIncomeReality = () => {
   const [selectedReflection, setSelectedReflection] = useState(null);
   const [canProceed, setCanProceed] = useState(false);
 
-  const reflectionPrompts = useMemo(
-    () => [
-      "How can you balance freedom and responsibility when you first earn money?",
-      "Which priorities should you protect before spending on wants?",
-    ],
-    []
-  );
-
   const handleChoice = (option) => {
     if (selectedOption || showResult) return;
 
     resetFeedback();
-    const currentStageData = FIRST_INCOME_STAGES[currentStage];
+    const currentStageData = stages[currentStage];
+    if (!currentStageData) return;
     const updatedHistory = [
       ...history,
       { stageId: currentStageData.id, isCorrect: option.isCorrect },
@@ -249,22 +87,25 @@ const FirstIncomeReality = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
-  const stage = FIRST_INCOME_STAGES[Math.min(currentStage, totalStages - 1)];
+  const subtitle = t("financial-literacy.young-adult.first-income-reality.subtitleProgress", {
+    current: Math.min(currentStage + 1, totalStages),
+    total: totalStages,
+  });
+  const stage = stages[Math.min(currentStage, Math.max(totalStages - 1, 0))];
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="First Income Reality"
+      title={gameContent?.title}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      maxScore={FIRST_INCOME_STAGES.length}
-      currentLevel={Math.min(currentStage + 1, FIRST_INCOME_STAGES.length)}
-      totalLevels={FIRST_INCOME_STAGES.length}
+      maxScore={totalStages}
+      currentLevel={Math.min(currentStage + 1, totalStages)}
+      totalLevels={totalStages}
       gameId={gameId}
       gameType="finance"
       showGameOver={showResult}
@@ -276,12 +117,12 @@ const FirstIncomeReality = () => {
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>First Income</span>
+            <span>{gameContent?.scenarioLabel}</span>
+            <span>{gameContent?.scenarioValue}</span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+          <p className="text-lg text-white/90 mb-6">{stage?.prompt}</p>
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {(stage?.options || []).map((option) => {
               const isSelected = selectedOption === option.id;
               return (
                 <button
@@ -296,7 +137,11 @@ const FirstIncomeReality = () => {
                     }`}
                 >
                   <div className="flex justify-between items-center mb-2 text-sm text-white/70">
-                    <span>Choice {option.id.toUpperCase()}</span>
+                    <span>
+                      {t("financial-literacy.young-adult.first-income-reality.choiceLabel", {
+                        id: String(option.id || "").toUpperCase(),
+                      })}
+                    </span>
                     
                   </div>
                   <p className="text-white font-semibold">{option.label}</p>
@@ -307,7 +152,7 @@ const FirstIncomeReality = () => {
           </div>
           {(showResult || showFeedback) && (
             <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-              <h4 className="text-lg font-semibold text-white">Reflection</h4>
+              <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionTitle}</h4>
               {selectedReflection && (
                 <div className="max-h-24 overflow-y-auto pr-2">
                   <p className="text-sm text-white/90">{selectedReflection}</p>
@@ -328,10 +173,12 @@ const FirstIncomeReality = () => {
                       }}
                       className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Continue
+                      {gameContent?.continueButton}
                     </button>
                   ) : (
-                    <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                    <div className="py-2 px-6 text-white font-semibold">
+                      {gameContent?.readingLabel}
+                    </div>
                   )}
                 </div>
               )}
@@ -349,11 +196,14 @@ const FirstIncomeReality = () => {
                     ))}
                   </ul>
                   <p className="text-sm text-white/70">
-                    Skill unlocked: <strong>Responsible income mindset</strong>
+                    {gameContent?.skillUnlockedLabel}{" "}
+                    <strong>{gameContent?.skillName}</strong>
                   </p>
                   {!hasPassed && (
                     <p className="text-xs text-amber-300">
-                      Answer all {totalStages} choices correctly to earn the full reward.
+                      {t("financial-literacy.young-adult.first-income-reality.fullRewardHint", {
+                        total: totalStages,
+                      })}
                     </p>
                   )}
                   {!hasPassed && (
@@ -361,7 +211,7 @@ const FirstIncomeReality = () => {
                       onClick={handleRetry}
                       className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Try Again
+                      {gameContent?.tryAgainButton}
                     </button>
                   )}
                 </>
@@ -372,18 +222,21 @@ const FirstIncomeReality = () => {
         </div>
         {showResult && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection Prompts</h4>
+            <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionPromptsTitle}</h4>
             <ul className="text-sm list-disc list-inside space-y-1">
               {reflectionPrompts.map((prompt) => (
                 <li key={prompt}>{prompt}</li>
               ))}
             </ul>
             <p className="text-sm text-white/70">
-              Skill unlocked: <strong>Responsible income mindset</strong>
+              {gameContent?.skillUnlockedLabel}{" "}
+              <strong>{gameContent?.skillName}</strong>
             </p>
             {!hasPassed && (
               <p className="text-xs text-amber-300">
-                Answer all {totalStages} choices correctly to earn the full reward.
+                {t("financial-literacy.young-adult.first-income-reality.fullRewardHint", {
+                  total: totalStages,
+                })}
               </p>
             )}
             {!hasPassed && (
@@ -391,7 +244,7 @@ const FirstIncomeReality = () => {
                 onClick={handleRetry}
                 className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
               >
-                Try Again
+                {gameContent?.tryAgainButton}
               </button>
             )}
           </div>

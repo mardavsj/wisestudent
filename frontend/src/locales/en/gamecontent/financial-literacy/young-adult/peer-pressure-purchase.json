@@ -1,0 +1,176 @@
+{
+  "title": "Peer Pressure Purchase",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Peer Pressure",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Peer pressure resistance",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you maintain friendships while staying within your financial limits?",
+    "What strategies help you confidently say no to spending that doesn't align with your goals?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Friends push you to spend beyond comfort. What's best?",
+      "options": [
+        {
+          "id": "follow",
+          "label": "Follow them",
+          "reflection": "Following friends beyond your comfort zone can lead to financial stress and spending that doesn't align with your personal goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "limits",
+          "label": "Stick to your limits",
+          "reflection": "Exactly! Sticking to your financial limits shows financial maturity and helps maintain your financial health regardless of peer pressure.",
+          "isCorrect": true
+        },
+        {
+          "id": "sometimes",
+          "label": "Sometimes follow, sometimes say no",
+          "reflection": "While flexibility has merit, consistently adhering to your financial limits is more important for maintaining financial health.",
+          "isCorrect": false
+        },
+        {
+          "id": "more",
+          "label": "Spend even more to show I can afford it",
+          "reflection": "Trying to outspend friends to prove financial capability often leads to financial strain and unnecessary competition.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "How does peer pressure affect your financial decisions?",
+      "options": [
+        {
+          "id": "pressure",
+          "label": "It can push you to make unwise spending choices",
+          "reflection": "Exactly! Peer pressure can lead to unwise spending choices that don't align with your financial goals or budget.",
+          "isCorrect": true
+        },
+        {
+          "id": "improves",
+          "label": "It improves your financial decision-making",
+          "reflection": "Peer pressure typically doesn't improve financial decision-making as it often encourages spending beyond comfort zones.",
+          "isCorrect": false
+        },
+        {
+          "id": "motivates",
+          "label": "It motivates better financial habits",
+          "reflection": "Peer pressure usually motivates spending to match others rather than developing better financial habits.",
+          "isCorrect": false
+        },
+        {
+          "id": "inspires",
+          "label": "It inspires more responsible spending",
+          "reflection": "Peer pressure usually inspires competitive spending rather than more responsible financial behavior.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "What's the wisest way to handle group spending activities?",
+      "options": [
+        {
+          "id": "match",
+          "label": "Match what others are spending",
+          "reflection": "Matching others' spending can lead to financial stress if their budgets are different from yours.",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "label": "Plan ahead and stick to your budget",
+          "reflection": "Perfect! Planning ahead and sticking to your budget allows you to participate while maintaining financial control.",
+          "isCorrect": true
+        },
+        {
+          "id": "compete",
+          "label": "Compete to show financial capability",
+          "reflection": "Competing financially with others often leads to unnecessary spending and financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid all group spending activities",
+          "reflection": "Avoiding all group activities might protect finances but could limit social connections. Planning ahead is a better balance.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "How can you maintain friendships while managing peer pressure?",
+      "options": [
+        {
+          "id": "agree",
+          "label": "Agree to all spending suggestions to maintain harmony",
+          "reflection": "Always agreeing to spending suggestions can harm your finances and may not create genuine respect in friendships.",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "label": "Hide your financial limitations from friends",
+          "reflection": "Hiding financial limitations can lead to situations where you're forced to spend beyond your means.",
+          "isCorrect": false
+        },
+        {
+          "id": "confidence",
+          "label": "Financial confidence includes saying no",
+          "reflection": "Exactly! Having financial confidence to say no when needed helps maintain both your finances and your self-respect in relationships.",
+          "isCorrect": true
+        },
+        {
+          "id": "judge",
+          "label": "Judge friends who spend differently than you",
+          "reflection": "Judging friends' spending habits won't help with peer pressure and may damage relationships.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What strategy helps resist peer pressure to overspend?",
+      "options": [
+        {
+          "id": "blame",
+          "label": "Blame others for your spending decisions",
+          "reflection": "Blaming others for your spending decisions removes your personal financial responsibility and doesn't address peer pressure.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore your financial limits temporarily",
+          "reflection": "Ignoring financial limits, even temporarily, can lead to financial stress and doesn't build lasting financial confidence.",
+          "isCorrect": false
+        },
+        {
+          "id": "justify",
+          "label": "Justify overspending as relationship investments",
+          "reflection": "Consistently justifying overspending as relationship investments can lead to financial stress and unsustainable habits.",
+          "isCorrect": false
+        },
+        {
+          "id": "prepare",
+          "label": "Prepare responses for social spending situations",
+          "reflection": "Perfect! Preparing responses helps you stick to your financial limits while maintaining relationships and confidence.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "title": "Brand vs Budget",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Brand vs Budget",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Brand vs budget awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you resist brand pressure while making smart purchases?",
+    "What strategies help you evaluate value vs. brand appeal?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which choice is financially wiser?",
+      "options": [
+        {
+          "id": "impress",
+          "label": "Buying brands to impress",
+          "reflection": "Buying brands just to impress others often leads to unnecessary expenses that strain your budget and don't provide lasting value.",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "label": "Buying within budget and need",
+          "reflection": "Perfect! Sticking to your budget and actual needs ensures your money is spent on things that provide real value to your life.",
+          "isCorrect": true
+        },
+        {
+          "id": "latest",
+          "label": "Always getting latest models",
+          "reflection": "Purchasing the latest models often means paying premium prices for marginal improvements, which can significantly impact your finances.",
+          "isCorrect": false
+        },
+        {
+          "id": "trendy",
+          "label": "Following trendy purchases",
+          "reflection": "Trendy purchases often lose value quickly and may not serve your actual needs, making them poor financial decisions.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "Why do branded items often cost more?",
+      "options": [
+        {
+          "id": "quality",
+          "label": "Significantly better materials and construction",
+          "reflection": "Often the quality difference doesn't justify the price premium. Many non-branded items offer similar quality at lower prices.",
+          "isCorrect": false
+        },
+        {
+          "id": "rare",
+          "label": "They use rare and expensive materials",
+          "reflection": "Branded items don't necessarily use rare materials. The premium is often for the brand name rather than material rarity.",
+          "isCorrect": false
+        },
+        {
+          "id": "marketing",
+          "label": "Higher marketing and brand premiums",
+          "reflection": "Exactly! A significant portion of the cost of branded items goes toward marketing and brand maintenance rather than product quality.",
+          "isCorrect": true
+        },
+        {
+          "id": "handmade",
+          "label": "They are all handmade by skilled artisans",
+          "reflection": "Most branded items are mass-produced, not handmade. The premium comes from branding, not craftsmanship.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "What's the best approach to purchasing decisions?",
+      "options": [
+        {
+          "id": "brand",
+          "label": "Choose based on brand reputation alone",
+          "reflection": "Choosing based on brand alone often leads to overpaying for items that may not meet your specific needs or provide good value.",
+          "isCorrect": false
+        },
+        {
+          "id": "popularity",
+          "label": "Go with what's popular among peers",
+          "reflection": "Following popularity trends can lead to unnecessary purchases that don't align with your actual needs or financial situation.",
+          "isCorrect": false
+        },
+        {
+          "id": "appearance",
+          "label": "Pick based on appearance and status",
+          "reflection": "Choosing items based on appearance and status often leads to purchases that look good but don't provide practical value.",
+          "isCorrect": false
+        },
+        {
+          "id": "value",
+          "label": "Focus on value and actual need",
+          "reflection": "Perfect! Evaluating value and need before purchasing helps ensure your money is spent wisely on items that truly benefit you.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "How does brand pressure affect your finances?",
+      "options": [
+        {
+          "id": "expense",
+          "label": "Brand pressure causes unnecessary expense",
+          "reflection": "Exactly! The pressure to buy certain brands often leads to overspending on items that don't provide proportionally greater value.",
+          "isCorrect": true
+        },
+        {
+          "id": "savings",
+          "label": "It helps increase your savings rate",
+          "reflection": "Brand pressure typically decreases savings as it encourages spending more on premium products rather than saving.",
+          "isCorrect": false
+        },
+        {
+          "id": "investment",
+          "label": "Branded items are always good investments",
+          "reflection": "Most consumer goods depreciate over time, branded or not. Few branded items hold or increase their value.",
+          "isCorrect": false
+        },
+        {
+          "id": "quality",
+          "label": "It guarantees better quality purchases",
+          "reflection": "Brand does not guarantee quality. Many non-branded items offer equivalent or better quality at lower prices.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What should you consider before buying a branded item?",
+      "options": [
+        {
+          "id": "status",
+          "label": "How much status it will give you",
+          "reflection": "Focusing on status often leads to purchases that strain your finances without providing practical value to your life.",
+          "isCorrect": false
+        },
+        {
+          "id": "need",
+          "label": "Whether you actually need the item and can afford it",
+          "reflection": "Perfect! Assessing actual need and affordability should always come before considering any branded purchase.",
+          "isCorrect": true
+        },
+        {
+          "id": "influence",
+          "label": "How much it will impress others",
+          "reflection": "Making purchases to impress others often leads to financial strain for temporary social gains.",
+          "isCorrect": false
+        },
+        {
+          "id": "trend",
+          "label": "Whether it's currently trending",
+          "reflection": "Trending items may not serve your actual needs and often lose their appeal quickly, making them poor financial choices.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

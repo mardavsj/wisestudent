@@ -1,0 +1,176 @@
+{
+  "title": "Fixed vs Variable Expenses",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Expenses",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Expense categorization",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you ensure fixed expenses are always covered in your budget?",
+    "What strategies help manage variable expenses within your financial limits?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which is a fixed expense?",
+      "options": [
+        {
+          "id": "rent",
+          "label": "Rent/hostel fee",
+          "reflection": "Exactly! Rent or hostel fees are fixed expenses that remain the same each month regardless of usage.",
+          "isCorrect": true
+        },
+        {
+          "id": "eating",
+          "label": "Eating out",
+          "reflection": "Eating out is a variable expense since the amount changes depending on how often and where you eat out.",
+          "isCorrect": false
+        },
+        {
+          "id": "shopping",
+          "label": "Shopping for clothes",
+          "reflection": "Shopping for clothes is a variable expense since the amount varies based on your purchases.",
+          "isCorrect": false
+        },
+        {
+          "id": "entertainment",
+          "label": "Entertainment expenses",
+          "reflection": "Entertainment expenses are variable since they change based on your activities and choices.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "How should fixed and variable expenses be prioritized in a budget?",
+      "options": [
+        {
+          "id": "variable",
+          "label": "Variable expenses should come first",
+          "reflection": "Variable expenses are more flexible and should be planned after fixed expenses, which are essential.",
+          "isCorrect": false
+        },
+        {
+          "id": "equal",
+          "label": "Both should be treated equally",
+          "reflection": "Fixed expenses are essential and must be paid, so they should take priority over variable expenses in budget planning.",
+          "isCorrect": false
+        },
+        {
+          "id": "flexible",
+          "label": "Only plan for flexible expenses",
+          "reflection": "Fixed expenses are essential and cannot be skipped, so they must be planned for first in any budget.",
+          "isCorrect": false
+        },
+        {
+          "id": "fixed",
+          "label": "Fixed expenses must be planned first",
+          "reflection": "Perfect! Fixed expenses should be planned for first since they are essential and must be paid regardless of income fluctuations.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "What happens if you don't account for fixed expenses first?",
+      "options": [
+        {
+          "id": "savings",
+          "label": "You'll save more money",
+          "reflection": "Not accounting for fixed expenses first often leads to financial stress and penalties, not increased savings.",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "label": "More financial freedom occurs",
+          "reflection": "Missing fixed expenses actually reduces financial freedom by creating debt and potential credit issues.",
+          "isCorrect": false
+        },
+        {
+          "id": "penalties",
+          "label": "Late fees and penalties may apply",
+          "reflection": "Exactly! Not accounting for fixed expenses first can result in late fees, penalties, and negative impacts on credit scores.",
+          "isCorrect": true
+        },
+        {
+          "id": "investment",
+          "label": "More money becomes available for investment",
+          "reflection": "Missing fixed expenses first typically leads to financial penalties and stress, leaving less money for investment.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "Which of these is typically a variable expense?",
+      "options": [
+        {
+          "id": "insurance",
+          "label": "Insurance premium",
+          "reflection": "Insurance premiums are typically fixed expenses that remain the same each month.",
+          "isCorrect": false
+        },
+        {
+          "id": "utilities",
+          "label": "Electricity bill (varies with usage)",
+          "reflection": "Exactly! Electricity bills vary based on usage, making them a variable expense that changes monthly.",
+          "isCorrect": true
+        },
+        {
+          "id": "loan",
+          "label": "Loan EMI",
+          "reflection": "Loan EMIs are fixed expenses that remain the same amount each month.",
+          "isCorrect": false
+        },
+        {
+          "id": "internet",
+          "label": "Internet subscription",
+          "reflection": "Internet subscriptions are usually fixed expenses with a consistent monthly charge.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "Why is it important to distinguish between fixed and variable expenses?",
+      "options": [
+        {
+          "id": "planning",
+          "label": "It helps in better budget planning",
+          "reflection": "Perfect! Distinguishing between fixed and variable expenses enables better budget planning and financial management.",
+          "isCorrect": true
+        },
+        {
+          "id": "ignoring",
+          "label": "You can ignore fixed expenses",
+          "reflection": "Fixed expenses must be accounted for in budgeting and cannot be ignored as they are essential payments.",
+          "isCorrect": false
+        },
+        {
+          "id": "same",
+          "label": "They are the same thing",
+          "reflection": "Fixed and variable expenses are distinctly different, with fixed expenses remaining constant and variable expenses changing.",
+          "isCorrect": false
+        },
+        {
+          "id": "optional",
+          "label": "Variable expenses are optional",
+          "reflection": "While more flexible, some variable expenses like groceries are necessary and need to be budgeted for.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

@@ -86,7 +86,12 @@ const BadgeYoungEarner = () => {
         {!showResult && challenges[challenge] && (
           <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
             <h3 className="text-2xl font-bold mb-4">{challenges[challenge].question}</h3>
-            <p className="text-white/70 mb-6">{gameContent?.scoreLabel} {score}/{challenges.length}</p>
+            <p className="text-white/70 mb-6">
+              {t("financial-literacy.kids.badge-young-earner.scoreLabel", {
+                score,
+                total: challenges.length,
+              })}
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {challenges[challenge].options.map((option, idx) => (
                 <button
@@ -116,7 +121,9 @@ const BadgeYoungEarner = () => {
                 <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.resultGreatTitle}</h3>
                 <p className="text-white/90 text-lg mb-4">{t("financial-literacy.kids.badge-young-earner.resultGreatDescription", { score: finalScore, total: challenges.length })}</p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-4">
-                  <span>+{finalScore} Coins</span>
+                  <span>
+                    +{finalScore} {gameContent?.coinsLabel || "Coins"}
+                  </span>
                 </div>
                 <p className="text-white/80">{gameContent?.wisdomDescription}</p>
               </div>

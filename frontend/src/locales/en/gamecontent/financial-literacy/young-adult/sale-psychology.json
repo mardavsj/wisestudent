@@ -1,0 +1,176 @@
+{
+  "title": "Sale Psychology",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Sale Psychology",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Sale psychology awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you resist the psychological pull of sales and discounts?",
+    "What strategies help you distinguish between genuine needs and tempting deals?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "A sale tempts you to buy something unplanned. What should you ask?",
+      "options": [
+        {
+          "id": "cheap",
+          "label": "Is it cheap?",
+          "reflection": "Just because something is cheap doesn't mean it's a good purchase if you don't need it. A discount doesn't justify unnecessary purchases.",
+          "isCorrect": false
+        },
+        {
+          "id": "want",
+          "label": "Will I regret not buying it?",
+          "reflection": "This can lead to impulse purchases. It's better to focus on actual needs rather than fear of missing out.",
+          "isCorrect": false
+        },
+        {
+          "id": "need",
+          "label": "Do I actually need it?",
+          "reflection": "Perfect! Asking whether you actually need an item is the most important question before making any purchase, regardless of the discount.",
+          "isCorrect": true
+        },
+        {
+          "id": "trend",
+          "label": "Is everyone else buying it?",
+          "reflection": "Following trends or others' purchasing decisions often leads to unnecessary expenses that don't align with your actual needs.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "Why do sales make us want to buy more?",
+      "options": [
+        {
+          "id": "quality",
+          "label": "Discounted items are usually higher quality",
+          "reflection": "The quality of an item isn't necessarily improved by being on sale. The discount doesn't guarantee better value.",
+          "isCorrect": false
+        },
+        {
+          "id": "rare",
+          "label": "Sale items are rare and unique",
+          "reflection": "Sale items are often overstocked or seasonal products, not necessarily rare or unique items. The discount doesn't make them inherently valuable.",
+          "isCorrect": false
+        },
+        {
+          "id": "value",
+          "label": "Everything on sale is a great deal",
+          "reflection": "Not everything on sale offers real value. A discounted item is still unnecessary if you don't need it.",
+          "isCorrect": false
+        },
+        {
+          "id": "urgency",
+          "label": "Sales create urgency and fear of missing out",
+          "reflection": "Exactly! Sales tap into psychological triggers like urgency and scarcity, making us feel like we need to act immediately without proper consideration.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "What's the best strategy when encountering an attractive sale?",
+      "options": [
+        {
+          "id": "list",
+          "label": "Stick to your planned shopping list",
+          "reflection": "Perfect! Sticking to a planned list helps you avoid impulse purchases and ensures you only buy what you actually need.",
+          "isCorrect": true
+        },
+        {
+          "id": "browse",
+          "label": "Browse and see what catches your eye",
+          "reflection": "Browsing without a plan increases the likelihood of impulse purchases that may not align with your actual needs.",
+          "isCorrect": false
+        },
+        {
+          "id": "discount",
+          "label": "Buy anything with a high discount percentage",
+          "reflection": "A high discount percentage doesn't make an unnecessary purchase worthwhile. Focus on need, not just the discount.",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "label": "Compare prices across multiple stores",
+          "reflection": "While comparing prices is good practice, it doesn't address whether the purchase is necessary in the first place.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "How does the 'sale psychology' affect your finances?",
+      "options": [
+        {
+          "id": "savings",
+          "label": "Sales always help you save money",
+          "reflection": "Sales only help save money if you were planning to buy the item anyway. Otherwise, they often lead to unplanned spending.",
+          "isCorrect": false
+        },
+        {
+          "id": "unnecessary",
+          "label": "Discounts don't justify unnecessary purchases",
+          "reflection": "Exactly! Discounts can mask the fact that an item is still unnecessary. The core principle is that a good deal on something you don't need is still a bad purchase.",
+          "isCorrect": true
+        },
+        {
+          "id": "investment",
+          "label": "Sale items are always good investments",
+          "reflection": "Most consumer goods depreciate over time, regardless of discounts. Few items bought on sale maintain or increase their value.",
+          "isCorrect": false
+        },
+        {
+          "id": "priority",
+          "label": "Sale items should be top priority",
+          "reflection": "Just because something is on sale doesn't mean it should take priority over items you actually need. Needs should always come first.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What question should you ask before buying anything on sale?",
+      "options": [
+        {
+          "id": "money",
+          "label": "Do I have enough money for this?",
+          "reflection": "While budget is important, having money available doesn't justify an unnecessary purchase. The focus should be on need, not just affordability.",
+          "isCorrect": false
+        },
+        {
+          "id": "others",
+          "label": "Would others think this is a good deal?",
+          "reflection": "Others' opinions shouldn't drive your purchasing decisions. Focus on your actual needs rather than external validation.",
+          "isCorrect": false
+        },
+        {
+          "id": "need2",
+          "label": "Would I buy this at full price if I really needed it?",
+          "reflection": "Perfect! This question helps you evaluate whether the item has real value to you, regardless of the discount. It focuses on actual need rather than the attraction of a deal.",
+          "isCorrect": true
+        },
+        {
+          "id": "brand",
+          "label": "Is this a reputable brand?",
+          "reflection": "Brand reputation doesn't change whether an item is necessary for you. Even reputable brands sell items you may not need.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

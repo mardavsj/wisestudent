@@ -1,0 +1,176 @@
+{
+  "title": "Checking Bank Statements",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Financial Monitoring",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Statement analysis mastery",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can regular statement checking actually increase your financial confidence and control rather than create anxiety?",
+    "What systematic approach makes statement review efficient while maximizing the insights you gain about your spending patterns?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Why should you check statements?",
+      "options": [
+        {
+          "id": "curiosity",
+          "label": "For curiosity",
+          "reflection": "While curiosity can motivate checking, the primary purpose is practical financial management and error detection rather than casual browsing.",
+          "isCorrect": false
+        },
+        {
+          "id": "routine",
+          "label": "Because it's a monthly routine",
+          "reflection": "Routine checking is valuable but the underlying purpose is active financial monitoring rather than simply fulfilling a habitual obligation.",
+          "isCorrect": false
+        },
+        {
+          "id": "tracking",
+          "label": "To track spending and detect errors",
+          "reflection": "Exactly! Regular statement review helps monitor financial habits, catch unauthorized transactions, and identify billing mistakes early.",
+          "isCorrect": true
+        },
+        {
+          "id": "requirement",
+          "label": "To meet bank requirements",
+          "reflection": "Banks provide statements for customer benefit rather than imposing requirements - the value comes from your active review and analysis.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "What's the main benefit of regular statement checking?",
+      "options": [
+        {
+          "id": "balance",
+          "label": "Knowing current account balance",
+          "reflection": "While balance awareness helps, the deeper value is understanding spending patterns and catching irregularities that affect your finances.",
+          "isCorrect": false
+        },
+        {
+          "id": "awareness",
+          "label": "Increased spending awareness",
+          "reflection": "Perfect! Seeing actual transaction patterns reveals unconscious spending habits and helps identify areas for financial improvement.",
+          "isCorrect": true
+        },
+        {
+          "id": "rewards",
+          "label": "Earning bank rewards points",
+          "reflection": "Statement checking doesn't directly generate rewards - the benefit comes from identifying optimization opportunities and preventing losses.",
+          "isCorrect": false
+        },
+        {
+          "id": "history",
+          "label": "Having transaction history records",
+          "reflection": "Record keeping is automatic, but the real value lies in actively reviewing patterns and discrepancies rather than passive documentation.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "How often should you review bank statements?",
+      "options": [
+        {
+          "id": "monthly",
+          "label": "Monthly when they arrive",
+          "reflection": "Exactly! Monthly review aligns with statement cycles and provides regular checkpoints for financial monitoring and pattern recognition.",
+          "isCorrect": true
+        },
+        {
+          "id": "weekly",
+          "label": "Weekly for better control",
+          "reflection": "Weekly reviews can work but may be excessive for most people - monthly aligns with billing cycles and provides sufficient oversight.",
+          "isCorrect": false
+        },
+        {
+          "id": "quarterly",
+          "label": "Quarterly to save time",
+          "reflection": "Quarterly intervals are too infrequent and may miss timely opportunities to address errors or unauthorized transactions effectively.",
+          "isCorrect": false
+        },
+        {
+          "id": "annually",
+          "label": "Annually during tax season",
+          "reflection": "Annual review misses too many opportunities for course correction and fraud detection - regular monitoring is essential for financial health.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "What should you look for when checking statements?",
+      "options": [
+        {
+          "id": "large",
+          "label": "Focus only on large amounts",
+          "reflection": "Large transaction focus misses small recurring charges and micro-fraud that can accumulate significantly over time.",
+          "isCorrect": false
+        },
+        {
+          "id": "recent",
+          "label": "Check only recent transactions",
+          "reflection": "Recent-only review may miss patterns and recurring issues that become apparent when examining complete transaction history.",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "label": "Verify ending balance only",
+          "reflection": "Balance verification alone won't reveal unauthorized transactions or categorization errors that affect your financial understanding.",
+          "isCorrect": false
+        },
+        {
+          "id": "everything",
+          "label": "Review every single transaction",
+          "reflection": "Perfect! Comprehensive review catches both obvious errors and subtle irregularities that might otherwise go unnoticed in cursory examination.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What's the consequence of ignoring statement errors?",
+      "options": [
+        {
+          "id": "minor",
+          "label": "Small errors aren't worth the effort",
+          "reflection": "Actually, small errors often indicate larger systematic issues and compound over time - early detection prevents bigger financial problems.",
+          "isCorrect": false
+        },
+        {
+          "id": "forgotten",
+          "label": "Banks will fix them automatically",
+          "reflection": "Banks require customer reporting to address errors - relying on automatic correction leaves you vulnerable to ongoing financial damage.",
+          "isCorrect": false
+        },
+        {
+          "id": "escalation",
+          "label": "Errors can grow and multiply",
+          "reflection": "Exactly! Unaddressed errors compound through interest, fees, and expanded unauthorized activity - prompt attention prevents escalation.",
+          "isCorrect": true
+        },
+        {
+          "id": "learning",
+          "label": "Errors provide learning opportunities",
+          "reflection": "While learning can occur, the primary impact is financial loss - the cost of errors typically outweighs any educational benefit gained.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "title": "Why Budgeting Matters",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Budgeting",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Budgeting fundamentals",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can budgeting help you achieve your financial goals while still allowing for flexibility?",
+    "What strategies help maintain a budget that adapts to changing needs?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "What does a budget help you do?",
+      "options": [
+        {
+          "id": "restrict",
+          "label": "Restrict all spending",
+          "reflection": "Budgets don't restrict all spending, but rather help you make intentional choices about where your money goes.",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "label": "Track expenses after spending",
+          "reflection": "While tracking is part of budgeting, the primary benefit is planning and controlling spending before it happens, not just tracking afterward.",
+          "isCorrect": false
+        },
+        {
+          "id": "reduce",
+          "label": "Reduce income to match spending",
+          "reflection": "Budgets don't reduce income, but rather help you align your spending with your income to achieve financial goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "control",
+          "label": "Control money instead of guessing",
+          "reflection": "Exactly! Budgets help you control your money intentionally rather than guessing where it goes, giving you financial clarity.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "How does budgeting affect financial freedom?",
+      "options": [
+        {
+          "id": "limits",
+          "label": "It limits financial freedom",
+          "reflection": "Actually, budgeting increases financial freedom by helping you make intentional choices about spending, saving, and investing.",
+          "isCorrect": false
+        },
+        {
+          "id": "restricts",
+          "label": "It restricts all financial choices",
+          "reflection": "Budgeting doesn't restrict choices but rather helps prioritize them according to your values and goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "label": "Budgets give freedom with limits",
+          "reflection": "Perfect! Budgets provide financial freedom by setting intentional limits that allow you to pursue your goals while avoiding financial stress.",
+          "isCorrect": true
+        },
+        {
+          "id": "controls",
+          "label": "It controls others' spending",
+          "reflection": "Budgeting is about managing your own money, not controlling others' spending decisions.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "What happens when you don't budget?",
+      "options": [
+        {
+          "id": "savings",
+          "label": "Savings increase automatically",
+          "reflection": "Without budgeting, it's difficult to consistently save money as there's no plan for allocating funds toward savings goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "guessing",
+          "label": "You end up guessing where money goes",
+          "reflection": "Exactly! Without a budget, you're essentially guessing where your money goes, which often leads to financial surprises and stress.",
+          "isCorrect": true
+        },
+        {
+          "id": "control",
+          "label": "You gain more control over spending",
+          "reflection": "Actually, without a budget you have less control over spending since there's no plan or framework to guide decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "planning",
+          "label": "Automatic financial planning occurs",
+          "reflection": "Financial planning doesn't occur automatically without budgeting. Intentional planning is required for financial success.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "Why is budgeting important for achieving financial goals?",
+      "options": [
+        {
+          "id": "prevents",
+          "label": "It prevents all spending",
+          "reflection": "Budgeting doesn't prevent all spending, but rather helps align spending with your goals and priorities.",
+          "isCorrect": false
+        },
+        {
+          "id": "increases",
+          "label": "It increases your income automatically",
+          "reflection": "Budgeting doesn't increase income directly, but it can help you manage your income more effectively toward goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "decreases",
+          "label": "It decreases your expenses significantly",
+          "reflection": "While budgeting may help reduce unnecessary expenses, its main purpose is to align spending with your priorities and goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "allocates",
+          "label": "It allocates money toward specific goals",
+          "reflection": "Perfect! Budgeting helps allocate money specifically toward your financial goals, making them more achievable.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What's the best approach to budgeting?",
+      "options": [
+        {
+          "id": "flexible",
+          "label": "Create a flexible budget that adapts to needs",
+          "reflection": "Exactly! A flexible budget that adapts to changing needs is more sustainable and effective for long-term financial success.",
+          "isCorrect": true
+        },
+        {
+          "id": "rigid",
+          "label": "Create a rigid budget that never changes",
+          "reflection": "A rigid budget that never changes may not adapt to life changes or unexpected expenses, making it difficult to sustain.",
+          "isCorrect": false
+        },
+        {
+          "id": "monthly",
+          "label": "Only budget when money runs low",
+          "reflection": "Budgeting reactively when money runs low doesn't provide the benefits of proactive financial planning.",
+          "isCorrect": false
+        },
+        {
+          "id": "simple",
+          "label": "Keep it as simple as possible forever",
+          "reflection": "While simplicity is good, budgets should evolve as your financial situation and goals become more complex.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "title": "First Credit Checkpoint",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "First Credit",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Responsible credit management",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you use credit as a tool for financial growth rather than a source of debt?",
+    "What strategies will help you maintain responsible credit habits over time?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Before applying for your first credit card, what should be your primary consideration?",
+      "options": [
+        {
+          "id": "status",
+          "label": "Getting a card for social status",
+          "reflection": "Using credit cards for status can lead to overspending and debt. Credit should be a financial tool, not a status symbol.",
+          "isCorrect": false
+        },
+        {
+          "id": "responsibility",
+          "label": "Understanding your ability to repay",
+          "reflection": "Exactly! Responsible credit use starts with knowing your limits and ensuring you can make payments on time.",
+          "isCorrect": true
+        },
+        {
+          "id": "rewards",
+          "label": "Maximizing reward points and benefits",
+          "reflection": "While rewards are nice, they shouldn't be the primary focus. Responsible repayment should always come first.",
+          "isCorrect": false
+        },
+        {
+          "id": "approval",
+          "label": "Getting approved for the highest limit",
+          "reflection": "Higher limits can be tempting but dangerous if you're not ready to handle them responsibly.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "What's the most important habit to develop with your first credit card?",
+      "options": [
+        {
+          "id": "payment",
+          "label": "Paying the full balance every month",
+          "reflection": "Perfect! This is the golden rule of credit card use. It builds good credit while avoiding interest charges.",
+          "isCorrect": true
+        },
+        {
+          "id": "spending",
+          "label": "Using it for all purchases to build credit",
+          "reflection": "Using credit for everything can lead to overspending. It's better to use it strategically for purchases you can afford.",
+          "isCorrect": false
+        },
+        {
+          "id": "minimum",
+          "label": "Paying only the minimum amount due",
+          "reflection": "Minimum payments lead to accumulating interest and debt. Always aim to pay the full balance.",
+          "isCorrect": false
+        },
+        {
+          "id": "timing",
+          "label": "Making purchases right before the statement date",
+          "reflection": "Timing purchases isn't as important as making responsible choices and paying on time.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "How should you handle credit card offers and promotions?",
+      "options": [
+        {
+          "id": "accept",
+          "label": "Accept all offers to maximize benefits",
+          "reflection": "Accepting too many offers can lead to overspending and financial complexity. Choose wisely based on your needs.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore all credit offers completely",
+          "reflection": "While you shouldn't accept every offer, completely ignoring credit can limit your financial tools and opportunities.",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "label": "Only compare interest rates, ignore other terms",
+          "reflection": "Interest rates are important, but fees, rewards, and terms also matter. Consider the complete package.",
+          "isCorrect": false
+        },
+        {
+          "id": "evaluate",
+          "label": "Evaluate each offer carefully based on your needs",
+          "reflection": "Exactly! Good financial decisions come from careful evaluation, not impulsive acceptance of every offer.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What should you do if you can't make a full payment on your credit card?",
+      "options": [
+        {
+          "id": "skip",
+          "label": "Skip the payment and hope for the best",
+          "reflection": "Skipping payments damages your credit score and leads to late fees. Always make at least the minimum payment.",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "label": "Borrow from another source to pay it off",
+          "reflection": "Borrowing to pay credit cards can create a cycle of debt. It's better to reduce spending and pay what you can.",
+          "isCorrect": false
+        },
+        {
+          "id": "minimum",
+          "label": "Pay at least the minimum and contact your issuer",
+          "reflection": "Good! Making minimum payments protects your credit while you work on paying the full amount. Communication with your issuer is also key.",
+          "isCorrect": true
+        },
+        {
+          "id": "delay",
+          "label": "Delay payment until next month when you have more money",
+          "reflection": "Delaying payments leads to late fees and credit damage. It's always better to pay something rather than nothing.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What's the best approach to building a good credit history?",
+      "options": [
+        {
+          "id": "multiple",
+          "label": "Open multiple credit accounts quickly",
+          "reflection": "Opening too many accounts at once can hurt your credit score and make it harder to manage your finances.",
+          "isCorrect": false
+        },
+        {
+          "id": "consistent",
+          "label": "Use credit consistently and responsibly over time",
+          "reflection": "Perfect! Good credit history is built through consistent, responsible use over months and years, not quick fixes.",
+          "isCorrect": true
+        },
+        {
+          "id": "high",
+          "label": "Maintain high balances to show credit usage",
+          "reflection": "High balances hurt your credit utilization ratio. It's better to keep balances low and pay them off regularly.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid credit entirely to prevent any risk",
+          "reflection": "While avoiding credit eliminates risk, it also prevents you from building the credit history needed for loans, mortgages, and other financial opportunities.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}

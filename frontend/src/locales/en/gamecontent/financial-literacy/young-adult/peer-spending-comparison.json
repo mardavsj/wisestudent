@@ -1,0 +1,176 @@
+{
+  "title": "Peer Spending Comparison",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Social Finance",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Social financial independence",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you build confidence in your financial decisions while maintaining meaningful friendships?",
+    "What strategies help you participate in social activities within your budget without feeling excluded?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Comparing spending with friends leads to:",
+      "options": [
+        {
+          "id": "better",
+          "label": "Better financial decisions",
+          "reflection": "Social comparison often leads to competitive spending rather than improved financial judgment or personal goal alignment.",
+          "isCorrect": false
+        },
+        {
+          "id": "pressure",
+          "label": "Overspending pressure",
+          "reflection": "Exactly! Comparing spending creates pressure to match others' consumption levels, often beyond personal financial capacity.",
+          "isCorrect": true
+        },
+        {
+          "id": "motivation",
+          "label": "Healthy motivation for improvement",
+          "reflection": "While some motivation can occur, comparison more commonly creates stress and spending pressure rather than constructive inspiration.",
+          "isCorrect": false
+        },
+        {
+          "id": "insight",
+          "label": "Valuable spending insights",
+          "reflection": "Friends' spending rarely provides relevant insights for your personal financial situation and goals.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "How should you handle peer spending differences?",
+      "options": [
+        {
+          "id": "match",
+          "label": "Match their spending levels",
+          "reflection": "Matching others' spending often creates financial stress and debt that can take years to resolve and limit future choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid friends who spend differently",
+          "reflection": "Social isolation isn't necessary - healthy relationships respect individual financial boundaries and different priorities.",
+          "isCorrect": false
+        },
+        {
+          "id": "secret",
+          "label": "Hide your financial situation",
+          "reflection": "Secrecy creates stress and prevents authentic relationships - transparency with trusted friends builds stronger connections.",
+          "isCorrect": false
+        },
+        {
+          "id": "confident",
+          "label": "Stay confident in your budget",
+          "reflection": "Perfect! Financial confidence includes making decisions based on personal values and goals rather than social pressure.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "What's the impact of social spending pressure?",
+      "options": [
+        {
+          "id": "unity",
+          "label": "Creates group bonding",
+          "reflection": "While shared activities can bond groups, spending pressure often creates exclusion and financial stress rather than genuine connection.",
+          "isCorrect": false
+        },
+        {
+          "id": "growth",
+          "label": "Encourages financial growth",
+          "reflection": "Social pressure typically encourages consumption rather than genuine financial development or wealth-building behaviors.",
+          "isCorrect": false
+        },
+        {
+          "id": "stress",
+          "label": "Generates financial anxiety",
+          "reflection": "Exactly! Social pressure to spend creates ongoing stress about affordability and can lead to debt and relationship tension.",
+          "isCorrect": true
+        },
+        {
+          "id": "normal",
+          "label": "Normalizes responsible habits",
+          "reflection": "Social circles more commonly normalize spending patterns rather than promoting the disciplined financial habits needed for long-term security.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "How can you maintain friendships while spending differently?",
+      "options": [
+        {
+          "id": "conform",
+          "label": "Conform to group spending norms",
+          "reflection": "Conforming creates financial stress and resentment - authentic friendships respect individual financial circumstances and choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "communicate",
+          "label": "Communicate your financial boundaries",
+          "reflection": "Perfect! Clear communication about your financial situation helps friends understand and respect your spending limitations.",
+          "isCorrect": true
+        },
+        {
+          "id": "separate",
+          "label": "Spend separately from friends",
+          "reflection": "Complete separation isn't necessary - finding affordable shared activities maintains connections while respecting financial limits.",
+          "isCorrect": false
+        },
+        {
+          "id": "justify",
+          "label": "Justify your spending choices constantly",
+          "reflection": "Constant justification creates stress - trusted friends accept your financial decisions without requiring detailed explanations.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What's the relationship between peer comparison and financial success?",
+      "options": [
+        {
+          "id": "negative",
+          "label": "Negative impact on financial health",
+          "reflection": "Exactly! Peer comparison typically undermines financial success by encouraging spending beyond personal means and goals.",
+          "isCorrect": true
+        },
+        {
+          "id": "positive",
+          "label": "Positive correlation with success",
+          "reflection": "Actually, financial success typically requires ignoring social pressure and making independent decisions based on personal goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "neutral",
+          "label": "No significant relationship",
+          "reflection": "Peer influence significantly affects spending behavior and financial decision-making, particularly among young adults establishing habits.",
+          "isCorrect": false
+        },
+        {
+          "id": "motivational",
+          "label": "Provides motivational benchmark",
+          "reflection": "While benchmarks can help, peer spending rarely represents appropriate financial goals - individual circumstances vary greatly.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

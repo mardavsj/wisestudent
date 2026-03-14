@@ -1,0 +1,177 @@
+{
+  "title": "Income vs Fixed Commitments",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Budgeting",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Fixed-cost priority",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you ensure fixed commitments are always covered?",
+    "What's the relationship between financial stability and lifestyle choices?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which expense should be prioritized when budgeting?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "subscriptions",
+          "label": "Subscriptions and entertainment",
+          "reflection": "While entertainment adds quality to life, these are discretionary expenses that should come after essential needs are covered.",
+          "isCorrect": false
+        },
+        {
+          "id": "shopping",
+          "label": "Shopping and personal purchases",
+          "reflection": "Non-essential shopping should be considered only after ensuring your basic living expenses are fully covered.",
+          "isCorrect": false
+        },
+        {
+          "id": "dining",
+          "label": "Dining out and social activities",
+          "reflection": "Social activities are valuable, but they're luxuries that should be budgeted for after securing your financial foundation.",
+          "isCorrect": false
+        },
+        {
+          "id": "essentials",
+          "label": "Rent, travel, food, essentials",
+          "reflection": "Exactly! Fixed commitments like housing, transportation, and food are fundamental needs that must be covered first.",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What happens when you prioritize lifestyle over fixed commitments?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "freedom",
+          "label": "Gives you more freedom to enjoy life",
+          "reflection": "Temporary enjoyment from lifestyle spending becomes meaningless when you can't afford basic necessities.",
+          "isCorrect": false
+        },
+        {
+          "id": "flexible",
+          "label": "Makes your budget more flexible",
+          "reflection": "Prioritizing discretionary spending actually makes your financial situation less stable and predictable.",
+          "isCorrect": false
+        },
+        {
+          "id": "stress",
+          "label": "Creates financial stress and potential defaults",
+          "reflection": "Exactly! Neglecting fixed commitments can lead to eviction, damaged credit, and accumulating late fees.",
+          "isCorrect": true
+        },
+        {
+          "id": "reward",
+          "label": "Rewards you for working hard",
+          "reflection": "While rewarding yourself is important, it should never compromise your ability to meet essential obligations.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "How should you handle fixed commitments with irregular income?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "priority",
+          "label": "Set aside money for fixed costs first",
+          "reflection": "Perfect! Treating fixed commitments as non-negotiable ensures they're always covered regardless of income fluctuations.",
+          "isCorrect": true
+        },
+        {
+          "id": "average",
+          "label": "Average your income and budget normally",
+          "reflection": "Averaging can work, but it's risky during lean months when your actual income falls below the average.",
+          "isCorrect": false
+        },
+        {
+          "id": "later",
+          "label": "Pay fixed costs when convenient",
+          "reflection": "Flexible payment timing for fixed commitments often leads to missed payments and serious financial consequences.",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "label": "Skip fixed payments during low-income periods",
+          "reflection": "Skipping essential payments creates a cascade of problems including penalties, credit damage, and legal issues.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "What's the smartest approach to managing subscriptions?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "keep",
+          "label": "Keep all subscriptions for convenience",
+          "reflection": "Convenience comes at a cost, and unnecessary subscriptions can drain money that should go toward essential commitments.",
+          "isCorrect": false
+        },
+        {
+          "id": "bundle",
+          "label": "Bundle multiple subscriptions to save money",
+          "reflection": "Bundling might save some money, but it doesn't address whether you actually need all those services.",
+          "isCorrect": false
+        },
+        {
+          "id": "evaluate",
+          "label": "Evaluate necessity and cancel non-essentials",
+          "reflection": "Excellent! Regular evaluation helps distinguish between valuable subscriptions and financial drains.",
+          "isCorrect": true
+        },
+        {
+          "id": "automatic",
+          "label": "Set all subscriptions to auto-renew",
+          "reflection": "Automatic renewals often lead to paying for services you no longer use or need, wasting money on fixed commitments.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Which strategy protects your financial stability?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "maximum",
+          "label": "Maximize lifestyle spending while hoping income continues",
+          "reflection": "Hope-based budgeting is financially dangerous and often leads to crisis when circumstances change unexpectedly.",
+          "isCorrect": false
+        },
+        {
+          "id": "foundation",
+          "label": "Build a foundation covering all fixed commitments",
+          "reflection": "Perfect! Ensuring your essential expenses are always covered creates the stability needed for discretionary spending.",
+          "isCorrect": true
+        },
+        {
+          "id": "minimum",
+          "label": "Pay minimum amounts on all commitments",
+          "reflection": "Minimum payments often lead to growing debt and don't provide the financial security of fully meeting your obligations.",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "label": "Delay commitment payments when cash is tight",
+          "reflection": "Delaying essential payments creates a snowball effect of penalties and stress that undermines long-term financial health.",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}
+

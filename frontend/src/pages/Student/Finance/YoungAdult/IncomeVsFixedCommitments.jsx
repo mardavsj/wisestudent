@@ -1,178 +1,22 @@
-import React, { useMemo, useState } from "react";
+﻿import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Trophy } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const INCOME_COMMITMENTS_STAGES = [
-  {
-    id: 1,
-    prompt: "Which expense should be prioritized when budgeting?",
-    options: [
-      {
-        id: "subscriptions",
-        label: "Subscriptions and entertainment",
-        reflection: "While entertainment adds quality to life, these are discretionary expenses that should come after essential needs are covered.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "shopping",
-        label: "Shopping and personal purchases",
-        reflection: "Non-essential shopping should be considered only after ensuring your basic living expenses are fully covered.",
-        isCorrect: false,
-      },
-      {
-        id: "dining",
-        label: "Dining out and social activities",
-        reflection: "Social activities are valuable, but they're luxuries that should be budgeted for after securing your financial foundation.",
-        isCorrect: false,
-      },
-      {
-        id: "essentials",
-        label: "Rent, travel, food, essentials",
-        reflection: "Exactly! Fixed commitments like housing, transportation, and food are fundamental needs that must be covered first.",
-        isCorrect: true,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 2,
-    prompt: "What happens when you prioritize lifestyle over fixed commitments?",
-    options: [
-      
-      {
-        id: "freedom",
-        label: "Gives you more freedom to enjoy life",
-        reflection: "Temporary enjoyment from lifestyle spending becomes meaningless when you can't afford basic necessities.",
-        isCorrect: false,
-      },
-      {
-        id: "flexible",
-        label: "Makes your budget more flexible",
-        reflection: "Prioritizing discretionary spending actually makes your financial situation less stable and predictable.",
-        isCorrect: false,
-      },
-      {
-        id: "stress",
-        label: "Creates financial stress and potential defaults",
-        reflection: "Exactly! Neglecting fixed commitments can lead to eviction, damaged credit, and accumulating late fees.",
-        isCorrect: true,
-      },
-      {
-        id: "reward",
-        label: "Rewards you for working hard",
-        reflection: "While rewarding yourself is important, it should never compromise your ability to meet essential obligations.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 3,
-    prompt: "How should you handle fixed commitments with irregular income?",
-    options: [
-      {
-        id: "priority",
-        label: "Set aside money for fixed costs first",
-        reflection: "Perfect! Treating fixed commitments as non-negotiable ensures they're always covered regardless of income fluctuations.",
-        isCorrect: true,
-      },
-      {
-        id: "average",
-        label: "Average your income and budget normally",
-        reflection: "Averaging can work, but it's risky during lean months when your actual income falls below the average.",
-        isCorrect: false,
-      },
-      {
-        id: "later",
-        label: "Pay fixed costs when convenient",
-        reflection: "Flexible payment timing for fixed commitments often leads to missed payments and serious financial consequences.",
-        isCorrect: false,
-      },
-      {
-        id: "skip",
-        label: "Skip fixed payments during low-income periods",
-        reflection: "Skipping essential payments creates a cascade of problems including penalties, credit damage, and legal issues.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 4,
-    prompt: "What's the smartest approach to managing subscriptions?",
-    options: [
-      
-      {
-        id: "keep",
-        label: "Keep all subscriptions for convenience",
-        reflection: "Convenience comes at a cost, and unnecessary subscriptions can drain money that should go toward essential commitments.",
-        isCorrect: false,
-      },
-      {
-        id: "bundle",
-        label: "Bundle multiple subscriptions to save money",
-        reflection: "Bundling might save some money, but it doesn't address whether you actually need all those services.",
-        isCorrect: false,
-      },
-      {
-        id: "evaluate",
-        label: "Evaluate necessity and cancel non-essentials",
-        reflection: "Excellent! Regular evaluation helps distinguish between valuable subscriptions and financial drains.",
-        isCorrect: true,
-      },
-      {
-        id: "automatic",
-        label: "Set all subscriptions to auto-renew",
-        reflection: "Automatic renewals often lead to paying for services you no longer use or need, wasting money on fixed commitments.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 5,
-    prompt: "Which strategy protects your financial stability?",
-    options: [
-      
-      {
-        id: "maximum",
-        label: "Maximize lifestyle spending while hoping income continues",
-        reflection: "Hope-based budgeting is financially dangerous and often leads to crisis when circumstances change unexpectedly.",
-        isCorrect: false,
-      },
-      {
-        id: "foundation",
-        label: "Build a foundation covering all fixed commitments",
-        reflection: "Perfect! Ensuring your essential expenses are always covered creates the stability needed for discretionary spending.",
-        isCorrect: true,
-      },
-      {
-        id: "minimum",
-        label: "Pay minimum amounts on all commitments",
-        reflection: "Minimum payments often lead to growing debt and don't provide the financial security of fully meeting your obligations.",
-        isCorrect: false,
-      },
-      {
-        id: "delay",
-        label: "Delay commitment payments when cash is tight",
-        reflection: "Delaying essential payments creates a snowball effect of penalties and stress that undermines long-term financial health.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-];
-
-const totalStages = INCOME_COMMITMENTS_STAGES.length;
-const successThreshold = totalStages;
 
 const IncomeVsFixedCommitments = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   const gameId = "finance-young-adult-5";
+  const gameContent = t("financial-literacy.young-adult.income-vs-fixed-commitments", { returnObjects: true });
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = stages.length;
+  const successThreshold = totalStages;
+  const reflectionPrompts = Array.isArray(gameContent?.reflectionPrompts) ? gameContent.reflectionPrompts : [];
+
   const gameData = getGameDataById(gameId);
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
@@ -189,19 +33,12 @@ const IncomeVsFixedCommitments = () => {
   const [selectedReflection, setSelectedReflection] = useState(null);
   const [canProceed, setCanProceed] = useState(false);
 
-  const reflectionPrompts = useMemo(
-    () => [
-      "How can you ensure fixed commitments are always covered?",
-      "What's the relationship between financial stability and lifestyle choices?",
-    ],
-    []
-  );
-
   const handleChoice = (option) => {
     if (selectedOption || showResult) return;
 
     resetFeedback();
-    const currentStageData = INCOME_COMMITMENTS_STAGES[currentStage];
+    const currentStageData = stages[currentStage];
+    if (!currentStageData) return;
     const updatedHistory = [
       ...history,
       { stageId: currentStageData.id, isCorrect: option.isCorrect },
@@ -250,22 +87,25 @@ const IncomeVsFixedCommitments = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
-  const stage = INCOME_COMMITMENTS_STAGES[Math.min(currentStage, totalStages - 1)];
+  const subtitle = t("financial-literacy.young-adult.income-vs-fixed-commitments.subtitleProgress", {
+    current: Math.min(currentStage + 1, totalStages),
+    total: totalStages,
+  });
+  const stage = stages[Math.min(currentStage, Math.max(totalStages - 1, 0))];
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="Income vs Fixed Commitments"
+      title={gameContent?.title}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      maxScore={INCOME_COMMITMENTS_STAGES.length}
-      currentLevel={Math.min(currentStage + 1, INCOME_COMMITMENTS_STAGES.length)}
-      totalLevels={INCOME_COMMITMENTS_STAGES.length}
+      maxScore={totalStages}
+      currentLevel={Math.min(currentStage + 1, totalStages)}
+      totalLevels={totalStages}
       gameId={gameId}
       gameType="finance"
       showGameOver={showResult}
@@ -277,12 +117,12 @@ const IncomeVsFixedCommitments = () => {
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>Fixed Commitments</span>
+            <span>{gameContent?.scenarioLabel}</span>
+            <span>{gameContent?.scenarioValue}</span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+          <p className="text-lg text-white/90 mb-6">{stage?.prompt}</p>
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {(stage?.options || []).map((option) => {
               const isSelected = selectedOption === option.id;
               return (
                 <button
@@ -297,7 +137,11 @@ const IncomeVsFixedCommitments = () => {
                     }`}
                 >
                   <div className="flex justify-between items-center mb-2 text-sm text-white/70">
-                    <span>Choice {option.id.toUpperCase()}</span>
+                    <span>
+                      {t("financial-literacy.young-adult.income-vs-fixed-commitments.choiceLabel", {
+                        id: String(option.id || "").toUpperCase(),
+                      })}
+                    </span>
                   </div>
                   <p className="text-white font-semibold">{option.label}</p>
                 </button>
@@ -306,7 +150,7 @@ const IncomeVsFixedCommitments = () => {
           </div>
           {(showResult || showFeedback) && (
             <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-              <h4 className="text-lg font-semibold text-white">Reflection</h4>
+              <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionTitle}</h4>
               {selectedReflection && (
                 <div className="max-h-24 overflow-y-auto pr-2">
                   <p className="text-sm text-white/90">{selectedReflection}</p>
@@ -327,10 +171,12 @@ const IncomeVsFixedCommitments = () => {
                       }}
                       className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Continue
+                      {gameContent?.continueButton}
                     </button>
                   ) : (
-                    <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                    <div className="py-2 px-6 text-white font-semibold">
+                      {gameContent?.readingLabel}
+                    </div>
                   )}
                 </div>
               )}
@@ -348,11 +194,14 @@ const IncomeVsFixedCommitments = () => {
                     ))}
                   </ul>
                   <p className="text-sm text-white/70">
-                    Skill unlocked: <strong>Priority-based budgeting</strong>
+                    {gameContent?.skillUnlockedLabel}{" "}
+                    <strong>{gameContent?.skillName}</strong>
                   </p>
                   {!hasPassed && (
                     <p className="text-xs text-amber-300">
-                      Answer all {totalStages} choices correctly to earn the full reward.
+                      {t("financial-literacy.young-adult.income-vs-fixed-commitments.fullRewardHint", {
+                        total: totalStages,
+                      })}
                     </p>
                   )}
                   {!hasPassed && (
@@ -360,7 +209,7 @@ const IncomeVsFixedCommitments = () => {
                       onClick={handleRetry}
                       className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Try Again
+                      {gameContent?.tryAgainButton}
                     </button>
                   )}
                 </>
@@ -371,18 +220,21 @@ const IncomeVsFixedCommitments = () => {
         </div>
         {showResult && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection Prompts</h4>
+            <h4 className="text-lg font-semibold text-white">{gameContent?.reflectionPromptsTitle}</h4>
             <ul className="text-sm list-disc list-inside space-y-1">
               {reflectionPrompts.map((prompt) => (
                 <li key={prompt}>{prompt}</li>
               ))}
             </ul>
             <p className="text-sm text-white/70">
-              Skill unlocked: <strong>Priority-based budgeting</strong>
+              {gameContent?.skillUnlockedLabel}{" "}
+              <strong>{gameContent?.skillName}</strong>
             </p>
             {!hasPassed && (
               <p className="text-xs text-amber-300">
-                Answer all {totalStages} choices correctly to earn the full reward.
+                {t("financial-literacy.young-adult.income-vs-fixed-commitments.fullRewardHint", {
+                  total: totalStages,
+                })}
               </p>
             )}
             {!hasPassed && (
@@ -390,7 +242,7 @@ const IncomeVsFixedCommitments = () => {
                 onClick={handleRetry}
                 className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
               >
-                Try Again
+                {gameContent?.tryAgainButton}
               </button>
             )}
           </div>

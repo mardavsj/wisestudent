@@ -1,0 +1,176 @@
+{
+  "title": "Multiple Bank Accounts",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Account Management",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Account consolidation strategy",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can consolidated banking actually increase your financial effectiveness rather than limit your options?",
+    "What account structure provides the right balance between functionality and manageability for your specific needs?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Is opening many bank accounts helpful?",
+      "options": [
+        {
+          "id": "always",
+          "label": "Yes, always",
+          "reflection": "Multiple accounts often create complexity without proportional benefits - management overhead typically outweighs any advantages.",
+          "isCorrect": false
+        },
+        {
+          "id": "confusion",
+          "label": "No, it can create confusion",
+          "reflection": "Exactly! Multiple accounts and make it harder to maintain clear oversight of your total financial position.",
+          "isCorrect": true
+        },
+        {
+          "id": "benefits",
+          "label": "Yes, for earning interest",
+          "reflection": "While interest earning is possible, the administrative burden and potential fees often negate benefits from spreading money across many accounts.",
+          "isCorrect": false
+        },
+        {
+          "id": "flexibility",
+          "label": "Yes, for payment flexibility",
+          "reflection": "Single well-managed accounts with good features typically provide sufficient flexibility without the complications of multiple account management.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "What's the main downside of multiple bank accounts?",
+      "options": [
+        {
+          "id": "fees",
+          "label": "Monthly maintenance fees",
+          "reflection": "Fees are a concern but the fundamental issue is the cognitive load and tracking complexity that undermines financial awareness.",
+          "isCorrect": false
+        },
+        {
+          "id": "benefits",
+          "label": "Missing out on account benefits",
+          "reflection": "Benefit optimization is possible but secondary to the primary challenge of maintaining clear financial oversight across multiple accounts.",
+          "isCorrect": false
+        },
+        {
+          "id": "security",
+          "label": "Increased security risks",
+          "reflection": "Security concerns exist but aren't the primary issue - rather than safety.",
+          "isCorrect": false
+        },
+        {
+          "id": "tracking",
+          "label": "Difficulty tracking total balance",
+          "reflection": "Perfect! Multiple accounts make it challenging to maintain clear picture of overall financial position and spending patterns.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "How should you organize bank accounts effectively?",
+      "options": [
+        {
+          "id": "many",
+          "label": "Separate account for every purpose",
+          "reflection": "Over-separation creates management complexity that often leads to neglected accounts and poor overall financial oversight.",
+          "isCorrect": false
+        },
+        {
+          "id": "focused",
+          "label": "Few accounts with clear purposes",
+          "reflection": "Exactly! Limited accounts with specific, well-defined roles enable better tracking and more effective financial management.",
+          "isCorrect": true
+        },
+        {
+          "id": "maximize",
+          "label": "Maximize number of free accounts",
+          "reflection": "Free accounts sound appealing but the administrative burden typically outweighs any benefits from promotional offers.",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "label": "Open accounts based on promotions",
+          "reflection": "Promotion-driven account opening creates scattered financial footprint that's difficult to manage and monitor effectively.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "What's the relationship between account count and financial control?",
+      "options": [
+        {
+          "id": "fewer",
+          "label": "Fewer accounts improve oversight",
+          "reflection": "Exactly! Consolidated accounts enable clearer picture of financial position and more effective management of resources.",
+          "isCorrect": true
+        },
+        {
+          "id": "more",
+          "label": "More accounts equal more control",
+          "reflection": "Actually, more accounts typically reduce control by and making it harder to maintain comprehensive financial awareness.",
+          "isCorrect": false
+        },
+        {
+          "id": "neutral",
+          "label": "Account count doesn't matter",
+          "reflection": "Account quantity significantly impacts management ease - fewer accounts generally enable better control and financial discipline.",
+          "isCorrect": false
+        },
+        {
+          "id": "complex",
+          "label": "Complexity enhances financial skills",
+          "reflection": "While complexity might build some skills, it more commonly creates stress and reduces rather than improves financial effectiveness.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "When might multiple accounts make sense?",
+      "options": [
+        {
+          "id": "strategic",
+          "label": "Specific strategic purposes only",
+          "reflection": "Exactly! Limited multiple accounts can work when each serves distinct, well-defined financial goals with clear management protocols.",
+          "isCorrect": true
+        },
+        {
+          "id": "never",
+          "label": "Never - always consolidate",
+          "reflection": "Complete consolidation isn't always optimal - specific circumstances can justify strategic multiple account usage.",
+          "isCorrect": false
+        },
+        {
+          "id": "convenience",
+          "label": "For payment convenience",
+          "reflection": "Single accounts with good features typically provide adequate convenience without the complications of managing multiple account relationships.",
+          "isCorrect": false
+        },
+        {
+          "id": "rewards",
+          "label": "To maximize reward programs",
+          "reflection": "Reward optimization is possible but requires careful management - the benefits rarely justify the complexity for most people's needs.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

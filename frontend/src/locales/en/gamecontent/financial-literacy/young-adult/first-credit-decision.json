@@ -1,0 +1,176 @@
+{
+  "title": "First Credit Decision",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Credit Decisions",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Responsible credit usage",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can understanding responsible credit use help you build long-term financial security?",
+    "What strategies can you implement to ensure credit supports your financial goals rather than hinders them?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "When is it okay to use credit?",
+      "options": [
+        {
+          "id": "impulse",
+          "label": "For impulse spending",
+          "reflection": "Using credit for impulse purchases can lead to debt accumulation and financial stress. It's important to distinguish between wants and needs before using credit.",
+          "isCorrect": false
+        },
+        {
+          "id": "planned",
+          "label": "For planned needs with repayment ability",
+          "reflection": "Exactly! Credit should be used for planned expenses where you have a clear repayment strategy. This ensures you can afford the debt without financial strain.",
+          "isCorrect": true
+        },
+        {
+          "id": "luxury",
+          "label": "For luxury items to impress others",
+          "reflection": "Using credit to impress others can lead to financial problems and doesn't build genuine relationships. True confidence comes from financial responsibility.",
+          "isCorrect": false
+        },
+        {
+          "id": "emergency",
+          "label": "Only for true emergencies",
+          "reflection": "While emergencies are valid uses of credit, planned expenses with clear repayment ability are also appropriate. The key is responsible usage with a strategy.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "What is the primary purpose of credit?",
+      "options": [
+        {
+          "id": "free",
+          "label": "Free money to spend however you want",
+          "reflection": "Credit is not free money - it's borrowed money that must be repaid, often with interest. This misconception can lead to serious financial problems.",
+          "isCorrect": false
+        },
+        {
+          "id": "tool",
+          "label": "A financial tool for strategic purchases",
+          "reflection": "Perfect! Credit is a tool that, when used strategically, can help you make important purchases and build financial credibility.",
+          "isCorrect": true
+        },
+        {
+          "id": "status",
+          "label": "To increase your social status",
+          "reflection": "Using credit for status symbols can create financial stress and doesn't reflect true wealth or success. Financial security comes from responsible management.",
+          "isCorrect": false
+        },
+        {
+          "id": "escape",
+          "label": "To escape from financial problems",
+          "reflection": "Credit rarely solves financial problems and often makes them worse. The solution lies in budgeting and responsible spending habits.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "How much credit should you use?",
+      "options": [
+        {
+          "id": "max",
+          "label": "As much as you're approved for",
+          "reflection": "Using maximum credit increases your debt burden and can negatively impact your credit score. It's better to borrow only what you need and can afford.",
+          "isCorrect": false
+        },
+        {
+          "id": "minimum",
+          "label": "Always the minimum amount possible",
+          "reflection": "While being conservative is good, completely avoiding credit when you can handle it responsibly means missing opportunities to build credit history.",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "label": "Whatever feels right in the moment",
+          "reflection": "Making credit decisions based on emotions can lead to poor financial choices. It's important to have a systematic approach to credit usage.",
+          "isCorrect": false
+        },
+        {
+          "id": "responsible",
+          "label": "Only what fits your budget and repayment plan",
+          "reflection": "Exactly! Responsible credit usage means borrowing within your means and having a clear plan for repayment without financial strain.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What should you consider before using credit?",
+      "options": [
+        {
+          "id": "ignore",
+          "label": "Ignore the interest rates and fees",
+          "reflection": "Ignoring the cost of credit can lead to expensive mistakes. Always understand the total cost including interest rates and fees before borrowing.",
+          "isCorrect": false
+        },
+        {
+          "id": "comparison",
+          "label": "Compare different credit options available",
+          "reflection": "While comparing options is helpful, the most important factor is your ability to repay. The best credit option is one you can afford to use responsibly.",
+          "isCorrect": false
+        },
+        {
+          "id": "evaluate",
+          "label": "Evaluate your ability to repay on time",
+          "reflection": "Perfect! Before using credit, you should assess whether you can comfortably make payments without jeopardizing other financial obligations.",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "label": "What your friends are doing with credit",
+          "reflection": "Following friends' credit habits can lead to financial trouble. Your credit decisions should be based on your personal financial situation and goals.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What is the outcome of responsible credit use?",
+      "options": [
+        {
+          "id": "debt",
+          "label": "Increased debt and financial stress",
+          "reflection": "Responsible credit use should not lead to increased debt or stress. If you're experiencing these issues, it's time to reassess your credit usage habits.",
+          "isCorrect": false
+        },
+        {
+          "id": "stability",
+          "label": "Financial stability and improved credit score",
+          "reflection": "Exactly! When used responsibly, credit can help build a positive credit history, improve your credit score, and provide financial flexibility for future needs.",
+          "isCorrect": true
+        },
+        {
+          "id": "dependence",
+          "label": "Increased dependence on borrowing",
+          "reflection": "Responsible credit use builds financial independence, not dependence. The goal is to use credit strategically while maintaining control over your finances.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "You don't need to track it",
+          "reflection": "Tracking your credit usage is essential for responsible management. Regular monitoring helps you stay within limits and avoid surprises.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}

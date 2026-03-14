@@ -1,0 +1,177 @@
+{
+  "title": "Independence Checkpoint",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Independence",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Personal finance basics",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you maintain financial independence while building meaningful relationships?",
+    "What systems can you create to ensure consistent financial responsibility?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You just received your first income. What's your first step?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "spend",
+          "label": "Spend it on something you've wanted",
+          "reflection": "While treating yourself is understandable, it's important to first establish a foundation for managing your money responsibly.",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "label": "Plan how to allocate this income",
+          "reflection": "Excellent! Taking time to plan ensures you make thoughtful decisions about your money rather than impulse purchases.",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "label": "Put it all in savings immediately",
+          "reflection": "While saving is important, it's also important to balance your needs and wants appropriately rather than being overly restrictive.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore it and continue as before",
+          "reflection": "Ignoring your first income means missing the opportunity to establish healthy financial habits that will serve you throughout your life.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "How should you prioritize your expenses?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "needs",
+          "label": "Cover your needs first, then wants",
+          "reflection": "Perfect! Addressing needs first ensures your essential requirements are met before allocating money to wants.",
+          "isCorrect": true
+        },
+        {
+          "id": "wants",
+          "label": "Start with your wants and desires",
+          "reflection": "Prioritizing wants first can lead to insufficient funds for essential needs, creating financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "label": "Pay expenses in random order",
+          "reflection": "Random ordering doesn't prioritize essential needs, which can lead to serious consequences if critical bills aren't paid.",
+          "isCorrect": false
+        },
+        {
+          "id": "social",
+          "label": "Match what your friends spend",
+          "reflection": "Following others' spending patterns ignores your own financial situation and needs, often leading to poor financial decisions.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "What's the best approach to saving?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "later",
+          "label": "Save whatever is left at month-end",
+          "reflection": "Leaving savings for last often means little to nothing gets saved, as other expenses consume the available funds.",
+          "isCorrect": false
+        },
+        {
+          "id": "manual",
+          "label": "Manually transfer amounts occasionally",
+          "reflection": "Manual transfers depend on remembering and having willpower, which often leads to inconsistent saving habits.",
+          "isCorrect": false
+        },
+        {
+          "id": "minimum",
+          "label": "Save only the minimum possible",
+          "reflection": "Saving minimal amounts limits your financial security and ability to reach your long-term goals effectively.",
+          "isCorrect": false
+        },
+        {
+          "id": "automate",
+          "label": "Automate savings from the start",
+          "reflection": "Excellent! Automating savings ensures it's treated as a priority rather than an afterthought.",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "How should you handle unexpected expenses?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "credit",
+          "label": "Use credit cards to cover them",
+          "reflection": "Using credit for emergencies can create debt cycles and additional financial stress, especially if you can't pay balances quickly.",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "label": "Borrow from friends or family",
+          "reflection": "Borrowing from loved ones can strain relationships and doesn't address the underlying need for financial preparedness.",
+          "isCorrect": false
+        },
+        {
+          "id": "emergency",
+          "label": "Build an emergency fund for this purpose",
+          "reflection": "Perfect! Having an emergency fund provides financial security and prevents disruption to your regular budget.",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "label": "Skip paying for them if unaffordable",
+          "reflection": "Skipping necessary expenses can lead to larger problems down the road and doesn't provide a sustainable solution.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "What's your strategy for managing wants vs needs?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "all",
+          "label": "Deny yourself all wants",
+          "reflection": "Completely denying wants is unsustainable and can lead to financial rebellion and poor decisions later.",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "label": "Balance needs and reasonable wants",
+          "reflection": "Perfect! Balancing needs with reasonable wants creates a sustainable financial plan that you can maintain long-term.",
+          "isCorrect": true
+        },
+        {
+          "id": "wants",
+          "label": "Focus primarily on wants",
+          "reflection": "Prioritizing wants over needs can lead to financial instability and inability to meet essential obligations.",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "label": "Buy whatever appeals to you",
+          "reflection": "Impulse buying often leads to regret and financial stress when funds run short for essential needs.",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}
+

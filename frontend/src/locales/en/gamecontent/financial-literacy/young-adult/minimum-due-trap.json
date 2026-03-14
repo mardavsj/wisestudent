@@ -1,0 +1,176 @@
+{
+  "title": "Minimum Due Trap",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Minimum Due Trap",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Minimum payment awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you avoid falling into the minimum payment trap?",
+    "What strategies can help you pay more than the minimum consistently?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You receive your first credit card bill. What does paying only the minimum due actually mean?",
+      "options": [
+        {
+          "id": "no-problem",
+          "label": "No problem - I can pay more later",
+          "reflection": "Paying only the minimum creates a false sense of security while interest continues to accumulate.",
+          "isCorrect": false
+        },
+        {
+          "id": "manageable",
+          "label": "It's manageable if I'm careful with spending",
+          "reflection": "While spending control is important, minimum payments alone won't reduce your debt significantly.",
+          "isCorrect": false
+        },
+        {
+          "id": "temporary",
+          "label": "Just a temporary solution until I get more money",
+          "reflection": "Temporary solutions often become permanent problems when dealing with compound interest.",
+          "isCorrect": false
+        },
+        {
+          "id": "growing-interest",
+          "label": "Growing interest and debt over time",
+          "reflection": "Exactly! Minimum payments cover mostly interest, leaving the principal debt largely untouched.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "If you carry a balance and only pay minimum due, what happens to your debt over 12 months?",
+      "options": [
+        {
+          "id": "decrease",
+          "label": "It decreases significantly",
+          "reflection": "Minimum payments are designed to keep you in debt longer, not to pay it off quickly.",
+          "isCorrect": false
+        },
+        {
+          "id": "stay-same",
+          "label": "It stays roughly the same",
+          "reflection": "While the balance might appear stable, interest continues to compound, making the real debt grow.",
+          "isCorrect": false
+        },
+        {
+          "id": "increase",
+          "label": "It increases due to accumulating interest",
+          "reflection": "Correct! Interest compounds on the remaining balance, causing your debt to grow even with minimum payments.",
+          "isCorrect": true
+        },
+        {
+          "id": "fluctuate",
+          "label": "It fluctuates based on new purchases",
+          "reflection": "New purchases do affect the balance, but the core issue is interest accumulation on existing debt.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "Why do credit card companies prefer customers who pay only minimum due?",
+      "options": [
+        {
+          "id": "customer-service",
+          "label": "They want to provide good customer service",
+          "reflection": "While customer service is important, the business model relies on interest income from revolving balances.",
+          "isCorrect": false
+        },
+        {
+          "id": "profit",
+          "label": "They profit from interest charges over time",
+          "reflection": "Exactly! Interest income is a major revenue source, making minimum payment customers very profitable.",
+          "isCorrect": true
+        },
+        {
+          "id": "loyalty",
+          "label": "They value customer loyalty and long-term relationships",
+          "reflection": "While relationships matter, the financial incentive comes from ongoing interest payments.",
+          "isCorrect": false
+        },
+        {
+          "id": "convenience",
+          "label": "It's more convenient for their billing system",
+          "reflection": "Convenience for the company isn't the primary reason - profit from interest is the main driver.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What's the real cost of making only minimum payments on a ₹50,000 debt at 36% annual interest?",
+      "options": [
+        {
+          "id": "time",
+          "label": "It takes years to pay off with mostly interest payments",
+          "reflection": "Correct! At 36% interest, it could take over 20 years to pay off with minimum payments, paying much more in interest than principal.",
+          "isCorrect": true
+        },
+        {
+          "id": "manageable",
+          "label": "It's manageable if I make small extra payments",
+          "reflection": "Small extra payments help, but the fundamental issue is that minimum payments are structured to maximize interest income.",
+          "isCorrect": false
+        },
+        {
+          "id": "quick",
+          "label": "It gets paid off relatively quickly",
+          "reflection": "Minimum payments are specifically calculated to extend the repayment period and maximize interest charges.",
+          "isCorrect": false
+        },
+        {
+          "id": "negligible",
+          "label": "The interest cost is negligible for small amounts",
+          "reflection": "Even small amounts can accumulate significant interest over time with high-interest rates.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What's the best strategy when you can't pay the full credit card bill?",
+      "options": [
+        {
+          "id": "minimum",
+          "label": "Pay the minimum due and worry about the rest later",
+          "reflection": "This approach maximizes the time you stay in debt and the interest you pay over the long term.",
+          "isCorrect": false
+        },
+        {
+          "id": "partial",
+          "label": "Pay as much as possible beyond the minimum",
+          "reflection": "Excellent! Paying more than the minimum significantly reduces both the principal and the total interest paid.",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore the bill temporarily to avoid stress",
+          "reflection": "Ignoring bills leads to late fees, higher interest rates, and damage to your credit score.",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "label": "Borrow from another source to pay the full amount",
+          "reflection": "This can create a cycle of debt and should only be considered if the new debt has better terms.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}

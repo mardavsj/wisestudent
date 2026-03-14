@@ -1,0 +1,176 @@
+{
+  "title": "Needs vs Wants Checkpoint",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Classification Challenge",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Needs-wants classification mastery",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can clearly distinguishing needs from wants actually increase your financial freedom and life satisfaction?",
+    "What system helps you consistently make conscious spending trade-offs that align with your values and goals?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which of these is a basic need for survival?",
+      "options": [
+        {
+          "id": "phone",
+          "label": "Latest smartphone",
+          "reflection": "While useful, smartphones are modern conveniences rather than survival necessities - basic communication can be achieved through simpler means.",
+          "isCorrect": false
+        },
+        {
+          "id": "streaming",
+          "label": "Streaming service subscription",
+          "reflection": "Entertainment services provide enjoyment but are not essential for basic survival or well-being.",
+          "isCorrect": false
+        },
+        {
+          "id": "designer",
+          "label": "Designer clothing",
+          "reflection": "While clothing is necessary, designer brands represent wants rather than the basic need for protection from elements.",
+          "isCorrect": false
+        },
+        {
+          "id": "shelter",
+          "label": "Safe housing",
+          "reflection": "Exactly! Shelter is a fundamental human need for protection, safety, and basic survival requirements.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Which represents a genuine need rather than a want?",
+      "options": [
+        {
+          "id": "gaming",
+          "label": "High-end gaming computer",
+          "reflection": "Gaming equipment provides entertainment and recreation but isn't essential for basic functioning or survival.",
+          "isCorrect": false
+        },
+        {
+          "id": "transportation",
+          "label": "Reliable transportation to work",
+          "reflection": "Perfect! Transportation to employment is essential for earning income and maintaining basic living standards.",
+          "isCorrect": true
+        },
+        {
+          "id": "luxury",
+          "label": "Luxury car upgrade",
+          "reflection": "Vehicle upgrades represent wants for comfort or status rather than the basic need for functional transportation.",
+          "isCorrect": false
+        },
+        {
+          "id": "vacation",
+          "label": "International vacation",
+          "reflection": "Travel provides enrichment and relaxation but isn't necessary for basic survival or daily functioning.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "Which expense category contains mostly wants?",
+      "options": [
+        {
+          "id": "utilities",
+          "label": "Electricity and water bills",
+          "reflection": "Utilities are essential services required for basic living conditions and health maintenance.",
+          "isCorrect": false
+        },
+        {
+          "id": "healthcare",
+          "label": "Basic healthcare costs",
+          "reflection": "Healthcare addresses fundamental physical and mental well-being needs rather than optional desires.",
+          "isCorrect": false
+        },
+        {
+          "id": "entertainment",
+          "label": "Dining out and entertainment",
+          "reflection": "Exactly! These represent discretionary spending for enjoyment rather than fundamental survival requirements.",
+          "isCorrect": true
+        },
+        {
+          "id": "groceries",
+          "label": "Grocery shopping for meals",
+          "reflection": "Food is a basic survival necessity, though the quality and type of food purchased can include both needs and wants.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "How should you prioritize when needs and wants conflict?",
+      "options": [
+        {
+          "id": "needs",
+          "label": "Cover needs first, then wants",
+          "reflection": "Perfect! This fundamental principle ensures survival and stability before allocating resources to discretionary spending.",
+          "isCorrect": true
+        },
+        {
+          "id": "equal",
+          "label": "Treat all expenses equally",
+          "reflection": "Equal treatment often means neglecting essential needs or creating financial stress through inadequate planning.",
+          "isCorrect": false
+        },
+        {
+          "id": "wants",
+          "label": "Satisfy wants when possible",
+          "reflection": "Prioritizing wants can lead to neglected essentials and create serious consequences for health, housing, or employment.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore the distinction entirely",
+          "reflection": "Ignoring the difference prevents effective budgeting and often leads to financial crisis when essential costs arise.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What's the benefit of clearly distinguishing needs from wants?",
+      "options": [
+        {
+          "id": "restriction",
+          "label": "Creates unnecessary financial restrictions",
+          "reflection": "Actually, clear distinction increases freedom by ensuring essentials are covered and enabling informed discretionary choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "stress",
+          "label": "Increases spending anxiety",
+          "reflection": "Clear categorization actually reduces anxiety by providing framework for confident financial decision-making.",
+          "isCorrect": false
+        },
+        {
+          "id": "clarity",
+          "label": "Enables conscious spending decisions",
+          "reflection": "Exactly! Understanding this difference empowers intentional resource allocation and prevents regrettable financial choices.",
+          "isCorrect": true
+        },
+        {
+          "id": "complexity",
+          "label": "Makes budgeting overly complicated",
+          "reflection": "This fundamental distinction simplifies rather than complicates budgeting by providing clear priority framework.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

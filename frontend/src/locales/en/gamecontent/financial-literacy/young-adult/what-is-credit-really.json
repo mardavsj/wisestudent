@@ -1,0 +1,176 @@
+{
+  "title": "What Is Credit Really?",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Credit Understanding",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Credit literacy",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can understanding the true nature of credit help you make better financial decisions?",
+    "What strategies can you use to ensure credit enhances rather than hinders your financial goals?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Credit means:",
+      "options": [
+        {
+          "id": "extra",
+          "label": "Extra income",
+          "reflection": "Credit is not extra income - it's borrowed money that must be repaid. Thinking of credit as extra income can lead to overspending and financial difficulties.",
+          "isCorrect": false
+        },
+        {
+          "id": "borrowed",
+          "label": "Borrowed money that must be repaid",
+          "reflection": "Exactly! Credit is borrowed money that comes with a cost - you must repay it, often with interest. Understanding this is crucial for responsible credit usage.",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "label": "Free money that doesn't need to be paid back",
+          "reflection": "Credit is never free money. It always requires repayment, and often with additional interest charges. This misconception can lead to serious financial problems.",
+          "isCorrect": false
+        },
+        {
+          "id": "gift",
+          "label": "A gift from the bank",
+          "reflection": "Banks don't give gifts - they're businesses that lend money to make a profit. Credit is a loan, not a gift, and must be repaid according to the agreed terms.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "When is credit helpful?",
+      "options": [
+        {
+          "id": "always",
+          "label": "Always, it's free money",
+          "reflection": "Credit is not free money and shouldn't be used carelessly. Using credit without a repayment plan can lead to debt accumulation and financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "emergency",
+          "label": "Only for emergencies",
+          "reflection": "While credit can be useful for emergencies, it's also helpful for planned purchases when you have a repayment strategy. The key is responsible usage with clear repayment intentions.",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "label": "Never, it's always dangerous",
+          "reflection": "Credit can be a useful financial tool when used responsibly. The danger comes from misuse, not from credit itself. Responsible credit usage can build financial credibility and help in emergencies.",
+          "isCorrect": false
+        },
+        {
+          "id": "planned",
+          "label": "When repayment is planned",
+          "reflection": "Perfect! Credit is helpful when you have a clear plan to repay it. This includes budgeting for payments and ensuring you can afford the debt without financial strain.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "What happens if you don't repay credit?",
+      "options": [
+        {
+          "id": "nothing",
+          "label": "Nothing, it's forgotten",
+          "reflection": "Failure to repay credit has serious consequences including damaged credit scores, legal action, and difficulty obtaining future credit. Debts don't simply disappear.",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "label": "You can delay payment indefinitely",
+          "reflection": "While you might delay payments temporarily, eventually the debt must be settled. Delaying only increases the total cost through late fees, interest, and potential legal action.",
+          "isCorrect": false
+        },
+        {
+          "id": "consequences",
+          "label": "Credit score damage and legal issues",
+          "reflection": "Exactly! Non-repayment leads to serious consequences including damaged credit history, collection actions, potential lawsuits, and difficulty getting future loans or credit cards.",
+          "isCorrect": true
+        },
+        {
+          "id": "forgiven",
+          "label": "The bank will forgive the debt",
+          "reflection": "Banks are businesses that expect repayment. While they might work with you on payment plans, they won't simply forgive debts. Personal responsibility for repayment is essential.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "How should you use credit responsibly?",
+      "options": [
+        {
+          "id": "budget",
+          "label": "Only borrow what fits your budget",
+          "reflection": "Exactly! Responsible credit usage means borrowing only what you can comfortably repay within your budget. This prevents financial strain and maintains your ability to meet other financial obligations.",
+          "isCorrect": true
+        },
+        {
+          "id": "max",
+          "label": "Use maximum available credit",
+          "reflection": "Using maximum credit increases your debt burden and financial risk. Responsible credit usage involves keeping balances manageable and within your ability to repay comfortably.",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "label": "Use credit for impulse purchases",
+          "reflection": "Impulse purchases with credit can quickly lead to unmanageable debt. Credit should be used for planned expenses that fit within your financial capacity and repayment timeline.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore monthly payment amounts",
+          "reflection": "Ignoring payment amounts can lead to missed payments and financial difficulties. Understanding and budgeting for monthly payments is essential for responsible credit management.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What is the true cost of credit?",
+      "options": [
+        {
+          "id": "principal",
+          "label": "Just the amount borrowed",
+          "reflection": "The true cost of credit includes not just the principal amount but also interest charges, fees, and potential impacts on your financial opportunities. Understanding the total cost is crucial for informed decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "free",
+          "label": "Credit is free if paid on time",
+          "reflection": "Even when paid on time, credit typically involves interest charges or fees. 'Free' credit is rare, and even promotional offers often come with conditions or future costs.",
+          "isCorrect": false
+        },
+        {
+          "id": "opportunity",
+          "label": "Opportunity to spend more",
+          "reflection": "While credit can increase your spending power, this is not the 'cost' but rather a feature. The actual cost is financial - the money you must repay plus interest and fees.",
+          "isCorrect": false
+        },
+        {
+          "id": "total",
+          "label": "Principal plus interest and fees",
+          "reflection": "Exactly! The true cost of credit includes the principal amount borrowed plus interest charges, fees, and any other associated costs. This total cost should be considered when deciding whether to use credit.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}

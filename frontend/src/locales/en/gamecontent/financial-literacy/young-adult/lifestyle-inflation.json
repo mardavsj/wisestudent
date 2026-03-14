@@ -1,0 +1,176 @@
+{
+  "title": "Lifestyle Inflation",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Lifestyle Inflation",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Lifestyle inflation awareness",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you enjoy income increases while preventing lifestyle inflation?",
+    "What systems can you put in place to automatically save a portion of income increases?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "As income increases, what should change first?",
+      "options": [
+        {
+          "id": "spending",
+          "label": "Spending immediately",
+          "reflection": "Increasing spending immediately with income growth leads to lifestyle inflation, which can trap young earners in a cycle of living paycheck to paycheck.",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "label": "Savings and goals first",
+          "reflection": "Exactly! Prioritizing savings and goals when income increases helps build wealth and prevents lifestyle inflation from taking hold.",
+          "isCorrect": true
+        },
+        {
+          "id": "luxury",
+          "label": "Upgrade to luxury items",
+          "reflection": "Upgrading to luxury items immediately when income increases is a classic sign of lifestyle inflation, which can lead to financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "status",
+          "label": "Change status symbols (car, house, etc.)",
+          "reflection": "Changing status symbols with income increases often leads to higher expenses that can trap you in lifestyle inflation.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 2,
+      "prompt": "What happens when you increase spending as income grows?",
+      "options": [
+        {
+          "id": "inflation",
+          "label": "Lifestyle inflation occurs gradually",
+          "reflection": "Exactly! Lifestyle inflation happens gradually as people adjust their spending to match their income increases, often without realizing it.",
+          "isCorrect": true
+        },
+        {
+          "id": "security",
+          "label": "Financial security improves automatically",
+          "reflection": "Simply increasing spending with income doesn't improve financial security. Without intentional saving, you may end up with the same financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "wealth",
+          "label": "Wealth builds faster",
+          "reflection": "Increasing spending with income actually works against wealth building. More money spent means less money saved and invested.",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "label": "More financial freedom is achieved",
+          "reflection": "Paradoxically, increasing spending with income often reduces financial freedom by creating higher expenses that require more income to maintain.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 3,
+      "prompt": "What's the best approach to handle a raise or promotion?",
+      "options": [
+        {
+          "id": "celebrate",
+          "label": "Celebrate first with a big purchase",
+          "reflection": "Celebrating with a big purchase immediately after a raise can start the slippery slope of lifestyle inflation.",
+          "isCorrect": false
+        },
+        {
+          "id": "upgrade",
+          "label": "Upgrade your lifestyle immediately",
+          "reflection": "Upgrading your lifestyle immediately after a raise is a classic trigger for lifestyle inflation, which can trap young earners.",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "label": "Match your spending to peers with similar income",
+          "reflection": "Matching peer spending can lead to unnecessary expenses and accelerate lifestyle inflation rather than building financial security.",
+          "isCorrect": false
+        },
+        {
+          "id": "automate",
+          "label": "Automate increased savings before spending",
+          "reflection": "Perfect! Automating increased savings first ensures that your new income builds wealth rather than funding lifestyle inflation.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 4,
+      "prompt": "How does lifestyle inflation affect your financial future?",
+      "options": [
+        {
+          "id": "benefits",
+          "label": "It provides more benefits than drawbacks",
+          "reflection": "Lifestyle inflation has significant drawbacks, including reduced savings, higher financial stress, and less flexibility in life choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "wealth",
+          "label": "It accelerates wealth building",
+          "reflection": "Lifestyle inflation actually works against wealth building by directing increased income toward consumption rather than investment.",
+          "isCorrect": false
+        },
+        {
+          "id": "traps",
+          "label": "Lifestyle inflation traps young earners",
+          "reflection": "Exactly! Lifestyle inflation creates a cycle where increased income leads to increased spending, trapping earners in a pattern that prevents wealth building.",
+          "isCorrect": true
+        },
+        {
+          "id": "freedom",
+          "label": "It increases financial freedom",
+          "reflection": "Lifestyle inflation typically decreases financial freedom by creating higher expenses that require more income to maintain, reducing flexibility.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    },
+    {
+      "id": 5,
+      "prompt": "What strategy prevents lifestyle inflation?",
+      "options": [
+        {
+          "id": "delay",
+          "label": "Delay gratification for major purchases",
+          "reflection": "While delaying gratification helps, the most effective strategy is to automatically direct income increases toward savings.",
+          "isCorrect": false
+        },
+        {
+          "id": "percent",
+          "label": "Save a percentage of any income increase",
+          "reflection": "Perfect! Saving a percentage of any income increase is a proven strategy to prevent lifestyle inflation and build long-term wealth.",
+          "isCorrect": true
+        },
+        {
+          "id": "compare",
+          "label": "Compare your lifestyle to others",
+          "reflection": "Comparing your lifestyle to others often leads to lifestyle inflation as you try to match or exceed others' spending patterns.",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "label": "Spend your income increase on wants",
+          "reflection": "Spending income increases on wants is the definition of lifestyle inflation, which traps young earners in a cycle of living paycheck to paycheck.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 5
+    }
+  ]
+}

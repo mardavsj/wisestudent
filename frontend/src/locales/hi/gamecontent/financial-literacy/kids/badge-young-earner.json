@@ -2,6 +2,8 @@
     "title": "बैज: युवा कमाने वाला",
     "subtitleComplete": "बैज अर्जित किया!",
     "subtitleProgress": "चुनौती {{current}} में से {{total}}",
+    "scoreLabel": "स्कोर: {{score}}/{{total}}",
+    "coinsLabel": "कॉइन्स",
     "resultGreatEmoji": "🏆",
     "resultGreatTitle": "युवा कमाने वाला बैज अर्जित किया!",
     "resultGreatDescription": "आपने {{total}} चुनौतियों में से {{score}} स्मार्ट कमाई निर्णय लिए!",

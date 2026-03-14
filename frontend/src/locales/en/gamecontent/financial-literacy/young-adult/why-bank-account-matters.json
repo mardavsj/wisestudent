@@ -1,0 +1,176 @@
+{
+  "title": "Why a Bank Account Matters",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Banking Fundamentals",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Banking fundamentals mastery",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can bank accounts actually increase your financial freedom and opportunities rather than just adding complexity?",
+    "What specific banking features align best with your current financial goals and lifestyle needs?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Why is having a bank account important?",
+      "options": [
+        {
+          "id": "salary",
+          "label": "Only for salary deposits",
+          "reflection": "While salary deposit is one function, bank accounts provide much broader financial benefits and security features.",
+          "isCorrect": false
+        },
+        {
+          "id": "foundation",
+          "label": "For safety, records, and access to services",
+          "reflection": "Exactly! Bank accounts provide security, transaction history, and gateway to essential financial services and opportunities.",
+          "isCorrect": true
+        },
+        {
+          "id": "status",
+          "label": "Shows financial status to others",
+          "reflection": "While bank accounts can indicate financial engagement, their primary value lies in practical benefits rather than social signaling.",
+          "isCorrect": false
+        },
+        {
+          "id": "convenience",
+          "label": "Just for ATM withdrawals",
+          "reflection": "ATM access is one feature, but bank accounts offer comprehensive financial management tools beyond simple cash access.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "What's the main security benefit of bank accounts?",
+      "options": [
+        {
+          "id": "insurance",
+          "label": "Government deposit insurance",
+          "reflection": "Perfect! FDIC/NCUA insurance protects deposits up to $250,000, providing security that cash or informal storage cannot match.",
+          "isCorrect": true
+        },
+        {
+          "id": "password",
+          "label": "Password protection online",
+          "reflection": "While passwords help, the fundamental security comes from institutional protection and regulatory oversight of deposits.",
+          "isCorrect": false
+        },
+        {
+          "id": "location",
+          "label": "Physical bank location security",
+          "reflection": "Branch security is relevant but secondary to the systemic protections and insurance that safeguard deposited funds.",
+          "isCorrect": false
+        },
+        {
+          "id": "cards",
+          "label": "Secure debit card transactions",
+          "reflection": "Card security is valuable but represents just one aspect of the comprehensive protection offered by insured banking institutions.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "How do bank accounts facilitate financial growth?",
+      "options": [
+        {
+          "id": "spending",
+          "label": "Enable easier spending",
+          "reflection": "While convenient spending is possible, bank accounts more importantly enable saving, investing, and building financial security.",
+          "isCorrect": false
+        },
+        {
+          "id": "fees",
+          "label": "Charge fees for premium features",
+          "reflection": "Fees are costs rather than growth facilitators - the real value lies in accessing services that build financial capability and wealth.",
+          "isCorrect": false
+        },
+        {
+          "id": "marketing",
+          "label": "Receive targeted financial offers",
+          "reflection": "Marketing offers may provide some value but don't represent the core growth potential of established banking relationships.",
+          "isCorrect": false
+        },
+        {
+          "id": "services",
+          "label": "Provide access to financial services",
+          "reflection": "Exactly! Bank accounts unlock credit building, investment opportunities, and advanced financial products that drive long-term growth.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "What record-keeping advantage do banks provide?",
+      "options": [
+        {
+          "id": "apps",
+          "label": "Mobile banking apps",
+          "reflection": "Apps provide access but the fundamental value is in the comprehensive, auditable transaction history they display.",
+          "isCorrect": false
+        },
+        {
+          "id": "alerts",
+          "label": "Fraud alert notifications",
+          "reflection": "Alerts are protective but the core record-keeping value lies in maintaining complete, organized financial transaction history.",
+          "isCorrect": false
+        },
+        {
+          "id": "statements",
+          "label": "Automatic transaction statements",
+          "reflection": "Perfect! Detailed, organized records help track spending, prepare taxes, and maintain financial awareness automatically.",
+          "isCorrect": true
+        },
+        {
+          "id": "branches",
+          "label": "Physical branch locations",
+          "reflection": "Branch access provides service options but doesn't directly contribute to the systematic record-keeping benefits of banking.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "How do bank accounts impact financial inclusion?",
+      "options": [
+        {
+          "id": "exclusion",
+          "label": "Create barriers for some people",
+          "reflection": "While access challenges exist, bank accounts generally expand rather than restrict financial participation and opportunities.",
+          "isCorrect": false
+        },
+        {
+          "id": "inclusion",
+          "label": "Open doors to economic participation",
+          "reflection": "Exactly! Bank accounts enable payroll participation, credit building, and access to the formal economy essential for financial stability.",
+          "isCorrect": true
+        },
+        {
+          "id": "complexity",
+          "label": "Make finances more complicated",
+          "reflection": "Banking adds structure rather than complexity - it provides frameworks that simplify rather than complicate financial management.",
+          "isCorrect": false
+        },
+        {
+          "id": "cost",
+          "label": "Require expensive minimum balances",
+          "reflection": "While some accounts have requirements, many low-cost or no-minimum options exist, and the benefits typically outweigh costs.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

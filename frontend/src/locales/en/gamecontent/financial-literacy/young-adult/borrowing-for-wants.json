@@ -1,0 +1,176 @@
+{
+  "title": "Borrowing for Wants",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Debt Decisions",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Responsible borrowing judgment",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can delayed gratification actually increase your long-term satisfaction and financial security?",
+    "What systems can you create to enjoy wants responsibly without creating financial stress?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Is it okay to borrow for wants?",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Yes, borrowing enables lifestyle",
+          "reflection": "Borrowing for wants creates debt obligations that can limit future financial freedom and opportunities.",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "label": "No, it creates unnecessary stress",
+          "reflection": "Exactly! Wants should be funded by current income rather than creating long-term financial obligations.",
+          "isCorrect": true
+        },
+        {
+          "id": "sometimes",
+          "label": "Sometimes when deals are good",
+          "reflection": "Even attractive deals create debt obligations that compound over time and reduce financial flexibility.",
+          "isCorrect": false
+        },
+        {
+          "id": "investment",
+          "label": "Yes, if it's an investment",
+          "reflection": "True investments increase future earning potential - lifestyle wants typically depreciate rather than appreciate.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "What's the real cost of borrowing for wants?",
+      "options": [
+        {
+          "id": "interest",
+          "label": "Just the interest charges",
+          "reflection": "Interest is only part of the cost - borrowing also creates psychological stress and limits future financial choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "flexibility",
+          "label": "Loss of financial flexibility",
+          "reflection": "Reduced flexibility is a major consequence, but the opportunity cost of foregone goals is often more significant.",
+          "isCorrect": false
+        },
+        {
+          "id": "credit",
+          "label": "Damage to credit score",
+          "reflection": "While credit impact matters, the fundamental issue is creating obligations for non-essential purchases.",
+          "isCorrect": false
+        },
+        {
+          "id": "opportunity",
+          "label": "Opportunity cost of other goals",
+          "reflection": "Perfect! Money spent on want repayments could fund education, travel, or emergency savings instead.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "How should you handle want cravings with limited money?",
+      "options": [
+        {
+          "id": "borrow",
+          "label": "Borrow to satisfy immediately",
+          "reflection": "Immediate satisfaction through borrowing creates long-term financial burden that outweighs temporary pleasure.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore all wants completely",
+          "reflection": "Complete denial can create resentment and doesn't address the underlying need for reasonable enjoyment.",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "label": "Save up and buy when affordable",
+          "reflection": "Exactly! Saving builds patience and ensures purchases are truly valued rather than impulse-driven.",
+          "isCorrect": true
+        },
+        {
+          "id": "alternatives",
+          "label": "Find free or cheaper alternatives",
+          "reflection": "While resourceful, alternatives may not provide the genuine satisfaction that makes certain wants worthwhile.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "What's the psychological impact of want-based debt?",
+      "options": [
+        {
+          "id": "freedom",
+          "label": "Increases financial freedom",
+          "reflection": "Want-based debt actually reduces freedom by creating ongoing obligations and limiting future choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "stress",
+          "label": "Creates ongoing mental stress",
+          "reflection": "Exactly! Debt for non-essentials creates persistent anxiety about repayment and financial security.",
+          "isCorrect": true
+        },
+        {
+          "id": "motivation",
+          "label": "Motivates harder work",
+          "reflection": "While debt might motivate some, it more commonly creates stress that impedes rather than enhances productivity.",
+          "isCorrect": false
+        },
+        {
+          "id": "normal",
+          "label": "Becomes normal spending behavior",
+          "reflection": "Normalization of debt for wants creates unhealthy financial habits that compound over time.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "How can you distinguish needs from wants when borrowing?",
+      "options": [
+        {
+          "id": "essential",
+          "label": "Essential survival and obligations only",
+          "reflection": "Perfect! Needs are objectively necessary for health, shelter, and meeting existing commitments.",
+          "isCorrect": true
+        },
+        {
+          "id": "urgent",
+          "label": "Anything that feels urgent",
+          "reflection": "Urgency often reflects emotion rather than necessity - true needs relate to survival and basic functioning.",
+          "isCorrect": false
+        },
+        {
+          "id": "future",
+          "label": "Investments in future happiness",
+          "reflection": "Future happiness investments should increase capability or earning potential rather than just provide temporary pleasure.",
+          "isCorrect": false
+        },
+        {
+          "id": "social",
+          "label": "Keeping up with social expectations",
+          "reflection": "Social expectations often promote spending beyond means and create financial stress rather than genuine fulfillment.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

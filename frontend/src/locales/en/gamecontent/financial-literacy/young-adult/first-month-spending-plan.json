@@ -1,0 +1,177 @@
+{
+  "title": "First Month Spending Plan",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "First Month",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Budget-first mindset",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can planning prevent financial regrets in your first month?",
+    "What balance between saving and spending feels sustainable for you?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "What should you do before spending your first income?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "spend",
+          "label": "Spend first, plan later",
+          "reflection": "While spontaneous spending might feel liberating, it often leads to regret and financial stress when bills arrive.",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "label": "List expenses and savings first",
+          "reflection": "Exactly! Planning before spending ensures your income covers necessities while building financial security.",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "label": "Save everything and spend nothing",
+          "reflection": "While saving is important, completely avoiding spending can lead to feeling deprived and missing reasonable opportunities.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore planning and wing it",
+          "reflection": "Flying blind with your finances often results in missed payments, late fees, and unnecessary financial anxiety.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Which approach to budgeting works best for beginners?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "detailed",
+          "label": "Create a detailed budget with specific categories",
+          "reflection": "Perfect! Detailed budgets help you understand exactly where your money goes and prevent overspending.",
+          "isCorrect": true
+        },
+        {
+          "id": "rough",
+          "label": "Make a rough estimate in your head",
+          "reflection": "Mental estimates often lead to miscalculations and can cause you to overlook important expenses.",
+          "isCorrect": false
+        },
+        {
+          "id": "apps",
+          "label": "Rely solely on budgeting apps",
+          "reflection": "While apps are helpful tools, understanding your own budget first builds better financial intuition.",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "label": "Budgeting is too complicated for me",
+          "reflection": "Basic budgeting is simpler than it seems and prevents the complexity that comes from financial disorganization.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "What's the most important category to prioritize?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "wants",
+          "label": "Things that would be nice to have",
+          "reflection": "Wants are important for quality of life, but they should come after ensuring your essential needs are met.",
+          "isCorrect": false
+        },
+        {
+          "id": "fun",
+          "label": "Entertainment and social activities",
+          "reflection": "While fun is valuable, prioritizing entertainment over essentials can lead to difficult financial situations.",
+          "isCorrect": false
+        },
+        {
+          "id": "luxury",
+          "label": "Luxury items and premium services",
+          "reflection": "Luxury purchases should only come after establishing a solid financial foundation with needs consistently covered.",
+          "isCorrect": false
+        },
+        {
+          "id": "needs",
+          "label": "Essential needs like rent, food, and utilities",
+          "reflection": "Exactly! Needs come first to ensure your basic living requirements are covered before discretionary spending.",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "How much should you aim to save from your first income?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "nothing",
+          "label": "Save nothing until I have extra",
+          "reflection": "Waiting to save often means never starting, as 'extra' money rarely materializes without intentional allocation.",
+          "isCorrect": false
+        },
+        {
+          "id": "half",
+          "label": "Save half of everything I earn",
+          "reflection": "While aggressive saving has benefits, saving half may be unrealistic and lead to feeling overly restricted.",
+          "isCorrect": false
+        },
+        {
+          "id": "percentage",
+          "label": "At least 10-20% of your income",
+          "reflection": "Excellent! This percentage builds an emergency fund while still allowing you to enjoy your earnings responsibly.",
+          "isCorrect": true
+        },
+        {
+          "id": "later",
+          "label": "Start saving after I get a raise",
+          "reflection": "Delaying savings formation often means missing the opportunity to build good financial habits early.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "What habit prevents first-month financial mistakes?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "forget",
+          "label": "Forget about money until something goes wrong",
+          "reflection": "Ignoring your finances until problems arise often means dealing with preventable stress and penalties.",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "label": "Track spending daily and adjust as needed",
+          "reflection": "Perfect! Daily tracking creates awareness and allows you to course-correct before small issues become big problems.",
+          "isCorrect": true
+        },
+        {
+          "id": "strict",
+          "label": "Follow the budget perfectly without exceptions",
+          "reflection": "While discipline is important, rigid adherence without flexibility can lead to resentment and eventual abandonment.",
+          "isCorrect": false
+        },
+        {
+          "id": "monthly",
+          "label": "Review finances once a month",
+          "reflection": "Monthly reviews are helpful, but waiting a full month can mean missing opportunities to prevent problems early.",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}
+

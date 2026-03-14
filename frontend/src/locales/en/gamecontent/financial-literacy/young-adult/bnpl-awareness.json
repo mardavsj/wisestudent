@@ -1,0 +1,176 @@
+{
+  "title": "BNPL Awareness",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "BNPL Awareness",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "BNPL responsibility",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you use BNPL strategically without falling into the debt trap?",
+    "What systems can you put in place to track BNPL obligations effectively?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You're buying a ₹5,000 phone online and see a 'Buy Now Pay Later' option. What does BNPL actually represent?",
+      "options": [
+        {
+          "id": "free-money",
+          "label": "Free money to spend without immediate cost",
+          "reflection": "BNPL is not free money - it's borrowed money that must be repaid, often with interest or fees.",
+          "isCorrect": false
+        },
+        {
+          "id": "instant-purchase",
+          "label": "Instant purchase with no financial obligations",
+          "reflection": "BNPL creates financial obligations - you must repay the amount within the specified timeframe.",
+          "isCorrect": false
+        },
+        {
+          "id": "credit-card",
+          "label": "Same as a credit card with no interest",
+          "reflection": "BNPL can be interest-free if paid on time, but late payments can result in fees and impact your credit score.",
+          "isCorrect": false
+        },
+        {
+          "id": "deferred-payment",
+          "label": "Deferred payment that must be repaid on schedule",
+          "reflection": "Exactly! BNPL is essentially a short-term loan that requires repayment according to the agreed schedule.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "When does Buy Now Pay Later work best for your financial situation?",
+      "options": [
+        {
+          "id": "frequent-use",
+          "label": "Used frequently for all purchases",
+          "reflection": "Frequent use of BNPL can lead to overspending and accumulating multiple payment obligations that become difficult to manage.",
+          "isCorrect": false
+        },
+        {
+          "id": "rare-understanding",
+          "label": "Used rarely with full understanding",
+          "reflection": "Correct! BNPL should be used strategically with clear understanding of the repayment terms and only for planned purchases.",
+          "isCorrect": true
+        },
+        {
+          "id": "impulse-shopping",
+          "label": "Used for impulse shopping to avoid cash payments",
+          "reflection": "Using BNPL for impulse purchases can lead to financial stress and debt accumulation when you don't have the funds to repay.",
+          "isCorrect": false
+        },
+        {
+          "id": "monthly-subscription",
+          "label": "Used as a monthly subscription service",
+          "reflection": "BNPL is meant for individual purchases, not ongoing subscription services - that's what credit cards or direct debits are for.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "What's the hidden risk of using multiple BNPL services simultaneously?",
+      "options": [
+        {
+          "id": "no-risk",
+          "label": "There's no risk if you're organized",
+          "reflection": "Multiple BNPL obligations can become overwhelming even with good organization, leading to missed payments and fees.",
+          "isCorrect": false
+        },
+        {
+          "id": "convenience",
+          "label": "It's more convenient than using one payment method",
+          "reflection": "While convenient, the scattered nature of multiple BNPL services can make it harder to track and manage your total obligations.",
+          "isCorrect": false
+        },
+        {
+          "id": "debt-accumulation",
+          "label": "It can quietly accumulate debt across platforms",
+          "reflection": "Exactly! Multiple BNPL services can create scattered debt obligations that are easy to lose track of, leading to missed payments.",
+          "isCorrect": true
+        },
+        {
+          "id": "credit-score",
+          "label": "It improves your credit score automatically",
+          "reflection": "BNPL services don't necessarily report to credit bureaus, so they may not help build your credit score as effectively as traditional credit.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What happens if you miss a BNPL payment deadline?",
+      "options": [
+        {
+          "id": "fees-penalties",
+          "label": "You face late fees and potential credit impact",
+          "reflection": "Correct! Missed BNPL payments can result in significant fees, interest charges, and negative reporting to credit bureaus.",
+          "isCorrect": true
+        },
+        {
+          "id": "no-consequences",
+          "label": "Nothing happens - it's very flexible",
+          "reflection": "BNPL services have strict payment deadlines, and missing them can result in late fees, interest charges, and damage to your credit score.",
+          "isCorrect": false
+        },
+        {
+          "id": "extension",
+          "label": "You automatically get an extension",
+          "reflection": "Extensions are not automatic and usually require contacting the service provider, often with additional fees or conditions.",
+          "isCorrect": false
+        },
+        {
+          "id": "reminder",
+          "label": "You just get a friendly reminder",
+          "reflection": "While reminders are sent, they don't prevent the consequences of missed payments, which can be severe.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What's the best practice for managing BNPL responsibly?",
+      "options": [
+        {
+          "id": "multiple-services",
+          "label": "Use multiple BNPL services for different purchases",
+          "reflection": "Using multiple services increases complexity and the risk of missing payments or accumulating unmanageable debt.",
+          "isCorrect": false
+        },
+        {
+          "id": "single-service",
+          "label": "Use one BNPL service and track payments carefully",
+          "reflection": "Excellent! Using one service makes it easier to track your obligations and avoid the complexity of managing multiple payment schedules.",
+          "isCorrect": true
+        },
+        {
+          "id": "automatic-payments",
+          "label": "Set up automatic payments to avoid thinking about it",
+          "reflection": "While automatic payments can help, you should still monitor your BNPL usage to ensure you're not overspending.",
+          "isCorrect": false
+        },
+        {
+          "id": "minimum-payments",
+          "label": "Make minimum payments and worry about the rest later",
+          "reflection": "BNPL typically requires full payment by the deadline - there's no minimum payment option like with credit cards.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}

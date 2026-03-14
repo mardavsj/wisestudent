@@ -1,0 +1,176 @@
+{
+  "title": "Digital Money Checkpoint",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Digital Finance Safety",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Digital money safety mastery",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can systematic digital money safety practices actually increase your financial freedom rather than restrict your transaction flexibility?",
+    "What personal security protocols help you use digital money confidently while maintaining the convenience that makes digital transactions valuable?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "What's the first rule of digital money safety?",
+      "options": [
+        {
+          "id": "protection",
+          "label": "Never share login credentials",
+          "reflection": "Exactly! Your login information is the key to your digital finances - sharing it compromises all your accounts and financial security.",
+          "isCorrect": true
+        },
+        {
+          "id": "convenience",
+          "label": "Use whatever is most convenient",
+          "reflection": "Convenience shouldn't override security - responsible digital money usage requires prioritizing protection over ease of access.",
+          "isCorrect": false
+        },
+        {
+          "id": "multitasking",
+          "label": "Manage multiple accounts simultaneously",
+          "reflection": "Multitasking increases error risk rather than security - focused, careful management of each transaction is safer than juggling multiple platforms.",
+          "isCorrect": false
+        },
+        {
+          "id": "public",
+          "label": "Use public computers when needed",
+          "reflection": "Public devices create security vulnerabilities through keyloggers and session hijacking - personal secured devices are essential for financial activities.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "How should you verify digital payment requests?",
+      "options": [
+        {
+          "id": "immediate",
+          "label": "Act immediately on all requests",
+          "reflection": "Urgent pressure often indicates scams - legitimate requests allow reasonable time for verification and don't create artificial time constraints.",
+          "isCorrect": false
+        },
+        {
+          "id": "small",
+          "label": "Send small test amounts first",
+          "reflection": "Test amounts still represent real money loss and don't prevent larger fraud - proper verification eliminates risk entirely rather than minimizing potential losses.",
+          "isCorrect": false
+        },
+        {
+          "id": "verify",
+          "label": "Confirm through official channels",
+          "reflection": "Perfect! Always verify payment requests by contacting the supposed sender through known, official communication methods rather than replying to messages.",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore all unsolicited requests",
+          "reflection": "While ignoring unknown requests is wise, legitimate requests from known contacts still require verification to prevent account compromise scenarios.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 3,
+      "prompt": "What's essential for secure digital transactions?",
+      "options": [
+        {
+          "id": "speed",
+          "label": "Complete transactions quickly",
+          "reflection": "Rushing increases error likelihood - taking time to verify details, check balances, and confirm recipients prevents costly mistakes and fraud.",
+          "isCorrect": false
+        },
+        {
+          "id": "doublecheck",
+          "label": "Double-check recipient and amount",
+          "reflection": "Exactly! Verifying recipient details and amounts prevents irreversible transfer errors and ensures funds reach intended destinations accurately.",
+          "isCorrect": true
+        },
+        {
+          "id": "autopilot",
+          "label": "Use saved payment templates",
+          "reflection": "Templates speed processes but bypass verification steps - manual confirmation for each transaction catches errors that automation might miss.",
+          "isCorrect": false
+        },
+        {
+          "id": "multiple",
+          "label": "Use multiple payment methods",
+          "reflection": "Multiple methods increase complexity without enhancing security - focused use of secure, verified payment channels with proper checks is more effective.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 4,
+      "prompt": "How should you protect your digital wallet?",
+      "options": [
+        {
+          "id": "simple",
+          "label": "Use simple, easy-to-remember PINs",
+          "reflection": "Simple PINs are easily guessed or cracked - strong, unique authentication methods provide necessary protection for financial access points.",
+          "isCorrect": false
+        },
+        {
+          "id": "shared",
+          "label": "Share access with family members",
+          "reflection": "Shared access increases security risks and removes accountability - individual secure access ensures proper oversight and reduces fraud opportunities.",
+          "isCorrect": false
+        },
+        {
+          "id": "default",
+          "label": "Keep default security settings",
+          "reflection": "Default settings often provide minimal protection - customized security configurations tailored to your needs offer stronger defense against threats.",
+          "isCorrect": false
+        },
+        {
+          "id": "secure",
+          "label": "Enable biometric authentication",
+          "reflection": "Exactly! Biometric security (fingerprint, face recognition) combined with strong PINs creates multiple layers of protection against unauthorized access.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 5,
+      "prompt": "What's the best practice for transaction monitoring?",
+      "options": [
+        {
+          "id": "ignore",
+          "label": "Trust the system completely",
+          "reflection": "Blind trust ignores potential errors and fraud - active monitoring catches unauthorized transactions and system glitches that could impact your finances.",
+          "isCorrect": false
+        },
+        {
+          "id": "monitor",
+          "label": "Review transactions regularly",
+          "reflection": "Exactly! Regular monitoring helps detect unauthorized activities quickly, track spending patterns, and identify billing errors before they become major issues.",
+          "isCorrect": true
+        },
+        {
+          "id": "annual",
+          "label": "Check statements annually",
+          "reflection": "Annual reviews miss timely opportunities to address fraud and errors - frequent monitoring enables rapid response and minimizes financial damage.",
+          "isCorrect": false
+        },
+        {
+          "id": "notifications",
+          "label": "Rely solely on notifications",
+          "reflection": "Notifications help but aren't comprehensive - proactive review catches issues that automated alerts might miss and provides complete financial oversight.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}

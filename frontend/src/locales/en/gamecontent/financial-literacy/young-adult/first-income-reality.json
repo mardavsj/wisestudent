@@ -1,0 +1,177 @@
+{
+  "title": "First Income Reality",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "First Income",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Responsible income mindset",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you balance freedom and responsibility when you first earn money?",
+    "Which priorities should you protect before spending on wants?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You just received your stipend/salary. What does this income represent?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "free",
+          "label": "Free money to spend however I like",
+          "reflection": "While it might feel like free money, it's important to remember that income comes from work and should be managed responsibly.",
+          "isCorrect": false
+        },
+        {
+          "id": "responsibility",
+          "label": "A responsibility to manage wisely",
+          "reflection": "Exactly! Treating income as a responsibility helps build good financial habits for life.",
+          "isCorrect": true
+        },
+        {
+          "id": "opportunity",
+          "label": "An opportunity to invest in my future",
+          "reflection": "Smart thinking! Every income is an opportunity to build wealth through investing and saving.",
+          "isCorrect": false
+        },
+        {
+          "id": "luxury",
+          "label": "Money for luxury and status items",
+          "reflection": "Focusing on luxury items can lead to poor financial habits and debt accumulation.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Do you treat this income as only for wants or for building a habit?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "habit",
+          "label": "Treat it as the first step to a savings habit",
+          "reflection": "Great approach! Building a savings habit early sets the foundation for long-term financial security.",
+          "isCorrect": true
+        },
+        {
+          "id": "wants",
+          "label": "I earned it - buy whatever I feel like",
+          "reflection": "While it's understandable to want to enjoy your earnings, impulsive spending can lead to financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "celebrate",
+          "label": "Celebrate first, then think about saving",
+          "reflection": "While celebrating is nice, it's important to prioritize financial planning before indulgence.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore the importance of financial planning",
+          "reflection": "Ignoring financial planning can lead to unpreparedness for future needs and emergencies.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Which plan makes the most sense on payday?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "all",
+          "label": "Spend all to celebrate and worry later",
+          "reflection": "While celebrations are important, spending everything can lead to financial difficulties.",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "label": "Spend randomly without any planning",
+          "reflection": "Random spending without planning can lead to overspending and financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "label": "Pay off debts first, then plan spending",
+          "reflection": "Paying off debts is important, but having a balanced plan for needs and savings is also crucial.",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "label": "Cover needs, automate savings, then allocate fun money",
+          "reflection": "Perfect! This approach ensures your needs are met while building financial security.",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "A family or school deadline coincides with a minor want. What do you choose?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "want",
+          "label": "Give in now - stress makes you value the treat",
+          "reflection": "While treats can provide temporary relief, responsibilities should take priority.",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "label": "Try to do both simultaneously",
+          "reflection": "Attempting to do both can lead to poor performance in both areas and increased stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "deadline",
+          "label": "Handle responsibilities first, postpone the want",
+          "reflection": "Excellent! Prioritizing responsibilities over wants shows financial maturity.",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid both and do something else",
+          "reflection": "Avoiding responsibilities can lead to bigger problems later.",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Which reminder keeps this first income meaningful?",
+      "reward": 5,
+      "options": [
+        {
+          "id": "privacy",
+          "label": "Keep a log of spending and review weekly",
+          "reflection": "Perfect! Tracking spending builds awareness and helps prevent surprise expenses.",
+          "isCorrect": true
+        },
+        {
+          "id": "just",
+          "label": "Spend without thinking - you deserve it",
+          "reflection": "While you do deserve rewards, mindful spending prevents future financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "label": "Compare my spending to others",
+          "reflection": "Comparing spending to others can lead to unnecessary purchases and financial pressure.",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "label": "Make impulse purchases regularly",
+          "reflection": "Regular impulse purchases can quickly deplete your income and build poor financial habits.",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}
+
