@@ -1,0 +1,54 @@
+{
+  "title": "शांति पर प्रश्नोत्तरी",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "subtitleComplete": "प्रश्नोत्तरी पूरी हुई!",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तनाव को क्या कम करता है?",
+      "options": [
+        { "id": "a", "text": "गहरी सांस लेना", "emoji": "🌬️", "isCorrect": true },
+        { "id": "b", "text": "चिल्लाना", "emoji": "😡", "isCorrect": false },
+        { "id": "c", "text": "चिंता करना", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "कौन सी गतिविधि आपको शांत महसूस करने में मदद करती है?",
+      "options": [
+        { "id": "b", "text": "बहुत गुस्सा होना", "emoji": "😡", "isCorrect": false },
+        { "id": "a", "text": "धीरे-धीरे, गहरी सांसें लेना", "emoji": "🧘", "isCorrect": true },
+        { "id": "c", "text": "हर बात पर घबराना", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "जब आप तनाव महसूस करते हैं तो क्या मदद करता है?",
+      "options": [
+        { "id": "b", "text": "बिना आराम किए लगातार काम करना", "emoji": "⚡", "isCorrect": false },
+        { "id": "c", "text": "लगातार चिंता करना", "emoji": "😰", "isCorrect": false },
+        { "id": "a", "text": "ब्रेक लेना और गहरी सांस लेना", "emoji": "⏸️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "मुश्किल समय में आप शांत कैसे रह सकते हैं?",
+      "options": [
+        { "id": "a", "text": "गहरी सांस लेने का अभ्यास करें और व्यवस्थित रहें", "emoji": "🧘", "isCorrect": true },
+        { "id": "b", "text": "बहुत परेशान होना और चिल्लाना", "emoji": "😡", "isCorrect": false },
+        { "id": "c", "text": "हर बात पर घबरा जाना", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तनाव कम करने का सबसे अच्छा तरीका क्या है?",
+      "options": [
+        { "id": "b", "text": "सब पर चिल्लाना", "emoji": "😡", "isCorrect": false },
+        { "id": "a", "text": "गहरी सांस लेने के व्यायाम और ब्रेक लेना", "emoji": "🌬️", "isCorrect": true },
+        { "id": "c", "text": "हर समय चिंता करना", "emoji": "😰", "isCorrect": false }
+      ]
+    }
+  ]
+}

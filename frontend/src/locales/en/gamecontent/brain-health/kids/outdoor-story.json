@@ -1,0 +1,53 @@
+{
+  "title": "Outdoor Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Friend asks to play football, but you're on phone. Best choice?",
+      "options": [
+        { "id": "football", "text": "Play football", "emoji": "⚽", "isCorrect": true },
+        { "id": "phone", "text": "Keep using phone", "emoji": "📱", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore friend", "emoji": "😑", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Friends invite you to park, you're gaming. Best?",
+      "options": [
+        { "id": "gaming", "text": "Game more", "emoji": "🎮", "isCorrect": false },
+        { "id": "park", "text": "Go to park", "emoji": "🌳", "isCorrect": true },
+        { "id": "indoors", "text": "Stay indoors", "emoji": "🏠", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Cousin wants to bike, you're watching videos. Best?",
+      "options": [
+        { "id": "videos", "text": "Watch videos", "emoji": "📹", "isCorrect": false },
+        { "id": "no", "text": "Say no", "emoji": "❌", "isCorrect": false },
+        { "id": "bike", "text": "Ride bike", "emoji": "🚴", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Team needs you for game, you're scrolling. Best?",
+      "options": [
+        { "id": "team", "text": "Join team", "emoji": "👥", "isCorrect": true },
+        { "id": "scroll", "text": "Keep scrolling", "emoji": "📱", "isCorrect": false },
+        { "id": "skip", "text": "Skip game", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Friend suggests hide and seek, you're on tablet. Best?",
+      "options": [
+        { "id": "tablet", "text": "Stay on tablet", "emoji": "📱", "isCorrect": false },
+        { "id": "dont", "text": "Don't play", "emoji": "😑", "isCorrect": false },
+        { "id": "play", "text": "Play hide and seek", "emoji": "🔍", "isCorrect": true }
+      ]
+    }
+  ]
+}

@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const EmotionKidBadge = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-50");
   const gameId = gameData?.id || "brain-kids-50";
+
+  const gameContent = t("brain-health.kids.emotion-kid-badge", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,143 +31,7 @@ const EmotionKidBadge = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Identifying Happiness",
-      question: "Which feeling is happiness?",
-      options: [
-        { 
-          text: "Feeling joyful and smiling", 
-          emoji: "😊", 
-          isCorrect: true
-        },
-        { 
-          text: "Feeling sad and crying", 
-          emoji: "😢", 
-          isCorrect: false
-        },
-        { 
-          text: "Feeling angry and frowning", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          text: "Feeling scared and hiding", 
-          emoji: "😨", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Identifying Sadness",
-      question: "Which feeling is sadness?",
-      options: [
-        { 
-          text: "Feeling happy and laughing", 
-          emoji: "😄", 
-          isCorrect: false
-        },
-        { 
-          text: "Feeling excited and jumping", 
-          emoji: "🎉", 
-          isCorrect: false
-        },
-        { 
-          text: "Feeling down and teary", 
-          emoji: "😢", 
-          isCorrect: true
-        },
-        { 
-          text: "Feeling proud and confident", 
-          emoji: "😎", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Identifying Anger",
-      question: "Which feeling is anger?",
-      options: [
-        { 
-          text: "Feeling calm and peaceful", 
-          emoji: "😌", 
-          isCorrect: false
-        },
-        { 
-          text: "Feeling mad and frustrated", 
-          emoji: "😠", 
-          isCorrect: true
-        },
-        { 
-          text: "Feeling happy and cheerful", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        { 
-          text: "Feeling surprised and shocked", 
-          emoji: "😲", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Identifying Fear",
-      question: "Which feeling is fear?",
-      options: [
-        { 
-          text: "Feeling scared and worried", 
-          emoji: "😨", 
-          isCorrect: true
-        },
-        { 
-          text: "Feeling brave and strong", 
-          emoji: "💪", 
-          isCorrect: false
-        },
-        { 
-          text: "Feeling happy and joyful", 
-          emoji: "😊", 
-          isCorrect: false
-        },
-        { 
-          text: "Feeling calm and relaxed", 
-          emoji: "😌", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Identifying Excitement",
-      question: "Which feeling is excitement?",
-      options: [
-        { 
-          text: "Feeling bored and tired", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Feeling calm and quiet", 
-          emoji: "😌", 
-          isCorrect: false
-        },
-        { 
-          text: "Feeling thrilled and energetic", 
-          emoji: "🎉", 
-          isCorrect: true
-        },
-        { 
-          text: "Feeling sad and gloomy", 
-          emoji: "😢", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleAnswer = (isCorrect) => {
     if (answered) return;
@@ -202,8 +70,16 @@ const EmotionKidBadge = () => {
 
   return (
     <GameShell
-      title="Badge: Emotion Kid"
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      title={gameContent?.title || "Badge: Emotion Kid"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("brain-health.kids.emotion-kid-badge.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       score={score}
       currentLevel={challenge + 1}
       totalLevels={challenges.length}
@@ -226,8 +102,20 @@ const EmotionKidBadge = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20">
               {/* Header - Stack on mobile, horizontal on larger screens */}
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mb-4 sm:mb-5 md:mb-6">
-                <span className="text-white/80 text-xs sm:text-sm md:text-base">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold text-xs sm:text-sm md:text-base">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80 text-xs sm:text-sm md:text-base">
+                  {t("brain-health.kids.emotion-kid-badge.challengeLabel", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1}/${challenges.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold text-xs sm:text-sm md:text-base">
+                  {t("brain-health.kids.emotion-kid-badge.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+                </span>
               </div>
               
               {/* Challenge title and question - Centered */}
@@ -270,34 +158,49 @@ const EmotionKidBadge = () => {
             {score >= 3 ? (
               <div>
                 <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4">🏆</div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">Emotion Kid Badge Earned!</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
+                  {gameContent?.success?.header || "Emotion Kid Badge Earned!"}
+                </h3>
                 <p className="text-white/90 text-sm sm:text-base md:text-lg mb-3 sm:mb-4 px-2">
-                  You got {score} out of {challenges.length} challenges correct!
-                  You're a true Emotion Kid expert!
+                  {t("brain-health.kids.emotion-kid-badge.success.feedback", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct! You're a true Emotion Kid expert!`,
+                  })}
                 </p>
                 <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-full inline-flex items-center gap-2 mb-3 sm:mb-4 text-sm sm:text-base">
-                  <span>+{score} Coins</span>
+                  <span>
+                    {t("brain-health.kids.emotion-kid-badge.success.coins", {
+                      score,
+                      defaultValue: `+${score} Coins`,
+                    })}
+                  </span>
                 </div>
                 <p className="text-white/80 text-xs sm:text-sm md:text-base px-2">
-                  Lesson: You can identify different feelings like happiness, sadness, anger, fear, and excitement!
+                  {gameContent?.success?.lesson || "Lesson: You can identify different feelings like happiness, sadness, anger, fear, and excitement!"}
                 </p>
               </div>
             ) : (
               <div>
                 <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4">💪</div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">Keep Learning!</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
+                  {gameContent?.failure?.header || "Keep Learning!"}
+                </h3>
                 <p className="text-white/90 text-sm sm:text-base md:text-lg mb-3 sm:mb-4 px-2">
-                  You got {score} out of {challenges.length} challenges correct.
-                  Practice makes perfect with identifying feelings!
+                  {t("brain-health.kids.emotion-kid-badge.failure.feedback", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `You got ${score} out of ${challenges.length} challenges correct. Practice makes perfect with identifying feelings!`,
+                  })}
                 </p>
                 <button
                   onClick={handleTryAgain}
                   className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 active:scale-95 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-full font-bold transition-all mb-3 sm:mb-4 text-sm sm:text-base"
                 >
-                  Try Again
+                  {gameContent?.failure?.button || "Try Again"}
                 </button>
                 <p className="text-white/80 text-xs sm:text-sm px-2">
-                  Tip: Pay attention to facial expressions and body language to identify different feelings!
+                  {gameContent?.failure?.tip || "Tip: Pay attention to facial expressions and body language to identify different feelings!"}
                 </p>
               </div>
             )}

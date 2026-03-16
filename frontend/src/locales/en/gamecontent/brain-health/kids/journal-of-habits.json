@@ -1,0 +1,47 @@
+{
+  "title": "Journal of Habits",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "subtitleComplete": "Journal Complete!",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "journalHeader": "Journal Entry",
+  "tipLabel": "Tip",
+  "placeholder": "Write your journal entry here...",
+  "minLengthNeeded": "Minimum {{min}} characters ({{needed}} more needed)",
+  "minLengthReached": "✓ Minimum length reached",
+  "charCountLabel": "{{count}} characters",
+  "submitBtn": "Submit Entry",
+  "submittedBtn": "Submitted!",
+  "stages": [
+    { 
+      "id": 1, 
+      "prompt": "Write: \"One habit that keeps my brain strong is ___.\"", 
+      "minLength": 10,
+      "guidance": "Think about activities that help you learn, concentrate, or feel mentally sharp."
+    },
+    { 
+      "id": 2, 
+      "prompt": "Describe a time when you felt your brain was working really well. What were you doing?", 
+      "minLength": 10,
+      "guidance": "Consider activities like reading, solving puzzles, or learning something new."
+    },
+    { 
+      "id": 3, 
+      "prompt": "What is one thing you could change to help your brain stay healthy?", 
+      "minLength": 10,
+      "guidance": "Think about sleep, diet, exercise, or learning activities."
+    },
+    { 
+      "id": 4, 
+      "prompt": "Write about your favorite way to relax and how it helps your brain.", 
+      "minLength": 10,
+      "guidance": "Consider activities like reading, drawing, listening to music, or spending time in nature."
+    },
+    { 
+      "id": 5, 
+      "prompt": "What new brain-healthy habit would you like to try this week?", 
+      "minLength": 10,
+      "guidance": "Choose something specific and achievable, like drinking more water or reading for 15 minutes daily."
+    }
+  ]
+}

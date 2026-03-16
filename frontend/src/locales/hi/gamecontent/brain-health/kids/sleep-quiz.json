@@ -1,0 +1,129 @@
+{
+  "title": "नींद पर प्रश्नोत्तरी",
+  "subtitleDefault": "प्रश्नोत्तरी पूर्ण!",
+  "subtitlePlaying": "प्रश्न {{current}} का {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "बच्चों को कितने घंटे सोना चाहिए? ",
+      "options": [
+        { 
+          "id": "b", 
+          "text": " 8-10 घंटे", 
+          "emoji": "😴", 
+          "isCorrect": true
+        },
+        { 
+          "id": "a", 
+          "text": " 4 घंटे", 
+          "emoji": "😴", 
+          "isCorrect": false
+        },
+        { 
+          "id": "c", 
+          "text": " 12+ घंटे", 
+          "emoji": "😴", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "बच्चों के लिए सबसे अच्छा सोने का समय? ",
+      "options": [
+        { 
+          "id": "a", 
+          "text": " आधी रात", 
+          "emoji": "🌙", 
+          "isCorrect": false
+        },
+        { 
+          "id": "b", 
+          "text": " रात 9-10 बजे", 
+          "emoji": "🌙", 
+          "isCorrect": true
+        },
+        { 
+          "id": "c", 
+          "text": " रात 2 बजे", 
+          "emoji": "🌙", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "क्या सोने में मदद करता है? ",
+      "options": [
+        { 
+          "id": "c", 
+          "text": " तेज़ संगीत", 
+          "emoji": "🔊", 
+          "isCorrect": false
+        },
+        { 
+          "id": "a", 
+          "text": " स्क्रीन टाइम", 
+          "emoji": "📱", 
+          "isCorrect": false
+        },
+        { 
+          "id": "b", 
+          "text": " शांत दिनचर्या", 
+          "emoji": "🧘", 
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "नींद के लिए क्या अच्छा है? ",
+      "options": [
+        { 
+          "id": "b", 
+          "text": " गरम दूध", 
+          "emoji": "🥛", 
+          "isCorrect": true
+        },
+        { 
+          "id": "a", 
+          "text": " कैफीन", 
+          "emoji": "☕", 
+          "isCorrect": false
+        },
+        { 
+          "id": "c", 
+          "text": " गेम खेलना", 
+          "emoji": "🎮", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "नींद मदद करती है? ",
+      "options": [
+        { 
+          "id": "c", 
+          "text": " तनाव में", 
+          "emoji": "😰", 
+          "isCorrect": false
+        },
+        { 
+          "id": "a", 
+          "text": " ध्यान केंद्रित करने में", 
+          "emoji": "🎯", 
+          "isCorrect": true
+        },
+        { 
+          "id": "b", 
+          "text": " थकान में", 
+          "emoji": "😴", 
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

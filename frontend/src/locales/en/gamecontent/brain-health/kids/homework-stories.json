@@ -1,0 +1,54 @@
+{
+  "title": "Homework Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Kid watches cartoon instead of homework. Best?",
+      "options": [
+        { "id": "homework", "text": "Do homework first", "emoji": "📚", "isCorrect": true },
+        { "id": "watch", "text": "Watch more", "emoji": "📺", "isCorrect": false },
+        { "id": "skip", "text": "Skip homework", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Kid plays games, ignores math homework. Best?",
+      "options": [
+        { "id": "watch", "text": "Play longer", "emoji": "🎮", "isCorrect": false },
+        { "id": "homework", "text": "Finish math first", "emoji": "📐", "isCorrect": true },
+        { "id": "skip", "text": "No math", "emoji": "❌", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Kid scrolls phone, skips reading. Best choice?",
+      "options": [
+        { "id": "skip", "text": "No reading", "emoji": "❌", "isCorrect": false },
+        { "id": "scroll", "text": "Scroll more", "emoji": "📱", "isCorrect": false },
+        { "id": "read", "text": "Read first", "emoji": "📖", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Kid watches videos, forgets project. Best?",
+      "options": [
+        { "id": "project", "text": "Work on project", "emoji": "📝", "isCorrect": true },
+        { "id": "videos", "text": "Watch videos", "emoji": "📹", "isCorrect": false },
+        { "id": "skip", "text": "Skip project", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Kid chats online, no study time. Best?",
+      "options": [
+        { "id": "chat", "text": "Chat more", "emoji": "💬", "isCorrect": false },
+        { "id": "skip", "text": "No study", "emoji": "❌", "isCorrect": false },
+        { "id": "study", "text": "Study first", "emoji": "📖", "isCorrect": true }
+      ]
+    }
+  ]
+}

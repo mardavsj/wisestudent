@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -10,10 +11,13 @@ const ROUND_TIME = 10;
 
 const ReflexQuickCalm = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-39");
   const gameId = gameData?.id || "brain-kids-39";
+  
+  const gameContent = t("brain-health.kids.reflex-quick-calm", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -63,161 +67,7 @@ const ReflexQuickCalm = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      text: "Which action helps you stay calm?",
-      options: [
-        { 
-          id: "smile", 
-          text: "Smile", 
-          emoji: "😊", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "yell", 
-          text: "Yell", 
-          emoji: "😡", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "panic", 
-          text: "Panic", 
-          emoji: "😱", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "rush", 
-          text: "Rush around", 
-          emoji: "🏃", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What helps you relax when stressed?",
-      options: [
-        { 
-          id: "worry", 
-          text: "Worry more", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "breathe", 
-          text: "Breathe deeply", 
-          emoji: "🌬️", 
-          isCorrect: true
-        },
-        { 
-          id: "scream", 
-          text: "Scream", 
-          emoji: "😱", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore it", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Which is a calm way to handle anger?",
-      options: [
-        { 
-          id: "hit", 
-          text: "Hit something", 
-          emoji: "👊", 
-          isCorrect: false
-        },
-        { 
-          id: "blame", 
-          text: "Blame others", 
-          emoji: "👆", 
-          isCorrect: false
-        },
-        { 
-          id: "count", 
-          text: "Count to 10", 
-          emoji: "🔢", 
-          isCorrect: true
-        },
-        { 
-          id: "cry", 
-          text: "Cry and give up", 
-          emoji: "😢", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What helps you feel peaceful?",
-      options: [
-        { 
-          id: "argue", 
-          text: "Argue", 
-          emoji: "😤", 
-          isCorrect: false
-        },
-        { 
-          id: "complain", 
-          text: "Complain", 
-          emoji: "😒", 
-          isCorrect: false
-        },
-        { 
-          id: "stress", 
-          text: "Stress out", 
-          emoji: "😓", 
-          isCorrect: false
-        },
-        { 
-          id: "relax", 
-          text: "Relax and rest", 
-          emoji: "🧘", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Which action keeps you calm?",
-      options: [
-        { 
-          id: "negative", 
-          text: "Think negative thoughts", 
-          emoji: "💔", 
-          isCorrect: false
-        },
-        { 
-          id: "positive", 
-          text: "Think positive thoughts", 
-          emoji: "✨", 
-          isCorrect: true
-        },
-        { 
-          id: "avoid", 
-          text: "Avoid the problem", 
-          emoji: "🏃", 
-          isCorrect: false
-        },
-        { 
-          id: "overthink", 
-          text: "Overthink everything", 
-          emoji: "🤯", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -318,7 +168,7 @@ const ReflexQuickCalm = () => {
     resetFeedback();
 
     const isCorrect = option.isCorrect;
-    const isLastQuestion = currentRound === questions.length;
+    const isLastQuestion = currentRound === TOTAL_ROUNDS;
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
@@ -336,29 +186,21 @@ const ReflexQuickCalm = () => {
     }, 500);
   };
 
-  // Log when game completes and update location state with nextGameId
-  useEffect(() => {
-    if (gameState === "finished") {
-      console.log(`🎮 Reflex Quick Calm game completed! Score: ${score}/${questions.length}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
-      
-      // Update location state with nextGameId for GameOverModal
-      if (nextGameId && window.history && window.history.replaceState) {
-        const currentState = window.history.state || {};
-        window.history.replaceState({
-          ...currentState,
-          nextGameId: nextGameId
-        }, '');
-      }
-    }
-  }, [gameState, score, gameId, nextGamePath, nextGameId, questions.length]);
-
   const finalScore = score;
   const currentQuestion = questions[currentRound - 1];
 
   return (
     <GameShell
-      title="Reflex Quick Calm"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your calm reflexes!` : "Test your calm reflexes!"}
+      title={gameContent?.title || "Reflex Quick Calm"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.reflex-quick-calm.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your calm reflexes!`
+            }) 
+          : gameContent?.subtitleDefault || "Test your calm reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -380,18 +222,24 @@ const ReflexQuickCalm = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🧘</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Calm Skills?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Ready to Test Your Calm Skills?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Identify calming actions and stress management techniques.
+              {gameContent?.readyDescription || "Identify calming actions and stress management techniques."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.reflex-quick-calm.readyInstruction", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -400,13 +248,13 @@ const ReflexQuickCalm = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round"}:</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time"}:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score"}:</span> {score}
               </div>
             </div>
 

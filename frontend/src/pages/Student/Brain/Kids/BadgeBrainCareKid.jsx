@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BadgeBrainCareKid = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-10");
   const gameId = gameData?.id || "brain-kids-10";
+  
+  const gameContent = t("brain-health.kids.badge-brain-care-kid", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,143 +31,7 @@ const BadgeBrainCareKid = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Brain Health Challenge 1",
-      question: "What is the best way to keep your brain healthy?",
-      options: [
-        { 
-          text: "Eat healthy, exercise, and sleep well", 
-          emoji: "🙂‍↔️", 
-          isCorrect: true
-        },
-        { 
-          text: "Only play video games", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          text: "Skip meals and stay up late", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid all physical activity", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Brain Health Challenge 2",
-      question: "Which activity helps your brain the most?",
-      options: [
-        { 
-          text: "Watching TV all day", 
-          emoji: "📺", 
-          isCorrect: false
-        },
-        { 
-          text: "Reading, learning, and staying active", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          text: "Eating only junk food", 
-          emoji: "🍟", 
-          isCorrect: false
-        },
-        { 
-          text: "Never drinking water", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Brain Health Challenge 3",
-      question: "What should you do for better brain function?",
-      options: [
-        { 
-          text: "Drink lots of soda", 
-          emoji: "🥤", 
-          isCorrect: false
-        },
-        { 
-          text: "Skip breakfast daily", 
-          emoji: "🍳", 
-          isCorrect: false
-        },
-        { 
-          text: "Drink water, eat healthy, and exercise", 
-          emoji: "💧", 
-          isCorrect: true
-        },
-        { 
-          text: "Stay up very late", 
-          emoji: "🌙", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Brain Health Challenge 4",
-      question: "How can you improve your focus?",
-      options: [
-        { 
-          text: "Practice focusing, take breaks, and stay organized", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-        { 
-          text: "Never take breaks", 
-          emoji: "⏰", 
-          isCorrect: false
-        },
-        { 
-          text: "Always multitask", 
-          emoji: "📱", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid learning new things", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Brain Health Challenge 5",
-      question: "What makes a brain-healthy daily routine?",
-      options: [
-        { 
-          text: "Regular sleep, healthy meals, and mental activities", 
-          emoji: "🧠", 
-          isCorrect: true
-        },
-        { 
-          text: "Irregular sleep schedule", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Only eat snacks", 
-          emoji: "🍪", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid all exercise", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -193,9 +61,17 @@ const BadgeBrainCareKid = () => {
 
   return (
     <GameShell
-      title="Badge: Brain Care Kid"
+      title={gameContent?.title || "Badge: Brain Care Kid"}
       score={score}
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("brain-health.kids.badge-brain-care-kid.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -216,8 +92,20 @@ const BadgeBrainCareKid = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.badge-brain-care-kid.subtitleProgress", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1}/${challenges.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.badge-brain-care-kid.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{currentChallengeData.title}</h3>

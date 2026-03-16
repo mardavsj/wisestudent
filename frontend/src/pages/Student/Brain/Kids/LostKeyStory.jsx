@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const LostKeyStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-81");
   const gameId = gameData?.id || "brain-kids-81";
+
+  const gameContent = t("brain-health.kids.lost-key-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,129 +30,7 @@ const LostKeyStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Kid loses classroom key. Best action?",
-      options: [
-        { 
-          id: "tell", 
-          text: "Tell teacher & find solution", 
-          emoji: "👨‍🏫", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "hide", 
-          text: "Hide and don't tell anyone", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          id: "panic", 
-          text: "Panic and cry", 
-          emoji: "😰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Lost homework assignment. What should you do?",
-      options: [
-        { 
-          id: "ignore", 
-          text: "Ignore it", 
-          emoji: "😑", 
-          isCorrect: false
-        },
-        { 
-          id: "tell2", 
-          text: "Tell teacher & ask for help", 
-          emoji: "🙋", 
-          isCorrect: true
-        },
-        { 
-          id: "blame", 
-          text: "Blame someone else", 
-          emoji: "👆", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Forgot lunch money. Best solution?",
-      options: [
-        { 
-          id: "skip", 
-          text: "Skip lunch", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          id: "steal", 
-          text: "Take from someone", 
-          emoji: "👀", 
-          isCorrect: false
-        },
-        { 
-          id: "ask3", 
-          text: "Tell teacher & find solution", 
-          emoji: "💬", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Lost library book. What's the right action?",
-      options: [
-        { 
-          id: "tell4", 
-          text: "Tell librarian & search together", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          id: "lie", 
-          text: "Lie about it", 
-          emoji: "🤥", 
-          isCorrect: false
-        },
-        { 
-          id: "avoid", 
-          text: "Avoid the library", 
-          emoji: "🚶", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Lost friend's pencil. Best approach?",
-      options: [
-        { 
-          id: "deny", 
-          text: "Deny it", 
-          emoji: "🙅", 
-          isCorrect: false
-        },
-        { 
-          id: "tell5", 
-          text: "Tell friend & find solution", 
-          emoji: "🤝", 
-          isCorrect: true
-        },
-        { 
-          id: "ignore5", 
-          text: "Ignore it", 
-          emoji: "😐", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -177,8 +59,16 @@ const LostKeyStory = () => {
 
   return (
     <GameShell
-      title="Lost Key Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Lost Key Story"}
+      subtitle={
+        !showResult
+          ? t("brain-health.kids.lost-key-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+          : gameContent?.subtitleComplete || "Story Complete!"
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -200,8 +90,20 @@ const LostKeyStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.lost-key-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.lost-key-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

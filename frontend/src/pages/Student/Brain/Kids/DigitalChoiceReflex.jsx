@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -10,10 +11,13 @@ const ROUND_TIME = 10;
 
 const DigitalChoiceReflex = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-73");
   const gameId = gameData?.id || "brain-kids-73";
+  
+  const gameContent = t("brain-health.kids.digital-choice-reflex", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -33,63 +37,7 @@ const DigitalChoiceReflex = () => {
   const [answered, setAnswered] = useState(false);
   const timerRef = useRef(null);
 
-  const questions = [
-    {
-      id: 1,
-      question: "Which digital activity shows good balance?",
-      correctAnswer: "Playing outdoors with friends",
-      options: [
-        { text: "Playing video games all night", isCorrect: false, emoji: "🎮" },
-        { text: "Scrolling social media endlessly", isCorrect: false, emoji: "📱" },
-        { text: "Playing outdoors with friends", isCorrect: true, emoji: "🌳" },
-        { text: "Watching videos for hours", isCorrect: false, emoji: "📺" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What demonstrates healthy screen time habits?",
-      correctAnswer: "Setting time limits for devices",
-      options: [
-        { text: "Using devices during meals", isCorrect: false, emoji: "🍽️" },
-        { text: "Setting time limits for devices", isCorrect: true, emoji: "⏰" },
-        { text: "Playing games instead of homework", isCorrect: false, emoji: "📚" },
-        { text: "Using screens right before bed", isCorrect: false, emoji: "😴" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Which approach shows digital wellness?",
-      correctAnswer: "Balancing online and offline activities",
-      options: [
-        { text: "Spending all free time online", isCorrect: false, emoji: "💻" },
-        { text: "Ignoring device usage time", isCorrect: false, emoji: "⏱️" },
-        { text: "Balancing online and offline activities", isCorrect: true, emoji: "⚖️" },
-        { text: "Using screens during family time", isCorrect: false, emoji: "👪" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What is a sign of healthy digital habits?",
-      correctAnswer: "Taking regular breaks from screens",
-      options: [
-        { text: "Multitasking on multiple devices", isCorrect: false, emoji: "🔄" },
-        { text: "Using devices during conversations", isCorrect: false, emoji: "💬" },
-        { text: "Keeping devices on at all times", isCorrect: false, emoji: "🔛" },
-        { text: "Taking regular breaks from screens", isCorrect: true, emoji: "⏸️" },
-      ]
-    },
-    {
-      id: 5,
-      question: "Which behavior shows digital balance?",
-      correctAnswer: "Prioritizing sleep over late-night browsing",
-      options: [
-        { text: "Prioritizing sleep over late-night browsing", isCorrect: true, emoji: "😴" },
-        { text: "Checking notifications constantly", isCorrect: false, emoji: "🔔" },
-        { text: "Sharing personal info freely online", isCorrect: false, emoji: "🔓" },
-        { text: "Ignoring online safety rules", isCorrect: false, emoji: "⚠️" }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   // Handle time up - move to next question or show results
   const handleTimeUp = useCallback(() => {
@@ -207,8 +155,16 @@ const DigitalChoiceReflex = () => {
 
   return (
     <GameShell
-      title="Reflex Digital Choice"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your digital wellness reflexes!` : "Test your digital wellness reflexes!"}
+      title={gameContent?.title || "Reflex Digital Choice"}
+      subtitle={
+        gameState === "playing"
+          ? t("brain-health.kids.digital-choice-reflex.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your digital wellness reflexes!`,
+            })
+          : gameContent?.subtitleReady || "Test your digital wellness reflexes!"
+      }
       score={score}
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
@@ -229,18 +185,24 @@ const DigitalChoiceReflex = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">📱</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Digital Wellness Skills?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.ready?.header || "Ready to Test Your Digital Wellness Skills?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Answer questions about healthy digital habits and screen time management.
+              {gameContent?.ready?.description || "Answer questions about healthy digital habits and screen time management."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.digital-choice-reflex.ready.details", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`,
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.ready?.button || "Start Game"}
             </button>
           </div>
         )}
@@ -249,13 +211,13 @@ const DigitalChoiceReflex = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round:"}</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time:"}</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score:"}</span> {score}
               </div>
             </div>
 
@@ -283,18 +245,24 @@ const DigitalChoiceReflex = () => {
         {gameState === "finished" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">📱</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.finished?.header || "Great Job!"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              You scored {score} out of {TOTAL_ROUNDS}!
+              {t("brain-health.kids.digital-choice-reflex.finished.score", {
+                score,
+                total: TOTAL_ROUNDS,
+                defaultValue: `You scored ${score} out of ${TOTAL_ROUNDS}!`,
+              })}
             </p>
             <p className="text-white/80 mb-6">
-              You're developing strong digital wellness habits!
+              {gameContent?.finished?.feedback || "You're developing strong digital wellness habits!"}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
             >
-              Play Again
+              {gameContent?.finished?.button || "Play Again"}
             </button>
           </div>
         )}

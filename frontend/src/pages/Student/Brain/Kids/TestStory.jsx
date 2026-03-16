@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const TestStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-95");
   const gameId = gameData?.id || "brain-kids-95";
+  
+  const gameContent = t("brain-health.kids.test-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,133 +30,7 @@ const TestStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Kid fails spelling test. Best response?",
-      options: [
-        
-        { 
-          id: "give", 
-          text: "Give up on spelling", 
-          emoji: "🏳️", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "study", 
-          text: "Study and try again", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          id: "blame", 
-          text: "Blame the test", 
-          emoji: "👆", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Kid gets low score on math. What should they do?",
-      options: [
-       
-        { 
-          id: "quit", 
-          text: "Quit math class", 
-          emoji: "🚶", 
-          isCorrect: false
-        },
-        { 
-          id: "cry", 
-          text: "Cry and give up", 
-          emoji: "😢", 
-          isCorrect: false
-        },
-         { 
-          id: "practice", 
-          text: "Practice more and retake", 
-          emoji: "✏️", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "Kid fails science quiz. Best approach?",
-      options: [
-        
-        { 
-          id: "ignore", 
-          text: "Ignore the result", 
-          emoji: "😑", 
-          isCorrect: false
-        },
-        { 
-          id: "review", 
-          text: "Review mistakes and study", 
-          emoji: "🔬", 
-          isCorrect: true
-        },
-        { 
-          id: "angry", 
-          text: "Get angry at teacher", 
-          emoji: "😠", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Kid doesn't pass reading test. What's right?",
-      options: [
-        
-        { 
-          id: "stop", 
-          text: "Stop reading", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          id: "blame4", 
-          text: "Blame the book", 
-          emoji: "📚", 
-          isCorrect: false
-        },
-        { 
-          id: "read", 
-          text: "Read more and practice", 
-          emoji: "📖", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "Kid fails history exam. Best action?",
-      options: [
-        { 
-          id: "learn", 
-          text: "Study harder and retake", 
-          emoji: "📜", 
-          isCorrect: true
-        },
-        { 
-          id: "avoid", 
-          text: "Avoid history class", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          id: "complain", 
-          text: "Complain about it", 
-          emoji: "😤", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -181,8 +59,16 @@ const TestStory = () => {
 
   return (
     <GameShell
-      title="Test Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Test Story"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Story Complete!"
+          : t("brain-health.kids.test-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -204,8 +90,20 @@ const TestStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.test-story.subtitleProgress", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.test-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

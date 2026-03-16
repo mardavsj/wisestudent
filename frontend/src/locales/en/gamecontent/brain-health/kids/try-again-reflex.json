@@ -1,0 +1,65 @@
+{
+  "title": "Reflex Try Again",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your resilience reflexes!",
+  "subtitleDefault": "Test your resilience reflexes!",
+  "getReady": "Get Ready!",
+  "description": "Identify resilient actions!",
+  "timerInfo": "You have {{seconds}} seconds for each question.",
+  "roundInfo": "You have {{rounds}} questions with {{seconds}} seconds each!",
+  "startGame": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "text": "A young bakery helper accidentally drops the cake batter. What should they do?",
+      "options": [
+        { "id": "a", "text": "Start Over", "emoji": "🍰", "isCorrect": true },
+        { "id": "b", "text": "Leave it", "emoji": "🛑", "isCorrect": false },
+        { "id": "c", "text": "Blame someone else", "emoji": "👀", "isCorrect": false },
+        { "id": "d", "text": "Ignore and go play", "emoji": "⚽", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "A junior gardener's first plant dies. What shows resilience?",
+      "options": [
+        { "id": "b", "text": "Leave the garden", "emoji": "🚪", "isCorrect": false },
+        { "id": "c", "text": "Sit and sulk", "emoji": "😞", "isCorrect": false },
+        { "id": "d", "text": "Blame the sun", "emoji": "☀️", "isCorrect": false },
+        { "id": "a", "text": "Try planting again", "emoji": "🌱", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "A young coder's program fails. What is the resilient choice?",
+      "options": [
+        { "id": "b", "text": "Delete the whole file", "emoji": "🗑️", "isCorrect": false },
+        { "id": "a", "text": "Keep debugging", "emoji": "💻", "isCorrect": true },
+        { "id": "c", "text": "Walk away frustrated", "emoji": "🚶", "isCorrect": false },
+        { "id": "d", "text": "Copy from someone else", "emoji": "📄", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "A young athlete misses a goal in practice. What should they do?",
+      "options": [
+        { "id": "b", "text": "Give up", "emoji": "❌", "isCorrect": false },
+        { "id": "c", "text": "Complain about the coach", "emoji": "🗣️", "isCorrect": false },
+        { "id": "a", "text": "Practice again", "emoji": "🏀", "isCorrect": true },
+        { "id": "d", "text": "Take a long break", "emoji": "🛌", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "A young painter spills paint on their artwork. How do they show resilience?",
+      "options": [
+        { "id": "a", "text": "Paint again and fix it", "emoji": "🎨", "isCorrect": true },
+        { "id": "b", "text": "Throw the painting away", "emoji": "🗑️", "isCorrect": false },
+        { "id": "c", "text": "Cry and leave", "emoji": "😭", "isCorrect": false },
+        { "id": "d", "text": "Blame the brush", "emoji": "🖌️", "isCorrect": false }
+      ]
+    }
+  ]
+}

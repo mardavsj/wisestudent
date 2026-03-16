@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Image } from "lucide-react";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -7,10 +8,13 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const FeelingsMatterPoster = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-46");
   const gameId = gameData?.id || "brain-kids-46";
+
+  const gameContent = t("brain-health.kids.feelings-matter-poster", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,48 +31,7 @@ const FeelingsMatterPoster = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const stages = [
-    {
-      question: 'Which poster best shows "It\'s Okay to Feel"?',
-      choices: [
-        { text: "Poster showing different emotions are normal", correct: true, emoji: "😠" },
-        { text: "Poster showing only happy faces", correct: false, emoji: "😊" },
-        { text: "Poster showing only sad faces", correct: false, emoji: "😢" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Feelings Matter"?',
-      choices: [
-        { text: "Poster showing only objects", correct: false, emoji: "📦" },
-        { text: "Poster showing emotions are important", correct: true, emoji: "❤️" },
-        { text: "Poster showing only games", correct: false, emoji: "🎮" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Express Your Feelings"?',
-      choices: [
-        { text: "Poster showing talking about feelings", correct: true, emoji: "🗣️" },
-        { text: "Poster showing hiding emotions", correct: false, emoji: "🤐" },
-        { text: "Poster showing only silence", correct: false, emoji: "🤫" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "All Emotions Are Valid"?',
-      choices: [
-        { text: "Poster showing only one emotion", correct: false, emoji: "😊" },
-        { text: "Poster showing all feelings are okay", correct: true, emoji: "🌈" },
-        { text: "Poster showing only negative emotions", correct: false, emoji: "😢" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Share Your Feelings"?',
-      choices: [
-        { text: "Poster showing keeping feelings inside", correct: false, emoji: "🔒" },
-        { text: "Poster showing only being alone", correct: false, emoji: "🚶" },
-        { text: "Poster showing talking to trusted adults", correct: true, emoji: "👨‍👩‍👧" }
-      ]
-    }
-  ];
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
 
   const handleSelect = (isCorrect) => {
     if (answered || showResult) return;
@@ -97,8 +60,16 @@ const FeelingsMatterPoster = () => {
 
   return (
     <GameShell
-      title="Poster: Feelings Matter"
-      subtitle={!showResult ? `Question ${currentStage + 1} of ${stages.length}: Choose the best feelings poster!` : "Poster Complete!"}
+      title={gameContent?.title || "Poster: Feelings Matter"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Poster Complete!"
+          : t("brain-health.kids.feelings-matter-poster.subtitleProgress", {
+              current: currentStage + 1,
+              total: stages.length,
+              defaultValue: `Question ${currentStage + 1} of ${stages.length}: Choose the best feelings poster!`,
+            })
+      }
       score={finalScore}
       currentLevel={currentStage + 1}
       totalLevels={stages.length}
@@ -120,14 +91,26 @@ const FeelingsMatterPoster = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentStage + 1}/{stages.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{stages.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.feelings-matter-poster.questionLabel", {
+                    current: currentStage + 1,
+                    total: stages.length,
+                    defaultValue: `Question ${currentStage + 1}/${stages.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.feelings-matter-poster.scoreLabel", {
+                    score,
+                    total: stages.length,
+                    defaultValue: `Score: ${score}/${stages.length}`,
+                  })}
+                </span>
               </div>
               
               <div className="text-center mb-6">
                 <Image className="w-12 h-12 mx-auto mb-4 text-yellow-400" />
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  {stages[currentStage].question}
+                  {stages[currentStage]?.question}
                 </h3>
               </div>
               

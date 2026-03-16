@@ -1,0 +1,54 @@
+{
+  "title": "गिरने की कहानी",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "साइकिल चलाते समय बच्चा गिर जाता है। क्या वे हार मान लें या फिर से कोशिश करें?",
+      "options": [
+        { "id": "try", "text": "फिर से कोशिश करें", "emoji": "🚴", "isCorrect": true },
+        { "id": "quit", "text": "हार मान लें", "emoji": "🏳️", "isCorrect": false },
+        { "id": "cry", "text": "रोएं और रुक जाएं", "emoji": "😢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "बच्चा ड्राइंग में असफल हो जाता है। उन्हें क्या करना चाहिए?",
+      "options": [
+        { "id": "stop", "text": "हमेशा के लिए ड्राइंग बंद कर दें", "emoji": "🛑", "isCorrect": false },
+        { "id": "blame", "text": "कागज कोदोष दें", "emoji": "👆", "isCorrect": false },
+        { "id": "practice", "text": "अभ्यास करें और फिर से कोशिश करें", "emoji": "✏️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "बच्चा गणित की समस्या हल नहीं कर पा रहा है। सबसे अच्छा कार्य?",
+      "options": [
+        { "id": "give", "text": "हार मान लें", "emoji": "😞", "isCorrect": false },
+        { "id": "ask", "text": "मदद मांगें और फिर से कोशिश करें", "emoji": "🙋", "isCorrect": true },
+        { "id": "ignore", "text": "इसे अनदेखा करें", "emoji": "😑", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "बच्चा एक खेल हार जाता है। सही प्रतिक्रिया क्या है?",
+      "options": [
+        { "id": "angry", "text": "गुस्सा हों और हार मान लें", "emoji": "😠", "isCorrect": false },
+        { "id": "blame4", "text": "खेल को दोष दें", "emoji": "👆", "isCorrect": false },
+        { "id": "learn", "text": "इससे सीखें और फिर से कोशिश करें", "emoji": "🎮", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "बच्चा कला में गलती करता है। उन्हें क्या करना चाहिए?",
+      "options": [
+        { "id": "fix", "text": "इसे ठीक करें और बनाना जारी रखें", "emoji": "🎨", "isCorrect": true },
+        { "id": "throw", "text": "इसे फेंक दें", "emoji": "🗑️", "isCorrect": false },
+        { "id": "cry5", "text": "रोएं और रुक जाएं", "emoji": "😭", "isCorrect": false }
+      ]
+    }
+  ]
+}

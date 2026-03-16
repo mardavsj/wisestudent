@@ -1,0 +1,129 @@
+{
+  "title": "हारे हुए खेल की कहानी",
+  "subtitleProgress": "प्रश्न {{current}} - {{total}}",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "बच्चा क्रिकेट में हार जाता है और ईर्ष्या महसूस करता है। क्या करें?",
+      "options": [
+        { 
+          "id": "congratulate", 
+          "text": "दूसरों को बधाई दें", 
+          "emoji": "👏", 
+          "isCorrect": true
+        },
+        { 
+          "id": "mad", 
+          "text": "गुस्सा करें", 
+          "emoji": "😠", 
+          "isCorrect": false
+        },
+        { 
+          "id": "quit", 
+          "text": "खेल छोड़ दें", 
+          "emoji": "🚪", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "दौड़ में हार गया, दुखी महसूस कर रहा है। सबसे अच्छा कार्य?",
+      "options": [
+        { 
+          "id": "run", 
+          "text": "भाग जाएँ", 
+          "emoji": "🏃", 
+          "isCorrect": false
+        },
+        { 
+          "id": "cheer", 
+          "text": "विजेता के लिए खुशी मनाएं", 
+          "emoji": "🎉", 
+          "isCorrect": true
+        },
+        { 
+          "id": "blame", 
+          "text": "ट्रैक को दोष दें", 
+          "emoji": "👆", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "प्रश्नोत्तरी नहीं जीती, बुरा महसूस कर रहा है। क्या करें?",
+      "options": [
+        { 
+          "id": "argue", 
+          "text": "बहस करें", 
+          "emoji": "😤", 
+          "isCorrect": false
+        },
+        { 
+          "id": "ignore", 
+          "text": "सबको अनदेखा करें", 
+          "emoji": "😑", 
+          "isCorrect": false
+        },
+        { 
+          "id": "congratulate", 
+          "text": "विजेता को बधाई दें", 
+          "emoji": "👍", 
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "बोर्ड गेम हार गया, ईर्ष्या महसूस कर रहा है। सबसे अच्छा तरीका?",
+      "options": [
+        { 
+          "id": "smile", 
+          "text": "मुस्कुराएं और ताली बजाएं", 
+          "emoji": "😊", 
+          "isCorrect": true
+        },
+        { 
+          "id": "throw", 
+          "text": "टुकड़े फेंकें", 
+          "emoji": "💥", 
+          "isCorrect": false
+        },
+        { 
+          "id": "leave", 
+          "text": "टेबल से हट जाएँ", 
+          "emoji": "🚶", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "सॉकर में गोल करने से चूक गया, गुस्सा आ रहा है। क्या करें?",
+      "options": [
+        { 
+          "id": "kick", 
+          "text": "गेंद को दूर मारें", 
+          "emoji": "⚽", 
+          "isCorrect": false
+        },
+        { 
+          "id": "yell", 
+          "text": "चिल्लाएँ", 
+          "emoji": "😡", 
+          "isCorrect": false
+        },
+        { 
+          "id": "support", 
+          "text": "साथियों का समर्थन करें", 
+          "emoji": "🤝", 
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

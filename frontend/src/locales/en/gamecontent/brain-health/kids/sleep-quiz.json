@@ -1,0 +1,129 @@
+{
+  "title": "Quiz on Sleep",
+  "subtitleDefault": "Quiz Complete!",
+  "subtitlePlaying": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "How many hours should kids sleep? ",
+      "options": [
+        { 
+          "id": "b", 
+          "text": " 8–10 hours", 
+          "emoji": "😴", 
+          "isCorrect": true
+        },
+        { 
+          "id": "a", 
+          "text": " 4 hours", 
+          "emoji": "😴", 
+          "isCorrect": false
+        },
+        { 
+          "id": "c", 
+          "text": " 12+ hours", 
+          "emoji": "😴", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Best bedtime for kids? ",
+      "options": [
+        { 
+          "id": "a", 
+          "text": " Midnight", 
+          "emoji": "🌙", 
+          "isCorrect": false
+        },
+        { 
+          "id": "b", 
+          "text": " 9–10 PM", 
+          "emoji": "🌙", 
+          "isCorrect": true
+        },
+        { 
+          "id": "c", 
+          "text": " 2 AM", 
+          "emoji": "🌙", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What helps sleep? ",
+      "options": [
+        { 
+          "id": "c", 
+          "text": " Loud music", 
+          "emoji": "🔊", 
+          "isCorrect": false
+        },
+        { 
+          "id": "a", 
+          "text": " Screen time", 
+          "emoji": "📱", 
+          "isCorrect": false
+        },
+        { 
+          "id": "b", 
+          "text": " Quiet routine", 
+          "emoji": "🧘", 
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Good for sleep? ",
+      "options": [
+        { 
+          "id": "b", 
+          "text": " Warm milk", 
+          "emoji": "🥛", 
+          "isCorrect": true
+        },
+        { 
+          "id": "a", 
+          "text": " Caffeine", 
+          "emoji": "☕", 
+          "isCorrect": false
+        },
+        { 
+          "id": "c", 
+          "text": " Gaming", 
+          "emoji": "🎮", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Sleep helps? ",
+      "options": [
+        { 
+          "id": "c", 
+          "text": " Stress", 
+          "emoji": "😰", 
+          "isCorrect": false
+        },
+        { 
+          "id": "a", 
+          "text": " Focus", 
+          "emoji": "🎯", 
+          "isCorrect": true
+        },
+        { 
+          "id": "b", 
+          "text": " Tiredness", 
+          "emoji": "😴", 
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

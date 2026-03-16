@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const FallStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-91");
   const gameId = gameData?.id || "brain-kids-91";
+
+  const gameContent = t("brain-health.kids.fall-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,135 +30,7 @@ const FallStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Kid falls while cycling. Do they quit or try again?",
-      options: [
-        { 
-          id: "try", 
-          text: "Try again", 
-          emoji: "🚴", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "quit", 
-          text: "Quit", 
-          emoji: "🏳️", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "cry", 
-          text: "Cry and stop", 
-          emoji: "😢", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Kid fails at drawing. What should they do?",
-      options: [
-        { 
-          id: "stop", 
-          text: "Stop drawing forever", 
-          emoji: "🛑", 
-          
-          isCorrect: false
-        },
-        
-        { 
-          id: "blame", 
-          text: "Blame the paper", 
-          emoji: "👆", 
-          isCorrect: false
-        },
-        { 
-          id: "practice", 
-          text: "Practice and try again", 
-          emoji: "✏️", 
-          
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "Kid can't solve math problem. Best action?",
-      options: [
-        { 
-          id: "give", 
-          text: "Give up", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          id: "ask", 
-          text: "Ask for help and try again", 
-          emoji: "🙋", 
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore it", 
-          emoji: "😑", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Kid loses a game. What's the right response?",
-      options: [
-       
-        { 
-          id: "angry", 
-          text: "Get angry and quit", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          id: "blame4", 
-          text: "Blame the game", 
-          emoji: "👆", 
-          isCorrect: false
-        },
-         { 
-          id: "learn", 
-          text: "Learn from it and try again", 
-          emoji: "🎮", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "Kid makes mistake in art. What should they do?",
-      options: [
-        { 
-          id: "fix", 
-          text: "Fix it and keep creating", 
-          emoji: "🎨", 
-          isCorrect: true
-        },
-        { 
-          id: "throw", 
-          text: "Throw it away", 
-          emoji: "🗑️", 
-          isCorrect: false
-        },
-        { 
-          id: "cry5", 
-          text: "Cry and stop", 
-          emoji: "😭", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -183,8 +59,16 @@ const FallStory = () => {
 
   return (
     <GameShell
-      title="Fall Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Fall Story"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Story Complete!"
+          : t("brain-health.kids.fall-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -206,8 +90,20 @@ const FallStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.fall-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.fall-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

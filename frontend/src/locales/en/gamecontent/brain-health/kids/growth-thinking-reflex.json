@@ -1,0 +1,65 @@
+{
+  "title": "Reflex Growth Thinking",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your growth mindset reflexes!",
+  "subtitleDefault": "Test your growth mindset reflexes!",
+  "readyTitle": "Get Ready!",
+  "readyText1": "Answer questions about growth thinking!",
+  "readyText2": "You have {{time}} seconds for each question.",
+  "readyText3": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which activity shows a growth mindset?",
+      "options": [
+        { "text": "Giving up easily", "isCorrect": false, "emoji": "🏳️" },
+        { "text": "Blaming others for failures", "isCorrect": false, "emoji": "😠" },
+        { "text": "Learning from mistakes", "isCorrect": true, "emoji": "📚" },
+        { "text": "Avoiding challenges", "isCorrect": false, "emoji": "🛡️" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What demonstrates growth thinking?",
+      "options": [
+        { "text": "Staying at beginner level", "isCorrect": false, "emoji": "👶" },
+        { "text": "Making excuses for poor performance", "isCorrect": false, "emoji": "🙂" },
+        { "text": "Comparing yourself to others", "isCorrect": false, "emoji": "👥" },
+        { "text": "Practicing to improve skills", "isCorrect": true, "emoji": "💪" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which approach shows growth mindset?",
+      "options": [
+        { "text": "Embracing difficult challenges", "isCorrect": true, "emoji": "🧗" },
+        { "text": "Sticking to easy tasks", "isCorrect": false, "emoji": "😊" },
+        { "text": "Quitting when it gets hard", "isCorrect": false, "emoji": "😞" },
+        { "text": "Ignoring feedback", "isCorrect": false, "emoji": "🙉" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is a sign of growth thinking?",
+      "options": [
+        { "text": "Believing talent is fixed", "isCorrect": false, "emoji": "🧱" },
+        { "text": "Viewing effort as a path to mastery", "isCorrect": true, "emoji": "📈" },
+        { "text": "Avoiding hard work", "isCorrect": false, "emoji": "😴" },
+        { "text": "Feeling threatened by others' success", "isCorrect": false, "emoji": "😒" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which behavior shows growth mindset?",
+      "options": [
+        { "text": "Giving up after failure", "isCorrect": false, "emoji": "🏳️" },
+        { "text": "Staying in comfort zone", "isCorrect": false, "emoji": "🛋️" },
+        { "text": "Persisting through setbacks", "isCorrect": true, "emoji": "🦾" },
+        { "text": "Ignoring constructive criticism", "isCorrect": false, "emoji": "🙉" }
+      ]
+    }
+  ]
+}

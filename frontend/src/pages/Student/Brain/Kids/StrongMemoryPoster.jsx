@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const StrongMemoryPoster = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-26");
   const gameId = gameData?.id || "brain-kids-26";
+  
+  const gameContent = t("brain-health.kids.strong-memory-poster", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,48 +30,7 @@ const StrongMemoryPoster = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const stages = [
-    {
-      question: 'Which poster would best show "Practice = Memory"?',
-      choices: [
-        { text: "Poster showing daily practice and repetition 🔁", correct: true },
-        { text: "Poster showing someone sleeping all day 😴", correct: false },
-        { text: "Poster showing someone avoiding practice 🚫", correct: false },
-      ],
-    },
-    {
-      question: 'Which poster would best show "Repeat to Remember"?',
-      choices: [
-        { text: "Poster showing someone reading once 📖", correct: false },
-        { text: "Poster showing repeated learning and practice 🔁", correct: true },
-        { text: "Poster showing someone forgetting everything 😵", correct: false },
-      ],
-    },
-    {
-      question: 'Which poster would best show "Memory Gets Stronger with Practice"?',
-      choices: [
-        { text: "Poster showing no practice at all 🚫", correct: false },
-        { text: "Poster showing daily practice and improvement 📈", correct: true },
-        { text: "Poster showing someone giving up 😔", correct: false },
-      ],
-    },
-    {
-      question: 'Which poster would best show "Review Helps Memory"?',
-      choices: [
-        { text: "Poster showing someone reviewing lessons 📚", correct: true },
-        { text: "Poster showing someone ignoring lessons 🙈", correct: false },
-        { text: "Poster showing someone never studying 🎮", correct: false },
-      ],
-    },
-    {
-      question: 'Which poster would best show "Strong Memory Through Repetition"?',
-      choices: [
-        { text: "Poster showing repeated practice and learning 🔁", correct: true },
-        { text: "Poster showing someone learning once and stopping ⏸️", correct: false },
-        { text: "Poster showing someone avoiding all learning 🚫", correct: false },
-      ],
-    },
-  ];
+  const stages = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -96,9 +59,17 @@ const StrongMemoryPoster = () => {
 
   return (
     <GameShell
-      title="Poster: Strong Memory"
+      title={gameContent?.title || "Poster: Strong Memory"}
       score={score}
-      subtitle={!showResult ? `Question ${currentStage + 1} of ${stages.length}` : "Poster Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Poster Complete!"
+          : t("brain-health.kids.strong-memory-poster.subtitleProgress", {
+              current: currentStage + 1,
+              total: stages.length,
+              defaultValue: `Question ${currentStage + 1} of ${stages.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -119,23 +90,35 @@ const StrongMemoryPoster = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentStage + 1}/{stages.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{stages.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.strong-memory-poster.subtitleProgress", {
+                    current: currentStage + 1,
+                    total: stages.length,
+                    defaultValue: `Question ${currentStage + 1}/${stages.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.strong-memory-poster.scoreLabel", {
+                    score,
+                    total: stages.length,
+                    defaultValue: `Score: ${score}/${stages.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
-                {currentStageData.question}
+                {currentStageData.text}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {currentStageData.choices.map((choice, idx) => (
+                {currentStageData.options.map((option) => (
                   <button
-                    key={idx}
-                    onClick={() => handleChoice(choice.correct)}
+                    key={option.id}
+                    onClick={() => handleChoice(option.isCorrect)}
                     disabled={answered}
                     className="bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white p-6 rounded-2xl shadow-lg transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
-                    <p className="font-semibold text-lg">{choice.text}</p>
+                    <p className="font-semibold text-lg">{option.text}</p>
                   </button>
                 ))}
               </div>

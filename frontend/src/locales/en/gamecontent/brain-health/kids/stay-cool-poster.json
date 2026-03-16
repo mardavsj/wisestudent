@@ -1,0 +1,54 @@
+{
+  "title": "Stay Cool Poster",
+  "subtitleDefault": "Poster Complete!",
+  "subtitlePlaying": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Create/select a poster for someone who feels nervous before a performance.",
+      "options": [
+        { "id": "rush-fast", "text": "Rush through quickly", "emoji": "🏃‍♂️", "isCorrect": false },
+        { "id": "panic-loud", "text": "Shout and panic", "emoji": "😱", "isCorrect": false },
+        { "id": "deep-breaths", "text": "Take deep breaths", "emoji": "💨", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Choose a poster for staying relaxed during homework stress.",
+      "options": [
+        { "id": "tiny-steps", "text": "Handle one step at a time", "emoji": "📄", "isCorrect": true },
+        { "id": "rush-all", "text": "Finish everything at once", "emoji": "⚡", "isCorrect": false },
+        { "id": "ignore-work", "text": "Leave homework for later", "emoji": "🕐", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Pick the poster idea for calming down before a sports match.",
+      "options": [
+        { "id": "rush-aggressive", "text": "Play as fast as possible", "emoji": "🏃‍♂️", "isCorrect": false },
+        { "id": "complain-loud", "text": "Argue with teammates", "emoji": "🗣️", "isCorrect": false },
+        { "id": "visualize-success", "text": "Imagine winning calmly", "emoji": "🏅", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Select a poster for staying peaceful during a noisy day at school.",
+      "options": [
+        { "id": "yell-back", "text": "Shout back at everyone", "emoji": "😤", "isCorrect": false },
+        { "id": "mindful-breaks", "text": "Take short mindful breaks", "emoji": "🧘", "isCorrect": true },
+        { "id": "ignore-friends", "text": "Ignore everyone", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Pick a poster for staying cool while waiting for a turn in a game.",
+      "options": [
+        { "id": "slow-count", "text": "Count slowly and breathe", "emoji": "🌿", "isCorrect": true },
+        { "id": "rush-others", "text": "Push to go first", "emoji": "🏃‍♂️", "isCorrect": false },
+        { "id": "complain-loud", "text": "Complain loudly", "emoji": "📢", "isCorrect": false }
+      ]
+    }
+  ]
+}

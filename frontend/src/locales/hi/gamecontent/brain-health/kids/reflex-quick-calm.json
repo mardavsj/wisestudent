@@ -1,0 +1,64 @@
+{
+  "title": "त्वरित शांति रिफ्लेक्स",
+  "subtitleDefault": "अपने शांत रिफ्लेक्स का परीक्षण करें!",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपने शांत रिफ्लेक्स का परीक्षण करें!",
+  "readyTitle": "क्या आप अपने शांत कौशल का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "शांत करने वाले कार्यों और तनाव प्रबंधन तकनीकों को पहचानें।",
+  "readyInstruction": "आपके पास {{total}} सवाल हैं और प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड",
+  "timeLabel": "समय",
+  "scoreLabel": "स्कोर",
+  "questions": [
+    {
+      "id": 1,
+      "text": "कौन सा कार्य आपको शांत रहने में मदद करता है?",
+      "options": [
+        { "id": "smile", "text": "मुस्कुराना", "emoji": "😊", "isCorrect": true },
+        { "id": "yell", "text": "चिल्लाना", "emoji": "😡", "isCorrect": false },
+        { "id": "panic", "text": "घबराना", "emoji": "😱", "isCorrect": false },
+        { "id": "rush", "text": "इधर-उधर भागना", "emoji": "🏃", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तनाव होने पर आपको क्या आराम करने में मदद करता है?",
+      "options": [
+        { "id": "worry", "text": "अधिक चिंता करना", "emoji": "😰", "isCorrect": false },
+        { "id": "breathe", "text": "गहरी सांस लेना", "emoji": "🌬️", "isCorrect": true },
+        { "id": "scream", "text": "चीखना", "emoji": "😱", "isCorrect": false },
+        { "id": "ignore", "text": "इसे अनदेखा करना", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "गुस्से को संभालने का शांत तरीका कौन सा है?",
+      "options": [
+        { "id": "hit", "text": "किसी चीज को मारना", "emoji": "👊", "isCorrect": false },
+        { "id": "blame", "text": "दूसरों को दोष देना", "emoji": "👆", "isCorrect": false },
+        { "id": "count", "text": "10 तक गिनना", "emoji": "🔢", "isCorrect": true },
+        { "id": "cry", "text": "रोना और हार मानना", "emoji": "😢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आपको शांतिपूर्ण महसूस करने में क्या मदद करता है?",
+      "options": [
+        { "id": "argue", "text": "बहस करना", "emoji": "😤", "isCorrect": false },
+        { "id": "complain", "text": "शिकायत करना", "emoji": "😒", "isCorrect": false },
+        { "id": "stress", "text": "तनाव लेना", "emoji": "😓", "isCorrect": false },
+        { "id": "relax", "text": "आराम करना", "emoji": "🧘", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "कौन सा कार्य आपको शांत रखता है?",
+      "options": [
+        { "id": "negative", "text": "नकारात्मक विचार सोचना", "emoji": "💔", "isCorrect": false },
+        { "id": "positive", "text": "सकारात्मक विचार सोचना", "emoji": "✨", "isCorrect": true },
+        { "id": "avoid", "text": "समस्या से बचना", "emoji": "🏃", "isCorrect": false },
+        { "id": "overthink", "text": "हर चीज के बारे में ज्यादा सोचना", "emoji": "🤯", "isCorrect": false }
+      ]
+    }
+  ]
+}

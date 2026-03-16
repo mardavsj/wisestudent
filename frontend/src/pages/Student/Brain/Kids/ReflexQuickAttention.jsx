@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -10,10 +11,13 @@ const ROUND_TIME = 10;
 
 const ReflexQuickAttention = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-19");
   const gameId = gameData?.id || "brain-kids-19";
+  
+  const gameContent = t("brain-health.kids.reflex-quick-attention", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -34,63 +38,7 @@ const ReflexQuickAttention = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      question: "Which is a good attention skill?",
-      correctAnswer: "Quick Focus",
-      options: [
-        { text: "Quick Focus", isCorrect: true, emoji: "⚡" },
-        { text: "Getting Distracted", isCorrect: false, emoji: "😵" },
-        { text: "Losing Concentration", isCorrect: false, emoji: "💭" },
-        { text: "Daydreaming", isCorrect: false, emoji: "💭" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Which is a bad attention skill?",
-      correctAnswer: "Getting Distracted",
-      options: [
-        { text: "Staying Alert", isCorrect: false, emoji: "👁️" },
-        { text: "Getting Distracted", isCorrect: true, emoji: "😵" },
-        { text: "Quick Response", isCorrect: false, emoji: "🎯" },
-        { text: "Focused Listening", isCorrect: false, emoji: "👂" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Which helps you pay better attention?",
-      correctAnswer: "Staying Alert",
-      options: [
-        { text: "Multitasking", isCorrect: false, emoji: "🔄" },
-        { text: "Staying Alert", isCorrect: true, emoji: "👁️" },
-        { text: "Fidgeting", isCorrect: false, emoji: "👋" },
-        { text: "Interrupting", isCorrect: false, emoji: "🗣️" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Which should you avoid for better attention?",
-      correctAnswer: "Losing Concentration",
-      options: [
-        { text: "Taking Notes", isCorrect: false, emoji: "📝" },
-        { text: "Asking Questions", isCorrect: false, emoji: "❓" },
-        { text: "Losing Concentration", isCorrect: true, emoji: "💭" },
-        { text: "Active Listening", isCorrect: false, emoji: "👂" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Which is a helpful attention skill?",
-      correctAnswer: "Quick Response",
-      options: [
-        { text: "Ignoring Instructions", isCorrect: false, emoji: "🙉" },
-        { text: "Quick Response", isCorrect: true, emoji: "🎯" },
-        { text: "Rushing Without Thinking", isCorrect: false, emoji: "🏃" },
-        { text: "Tuning Out", isCorrect: false, emoji: "🔇" }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -191,7 +139,7 @@ const ReflexQuickAttention = () => {
     resetFeedback();
 
     const isCorrect = option.isCorrect;
-    const isLastQuestion = currentRound === questions.length;
+    const isLastQuestion = currentRound === TOTAL_ROUNDS;
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
@@ -214,8 +162,16 @@ const ReflexQuickAttention = () => {
 
   return (
     <GameShell
-      title="Reflex Quick Attention"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your attention reflexes!` : "Test your attention reflexes!"}
+      title={gameContent?.title || "Reflex Quick Attention"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.reflex-quick-attention.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your attention reflexes!`
+            }) 
+          : gameContent?.subtitleDefault || "Test your attention reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -236,18 +192,24 @@ const ReflexQuickAttention = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">⚡</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Attention Skills?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Ready to Test Your Attention Skills?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Identify good and bad attention skills.
+              {gameContent?.readyDescription || "Identify good and bad attention skills."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.reflex-quick-attention.readyInstruction", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -256,13 +218,13 @@ const ReflexQuickAttention = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round"}:</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time"}:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score"}:</span> {score}
               </div>
             </div>
 

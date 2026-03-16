@@ -1,0 +1,64 @@
+{
+  "title": "Badge: Bounce Back Kid",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "challengeLabel": "Challenge {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Bounce Back Challenge 1",
+      "question": "How do you overcome failure?",
+      "options": [
+        { "text": "Learn from it and try again", "emoji": "💪", "isCorrect": true },
+        { "text": "Give up immediately", "emoji": "🏳️", "isCorrect": false },
+        { "text": "Blame others", "emoji": "👆", "isCorrect": false },
+        { "text": "Avoid challenges", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Bounce Back Challenge 2",
+      "question": "What helps you bounce back?",
+      "options": [
+        { "text": "Quitting when things get hard", "emoji": "😞", "isCorrect": false },
+        { "text": "Staying positive and trying again", "emoji": "✨", "isCorrect": true },
+        { "text": "Avoiding all problems", "emoji": "🚫", "isCorrect": false },
+        { "text": "Never learning from mistakes", "emoji": "🔄", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Bounce Back Challenge 3",
+      "question": "How do resilient people handle setbacks?",
+      "options": [
+        { "text": "Stay down and give up", "emoji": "⬇️", "isCorrect": false },
+        { "text": "Blame everything on others", "emoji": "👆", "isCorrect": false },
+        { "text": "Get back up and keep trying", "emoji": "⬆️", "isCorrect": true },
+        { "text": "Never face challenges", "emoji": "🚶", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Bounce Back Challenge 4",
+      "question": "What is the best way to handle failure?",
+      "options": [
+        { "text": "Use it as a lesson and improve", "emoji": "📚", "isCorrect": true },
+        { "text": "Never try again", "emoji": "🛑", "isCorrect": false },
+        { "text": "Make excuses", "emoji": "😤", "isCorrect": false },
+        { "text": "Avoid all risks", "emoji": "🔒", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Bounce Back Challenge 5",
+      "question": "How do you build resilience?",
+      "options": [
+        { "text": "Avoid all difficulties", "emoji": "🚫", "isCorrect": false },
+        { "text": "Give up easily", "emoji": "😞", "isCorrect": false },
+        { "text": "Never learn from mistakes", "emoji": "🔄", "isCorrect": false },
+        { "text": "Face challenges, learn from failures, and keep trying", "emoji": "🎯", "isCorrect": true }
+      ]
+    }
+  ]
+}

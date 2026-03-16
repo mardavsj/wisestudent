@@ -1,0 +1,44 @@
+{
+  "title": "Journal of Ideas",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "subtitleComplete": "Journal Complete!",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "placeholder": "Write your thoughts here...",
+  "minLengthLabel": "{{count}}/{{min}} characters minimum",
+  "charCountLabel": "{{count}} characters",
+  "submitBtn": "Submit Entry",
+  "submittedBtn": "Submitted!",
+  "stages": [
+    { 
+      "id": 1, 
+      "prompt": "Write: \"One time I solved a problem was ___.\"", 
+      "minLength": 10,
+      "guidance": "Think about a problem you solved creatively."
+    },
+    { 
+      "id": 2, 
+      "prompt": "Describe a time you came up with a creative idea. What was it?", 
+      "minLength": 10,
+      "guidance": "Think about something original you thought of."
+    },
+    { 
+      "id": 3, 
+      "prompt": "Write about a time you fixed something in a new way.", 
+      "minLength": 10,
+      "guidance": "How did you solve it differently?"
+    },
+    { 
+      "id": 4, 
+      "prompt": "Describe a creative solution you found for a challenge.", 
+      "minLength": 10,
+      "guidance": "What creative approach did you use?"
+    },
+    { 
+      "id": 5, 
+      "prompt": "Write about a time you thought outside the box.", 
+      "minLength": 10,
+      "guidance": "How did you think differently?"
+    }
+  ]
+}

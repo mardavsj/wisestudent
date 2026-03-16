@@ -1,0 +1,129 @@
+{
+  "title": "Lost Game Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Kid loses in cricket and feels jealous. What to do?",
+      "options": [
+        { 
+          "id": "congratulate", 
+          "text": "Congratulate others", 
+          "emoji": "👏", 
+          "isCorrect": true
+        },
+        { 
+          "id": "mad", 
+          "text": "Be mad", 
+          "emoji": "😠", 
+          "isCorrect": false
+        },
+        { 
+          "id": "quit", 
+          "text": "Quit game", 
+          "emoji": "🚪", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Lost in race, feels upset. Best action?",
+      "options": [
+        { 
+          "id": "run", 
+          "text": "Run away", 
+          "emoji": "🏃", 
+          "isCorrect": false
+        },
+        { 
+          "id": "cheer", 
+          "text": "Cheer for winner", 
+          "emoji": "🎉", 
+          "isCorrect": true
+        },
+        { 
+          "id": "blame", 
+          "text": "Blame track", 
+          "emoji": "👆", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Didn't win quiz, feels bad. What to do?",
+      "options": [
+        { 
+          "id": "argue", 
+          "text": "Argue", 
+          "emoji": "😤", 
+          "isCorrect": false
+        },
+        { 
+          "id": "ignore", 
+          "text": "Ignore everyone", 
+          "emoji": "😑", 
+          "isCorrect": false
+        },
+        { 
+          "id": "congratulate", 
+          "text": "Say good job to winner", 
+          "emoji": "👍", 
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Lost board game, jealous. Best way?",
+      "options": [
+        { 
+          "id": "smile", 
+          "text": "Smile and clap", 
+          "emoji": "😊", 
+          "isCorrect": true
+        },
+        { 
+          "id": "throw", 
+          "text": "Throw pieces", 
+          "emoji": "💥", 
+          "isCorrect": false
+        },
+        { 
+          "id": "leave", 
+          "text": "Leave table", 
+          "emoji": "🚶", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Missed goal in soccer, feels angry. What to do?",
+      "options": [
+        { 
+          "id": "kick", 
+          "text": "Kick ball away", 
+          "emoji": "⚽", 
+          "isCorrect": false
+        },
+        { 
+          "id": "yell", 
+          "text": "Yell", 
+          "emoji": "😡", 
+          "isCorrect": false
+        },
+        { 
+          "id": "support", 
+          "text": "Support teammates", 
+          "emoji": "🤝", 
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "title": "Homework Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Kid has lots of homework and feels stressed. Best action?",
+      "options": [
+        { "id": "step", "text": "Do one step at a time", "emoji": "📝", "isCorrect": true },
+        { "id": "panic", "text": "Panic and give up", "emoji": "😰", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore all homework", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You feel overwhelmed with homework. What should you do?",
+      "options": [
+        { "id": "rush", "text": "Rush through everything at once", "emoji": "⚡", "isCorrect": false },
+        { "id": "break", "text": "Take breaks and do it step by step", "emoji": "⏸️", "isCorrect": true },
+        { "id": "skip", "text": "Skip everything", "emoji": "⏭️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What helps when you feel stressed about homework?",
+      "options": [
+        { "id": "worry", "text": "Worry about everything", "emoji": "😰", "isCorrect": false },
+        { "id": "shout", "text": "Shout and get angry", "emoji": "😡", "isCorrect": false },
+        { "id": "breathe", "text": "Take deep breaths and organize tasks", "emoji": "🌬️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "How can you manage homework stress better?",
+      "options": [
+        { "id": "plan", "text": "Plan your time and do tasks one by one", "emoji": "📋", "isCorrect": true },
+        { "id": "procrastinate", "text": "Wait until the last minute", "emoji": "⏰", "isCorrect": false },
+        { "id": "avoid", "text": "Avoid all homework", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What's the best way to handle lots of homework?",
+      "options": [
+        { "id": "panic", "text": "Panic about everything", "emoji": "😰", "isCorrect": false },
+        { "id": "organize", "text": "Organize and tackle one task at a time", "emoji": "📝", "isCorrect": true },
+        { "id": "ignore", "text": "Ignore it completely", "emoji": "😴", "isCorrect": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "title": "मस्तिष्क देखभाल की पहेली",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "मस्तिष्क देखभाल गतिविधियों का उनके लाभों के साथ मिलान करें ({{current}}/{{total}} मिलान किए गए)",
+  "matchesLabel": "मिलान: {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "instructions": "बाईं ओर से एक गतिविधि और दाईं ओर से उसका लाभ चुनें, फिर \"मिलान करें\" पर क्लिक करें",
+  "leftTitle": "मस्तिष्क देखभाल गतिविधियाँ",
+  "rightTitle": "लाभ",
+  "matchButton": "चुने हुए का मिलान करें",
+  "leftItems": [
+    { "id": 1, "name": "नींद", "emoji": "😴" },
+    { "id": 2, "name": "पढ़ना", "emoji": "📚" },
+    { "id": 3, "name": "व्यायाम", "emoji": "💪" },
+    { "id": 4, "name": "स्वस्थ भोजन", "emoji": "🍎" },
+    { "id": 5, "name": "पानी", "emoji": "💧" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "आराम और याददाश्त", "emoji": "🧠" },
+    { "id": 2, "name": "तेज़ दिमाग", "emoji": "✨" },
+    { "id": 3, "name": "मजबूत मस्तिष्क", "emoji": "💪" },
+    { "id": 4, "name": "स्मार्ट ईंधन", "emoji": "⚡" },
+    { "id": 5, "name": "हाइड्रेटेड रहें", "emoji": "💧" }
+  ],
+  "correctMatches": [
+    { "leftId": 1, "rightId": 1 },
+    { "leftId": 2, "rightId": 2 },
+    { "leftId": 3, "rightId": 3 },
+    { "leftId": 4, "rightId": 4 },
+    { "leftId": 5, "rightId": 5 }
+  ]
+}

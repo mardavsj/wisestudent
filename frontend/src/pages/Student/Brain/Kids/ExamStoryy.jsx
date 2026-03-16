@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const ExamStoryy = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-35");
   const gameId = gameData?.id || "brain-kids-35";
+
+  const gameContent = t("brain-health.kids.exam-storyy", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,131 +30,7 @@ const ExamStoryy = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-  {
-    id: 1,
-    text: "Riya studies well but her hands feel cold when she opens the exam paper. What would help her most at that moment?",
-    options: [
-      
-      {
-        id: "rush",
-        text: "Read all questions quickly at once",
-        emoji: "📄",
-        isCorrect: false
-      },
-      {
-        id: "compare",
-        text: "Look around to see how others are doing",
-        emoji: "👀",
-        isCorrect: false
-      },
-      {
-        id: "pause",
-        text: "Take a short pause and focus on one question",
-        emoji: "⏸️",
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 2,
-    text: "Before entering the exam hall, Aarav hears older students talking about how hard the test is. What is the smartest choice for him?",
-    options: [
-      {
-        id: "selftalk",
-        text: "Remind himself of his own preparation",
-        emoji: "💭",
-        isCorrect: true
-      },
-      {
-        id: "listen",
-        text: "Keep listening to their worries",
-        emoji: "👂",
-        isCorrect: false
-      },
-      {
-        id: "escape",
-        text: "Leave the area and avoid the exam",
-        emoji: "🚪",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    text: "Meena forgets an answer she studied many times. What helps her brain recall better?",
-    options: [
-      
-      {
-        id: "panic",
-        text: "Assume everything is forgotten",
-        emoji: "⚠️",
-        isCorrect: false
-      },
-      {
-        id: "skipall",
-        text: "Stop trying and move on forever",
-        emoji: "⏭️",
-        isCorrect: false
-      },
-      {
-        id: "calm",
-        text: "Stay calm and think step by step",
-        emoji: "🧠",
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 4,
-    text: "During the test, Kabir notices his heart beating fast. What action supports his focus?",
-    options: [
-     
-      {
-        id: "shake",
-        text: "Keep tapping the desk repeatedly",
-        emoji: "🫨",
-        isCorrect: false
-      },
-       {
-        id: "breath",
-        text: "Slow breathing while reading the question",
-        emoji: "🌬️",
-        isCorrect: true
-      },
-      {
-        id: "fear",
-        text: "Think only about the result",
-        emoji: "📊",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 5,
-    text: "After finishing early, Sana feels unsure about her answers. What is the most helpful next step?",
-    options: [
-      {
-        id: "review",
-        text: "Review answers calmly and check mistakes",
-        emoji: "🔍",
-        isCorrect: true
-      },
-      {
-        id: "stress",
-        text: "Worry about what she might have done wrong",
-        emoji: "😟",
-        isCorrect: false
-      },
-      {
-        id: "copy",
-        text: "Change answers by guessing again",
-        emoji: "🎯",
-        isCorrect: false
-      }
-    ]
-  }
-];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
 
   const handleChoice = (isCorrect) => {
@@ -180,8 +60,16 @@ const ExamStoryy = () => {
 
   return (
     <GameShell
-      title="Exam Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Exam Story"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Story Complete!"
+          : t("brain-health.kids.exam-storyy.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -203,8 +91,20 @@ const ExamStoryy = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.exam-storyy.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.exam-storyy.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

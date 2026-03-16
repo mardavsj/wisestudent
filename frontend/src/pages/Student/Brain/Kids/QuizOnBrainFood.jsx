@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const QuizOnBrainFood = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-2");
   const gameId = gameData?.id || "brain-kids-2";
+  
+  const gameContent = t("brain-health.kids.quiz-on-brain-food", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -20,135 +24,14 @@ const QuizOnBrainFood = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Which food is healthy for brain?",
-      options: [
-        { 
-          id: "a", 
-          text: "Fruits", 
-          emoji: "🍎", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Chips", 
-          emoji: "🍟", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Cola", 
-          emoji: "🥤", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which nutrient helps your brain grow?",
-      options: [
-        { 
-          id: "a", 
-          text: "Sugar", 
-          emoji: "🍬", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Protein", 
-          emoji: "🥩", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Salt", 
-          emoji: "🧂", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What drink is best for your brain?",
-      options: [
-        { 
-          id: "a", 
-          text: "Soda", 
-          emoji: "🥤", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Energy drinks", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Water", 
-          emoji: "💧", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Which food helps you concentrate better?",
-      options: [
-        { 
-          id: "a", 
-          text: "Fish with omega-3", 
-          emoji: "🐟", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Candy", 
-          emoji: "🍭", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Chips", 
-          emoji: "🍟", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Why are vegetables good for your brain?",
-      options: [
-        { 
-          id: "a", 
-          text: "They taste bad", 
-          emoji: "😖", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "They have vitamins and minerals", 
-          emoji: "Ⓜ️", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "They are expensive", 
-          emoji: "💰", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -177,9 +60,17 @@ const QuizOnBrainFood = () => {
 
   return (
     <GameShell
-      title="Brain Food Quiz"
+      title={gameContent?.title || "Brain Food Quiz"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      subtitle={
+        !showResult 
+          ? t("brain-health.kids.quiz-on-brain-food.subtitlePlaying", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`
+            }) 
+          : gameContent?.subtitleComplete || "Quiz Complete!"
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -200,8 +91,20 @@ const QuizOnBrainFood = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.quiz-on-brain-food.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.quiz-on-brain-food.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -218,7 +121,7 @@ const QuizOnBrainFood = () => {
                   >
                     <div className="text-3xl mb-3">{option.emoji}</div>
                     <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
+                    {option.description && <p className="text-white/90 text-sm">{option.description}</p>}
                   </button>
                 ))}
               </div>

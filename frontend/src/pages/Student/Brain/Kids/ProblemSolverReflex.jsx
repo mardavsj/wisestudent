@@ -1,19 +1,22 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 import { Zap, X, RefreshCw } from 'lucide-react';
 
-const TOTAL_ROUNDS = 5;
 const ROUND_TIME = 10;
 
 const ProblemSolverReflex = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-83");
   const gameId = gameData?.id || "brain-kids-83";
+  
+  const gameContent = t("brain-health.kids.problem-solver-reflex", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -33,63 +36,8 @@ const ProblemSolverReflex = () => {
   const [answered, setAnswered] = useState(false);
   const timerRef = useRef(null);
 
-  const questions = [
-    {
-      id: 1,
-      question: "Which approach shows effective problem-solving?",
-      correctAnswer: "Breaking big problems into smaller parts",
-      options: [
-        { text: "Ignoring the problem", isCorrect: false, emoji: "🙈" },
-        { text: "Blaming others for the issue", isCorrect: false, emoji: "👆" },
-        { text: "Breaking big problems into smaller parts", isCorrect: true, emoji: "🧩" },
-        { text: "Giving up immediately", isCorrect: false, emoji: "🏳️" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What is a key step in problem-solving?",
-      correctAnswer: "Identifying the root cause",
-      options: [
-        { text: "Jumping to conclusions", isCorrect: false, emoji: "🏁" },
-        { text: "Identifying the root cause", isCorrect: true, emoji: "🔍" },
-        { text: "Avoiding the situation", isCorrect: false, emoji: "🏃" },
-        { text: "Complaining about the problem", isCorrect: false, emoji: "🗣️" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Which strategy helps solve problems effectively?",
-      correctAnswer: "Trying different solutions",
-      options: [
-        { text: "Sticking to one approach", isCorrect: false, emoji: "🔂" },
-        { text: "Waiting for someone else to fix it", isCorrect: false, emoji: "🕐" },
-        { text: "Trying different solutions", isCorrect: true, emoji: "🧪" },
-        { text: "Denying the problem exists", isCorrect: false, emoji: "🤥" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What should you do when facing a challenge?",
-      correctAnswer: "Stay calm and think clearly",
-      options: [
-        { text: "Stay calm and think clearly", isCorrect: true, emoji: "🧘" },
-        { text: "Panic and make rushed decisions", isCorrect: false, emoji: "😵" },
-        { text: "Avoid dealing with it", isCorrect: false, emoji: "😴" },
-        { text: "Blame circumstances", isCorrect: false, emoji: "🎲" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Which mindset helps with problem-solving?",
-      correctAnswer: "Viewing obstacles as opportunities to learn",
-      options: [
-        { text: "Seeing problems as dead ends", isCorrect: false, emoji: "🚧" },
-        { text: "Viewing obstacles as opportunities to learn", isCorrect: true, emoji: "📈" },
-        { text: "Expecting others to solve everything", isCorrect: false, emoji: "👥" },
-        { text: "Avoiding challenges completely", isCorrect: false, emoji: "🔐" }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  const TOTAL_ROUNDS = questions.length || 5;
 
   // Handle time up - move to next question or show results
   const handleTimeUp = useCallback(() => {
@@ -106,7 +54,7 @@ const ProblemSolverReflex = () => {
         setAnswered(false);
       }
     }, 1000);
-  }, [currentRound, resetFeedback]);
+  }, [currentRound, resetFeedback, TOTAL_ROUNDS]);
 
   // Reset timer when round changes
   useEffect(() => {
@@ -114,7 +62,7 @@ const ProblemSolverReflex = () => {
       setTimeLeft(ROUND_TIME);
       setAnswered(false);
     }
-  }, [currentRound, gameState]);
+  }, [currentRound, gameState, TOTAL_ROUNDS]);
 
   // Timer effect - countdown from 10 seconds for each question
   useEffect(() => {
@@ -161,7 +109,7 @@ const ProblemSolverReflex = () => {
         timerRef.current = null;
       }
     };
-  }, [gameState, handleTimeUp]);
+  }, [gameState, handleTimeUp, currentRound, TOTAL_ROUNDS]);
 
   const startGame = () => {
     setGameState("playing");
@@ -190,6 +138,8 @@ const ProblemSolverReflex = () => {
     if (isCorrect) {
       setScore((prev) => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
 
     // Move to next round or show results after a short delay
@@ -207,8 +157,18 @@ const ProblemSolverReflex = () => {
 
   return (
     <GameShell
-      title="Reflex Problem Solver"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your problem-solving reflexes!` : "Test your problem-solving reflexes!"}
+      title={gameContent?.title || "Reflex Problem Solver"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.problem-solver-reflex.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your problem-solving reflexes!`,
+            })
+          : gameState === "finished"
+          ? gameContent?.subtitleFinished || "Great Job!"
+          : gameContent?.subtitleReady || "Test your problem-solving reflexes!"
+      }
       score={score}
       currentLevel={currentRound || 1}
       totalLevels={TOTAL_ROUNDS}
@@ -229,18 +189,24 @@ const ProblemSolverReflex = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🧩</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Problem-Solving Skills?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Ready to Test Your Problem-Solving Skills?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Answer questions about effective problem-solving strategies.
+              {gameContent?.readyDescription || "Answer questions about effective problem-solving strategies."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.problem-solver-reflex.readyStats", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`,
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -249,13 +215,13 @@ const ProblemSolverReflex = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round"}:</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time"}:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score"}:</span> {score}
               </div>
             </div>
 
@@ -283,18 +249,24 @@ const ProblemSolverReflex = () => {
         {gameState === "finished" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🧩</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.finishedTitle || "Great Job!"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              You scored {score} out of {TOTAL_ROUNDS}!
+              {t("brain-health.kids.problem-solver-reflex.finishedScore", {
+                score,
+                total: TOTAL_ROUNDS,
+                defaultValue: `You scored ${score} out of ${TOTAL_ROUNDS}!`,
+              })}
             </p>
             <p className="text-white/80 mb-6">
-              You're developing strong problem-solving skills!
+              {gameContent?.finishedDescription || "You're developing strong problem-solving skills!"}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
             >
-              Play Again
+              {gameContent?.playAgainButton || "Play Again"}
             </button>
           </div>
         )}

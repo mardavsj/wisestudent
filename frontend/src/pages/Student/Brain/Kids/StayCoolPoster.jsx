@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -8,10 +9,13 @@ import { Wind, Music, Flower, Waves } from 'lucide-react';
 
 const StayCoolPoster = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-36");
   const gameId = gameData?.id || "brain-kids-36";
+  
+  const gameContent = t("brain-health.kids.stay-cool-poster", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -51,147 +55,34 @@ const StayCoolPoster = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-  {
-    id: 1,
-    text: "Create/select a poster for someone who feels nervous before a performance.",
-    options: [
-      
-      { 
-        id: "rush-fast", 
-        text: "Rush through quickly", 
-        emoji: "🏃‍♂️", 
-        icon: <Waves className="w-6 h-6" />,
-        isCorrect: false
-      },
-      { 
-        id: "panic-loud", 
-        text: "Shout and panic", 
-        emoji: "😱", 
-        icon: <Music className="w-6 h-6" />,
-        isCorrect: false
-      },
-      { 
-        id: "deep-breaths", 
-        text: "Take deep breaths", 
-        emoji: "💨", 
-        icon: <Wind className="w-6 h-6" />,
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 2,
-    text: "Choose a poster for staying relaxed during homework stress.",
-    options: [
-      { 
-        id: "tiny-steps", 
-        text: "Handle one step at a time", 
-        emoji: "📄", 
-        icon: <Flower className="w-6 h-6" />,
-        isCorrect: true
-      },
-      { 
-        id: "rush-all", 
-        text: "Finish everything at once", 
-        emoji: "⚡", 
-        icon: <Wind className="w-6 h-6" />,
-        isCorrect: false
-      },
-      { 
-        id: "ignore-work", 
-        text: "Leave homework for later", 
-        emoji: "🕐", 
-        icon: <Music className="w-6 h-6" />,
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    text: "Pick the poster idea for calming down before a sports match.",
-    options: [
-      
-      { 
-        id: "rush-aggressive", 
-        text: "Play as fast as possible", 
-        emoji: "🏃‍♂️", 
-        icon: <Waves className="w-6 h-6" />,
-        isCorrect: false
-      },
-      { 
-        id: "complain-loud", 
-        text: "Argue with teammates", 
-        emoji: "🗣️", 
-        icon: <Music className="w-6 h-6" />,
-        isCorrect: false
-      },
-      { 
-        id: "visualize-success", 
-        text: "Imagine winning calmly", 
-        emoji: "🏅", 
-        icon: <Wind className="w-6 h-6" />,
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 4,
-    text: "Select a poster for staying peaceful during a noisy day at school.",
-    options: [
-      
-      { 
-        id: "yell-back", 
-        text: "Shout back at everyone", 
-        emoji: "😤", 
-        icon: <Waves className="w-6 h-6" />,
-        isCorrect: false
-      },
-      { 
-        id: "mindful-breaks", 
-        text: "Take short mindful breaks", 
-        emoji: "🧘", 
-        icon: <Flower className="w-6 h-6" />,
-        isCorrect: true
-      },
-      { 
-        id: "ignore-friends", 
-        text: "Ignore everyone", 
-        emoji: "🙈", 
-        icon: <Music className="w-6 h-6" />,
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 5,
-    text: "Pick a poster for staying cool while waiting for a turn in a game.",
-    options: [
-      { 
-        id: "slow-count", 
-        text: "Count slowly and breathe", 
-        emoji: "🌿", 
-        icon: <Flower className="w-6 h-6" />,
-        isCorrect: true
-      },
-      { 
-        id: "rush-others", 
-        text: "Push to go first", 
-        emoji: "🏃‍♂️", 
-        icon: <Waves className="w-6 h-6" />,
-        isCorrect: false
-      },
-      { 
-        id: "complain-loud", 
-        text: "Complain loudly", 
-        emoji: "📢", 
-        icon: <Music className="w-6 h-6" />,
-        isCorrect: false
-      }
-    ]
-  }
-];
+  const iconMap = {
+    "rush-fast": <Waves className="w-6 h-6" />,
+    "panic-loud": <Music className="w-6 h-6" />,
+    "deep-breaths": <Wind className="w-6 h-6" />,
+    "tiny-steps": <Flower className="w-6 h-6" />,
+    "rush-all": <Wind className="w-6 h-6" />,
+    "ignore-work": <Music className="w-6 h-6" />,
+    "rush-aggressive": <Waves className="w-6 h-6" />,
+    "complain-loud": <Music className="w-6 h-6" />,
+    "visualize-success": <Wind className="w-6 h-6" />,
+    "yell-back": <Waves className="w-6 h-6" />,
+    "mindful-breaks": <Flower className="w-6 h-6" />,
+    "ignore-friends": <Music className="w-6 h-6" />,
+    "slow-count": <Flower className="w-6 h-6" />,
+    "rush-others": <Waves className="w-6 h-6" />,
+    "complain-loud-wait": <Music className="w-6 h-6" />
+  };
 
+  const questions = useMemo(() => {
+    const rawQuestions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+    return rawQuestions.map(q => ({
+      ...q,
+      options: q.options.map(opt => ({
+        ...opt,
+        icon: iconMap[opt.id] || <Music className="w-6 h-6" />
+      }))
+    }));
+  }, [gameContent]);
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -202,6 +93,8 @@ const StayCoolPoster = () => {
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     const isLastQuestion = currentQuestion === questions.length - 1;
@@ -220,8 +113,16 @@ const StayCoolPoster = () => {
 
   return (
     <GameShell
-      title="Poster: Stay Cool"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Poster Complete!"}
+      title={gameContent?.title || "Poster: Stay Cool"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleDefault || "Poster Complete!" 
+          : t("brain-health.kids.stay-cool-poster.subtitlePlaying", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -243,8 +144,20 @@ const StayCoolPoster = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.stay-cool-poster.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.stay-cool-poster.scoreLabel", {
+                    current: score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

@@ -1,0 +1,32 @@
+{
+  "title": "सकारात्मक शब्दों की पहेली",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "मिलान {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchesLabel": "मिलान: {{current}}/{{total}}",
+  "instruction": "सकारात्मक शब्दों को उनके अर्थों से मिलाएं!",
+  "leftTitle": "सकारात्मक शब्द",
+  "rightTitle": "अर्थ",
+  "matchButton": "मिलान करें",
+  "leftItems": [
+    { "id": 1, "name": "आशा", "emoji": "🌟" },
+    { "id": 2, "name": "कृतज्ञता", "emoji": "🙏" },
+    { "id": 3, "name": "आशावाद", "emoji": "☀️" },
+    { "id": 4, "name": "दयालुता", "emoji": "❤️" },
+    { "id": 5, "name": "हर्ष", "emoji": "👏" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "भविष्य", "emoji": "🤔" },
+    { "id": 2, "name": "धन्यवाद", "emoji": "🤗" },
+    { "id": 3, "name": "उज्ज्वल पक्ष", "emoji": "😎" },
+    { "id": 4, "name": "परवाह", "emoji": "😌" },
+    { "id": 5, "name": "खुशी", "emoji": "😊" }
+  ],
+  "correctMatches": [
+    { "leftId": 1, "rightId": 1 },
+    { "leftId": 2, "rightId": 2 },
+    { "leftId": 3, "rightId": 3 },
+    { "leftId": 4, "rightId": 4 },
+    { "leftId": 5, "rightId": 5 }
+  ]
+}

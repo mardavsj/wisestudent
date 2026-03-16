@@ -1,0 +1,72 @@
+{
+  "title": "Reflex Creative Thinking",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your creative thinking reflexes!",
+  "subtitleReady": "Test your creative thinking reflexes!",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "ready": {
+    "header": "Ready to Test Your Creative Thinking Skills?",
+    "description": "Answer questions about creative thinking and problem-solving.",
+    "details": "You have {{total}} questions with {{time}} seconds each!",
+    "button": "Start Game"
+  },
+  "finished": {
+    "header": "Great Job!",
+    "score": "You scored {{score}} out of {{total}}!",
+    "feedback": "You're developing strong creative thinking skills!",
+    "button": "Play Again"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which activity shows creative thinking?",
+      "options": [
+        { "text": "Copying homework", "isCorrect": false, "emoji": "📋" },
+        { "text": "Following exact instructions", "isCorrect": false, "emoji": "📜" },
+        { "text": "Designing a new toy", "isCorrect": true, "emoji": "🧸" },
+        { "text": "Doing things the same way", "isCorrect": false, "emoji": "🔄" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What demonstrates creative problem-solving?",
+      "options": [
+        { "text": "Using the usual method", "isCorrect": false, "emoji": "🔁" },
+        { "text": "Asking someone else to solve it", "isCorrect": false, "emoji": "🙋" },
+        { "text": "Giving up when stuck", "isCorrect": false, "emoji": "😞" },
+        { "text": "Finding a new solution", "isCorrect": true, "emoji": "🔍" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which approach shows creativity?",
+      "options": [
+        { "text": "Sticking to one method", "isCorrect": false, "emoji": "📏" },
+        { "text": "Repeating what others did", "isCorrect": false, "emoji": "🔁" },
+        { "text": "Combining different ideas", "isCorrect": true, "emoji": "🔀" },
+        { "text": "Avoiding new challenges", "isCorrect": false, "emoji": "🛡️" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is a sign of creative thinking?",
+      "options": [
+        { "text": "Accepting the first answer", "isCorrect": false, "emoji": "✅" },
+        { "text": "Following set procedures", "isCorrect": false, "emoji": "📋" },
+        { "text": "Avoiding mistakes", "isCorrect": false, "emoji": "⚠️" },
+        { "text": "Asking 'what if' questions", "isCorrect": true, "emoji": "❓" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which behavior shows creative thinking?",
+      "options": [
+        { "text": "Doing everything by the book", "isCorrect": false, "emoji": "📚" },
+        { "text": "Copying successful methods exactly", "isCorrect": false, "emoji": "🖨️" },
+        { "text": "Experimenting with new approaches", "isCorrect": true, "emoji": "🧪" },
+        { "text": "Sticking to familiar routines", "isCorrect": false, "emoji": "🧭" }
+      ]
+    }
+  ]
+}

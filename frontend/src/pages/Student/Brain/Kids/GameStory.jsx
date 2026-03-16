@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const GameStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-18");
   const gameId = gameData?.id || "brain-kids-18";
+
+  const gameContent = t("brain-health.kids.game-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,131 +30,7 @@ const GameStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "You want to play games but have homework. What should you do?",
-      options: [
-        { 
-          id: "homework", 
-          text: "Finish homework first, then play", 
-          emoji: "📚", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "games", 
-          text: "Play games first, homework later", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          id: "both", 
-          text: "Do both at same time", 
-          emoji: "🤹", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You've been playing games for 2 hours. What should you do?",
-      options: [
-        { 
-          id: "continue", 
-          text: "Keep playing more", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          id: "break", 
-          text: "Take a break and do other activities", 
-          emoji: "⏸️", 
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore everything else", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Your friend invites you to play games during study time. What do you do?",
-      options: [
-        { 
-          id: "play", 
-          text: "Play games with friend", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          id: "study", 
-          text: "Finish studying first, then play", 
-          emoji: "📖", 
-          isCorrect: true
-        },
-        { 
-          id: "skip", 
-          text: "Skip studying completely", 
-          emoji: "⏭️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How can you balance games and study time?",
-      options: [
-        { 
-          id: "onlygames", 
-          text: "Play games all the time", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "onlystudy", 
-          text: "Never play games", 
-          emoji: "📚", 
-          isCorrect: false
-        },
-        { 
-          id: "schedule", 
-          text: "Set a schedule: study time and game time", 
-          emoji: "⏰", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "You finished your homework early. What's a good choice?",
-      options: [
-         { 
-          id: "play", 
-          text: "Play games as a reward", 
-          emoji: "🎮", 
-          isCorrect: true
-        },
-        { 
-          id: "morehomework", 
-          text: "Do extra homework", 
-          emoji: "📝", 
-          isCorrect: false
-        },
-       
-        { 
-          id: "nothing", 
-          text: "Do nothing", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -179,9 +59,17 @@ const GameStory = () => {
 
   return (
     <GameShell
-      title="Game Story"
+      title={gameContent?.title || "Game Story"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Story Complete!"
+          : t("brain-health.kids.game-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -202,8 +90,20 @@ const GameStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.game-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.game-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

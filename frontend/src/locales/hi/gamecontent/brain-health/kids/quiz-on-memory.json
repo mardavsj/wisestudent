@@ -1,0 +1,54 @@
+{
+  "title": "याददाश्त पर क्विज़",
+  "subtitlePlaying": "सवाल {{total}} में से {{current}}",
+  "subtitleComplete": "क्विज़ पूरा हुआ!",
+  "questionLabel": "सवाल {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "याददाश्त में क्या मदद करता है?",
+      "options": [
+        { "id": "b", "text": "खाना छोड़ना", "emoji": "🍽️", "isCorrect": false },
+        { "id": "a", "text": "नींद", "emoji": "😴", "isCorrect": true },
+        { "id": "c", "text": "तनाव", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "कौन सी गतिविधि याददाश्त में सुधार करती है?",
+      "options": [
+        { "id": "a", "text": "अभ्यास और दोहराव", "emoji": "🔁", "isCorrect": true },
+        { "id": "b", "text": "कभी अभ्यास नहीं करना", "emoji": "🚫", "isCorrect": false },
+        { "id": "c", "text": "सब कुछ भूल जाना", "emoji": "😵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "याददाश्त के लिए कौन सा भोजन अच्छा है?",
+      "options": [
+        { "id": "a", "text": "सिर्फ जंक फूड", "emoji": "🍟", "isCorrect": false },
+        { "id": "b", "text": "स्वस्थ भोजन जैसे फल और सब्जियां", "emoji": "🍎", "isCorrect": true },
+        { "id": "c", "text": "बिल्कुल भी खाना नहीं", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आप चीजों को बेहतर तरीके से कैसे याद रख सकते हैं?",
+      "options": [
+        { "id": "b", "text": "कभी कुछ न लिखें", "emoji": "🙈", "isCorrect": false },
+        { "id": "c", "text": "हर चीज़ को नज़रअंदाज़ करें", "emoji": "😴", "isCorrect": false },
+        { "id": "a", "text": "उन्हें लिखें और समीक्षा करें", "emoji": "📝", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "क्या व्यायाम याददाश्त में मदद करता है?",
+      "options": [
+        { "id": "b", "text": "नहीं, व्यायाम मदद नहीं करता", "emoji": "❌", "isCorrect": false },
+        { "id": "a", "text": "हाँ, व्यायाम मस्तिष्क के कार्य में सुधार करता है", "emoji": "💪", "isCorrect": true },
+        { "id": "c", "text": "हो सकता है कभी-कभी", "emoji": "🤔", "isCorrect": false }
+      ]
+    }
+  ]
+}

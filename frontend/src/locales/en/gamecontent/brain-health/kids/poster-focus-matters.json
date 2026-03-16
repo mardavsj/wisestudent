@@ -1,0 +1,49 @@
+{
+  "title": "Poster: Focus Matters",
+  "subtitleComplete": "Poster Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questionStats": "Question {{current}}/{{total}}",
+  "stages": [
+    {
+      "question": "Which poster would best show \"Focus Helps You Learn Better\"?",
+      "choices": [
+        { "text": "Poster with a student concentrating on books 📚", "correct": true },
+        { "text": "Poster with someone watching TV 📺", "correct": false },
+        { "text": "Poster with a sleeping person 😴", "correct": false }
+      ]
+    },
+    {
+      "question": "Which poster would best show \"Quiet Space Improves Focus\"?",
+      "choices": [
+        { "text": "Poster with loud music and noise 🔊", "correct": false },
+        { "text": "Poster with a peaceful study area 🔇", "correct": true },
+        { "text": "Poster with a busy playground 🎮", "correct": false }
+      ]
+    },
+    {
+      "question": "Which poster would best show \"Focus Leads to Success\"?",
+      "choices": [
+        { "text": "Poster with someone achieving goals 🎯", "correct": true },
+        { "text": "Poster with someone giving up 😔", "correct": false },
+        { "text": "Poster with distractions everywhere 📱", "correct": false }
+      ]
+    },
+    {
+      "question": "Which poster would best show \"Take Breaks to Stay Focused\"?",
+      "choices": [
+        { "text": "Poster showing continuous work without rest ⏰", "correct": false },
+        { "text": "Poster showing study time with breaks ⏸️", "correct": true },
+        { "text": "Poster showing only play time 🎮", "correct": false }
+      ]
+    },
+    {
+      "question": "Which poster would best show \"Focus Makes You Smarter\"?",
+      "choices": [
+        { "text": "Poster with a brain getting stronger 🧠", "correct": true },
+        { "text": "Poster with a confused person 🤯", "correct": false },
+        { "text": "Poster with someone ignoring lessons 🙈", "correct": false }
+      ]
+    }
+  ]
+}

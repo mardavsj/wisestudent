@@ -1,0 +1,54 @@
+{
+  "title": "Sports for Brain Health",
+  "subtitleDefault": "Story Complete!",
+  "subtitlePlaying": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Kid loses a game and feels angry. Right action?",
+      "options": [
+        { "id": "try-again", "text": "Try again calmly", "emoji": "🧘", "isCorrect": true },
+        { "id": "yell", "text": "Yell and get more angry", "emoji": "😡", "isCorrect": false },
+        { "id": "quit", "text": "Quit playing forever", "emoji": "🚪", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "After losing, what helps you improve?",
+      "options": [
+        { "id": "blame", "text": "Blame others", "emoji": "👆", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore the loss", "emoji": "🙈", "isCorrect": false },
+        { "id": "practice", "text": "Practice and learn from mistakes", "emoji": "📚", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "When you feel angry after losing, what should you do?",
+      "options": [
+        { "id": "scream", "text": "Scream and throw things", "emoji": "😱", "isCorrect": false },
+        { "id": "breathe", "text": "Take deep breaths and calm down", "emoji": "🌬️", "isCorrect": true },
+        { "id": "cry", "text": "Cry and give up", "emoji": "😢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What's the best way to handle losing?",
+      "options": [
+        { "id": "forget", "text": "Forget about it completely", "emoji": "🧠", "isCorrect": false },
+        { "id": "complain", "text": "Complain to everyone", "emoji": "😤", "isCorrect": false },
+        { "id": "learn", "text": "Learn from it and try again", "emoji": "💪", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "How can you stay calm when you lose?",
+      "options": [
+        { "id": "positive", "text": "Think positive and keep trying", "emoji": "✨", "isCorrect": true },
+        { "id": "negative", "text": "Think you'll always lose", "emoji": "💔", "isCorrect": false },
+        { "id": "avoid", "text": "Avoid playing again", "emoji": "🏃", "isCorrect": false }
+      ]
+    }
+  ]
+}

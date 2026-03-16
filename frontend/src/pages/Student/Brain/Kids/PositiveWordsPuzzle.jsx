@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const PositiveWordsPuzzle = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-54");
   const gameId = gameData?.id || "brain-kids-54";
+  
+  const gameContent = t("brain-health.kids.positive-words-puzzle", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,41 +31,17 @@ const PositiveWordsPuzzle = () => {
   const [showResult, setShowResult] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Left side - positive words
-  const leftItems = [
-    { id: 1, name: "Hope", emoji: "🌟",  },
-    { id: 2, name: "Gratitude", emoji: "🙏",  },
-    { id: 3, name: "Optimism", emoji: "☀️",  },
-    { id: 4, name: "Kindness", emoji: "❤️",  },
-    { id: 5, name: "Joy", emoji: "👏",  }
-  ];
+  const leftItems = Array.isArray(gameContent?.leftItems) ? gameContent.leftItems : [];
+  const rightItems = Array.isArray(gameContent?.rightItems) ? gameContent.rightItems : [];
+  const correctMatches = Array.isArray(gameContent?.correctMatches) ? gameContent.correctMatches : [];
 
-  // Right side - meanings/definitions
-  const rightItems = [
-    { id: 1, name: "Future", emoji: "🤔",  },
-    { id: 2, name: "Thanks", emoji: "🤗",  },
-    { id: 3, name: "Bright Side", emoji: "😎",  },
-    { id: 4, name: "Care", emoji: "😌",  },
-    { id: 5, name: "Happiness", emoji: "😊",  }
-  ];
-
-  // Correct matches
-  const correctMatches = [
-    { leftId: 1, rightId: 1 }, // Hope → Future
-    { leftId: 2, rightId: 2 }, // Gratitude → Thanks
-    { leftId: 3, rightId: 3 }, // Optimism → Bright Side
-    { leftId: 4, rightId: 4 }, // Kindness → Care
-    { leftId: 5, rightId: 5 }  // Joy → Happiness
-  ];
-
-  // Shuffled right items for display (to split matches across positions)
-  const shuffledRightItems = [
-    rightItems[2], // Bright Side (id: 3) - position 1
-    rightItems[4], // Happiness (id: 5) - position 2
-    rightItems[0], // Future (id: 1) - position 3
-    rightItems[3], // Care (id: 4) - position 4
-    rightItems[1]  // Thanks (id: 2) - position 5
-  ];
+  // Shuffled right items for display
+  const shuffledRightItems = useMemo(() => {
+    if (rightItems.length === 0) return [];
+    // Fixed stable shuffle indices: 2, 4, 0, 3, 1
+    const indices = [2, 4, 0, 3, 1];
+    return indices.map(idx => rightItems[idx]).filter(Boolean);
+  }, [rightItems]);
 
   const handleLeftSelect = (item) => {
     if (showResult) return;
@@ -122,8 +102,16 @@ const PositiveWordsPuzzle = () => {
 
   return (
     <GameShell
-      title="Puzzle of Positive Words"
-      subtitle={!showResult ? `Match ${matches.length}/${leftItems.length}` : "Puzzle Complete!"}
+      title={gameContent?.title || "Puzzle of Positive Words"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Puzzle Complete!"
+          : t("brain-health.kids.positive-words-puzzle.subtitleProgress", {
+              current: matches.length,
+              total: leftItems.length,
+              defaultValue: `Match ${matches.length}/${leftItems.length}`,
+            })
+      }
       score={score}
       currentLevel={matches.length + 1}
       totalLevels={leftItems.length}
@@ -145,18 +133,30 @@ const PositiveWordsPuzzle = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Matches: {matches.length}/{leftItems.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{leftItems.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.positive-words-puzzle.matchesLabel", {
+                    current: matches.length,
+                    total: leftItems.length,
+                    defaultValue: `Matches: ${matches.length}/${leftItems.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.positive-words-puzzle.scoreLabel", {
+                    score,
+                    total: leftItems.length,
+                    defaultValue: `Score: ${score}/${leftItems.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6 text-center">
-                Match the positive words with their meanings!
+                {gameContent?.instruction || "Match the positive words with their meanings!"}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Positive Words</h3>
+                  <h3 className="text-white font-bold text-center mb-4">{gameContent?.leftTitle || "Positive Words"}</h3>
                   {leftItems.map((item) => (
                     <button
                       key={item.id}
@@ -174,7 +174,7 @@ const PositiveWordsPuzzle = () => {
                         <span className="text-3xl">{item.emoji}</span>
                         <div className="text-left">
                           <div className="text-white font-semibold">{item.name}</div>
-                          <div className="text-white/70 text-sm">{item.description}</div>
+                          {item.description && <div className="text-white/70 text-sm">{item.description}</div>}
                         </div>
                       </div>
                     </button>
@@ -183,7 +183,7 @@ const PositiveWordsPuzzle = () => {
 
                 {/* Right side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Meanings</h3>
+                  <h3 className="text-white font-bold text-center mb-4">{gameContent?.rightTitle || "Meanings"}</h3>
                   {shuffledRightItems.map((item) => (
                     <button
                       key={item.id}
@@ -201,7 +201,7 @@ const PositiveWordsPuzzle = () => {
                         <span className="text-3xl">{item.emoji}</span>
                         <div className="text-left">
                           <div className="text-white font-semibold">{item.name}</div>
-                          <div className="text-white/70 text-sm">{item.description}</div>
+                          {item.description && <div className="text-white/70 text-sm">{item.description}</div>}
                         </div>
                       </div>
                     </button>
@@ -220,7 +220,7 @@ const PositiveWordsPuzzle = () => {
                       : "bg-white/20 text-white/50 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton || "Match"}
                 </button>
               </div>
             </div>
@@ -232,4 +232,3 @@ const PositiveWordsPuzzle = () => {
 };
 
 export default PositiveWordsPuzzle;
-

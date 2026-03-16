@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -10,10 +11,13 @@ const ROUND_TIME = 10;
 
 const GrowthThinkingReflex = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-99");
   const gameId = gameData?.id || "brain-kids-99";
+
+  const gameContent = t("brain-health.kids.growth-thinking-reflex", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,70 +31,15 @@ const GrowthThinkingReflex = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
-  const [currentRound, setCurrentRound] = useState(0);
-  const [score, setScore] = useState(0);
+  const [currentRound, setCurrentRound] = useState(1);
   const [timeLeft, setTimeLeft] = useState(ROUND_TIME);
+  const [score, setScore] = useState(0);
   const [answered, setAnswered] = useState(false);
+  
+  const currentRoundRef = useRef(1);
   const timerRef = useRef(null);
-  const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      question: "Which activity shows a growth mindset?",
-      correctAnswer: "Learning from mistakes",
-      options: [
-        { text: "Giving up easily", isCorrect: false, emoji: "🏳️" },
-        { text: "Blaming others for failures", isCorrect: false, emoji: "😠" },
-        { text: "Learning from mistakes", isCorrect: true, emoji: "📚" },
-        { text: "Avoiding challenges", isCorrect: false, emoji: "🛡️" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What demonstrates growth thinking?",
-      correctAnswer: "Practicing to improve skills",
-      options: [
-        { text: "Staying at beginner level", isCorrect: false, emoji: "👶" },
-        { text: "Making excuses for poor performance", isCorrect: false, emoji: "🙂" },
-        { text: "Comparing yourself to others", isCorrect: false, emoji: "👥" },
-        { text: "Practicing to improve skills", isCorrect: true, emoji: "💪" },
-      ]
-    },
-    {
-      id: 3,
-      question: "Which approach shows growth mindset?",
-      correctAnswer: "Embracing difficult challenges",
-      options: [
-        { text: "Embracing difficult challenges", isCorrect: true, emoji: "🧗" },
-        { text: "Sticking to easy tasks", isCorrect: false, emoji: "😊" },
-        { text: "Quitting when it gets hard", isCorrect: false, emoji: "😞" },
-        { text: "Ignoring feedback", isCorrect: false, emoji: "🙉" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What is a sign of growth thinking?",
-      correctAnswer: "Viewing effort as a path to mastery",
-      options: [
-        { text: "Believing talent is fixed", isCorrect: false, emoji: "🧱" },
-        { text: "Viewing effort as a path to mastery", isCorrect: true, emoji: "📈" },
-        { text: "Avoiding hard work", isCorrect: false, emoji: "😴" },
-        { text: "Feeling threatened by others' success", isCorrect: false, emoji: "😒" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Which behavior shows growth mindset?",
-      correctAnswer: "Persisting through setbacks",
-      options: [
-        { text: "Giving up after failure", isCorrect: false, emoji: "🏳️" },
-        { text: "Staying in comfort zone", isCorrect: false, emoji: "🛋️" },
-        { text: "Persisting through setbacks", isCorrect: true, emoji: "🦾" },
-        { text: "Ignoring constructive criticism", isCorrect: false, emoji: "🙉" }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;
@@ -192,8 +141,16 @@ const GrowthThinkingReflex = () => {
 
   return (
     <GameShell
-      title="Reflex Growth Thinking"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your growth mindset reflexes!` : "Test your growth mindset reflexes!"}
+      title={gameContent?.title || "Reflex Growth Thinking"}
+      subtitle={
+        gameState === "playing"
+          ? t("brain-health.kids.growth-thinking-reflex.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your growth mindset reflexes!`,
+            })
+          : gameContent?.subtitleDefault || "Test your growth mindset reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -213,19 +170,28 @@ const GrowthThinkingReflex = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🧠</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Get Ready!"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Answer questions about growth thinking!<br />
-              You have {ROUND_TIME} seconds for each question.
+              {gameContent?.readyText1 || "Answer questions about growth thinking!"}<br />
+              {t("brain-health.kids.growth-thinking-reflex.readyText2", {
+                time: ROUND_TIME,
+                defaultValue: `You have ${ROUND_TIME} seconds for each question.`,
+              })}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.growth-thinking-reflex.readyText3", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`,
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -234,13 +200,13 @@ const GrowthThinkingReflex = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round:"}</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time:"}</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score:"}</span> {score}
               </div>
             </div>
 

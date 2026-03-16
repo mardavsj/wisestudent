@@ -1,0 +1,42 @@
+{
+  "title": "Journal of Good Things",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "subtitleComplete": "Journal Complete!",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "placeholder": "Write your thoughts here...",
+  "minLengthLabel": "{{current}}/{{min}} characters minimum",
+  "submitButton": "Submit",
+  "stages": [
+    { 
+      "id": 1, 
+      "prompt": "Write: \"One good thing that happened today was ___.\"", 
+      "minLength": 10,
+      "guidance": "Think about something positive that happened today."
+    },
+    { 
+      "id": 2, 
+      "prompt": "I'm grateful for ___.", 
+      "minLength": 10,
+      "guidance": "What are you thankful for in your life?"
+    },
+    { 
+      "id": 3, 
+      "prompt": "A positive moment was ___.", 
+      "minLength": 10,
+      "guidance": "Describe a moment that made you feel good."
+    },
+    { 
+      "id": 4, 
+      "prompt": "Something that made me smile ___.", 
+      "minLength": 10,
+      "guidance": "What brought a smile to your face today?"
+    },
+    { 
+      "id": 5, 
+      "prompt": "A kind act I saw or did ___.", 
+      "minLength": 10,
+      "guidance": "Think about kindness you experienced or showed."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Puzzle of Brain Care",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match brain care activities with their benefits ({{current}}/{{total}} matched)",
+  "matchesLabel": "Matches: {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "instructions": "Select an activity from the left and its benefit from the right, then click \"Match\"",
+  "leftTitle": "Brain Care Activities",
+  "rightTitle": "Benefits",
+  "matchButton": "Match Selected",
+  "leftItems": [
+    { "id": 1, "name": "Sleep", "emoji": "😴" },
+    { "id": 2, "name": "Reading", "emoji": "📚" },
+    { "id": 3, "name": "Exercise", "emoji": "💪" },
+    { "id": 4, "name": "Healthy Food", "emoji": "🍎" },
+    { "id": 5, "name": "Water", "emoji": "💧" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "Rest & Memory", "emoji": "🧠" },
+    { "id": 2, "name": "Sharp Mind", "emoji": "✨" },
+    { "id": 3, "name": "Strong Brain", "emoji": "💪" },
+    { "id": 4, "name": "Smart Fuel", "emoji": "⚡" },
+    { "id": 5, "name": "Stay Hydrated", "emoji": "💧" }
+  ],
+  "correctMatches": [
+    { "leftId": 1, "rightId": 1 },
+    { "leftId": 2, "rightId": 2 },
+    { "leftId": 3, "rightId": 3 },
+    { "leftId": 4, "rightId": 4 },
+    { "leftId": 5, "rightId": 5 }
+  ]
+}

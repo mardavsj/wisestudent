@@ -1,0 +1,68 @@
+{
+  "title": "Badge: Positive Kid",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Rainy Day Optimism",
+      "description": "Find the silver lining in a rainy day!",
+      "question": "It's raining and your picnic is cancelled. What's a positive thought?",
+      "options": [
+        { "text": "We can play indoor games!", "emoji": "🏠", "isCorrect": true },
+        { "text": "This day is ruined", "emoji": "😞", "isCorrect": false },
+        { "text": "I hate rain", "emoji": "🌧️", "isCorrect": false },
+        { "text": "Nothing good can happen", "emoji": "😠", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Positivity Quiz",
+      "description": "Test your positive thinking knowledge!",
+      "question": "What is the benefit of positive thinking?",
+      "options": [
+        { "text": "Makes you feel worse", "emoji": "😞", "isCorrect": false },
+        { "text": "Helps you feel better and solve problems", "emoji": "😊", "isCorrect": true },
+        { "text": "Doesn't help at all", "emoji": "🤷", "isCorrect": false },
+        { "text": "Makes problems bigger", "emoji": "😠", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Happy Thoughts Reflex",
+      "description": "Quickly identify positive thoughts!",
+      "question": "Is this thought positive or negative: 'I can learn from my mistakes'?",
+      "options": [
+        { "text": "Negative - it's about mistakes", "emoji": "😞", "isCorrect": false },
+        { "text": "Negative - it's too hard", "emoji": "😠", "isCorrect": false },
+        { "text": "Positive - it shows growth mindset", "emoji": "🌟", "isCorrect": true },
+        { "text": "Negative - mistakes are bad", "emoji": "❌", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Positive Words Match",
+      "description": "Match uplifting words and meanings!",
+      "question": "What does 'gratitude' mean?",
+      "options": [
+        { "text": "Being thankful for what you have", "emoji": "🙏", "isCorrect": true },
+        { "text": "Complaining about things", "emoji": "😠", "isCorrect": false },
+        { "text": "Wanting more stuff", "emoji": "🛍️", "isCorrect": false },
+        { "text": "Being sad all the time", "emoji": "😞", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Lost Match Positivity",
+      "description": "Turn defeat into motivation!",
+      "question": "Your team lost the big game. What's a positive way to think?",
+      "options": [
+        { "text": "We're losers forever", "emoji": "😞", "isCorrect": false },
+        { "text": "We'll never win", "emoji": "😠", "isCorrect": false },
+        { "text": "Next time we'll improve and try harder", "emoji": "💪", "isCorrect": true },
+        { "text": "Games are stupid", "emoji": "🚫", "isCorrect": false }
+      ]
+    }
+  ]
+}

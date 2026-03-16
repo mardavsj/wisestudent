@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const ScreensQuiz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-72");
   const gameId = gameData?.id || "brain-kids-72";
+  
+  const gameContent = t("brain-health.kids.screens-quiz", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,130 +31,6 @@ const ScreensQuiz = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Too much screen time causes?",
-      options: [
-        { 
-          id: "a", 
-          text: " Eye strain", 
-          emoji: "👁️", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: " More energy", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: " Superpowers", 
-          emoji: "🦸", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Screens before bed affect? ",
-      options: [
-        { 
-          id: "b", 
-          text: " Strength", 
-          emoji: "💪", 
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: " Sleep", 
-          emoji: "😴", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: " Height", 
-          emoji: "📏", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Best screen time limit? ",
-      options: [
-        { 
-          id: "c", 
-          text: " No limit", 
-          emoji: "♾️", 
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: " 10 hrs", 
-          emoji: "⏰", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: " 1–2 hrs", 
-          emoji: "⏱️", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Too much gaming causes? ",
-      options: [
-        { 
-          id: "b", 
-          text: " Tiredness", 
-          emoji: "😴", 
-          isCorrect: true
-        },
-        { 
-          id: "a", 
-          text: " Focus", 
-          emoji: "🎯", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: " Speed", 
-          emoji: "⚡", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Balanced screen use helps? ",
-      options: [
-        { 
-          id: "c", 
-          text: " Laziness", 
-          emoji: "😑", 
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: " Eyes", 
-          emoji: "👁️", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: " Headaches", 
-          emoji: "🤕", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
-
   const handleChoice = (isCorrect) => {
     if (answered) return;
     
@@ -159,6 +40,8 @@ const ScreensQuiz = () => {
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     const isLastQuestion = currentQuestion === questions.length - 1;
@@ -177,8 +60,16 @@ const ScreensQuiz = () => {
 
   return (
     <GameShell
-      title="Quiz on Screens"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      title={gameContent?.title || "Quiz on Screens"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleDefault || "Quiz Complete!" 
+          : t("brain-health.kids.screens-quiz.subtitlePlaying", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -187,21 +78,33 @@ const ScreensQuiz = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      nextGamePathProp="/student/brain/kids/reflex-digital-choice"
       nextGameIdProp="brain-kids-73"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       gameId={gameId}
       gameType="brain"
+      backPath="/games/brain-health/kids"
     >
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.screens-quiz.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.screens-quiz.scoreLabel", {
+                    current: score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

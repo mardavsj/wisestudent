@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const ArtStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-88");
   const gameId = gameData?.id || "brain-kids-88";
+  
+  const gameContent = t("brain-health.kids.art-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,54 +30,7 @@ const ArtStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-  {
-    id: 1,
-    text: "Riya finds old newspapers and bottle caps at home. She plans to use them to create something for her school display. What choice best shows creative thinking?",
-    options: [
-      { id: "a1", text: "Throw them away and buy new craft items", emoji: "🗑️", isCorrect: false },
-      { id: "b1", text: "Use the waste items to design a new art piece", emoji: "♻️", isCorrect: true },
-      { id: "c1", text: "Wait for someone else to tell her what to make", emoji: "⏳", isCorrect: false }
-    ]
-  },
-  {
-    id: 2,
-    text: "Ayaan wants to draw a picture for his art story. He has seen many similar drawings before. What would make his artwork truly creative?",
-    options: [
-      { id: "a2", text: "Copying a picture exactly from a book", emoji: "📘", isCorrect: false },
-      { id: "c2", text: "Leaving the page blank to avoid mistakes", emoji: "📄", isCorrect: false },
-      { id: "b2", text: "Adding his own ideas and colors to the drawing", emoji: "🎨", isCorrect: true },
-    ]
-  },
-  {
-    id: 3,
-    text: "Two friends are building a play fort using boxes. One follows instructions, the other changes the design to solve problems. Which action shows creativity in the story?",
-    options: [
-      { id: "a3", text: "Stopping when the boxes don’t fit", emoji: "🚫", isCorrect: false },
-      { id: "b3", text: "Changing the design to make the fort stronger", emoji: "🏰", isCorrect: true },
-      { id: "c3", text: "Waiting for an adult to build it instead", emoji: "🙋", isCorrect: false }
-    ]
-  },
-  {
-    id: 4,
-    text: "Meera writes an art story about a talking tree. How can she make the story more creative?",
-    options: [
-      { id: "a4", text: "Using only one sentence again and again", emoji: "🔁", isCorrect: false },
-      { id: "b4", text: "Giving the tree feelings and a unique problem", emoji: "🌳", isCorrect: true },
-      { id: "c4", text: "Ending the story without any ideas", emoji: "❌", isCorrect: false }
-    ]
-  },
-  {
-    id: 5,
-    text: "During art time, a child taps different objects to make sounds for a story scene. What makes this activity creative?",
-    options: [
-      { id: "b5", text: "Exploring new sounds to match the story mood", emoji: "🎶", isCorrect: true },
-      { id: "a5", text: "Using objects only for their normal purpose", emoji: "📦", isCorrect: false },
-      { id: "c5", text: "Stopping because instruments are not available", emoji: "🛑", isCorrect: false }
-    ]
-  }
-];
-
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -102,8 +59,16 @@ const ArtStory = () => {
 
   return (
     <GameShell
-      title="Art Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Art Story"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Story Complete!"
+          : t("brain-health.kids.art-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -125,8 +90,20 @@ const ArtStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.art-story.subtitleProgress", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.art-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

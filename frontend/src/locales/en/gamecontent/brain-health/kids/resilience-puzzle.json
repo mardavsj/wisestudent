@@ -1,0 +1,26 @@
+{
+  "title": "Puzzle of Resilience",
+  "subtitleDefault": "Match the items!",
+  "subtitleMatching": "Match {{current}}/{{total}}",
+  "subtitleComplete": "Puzzle Complete!",
+  "matchesLabel": "Matches: {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "instruction": "Match the setbacks with the resilient responses!",
+  "leftTitle": "Setbacks",
+  "rightTitle": "Resilient Responses",
+  "matchButton": "Match",
+  "leftItems": [
+    { "id": 1, "name": "Fall", "emoji": "⬇️" },
+    { "id": 2, "name": "Fail", "emoji": "❌" },
+    { "id": 3, "name": "Mistake", "emoji": "⚠️" },
+    { "id": 4, "name": "Lose", "emoji": "😞" },
+    { "id": 5, "name": "Error", "emoji": "🔴" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "Rise", "emoji": "⬆️" },
+    { "id": 2, "name": "Try Again", "emoji": "🔄" },
+    { "id": 3, "name": "Learn", "emoji": "📚" },
+    { "id": 4, "name": "Practice", "emoji": "💪" },
+    { "id": 5, "name": "Fix", "emoji": "🔧" }
+  ]
+}

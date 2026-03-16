@@ -1,0 +1,129 @@
+{
+  "title": "Quiz on Screens",
+  "subtitleDefault": "Quiz Complete!",
+  "subtitlePlaying": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Too much screen time causes?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Eye strain",
+          "emoji": "👁️",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "More energy",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Superpowers",
+          "emoji": "🦸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Screens before bed affect?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Strength",
+          "emoji": "💪",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "Sleep",
+          "emoji": "😴",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Height",
+          "emoji": "📏",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Best screen time limit?",
+      "options": [
+        {
+          "id": "c",
+          "text": "No limit",
+          "emoji": "♾️",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "10 hrs",
+          "emoji": "⏰",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "1–2 hrs",
+          "emoji": "⏱️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Too much gaming causes?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Tiredness",
+          "emoji": "😴",
+          "isCorrect": true
+        },
+        {
+          "id": "a",
+          "text": "Focus",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Speed",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Balanced screen use helps?",
+      "options": [
+        {
+          "id": "c",
+          "text": "Laziness",
+          "emoji": "😑",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "Eyes",
+          "emoji": "👁️",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Headaches",
+          "emoji": "🤕",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

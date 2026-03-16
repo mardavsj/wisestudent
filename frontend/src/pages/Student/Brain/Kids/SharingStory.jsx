@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const SharingStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-45");
   const gameId = gameData?.id || "brain-kids-45";
+  
+  const gameContent = t("brain-health.kids.sharing-story", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,132 +31,6 @@ const SharingStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Kid feels angry. Best way to handle?",
-      options: [
-        { 
-          id: "tell", 
-          text: "Tell teacher/parent", 
-          emoji: "👨‍🏫", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "yell", 
-          text: "Yell at others", 
-          emoji: "😡", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "hide", 
-          text: "Hide feelings", 
-          emoji: "😶", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Feeling sad about a fight. What to do?",
-      options: [
-        { 
-          id: "silent", 
-          text: "Stay silent", 
-          emoji: "🤐", 
-          isCorrect: false
-        },
-        { 
-          id: "talk", 
-          text: "Talk to friend", 
-          emoji: "💬", 
-          isCorrect: true
-        },
-        { 
-          id: "blame", 
-          text: "Blame others", 
-          emoji: "👆", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Scared at night. Best action?",
-      options: [
-        { 
-          id: "ignore", 
-          text: "Ignore it", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          id: "stay", 
-          text: "Stay scared", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "tell", 
-          text: "Tell parent", 
-          emoji: "👨‍👩‍👧", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Jealous of friend's toy. What to do?",
-      options: [
-        { 
-          id: "share", 
-          text: "Share feelings", 
-          emoji: "💭", 
-          isCorrect: true
-        },
-        { 
-          id: "take", 
-          text: "Take toy", 
-          emoji: "🤲", 
-          isCorrect: false
-        },
-        { 
-          id: "mad", 
-          text: "Be mad", 
-          emoji: "😠", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Excited but nervous. Best way?",
-      options: [
-        { 
-          id: "secret", 
-          text: "Keep it secret", 
-          emoji: "🤫", 
-          isCorrect: false
-        },
-        { 
-          id: "act", 
-          text: "Act out", 
-          emoji: "🎭", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "tell", 
-          text: "Tell someone", 
-          emoji: "🗣️", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
-
   const handleChoice = (isCorrect) => {
     if (answered) return;
     
@@ -161,6 +40,8 @@ const SharingStory = () => {
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     const isLastQuestion = currentQuestion === questions.length - 1;
@@ -179,8 +60,16 @@ const SharingStory = () => {
 
   return (
     <GameShell
-      title="Sharing Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Sharing Story"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleDefault || "Story Complete!" 
+          : t("brain-health.kids.sharing-story.subtitlePlaying", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -189,21 +78,33 @@ const SharingStory = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      nextGamePathProp="/student/brain/kids/poster-feelings-matter"
       nextGameIdProp="brain-kids-46"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       gameId={gameId}
       gameType="brain"
+      backPath="/games/brain-health/kids"
     >
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.sharing-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.sharing-story.scoreLabel", {
+                    current: score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -220,7 +121,6 @@ const SharingStory = () => {
                   >
                     <div className="text-3xl mb-3">{option.emoji}</div>
                     <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
                   </button>
                 ))}
               </div>

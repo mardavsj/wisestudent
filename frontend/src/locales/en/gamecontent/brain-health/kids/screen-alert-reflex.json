@@ -1,0 +1,64 @@
+{
+  "title": "Reflex Screen Alert",
+  "subtitleDefault": "Test your screen balance reflexes!",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your screen balance reflexes!",
+  "readyTitle": "Get Ready!",
+  "readyText": "Identify balanced screen choices!<br />You have {{time}} seconds for each question.",
+  "readySubtext": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round",
+  "timeLabel": "Time",
+  "scoreLabel": "Score",
+  "questions": [
+    {
+      "id": 1,
+      "text": "A young news reporter needs to stay focused for a live morning segment. Which evening habit helps alertness?",
+      "options": [
+        { "id": "b", "text": "Watch one more episode before bed", "emoji": "🎬", "isCorrect": false },
+        { "id": "c", "text": "Scroll social media endlessly", "emoji": "📱", "isCorrect": false },
+        { "id": "a", "text": "Log off from games an hour early", "emoji": "🕹️", "isCorrect": true },
+        { "id": "d", "text": "Keep phone under pillow", "emoji": "📳", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "A junior astronaut trainee wants to practice star charts in the morning. What screen habit helps?",
+      "options": [
+        { "id": "b", "text": "Play games nonstop at night", "emoji": "🎮", "isCorrect": false },
+        { "id": "c", "text": "Leave tablet on all night", "emoji": "💻", "isCorrect": false },
+        { "id": "d", "text": "Watch long videos before sleeping", "emoji": "📺", "isCorrect": false },
+        { "id": "a", "text": "Take short breaks from screen while practicing", "emoji": "⏸️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "A forest guide-in-training needs to identify bird sounds in the morning. What night habit keeps eyes fresh?",
+      "options": [
+        { "id": "a", "text": "Staring at bright screen continuously", "emoji": "👀", "isCorrect": false },
+        { "id": "b", "text": "Rest your eyes and stretch after screen time", "emoji": "😴", "isCorrect": true },
+        { "id": "c", "text": "No breaks during tablet games", "emoji": "⏱️", "isCorrect": false },
+        { "id": "d", "text": "Scroll videos until sleepy", "emoji": "📱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "A classroom helper wants to stay cheerful and attentive. What is a balanced screen choice?",
+      "options": [
+        { "id": "a", "text": "Limit screen time to short sessions", "emoji": "⏰", "isCorrect": true },
+        { "id": "b", "text": "Ignore screen limits and continue playing", "emoji": "🔓", "isCorrect": false },
+        { "id": "c", "text": "Combine TV, tablet, and phone use at once", "emoji": "📺💻📱", "isCorrect": false },
+        { "id": "d", "text": "Use tablet until very late", "emoji": "🌙", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "A young game designer needs energy and focus tomorrow. Which habit is best tonight?",
+      "options": [
+        { "id": "b", "text": "Random screen times whenever bored", "emoji": "🔄", "isCorrect": false },
+        { "id": "c", "text": "Play on all devices at once", "emoji": "💻📱📺", "isCorrect": false },
+        { "id": "a", "text": "Follow a regular screen schedule", "emoji": "📅", "isCorrect": true },
+        { "id": "d", "text": "Skip breaks completely", "emoji": "⏱️", "isCorrect": false }
+      ]
+    }
+  ]
+}

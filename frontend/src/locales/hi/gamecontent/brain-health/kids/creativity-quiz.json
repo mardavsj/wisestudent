@@ -1,0 +1,54 @@
+{
+  "title": "रचनात्मकता पर प्रश्नोत्तरी",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "subtitleComplete": "प्रश्नोत्तरी पूरी हुई!",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "कौन सा समस्या समाधान है?",
+      "options": [
+        { "id": "crying", "text": "रोना", "emoji": "😢", "isCorrect": false },
+        { "id": "finding", "text": "दूसरा रास्ता खोजना", "emoji": "💡", "isCorrect": true },
+        { "id": "giving", "text": "हार मानना", "emoji": "😞", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "रचनात्मक सोच क्या है?",
+      "options": [
+        { "id": "copy", "text": "दूसरों की नकल करना", "emoji": "📋", "isCorrect": false },
+        { "id": "avoid", "text": "समस्याओं से बचना", "emoji": "🚶", "isCorrect": false },
+        { "id": "new", "text": "नए विचारों के साथ आना", "emoji": "✨", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "आप किसी समस्या को रचनात्मक तरीके से कैसे हल करते हैं?",
+      "options": [
+        { "id": "same", "text": "वही काम दोबारा करें", "emoji": "🔄", "isCorrect": false },
+        { "id": "think", "text": "विभिन्न समाधानों के बारे में सोचें", "emoji": "🧠", "isCorrect": true },
+        { "id": "wait", "text": "किसी और का इंतज़ार करें", "emoji": "⏳", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आपको रचनात्मक होने में क्या मदद करता है?",
+      "options": [
+        { "id": "experiment", "text": "नई चीज़ें आज़माना", "emoji": "🔬", "isCorrect": true },
+        { "id": "fear", "text": "कोशिश करने से डरना", "emoji": "😨", "isCorrect": false },
+        { "id": "stay", "text": "कम्फर्ट ज़ोन में रहना", "emoji": "🛋️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "समस्या को हल करने का सबसे अच्छा तरीका क्या है?",
+      "options": [
+        { "id": "quit", "text": "तुरंत हार मान लें", "emoji": "🏳️", "isCorrect": false },
+        { "id": "blame", "text": "दूसरों को दोष दें", "emoji": "👆", "isCorrect": false },
+        { "id": "solve", "text": "सोचें और समाधान खोजें", "emoji": "🔧", "isCorrect": true }
+      ]
+    }
+  ]
+}

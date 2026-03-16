@@ -1,0 +1,54 @@
+{
+  "title": "मस्तिष्क स्वास्थ्य के लिए खेल",
+  "subtitleDefault": "कहानी पूर्ण!",
+  "subtitlePlaying": "प्रश्न {{current}} का {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "बच्चा खेल हार जाता है और गुस्सा महसूस करता है। सही कार्रवाई?",
+      "options": [
+        { "id": "try-again", "text": "शांति से दोबारा प्रयास करें", "emoji": "🧘", "isCorrect": true },
+        { "id": "yell", "text": "चिल्लाओ और और अधिक क्रोधित हो जाओ", "emoji": "😡", "isCorrect": false },
+        { "id": "quit", "text": "हमेशा के लिए खेलना छोड़ दें", "emoji": "🚪", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "हारने के बाद, आपको क्या सुधारने में मदद करता है?",
+      "options": [
+        { "id": "blame", "text": "दूसरों को दोष दें", "emoji": "👆", "isCorrect": false },
+        { "id": "ignore", "text": "हार को नजरअंदाज करें", "emoji": "🙈", "isCorrect": false },
+        { "id": "practice", "text": "अभ्यास करें और गलतियों से सीखें", "emoji": "📚", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "जब आप हारने के बाद गुस्सा महसूस करते हैं, तो आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "scream", "text": "चिल्लाओ और चीजें फेंको", "emoji": "😱", "isCorrect": false },
+        { "id": "breathe", "text": "गहरी सांस लें और शांत हो जाएं", "emoji": "🌬️", "isCorrect": true },
+        { "id": "cry", "text": "रोओ और हार मान लो", "emoji": "😢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "हार को संभालने का सबसे अच्छा तरीका क्या है?",
+      "options": [
+        { "id": "forget", "text": "इसके बारे में पूरी तरह से भूल जाओ", "emoji": "🧠", "isCorrect": false },
+        { "id": "complain", "text": "हर किसी से शिकायत करें", "emoji": "😤", "isCorrect": false },
+        { "id": "learn", "text": "इससे सीखें और पुनः प्रयास करें", "emoji": "💪", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "जब आप हारते हैं तो आप शांत कैसे रह सकते हैं?",
+      "options": [
+        { "id": "positive", "text": "सकारात्मक सोचें और प्रयास करते रहें", "emoji": "✨", "isCorrect": true },
+        { "id": "negative", "text": "सोचें कि आप हमेशा हारेंगे", "emoji": "💔", "isCorrect": false },
+        { "id": "avoid", "text": "दोबारा खेलने से बचें", "emoji": "🏃", "isCorrect": false }
+      ]
+    }
+  ]
+}

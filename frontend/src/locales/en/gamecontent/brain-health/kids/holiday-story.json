@@ -1,0 +1,54 @@
+{
+  "title": "Holiday Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "On the first night of holidays, Rohan wants to play until very late because there is no school tomorrow. What choice helps him enjoy the next day too?",
+      "options": [
+        { "id": "allnight", "text": "Play until he feels completely exhausted", "emoji": "🌌", "isCorrect": false },
+        { "id": "random", "text": "Decide based on how tired he feels later", "emoji": "🎲", "isCorrect": false },
+        { "id": "balanced", "text": "Set a play limit and save energy for tomorrow", "emoji": "⚖️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "During holidays, Meera shifts her sleep time every night and feels confused in the mornings. What helps her days feel smoother?",
+      "options": [
+        { "id": "catchup", "text": "Sleep very late and wake suddenly", "emoji": "⚡", "isCorrect": false },
+        { "id": "anchor", "text": "Keep a loose but regular sleep rhythm", "emoji": "⏰", "isCorrect": true },
+        { "id": "ignoreclock", "text": "Stop caring about time completely", "emoji": "🕰️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Arjun plans gaming, movies, and outings all in one day. By evening, he feels drained. What would help him enjoy activities longer?",
+      "options": [
+        { "id": "pace", "text": "Space activities with rest in between", "emoji": "🌿", "isCorrect": true },
+        { "id": "stack", "text": "Do everything back-to-back", "emoji": "📚", "isCorrect": false },
+        { "id": "skiprest", "text": "Ignore tiredness and continue", "emoji": "🔥", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Late-night movies feel exciting, but the next morning feels slow. What explains this change?",
+      "options": [
+        { "id": "boredom", "text": "Movies suddenly became less fun", "emoji": "🎬", "isCorrect": false },
+        { "id": "weather", "text": "The weather affected energy", "emoji": "🌤️", "isCorrect": false },
+        { "id": "bodyclock", "text": "The body clock needs consistency to recharge", "emoji": "🧠", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "At night, messages keep coming while Aman is on holiday. He enjoys chatting but feels tired the whole day after. What helps him keep energy?",
+      "options": [
+        { "id": "replyall", "text": "Reply to every message immediately", "emoji": "💬", "isCorrect": false },
+        { "id": "boundary", "text": "Create a clear stop time for chatting", "emoji": "🚦", "isCorrect": true },
+        { "id": "latewake", "text": "Stay up and wake later to adjust", "emoji": "🌙", "isCorrect": false }
+      ]
+    }
+  ]
+}

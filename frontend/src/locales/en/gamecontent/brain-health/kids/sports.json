@@ -1,0 +1,54 @@
+{
+  "title": "Sports Story",
+  "subtitleDefault": "Story Complete!",
+  "subtitlePlaying": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Kid loses in game, feels angry. What should they do?",
+      "options": [
+        { "id": "quit", "text": "Quit the team", "emoji": "🏳️", "isCorrect": false },
+        { "id": "blame", "text": "Blame others", "emoji": "👆", "isCorrect": false },
+        { "id": "calm", "text": "Try again calmly", "emoji": "😊", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Missed goal, upset. What's the best response?",
+      "options": [
+        { "id": "throw", "text": "Throw the ball", "emoji": "😠", "isCorrect": false },
+        { "id": "practice", "text": "Practice more and try again", "emoji": "⚽", "isCorrect": true },
+        { "id": "cry", "text": "Cry and give up", "emoji": "😢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Team loses the match. What should they do?",
+      "options": [
+        { "id": "learn", "text": "Learn from it calmly", "emoji": "📚", "isCorrect": true },
+        { "id": "argue", "text": "Argue with each other", "emoji": "😠", "isCorrect": false },
+        { "id": "quit2", "text": "Give up completely", "emoji": "🚶", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Injured during play, angry. How should they handle it?",
+      "options": [
+        { "id": "ignore", "text": "Ignore the pain and continue", "emoji": "🤕", "isCorrect": false },
+        { "id": "yell", "text": "Yell at the coach", "emoji": "😡", "isCorrect": false },
+        { "id": "rest", "text": "Rest and stay calm", "emoji": "🏥", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Bad referee call, mad. What's the right action?",
+      "options": [
+        { "id": "protest", "text": "Protest loudly", "emoji": "🗣️", "isCorrect": false },
+        { "id": "accept", "text": "Accept and focus calmly", "emoji": "👍", "isCorrect": true },
+        { "id": "leave", "text": "Leave the game", "emoji": "🏃", "isCorrect": false }
+      ]
+    }
+  ]
+}

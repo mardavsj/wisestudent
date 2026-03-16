@@ -1,0 +1,42 @@
+{
+  "title": "Journal of Calmness",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "subtitleComplete": "Journal Complete!",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "characterCountLabel": "{{current}}/{{min}} characters minimum",
+  "placeholder": "Write your thoughts here...",
+  "submitButton": "Submit",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Write: \"One thing that calms me down is ___.\"",
+      "minLength": 10,
+      "guidance": "Think about activities or things that help you feel calm and peaceful."
+    },
+    {
+      "id": 2,
+      "prompt": "My favorite relaxing activity is ___.",
+      "minLength": 10,
+      "guidance": "What do you enjoy doing when you want to relax?"
+    },
+    {
+      "id": 3,
+      "prompt": "When stressed, I can ___.",
+      "minLength": 10,
+      "guidance": "What helps you when you feel stressed or worried?"
+    },
+    {
+      "id": 4,
+      "prompt": "A calm place for me is ___.",
+      "minLength": 10,
+      "guidance": "Where do you feel most calm and peaceful?"
+    },
+    {
+      "id": 5,
+      "prompt": "To stay cool, I ___.",
+      "minLength": 10,
+      "guidance": "What do you do to keep yourself calm and collected?"
+    }
+  ]
+}

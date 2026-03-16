@@ -1,19 +1,22 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
-import { getBrainKidsGames } from "../../../../pages/Games/GameCategories/Brain/kidGamesData";
 
 const TOTAL_ROUNDS = 5;
 const ROUND_TIME = 10;
 
 const QuickEmotionReflex = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-49");
   const gameId = gameData?.id || "brain-kids-49";
+  
+  const gameContent = t("brain-health.kids.quick-emotion-reflex", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -35,59 +38,7 @@ const QuickEmotionReflex = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-  {
-    id: 1,
-    text: "A baker sees customers smiling after tasting fresh bread. What feeling fits best?",
-    options: [
-      { id: "a", text: "Pride", emoji: "🏆", isCorrect: true },
-      { id: "b", text: "Confusion", emoji: "😅", isCorrect: false },
-      { id: "c", text: "Fear", emoji: "😱", isCorrect: false },
-      { id: "d", text: "Boredom", emoji: "🙄", isCorrect: false }
-    ]
-  },
-  {
-    id: 2,
-    text: "A pilot hears strange noise but follows training calmly. What emotion is shown?",
-    options: [
-      { id: "a", text: "Joy", emoji: "🥳", isCorrect: false },
-      { id: "b", text: "Anger", emoji: "😠", isCorrect: false },
-      { id: "c", text: "Shyness", emoji: "😳", isCorrect: false },
-      { id: "d", text: "Confidence", emoji: "💪", isCorrect: true }
-    ]
-  },
-  {
-    id: 3,
-    text: "A gardener sees the first flower bloom after many days. What feeling appears?",
-    options: [
-      { id: "a", text: "Sleepiness", emoji: "😴", isCorrect: false },
-      { id: "b", text: "Worry", emoji: "🤔", isCorrect: false },
-      { id: "c", text: "Happiness", emoji: "😊", isCorrect: true },
-      { id: "d", text: "Jealousy", emoji: "😔", isCorrect: false }
-    ]
-  },
-  {
-    id: 4,
-    text: "A doctor must give a shot and speaks softly to help the child relax. What emotion is shown?",
-    options: [
-      { id: "a", text: "Excitement", emoji: "🤩", isCorrect: false },
-      { id: "b", text: "Care", emoji: "🤗", isCorrect: true },
-      { id: "c", text: "Fear", emoji: "😨", isCorrect: false },
-      { id: "d", text: "Panic", emoji: "⚠️", isCorrect: false }
-    ]
-  },
-  {
-    id: 5,
-    text: "A shopkeeper finds money left behind and waits to return it. What feeling guides this?",
-    options: [
-      { id: "a", text: "Honesty", emoji: "🤗", isCorrect: true },
-      { id: "b", text: "Greed", emoji: "💰", isCorrect: false },
-      { id: "c", text: "Surprise", emoji: "😮", isCorrect: false },
-      { id: "d", text: "Anger", emoji: "😠", isCorrect: false }
-    ]
-  }
-];
-
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;
@@ -170,13 +121,20 @@ const QuickEmotionReflex = () => {
   };
 
   const finalScore = score;
-
   const currentQuestion = questions[currentRound - 1];
 
   return (
     <GameShell
-      title="Reflex Quick Emotion"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your emotion reflexes!` : "Test your emotion reflexes!"}
+      title={gameContent?.title || "Reflex Quick Emotion"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.quick-emotion-reflex.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your emotion reflexes!`
+            }) 
+          : gameContent?.subtitleReady || "Test your emotion reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -196,19 +154,27 @@ const QuickEmotionReflex = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🧠</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
-            <p className="text-white/90 text-lg mb-6">
-              Answer questions about emotions!<br />
-              You have {ROUND_TIME} seconds for each question.
-            </p>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Get Ready!"}
+            </h3>
+            <p className="text-white/90 text-lg mb-6" dangerouslySetInnerHTML={{ 
+              __html: t("brain-health.kids.quick-emotion-reflex.readyDescription", {
+                time: ROUND_TIME,
+                defaultValue: `Answer questions about emotions!<br />You have ${ROUND_TIME} seconds for each question.`
+              })
+            }} />
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.quick-emotion-reflex.readySummary", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -217,13 +183,13 @@ const QuickEmotionReflex = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round:"}</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time:"}</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score:"}</span> {score}
               </div>
             </div>
       

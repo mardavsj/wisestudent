@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -8,10 +9,13 @@ import { Smile, Heart, Sun, Sparkles, ThumbsUp } from 'lucide-react';
 
 const PositiveKidBadge = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-60");
   const gameId = gameData?.id || "brain-kids-60";
+  
+  const gameContent = t("brain-health.kids.positive-kid-badge", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -58,158 +62,31 @@ const PositiveKidBadge = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Rainy Day Optimism",
-      description: "Find the silver lining in a rainy day!",
-      icon: <Sun className="w-8 h-8" />,
-      color: "bg-yellow-500",
-      question: "It's raining and your picnic is cancelled. What's a positive thought?",
-      options: [
-        { 
-          text: "We can play indoor games!", 
-          emoji: "🏠", 
-          isCorrect: true
-        },
-        { 
-          text: "This day is ruined", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          text: "I hate rain", 
-          emoji: "🌧️", 
-          isCorrect: false
-        },
-        { 
-          text: "Nothing good can happen", 
-          emoji: "😠", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Positivity Quiz",
-      description: "Test your positive thinking knowledge!",
-      icon: <Sparkles className="w-8 h-8" />,
-      color: "bg-purple-500",
-      question: "What is the benefit of positive thinking?",
-      options: [
-        { 
-          text: "Makes you feel worse", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          text: "Helps you feel better and solve problems", 
-          emoji: "😊", 
-          isCorrect: true
-        },
-        { 
-          text: "Doesn't help at all", 
-          emoji: "🤷", 
-          isCorrect: false
-        },
-        { 
-          text: "Makes problems bigger", 
-          emoji: "😠", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Happy Thoughts Reflex",
-      description: "Quickly identify positive thoughts!",
-      icon: <Smile className="w-8 h-8" />,
-      color: "bg-green-500",
-      question: "Is this thought positive or negative: 'I can learn from my mistakes'?",
-      options: [
-        { 
-          text: "Negative - it's about mistakes", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          text: "Negative - it's too hard", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          text: "Positive - it shows growth mindset", 
-          emoji: "🌟", 
-          isCorrect: true
-        },
-        { 
-          text: "Negative - mistakes are bad", 
-          emoji: "❌", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Positive Words Match",
-      description: "Match uplifting words and meanings!",
-      icon: <Heart className="w-8 h-8" />,
-      color: "bg-pink-500",
-      question: "What does 'gratitude' mean?",
-      options: [
-        { 
-          text: "Being thankful for what you have", 
-          emoji: "🙏", 
-          isCorrect: true
-        },
-        { 
-          text: "Complaining about things", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          text: "Wanting more stuff", 
-          emoji: "🛍️", 
-          isCorrect: false
-        },
-        { 
-          text: "Being sad all the time", 
-          emoji: "😞", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Lost Match Positivity",
-      description: "Turn defeat into motivation!",
-      icon: <ThumbsUp className="w-8 h-8" />,
-      color: "bg-blue-500",
-      question: "Your team lost the big game. What's a positive way to think?",
-      options: [
-        { 
-          text: "We're losers forever", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          text: "We'll never win", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          text: "Next time we'll improve and try harder", 
-          emoji: "💪", 
-          isCorrect: true
-        },
-        { 
-          text: "Games are stupid", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challengeData = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
+  
+  // Map icons and colors to localized challenges
+  const challenges = useMemo(() => {
+    const icons = [
+      <Sun className="w-8 h-8" />,
+      <Sparkles className="w-8 h-8" />,
+      <Smile className="w-8 h-8" />,
+      <Heart className="w-8 h-8" />,
+      <ThumbsUp className="w-8 h-8" />
+    ];
+    const colors = [
+      "bg-yellow-500",
+      "bg-purple-500",
+      "bg-green-500",
+      "bg-pink-500",
+      "bg-blue-500"
+    ];
+    
+    return challengeData.map((c, i) => ({
+      ...c,
+      icon: icons[i % icons.length],
+      color: colors[i % colors.length]
+    }));
+  }, [challengeData]);
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -255,9 +132,17 @@ const PositiveKidBadge = () => {
 
   return (
     <GameShell
-      title="Badge: Positive Kid"
+      title={gameContent?.title || "Badge: Positive Kid"}
       score={score}
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("brain-health.kids.positive-kid-badge.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -278,8 +163,20 @@ const PositiveKidBadge = () => {
         {!showResult && currentChallenge ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
             <div className="flex justify-between items-center mb-4">
-              <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-              <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+              <span className="text-white/80">
+                {t("brain-health.kids.positive-kid-badge.subtitleProgress", {
+                  current: challenge + 1,
+                  total: challenges.length,
+                  defaultValue: `Challenge ${challenge + 1}/${challenges.length}`,
+                })}
+              </span>
+              <span className="text-yellow-400 font-bold">
+                {t("brain-health.kids.positive-kid-badge.scoreLabel", {
+                  score,
+                  total: challenges.length,
+                  defaultValue: `Score: ${score}/${challenges.length}`,
+                })}
+              </span>
             </div>
             
             <div className="mb-6">

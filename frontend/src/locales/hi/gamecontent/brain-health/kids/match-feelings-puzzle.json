@@ -1,0 +1,31 @@
+{
+  "title": "पहेली: भावनाओं का मिलान करें",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "मिलान {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "instruction": "अभिव्यक्तियों का सही भावनाओं के साथ मिलान करें!",
+  "expressionsTitle": "अभिव्यक्तियाँ",
+  "feelingsTitle": "भावनाएं",
+  "matchButton": "मिलान करें",
+  "leftItems": [
+    { "id": 1, "name": "शांत मुस्कान", "emoji": "🌤️" },
+    { "id": 2, "name": "आंखें भारी महसूस होना", "emoji": "💧" },
+    { "id": 3, "name": "तनी हुई भौहें", "emoji": "🧩" },
+    { "id": 4, "name": "स्थिर नहीं रह पाना", "emoji": "⚡" },
+    { "id": 5, "name": "शरीर में कंपन महसूस होना", "emoji": "🍃" }
+  ],
+  "rightItems": [
+    { "id": 4, "name": "उत्साह का विस्फोट", "emoji": "🎉" },
+    { "id": 3, "name": "परेशान ऊर्जा", "emoji": "🔥" },
+    { "id": 2, "name": "कमज़ोर महसूस करना", "emoji": "🌧️" },
+    { "id": 1, "name": "अंदर से आनंदित", "emoji": "🎈" },
+    { "id": 5, "name": "असुरक्षित महसूस करना", "emoji": "🛑" }
+  ],
+  "correctMatches": [
+    { "leftId": 1, "rightId": 1 },
+    { "leftId": 2, "rightId": 2 },
+    { "leftId": 3, "rightId": 3 },
+    { "leftId": 4, "rightId": 4 },
+    { "leftId": 5, "rightId": 5 }
+  ]
+}

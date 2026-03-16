@@ -1,0 +1,40 @@
+{
+  "title": "पहेली: मेमोरी मैच",
+  "subtitleComplete": "खेल पूरा हुआ!",
+  "subtitleProgress": "पहले दिखाए गए फलों का मिलान करें ({{current}}/{{total}} मिलान किए गए)",
+  "fruitsShownTitle": "दिखाए गए फल",
+  "matchTheseTitle": "इनका मिलान करें",
+  "selectAFruit": "एक फल चुनें",
+  "selectedLabel": "चुना गया: {{name}}",
+  "matchButton": "चुने हुए का मिलान करें",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "greatMemoryTitle": "शानदार याददाश्त!",
+  "greatMemoryDescription": "आपने {{total}} में से {{score}} फलों का सही मिलान किया! आपकी याददाश्त अच्छी तरह काम कर रही है!",
+  "coinsAwarded": "+{{score}} सिक्के",
+  "rememberedFruits": "आपको ये फल याद रहे: सेब, केला, संतरा, अंगूर और आम!",
+  "keepPracticingTitle": "अभ्यास जारी रखें!",
+  "keepPracticingDescription": "आपने {{total}} में से {{score}} फलों का सही मिलान किया। याद रखें, अभ्यास आपकी याददाश्त को बेहतर बनाने में मदद करता है!",
+  "tryAgainPrompt": "प्रत्येक फल को उसकी जोड़ी के साथ मिलाने का प्रयास करें। फल थे: सेब, केला, संतरा, अंगूर और आम!",
+  "leftItems": [
+    { "id": 1, "name": "सेब", "emoji": "🍎" },
+    { "id": 2, "name": "केला", "emoji": "🍌" },
+    { "id": 3, "name": "संतरा", "emoji": "🍊" },
+    { "id": 4, "name": "अंगूर", "emoji": "🍇" },
+    { "id": 5, "name": "तरबूज", "emoji": "🍉" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "लाल फल" },
+    { "id": 2, "name": "पीला फल" },
+    { "id": 3, "name": "नारंगी फल" },
+    { "id": 4, "name": "बैंगनी फल" },
+    { "id": 5, "name": "हरा फल" }
+  ],
+  "correctMatches": [
+    { "leftId": 1, "rightId": 1 },
+    { "leftId": 2, "rightId": 2 },
+    { "leftId": 3, "rightId": 3 },
+    { "leftId": 4, "rightId": 4 },
+    { "leftId": 5, "rightId": 5 }
+  ]
+}

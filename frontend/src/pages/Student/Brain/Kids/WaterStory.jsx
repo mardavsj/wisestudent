@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const WaterStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-1");
   const gameId = gameData?.id || "brain-kids-1";
+  
+  const gameContent = t("brain-health.kids.water-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,132 +30,7 @@ const WaterStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Teacher says 'Drink water for brain.' Do you follow?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "💧", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe later", 
-          emoji: "🤔", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "❌", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You feel thirsty during class. What should you do?",
-      options: [
-        { 
-          id: "wait", 
-          text: "Wait until break", 
-          emoji: "⏰", 
-         
-          isCorrect: false
-        },
-        { 
-          id: "drink", 
-          text: "Drink water", 
-          emoji: "💧", 
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore thirst", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Your friend says water is boring. What do you say?",
-      options: [
-        { 
-          id: "agree", 
-          text: "Agree - soda is better", 
-          emoji: "🥤", 
-          isCorrect: false
-        },
-        { 
-          id: "say-nothing", 
-          text: "Say nothing", 
-          emoji: "🤐", 
-          isCorrect: false
-        },
-        { 
-          id: "explain", 
-          text: "Explain water helps brain", 
-          emoji: "🧠", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How much water should you drink daily?",
-      options: [
-        { 
-          id: "enough", 
-          text: "Enough to stay hydrated", 
-          emoji: "💧", 
-          isCorrect: true
-        },
-        { 
-          id: "little", 
-          text: "A little is enough", 
-          emoji: "💧", 
-          isCorrect: false
-        },
-        { 
-          id: "none", 
-          text: "None needed", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "When is the best time to drink water?",
-      options: [
-        { 
-          id: "during", 
-          text: "Only during meals", 
-          emoji: "🍽️", 
-          isCorrect: false
-        },
-        { 
-          id: "throughout", 
-          text: "Throughout the day", 
-          emoji: "⏰", 
-          isCorrect: true
-        },
-        { 
-          id: "evening", 
-          text: "Only in evening", 
-          emoji: "🌙", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -188,9 +67,17 @@ const WaterStory = () => {
 
   return (
     <GameShell
-      title="Water for Brain Health"
+      title={gameContent?.title || "Water for Brain Health"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Story Complete!"
+          : t("brain-health.kids.water-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -211,8 +98,20 @@ const WaterStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.water-story.subtitleProgress", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.water-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

@@ -1,0 +1,54 @@
+{
+  "title": "फोकस पर क्विज़",
+  "subtitlePlaying": "सवाल {{total}} में से {{current}}",
+  "subtitleComplete": "क्विज़ पूरा हुआ!",
+  "questionLabel": "सवाल {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ध्यान केंद्रित करने में क्या मदद करता है?",
+      "options": [
+        { "id": "a", "text": "शांत कमरा", "emoji": "🔇", "isCorrect": true },
+        { "id": "b", "text": "टीवी चालू", "emoji": "📺", "isCorrect": false },
+        { "id": "c", "text": "फोन गेम", "emoji": "📱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "कौन सी गतिविधि एकाग्रता में सुधार करती है?",
+      "options": [
+        { "id": "a", "text": "एक साथ कई काम करना", "emoji": "🤹", "isCorrect": false },
+        { "id": "b", "text": "ध्यान", "emoji": "🧘", "isCorrect": true },
+        { "id": "c", "text": "तेज़ संगीत", "emoji": "🔊", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "पढ़ने का सबसे अच्छा समय कब है?",
+      "options": [
+        { "id": "a", "text": "जब आप सबसे अधिक सतर्क हों", "emoji": "⚡", "isCorrect": true },
+        { "id": "b", "text": "रात में बहुत देर से", "emoji": "🌙", "isCorrect": false },
+        { "id": "c", "text": "टीवी शो के दौरान", "emoji": "📺", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "होमवर्क शुरू करने से पहले आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "a", "text": "सभी सोशल मीडिया की जाँच करें", "emoji": "📱", "isCorrect": false },
+        { "id": "b", "text": "अपनी डेस्क साफ करें और सामग्री इकट्ठा करें", "emoji": "📚", "isCorrect": true },
+        { "id": "c", "text": "सबसे कठिन काम से शुरू करें", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ब्रेक लेने से पहले आपको कितनी देर ध्यान केंद्रित करना चाहिए?",
+      "options": [
+        { "id": "a", "text": "बिना ब्रेक के कई घंटे", "emoji": "⏰", "isCorrect": false },
+        { "id": "b", "text": "25-30 मिनट", "emoji": "⏱️", "isCorrect": true },
+        { "id": "c", "text": "5 मिनट", "emoji": "⏳", "isCorrect": false }
+      ]
+    }
+  ]
+}

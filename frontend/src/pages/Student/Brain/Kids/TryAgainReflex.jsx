@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -10,10 +11,13 @@ const ROUND_TIME = 10;
 
 const TryAgainReflex = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-93");
   const gameId = gameData?.id || "brain-kids-93";
+  
+  const gameContent = t("brain-health.kids.try-again-reflex", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -34,58 +38,7 @@ const TryAgainReflex = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-  {
-    id: 1,
-    text: "A young bakery helper accidentally drops the cake batter. What should they do?",
-    options: [
-      { id: "a", text: "Start Over", emoji: "🍰", isCorrect: true },
-      { id: "b", text: "Leave it", emoji: "🛑", isCorrect: false },
-      { id: "c", text: "Blame someone else", emoji: "👀", isCorrect: false },
-      { id: "d", text: "Ignore and go play", emoji: "⚽", isCorrect: false }
-    ]
-  },
-  {
-    id: 2,
-    text: "A junior gardener’s first plant dies. What shows resilience?",
-    options: [
-      { id: "b", text: "Leave the garden", emoji: "🚪", isCorrect: false },
-      { id: "c", text: "Sit and sulk", emoji: "😞", isCorrect: false },
-      { id: "d", text: "Blame the sun", emoji: "☀️", isCorrect: false },
-      { id: "a", text: "Try planting again", emoji: "🌱", isCorrect: true },
-    ]
-  },
-  {
-    id: 3,
-    text: "A young coder’s program fails. What is the resilient choice?",
-    options: [
-      { id: "b", text: "Delete the whole file", emoji: "🗑️", isCorrect: false },
-      { id: "a", text: "Keep debugging", emoji: "💻", isCorrect: true },
-      { id: "c", text: "Walk away frustrated", emoji: "🚶", isCorrect: false },
-      { id: "d", text: "Copy from someone else", emoji: "📄", isCorrect: false }
-    ]
-  },
-  {
-    id: 4,
-    text: "A young athlete misses a goal in practice. What should they do?",
-    options: [
-      { id: "b", text: "Give up", emoji: "❌", isCorrect: false },
-      { id: "c", text: "Complain about the coach", emoji: "🗣️", isCorrect: false },
-      { id: "a", text: "Practice again", emoji: "🏀", isCorrect: true },
-      { id: "d", text: "Take a long break", emoji: "🛌", isCorrect: false }
-    ]
-  },
-  {
-    id: 5,
-    text: "A young painter spills paint on their artwork. How do they show resilience?",
-    options: [
-      { id: "a", text: "Paint again and fix it", emoji: "🎨", isCorrect: true },
-      { id: "b", text: "Throw the painting away", emoji: "🗑️", isCorrect: false },
-      { id: "c", text: "Cry and leave", emoji: "😭", isCorrect: false },
-      { id: "d", text: "Blame the brush", emoji: "🖌️", isCorrect: false }
-    ]
-  }
-];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
 
   useEffect(() => {
@@ -188,8 +141,16 @@ const TryAgainReflex = () => {
 
   return (
     <GameShell
-      title="Reflex Try Again"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your resilience reflexes!` : "Test your resilience reflexes!"}
+      title={gameContent?.title || "Reflex Try Again"}
+      subtitle={
+        gameState === "playing"
+          ? t("brain-health.kids.try-again-reflex.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your resilience reflexes!`,
+            })
+          : gameContent?.subtitleDefault || "Test your resilience reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -209,19 +170,26 @@ const TryAgainReflex = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">💪</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.getReady || "Get Ready!"}</h3>
             <p className="text-white/90 text-lg mb-6">
-              Identify resilient actions!<br />
-              You have {ROUND_TIME} seconds for each question.
+              {gameContent?.description || "Identify resilient actions!"}<br />
+              {t("brain-health.kids.try-again-reflex.timerInfo", {
+                seconds: ROUND_TIME,
+                defaultValue: `You have ${ROUND_TIME} seconds for each question.`,
+              })}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.try-again-reflex.roundInfo", {
+                rounds: TOTAL_ROUNDS,
+                seconds: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`,
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startGame || "Start Game"}
             </button>
           </div>
         )}
@@ -230,13 +198,13 @@ const TryAgainReflex = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round:"}</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time:"}</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score:"}</span> {score}
               </div>
             </div>
 

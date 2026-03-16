@@ -1,0 +1,54 @@
+{
+  "title": "Quiz on Creativity",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Quiz Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which is problem solving?",
+      "options": [
+        { "id": "crying", "text": "Crying", "emoji": "😢", "isCorrect": false },
+        { "id": "finding", "text": "Finding another way", "emoji": "💡", "isCorrect": true },
+        { "id": "giving", "text": "Giving up", "emoji": "😞", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What is creative thinking?",
+      "options": [
+        { "id": "copy", "text": "Copying others", "emoji": "📋", "isCorrect": false },
+        { "id": "avoid", "text": "Avoiding problems", "emoji": "🚶", "isCorrect": false },
+        { "id": "new", "text": "Coming up with new ideas", "emoji": "✨", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "How do you solve a problem creatively?",
+      "options": [
+        { "id": "same", "text": "Do the same thing again", "emoji": "🔄", "isCorrect": false },
+        { "id": "think", "text": "Think of different solutions", "emoji": "🧠", "isCorrect": true },
+        { "id": "wait", "text": "Wait for someone else", "emoji": "⏳", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What helps you be creative?",
+      "options": [
+        { "id": "experiment", "text": "Trying new things", "emoji": "🔬", "isCorrect": true },
+        { "id": "fear", "text": "Being afraid to try", "emoji": "😨", "isCorrect": false },
+        { "id": "stay", "text": "Staying in comfort zone", "emoji": "🛋️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What is the best way to solve a problem?",
+      "options": [
+        { "id": "quit", "text": "Give up immediately", "emoji": "🏳️", "isCorrect": false },
+        { "id": "blame", "text": "Blame others", "emoji": "👆", "isCorrect": false },
+        { "id": "solve", "text": "Think and find solutions", "emoji": "🔧", "isCorrect": true }
+      ]
+    }
+  ]
+}

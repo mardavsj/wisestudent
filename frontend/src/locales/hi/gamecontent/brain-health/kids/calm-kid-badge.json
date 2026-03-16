@@ -1,0 +1,69 @@
+{
+  "title": "बैज: शांत बच्चा",
+  "subtitleProgress": "चुनौती {{current}} / {{total}}",
+  "subtitleComplete": "बैज पूरा हुआ!",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "challengeLabel": "चुनौती {{current}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "शांत सांस लेने की चुनौती",
+      "description": "शांत रहने का सबसे अच्छा तरीका चुनें!",
+      "question": "जब आप तनाव महसूस करते हैं, तो आपको शांत रहने में क्या मदद करता है?",
+      "options": [
+        { "text": "गहरी सांसें लें और 10 तक गिनें", "emoji": "🌬️", "isCorrect": true },
+        { "text": "चिल्लाएं और गुस्सा करें", "emoji": "😡", "isCorrect": false },
+        { "text": "घबराएं और अधिक चिंता करें", "emoji": "😱", "isCorrect": false },
+        { "text": "समस्या को नज़रअंदाज़ करें", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "शांत विचारों की प्रश्नोत्तरी",
+      "description": "अपनी शांत सोच का परीक्षण करें!",
+      "question": "जब आप परेशान हों तो सोचने का सबसे अच्छा तरीका क्या है?",
+      "options": [
+        { "text": "नकारात्मक विचार सोचें", "emoji": "💔", "isCorrect": false },
+        { "text": "सकारात्मक सोचें और शांत रहें", "emoji": "✨", "isCorrect": true },
+        { "text": "हार मानने के बारे में सोचें", "emoji": "😞", "isCorrect": false },
+        { "text": "बिल्कुल मत सोचो", "emoji": "🤷", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "शांत क्रिया रिफ्लेक्स",
+      "description": "जल्दी से शांत क्रियाएं चुनें!",
+      "question": "कौन सी क्रिया आपको शांति महसूस करने में मदद करती है?",
+      "options": [
+        { "text": "दूसरों के साथ बहस करें", "emoji": "😤", "isCorrect": false },
+        { "text": "तनाव में इधर-उधर भागें", "emoji": "🏃", "isCorrect": false },
+        { "text": "आराम करें और ब्रेक लें", "emoji": "🧘", "isCorrect": true },
+        { "text": "हर चीज़ के बारे में शिकायत करें", "emoji": "😒", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "शांत प्रतिक्रिया पहेली",
+      "description": "स्थितियों के लिए शांत प्रतिक्रियाओं का मिलान करें!",
+      "question": "जब कोई आपको गुस्सा दिलाता है, तो आपको क्या करना चाहिए?",
+      "options": [
+        { "text": "उन्हें वापस मारें", "emoji": "👊", "isCorrect": false },
+        { "text": "उन पर चिल्लाएं", "emoji": "😱", "isCorrect": false },
+        { "text": "भाग जाओ", "emoji": "🏃", "isCorrect": false },
+        { "text": "शांत रहें और बात करें", "emoji": "💬", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "काम मास्टर चुनौती",
+      "description": "अंतिम शांत चुनौती!",
+      "question": "आप एक शांत बच्चे कैसे बन सकते हैं?",
+      "options": [
+        { "text": "रोजाना शांत तकनीकों का अभ्यास करें", "emoji": "🌟", "isCorrect": true },
+        { "text": "कभी भावनाओं को महसूस न करें", "emoji": "😑", "isCorrect": false },
+        { "text": "हमेशा गुस्सा करें", "emoji": "😡", "isCorrect": false },
+        { "text": "अपनी भावनाओं को नज़रअंदाज़ करें", "emoji": "🙈", "isCorrect": false }
+      ]
+    }
+  ]
+}

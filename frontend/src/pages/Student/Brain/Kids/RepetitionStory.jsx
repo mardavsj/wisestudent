@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const RepetitionStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-25");
   const gameId = gameData?.id || "brain-kids-25";
+  
+  const gameContent = t("brain-health.kids.repetition-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -20,138 +24,14 @@ const RepetitionStory = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-  {
-    id: 1,
-    text: "A child wants to remember spellings better. What should they do?",
-    options: [
-      
-      {
-        id: "b",
-        text: "Only read spellings once",
-        emoji: "👀",
-        isCorrect: false
-      },
-      {
-        id: "c",
-        text: "Avoid practicing at all",
-        emoji: "🙅",
-        isCorrect: false
-      },
-      {
-        id: "a",
-        text: "Practice a few spellings every day",
-        emoji: "✏️",
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 2,
-    text: "You want to remember a new song. What helps most?",
-    options: [
-      {
-        id: "a",
-        text: "Listening and singing it again",
-        emoji: "🎶",
-        isCorrect: true
-      },
-      {
-        id: "b",
-        text: "Hearing it once and stopping",
-        emoji: "🔇",
-        isCorrect: false
-      },
-      {
-        id: "c",
-        text: "Ignoring the song",
-        emoji: "😶",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    text: "To get better at math, which habit is best?",
-    options: [
-      
-      {
-        id: "b",
-        text: "Only watch others solve",
-        emoji: "👀",
-        isCorrect: false
-      },
-      {
-        id: "a",
-        text: "Solve a few questions daily",
-        emoji: "➗",
-        isCorrect: true
-      },
-      {
-        id: "c",
-        text: "Stop practicing after mistakes",
-        emoji: "❌",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 4,
-    text: "You read a story and want to remember it well. What can you do?",
-    options: [
-      {
-        id: "a",
-        text: "Read again and talk about the story",
-        emoji: "📖",
-        isCorrect: true
-      },
-      {
-        id: "b",
-        text: "Close the book immediately",
-        emoji: "📕",
-        isCorrect: false
-      },
-      {
-        id: "c",
-        text: "Forget the story on purpose",
-        emoji: "🤷",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 5,
-    text: "Which habit helps learning last longer?",
-    options: [
-      
-      {
-        id: "b",
-        text: "Study only once a month",
-        emoji: "📆",
-        isCorrect: false
-      },
-      {
-        id: "c",
-        text: "Never revise anything",
-        emoji: "🚫",
-        isCorrect: false
-      },
-      {
-        id: "a",
-        text: "Practice a little every day",
-        emoji: "🌱",
-        isCorrect: true
-      },
-    ]
-  }
-];
-
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -180,15 +60,22 @@ const RepetitionStory = () => {
 
   return (
     <GameShell
-      title="Story of Repetition"
+      title={gameContent?.title || "Story of Repetition"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleDefault || "Story Complete!" 
+          : t("brain-health.kids.repetition-story.subtitlePlaying", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
-      nextGamePathProp="/student/brain/kids/poster-strong-memory"
       nextGameIdProp="brain-kids-26"
       gameType="brain"
       totalLevels={questions.length}
@@ -197,14 +84,27 @@ const RepetitionStory = () => {
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
+      backPath="/games/brain-health/kids"
     >
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.repetition-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.repetition-story.scoreLabel", {
+                    current: score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -221,7 +121,7 @@ const RepetitionStory = () => {
                   >
                     <div className="text-3xl mb-3">{option.emoji}</div>
                     <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
+                    {option.description && <p className="text-white/90 text-sm">{option.description}</p>}
                   </button>
                 ))}
               </div>

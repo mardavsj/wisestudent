@@ -1,0 +1,64 @@
+{
+  "title": "बैज: रचनात्मक बच्चा",
+  "subtitleProgress": "चुनौती {{current}} / {{total}}",
+  "subtitleComplete": "बैज पूरा हुआ!",
+  "challengeLabel": "चुनौती {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "रचनात्मक चुनौती 1",
+      "question": "आप किसी समस्या को रचनात्मक तरीके से कैसे हल करते हैं?",
+      "options": [
+        { "text": "विभिन्न समाधानों के बारे में सोचें और नए दृष्टिकोण आज़माएँ", "emoji": "💡", "isCorrect": true },
+        { "text": "तुरंत हार मान लेना", "emoji": "🏳️", "isCorrect": false },
+        { "text": "दूसरे जो करते हैं उसकी नकल करें", "emoji": "📋", "isCorrect": false },
+        { "text": "समस्या से बचें", "emoji": "🚶", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "रचनात्मक चुनौती 2",
+      "question": "रचनात्मक समस्या समाधान क्या है?",
+      "options": [
+        { "text": "एक ही काम को बार-बार करना", "emoji": "🔄", "isCorrect": false },
+        { "text": "अद्वितीय और मौलिक समाधान खोजना", "emoji": "✨", "isCorrect": true },
+        { "text": "केवल एक ही तरीके का पालन करना", "emoji": "➡️", "isCorrect": false },
+        { "text": "कभी नई चीजें न आज़माना", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "रचनात्मक चुनौती 3",
+      "question": "आप अधिक रचनात्मक कैसे हो सकते हैं?",
+      "options": [
+        { "text": "हमेशा दूसरों की नकल करें", "emoji": "📋", "isCorrect": false },
+        { "text": "नए विचारों के साथ प्रयोग करें और लीक से हटकर सोचें", "emoji": "🧠", "isCorrect": true },
+        { "text": "केवल पुराने तरीकों पर टिके रहें", "emoji": "📜", "isCorrect": false },
+        { "text": "सभी चुनौतियों से बचें", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "रचनात्मक चुनौती 4",
+      "question": "आपको रचनात्मक रूप से सोचने में क्या मदद करता है?",
+      "options": [
+        { "text": "केवल वही करना जो आप जानते हैं", "emoji": "📚", "isCorrect": false },
+        { "text": "कभी प्रयोग न करना", "emoji": "🔒", "isCorrect": false },
+        { "text": "सभी समस्याओं से बचना", "emoji": "🙈", "isCorrect": false },
+        { "text": "नए विचारों के प्रति खुले रहना और विभिन्न दृष्टिकोणों को आज़माना", "emoji": "🌈", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "रचनात्मक चुनौती 5",
+      "question": "समस्याओं को रचनात्मक रूप से हल करने का सबसे अच्छा तरीका क्या है?",
+      "options": [
+        { "text": "केवल एक समाधान का उपयोग करें", "emoji": "➡️", "isCorrect": false },
+        { "text": "कभी विकल्पों के बारे में न सोचें", "emoji": "🚫", "isCorrect": false },
+        { "text": "कल्पना का उपयोग करें, विचारों पर मंथन करें और नए तरीके आज़माएँ", "emoji": "🎨", "isCorrect": true },
+        { "text": "हमेशा हार मान लेना", "emoji": "😞", "isCorrect": false }
+      ]
+    }
+  ]
+}

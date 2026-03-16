@@ -1,0 +1,129 @@
+{
+  "title": "साझा करने की कहानी",
+  "subtitleDefault": "कहानी पूर्ण!",
+  "subtitlePlaying": "प्रश्न {{current}} का {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "बच्चा गुस्से में है। संभालने का सबसे अच्छा तरीका?",
+      "options": [
+        { 
+          "id": "tell", 
+          "text": "शिक्षक/अभिभावक को बताएं", 
+          "emoji": "👨‍🏫", 
+          "isCorrect": true
+        },
+        { 
+          "id": "yell", 
+          "text": "दूसरों पर चिल्लाएं", 
+          "emoji": "😡", 
+          "isCorrect": false
+        },
+        { 
+          "id": "hide", 
+          "text": "भावनाओं को छिपाएं", 
+          "emoji": "😶", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "झगड़े के बारे में उदास महसूस कर रहे हैं। क्या करें?",
+      "options": [
+        { 
+          "id": "silent", 
+          "text": "चुप रहें", 
+          "emoji": "🤐", 
+          "isCorrect": false
+        },
+        { 
+          "id": "talk", 
+          "text": "दोस्त से बात करें", 
+          "emoji": "💬", 
+          "isCorrect": true
+        },
+        { 
+          "id": "blame", 
+          "text": "दूसरों को दोष दें", 
+          "emoji": "👆", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "रात में डर लग रहा है। सबसे अच्छा काम?",
+      "options": [
+        { 
+          "id": "ignore", 
+          "text": "इसे अनदेखा करें", 
+          "emoji": "🙈", 
+          "isCorrect": false
+        },
+        { 
+          "id": "stay", 
+          "text": "डरे रहें", 
+          "emoji": "😰", 
+          "isCorrect": false
+        },
+        { 
+          "id": "tell", 
+          "text": "अभिभावक को बताएं", 
+          "emoji": "👨‍👩‍👧", 
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "दोस्त के खिलौने से जलन। क्या करें?",
+      "options": [
+        { 
+          "id": "share", 
+          "text": "भावनाएं साझा करें", 
+          "emoji": "💭", 
+          "isCorrect": true
+        },
+        { 
+          "id": "take", 
+          "text": "खिलौना ले लें", 
+          "emoji": "🤲", 
+          "isCorrect": false
+        },
+        { 
+          "id": "mad", 
+          "text": "पागल हो जाएं", 
+          "emoji": "😠", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "उत्साहित लेकिन घबराया हुआ। सबसे अच्छा तरीका?",
+      "options": [
+        { 
+          "id": "secret", 
+          "text": "इसे गुप्त रखें", 
+          "emoji": "🤫", 
+          "isCorrect": false
+        },
+        { 
+          "id": "act", 
+          "text": "अभिनय करें", 
+          "emoji": "🎭", 
+          "isCorrect": false
+        },
+        { 
+          "id": "tell", 
+          "text": "किसी को बताएं", 
+          "emoji": "🗣️", 
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Image } from "lucide-react";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -7,10 +8,13 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const DontGiveUpPoster = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-96");
   const gameId = gameData?.id || "brain-kids-96";
+  
+  const gameContent = t("brain-health.kids.dont-give-up-poster", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,48 +31,7 @@ const DontGiveUpPoster = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const stages = [
-    {
-      question: 'Which poster best shows "Failure = Step to Success"?',
-      choices: [
-        { text: "Poster showing failure leads to learning and success", correct: true, emoji: "📈" },
-        { text: "Poster showing failure is the end", correct: false, emoji: "🛑" },
-        { text: "Poster showing only success matters", correct: false, emoji: "🏆" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Don\'t Give Up"?',
-      choices: [
-        { text: "Poster showing quitting easily", correct: false, emoji: "🏳️" },
-        { text: "Poster showing persistence and trying again", correct: true, emoji: "🔄" },
-        { text: "Poster showing avoiding challenges", correct: false, emoji: "🚶" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Keep Trying"?',
-      choices: [
-        { text: "Poster showing never giving up and practicing", correct: true, emoji: "🎯" },
-        { text: "Poster showing giving up after one try", correct: false, emoji: "😞" },
-        { text: "Poster showing only winning matters", correct: false, emoji: "👑" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Learn from Mistakes"?',
-      choices: [
-        { text: "Poster showing ignoring mistakes", correct: false, emoji: "🙈" },
-        { text: "Poster showing using mistakes to improve", correct: true, emoji: "📚" },
-        { text: "Poster showing never making mistakes", correct: false, emoji: "✨" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Resilience and Growth"?',
-      choices: [
-        { text: "Poster showing bouncing back and growing stronger", correct: true, emoji: "🌱" },
-        { text: "Poster showing staying down after falling", correct: false, emoji: "⬇️" },
-        { text: "Poster showing avoiding all challenges", correct: false, emoji: "🚫" }
-      ]
-    }
-  ];
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
 
   const handleSelect = (isCorrect) => {
     if (answered || showResult) return;
@@ -97,8 +60,16 @@ const DontGiveUpPoster = () => {
 
   return (
     <GameShell
-      title="Poster: Don't Give Up"
-      subtitle={!showResult ? `Stage ${currentStage + 1} of ${stages.length}` : "Poster Complete!"}
+      title={gameContent?.title || "Poster: Don't Give Up"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Poster Complete!"
+          : t("brain-health.kids.dont-give-up-poster.subtitleProgress", {
+              current: currentStage + 1,
+              total: stages.length,
+              defaultValue: `Stage ${currentStage + 1} of ${stages.length}`,
+            })
+      }
       score={score}
       currentLevel={currentStage + 1}
       totalLevels={stages.length}
@@ -120,8 +91,20 @@ const DontGiveUpPoster = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Stage {currentStage + 1}/{stages.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{stages.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.dont-give-up-poster.stageLabel", {
+                    current: currentStage + 1,
+                    total: stages.length,
+                    defaultValue: `Stage ${currentStage + 1}/${stages.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.dont-give-up-poster.scoreLabel", {
+                    score,
+                    total: stages.length,
+                    defaultValue: `Score: ${score}/${stages.length}`,
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">

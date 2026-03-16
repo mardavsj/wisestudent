@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -8,10 +9,13 @@ import { Award, Wind, Flower2, Sun, Waves, BookOpenCheck } from 'lucide-react';
 
 const CalmKidBadge = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-40");
   const gameId = gameData?.id || "brain-kids-40";
+  
+  const gameContent = t("brain-health.kids.calm-kid-badge", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -58,158 +62,29 @@ const CalmKidBadge = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Calm Breathing Challenge",
-      description: "Choose the best way to stay calm!",
-      icon: <Wind className="w-8 h-8" />,
-      color: "bg-blue-500",
-      question: "When you feel stressed, what helps you stay calm?",
-      options: [
-        { 
-          text: "Take deep breaths and count to 10", 
-          emoji: "🌬️", 
-          isCorrect: true
-        },
-        { 
-          text: "Yell and get angry", 
-          emoji: "😡", 
-          isCorrect: false
-        },
-        { 
-          text: "Panic and worry more", 
-          emoji: "😱", 
-          isCorrect: false
-        },
-        { 
-          text: "Ignore the problem", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Calm Thoughts Quiz",
-      description: "Test your calm thinking!",
-      icon: <BookOpenCheck className="w-8 h-8" />,
-      color: "bg-purple-500",
-      question: "What is the best way to think when you're upset?",
-      options: [
-        { 
-          text: "Think negative thoughts", 
-          emoji: "💔", 
-          isCorrect: false
-        },
-        { 
-          text: "Think positive and stay calm", 
-          emoji: "✨", 
-          isCorrect: true
-        },
-        { 
-          text: "Think about giving up", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          text: "Don't think at all", 
-          emoji: "🤷", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Calm Actions Reflex",
-      description: "Quickly choose calm actions!",
-      icon: <Flower2 className="w-8 h-8" />,
-      color: "bg-pink-500",
-      question: "Which action helps you feel peaceful?",
-      options: [
-        { 
-          text: "Argue with others", 
-          emoji: "😤", 
-          isCorrect: false
-        },
-        { 
-          text: "Rush around stressed", 
-          emoji: "🏃", 
-          isCorrect: false
-        },
-        { 
-          text: "Relax and take a break", 
-          emoji: "🧘", 
-          isCorrect: true
-        },
-        { 
-          text: "Complain about everything", 
-          emoji: "😒", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Calm Response Puzzle",
-      description: "Match calm responses to situations!",
-      icon: <Sun className="w-8 h-8" />,
-      color: "bg-yellow-500",
-      question: "When someone makes you angry, what should you do?",
-      options: [
-        { 
-          text: "Hit them back", 
-          emoji: "👊", 
-          isCorrect: false
-        },
-        { 
-          text: "Scream at them", 
-          emoji: "😱", 
-          isCorrect: false
-        },
-        { 
-          text: "Run away", 
-          emoji: "🏃", 
-          isCorrect: false
-        },
-        { 
-          text: "Stay calm and talk it out", 
-          emoji: "💬", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Calm Master Challenge",
-      description: "Final calm challenge!",
-      icon: <Waves className="w-8 h-8" />,
-      color: "bg-cyan-500",
-      question: "How can you become a calm kid?",
-      options: [
-        { 
-          text: "Practice calm techniques daily", 
-          emoji: "🌟", 
-          isCorrect: true
-        },
-        { 
-          text: "Never feel emotions", 
-          emoji: "😑", 
-          isCorrect: false
-        },
-        { 
-          text: "Always get angry", 
-          emoji: "😡", 
-          isCorrect: false
-        },
-        { 
-          text: "Ignore your feelings", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = useMemo(() => {
+    const rawChallenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
+    const icons = [
+      <Wind className="w-8 h-8" />,
+      <BookOpenCheck className="w-8 h-8" />,
+      <Flower2 className="w-8 h-8" />,
+      <Sun className="w-8 h-8" />,
+      <Waves className="w-8 h-8" />
+    ];
+    const colors = [
+      "bg-blue-500",
+      "bg-purple-500",
+      "bg-pink-500",
+      "bg-yellow-500",
+      "bg-cyan-500"
+    ];
+
+    return rawChallenges.map((c, idx) => ({
+      ...c,
+      icon: icons[idx] || icons[0],
+      color: colors[idx] || colors[0]
+    }));
+  }, [gameContent]);
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -255,9 +130,17 @@ const CalmKidBadge = () => {
 
   return (
     <GameShell
-      title="Badge: Calm Kid"
+      title={gameContent?.title || "Badge: Calm Kid"}
       score={score}
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("brain-health.kids.calm-kid-badge.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -278,8 +161,20 @@ const CalmKidBadge = () => {
         {!showResult && currentChallenge ? (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
             <div className="flex justify-between items-center mb-4">
-              <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-              <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+              <span className="text-white/80">
+                {t("brain-health.kids.calm-kid-badge.challengeLabel", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1}/${challenges.length}`,
+                  })}
+              </span>
+              <span className="text-yellow-400 font-bold">
+                {t("brain-health.kids.calm-kid-badge.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+              </span>
             </div>
             
             <div className="mb-6">

@@ -1,0 +1,64 @@
+{
+  "title": "Reflex Quick Emotion",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your emotion reflexes!",
+  "subtitleReady": "Test your emotion reflexes!",
+  "readyTitle": "Get Ready!",
+  "readyDescription": "Answer questions about emotions!<br />You have {{time}} seconds for each question.",
+  "readySummary": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "text": "A baker sees customers smiling after tasting fresh bread. What feeling fits best?",
+      "options": [
+        { "id": "a", "text": "Pride", "emoji": "🏆", "isCorrect": true },
+        { "id": "b", "text": "Confusion", "emoji": "😅", "isCorrect": false },
+        { "id": "c", "text": "Fear", "emoji": "😱", "isCorrect": false },
+        { "id": "d", "text": "Boredom", "emoji": "🙄", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "A pilot hears strange noise but follows training calmly. What emotion is shown?",
+      "options": [
+        { "id": "a", "text": "Joy", "emoji": "🥳", "isCorrect": false },
+        { "id": "b", "text": "Anger", "emoji": "😠", "isCorrect": false },
+        { "id": "c", "text": "Shyness", "emoji": "😳", "isCorrect": false },
+        { "id": "d", "text": "Confidence", "emoji": "💪", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "A gardener sees the first flower bloom after many days. What feeling appears?",
+      "options": [
+        { "id": "a", "text": "Sleepiness", "emoji": "😴", "isCorrect": false },
+        { "id": "b", "text": "Worry", "emoji": "🤔", "isCorrect": false },
+        { "id": "c", "text": "Happiness", "emoji": "😊", "isCorrect": true },
+        { "id": "d", "text": "Jealousy", "emoji": "😔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "A doctor must give a shot and speaks softly to help the child relax. What emotion is shown?",
+      "options": [
+        { "id": "a", "text": "Excitement", "emoji": "🤩", "isCorrect": false },
+        { "id": "b", "text": "Care", "emoji": "🤗", "isCorrect": true },
+        { "id": "c", "text": "Fear", "emoji": "😨", "isCorrect": false },
+        { "id": "d", "text": "Panic", "emoji": "⚠️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "A shopkeeper finds money left behind and waits to return it. What feeling guides this?",
+      "options": [
+        { "id": "a", "text": "Honesty", "emoji": "🤗", "isCorrect": true },
+        { "id": "b", "text": "Greed", "emoji": "💰", "isCorrect": false },
+        { "id": "c", "text": "Surprise", "emoji": "😮", "isCorrect": false },
+        { "id": "d", "text": "Anger", "emoji": "😠", "isCorrect": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "title": "Badge: Balanced Kid",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Tablet Story Challenge",
+      "description": "Choose the balanced approach in digital dilemmas!",
+      "question": "It's tablet time! Which choice shows digital balance?",
+      "options": [
+        { "text": "Play tablet for 1 hour, then go outside", "emoji": "⚖️", "isCorrect": true },
+        { "text": "Play tablet all day without breaks", "emoji": "📱", "isCorrect": false },
+        { "text": "Never use tablet at all", "emoji": "🚫", "isCorrect": false },
+        { "text": "Play tablet until bedtime", "emoji": "🌙", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Screen Quiz Master",
+      "description": "Test your knowledge of healthy screen habits!",
+      "question": "Answer this question: What's the best screen time limit for kids?",
+      "options": [
+        { "text": "10 hours per day", "emoji": "⏰", "isCorrect": false },
+        { "text": "1-2 hours per day", "emoji": "✅", "isCorrect": true },
+        { "text": "No limit needed", "emoji": "♾️", "isCorrect": false },
+        { "text": "All day is fine", "emoji": "📱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Digital Reflex",
+      "description": "Quickly identify balanced digital activities!",
+      "question": "Is this a balanced digital activity: 'Playing games for 1 hour then going outside'?",
+      "options": [
+        { "text": "No, games are always bad", "emoji": "❌", "isCorrect": false },
+        { "text": "No, you should only play games", "emoji": "🎮", "isCorrect": false },
+        { "text": "Yes, it balances screen time with outdoor play", "emoji": "✅", "isCorrect": true },
+        { "text": "No, balance doesn't matter", "emoji": "🤷", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Balance Puzzle",
+      "description": "Match screen time with its effects!",
+      "question": "What effect does balanced screen use have?",
+      "options": [
+        { "text": "Makes you tired all the time", "emoji": "😴", "isCorrect": false },
+        { "text": "Helps you stay healthy and active", "emoji": "💪", "isCorrect": true },
+        { "text": "Doesn't help at all", "emoji": "🤷", "isCorrect": false },
+        { "text": "Makes you lazy", "emoji": "😑", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Homework Priority",
+      "description": "Learn to prioritize tasks effectively!",
+      "question": "You have homework and a game. What's the balanced approach?",
+      "options": [
+        { "text": "Play game all day, skip homework", "emoji": "🎮", "isCorrect": false },
+        { "text": "Do homework first, then play game for limited time", "emoji": "⚖️", "isCorrect": true },
+        { "text": "Only do homework, never play", "emoji": "📚", "isCorrect": false },
+        { "text": "Do homework while playing game", "emoji": "🤹", "isCorrect": false }
+      ]
+    }
+  ]
+}

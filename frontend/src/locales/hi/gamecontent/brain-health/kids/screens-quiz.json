@@ -1,0 +1,129 @@
+{
+  "title": "स्क्रीन पर प्रश्नोत्तरी",
+  "subtitleDefault": "प्रश्नोत्तरी पूर्ण!",
+  "subtitlePlaying": "प्रश्न {{current}} का {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "बहुत अधिक स्क्रीन टाइम क्या कारण बनता है?",
+      "options": [
+        {
+          "id": "a",
+          "text": "आँखों में तनाव",
+          "emoji": "👁️",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "अधिक ऊर्जा",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "महाशक्तियाँ",
+          "emoji": "🦸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "सोने से पहले स्क्रीन किसे प्रभावित करती है?",
+      "options": [
+        {
+          "id": "b",
+          "text": "ताकत",
+          "emoji": "💪",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "नींद",
+          "emoji": "😴",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "लंबाई",
+          "emoji": "📏",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "सबसे अच्छा स्क्रीन समय सीमा क्या है?",
+      "options": [
+        {
+          "id": "c",
+          "text": "कोई सीमा नहीं",
+          "emoji": "♾️",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "10 घंटे",
+          "emoji": "⏰",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "1-2 घंटे",
+          "emoji": "⏱️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "बहुत अधिक गेमिंग के कारण क्या होता है?",
+      "options": [
+        {
+          "id": "b",
+          "text": "थकान",
+          "emoji": "😴",
+          "isCorrect": true
+        },
+        {
+          "id": "a",
+          "text": "फोकस",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "गति",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "संतुलित स्क्रीन उपयोग किसमें मदद करता है?",
+      "options": [
+        {
+          "id": "c",
+          "text": "आलस्य",
+          "emoji": "😑",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "आंखें",
+          "emoji": "👁️",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "सिरदर्द",
+          "emoji": "🤕",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

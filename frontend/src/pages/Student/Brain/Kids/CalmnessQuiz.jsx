@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const CalmnessQuiz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-32");
   const gameId = gameData?.id || "brain-kids-32";
+  
+  const gameContent = t("brain-health.kids.calmness-quiz", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,129 +30,7 @@ const CalmnessQuiz = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "What reduces stress?",
-      options: [
-        { 
-          id: "a", 
-          text: "Deep breathing", 
-          emoji: "🌬️", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Shouting", 
-          emoji: "😡", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Worrying", 
-          emoji: "😰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which activity helps you feel calm?",
-      options: [
-        { 
-          id: "b", 
-          text: "Getting very angry", 
-          emoji: "😡", 
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: "Taking slow, deep breaths", 
-          emoji: "🧘", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Panicking about everything", 
-          emoji: "😰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What helps when you feel stressed?",
-      options: [
-        { 
-          id: "b", 
-          text: "Working non-stop without rest", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Worrying constantly", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: "Taking a break and breathing deeply", 
-          emoji: "⏸️", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How can you stay calm during difficult times?",
-      options: [
-        { 
-          id: "a", 
-          text: "Practice deep breathing and stay organized", 
-          emoji: "🧘", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Get very upset and shout", 
-          emoji: "😡", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Panic about everything", 
-          emoji: "😰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What is the best way to reduce stress?",
-      options: [
-        { 
-          id: "b", 
-          text: "Shouting at everyone", 
-          emoji: "😡", 
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: "Deep breathing exercises and taking breaks", 
-          emoji: "🌬️", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Worrying all the time", 
-          emoji: "😰", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -177,9 +59,17 @@ const CalmnessQuiz = () => {
 
   return (
     <GameShell
-      title="Quiz on Calmness"
+      title={gameContent?.title || "Quiz on Calmness"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Quiz Complete!"
+          : t("brain-health.kids.calmness-quiz.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -200,8 +90,20 @@ const CalmnessQuiz = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.calmness-quiz.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.calmness-quiz.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

@@ -1,0 +1,45 @@
+{
+  "title": "Journal of Recall",
+  "subtitlePlaying": "Entry {{current}} of {{total}}",
+  "subtitleComplete": "Journal Complete!",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "journalHeader": "Journal Entry",
+  "placeholder": "Type your response here...",
+  "minLengthRequired": "Minimum {{min}} characters required",
+  "charactersCount": "{{current}}/{{min}}",
+  "submitButton": "Submit Entry",
+  "submittedButton": "Submitted!",
+  "journalPrompts": [
+    {
+      "id": 1,
+      "prompt": "Write: \"One time I remembered something important was ___\"",
+      "guidance": "Think about a moment when you successfully remembered something important.",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Write: \"My favorite memory from school is ___\"",
+      "guidance": "Reflect on a happy or meaningful memory from your school experience.",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "Write: \"I recall a fun day when ___\"",
+      "guidance": "Remember a day that was particularly enjoyable or memorable.",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "Write: \"Something I never forget is ___\"",
+      "guidance": "Think about something that has stayed in your memory clearly.",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "Write: \"A happy recall is ___\"",
+      "guidance": "Describe a positive memory that brings you joy when you think about it.",
+      "minLength": 10
+    }
+  ]
+}

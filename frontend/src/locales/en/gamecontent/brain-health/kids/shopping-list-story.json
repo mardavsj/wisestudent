@@ -1,0 +1,129 @@
+{
+  "title": "Shopping List Story",
+  "subtitleDefault": "Story Complete!",
+  "subtitlePlaying": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Mom gives you 3 items to buy: milk, bread, eggs. You forget 2. Is this good memory?",
+      "options": [
+        { 
+          "id": "yes", 
+          "text": "Yes", 
+          "emoji": "👍", 
+          "isCorrect": false
+        },
+        { 
+          "id": "no", 
+          "text": "No", 
+          "emoji": "👎", 
+          "isCorrect": true
+        },
+        { 
+          "id": "maybe", 
+          "text": "Maybe", 
+          "emoji": "🤔", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "How can you remember the shopping list better?",
+      "options": [
+        { 
+          "id": "repeat", 
+          "text": "Repeat the items in your mind", 
+          "emoji": "🔁", 
+          "isCorrect": true
+        },
+        { 
+          "id": "ignore", 
+          "text": "Ignore the list", 
+          "emoji": "😴", 
+          "isCorrect": false
+        },
+        { 
+          "id": "guess", 
+          "text": "Guess what to buy", 
+          "emoji": "🎲", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What helps improve your memory?",
+      "options": [
+        { 
+          "id": "stress", 
+          "text": "Being stressed all the time", 
+          "emoji": "😰", 
+          "isCorrect": false
+        },
+        { 
+          "id": "skip", 
+          "text": "Skipping meals", 
+          "emoji": "🍽️", 
+          "isCorrect": false
+        },
+        { 
+          "id": "sleep", 
+          "text": "Getting enough sleep", 
+          "emoji": "😴", 
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You need to remember 5 things. What's a good strategy?",
+      "options": [
+        { 
+          "id": "forget", 
+          "text": "Try to remember without help", 
+          "emoji": "🧠", 
+          "isCorrect": false
+        },
+        { 
+          "id": "write", 
+          "text": "Write them down or make a list", 
+          "emoji": "📝", 
+          "isCorrect": true
+        },
+        { 
+          "id": "ignore", 
+          "text": "Ignore them completely", 
+          "emoji": "🙈", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Practicing memory helps your brain. True or false?",
+      "options": [
+        { 
+          "id": "true", 
+          "text": "True", 
+          "emoji": "🙂", 
+          "isCorrect": true
+        },
+        { 
+          "id": "false", 
+          "text": "False", 
+          "emoji": "🙃", 
+          "isCorrect": false
+        },
+        { 
+          "id": "maybe", 
+          "text": "Maybe", 
+          "emoji": "🤔", 
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

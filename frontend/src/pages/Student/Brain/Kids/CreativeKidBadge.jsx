@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const CreativeKidBadge = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-90");
   const gameId = gameData?.id || "brain-kids-90";
+  
+  const gameContent = t("brain-health.kids.creative-kid-badge", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,145 +31,7 @@ const CreativeKidBadge = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Creative Challenge 1",
-      question: "How do you solve a problem creatively?",
-      options: [
-        { 
-          text: "Think of different solutions and try new approaches", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-        { 
-          text: "Give up immediately", 
-          emoji: "🏳️", 
-          isCorrect: false
-        },
-        { 
-          text: "Copy what others do", 
-          emoji: "📋", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid the problem", 
-          emoji: "🚶", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Creative Challenge 2",
-      question: "What is creative problem solving?",
-      options: [
-        { 
-          text: "Doing the same thing repeatedly", 
-          emoji: "🔄", 
-          isCorrect: false
-        },
-        { 
-          text: "Finding unique and original solutions", 
-          emoji: "✨", 
-          isCorrect: true
-        },
-        { 
-          text: "Following only one method", 
-          emoji: "➡️", 
-          isCorrect: false
-        },
-        { 
-          text: "Never trying new things", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Creative Challenge 3",
-      question: "How can you be more creative?",
-      options: [
-        { 
-          text: "Always copy others", 
-          emoji: "📋", 
-          isCorrect: false
-        },
-        { 
-          text: "Experiment with new ideas and think outside the box", 
-          emoji: "🧠", 
-          isCorrect: true
-        },
-        { 
-          text: "Stick to old ways only", 
-          emoji: "📜", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid all challenges", 
-          emoji: "😰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Creative Challenge 4",
-      question: "What helps you think creatively?",
-      options: [
-        
-        { 
-          text: "Only doing what you know", 
-          emoji: "📚", 
-          isCorrect: false
-        },
-        { 
-          text: "Never experimenting", 
-          emoji: "🔒", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoiding all problems", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          text: "Being open to new ideas and trying different approaches", 
-          emoji: "🌈", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      title: "Creative Challenge 5",
-      question: "What is the best way to solve problems creatively?",
-      options: [
-        
-        { 
-          text: "Only use one solution", 
-          emoji: "➡️", 
-          isCorrect: false
-        },
-        { 
-          text: "Never think of alternatives", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          text: "Use imagination, brainstorm ideas, and try new methods", 
-          emoji: "🎨", 
-          isCorrect: true
-        },
-        { 
-          text: "Always give up", 
-          emoji: "😞", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -195,9 +61,17 @@ const CreativeKidBadge = () => {
 
   return (
     <GameShell
-      title="Badge: Creative Kid"
+      title={gameContent?.title || "Badge: Creative Kid"}
       score={score}
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("brain-health.kids.creative-kid-badge.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -218,8 +92,20 @@ const CreativeKidBadge = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.creative-kid-badge.challengeLabel", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1}/${challenges.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.creative-kid-badge.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{currentChallengeData.title}</h3>

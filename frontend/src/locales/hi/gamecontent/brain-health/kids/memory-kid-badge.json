@@ -1,0 +1,63 @@
+{
+  "title": "बैज: मेमोरी किड",
+  "subtitleComplete": "बैज पूरा हुआ!",
+  "subtitleProgress": "चुनौती {{current}} / {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "स्मृति चुनौती 1",
+      "question": "आपकी याददाश्त सुधारने का सबसे अच्छा तरीका क्या है?",
+      "options": [
+        { "text": "नियमित रूप से अभ्यास करें, जानकारी दोहराएं और पर्याप्त नींद लें", "emoji": "🧠", "isCorrect": true },
+        { "text": "कभी अभ्यास न करें", "emoji": "🚫", "isCorrect": false },
+        { "text": "सभी सीखने की गतिविधियों से बचें", "emoji": "😴", "isCorrect": false },
+        { "text": "केवल एक बार सीखें", "emoji": "⏸️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "स्मृति चुनौती 2",
+      "question": "कौन सी गतिविधि याददाश्त में सबसे अधिक मदद करती है?",
+      "options": [
+        { "text": "पूरा दिन वीडियो गेम खेलना", "emoji": "🎮", "isCorrect": false },
+        { "text": "जानकारी को दोहराना और अभ्यास करना", "emoji": "🔁", "isCorrect": true },
+        { "text": "कभी भी किसी चीज की समीक्षा न करना", "emoji": "🙈", "isCorrect": false },
+        { "text": "सभी याददाश्त अभ्यासों से बचना", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "स्मृति चुनौती 3",
+      "question": "आप चीजों को बेहतर तरीके से कैसे याद रख सकते हैं?",
+      "options": [
+        { "text": "उन्हें लिखें और अक्सर समीक्षा करें", "emoji": "📝", "isCorrect": true },
+        { "text": "कभी कुछ मत लिखो", "emoji": "🚫", "isCorrect": false },
+        { "text": "सब कुछ अनदेखा करें", "emoji": "😴", "isCorrect": false },
+        { "text": "केवल एक बार पढ़ें", "emoji": "📖", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "स्मृति चुनौती 4",
+      "question": "आपके मस्तिष्क को याद रखने में क्या मदद करता है?",
+      "options": [
+        { "text": "पूरी रात जागना", "emoji": "🌙", "isCorrect": false },
+        { "text": "खाना छोड़ना", "emoji": "🍽️", "isCorrect": false },
+        { "text": "सभी आराम से बचना", "emoji": "⏰", "isCorrect": false },
+        { "text": "पर्याप्त नींद लेना और स्वस्थ भोजन करना", "emoji": "😴", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "स्मृति चुनौती 5",
+      "question": "याददाश्त को क्या मजबूत बनाता है?",
+      "options": [
+        { "text": "कभी अभ्यास न करें", "emoji": "🚫", "isCorrect": false },
+        { "text": "एक बार सीखना और रुक जाना", "emoji": "⏸️", "isCorrect": false },
+        { "text": "नियमित अभ्यास और दोहराव", "emoji": "🔁", "isCorrect": true },
+        { "text": "सभी याददाश्त गतिविधियों से बचना", "emoji": "😴", "isCorrect": false }
+      ]
+    }
+  ]
+}

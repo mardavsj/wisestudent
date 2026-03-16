@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,14 +8,17 @@ import { getBrainKidsGames } from "../../../../pages/Games/GameCategories/Brain/
 
 const SportsStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Check if this component should render based on gameId from location.state
-  // This is needed because there are multiple "Sports Story" games with the same path
   const expectedGameId = "brain-kids-8";
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById(expectedGameId);
   const gameId = gameData?.id || expectedGameId;
+  
+  const gameContent = t("brain-health.kids.sports-story", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -60,135 +64,6 @@ const SportsStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Kid loses a game and feels angry. Right action?",
-      options: [
-        { 
-          id: "try-again", 
-          text: "Try again calmly", 
-          emoji: "🧘", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "yell", 
-          text: "Yell and get more angry", 
-          emoji: "😡", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "quit", 
-          text: "Quit playing forever", 
-          emoji: "🚪", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "After losing, what helps you improve?",
-      options: [
-       
-        { 
-          id: "blame", 
-          text: "Blame others", 
-          emoji: "👆", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore the loss", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-         { 
-          id: "practice", 
-          text: "Practice and learn from mistakes", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "When you feel angry after losing, what should you do?",
-      options: [
-        
-        { 
-          id: "scream", 
-          text: "Scream and throw things", 
-          emoji: "😱", 
-          isCorrect: false
-        },
-        { 
-          id: "breathe", 
-          text: "Take deep breaths and calm down", 
-          emoji: "🌬️", 
-          isCorrect: true
-        },
-        { 
-          id: "cry", 
-          text: "Cry and give up", 
-          emoji: "😢", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What's the best way to handle losing?",
-      options: [
-        
-        { 
-          id: "forget", 
-          text: "Forget about it completely", 
-          emoji: "🧠", 
-          isCorrect: false
-        },
-        { 
-          id: "complain", 
-          text: "Complain to everyone", 
-          emoji: "😤", 
-          isCorrect: false
-        },
-        { 
-          id: "learn", 
-          text: "Learn from it and try again", 
-          emoji: "💪", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "How can you stay calm when you lose?",
-      options: [
-        { 
-          id: "positive", 
-          text: "Think positive and keep trying", 
-          emoji: "✨", 
-          isCorrect: true
-        },
-        { 
-          id: "negative", 
-          text: "Think you'll always lose", 
-          emoji: "💔", 
-          isCorrect: false
-        },
-        { 
-          id: "avoid", 
-          text: "Avoid playing again", 
-          emoji: "🏃", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
-
   const handleChoice = (isCorrect) => {
     if (answered) return;
     
@@ -202,18 +77,16 @@ const SportsStory = () => {
       setScore(prev => {
         const newScore = prev + 1;
         finalScore = newScore;
-        console.log(`✅ Correct answer! Score: ${newScore}/${questions.length}, isLastQuestion: ${isLastQuestion}, gameId: ${gameId}`);
         return newScore;
       });
       showCorrectAnswerFeedback(1, true);
     } else {
       finalScore = score;
-      console.log(`❌ Wrong answer. Score: ${score}/${questions.length}, isLastQuestion: ${isLastQuestion}, gameId: ${gameId}`);
+      showCorrectAnswerFeedback(0, false);
     }
     
     setTimeout(() => {
       if (isLastQuestion) {
-        console.log(`🎮 Game complete! Final score: ${finalScore}/${questions.length}, gameId: ${gameId}`);
         setShowResult(true);
       } else {
         setCurrentQuestion(prev => prev + 1);
@@ -225,8 +98,6 @@ const SportsStory = () => {
   // Log when game completes and update location state with nextGameId
   useEffect(() => {
     if (showResult) {
-      console.log(`🎮 Sports Story game completed! Score: ${score}/${questions.length}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
-      
       // Update location state with nextGameId for GameOverModal
       if (nextGameId && window.history && window.history.replaceState) {
         const currentState = window.history.state || {};
@@ -242,9 +113,17 @@ const SportsStory = () => {
 
   return (
     <GameShell
-      title="Sports for Brain Health"
+      title={gameContent?.title || "Sports for Brain Health"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleDefault || "Story Complete!" 
+          : t("brain-health.kids.sports-story.subtitlePlaying", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -266,8 +145,20 @@ const SportsStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.sports-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.sports-story.scoreLabel", {
+                    current: score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

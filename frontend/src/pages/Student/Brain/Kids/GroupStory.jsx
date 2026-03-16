@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const GroupStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-85");
   const gameId = gameData?.id || "brain-kids-85";
+
+  const gameContent = t("brain-health.kids.group-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,131 +30,7 @@ const GroupStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Group project fails. Next step?",
-      options: [
-        { 
-          id: "together", 
-          text: "Work together & fix", 
-          emoji: "🤝", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "blame", 
-          text: "Blame each other", 
-          emoji: "👆", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "quit", 
-          text: "Give up", 
-          emoji: "🏳️", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Team member doesn't help. What to do?",
-      options: [
-        { 
-          id: "ignore", 
-          text: "Ignore them", 
-          emoji: "😑", 
-          isCorrect: false
-        },
-        { 
-          id: "talk", 
-          text: "Talk & work together", 
-          emoji: "💬", 
-          isCorrect: true
-        },
-        { 
-          id: "yell", 
-          text: "Yell at them", 
-          emoji: "😠", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Group can't agree on idea. Best solution?",
-      options: [
-        { 
-          id: "fight", 
-          text: "Fight about it", 
-          emoji: "👊", 
-          isCorrect: false
-        },
-        { 
-          id: "discuss", 
-          text: "Discuss & find middle ground", 
-          emoji: "🗣️", 
-          isCorrect: true
-        },
-        { 
-          id: "split", 
-          text: "Split up", 
-          emoji: "🚶", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "One person does all the work. What's fair?",
-      options: [
-        { 
-          id: "share", 
-          text: "Share work equally", 
-          emoji: "⚖️", 
-          isCorrect: true
-        },
-        { 
-          id: "let", 
-          text: "Let them do everything", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          id: "take", 
-          text: "Take all credit", 
-          emoji: "👑", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Project deadline is close. Best approach?",
-      options: [
-        { 
-          id: "panic", 
-          text: "Panic and stress", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "plan", 
-          text: "Plan together & finish", 
-          emoji: "📋", 
-          isCorrect: true
-        },
-        { 
-          id: "delay", 
-          text: "Ask to delay", 
-          emoji: "⏰", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -179,8 +59,16 @@ const GroupStory = () => {
 
   return (
     <GameShell
-      title="Group Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Group Story"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Story Complete!"
+          : t("brain-health.kids.group-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -202,8 +90,20 @@ const GroupStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.group-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.group-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

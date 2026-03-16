@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const Homework = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-31");
   const gameId = gameData?.id || "brain-kids-31";
+
+  const gameContent = t("brain-health.kids.homework", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,129 +30,7 @@ const Homework = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Kid has lots of homework and feels stressed. Best action?",
-      options: [
-        { 
-          id: "step", 
-          text: "Do one step at a time", 
-          emoji: "📝", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "panic", 
-          text: "Panic and give up", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore all homework", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "You feel overwhelmed with homework. What should you do?",
-      options: [
-        { 
-          id: "rush", 
-          text: "Rush through everything at once", 
-          emoji: "⚡", 
-          isCorrect: false
-        },
-        { 
-          id: "break", 
-          text: "Take breaks and do it step by step", 
-          emoji: "⏸️", 
-          isCorrect: true
-        },
-        { 
-          id: "skip", 
-          text: "Skip everything", 
-          emoji: "⏭️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What helps when you feel stressed about homework?",
-      options: [
-        { 
-          id: "worry", 
-          text: "Worry about everything", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "shout", 
-          text: "Shout and get angry", 
-          emoji: "😡", 
-          isCorrect: false
-        },
-        { 
-          id: "breathe", 
-          text: "Take deep breaths and organize tasks", 
-          emoji: "🌬️", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How can you manage homework stress better?",
-      options: [
-        { 
-          id: "plan", 
-          text: "Plan your time and do tasks one by one", 
-          emoji: "📋", 
-          isCorrect: true
-        },
-        { 
-          id: "procrastinate", 
-          text: "Wait until the last minute", 
-          emoji: "⏰", 
-          isCorrect: false
-        },
-        { 
-          id: "avoid", 
-          text: "Avoid all homework", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What's the best way to handle lots of homework?",
-      options: [
-        { 
-          id: "panic", 
-          text: "Panic about everything", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "organize", 
-          text: "Organize and tackle one task at a time", 
-          emoji: "📝", 
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore it completely", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -177,9 +59,17 @@ const Homework = () => {
 
   return (
     <GameShell
-      title="Homework Story"
+      title={gameContent?.title || "Homework Story"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={
+        !showResult
+          ? t("brain-health.kids.homework.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+          : gameContent?.subtitleComplete || "Story Complete!"
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -200,8 +90,20 @@ const Homework = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.homework.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.homework.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

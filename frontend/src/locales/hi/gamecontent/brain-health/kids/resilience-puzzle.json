@@ -1,0 +1,26 @@
+{
+  "title": "लचीलेपन की पहेली",
+  "subtitleDefault": "वस्तुओं का मिलान करें!",
+  "subtitleMatching": "मिलान {{current}}/{{total}}",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "matchesLabel": "मिलान: {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "instruction": "असफलताओं का लचीली प्रतिक्रियाओं से मिलान करें!",
+  "leftTitle": "असफलताएं",
+  "rightTitle": "लचीली प्रतिक्रियाएं",
+  "matchButton": "मिलान करें",
+  "leftItems": [
+    { "id": 1, "name": "गिरना", "emoji": "⬇️" },
+    { "id": 2, "name": "असफल होना", "emoji": "❌" },
+    { "id": 3, "name": "गलती", "emoji": "⚠️" },
+    { "id": 4, "name": "हारना", "emoji": "😞" },
+    { "id": 5, "name": "त्रुटि", "emoji": "🔴" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "उठना", "emoji": "⬆️" },
+    { "id": 2, "name": "दोबारा कोशिश करें", "emoji": "🔄" },
+    { "id": 3, "name": "सीखना", "emoji": "📚" },
+    { "id": 4, "name": "अभ्यास", "emoji": "💪" },
+    { "id": 5, "name": "सुधारें", "emoji": "🔧" }
+  ]
+}

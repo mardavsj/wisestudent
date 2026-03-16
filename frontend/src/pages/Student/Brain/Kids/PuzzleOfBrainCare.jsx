@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const PuzzleOfBrainCare = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-4");
   const gameId = gameData?.id || "brain-kids-4";
+  
+  const gameContent = t("brain-health.kids.puzzle-of-brain-care", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -20,6 +24,7 @@ const PuzzleOfBrainCare = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const [score, setScore] = useState(0);
   const [matches, setMatches] = useState([]);
   const [selectedLeft, setSelectedLeft] = useState(null);
@@ -27,41 +32,17 @@ const PuzzleOfBrainCare = () => {
   const [showResult, setShowResult] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Brain care activities (left side)
-  const leftItems = [
-    { id: 1, name: "Sleep", emoji: "😴",  },
-    { id: 2, name: "Reading", emoji: "📚",  },
-    { id: 3, name: "Exercise", emoji: "💪",  },
-    { id: 4, name: "Healthy Food", emoji: "🍎",  },
-    { id: 5, name: "Water", emoji: "💧",  }
-  ];
+  const leftItems = Array.isArray(gameContent?.leftItems) ? gameContent.leftItems : [];
+  const rightItems = Array.isArray(gameContent?.rightItems) ? gameContent.rightItems : [];
+  const correctMatches = Array.isArray(gameContent?.correctMatches) ? gameContent.correctMatches : [];
 
-  // Benefits (right side)
-  const rightItems = [
-    { id: 1, name: "Rest & Memory", emoji: "🧠",  },
-    { id: 2, name: "Sharp Mind", emoji: "✨",  },
-    { id: 3, name: "Strong Brain", emoji: "💪",  },
-    { id: 4, name: "Smart Fuel", emoji: "⚡",  },
-    { id: 5, name: "Stay Hydrated", emoji: "💧",  }
-  ];
-
-  // Correct matches
-  const correctMatches = [
-    { leftId: 1, rightId: 1 }, // Sleep → Rest & Memory
-    { leftId: 2, rightId: 2 }, // Reading → Sharp Mind
-    { leftId: 3, rightId: 3 }, // Exercise → Strong Brain
-    { leftId: 4, rightId: 4 }, // Healthy Food → Smart Fuel
-    { leftId: 5, rightId: 5 }  // Water → Stay Hydrated
-  ];
-
-  // Shuffled right items for display (to split matches across positions)
-  const shuffledRightItems = [
-    rightItems[2], // Strong Brain (id: 3) - position 1
-    rightItems[0], // Rest & Memory (id: 1) - position 2
-    rightItems[4], // Stay Hydrated (id: 5) - position 3
-    rightItems[1], // Sharp Mind (id: 2) - position 4
-    rightItems[3]  // Smart Fuel (id: 4) - position 5
-  ];
+  // Shuffled right items for display
+  const shuffledRightItems = useMemo(() => {
+    if (rightItems.length === 0) return [];
+    // The original code had a fixed shuffle: [2, 0, 4, 1, 3]
+    const shuffleIndices = [2, 0, 4, 1, 3];
+    return shuffleIndices.map(idx => rightItems[idx]).filter(Boolean);
+  }, [rightItems]);
 
   const handleLeftSelect = (item) => {
     if (showResult) return;
@@ -109,15 +90,6 @@ const PuzzleOfBrainCare = () => {
     setSelectedRight(null);
   };
 
-  const handleTryAgain = () => {
-    setShowResult(false);
-    setMatches([]);
-    setSelectedLeft(null);
-    setSelectedRight(null);
-    setScore(0);
-    resetFeedback();
-  };
-
   // Check if a left item is already matched
   const isLeftItemMatched = (itemId) => {
     return matches.some(match => match.leftId === itemId);
@@ -136,9 +108,17 @@ const PuzzleOfBrainCare = () => {
 
   return (
     <GameShell
-      title="Puzzle of Brain Care"
+      title={gameContent?.title || "Puzzle of Brain Care"}
       score={score}
-      subtitle={showResult ? "Puzzle Complete!" : `Match brain care activities with their benefits (${matches.length}/${leftItems.length} matched)`}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleComplete || "Puzzle Complete!" 
+          : t("brain-health.kids.puzzle-of-brain-care.subtitleProgress", {
+              current: matches.length,
+              total: leftItems.length,
+              defaultValue: `Match brain care activities with their benefits (${matches.length}/${leftItems.length} matched)`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -159,18 +139,32 @@ const PuzzleOfBrainCare = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Matches: {matches.length}/{leftItems.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{leftItems.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.puzzle-of-brain-care.matchesLabel", {
+                    current: matches.length,
+                    total: leftItems.length,
+                    defaultValue: `Matches: ${matches.length}/${leftItems.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.puzzle-of-brain-care.scoreLabel", {
+                    score,
+                    total: leftItems.length,
+                    defaultValue: `Score: ${score}/${leftItems.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white/90 text-center mb-6">
-                Select an activity from the left and its benefit from the right, then click "Match"
+                {gameContent?.instructions || "Select an activity from the left and its benefit from the right, then click \"Match\""}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* Left column - Activities */}
                 <div>
-                  <h4 className="text-lg font-semibold mb-4 text-white text-center">Brain Care Activities</h4>
+                  <h4 className="text-lg font-semibold mb-4 text-white text-center">
+                    {gameContent?.leftTitle || "Brain Care Activities"}
+                  </h4>
                   <div className="space-y-3">
                     {leftItems.map((item) => {
                       const isMatched = isLeftItemMatched(item.id);
@@ -196,7 +190,7 @@ const PuzzleOfBrainCare = () => {
                             <span className="text-2xl mr-3">{item.emoji}</span>
                             <div className="text-left flex-1">
                               <div className="font-semibold text-white">{item.name}</div>
-                              <div className="text-sm text-white/70">{item.description}</div>
+                              {item.description && <div className="text-sm text-white/70">{item.description}</div>}
                             </div>
                             {isMatched && (
                               <span className={`text-xl ${matchResult ? 'text-green-400' : 'text-red-400'}`}>
@@ -212,7 +206,9 @@ const PuzzleOfBrainCare = () => {
 
                 {/* Right column - Benefits */}
                 <div>
-                  <h4 className="text-lg font-semibold mb-4 text-white text-center">Benefits</h4>
+                  <h4 className="text-lg font-semibold mb-4 text-white text-center">
+                    {gameContent?.rightTitle || "Benefits"}
+                  </h4>
                   <div className="space-y-3">
                     {shuffledRightItems.map((item) => {
                       const isMatched = isRightItemMatched(item.id);
@@ -235,7 +231,7 @@ const PuzzleOfBrainCare = () => {
                             <span className="text-2xl mr-3">{item.emoji}</span>
                             <div className="flex-1">
                               <div className="font-semibold text-white">{item.name}</div>
-                              <div className="text-sm text-white/70">{item.description}</div>
+                              {item.description && <div className="text-sm text-white/70">{item.description}</div>}
                             </div>
                             {isMatched && (
                               <span className="text-xl text-green-400">✓</span>
@@ -255,11 +251,11 @@ const PuzzleOfBrainCare = () => {
                   disabled={!selectedLeft || !selectedRight || showResult}
                   className={`px-8 py-3 rounded-full font-bold transition-all ${
                     selectedLeft && selectedRight && !showResult
-                      ? 'bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white'
+                      ? 'bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white transform hover:scale-105'
                       : 'bg-gray-500/30 text-gray-400 cursor-not-allowed'
                   }`}
                 >
-                  Match Selected
+                  {gameContent?.matchButton || "Match Selected"}
                 </button>
               </div>
             </div>

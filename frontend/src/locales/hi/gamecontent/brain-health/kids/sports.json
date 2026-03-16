@@ -1,0 +1,54 @@
+{
+  "title": "खेल की कहानी",
+  "subtitleDefault": "कहानी पूर्ण!",
+  "subtitlePlaying": "प्रश्न {{current}} का {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "बच्चा खेल में हार जाता है, गुस्सा महसूस करता है। उसे क्या करना चाहिए?",
+      "options": [
+        { "id": "quit", "text": "टीम छोड़ दें", "emoji": "🏳️", "isCorrect": false },
+        { "id": "blame", "text": "दूसरों को दोष दें", "emoji": "👆", "isCorrect": false },
+        { "id": "calm", "text": "शांति से दोबारा प्रयास करें", "emoji": "😊", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "लक्ष्य चूक गया, परेशान है। सबसे अच्छी प्रतिक्रिया क्या है?",
+      "options": [
+        { "id": "throw", "text": "गेंद फेंको", "emoji": "😠", "isCorrect": false },
+        { "id": "practice", "text": "अधिक अभ्यास करें और पुनः प्रयास करें", "emoji": "⚽", "isCorrect": true },
+        { "id": "cry", "text": "रोओ और हार मान लो", "emoji": "😢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "टीम मैच हार जाती है। उन्हें क्या करना चाहिए?",
+      "options": [
+        { "id": "learn", "text": "इससे शांति से सीखें", "emoji": "📚", "isCorrect": true },
+        { "id": "argue", "text": "एक दूसरे से बहस करें", "emoji": "😠", "isCorrect": false },
+        { "id": "quit2", "text": "पूरी तरह से हार मान लो", "emoji": "🚶", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "खेल के दौरान घायल, गुस्सा। उन्हें इसे कैसे संभालना चाहिए?",
+      "options": [
+        { "id": "ignore", "text": "दर्द को नजरअंदाज करें और जारी रखें", "emoji": "🤕", "isCorrect": false },
+        { "id": "yell", "text": "कोच पर चिल्लाओ", "emoji": "😡", "isCorrect": false },
+        { "id": "rest", "text": "आराम करें और शांत रहें", "emoji": "🏥", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "रेफरी का गलत फैसला, पागल। सही कार्रवाई क्या है?",
+      "options": [
+        { "id": "protest", "text": "ज़ोर से विरोध करें", "emoji": "🗣️", "isCorrect": false },
+        { "id": "accept", "text": "स्वीकार करें और शांति से ध्यान केंद्रित करें", "emoji": "👍", "isCorrect": true },
+        { "id": "leave", "text": "खेल छोड़ दो", "emoji": "🏃", "isCorrect": false }
+      ]
+    }
+  ]
+}

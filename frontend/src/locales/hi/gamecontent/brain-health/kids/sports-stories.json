@@ -1,0 +1,54 @@
+{
+  "title": "खेल की कहानियाँ",
+  "subtitleDefault": "कहानी पूर्ण!",
+  "subtitlePlaying": "प्रश्न {{current}} का {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "टीम फुटबॉल मैच हार जाती है। क्या उन्हें रुक जाना चाहिए?",
+      "options": [
+        { "id": "practice", "text": "नहीं, और अधिक अभ्यास करें", "emoji": "⚽", "isCorrect": true },
+        { "id": "quit", "text": "हाँ, खेलना बंद कर दें", "emoji": "🏳️", "isCorrect": false },
+        { "id": "blame", "text": "टीम के साथियों को दोष दें", "emoji": "👆", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "बच्चा सॉकर में गोल करने से चूक गया। उसे क्या करना चाहिए?",
+      "options": [
+        { "id": "give", "text": "सॉकर छोड़ दें", "emoji": "😞", "isCorrect": false },
+        { "id": "practice2", "text": "अधिक अभ्यास करें और पुनः प्रयास करें", "emoji": "⚽", "isCorrect": true },
+        { "id": "cry", "text": "रोओ और छोड़ दो", "emoji": "😢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "टीम बास्केटबॉल गेम हार जाती है। सबसे अच्छी प्रतिक्रिया?",
+      "options": [
+        { "id": "learn", "text": "हार से सीखें और अभ्यास करें", "emoji": "🏀", "isCorrect": true },
+        { "id": "stop", "text": "बास्केटबॉल खेलना बंद करें", "emoji": "🚫", "isCorrect": false },
+        { "id": "angry", "text": "कोच पर गुस्सा हों", "emoji": "😠", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "बच्चा दौड़ के दौरान गिर जाता है। सही कार्रवाई क्या है?",
+      "options": [
+        { "id": "stay", "text": "नीचे रहें और छोड़ दें", "emoji": "😞", "isCorrect": false },
+        { "id": "blame4", "text": "ट्रैक को दोष दें", "emoji": "👆", "isCorrect": false },
+        { "id": "get", "text": "उठो और खत्म करो", "emoji": "🏃", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "टीम टूर्नामेंट हार जाती है। अगला कदम?",
+      "options": [
+        { "id": "quit5", "text": "टीम छोड़ दें", "emoji": "🚶", "isCorrect": false },
+        { "id": "train", "text": "अगली बार के लिए और कड़ी मेहनत करें", "emoji": "💪", "isCorrect": true },
+        { "id": "complain", "text": "इसके बारे में शिकायत करें", "emoji": "😤", "isCorrect": false }
+      ]
+    }
+  ]
+}

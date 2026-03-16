@@ -1,0 +1,40 @@
+{
+  "title": "Puzzle of Focus",
+  "subtitleComplete": "Game Complete!",
+  "subtitleProgress": "Match focus concepts to their effects ({{current}}/{{total}} matched)",
+  "conceptTitle": "Focus Concepts",
+  "effectTitle": "Effects",
+  "selectedConcept": "Selected: {{name}}",
+  "selectConcept": "Select a concept",
+  "matchButton": "Match Selected",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "Matched: {{current}}/{{total}}",
+  "greatMatchingTitle": "Great Matching!",
+  "greatMatchingDescription": "You correctly matched {{score}} out of {{total}} focus concepts! You understand how focus works!",
+  "coinsAwarded": "+{{score}} Coins",
+  "matchingSummary": "You know that meditation creates calm, quiet rooms help focus, and listening improves learning!",
+  "keepLearningTitle": "Keep Learning!",
+  "keepLearningDescription": "You matched {{score}} out of {{total}} focus concepts correctly. Remember, understanding these concepts helps you focus better!",
+  "learningHint": "Try to match each focus concept with its appropriate effect. Meditation → Calm Mind, Quiet Room → Better Focus!",
+  "leftItems": [
+    { "id": 1, "name": "Meditation", "emoji": "🧘" },
+    { "id": 2, "name": "Quiet Room", "emoji": "🔇" },
+    { "id": 3, "name": "Listening", "emoji": "👂" },
+    { "id": 4, "name": "Concentration", "emoji": "🎯" },
+    { "id": 5, "name": "Noise", "emoji": "🔊" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "Calm Mind", "emoji": "🧠" },
+    { "id": 2, "name": "Better Focus", "emoji": "✨" },
+    { "id": 3, "name": "Learn Better", "emoji": "📚" },
+    { "id": 4, "name": "Sharp Thinking", "emoji": "⚡" },
+    { "id": 5, "name": "Distraction", "emoji": "😵" }
+  ],
+  "correctMatches": [
+    { "leftId": 1, "rightId": 1 },
+    { "leftId": 2, "rightId": 2 },
+    { "leftId": 3, "rightId": 3 },
+    { "leftId": 4, "rightId": 4 },
+    { "leftId": 5, "rightId": 5 }
+  ]
+}

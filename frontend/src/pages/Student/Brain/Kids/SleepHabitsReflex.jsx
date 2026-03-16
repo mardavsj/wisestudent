@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
-import { getBrainKidsGames } from "../../../../pages/Games/GameCategories/Brain/kidGamesData";
 
 const TOTAL_ROUNDS = 5;
 const ROUND_TIME = 10;
 
 const SleepHabitsReflex = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-63");
@@ -35,58 +36,8 @@ const SleepHabitsReflex = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-  {
-    id: 1,
-    text: "A young news reporter wakes up fresh and focused before school because of last night’s choice. What likely helped?",
-    options: [
-      { id: "a", text: "Packing tomorrow’s bag early", emoji: "🎒", isCorrect: false },
-      { id: "b", text: "Stopping games before bedtime", emoji: "🧩", isCorrect: true },
-      { id: "c", text: "Eating spicy snacks late", emoji: "🌶️", isCorrect: false },
-      { id: "d", text: "Watching funny clips in bed", emoji: "📺", isCorrect: false }
-    ]
-  },
-  {
-    id: 2,
-    text: "A trainee chef needs steady hands in the morning class. What evening action supports this?",
-    options: [
-      { id: "c", text: "Taking quiet time to relax", emoji: "🌿", isCorrect: true },
-      { id: "a", text: "Drinking fizzy drinks at night", emoji: "🥤", isCorrect: false },
-      { id: "b", text: "Practicing dance moves before sleep", emoji: "💃", isCorrect: false },
-      { id: "d", text: "Keeping bright lights on", emoji: "💡", isCorrect: false }
-    ]
-  },
-  {
-    id: 3,
-    text: "A student astronaut dreams of space and wakes up energetic daily. What habit makes this easier?",
-    options: [
-      { id: "a", text: "Sleeping at different times daily", emoji: "🔄", isCorrect: false },
-      { id: "b", text: "Skipping sleep for shows", emoji: "🎬", isCorrect: false },
-      { id: "c", text: "Keeping a regular sleep time", emoji: "⏳", isCorrect: true },
-      { id: "d", text: "Napping very late at night", emoji: "🛋️", isCorrect: false }
-    ]
-  },
-  {
-    id: 4,
-    text: "A young wildlife photographer needs sharp eyes at sunrise. What night setup helps most?",
-    options: [
-      { id: "a", text: "Sleeping with music blasting", emoji: "🎵", isCorrect: false },
-      { id: "c", text: "Leaving toys scattered around", emoji: "🧸", isCorrect: false },
-      { id: "d", text: "Scrolling messages in bed", emoji: "💬", isCorrect: false },
-      { id: "b", text: "Keeping the room calm and dim", emoji: "🌌", isCorrect: true },
-    ]
-  },
-  {
-    id: 5,
-    text: "A future scientist wants her brain to feel clear every morning. What night habit supports this?",
-    options: [
-      { id: "a", text: "Following the same wind-down steps nightly", emoji: "🧠", isCorrect: true },
-      { id: "b", text: "Eating heavy food very late", emoji: "🍕", isCorrect: false },
-      { id: "c", text: "Sleeping at random hours", emoji: "🎲", isCorrect: false },
-      { id: "d", text: "Going to bed while worried", emoji: "☁️", isCorrect: false }
-    ]
-  }
-];
+  const gameContent = t("brain-health.kids.sleep-habits-reflex", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
 
   useEffect(() => {
@@ -175,8 +126,16 @@ const SleepHabitsReflex = () => {
 
   return (
     <GameShell
-      title="Reflex Sleep Habits"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your sleep habits reflexes!` : "Test your sleep habits reflexes!"}
+      title={gameContent?.title || "Reflex Sleep Habits"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.sleep-habits-reflex.subtitlePlaying", { 
+              current: currentRound, 
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your sleep habits reflexes!`
+            })
+          : gameContent?.subtitleDefault || "Test your sleep habits reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -186,29 +145,40 @@ const SleepHabitsReflex = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
-      nextGamePathProp="/student/brain/kids/puzzle-rest"
       nextGameIdProp="brain-kids-64"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      backPath="/games/brain-health/kids"
+    >
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">😴</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
-            <p className="text-white/90 text-lg mb-6">
-              Identify good sleep habits!<br />
-              You have {ROUND_TIME} seconds for each question.
-            </p>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.ready?.title || "Get Ready!"}
+            </h3>
+            <p className="text-white/90 text-lg mb-6" 
+               dangerouslySetInnerHTML={{ 
+                 __html: t("brain-health.kids.sleep-habits-reflex.ready.description", { 
+                   time: ROUND_TIME,
+                   defaultValue: `Identify good sleep habits!<br />You have ${ROUND_TIME} seconds for each question.`
+                 }) 
+               }} 
+            />
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.sleep-habits-reflex.ready.info", { 
+                total: TOTAL_ROUNDS, 
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.ready?.button || "Start Game"}
             </button>
           </div>
         )}
@@ -217,13 +187,29 @@ const SleepHabitsReflex = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">
+                  {t("brain-health.kids.sleep-habits-reflex.roundLabel", { 
+                    current: currentRound, 
+                    total: TOTAL_ROUNDS,
+                    defaultValue: `Round: ${currentRound}/${TOTAL_ROUNDS}`
+                  })}
+                </span>
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">
+                  {t("brain-health.kids.sleep-habits-reflex.timeLabel", { 
+                    time: timeLeft,
+                    defaultValue: `Time: ${timeLeft}s`
+                  })}
+                </span>
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">
+                  {t("brain-health.kids.sleep-habits-reflex.scoreLabel", { 
+                    score: score,
+                    defaultValue: `Score: ${score}`
+                  })}
+                </span>
               </div>
             </div>
 

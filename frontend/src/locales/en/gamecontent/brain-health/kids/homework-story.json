@@ -1,0 +1,54 @@
+{
+  "title": "Homework Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Kid studies with TV on. Is focus good?",
+      "options": [
+        { "id": "no", "text": "No", "emoji": "👎", "isCorrect": true },
+        { "id": "yes", "text": "Yes", "emoji": "👍", "isCorrect": false },
+        { "id": "maybe", "text": "Maybe", "emoji": "🤔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What's the best place to do homework?",
+      "options": [
+        { "id": "bed", "text": "In bed", "emoji": "🛏️", "isCorrect": false },
+        { "id": "floor", "text": "On the floor", "emoji": "📄", "isCorrect": false },
+        { "id": "quiet", "text": "A quiet desk or table", "emoji": "📚", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "You have homework and want to watch a show. What should you do?",
+      "options": [
+        { "id": "now", "text": "Watch now and do homework later", "emoji": "📺", "isCorrect": false },
+        { "id": "later", "text": "Finish homework first, then watch", "emoji": "📺", "isCorrect": true },
+        { "id": "both", "text": "Do both at same time", "emoji": "🤹", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "How should you organize your homework time?",
+      "options": [
+        { "id": "plan", "text": "Plan which subjects first", "emoji": "📋", "isCorrect": true },
+        { "id": "random", "text": "Do whatever you feel like", "emoji": "🎲", "isCorrect": false },
+        { "id": "skip", "text": "Skip some subjects", "emoji": "⏭️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You don't understand your homework. What's the best approach?",
+      "options": [
+        { "id": "copy", "text": "Copy from friend", "emoji": "👀", "isCorrect": false },
+        { "id": "skip", "text": "Skip it", "emoji": "⏭️", "isCorrect": false },
+        { "id": "ask", "text": "Ask teacher or parent for help", "emoji": "🙋", "isCorrect": true }
+      ]
+    }
+  ]
+}

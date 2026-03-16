@@ -1,19 +1,22 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
-import { getBrainKidsGames } from "../../../../pages/Games/GameCategories/Brain/kidGamesData";
 
 const TOTAL_ROUNDS = 5;
 const ROUND_TIME = 10;
 
 const PositiveNegativeReflex = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-59");
   const gameId = gameData?.id || "brain-kids-59";
+  
+  const gameContent = t("brain-health.kids.positive-negative-reflex", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -35,163 +38,7 @@ const PositiveNegativeReflex = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-  {
-    id: 1,
-    text: "You didn’t score well in a test, but you want to motivate yourself for the next one. Which thought helps most?",
-    options: [
-      
-      {
-        id: "b",
-        text: "I will always be bad at this subject",
-        emoji: "😔",
-        isCorrect: false
-      },
-      {
-        id: "c",
-        text: "There is no point in trying again",
-        emoji: "😞",
-        isCorrect: false
-      },
-      {
-        id: "d",
-        text: "Others are better, so I should stop",
-        emoji: "�",
-        isCorrect: false
-      },
-      {
-        id: "a",
-        text: "I can improve if I practice differently next time",
-        emoji: "😊",
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 2,
-    text: "A friend posts their success online. What kind of reaction reflects a healthy mindset?",
-    options: [
-      
-      {
-        id: "b",
-        text: "Feeling upset because they are ahead of you",
-        emoji: "😔",
-        isCorrect: false
-      },
-      {
-        id: "c",
-        text: "Thinking they don’t deserve the success",
-        emoji: "😕",
-        isCorrect: false
-      },
-      {
-        id: "a",
-        text: "Feeling inspired to work toward your own goals",
-        emoji: "🤔",
-        isCorrect: true
-      },
-      {
-        id: "d",
-        text: "Avoiding their posts completely",
-        emoji: "🔒",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    text: "You make a small mistake while presenting in class. Which inner response is most constructive?",
-    options: [
-      
-      {
-        id: "b",
-        text: "Everyone must think I’m embarrassing",
-        emoji: "😔",
-        isCorrect: false
-      },
-      {
-        id: "a",
-        text: "Mistakes help me learn how to do better",
-        emoji: "😊",
-        isCorrect: true
-      },
-      {
-        id: "c",
-        text: "I should never speak in front of others again",
-        emoji: "😐",
-        isCorrect: false
-      },
-      {
-        id: "d",
-        text: "I always ruin things",
-        emoji: "🤨",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 4,
-    text: "Someone gives you helpful feedback on your online project. Which response shows a positive attitude?",
-    options: [
-      {
-        id: "a",
-        text: "Using the feedback to improve your work",
-        emoji: "🙂",
-        isCorrect: true
-      },
-      {
-        id: "b",
-        text: "Feeling offended and rejecting all advice",
-        emoji: "😕",
-        isCorrect: false
-      },
-      {
-        id: "c",
-        text: "Assuming they want to criticize you",
-        emoji: "🤔",
-        isCorrect: false
-      },
-      {
-        id: "d",
-        text: "Stopping the project completely",
-        emoji: "⛔",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 5,
-    text: "You are learning a new skill online and progress feels slow. Which thought supports emotional growth?",
-    options: [
-      
-      {
-        id: "b",
-        text: "If I’m not fast, I must be bad at it",
-        emoji: "😔",
-        isCorrect: false
-      },
-      {
-        id: "c",
-        text: "Others learn faster, so I should quit",
-        emoji: "🤨",
-        isCorrect: false
-      },
-      {
-        id: "a",
-        text: "Growth takes time and consistent effort",
-        emoji: "🤔",
-        isCorrect: true
-      },
-      {
-        id: "d",
-        text: "There’s no value in slow progress",
-        emoji: "😐",
-        isCorrect: false
-      }
-    ]
-  }
-];
-
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   useEffect(() => {
     currentRoundRef.current = currentRound;
@@ -279,8 +126,16 @@ const PositiveNegativeReflex = () => {
 
   return (
     <GameShell
-      title="Reflex Positive/Negative"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your positive/negative reflexes!` : "Test your positive/negative reflexes!"}
+      title={gameContent?.title || "Reflex Positive/Negative"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.positive-negative-reflex.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your positive/negative reflexes!`,
+            })
+          : gameContent?.subtitleDefault || "Test your positive/negative reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -300,19 +155,25 @@ const PositiveNegativeReflex = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">😊</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
-            <p className="text-white/90 text-lg mb-6">
-              Identify positive and negative words!<br />
-              You have {ROUND_TIME} seconds for each question.
-            </p>
+            <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.readyTitle || "Get Ready!"}</h3>
+            <p className="text-white/90 text-lg mb-6" dangerouslySetInnerHTML={{ 
+              __html: t("brain-health.kids.positive-negative-reflex.readyDescription", {
+                time: ROUND_TIME,
+                defaultValue: `Identify positive and negative words!<br />You have ${ROUND_TIME} seconds for each question.`,
+              }) 
+            }} />
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.positive-negative-reflex.readyStats", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`,
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -321,13 +182,13 @@ const PositiveNegativeReflex = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round:"}</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time:"}</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score:"}</span> {score}
               </div>
             </div>
 
@@ -357,4 +218,3 @@ const PositiveNegativeReflex = () => {
 };
 
 export default PositiveNegativeReflex;
-

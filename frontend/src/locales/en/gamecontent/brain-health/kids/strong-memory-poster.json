@@ -1,0 +1,53 @@
+{
+  "title": "Poster: Strong Memory",
+  "subtitleComplete": "Poster Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which poster would best show \"Practice = Memory\"?",
+      "options": [
+        { "id": "a1", "text": "Poster showing daily practice and repetition 🔁", "isCorrect": true },
+        { "id": "b1", "text": "Poster showing someone sleeping all day 😴", "isCorrect": false },
+        { "id": "c1", "text": "Poster showing someone avoiding practice 🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Which poster would best show \"Repeat to Remember\"?",
+      "options": [
+        { "id": "a2", "text": "Poster showing someone reading once 📖", "isCorrect": false },
+        { "id": "b2", "text": "Poster showing repeated learning and practice 🔁", "isCorrect": true },
+        { "id": "c2", "text": "Poster showing someone forgetting everything 😵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Which poster would best show \"Memory Gets Stronger with Practice\"?",
+      "options": [
+        { "id": "a3", "text": "Poster showing no practice at all 🚫", "isCorrect": false },
+        { "id": "b3", "text": "Poster showing daily practice and improvement 📈", "isCorrect": true },
+        { "id": "c3", "text": "Poster showing someone giving up 😔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Which poster would best show \"Review Helps Memory\"?",
+      "options": [
+        { "id": "a4", "text": "Poster showing someone reviewing lessons 📚", "isCorrect": true },
+        { "id": "b4", "text": "Poster showing someone ignoring lessons 🙈", "isCorrect": false },
+        { "id": "c4", "text": "Poster showing someone never studying 🎮", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Which poster would best show \"Strong Memory Through Repetition\"?",
+      "options": [
+        { "id": "a5", "text": "Poster showing repeated practice and learning 🔁", "isCorrect": true },
+        { "id": "b5", "text": "Poster showing someone learning once and stopping ⏸️", "isCorrect": false },
+        { "id": "c5", "text": "Poster showing someone avoiding all learning 🚫", "isCorrect": false }
+      ]
+    }
+  ]
+}

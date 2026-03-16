@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const CreativityQuiz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-82");
   const gameId = gameData?.id || "brain-kids-82";
+  
+  const gameContent = t("brain-health.kids.creativity-quiz", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,131 +30,7 @@ const CreativityQuiz = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Which is problem solving?",
-      options: [
-        { 
-          id: "crying", 
-          text: "Crying", 
-          emoji: "😢", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "finding", 
-          text: "Finding another way", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-        { 
-          id: "giving", 
-          text: "Giving up", 
-          emoji: "😞", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What is creative thinking?",
-      options: [
-        { 
-          id: "copy", 
-          text: "Copying others", 
-          emoji: "📋", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "avoid", 
-          text: "Avoiding problems", 
-          emoji: "🚶", 
-          isCorrect: false
-        },
-        { 
-          id: "new", 
-          text: "Coming up with new ideas", 
-          emoji: "✨", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "How do you solve a problem creatively?",
-      options: [
-        { 
-          id: "same", 
-          text: "Do the same thing again", 
-          emoji: "🔄", 
-          isCorrect: false
-        },
-        { 
-          id: "think", 
-          text: "Think of different solutions", 
-          emoji: "🧠", 
-          isCorrect: true
-        },
-        { 
-          id: "wait", 
-          text: "Wait for someone else", 
-          emoji: "⏳", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What helps you be creative?",
-      options: [
-         { 
-          id: "experiment", 
-          text: "Trying new things", 
-          emoji: "🔬", 
-          isCorrect: true
-        },
-        { 
-          id: "fear", 
-          text: "Being afraid to try", 
-          emoji: "😨", 
-          isCorrect: false
-        },
-       
-        { 
-          id: "stay", 
-          text: "Staying in comfort zone", 
-          emoji: "🛋️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What is the best way to solve a problem?",
-      options: [
-        { 
-          id: "quit", 
-          text: "Give up immediately", 
-          emoji: "🏳️", 
-          isCorrect: false
-        },
-        { 
-          id: "blame", 
-          text: "Blame others", 
-          emoji: "👆", 
-          isCorrect: false
-        },
-        { 
-          id: "solve", 
-          text: "Think and find solutions", 
-          emoji: "🔧", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -179,8 +59,16 @@ const CreativityQuiz = () => {
 
   return (
     <GameShell
-      title="Quiz on Creativity"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      title={gameContent?.title || "Quiz on Creativity"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Quiz Complete!"
+          : t("brain-health.kids.creativity-quiz.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -202,8 +90,20 @@ const CreativityQuiz = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.creativity-quiz.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.creativity-quiz.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

@@ -1,0 +1,76 @@
+{
+  "title": "Badge: Emotion Kid",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "subtitleComplete": "Badge Complete!",
+  "challengeLabel": "Challenge {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "success": {
+    "header": "Emotion Kid Badge Earned!",
+    "feedback": "You got {{score}} out of {{total}} challenges correct! You're a true Emotion Kid expert!",
+    "coins": "+{{score}} Coins",
+    "lesson": "Lesson: You can identify different feelings like happiness, sadness, anger, fear, and excitement!"
+  },
+  "failure": {
+    "header": "Keep Learning!",
+    "feedback": "You got {{score}} out of {{total}} challenges correct. Practice makes perfect with identifying feelings!",
+    "button": "Try Again",
+    "tip": "Tip: Pay attention to facial expressions and body language to identify different feelings!"
+  },
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Identifying Happiness",
+      "question": "Which feeling is happiness?",
+      "options": [
+        { "text": "Feeling joyful and smiling", "emoji": "😊", "isCorrect": true },
+        { "text": "Feeling sad and crying", "emoji": "😢", "isCorrect": false },
+        { "text": "Feeling angry and frowning", "emoji": "😠", "isCorrect": false },
+        { "text": "Feeling scared and hiding", "emoji": "😨", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Identifying Sadness",
+      "question": "Which feeling is sadness?",
+      "options": [
+        { "text": "Feeling happy and laughing", "emoji": "😄", "isCorrect": false },
+        { "text": "Feeling excited and jumping", "emoji": "🎉", "isCorrect": false },
+        { "text": "Feeling down and teary", "emoji": "😢", "isCorrect": true },
+        { "text": "Feeling proud and confident", "emoji": "😎", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Identifying Anger",
+      "question": "Which feeling is anger?",
+      "options": [
+        { "text": "Feeling calm and peaceful", "emoji": "😌", "isCorrect": false },
+        { "text": "Feeling mad and frustrated", "emoji": "😠", "isCorrect": true },
+        { "text": "Feeling happy and cheerful", "emoji": "😊", "isCorrect": false },
+        { "text": "Feeling surprised and shocked", "emoji": "😲", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Identifying Fear",
+      "question": "Which feeling is fear?",
+      "options": [
+        { "text": "Feeling scared and worried", "emoji": "😨", "isCorrect": true },
+        { "text": "Feeling brave and strong", "emoji": "💪", "isCorrect": false },
+        { "text": "Feeling happy and joyful", "emoji": "😊", "isCorrect": false },
+        { "text": "Feeling calm and relaxed", "emoji": "😌", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Identifying Excitement",
+      "question": "Which feeling is excitement?",
+      "options": [
+        { "text": "Feeling bored and tired", "emoji": "😴", "isCorrect": false },
+        { "text": "Feeling calm and quiet", "emoji": "😌", "isCorrect": false },
+        { "text": "Feeling thrilled and energetic", "emoji": "🎉", "isCorrect": true },
+        { "text": "Feeling sad and gloomy", "emoji": "😢", "isCorrect": false }
+      ]
+    }
+  ]
+}

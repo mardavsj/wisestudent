@@ -1,0 +1,53 @@
+{
+  "title": "परीक्षा कहानी",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "बच्चा स्पेलिंग टेस्ट में फेल हो जाता है। सबसे अच्छी प्रतिक्रिया?",
+      "options": [
+        { "id": "give", "text": "स्पेलिंग छोड़ दो", "emoji": "🏳️", "isCorrect": false },
+        { "id": "study", "text": "पढ़ाई करो और दोबारा कोशिश करो", "emoji": "📚", "isCorrect": true },
+        { "id": "blame", "text": "टेस्ट को दोष दो", "emoji": "👆", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "बच्चे को गणित में कम अंक मिलते हैं। उसे क्या करना चाहिए?",
+      "options": [
+        { "id": "quit", "text": "गणित की कक्षा छोड़ दो", "emoji": "🚶", "isCorrect": false },
+        { "id": "cry", "text": "रोओ और हार मान लो", "emoji": "😢", "isCorrect": false },
+        { "id": "practice", "text": "और अभ्यास करो और दोबारा दो", "emoji": "✏️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "बच्चा विज्ञान की क्विज़ में फेल हो जाता है। सबसे अच्छा तरीका?",
+      "options": [
+        { "id": "ignore", "text": "परिणाम को अनदेखा करो", "emoji": "😑", "isCorrect": false },
+        { "id": "review", "text": "गलतियों की समीक्षा करो और पढ़ो", "emoji": "🔬", "isCorrect": true },
+        { "id": "angry", "text": "शिक्षक पर गुस्सा करो", "emoji": "😠", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "बच्चा पढ़ने की परीक्षा पास नहीं करता। क्या सही है?",
+      "options": [
+        { "id": "stop", "text": "पढ़ना बंद कर दो", "emoji": "🚫", "isCorrect": false },
+        { "id": "blame4", "text": "किताब को दोष दो", "emoji": "📚", "isCorrect": false },
+        { "id": "read", "text": "और पढ़ो और अभ्यास करो", "emoji": "📖", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "बच्चा इतिहास की परीक्षा में फेल हो जाता है। सबसे अच्छा कदम?",
+      "options": [
+        { "id": "learn", "text": "और मेहनत से पढ़ो और दोबारा दो", "emoji": "📜", "isCorrect": true },
+        { "id": "avoid", "text": "इतिहास की कक्षा से बचो", "emoji": "🙈", "isCorrect": false },
+        { "id": "complain", "text": "शिकायत करो", "emoji": "😤", "isCorrect": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Poster: Stay Positive",
+  "subtitleComplete": "Poster Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}: Choose the best positive poster!",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which poster inspires someone feeling down to keep going?",
+      "options": [
+        { "id": "a1", "text": "Focus on what went wrong", "emoji": "⚡", "isCorrect": false },
+        { "id": "b1", "text": "Think everything is hopeless", "emoji": "🌧️", "isCorrect": false },
+        { "id": "c1", "text": "Take small steps each day", "emoji": "🌱", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Which poster encourages a positive mindset during challenges?",
+      "options": [
+        { "id": "a2", "text": "Look for solutions and keep trying", "emoji": "🔍", "isCorrect": true },
+        { "id": "b2", "text": "Complain about problems", "emoji": "😤", "isCorrect": false },
+        { "id": "c2", "text": "Worry and give up easily", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Which poster helps someone focus on happy moments?",
+      "options": [
+        { "id": "a3", "text": "Remember only sad events", "emoji": "😢", "isCorrect": false },
+        { "id": "b3", "text": "Notice small joys in daily life", "emoji": "☀️", "isCorrect": true },
+        { "id": "c3", "text": "Keep thinking about mistakes", "emoji": "⚡", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Which poster inspires choosing optimism in tough situations?",
+      "options": [
+        { "id": "a4", "text": "Look for the silver lining", "emoji": "🌈", "isCorrect": true },
+        { "id": "b4", "text": "Focus on complaints", "emoji": "😑", "isCorrect": false },
+        { "id": "c4", "text": "Give up immediately", "emoji": "🏳️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Which poster encourages spreading good energy to friends?",
+      "options": [
+        { "id": "a5", "text": "Ignore friends who are sad", "emoji": "🙈", "isCorrect": false },
+        { "id": "b5", "text": "Point out everyone's mistakes", "emoji": "⚡", "isCorrect": false },
+        { "id": "c5", "text": "Smile and help others", "emoji": "💛", "isCorrect": true }
+      ]
+    }
+  ]
+}

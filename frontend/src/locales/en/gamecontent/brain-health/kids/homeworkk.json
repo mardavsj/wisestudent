@@ -1,0 +1,54 @@
+{
+  "title": "Homework Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Kid finds homework hard. Positive thought?",
+      "options": [
+        { "id": "step", "text": "I can learn step by step", "emoji": "📚", "isCorrect": true },
+        { "id": "never", "text": "I'll never get it", "emoji": "😞", "isCorrect": false },
+        { "id": "skip", "text": "Skip it", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Math problem tough. Best thought?",
+      "options": [
+        { "id": "hate", "text": "I hate math", "emoji": "😠", "isCorrect": false },
+        { "id": "different", "text": "Try different way!", "emoji": "💡", "isCorrect": true },
+        { "id": "giveup", "text": "Give up", "emoji": "😔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Reading book difficult. Positive?",
+      "options": [
+        { "id": "boring", "text": "Boring book", "emoji": "😑", "isCorrect": false },
+        { "id": "stop", "text": "Stop reading", "emoji": "🚫", "isCorrect": false },
+        { "id": "slowly", "text": "Read slowly and enjoy!", "emoji": "📖", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Science project hard. Thought?",
+      "options": [
+        { "id": "help", "text": "Ask for help and learn!", "emoji": "🤝", "isCorrect": true },
+        { "id": "bad", "text": "I'm bad at science", "emoji": "😞", "isCorrect": false },
+        { "id": "dont", "text": "Don't do it", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Writing essay tough. Best thought?",
+      "options": [
+        { "id": "cant", "text": "I can't write", "emoji": "😞", "isCorrect": false },
+        { "id": "copy", "text": "Copy from friend", "emoji": "📋", "isCorrect": false },
+        { "id": "sentence", "text": "Write one sentence at a time!", "emoji": "✍️", "isCorrect": true }
+      ]
+    }
+  ]
+}

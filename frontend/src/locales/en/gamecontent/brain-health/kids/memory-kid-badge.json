@@ -1,0 +1,63 @@
+{
+  "title": "Badge: Memory Kid",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Memory Challenge 1",
+      "question": "What is the best way to improve your memory?",
+      "options": [
+        { "text": "Practice regularly, repeat information, and get enough sleep", "emoji": "🧠", "isCorrect": true },
+        { "text": "Never practice", "emoji": "🚫", "isCorrect": false },
+        { "text": "Avoid all learning activities", "emoji": "😴", "isCorrect": false },
+        { "text": "Only learn once", "emoji": "⏸️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Memory Challenge 2",
+      "question": "Which activity helps memory the most?",
+      "options": [
+        { "text": "Playing video games all day", "emoji": "🎮", "isCorrect": false },
+        { "text": "Repeating and practicing information", "emoji": "🔁", "isCorrect": true },
+        { "text": "Never reviewing anything", "emoji": "🙈", "isCorrect": false },
+        { "text": "Avoiding all memory exercises", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Memory Challenge 3",
+      "question": "How can you remember things better?",
+      "options": [
+        { "text": "Write them down and review often", "emoji": "📝", "isCorrect": true },
+        { "text": "Never write anything", "emoji": "🚫", "isCorrect": false },
+        { "text": "Ignore everything", "emoji": "😴", "isCorrect": false },
+        { "text": "Only read once", "emoji": "📖", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Memory Challenge 4",
+      "question": "What helps your brain remember?",
+      "options": [
+        { "text": "Staying up all night", "emoji": "🌙", "isCorrect": false },
+        { "text": "Skipping meals", "emoji": "🍽️", "isCorrect": false },
+        { "text": "Avoiding all rest", "emoji": "⏰", "isCorrect": false },
+        { "text": "Getting enough sleep and eating healthy", "emoji": "😴", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Memory Challenge 5",
+      "question": "What makes memory stronger?",
+      "options": [
+        { "text": "Never practicing", "emoji": "🚫", "isCorrect": false },
+        { "text": "Learning once and stopping", "emoji": "⏸️", "isCorrect": false },
+        { "text": "Regular practice and repetition", "emoji": "🔁", "isCorrect": true },
+        { "text": "Avoiding all memory activities", "emoji": "😴", "isCorrect": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "title": "Reflex Positive/Negative",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your positive/negative reflexes!",
+  "subtitleDefault": "Test your positive/negative reflexes!",
+  "readyTitle": "Get Ready!",
+  "readyDescription": "Identify positive and negative words!<br />You have {{time}} seconds for each question.",
+  "readyStats": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You didn’t score well in a test, but you want to motivate yourself for the next one. Which thought helps most?",
+      "options": [
+        { "id": "b", "text": "I will always be bad at this subject", "emoji": "😔", "isCorrect": false },
+        { "id": "c", "text": "There is no point in trying again", "emoji": "😞", "isCorrect": false },
+        { "id": "d", "text": "Others are better, so I should stop", "emoji": "🙁", "isCorrect": false },
+        { "id": "a", "text": "I can improve if I practice differently next time", "emoji": "😊", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "A friend posts their success online. What kind of reaction reflects a healthy mindset?",
+      "options": [
+        { "id": "b", "text": "Feeling upset because they are ahead of you", "emoji": "😔", "isCorrect": false },
+        { "id": "c", "text": "Thinking they don’t deserve the success", "emoji": "😕", "isCorrect": false },
+        { "id": "a", "text": "Feeling inspired to work toward your own goals", "emoji": "🤔", "isCorrect": true },
+        { "id": "d", "text": "Avoiding their posts completely", "emoji": "🔒", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "You make a small mistake while presenting in class. Which inner response is most constructive?",
+      "options": [
+        { "id": "b", "text": "Everyone must think I’m embarrassing", "emoji": "😔", "isCorrect": false },
+        { "id": "a", "text": "Mistakes help me learn how to do better", "emoji": "😊", "isCorrect": true },
+        { "id": "c", "text": "I should never speak in front of others again", "emoji": "😐", "isCorrect": false },
+        { "id": "d", "text": "I always ruin things", "emoji": "🤨", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Someone gives you helpful feedback on your online project. Which response shows a positive attitude?",
+      "options": [
+        { "id": "a", "text": "Using the feedback to improve your work", "emoji": "🙂", "isCorrect": true },
+        { "id": "b", "text": "Feeling offended and rejecting all advice", "emoji": "😕", "isCorrect": false },
+        { "id": "c", "text": "Assuming they want to criticize you", "emoji": "🤔", "isCorrect": false },
+        { "id": "d", "text": "Stopping the project completely", "emoji": "⛔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You are learning a new skill online and progress feels slow. Which thought supports emotional growth?",
+      "options": [
+        { "id": "b", "text": "If I’m not fast, I must be bad at it", "emoji": "😔", "isCorrect": false },
+        { "id": "c", "text": "Others learn faster, so I should quit", "emoji": "🤨", "isCorrect": false },
+        { "id": "a", "text": "Growth takes time and consistent effort", "emoji": "🤔", "isCorrect": true },
+        { "id": "d", "text": "There’s no value in slow progress", "emoji": "😐", "isCorrect": false }
+      ]
+    }
+  ]
+}

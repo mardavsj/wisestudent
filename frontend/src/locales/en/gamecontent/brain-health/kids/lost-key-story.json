@@ -1,0 +1,129 @@
+{
+  "title": "Lost Key Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Kid loses classroom key. Best action?",
+      "options": [
+        { 
+          "id": "tell", 
+          "text": "Tell teacher & find solution", 
+          "emoji": "👨‍🏫", 
+          "isCorrect": true
+        },
+        { 
+          "id": "hide", 
+          "text": "Hide and don't tell anyone", 
+          "emoji": "🙈", 
+          "isCorrect": false
+        },
+        { 
+          "id": "panic", 
+          "text": "Panic and cry", 
+          "emoji": "😰", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Lost homework assignment. What should you do?",
+      "options": [
+        { 
+          "id": "ignore", 
+          "text": "Ignore it", 
+          "emoji": "😑", 
+          "isCorrect": false
+        },
+        { 
+          "id": "tell2", 
+          "text": "Tell teacher & ask for help", 
+          "emoji": "🙋", 
+          "isCorrect": true
+        },
+        { 
+          "id": "blame", 
+          "text": "Blame someone else", 
+          "emoji": "👆", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Forgot lunch money. Best solution?",
+      "options": [
+        { 
+          "id": "skip", 
+          "text": "Skip lunch", 
+          "emoji": "😞", 
+          "isCorrect": false
+        },
+        { 
+          "id": "steal", 
+          "text": "Take from someone", 
+          "emoji": "👀", 
+          "isCorrect": false
+        },
+        { 
+          "id": "ask3", 
+          "text": "Tell teacher & find solution", 
+          "emoji": "💬", 
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Lost library book. What's the right action?",
+      "options": [
+        { 
+          "id": "tell4", 
+          "text": "Tell librarian & search together", 
+          "emoji": "📚", 
+          "isCorrect": true
+        },
+        { 
+          "id": "lie", 
+          "text": "Lie about it", 
+          "emoji": "🤥", 
+          "isCorrect": false
+        },
+        { 
+          "id": "avoid", 
+          "text": "Avoid the library", 
+          "emoji": "🚶", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Lost friend's pencil. Best approach?",
+      "options": [
+        { 
+          "id": "deny", 
+          "text": "Deny it", 
+          "emoji": "🙅", 
+          "isCorrect": false
+        },
+        { 
+          "id": "tell5", 
+          "text": "Tell friend & find solution", 
+          "emoji": "🤝", 
+          "isCorrect": true
+        },
+        { 
+          "id": "ignore5", 
+          "text": "Ignore it", 
+          "emoji": "😐", 
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

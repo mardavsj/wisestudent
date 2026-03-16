@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -10,10 +11,13 @@ const ROUND_TIME = 10;
 
 const HappyThoughtsReflex = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-53");
   const gameId = gameData?.id || "brain-kids-53";
+
+  const gameContent = t("brain-health.kids.happy-thoughts-reflex", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -28,65 +32,15 @@ const HappyThoughtsReflex = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   
   const [gameState, setGameState] = useState("ready"); // ready, playing, finished
-  const [score, setScore] = useState(0);
-  const [currentRound, setCurrentRound] = useState(0);
+  const [currentRound, setCurrentRound] = useState(1);
   const [timeLeft, setTimeLeft] = useState(ROUND_TIME);
+  const [score, setScore] = useState(0);
   const [answered, setAnswered] = useState(false);
+  
+  const currentRoundRef = useRef(1);
   const timerRef = useRef(null);
-  const currentRoundRef = useRef(0);
 
-  const questions = [
-  {
-    id: 1,
-    text: "You make a mistake while drawing in class. Which thought helps you feel better quickly?",
-    options: [
-      { id: "im-bad", text: "I am bad at everything", emoji: "😞", isCorrect: false },
-      { id: "quit", text: "I should stop drawing forever", emoji: "🚫", isCorrect: false },
-      { id: "get-angry", text: "I feel angry and throw the paper", emoji: "😠", isCorrect: false },
-      { id: "try-again", text: "I can try again and improve", emoji: "✏️", isCorrect: true },
-    ]
-  },
-  {
-    id: 2,
-    text: "Your friend does not want to play today. What is the healthiest thought?",
-    options: [
-      { id: "alone", text: "No one likes me", emoji: "😢", isCorrect: false },
-      { id: "another-time", text: "We can play together another day", emoji: "📅", isCorrect: true },
-      { id: "ignore", text: "I will ignore everyone", emoji: "🙄", isCorrect: false },
-      { id: "revenge", text: "I will stop being their friend", emoji: "💢", isCorrect: false }
-    ]
-  },
-  {
-    id: 3,
-    text: "You feel nervous before a school test. Which thought keeps your mind calm?",
-    options: [
-      { id: "prepared", text: "I prepared and will do my best", emoji: "📘", isCorrect: true },
-      { id: "fail", text: "I will definitely fail", emoji: "😰", isCorrect: false },
-      { id: "panic", text: "I cannot remember anything", emoji: "😵", isCorrect: false },
-      { id: "escape", text: "I want to skip the test", emoji: "🏃", isCorrect: false }
-    ]
-  },
-  {
-    id: 4,
-    text: "Someone wins a prize instead of you. What thought shows a happy mindset?",
-    options: [
-      { id: "jealous", text: "It is unfair to me", emoji: "😤", isCorrect: false },
-      { id: "self-blame", text: "I am useless", emoji: "💔", isCorrect: false },
-      { id: "happy-for-them", text: "I am happy for their success", emoji: "🎉", isCorrect: true },
-      { id: "angry-world", text: "The world is against me", emoji: "🌪️", isCorrect: false }
-    ]
-  },
-  {
-    id: 5,
-    text: "You wake up feeling tired in the morning. Which thought starts the day positively?",
-    options: [
-      { id: "bad-day", text: "Today will be terrible", emoji: "☁️", isCorrect: false },
-      { id: "small-steps", text: "I will take the day one step at a time", emoji: "🌈", isCorrect: true },
-      { id: "complain", text: "I do not want to do anything", emoji: "😩", isCorrect: false },
-      { id: "give-up", text: "I cannot handle today", emoji: "🛑", isCorrect: false }
-    ]
-  }
-];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
 
   useEffect(() => {
@@ -175,8 +129,16 @@ const HappyThoughtsReflex = () => {
 
   return (
     <GameShell
-      title="Reflex Happy Thoughts"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your happy thoughts reflexes!` : "Test your happy thoughts reflexes!"}
+      title={gameContent?.title || "Reflex Happy Thoughts"}
+      subtitle={
+        gameState === "playing"
+          ? t("brain-health.kids.happy-thoughts-reflex.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your happy thoughts reflexes!`,
+            })
+          : gameContent?.subtitleDefault || "Test your happy thoughts reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -196,19 +158,28 @@ const HappyThoughtsReflex = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">😊</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Get Ready!"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Answer questions about happy thoughts!<br />
-              You have {ROUND_TIME} seconds for each question.
+              {gameContent?.readyText1 || "Answer questions about happy thoughts!"}<br />
+              {t("brain-health.kids.happy-thoughts-reflex.readyText2", {
+                time: ROUND_TIME,
+                defaultValue: `You have ${ROUND_TIME} seconds for each question.`,
+              })}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.happy-thoughts-reflex.readyText3", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`,
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -217,13 +188,13 @@ const HappyThoughtsReflex = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round:"}</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time:"}</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score:"}</span> {score}
               </div>
             </div>
 

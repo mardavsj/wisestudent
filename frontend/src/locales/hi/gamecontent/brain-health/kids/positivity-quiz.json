@@ -1,0 +1,54 @@
+{
+  "title": "सकारात्मकता पर प्रश्नोत्तरी",
+  "subtitleComplete": "प्रश्नोत्तरी पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{current}} में से {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questionStats": "प्रश्न {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "सकारात्मक सोच क्या है?",
+      "options": [
+        { "id": "complaining", "text": "शिकायत करना", "emoji": "😤" },
+        { "id": "goodside", "text": "अच्छे पक्ष की तलाश करना", "emoji": "😊", "isCorrect": true },
+        { "id": "givingup", "text": "हार मानना", "emoji": "😔" }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "सकारात्मक दृष्टिकोण का क्या अर्थ है?",
+      "options": [
+        { "id": "brightside", "text": "उज्ज्वल पक्ष देखें", "emoji": "☀️", "isCorrect": true },
+        { "id": "alwayssad", "text": "हमेशा दुखी रहना", "emoji": "😢" },
+        { "id": "ignore", "text": "समस्याओं को नज़रअंदाज़ करना", "emoji": "🙈" }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "कृतज्ञता क्या है?",
+      "options": [
+        { "id": "forgetting", "text": "भूल जाना", "emoji": "🤷" },
+        { "id": "complaining2", "text": "शिकायत करना", "emoji": "😤" },
+        { "id": "thanks", "text": "धन्यवाद कहना", "emoji": "🙏", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आशावाद क्या है?",
+      "options": [
+        { "id": "hoping", "text": "सर्वोत्तम की आशा करना", "emoji": "🌟", "isCorrect": true },
+        { "id": "worst", "text": "सबसे बुरे की अपेक्षा करना", "emoji": "😰" },
+        { "id": "nothing", "text": "कुछ न करना", "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "सकारात्मक सोच कैसे मदद करती है?",
+      "options": [
+        { "id": "worse", "text": "बुरा महसूस करना", "emoji": "😢" },
+        { "id": "nochange", "text": "कोई बदलाव नहीं", "emoji": "😑" },
+        { "id": "better", "text": "बेहतर महसूस करना", "emoji": "😊", "isCorrect": true }
+      ]
+    }
+  ]
+}

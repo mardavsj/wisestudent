@@ -1,0 +1,64 @@
+{
+  "title": "Reflex Rest Alert",
+  "subtitleDefault": "Test your rest habits reflexes!",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your rest habits reflexes!",
+  "readyTitle": "Get Ready!",
+  "readyText": "Identify good rest habits!<br />You have {{time}} seconds for each question.",
+  "roundStats": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round",
+  "timeLabel": "Time",
+  "scoreLabel": "Score",
+  "questions": [
+    {
+      "id": 1,
+      "text": "A junior weather reporter must stay alert to read the morning forecast clearly. Which evening choice supports this?",
+      "options": [
+        { "id": "b", "text": "Checking messages again and again", "emoji": "💬", "isCorrect": false },
+        { "id": "c", "text": "Watching one more episode", "emoji": "🎞️", "isCorrect": false },
+        { "id": "d", "text": "Snacking while lying in bed", "emoji": "🍿", "isCorrect": false },
+        { "id": "a", "text": "Turning lights low before sleep", "emoji": "🌗", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "A young traffic police helper needs quick reactions during a school drill. What habit makes mornings smoother?",
+      "options": [
+        { "id": "a", "text": "Sleeping at a changing time daily", "emoji": "🔄", "isCorrect": false },
+        { "id": "c", "text": "Drinking sweet drinks late", "emoji": "🥤", "isCorrect": false },
+        { "id": "b", "text": "Playing calm games before bed", "emoji": "🧩", "isCorrect": true },
+        { "id": "d", "text": "Keeping room lights bright", "emoji": "💡", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "A space trainee wants their mind sharp for morning practice. What night choice helps alertness?",
+      "options": [
+        { "id": "a", "text": "Listening to loud music", "emoji": "🎧", "isCorrect": false },
+        { "id": "c", "text": "Having a short wind-down routine", "emoji": "🌿", "isCorrect": true },
+        { "id": "b", "text": "Lying awake planning tomorrow", "emoji": "📋", "isCorrect": false },
+        { "id": "d", "text": "Scrolling videos until sleepy", "emoji": "📱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "A wildlife guide must stay focused during early forest walks. What supports steady energy?",
+      "options": [
+        { "id": "c", "text": "Resting at nearly the same time daily", "emoji": "⏳", "isCorrect": true },
+        { "id": "a", "text": "Eating heavy food very late", "emoji": "🍔", "isCorrect": false },
+        { "id": "b", "text": "Sleeping with toys scattered around", "emoji": "🧸", "isCorrect": false },
+        { "id": "d", "text": "Keeping TV noise in background", "emoji": "📺", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "A young classroom helper wants to stay calm and alert all day. What night habit helps most?",
+      "options": [
+        { "id": "d", "text": "Following the same calming steps nightly", "emoji": "🛏️", "isCorrect": true },
+        { "id": "a", "text": "Rushing to bed feeling worried", "emoji": "☁️", "isCorrect": false },
+        { "id": "b", "text": "Skipping rest to finish tasks", "emoji": "📝", "isCorrect": false },
+        { "id": "c", "text": "Resting only on weekends", "emoji": "📆", "isCorrect": false }
+      ]
+    }
+  ]
+}

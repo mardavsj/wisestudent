@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,10 +8,13 @@ import { getBrainKidsGames } from "../../../../pages/Games/GameCategories/Brain/
 
 const ExamStori = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-65");
   const gameId = gameData?.id || "brain-kids-65";
+
+  const gameContent = t("brain-health.kids.exam-stori", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -57,131 +61,7 @@ const ExamStori = () => {
   const [selectedOptionId, setSelectedOptionId] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-  {
-    id: 1,
-    text: "Two days before the exam, Aditya plans his study time. By midnight, he feels his focus fading but the chapter isn’t finished. What choice best supports his exam performance?",
-    options: [
-      
-      {
-        id: "push",
-        text: "Push through while rereading without focus",
-        emoji: "📖",
-        isCorrect: false
-      },
-      {
-        id: "memorize",
-        text: "Memorize quickly without understanding",
-        emoji: "🧩",
-        isCorrect: false
-      },
-      {
-        id: "prioritize",
-        text: "Stop, rest well, and continue with a fresh mind",
-        emoji: "🌙",
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 2,
-    text: "The night before a test, Kabir finishes revision early and opens a game to relax. Time passes faster than expected. What decision would help him the next morning?",
-    options: [
-      {
-        id: "limit",
-        text: "Set a clear stop time and protect sleep",
-        emoji: "⏱️",
-        isCorrect: true
-      },
-      {
-        id: "continue",
-        text: "Keep playing until feeling sleepy",
-        emoji: "🎮",
-        isCorrect: false
-      },
-      {
-        id: "balance",
-        text: "Play more and wake up earlier to revise",
-        emoji: "⏰",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    text: "While studying late, Nisha notices she keeps reading the same line again and again. What does this signal about her learning state?",
-    options: [
-      
-      {
-        id: "difficulty",
-        text: "The topic is impossible to understand",
-        emoji: "🚫",
-        isCorrect: false
-      },
-      {
-        id: "fatigue",
-        text: "Her brain needs rest to work effectively",
-        emoji: "🧠",
-        isCorrect: true
-      },
-      {
-        id: "failure",
-        text: "She is not capable of doing well",
-        emoji: "❌",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 4,
-    text: "Late at night, messages keep arriving on Aarav’s phone while he prepares for an exam. What choice supports steady focus?",
-    options: [
-      {
-        id: "silence",
-        text: "Silence notifications until study is complete",
-        emoji: "🔕",
-        isCorrect: true
-      },
-      {
-        id: "reply",
-        text: "Reply quickly to avoid missing out",
-        emoji: "💬",
-        isCorrect: false
-      },
-      {
-        id: "multitask",
-        text: "Switch between messages and notes",
-        emoji: "🔀",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 5,
-    text: "The project deadline and exam date fall close together. Riya feels pressure to finish everything in one night. What strategy helps her most?",
-    options: [
-      
-      {
-        id: "overnight",
-        text: "Complete everything in one long stretch",
-        emoji: "🌌",
-        isCorrect: false
-      },
-      {
-        id: "ignore",
-        text: "Focus only on one task and forget the other",
-        emoji: "🚫",
-        isCorrect: false
-      },
-      {
-        id: "plan",
-        text: "Break work across days with rest in between",
-        emoji: "🗓️",
-        isCorrect: true
-      },
-    ]
-  }
-];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
 
   const handleChoice = (option) => {
@@ -231,8 +111,16 @@ const ExamStori = () => {
 
   return (
     <GameShell
-      title="Exam Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Exam Story"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Story Complete!"
+          : t("brain-health.kids.exam-stori.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -254,8 +142,20 @@ const ExamStori = () => {
           <div className="space-y-4 md:space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4 md:mb-6">
-                <span className="text-white/80 text-sm md:text-base">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold text-sm md:text-base">Score: {score}/{questions.length}</span>
+                <span className="text-white/80 text-sm md:text-base">
+                  {t("brain-health.kids.exam-stori.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold text-sm md:text-base">
+                  {t("brain-health.kids.exam-stori.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-base md:text-lg lg:text-xl mb-4 md:mb-6 text-center">

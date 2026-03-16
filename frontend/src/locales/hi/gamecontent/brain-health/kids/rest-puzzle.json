@@ -1,0 +1,25 @@
+{
+  "title": "आराम की पहेली",
+  "subtitleDefault": "पहेली पूरी हुई!",
+  "subtitlePlaying": "{{current}}/{{total}} जोड़ियों का मिलान करें",
+  "instruction": "आराम की गतिविधियों का उनके प्रभावों से मिलान करें!",
+  "leftTitle": "आराम की गतिविधियाँ",
+  "rightTitle": "प्रभाव",
+  "matchButton": "मिलान करें!",
+  "matchesLabel": "मिलान: {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "leftItems": [
+    { "id": 1, "name": "झपकी", "emoji": "🛌" },
+    { "id": 2, "name": "पूरी रात टीवी", "emoji": "📺" },
+    { "id": 3, "name": "समय पर सोना", "emoji": "🌙" },
+    { "id": 4, "name": "देर रात गेमिंग", "emoji": "🎮" },
+    { "id": 5, "name": "शांत समय", "emoji": "🧘" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "ऊर्जा", "emoji": "🙂" },
+    { "id": 2, "name": "थकान", "emoji": "😢" },
+    { "id": 3, "name": "तरोताजा", "emoji": "😊" },
+    { "id": 4, "name": "शक्तिहीन", "emoji": "😞" },
+    { "id": 5, "name": "शांत", "emoji": "😌" }
+  ]
+}

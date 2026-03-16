@@ -1,0 +1,149 @@
+{
+  "title": "Badge: Sleep Champ",
+  "subtitleDefault": "Badge Complete!",
+  "subtitlePlaying": "Challenge {{current}} of {{total}}",
+  "challengeLabel": "Challenge {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Bedtime Story Challenge",
+      "description": "Choose the best bedtime routine!",
+      "question": "It's bedtime! Which routine helps you sleep best?",
+      "options": [
+        { 
+          "text": "Go to bed at the same time each night", 
+          "emoji": "🌙", 
+          "isCorrect": true
+        },
+        { 
+          "text": "Stay up late every night", 
+          "emoji": "⏰", 
+          "isCorrect": false
+        },
+        { 
+          "text": "Watch TV until you fall asleep", 
+          "emoji": "📺", 
+          "isCorrect": false
+        },
+        { 
+          "text": "Play games until midnight", 
+          "emoji": "🎮", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Sleep Quiz Master",
+      "description": "Test your sleep knowledge!",
+      "question": "Answer this question: How many hours should kids sleep?",
+      "options": [
+        { 
+          "text": "4 hours is enough", 
+          "emoji": "😴", 
+          "isCorrect": false
+        },
+        { 
+          "text": "8-10 hours is best", 
+          "emoji": "😊", 
+          "isCorrect": true
+        },
+        { 
+          "text": "12+ hours always", 
+          "emoji": "😴", 
+          "isCorrect": false
+        },
+        { 
+          "text": "No sleep needed", 
+          "emoji": "⚡", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Sleep Habits Reflex",
+      "description": "Quickly identify good sleep habits!",
+      "question": "Is this a good sleep habit: 'Going to bed at the same time each night'?",
+      "options": [
+        { 
+          "text": "No, routines are bad", 
+          "emoji": "❌", 
+          "isCorrect": false
+        },
+        { 
+          "text": "No, it's too strict", 
+          "emoji": "😞", 
+          "isCorrect": false
+        },
+        { 
+          "text": "Yes, routines help sleep", 
+          "emoji": "✅", 
+          "isCorrect": true
+        },
+        { 
+          "text": "No, sleep doesn't matter", 
+          "emoji": "🤷", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Rest Habits Puzzle",
+      "description": "Match rest habits with their effects!",
+      "question": "What effect does good sleep have?",
+      "options": [
+        { 
+          "text": "Makes you more tired", 
+          "emoji": "😴", 
+          "isCorrect": false
+        },
+        { 
+          "text": "Helps you feel energized and focused", 
+          "emoji": "⚡", 
+          "isCorrect": true
+        },
+        { 
+          "text": "Doesn't help at all", 
+          "emoji": "🤷", 
+          "isCorrect": false
+        },
+        { 
+          "text": "Makes you lazy", 
+          "emoji": "😑", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Exam Time Wisdom",
+      "description": "Avoid bad sleep habits during exams!",
+      "question": "It's exam week! What's the best approach to balance studying and sleep?",
+      "options": [
+        { 
+          "text": "Study all night, skip sleep", 
+          "emoji": "📚", 
+          "isCorrect": false
+        },
+        { 
+          "text": "Study during day, sleep at night", 
+          "emoji": "🌙", 
+          "isCorrect": true
+        },
+        { 
+          "text": "No sleep needed for exams", 
+          "emoji": "⚡", 
+          "isCorrect": false
+        },
+        { 
+          "text": "Sleep all day, study at night", 
+          "emoji": "🌙", 
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

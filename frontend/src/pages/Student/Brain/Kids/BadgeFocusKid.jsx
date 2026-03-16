@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BadgeFocusKid = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-20");
   const gameId = gameData?.id || "brain-kids-20";
+  
+  const gameContent = t("brain-health.kids.badge-focus-kid", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,143 +31,7 @@ const BadgeFocusKid = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Focus Challenge 1",
-      question: "What is the best way to improve your focus?",
-      options: [
-        { 
-          text: "Practice focusing, eliminate distractions, and take breaks", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-        { 
-          text: "Never take breaks", 
-          emoji: "⏰", 
-          isCorrect: false
-        },
-        { 
-          text: "Always multitask", 
-          emoji: "🤹", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid all learning activities", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Focus Challenge 2",
-      question: "Which environment helps you focus best?",
-      options: [
-        { 
-          text: "Loud and noisy place", 
-          emoji: "🔊", 
-          isCorrect: false
-        },
-        { 
-          text: "Quiet and organized space", 
-          emoji: "🔇", 
-          isCorrect: true
-        },
-        { 
-          text: "Busy playground", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          text: "In front of TV", 
-          emoji: "📺", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Focus Challenge 3",
-      question: "How should you balance games and study?",
-      options: [
-        { 
-          text: "Play games all day", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          text: "Study all day without breaks", 
-          emoji: "📚", 
-          isCorrect: false
-        },
-        { 
-          text: "Set a schedule: study time and play time", 
-          emoji: "⏰", 
-          isCorrect: true
-        },
-        { 
-          text: "Never play games", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Focus Challenge 4",
-      question: "What helps you maintain focus longer?",
-      options: [
-        { 
-          text: "Taking short breaks between tasks", 
-          emoji: "⏸️", 
-          isCorrect: true
-        },
-        { 
-          text: "Working continuously without rest", 
-          emoji: "⏰", 
-          isCorrect: false
-        },
-        { 
-          text: "Doing everything at once", 
-          emoji: "🤹", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoiding all activities", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Focus Challenge 5",
-      question: "What is a key focus strategy?",
-      options: [
-        { 
-          text: "Eliminate distractions and stay organized", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-        { 
-          text: "Have many distractions around", 
-          emoji: "📱", 
-          isCorrect: false
-        },
-        { 
-          text: "Work in chaos", 
-          emoji: "🌀", 
-          isCorrect: false
-        },
-        { 
-          text: "Never plan anything", 
-          emoji: "❌", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -193,9 +61,17 @@ const BadgeFocusKid = () => {
 
   return (
     <GameShell
-      title="Badge: Focus Kid"
+      title={gameContent?.title || "Badge: Focus Kid"}
       score={score}
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("brain-health.kids.badge-focus-kid.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -216,8 +92,20 @@ const BadgeFocusKid = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.badge-focus-kid.subtitleProgress", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1}/${challenges.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.badge-focus-kid.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{currentChallengeData.title}</h3>

@@ -1,0 +1,69 @@
+{
+  "title": "त्वरित एकाग्रता रिफ्लेक्स",
+  "subtitleDefault": "अपनी एकाग्रता शक्तियों का परीक्षण करें!",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपनी एकाग्रता शक्तियों का परीक्षण करें!",
+  "readyTitle": "क्या आप अपनी एकाग्रता कौशल का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "अच्छे और बुरे एकाग्रता कौशल को पहचानें।",
+  "readyInstruction": "आपके पास {{total}} सवाल हैं और प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड",
+  "timeLabel": "समय",
+  "scoreLabel": "स्कोर",
+  "questions": [
+    {
+      "id": 1,
+      "question": "कौन सा एक अच्छा एकाग्रता कौशल है?",
+      "correctAnswer": "त्वरित फोकस",
+      "options": [
+        { "text": "त्वरित फोकस", "isCorrect": true, "emoji": "⚡" },
+        { "text": "विचलित होना", "isCorrect": false, "emoji": "😵" },
+        { "text": "एकाग्रता खोना", "isCorrect": false, "emoji": "💭" },
+        { "text": "ख्यालों में खो जाना", "isCorrect": false, "emoji": "💭" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "कौन सा एकाग्रता कौशल खराब है?",
+      "correctAnswer": "विचलित होना",
+      "options": [
+        { "text": "सतर्क रहना", "isCorrect": false, "emoji": "👁️" },
+        { "text": "विचलित होना", "isCorrect": true, "emoji": "😵" },
+        { "text": "त्वरित प्रतिक्रिया", "isCorrect": false, "emoji": "🎯" },
+        { "text": "ध्यान से सुनना", "isCorrect": false, "emoji": "👂" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "कौन सा आपको बेहतर ध्यान देने में मदद करता है?",
+      "correctAnswer": "सतर्क रहना",
+      "options": [
+        { "text": "मल्टीटास्किंग", "isCorrect": false, "emoji": "🔄" },
+        { "text": "सतर्क रहना", "isCorrect": true, "emoji": "👁️" },
+        { "text": "बेचैनी महसूस करना", "isCorrect": false, "emoji": "👋" },
+        { "text": "बाधा डालना", "isCorrect": false, "emoji": "🗣️" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "बेहतर एकाग्रता के लिए आपको किससे बचना चाहिए?",
+      "correctAnswer": "एकाग्रता खोना",
+      "options": [
+        { "text": "नोट्स लेना", "isCorrect": false, "emoji": "📝" },
+        { "text": "सवाल पूछना", "isCorrect": false, "emoji": "❓" },
+        { "text": "एकाग्रता खोना", "isCorrect": true, "emoji": "💭" },
+        { "text": "सक्रिय श्रवण", "isCorrect": false, "emoji": "👂" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "कौन सा एक सहायक एकाग्रता कौशल है?",
+      "correctAnswer": "त्वरित प्रतिक्रिया",
+      "options": [
+        { "text": "निर्देशों को अनदेखा करना", "isCorrect": false, "emoji": "🙉" },
+        { "text": "त्वरित प्रतिक्रिया", "isCorrect": true, "emoji": "🎯" },
+        { "text": "बिना सोचे-समझे जल्दबाजी करना", "isCorrect": false, "emoji": "🏃" },
+        { "text": "अनदेखा करना", "isCorrect": false, "emoji": "🔇" }
+      ]
+    }
+  ]
+}

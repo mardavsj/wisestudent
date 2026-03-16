@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { PenSquare } from "lucide-react";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -7,10 +8,13 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const JournalOfFocus = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-17");
   const gameId = gameData?.id || "brain-kids-17";
+
+  const gameContent = t("brain-health.kids.journal-of-focus", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -28,38 +32,7 @@ const JournalOfFocus = () => {
   const [entry, setEntry] = useState("");
   const [answered, setAnswered] = useState(false);
 
-  const journalPrompts = [
-    {
-      id: 1,
-      prompt: "Write: \"One strategy that helps me focus is ___\"",
-      guidance: "Think about activities or techniques that help you concentrate better.",
-      minLength: 10
-    },
-    {
-      id: 2,
-      prompt: "Write: \"When I lose focus, I can ___\"",
-      guidance: "Reflect on what you do to regain your concentration.",
-      minLength: 10
-    },
-    {
-      id: 3,
-      prompt: "Write: \"A quiet place helps me focus because ___\"",
-      guidance: "Think about why a peaceful environment is important for concentration.",
-      minLength: 10
-    },
-    {
-      id: 4,
-      prompt: "Write: \"One distraction I avoid while studying is ___\"",
-      guidance: "Consider what things take away your attention when you need to focus.",
-      minLength: 10
-    },
-    {
-      id: 5,
-      prompt: "Write: \"I improve my focus by ___\"",
-      guidance: "Reflect on practices that help you maintain better concentration.",
-      minLength: 10
-    }
-  ];
+  const journalPrompts = Array.isArray(gameContent?.prompts) ? gameContent.prompts : [];
 
   const handleInputChange = (e) => {
     if (!answered) {
@@ -93,9 +66,17 @@ const JournalOfFocus = () => {
 
   return (
     <GameShell
-      title="Journal of Focus"
+      title={gameContent?.title || "Journal of Focus"}
       score={score}
-      subtitle={!showResult ? `Entry ${currentStage + 1} of ${journalPrompts.length}` : "Journal Complete!"}
+      subtitle={
+        !showResult
+          ? t("brain-health.kids.journal-of-focus.subtitleProgress", {
+              current: currentStage + 1,
+              total: journalPrompts.length,
+              defaultValue: `Entry ${currentStage + 1} of ${journalPrompts.length}`,
+            })
+          : gameContent?.subtitleComplete || "Journal Complete!"
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -116,13 +97,27 @@ const JournalOfFocus = () => {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Entry {currentStage + 1}/{journalPrompts.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{journalPrompts.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.journal-of-focus.entryLabel", {
+                    current: currentStage + 1,
+                    total: journalPrompts.length,
+                    defaultValue: `Entry ${currentStage + 1}/${journalPrompts.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.journal-of-focus.scoreLabel", {
+                    score,
+                    total: journalPrompts.length,
+                    defaultValue: `Score: ${score}/${journalPrompts.length}`,
+                  })}
+                </span>
               </div>
               
               <div className="flex items-center gap-3 mb-4">
                 <PenSquare className="w-8 h-8 text-blue-400" />
-                <h3 className="text-xl font-bold text-white">Journal Entry</h3>
+                <h3 className="text-xl font-bold text-white">
+                  {gameContent?.journalHeader || "Journal Entry"}
+                </h3>
               </div>
               
               <p className="text-white text-lg mb-2">
@@ -137,16 +132,23 @@ const JournalOfFocus = () => {
                   className="w-full max-w-md mx-auto border border-white/20 rounded-lg p-3 bg-white/5 text-white placeholder-white/50 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={entry}
                   onChange={handleInputChange}
-                  placeholder="Type your response here..."
+                  placeholder={gameContent?.placeholder || "Type your response here..."}
                   rows={6}
                   disabled={answered}
                 />
                 <div className="flex justify-between items-center mt-2 text-xs text-white/60">
                   <span>
-                    Minimum {currentPrompt.minLength} characters required
+                    {t("brain-health.kids.journal-of-focus.minLengthLabel", {
+                      min: currentPrompt.minLength,
+                      defaultValue: `Minimum ${currentPrompt.minLength} characters required`,
+                    })}
                   </span>
                   <span className={entry.length >= currentPrompt.minLength ? "text-green-400" : "text-red-400"}>
-                    {entry.length}/{currentPrompt.minLength}
+                    {t("brain-health.kids.journal-of-focus.charCountLabel", {
+                      count: entry.length,
+                      min: currentPrompt.minLength,
+                      defaultValue: `${entry.length}/${currentPrompt.minLength}`,
+                    })}
                   </span>
                 </div>
               </div>
@@ -160,7 +162,7 @@ const JournalOfFocus = () => {
                     : "bg-gray-500/30 text-gray-400 cursor-not-allowed"
                 }`}
               >
-                {answered ? "Submitted!" : "Submit Entry"}
+                {answered ? gameContent?.submittedBtn || "Submitted!" : gameContent?.submitBtn || "Submit Entry"}
               </button>
             </div>
           </div>

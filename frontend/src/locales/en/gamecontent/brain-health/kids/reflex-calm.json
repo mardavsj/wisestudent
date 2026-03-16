@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Calm",
+  "subtitleDefault": "Test your calm reflexes!",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your calm reflexes!",
+  "readyTitle": "Ready to Test Your Calm Skills?",
+  "readyDescription": "Answer questions about staying calm and managing stress.",
+  "readyInstruction": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round",
+  "timeLabel": "Time",
+  "scoreLabel": "Score",
+  "finishedTitle": "Great Job!",
+  "finishedScore": "You scored {{score}} out of {{total}}!",
+  "finishedMessage": "You're developing strong calm skills!",
+  "playAgainButton": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a calm action when feeling stressed?",
+      "options": [
+        { "id": "a", "text": "Panic and yell", "emoji": "😰", "isCorrect": false },
+        { "id": "b", "text": "Run around frantically", "emoji": "🏃", "isCorrect": false },
+        { "id": "c", "text": "Breathe slowly and deeply", "emoji": "🌬️", "isCorrect": true },
+        { "id": "d", "text": "Shout loudly", "emoji": "😱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which action helps you stay calm?",
+      "options": [
+        { "id": "a", "text": "Getting very angry", "emoji": "😡", "isCorrect": false },
+        { "id": "b", "text": "Count to 10 slowly", "emoji": "🔢", "isCorrect": true },
+        { "id": "c", "text": "Worry about everything", "emoji": "😟", "isCorrect": false },
+        { "id": "d", "text": "Scream out loud", "emoji": "😱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What should you do to feel calm?",
+      "options": [
+        { "id": "a", "text": "Shout at others", "emoji": "😠", "isCorrect": false },
+        { "id": "b", "text": "Think about worst scenarios", "emoji": "😰", "isCorrect": false },
+        { "id": "c", "text": "Take a break and relax", "emoji": "🧘", "isCorrect": true },
+        { "id": "d", "text": "Cry loudly", "emoji": "😢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which is a calm response to stress?",
+      "options": [
+        { "id": "a", "text": "Practice deep breathing", "emoji": "💨", "isCorrect": true },
+        { "id": "b", "text": "Panic immediately", "emoji": "😱", "isCorrect": false },
+        { "id": "c", "text": "Ignore the problem", "emoji": "🙈", "isCorrect": false },
+        { "id": "d", "text": "Hit something", "emoji": "🤬", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What helps you stay calm in difficult situations?",
+      "options": [
+        { "id": "a", "text": "Reacting immediately with anger", "emoji": "😡", "isCorrect": false },
+        { "id": "b", "text": "Staying calm and thinking clearly", "emoji": "😌", "isCorrect": true },
+        { "id": "c", "text": "Worrying constantly", "emoji": "😟", "isCorrect": false },
+        { "id": "d", "text": "Running away", "emoji": "🏃", "isCorrect": false }
+      ]
+    }
+  ]
+}

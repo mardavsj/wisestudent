@@ -1,0 +1,64 @@
+{
+  "title": "Reflex Quick Calm",
+  "subtitleDefault": "Test your calm reflexes!",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your calm reflexes!",
+  "readyTitle": "Ready to Test Your Calm Skills?",
+  "readyDescription": "Identify calming actions and stress management techniques.",
+  "readyInstruction": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round",
+  "timeLabel": "Time",
+  "scoreLabel": "Score",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which action helps you stay calm?",
+      "options": [
+        { "id": "smile", "text": "Smile", "emoji": "😊", "isCorrect": true },
+        { "id": "yell", "text": "Yell", "emoji": "😡", "isCorrect": false },
+        { "id": "panic", "text": "Panic", "emoji": "😱", "isCorrect": false },
+        { "id": "rush", "text": "Rush around", "emoji": "🏃", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What helps you relax when stressed?",
+      "options": [
+        { "id": "worry", "text": "Worry more", "emoji": "😰", "isCorrect": false },
+        { "id": "breathe", "text": "Breathe deeply", "emoji": "🌬️", "isCorrect": true },
+        { "id": "scream", "text": "Scream", "emoji": "😱", "isCorrect": false },
+        { "id": "ignore", "text": "Ignore it", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Which is a calm way to handle anger?",
+      "options": [
+        { "id": "hit", "text": "Hit something", "emoji": "👊", "isCorrect": false },
+        { "id": "blame", "text": "Blame others", "emoji": "👆", "isCorrect": false },
+        { "id": "count", "text": "Count to 10", "emoji": "🔢", "isCorrect": true },
+        { "id": "cry", "text": "Cry and give up", "emoji": "😢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What helps you feel peaceful?",
+      "options": [
+        { "id": "argue", "text": "Argue", "emoji": "😤", "isCorrect": false },
+        { "id": "complain", "text": "Complain", "emoji": "😒", "isCorrect": false },
+        { "id": "stress", "text": "Stress out", "emoji": "😓", "isCorrect": false },
+        { "id": "relax", "text": "Relax and rest", "emoji": "🧘", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Which action keeps you calm?",
+      "options": [
+        { "id": "negative", "text": "Think negative thoughts", "emoji": "💔", "isCorrect": false },
+        { "id": "positive", "text": "Think positive thoughts", "emoji": "✨", "isCorrect": true },
+        { "id": "avoid", "text": "Avoid the problem", "emoji": "🏃", "isCorrect": false },
+        { "id": "overthink", "text": "Overthink everything", "emoji": "🤯", "isCorrect": false }
+      ]
+    }
+  ]
+}

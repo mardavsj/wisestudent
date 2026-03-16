@@ -1,0 +1,53 @@
+{
+  "title": "Water for Brain Health",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Teacher says 'Drink water for brain.' Do you follow?",
+      "options": [
+        { "id": "yes", "text": "Yes", "emoji": "💧", "isCorrect": true },
+        { "id": "maybe", "text": "Maybe later", "emoji": "🤔", "isCorrect": false },
+        { "id": "no", "text": "No", "emoji": "❌", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You feel thirsty during class. What should you do?",
+      "options": [
+        { "id": "wait", "text": "Wait until break", "emoji": "⏰", "isCorrect": false },
+        { "id": "drink", "text": "Drink water", "emoji": "💧", "isCorrect": true },
+        { "id": "ignore", "text": "Ignore thirst", "emoji": "😴", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Your friend says water is boring. What do you say?",
+      "options": [
+        { "id": "agree", "text": "Agree - soda is better", "emoji": "🥤", "isCorrect": false },
+        { "id": "say-nothing", "text": "Say nothing", "emoji": "🤐", "isCorrect": false },
+        { "id": "explain", "text": "Explain water helps brain", "emoji": "🧠", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "How much water should you drink daily?",
+      "options": [
+        { "id": "enough", "text": "Enough to stay hydrated", "emoji": "💧", "isCorrect": true },
+        { "id": "little", "text": "A little is enough", "emoji": "💧", "isCorrect": false },
+        { "id": "none", "text": "None needed", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "When is the best time to drink water?",
+      "options": [
+        { "id": "during", "text": "Only during meals", "emoji": "🍽️", "isCorrect": false },
+        { "id": "throughout", "text": "Throughout the day", "emoji": "⏰", "isCorrect": true },
+        { "id": "evening", "text": "Only in evening", "emoji": "🌙", "isCorrect": false }
+      ]
+    }
+  ]
+}

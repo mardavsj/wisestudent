@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -9,10 +10,13 @@ const ROUND_TIME = 10;
 
 const ReflexRecall = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-23");
   const gameId = gameData?.id || "brain-kids-23";
+  
+  const gameContent = t("brain-health.kids.reflex-recall", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -33,65 +37,7 @@ const ReflexRecall = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  // Questions with 4 options each - one correct answer
-  const questions = [
-  {
-    id: 1,
-    question: "Earlier, a screen showed several online actions. Which one appeared briefly?",
-    correctAnswer: "Updating privacy settings",
-    options: [
-      { text: "Joining a public chat room", isCorrect: false, emoji: "💬" },
-      { text: "Downloading unknown software", isCorrect: false, emoji: "⬇️" },
-      { text: "Posting personal photos", isCorrect: false, emoji: "🖼️" },
-      { text: "Updating privacy settings", isCorrect: true, emoji: "⚙️" },
-    ]
-  },
-  {
-    id: 2,
-    question: "From the quick list you saw, which activity was mentioned?",
-    correctAnswer: "Reporting a harmful message",
-    options: [
-      { text: "Ignoring warning messages", isCorrect: false, emoji: "🚫" },
-      { text: "Sharing passwords with friends", isCorrect: false, emoji: "🔑" },
-      { text: "Reporting a harmful message", isCorrect: true, emoji: "📢" },
-      { text: "Clicking pop-up rewards", isCorrect: false, emoji: "🎁" }
-    ]
-  },
-  {
-    id: 3,
-    question: "Think back to the symbols shown earlier. Which one was included?",
-    correctAnswer: "Verified website indicator",
-    options: [
-      { text: "Anonymous profile icon", isCorrect: false, emoji: "👤" },
-      { text: "Verified website indicator", isCorrect: true, emoji: "🛡️" },
-      { text: "Game score badge", isCorrect: false, emoji: "🏅" },
-      { text: "Live streaming button", isCorrect: false, emoji: "📡" }
-    ]
-  },
-  {
-    id: 4,
-    question: "Which item did NOT appear when safe online habits were shown?",
-    correctAnswer: "Posting location publicly",
-    options: [
-      { text: "Posting location publicly", isCorrect: true, emoji: "📍" },
-      { text: "Using strong passwords", isCorrect: false, emoji: "🔑" },
-      { text: "Checking website links", isCorrect: false, emoji: "🔍" },
-      { text: "Logging out on shared devices", isCorrect: false, emoji: "🚪" }
-    ]
-  },
-  {
-    id: 5,
-    question: "During the recall round, which digital behavior was missing?",
-    correctAnswer: "Replying to unknown messages",
-    options: [
-      { text: "Blocking suspicious users", isCorrect: false, emoji: "⛔" },
-      { text: "Using two-step verification", isCorrect: false, emoji: "🔐" },
-      { text: "Replying to unknown messages", isCorrect: true, emoji: "📨" },
-      { text: "Reviewing app permissions", isCorrect: false, emoji: "📋" }
-    ]
-  }
-];
-
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -123,44 +69,24 @@ const ReflexRecall = () => {
     }, 1000);
   }, [resetFeedback]);
 
-  // Timer effect - countdown from 10 seconds for each question
+  // Timer effect
   useEffect(() => {
-    if (gameState !== "playing") {
+    if (gameState === "playing" && !answered && timeLeft > 0) {
+      timerRef.current = setInterval(() => {
+        setTimeLeft(prev => {
+          if (prev <= 1) {
+            handleTimeUp();
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    } else {
       if (timerRef.current) {
         clearInterval(timerRef.current);
         timerRef.current = null;
       }
-      return;
     }
-
-    // Check if game should be finished
-    if (currentRoundRef.current > TOTAL_ROUNDS) {
-      setGameState("finished");
-      return;
-    }
-
-    // Clear any existing timer
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
-    }
-
-    // Start countdown timer
-    timerRef.current = setInterval(() => {
-      setTimeLeft((prev) => {
-        const newTime = prev - 1;
-        if (newTime <= 0) {
-          // Time's up for this round
-          if (timerRef.current) {
-            clearInterval(timerRef.current);
-            timerRef.current = null;
-          }
-          handleTimeUp();
-          return 0;
-        }
-        return newTime;
-      });
-    }, 1000);
 
     return () => {
       if (timerRef.current) {
@@ -168,7 +94,7 @@ const ReflexRecall = () => {
         timerRef.current = null;
       }
     };
-  }, [gameState, handleTimeUp]);
+  }, [gameState, answered, timeLeft, handleTimeUp]);
 
   // Ensure game always starts fresh when component mounts
   useEffect(() => {
@@ -207,7 +133,7 @@ const ReflexRecall = () => {
     resetFeedback();
 
     const isCorrect = option.isCorrect;
-    const isLastQuestion = currentRound === questions.length;
+    const isLastQuestion = currentRound === TOTAL_ROUNDS;
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
@@ -225,13 +151,28 @@ const ReflexRecall = () => {
     }, 500);
   };
 
+  // Log when game completes
+  useEffect(() => {
+    if (gameState === "finished") {
+      console.log(`🎮 Reflex Recall game completed! Score: ${score}/${TOTAL_ROUNDS}`);
+    }
+  }, [gameState, score]);
+
   const finalScore = score;
   const currentQuestion = questions[currentRound - 1];
 
   return (
     <GameShell
-      title="Reflex Recall"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your memory recall!` : "Test your memory recall!"}
+      title={gameContent?.title || "Reflex Recall"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.reflex-recall.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your memory recall!`
+            }) 
+          : gameContent?.subtitleDefault || "Test your memory recall!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -252,18 +193,24 @@ const ReflexRecall = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🧠</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Memory Recall?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Ready to Test Your Memory Recall?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Identify which words were shown in the initial list.
+              {gameContent?.readyDescription || "Identify which words were shown in the initial list."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.reflex-recall.readyInstruction", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -272,13 +219,13 @@ const ReflexRecall = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round"}:</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time"}:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score"}:</span> {score}
               </div>
             </div>
 

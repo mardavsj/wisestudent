@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Image } from "lucide-react";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -7,10 +8,14 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const SleepWellPoster = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-66");
   const gameId = gameData?.id || "brain-kids-66";
+  
+  const gameContent = t("brain-health.kids.sleep-well-poster", { returnObjects: true });
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,50 +32,6 @@ const SleepWellPoster = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const stages = [
-  {
-    question: 'Which poster shows how sleep helps your brain stay sharp?',
-    choices: [
-      { text: "Keep studying all night", correct: false, emoji: "📚" },
-      { text: "Recharge your mind while you rest", correct: true, emoji: "🧠" },
-      { text: "Stay awake with energy drinks", correct: false, emoji: "⚡" }
-    ]
-  },
-  {
-    question: 'Which poster encourages resting to feel energetic?',
-    choices: [
-      { text: "Take a short break to recharge", correct: true, emoji: "🌙" },
-      { text: "Work nonstop without sleeping", correct: false, emoji: "🏃" },
-      { text: "Drink coffee instead of sleeping", correct: false, emoji: "☕" }
-    ]
-  },
-  {
-    question: 'Which poster reminds you to sleep wisely for better health?',
-    choices: [
-      { text: "Stay awake and party late", correct: false, emoji: "🎉" },
-      { text: "Turn on lights and play games", correct: false, emoji: "💡" },
-      { text: "Stick to bedtime and get good rest", correct: true, emoji: "🛏️" },
-    ]
-  },
-  {
-    question: 'Which poster shows that resting gives you energy for the day?',
-    choices: [
-      { text: "Work late and feel tired", correct: false, emoji: "💻" },
-      { text: "Sleep well to refill your energy", correct: true, emoji: "🔋" },
-      { text: "Ignore rest and push yourself", correct: false, emoji: "😴" }
-    ]
-  },
-  {
-    question: 'Which poster shows that good sleep helps you do better in tasks?',
-    choices: [
-      { text: "Get rest to perform at your best", correct: true, emoji: "🏆" },
-      { text: "Skip sleep to study more", correct: false, emoji: "📚" },
-      { text: "Play games all night and skip bed", correct: false, emoji: "🎮" }
-    ]
-  }
-];
-
-
   const handleSelect = (isCorrect) => {
     if (answered || showResult) return;
     
@@ -80,6 +41,8 @@ const SleepWellPoster = () => {
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     const isLastStage = currentStage === stages.length - 1;
@@ -96,8 +59,16 @@ const SleepWellPoster = () => {
 
   return (
     <GameShell
-      title="Poster: Sleep Well"
-      subtitle={!showResult ? `Stage ${currentStage + 1} of ${stages.length}` : "Poster Complete!"}
+      title={gameContent?.title || "Poster: Sleep Well"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleDefault || "Poster Complete!" 
+          : t("brain-health.kids.sleep-well-poster.subtitlePlaying", {
+              current: currentStage + 1,
+              total: stages.length,
+              defaultValue: `Stage ${currentStage + 1} of ${stages.length}`
+            })
+      }
       score={score}
       currentLevel={currentStage + 1}
       totalLevels={stages.length}
@@ -106,21 +77,33 @@ const SleepWellPoster = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      nextGamePathProp="/student/brain/kids/journal-rest"
       nextGameIdProp="brain-kids-67"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       gameId={gameId}
       gameType="brain"
+      backPath="/games/brain-health/kids"
     >
       <div className="space-y-8">
         {!showResult && stages[currentStage] ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Stage {currentStage + 1}/{stages.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{stages.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.sleep-well-poster.stageLabel", {
+                    current: currentStage + 1,
+                    total: stages.length,
+                    defaultValue: `Stage ${currentStage + 1}/${stages.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.sleep-well-poster.scoreLabel", {
+                    current: score,
+                    total: stages.length,
+                    defaultValue: `Score: ${score}/${stages.length}`
+                  })}
+                </span>
               </div>
               
               <div className="text-center mb-6">

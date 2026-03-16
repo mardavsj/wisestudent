@@ -1,0 +1,31 @@
+{
+  "title": "Puzzle: Match Feelings",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "instruction": "Match the expressions with the correct feelings!",
+  "expressionsTitle": "Expressions",
+  "feelingsTitle": "Feelings",
+  "matchButton": "Match",
+  "leftItems": [
+    { "id": 1, "name": "Quiet grin", "emoji": "🌤️" },
+    { "id": 2, "name": "Eyes feel heavy", "emoji": "💧" },
+    { "id": 3, "name": "Tight eyebrows", "emoji": "🧩" },
+    { "id": 4, "name": "Can’t stay still", "emoji": "⚡" },
+    { "id": 5, "name": "Body feels shaky", "emoji": "🍃" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "Joyful inside", "emoji": "🎈" },
+    { "id": 2, "name": "Feeling low", "emoji": "🌧️" },
+    { "id": 3, "name": "Upset energy", "emoji": "🔥" },
+    { "id": 4, "name": "Burst of excitement", "emoji": "🎉" },
+    { "id": 5, "name": "Feeling unsafe", "emoji": "🛑" }
+  ],
+  "correctMatches": [
+    { "leftId": 1, "rightId": 1 },
+    { "leftId": 2, "rightId": 2 },
+    { "leftId": 3, "rightId": 3 },
+    { "leftId": 4, "rightId": 4 },
+    { "leftId": 5, "rightId": 5 }
+  ]
+}

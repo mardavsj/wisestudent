@@ -1,0 +1,54 @@
+{
+  "title": "Quiz on Calmness",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Quiz Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "What reduces stress?",
+      "options": [
+        { "id": "a", "text": "Deep breathing", "emoji": "🌬️", "isCorrect": true },
+        { "id": "b", "text": "Shouting", "emoji": "😡", "isCorrect": false },
+        { "id": "c", "text": "Worrying", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Which activity helps you feel calm?",
+      "options": [
+        { "id": "b", "text": "Getting very angry", "emoji": "😡", "isCorrect": false },
+        { "id": "a", "text": "Taking slow, deep breaths", "emoji": "🧘", "isCorrect": true },
+        { "id": "c", "text": "Panicking about everything", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What helps when you feel stressed?",
+      "options": [
+        { "id": "b", "text": "Working non-stop without rest", "emoji": "⚡", "isCorrect": false },
+        { "id": "c", "text": "Worrying constantly", "emoji": "😰", "isCorrect": false },
+        { "id": "a", "text": "Taking a break and breathing deeply", "emoji": "⏸️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "How can you stay calm during difficult times?",
+      "options": [
+        { "id": "a", "text": "Practice deep breathing and stay organized", "emoji": "🧘", "isCorrect": true },
+        { "id": "b", "text": "Get very upset and shout", "emoji": "😡", "isCorrect": false },
+        { "id": "c", "text": "Panic about everything", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "What is the best way to reduce stress?",
+      "options": [
+        { "id": "b", "text": "Shouting at everyone", "emoji": "😡", "isCorrect": false },
+        { "id": "a", "text": "Deep breathing exercises and taking breaks", "emoji": "🌬️", "isCorrect": true },
+        { "id": "c", "text": "Worrying all the time", "emoji": "😰", "isCorrect": false }
+      ]
+    }
+  ]
+}

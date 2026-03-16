@@ -1,0 +1,25 @@
+{
+  "title": "समाधान की पहेली",
+  "subtitleDefault": "पहेली पूर्ण!",
+  "subtitlePlaying": "मिलान {{current}}/{{total}}",
+  "matchLabel": "मिलान: {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "instructions": "समस्याओं का सही समाधान के साथ मिलान करें!",
+  "problemsTitle": "समस्याएं",
+  "solutionsTitle": "समाधान",
+  "matchButton": "मिलान करें",
+  "problems": [
+    { "id": 1, "name": "टूटी हुई पेंसिल", "emoji": "✏️" },
+    { "id": 2, "name": "फैला हुआ पानी", "emoji": "💧" },
+    { "id": 3, "name": "खोया हुआ इरेज़र", "emoji": "🧹" },
+    { "id": 4, "name": "फटा हुआ कागज़", "emoji": "📄" },
+    { "id": 5, "name": "लापता किताब", "emoji": "📚" }
+  ],
+  "solutions": [
+    { "id": 1, "name": "उधार मांगें", "emoji": "🤝" },
+    { "id": 2, "name": "साफ करें", "emoji": "🧽" },
+    { "id": 3, "name": "खोजें", "emoji": "🔍" },
+    { "id": 4, "name": "टेप लगाएं", "emoji": "📎" },
+    { "id": 5, "name": "पूछें", "emoji": "🙋" }
+  ]
+}

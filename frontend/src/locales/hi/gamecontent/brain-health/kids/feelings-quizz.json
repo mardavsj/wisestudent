@@ -1,0 +1,54 @@
+{
+  "title": "भावनाओं पर प्रश्नोत्तरी",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "subtitleComplete": "प्रश्नोत्तरी पूरी हुई!",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "आपने कड़ी मेहनत की लेकिन फिर भी परीक्षा में अच्छा प्रदर्शन नहीं कर पाए। आप कैसा महसूस कर सकते हैं?",
+      "options": [
+        { "id": "b", "text": "नींद आना", "emoji": "😴", "isCorrect": false },
+        { "id": "a", "text": "निराश", "emoji": "😞", "isCorrect": true },
+        { "id": "c", "text": "भूखा", "emoji": "🍔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "आपका मित्र आपको जन्मदिन के उपहार से आश्चर्यचकित कर देता है। कौन सी भावना सबसे उपयुक्त बैठती है?",
+      "options": [
+        { "id": "a", "text": "उत्साहित", "emoji": "🤩", "isCorrect": true },
+        { "id": "b", "text": "थका हुआ", "emoji": "🥱", "isCorrect": false },
+        { "id": "c", "text": "ठंडा", "emoji": "🧊", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "कोई बिना पूछे आपकी चीज़ें ले लेता है। आपको कैसा महसूस होने की संभावना है?",
+      "options": [
+        { "id": "b", "text": "बोर", "emoji": "😐", "isCorrect": false },
+        { "id": "c", "text": "नींद आना", "emoji": "😴", "isCorrect": false },
+        { "id": "a", "text": "गुस्सा", "emoji": "😠", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आप पहली बार मंच पर बोलने वाले हैं। कौन सी भावना आम है?",
+      "options": [
+        { "id": "a", "text": "घबराया हुआ", "emoji": "😬", "isCorrect": true },
+        { "id": "b", "text": "भूखा", "emoji": "🍕", "isCorrect": false },
+        { "id": "c", "text": "गंदा", "emoji": "🧼", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "आप किसी की मदद करते हैं और वे आपको गर्मजोशी से धन्यवाद देते हैं। आप अंदर से कैसा महसूस करते हैं?",
+      "options": [
+        { "id": "b", "text": "प्यासा", "emoji": "🥤", "isCorrect": false },
+        { "id": "a", "text": "गर्व", "emoji": "😊", "isCorrect": true },
+        { "id": "c", "text": "शोरगुल", "emoji": "🔊", "isCorrect": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "title": "Game Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You play a memory card game. Does it improve your brain?",
+      "options": [
+        { "id": "yes", "text": "Yes", "emoji": "🧠", "isCorrect": true },
+        { "id": "no", "text": "No", "emoji": "🤯", "isCorrect": false },
+        { "id": "maybe", "text": "Maybe", "emoji": "💭", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Playing puzzle games helps your memory. True or false?",
+      "options": [
+        { "id": "false", "text": "False", "emoji": "🤯", "isCorrect": false },
+        { "id": "true", "text": "True", "emoji": "🧩", "isCorrect": true },
+        { "id": "maybe", "text": "Maybe", "emoji": "💭", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Memory card games train your brain to remember better. Yes or no?",
+      "options": [
+        { "id": "maybe", "text": "Maybe", "emoji": "💭", "isCorrect": false },
+        { "id": "yes", "text": "Yes", "emoji": "👾", "isCorrect": true },
+        { "id": "no", "text": "No", "emoji": "🤯", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Brain games make your memory stronger. True or false?",
+      "options": [
+        { "id": "true", "text": "True", "emoji": "📝", "isCorrect": true },
+        { "id": "false", "text": "False", "emoji": "🤯", "isCorrect": false },
+        { "id": "maybe", "text": "Maybe", "emoji": "💭", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Playing memory games regularly improves your recall. Yes or no?",
+      "options": [
+        { "id": "no", "text": "No", "emoji": "🤯", "isCorrect": false },
+        { "id": "maybe", "text": "Maybe", "emoji": "💭", "isCorrect": false },
+        { "id": "yes", "text": "Yes", "emoji": "🤓", "isCorrect": true }
+      ]
+    }
+  ]
+}

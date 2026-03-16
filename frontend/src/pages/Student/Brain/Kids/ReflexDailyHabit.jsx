@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -9,10 +10,13 @@ const ROUND_TIME = 10;
 
 const ReflexDailyHabit = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-9");
   const gameId = gameData?.id || "brain-kids-9";
+  
+  const gameContent = t("brain-health.kids.reflex-daily-habit", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -33,58 +37,7 @@ const ReflexDailyHabit = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      question: "What is a good daily habit for mental health?",
-      options: [
-        { text: "Stay up late every night", isCorrect: false, emoji: "😴" },
-        { text: "Read books regularly", isCorrect: true, emoji: "📚" },
-        { text: "Skip breakfast often", isCorrect: false, emoji: "🥪" },
-        { text: "Avoid all social contact", isCorrect: false, emoji: "😶" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Which habit helps improve physical fitness?",
-      options: [
-        { text: "Exercise regularly", isCorrect: true, emoji: "💪" },
-        { text: "Eat junk food daily", isCorrect: false, emoji: "🍔" },
-        { text: "Watch TV all day", isCorrect: false, emoji: "📺" },
-        { text: "Avoid drinking water", isCorrect: false, emoji: "🚱" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What habit improves sleep quality?",
-      options: [
-        { text: "Use phone before sleep", isCorrect: false, emoji: "📱" },
-        { text: "Drink caffeine late", isCorrect: false, emoji: "☕" },
-        { text: "Skip bedtime routine", isCorrect: false, emoji: "⏰" },
-        { text: "Go to bed early", isCorrect: true, emoji: "😴" },
-      ]
-    },
-    {
-      id: 4,
-      question: "Which habit supports brain function?",
-      options: [
-        { text: "Dehydration regularly", isCorrect: false, emoji: "🏜️" },
-        { text: "Skip meals often", isCorrect: false, emoji: "🍽️" },
-        { text: "Drink plenty of water", isCorrect: true, emoji: "💧" },
-        { text: "Procrastinate constantly", isCorrect: false, emoji: "⏳" }
-      ]
-    },
-    {
-      id: 5,
-      question: "What habit builds strong relationships?",
-      options: [
-        { text: "Communicate openly", isCorrect: true, emoji: "💬" },
-        { text: "Avoid conversations", isCorrect: false, emoji: "🤐" },
-        { text: "Cancel plans always", isCorrect: false, emoji: "❌" },
-        { text: "Ignore others' feelings", isCorrect: false, emoji: "🙄" }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -185,7 +138,7 @@ const ReflexDailyHabit = () => {
     resetFeedback();
 
     const isCorrect = option.isCorrect;
-    const isLastQuestion = currentRound === questions.length;
+    const isLastQuestion = currentRound === TOTAL_ROUNDS;
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
@@ -208,8 +161,16 @@ const ReflexDailyHabit = () => {
 
   return (
     <GameShell
-      title="Reflex Daily Habit"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your daily habit knowledge!` : "Test your daily habit knowledge!"}
+      title={gameContent?.title || "Reflex Daily Habit"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.reflex-daily-habit.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your daily habit knowledge!`
+            }) 
+          : gameContent?.subtitleDefault || "Test your daily habit knowledge!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -229,18 +190,24 @@ const ReflexDailyHabit = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🧠</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Daily Habit Knowledge?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Ready to Test Your Daily Habit Knowledge?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Answer questions about healthy daily habits and lifestyle choices.
+              {gameContent?.readyDescription || "Answer questions about healthy daily habits and lifestyle choices."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.reflex-daily-habit.readyInstruction", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -249,13 +216,13 @@ const ReflexDailyHabit = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round"}:</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time"}:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score"}:</span> {score}
               </div>
             </div>
 
@@ -277,6 +244,31 @@ const ReflexDailyHabit = () => {
                 ))}
               </div>
             </div>
+          </div>
+        )}
+
+        {gameState === "finished" && (
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
+            <div className="text-5xl mb-6">🧠</div>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.finishedTitle || "Great Job!"}
+            </h3>
+            <p className="text-white/90 text-lg mb-6">
+              {t("brain-health.kids.reflex-daily-habit.finishedScore", {
+                score,
+                total: TOTAL_ROUNDS,
+                defaultValue: `You scored ${score} out of ${TOTAL_ROUNDS}!`
+              })}
+            </p>
+            <p className="text-white/80 mb-6">
+              {gameContent?.finishedMessage || "You're developing strong daily habit awareness!"}
+            </p>
+            <button
+              onClick={startGame}
+              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
+            >
+              {gameContent?.playAgainButton || "Play Again"}
+            </button>
           </div>
         )}
       </div>

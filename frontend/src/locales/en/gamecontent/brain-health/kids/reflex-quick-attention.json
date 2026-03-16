@@ -1,0 +1,69 @@
+{
+  "title": "Reflex Quick Attention",
+  "subtitleDefault": "Test your attention reflexes!",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your attention reflexes!",
+  "readyTitle": "Ready to Test Your Attention Skills?",
+  "readyDescription": "Identify good and bad attention skills.",
+  "readyInstruction": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round",
+  "timeLabel": "Time",
+  "scoreLabel": "Score",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which is a good attention skill?",
+      "correctAnswer": "Quick Focus",
+      "options": [
+        { "text": "Quick Focus", "isCorrect": true, "emoji": "⚡" },
+        { "text": "Getting Distracted", "isCorrect": false, "emoji": "😵" },
+        { "text": "Losing Concentration", "isCorrect": false, "emoji": "💭" },
+        { "text": "Daydreaming", "isCorrect": false, "emoji": "💭" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which is a bad attention skill?",
+      "correctAnswer": "Getting Distracted",
+      "options": [
+        { "text": "Staying Alert", "isCorrect": false, "emoji": "👁️" },
+        { "text": "Getting Distracted", "isCorrect": true, "emoji": "😵" },
+        { "text": "Quick Response", "isCorrect": false, "emoji": "🎯" },
+        { "text": "Focused Listening", "isCorrect": false, "emoji": "👂" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which helps you pay better attention?",
+      "correctAnswer": "Staying Alert",
+      "options": [
+        { "text": "Multitasking", "isCorrect": false, "emoji": "🔄" },
+        { "text": "Staying Alert", "isCorrect": true, "emoji": "👁️" },
+        { "text": "Fidgeting", "isCorrect": false, "emoji": "👋" },
+        { "text": "Interrupting", "isCorrect": false, "emoji": "🗣️" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which should you avoid for better attention?",
+      "correctAnswer": "Losing Concentration",
+      "options": [
+        { "text": "Taking Notes", "isCorrect": false, "emoji": "📝" },
+        { "text": "Asking Questions", "isCorrect": false, "emoji": "❓" },
+        { "text": "Losing Concentration", "isCorrect": true, "emoji": "💭" },
+        { "text": "Active Listening", "isCorrect": false, "emoji": "👂" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which is a helpful attention skill?",
+      "correctAnswer": "Quick Response",
+      "options": [
+        { "text": "Ignoring Instructions", "isCorrect": false, "emoji": "🙉" },
+        { "text": "Quick Response", "isCorrect": true, "emoji": "🎯" },
+        { "text": "Rushing Without Thinking", "isCorrect": false, "emoji": "🏃" },
+        { "text": "Tuning Out", "isCorrect": false, "emoji": "🔇" }
+      ]
+    }
+  ]
+}

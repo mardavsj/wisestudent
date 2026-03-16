@@ -1,0 +1,69 @@
+{
+  "title": "Badge: Calm Kid",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "subtitleComplete": "Badge Complete!",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challengeLabel": "Challenge {{current}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Calm Breathing Challenge",
+      "description": "Choose the best way to stay calm!",
+      "question": "When you feel stressed, what helps you stay calm?",
+      "options": [
+        { "text": "Take deep breaths and count to 10", "emoji": "🌬️", "isCorrect": true },
+        { "text": "Yell and get angry", "emoji": "😡", "isCorrect": false },
+        { "text": "Panic and worry more", "emoji": "😱", "isCorrect": false },
+        { "text": "Ignore the problem", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Calm Thoughts Quiz",
+      "description": "Test your calm thinking!",
+      "question": "What is the best way to think when you're upset?",
+      "options": [
+        { "text": "Think negative thoughts", "emoji": "💔", "isCorrect": false },
+        { "text": "Think positive and stay calm", "emoji": "✨", "isCorrect": true },
+        { "text": "Think about giving up", "emoji": "😞", "isCorrect": false },
+        { "text": "Don't think at all", "emoji": "🤷", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Calm Actions Reflex",
+      "description": "Quickly choose calm actions!",
+      "question": "Which action helps you feel peaceful?",
+      "options": [
+        { "text": "Argue with others", "emoji": "😤", "isCorrect": false },
+        { "text": "Rush around stressed", "emoji": "🏃", "isCorrect": false },
+        { "text": "Relax and take a break", "emoji": "🧘", "isCorrect": true },
+        { "text": "Complain about everything", "emoji": "😒", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Calm Response Puzzle",
+      "description": "Match calm responses to situations!",
+      "question": "When someone makes you angry, what should you do?",
+      "options": [
+        { "text": "Hit them back", "emoji": "👊", "isCorrect": false },
+        { "text": "Scream at them", "emoji": "😱", "isCorrect": false },
+        { "text": "Run away", "emoji": "🏃", "isCorrect": false },
+        { "text": "Stay calm and talk it out", "emoji": "💬", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Calm Master Challenge",
+      "description": "Final calm challenge!",
+      "question": "How can you become a calm kid?",
+      "options": [
+        { "text": "Practice calm techniques daily", "emoji": "🌟", "isCorrect": true },
+        { "text": "Never feel emotions", "emoji": "😑", "isCorrect": false },
+        { "text": "Always get angry", "emoji": "😡", "isCorrect": false },
+        { "text": "Ignore your feelings", "emoji": "🙈", "isCorrect": false }
+      ]
+    }
+  ]
+}

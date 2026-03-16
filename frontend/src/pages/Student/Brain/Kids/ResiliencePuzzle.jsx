@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const ResiliencePuzzle = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-94");
   const gameId = gameData?.id || "brain-kids-94";
+  
+  const gameContent = t("brain-health.kids.resilience-puzzle", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -20,6 +24,7 @@ const ResiliencePuzzle = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const [score, setScore] = useState(0);
   const [matches, setMatches] = useState([]);
   const [selectedLeft, setSelectedLeft] = useState(null);
@@ -27,25 +32,11 @@ const ResiliencePuzzle = () => {
   const [showResult, setShowResult] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Left side - setbacks
-  const leftItems = [
-    { id: 1, name: "Fall", emoji: "⬇️",  },
-    { id: 2, name: "Fail", emoji: "❌",  },
-    { id: 3, name: "Mistake", emoji: "⚠️",  },
-    { id: 4, name: "Lose", emoji: "😞",  },
-    { id: 5, name: "Error", emoji: "🔴",  }
-  ];
+  // Get items from translations
+  const leftItems = Array.isArray(gameContent?.leftItems) ? gameContent.leftItems : [];
+  const rightItems = Array.isArray(gameContent?.rightItems) ? gameContent.rightItems : [];
 
-  // Right side - resilient responses
-  const rightItems = [
-    { id: 1, name: "Rise", emoji: "⬆️",  },
-    { id: 2, name: "Try Again", emoji: "🔄",  },
-    { id: 3, name: "Learn", emoji: "📚",  },
-    { id: 4, name: "Practice", emoji: "💪",  },
-    { id: 5, name: "Fix", emoji: "🔧",  }
-  ];
-
-  // Correct matches
+  // Correct matches (based on ID)
   const correctMatches = [
     { leftId: 1, rightId: 1 }, // Fall → Rise
     { leftId: 2, rightId: 2 }, // Fail → Try Again
@@ -54,14 +45,20 @@ const ResiliencePuzzle = () => {
     { leftId: 5, rightId: 5 }  // Error → Fix
   ];
 
-  // Shuffled right items for display (to split matches across positions)
-  const shuffledRightItems = [
-    rightItems[2], // Learn (id: 3) - position 1
-    rightItems[4], // Fix (id: 5) - position 2
-    rightItems[0], // Rise (id: 1) - position 3
-    rightItems[3], // Practice (id: 4) - position 4
-    rightItems[1]  // Try Again (id: 2) - position 5
-  ];
+  // Shuffled right items for display
+  const shuffledRightItems = useMemo(() => {
+    if (rightItems.length === 0) return [];
+    // Fixed shuffling pattern as per original logic to ensure consistency across languages
+    // 3, 5, 1, 4, 2
+    const items = [...rightItems];
+    return [
+      items.find(item => item.id === 3),
+      items.find(item => item.id === 5),
+      items.find(item => item.id === 1),
+      items.find(item => item.id === 4),
+      items.find(item => item.id === 2)
+    ].filter(Boolean);
+  }, [rightItems]);
 
   const handleLeftSelect = (item) => {
     if (showResult) return;
@@ -108,10 +105,6 @@ const ResiliencePuzzle = () => {
     setSelectedRight(null);
   };
 
-  const isMatched = (leftId, rightId) => {
-    return matches.some(m => m.leftId === leftId && m.rightId === rightId && m.isCorrect);
-  };
-
   const isLeftMatched = (leftId) => {
     return matches.some(m => m.leftId === leftId && m.isCorrect);
   };
@@ -122,8 +115,16 @@ const ResiliencePuzzle = () => {
 
   return (
     <GameShell
-      title="Puzzle of Resilience"
-      subtitle={!showResult ? `Match ${matches.length}/${leftItems.length}` : "Puzzle Complete!"}
+      title={gameContent?.title || "Puzzle of Resilience"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleComplete || "Puzzle Complete!" 
+          : t("brain-health.kids.resilience-puzzle.subtitleMatching", {
+              current: matches.length,
+              total: leftItems.length,
+              defaultValue: `Match ${matches.length}/${leftItems.length}`
+            })
+      }
       score={score}
       currentLevel={matches.length + 1}
       totalLevels={leftItems.length}
@@ -132,31 +133,45 @@ const ResiliencePuzzle = () => {
       maxScore={leftItems.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      nextGamePathProp="/student/brain/kids/test-story"
       nextGameIdProp="brain-kids-95"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       gameId={gameId}
       gameType="brain"
+      backPath="/games/brain-health/kids"
     >
-      <div className="space-y-8">
+      <div className="space-y-8 max-w-4xl mx-auto">
         {!showResult ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Matches: {matches.length}/{leftItems.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{leftItems.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.resilience-puzzle.matchesLabel", {
+                    current: matches.length,
+                    total: leftItems.length,
+                    defaultValue: `Matches: ${matches.length}/${leftItems.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.resilience-puzzle.scoreLabel", {
+                    current: score,
+                    total: leftItems.length,
+                    defaultValue: `Score: ${score}/${leftItems.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6 text-center">
-                Match the setbacks with the resilient responses!
+                {gameContent?.instruction || "Match the setbacks with the resilient responses!"}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Setbacks</h3>
+                  <h3 className="text-white font-bold text-center mb-4">
+                    {gameContent?.leftTitle || "Setbacks"}
+                  </h3>
                   {leftItems.map((item) => (
                     <button
                       key={item.id}
@@ -174,7 +189,6 @@ const ResiliencePuzzle = () => {
                         <span className="text-3xl">{item.emoji}</span>
                         <div className="text-left">
                           <div className="text-white font-semibold">{item.name}</div>
-                          <div className="text-white/70 text-sm">{item.description}</div>
                         </div>
                       </div>
                     </button>
@@ -183,7 +197,9 @@ const ResiliencePuzzle = () => {
 
                 {/* Right side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Resilient Responses</h3>
+                  <h3 className="text-white font-bold text-center mb-4">
+                    {gameContent?.rightTitle || "Resilient Responses"}
+                  </h3>
                   {shuffledRightItems.map((item) => (
                     <button
                       key={item.id}
@@ -201,7 +217,6 @@ const ResiliencePuzzle = () => {
                         <span className="text-3xl">{item.emoji}</span>
                         <div className="text-left">
                           <div className="text-white font-semibold">{item.name}</div>
-                          <div className="text-white/70 text-sm">{item.description}</div>
                         </div>
                       </div>
                     </button>
@@ -220,7 +235,7 @@ const ResiliencePuzzle = () => {
                       : "bg-white/20 text-white/50 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton || "Match"}
                 </button>
               </div>
             </div>

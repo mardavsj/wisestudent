@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Image } from "lucide-react";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -7,10 +8,13 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const BeCreativePoster = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-86");
   const gameId = gameData?.id || "brain-kids-86";
+  
+  const gameContent = t("brain-health.kids.be-creative-poster", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,48 +31,7 @@ const BeCreativePoster = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const stages = [
-    {
-      question: 'Which poster best shows "Think Out of the Box"?',
-      choices: [
-        { text: "Poster showing creative thinking and new ideas", correct: true, emoji: "💡" },
-        { text: "Poster showing only following rules", correct: false, emoji: "📋" },
-        { text: "Poster showing copying others", correct: false, emoji: "📋" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Be Creative"?',
-      choices: [
-        { text: "Poster showing only doing same thing", correct: false, emoji: "🔄" },
-        { text: "Poster showing imagination and creativity", correct: true, emoji: "🎨" },
-        { text: "Poster showing avoiding new things", correct: false, emoji: "🚫" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Solve Problems Creatively"?',
-      choices: [
-        { text: "Poster showing finding creative solutions", correct: true, emoji: "💭" },
-        { text: "Poster showing giving up easily", correct: false, emoji: "🏳️" },
-        { text: "Poster showing only one way to solve", correct: false, emoji: "➡️" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Use Your Imagination"?',
-      choices: [
-        { text: "Poster showing only copying", correct: false, emoji: "📋" },
-        { text: "Poster showing thinking differently", correct: true, emoji: "🧠" },
-        { text: "Poster showing avoiding ideas", correct: false, emoji: "🤐" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Create Something New"?',
-      choices: [
-        { text: "Poster showing making original things", correct: true, emoji: "🆕" },
-        { text: "Poster showing only repeating old things", correct: false, emoji: "🔄" },
-        { text: "Poster showing never trying new", correct: false, emoji: "🚫" }
-      ]
-    }
-  ];
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
 
   const handleSelect = (isCorrect) => {
     if (answered || showResult) return;
@@ -97,8 +60,16 @@ const BeCreativePoster = () => {
 
   return (
     <GameShell
-      title="Poster: Be Creative"
-      subtitle={!showResult ? `Stage ${currentStage + 1} of ${stages.length}` : "Poster Complete!"}
+      title={gameContent?.title || "Poster: Be Creative"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Poster Complete!"
+          : t("brain-health.kids.be-creative-poster.subtitleProgress", {
+              current: currentStage + 1,
+              total: stages.length,
+              defaultValue: `Stage ${currentStage + 1} of ${stages.length}`,
+            })
+      }
       score={score}
       currentLevel={currentStage + 1}
       totalLevels={stages.length}
@@ -120,8 +91,20 @@ const BeCreativePoster = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Stage {currentStage + 1}/{stages.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{stages.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.be-creative-poster.stageLabel", {
+                    current: currentStage + 1,
+                    total: stages.length,
+                    defaultValue: `Stage ${currentStage + 1}/${stages.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.be-creative-poster.scoreLabel", {
+                    score,
+                    total: stages.length,
+                    defaultValue: `Score: ${score}/${stages.length}`,
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-6 text-center">

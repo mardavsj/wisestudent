@@ -1,0 +1,64 @@
+{
+  "title": "रिफ्लेक्स क्विक इमोशन",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपनी भावना की सजगता का परीक्षण करें!",
+  "subtitleReady": "अपनी भावना की सजगता का परीक्षण करें!",
+  "readyTitle": "तैयार हो जाइए!",
+  "readyDescription": "भावनाओं के बारे में सवालों के जवाब दें!<br />प्रत्येक प्रश्न के लिए आपके पास {{time}} सेकंड हैं।",
+  "readySummary": "आपके पास {{total}} प्रश्न हैं जिनमें प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड:",
+  "timeLabel": "समय:",
+  "scoreLabel": "स्कोर:",
+  "questions": [
+    {
+      "id": 1,
+      "text": "एक बेकर ग्राहकों को ताजी रोटी चखने के बाद मुस्कुराते हुए देखता है। कौन सी भावना सबसे उपयुक्त है?",
+      "options": [
+        { "id": "a", "text": "गर्व", "emoji": "🏆", "isCorrect": true },
+        { "id": "b", "text": "भ्रम", "emoji": "😅", "isCorrect": false },
+        { "id": "c", "text": "डर", "emoji": "😱", "isCorrect": false },
+        { "id": "d", "text": "ऊब", "emoji": "🙄", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "एक पायलट अजीब आवाज सुनता है लेकिन शांति से प्रशिक्षण का पालन करता है। कौन सी भावना दिखाई गई है?",
+      "options": [
+        { "id": "a", "text": "खुशी", "emoji": "🥳", "isCorrect": false },
+        { "id": "b", "text": "क्रोध", "emoji": "😠", "isCorrect": false },
+        { "id": "c", "text": "शर्मीलापन", "emoji": "😳", "isCorrect": false },
+        { "id": "d", "text": "आत्मविश्वास", "emoji": "💪", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "एक माली कई दिनों बाद पहला फूल खिलते हुए देखता है। कौन सी भावना आती है?",
+      "options": [
+        { "id": "a", "text": "नींद", "emoji": "😴", "isCorrect": false },
+        { "id": "b", "text": "चिंता", "emoji": "🤔", "isCorrect": false },
+        { "id": "c", "text": "प्रसन्नता", "emoji": "😊", "isCorrect": true },
+        { "id": "d", "text": "ईर्ष्या", "emoji": "😔", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "एक डॉक्टर को सुई लगानी पड़ती है और वह बच्चे को शांत करने के लिए धीरे से बोलता है। कौन सी भावना दिखाई गई है?",
+      "options": [
+        { "id": "a", "text": "उत्साह", "emoji": "🤩", "isCorrect": false },
+        { "id": "b", "text": "देखभाल", "emoji": "🤗", "isCorrect": true },
+        { "id": "c", "text": "डर", "emoji": "😨", "isCorrect": false },
+        { "id": "d", "text": "घबराहट", "emoji": "⚠️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "एक दुकानदार को छूटा हुआ पैसा मिलता है और वह उसे वापस करने के लिए इंतजार करता है। कौन सी भावना इसका मार्गदर्शन करती है?",
+      "options": [
+        { "id": "a", "text": "ईमानदारी", "emoji": "🤗", "isCorrect": true },
+        { "id": "b", "text": "लालच", "emoji": "💰", "isCorrect": false },
+        { "id": "c", "text": "आश्चर्य", "emoji": "😮", "isCorrect": false },
+        { "id": "d", "text": "क्रोध", "emoji": "😠", "isCorrect": false }
+      ]
+    }
+  ]
+}

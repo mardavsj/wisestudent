@@ -1,0 +1,45 @@
+{
+  "title": "Journal of Focus",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "subtitleComplete": "Journal Complete!",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "journalHeader": "Journal Entry",
+  "placeholder": "Type your response here...",
+  "minLengthLabel": "Minimum {{min}} characters required",
+  "charCountLabel": "{{count}}/{{min}}",
+  "submitBtn": "Submit Entry",
+  "submittedBtn": "Submitted!",
+  "prompts": [
+    {
+      "id": 1,
+      "prompt": "Write: \"One strategy that helps me focus is ___\"",
+      "guidance": "Think about activities or techniques that help you concentrate better.",
+      "minLength": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Write: \"When I lose focus, I can ___\"",
+      "guidance": "Reflect on what you do to regain your concentration.",
+      "minLength": 10
+    },
+    {
+      "id": 3,
+      "prompt": "Write: \"A quiet place helps me focus because ___\"",
+      "guidance": "Think about why a peaceful environment is important for concentration.",
+      "minLength": 10
+    },
+    {
+      "id": 4,
+      "prompt": "Write: \"One distraction I avoid while studying is ___\"",
+      "guidance": "Consider what things take away your attention when you need to focus.",
+      "minLength": 10
+    },
+    {
+      "id": 5,
+      "prompt": "Write: \"I improve my focus by ___\"",
+      "guidance": "Reflect on practices that help you maintain better concentration.",
+      "minLength": 10
+    }
+  ]
+}

@@ -1,19 +1,23 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
-import { Moon, Clock, Bed, Zap } from 'lucide-react';
 
-const TOTAL_ROUNDS = 5;
 const ROUND_TIME = 10;
 
 const RestAlertReflex = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-69");
   const gameId = gameData?.id || "brain-kids-69";
+  
+  const gameContent = t("brain-health.kids.rest-alert-reflex", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
+  const TOTAL_ROUNDS = questions.length || 5;
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -34,60 +38,6 @@ const RestAlertReflex = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-  {
-    id: 1,
-    text: "A junior weather reporter must stay alert to read the morning forecast clearly. Which evening choice supports this?",
-    options: [
-      { id: "b", text: "Checking messages again and again", emoji: "💬", isCorrect: false },
-      { id: "a", text: "Turning lights low before sleep", emoji: "🌗", isCorrect: true },
-      { id: "c", text: "Watching one more episode", emoji: "🎞️", isCorrect: false },
-      { id: "d", text: "Snacking while lying in bed", emoji: "🍿", isCorrect: false }
-    ]
-  },
-  {
-    id: 2,
-    text: "A young traffic police helper needs quick reactions during a school drill. What habit makes mornings smoother?",
-    options: [
-      { id: "b", text: "Playing calm games before bed", emoji: "🧩", isCorrect: true },
-      { id: "a", text: "Sleeping at a changing time daily", emoji: "🔄", isCorrect: false },
-      { id: "c", text: "Drinking sweet drinks late", emoji: "🥤", isCorrect: false },
-      { id: "d", text: "Keeping room lights bright", emoji: "💡", isCorrect: false }
-    ]
-  },
-  {
-    id: 3,
-    text: "A space trainee wants their mind sharp for morning practice. What night choice helps alertness?",
-    options: [
-      { id: "a", text: "Listening to loud music", emoji: "🎧", isCorrect: false },
-      { id: "b", text: "Lying awake planning tomorrow", emoji: "📋", isCorrect: false },
-      { id: "c", text: "Having a short wind-down routine", emoji: "🌿", isCorrect: true },
-      { id: "d", text: "Scrolling videos until sleepy", emoji: "📱", isCorrect: false }
-    ]
-  },
-  {
-    id: 4,
-    text: "A wildlife guide must stay focused during early forest walks. What supports steady energy?",
-    options: [
-      { id: "c", text: "Resting at nearly the same time daily", emoji: "⏳", isCorrect: true },
-      { id: "a", text: "Eating heavy food very late", emoji: "🍔", isCorrect: false },
-      { id: "b", text: "Sleeping with toys scattered around", emoji: "🧸", isCorrect: false },
-      { id: "d", text: "Keeping TV noise in background", emoji: "📺", isCorrect: false },
-    ]
-  },
-  {
-    id: 5,
-    text: "A young classroom helper wants to stay calm and alert all day. What night habit helps most?",
-    options: [
-      { id: "a", text: "Rushing to bed feeling worried", emoji: "☁️", isCorrect: false },
-      { id: "b", text: "Skipping rest to finish tasks", emoji: "📝", isCorrect: false },
-      { id: "c", text: "Resting only on weekends", emoji: "📆", isCorrect: false },
-      { id: "d", text: "Following the same calming steps nightly", emoji: "🛏️", isCorrect: true }
-    ]
-  }
-];
-
-
   useEffect(() => {
     currentRoundRef.current = currentRound;
   }, [currentRound]);
@@ -98,7 +48,7 @@ const RestAlertReflex = () => {
       setTimeLeft(ROUND_TIME);
       setAnswered(false);
     }
-  }, [currentRound, gameState]);
+  }, [currentRound, gameState, TOTAL_ROUNDS]);
 
   const handleTimeUp = useCallback(() => {
     if (currentRoundRef.current < TOTAL_ROUNDS) {
@@ -106,7 +56,7 @@ const RestAlertReflex = () => {
     } else {
       setGameState("finished");
     }
-  }, []);
+  }, [TOTAL_ROUNDS]);
 
   // Timer effect
   useEffect(() => {
@@ -168,45 +118,59 @@ const RestAlertReflex = () => {
     }, 500);
   };
 
-  const finalScore = score;
   const currentQuestion = questions[currentRound - 1];
 
   return (
     <GameShell
-      title="Reflex Rest Alert"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your rest habits reflexes!` : "Test your rest habits reflexes!"}
+      title={gameContent?.title || "Reflex Rest Alert"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.rest-alert-reflex.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your rest habits reflexes!`
+            })
+          : gameContent?.subtitleDefault || "Test your rest habits reflexes!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
       showGameOver={gameState === "finished"}
-      showConfetti={gameState === "finished" && finalScore === TOTAL_ROUNDS}
+      showConfetti={gameState === "finished" && score === TOTAL_ROUNDS}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
-      score={finalScore}
+      score={score}
       gameId={gameId}
-      nextGamePathProp="/student/brain/kids/badge-sleep-champ"
       nextGameIdProp="brain-kids-70"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
-      totalXp={totalXp}>
+      totalXp={totalXp}
+      backPath="/games/brain-health/kids"
+    >
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">😴</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Get Ready!</h3>
-            <p className="text-white/90 text-lg mb-6">
-              Identify good rest habits!<br />
-              You have {ROUND_TIME} seconds for each question.
-            </p>
+            <h3 className="text-2xl font-bold text-white mb-4">{gameContent?.readyTitle || "Get Ready!"}</h3>
+            <p className="text-white/90 text-lg mb-6" dangerouslySetInnerHTML={{ 
+              __html: t("brain-health.kids.rest-alert-reflex.readyText", { 
+                time: ROUND_TIME,
+                defaultValue: `Identify good rest habits!<br />You have ${ROUND_TIME} seconds for each question.`
+              })
+            }} />
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.rest-alert-reflex.roundStats", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -215,13 +179,13 @@ const RestAlertReflex = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round"}:</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time"}:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score"}:</span> {score}
               </div>
             </div>
 

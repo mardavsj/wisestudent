@@ -1,0 +1,32 @@
+{
+  "title": "Puzzle of Positive Words",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchesLabel": "Matches: {{current}}/{{total}}",
+  "instruction": "Match the positive words with their meanings!",
+  "leftTitle": "Positive Words",
+  "rightTitle": "Meanings",
+  "matchButton": "Match",
+  "leftItems": [
+    { "id": 1, "name": "Hope", "emoji": "🌟" },
+    { "id": 2, "name": "Gratitude", "emoji": "🙏" },
+    { "id": 3, "name": "Optimism", "emoji": "☀️" },
+    { "id": 4, "name": "Kindness", "emoji": "❤️" },
+    { "id": 5, "name": "Joy", "emoji": "👏" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "Future", "emoji": "🤔" },
+    { "id": 2, "name": "Thanks", "emoji": "🤗" },
+    { "id": 3, "name": "Bright Side", "emoji": "😎" },
+    { "id": 4, "name": "Care", "emoji": "😌" },
+    { "id": 5, "name": "Happiness", "emoji": "😊" }
+  ],
+  "correctMatches": [
+    { "leftId": 1, "rightId": 1 },
+    { "leftId": 2, "rightId": 2 },
+    { "leftId": 3, "rightId": 3 },
+    { "leftId": 4, "rightId": 4 },
+    { "leftId": 5, "rightId": 5 }
+  ]
+}

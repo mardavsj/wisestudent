@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -9,10 +10,13 @@ const ROUND_TIME = 10;
 
 const ReflexSequence = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-29");
   const gameId = gameData?.id || "brain-kids-29";
+  
+  const gameContent = t("brain-health.kids.reflex-sequence", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -33,63 +37,7 @@ const ReflexSequence = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-    {
-      id: 1,
-      question: "Which sequence is in the correct alphabetical order?",
-      correctAnswer: "A → B → C → D",
-      options: [
-        { text: "A → B → C → D", isCorrect: true, emoji: "🔤" },
-        { text: "D → C → B → A", isCorrect: false, emoji: "🔤" },
-        { text: "B → A → D → C", isCorrect: false, emoji: "🔤" },
-        { text: "C → A → B → D", isCorrect: false, emoji: "🔤" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Which sequence is in the correct numerical order?",
-      correctAnswer: "1 → 2 → 3 → 4",
-      options: [
-        { text: "3 → 1 → 4 → 2", isCorrect: false, emoji: "🔢" },
-        { text: "4 → 3 → 2 → 1", isCorrect: false, emoji: "🔢" },
-        { text: "1 → 2 → 3 → 4", isCorrect: true, emoji: "🔢" },
-        { text: "2 → 4 → 1 → 3", isCorrect: false, emoji: "🔢" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Which sequence is in the correct color spectrum order?",
-      correctAnswer: "Red → Orange → Yellow → Green",
-      options: [
-        { text: "Green → Blue → Red → Orange", isCorrect: false, emoji: "🌈" },
-        { text: "Yellow → Red → Green → Blue", isCorrect: false, emoji: "🌈" },
-        { text: "Red → Orange → Yellow → Green", isCorrect: true, emoji: "🌈" },
-        { text: "Blue → Green → Yellow → Red", isCorrect: false, emoji: "🌈" }
-      ]
-    },
-    {
-      id: 4,
-      question: "Which sequence is in the correct alphabetical order?",
-      correctAnswer: "Cat → Dog → Elephant → Fox",
-      options: [
-        { text: "Elephant → Cat → Fox → Dog", isCorrect: false, emoji: "🐾" },
-        { text: "Fox → Dog → Cat → Elephant", isCorrect: false, emoji: "🐾" },
-        { text: "Dog → Fox → Elephant → Cat", isCorrect: false, emoji: "🐾" },
-        { text: "Cat → Dog → Elephant → Fox", isCorrect: true, emoji: "🐾" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Which sequence is in the correct alphabetical order?",
-      correctAnswer: "Apple → Banana → Cherry → Date",
-      options: [
-        { text: "Cherry → Apple → Date → Banana", isCorrect: false, emoji: "🍎" },
-        { text: "Date → Cherry → Banana → Apple", isCorrect: false, emoji: "🍎" },
-        { text: "Banana → Date → Apple → Cherry", isCorrect: false, emoji: "🍎" },
-        { text: "Apple → Banana → Cherry → Date", isCorrect: true, emoji: "🍎" }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -190,7 +138,7 @@ const ReflexSequence = () => {
     resetFeedback();
 
     const isCorrect = option.isCorrect;
-    const isLastQuestion = currentRound === questions.length;
+    const isLastQuestion = currentRound === TOTAL_ROUNDS;
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
@@ -213,8 +161,16 @@ const ReflexSequence = () => {
 
   return (
     <GameShell
-      title="Reflex Sequence"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your sequence knowledge!` : "Test your sequence knowledge!"}
+      title={gameContent?.title || "Reflex Sequence"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.reflex-sequence.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your sequence knowledge!`
+            }) 
+          : gameContent?.subtitleDefault || "Test your sequence knowledge!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -224,29 +180,35 @@ const ReflexSequence = () => {
       showAnswerConfetti={showAnswerConfetti}
       score={finalScore}
       gameId={gameId}
-      nextGamePathProp="/student/brain/kids/badge-memory-kid"
       nextGameIdProp="brain-kids-30"
       gameType="brain"
       maxScore={TOTAL_ROUNDS}
       totalCoins={totalCoins}
       totalXp={totalXp}
+      backPath="/games/brain-health/kids"
     >
       <div className="text-center text-white space-y-8">
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🔤</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Sequence Knowledge?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Ready to Test Your Sequence Knowledge?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Identify the correct sequence order.
+              {gameContent?.readyDescription || "Identify the correct sequence order."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.reflex-sequence.readyInstruction", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -255,13 +217,13 @@ const ReflexSequence = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round"}:</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time"}:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score"}:</span> {score}
               </div>
             </div>
 

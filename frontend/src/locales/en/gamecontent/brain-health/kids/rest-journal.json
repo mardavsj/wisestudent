@@ -1,0 +1,42 @@
+{
+  "title": "Journal of Rest",
+  "subtitleDefault": "Journal Complete!",
+  "subtitlePlaying": "Entry {{current}} of {{total}}",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "placeholder": "Write your thoughts here...",
+  "characterMin": "{{current}}/{{min}} characters minimum",
+  "submitButton": "Submit",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Write: \"One way I relax is ___.\"",
+      "minLength": 10,
+      "guidance": "Think about activities that help you relax and rest."
+    },
+    {
+      "id": 2,
+      "prompt": "I rest well when I ___.",
+      "minLength": 10,
+      "guidance": "What conditions help you get good rest?"
+    },
+    {
+      "id": 3,
+      "prompt": "A calm bedtime routine I like is ___.",
+      "minLength": 10,
+      "guidance": "Describe a peaceful routine before bed."
+    },
+    {
+      "id": 4,
+      "prompt": "Something that helps me sleep is ___.",
+      "minLength": 10,
+      "guidance": "What makes it easier for you to fall asleep?"
+    },
+    {
+      "id": 5,
+      "prompt": "I feel refreshed after ___.",
+      "minLength": 10,
+      "guidance": "What makes you feel energized and ready?"
+    }
+  ]
+}

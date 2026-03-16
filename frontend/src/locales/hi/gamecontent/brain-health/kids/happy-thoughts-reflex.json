@@ -1,0 +1,65 @@
+{
+  "title": "रिफ्लेक्स हैप्पी थॉट्स",
+  "subtitlePlaying": "दौर {{current}}/{{total}}: अपने खुशनुमा विचारों की प्रतिक्रिया का परीक्षण करें!",
+  "subtitleDefault": "अपने खुशनुमा विचारों की प्रतिक्रिया का परीक्षण करें!",
+  "readyTitle": "तैयार हो जाइए!",
+  "readyText1": "खुशनुमा विचारों के बारे में सवालों के जवाब दें!",
+  "readyText2": "प्रत्येक प्रश्न के लिए आपके पास {{time}} सेकंड हैं।",
+  "readyText3": "आपके पास {{total}} प्रश्न हैं जिनमें प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "दौर:",
+  "timeLabel": "समय:",
+  "scoreLabel": "स्कोर:",
+  "questions": [
+    {
+      "id": 1,
+      "text": "कक्षा में ड्राइंग करते समय आपसे गलती हो जाती है। कौन सा विचार आपको जल्दी बेहतर महसूस कराने में मदद करता है?",
+      "options": [
+        { "id": "im-bad", "text": "मैं हर चीज़ में बुरा हूँ", "emoji": "😞", "isCorrect": false },
+        { "id": "quit", "text": "मुझे हमेशा के लिए ड्राइंग बंद कर देनी चाहिए", "emoji": "🚫", "isCorrect": false },
+        { "id": "get-angry", "text": "मुझे गुस्सा आता है और मैं कागज़ फेंक देता हूँ", "emoji": "😠", "isCorrect": false },
+        { "id": "try-again", "text": "मैं फिर से कोशिश कर सकता हूँ और सुधार कर सकता हूँ", "emoji": "✏️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "आपका मित्र आज खेलना नहीं चाहता। सबसे स्वास्थ्यप्रद विचार क्या है?",
+      "options": [
+        { "id": "alone", "text": "कोई मुझे पसंद नहीं करता", "emoji": "😢", "isCorrect": false },
+        { "id": "another-time", "text": "हम किसी और दिन साथ खेल सकते हैं", "emoji": "📅", "isCorrect": true },
+        { "id": "ignore", "text": "मैं सबको नज़रअंदाज़ कर दूँगा", "emoji": "🙄", "isCorrect": false },
+        { "id": "revenge", "text": "मैं उनका मित्र बनना बंद कर दूँगा", "emoji": "💢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "आप स्कूल टेस्ट से पहले घबराहट महसूस करते हैं। कौन सा विचार आपके दिमाग को शांत रखता है?",
+      "options": [
+        { "id": "prepared", "text": "मैंने तैयारी की है और अपना सर्वश्रेष्ठ दूँगा", "emoji": "📘", "isCorrect": true },
+        { "id": "fail", "text": "मैं निश्चित रूप से फेल हो जाऊँगा", "emoji": "😰", "isCorrect": false },
+        { "id": "panic", "text": "मुझे कुछ भी याद नहीं आ रहा है", "emoji": "😵", "isCorrect": false },
+        { "id": "escape", "text": "मैं टेस्ट छोड़ना चाहता हूँ", "emoji": "🏃", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आपकी जगह कोई और इनाम जीतता है। कौन सा विचार खुशमिजाज माइंडसेट दिखाता है?",
+      "options": [
+        { "id": "jealous", "text": "यह मेरे साथ अन्याय है", "emoji": "😤", "isCorrect": false },
+        { "id": "self-blame", "text": "मैं बेकार हूँ", "emoji": "💔", "isCorrect": false },
+        { "id": "happy-for-them", "text": "मैं उनकी सफलता से खुश हूँ", "emoji": "🎉", "isCorrect": true },
+        { "id": "angry-world", "text": "दुनिया मेरे खिलाफ है", "emoji": "🌪️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "आप सुबह सोकर उठते हैं और थकान महसूस करते हैं। कौन सा विचार दिन की सकारात्मक शुरुआत करता है?",
+      "options": [
+        { "id": "bad-day", "text": "आज का दिन बहुत बुरा होगा", "emoji": "☁️", "isCorrect": false },
+        { "id": "small-steps", "text": "मैं दिन को एक-एक कदम करके लूँगा", "emoji": "🌈", "isCorrect": true },
+        { "id": "complain", "text": "मैं कुछ भी नहीं करना चाहता", "emoji": "😩", "isCorrect": false },
+        { "id": "give-up", "text": "मैं आज का दिन नहीं संभाल सकता", "emoji": "🛑", "isCorrect": false }
+      ]
+    }
+  ]
+}

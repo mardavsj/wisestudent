@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Image } from "lucide-react";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -7,10 +8,13 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const PosterBrainHealth = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-6");
   const gameId = gameData?.id || "brain-kids-6";
+  
+  const gameContent = t("brain-health.kids.poster-brain-health", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -21,56 +25,14 @@ const PosterBrainHealth = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
   const [currentStage, setCurrentStage] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const stages = [
-    {
-      question: 'Which poster best shows "Healthy Brain = Happy You"?',
-      choices: [
-        { text: "Poster showing brain with happy face and exercise", correct: true, emoji: "🧠" },
-        { text: "Poster showing only food items", correct: false, emoji: "🍎" },
-        { text: "Poster showing only sleep", correct: false, emoji: "😴" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Feed Your Brain with Healthy Foods"?',
-      choices: [
-        { text: "Poster showing only junk food", correct: false, emoji: "🍟" },
-        { text: "Poster showing fruits, vegetables, and water", correct: true, emoji: "🍎" },
-        { text: "Poster showing only drinks", correct: false, emoji: "🥤" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Brain Power Through Exercise"?',
-      choices: [
-        { text: "Poster showing person exercising and brain", correct: true, emoji: "💪" },
-        { text: "Poster showing only sitting", correct: false, emoji: "🪑" },
-        { text: "Poster showing only sleeping", correct: false, emoji: "😴" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "Stay Hydrated for Brain Health"?',
-      choices: [
-        
-        { text: "Poster showing only soda drinks", correct: false, emoji: "🥤" },
-        { text: "Poster showing water and brain connection", correct: true, emoji: "💧" },
-        { text: "Poster showing only food", correct: false, emoji: "🍔" }
-      ]
-    },
-    {
-      question: 'Which poster best shows "My Brain Health Plan"?',
-      choices: [
-        
-        { text: "Poster showing only one activity", correct: false, emoji: "⚽" },
-        { text: "Poster showing only unhealthy habits", correct: false, emoji: "🚫" },
-        { text: "Poster showing multiple brain health tips together", correct: true, emoji: "📋" },
-      ]
-    }
-  ];
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
 
   const handleSelect = (isCorrect) => {
     if (answered || showResult) return;
@@ -81,6 +43,8 @@ const PosterBrainHealth = () => {
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     const isLastStage = currentStage === stages.length - 1;
@@ -99,8 +63,16 @@ const PosterBrainHealth = () => {
 
   return (
     <GameShell
-      title="Poster: Brain Health"
-      subtitle={!showResult ? `Question ${currentStage + 1} of ${stages.length}: Choose the best brain health poster!` : "Poster Complete!"}
+      title={gameContent?.title || "Poster: Brain Health"}
+      subtitle={
+        !showResult 
+          ? t("brain-health.kids.poster-brain-health.subtitleProgress", {
+              current: currentStage + 1,
+              total: stages.length,
+              defaultValue: `Question ${currentStage + 1} of ${stages.length}: Choose the best brain health poster!`,
+            })
+          : gameContent?.subtitleComplete || "Poster Complete!"
+      }
       score={finalScore}
       currentLevel={currentStage + 1}
       totalLevels={stages.length}
@@ -122,8 +94,20 @@ const PosterBrainHealth = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentStage + 1}/{stages.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{stages.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.poster-brain-health.questionStats", {
+                    current: currentStage + 1,
+                    total: stages.length,
+                    defaultValue: `Question ${currentStage + 1}/${stages.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.poster-brain-health.scoreLabel", {
+                    score,
+                    total: stages.length,
+                    defaultValue: `Score: ${score}/${stages.length}`,
+                  })}
+                </span>
               </div>
               
               <div className="text-center mb-6">

@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const Sports = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-38");
   const gameId = gameData?.id || "brain-kids-38";
+  
+  const gameContent = t("brain-health.kids.sports", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,134 +31,6 @@ const Sports = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Kid loses in game, feels angry. What should they do?",
-      options: [
-        
-        { 
-          id: "quit", 
-          text: "Quit the team", 
-          emoji: "🏳️", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "blame", 
-          text: "Blame others", 
-          emoji: "👆", 
-          isCorrect: false
-        },
-        { 
-          id: "calm", 
-          text: "Try again calmly", 
-          emoji: "😊", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 2,
-      text: "Missed goal, upset. What's the best response?",
-      options: [
-        
-        { 
-          id: "throw", 
-          text: "Throw the ball", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          id: "practice", 
-          text: "Practice more and try again", 
-          emoji: "⚽", 
-          isCorrect: true
-        },
-        { 
-          id: "cry", 
-          text: "Cry and give up", 
-          emoji: "😢", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Team loses the match. What should they do?",
-      options: [
-        { 
-          id: "learn", 
-          text: "Learn from it calmly", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          id: "argue", 
-          text: "Argue with each other", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          id: "quit2", 
-          text: "Give up completely", 
-          emoji: "🚶", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Injured during play, angry. How should they handle it?",
-      options: [
-        
-        { 
-          id: "ignore", 
-          text: "Ignore the pain and continue", 
-          emoji: "🤕", 
-          isCorrect: false
-        },
-        { 
-          id: "yell", 
-          text: "Yell at the coach", 
-          emoji: "😡", 
-          isCorrect: false
-        },
-        { 
-          id: "rest", 
-          text: "Rest and stay calm", 
-          emoji: "🏥", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "Bad referee call, mad. What's the right action?",
-      options: [
-        
-        { 
-          id: "protest", 
-          text: "Protest loudly", 
-          emoji: "🗣️", 
-          isCorrect: false
-        },
-        { 
-          id: "accept", 
-          text: "Accept and focus calmly", 
-          emoji: "👍", 
-          isCorrect: true
-        },
-        { 
-          id: "leave", 
-          text: "Leave the game", 
-          emoji: "🏃", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
-
   const currentQuestionData = questions[currentQuestion];
 
   const handleChoice = (isCorrect) => {
@@ -165,6 +42,8 @@ const Sports = () => {
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     const isLastQuestion = currentQuestion === questions.length - 1;
@@ -182,8 +61,16 @@ const Sports = () => {
 
   return (
     <GameShell
-      title="Sports Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Sports Story"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleDefault || "Story Complete!" 
+          : t("brain-health.kids.sports.subtitlePlaying", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -192,7 +79,6 @@ const Sports = () => {
       maxScore={questions.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      nextGamePathProp="/student/brain/kids/reflex-quick-calm"
       nextGameIdProp="brain-kids-39"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
@@ -206,8 +92,20 @@ const Sports = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.sports.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.sports.scoreLabel", {
+                    current: score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

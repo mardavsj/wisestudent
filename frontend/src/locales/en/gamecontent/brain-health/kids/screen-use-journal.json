@@ -1,0 +1,42 @@
+{
+  "title": "Journal of Screen Use",
+  "subtitleDefault": "Journal Complete!",
+  "subtitlePlaying": "Entry {{current}} of {{total}}",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "placeholder": "Write your thoughts here...",
+  "minCharacters": "{{count}} characters minimum",
+  "submitButton": "Submit",
+  "stages": [
+    { 
+      "id": 1, 
+      "prompt": "Write: \"I spend ___ hrs daily on screens.\"", 
+      "minLength": 10,
+      "guidance": "Think about how much time you spend on screens each day."
+    },
+    { 
+      "id": 2, 
+      "prompt": "I can cut screen time by ___.", 
+      "minLength": 10,
+      "guidance": "What activities can replace screen time?"
+    },
+    { 
+      "id": 3, 
+      "prompt": "Instead of screens, I enjoy ___.", 
+      "minLength": 10,
+      "guidance": "What non-screen activities do you like?"
+    },
+    { 
+      "id": 4, 
+      "prompt": "My favorite non-screen activity is ___.", 
+      "minLength": 10,
+      "guidance": "Describe an activity you enjoy without screens."
+    },
+    { 
+      "id": 5, 
+      "prompt": "I balance screens with ___.", 
+      "minLength": 10,
+      "guidance": "How do you balance screen time with other activities?"
+    }
+  ]
+}

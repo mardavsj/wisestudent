@@ -1,0 +1,25 @@
+{
+  "title": "संतुलन की पहेली",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "subtitleProgress": "{{current}}/{{total}} जोड़े मिलाएँ",
+  "matchesLabel": "मिलान: {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "instructionText": "स्क्रीन पर बिताए गए समय का उनके प्रभावों से मिलान करें!",
+  "leftTitle": "स्क्रीन समय",
+  "rightTitle": "प्रभाव",
+  "matchButton": "मिलान करें!",
+  "leftItems": [
+    { "id": 1, "name": "1 घंटे खेल", "emoji": "🎮" },
+    { "id": 2, "name": "5 घंटे स्क्रीन", "emoji": "📱" },
+    { "id": 3, "name": "2 घंटे टैबलेट", "emoji": "💻" },
+    { "id": 4, "name": "30 मिनट फोन", "emoji": "📞" },
+    { "id": 5, "name": "6 घंटे गेमिंग", "emoji": "🎮" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "मज़ेदार", "emoji": "😊" },
+    { "id": 2, "name": "नुकसान", "emoji": "😞" },
+    { "id": 3, "name": "संतुलन", "emoji": "⚖️" },
+    { "id": 4, "name": "अच्छा", "emoji": "✅" },
+    { "id": 5, "name": "बुरा", "emoji": "❌" }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "title": "Quiz on Focus",
+  "subtitlePlaying": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Quiz Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "What helps focus?",
+      "options": [
+        { "id": "a", "text": "Quiet room", "emoji": "🔇", "isCorrect": true },
+        { "id": "b", "text": "TV on", "emoji": "📺", "isCorrect": false },
+        { "id": "c", "text": "Phone games", "emoji": "📱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Which activity improves concentration?",
+      "options": [
+        { "id": "a", "text": "Multitasking", "emoji": "🤹", "isCorrect": false },
+        { "id": "b", "text": "Meditation", "emoji": "🧘", "isCorrect": true },
+        { "id": "c", "text": "Loud music", "emoji": "🔊", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "When is the best time to study?",
+      "options": [
+        { "id": "a", "text": "When you're most alert", "emoji": "⚡", "isCorrect": true },
+        { "id": "b", "text": "Very late at night", "emoji": "🌙", "isCorrect": false },
+        { "id": "c", "text": "During TV show", "emoji": "📺", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "What should you do before starting homework?",
+      "options": [
+        { "id": "a", "text": "Check all social media", "emoji": "📱", "isCorrect": false },
+        { "id": "b", "text": "Clear your desk and gather materials", "emoji": "📚", "isCorrect": true },
+        { "id": "c", "text": "Start with hardest task", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "How long should you focus before taking a break?",
+      "options": [
+        { "id": "a", "text": "Several hours without break", "emoji": "⏰", "isCorrect": false },
+        { "id": "b", "text": "25-30 minutes", "emoji": "⏱️", "isCorrect": true },
+        { "id": "c", "text": "5 minutes", "emoji": "⏳", "isCorrect": false }
+      ]
+    }
+  ]
+}

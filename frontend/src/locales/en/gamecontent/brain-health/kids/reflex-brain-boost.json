@@ -1,0 +1,73 @@
+{
+  "title": "Reflex Brain Boost",
+  "subtitleDefault": "Test your brain health reflexes!",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your brain health reflexes!",
+  "readyTitle": "Ready to Test Your Brain Health Skills?",
+  "readyDescription": "Answer questions about brain-boosting activities and habits.",
+  "readyInstruction": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round",
+  "timeLabel": "Time",
+  "scoreLabel": "Score",
+  "finishedTitle": "Great Job!",
+  "finishedScore": "You scored {{score}} out of {{total}}!",
+  "finishedMessage": "You're developing strong brain health habits!",
+  "playAgainButton": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which activity is most beneficial for brain health?",
+      "correctAnswer": "Regular physical exercise",
+      "options": [
+        { "text": "Regular physical exercise", "isCorrect": true, "emoji": "🏃" },
+        { "text": "Eating sugary snacks", "isCorrect": false, "emoji": "🍬" },
+        { "text": "Staying up all night", "isCorrect": false, "emoji": "🌙" },
+        { "text": "Skipping breakfast", "isCorrect": false, "emoji": "🍽️" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What helps improve memory and cognitive function?",
+      "correctAnswer": "Getting adequate sleep each night",
+      "options": [
+        { "text": "Drinking energy drinks", "isCorrect": false, "emoji": "☕" },
+        { "text": "Multitasking constantly", "isCorrect": false, "emoji": "🔄" },
+        { "text": "Getting adequate sleep each night", "isCorrect": true, "emoji": "😴" },
+        { "text": "Avoiding all social interaction", "isCorrect": false, "emoji": "🔇" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which nutrient is essential for optimal brain function?",
+      "correctAnswer": "Omega-3 fatty acids from fish",
+      "options": [
+        { "text": "Trans fats from fried food", "isCorrect": false, "emoji": "🍟" },
+        { "text": "Omega-3 fatty acids from fish", "isCorrect": true, "emoji": "🐟" },
+        { "text": "High fructose corn syrup", "isCorrect": false, "emoji": "🥤" },
+        { "text": "Artificial food coloring", "isCorrect": false, "emoji": "🎨" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What activity can help reduce stress and boost brain power?",
+      "correctAnswer": "Practicing mindfulness meditation",
+      "options": [
+        { "text": "Playing violent video games", "isCorrect": false, "emoji": "🎮" },
+        { "text": "Consuming excessive caffeine", "isCorrect": false, "emoji": "☕" },
+        { "text": "Isolating yourself completely", "isCorrect": false, "emoji": "🚪" },
+        { "text": "Practicing mindfulness meditation", "isCorrect": true, "emoji": "🧘" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which habit supports long-term brain health?",
+      "correctAnswer": "Engaging in lifelong learning",
+      "options": [
+        { "text": "Avoiding all mental challenges", "isCorrect": false, "emoji": "😴" },
+        { "text": "Engaging in lifelong learning", "isCorrect": true, "emoji": "🎓" },
+        { "text": "Watching TV for hours daily", "isCorrect": false, "emoji": "📺" },
+        { "text": "Ignoring problems consistently", "isCorrect": false, "emoji": "🙈" }
+      ]
+    }
+  ]
+}

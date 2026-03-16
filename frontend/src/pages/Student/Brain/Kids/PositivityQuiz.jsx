@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const PositivityQuiz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-52");
   const gameId = gameData?.id || "brain-kids-52";
+  
+  const gameContent = t("brain-health.kids.positivity-quiz", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,129 +30,7 @@ const PositivityQuiz = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "What is positive thinking?",
-      options: [
-        { 
-          id: "complaining", 
-          text: "Complaining", 
-          emoji: "😤", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "goodside", 
-          text: "Looking for good side", 
-          emoji: "😊", 
-          isCorrect: true
-        },
-        { 
-          id: "givingup", 
-          text: "Giving up", 
-          emoji: "😔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Positive attitude means?",
-      options: [
-        { 
-          id: "brightside", 
-          text: "See the bright side", 
-          emoji: "☀️", 
-          isCorrect: true
-        },
-        { 
-          id: "alwayssad", 
-          text: "Always sad", 
-          emoji: "😢", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore problems", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Gratitude is?",
-      options: [
-        { 
-          id: "forgetting", 
-          text: "Forgetting", 
-          emoji: "🤷", 
-          isCorrect: false
-        },
-        { 
-          id: "complaining2", 
-          text: "Complaining", 
-          emoji: "😤", 
-          isCorrect: false
-        },
-        { 
-          id: "thanks", 
-          text: "Saying thanks", 
-          emoji: "🙏", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Optimism is?",
-      options: [
-        { 
-          id: "hoping", 
-          text: "Hoping for best", 
-          emoji: "🌟", 
-          isCorrect: true
-        },
-        { 
-          id: "worst", 
-          text: "Expecting worst", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "nothing", 
-          text: "Doing nothing", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Positive thinking helps?",
-      options: [
-        { 
-          id: "worse", 
-          text: "Feel worse", 
-          emoji: "😢", 
-          isCorrect: false
-        },
-        { 
-          id: "nochange", 
-          text: "No change", 
-          emoji: "😑", 
-          isCorrect: false
-        },
-        { 
-          id: "better", 
-          text: "Feel better", 
-          emoji: "😊", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -159,6 +41,8 @@ const PositivityQuiz = () => {
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     const isLastQuestion = currentQuestion === questions.length - 1;
@@ -177,8 +61,16 @@ const PositivityQuiz = () => {
 
   return (
     <GameShell
-      title="Quiz on Positivity"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      title={gameContent?.title || "Quiz on Positivity"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleComplete || "Quiz Complete!"
+          : t("brain-health.kids.positivity-quiz.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -200,11 +92,23 @@ const PositivityQuiz = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.positivity-quiz.questionStats", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.positivity-quiz.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
-              <p className="text-white text-lg mb-6">
+              <p className="text-white text-lg mb-6 text-center md:text-left">
                 {currentQuestionData.text}
               </p>
               
@@ -218,7 +122,7 @@ const PositivityQuiz = () => {
                   >
                     <div className="text-3xl mb-3">{option.emoji}</div>
                     <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
+                    {option.description && <p className="text-white/90 text-sm">{option.description}</p>}
                   </button>
                 ))}
               </div>

@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const Game = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-28");
   const gameId = gameData?.id || "brain-kids-28";
+
+  const gameContent = t("brain-health.kids.game", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,129 +30,7 @@ const Game = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "You play a memory card game. Does it improve your brain?",
-      options: [
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "🧠", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "🤯", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "💭", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Playing puzzle games helps your memory. True or false?",
-      options: [
-        { 
-          id: "false", 
-          text: "False", 
-          emoji: "🤯", 
-          isCorrect: false
-        },
-        { 
-          id: "true", 
-          text: "True", 
-          emoji: "🧩", 
-          isCorrect: true
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "💭", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Memory card games train your brain to remember better. Yes or no?",
-      options: [
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "💭", 
-          isCorrect: false
-        },
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "👾", 
-          isCorrect: true
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "🤯", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Brain games make your memory stronger. True or false?",
-      options: [
-        { 
-          id: "true", 
-          text: "True", 
-          emoji: "📝", 
-          isCorrect: true
-        },
-        { 
-          id: "false", 
-          text: "False", 
-          emoji: "🤯", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "💭", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Playing memory games regularly improves your recall. Yes or no?",
-      options: [
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "🤯", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "💭", 
-          isCorrect: false
-        },
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "🤓", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -177,9 +59,17 @@ const Game = () => {
 
   return (
     <GameShell
-      title="Game Story"
+      title={gameContent?.title || "Game Story"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Story Complete!"
+          : t("brain-health.kids.game.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -200,8 +90,20 @@ const Game = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.game.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.game.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

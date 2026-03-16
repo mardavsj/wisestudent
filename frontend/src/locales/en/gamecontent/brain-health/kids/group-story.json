@@ -1,0 +1,54 @@
+{
+  "title": "Group Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Group project fails. Next step?",
+      "options": [
+        { "id": "together", "text": "Work together & fix", "emoji": "🤝", "isCorrect": true },
+        { "id": "blame", "text": "Blame each other", "emoji": "👆", "isCorrect": false },
+        { "id": "quit", "text": "Give up", "emoji": "🏳️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Team member doesn't help. What to do?",
+      "options": [
+        { "id": "ignore", "text": "Ignore them", "emoji": "😑", "isCorrect": false },
+        { "id": "talk", "text": "Talk & work together", "emoji": "💬", "isCorrect": true },
+        { "id": "yell", "text": "Yell at them", "emoji": "😠", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Group can't agree on idea. Best solution?",
+      "options": [
+        { "id": "fight", "text": "Fight about it", "emoji": "👊", "isCorrect": false },
+        { "id": "discuss", "text": "Discuss & find middle ground", "emoji": "🗣️", "isCorrect": true },
+        { "id": "split", "text": "Split up", "emoji": "🚶", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "One person does all the work. What's fair?",
+      "options": [
+        { "id": "share", "text": "Share work equally", "emoji": "⚖️", "isCorrect": true },
+        { "id": "let", "text": "Let them do everything", "emoji": "😴", "isCorrect": false },
+        { "id": "take", "text": "Take all credit", "emoji": "👑", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Project deadline is close. Best approach?",
+      "options": [
+        { "id": "panic", "text": "Panic and stress", "emoji": "😰", "isCorrect": false },
+        { "id": "plan", "text": "Plan together & finish", "emoji": "📋", "isCorrect": true },
+        { "id": "delay", "text": "Ask to delay", "emoji": "⏰", "isCorrect": false }
+      ]
+    }
+  ]
+}

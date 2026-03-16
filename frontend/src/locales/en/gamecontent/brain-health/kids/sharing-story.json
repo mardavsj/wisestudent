@@ -1,0 +1,129 @@
+{
+  "title": "Sharing Story",
+  "subtitleDefault": "Story Complete!",
+  "subtitlePlaying": "Question {{current}} of {{total}}",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Kid feels angry. Best way to handle?",
+      "options": [
+        { 
+          "id": "tell", 
+          "text": "Tell teacher/parent", 
+          "emoji": "👨‍🏫", 
+          "isCorrect": true
+        },
+        { 
+          "id": "yell", 
+          "text": "Yell at others", 
+          "emoji": "😡", 
+          "isCorrect": false
+        },
+        { 
+          "id": "hide", 
+          "text": "Hide feelings", 
+          "emoji": "😶", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Feeling sad about a fight. What to do?",
+      "options": [
+        { 
+          "id": "silent", 
+          "text": "Stay silent", 
+          "emoji": "🤐", 
+          "isCorrect": false
+        },
+        { 
+          "id": "talk", 
+          "text": "Talk to friend", 
+          "emoji": "💬", 
+          "isCorrect": true
+        },
+        { 
+          "id": "blame", 
+          "text": "Blame others", 
+          "emoji": "👆", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Scared at night. Best action?",
+      "options": [
+        { 
+          "id": "ignore", 
+          "text": "Ignore it", 
+          "emoji": "🙈", 
+          "isCorrect": false
+        },
+        { 
+          "id": "stay", 
+          "text": "Stay scared", 
+          "emoji": "😰", 
+          "isCorrect": false
+        },
+        { 
+          "id": "tell", 
+          "text": "Tell parent", 
+          "emoji": "👨‍👩‍👧", 
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Jealous of friend's toy. What to do?",
+      "options": [
+        { 
+          "id": "share", 
+          "text": "Share feelings", 
+          "emoji": "💭", 
+          "isCorrect": true
+        },
+        { 
+          "id": "take", 
+          "text": "Take toy", 
+          "emoji": "🤲", 
+          "isCorrect": false
+        },
+        { 
+          "id": "mad", 
+          "text": "Be mad", 
+          "emoji": "😠", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Excited but nervous. Best way?",
+      "options": [
+        { 
+          "id": "secret", 
+          "text": "Keep it secret", 
+          "emoji": "🤫", 
+          "isCorrect": false
+        },
+        { 
+          "id": "act", 
+          "text": "Act out", 
+          "emoji": "🎭", 
+          "isCorrect": false
+        },
+        { 
+          "id": "tell", 
+          "text": "Tell someone", 
+          "emoji": "🗣️", 
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

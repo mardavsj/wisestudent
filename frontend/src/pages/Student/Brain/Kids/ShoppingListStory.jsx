@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const ShoppingListStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-21");
   const gameId = gameData?.id || "brain-kids-21";
+  
+  const gameContent = t("brain-health.kids.shopping-list-story", { returnObjects: true });
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,136 +31,6 @@ const ShoppingListStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Mom gives you 3 items to buy: milk, bread, eggs. You forget 2. Is this good memory?",
-      options: [
-        
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "👍", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "👎", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "How can you remember the shopping list better?",
-      options: [
-        { 
-          id: "repeat", 
-          text: "Repeat the items in your mind", 
-          emoji: "🔁", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore the list", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          id: "guess", 
-          text: "Guess what to buy", 
-          emoji: "🎲", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What helps improve your memory?",
-      options: [
-        
-        { 
-          id: "stress", 
-          text: "Being stressed all the time", 
-          emoji: "😰", 
-          isCorrect: false
-        },
-        { 
-          id: "skip", 
-          text: "Skipping meals", 
-          emoji: "🍽️", 
-          isCorrect: false
-        },
-        { 
-          id: "sleep", 
-          text: "Getting enough sleep", 
-          emoji: "😴", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 4,
-      text: "You need to remember 5 things. What's a good strategy?",
-      options: [
-        
-        { 
-          id: "forget", 
-          text: "Try to remember without help", 
-          emoji: "🧠", 
-          isCorrect: false
-        },
-        { 
-          id: "write", 
-          text: "Write them down or make a list", 
-          emoji: "📝", 
-          isCorrect: true
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore them completely", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Practicing memory helps your brain. True or false?",
-      options: [
-        { 
-          id: "true", 
-          text: "True", 
-          emoji: "🙂", 
-          isCorrect: true
-        },
-        { 
-          id: "false", 
-          text: "False", 
-          emoji: "🙃", 
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
-
   const handleChoice = (isCorrect) => {
     if (answered) return;
     
@@ -165,6 +40,8 @@ const ShoppingListStory = () => {
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     const isLastQuestion = currentQuestion === questions.length - 1;
@@ -183,15 +60,22 @@ const ShoppingListStory = () => {
 
   return (
     <GameShell
-      title="Shopping List Story"
+      title={gameContent?.title || "Shopping List Story"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleDefault || "Story Complete!" 
+          : t("brain-health.kids.shopping-list-story.subtitlePlaying", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
       showGameOver={showResult}
       gameId={gameId}
-      nextGamePathProp="/student/brain/kids/quiz-on-memory"
       nextGameIdProp="brain-kids-22"
       gameType="brain"
       totalLevels={questions.length}
@@ -200,14 +84,27 @@ const ShoppingListStory = () => {
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
+      backPath="/games/brain-health/kids"
     >
       <div className="space-y-8">
         {!showResult && currentQuestionData ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.shopping-list-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.shopping-list-story.scoreLabel", {
+                    current: score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -224,7 +121,6 @@ const ShoppingListStory = () => {
                   >
                     <div className="text-3xl mb-3">{option.emoji}</div>
                     <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
                   </button>
                 ))}
               </div>

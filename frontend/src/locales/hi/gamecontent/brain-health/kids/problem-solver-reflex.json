@@ -1,0 +1,69 @@
+{
+  "title": "रिफ्लेक्स समस्या निवारक",
+  "subtitleReady": "अपनी समस्या-सुलझाने की सजगता का परीक्षण करें!",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपनी समस्या-सुलझाने की सजगता का परीक्षण करें!",
+  "subtitleFinished": "बहुत बढ़िया!",
+  "readyTitle": "क्या आप अपने समस्या-सुलझाने के कौशल का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "प्रभावी समस्या-समाधान रणनीतियों के बारे में प्रश्नों के उत्तर दें।",
+  "readyStats": "आपके पास {{total}} प्रश्न हैं और प्रत्येक के लिए {{time}} सेकंड का समय है!",
+  "startButton": "खेल शुरू करें",
+  "finishedTitle": "बहुत बढ़िया!",
+  "finishedScore": "आपने {{total}} में से {{score}} अंक प्राप्त किए!",
+  "finishedDescription": "आप मजबूत समस्या-सुलझाने के कौशल विकसित कर रहे हैं!",
+  "playAgainButton": "फिर से खेलें",
+  "roundLabel": "राउंड",
+  "timeLabel": "समय",
+  "scoreLabel": "स्कोर",
+  "questions": [
+    {
+      "id": 1,
+      "question": "कौन सा दृष्टिकोण प्रभावी समस्या-समाधान दिखाता है?",
+      "options": [
+        { "text": "समस्या को नज़रअंदाज़ करना", "isCorrect": false, "emoji": "🙈" },
+        { "text": "समस्या के लिए दूसरों को दोष देना", "isCorrect": false, "emoji": "👆" },
+        { "text": "बड़ी समस्याओं को छोटे भागों में तोड़ना", "isCorrect": true, "emoji": "🧩" },
+        { "text": "तुरंत हार मान लेना", "isCorrect": false, "emoji": "🏳️" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "समस्या-समाधान में एक महत्वपूर्ण कदम क्या है?",
+      "options": [
+        { "text": "निष्कर्ष पर जल्दबाज़ी करना", "isCorrect": false, "emoji": "🏁" },
+        { "text": "मूल कारण की पहचान करना", "isCorrect": true, "emoji": "🔍" },
+        { "text": "स्थिति से बचना", "isCorrect": false, "emoji": "🏃" },
+        { "text": "समस्या के बारे में शिकायत करना", "isCorrect": false, "emoji": "🗣️" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "कौन सी रणनीति समस्याओं को प्रभावी ढंग से हल करने में मदद करती है?",
+      "options": [
+        { "text": "एक ही दृष्टिकोण पर टिके रहना", "isCorrect": false, "emoji": "🔂" },
+        { "text": "किसी और के इसे ठीक करने का इंतज़ार करना", "isCorrect": false, "emoji": "🕐" },
+        { "text": "विभिन्न समाधानों को आज़माना", "isCorrect": true, "emoji": "🧪" },
+        { "text": "समस्या के अस्तित्व से इनकार करना", "isCorrect": false, "emoji": "🤥" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "चुनौती का सामना करते समय आपको क्या करना चाहिए?",
+      "options": [
+        { "text": "शांत रहें और स्पष्ट रूप से सोचें", "isCorrect": true, "emoji": "🧘" },
+        { "text": "घबराएं और जल्दबाज़ी में निर्णय लें", "isCorrect": false, "emoji": "😵" },
+        { "text": "निपटने से बचें", "isCorrect": false, "emoji": "😴" },
+        { "text": "परिस्थितियों को दोष देना", "isCorrect": false, "emoji": "🎲" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "कौन सी मानसिकता समस्या-समाधान में मदद करती है?",
+      "options": [
+        { "text": "बाधाओं को बंद रास्ते के रूप में देखना", "isCorrect": false, "emoji": "🚧" },
+        { "text": "बाधाओं को सीखने के अवसर के रूप में देखना", "isCorrect": true, "emoji": "📈" },
+        { "text": "दूसरों से सब कुछ हल करने की उम्मीद करना", "isCorrect": false, "emoji": "👥" },
+        { "text": "चुनौतियों से पूरी तरह बचना", "isCorrect": false, "emoji": "🔐" }
+      ]
+    }
+  ]
+}

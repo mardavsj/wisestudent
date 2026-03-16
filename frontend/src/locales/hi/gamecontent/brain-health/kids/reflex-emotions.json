@@ -1,0 +1,64 @@
+{
+  "title": "भावना रिफ्लेक्स",
+  "subtitleDefault": "अपनी भावनाओं के ज्ञान का परीक्षण करें!",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपनी भावनाओं के ज्ञान का परीक्षण करें!",
+  "readyTitle": "क्या आप अपनी भावनाओं के ज्ञान का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "भावनाओं को पहचानें और भावनाओं को समझें।",
+  "readyInstruction": "आपके पास {{total}} सवाल हैं और प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड",
+  "timeLabel": "समय",
+  "scoreLabel": "स्कोर",
+  "questions": [
+    {
+      "id": 1,
+      "text": "एक युवा रसोइया पहला पैनकेक जला देता है लेकिन मुस्कान के साथ फिर से कोशिश करता है। कौन सी भावना सबसे अच्छी लगती है?",
+      "options": [
+        { "id": "a", "text": "भ्रमित", "emoji": "🧩", "isCorrect": false },
+        { "id": "b", "text": "नींद आना", "emoji": "🌙", "isCorrect": false },
+        { "id": "c", "text": "आशावान", "emoji": "🌱", "isCorrect": true },
+        { "id": "d", "text": "ऊब गया", "emoji": "🪵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "एक दमकलकर्मी अलार्म सुनता है और दूसरों की मदद करने के लिए तेजी से दौड़ता है। कौन सी भावना दिखाई गई है?",
+      "options": [
+        { "id": "a", "text": "चंचल", "emoji": "🎲", "isCorrect": false },
+        { "id": "b", "text": "आलसी", "emoji": "🛋️", "isCorrect": false },
+        { "id": "c", "text": "गर्व", "emoji": "🏅", "isCorrect": false },
+        { "id": "d", "text": "सतर्क", "emoji": "🚨", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "एक कलाकार गलती से एक चित्र को फाड़ देता है और अंदर से भारीपन महसूस करता है। कौन सी भावना मेल खाती है?",
+      "options": [
+        { "id": "a", "text": "उत्साहित", "emoji": "🎉", "isCorrect": false },
+        { "id": "b", "text": "निराश", "emoji": "🌧️", "isCorrect": true },
+        { "id": "c", "text": "बहादुर", "emoji": "🛡️", "isCorrect": false },
+        { "id": "d", "text": "जिज्ञासु", "emoji": "🔍", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "एक डॉक्टर बच्चे को बेहतर महसूस करने में मदद करता है और चुपचाप मुस्कुराते हुए बाहर निकलता है। कौन सी भावना फिट बैठती है?",
+      "options": [
+        { "id": "a", "text": "संतुष्ट", "emoji": "🌼", "isCorrect": true },
+        { "id": "b", "text": "क्रोधित", "emoji": "🔥", "isCorrect": false },
+        { "id": "c", "text": "डरा हुआ", "emoji": "🍃", "isCorrect": false },
+        { "id": "d", "text": "ईर्ष्या", "emoji": "🪞", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "एक शिक्षक शोर वाली कक्षा में प्रवेश करता है लेकिन बोलने से पहले गहरी सांस लेता है। कौन सी भावना दिखाई गई है?",
+      "options": [
+        { "id": "a", "text": "हैरान", "emoji": "🎁", "isCorrect": false },
+        { "id": "b", "text": "उत्साहित", "emoji": "⚡", "isCorrect": false },
+        { "id": "c", "text": "शर्मिला", "emoji": "🐚", "isCorrect": false },
+        { "id": "d", "text": "शांत", "emoji": "🪷", "isCorrect": true }
+      ]
+    }
+  ]
+}

@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const PosterFocusMatters = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-16");
   const gameId = gameData?.id || "brain-kids-16";
+  
+  const gameContent = t("brain-health.kids.poster-focus-matters", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -20,54 +24,14 @@ const PosterFocusMatters = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const [score, setScore] = useState(0);
   const [currentStage, setCurrentStage] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const stages = [
-    {
-      question: 'Which poster would best show "Focus Helps You Learn Better"?',
-      choices: [
-        { text: "Poster with a student concentrating on books 📚", correct: true },
-        { text: "Poster with someone watching TV 📺", correct: false },
-        { text: "Poster with a sleeping person 😴", correct: false },
-      ],
-    },
-    {
-      question: 'Which poster would best show "Quiet Space Improves Focus"?',
-      choices: [
-        { text: "Poster with loud music and noise 🔊", correct: false },
-        { text: "Poster with a peaceful study area 🔇", correct: true },
-        { text: "Poster with a busy playground 🎮", correct: false },
-      ],
-    },
-    {
-      question: 'Which poster would best show "Focus Leads to Success"?',
-      choices: [
-        { text: "Poster with someone achieving goals 🎯", correct: true },
-        { text: "Poster with someone giving up 😔", correct: false },
-        { text: "Poster with distractions everywhere 📱", correct: false },
-      ],
-    },
-    {
-      question: 'Which poster would best show "Take Breaks to Stay Focused"?',
-      choices: [
-        { text: "Poster showing continuous work without rest ⏰", correct: false },
-        { text: "Poster showing study time with breaks ⏸️", correct: true },
-        { text: "Poster showing only play time 🎮", correct: false },
-      ],
-    },
-    {
-      question: 'Which poster would best show "Focus Makes You Smarter"?',
-      choices: [
-        { text: "Poster with a brain getting stronger 🧠", correct: true },
-        { text: "Poster with a confused person 🤯", correct: false },
-        { text: "Poster with someone ignoring lessons 🙈", correct: false },
-      ],
-    },
-  ];
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -78,6 +42,8 @@ const PosterFocusMatters = () => {
     if (isCorrect) {
       setScore(prev => prev + 1);
       showCorrectAnswerFeedback(1, true);
+    } else {
+      showCorrectAnswerFeedback(0, false);
     }
     
     const isLastStage = currentStage === stages.length - 1;
@@ -96,9 +62,17 @@ const PosterFocusMatters = () => {
 
   return (
     <GameShell
-      title="Poster: Focus Matters"
+      title={gameContent?.title || "Poster: Focus Matters"}
       score={score}
-      subtitle={!showResult ? `Question ${currentStage + 1} of ${stages.length}` : "Poster Complete!"}
+      subtitle={
+        !showResult 
+          ? t("brain-health.kids.poster-focus-matters.subtitleProgress", {
+              current: currentStage + 1,
+              total: stages.length,
+              defaultValue: `Question ${currentStage + 1} of ${stages.length}`,
+            })
+          : gameContent?.subtitleComplete || "Poster Complete!"
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -119,11 +93,23 @@ const PosterFocusMatters = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentStage + 1}/{stages.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{stages.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.poster-focus-matters.questionStats", {
+                    current: currentStage + 1,
+                    total: stages.length,
+                    defaultValue: `Question ${currentStage + 1}/${stages.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.poster-focus-matters.scoreLabel", {
+                    score,
+                    total: stages.length,
+                    defaultValue: `Score: ${score}/${stages.length}`,
+                  })}
+                </span>
               </div>
               
-              <p className="text-white text-lg mb-6">
+              <p className="text-white text-lg mb-6 text-center md:text-left">
                 {currentStageData.question}
               </p>
               

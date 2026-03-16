@@ -1,0 +1,54 @@
+{
+  "title": "शांत रहें पोस्टर",
+  "subtitleDefault": "पोस्टर पूर्ण!",
+  "subtitlePlaying": "प्रश्न {{current}} का {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "किसी ऐसे व्यक्ति के लिए पोस्टर बनाएं/चुनें जो प्रदर्शन से पहले घबराहट महसूस करता है।",
+      "options": [
+        { "id": "rush-fast", "text": "जल्दी से भागें", "emoji": "🏃‍♂️", "isCorrect": false },
+        { "id": "panic-loud", "text": "चिल्लाओ और घबराओ", "emoji": "😱", "isCorrect": false },
+        { "id": "deep-breaths", "text": "गहरी सांसें लें", "emoji": "💨", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "होमवर्क के तनाव के दौरान तनावमुक्त रहने के लिए एक पोस्टर चुनें।",
+      "options": [
+        { "id": "tiny-steps", "text": "एक समय में एक कदम संभालें", "emoji": "📄", "isCorrect": true },
+        { "id": "rush-all", "text": "सब कुछ एक साथ खत्म करें", "emoji": "⚡", "isCorrect": false },
+        { "id": "ignore-work", "text": "होमवर्क बाद के लिए छोड़ दें", "emoji": "🕐", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "खेल मैच से पहले शांत होने के लिए पोस्टर विचार चुनें।",
+      "options": [
+        { "id": "rush-aggressive", "text": "जितनी जल्दी हो सके खेलें", "emoji": "🏃‍♂️", "isCorrect": false },
+        { "id": "complain-loud", "text": "टीम के साथियों के साथ बहस करें", "emoji": "🗣️", "isCorrect": false },
+        { "id": "visualize-success", "text": "शांति से जीतने की कल्पना करें", "emoji": "🏅", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "स्कूल में शोर-शराबे वाले दिन के दौरान शांतिपूर्ण रहने के लिए एक पोस्टर चुनें।",
+      "options": [
+        { "id": "yell-back", "text": "सब पर वापस चिल्लाओ", "emoji": "😤", "isCorrect": false },
+        { "id": "mindful-breaks", "text": "छोटे माइंडफुल ब्रेक लें", "emoji": "🧘", "isCorrect": true },
+        { "id": "ignore-friends", "text": "हर किसी को नजरअंदाज करें", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "खेल में अपनी बारी का इंतज़ार करते समय शांत रहने के लिए एक पोस्टर चुनें।",
+      "options": [
+        { "id": "slow-count", "text": "धीरे-धीरे गिनें और सांस लें", "emoji": "🌿", "isCorrect": true },
+        { "id": "rush-others", "text": "पहले जाने के लिए धक्का दें", "emoji": "🏃‍♂️", "isCorrect": false },
+        { "id": "complain-loud", "text": "ज़ोर से शिकायत करें", "emoji": "📢", "isCorrect": false }
+      ]
+    }
+  ]
+}

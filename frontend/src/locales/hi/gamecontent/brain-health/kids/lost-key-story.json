@@ -1,0 +1,129 @@
+{
+  "title": "खोई हुई चाबी की कहानी",
+  "subtitleProgress": "प्रश्न {{current}} - {{total}}",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "बच्चा कक्षा की चाबी खो देता है। सबसे अच्छा कार्य?",
+      "options": [
+        { 
+          "id": "tell", 
+          "text": "शिक्षक को बताएं और समाधान खोजें", 
+          "emoji": "👨‍🏫", 
+          "isCorrect": true
+        },
+        { 
+          "id": "hide", 
+          "text": "छिपें और किसी को न बताएं", 
+          "emoji": "🙈", 
+          "isCorrect": false
+        },
+        { 
+          "id": "panic", 
+          "text": "घबराएं और रोएं", 
+          "emoji": "😰", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "होमवर्क असाइनमेंट खो गया। आपको क्या करना चाहिए?",
+      "options": [
+        { 
+          "id": "ignore", 
+          "text": "इसे अनदेखा करें", 
+          "emoji": "😑", 
+          "isCorrect": false
+        },
+        { 
+          "id": "tell2", 
+          "text": "शिक्षक को बताएं और मदद मांगें", 
+          "emoji": "🙋", 
+          "isCorrect": true
+        },
+        { 
+          "id": "blame", 
+          "text": "किसी और को दोष दें", 
+          "emoji": "👆", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "लंच के पैसे भूल गए। सबसे अच्छा समाधान?",
+      "options": [
+        { 
+          "id": "skip", 
+          "text": "लंच छोड़ दें", 
+          "emoji": "😞", 
+          "isCorrect": false
+        },
+        { 
+          "id": "steal", 
+          "text": "किसी से ले लें", 
+          "emoji": "👀", 
+          "isCorrect": false
+        },
+        { 
+          "id": "ask3", 
+          "text": "शिक्षक को बताएं और समाधान खोजें", 
+          "emoji": "💬", 
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "पुस्तकालय की किताब खो गई। सही कार्य क्या है?",
+      "options": [
+        { 
+          "id": "tell4", 
+          "text": "पुस्तकालयाध्यक्ष को बताएं और साथ मिलकर खोजें", 
+          "emoji": "📚", 
+          "isCorrect": true
+        },
+        { 
+          "id": "lie", 
+          "text": "इसके बारे में झूठ बोलें", 
+          "emoji": "🤥", 
+          "isCorrect": false
+        },
+        { 
+          "id": "avoid", 
+          "text": "पुस्तकालय जाने से बचें", 
+          "emoji": "🚶", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "दोस्त की पेंसिल खो गई। सबसे अच्छा दृष्टिकोण?",
+      "options": [
+        { 
+          "id": "deny", 
+          "text": "इसे नकारें", 
+          "emoji": "🙅", 
+          "isCorrect": false
+        },
+        { 
+          "id": "tell5", 
+          "text": "दोस्त को बताएं और समाधान खोजें", 
+          "emoji": "🤝", 
+          "isCorrect": true
+        },
+        { 
+          "id": "ignore5", 
+          "text": "इसे अनदेखा करें", 
+          "emoji": "😐", 
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

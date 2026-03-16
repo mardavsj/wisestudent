@@ -1,0 +1,72 @@
+{
+  "title": "रिफ्लेक्स रचनात्मक सोच",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपनी रचनात्मक सोच की सजगता का परीक्षण करें!",
+  "subtitleReady": "अपनी रचनात्मक सोच की सजगता का परीक्षण करें!",
+  "roundLabel": "राउंड:",
+  "timeLabel": "समय:",
+  "scoreLabel": "स्कोर:",
+  "ready": {
+    "header": "क्या आप अपने रचनात्मक सोच कौशल का परीक्षण करने के लिए तैयार हैं?",
+    "description": "रचनात्मक सोच और समस्या-समाधान के बारे में सवालों के जवाब दें।",
+    "details": "आपके पास प्रत्येक प्रश्न के लिए {{time}} सेकंड के साथ {{total}} प्रश्न हैं!",
+    "button": "खेल शुरू करें"
+  },
+  "finished": {
+    "header": "बहुत बढ़िया!",
+    "score": "आपने {{total}} में से {{score}} स्कोर किया!",
+    "feedback": "आप मजबूत रचनात्मक सोच कौशल विकसित कर रहे हैं!",
+    "button": "फिर से खेलें"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "कौन सी गतिविधि रचनात्मक सोच दिखाती है?",
+      "options": [
+        { "text": "होमवर्क की नकल करना", "isCorrect": false, "emoji": "📋" },
+        { "text": "सटीक निर्देशों का पालन करना", "isCorrect": false, "emoji": "📜" },
+        { "text": "एक नया खिलौना डिजाइन करना", "isCorrect": true, "emoji": "🧸" },
+        { "text": "चीजों को उसी तरह करना", "isCorrect": false, "emoji": "🔄" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "रचनात्मक समस्या-समाधान क्या दर्शाता है?",
+      "options": [
+        { "text": "सामान्य पद्धति का उपयोग करना", "isCorrect": false, "emoji": "🔁" },
+        { "text": "इसे हल करने के लिए किसी और से पूछना", "isCorrect": false, "emoji": "🙋" },
+        { "text": "फंसने पर हार मान लेना", "isCorrect": false, "emoji": "😞" },
+        { "text": "एक नया समाधान खोजना", "isCorrect": true, "emoji": "🔍" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "कौन सा दृष्टिकोण रचनात्मकता दिखाता है?",
+      "options": [
+        { "text": "एक ही विधि पर अड़े रहना", "isCorrect": false, "emoji": "📏" },
+        { "text": "दूसरों द्वारा किए गए कार्यों को दोहराना", "isCorrect": false, "emoji": "🔁" },
+        { "text": "विभिन्न विचारों का संयोजन", "isCorrect": true, "emoji": "🔀" },
+        { "text": "नई चुनौतियों से बचना", "isCorrect": false, "emoji": "🛡️" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "रचनात्मक सोच का संकेत क्या है?",
+      "options": [
+        { "text": "पहले उत्तर को स्वीकार करना", "isCorrect": false, "emoji": "✅" },
+        { "text": "निर्धारित प्रक्रियाओं का पालन करना", "isCorrect": false, "emoji": "📋" },
+        { "text": "गलतियों से बचना", "isCorrect": false, "emoji": "⚠️" },
+        { "text": " 'क्या होगा यदि' प्रश्न पूछना", "isCorrect": true, "emoji": "❓" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "कौन सा व्यवहार रचनात्मक सोच दिखाता है?",
+      "options": [
+        { "text": "किताब के अनुसार सब कुछ करना", "isCorrect": false, "emoji": "📚" },
+        { "text": "सफल तरीकों की बिल्कुल नकल करना", "isCorrect": false, "emoji": "🖨️" },
+        { "text": "नए दृष्टिकोणों के साथ प्रयोग करना", "isCorrect": true, "emoji": "🧪" },
+        { "text": "परिचित दिनचर्या पर टिके रहना", "isCorrect": false, "emoji": "🧭" }
+      ]
+    }
+  ]
+}

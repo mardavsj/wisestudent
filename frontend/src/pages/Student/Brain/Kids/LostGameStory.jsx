@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const LostGameStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-48");
   const gameId = gameData?.id || "brain-kids-48";
+
+  const gameContent = t("brain-health.kids.lost-game-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,132 +30,7 @@ const LostGameStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Kid loses in cricket and feels jealous. What to do?",
-      options: [
-        { 
-          id: "congratulate", 
-          text: "Congratulate others", 
-          emoji: "👏", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "mad", 
-          text: "Be mad", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          id: "quit", 
-          text: "Quit game", 
-          emoji: "🚪", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Lost in race, feels upset. Best action?",
-      options: [
-        { 
-          id: "run", 
-          text: "Run away", 
-          emoji: "🏃", 
-          isCorrect: false
-        },
-        { 
-          id: "cheer", 
-          text: "Cheer for winner", 
-          emoji: "🎉", 
-          isCorrect: true
-        },
-        { 
-          id: "blame", 
-          text: "Blame track", 
-          emoji: "👆", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Didn't win quiz, feels bad. What to do?",
-      options: [
-        { 
-          id: "argue", 
-          text: "Argue", 
-          emoji: "😤", 
-          isCorrect: false
-        },
-        { 
-          id: "ignore", 
-          text: "Ignore everyone", 
-          emoji: "😑", 
-          isCorrect: false
-        },
-        { 
-          id: "congratulate", 
-          text: "Say good job to winner", 
-          emoji: "👍", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Lost board game, jealous. Best way?",
-      options: [
-        { 
-          id: "smile", 
-          text: "Smile and clap", 
-          emoji: "😊", 
-          isCorrect: true
-        },
-        { 
-          id: "throw", 
-          text: "Throw pieces", 
-          emoji: "💥", 
-          isCorrect: false
-        },
-        { 
-          id: "leave", 
-          text: "Leave table", 
-          emoji: "🚶", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Missed goal in soccer, feels angry. What to do?",
-      options: [
-        { 
-          id: "kick", 
-          text: "Kick ball away", 
-          emoji: "⚽", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "yell", 
-          text: "Yell", 
-          emoji: "😡", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "support", 
-          text: "Support teammates", 
-          emoji: "🤝", 
-          
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -180,8 +59,16 @@ const LostGameStory = () => {
 
   return (
     <GameShell
-      title="Lost Game Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Lost Game Story"}
+      subtitle={
+        !showResult
+          ? t("brain-health.kids.lost-game-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+          : gameContent?.subtitleComplete || "Story Complete!"
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -203,8 +90,20 @@ const LostGameStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.lost-game-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.lost-game-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

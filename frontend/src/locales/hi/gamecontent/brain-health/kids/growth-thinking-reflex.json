@@ -1,0 +1,65 @@
+{
+  "title": "रिफ्लेक्स ग्रोथ थिंकिंग",
+  "subtitlePlaying": "दौर {{current}}/{{total}}: अपनी ग्रोथ माइंडसेट रिफ्लेक्स का परीक्षण करें!",
+  "subtitleDefault": "अपनी ग्रोथ माइंडसेट रिफ्लेक्स का परीक्षण करें!",
+  "readyTitle": "तैयार हो जाइए!",
+  "readyText1": "ग्रोथ थिंकिंग के बारे में सवालों के जवाब दें!",
+  "readyText2": "प्रत्येक प्रश्न के लिए आपके पास {{time}} सेकंड हैं।",
+  "readyText3": "आपके पास {{total}} प्रश्न हैं जिनमें प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "दौर:",
+  "timeLabel": "समय:",
+  "scoreLabel": "स्कोर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "कौन सी गतिविधि ग्रोथ माइंडसेट दिखाती है?",
+      "options": [
+        { "text": "आसानी से हार मान लेना", "isCorrect": false, "emoji": "🏳️" },
+        { "text": "विफलताओं के लिए दूसरों को दोष देना", "isCorrect": false, "emoji": "😠" },
+        { "text": "गलतियों से सीखना", "isCorrect": true, "emoji": "📚" },
+        { "text": "चुनौतियों से बचना", "isCorrect": false, "emoji": "🛡️" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ग्रोथ थिंकिंग क्या प्रदर्शित करती है?",
+      "options": [
+        { "text": "शुरुआती स्तर पर बने रहना", "isCorrect": false, "emoji": "👶" },
+        { "text": "खराब प्रदर्शन के लिए बहाने बनाना", "isCorrect": false, "emoji": "🙂" },
+        { "text": "अपनी तुलना दूसरों से करना", "isCorrect": false, "emoji": "👥" },
+        { "text": "कौशल सुधारने के लिए अभ्यास करना", "isCorrect": true, "emoji": "💪" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "कौन सा दृष्टिकोण ग्रोथ माइंडसेट दिखाता है?",
+      "options": [
+        { "text": "मुश्किल चुनौतियों को गले लगाना", "isCorrect": true, "emoji": "🧗" },
+        { "text": "आसान कामों तक ही सीमित रहना", "isCorrect": false, "emoji": "😊" },
+        { "text": "कठिन होने पर छोड़ देना", "isCorrect": false, "emoji": "😞" },
+        { "text": "प्रतिक्रिया को नज़रअंदाज़ करना", "isCorrect": false, "emoji": "🙉" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ग्रोथ थिंकिंग का संकेत क्या है?",
+      "options": [
+        { "text": "यह मानना कि प्रतिभा स्थिर है", "isCorrect": false, "emoji": "🧱" },
+        { "text": "प्रयास को महारत के रास्ते के रूप में देखना", "isCorrect": true, "emoji": "📈" },
+        { "text": "कड़ी मेहनत से बचना", "isCorrect": false, "emoji": "😴" },
+        { "text": "दूसरों की सफलता से खतरा महसूस करना", "isCorrect": false, "emoji": "😒" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "कौन सा व्यवहार ग्रोथ माइंडसेट दिखाता है?",
+      "options": [
+        { "text": "विफलता के बाद हार मान लेना", "isCorrect": false, "emoji": "🏳️" },
+        { "text": "अपने कम्फर्ट ज़ोन में रहना", "isCorrect": false, "emoji": "🛋️" },
+        { "text": "झटकों के बावजूद डटे रहना", "isCorrect": true, "emoji": "🦾" },
+        { "text": "रचनात्मक आलोचना को नज़रअंदाज़ करना", "isCorrect": false, "emoji": "🙉" }
+      ]
+    }
+  ]
+}

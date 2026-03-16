@@ -1,0 +1,54 @@
+{
+  "title": "Classroom Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Teacher is teaching. Do you listen carefully or doodle?",
+      "options": [
+        { "id": "doodle", "text": "Doodle in notebook", "emoji": "✏️", "isCorrect": false },
+        { "id": "chat", "text": "Chat with friends", "emoji": "💬", "isCorrect": false },
+        { "id": "listen", "text": "Listen carefully", "emoji": "👂", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You don't understand something the teacher said. What should you do?",
+      "options": [
+        { "id": "ignore", "text": "Ignore it", "emoji": "😴", "isCorrect": false },
+        { "id": "ask", "text": "Ask the teacher to explain", "emoji": "🙋", "isCorrect": true },
+        { "id": "copy", "text": "Copy from friend", "emoji": "👀", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "During group work, your friend wants to chat about games. What do you do?",
+      "options": [
+        { "id": "focus", "text": "Stay focused on the task", "emoji": "🎯", "isCorrect": true },
+        { "id": "chat", "text": "Chat about games", "emoji": "🎮", "isCorrect": false },
+        { "id": "both", "text": "Do both at same time", "emoji": "🤹", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You finished your classwork early. What's the best choice?",
+      "options": [
+        { "id": "disturb", "text": "Disturb others who are still working", "emoji": "😈", "isCorrect": false },
+        { "id": "help", "text": "Help classmates who need assistance", "emoji": "🤝", "isCorrect": true },
+        { "id": "play", "text": "Play on phone", "emoji": "📱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "The lesson is difficult. How do you handle it?",
+      "options": [
+        { "id": "giveup", "text": "Give up and stop trying", "emoji": "😔", "isCorrect": false },
+        { "id": "blame", "text": "Blame the teacher", "emoji": "👎", "isCorrect": false },
+        { "id": "persist", "text": "Keep trying and ask for help if needed", "emoji": "💪", "isCorrect": true }
+      ]
+    }
+  ]
+}

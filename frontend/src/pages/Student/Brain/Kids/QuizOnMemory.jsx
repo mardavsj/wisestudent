@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const QuizOnMemory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-22");
   const gameId = gameData?.id || "brain-kids-22";
+  
+  const gameContent = t("brain-health.kids.quiz-on-memory", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -20,139 +24,14 @@ const QuizOnMemory = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "What helps memory?",
-      options: [
-        
-        { 
-          id: "b", 
-          text: "Skipping food", 
-          emoji: "🍽️", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: "Sleep", 
-          emoji: "😴", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Stress", 
-          emoji: "😰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which activity improves memory?",
-      options: [
-        { 
-          id: "a", 
-          text: "Practicing and repeating", 
-          emoji: "🔁", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Never practicing", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Forgetting everything", 
-          emoji: "😵", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "What food is good for memory?",
-      options: [
-        { 
-          id: "a", 
-          text: "Junk food only", 
-          emoji: "🍟", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Healthy food like fruits and vegetables", 
-          emoji: "🍎", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "No food at all", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How can you remember things better?",
-      options: [
-        
-        { 
-          id: "b", 
-          text: "Never write anything", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Ignore everything", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: "Write them down and review", 
-          emoji: "📝", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      text: "Does exercise help memory?",
-      options: [
-        
-        { 
-          id: "b", 
-          text: "No, exercise doesn't help", 
-          emoji: "❌", 
-          isCorrect: false
-        },
-        { 
-          id: "a", 
-          text: "Yes, exercise improves brain function", 
-          emoji: "💪", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Maybe sometimes", 
-          emoji: "🤔", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -181,9 +60,17 @@ const QuizOnMemory = () => {
 
   return (
     <GameShell
-      title="Quiz on Memory"
+      title={gameContent?.title || "Quiz on Memory"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      subtitle={
+        !showResult 
+          ? t("brain-health.kids.quiz-on-memory.subtitlePlaying", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`
+            }) 
+          : gameContent?.subtitleComplete || "Quiz Complete!"
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -204,8 +91,20 @@ const QuizOnMemory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.quiz-on-memory.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.quiz-on-memory.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -222,7 +121,7 @@ const QuizOnMemory = () => {
                   >
                     <div className="text-3xl mb-3">{option.emoji}</div>
                     <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
+                    {option.description && <p className="text-white/90 text-sm">{option.description}</p>}
                   </button>
                 ))}
               </div>

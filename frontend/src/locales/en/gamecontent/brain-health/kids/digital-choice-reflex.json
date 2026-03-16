@@ -1,0 +1,72 @@
+{
+  "title": "Reflex Digital Choice",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your digital wellness reflexes!",
+  "subtitleReady": "Test your digital wellness reflexes!",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "ready": {
+    "header": "Ready to Test Your Digital Wellness Skills?",
+    "description": "Answer questions about healthy digital habits and screen time management.",
+    "details": "You have {{total}} questions with {{time}} seconds each!",
+    "button": "Start Game"
+  },
+  "finished": {
+    "header": "Great Job!",
+    "score": "You scored {{score}} out of {{total}}!",
+    "feedback": "You're developing strong digital wellness habits!",
+    "button": "Play Again"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which digital activity shows good balance?",
+      "options": [
+        { "text": "Playing video games all night", "isCorrect": false, "emoji": "🎮" },
+        { "text": "Scrolling social media endlessly", "isCorrect": false, "emoji": "📱" },
+        { "text": "Playing outdoors with friends", "isCorrect": true, "emoji": "🌳" },
+        { "text": "Watching videos for hours", "isCorrect": false, "emoji": "📺" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What demonstrates healthy screen time habits?",
+      "options": [
+        { "text": "Using devices during meals", "isCorrect": false, "emoji": "🍽️" },
+        { "text": "Setting time limits for devices", "isCorrect": true, "emoji": "⏰" },
+        { "text": "Playing games instead of homework", "isCorrect": false, "emoji": "📚" },
+        { "text": "Using screens right before bed", "isCorrect": false, "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which approach shows digital wellness?",
+      "options": [
+        { "text": "Spending all free time online", "isCorrect": false, "emoji": "💻" },
+        { "text": "Ignoring device usage time", "isCorrect": false, "emoji": "⏱️" },
+        { "text": "Balancing online and offline activities", "isCorrect": true, "emoji": "⚖️" },
+        { "text": "Using screens during family time", "isCorrect": false, "emoji": "👪" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is a sign of healthy digital habits?",
+      "options": [
+        { "text": "Multitasking on multiple devices", "isCorrect": false, "emoji": "🔄" },
+        { "text": "Using devices during conversations", "isCorrect": false, "emoji": "💬" },
+        { "text": "Keeping devices on at all times", "isCorrect": false, "emoji": "🔛" },
+        { "text": "Taking regular breaks from screens", "isCorrect": true, "emoji": "⏸️" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which behavior shows digital balance?",
+      "options": [
+        { "text": "Prioritizing sleep over late-night browsing", "isCorrect": true, "emoji": "😴" },
+        { "text": "Checking notifications constantly", "isCorrect": false, "emoji": "🔔" },
+        { "text": "Sharing personal info freely online", "isCorrect": false, "emoji": "🔓" },
+        { "text": "Ignoring online safety rules", "isCorrect": false, "emoji": "⚠️" }
+      ]
+    }
+  ]
+}

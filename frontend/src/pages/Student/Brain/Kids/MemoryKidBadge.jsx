@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const MemoryKidBadge = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-30");
   const gameId = gameData?.id || "brain-kids-30";
+  
+  const gameContent = t("brain-health.kids.memory-kid-badge", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,145 +31,7 @@ const MemoryKidBadge = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Memory Challenge 1",
-      question: "What is the best way to improve your memory?",
-      options: [
-        { 
-          text: "Practice regularly, repeat information, and get enough sleep", 
-          emoji: "🧠", 
-          isCorrect: true
-        },
-        { 
-          text: "Never practice", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid all learning activities", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Only learn once", 
-          emoji: "⏸️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Memory Challenge 2",
-      question: "Which activity helps memory the most?",
-      options: [
-        { 
-          text: "Playing video games all day", 
-          emoji: "🎮", 
-          isCorrect: false
-        },
-        { 
-          text: "Repeating and practicing information", 
-          emoji: "🔁", 
-          isCorrect: true
-        },
-        { 
-          text: "Never reviewing anything", 
-          emoji: "🙈", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoiding all memory exercises", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Memory Challenge 3",
-      question: "How can you remember things better?",
-      options: [
-        { 
-          text: "Write them down and review often", 
-          emoji: "📝", 
-          isCorrect: true
-        },
-        { 
-          text: "Never write anything", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          text: "Ignore everything", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          text: "Only read once", 
-          emoji: "📖", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Memory Challenge 4",
-      question: "What helps your brain remember?",
-      options: [
-        
-        { 
-          text: "Staying up all night", 
-          emoji: "🌙", 
-          isCorrect: false
-        },
-        { 
-          text: "Skipping meals", 
-          emoji: "🍽️", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoiding all rest", 
-          emoji: "⏰", 
-          isCorrect: false
-        },
-        { 
-          text: "Getting enough sleep and eating healthy", 
-          emoji: "😴", 
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 5,
-      title: "Memory Challenge 5",
-      question: "What makes memory stronger?",
-      options: [
-       
-        { 
-          text: "Never practicing", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          text: "Learning once and stopping", 
-          emoji: "⏸️", 
-          isCorrect: false
-        },
-         { 
-          text: "Regular practice and repetition", 
-          emoji: "🔁", 
-          isCorrect: true
-        },
-        { 
-          text: "Avoiding all memory activities", 
-          emoji: "😴", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -195,9 +61,17 @@ const MemoryKidBadge = () => {
 
   return (
     <GameShell
-      title="Badge: Memory Kid"
+      title={gameContent?.title || "Badge: Memory Kid"}
       score={score}
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("brain-health.kids.memory-kid-badge.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -218,8 +92,20 @@ const MemoryKidBadge = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.memory-kid-badge.subtitleProgress", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1}/${challenges.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.memory-kid-badge.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{currentChallengeData.title}</h3>

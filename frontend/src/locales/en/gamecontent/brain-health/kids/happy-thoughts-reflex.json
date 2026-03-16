@@ -1,0 +1,65 @@
+{
+  "title": "Reflex Happy Thoughts",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your happy thoughts reflexes!",
+  "subtitleDefault": "Test your happy thoughts reflexes!",
+  "readyTitle": "Get Ready!",
+  "readyText1": "Answer questions about happy thoughts!",
+  "readyText2": "You have {{time}} seconds for each question.",
+  "readyText3": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round:",
+  "timeLabel": "Time:",
+  "scoreLabel": "Score:",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You make a mistake while drawing in class. Which thought helps you feel better quickly?",
+      "options": [
+        { "id": "im-bad", "text": "I am bad at everything", "emoji": "😞", "isCorrect": false },
+        { "id": "quit", "text": "I should stop drawing forever", "emoji": "🚫", "isCorrect": false },
+        { "id": "get-angry", "text": "I feel angry and throw the paper", "emoji": "😠", "isCorrect": false },
+        { "id": "try-again", "text": "I can try again and improve", "emoji": "✏️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Your friend does not want to play today. What is the healthiest thought?",
+      "options": [
+        { "id": "alone", "text": "No one likes me", "emoji": "😢", "isCorrect": false },
+        { "id": "another-time", "text": "We can play together another day", "emoji": "📅", "isCorrect": true },
+        { "id": "ignore", "text": "I will ignore everyone", "emoji": "🙄", "isCorrect": false },
+        { "id": "revenge", "text": "I will stop being their friend", "emoji": "💢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "You feel nervous before a school test. Which thought keeps your mind calm?",
+      "options": [
+        { "id": "prepared", "text": "I prepared and will do my best", "emoji": "📘", "isCorrect": true },
+        { "id": "fail", "text": "I will definitely fail", "emoji": "😰", "isCorrect": false },
+        { "id": "panic", "text": "I cannot remember anything", "emoji": "😵", "isCorrect": false },
+        { "id": "escape", "text": "I want to skip the test", "emoji": "🏃", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Someone wins a prize instead of you. What thought shows a happy mindset?",
+      "options": [
+        { "id": "jealous", "text": "It is unfair to me", "emoji": "😤", "isCorrect": false },
+        { "id": "self-blame", "text": "I am useless", "emoji": "💔", "isCorrect": false },
+        { "id": "happy-for-them", "text": "I am happy for their success", "emoji": "🎉", "isCorrect": true },
+        { "id": "angry-world", "text": "The world is against me", "emoji": "🌪️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You wake up feeling tired in the morning. Which thought starts the day positively?",
+      "options": [
+        { "id": "bad-day", "text": "Today will be terrible", "emoji": "☁️", "isCorrect": false },
+        { "id": "small-steps", "text": "I will take the day one step at a time", "emoji": "🌈", "isCorrect": true },
+        { "id": "complain", "text": "I do not want to do anything", "emoji": "😩", "isCorrect": false },
+        { "id": "give-up", "text": "I cannot handle today", "emoji": "🛑", "isCorrect": false }
+      ]
+    }
+  ]
+}

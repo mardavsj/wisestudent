@@ -1,0 +1,129 @@
+{
+  "title": "हारे हुए मैच की कहानी",
+  "subtitleProgress": "प्रश्न {{current}} - {{total}}",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "टीम खेल हार जाती है। सबसे अच्छा विचार?",
+      "options": [
+        { 
+          "id": "improve", 
+          "text": "अगली बार हम सुधार करेंगे!", 
+          "emoji": "📈", 
+          "isCorrect": true
+        },
+        { 
+          "id": "losers", 
+          "text": "हम हारने वाले हैं", 
+          "emoji": "😢", 
+          "isCorrect": false
+        },
+        { 
+          "id": "giveup", 
+          "text": "हार मान लो", 
+          "emoji": "😔", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "परीक्षा में असफल। सकारात्मक विचार?",
+      "options": [
+        { 
+          "id": "dumb", 
+          "text": "मैं मूर्ख हूँ", 
+          "emoji": "😞", 
+          "isCorrect": false
+        },
+        { 
+          "id": "study", 
+          "text": "अगली बार और पढ़ाई करेंगे!", 
+          "emoji": "📚",  
+          "isCorrect": true
+        },
+        { 
+          "id": "skip", 
+          "text": "स्कूल छोड़ दो", 
+          "emoji": "🚶", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "साइकिल से गिर गया। सबसे अच्छा विचार?",
+      "options": [
+        { 
+          "id": "never", 
+          "text": "फिर कभी सवारी नहीं करेंगे", 
+          "emoji": "🚫", 
+          "isCorrect": false
+        },
+        { 
+          "id": "hate", 
+          "text": "साइकिल से नफरत", 
+          "emoji": "😠", 
+          "isCorrect": false
+        },
+        { 
+          "id": "practice", 
+          "text": "अभ्यास पूर्ण बनाता है!", 
+          "emoji": "🚴", 
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ड्राइंग नहीं जीती। क्या सोचें?",
+      "options": [
+        { 
+          "id": "newideas", 
+          "text": "अगली बार नए विचार आज़माएँ!", 
+          "emoji": "🎨", 
+          "isCorrect": true
+        },
+        { 
+          "id": "bad", 
+          "text": "मैं कला में खराब हूँ", 
+          "emoji": "😞", 
+          "isCorrect": false
+        },
+        { 
+          "id": "stop", 
+          "text": "ड्राइंग बंद करें", 
+          "emoji": "✋", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "गोल करने से चूक गए। सकारात्मक विचार?",
+      "options": [
+        { 
+          "id": "terrible", 
+          "text": "मैं भयानक हूँ", 
+          "emoji": "😞", 
+          "isCorrect": false
+        },
+        { 
+          "id": "quit", 
+          "text": "टीम छोड़ दो", 
+          "emoji": "🚪", 
+          "isCorrect": false
+        },
+        { 
+          "id": "practice2", 
+          "text": "अभ्यास करते रहें!", 
+          "emoji": "⚽", 
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

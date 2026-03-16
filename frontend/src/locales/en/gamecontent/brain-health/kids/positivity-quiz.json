@@ -1,0 +1,54 @@
+{
+  "title": "Quiz on Positivity",
+  "subtitleComplete": "Quiz Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questionStats": "Question {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "What is positive thinking?",
+      "options": [
+        { "id": "complaining", "text": "Complaining", "emoji": "😤" },
+        { "id": "goodside", "text": "Looking for good side", "emoji": "😊", "isCorrect": true },
+        { "id": "givingup", "text": "Giving up", "emoji": "😔" }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Positive attitude means?",
+      "options": [
+        { "id": "brightside", "text": "See the bright side", "emoji": "☀️", "isCorrect": true },
+        { "id": "alwayssad", "text": "Always sad", "emoji": "😢" },
+        { "id": "ignore", "text": "Ignore problems", "emoji": "🙈" }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Gratitude is?",
+      "options": [
+        { "id": "forgetting", "text": "Forgetting", "emoji": "🤷" },
+        { "id": "complaining2", "text": "Complaining", "emoji": "😤" },
+        { "id": "thanks", "text": "Saying thanks", "emoji": "🙏", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Optimism is?",
+      "options": [
+        { "id": "hoping", "text": "Hoping for best", "emoji": "🌟", "isCorrect": true },
+        { "id": "worst", "text": "Expecting worst", "emoji": "😰" },
+        { "id": "nothing", "text": "Doing nothing", "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Positive thinking helps?",
+      "options": [
+        { "id": "worse", "text": "Feel worse", "emoji": "😢" },
+        { "id": "nochange", "text": "No change", "emoji": "😑" },
+        { "id": "better", "text": "Feel better", "emoji": "😊", "isCorrect": true }
+      ]
+    }
+  ]
+}

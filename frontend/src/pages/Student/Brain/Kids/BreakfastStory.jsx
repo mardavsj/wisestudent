@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BreakfastStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-5");
   const gameId = gameData?.id || "brain-kids-5";
+  
+  const gameContent = t("brain-health.kids.breakfast-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,135 +30,7 @@ const BreakfastStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Kid skips breakfast. Is this good for brain?",
-      options: [
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "👎", 
-         
-          isCorrect: true
-        },
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "👍", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which breakfast is best for your brain?",
-      options: [
-        { 
-          id: "cereal", 
-          text: "Whole grain cereal with milk", 
-          emoji: "🥣", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "candy", 
-          text: "Candy bar", 
-          emoji: "🍫", 
-          isCorrect: false
-        },
-        { 
-          id: "nothing", 
-          text: "Nothing", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Why is breakfast called the most important meal?",
-      options: [
-        { 
-          id: "expensive", 
-          text: "It's the most expensive meal", 
-          emoji: "💰", 
-          isCorrect: false
-        },
-        { 
-          id: "first", 
-          text: "It's the first meal after sleeping", 
-          emoji: "🌅", 
-          isCorrect: true
-        },
-        { 
-          id: "biggest", 
-          text: "It's the biggest meal", 
-          emoji: "🍽️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How does breakfast help your school performance?",
-      options: [
-        { 
-          id: "focus", 
-          text: "Helps you focus and learn better", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-        { 
-          id: "sleepy", 
-          text: "Makes you sleepy in class", 
-          emoji: "😴", 
-          isCorrect: false
-        },
-        { 
-          id: "nothing", 
-          text: "Does nothing", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "What should you do if you're running late for school?",
-      options: [
-        { 
-          id: "skip", 
-          text: "Skip breakfast completely", 
-          emoji: "⏰", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "wait", 
-          text: "Wait and eat later", 
-          emoji: "⏳", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "quick", 
-          text: "Grab a quick healthy snack", 
-          emoji: "🍎", 
-          
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -191,9 +67,17 @@ const BreakfastStory = () => {
 
   return (
     <GameShell
-      title="Breakfast for Brain Power"
+      title={gameContent?.title || "Breakfast for Brain Power"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Story Complete!"
+          : t("brain-health.kids.breakfast-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -214,8 +98,20 @@ const BreakfastStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.breakfast-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.breakfast-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

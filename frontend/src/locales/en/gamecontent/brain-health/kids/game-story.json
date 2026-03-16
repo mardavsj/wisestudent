@@ -1,0 +1,54 @@
+{
+  "title": "Game Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You want to play games but have homework. What should you do?",
+      "options": [
+        { "id": "homework", "text": "Finish homework first, then play", "emoji": "📚", "isCorrect": true },
+        { "id": "games", "text": "Play games first, homework later", "emoji": "🎮", "isCorrect": false },
+        { "id": "both", "text": "Do both at same time", "emoji": "🤹", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You've been playing games for 2 hours. What should you do?",
+      "options": [
+        { "id": "continue", "text": "Keep playing more", "emoji": "🎮", "isCorrect": false },
+        { "id": "break", "text": "Take a break and do other activities", "emoji": "⏸️", "isCorrect": true },
+        { "id": "ignore", "text": "Ignore everything else", "emoji": "😴", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Your friend invites you to play games during study time. What do you do?",
+      "options": [
+        { "id": "play", "text": "Play games with friend", "emoji": "🎮", "isCorrect": false },
+        { "id": "study", "text": "Finish studying first, then play", "emoji": "📖", "isCorrect": true },
+        { "id": "skip", "text": "Skip studying completely", "emoji": "⏭️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "How can you balance games and study time?",
+      "options": [
+        { "id": "onlygames", "text": "Play games all the time", "emoji": "🎮", "isCorrect": false },
+        { "id": "onlystudy", "text": "Never play games", "emoji": "📚", "isCorrect": false },
+        { "id": "schedule", "text": "Set a schedule: study time and game time", "emoji": "⏰", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You finished your homework early. What's a good choice?",
+      "options": [
+        { "id": "play", "text": "Play games as a reward", "emoji": "🎮", "isCorrect": true },
+        { "id": "morehomework", "text": "Do extra homework", "emoji": "📝", "isCorrect": false },
+        { "id": "nothing", "text": "Do nothing", "emoji": "😴", "isCorrect": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "title": "शांत रिफ्लेक्स",
+  "subtitleDefault": "अपनी शांत सजगता का परीक्षण करें!",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपनी शांत सजगता का परीक्षण करें!",
+  "readyTitle": "क्या आप अपने शांत कौशल का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "शांत रहने और तनाव प्रबंधन के बारे में सवालों के जवाब दें।",
+  "readyInstruction": "आपके पास {{total}} सवाल हैं और प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड",
+  "timeLabel": "समय",
+  "scoreLabel": "स्कोर",
+  "finishedTitle": "बहुत बढ़िया!",
+  "finishedScore": "आपने {{total}} में से {{score}} अंक प्राप्त किए!",
+  "finishedMessage": "आप मजबूत शांत कौशल विकसित कर रहे हैं!",
+  "playAgainButton": "फिर से खेलें",
+  "questions": [
+    {
+      "id": 1,
+      "question": "तनाव महसूस होने पर शांत रहने वाली क्रिया क्या है?",
+      "options": [
+        { "id": "a", "text": "घबराना और चिल्लाना", "emoji": "😰", "isCorrect": false },
+        { "id": "b", "text": "पागलों की तरह इधर-उधर भागना", "emoji": "🏃", "isCorrect": false },
+        { "id": "c", "text": "धीरे-धीरे और गहरी सांस लें", "emoji": "🌬️", "isCorrect": true },
+        { "id": "d", "text": "ज़ोर से चिल्लाना", "emoji": "😱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "कौन सी क्रिया आपको शांत रहने में मदद करती है?",
+      "options": [
+        { "id": "a", "text": "बहुत गुस्सा होना", "emoji": "😡", "isCorrect": false },
+        { "id": "b", "text": "धीरे-धीरे 10 तक गिनें", "emoji": "🔢", "isCorrect": true },
+        { "id": "c", "text": "हर चीज़ के बारे में चिंता करना", "emoji": "😟", "isCorrect": false },
+        { "id": "d", "text": "ज़ोर से चीखना", "emoji": "😱", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "शांत महसूस करने के लिए आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "a", "text": "दूसरों पर चिल्लाना", "emoji": "😠", "isCorrect": false },
+        { "id": "b", "text": "सबसे खराब स्थितियों के बारे में सोचना", "emoji": "😰", "isCorrect": false },
+        { "id": "c", "text": "एक ब्रेक लें और आराम करें", "emoji": "🧘", "isCorrect": true },
+        { "id": "d", "text": "ज़ोर-ज़ोर से रोना", "emoji": "😢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "तनाव के प्रति शांत प्रतिक्रिया कौन सी है?",
+      "options": [
+        { "id": "a", "text": "गहरी सांस लेने का अभ्यास करें", "emoji": "💨", "isCorrect": true },
+        { "id": "b", "text": "तुरंत घबरा जाना", "emoji": "😱", "isCorrect": false },
+        { "id": "c", "text": "समस्या की अनदेखी करें", "emoji": "🙈", "isCorrect": false },
+        { "id": "d", "text": "किसी चीज़ को मारना", "emoji": "🤬", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "मुश्किल परिस्थितियों में शांत रहने में क्या मदद करता है?",
+      "options": [
+        { "id": "a", "text": "गुस्से के साथ तुरंत प्रतिक्रिया देना", "emoji": "😡", "isCorrect": false },
+        { "id": "b", "text": "शांत रहना और स्पष्ट रूप से सोचना", "emoji": "😌", "isCorrect": true },
+        { "id": "c", "text": "लगातार चिंता करना", "emoji": "😟", "isCorrect": false },
+        { "id": "d", "text": "भाग जाना", "emoji": "🏃", "isCorrect": false }
+      ]
+    }
+  ]
+}

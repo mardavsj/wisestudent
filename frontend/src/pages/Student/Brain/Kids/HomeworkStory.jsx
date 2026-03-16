@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const HomeworkStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-15");
   const gameId = gameData?.id || "brain-kids-15";
+
+  const gameContent = t("brain-health.kids.homework-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,135 +30,7 @@ const HomeworkStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Kid studies with TV on. Is focus good?",
-      options: [
-        { 
-          id: "no", 
-          text: "No", 
-          emoji: "👎", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "yes", 
-          text: "Yes", 
-          emoji: "👍", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "maybe", 
-          text: "Maybe", 
-          emoji: "🤔", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "What's the best place to do homework?",
-      options: [
-        
-        { 
-          id: "bed", 
-          text: "In bed", 
-          emoji: "🛏️", 
-          isCorrect: false
-        },
-        { 
-          id: "floor", 
-          text: "On the floor", 
-          emoji: "📄", 
-          isCorrect: false
-        },
-        { 
-          id: "quiet", 
-          text: "A quiet desk or table", 
-          emoji: "📚", 
-          
-          isCorrect: true
-        },
-      ]
-    },
-    {
-      id: 3,
-      text: "You have homework and want to watch a show. What should you do?",
-      options: [
-        { 
-          id: "now", 
-          text: "Watch now and do homework later", 
-          emoji: "📺", 
-          isCorrect: false
-        },
-        { 
-          id: "later", 
-          text: "Finish homework first, then watch", 
-          emoji: "📺", 
-          isCorrect: true
-        },
-        { 
-          id: "both", 
-          text: "Do both at same time", 
-          emoji: "🤹", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "How should you organize your homework time?",
-      options: [
-        { 
-          id: "plan", 
-          text: "Plan which subjects first", 
-          emoji: "📋", 
-          isCorrect: true
-        },
-        { 
-          id: "random", 
-          text: "Do whatever you feel like", 
-          emoji: "🎲", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "skip", 
-          text: "Skip some subjects", 
-          emoji: "⏭️", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "You don't understand your homework. What's the best approach?",
-      options: [
-        { 
-          id: "copy", 
-          text: "Copy from friend", 
-          emoji: "👀", 
-          isCorrect: false
-        },
-        
-        { 
-          id: "skip", 
-          text: "Skip it", 
-          emoji: "⏭️", 
-          isCorrect: false
-        },
-        { 
-          id: "ask", 
-          text: "Ask teacher or parent for help", 
-          emoji: "🙋", 
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -183,9 +59,17 @@ const HomeworkStory = () => {
 
   return (
     <GameShell
-      title="Homework Story"
+      title={gameContent?.title || "Homework Story"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      subtitle={
+        !showResult
+          ? t("brain-health.kids.homework-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+          : gameContent?.subtitleComplete || "Story Complete!"
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -206,8 +90,20 @@ const HomeworkStory = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.homework-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.homework-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

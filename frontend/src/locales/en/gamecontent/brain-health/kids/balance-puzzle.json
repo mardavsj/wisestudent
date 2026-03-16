@@ -1,0 +1,25 @@
+{
+  "title": "Puzzle of Balance",
+  "subtitleComplete": "Puzzle Complete!",
+  "subtitleProgress": "Match {{current}}/{{total}} pairs",
+  "matchesLabel": "Matches: {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "instructionText": "Match screen time amounts with their effects!",
+  "leftTitle": "Screen Time",
+  "rightTitle": "Effects",
+  "matchButton": "Match!",
+  "leftItems": [
+    { "id": 1, "name": "1 hr Game", "emoji": "🎮" },
+    { "id": 2, "name": "5 hrs Screen", "emoji": "📱" },
+    { "id": 3, "name": "2 hrs Tablet", "emoji": "💻" },
+    { "id": 4, "name": "30 min Phone", "emoji": "📞" },
+    { "id": 5, "name": "6 hrs Gaming", "emoji": "🎮" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "Fun", "emoji": "😊" },
+    { "id": 2, "name": "Harm", "emoji": "😞" },
+    { "id": 3, "name": "Balance", "emoji": "⚖️" },
+    { "id": 4, "name": "Good", "emoji": "✅" },
+    { "id": 5, "name": "Bad", "emoji": "❌" }
+  ]
+}

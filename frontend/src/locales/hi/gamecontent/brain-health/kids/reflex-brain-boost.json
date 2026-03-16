@@ -1,0 +1,73 @@
+{
+  "title": "मस्तिष्क बूस्ट रिफ्लेक्स",
+  "subtitleDefault": "अपने मस्तिष्क स्वास्थ्य सजगता का परीक्षण करें!",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपने मस्तिष्क स्वास्थ्य सजगता का परीक्षण करें!",
+  "readyTitle": "क्या आप अपने मस्तिष्क स्वास्थ्य कौशल का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "मस्तिष्क-वर्धक गतिविधियों और आदतों के बारे में सवालों के जवाब दें।",
+  "readyInstruction": "आपके पास {{total}} सवाल हैं और प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड",
+  "timeLabel": "समय",
+  "scoreLabel": "स्कोर",
+  "finishedTitle": "बहुत बढ़िया!",
+  "finishedScore": "आपने {{total}} में से {{score}} अंक प्राप्त किए!",
+  "finishedMessage": "आप मस्तिष्क स्वास्थ्य की अच्छी आदतें विकसित कर रहे हैं!",
+  "playAgainButton": "फिर से खेलें",
+  "questions": [
+    {
+      "id": 1,
+      "question": "मस्तिष्क स्वास्थ्य के लिए कौन सी गतिविधि सबसे अधिक फायदेमंद है?",
+      "correctAnswer": "नियमित शारीरिक व्यायाम",
+      "options": [
+        { "text": "नियमित शारीरिक व्यायाम", "isCorrect": true, "emoji": "🏃" },
+        { "text": "मीठा स्नैक्स खाना", "isCorrect": false, "emoji": "🍬" },
+        { "text": "पूरी रात जागना", "isCorrect": false, "emoji": "🌙" },
+        { "text": "नाश्ता छोड़ना", "isCorrect": false, "emoji": "🍽️" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "याददाश्त और संज्ञानात्मक कार्य को सुधारने में क्या मदद करता है?",
+      "correctAnswer": "हर रात पर्याप्त नींद लेना",
+      "options": [
+        { "text": "एनर्जी ड्रिंक पीना", "isCorrect": false, "emoji": "☕" },
+        { "text": "लगातार मल्टीटास्किंग करना", "isCorrect": false, "emoji": "🔄" },
+        { "text": "हर रात पर्याप्त नींद लेना", "isCorrect": true, "emoji": "😴" },
+        { "text": "सभी सामाजिक मेलजोल से बचना", "isCorrect": false, "emoji": "🔇" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "इष्टतम मस्तिष्क कार्य के लिए कौन सा पोषक तत्व आवश्यक है?",
+      "correctAnswer": "मछली से ओमेगा-3 फैटी एसिड",
+      "options": [
+        { "text": "तले हुए भोजन से ट्रांस फैट", "isCorrect": false, "emoji": "🍟" },
+        { "text": "मछली से ओमेगा-3 फैटी एसिड", "isCorrect": true, "emoji": "🐟" },
+        { "text": "हाई फ्रुक्टोज कॉर्न सिरप", "isCorrect": false, "emoji": "🥤" },
+        { "text": "कृत्रिम खाद्य रंग", "isCorrect": false, "emoji": "🎨" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "कौन सी गतिविधि तनाव कम करने और मस्तिष्क की शक्ति बढ़ाने में मदद कर सकती है?",
+      "correctAnswer": "माइंडफुलनेस मेडिटेशन का अभ्यास करना",
+      "options": [
+        { "text": "हिंसक वीडियो गेम खेलना", "isCorrect": false, "emoji": "🎮" },
+        { "text": "अत्यधिक कैफीन का सेवन करना", "isCorrect": false, "emoji": "☕" },
+        { "text": "खुद को पूरी तरह से अलग-थलग कर लेना", "isCorrect": false, "emoji": "🚪" },
+        { "text": "माइंडफुलनेस मेडिटेशन का अभ्यास करना", "isCorrect": true, "emoji": "🧘" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "कौन सी आदत दीर्घकालिक मस्तिष्क स्वास्थ्य का समर्थन करती है?",
+      "correctAnswer": "जीवन भर सीखते रहना",
+      "options": [
+        { "text": "सभी मानसिक चुनौतियों से बचना", "isCorrect": false, "emoji": "😴" },
+        { "text": "जीवन भर सीखते रहना", "isCorrect": true, "emoji": "🎓" },
+        { "text": "प्रतिदिन घंटों टीवी देखना", "isCorrect": false, "emoji": "📺" },
+        { "text": "लगातार समस्याओं की अनदेखी करना", "isCorrect": false, "emoji": "🙈" }
+      ]
+    }
+  ]
+}

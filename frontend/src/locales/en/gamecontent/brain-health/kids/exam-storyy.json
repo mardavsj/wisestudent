@@ -1,0 +1,129 @@
+{
+  "title": "Exam Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Riya studies well but her hands feel cold when she opens the exam paper. What would help her most at that moment?",
+      "options": [
+        {
+          "id": "rush",
+          "text": "Read all questions quickly at once",
+          "emoji": "📄",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "text": "Look around to see how others are doing",
+          "emoji": "👀",
+          "isCorrect": false
+        },
+        {
+          "id": "pause",
+          "text": "Take a short pause and focus on one question",
+          "emoji": "⏸️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Before entering the exam hall, Aarav hears older students talking about how hard the test is. What is the smartest choice for him?",
+      "options": [
+        {
+          "id": "selftalk",
+          "text": "Remind himself of his own preparation",
+          "emoji": "💭",
+          "isCorrect": true
+        },
+        {
+          "id": "listen",
+          "text": "Keep listening to their worries",
+          "emoji": "👂",
+          "isCorrect": false
+        },
+        {
+          "id": "escape",
+          "text": "Leave the area and avoid the exam",
+          "emoji": "🚪",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Meena forgets an answer she studied many times. What helps her brain recall better?",
+      "options": [
+        {
+          "id": "panic",
+          "text": "Assume everything is forgotten",
+          "emoji": "⚠️",
+          "isCorrect": false
+        },
+        {
+          "id": "skipall",
+          "text": "Stop trying and move on forever",
+          "emoji": "⏭️",
+          "isCorrect": false
+        },
+        {
+          "id": "calm",
+          "text": "Stay calm and think step by step",
+          "emoji": "🧠",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "During the test, Kabir notices his heart beating fast. What action supports his focus?",
+      "options": [
+        {
+          "id": "shake",
+          "text": "Keep tapping the desk repeatedly",
+          "emoji": "🫨",
+          "isCorrect": false
+        },
+        {
+          "id": "breath",
+          "text": "Slow breathing while reading the question",
+          "emoji": "🌬️",
+          "isCorrect": true
+        },
+        {
+          "id": "fear",
+          "text": "Think only about the result",
+          "emoji": "📊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "After finishing early, Sana feels unsure about her answers. What is the most helpful next step?",
+      "options": [
+        {
+          "id": "review",
+          "text": "Review answers calmly and check mistakes",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "stress",
+          "text": "Worry about what she might have done wrong",
+          "emoji": "😟",
+          "isCorrect": false
+        },
+        {
+          "id": "copy",
+          "text": "Change answers by guessing again",
+          "emoji": "🎯",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

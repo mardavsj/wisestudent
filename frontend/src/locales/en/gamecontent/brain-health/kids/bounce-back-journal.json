@@ -1,0 +1,39 @@
+{
+  "title": "Journal of Bounce Back",
+  "subtitleComplete": "Journal Complete!",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "placeholder": "Write your thoughts here...",
+  "minCharsLabel": "{{current}}/{{min}} characters minimum",
+  "charsLabel": "{{current}} characters",
+  "submittedBtn": "Submitted!",
+  "submitBtn": "Submit Entry",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Write: \"One time I failed but tried again was ___.\"",
+      "guidance": "Think about a time you failed but didn't give up."
+    },
+    {
+      "id": 2,
+      "prompt": "Describe a time you fell down but got back up. What happened?",
+      "guidance": "Think about a setback you overcame."
+    },
+    {
+      "id": 3,
+      "prompt": "Write about a mistake you made and how you fixed it.",
+      "guidance": "How did you learn from your mistake?"
+    },
+    {
+      "id": 4,
+      "prompt": "Describe a challenge you faced and how you bounced back.",
+      "guidance": "What helped you recover and try again?"
+    },
+    {
+      "id": 5,
+      "prompt": "Write about a time you didn't give up even when it was hard.",
+      "guidance": "What kept you going?"
+    }
+  ]
+}

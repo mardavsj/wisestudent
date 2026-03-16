@@ -1,0 +1,68 @@
+{
+  "title": "दैनिक आदत रिफ्लेक्स",
+  "subtitleDefault": "अपनी दैनिक आदत के ज्ञान का परीक्षण करें!",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपनी दैनिक आदत के ज्ञान का परीक्षण करें!",
+  "readyTitle": "क्या आप अपनी दैनिक आदत के ज्ञान का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "स्वस्थ दैनिक आदतों और जीवनशैली विकल्पों के बारे में सवालों के जवाब दें।",
+  "readyInstruction": "आपके पास {{total}} सवाल हैं और प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड",
+  "timeLabel": "समय",
+  "scoreLabel": "स्कोर",
+  "finishedTitle": "बहुत बढ़िया!",
+  "finishedScore": "आपने {{total}} में से {{score}} अंक प्राप्त किए!",
+  "finishedMessage": "आप दैनिक आदत के प्रति मजबूत जागरूकता विकसित कर रहे हैं!",
+  "playAgainButton": "फिर से खेलें",
+  "questions": [
+    {
+      "id": 1,
+      "question": "मानसिक स्वास्थ्य के लिए एक अच्छी दैनिक आदत क्या है?",
+      "options": [
+        { "text": "हर रात देर तक जागना", "isCorrect": false, "emoji": "😴" },
+        { "text": "नियमित रूप से किताबें पढ़ें", "isCorrect": true, "emoji": "📚" },
+        { "text": "अक्सर नाश्ता छोड़ देना", "isCorrect": false, "emoji": "🥪" },
+        { "text": "सभी सामाजिक संपर्क से बचें", "isCorrect": false, "emoji": "😶" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "कौन सी आदत शारीरिक फिटनेस सुधारने में मदद करती है?",
+      "options": [
+        { "text": "नियमित रूप से व्यायाम करें", "isCorrect": true, "emoji": "💪" },
+        { "text": "प्रतिदिन जंक फूड खाएं", "isCorrect": false, "emoji": "🍔" },
+        { "text": "पूरे दिन टीवी देखें", "isCorrect": false, "emoji": "📺" },
+        { "text": "पानी पीने से बचें", "isCorrect": false, "emoji": "🚱" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "कौन सी आदत नींद की गुणवत्ता में सुधार करती है?",
+      "options": [
+        { "text": "सोने से पहले फोन का प्रयोग करें", "isCorrect": false, "emoji": "📱" },
+        { "text": "देर से कैफीन पिएं", "isCorrect": false, "emoji": "☕" },
+        { "text": "सोने की दिनचर्या छोड़ें", "isCorrect": false, "emoji": "⏰" },
+        { "text": "जल्दी सोने जाएं", "isCorrect": true, "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "कौन सी आदत मस्तिष्क के कार्य में सहायता करती है?",
+      "options": [
+        { "text": "नियमित रूप से डिहाइड्रेशन", "isCorrect": false, "emoji": "🏜️" },
+        { "text": "अक्सर भोजन छोड़ें", "isCorrect": false, "emoji": "🍽️" },
+        { "text": "खूब पानी पिएं", "isCorrect": true, "emoji": "💧" },
+        { "text": "लगातार काम टालना", "isCorrect": false, "emoji": "⏳" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "कौन सी आदत मजबूत रिश्ते बनाती है?",
+      "options": [
+        { "text": "खुलकर संवाद करें", "isCorrect": true, "emoji": "💬" },
+        { "text": "बातचीत से बचें", "isCorrect": false, "emoji": "🤐" },
+        { "text": "हमेशा योजनाएं रद्द करें", "isCorrect": false, "emoji": "❌" },
+        { "text": "दूसरों की भावनाओं को नज़रअंदाज़ करें", "isCorrect": false, "emoji": "🙄" }
+      ]
+    }
+  ]
+}

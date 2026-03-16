@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { PenSquare } from "lucide-react";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -7,10 +8,14 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const RestJournal = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-67");
   const gameId = gameData?.id || "brain-kids-67";
+  
+  const gameContent = t("brain-health.kids.rest-journal", { returnObjects: true });
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -28,44 +33,11 @@ const RestJournal = () => {
   const [entry, setEntry] = useState("");
   const [answered, setAnswered] = useState(false);
 
-  const stages = [
-    { 
-      id: 1, 
-      prompt: "Write: \"One way I relax is ___.\"", 
-      minLength: 10,
-      guidance: "Think about activities that help you relax and rest."
-    },
-    { 
-      id: 2, 
-      prompt: "I rest well when I ___.", 
-      minLength: 10,
-      guidance: "What conditions help you get good rest?"
-    },
-    { 
-      id: 3, 
-      prompt: "A calm bedtime routine I like is ___.", 
-      minLength: 10,
-      guidance: "Describe a peaceful routine before bed."
-    },
-    { 
-      id: 4, 
-      prompt: "Something that helps me sleep is ___.", 
-      minLength: 10,
-      guidance: "What makes it easier for you to fall asleep?"
-    },
-    { 
-      id: 5, 
-      prompt: "I feel refreshed after ___.", 
-      minLength: 10,
-      guidance: "What makes you feel energized and ready?"
-    }
-  ];
-
   const handleSubmit = () => {
     if (answered) return;
     
     const currentPrompt = stages[currentStage];
-    if (entry.trim().length < currentPrompt.minLength) {
+    if (entry.trim().length < (currentPrompt?.minLength || 10)) {
       showCorrectAnswerFeedback(0, false);
       return;
     }
@@ -98,8 +70,16 @@ const RestJournal = () => {
 
   return (
     <GameShell
-      title="Journal of Rest"
-      subtitle={!showResult ? `Entry ${currentStage + 1} of ${stages.length}` : "Journal Complete!"}
+      title={gameContent?.title || "Journal of Rest"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleDefault || "Journal Complete!" 
+          : t("brain-health.kids.rest-journal.subtitlePlaying", {
+              current: currentStage + 1,
+              total: stages.length,
+              defaultValue: `Entry ${currentStage + 1} of ${stages.length}`
+            })
+      }
       score={score}
       currentLevel={currentStage + 1}
       totalLevels={stages.length}
@@ -108,21 +88,33 @@ const RestJournal = () => {
       maxScore={stages.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      nextGamePathProp="/student/brain/kids/holiday-story"
       nextGameIdProp="brain-kids-68"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       gameId={gameId}
       gameType="brain"
+      backPath="/games/brain-health/kids"
     >
       <div className="space-y-8">
         {!showResult && stages[currentStage] ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Entry {currentStage + 1}/{stages.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{stages.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.rest-journal.entryLabel", {
+                    current: currentStage + 1,
+                    total: stages.length,
+                    defaultValue: `Entry ${currentStage + 1}/${stages.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.rest-journal.scoreLabel", {
+                    current: score,
+                    total: stages.length,
+                    defaultValue: `Score: ${score}/${stages.length}`
+                  })}
+                </span>
               </div>
               
               <div className="text-center mb-6">
@@ -138,14 +130,18 @@ const RestJournal = () => {
               <textarea
                 value={entry}
                 onChange={handleInputChange}
-                placeholder="Write your thoughts here..."
+                placeholder={gameContent?.placeholder || "Write your thoughts here..."}
                 className="w-full h-40 p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                 disabled={answered}
               />
               
               <div className="flex justify-between items-center mt-4">
                 <span className={`text-sm ${characterCount < minLength ? 'text-red-400' : 'text-green-400'}`}>
-                  {characterCount}/{minLength} characters minimum
+                  {t("brain-health.kids.rest-journal.characterMin", {
+                    current: characterCount,
+                    min: minLength,
+                    defaultValue: `${characterCount}/${minLength} characters minimum`
+                  })}
                 </span>
                 <button
                   onClick={handleSubmit}
@@ -156,7 +152,7 @@ const RestJournal = () => {
                       : "bg-white/20 text-white/50 cursor-not-allowed"
                   }`}
                 >
-                  Submit
+                  {gameContent?.submitButton || "Submit"}
                 </button>
               </div>
             </div>

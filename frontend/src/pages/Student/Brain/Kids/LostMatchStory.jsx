@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,10 +8,13 @@ import { getBrainKidsGames } from "../../../../pages/Games/GameCategories/Brain/
 
 const LostMatchStory = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-55");
   const gameId = gameData?.id || "brain-kids-55";
+
+  const gameContent = t("brain-health.kids.lost-match-story", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -56,129 +60,7 @@ const LostMatchStory = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Team loses a game. Best thought?",
-      options: [
-        { 
-          id: "improve", 
-          text: "Next time we'll improve!", 
-          emoji: "📈", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "losers", 
-          text: "We're losers", 
-          emoji: "😢", 
-          isCorrect: false
-        },
-        { 
-          id: "giveup", 
-          text: "Give up", 
-          emoji: "😔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Failed test. Positive thought?",
-      options: [
-        { 
-          id: "dumb", 
-          text: "I'm dumb", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          id: "study", 
-          text: "Study more next time!", 
-          emoji: "📚",  
-          isCorrect: true
-        },
-        { 
-          id: "skip", 
-          text: "Skip school", 
-          emoji: "🚶", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Fell off bike. Best thought?",
-      options: [
-        { 
-          id: "never", 
-          text: "Never ride again", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          id: "hate", 
-          text: "Hate bike", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          id: "practice", 
-          text: "Practice makes perfect!", 
-          emoji: "🚴", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Drawing didn't win. What to think?",
-      options: [
-        { 
-          id: "newideas", 
-          text: "Try new ideas next!", 
-          emoji: "🎨", 
-          isCorrect: true
-        },
-        { 
-          id: "bad", 
-          text: "I'm bad at art", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          id: "stop", 
-          text: "Stop drawing", 
-          emoji: "✋", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Missed goal. Positive thought?",
-      options: [
-        { 
-          id: "terrible", 
-          text: "I'm terrible", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          id: "quit", 
-          text: "Quit team", 
-          emoji: "🚪", 
-          isCorrect: false
-        },
-        { 
-          id: "practice2", 
-          text: "Keep practicing!", 
-          emoji: "⚽", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -225,8 +107,16 @@ const LostMatchStory = () => {
 
   return (
     <GameShell
-      title="Lost Match Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Lost Match Story"}
+      subtitle={
+        !showResult
+          ? t("brain-health.kids.lost-match-story.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+          : gameContent?.subtitleComplete || "Story Complete!"
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -249,8 +139,20 @@ const LostMatchStory = () => {
           <div className="space-y-4 sm:space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mb-4 sm:mb-5 md:mb-6">
-                <span className="text-white/80 text-xs sm:text-sm md:text-base">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold text-xs sm:text-sm md:text-base">Score: {score}/{questions.length}</span>
+                <span className="text-white/80 text-xs sm:text-sm md:text-base">
+                  {t("brain-health.kids.lost-match-story.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold text-xs sm:text-sm md:text-base">
+                  {t("brain-health.kids.lost-match-story.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-base sm:text-lg md:text-xl mb-4 sm:mb-5 md:mb-6 text-center">

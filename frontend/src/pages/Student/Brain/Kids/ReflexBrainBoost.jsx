@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -10,10 +11,13 @@ const ROUND_TIME = 10;
 
 const ReflexBrainBoost = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-3");
   const gameId = gameData?.id || "brain-kids-3";
+  
+  const gameContent = t("brain-health.kids.reflex-brain-boost", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -33,63 +37,7 @@ const ReflexBrainBoost = () => {
   const [answered, setAnswered] = useState(false);
   const timerRef = useRef(null);
 
-  const questions = [
-    {
-      id: 1,
-      question: "Which activity is most beneficial for brain health?",
-      correctAnswer: "Regular physical exercise",
-      options: [
-        { text: "Regular physical exercise", isCorrect: true, emoji: "🏃" },
-        { text: "Eating sugary snacks", isCorrect: false, emoji: "🍬" },
-        { text: "Staying up all night", isCorrect: false, emoji: "🌙" },
-        { text: "Skipping breakfast", isCorrect: false, emoji: "🍽️" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What helps improve memory and cognitive function?",
-      correctAnswer: "Getting adequate sleep each night",
-      options: [
-        { text: "Drinking energy drinks", isCorrect: false, emoji: "☕" },
-        { text: "Multitasking constantly", isCorrect: false, emoji: "🔄" },
-        { text: "Getting adequate sleep each night", isCorrect: true, emoji: "😴" },
-        { text: "Avoiding all social interaction", isCorrect: false, emoji: "🔇" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Which nutrient is essential for optimal brain function?",
-      correctAnswer: "Omega-3 fatty acids from fish",
-      options: [
-        { text: "Trans fats from fried food", isCorrect: false, emoji: "🍟" },
-        { text: "Omega-3 fatty acids from fish", isCorrect: true, emoji: "🐟" },
-        { text: "High fructose corn syrup", isCorrect: false, emoji: "🥤" },
-        { text: "Artificial food coloring", isCorrect: false, emoji: "🎨" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What activity can help reduce stress and boost brain power?",
-      correctAnswer: "Practicing mindfulness meditation",
-      options: [
-        { text: "Playing violent video games", isCorrect: false, emoji: "🎮" },
-        { text: "Consuming excessive caffeine", isCorrect: false, emoji: "☕" },
-        { text: "Isolating yourself completely", isCorrect: false, emoji: "🚪" },
-        { text: "Practicing mindfulness meditation", isCorrect: true, emoji: "🧘" },
-      ]
-    },
-    {
-      id: 5,
-      question: "Which habit supports long-term brain health?",
-      correctAnswer: "Engaging in lifelong learning",
-      options: [
-        { text: "Avoiding all mental challenges", isCorrect: false, emoji: "😴" },
-        { text: "Engaging in lifelong learning", isCorrect: true, emoji: "🎓" },
-        { text: "Watching TV for hours daily", isCorrect: false, emoji: "📺" },
-        { text: "Ignoring problems consistently", isCorrect: false, emoji: "🙈" }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   // Handle time up - move to next question or show results
   const handleTimeUp = useCallback(() => {
@@ -160,7 +108,7 @@ const ReflexBrainBoost = () => {
         timerRef.current = null;
       }
     };
-  }, [gameState, handleTimeUp]);
+  }, [gameState, currentRound, handleTimeUp]);
 
   const startGame = () => {
     setGameState("playing");
@@ -184,7 +132,7 @@ const ReflexBrainBoost = () => {
     resetFeedback();
 
     const isCorrect = option.isCorrect;
-    const isLastQuestion = currentRound === questions.length;
+    const isLastQuestion = currentRound === TOTAL_ROUNDS;
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
@@ -206,9 +154,17 @@ const ReflexBrainBoost = () => {
 
   return (
     <GameShell
-      title="Reflex Brain Boost"
+      title={gameContent?.title || "Reflex Brain Boost"}
       score={score}
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your brain health reflexes!` : "Test your brain health reflexes!"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.reflex-brain-boost.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your brain health reflexes!`
+            }) 
+          : gameContent?.subtitleDefault || "Test your brain health reflexes!"
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -228,18 +184,24 @@ const ReflexBrainBoost = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🧠</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Brain Health Skills?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Ready to Test Your Brain Health Skills?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Answer questions about brain-boosting activities and habits.
+              {gameContent?.readyDescription || "Answer questions about brain-boosting activities and habits."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.reflex-brain-boost.readyInstruction", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -248,13 +210,13 @@ const ReflexBrainBoost = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round"}:</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time"}:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score"}:</span> {score}
               </div>
             </div>
 
@@ -282,18 +244,24 @@ const ReflexBrainBoost = () => {
         {gameState === "finished" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🧠</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.finishedTitle || "Great Job!"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              You scored {score} out of {TOTAL_ROUNDS}!
+              {t("brain-health.kids.reflex-brain-boost.finishedScore", {
+                score,
+                total: TOTAL_ROUNDS,
+                defaultValue: `You scored ${score} out of ${TOTAL_ROUNDS}!`
+              })}
             </p>
             <p className="text-white/80 mb-6">
-              You're developing strong brain health habits!
+              {gameContent?.finishedMessage || "You're developing strong brain health habits!"}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
             >
-              Play Again
+              {gameContent?.playAgainButton || "Play Again"}
             </button>
           </div>
         )}

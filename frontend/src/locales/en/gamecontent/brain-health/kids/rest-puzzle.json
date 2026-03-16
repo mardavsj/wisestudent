@@ -1,0 +1,25 @@
+{
+  "title": "Puzzle of Rest",
+  "subtitleDefault": "Puzzle Complete!",
+  "subtitlePlaying": "Match {{current}}/{{total}} pairs",
+  "instruction": "Match rest activities with their effects!",
+  "leftTitle": "Rest Activities",
+  "rightTitle": "Effects",
+  "matchButton": "Match!",
+  "matchesLabel": "Matches: {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "leftItems": [
+    { "id": 1, "name": "Nap", "emoji": "🛌" },
+    { "id": 2, "name": "All-night TV", "emoji": "📺" },
+    { "id": 3, "name": "Early Sleep", "emoji": "🌙" },
+    { "id": 4, "name": "Late Gaming", "emoji": "🎮" },
+    { "id": 5, "name": "Quiet Time", "emoji": "🧘" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "Energy", "emoji": "🙂" },
+    { "id": 2, "name": "Tired", "emoji": "😢" },
+    { "id": 3, "name": "Restored", "emoji": "😊" },
+    { "id": 4, "name": "Exhausted", "emoji": "😞" },
+    { "id": 5, "name": "Calm", "emoji": "😌" }
+  ]
+}

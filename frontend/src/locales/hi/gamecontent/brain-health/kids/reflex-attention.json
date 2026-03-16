@@ -1,0 +1,73 @@
+{
+  "title": "एकाग्रता रिफ्लेक्स",
+  "subtitleDefault": "अपनी एकाग्रता सजगता का परीक्षण करें!",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपनी एकाग्रता सजगता का परीक्षण करें!",
+  "readyTitle": "क्या आप अपनी एकाग्रता कौशल का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "एकाग्रता और ध्यान सुधार के बारे में सवालों के जवाब दें।",
+  "readyInstruction": "आपके पास {{total}} सवाल हैं और प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड",
+  "timeLabel": "समय",
+  "scoreLabel": "स्कोर",
+  "finishedTitle": "बहुत बढ़िया!",
+  "finishedScore": "आपने {{total}} में से {{score}} अंक प्राप्त किए!",
+  "finishedMessage": "आप मजबूत एकाग्रता कौशल विकसित कर रहे हैं!",
+  "playAgainButton": "फिर से खेलें",
+  "questions": [
+    {
+      "id": 1,
+      "question": "कौन सी गतिविधि एकाग्रता और ध्यान सुधारने में मदद करती है?",
+      "correctAnswer": "निर्देशों को ध्यान से सुनना",
+      "options": [
+        { "text": "निर्देशों को ध्यान से सुनना", "isCorrect": true, "emoji": "👂" },
+        { "text": "कक्षा के दौरान ख्याली पुलाव पकाना", "isCorrect": false, "emoji": "☁️" },
+        { "text": "पढ़ाई करते समय दोस्तों से गप्पें मारना", "isCorrect": false, "emoji": "💬" },
+        { "text": "एक साथ कई डिवाइस पर काम करना", "isCorrect": false, "emoji": "📱" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "एकाग्रता बनाए रखने का सबसे अच्छा तरीका क्या है?",
+      "correctAnswer": "विकर्षणों को दूर करें और एक काम पर ध्यान केंद्रित करें",
+      "options": [
+        { "text": "कामों के बीच तेज़ी से स्विच करें", "isCorrect": false, "emoji": "🔄" },
+        { "text": "विकर्षणों को दूर करें और एक काम पर ध्यान केंद्रित करें", "isCorrect": true, "emoji": "🎯" },
+        { "text": "शोर-शराबे वाले माहौल में काम करें", "isCorrect": false, "emoji": "🔊" },
+        { "text": "बार-बार सोशल मीडिया चेक करें", "isCorrect": false, "emoji": "📱" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "कौन सी तकनीक ध्यान की अवधि में सुधार करती है?",
+      "correctAnswer": "माइंडफुलनेस अभ्यास करें",
+      "options": [
+        { "text": "असाइनमेंट जल्दी-जल्दी पूरा करना", "isCorrect": false, "emoji": "🏃" },
+        { "text": "माइंडफुलनेस अभ्यास करें", "isCorrect": true, "emoji": "🧘" },
+        { "text": "नियमित रूप से नाश्ता छोड़ना", "isCorrect": false, "emoji": "🍽️" },
+        { "text": "हर रात देर तक जागना", "isCorrect": false, "emoji": "🌙" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "लंबे कामों के दौरान ध्यान बनाए रखने में क्या मदद करता है?",
+      "correctAnswer": "नियमित रूप से छोटे ब्रेक लें",
+      "options": [
+        { "text": "बिना रुके घंटों काम करना", "isCorrect": false, "emoji": "⏰" },
+        { "text": "नियमित रूप से छोटे ब्रेक लें", "isCorrect": true, "emoji": "⏸️" },
+        { "text": "खूब सारे मीठे पेय पिएं", "isCorrect": false, "emoji": "🥤" },
+        { "text": "सभी शारीरिक गतिविधियों से बचें", "isCorrect": false, "emoji": "🛋️" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "कौन सी आदत बेहतर एकाग्रता कौशल का समर्थन करती है?",
+      "correctAnswer": "हर रात पर्याप्त नींद लें",
+      "options": [
+        { "text": "नियमित रूप से सोते समय के बाद तक जागना", "isCorrect": false, "emoji": "😴" },
+        { "text": "ऊर्जा के लिए जंक फूड खाएं", "isCorrect": false, "emoji": "🍔" },
+        { "text": "ज़रूरी भोजन छोड़ें", "isCorrect": false, "emoji": "🍽️" },
+        { "text": "हर रात पर्याप्त नींद लें", "isCorrect": true, "emoji": "🛌" }
+      ]
+    }
+  ]
+}

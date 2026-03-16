@@ -1,0 +1,68 @@
+{
+  "title": "Reflex Daily Habit",
+  "subtitleDefault": "Test your daily habit knowledge!",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your daily habit knowledge!",
+  "readyTitle": "Ready to Test Your Daily Habit Knowledge?",
+  "readyDescription": "Answer questions about healthy daily habits and lifestyle choices.",
+  "readyInstruction": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round",
+  "timeLabel": "Time",
+  "scoreLabel": "Score",
+  "finishedTitle": "Great Job!",
+  "finishedScore": "You scored {{score}} out of {{total}}!",
+  "finishedMessage": "You're developing strong daily habit awareness!",
+  "playAgainButton": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is a good daily habit for mental health?",
+      "options": [
+        { "text": "Stay up late every night", "isCorrect": false, "emoji": "😴" },
+        { "text": "Read books regularly", "isCorrect": true, "emoji": "📚" },
+        { "text": "Skip breakfast often", "isCorrect": false, "emoji": "🥪" },
+        { "text": "Avoid all social contact", "isCorrect": false, "emoji": "😶" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Which habit helps improve physical fitness?",
+      "options": [
+        { "text": "Exercise regularly", "isCorrect": true, "emoji": "💪" },
+        { "text": "Eat junk food daily", "isCorrect": false, "emoji": "🍔" },
+        { "text": "Watch TV all day", "isCorrect": false, "emoji": "📺" },
+        { "text": "Avoid drinking water", "isCorrect": false, "emoji": "🚱" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What habit improves sleep quality?",
+      "options": [
+        { "text": "Use phone before sleep", "isCorrect": false, "emoji": "📱" },
+        { "text": "Drink caffeine late", "isCorrect": false, "emoji": "☕" },
+        { "text": "Skip bedtime routine", "isCorrect": false, "emoji": "⏰" },
+        { "text": "Go to bed early", "isCorrect": true, "emoji": "😴" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which habit supports brain function?",
+      "options": [
+        { "text": "Dehydration regularly", "isCorrect": false, "emoji": "🏜️" },
+        { "text": "Skip meals often", "isCorrect": false, "emoji": "🍽️" },
+        { "text": "Drink plenty of water", "isCorrect": true, "emoji": "💧" },
+        { "text": "Procrastinate constantly", "isCorrect": false, "emoji": "⏳" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What habit builds strong relationships?",
+      "options": [
+        { "text": "Communicate openly", "isCorrect": true, "emoji": "💬" },
+        { "text": "Avoid conversations", "isCorrect": false, "emoji": "🤐" },
+        { "text": "Cancel plans always", "isCorrect": false, "emoji": "❌" },
+        { "text": "Ignore others' feelings", "isCorrect": false, "emoji": "🙄" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "title": "दिमागी ताकत के लिए नाश्ता",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "बच्चा नाश्ता छोड़ देता है। क्या यह दिमाग के लिए अच्छा है?",
+      "options": [
+        { "id": "maybe", "text": "शायद", "emoji": "🤔", "isCorrect": false },
+        { "id": "no", "text": "नहीं", "emoji": "👎", "isCorrect": true },
+        { "id": "yes", "text": "हाँ", "emoji": "👍", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "आपके दिमाग के लिए सबसे अच्छा नाश्ता कौन सा है?",
+      "options": [
+        { "id": "cereal", "text": "दूध के साथ साबुत अनाज का दलिया", "emoji": "🥣", "isCorrect": true },
+        { "id": "candy", "text": "कैंडी बार", "emoji": "🍫", "isCorrect": false },
+        { "id": "nothing", "text": "कुछ नहीं", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "नाश्ते को सबसे महत्वपूर्ण भोजन क्यों कहा जाता है?",
+      "options": [
+        { "id": "expensive", "text": "यह सबसे महंगा भोजन है", "emoji": "💰", "isCorrect": false },
+        { "id": "first", "text": "यह सोने के बाद पहला भोजन है", "emoji": "🌅", "isCorrect": true },
+        { "id": "biggest", "text": "यह सबसे बड़ा भोजन है", "emoji": "🍽️", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "नाश्ता आपके स्कूल के प्रदर्शन में कैसे मदद करता है?",
+      "options": [
+        { "id": "focus", "text": "ध्यान केंद्रित करने और बेहतर सीखने में मदद करता है", "emoji": "🎯", "isCorrect": true },
+        { "id": "sleepy", "text": "कक्षा में नींद आती है", "emoji": "😴", "isCorrect": false },
+        { "id": "nothing", "text": "कुछ नहीं करता", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "अगर आपको स्कूल के लिए देर हो रही है तो आपको क्या करना चाहिए?",
+      "options": [
+        { "id": "skip", "text": "नाश्ता पूरी तरह छोड़ दें", "emoji": "⏰", "isCorrect": false },
+        { "id": "wait", "text": "इंतज़ार करें और बाद में खाएं", "emoji": "⏳", "isCorrect": false },
+        { "id": "quick", "text": "जल्दी से एक स्वस्थ नाश्ता लें", "emoji": "🍎", "isCorrect": true }
+      ]
+    }
+  ]
+}

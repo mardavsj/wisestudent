@@ -1,0 +1,42 @@
+{
+  "title": "Journal of Feelings",
+  "subtitleProgress": "Entry {{current}} of {{total}}",
+  "subtitleComplete": "Journal Complete!",
+  "entryLabel": "Entry {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "placeholder": "Write your thoughts here...",
+  "minLengthLabel": "{{current}}/{{min}} characters minimum",
+  "submitButton": "Submit",
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Write: \"Today I felt ___ because ___.\"",
+      "minLength": 10,
+      "guidance": "Think about your feelings today and what caused them."
+    },
+    {
+      "id": 2,
+      "prompt": "Describe a time when you felt happy. What made you feel that way?",
+      "minLength": 10,
+      "guidance": "Think about moments that brought you joy."
+    },
+    {
+      "id": 3,
+      "prompt": "Write about a time you felt sad. What happened?",
+      "minLength": 10,
+      "guidance": "It's okay to feel sad sometimes. What made you feel this way?"
+    },
+    {
+      "id": 4,
+      "prompt": "Describe a situation that made you feel angry. How did you handle it?",
+      "minLength": 10,
+      "guidance": "Think about what made you angry and how you responded."
+    },
+    {
+      "id": 5,
+      "prompt": "Write about a time you felt excited. What were you excited about?",
+      "minLength": 10,
+      "guidance": "Think about something that made you feel thrilled or eager."
+    }
+  ]
+}

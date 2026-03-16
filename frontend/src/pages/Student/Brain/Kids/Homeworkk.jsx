@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,10 +8,13 @@ import { getBrainKidsGames } from "../../../../pages/Games/GameCategories/Brain/
 
 const Homeworkk = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-58");
   const gameId = gameData?.id || "brain-kids-58";
+
+  const gameContent = t("brain-health.kids.homeworkk", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -56,131 +60,7 @@ const Homeworkk = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "Kid finds homework hard. Positive thought?",
-      options: [
-        { 
-          id: "step", 
-          text: "I can learn step by step", 
-          emoji: "📚", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "never", 
-          text: "I'll never get it", 
-          emoji: "😞", 
-          
-          isCorrect: false
-        },
-        { 
-          id: "skip", 
-          text: "Skip it", 
-          emoji: "🚫", 
-          
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Math problem tough. Best thought?",
-      options: [
-        { 
-          id: "hate", 
-          text: "I hate math", 
-          emoji: "😠", 
-          isCorrect: false
-        },
-        { 
-          id: "different", 
-          text: "Try different way!", 
-          emoji: "💡", 
-          isCorrect: true
-        },
-        { 
-          id: "giveup", 
-          text: "Give up", 
-          emoji: "😔", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "Reading book difficult. Positive?",
-      options: [
-        { 
-          id: "boring", 
-          text: "Boring book", 
-          emoji: "😑", 
-          isCorrect: false
-        },
-        { 
-          id: "stop", 
-          text: "Stop reading", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          id: "slowly", 
-          text: "Read slowly and enjoy!", 
-          emoji: "📖", 
-          isCorrect: true
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "Science project hard. Thought?",
-      options: [
-        { 
-          id: "help", 
-          text: "Ask for help and learn!", 
-          emoji: "🤝", 
-          isCorrect: true
-        },
-        { 
-          id: "bad", 
-          text: "I'm bad at science", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          id: "dont", 
-          text: "Don't do it", 
-          emoji: "🚫", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "Writing essay tough. Best thought?",
-      options: [
-        { 
-          id: "cant", 
-          text: "I can't write", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          id: "copy", 
-          text: "Copy from friend", 
-          emoji: "📋", 
-          isCorrect: false
-        },
-        { 
-          id: "sentence", 
-          text: "Write one sentence at a time!", 
-          emoji: "✍️", 
-          isCorrect: true
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -227,8 +107,16 @@ const Homeworkk = () => {
 
   return (
     <GameShell
-      title="Homework Story"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Story Complete!"}
+      title={gameContent?.title || "Homework Story"}
+      subtitle={
+        !showResult
+          ? t("brain-health.kids.homeworkk.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+          : gameContent?.subtitleComplete || "Story Complete!"
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -251,8 +139,20 @@ const Homeworkk = () => {
           <div className="space-y-4 sm:space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mb-4 sm:mb-5 md:mb-6">
-                <span className="text-white/80 text-xs sm:text-sm md:text-base">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold text-xs sm:text-sm md:text-base">Score: {score}/{questions.length}</span>
+                <span className="text-white/80 text-xs sm:text-sm md:text-base">
+                  {t("brain-health.kids.homeworkk.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold text-xs sm:text-sm md:text-base">
+                  {t("brain-health.kids.homeworkk.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-base sm:text-lg md:text-xl mb-4 sm:mb-5 md:mb-6 text-center">

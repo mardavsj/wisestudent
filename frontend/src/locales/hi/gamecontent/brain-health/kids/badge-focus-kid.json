@@ -1,0 +1,63 @@
+{
+  "title": "बैज: फोकस किड",
+  "subtitleComplete": "बैज पूरा हुआ!",
+  "subtitleProgress": "चुनौती {{current}} / {{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "फोकस चुनौती 1",
+      "question": "अपना ध्यान (फोकस) सुधारने का सबसे अच्छा तरीका क्या है?",
+      "options": [
+        { "text": "ध्यान केंद्रित करने का अभ्यास करें, ध्यान भंग करने वाली चीजों को हटा दें, और ब्रेक लें", "emoji": "🎯", "isCorrect": true },
+        { "text": "कभी ब्रेक न लें", "emoji": "⏰", "isCorrect": false },
+        { "text": "हमेशा मल्टीटास्क (एक साथ कई काम) करें", "emoji": "🤹", "isCorrect": false },
+        { "text": "सीखने की सभी गतिविधियों से बचें", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "फोकस चुनौती 2",
+      "question": "कौन सा माहौल (वातावरण) आपको सबसे अच्छे से ध्यान केंद्रित करने में मदद करता है?",
+      "options": [
+        { "text": "तेज आवाज और शोरगुल वाली जगह", "emoji": "🔊", "isCorrect": false },
+        { "text": "शांत और सुव्यवस्थित जगह", "emoji": "🔇", "isCorrect": true },
+        { "text": "भीड़भाड़ वाला खेल का मैदान", "emoji": "🎮", "isCorrect": false },
+        { "text": "टीवी के सामने", "emoji": "📺", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "फोकस चुनौती 3",
+      "question": "आपको खेल और पढ़ाई में कैसे संतुलन बनाना चाहिए?",
+      "options": [
+        { "text": "पूरा दिन गेम खेलें", "emoji": "🎮", "isCorrect": false },
+        { "text": "बिना ब्रेक के पूरा दिन पढ़ाई करें", "emoji": "📚", "isCorrect": false },
+        { "text": "एक समय सारिणी बनाएं: पढ़ाई का समय और खेलने का समय", "emoji": "⏰", "isCorrect": true },
+        { "text": "कभी गेम न खेलें", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "फोकस चुनौती 4",
+      "question": "अधिक समय तक ध्यान केंद्रित रखने में आपकी क्या मदद करता है?",
+      "options": [
+        { "text": "कामों के बीच छोटे ब्रेक लेना", "emoji": "⏸️", "isCorrect": true },
+        { "text": "बिना आराम किए लगातार काम करना", "emoji": "⏰", "isCorrect": false },
+        { "text": "सब कुछ एक साथ करना", "emoji": "🤹", "isCorrect": false },
+        { "text": "सभी गतिविधियों से बचना", "emoji": "😴", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "फोकस चुनौती 5",
+      "question": "फोकस करने की एक प्रमुख रणनीति क्या है?",
+      "options": [
+        { "text": "ध्यान भटकाने वाली चीजों को हटा दें और व्यवस्थित रहें", "emoji": "🎯", "isCorrect": true },
+        { "text": "आस-पास बहुत सी ध्यान भटकाने वाली चीजें रखें", "emoji": "📱", "isCorrect": false },
+        { "text": "अव्यवस्था (अराजकता) में काम करें", "emoji": "🌀", "isCorrect": false },
+        { "text": "कभी कोई योजना न बनाएं", "emoji": "❌", "isCorrect": false }
+      ]
+    }
+  ]
+}

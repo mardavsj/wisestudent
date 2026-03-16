@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -10,10 +11,13 @@ const ROUND_TIME = 10;
 
 const ReflexAttention = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-13");
   const gameId = gameData?.id || "brain-kids-13";
+  
+  const gameContent = t("brain-health.kids.reflex-attention", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -33,63 +37,7 @@ const ReflexAttention = () => {
   const [answered, setAnswered] = useState(false);
   const timerRef = useRef(null);
 
-  const questions = [
-    {
-      id: 1,
-      question: "Which activity helps improve focus and attention?",
-      correctAnswer: "Listening carefully to instructions",
-      options: [
-        { text: "Listening carefully to instructions", isCorrect: true, emoji: "👂" },
-        { text: "Daydreaming during class", isCorrect: false, emoji: "☁️" },
-        { text: "Chatting with friends while studying", isCorrect: false, emoji: "💬" },
-        { text: "Multitasking on multiple devices", isCorrect: false, emoji: "📱" }
-      ]
-    },
-    {
-      id: 2,
-      question: "What is the best approach to maintain concentration?",
-      correctAnswer: "Eliminate distractions and focus on one task",
-      options: [
-        { text: "Switch between tasks rapidly", isCorrect: false, emoji: "🔄" },
-        { text: "Eliminate distractions and focus on one task", isCorrect: true, emoji: "🎯" },
-        { text: "Work in a noisy environment", isCorrect: false, emoji: "🔊" },
-        { text: "Check social media frequently", isCorrect: false, emoji: "📱" }
-      ]
-    },
-    {
-      id: 3,
-      question: "Which technique improves attention span?",
-      correctAnswer: "Practice mindfulness exercises",
-      options: [
-        { text: "Rushing through assignments", isCorrect: false, emoji: "🏃" },
-        { text: "Practice mindfulness exercises", isCorrect: true, emoji: "🧘" },
-        { text: "Skipping breakfast regularly", isCorrect: false, emoji: "🍽️" },
-        { text: "Staying up late every night", isCorrect: false, emoji: "🌙" }
-      ]
-    },
-    {
-      id: 4,
-      question: "What helps sustain attention during long tasks?",
-      correctAnswer: "Take regular short breaks",
-      options: [
-        { text: "Work for hours without stopping", isCorrect: false, emoji: "⏰" },
-        { text: "Take regular short breaks", isCorrect: true, emoji: "⏸️" },
-        { text: "Drink lots of sugary drinks", isCorrect: false, emoji: "🥤" },
-        { text: "Avoid all physical activity", isCorrect: false, emoji: "🛋️" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Which habit supports better attention skills?",
-      correctAnswer: "Get adequate sleep each night",
-      options: [
-        { text: "Stay up past bedtime regularly", isCorrect: false, emoji: "😴" },
-        { text: "Eat junk food for energy", isCorrect: false, emoji: "🍔" },
-        { text: "Skip important meals", isCorrect: false, emoji: "🍽️" },
-        { text: "Get adequate sleep each night", isCorrect: true, emoji: "🛌" },
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   // Handle time up - move to next question or show results
   const handleTimeUp = useCallback(() => {
@@ -160,7 +108,7 @@ const ReflexAttention = () => {
         timerRef.current = null;
       }
     };
-  }, [gameState, handleTimeUp]);
+  }, [gameState, currentRound, handleTimeUp]);
 
   const startGame = () => {
     setGameState("playing");
@@ -184,7 +132,7 @@ const ReflexAttention = () => {
     resetFeedback();
 
     const isCorrect = option.isCorrect;
-    const isLastQuestion = currentRound === questions.length;
+    const isLastQuestion = currentRound === TOTAL_ROUNDS;
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
@@ -206,9 +154,17 @@ const ReflexAttention = () => {
 
   return (
     <GameShell
-      title="Reflex Attention"
+      title={gameContent?.title || "Reflex Attention"}
       score={score}
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your attention reflexes!` : "Test your attention reflexes!"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.reflex-attention.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your attention reflexes!`
+            }) 
+          : gameContent?.subtitleDefault || "Test your attention reflexes!"
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -228,18 +184,24 @@ const ReflexAttention = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🧠</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Attention Skills?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Ready to Test Your Attention Skills?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Answer questions about focus and attention improvement.
+              {gameContent?.readyDescription || "Answer questions about focus and attention improvement."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.reflex-attention.readyInstruction", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -248,13 +210,13 @@ const ReflexAttention = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round"}:</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time"}:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score"}:</span> {score}
               </div>
             </div>
 
@@ -282,18 +244,24 @@ const ReflexAttention = () => {
         {gameState === "finished" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">🧠</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Great Job!</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.finishedTitle || "Great Job!"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              You scored {score} out of {TOTAL_ROUNDS}!
+              {t("brain-health.kids.reflex-attention.finishedScore", {
+                score,
+                total: TOTAL_ROUNDS,
+                defaultValue: `You scored ${score} out of ${TOTAL_ROUNDS}!`
+              })}
             </p>
             <p className="text-white/80 mb-6">
-              You're developing strong attention skills!
+              {gameContent?.finishedMessage || "You're developing strong attention skills!"}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-6 rounded-full font-bold transition-all mb-4"
             >
-              Play Again
+              {gameContent?.playAgainButton || "Play Again"}
             </button>
           </div>
         )}

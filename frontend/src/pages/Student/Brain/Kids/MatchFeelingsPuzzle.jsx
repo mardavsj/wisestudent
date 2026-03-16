@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const MatchFeelingsPuzzle = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-44");
   const gameId = gameData?.id || "brain-kids-44";
+  
+  const gameContent = t("brain-health.kids.match-feelings-puzzle", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,41 +31,16 @@ const MatchFeelingsPuzzle = () => {
   const [showResult, setShowResult] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  // Left side – story actions / body clues (not direct)
-const leftItems = [
-  { id: 1, name: "Quiet grin", emoji: "🌤️" },
-  { id: 2, name: "Eyes feel heavy", emoji: "💧" },
-  { id: 3, name: "Tight eyebrows", emoji: "🧩" },
-  { id: 4, name: "Can’t stay still", emoji: "⚡" },
-  { id: 5, name: "Body feels shaky", emoji: "🍃" },
-];
+  // Left side – expressions
+  const leftItems = Array.isArray(gameContent?.leftItems) ? gameContent.leftItems : [];
 
- // Right side – inner feelings (concept-based)
-const rightItems = [
-  { id: 1, name: "Joyful inside", emoji: "🎈" },
-  { id: 2, name: "Feeling low", emoji: "🌧️" },
-  { id: 3, name: "Upset energy", emoji: "🔥" },
-  { id: 4, name: "Burst of excitement", emoji: "🎉" },
-  { id: 5, name: "Feeling unsafe", emoji: "🛑" },
-];
+  // Right side – feelings
+  const rightItems = Array.isArray(gameContent?.rightItems) ? gameContent.rightItems : [];
 
- // Correct matches (logic-based, not emoji-based)
-const correctMatches = [
-  { leftId: 1, rightId: 1 }, // Quiet grin → Joyful inside
-  { leftId: 2, rightId: 2 }, // Eyes feel heavy → Feeling low
-  { leftId: 3, rightId: 3 }, // Tight eyebrows → Upset energy
-  { leftId: 4, rightId: 4 }, // Can’t stay still → Burst of excitement
-  { leftId: 5, rightId: 5 }, // Body feels shaky → Feeling unsafe
-];
+  // Correct matches
+  const correctMatches = Array.isArray(gameContent?.correctMatches) ? gameContent.correctMatches : [];
 
- // Shuffled right items for display
-const shuffledRightItems = [
-  rightItems[3], // Burst of excitement
-  rightItems[4], // Feeling low
-  rightItems[1], // Feeling unsafe
-  rightItems[0], // Joyful inside
-  rightItems[2], // Upset energy
-];
+
 
   const handleLeftSelect = (item) => {
     if (showResult) return;
@@ -122,8 +101,16 @@ const shuffledRightItems = [
 
   return (
     <GameShell
-      title="Puzzle: Match Feelings"
-      subtitle={!showResult ? `Match ${matches.length}/${leftItems.length}` : "Puzzle Complete!"}
+      title={gameContent?.title || "Puzzle: Match Feelings"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Puzzle Complete!"
+          : t("brain-health.kids.match-feelings-puzzle.subtitleProgress", {
+              current: matches.length,
+              total: leftItems.length,
+              defaultValue: `Match ${matches.length}/${leftItems.length}`,
+            })
+      }
       score={score}
       currentLevel={matches.length + 1}
       totalLevels={leftItems.length}
@@ -145,18 +132,32 @@ const shuffledRightItems = [
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Matches: {matches.length}/{leftItems.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{leftItems.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.match-feelings-puzzle.subtitleProgress", {
+                    current: matches.length,
+                    total: leftItems.length,
+                    defaultValue: `Matches: ${matches.length}/${leftItems.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.match-feelings-puzzle.scoreLabel", {
+                    score,
+                    total: leftItems.length,
+                    defaultValue: `Score: ${score}/${leftItems.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6 text-center">
-                Match the expressions with the correct feelings!
+                {gameContent?.instruction || "Match the expressions with the correct feelings!"}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Expressions</h3>
+                  <h3 className="text-white font-bold text-center mb-4">
+                    {gameContent?.expressionsTitle || "Expressions"}
+                  </h3>
                   {leftItems.map((item) => (
                     <button
                       key={item.id}
@@ -174,7 +175,6 @@ const shuffledRightItems = [
                         <span className="text-3xl">{item.emoji}</span>
                         <div className="text-left">
                           <div className="text-white font-semibold">{item.name}</div>
-                          <div className="text-white/70 text-sm">{item.description}</div>
                         </div>
                       </div>
                     </button>
@@ -183,8 +183,10 @@ const shuffledRightItems = [
 
                 {/* Right side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Feelings</h3>
-                  {shuffledRightItems.map((item) => (
+                  <h3 className="text-white font-bold text-center mb-4">
+                    {gameContent?.feelingsTitle || "Feelings"}
+                  </h3>
+                  {rightItems.map((item) => (
                     <button
                       key={item.id}
                       onClick={() => handleRightSelect(item)}
@@ -201,7 +203,6 @@ const shuffledRightItems = [
                         <span className="text-3xl">{item.emoji}</span>
                         <div className="text-left">
                           <div className="text-white font-semibold">{item.name}</div>
-                          <div className="text-white/70 text-sm">{item.description}</div>
                         </div>
                       </div>
                     </button>
@@ -220,7 +221,7 @@ const shuffledRightItems = [
                       : "bg-white/20 text-white/50 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton || "Match"}
                 </button>
               </div>
             </div>

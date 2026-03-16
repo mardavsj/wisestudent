@@ -1,0 +1,54 @@
+{
+  "title": "होमवर्क की कहानी",
+  "subtitleProgress": "प्रश्न {{current}} / {{total}}",
+  "subtitleComplete": "कहानी पूरी हुई!",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "बच्चा होमवर्क के बजाय कार्टून देखता है। सबसे अच्छा?",
+      "options": [
+        { "id": "homework", "text": "पहले होमवर्क करें", "emoji": "📚", "isCorrect": true },
+        { "id": "watch", "text": "और देखें", "emoji": "📺", "isCorrect": false },
+        { "id": "skip", "text": "होमवर्क छोड़ें", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "बच्चा गेम खेलता है, गणित के होमवर्क को नज़रअंदाज़ करता है। सबसे अच्छा?",
+      "options": [
+        { "id": "watch", "text": "देर तक खेलें", "emoji": "🎮", "isCorrect": false },
+        { "id": "homework", "text": "पहले गणित पूरा करें", "emoji": "📐", "isCorrect": true },
+        { "id": "skip", "text": "कोई गणित नहीं", "emoji": "❌", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "बच्चा फोन स्क्रॉल करता है, पढ़ना छोड़ देता है। सबसे अच्छा विकल्प?",
+      "options": [
+        { "id": "skip", "text": "कोई पढ़ना नहीं", "emoji": "❌", "isCorrect": false },
+        { "id": "scroll", "text": "और स्क्रॉल करें", "emoji": "📱", "isCorrect": false },
+        { "id": "read", "text": "पहले पढ़ें", "emoji": "📖", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "बच्चा वीडियो देखता है, प्रोजेक्ट भूल जाता है। सबसे अच्छा?",
+      "options": [
+        { "id": "project", "text": "प्रोजेक्ट पर काम करें", "emoji": "📝", "isCorrect": true },
+        { "id": "videos", "text": "वीडियो देखें", "emoji": "📹", "isCorrect": false },
+        { "id": "skip", "text": "प्रोजेक्ट छोड़ें", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "बच्चा ऑनलाइन चैट करता है, पढ़ाई का समय नहीं। सबसे अच्छा?",
+      "options": [
+        { "id": "chat", "text": "और चैट करें", "emoji": "💬", "isCorrect": false },
+        { "id": "skip", "text": "कोई पढ़ाई नहीं", "emoji": "❌", "isCorrect": false },
+        { "id": "study", "text": "पहले पढ़ाई करें", "emoji": "📖", "isCorrect": true }
+      ]
+    }
+  ]
+}

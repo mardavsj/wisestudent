@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const FeelingsQuizz = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-42");
   const gameId = gameData?.id || "brain-kids-42";
+
+  const gameContent = t("brain-health.kids.feelings-quizz", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,131 +30,7 @@ const FeelingsQuizz = () => {
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-  {
-    id: 1,
-    text: "You studied hard but still didn’t do well in a test. How might you feel?",
-    options: [
-      
-      {
-        id: "b",
-        text: "Sleepy",
-        emoji: "😴",
-        isCorrect: false
-      },
-      {
-        id: "a",
-        text: "Disappointed",
-        emoji: "😞",
-        isCorrect: true
-      },
-      {
-        id: "c",
-        text: "Hungry",
-        emoji: "🍔",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 2,
-    text: "Your friend surprises you with a birthday gift. What feeling fits best?",
-    options: [
-      {
-        id: "a",
-        text: "Excited",
-        emoji: "🤩",
-        isCorrect: true
-      },
-      {
-        id: "b",
-        text: "Tired",
-        emoji: "🥱",
-        isCorrect: false
-      },
-      {
-        id: "c",
-        text: "Cold",
-        emoji: "🧊",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 3,
-    text: "Someone takes your things without asking. How are you likely to feel?",
-    options: [
-      
-      {
-        id: "b",
-        text: "Bored",
-        emoji: "😐",
-        isCorrect: false
-      },
-      {
-        id: "c",
-        text: "Sleepy",
-        emoji: "😴",
-        isCorrect: false
-      },
-      {
-        id: "a",
-        text: "Angry",
-        emoji: "😠",
-        isCorrect: true
-      },
-    ]
-  },
-  {
-    id: 4,
-    text: "You are about to speak on stage for the first time. What feeling is common?",
-    options: [
-      {
-        id: "a",
-        text: "Nervous",
-        emoji: "😬",
-        isCorrect: true
-      },
-      {
-        id: "b",
-        text: "Hungry",
-        emoji: "🍕",
-        isCorrect: false
-      },
-      {
-        id: "c",
-        text: "Dirty",
-        emoji: "🧼",
-        isCorrect: false
-      }
-    ]
-  },
-  {
-    id: 5,
-    text: "You help someone and they thank you warmly. How do you feel inside?",
-    options: [
-      
-      {
-        id: "b",
-        text: "Thirsty",
-        emoji: "🥤",
-        isCorrect: false
-      },
-      {
-        id: "a",
-        text: "Proud",
-        emoji: "😊",
-        isCorrect: true
-      },
-      {
-        id: "c",
-        text: "Noisy",
-        emoji: "🔊",
-        isCorrect: false
-      }
-    ]
-  }
-];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
 
   const handleChoice = (isCorrect) => {
@@ -180,8 +60,16 @@ const FeelingsQuizz = () => {
 
   return (
     <GameShell
-      title="Quiz on Feelings"
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      title={gameContent?.title || "Quiz on Feelings"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Quiz Complete!"
+          : t("brain-health.kids.feelings-quizz.subtitleProgress", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`,
+            })
+      }
       score={score}
       currentLevel={currentQuestion + 1}
       totalLevels={questions.length}
@@ -203,8 +91,20 @@ const FeelingsQuizz = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.feelings-quizz.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.feelings-quizz.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`,
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">

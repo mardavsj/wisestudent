@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const BounceBackKidBadge = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-100");
   const gameId = gameData?.id || "brain-kids-100";
+  
+  const gameContent = t("brain-health.kids.bounce-back-kid-badge", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,146 +31,7 @@ const BounceBackKidBadge = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const challenges = [
-    {
-      id: 1,
-      title: "Bounce Back Challenge 1",
-      question: "How do you overcome failure?",
-      options: [
-        { 
-          text: "Learn from it and try again", 
-          emoji: "💪", 
-          isCorrect: true
-        },
-        { 
-          text: "Give up immediately", 
-          emoji: "🏳️", 
-          isCorrect: false
-        },
-        { 
-          text: "Blame others", 
-          emoji: "👆", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid challenges", 
-          emoji: "🙈", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Bounce Back Challenge 2",
-      question: "What helps you bounce back?",
-      options: [
-        
-        { 
-          text: "Quitting when things get hard", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          text: "Staying positive and trying again", 
-          emoji: "✨", 
-          isCorrect: true
-        },
-        { 
-          text: "Avoiding all problems", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          text: "Never learning from mistakes", 
-          emoji: "🔄", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Bounce Back Challenge 3",
-      question: "How do resilient people handle setbacks?",
-      options: [
-        
-        { 
-          text: "Stay down and give up", 
-          emoji: "⬇️", 
-          isCorrect: false
-        },
-        { 
-          text: "Blame everything on others", 
-          emoji: "👆", 
-          isCorrect: false
-        },
-        { 
-          text: "Get back up and keep trying", 
-          emoji: "⬆️", 
-          isCorrect: true
-        },
-        { 
-          text: "Never face challenges", 
-          emoji: "🚶", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Bounce Back Challenge 4",
-      question: "What is the best way to handle failure?",
-      options: [
-        { 
-          text: "Use it as a lesson and improve", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          text: "Never try again", 
-          emoji: "🛑", 
-          isCorrect: false
-        },
-        { 
-          text: "Make excuses", 
-          emoji: "😤", 
-          isCorrect: false
-        },
-        { 
-          text: "Avoid all risks", 
-          emoji: "🔒", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Bounce Back Challenge 5",
-      question: "How do you build resilience?",
-      options: [
-       
-        { 
-          text: "Avoid all difficulties", 
-          emoji: "🚫", 
-          isCorrect: false
-        },
-        { 
-          text: "Give up easily", 
-          emoji: "😞", 
-          isCorrect: false
-        },
-        { 
-          text: "Never learn from mistakes", 
-          emoji: "🔄", 
-          isCorrect: false
-        },
-         { 
-          text: "Face challenges, learn from failures, and keep trying", 
-          emoji: "🎯", 
-          isCorrect: true
-        },
-      ]
-    }
-  ];
+  const challenges = Array.isArray(gameContent?.challenges) ? gameContent.challenges : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -196,9 +61,17 @@ const BounceBackKidBadge = () => {
 
   return (
     <GameShell
-      title="Badge: Bounce Back Kid"
+      title={gameContent?.title || "Badge: Bounce Back Kid"}
       score={score}
-      subtitle={!showResult ? `Challenge ${challenge + 1} of ${challenges.length}` : "Badge Complete!"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Badge Complete!"
+          : t("brain-health.kids.bounce-back-kid-badge.subtitleProgress", {
+              current: challenge + 1,
+              total: challenges.length,
+              defaultValue: `Challenge ${challenge + 1} of ${challenges.length}`,
+            })
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -217,8 +90,20 @@ const BounceBackKidBadge = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Challenge {challenge + 1}/{challenges.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{challenges.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.bounce-back-kid-badge.challengeLabel", {
+                    current: challenge + 1,
+                    total: challenges.length,
+                    defaultValue: `Challenge ${challenge + 1}/${challenges.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.bounce-back-kid-badge.scoreLabel", {
+                    score,
+                    total: challenges.length,
+                    defaultValue: `Score: ${score}/${challenges.length}`,
+                  })}
+                </span>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{currentChallengeData.title}</h3>

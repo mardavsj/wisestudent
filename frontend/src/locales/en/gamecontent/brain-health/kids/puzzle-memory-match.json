@@ -1,0 +1,40 @@
+{
+  "title": "Puzzle: Memory Match",
+  "subtitleComplete": "Game Complete!",
+  "subtitleProgress": "Match fruits shown earlier ({{current}}/{{total}} matched)",
+  "fruitsShownTitle": "Fruits Shown",
+  "matchTheseTitle": "Match These",
+  "selectAFruit": "Select a fruit",
+  "selectedLabel": "Selected: {{name}}",
+  "matchButton": "Match Selected",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "Matched: {{current}}/{{total}}",
+  "greatMemoryTitle": "Great Memory!",
+  "greatMemoryDescription": "You correctly matched {{score}} out of {{total}} fruits! Your memory is working well!",
+  "coinsAwarded": "+{{score}} Coins",
+  "rememberedFruits": "You remembered the fruits: Apple, Banana, Orange, Grape, and Mango!",
+  "keepPracticingTitle": "Keep Practicing!",
+  "keepPracticingDescription": "You matched {{score}} out of {{total}} fruits correctly. Remember, practice helps improve your memory!",
+  "tryAgainPrompt": "Try to match each fruit with its pair. The fruits were: Apple, Banana, Orange, Grape, and Mango!",
+  "leftItems": [
+    { "id": 1, "name": "Apple", "emoji": "🍎" },
+    { "id": 2, "name": "Banana", "emoji": "🍌" },
+    { "id": 3, "name": "Orange", "emoji": "🍊" },
+    { "id": 4, "name": "Grape", "emoji": "🍇" },
+    { "id": 5, "name": "Watermelon", "emoji": "🍉" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "Red fruit" },
+    { "id": 2, "name": "Yellow fruit" },
+    { "id": 3, "name": "Orange fruit" },
+    { "id": 4, "name": "Purple fruit" },
+    { "id": 5, "name": "Green fruit" }
+  ],
+  "correctMatches": [
+    { "leftId": 1, "rightId": 1 },
+    { "leftId": 2, "rightId": 2 },
+    { "leftId": 3, "rightId": 3 },
+    { "leftId": 4, "rightId": 4 },
+    { "leftId": 5, "rightId": 5 }
+  ]
+}

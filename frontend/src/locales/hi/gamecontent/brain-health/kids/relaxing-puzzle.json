@@ -1,0 +1,26 @@
+{
+  "title": "रिलैक्सिंग पहेली",
+  "subtitleDefault": "वस्तुओं का मिलान करें!",
+  "subtitleMatching": "मिलान {{current}}/{{total}}",
+  "subtitleComplete": "पहेली पूरी हुई!",
+  "matchesLabel": "मिलान: {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "instruction": "आरामदायक गतिविधियों का उनके प्रभावों से मिलान करें!",
+  "leftTitle": "आरामदायक गतिविधियाँ",
+  "rightTitle": "विश्राम के प्रभाव",
+  "matchButton": "मिलान करें",
+  "leftItems": [
+    { "id": 1, "name": "योग", "emoji": "🧘" },
+    { "id": 2, "name": "संगीत", "emoji": "🎵" },
+    { "id": 3, "name": "गहरी साँस लेना", "emoji": "💨" },
+    { "id": 4, "name": "प्रकृति की सैर", "emoji": "🌳" },
+    { "id": 5, "name": "पढ़ना", "emoji": "📖" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "शांत", "emoji": "😌" },
+    { "id": 2, "name": "विश्राम", "emoji": "😊" },
+    { "id": 3, "name": "शांति", "emoji": "🕊️" },
+    { "id": 4, "name": "धैर्य", "emoji": "🌿" },
+    { "id": 5, "name": "निर्मल", "emoji": "✨" }
+  ]
+}

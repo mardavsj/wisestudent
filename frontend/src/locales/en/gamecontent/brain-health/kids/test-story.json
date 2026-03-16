@@ -1,0 +1,53 @@
+{
+  "title": "Test Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Kid fails spelling test. Best response?",
+      "options": [
+        { "id": "give", "text": "Give up on spelling", "emoji": "🏳️", "isCorrect": false },
+        { "id": "study", "text": "Study and try again", "emoji": "📚", "isCorrect": true },
+        { "id": "blame", "text": "Blame the test", "emoji": "👆", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Kid gets low score on math. What should they do?",
+      "options": [
+        { "id": "quit", "text": "Quit math class", "emoji": "🚶", "isCorrect": false },
+        { "id": "cry", "text": "Cry and give up", "emoji": "😢", "isCorrect": false },
+        { "id": "practice", "text": "Practice more and retake", "emoji": "✏️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Kid fails science quiz. Best approach?",
+      "options": [
+        { "id": "ignore", "text": "Ignore the result", "emoji": "😑", "isCorrect": false },
+        { "id": "review", "text": "Review mistakes and study", "emoji": "🔬", "isCorrect": true },
+        { "id": "angry", "text": "Get angry at teacher", "emoji": "😠", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Kid doesn't pass reading test. What's right?",
+      "options": [
+        { "id": "stop", "text": "Stop reading", "emoji": "🚫", "isCorrect": false },
+        { "id": "blame4", "text": "Blame the book", "emoji": "📚", "isCorrect": false },
+        { "id": "read", "text": "Read more and practice", "emoji": "📖", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Kid fails history exam. Best action?",
+      "options": [
+        { "id": "learn", "text": "Study harder and retake", "emoji": "📜", "isCorrect": true },
+        { "id": "avoid", "text": "Avoid history class", "emoji": "🙈", "isCorrect": false },
+        { "id": "complain", "text": "Complain about it", "emoji": "😤", "isCorrect": false }
+      ]
+    }
+  ]
+}

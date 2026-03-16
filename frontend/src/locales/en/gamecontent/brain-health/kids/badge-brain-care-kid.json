@@ -1,0 +1,63 @@
+{
+  "title": "Badge: Brain Care Kid",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Brain Health Challenge 1",
+      "question": "What is the best way to keep your brain healthy?",
+      "options": [
+        { "text": "Eat healthy, exercise, and sleep well", "emoji": "🙂‍↔️", "isCorrect": true },
+        { "text": "Only play video games", "emoji": "🎮", "isCorrect": false },
+        { "text": "Skip meals and stay up late", "emoji": "😴", "isCorrect": false },
+        { "text": "Avoid all physical activity", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Brain Health Challenge 2",
+      "question": "Which activity helps your brain the most?",
+      "options": [
+        { "text": "Watching TV all day", "emoji": "📺", "isCorrect": false },
+        { "text": "Reading, learning, and staying active", "emoji": "📚", "isCorrect": true },
+        { "text": "Eating only junk food", "emoji": "🍟", "isCorrect": false },
+        { "text": "Never drinking water", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Brain Health Challenge 3",
+      "question": "What should you do for better brain function?",
+      "options": [
+        { "text": "Drink lots of soda", "emoji": "🥤", "isCorrect": false },
+        { "text": "Skip breakfast daily", "emoji": "🍳", "isCorrect": false },
+        { "text": "Drink water, eat healthy, and exercise", "emoji": "💧", "isCorrect": true },
+        { "text": "Stay up very late", "emoji": "🌙", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Brain Health Challenge 4",
+      "question": "How can you improve your focus?",
+      "options": [
+        { "text": "Practice focusing, take breaks, and stay organized", "emoji": "🎯", "isCorrect": true },
+        { "text": "Never take breaks", "emoji": "⏰", "isCorrect": false },
+        { "text": "Always multitask", "emoji": "📱", "isCorrect": false },
+        { "text": "Avoid learning new things", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Brain Health Challenge 5",
+      "question": "What makes a brain-healthy daily routine?",
+      "options": [
+        { "text": "Regular sleep, healthy meals, and mental activities", "emoji": "🧠", "isCorrect": true },
+        { "text": "Irregular sleep schedule", "emoji": "😴", "isCorrect": false },
+        { "text": "Only eat snacks", "emoji": "🍪", "isCorrect": false },
+        { "text": "Avoid all exercise", "emoji": "🚫", "isCorrect": false }
+      ]
+    }
+  ]
+}

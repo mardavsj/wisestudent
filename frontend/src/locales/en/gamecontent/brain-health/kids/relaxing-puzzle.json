@@ -1,0 +1,26 @@
+{
+  "title": "Puzzle of Relaxing",
+  "subtitleDefault": "Match the items!",
+  "subtitleMatching": "Match {{current}}/{{total}}",
+  "subtitleComplete": "Puzzle Complete!",
+  "matchesLabel": "Matches: {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "instruction": "Match the relaxing activities with their effects!",
+  "leftTitle": "Relaxing Activities",
+  "rightTitle": "Relaxation Effects",
+  "matchButton": "Match",
+  "leftItems": [
+    { "id": 1, "name": "Yoga", "emoji": "🧘"},
+    { "id": 2, "name": "Music", "emoji": "🎵"},
+    { "id": 3, "name": "Deep Breathing", "emoji": "💨"},
+    { "id": 4, "name": "Nature Walk", "emoji": "🌳"},
+    { "id": 5, "name": "Reading", "emoji": "📖"}
+  ],
+  "rightItems": [
+    { "id": 1, "name": "Calm", "emoji": "😌"},
+    { "id": 2, "name": "Relax", "emoji": "😊"},
+    { "id": 3, "name": "Peace", "emoji": "🕊️"},
+    { "id": 4, "name": "Tranquil", "emoji": "🌿"},
+    { "id": 5, "name": "Serene", "emoji": "✨"}
+  ]
+}

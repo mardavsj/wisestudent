@@ -1,0 +1,64 @@
+{
+  "title": "अनुक्रम रिफ्लेक्स",
+  "subtitleDefault": "अपने अनुक्रम ज्ञान का परीक्षण करें!",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपने अनुक्रम ज्ञान का परीक्षण करें!",
+  "readyTitle": "क्या आप अपने अनुक्रम ज्ञान का परीक्षण करने के लिए तैयार हैं?",
+  "readyDescription": "सही अनुक्रम क्रम की पहचान करें।",
+  "readyInstruction": "आपके पास {{total}} सवाल हैं और प्रत्येक के लिए {{time}} सेकंड हैं!",
+  "startButton": "खेल शुरू करें",
+  "roundLabel": "राउंड",
+  "timeLabel": "समय",
+  "scoreLabel": "स्कोर",
+  "questions": [
+    {
+      "id": 1,
+      "question": "कौन सा अनुक्रम सही वर्णानुक्रम में है?",
+      "options": [
+        { "text": "A → B → C → D", "isCorrect": true, "emoji": "🔤" },
+        { "text": "D → C → B → A", "isCorrect": false, "emoji": "🔤" },
+        { "text": "B → A → D → C", "isCorrect": false, "emoji": "🔤" },
+        { "text": "C → A → B → D", "isCorrect": false, "emoji": "🔤" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "कौन सा अनुक्रम सही संख्यात्मक क्रम में है?",
+      "options": [
+        { "text": "3 → 1 → 4 → 2", "isCorrect": false, "emoji": "🔢" },
+        { "text": "4 → 3 → 2 → 1", "isCorrect": false, "emoji": "🔢" },
+        { "text": "1 → 2 → 3 → 4", "isCorrect": true, "emoji": "🔢" },
+        { "text": "2 → 4 → 1 → 3", "isCorrect": false, "emoji": "🔢" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "कौन सा अनुक्रम सही रंग स्पेक्ट्रम क्रम में है?",
+      "options": [
+        { "text": "Green → Blue → Red → Orange", "isCorrect": false, "emoji": "🌈" },
+        { "text": "Yellow → Red → Green → Blue", "isCorrect": false, "emoji": "🌈" },
+        { "text": "Red → Orange → Yellow → Green", "isCorrect": true, "emoji": "🌈" },
+        { "text": "Blue → Green → Yellow → Red", "isCorrect": false, "emoji": "🌈" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "कौन सा अनुक्रम सही वर्णानुक्रम में है?",
+      "options": [
+        { "text": "Elephant → Cat → Fox → Dog", "isCorrect": false, "emoji": "🐾" },
+        { "text": "Fox → Dog → Cat → Elephant", "isCorrect": false, "emoji": "🐾" },
+        { "text": "Dog → Fox → Elephant → Cat", "isCorrect": false, "emoji": "🐾" },
+        { "text": "Cat → Dog → Elephant → Fox", "isCorrect": true, "emoji": "🐾" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "कौन सा अनुक्रम सही वर्णानुक्रम में है?",
+      "options": [
+        { "text": "Cherry → Apple → Date → Banana", "isCorrect": false, "emoji": "🍎" },
+        { "text": "Date → Cherry → Banana → Apple", "isCorrect": false, "emoji": "🍎" },
+        { "text": "Banana → Date → Apple → Cherry", "isCorrect": false, "emoji": "🍎" },
+        { "text": "Apple → Banana → Cherry → Date", "isCorrect": true, "emoji": "🍎" }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -10,10 +11,13 @@ const ROUND_TIME = 10;
 
 const ReflexEmotions = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-43");
   const gameId = gameData?.id || "brain-kids-43";
+  
+  const gameContent = t("brain-health.kids.reflex-emotions", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -63,59 +67,7 @@ const ReflexEmotions = () => {
   const timerRef = useRef(null);
   const currentRoundRef = useRef(0);
 
-  const questions = [
-  {
-    id: 1,
-    text: "A young chef burns the first pancake but tries again with a smile. What feeling fits best?",
-    options: [
-      { id: "a", text: "Confused", emoji: "🧩", isCorrect: false },
-      { id: "b", text: "Sleepy", emoji: "🌙", isCorrect: false },
-      { id: "c", text: "Hopeful", emoji: "🌱", isCorrect: true },
-      { id: "d", text: "Bored", emoji: "🪵", isCorrect: false }
-    ]
-  },
-  {
-    id: 2,
-    text: "A firefighter hears the alarm and runs quickly to help others. What emotion is shown?",
-    options: [
-      { id: "a", text: "Playful", emoji: "🎲", isCorrect: false },
-      { id: "b", text: "Lazy", emoji: "🛋️", isCorrect: false },
-      { id: "c", text: "Proud", emoji: "🏅", isCorrect: false },
-      { id: "d", text: "Alert", emoji: "🚨", isCorrect: true }
-    ]
-  },
-  {
-    id: 3,
-    text: "An artist tears a drawing by mistake and feels heavy inside. What emotion matches?",
-    options: [
-      { id: "a", text: "Excited", emoji: "🎉", isCorrect: false },
-      { id: "b", text: "Disappointed", emoji: "🌧️", isCorrect: true },
-      { id: "c", text: "Brave", emoji: "🛡️", isCorrect: false },
-      { id: "d", text: "Curious", emoji: "🔍", isCorrect: false }
-    ]
-  },
-  {
-    id: 4,
-    text: "A doctor helps a child feel better and walks out smiling quietly. What emotion fits?",
-    options: [
-      { id: "a", text: "Satisfied", emoji: "🌼", isCorrect: true },
-      { id: "b", text: "Angry", emoji: "🔥", isCorrect: false },
-      { id: "c", text: "Scared", emoji: "🍃", isCorrect: false },
-      { id: "d", text: "Jealous", emoji: "🪞", isCorrect: false }
-    ]
-  },
-  {
-    id: 5,
-    text: "A teacher enters a noisy classroom but takes a deep breath before speaking. What emotion is shown?",
-    options: [
-      { id: "a", text: "Surprised", emoji: "🎁", isCorrect: false },
-      { id: "b", text: "Excited", emoji: "⚡", isCorrect: false },
-      { id: "c", text: "Shy", emoji: "🐚", isCorrect: false },
-      { id: "d", text: "Calm", emoji: "🪷", isCorrect: true }
-    ]
-  }
-];
-
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   // Update ref when currentRound changes
   useEffect(() => {
@@ -216,7 +168,7 @@ const ReflexEmotions = () => {
     resetFeedback();
 
     const isCorrect = option.isCorrect;
-    const isLastQuestion = currentRound === questions.length;
+    const isLastQuestion = currentRound === TOTAL_ROUNDS;
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
@@ -237,7 +189,7 @@ const ReflexEmotions = () => {
   // Log when game completes and update location state with nextGameId
   useEffect(() => {
     if (gameState === "finished") {
-      console.log(`🎮 Reflex Emotions game completed! Score: ${score}/${questions.length}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
+      console.log(`🎮 Reflex Emotions game completed! Score: ${score}/${TOTAL_ROUNDS}, gameId: ${gameId}, nextGamePath: ${nextGamePath}, nextGameId: ${nextGameId}`);
       
       // Update location state with nextGameId for GameOverModal
       if (nextGameId && window.history && window.history.replaceState) {
@@ -248,15 +200,23 @@ const ReflexEmotions = () => {
         }, '');
       }
     }
-  }, [gameState, score, gameId, nextGamePath, nextGameId, questions.length]);
+  }, [gameState, score, gameId, nextGamePath, nextGameId]);
 
   const finalScore = score;
   const currentQuestion = questions[currentRound - 1];
 
   return (
     <GameShell
-      title="Reflex Emotions"
-      subtitle={gameState === "playing" ? `Round ${currentRound}/${TOTAL_ROUNDS}: Test your emotions knowledge!` : "Test your emotions knowledge!"}
+      title={gameContent?.title || "Reflex Emotions"}
+      subtitle={
+        gameState === "playing" 
+          ? t("brain-health.kids.reflex-emotions.subtitlePlaying", {
+              current: currentRound,
+              total: TOTAL_ROUNDS,
+              defaultValue: `Round ${currentRound}/${TOTAL_ROUNDS}: Test your emotions knowledge!`
+            }) 
+          : gameContent?.subtitleDefault || "Test your emotions knowledge!"
+      }
       currentLevel={currentRound}
       totalLevels={TOTAL_ROUNDS}
       coinsPerLevel={coinsPerLevel}
@@ -278,18 +238,24 @@ const ReflexEmotions = () => {
         {gameState === "ready" && (
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
             <div className="text-5xl mb-6">😊</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Test Your Emotions Knowledge?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {gameContent?.readyTitle || "Ready to Test Your Emotions Knowledge?"}
+            </h3>
             <p className="text-white/90 text-lg mb-6">
-              Identify emotions and understand feelings.
+              {gameContent?.readyDescription || "Identify emotions and understand feelings."}
             </p>
             <p className="text-white/80 mb-6">
-              You have {TOTAL_ROUNDS} questions with {ROUND_TIME} seconds each!
+              {t("brain-health.kids.reflex-emotions.readyInstruction", {
+                total: TOTAL_ROUNDS,
+                time: ROUND_TIME,
+                defaultValue: `You have ${TOTAL_ROUNDS} questions with ${ROUND_TIME} seconds each!`
+              })}
             </p>
             <button
               onClick={startGame}
               className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-8 rounded-full text-xl font-bold shadow-lg transition-all transform hover:scale-105"
             >
-              Start Game
+              {gameContent?.startButton || "Start Game"}
             </button>
           </div>
         )}
@@ -298,13 +264,13 @@ const ReflexEmotions = () => {
           <div className="space-y-8">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="text-white">
-                <span className="font-bold">Round:</span> {currentRound}/{TOTAL_ROUNDS}
+                <span className="font-bold">{gameContent?.roundLabel || "Round"}:</span> {currentRound}/{TOTAL_ROUNDS}
               </div>
               <div className={`font-bold ${timeLeft <= 2 ? 'text-red-500' : timeLeft <= 3 ? 'text-yellow-500' : 'text-green-400'}`}>
-                <span className="text-white">Time:</span> {timeLeft}s
+                <span className="text-white">{gameContent?.timeLabel || "Time"}:</span> {timeLeft}s
               </div>
               <div className="text-white">
-                <span className="font-bold">Score:</span> {score}
+                <span className="font-bold">{gameContent?.scoreLabel || "Score"}:</span> {score}
               </div>
             </div>
 

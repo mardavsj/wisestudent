@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Image } from "lucide-react";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -7,10 +8,13 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const BalanceTechPoster = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-76");
   const gameId = gameData?.id || "brain-kids-76";
+  
+  const gameContent = t("brain-health.kids.balance-tech-poster", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -27,48 +31,7 @@ const BalanceTechPoster = () => {
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
 
-  const stages = [
-    {
-      question: 'Which poster best demonstrates healthy screen time habits?',
-      choices: [
-        { text: "Poster filled exclusively with various electronic devices", correct: false, emoji: "📱" },
-        { text: "Poster showing diverse activities with moderate device usage", correct: true, emoji: "🌳" },
-        { text: "Poster depicting broken electronics with warning signs", correct: false, emoji: "🚫" }
-      ]
-    },
-    {
-      question: 'Which poster illustrates effective daily routine management?',
-      choices: [
-        { text: "Poster displaying scheduled blocks for different activities", correct: true, emoji: "⚖️" },
-        { text: "Poster with overlapping chaotic activity schedules", correct: false, emoji: "🎭" },
-        { text: "Poster showing only entertainment-focused activities", correct: false, emoji: "📱" },
-      ]
-    },
-    {
-      question: 'Which poster represents responsible technology usage?',
-      choices: [
-        { text: "Poster promoting continuous consumption of digital media", correct: false, emoji: "📱" },
-        { text: "Poster restricting all non-digital recreational options", correct: false, emoji: "📱" },
-        { text: "Poster balancing digital engagement with physical activities", correct: true, emoji: "🤸" },
-      ]
-    },
-    {
-      question: 'Which poster exemplifies mindful digital consumption?',
-      choices: [
-        { text: "Poster encouraging unlimited unrestricted access", correct: false, emoji: "📱" },
-        { text: "Poster emphasizing quality over quantity in tech use", correct: true, emoji: "🧠" },
-        { text: "Poster advocating for constant connectivity", correct: false, emoji: "📱" }
-      ]
-    },
-    {
-      question: 'Which poster showcases integrated lifestyle wellness?',
-      choices: [
-        { text: "Poster harmonizing technological and non-tech elements", correct: true, emoji: "🎵" },
-        { text: "Poster focusing solely on digital achievements", correct: false, emoji: "📱" },
-        { text: "Poster eliminating all traditional activities", correct: false, emoji: "🪇" }
-      ]
-    }
-  ];
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
 
   const handleSelect = (isCorrect) => {
     if (answered || showResult) return;
@@ -95,8 +58,16 @@ const BalanceTechPoster = () => {
 
   return (
     <GameShell
-      title="Poster: Balance Tech Challenge"
-      subtitle={!showResult ? `Stage ${currentStage + 1} of ${stages.length}` : "Poster Complete!"}
+      title={gameContent?.title || "Poster: Balance Tech Challenge"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Poster Complete!"
+          : t("brain-health.kids.balance-tech-poster.subtitleProgress", {
+              current: currentStage + 1,
+              total: stages.length,
+              defaultValue: `Stage ${currentStage + 1} of ${stages.length}`,
+            })
+      }
       score={score}
       currentLevel={currentStage + 1}
       totalLevels={stages.length}
@@ -118,8 +89,20 @@ const BalanceTechPoster = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Stage {currentStage + 1}/{stages.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{stages.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.balance-tech-poster.stageLabel", {
+                    current: currentStage + 1,
+                    total: stages.length,
+                    defaultValue: `Stage ${currentStage + 1}/${stages.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.balance-tech-poster.scoreLabel", {
+                    score,
+                    total: stages.length,
+                    defaultValue: `Score: ${score}/${stages.length}`,
+                  })}
+                </span>
               </div>
               
               <div className="text-center mb-6">

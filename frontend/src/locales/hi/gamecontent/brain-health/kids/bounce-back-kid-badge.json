@@ -1,0 +1,64 @@
+{
+  "title": "बैज: बाउंस बैक किड",
+  "subtitleComplete": "बैज पूरा हुआ!",
+  "subtitleProgress": "चुनौती {{current}} / {{total}}",
+  "challengeLabel": "चुनौती {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "बाउंस बैक चुनौती 1",
+      "question": "आप असफलता से कैसे उबरते हैं?",
+      "options": [
+        { "text": "उससे सीखें और फिर से कोशिश करें", "emoji": "💪", "isCorrect": true },
+        { "text": "तुरंत हार मान लें", "emoji": "🏳️", "isCorrect": false },
+        { "text": "दूसरों को दोष दें", "emoji": "👆", "isCorrect": false },
+        { "text": "चुनौतियों से बचें", "emoji": "🙈", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "बाउंस बैक चुनौती 2",
+      "question": "वापस उठने में आपकी क्या मदद करता है?",
+      "options": [
+        { "text": "जब चीज़ें मुश्किल हों तो छोड़ देना", "emoji": "😞", "isCorrect": false },
+        { "text": "सकारात्मक रहना और फिर से कोशिश करना", "emoji": "✨", "isCorrect": true },
+        { "text": "सभी समस्याओं से बचना", "emoji": "🚫", "isCorrect": false },
+        { "text": "गलतियों से कभी न सीखना", "emoji": "🔄", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "बाउंस बैक चुनौती 3",
+      "question": "लचीले लोग झटकों से कैसे निपटते हैं?",
+      "options": [
+        { "text": "गिरे रहें और हार मान लें", "emoji": "⬇️", "isCorrect": false },
+        { "text": "सब कुछ दूसरों पर दोष मढ़ें", "emoji": "👆", "isCorrect": false },
+        { "text": "वापस उठें और कोशिश करते रहें", "emoji": "⬆️", "isCorrect": true },
+        { "text": "कभी चुनौतियों का सामना न करें", "emoji": "🚶", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "बाउंस बैक चुनौती 4",
+      "question": "असफलता से निपटने का सबसे अच्छा तरीका क्या है?",
+      "options": [
+        { "text": "इसे एक सबक के रूप में इस्तेमाल करें और सुधार करें", "emoji": "📚", "isCorrect": true },
+        { "text": "फिर कभी कोशिश न करें", "emoji": "🛑", "isCorrect": false },
+        { "text": "बहाने बनाएँ", "emoji": "😤", "isCorrect": false },
+        { "text": "सभी जोखिमों से बचें", "emoji": "🔒", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "बाउंस बैक चुनौती 5",
+      "question": "आप लचीलापन कैसे बनाते हैं?",
+      "options": [
+        { "text": "सभी कठिनाइयों से बचें", "emoji": "🚫", "isCorrect": false },
+        { "text": "आसानी से हार मान लें", "emoji": "😞", "isCorrect": false },
+        { "text": "गलतियों से कभी न सीखें", "emoji": "🔄", "isCorrect": false },
+        { "text": "चुनौतियों का सामना करें, असफलताओं से सीखें, और कोशिश करते रहें", "emoji": "🎯", "isCorrect": true }
+      ]
+    }
+  ]
+}

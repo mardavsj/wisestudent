@@ -1,0 +1,129 @@
+{
+  "title": "खरीदारी सूची की कहानी",
+  "subtitleDefault": "कहानी पूर्ण!",
+  "subtitlePlaying": "प्रश्न {{current}} का {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "माँ आपको खरीदने के लिए 3 सामान देती है: दूध, ब्रेड, अंडे। आप 2 भूल जाते हैं। क्या यह अच्छी याददाश्त है?",
+      "options": [
+        { 
+          "id": "yes", 
+          "text": "हाँ", 
+          "emoji": "👍", 
+          "isCorrect": false
+        },
+        { 
+          "id": "no", 
+          "text": "नहीं", 
+          "emoji": "👎", 
+          "isCorrect": true
+        },
+        { 
+          "id": "maybe", 
+          "text": "शायद", 
+          "emoji": "🤔", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "आप खरीदारी की सूची को बेहतर ढंग से कैसे याद रख सकते हैं?",
+      "options": [
+        { 
+          "id": "repeat", 
+          "text": "वस्तुओं को अपने मन में दोहराएं", 
+          "emoji": "🔁", 
+          "isCorrect": true
+        },
+        { 
+          "id": "ignore", 
+          "text": "सूची को अनदेखा करें", 
+          "emoji": "😴", 
+          "isCorrect": false
+        },
+        { 
+          "id": "guess", 
+          "text": "अंदाज़ा लगाएं कि क्या खरीदना है", 
+          "emoji": "🎲", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "आपकी याददाश्त सुधारने में क्या मदद करता है?",
+      "options": [
+        { 
+          "id": "stress", 
+          "text": "हर समय तनाव में रहना", 
+          "emoji": "😰", 
+          "isCorrect": false
+        },
+        { 
+          "id": "skip", 
+          "text": "भोजन छोड़ना", 
+          "emoji": "🍽️", 
+          "isCorrect": false
+        },
+        { 
+          "id": "sleep", 
+          "text": "पर्याप्त नींद लेना", 
+          "emoji": "😴", 
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आपको 5 चीजें याद रखनी हैं। एक अच्छी रणनीति क्या है?",
+      "options": [
+        { 
+          "id": "forget", 
+          "text": "बिना सहायता के याद रखने की कोशिश करें", 
+          "emoji": "🧠", 
+          "isCorrect": false
+        },
+        { 
+          "id": "write", 
+          "text": "उन्हें लिखें या एक सूची बनाएं", 
+          "emoji": "📝", 
+          "isCorrect": true
+        },
+        { 
+          "id": "ignore", 
+          "text": "उन्हें पूरी तरह से नज़रअंदाज़ करें", 
+          "emoji": "🙈", 
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "याददाश्त का अभ्यास करने से आपके मस्तिष्क को मदद मिलती है। सही या गलत?",
+      "options": [
+        { 
+          "id": "true", 
+          "text": "सही", 
+          "emoji": "🙂", 
+          "isCorrect": true
+        },
+        { 
+          "id": "false", 
+          "text": "गलत", 
+          "emoji": "🙃", 
+          "isCorrect": false
+        },
+        { 
+          "id": "maybe", 
+          "text": "शायद", 
+          "emoji": "🤔", 
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

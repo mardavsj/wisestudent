@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
@@ -7,10 +8,13 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const BalancePuzzle = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-74");
   const gameId = gameData?.id || "brain-kids-74";
+  
+  const gameContent = t("brain-health.kids.balance-puzzle", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -29,22 +33,10 @@ const BalancePuzzle = () => {
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
   // Left side - screen time amounts
-  const leftItems = [
-    { id: 1, name: "1 hr Game", emoji: "🎮",  },
-    { id: 2, name: "5 hrs Screen", emoji: "📱",  },
-    { id: 3, name: "2 hrs Tablet", emoji: "💻",  },
-    { id: 4, name: "30 min Phone", emoji: "📞",  },
-    { id: 5, name: "6 hrs Gaming", emoji: "🎮",  }
-  ];
+  const leftItems = Array.isArray(gameContent?.leftItems) ? gameContent.leftItems : [];
 
   // Right side - effects
-  const rightItems = [
-    { id: 1, name: "Fun", emoji: "😊",  },
-    { id: 2, name: "Harm", emoji: "😞",  },
-    { id: 3, name: "Balance", emoji: "⚖️",  },
-    { id: 4, name: "Good", emoji: "✅",  },
-    { id: 5, name: "Bad", emoji: "❌",  }
-  ];
+  const rightItems = Array.isArray(gameContent?.rightItems) ? gameContent.rightItems : [];
 
   // Correct matches
   const correctMatches = [
@@ -117,8 +109,16 @@ const BalancePuzzle = () => {
 
   return (
     <GameShell
-      title="Puzzle of Balance"
-      subtitle={!showResult ? `Match ${matches.length}/${leftItems.length} pairs` : "Puzzle Complete!"}
+      title={gameContent?.title || "Puzzle of Balance"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Puzzle Complete!"
+          : t("brain-health.kids.balance-puzzle.subtitleProgress", {
+              current: matches.length,
+              total: leftItems.length,
+              defaultValue: `Match ${matches.length}/${leftItems.length} pairs`
+            })
+      }
       score={score}
       currentLevel={matches.length + 1}
       totalLevels={leftItems.length}
@@ -140,18 +140,30 @@ const BalancePuzzle = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Matches: {matches.length}/{leftItems.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{leftItems.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.balance-puzzle.matchesLabel", {
+                    current: matches.length,
+                    total: leftItems.length,
+                    defaultValue: `Matches: ${matches.length}/${leftItems.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.balance-puzzle.scoreLabel", {
+                    score,
+                    total: leftItems.length,
+                    defaultValue: `Score: ${score}/${leftItems.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-center mb-6">
-                Match screen time amounts with their effects!
+                {gameContent?.instructionText || "Match screen time amounts with their effects!"}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Screen Time</h3>
+                  <h3 className="text-white font-bold text-center mb-4">{gameContent?.leftTitle || "Screen Time"}</h3>
                   {leftItems.map((item) => {
                     const matched = matches.some(m => m.leftId === item.id && m.isCorrect);
                     return (
@@ -181,7 +193,7 @@ const BalancePuzzle = () => {
                 
                 {/* Right side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Effects</h3>
+                  <h3 className="text-white font-bold text-center mb-4">{gameContent?.rightTitle || "Effects"}</h3>
                   {shuffledRightItems.map((item) => {
                     const matched = matches.some(m => m.rightId === item.id && m.isCorrect);
                     return (
@@ -216,7 +228,7 @@ const BalancePuzzle = () => {
                     onClick={handleMatch}
                     className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-8 rounded-full font-bold transition-all"
                   >
-                    Match!
+                    {gameContent?.matchButton || "Match!"}
                   </button>
                 </div>
               )}

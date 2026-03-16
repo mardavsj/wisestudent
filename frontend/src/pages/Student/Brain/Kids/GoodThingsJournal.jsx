@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { PenSquare } from "lucide-react";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -7,10 +8,13 @@ import { getGameDataById } from "../../../../utils/getGameData";
 
 const GoodThingsJournal = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-57");
   const gameId = gameData?.id || "brain-kids-57";
+
+  const gameContent = t("brain-health.kids.good-things-journal", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -28,38 +32,7 @@ const GoodThingsJournal = () => {
   const [entry, setEntry] = useState("");
   const [answered, setAnswered] = useState(false);
 
-  const stages = [
-    { 
-      id: 1, 
-      prompt: "Write: \"One good thing that happened today was ___.\"", 
-      minLength: 10,
-      guidance: "Think about something positive that happened today."
-    },
-    { 
-      id: 2, 
-      prompt: "I'm grateful for ___.", 
-      minLength: 10,
-      guidance: "What are you thankful for in your life?"
-    },
-    { 
-      id: 3, 
-      prompt: "A positive moment was ___.", 
-      minLength: 10,
-      guidance: "Describe a moment that made you feel good."
-    },
-    { 
-      id: 4, 
-      prompt: "Something that made me smile ___.", 
-      minLength: 10,
-      guidance: "What brought a smile to your face today?"
-    },
-    { 
-      id: 5, 
-      prompt: "A kind act I saw or did ___.", 
-      minLength: 10,
-      guidance: "Think about kindness you experienced or showed."
-    }
-  ];
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
 
   const handleSubmit = () => {
     if (answered) return;
@@ -98,8 +71,16 @@ const GoodThingsJournal = () => {
 
   return (
     <GameShell
-      title="Journal of Good Things"
-      subtitle={!showResult ? `Entry ${currentStage + 1} of ${stages.length}` : "Journal Complete!"}
+      title={gameContent?.title || "Journal of Good Things"}
+      subtitle={
+        showResult
+          ? gameContent?.subtitleComplete || "Journal Complete!"
+          : t("brain-health.kids.good-things-journal.subtitleProgress", {
+              current: currentStage + 1,
+              total: stages.length,
+              defaultValue: `Entry ${currentStage + 1} of ${stages.length}`,
+            })
+      }
       score={score}
       currentLevel={currentStage + 1}
       totalLevels={stages.length}
@@ -121,8 +102,20 @@ const GoodThingsJournal = () => {
           <div className="space-y-4 sm:space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4 mb-4 sm:mb-5 md:mb-6">
-                <span className="text-white/80 text-xs sm:text-sm md:text-base">Entry {currentStage + 1}/{stages.length}</span>
-                <span className="text-yellow-400 font-bold text-xs sm:text-sm md:text-base">Score: {score}/{stages.length}</span>
+                <span className="text-white/80 text-xs sm:text-sm md:text-base">
+                  {t("brain-health.kids.good-things-journal.entryLabel", {
+                    current: currentStage + 1,
+                    total: stages.length,
+                    defaultValue: `Entry ${currentStage + 1}/${stages.length}`,
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold text-xs sm:text-sm md:text-base">
+                  {t("brain-health.kids.good-things-journal.scoreLabel", {
+                    score,
+                    total: stages.length,
+                    defaultValue: `Score: ${score}/${stages.length}`,
+                  })}
+                </span>
               </div>
               
               <div className="text-center mb-4 sm:mb-5 md:mb-6">
@@ -138,14 +131,18 @@ const GoodThingsJournal = () => {
               <textarea
                 value={entry}
                 onChange={handleInputChange}
-                placeholder="Write your thoughts here..."
+                placeholder={gameContent?.placeholder || "Write your thoughts here..."}
                 className="w-full h-32 sm:h-36 md:h-40 p-3 sm:p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none text-sm sm:text-base"
                 disabled={answered}
               />
               
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4 mt-4">
                 <span className={`text-xs sm:text-sm ${characterCount < minLength ? 'text-red-400' : 'text-green-400'}`}>
-                  {characterCount}/{minLength} characters minimum
+                  {t("brain-health.kids.good-things-journal.minLengthLabel", {
+                    current: characterCount,
+                    min: minLength,
+                    defaultValue: `${characterCount}/${minLength} characters minimum`,
+                  })}
                 </span>
                 <button
                   onClick={handleSubmit}
@@ -156,7 +153,7 @@ const GoodThingsJournal = () => {
                       : "bg-white/20 text-white/50 cursor-not-allowed"
                   }`}
                 >
-                  Submit
+                  {gameContent?.submitButton || "Submit"}
                 </button>
               </div>
             </div>

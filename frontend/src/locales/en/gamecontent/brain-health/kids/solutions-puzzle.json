@@ -1,0 +1,25 @@
+{
+  "title": "Puzzle of Solutions",
+  "subtitleDefault": "Puzzle Complete!",
+  "subtitlePlaying": "Match {{current}}/{{total}}",
+  "matchLabel": "Matches: {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "instructions": "Match the problems with the correct solutions!",
+  "problemsTitle": "Problems",
+  "solutionsTitle": "Solutions",
+  "matchButton": "Match",
+  "problems": [
+    { "id": 1, "name": "Broken Pencil", "emoji": "✏️" },
+    { "id": 2, "name": "Spilled Water", "emoji": "💧" },
+    { "id": 3, "name": "Lost Eraser", "emoji": "🧹" },
+    { "id": 4, "name": "Torn Paper", "emoji": "📄" },
+    { "id": 5, "name": "Missing Book", "emoji": "📚" }
+  ],
+  "solutions": [
+    { "id": 1, "name": "Borrow", "emoji": "🤝" },
+    { "id": 2, "name": "Clean", "emoji": "🧽" },
+    { "id": 3, "name": "Search", "emoji": "🔍" },
+    { "id": 4, "name": "Tape", "emoji": "📎" },
+    { "id": 5, "name": "Ask", "emoji": "🙋" }
+  ]
+}

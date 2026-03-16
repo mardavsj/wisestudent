@@ -1,0 +1,129 @@
+{
+  "title": "लचीलेपन पर प्रश्नोत्तरी",
+  "subtitleDefault": "प्रश्नोत्तरी पूरी हुई!",
+  "subtitlePlaying": "प्रश्न {{current}} का {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{current}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "लचीलापन क्या है?",
+      "options": [
+        {
+          "id": "giving",
+          "text": "हार मान लेना",
+          "emoji": "🏳️",
+          "isCorrect": false
+        },
+        {
+          "id": "bouncing",
+          "text": "वापस उभरना",
+          "emoji": "⚡",
+          "isCorrect": true
+        },
+        {
+          "id": "complaining",
+          "text": "शिकायत करना",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "लचीला होने का क्या अर्थ है?",
+      "options": [
+        {
+          "id": "persist",
+          "text": "असफलताओं के बाद कोशिश करते रहना",
+          "emoji": "💪",
+          "isCorrect": true
+        },
+        {
+          "id": "quit",
+          "text": "चीजें कठिन होने पर छोड़ देना",
+          "emoji": "🚶",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "दूसरों को दोष देना",
+          "emoji": "👆",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "लचीले लोग असफलता को कैसे संभालते हैं?",
+      "options": [
+        {
+          "id": "cry",
+          "text": "रोना और हार मान लेना",
+          "emoji": "😢",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "इससे सीखना और दोबारा प्रयास करना",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "इसे नज़रअंदाज़ करना",
+          "emoji": "😑",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "लचीलेपन का लक्षण क्या है?",
+      "options": [
+        {
+          "id": "avoid",
+          "text": "चुनौतियों से बचना",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "panic",
+          "text": "समस्याओं में घबराना",
+          "emoji": "😰",
+          "isCorrect": false
+        },
+        {
+          "id": "try",
+          "text": "गिरने के बाद दोबारा कोशिश करना",
+          "emoji": "🔄",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "लचीलापन बनाने में क्या मदद करता है?",
+      "options": [
+        {
+          "id": "practice",
+          "text": "चुनौतियों का सामना करना और गलतियों से सीखना",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid2",
+          "text": "सभी कठिनाइयों से बचना",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "जल्दी हार मान लेना",
+          "emoji": "😞",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

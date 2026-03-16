@@ -1,0 +1,49 @@
+{
+  "title": "Poster: Sleep Well",
+  "subtitleDefault": "Poster Complete!",
+  "subtitlePlaying": "Stage {{current}} of {{total}}",
+  "stageLabel": "Stage {{current}}/{{total}}",
+  "scoreLabel": "Score: {{current}}/{{total}}",
+  "stages": [
+    {
+      "question": "Which poster shows how sleep helps your brain stay sharp?",
+      "choices": [
+        { "text": "Keep studying all night", "correct": false, "emoji": "📚" },
+        { "text": "Recharge your mind while you rest", "correct": true, "emoji": "🧠" },
+        { "text": "Stay awake with energy drinks", "correct": false, "emoji": "⚡" }
+      ]
+    },
+    {
+      "question": "Which poster encourages resting to feel energetic?",
+      "choices": [
+        { "text": "Take a short break to recharge", "correct": true, "emoji": "🌙" },
+        { "text": "Work nonstop without sleeping", "correct": false, "emoji": "🏃" },
+        { "text": "Drink coffee instead of sleeping", "correct": false, "emoji": "☕" }
+      ]
+    },
+    {
+      "question": "Which poster reminds you to sleep wisely for better health?",
+      "choices": [
+        { "text": "Stay awake and party late", "correct": false, "emoji": "🎉" },
+        { "text": "Turn on lights and play games", "correct": false, "emoji": "💡" },
+        { "text": "Stick to bedtime and get good rest", "correct": true, "emoji": "🛏️" }
+      ]
+    },
+    {
+      "question": "Which poster shows that resting gives you energy for the day?",
+      "choices": [
+        { "text": "Work late and feel tired", "correct": false, "emoji": "💻" },
+        { "text": "Sleep well to refill your energy", "correct": true, "emoji": "🔋" },
+        { "text": "Ignore rest and push yourself", "correct": false, "emoji": "😴" }
+      ]
+    },
+    {
+      "question": "Which poster shows that good sleep helps you do better in tasks?",
+      "choices": [
+        { "text": "Get rest to perform at your best", "correct": true, "emoji": "🏆" },
+        { "text": "Skip sleep to study more", "correct": false, "emoji": "📚" },
+        { "text": "Play games all night and skip bed", "correct": false, "emoji": "🎮" }
+      ]
+    }
+  ]
+}

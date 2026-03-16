@@ -1,0 +1,63 @@
+{
+  "title": "Badge: Focus Kid",
+  "subtitleComplete": "Badge Complete!",
+  "subtitleProgress": "Challenge {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Focus Challenge 1",
+      "question": "What is the best way to improve your focus?",
+      "options": [
+        { "text": "Practice focusing, eliminate distractions, and take breaks", "emoji": "🎯", "isCorrect": true },
+        { "text": "Never take breaks", "emoji": "⏰", "isCorrect": false },
+        { "text": "Always multitask", "emoji": "🤹", "isCorrect": false },
+        { "text": "Avoid all learning activities", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Focus Challenge 2",
+      "question": "Which environment helps you focus best?",
+      "options": [
+        { "text": "Loud and noisy place", "emoji": "🔊", "isCorrect": false },
+        { "text": "Quiet and organized space", "emoji": "🔇", "isCorrect": true },
+        { "text": "Busy playground", "emoji": "🎮", "isCorrect": false },
+        { "text": "In front of TV", "emoji": "📺", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Focus Challenge 3",
+      "question": "How should you balance games and study?",
+      "options": [
+        { "text": "Play games all day", "emoji": "🎮", "isCorrect": false },
+        { "text": "Study all day without breaks", "emoji": "📚", "isCorrect": false },
+        { "text": "Set a schedule: study time and play time", "emoji": "⏰", "isCorrect": true },
+        { "text": "Never play games", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Focus Challenge 4",
+      "question": "What helps you maintain focus longer?",
+      "options": [
+        { "text": "Taking short breaks between tasks", "emoji": "⏸️", "isCorrect": true },
+        { "text": "Working continuously without rest", "emoji": "⏰", "isCorrect": false },
+        { "text": "Doing everything at once", "emoji": "🤹", "isCorrect": false },
+        { "text": "Avoiding all activities", "emoji": "😴", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Focus Challenge 5",
+      "question": "What is a key focus strategy?",
+      "options": [
+        { "text": "Eliminate distractions and stay organized", "emoji": "🎯", "isCorrect": true },
+        { "text": "Have many distractions around", "emoji": "📱", "isCorrect": false },
+        { "text": "Work in chaos", "emoji": "🌀", "isCorrect": false },
+        { "text": "Never plan anything", "emoji": "❌", "isCorrect": false }
+      ]
+    }
+  ]
+}

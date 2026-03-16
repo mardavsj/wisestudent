@@ -1,0 +1,54 @@
+{
+  "title": "ब्रेन फूड क्विज़",
+  "subtitlePlaying": "सवाल {{total}} में से {{current}}",
+  "subtitleComplete": "क्विज़ पूरा हुआ!",
+  "questionLabel": "सवाल {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "कौन सा भोजन मस्तिष्क के लिए स्वस्थ है?",
+      "options": [
+        { "id": "a", "text": "फल", "emoji": "🍎", "isCorrect": true },
+        { "id": "b", "text": "चिप्स", "emoji": "🍟", "isCorrect": false },
+        { "id": "c", "text": "कोला", "emoji": "🥤", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "कौन सा पोषक तत्व आपके मस्तिष्क को बढ़ने में मदद करता है?",
+      "options": [
+        { "id": "a", "text": "चीनी", "emoji": "🍬", "isCorrect": false },
+        { "id": "b", "text": "प्रोटीन", "emoji": "🥩", "isCorrect": true },
+        { "id": "c", "text": "नमक", "emoji": "🧂", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "आपके मस्तिष्क के लिए सबसे अच्छा पेय कौन सा है?",
+      "options": [
+        { "id": "a", "text": "सोडा", "emoji": "🥤", "isCorrect": false },
+        { "id": "b", "text": "एनर्जी ड्रिंक्स", "emoji": "⚡", "isCorrect": false },
+        { "id": "c", "text": "पानी", "emoji": "💧", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "कौन सा भोजन आपको बेहतर ध्यान केंद्रित करने में मदद करता है?",
+      "options": [
+        { "id": "a", "text": "ओमेगा-3 वाली मछली", "emoji": "🐟", "isCorrect": true },
+        { "id": "b", "text": "कैंडी", "emoji": "🍭", "isCorrect": false },
+        { "id": "c", "text": "चिप्स", "emoji": "🍟", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "सब्जियां आपके मस्तिष्क के लिए क्यों अच्छी हैं?",
+      "options": [
+        { "id": "a", "text": "उनका स्वाद खराब होता है", "emoji": "😖", "isCorrect": false },
+        { "id": "b", "text": "उनमें विटामिन और खनिज होते हैं", "emoji": "Ⓜ️", "isCorrect": true },
+        { "id": "c", "text": "वे महंगी होती हैं", "emoji": "💰", "isCorrect": false }
+      ]
+    }
+  ]
+}

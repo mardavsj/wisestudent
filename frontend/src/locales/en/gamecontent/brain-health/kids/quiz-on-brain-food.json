@@ -1,0 +1,54 @@
+{
+  "title": "Brain Food Quiz",
+  "subtitlePlaying": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Quiz Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which food is healthy for brain?",
+      "options": [
+        { "id": "a", "text": "Fruits", "emoji": "🍎", "isCorrect": true },
+        { "id": "b", "text": "Chips", "emoji": "🍟", "isCorrect": false },
+        { "id": "c", "text": "Cola", "emoji": "🥤", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Which nutrient helps your brain grow?",
+      "options": [
+        { "id": "a", "text": "Sugar", "emoji": "🍬", "isCorrect": false },
+        { "id": "b", "text": "Protein", "emoji": "🥩", "isCorrect": true },
+        { "id": "c", "text": "Salt", "emoji": "🧂", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What drink is best for your brain?",
+      "options": [
+        { "id": "a", "text": "Soda", "emoji": "🥤", "isCorrect": false },
+        { "id": "b", "text": "Energy drinks", "emoji": "⚡", "isCorrect": false },
+        { "id": "c", "text": "Water", "emoji": "💧", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Which food helps you concentrate better?",
+      "options": [
+        { "id": "a", "text": "Fish with omega-3", "emoji": "🐟", "isCorrect": true },
+        { "id": "b", "text": "Candy", "emoji": "🍭", "isCorrect": false },
+        { "id": "c", "text": "Chips", "emoji": "🍟", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Why are vegetables good for your brain?",
+      "options": [
+        { "id": "a", "text": "They taste bad", "emoji": "😖", "isCorrect": false },
+        { "id": "b", "text": "They have vitamins and minerals", "emoji": "Ⓜ️", "isCorrect": true },
+        { "id": "c", "text": "They are expensive", "emoji": "💰", "isCorrect": false }
+      ]
+    }
+  ]
+}

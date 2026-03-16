@@ -1,0 +1,73 @@
+{
+  "title": "Reflex Attention",
+  "subtitleDefault": "Test your attention reflexes!",
+  "subtitlePlaying": "Round {{current}}/{{total}}: Test your attention reflexes!",
+  "readyTitle": "Ready to Test Your Attention Skills?",
+  "readyDescription": "Answer questions about focus and attention improvement.",
+  "readyInstruction": "You have {{total}} questions with {{time}} seconds each!",
+  "startButton": "Start Game",
+  "roundLabel": "Round",
+  "timeLabel": "Time",
+  "scoreLabel": "Score",
+  "finishedTitle": "Great Job!",
+  "finishedScore": "You scored {{score}} out of {{total}}!",
+  "finishedMessage": "You're developing strong attention skills!",
+  "playAgainButton": "Play Again",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which activity helps improve focus and attention?",
+      "correctAnswer": "Listening carefully to instructions",
+      "options": [
+        { "text": "Listening carefully to instructions", "isCorrect": true, "emoji": "👂" },
+        { "text": "Daydreaming during class", "isCorrect": false, "emoji": "☁️" },
+        { "text": "Chatting with friends while studying", "isCorrect": false, "emoji": "💬" },
+        { "text": "Multitasking on multiple devices", "isCorrect": false, "emoji": "📱" }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the best approach to maintain concentration?",
+      "correctAnswer": "Eliminate distractions and focus on one task",
+      "options": [
+        { "text": "Switch between tasks rapidly", "isCorrect": false, "emoji": "🔄" },
+        { "text": "Eliminate distractions and focus on one task", "isCorrect": true, "emoji": "🎯" },
+        { "text": "Work in a noisy environment", "isCorrect": false, "emoji": "🔊" },
+        { "text": "Check social media frequently", "isCorrect": false, "emoji": "📱" }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which technique improves attention span?",
+      "correctAnswer": "Practice mindfulness exercises",
+      "options": [
+        { "text": "Rushing through assignments", "isCorrect": false, "emoji": "🏃" },
+        { "text": "Practice mindfulness exercises", "isCorrect": true, "emoji": "🧘" },
+        { "text": "Skipping breakfast regularly", "isCorrect": false, "emoji": "🍽️" },
+        { "text": "Staying up late every night", "isCorrect": false, "emoji": "🌙" }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What helps sustain attention during long tasks?",
+      "correctAnswer": "Take regular short breaks",
+      "options": [
+        { "text": "Work for hours without stopping", "isCorrect": false, "emoji": "⏰" },
+        { "text": "Take regular short breaks", "isCorrect": true, "emoji": "⏸️" },
+        { "text": "Drink lots of sugary drinks", "isCorrect": false, "emoji": "🥤" },
+        { "text": "Avoid all physical activity", "isCorrect": false, "emoji": "🛋️" }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which habit supports better attention skills?",
+      "correctAnswer": "Get adequate sleep each night",
+      "options": [
+        { "text": "Stay up past bedtime regularly", "isCorrect": false, "emoji": "😴" },
+        { "text": "Eat junk food for energy", "isCorrect": false, "emoji": "🍔" },
+        { "text": "Skip important meals", "isCorrect": false, "emoji": "🍽️" },
+        { "text": "Get adequate sleep each night", "isCorrect": true, "emoji": "🛌" }
+      ]
+    }
+  ]
+}

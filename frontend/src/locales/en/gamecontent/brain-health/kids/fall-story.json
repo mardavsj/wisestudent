@@ -1,0 +1,54 @@
+{
+  "title": "Fall Story",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Story Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Kid falls while cycling. Do they quit or try again?",
+      "options": [
+        { "id": "try", "text": "Try again", "emoji": "🚴", "isCorrect": true },
+        { "id": "quit", "text": "Quit", "emoji": "🏳️", "isCorrect": false },
+        { "id": "cry", "text": "Cry and stop", "emoji": "😢", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Kid fails at drawing. What should they do?",
+      "options": [
+        { "id": "stop", "text": "Stop drawing forever", "emoji": "🛑", "isCorrect": false },
+        { "id": "blame", "text": "Blame the paper", "emoji": "👆", "isCorrect": false },
+        { "id": "practice", "text": "Practice and try again", "emoji": "✏️", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Kid can't solve math problem. Best action?",
+      "options": [
+        { "id": "give", "text": "Give up", "emoji": "😞", "isCorrect": false },
+        { "id": "ask", "text": "Ask for help and try again", "emoji": "🙋", "isCorrect": true },
+        { "id": "ignore", "text": "Ignore it", "emoji": "😑", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Kid loses a game. What's the right response?",
+      "options": [
+        { "id": "angry", "text": "Get angry and quit", "emoji": "😠", "isCorrect": false },
+        { "id": "blame4", "text": "Blame the game", "emoji": "👆", "isCorrect": false },
+        { "id": "learn", "text": "Learn from it and try again", "emoji": "🎮", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Kid makes mistake in art. What should they do?",
+      "options": [
+        { "id": "fix", "text": "Fix it and keep creating", "emoji": "🎨", "isCorrect": true },
+        { "id": "throw", "text": "Throw it away", "emoji": "🗑️", "isCorrect": false },
+        { "id": "cry5", "text": "Cry and stop", "emoji": "😭", "isCorrect": false }
+      ]
+    }
+  ]
+}

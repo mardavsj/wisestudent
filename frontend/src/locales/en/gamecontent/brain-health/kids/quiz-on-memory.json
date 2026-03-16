@@ -1,0 +1,54 @@
+{
+  "title": "Quiz on Memory",
+  "subtitlePlaying": "Question {{current}} of {{total}}",
+  "subtitleComplete": "Quiz Complete!",
+  "questionLabel": "Question {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "What helps memory?",
+      "options": [
+        { "id": "b", "text": "Skipping food", "emoji": "🍽️", "isCorrect": false },
+        { "id": "a", "text": "Sleep", "emoji": "😴", "isCorrect": true },
+        { "id": "c", "text": "Stress", "emoji": "😰", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Which activity improves memory?",
+      "options": [
+        { "id": "a", "text": "Practicing and repeating", "emoji": "🔁", "isCorrect": true },
+        { "id": "b", "text": "Never practicing", "emoji": "🚫", "isCorrect": false },
+        { "id": "c", "text": "Forgetting everything", "emoji": "😵", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What food is good for memory?",
+      "options": [
+        { "id": "a", "text": "Junk food only", "emoji": "🍟", "isCorrect": false },
+        { "id": "b", "text": "Healthy food like fruits and vegetables", "emoji": "🍎", "isCorrect": true },
+        { "id": "c", "text": "No food at all", "emoji": "🚫", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "How can you remember things better?",
+      "options": [
+        { "id": "b", "text": "Never write anything", "emoji": "🙈", "isCorrect": false },
+        { "id": "c", "text": "Ignore everything", "emoji": "😴", "isCorrect": false },
+        { "id": "a", "text": "Write them down and review", "emoji": "📝", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Does exercise help memory?",
+      "options": [
+        { "id": "b", "text": "No, exercise doesn't help", "emoji": "❌", "isCorrect": false },
+        { "id": "a", "text": "Yes, exercise improves brain function", "emoji": "💪", "isCorrect": true },
+        { "id": "c", "text": "Maybe sometimes", "emoji": "🤔", "isCorrect": false }
+      ]
+    }
+  ]
+}

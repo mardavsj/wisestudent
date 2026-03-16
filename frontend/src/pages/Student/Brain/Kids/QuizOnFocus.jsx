@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const QuizOnFocus = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-12");
   const gameId = gameData?.id || "brain-kids-12";
+  
+  const gameContent = t("brain-health.kids.quiz-on-focus", { returnObjects: true });
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -20,135 +24,14 @@ const QuizOnFocus = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [answered, setAnswered] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
 
-  const questions = [
-    {
-      id: 1,
-      text: "What helps focus?",
-      options: [
-        { 
-          id: "a", 
-          text: "Quiet room", 
-          emoji: "🔇", 
-          
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "TV on", 
-          emoji: "📺", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "Phone games", 
-          emoji: "📱", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 2,
-      text: "Which activity improves concentration?",
-      options: [
-        { 
-          id: "a", 
-          text: "Multitasking", 
-          emoji: "🤹", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Meditation", 
-          emoji: "🧘", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Loud music", 
-          emoji: "🔊", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      text: "When is the best time to study?",
-      options: [
-        { 
-          id: "a", 
-          text: "When you're most alert", 
-          emoji: "⚡", 
-          isCorrect: true
-        },
-        { 
-          id: "b", 
-          text: "Very late at night", 
-          emoji: "🌙", 
-          isCorrect: false
-        },
-        { 
-          id: "c", 
-          text: "During TV show", 
-          emoji: "📺", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      text: "What should you do before starting homework?",
-      options: [
-        { 
-          id: "a", 
-          text: "Check all social media", 
-          emoji: "📱", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "Clear your desk and gather materials", 
-          emoji: "📚", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "Start with hardest task", 
-          emoji: "😰", 
-          isCorrect: false
-        }
-      ]
-    },
-    {
-      id: 5,
-      text: "How long should you focus before taking a break?",
-      options: [
-        { 
-          id: "a", 
-          text: "Several hours without break", 
-          emoji: "⏰", 
-          isCorrect: false
-        },
-        { 
-          id: "b", 
-          text: "25-30 minutes", 
-          emoji: "⏱️", 
-          isCorrect: true
-        },
-        { 
-          id: "c", 
-          text: "5 minutes", 
-          emoji: "⏳", 
-          isCorrect: false
-        }
-      ]
-    }
-  ];
+  const questions = Array.isArray(gameContent?.questions) ? gameContent.questions : [];
 
   const handleChoice = (isCorrect) => {
     if (answered) return;
@@ -177,9 +60,17 @@ const QuizOnFocus = () => {
 
   return (
     <GameShell
-      title="Quiz on Focus"
+      title={gameContent?.title || "Quiz on Focus"}
       score={score}
-      subtitle={!showResult ? `Question ${currentQuestion + 1} of ${questions.length}` : "Quiz Complete!"}
+      subtitle={
+        !showResult 
+          ? t("brain-health.kids.quiz-on-focus.subtitlePlaying", {
+              current: currentQuestion + 1,
+              total: questions.length,
+              defaultValue: `Question ${currentQuestion + 1} of ${questions.length}`
+            }) 
+          : gameContent?.subtitleComplete || "Quiz Complete!"
+      }
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
@@ -200,8 +91,20 @@ const QuizOnFocus = () => {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Question {currentQuestion + 1}/{questions.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{questions.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.quiz-on-focus.questionLabel", {
+                    current: currentQuestion + 1,
+                    total: questions.length,
+                    defaultValue: `Question ${currentQuestion + 1}/${questions.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.quiz-on-focus.scoreLabel", {
+                    score,
+                    total: questions.length,
+                    defaultValue: `Score: ${score}/${questions.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6">
@@ -218,7 +121,7 @@ const QuizOnFocus = () => {
                   >
                     <div className="text-3xl mb-3">{option.emoji}</div>
                     <h3 className="font-bold text-lg mb-2">{option.text}</h3>
-                    <p className="text-white/90 text-sm">{option.description}</p>
+                    {option.description && <p className="text-white/90 text-sm">{option.description}</p>}
                   </button>
                 ))}
               </div>

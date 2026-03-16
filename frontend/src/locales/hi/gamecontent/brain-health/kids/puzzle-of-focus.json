@@ -1,0 +1,40 @@
+{
+  "title": "एकाग्रता की पहेली",
+  "subtitleComplete": "खेल पूरा हुआ!",
+  "subtitleProgress": "एकाग्रता अवधारणाओं को उनके प्रभावों के साथ मिलाएं ({{current}}/{{total}} मिलान किए गए)",
+  "conceptTitle": "एकाग्रता अवधारणाएं",
+  "effectTitle": "प्रभाव",
+  "selectedConcept": "चुना गया: {{name}}",
+  "selectConcept": "एक अवधारणा चुनें",
+  "matchButton": "चुने हुए का मिलान करें",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "matchedLabel": "मिलान किया गया: {{current}}/{{total}}",
+  "greatMatchingTitle": "शानदार मिलान!",
+  "greatMatchingDescription": "आपने {{total}} में से {{score}} एकाग्रता अवधारणाओं का सही मिलान किया! आप समझते हैं कि एकाग्रता कैसे काम करती है!",
+  "coinsAwarded": "+{{score}} सिक्के",
+  "matchingSummary": "आप जानते हैं कि ध्यान शांत मन बनाता है, शांत कमरे एकाग्रता में मदद करते हैं, और सुनना सीखने में सुधार करता है!",
+  "keepLearningTitle": "सीखते रहें!",
+  "keepLearningDescription": "आपने {{score}} में से {{total}} एकाग्रता अवधारणाओं का सही मिलान किया। याद रखें, इन अवधारणाओं को समझने से आपको बेहतर ध्यान केंद्रित करने में मदद मिलती है!",
+  "learningHint": "प्रत्येक एकाग्रता अवधारणा को उसके उचित प्रभाव के साथ मिलाने का प्रयास करें। ध्यान → शांत मन, शांत कमरा → बेहतर एकाग्रता!",
+  "leftItems": [
+    { "id": 1, "name": "ध्यान", "emoji": "🧘" },
+    { "id": 2, "name": "शांत कमरा", "emoji": "🔇" },
+    { "id": 3, "name": "सुनना", "emoji": "👂" },
+    { "id": 4, "name": "एकाग्रता", "emoji": "🎯" },
+    { "id": 5, "name": "शोर", "emoji": "🔊" }
+  ],
+  "rightItems": [
+    { "id": 1, "name": "शांत मन", "emoji": "🧠" },
+    { "id": 2, "name": "बेहतर एकाग्रता", "emoji": "✨" },
+    { "id": 3, "name": "बेहतर सीखें", "emoji": "📚" },
+    { "id": 4, "name": "तीक्ष्ण सोच", "emoji": "⚡" },
+    { "id": 5, "name": "भटकाव", "emoji": "😵" }
+  ],
+  "correctMatches": [
+    { "leftId": 1, "rightId": 1 },
+    { "leftId": 2, "rightId": 2 },
+    { "leftId": 3, "rightId": 3 },
+    { "leftId": 4, "rightId": 4 },
+    { "leftId": 5, "rightId": 5 }
+  ]
+}

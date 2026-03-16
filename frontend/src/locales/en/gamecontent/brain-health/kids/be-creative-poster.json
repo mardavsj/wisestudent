@@ -1,0 +1,49 @@
+{
+  "title": "Poster: Be Creative",
+  "subtitleComplete": "Poster Complete!",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "stageLabel": "Stage {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "stages": [
+    {
+      "question": "Which poster best shows \"Think Out of the Box\"?",
+      "choices": [
+        { "text": "Poster showing creative thinking and new ideas", "emoji": "💡", "correct": true },
+        { "text": "Poster showing only following rules", "emoji": "📋", "correct": false },
+        { "text": "Poster showing copying others", "emoji": "📋", "correct": false }
+      ]
+    },
+    {
+      "question": "Which poster best shows \"Be Creative\"?",
+      "choices": [
+        { "text": "Poster showing only doing same thing", "emoji": "🔄", "correct": false },
+        { "text": "Poster showing imagination and creativity", "emoji": "🎨", "correct": true },
+        { "text": "Poster showing avoiding new things", "emoji": "🚫", "correct": false }
+      ]
+    },
+    {
+      "question": "Which poster best shows \"Solve Problems Creatively\"?",
+      "choices": [
+        { "text": "Poster showing finding creative solutions", "emoji": "💭", "correct": true },
+        { "text": "Poster showing giving up easily", "emoji": "🏳️", "correct": false },
+        { "text": "Poster showing only one way to solve", "emoji": "➡️", "correct": false }
+      ]
+    },
+    {
+      "question": "Which poster best shows \"Use Your Imagination\"?",
+      "choices": [
+        { "text": "Poster showing only copying", "emoji": "📋", "correct": false },
+        { "text": "Poster showing thinking differently", "emoji": "🧠", "correct": true },
+        { "text": "Poster showing avoiding ideas", "emoji": "🤐", "correct": false }
+      ]
+    },
+    {
+      "question": "Which poster best shows \"Create Something New\"?",
+      "choices": [
+        { "text": "Poster showing making original things", "emoji": "🆕", "correct": true },
+        { "text": "Poster showing only repeating old things", "emoji": "🔄", "correct": false },
+        { "text": "Poster showing never trying new", "emoji": "🚫", "correct": false }
+      ]
+    }
+  ]
+}

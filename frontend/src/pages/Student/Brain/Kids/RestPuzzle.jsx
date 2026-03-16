@@ -1,17 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-
 const RestPuzzle = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-64");
   const gameId = gameData?.id || "brain-kids-64";
   
+  const gameContent = t("brain-health.kids.rest-puzzle", { returnObjects: true });
+  const leftItems = Array.isArray(gameContent?.leftItems) ? gameContent.leftItems : [];
+  const rightItems = Array.isArray(gameContent?.rightItems) ? gameContent.rightItems : [];
+  
+  // Correct matches (stable mapping based on IDs)
+  const correctMatches = [
+    { leftId: 1, rightId: 1 }, // Nap → Energy
+    { leftId: 2, rightId: 2 }, // All-night TV → Tired
+    { leftId: 3, rightId: 3 }, // Early Sleep → Restored
+    { leftId: 4, rightId: 4 }, // Late Gaming → Exhausted
+    { leftId: 5, rightId: 5 }  // Quiet Time → Calm
+  ];
+
+  // Shuffled right items for display (stable shuffle based on specific pattern)
+  const shuffledRightItems = useMemo(() => {
+    if (rightItems.length < 5) return rightItems;
+    return [
+      rightItems.find(i => i.id === 3), // Restored
+      rightItems.find(i => i.id === 5), // Calm
+      rightItems.find(i => i.id === 1), // Energy
+      rightItems.find(i => i.id === 4), // Exhausted
+      rightItems.find(i => i.id === 2)  // Tired
+    ].filter(Boolean);
+  }, [rightItems]);
+
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
     console.warn("Game data not found for RestPuzzle, using fallback ID");
@@ -21,48 +47,13 @@ const RestPuzzle = () => {
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
+  
   const [score, setScore] = useState(0);
   const [matches, setMatches] = useState([]);
   const [selectedLeft, setSelectedLeft] = useState(null);
   const [selectedRight, setSelectedRight] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
-
-  // Left side - rest activities
-  const leftItems = [
-    { id: 1, name: "Nap", emoji: "🛌",   },
-    { id: 2, name: "All-night TV", emoji: "📺",   },
-    { id: 3, name: "Early Sleep", emoji: "🌙",   },
-    { id: 4, name: "Late Gaming", emoji: "🎮",   },
-    { id: 5, name: "Quiet Time", emoji: "🧘",   }
-  ];
-
-  // Right side - effects
-  const rightItems = [
-    { id: 1, name: "Energy", emoji: "🙂",   },
-    { id: 2, name: "Tired", emoji: "😢",   },
-    { id: 3, name: "Restored", emoji: "😊",   },
-    { id: 4, name: "Exhausted", emoji: "😞",   },
-    { id: 5, name: "Calm", emoji: "😌",   }
-  ];
-
-  // Correct matches
-  const correctMatches = [
-    { leftId: 1, rightId: 1 }, // Nap → Energy
-    { leftId: 2, rightId: 2 }, // All-night TV → Tired
-    { leftId: 3, rightId: 3 }, // Early Sleep → Restored
-    { leftId: 4, rightId: 4 }, // Late Gaming → Exhausted
-    { leftId: 5, rightId: 5 }  // Quiet Time → Calm
-  ];
-
-  // Shuffled right items for display (to split matches across positions)
-  const shuffledRightItems = [
-    rightItems[2], // Restored (id: 3) - position 1
-    rightItems[4], // Calm (id: 5) - position 2
-    rightItems[0], // Energy (id: 1) - position 3
-    rightItems[3], // Exhausted (id: 4) - position 4
-    rightItems[1]  // Tired (id: 2) - position 5
-  ];
 
   const handleLeftSelect = (item) => {
     if (showResult) return;
@@ -102,7 +93,6 @@ const RestPuzzle = () => {
     if (newMatches.length === leftItems.length) {
       setTimeout(() => {
         setShowResult(true);
-        // Score is already correctly set from correct matches, no need to override
       }, 1000);
     }
 
@@ -111,14 +101,18 @@ const RestPuzzle = () => {
     setSelectedRight(null);
   };
 
-  const isMatched = (leftId, rightId) => {
-    return matches.some(m => m.leftId === leftId && m.rightId === rightId && m.isCorrect);
-  };
-
   return (
     <GameShell
-      title="Puzzle of Rest"
-      subtitle={!showResult ? `Match ${matches.length}/${leftItems.length} pairs` : "Puzzle Complete!"}
+      title={gameContent?.title || "Puzzle of Rest"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleDefault || "Puzzle Complete!" 
+          : t("brain-health.kids.rest-puzzle.subtitlePlaying", {
+              current: matches.length,
+              total: leftItems.length,
+              defaultValue: `Match ${matches.length}/${leftItems.length} pairs`
+            })
+      }
       score={score}
       currentLevel={matches.length + 1}
       totalLevels={leftItems.length}
@@ -127,31 +121,43 @@ const RestPuzzle = () => {
       maxScore={leftItems.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      nextGamePathProp="/student/brain/kids/exam-stori"
       nextGameIdProp="brain-kids-65"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       gameId={gameId}
       gameType="brain"
+      backPath="/games/brain-health/kids"
     >
       <div className="space-y-8 max-w-4xl mx-auto">
         {!showResult ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Matches: {matches.length}/{leftItems.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{leftItems.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.rest-puzzle.matchesLabel", {
+                    current: matches.length,
+                    total: leftItems.length,
+                    defaultValue: `Matches: ${matches.length}/${leftItems.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.rest-puzzle.scoreLabel", {
+                    current: score,
+                    total: leftItems.length,
+                    defaultValue: `Score: ${score}/${leftItems.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-center mb-6">
-                Match rest activities with their effects!
+                {gameContent?.instruction || "Match rest activities with their effects!"}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 relative">
                 {/* Left side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Rest Activities</h3>
+                  <h3 className="text-white font-bold text-center mb-4">{gameContent?.leftTitle || "Rest Activities"}</h3>
                   {leftItems.map((item) => {
                     const matched = matches.some(m => m.leftId === item.id && m.isCorrect);
                     return (
@@ -185,14 +191,14 @@ const RestPuzzle = () => {
                       onClick={handleMatch}
                       className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-4 px-6 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg"
                     >
-                      Match!
+                      {gameContent?.matchButton || "Match!"}
                     </button>
                   )}
                 </div>
                 
                 {/* Right side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Effects</h3>
+                  <h3 className="text-white font-bold text-center mb-4">{gameContent?.rightTitle || "Effects"}</h3>
                   {shuffledRightItems.map((item) => {
                     const matched = matches.some(m => m.rightId === item.id && m.isCorrect);
                     return (
@@ -227,7 +233,7 @@ const RestPuzzle = () => {
                     onClick={handleMatch}
                     className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-8 rounded-full font-bold transition-all"
                   >
-                    Match!
+                    {gameContent?.matchButton || "Match!"}
                   </button>
                 </div>
               )}

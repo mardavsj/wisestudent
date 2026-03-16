@@ -1,0 +1,65 @@
+{
+  "title": "रिफ्लेक्स: फिर से कोशिश करो",
+  "subtitlePlaying": "राउंड {{current}}/{{total}}: अपनी लचीलापन प्रतिक्रिया का परीक्षण करें!",
+  "subtitleDefault": "अपनी लचीलापन प्रतिक्रिया का परीक्षण करें!",
+  "getReady": "तैयार हो जाओ!",
+  "description": "लचीली कार्रवाइयों की पहचान करें!",
+  "timerInfo": "प्रत्येक प्रश्न के लिए आपके पास {{seconds}} सेकंड हैं।",
+  "roundInfo": "आपके पास {{rounds}} प्रश्न हैं, प्रत्येक में {{seconds}} सेकंड!",
+  "startGame": "खेल शुरू करें",
+  "roundLabel": "राउंड:",
+  "timeLabel": "समय:",
+  "scoreLabel": "स्कोर:",
+  "questions": [
+    {
+      "id": 1,
+      "text": "एक युवा बेकरी सहायक गलती से केक का बैटर गिरा देता है। उसे क्या करना चाहिए?",
+      "options": [
+        { "id": "a", "text": "दोबारा शुरू करो", "emoji": "🍰", "isCorrect": true },
+        { "id": "b", "text": "छोड़ दो", "emoji": "🛑", "isCorrect": false },
+        { "id": "c", "text": "किसी और को दोष दो", "emoji": "👀", "isCorrect": false },
+        { "id": "d", "text": "अनदेखा करो और खेलने जाओ", "emoji": "⚽", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "एक जूनियर माली का पहला पौधा मर जाता है। लचीलापन क्या दिखाता है?",
+      "options": [
+        { "id": "b", "text": "बगीचा छोड़ दो", "emoji": "🚪", "isCorrect": false },
+        { "id": "c", "text": "बैठकर उदास हो जाओ", "emoji": "😞", "isCorrect": false },
+        { "id": "d", "text": "सूरज को दोष दो", "emoji": "☀️", "isCorrect": false },
+        { "id": "a", "text": "फिर से पौधा लगाने की कोशिश करो", "emoji": "🌱", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "एक युवा कोडर का प्रोग्राम फेल हो जाता है। लचीला विकल्प क्या है?",
+      "options": [
+        { "id": "b", "text": "पूरी फ़ाइल हटा दो", "emoji": "🗑️", "isCorrect": false },
+        { "id": "a", "text": "डिबगिंग जारी रखो", "emoji": "💻", "isCorrect": true },
+        { "id": "c", "text": "निराश होकर चले जाओ", "emoji": "🚶", "isCorrect": false },
+        { "id": "d", "text": "किसी और से कॉपी करो", "emoji": "📄", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "एक युवा खिलाड़ी अभ्यास में गोल चूक जाता है। उसे क्या करना चाहिए?",
+      "options": [
+        { "id": "b", "text": "हार मान लो", "emoji": "❌", "isCorrect": false },
+        { "id": "c", "text": "कोच के बारे में शिकायत करो", "emoji": "🗣️", "isCorrect": false },
+        { "id": "a", "text": "फिर से अभ्यास करो", "emoji": "🏀", "isCorrect": true },
+        { "id": "d", "text": "लंबा ब्रेक लो", "emoji": "🛌", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "एक युवा चित्रकार अपनी कलाकृति पर रंग गिरा देता है। वह लचीलापन कैसे दिखाता है?",
+      "options": [
+        { "id": "a", "text": "फिर से पेंट करो और ठीक करो", "emoji": "🎨", "isCorrect": true },
+        { "id": "b", "text": "पेंटिंग फेंक दो", "emoji": "🗑️", "isCorrect": false },
+        { "id": "c", "text": "रोओ और चले जाओ", "emoji": "😭", "isCorrect": false },
+        { "id": "d", "text": "ब्रश को दोष दो", "emoji": "🖌️", "isCorrect": false }
+      ]
+    }
+  ]
+}

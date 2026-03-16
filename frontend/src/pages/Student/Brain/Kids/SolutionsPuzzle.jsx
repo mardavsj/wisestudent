@@ -1,15 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import GameShell from "../../Finance/GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
 const SolutionsPuzzle = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   
   // Get game data from game category folder (source of truth)
   const gameData = getGameDataById("brain-kids-84");
   const gameId = gameData?.id || "brain-kids-84";
+  
+  const gameContent = t("brain-health.kids.solutions-puzzle", { returnObjects: true });
+  const leftItems = Array.isArray(gameContent?.problems) ? gameContent.problems : [];
+  const rightItems = Array.isArray(gameContent?.solutions) ? gameContent.solutions : [];
+
+  // Correct matches
+  const correctMatches = [
+    { leftId: 1, rightId: 1 }, // Broken Pencil → Borrow
+    { leftId: 2, rightId: 2 }, // Spilled Water → Clean
+    { leftId: 3, rightId: 3 }, // Lost Eraser → Search
+    { leftId: 4, rightId: 4 }, // Torn Paper → Tape
+    { leftId: 5, rightId: 5 }  // Missing Book → Ask
+  ];
+
+  // Shuffled right items for display
+  const shuffledRightItems = useMemo(() => {
+    if (!rightItems.length) return [];
+    return [
+      rightItems.find(i => i.id === 3),
+      rightItems.find(i => i.id === 5),
+      rightItems.find(i => i.id === 1),
+      rightItems.find(i => i.id === 4),
+      rightItems.find(i => i.id === 2)
+    ].filter(Boolean);
+  }, [rightItems]);
   
   // Ensure gameId is always set correctly
   if (!gameData || !gameData.id) {
@@ -26,42 +53,6 @@ const SolutionsPuzzle = () => {
   const [selectedRight, setSelectedRight] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
-
-  // Left side - problems
-  const leftItems = [
-    { id: 1, name: "Broken Pencil", emoji: "✏️",  },
-    { id: 2, name: "Spilled Water", emoji: "💧",  },
-    { id: 3, name: "Lost Eraser", emoji: "🧹",  },
-    { id: 4, name: "Torn Paper", emoji: "📄",  },
-    { id: 5, name: "Missing Book", emoji: "📚",  }
-  ];
-
-  // Right side - solutions
-  const rightItems = [
-    { id: 1, name: "Borrow", emoji: "🤝",  },
-    { id: 2, name: "Clean", emoji: "🧽",  },
-    { id: 3, name: "Search", emoji: "🔍",  },
-    { id: 4, name: "Tape", emoji: "📎",  },
-    { id: 5, name: "Ask", emoji: "🙋",  }
-  ];
-
-  // Correct matches
-  const correctMatches = [
-    { leftId: 1, rightId: 1 }, // Broken Pencil → Borrow
-    { leftId: 2, rightId: 2 }, // Spilled Water → Clean
-    { leftId: 3, rightId: 3 }, // Lost Eraser → Search
-    { leftId: 4, rightId: 4 }, // Torn Paper → Tape
-    { leftId: 5, rightId: 5 }  // Missing Book → Ask
-  ];
-
-  // Shuffled right items for display (to split matches across positions)
-  const shuffledRightItems = [
-    rightItems[2], // Search (id: 3) - position 1
-    rightItems[4], // Ask (id: 5) - position 2
-    rightItems[0], // Borrow (id: 1) - position 3
-    rightItems[3], // Tape (id: 4) - position 4
-    rightItems[1]  // Clean (id: 2) - position 5
-  ];
 
   const handleLeftSelect = (item) => {
     if (showResult) return;
@@ -108,10 +99,6 @@ const SolutionsPuzzle = () => {
     setSelectedRight(null);
   };
 
-  const isMatched = (leftId, rightId) => {
-    return matches.some(m => m.leftId === leftId && m.rightId === rightId && m.isCorrect);
-  };
-
   const isLeftMatched = (leftId) => {
     return matches.some(m => m.leftId === leftId && m.isCorrect);
   };
@@ -122,8 +109,16 @@ const SolutionsPuzzle = () => {
 
   return (
     <GameShell
-      title="Puzzle of Solutions"
-      subtitle={!showResult ? `Match ${matches.length}/${leftItems.length}` : "Puzzle Complete!"}
+      title={gameContent?.title || "Puzzle of Solutions"}
+      subtitle={
+        showResult 
+          ? gameContent?.subtitleDefault || "Puzzle Complete!" 
+          : t("brain-health.kids.solutions-puzzle.subtitlePlaying", {
+              current: matches.length,
+              total: leftItems.length,
+              defaultValue: `Match ${matches.length}/${leftItems.length}`
+            })
+      }
       score={score}
       currentLevel={matches.length + 1}
       totalLevels={leftItems.length}
@@ -132,31 +127,45 @@ const SolutionsPuzzle = () => {
       maxScore={leftItems.length}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      nextGamePathProp="/student/brain/kids/group-story"
       nextGameIdProp="brain-kids-85"
       showConfetti={showResult && score >= 3}
       flashPoints={flashPoints}
       showAnswerConfetti={showAnswerConfetti}
       gameId={gameId}
       gameType="brain"
+      backPath="/games/brain-health/kids"
     >
       <div className="space-y-8">
         {!showResult ? (
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-white/80">Matches: {matches.length}/{leftItems.length}</span>
-                <span className="text-yellow-400 font-bold">Score: {score}/{leftItems.length}</span>
+                <span className="text-white/80">
+                  {t("brain-health.kids.solutions-puzzle.matchLabel", {
+                    current: matches.length,
+                    total: leftItems.length,
+                    defaultValue: `Matches: ${matches.length}/${leftItems.length}`
+                  })}
+                </span>
+                <span className="text-yellow-400 font-bold">
+                  {t("brain-health.kids.solutions-puzzle.scoreLabel", {
+                    current: score,
+                    total: leftItems.length,
+                    defaultValue: `Score: ${score}/${leftItems.length}`
+                  })}
+                </span>
               </div>
               
               <p className="text-white text-lg mb-6 text-center">
-                Match the problems with the correct solutions!
+                {gameContent?.instructions || "Match the problems with the correct solutions!"}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Problems</h3>
+                  <h3 className="text-white font-bold text-center mb-4">
+                    {gameContent?.problemsTitle || "Problems"}
+                  </h3>
                   {leftItems.map((item) => (
                     <button
                       key={item.id}
@@ -183,7 +192,9 @@ const SolutionsPuzzle = () => {
 
                 {/* Right side */}
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-center mb-4">Solutions</h3>
+                  <h3 className="text-white font-bold text-center mb-4">
+                    {gameContent?.solutionsTitle || "Solutions"}
+                  </h3>
                   {shuffledRightItems.map((item) => (
                     <button
                       key={item.id}
@@ -220,7 +231,7 @@ const SolutionsPuzzle = () => {
                       : "bg-white/20 text-white/50 cursor-not-allowed"
                   }`}
                 >
-                  Match
+                  {gameContent?.matchButton || "Match"}
                 </button>
               </div>
             </div>

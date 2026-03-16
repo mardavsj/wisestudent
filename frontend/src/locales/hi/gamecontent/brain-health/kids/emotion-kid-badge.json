@@ -1,0 +1,76 @@
+{
+  "title": "बैज: इमोशन किड",
+  "subtitleProgress": "चुनौती {{current}} / {{total}}",
+  "subtitleComplete": "बैज पूरा हुआ!",
+  "challengeLabel": "चुनौती {{current}}/{{total}}",
+  "scoreLabel": "स्कोर: {{score}}/{{total}}",
+  "success": {
+    "header": "इमोशन किड बैज मिला!",
+    "feedback": "आपने {{total}} में से {{score}} चुनौतियों का सही उत्तर दिया! आप एक सच्चे इमोशन किड विशेषज्ञ हैं!",
+    "coins": "+{{score}} सिक्के",
+    "lesson": "सबक: आप खुशी, उदासी, गुस्सा, डर और उत्साह जैसी विभिन्न भावनाओं को पहचान सकते हैं!"
+  },
+  "failure": {
+    "header": "सीखते रहें!",
+    "feedback": "आपने {{total}} में से {{score}} चुनौतियों का सही उत्तर दिया। भावनाओं को पहचानने में अभ्यास ही पूर्ण बनाता है!",
+    "button": "पुनः प्रयास करें",
+    "tip": "सुझाव: विभिन्न भावनाओं को पहचानने के लिए चेहरे के भावों और शारीरिक भाषा पर ध्यान दें!"
+  },
+  "challenges": [
+    {
+      "id": 1,
+      "title": "खुशी की पहचान",
+      "question": "कौन सी भावना खुशी है?",
+      "options": [
+        { "text": "आनंद महसूस करना और मुस्कुराना", "emoji": "😊", "isCorrect": true },
+        { "text": "दुखी महसूस करना और रोना", "emoji": "😢", "isCorrect": false },
+        { "text": "गुस्सा महसूस करना और त्योरियां चढ़ाना", "emoji": "😠", "isCorrect": false },
+        { "text": "डर महसूस करना और छिपना", "emoji": "😨", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "उदासी की पहचान",
+      "question": "कौन सी भावना उदासी है?",
+      "options": [
+        { "text": "खुश महसूस करना और हंसना", "emoji": "😄", "isCorrect": false },
+        { "text": "उत्साहित महसूस करना और कूदना", "emoji": "🎉", "isCorrect": false },
+        { "text": "उदास और आंसू भरा महसूस करना", "emoji": "😢", "isCorrect": true },
+        { "text": "गर्व और आत्मविश्वास महसूस करना", "emoji": "😎", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "गुस्से की पहचान",
+      "question": "कौन सी भावना गुस्सा है?",
+      "options": [
+        { "text": "शांत और शांतिपूर्ण महसूस करना", "emoji": "😌", "isCorrect": false },
+        { "text": "पागल और निराश महसूस करना", "emoji": "😠", "isCorrect": true },
+        { "text": "खुश और हंसमुख महसूस करना", "emoji": "😊", "isCorrect": false },
+        { "text": "हैरान और स्तब्ध महसूस करना", "emoji": "😲", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "डर की पहचान",
+      "question": "कौन सी भावना डर है?",
+      "options": [
+        { "text": "डरा हुआ और चिंतित महसूस करना", "emoji": "😨", "isCorrect": true },
+        { "text": "बहादुर और मजबूत महसूस करना", "emoji": "💪", "isCorrect": false },
+        { "text": "खुश और आनंदमय महसूस करना", "emoji": "😊", "isCorrect": false },
+        { "text": "शांत और शिथिल महसूस करना", "emoji": "😌", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "उत्साह की पहचान",
+      "question": "कौन सी भावना उत्साह है?",
+      "options": [
+        { "text": "ऊब और थकान महसूस करना", "emoji": "😴", "isCorrect": false },
+        { "text": "शांत और चुप महसूस करना", "emoji": "😌", "isCorrect": false },
+        { "text": "रोमांचित और ऊर्जावान महसूस करना", "emoji": "🎉", "isCorrect": true },
+        { "text": "दुखी और उदास महसूस करना", "emoji": "😢", "isCorrect": false }
+      ]
+    }
+  ]
+}

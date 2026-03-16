@@ -7,6 +7,11 @@ import {
 } from "./financial-literacy/kids";
 
 import {
+  enBrainKidsGameContent,
+  hiBrainKidsGameContent,
+} from "./brain-health/kids";
+
+import {
   enFinancialLiteracyTeensGameContent,
   hiFinancialLiteracyTeensGameContent,
 } from "./financial-literacy/teens";
@@ -285,6 +290,9 @@ const resources = {
         teens: enFinancialLiteracyTeensGameContent,
         "young-adult": enFinancialLiteracyYoungAdultGameContent,
       },
+      "brain-health": {
+        kids: enBrainKidsGameContent,
+      },
     },
   },
   hi: {
@@ -371,6 +379,9 @@ const resources = {
         kids: hiFinancialLiteracyKidsGameContent,
         teens: hiFinancialLiteracyTeensGameContent,
         "young-adult": hiFinancialLiteracyYoungAdultGameContent,
+      },
+      "brain-health": {
+        kids: hiBrainKidsGameContent,
       },
     },
   },
