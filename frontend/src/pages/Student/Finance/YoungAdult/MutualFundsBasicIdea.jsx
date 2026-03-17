@@ -1,178 +1,22 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Trophy } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const MUTUAL_FUNDS_STAGES = [
-  {
-    id: 1,
-    prompt: "Mutual funds work by:",
-    options: [
-      {
-        id: "gambling",
-        label: "Gambling on prices",
-        reflection: "Mutual funds are not gambling. They follow structured investment strategies with professional management and diversification.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "individual",
-        label: "Individual stock picking",
-        reflection: "While mutual funds may hold individual stocks, they're not about individual stock picking but rather diversified portfolio management.",
-        isCorrect: false,
-      },
-      {
-        id: "guaranteed",
-        label: "Guaranteed returns",
-        reflection: "Mutual funds don't guarantee returns. They offer the potential for returns based on the performance of the underlying assets.",
-        isCorrect: false,
-      },
-      {
-        id: "pooling",
-        label: "Pooling money and spreading risk",
-        reflection: "Exactly! Mutual funds collect money from many investors and invest in a diversified portfolio, spreading risk across multiple assets.",
-        isCorrect: true,
-      },
-    ],
-    reward: 15,
-  },
-  {
-    id: 2,
-    prompt: "What is the main benefit of mutual funds?",
-    options: [
-      {
-        id: "control",
-        label: "Complete control over investments",
-        reflection: "In mutual funds, professional fund managers make investment decisions, not individual investors.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "timing",
-        label: "Perfect market timing",
-        reflection: "Mutual funds don't guarantee perfect timing. They focus on long-term investment strategies rather than market timing.",
-        isCorrect: false,
-      },
-      {
-        id: "diversification",
-        label: "Diversification with small investment",
-        reflection: "Perfect! Mutual funds allow you to invest in a diversified portfolio even with a small amount, spreading risk across many assets.",
-        isCorrect: true,
-      },
-      {
-        id: "liquidity",
-        label: "Immediate liquidity like savings",
-        reflection: "While mutual funds are relatively liquid, they're not as immediately accessible as savings accounts. There may be exit loads or processing time.",
-        isCorrect: false,
-      },
-    ],
-    reward: 15,
-  },
-  {
-    id: 3,
-    prompt: "Who manages mutual fund investments?",
-    options: [
-      {
-        id: "investor",
-        label: "Each individual investor",
-        reflection: "Individual investors don't manage mutual fund investments directly. Professional fund managers handle the investment decisions.",
-        isCorrect: false,
-      },
-      {
-        id: "professional",
-        label: "Professional fund managers",
-        reflection: "Exactly! Professional fund managers with expertise in financial markets make investment decisions on behalf of all investors.",
-        isCorrect: true,
-      },
-      {
-        id: "government",
-        label: "Government officials",
-        reflection: "While regulated by government bodies, mutual funds are managed by private fund management companies, not government officials.",
-        isCorrect: false,
-      },
-      {
-        id: "random",
-        label: "Random selection process",
-        reflection: "Mutual fund investments follow strategic investment approaches, not random selection. Professional analysis guides investment decisions.",
-        isCorrect: false,
-      },
-    ],
-    reward: 15,
-  },
-  {
-    id: 4,
-    prompt: "What does diversification in mutual funds mean?",
-    options: [
-      {
-        id: "spread",
-        label: "Spreading investments across different assets",
-        reflection: "Exactly! Diversification means spreading investments across various stocks, bonds, or other securities to reduce overall risk.",
-        isCorrect: true,
-      },
-      {
-        id: "single",
-        label: "Investing in a single stock",
-        reflection: "Diversification means the opposite - investing in multiple assets to reduce risk, not concentrating in a single stock.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "sector",
-        label: "Investing only in one sector",
-        reflection: "Diversification involves investing across multiple sectors, not limiting to just one sector.",
-        isCorrect: false,
-      },
-      {
-        id: "company",
-        label: "Investing in the fund management company",
-        reflection: "Diversification refers to the portfolio holdings within the fund, not investing in the fund management company itself.",
-        isCorrect: false,
-      },
-    ],
-    reward: 15,
-  },
-  {
-    id: 5,
-    prompt: "When is mutual fund investment suitable?",
-    options: [
-      {
-        id: "expert",
-        label: "Only for financial experts",
-        reflection: "Mutual funds are designed for all investors, including beginners. Professional management makes them accessible to everyone.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "large",
-        label: "Only for large investments",
-        reflection: "Mutual funds have low minimum investment requirements, making them accessible even for small investment amounts.",
-        isCorrect: false,
-      },
-      {
-        id: "short",
-        label: "For short-term trading",
-        reflection: "Mutual funds are typically better suited for medium to long-term investment horizons rather than short-term trading.",
-        isCorrect: false,
-      },
-      {
-        id: "beginner",
-        label: "For beginners and experienced investors alike",
-        reflection: "Exactly! Mutual funds are suitable for investors at all levels due to professional management and built-in diversification.",
-        isCorrect: true,
-      },
-    ],
-    reward: 15,
-  },
-];
-
-const totalStages = MUTUAL_FUNDS_STAGES.length;
-const successThreshold = totalStages;
-
 const MutualFundsBasicIdea = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   const gameId = "finance-young-adult-65";
+  const gameContent = t(
+    "financial-literacy.young-adult.mutual-funds-basic-idea",
+    { returnObjects: true }
+  );
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = stages.length;
+  const successThreshold = totalStages;
   const gameData = getGameDataById(gameId);
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 15;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 15;
@@ -188,20 +32,15 @@ const MutualFundsBasicIdea = () => {
   const [showFeedback, setShowFeedback] = useState(false);
   const [selectedReflection, setSelectedReflection] = useState(null);
   const [canProceed, setCanProceed] = useState(false);
-
-  const reflectionPrompts = useMemo(
-    () => [
-      "How can diversification help protect your investments?",
-      "When would mutual funds be appropriate for your investment goals?",
-    ],
-    []
-  );
+  const reflectionPrompts = Array.isArray(gameContent?.reflectionPrompts)
+    ? gameContent.reflectionPrompts
+    : [];
 
   const handleChoice = (option) => {
     if (selectedOption || showResult) return;
 
     resetFeedback();
-    const currentStageData = MUTUAL_FUNDS_STAGES[currentStage];
+    const currentStageData = stages[currentStage];
     const updatedHistory = [
       ...history,
       { stageId: currentStageData.id, isCorrect: option.isCorrect },
@@ -247,22 +86,28 @@ const MutualFundsBasicIdea = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
-  const stage = MUTUAL_FUNDS_STAGES[Math.min(currentStage, totalStages - 1)];
+  const subtitle = t(
+    "financial-literacy.young-adult.mutual-funds-basic-idea.subtitleProgress",
+    {
+      current: Math.min(currentStage + 1, totalStages || 1),
+      total: totalStages || 1,
+    }
+  );
+  const stage = stages[Math.min(currentStage, Math.max(totalStages - 1, 0))];
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="Mutual Funds – Basic Idea"
+      title={gameContent?.title}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      maxScore={MUTUAL_FUNDS_STAGES.length}
-      currentLevel={Math.min(currentStage + 1, MUTUAL_FUNDS_STAGES.length)}
-      totalLevels={MUTUAL_FUNDS_STAGES.length}
+      maxScore={totalStages}
+      currentLevel={Math.min(currentStage + 1, totalStages || 1)}
+      totalLevels={totalStages || 1}
       gameId={gameId}
       gameType="finance"
       showGameOver={showResult}
@@ -274,8 +119,8 @@ const MutualFundsBasicIdea = () => {
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>Mutual Funds</span>
+            <span>{gameContent?.scenarioLabel}</span>
+            <span>{gameContent?.scenarioValue}</span>
           </div>
           <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
           <div className="grid grid-cols-2 gap-4">
@@ -294,7 +139,12 @@ const MutualFundsBasicIdea = () => {
                     }`}
                 >
                   <div className="flex justify-between items-center mb-2 text-sm text-white/70">
-                    <span>Choice {option.id.toUpperCase()}</span>
+                    <span>
+                      {t(
+                        "financial-literacy.young-adult.mutual-funds-basic-idea.choiceLabel",
+                        { id: String(option.id || "").toUpperCase() }
+                      )}
+                    </span>
                   </div>
                   <p className="text-white font-semibold">{option.label}</p>
                 </button>
@@ -303,7 +153,9 @@ const MutualFundsBasicIdea = () => {
           </div>
           {(showResult || showFeedback) && (
             <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-              <h4 className="text-lg font-semibold text-white">Reflection</h4>
+              <h4 className="text-lg font-semibold text-white">
+                {gameContent?.reflectionTitle}
+              </h4>
               {selectedReflection && (
                 <div className="max-h-24 overflow-y-auto pr-2">
                   <p className="text-sm text-white/90">{selectedReflection}</p>
@@ -327,7 +179,9 @@ const MutualFundsBasicIdea = () => {
                       Continue
                     </button>
                   ) : (
-                    <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                    <div className="py-2 px-6 text-white font-semibold">
+                      {gameContent?.readingLabel}
+                    </div>
                   )}
                 </div>
               )}
@@ -344,11 +198,15 @@ const MutualFundsBasicIdea = () => {
                     ))}
                   </ul>
                   <p className="text-sm text-white/70">
-                    Skill unlocked: <strong>Mutual fund understanding</strong>
+                    {gameContent?.skillUnlockedLabel}{" "}
+                    <strong>{gameContent?.skillName}</strong>
                   </p>
                   {!hasPassed && (
                     <p className="text-xs text-amber-300">
-                      Answer all {totalStages} choices correctly to earn the full reward.
+                      {t(
+                        "financial-literacy.young-adult.mutual-funds-basic-idea.fullRewardHint",
+                        { total: totalStages }
+                      )}
                     </p>
                   )}
                   {!hasPassed && (
@@ -356,7 +214,7 @@ const MutualFundsBasicIdea = () => {
                       onClick={handleRetry}
                       className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Try Again
+                      {gameContent?.tryAgainButton}
                     </button>
                   )}
                 </>
@@ -367,18 +225,24 @@ const MutualFundsBasicIdea = () => {
         </div>
         {showResult && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection Prompts</h4>
+            <h4 className="text-lg font-semibold text-white">
+              {gameContent?.reflectionPromptsTitle}
+            </h4>
             <ul className="text-sm list-disc list-inside space-y-1">
               {reflectionPrompts.map((prompt) => (
                 <li key={prompt}>{prompt}</li>
               ))}
             </ul>
             <p className="text-sm text-white/70">
-              Skill unlocked: <strong>Mutual fund understanding</strong>
+              {gameContent?.skillUnlockedLabel}{" "}
+              <strong>{gameContent?.skillName}</strong>
             </p>
             {!hasPassed && (
               <p className="text-xs text-amber-300">
-                Answer all {totalStages} choices correctly to earn the full reward.
+                {t(
+                  "financial-literacy.young-adult.mutual-funds-basic-idea.fullRewardHint",
+                  { total: totalStages }
+                )}
               </p>
             )}
             {!hasPassed && (
@@ -386,7 +250,7 @@ const MutualFundsBasicIdea = () => {
                 onClick={handleRetry}
                 className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
               >
-                Try Again
+                {gameContent?.tryAgainButton}
               </button>
             )}
           </div>

@@ -1,0 +1,177 @@
+{
+  "title": "Risk vs Return",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Risk–Return Tradeoff",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Risk–return judgment",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you balance potential returns with acceptable risk levels?",
+    "What factors should influence your risk tolerance in investments?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Higher returns usually mean:",
+      "options": [
+        {
+          "id": "no-risk",
+          "label": "No risk",
+          "reflection": "Higher returns typically come with higher risk. Investments with no risk usually offer lower, more predictable returns.",
+          "isCorrect": false
+        },
+        {
+          "id": "higher-risk",
+          "label": "Higher risk",
+          "reflection": "Exactly! The fundamental principle of investing is that higher potential returns are associated with higher levels of risk.",
+          "isCorrect": true
+        },
+        {
+          "id": "guaranteed",
+          "label": "Guaranteed profits",
+          "reflection": "No investment is truly guaranteed. Even seemingly safe investments carry some level of risk, and higher returns usually mean higher uncertainty.",
+          "isCorrect": false
+        },
+        {
+          "id": "stable",
+          "label": "Stable and predictable",
+          "reflection": "Stability and predictability are typically associated with lower returns. Higher returns usually involve more volatility and uncertainty.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "What is the relationship between risk and return?",
+      "options": [
+        {
+          "id": "independent",
+          "label": "They are completely independent",
+          "reflection": "Risk and return are closely related. Understanding this relationship is fundamental to making informed investment decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "reversed",
+          "label": "Higher returns always mean lower risk",
+          "reflection": "This is generally not true. The risk-return relationship typically works in the opposite direction, with higher returns associated with higher risk.",
+          "isCorrect": false
+        },
+        {
+          "id": "opposite",
+          "label": "Higher risk generally leads to higher potential returns",
+          "reflection": "Perfect! This is a core principle of investing - the risk-return tradeoff suggests that investments offering higher potential returns also come with higher risk.",
+          "isCorrect": true
+        },
+        {
+          "id": "same",
+          "label": "Risk and return always stay the same",
+          "reflection": "Investment risk and return vary together. They don't remain constant - they have a dynamic relationship that changes based on market conditions.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "Why might an investor accept higher risk?",
+      "options": [
+        {
+          "id": "returns",
+          "label": "To potentially achieve higher returns",
+          "reflection": "Exactly! Investors may accept higher risk for the possibility of earning higher returns, understanding that there's no guarantee of success.",
+          "isCorrect": true
+        },
+        {
+          "id": "security",
+          "label": "To achieve better security",
+          "reflection": "Accepting higher risk usually reduces security, not improves it. Lower risk investments typically offer more stability and protection.",
+          "isCorrect": false
+        },
+        {
+          "id": "safety",
+          "label": "To ensure complete safety",
+          "reflection": "Higher risk investments don't provide complete safety. For safety, investors typically choose lower-risk options like savings accounts or government bonds.",
+          "isCorrect": false
+        },
+        {
+          "id": "liquidity",
+          "label": "To improve liquidity",
+          "reflection": "Risk level doesn't directly determine liquidity. Some high-risk investments are highly liquid, while some low-risk investments may be less liquid.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What should you consider before choosing high-risk investments?",
+      "options": [
+        {
+          "id": "nothing",
+          "label": "Nothing - just go for the highest returns",
+          "reflection": "Making investment decisions without considering risk can lead to significant losses. It's important to evaluate your risk tolerance and financial goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "trends",
+          "label": "Only recent market trends",
+          "reflection": "While market trends are important, they shouldn't be the only factor. Your personal financial situation and long-term goals are equally important.",
+          "isCorrect": false
+        },
+        {
+          "id": "friends",
+          "label": "What your friends are investing in",
+          "reflection": "Following others' investment choices without considering your own situation can be risky. Your investment decisions should be based on your personal financial goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "factors",
+          "label": "Your risk tolerance, financial goals, and time horizon",
+          "reflection": "Perfect! These factors are crucial in determining whether high-risk investments align with your overall financial strategy and personal circumstances.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "How can understanding risk-return help you?",
+      "options": [
+        {
+          "id": "ignore",
+          "label": "Ignore all investment advice",
+          "reflection": "Understanding risk-return principles should help you make better decisions, not ignore advice. It gives you a framework for evaluating investment opportunities.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid all investments",
+          "reflection": "Understanding risk-return should help you make better investment choices, not avoid investing altogether. Some level of investment is usually necessary for financial growth.",
+          "isCorrect": false
+        },
+        {
+          "id": "decisions",
+          "label": "Make more informed investment decisions",
+          "reflection": "Exactly! Understanding the risk-return relationship helps you evaluate investment opportunities and choose options that align with your risk tolerance and goals.",
+          "isCorrect": true
+        },
+        {
+          "id": "gamble",
+          "label": "Take unnecessary risks",
+          "reflection": "Understanding risk-return should help you make calculated decisions, not encourage unnecessary gambling. The goal is to find the right balance for your situation.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}
+

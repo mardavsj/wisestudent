@@ -1,0 +1,177 @@
+{
+  "title": "Start Small, Stay Consistent",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Consistent Investing",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Consistency habit",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you start building an investing habit with your current income?",
+    "What strategies can help you maintain consistency in your investment approach?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "What matters more?",
+      "options": [
+        {
+          "id": "large",
+          "label": "Large one-time investments",
+          "reflection": "While large one-time investments can be beneficial, they're not always feasible for young adults with limited capital. The key is starting with what you can afford consistently.",
+          "isCorrect": false
+        },
+        {
+          "id": "small",
+          "label": "Small, regular contributions",
+          "reflection": "Exactly! Consistency beats size early on. Small, regular contributions build the habit of investing and can grow significantly over time through compound interest.",
+          "isCorrect": true
+        },
+        {
+          "id": "timing",
+          "label": "Perfect market timing",
+          "reflection": "Trying to time the market perfectly is extremely difficult even for professionals. Consistent investing through market ups and downs is more reliable than timing.",
+          "isCorrect": false
+        },
+        {
+          "id": "lump",
+          "label": "Waiting to invest a lump sum",
+          "reflection": "Waiting for a large lump sum may mean missing out on years of potential growth. Starting small and staying consistent often leads to better long-term results.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "Why is starting small beneficial for beginners?",
+      "options": [
+        {
+          "id": "pressure",
+          "label": "Reduces financial pressure",
+          "reflection": "Perfect! Starting small reduces the financial pressure and risk. It allows you to learn about investing without putting your financial security at risk.",
+          "isCorrect": true
+        },
+        {
+          "id": "returns",
+          "label": "Guarantees higher returns",
+          "reflection": "Starting small doesn't guarantee higher returns. The benefit is in building sustainable habits and reducing risk, not in immediate returns.",
+          "isCorrect": false
+        },
+        {
+          "id": "complexity",
+          "label": "Makes investing more complex",
+          "reflection": "Starting small actually simplifies investing by allowing you to focus on learning fundamentals without the stress of managing large amounts.",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "label": "Delays wealth building significantly",
+          "reflection": "While starting small may seem slower initially, the power of compound interest over time can make up for the smaller starting amounts.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "What is the advantage of regular contributions?",
+      "options": [
+        {
+          "id": "timing",
+          "label": "Perfect timing every time",
+          "reflection": "Regular contributions don't guarantee perfect timing, but they help smooth out market volatility through consistent investing regardless of market conditions.",
+          "isCorrect": false
+        },
+        {
+          "id": "control",
+          "label": "Complete control over market movements",
+          "reflection": "Regular contributions don't give you control over market movements. They provide a disciplined approach to investing despite market fluctuations.",
+          "isCorrect": false
+        },
+        {
+          "id": "guarantee",
+          "label": "Guaranteed profits in all market conditions",
+          "reflection": "No investment strategy can guarantee profits in all market conditions. Regular contributions help manage risk but don't eliminate it entirely.",
+          "isCorrect": false
+        },
+        {
+          "id": "dollar",
+          "label": "Dollar-cost averaging benefits",
+          "reflection": "Exactly! Regular contributions allow you to buy more shares when prices are low and fewer when prices are high, averaging out your purchase price over time.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "How does consistency impact long-term wealth building?",
+      "options": [
+        {
+          "id": "quick",
+          "label": "Creates quick wealth overnight",
+          "reflection": "Consistency is about long-term wealth building, not quick gains. Sustainable wealth creation takes time and patience with consistent contributions.",
+          "isCorrect": false
+        },
+        {
+          "id": "compound",
+          "label": "Enables compound growth over time",
+          "reflection": "Perfect! Consistency allows compound interest to work its magic. Even small amounts invested regularly can grow substantially over decades through reinvested returns.",
+          "isCorrect": true
+        },
+        {
+          "id": "volatile",
+          "label": "Makes investments more volatile",
+          "reflection": "Consistency actually helps smooth out volatility by spreading investments over time rather than making large, sporadic investments.",
+          "isCorrect": false
+        },
+        {
+          "id": "complex",
+          "label": "Complicates investment strategies",
+          "reflection": "Consistency simplifies investing by creating a routine. It removes the need to constantly decide when and how much to invest.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What should you prioritize when starting to invest?",
+      "options": [
+        {
+          "id": "amount",
+          "label": "The amount you invest each month",
+          "reflection": "While the amount matters, consistency in investing regularly is more important than the specific amount. Start with what you can afford and maintain the habit.",
+          "isCorrect": false
+        },
+        {
+          "id": "stocks",
+          "label": "Choosing the perfect stocks or funds",
+          "reflection": "While choosing good investments is important, building the investing habit comes first. You can refine your investment choices over time as you gain experience.",
+          "isCorrect": false
+        },
+        {
+          "id": "habit",
+          "label": "Building the habit of regular investing",
+          "reflection": "Exactly! Building the habit of regular investing is the most important priority. Once the habit is established, you can gradually increase the amount as your financial situation improves.",
+          "isCorrect": true
+        },
+        {
+          "id": "timing",
+          "label": "Finding the perfect time to start",
+          "reflection": "Waiting for the perfect time often means never starting. The best time to begin investing is now, even if it's with small amounts.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}
+

@@ -44,6 +44,20 @@ import enFinancialLiteracyYoungAdultOTPSafety from "../../../locales/en/gamecont
 import enFinancialLiteracyYoungAdultMultipleBankAccounts from "../../../locales/en/gamecontent/financial-literacy/young-adult/multiple-bank-accounts.json";
 import enFinancialLiteracyYoungAdultWalletVsBank from "../../../locales/en/gamecontent/financial-literacy/young-adult/wallet-vs-bank.json";
 import enFinancialLiteracyYoungAdultCheckingBankStatements from "../../../locales/en/gamecontent/financial-literacy/young-adult/checking-bank-statements.json";
+import enFinancialLiteracyYoungAdultWhySaveEarly from "../../../locales/en/gamecontent/financial-literacy/young-adult/why-save-early.json";
+import enFinancialLiteracyYoungAdultSavingBeforeInvesting from "../../../locales/en/gamecontent/financial-literacy/young-adult/saving-before-investing.json";
+import enFinancialLiteracyYoungAdultEmergencyFundFirst from "../../../locales/en/gamecontent/financial-literacy/young-adult/emergency-fund-first.json";
+import enFinancialLiteracyYoungAdultFixedDepositAwareness from "../../../locales/en/gamecontent/financial-literacy/young-adult/fixed-deposit-awareness.json";
+import enFinancialLiteracyYoungAdultMutualFundsBasicIdea from "../../../locales/en/gamecontent/financial-literacy/young-adult/mutual-funds-basic-idea.json";
+import enFinancialLiteracyYoungAdultRiskVsReturn from "../../../locales/en/gamecontent/financial-literacy/young-adult/risk-vs-return.json";
+import enFinancialLiteracyYoungAdultLongTermInvestingMindset from "../../../locales/en/gamecontent/financial-literacy/young-adult/long-term-investing-mindset.json";
+import enFinancialLiteracyYoungAdultAvoidingGetRichQuickSchemes from "../../../locales/en/gamecontent/financial-literacy/young-adult/avoiding-get-rich-quick-schemes.json";
+import enFinancialLiteracyYoungAdultStartSmallStayConsistent from "../../../locales/en/gamecontent/financial-literacy/young-adult/start-small-stay-consistent.json";
+import enFinancialLiteracyYoungAdultGrowthBasicsCheckpoint from "../../../locales/en/gamecontent/financial-literacy/young-adult/growth-basics-checkpoint.json";
+import enFinancialLiteracyYoungAdultIncomeComesFromSkills from "../../../locales/en/gamecontent/financial-literacy/young-adult/income-comes-from-skills.json";
+import enFinancialLiteracyYoungAdultFirstJobReality from "../../../locales/en/gamecontent/financial-literacy/young-adult/first-job-reality.json";
+import enFinancialLiteracyYoungAdultSideIncomeTruth from "../../../locales/en/gamecontent/financial-literacy/young-adult/side-income-truth.json";
+import enFinancialLiteracyYoungAdultTimeVsMoneyTradeoff from "../../../locales/en/gamecontent/financial-literacy/young-adult/time-vs-money-tradeoff.json";
 import enFinancialLiteracyYoungAdultPublicWifiRisk from "../../../locales/en/gamecontent/financial-literacy/young-adult/public-wifi-risk.json";
 import enFinancialLiteracyYoungAdultAutoDebitAwareness from "../../../locales/en/gamecontent/financial-literacy/young-adult/auto-debit-awareness.json";
 import enFinancialLiteracyYoungAdultDigitalRecordAdvantage from "../../../locales/en/gamecontent/financial-literacy/young-adult/digital-record-advantage.json";
@@ -58,6 +72,23 @@ import enFinancialLiteracyYoungAdultLoanEligibilityBasics from "../../../locales
 import enFinancialLiteracyYoungAdultBorrowingMoreThanNeeded from "../../../locales/en/gamecontent/financial-literacy/young-adult/borrowing-more-than-needed.json";
 import enFinancialLiteracyYoungAdultCreditIsNotEmergencyFund from "../../../locales/en/gamecontent/financial-literacy/young-adult/credit-is-not-emergency-fund.json";
 import enFinancialLiteracyYoungAdultFirstCreditCheckpoint from "../../../locales/en/gamecontent/financial-literacy/young-adult/first-credit-checkpoint.json";
+import enFinancialLiteracyYoungAdultFreelancingBasics from "../../../locales/en/gamecontent/financial-literacy/young-adult/freelancing-basics.json";
+import enFinancialLiteracyYoungAdultIncomeStability from "../../../locales/en/gamecontent/financial-literacy/young-adult/income-stability.json";
+import enFinancialLiteracyYoungAdultCareerGrowthVsQuickPay from "../../../locales/en/gamecontent/financial-literacy/young-adult/career-growth-vs-quick-pay.json";
+import enFinancialLiteracyYoungAdultOnlineIncomeScams from "../../../locales/en/gamecontent/financial-literacy/young-adult/online-income-scams.json";
+import enFinancialLiteracyYoungAdultMultipleIncomeStreams from "../../../locales/en/gamecontent/financial-literacy/young-adult/multiple-income-streams.json";
+import enFinancialLiteracyYoungAdultEarningReadinessCheckpoint from "../../../locales/en/gamecontent/financial-literacy/young-adult/earning-readiness-checkpoint.json";
+import enFinancialLiteracyYoungAdultPhishingMessageAlert from "../../../locales/en/gamecontent/financial-literacy/young-adult/phishing-message-alert.json";
+import enFinancialLiteracyYoungAdultFakeJobOffer from "../../../locales/en/gamecontent/financial-literacy/young-adult/fake-job-offer.json";
+import enFinancialLiteracyYoungAdultOTPSharingTrap from "../../../locales/en/gamecontent/financial-literacy/young-adult/otp-sharing-trap.json";
+import enFinancialLiteracyYoungAdultSocialMediaInvestmentTips from "../../../locales/en/gamecontent/financial-literacy/young-adult/social-media-investment-tips.json";
+import enFinancialLiteracyYoungAdultFakePaymentScreenshot from "../../../locales/en/gamecontent/financial-literacy/young-adult/fake-payment-screenshot.json";
+import enFinancialLiteracyYoungAdultPublicDeviceRisk from "../../../locales/en/gamecontent/financial-literacy/young-adult/public-device-risk.json";
+import enFinancialLiteracyYoungAdultLoanScamWarning from "../../../locales/en/gamecontent/financial-literacy/young-adult/loan-scam-warning.json";
+import enFinancialLiteracyYoungAdultFakeCustomerSupport from "../../../locales/en/gamecontent/financial-literacy/young-adult/fake-customer-support.json";
+import enFinancialLiteracyYoungAdultDataSharingAwareness from "../../../locales/en/gamecontent/financial-literacy/young-adult/data-sharing-awareness.json";
+import enFinancialLiteracyYoungAdultFraudSafetyCheckpoint from "../../../locales/en/gamecontent/financial-literacy/young-adult/fraud-safety-checkpoint.json";
+import enFinancialLiteracyYoungAdultMoneyAndIntegrity from "../../../locales/en/gamecontent/financial-literacy/young-adult/money-and-integrity.json";
 
 import hiFinancialLiteracyYoungAdultFirstIncomeReality from "../../../locales/hi/gamecontent/financial-literacy/young-adult/first-income-reality.json";
 import hiFinancialLiteracyYoungAdultSalaryIsNotPocketMoney from "../../../locales/hi/gamecontent/financial-literacy/young-adult/salary-is-not-pocket-money.json";
@@ -105,6 +136,20 @@ import hiFinancialLiteracyYoungAdultOTPSafety from "../../../locales/hi/gamecont
 import hiFinancialLiteracyYoungAdultMultipleBankAccounts from "../../../locales/hi/gamecontent/financial-literacy/young-adult/multiple-bank-accounts.json";
 import hiFinancialLiteracyYoungAdultWalletVsBank from "../../../locales/hi/gamecontent/financial-literacy/young-adult/wallet-vs-bank.json";
 import hiFinancialLiteracyYoungAdultCheckingBankStatements from "../../../locales/hi/gamecontent/financial-literacy/young-adult/checking-bank-statements.json";
+import hiFinancialLiteracyYoungAdultWhySaveEarly from "../../../locales/hi/gamecontent/financial-literacy/young-adult/why-save-early.json";
+import hiFinancialLiteracyYoungAdultSavingBeforeInvesting from "../../../locales/hi/gamecontent/financial-literacy/young-adult/saving-before-investing.json";
+import hiFinancialLiteracyYoungAdultEmergencyFundFirst from "../../../locales/hi/gamecontent/financial-literacy/young-adult/emergency-fund-first.json";
+import hiFinancialLiteracyYoungAdultFixedDepositAwareness from "../../../locales/hi/gamecontent/financial-literacy/young-adult/fixed-deposit-awareness.json";
+import hiFinancialLiteracyYoungAdultMutualFundsBasicIdea from "../../../locales/hi/gamecontent/financial-literacy/young-adult/mutual-funds-basic-idea.json";
+import hiFinancialLiteracyYoungAdultRiskVsReturn from "../../../locales/hi/gamecontent/financial-literacy/young-adult/risk-vs-return.json";
+import hiFinancialLiteracyYoungAdultLongTermInvestingMindset from "../../../locales/hi/gamecontent/financial-literacy/young-adult/long-term-investing-mindset.json";
+import hiFinancialLiteracyYoungAdultAvoidingGetRichQuickSchemes from "../../../locales/hi/gamecontent/financial-literacy/young-adult/avoiding-get-rich-quick-schemes.json";
+import hiFinancialLiteracyYoungAdultStartSmallStayConsistent from "../../../locales/hi/gamecontent/financial-literacy/young-adult/start-small-stay-consistent.json";
+import hiFinancialLiteracyYoungAdultGrowthBasicsCheckpoint from "../../../locales/hi/gamecontent/financial-literacy/young-adult/growth-basics-checkpoint.json";
+import hiFinancialLiteracyYoungAdultIncomeComesFromSkills from "../../../locales/hi/gamecontent/financial-literacy/young-adult/income-comes-from-skills.json";
+import hiFinancialLiteracyYoungAdultFirstJobReality from "../../../locales/hi/gamecontent/financial-literacy/young-adult/first-job-reality.json";
+import hiFinancialLiteracyYoungAdultSideIncomeTruth from "../../../locales/hi/gamecontent/financial-literacy/young-adult/side-income-truth.json";
+import hiFinancialLiteracyYoungAdultTimeVsMoneyTradeoff from "../../../locales/hi/gamecontent/financial-literacy/young-adult/time-vs-money-tradeoff.json";
 import hiFinancialLiteracyYoungAdultPublicWifiRisk from "../../../locales/hi/gamecontent/financial-literacy/young-adult/public-wifi-risk.json";
 import hiFinancialLiteracyYoungAdultAutoDebitAwareness from "../../../locales/hi/gamecontent/financial-literacy/young-adult/auto-debit-awareness.json";
 import hiFinancialLiteracyYoungAdultDigitalRecordAdvantage from "../../../locales/hi/gamecontent/financial-literacy/young-adult/digital-record-advantage.json";
@@ -119,6 +164,41 @@ import hiFinancialLiteracyYoungAdultLoanEligibilityBasics from "../../../locales
 import hiFinancialLiteracyYoungAdultBorrowingMoreThanNeeded from "../../../locales/hi/gamecontent/financial-literacy/young-adult/borrowing-more-than-needed.json";
 import hiFinancialLiteracyYoungAdultCreditIsNotEmergencyFund from "../../../locales/hi/gamecontent/financial-literacy/young-adult/credit-is-not-emergency-fund.json";
 import hiFinancialLiteracyYoungAdultFirstCreditCheckpoint from "../../../locales/hi/gamecontent/financial-literacy/young-adult/first-credit-checkpoint.json";
+import hiFinancialLiteracyYoungAdultFreelancingBasics from "../../../locales/hi/gamecontent/financial-literacy/young-adult/freelancing-basics.json";
+import hiFinancialLiteracyYoungAdultIncomeStability from "../../../locales/hi/gamecontent/financial-literacy/young-adult/income-stability.json";
+import hiFinancialLiteracyYoungAdultCareerGrowthVsQuickPay from "../../../locales/hi/gamecontent/financial-literacy/young-adult/career-growth-vs-quick-pay.json";
+import hiFinancialLiteracyYoungAdultOnlineIncomeScams from "../../../locales/hi/gamecontent/financial-literacy/young-adult/online-income-scams.json";
+import hiFinancialLiteracyYoungAdultMultipleIncomeStreams from "../../../locales/hi/gamecontent/financial-literacy/young-adult/multiple-income-streams.json";
+import hiFinancialLiteracyYoungAdultEarningReadinessCheckpoint from "../../../locales/hi/gamecontent/financial-literacy/young-adult/earning-readiness-checkpoint.json";
+import hiFinancialLiteracyYoungAdultPhishingMessageAlert from "../../../locales/hi/gamecontent/financial-literacy/young-adult/phishing-message-alert.json";
+import hiFinancialLiteracyYoungAdultFakeJobOffer from "../../../locales/hi/gamecontent/financial-literacy/young-adult/fake-job-offer.json";
+import hiFinancialLiteracyYoungAdultOTPSharingTrap from "../../../locales/hi/gamecontent/financial-literacy/young-adult/otp-sharing-trap.json";
+import hiFinancialLiteracyYoungAdultSocialMediaInvestmentTips from "../../../locales/hi/gamecontent/financial-literacy/young-adult/social-media-investment-tips.json";
+import hiFinancialLiteracyYoungAdultFakePaymentScreenshot from "../../../locales/hi/gamecontent/financial-literacy/young-adult/fake-payment-screenshot.json";
+import hiFinancialLiteracyYoungAdultPublicDeviceRisk from "../../../locales/hi/gamecontent/financial-literacy/young-adult/public-device-risk.json";
+import hiFinancialLiteracyYoungAdultLoanScamWarning from "../../../locales/hi/gamecontent/financial-literacy/young-adult/loan-scam-warning.json";
+import hiFinancialLiteracyYoungAdultFakeCustomerSupport from "../../../locales/hi/gamecontent/financial-literacy/young-adult/fake-customer-support.json";
+import hiFinancialLiteracyYoungAdultDataSharingAwareness from "../../../locales/hi/gamecontent/financial-literacy/young-adult/data-sharing-awareness.json";
+import hiFinancialLiteracyYoungAdultFraudSafetyCheckpoint from "../../../locales/hi/gamecontent/financial-literacy/young-adult/fraud-safety-checkpoint.json";
+import hiFinancialLiteracyYoungAdultMoneyAndIntegrity from "../../../locales/hi/gamecontent/financial-literacy/young-adult/money-and-integrity.json";
+import enFinancialLiteracyYoungAdultBorrowingWithResponsibility from "../../../locales/en/gamecontent/financial-literacy/young-adult/borrowing-with-responsibility.json";
+import enFinancialLiteracyYoungAdultPayingWhatYouOwe from "../../../locales/en/gamecontent/financial-literacy/young-adult/paying-what-you-owe.json";
+import enFinancialLiteracyYoungAdultFairUseOfMoney from "../../../locales/en/gamecontent/financial-literacy/young-adult/fair-use-of-money.json";
+import enFinancialLiteracyYoungAdultHonestyInFinancialDealings from "../../../locales/en/gamecontent/financial-literacy/young-adult/honesty-in-financial-dealings.json";
+import enFinancialLiteracyYoungAdultRespectingOtherPeoplesMoney from "../../../locales/en/gamecontent/financial-literacy/young-adult/respecting-other-peoples-money.json";
+import enFinancialLiteracyYoungAdultDigitalResponsibility from "../../../locales/en/gamecontent/financial-literacy/young-adult/digital-responsibility.json";
+import enFinancialLiteracyYoungAdultFinancialAccountability from "../../../locales/en/gamecontent/financial-literacy/young-adult/financial-accountability.json";
+import enFinancialLiteracyYoungAdultReputationMatters from "../../../locales/en/gamecontent/financial-literacy/young-adult/reputation-matters.json";
+import enFinancialLiteracyYoungAdultEthicalFinanceCheckpoint from "../../../locales/en/gamecontent/financial-literacy/young-adult/ethical-finance-checkpoint.json";
+import hiFinancialLiteracyYoungAdultBorrowingWithResponsibility from "../../../locales/hi/gamecontent/financial-literacy/young-adult/borrowing-with-responsibility.json";
+import hiFinancialLiteracyYoungAdultPayingWhatYouOwe from "../../../locales/hi/gamecontent/financial-literacy/young-adult/paying-what-you-owe.json";
+import hiFinancialLiteracyYoungAdultFairUseOfMoney from "../../../locales/hi/gamecontent/financial-literacy/young-adult/fair-use-of-money.json";
+import hiFinancialLiteracyYoungAdultHonestyInFinancialDealings from "../../../locales/hi/gamecontent/financial-literacy/young-adult/honesty-in-financial-dealings.json";
+import hiFinancialLiteracyYoungAdultRespectingOtherPeoplesMoney from "../../../locales/hi/gamecontent/financial-literacy/young-adult/respecting-other-peoples-money.json";
+import hiFinancialLiteracyYoungAdultDigitalResponsibility from "../../../locales/hi/gamecontent/financial-literacy/young-adult/digital-responsibility.json";
+import hiFinancialLiteracyYoungAdultFinancialAccountability from "../../../locales/hi/gamecontent/financial-literacy/young-adult/financial-accountability.json";
+import hiFinancialLiteracyYoungAdultReputationMatters from "../../../locales/hi/gamecontent/financial-literacy/young-adult/reputation-matters.json";
+import hiFinancialLiteracyYoungAdultEthicalFinanceCheckpoint from "../../../locales/hi/gamecontent/financial-literacy/young-adult/ethical-finance-checkpoint.json";
 
 export const enFinancialLiteracyYoungAdultGameContent = {
   "first-income-reality": enFinancialLiteracyYoungAdultFirstIncomeReality,
@@ -167,6 +247,20 @@ export const enFinancialLiteracyYoungAdultGameContent = {
   "multiple-bank-accounts": enFinancialLiteracyYoungAdultMultipleBankAccounts,
   "wallet-vs-bank": enFinancialLiteracyYoungAdultWalletVsBank,
   "checking-bank-statements": enFinancialLiteracyYoungAdultCheckingBankStatements,
+  "why-save-early": enFinancialLiteracyYoungAdultWhySaveEarly,
+  "saving-before-investing": enFinancialLiteracyYoungAdultSavingBeforeInvesting,
+  "emergency-fund-first": enFinancialLiteracyYoungAdultEmergencyFundFirst,
+  "fixed-deposit-awareness": enFinancialLiteracyYoungAdultFixedDepositAwareness,
+  "mutual-funds-basic-idea": enFinancialLiteracyYoungAdultMutualFundsBasicIdea,
+  "risk-vs-return": enFinancialLiteracyYoungAdultRiskVsReturn,
+  "long-term-investing-mindset": enFinancialLiteracyYoungAdultLongTermInvestingMindset,
+  "avoiding-get-rich-quick-schemes": enFinancialLiteracyYoungAdultAvoidingGetRichQuickSchemes,
+  "start-small-stay-consistent": enFinancialLiteracyYoungAdultStartSmallStayConsistent,
+  "growth-basics-checkpoint": enFinancialLiteracyYoungAdultGrowthBasicsCheckpoint,
+  "income-comes-from-skills": enFinancialLiteracyYoungAdultIncomeComesFromSkills,
+  "first-job-reality": enFinancialLiteracyYoungAdultFirstJobReality,
+  "side-income-truth": enFinancialLiteracyYoungAdultSideIncomeTruth,
+  "time-vs-money-tradeoff": enFinancialLiteracyYoungAdultTimeVsMoneyTradeoff,
   "public-wifi-risk": enFinancialLiteracyYoungAdultPublicWifiRisk,
   "auto-debit-awareness": enFinancialLiteracyYoungAdultAutoDebitAwareness,
   "digital-record-advantage": enFinancialLiteracyYoungAdultDigitalRecordAdvantage,
@@ -180,7 +274,33 @@ export const enFinancialLiteracyYoungAdultGameContent = {
   "loan-eligibility-basics": enFinancialLiteracyYoungAdultLoanEligibilityBasics,
   "borrowing-more-than-needed": enFinancialLiteracyYoungAdultBorrowingMoreThanNeeded,
   "credit-is-not-emergency-fund": enFinancialLiteracyYoungAdultCreditIsNotEmergencyFund,
-  "first-credit-checkpoint": enFinancialLiteracyYoungAdultFirstCreditCheckpoint
+  "first-credit-checkpoint": enFinancialLiteracyYoungAdultFirstCreditCheckpoint,
+  "freelancing-basics": enFinancialLiteracyYoungAdultFreelancingBasics,
+  "income-stability": enFinancialLiteracyYoungAdultIncomeStability,
+  "career-growth-vs-quick-pay": enFinancialLiteracyYoungAdultCareerGrowthVsQuickPay,
+  "online-income-scams": enFinancialLiteracyYoungAdultOnlineIncomeScams,
+  "multiple-income-streams": enFinancialLiteracyYoungAdultMultipleIncomeStreams,
+  "earning-readiness-checkpoint": enFinancialLiteracyYoungAdultEarningReadinessCheckpoint,
+  "phishing-message-alert": enFinancialLiteracyYoungAdultPhishingMessageAlert,
+  "fake-job-offer": enFinancialLiteracyYoungAdultFakeJobOffer,
+  "otp-sharing-trap": enFinancialLiteracyYoungAdultOTPSharingTrap,
+  "social-media-investment-tips": enFinancialLiteracyYoungAdultSocialMediaInvestmentTips,
+  "fake-payment-screenshot": enFinancialLiteracyYoungAdultFakePaymentScreenshot,
+  "public-device-risk": enFinancialLiteracyYoungAdultPublicDeviceRisk,
+  "loan-scam-warning": enFinancialLiteracyYoungAdultLoanScamWarning,
+  "fake-customer-support": enFinancialLiteracyYoungAdultFakeCustomerSupport,
+  "data-sharing-awareness": enFinancialLiteracyYoungAdultDataSharingAwareness,
+  "fraud-safety-checkpoint": enFinancialLiteracyYoungAdultFraudSafetyCheckpoint,
+  "money-and-integrity": enFinancialLiteracyYoungAdultMoneyAndIntegrity,
+  "borrowing-with-responsibility": enFinancialLiteracyYoungAdultBorrowingWithResponsibility,
+  "paying-what-you-owe": enFinancialLiteracyYoungAdultPayingWhatYouOwe,
+  "fair-use-of-money": enFinancialLiteracyYoungAdultFairUseOfMoney,
+  "honesty-in-financial-dealings": enFinancialLiteracyYoungAdultHonestyInFinancialDealings,
+  "respecting-other-peoples-money": enFinancialLiteracyYoungAdultRespectingOtherPeoplesMoney,
+  "digital-responsibility": enFinancialLiteracyYoungAdultDigitalResponsibility,
+  "financial-accountability": enFinancialLiteracyYoungAdultFinancialAccountability,
+  "reputation-matters": enFinancialLiteracyYoungAdultReputationMatters,
+  "ethical-finance-checkpoint": enFinancialLiteracyYoungAdultEthicalFinanceCheckpoint
 };
 
 export const hiFinancialLiteracyYoungAdultGameContent = {
@@ -230,6 +350,20 @@ export const hiFinancialLiteracyYoungAdultGameContent = {
   "multiple-bank-accounts": hiFinancialLiteracyYoungAdultMultipleBankAccounts,
   "wallet-vs-bank": hiFinancialLiteracyYoungAdultWalletVsBank,
   "checking-bank-statements": hiFinancialLiteracyYoungAdultCheckingBankStatements,
+  "why-save-early": hiFinancialLiteracyYoungAdultWhySaveEarly,
+  "saving-before-investing": hiFinancialLiteracyYoungAdultSavingBeforeInvesting,
+  "emergency-fund-first": hiFinancialLiteracyYoungAdultEmergencyFundFirst,
+  "fixed-deposit-awareness": hiFinancialLiteracyYoungAdultFixedDepositAwareness,
+  "mutual-funds-basic-idea": hiFinancialLiteracyYoungAdultMutualFundsBasicIdea,
+  "risk-vs-return": hiFinancialLiteracyYoungAdultRiskVsReturn,
+  "long-term-investing-mindset": hiFinancialLiteracyYoungAdultLongTermInvestingMindset,
+  "avoiding-get-rich-quick-schemes": hiFinancialLiteracyYoungAdultAvoidingGetRichQuickSchemes,
+  "start-small-stay-consistent": hiFinancialLiteracyYoungAdultStartSmallStayConsistent,
+  "growth-basics-checkpoint": hiFinancialLiteracyYoungAdultGrowthBasicsCheckpoint,
+  "income-comes-from-skills": hiFinancialLiteracyYoungAdultIncomeComesFromSkills,
+  "first-job-reality": hiFinancialLiteracyYoungAdultFirstJobReality,
+  "side-income-truth": hiFinancialLiteracyYoungAdultSideIncomeTruth,
+  "time-vs-money-tradeoff": hiFinancialLiteracyYoungAdultTimeVsMoneyTradeoff,
   "public-wifi-risk": hiFinancialLiteracyYoungAdultPublicWifiRisk,
   "auto-debit-awareness": hiFinancialLiteracyYoungAdultAutoDebitAwareness,
   "digital-record-advantage": hiFinancialLiteracyYoungAdultDigitalRecordAdvantage,
@@ -243,5 +377,31 @@ export const hiFinancialLiteracyYoungAdultGameContent = {
   "loan-eligibility-basics": hiFinancialLiteracyYoungAdultLoanEligibilityBasics,
   "borrowing-more-than-needed": hiFinancialLiteracyYoungAdultBorrowingMoreThanNeeded,
   "credit-is-not-emergency-fund": hiFinancialLiteracyYoungAdultCreditIsNotEmergencyFund,
-  "first-credit-checkpoint": hiFinancialLiteracyYoungAdultFirstCreditCheckpoint
+  "first-credit-checkpoint": hiFinancialLiteracyYoungAdultFirstCreditCheckpoint,
+  "freelancing-basics": hiFinancialLiteracyYoungAdultFreelancingBasics,
+  "income-stability": hiFinancialLiteracyYoungAdultIncomeStability,
+  "career-growth-vs-quick-pay": hiFinancialLiteracyYoungAdultCareerGrowthVsQuickPay,
+  "online-income-scams": hiFinancialLiteracyYoungAdultOnlineIncomeScams,
+  "multiple-income-streams": hiFinancialLiteracyYoungAdultMultipleIncomeStreams,
+  "earning-readiness-checkpoint": hiFinancialLiteracyYoungAdultEarningReadinessCheckpoint,
+  "phishing-message-alert": hiFinancialLiteracyYoungAdultPhishingMessageAlert,
+  "fake-job-offer": hiFinancialLiteracyYoungAdultFakeJobOffer,
+  "otp-sharing-trap": hiFinancialLiteracyYoungAdultOTPSharingTrap,
+  "social-media-investment-tips": hiFinancialLiteracyYoungAdultSocialMediaInvestmentTips,
+  "fake-payment-screenshot": hiFinancialLiteracyYoungAdultFakePaymentScreenshot,
+  "public-device-risk": hiFinancialLiteracyYoungAdultPublicDeviceRisk,
+  "loan-scam-warning": hiFinancialLiteracyYoungAdultLoanScamWarning,
+  "fake-customer-support": hiFinancialLiteracyYoungAdultFakeCustomerSupport,
+  "data-sharing-awareness": hiFinancialLiteracyYoungAdultDataSharingAwareness,
+  "fraud-safety-checkpoint": hiFinancialLiteracyYoungAdultFraudSafetyCheckpoint,
+  "money-and-integrity": hiFinancialLiteracyYoungAdultMoneyAndIntegrity,
+  "borrowing-with-responsibility": hiFinancialLiteracyYoungAdultBorrowingWithResponsibility,
+  "paying-what-you-owe": hiFinancialLiteracyYoungAdultPayingWhatYouOwe,
+  "fair-use-of-money": hiFinancialLiteracyYoungAdultFairUseOfMoney,
+  "honesty-in-financial-dealings": hiFinancialLiteracyYoungAdultHonestyInFinancialDealings,
+  "respecting-other-peoples-money": hiFinancialLiteracyYoungAdultRespectingOtherPeoplesMoney,
+  "digital-responsibility": hiFinancialLiteracyYoungAdultDigitalResponsibility,
+  "financial-accountability": hiFinancialLiteracyYoungAdultFinancialAccountability,
+  "reputation-matters": hiFinancialLiteracyYoungAdultReputationMatters,
+  "ethical-finance-checkpoint": hiFinancialLiteracyYoungAdultEthicalFinanceCheckpoint
 };

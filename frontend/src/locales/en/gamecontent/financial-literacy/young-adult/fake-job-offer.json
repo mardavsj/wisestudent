@@ -1,0 +1,178 @@
+{
+  "title": "Fake Job Offer",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Fake Job Offer",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Job offer verification",
+  "outcomeLine": "Outcome: You can spot fake job offers and protect your personal information.",
+  "outcomeLineShort": "You can recognize fake job offers.",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "What verification steps do you typically take before applying to job opportunities?",
+    "How can you distinguish between legitimate job offers and employment scams?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "A job promises high pay with upfront registration fees. What does this indicate?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Genuine opportunity",
+          "reflection": "Genuine employers don't require upfront fees from job applicants. They invest in their employees, not the other way around. This is a major red flag for scams.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Standard industry practice",
+          "reflection": "While some industries may have legitimate fees (like licensing), reputable employers typically cover these costs or pay them directly, not require upfront payment from applicants.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Sign of a competitive position",
+          "reflection": "High pay alone doesn't justify upfront fees. Legitimate high-paying positions are typically offered by established companies with clear hiring processes that don't involve applicant payments.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Likely scam",
+          "reflection": "Exactly! Legitimate jobs don't ask for money. This is one of the most common warning signs of employment scams designed to steal your money or personal information.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 2,
+      "prompt": "What should you do if a job asks for personal documents early in the process?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Send everything immediately to secure the position",
+          "reflection": "Sending personal documents immediately, especially to unverified employers, puts you at risk for identity theft and document fraud. Legitimate employers follow proper verification procedures.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Only send documents you can easily replace",
+          "reflection": "Even documents you can replace can be used for identity theft or fraudulent activities. It's better to verify the employer's legitimacy before sharing any sensitive information.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Verify the company's legitimacy first",
+          "reflection": "Perfect! Always research the company through official channels, check their business registration, and verify contact information before sharing any personal documents.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Ask for a copy of their business license instead",
+          "reflection": "While asking for their credentials is reasonable, scammers can easily provide fake documents. Independent verification through official sources is more reliable than exchanging documents.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 3,
+      "prompt": "Which is a warning sign of a fake job offer?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Professional email address and company website",
+          "reflection": "Professional appearance can be easily faked by scammers. Don't rely solely on surface-level professionalism to determine legitimacy.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Immediate job offer without interview",
+          "reflection": "Exactly! Legitimate employers typically conduct interviews and follow established hiring processes. Immediate offers without proper evaluation are major red flags.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Clear job description and responsibilities",
+          "reflection": "Clear job descriptions are actually a positive sign, but they can also be included in fake offers to appear legitimate. Look for other warning signs in combination.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Multiple communication channels available",
+          "reflection": "Having multiple ways to contact a company can be legitimate, but scammers also provide various contact methods to appear more credible. Verify through independent research.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 4,
+      "prompt": "How can you research a company's legitimacy?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Check business registration and reviews independently",
+          "reflection": "Perfect! Verify through official business registries, check reviews on multiple platforms, and look for consistent information across different sources to confirm legitimacy.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Trust their social media presence alone",
+          "reflection": "Social media profiles can be easily created and manipulated by scammers. They're not reliable indicators of a company's legitimacy on their own.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ask the company for references",
+          "reflection": "While asking for references is reasonable, scammers can provide fake references. Independent verification through official sources is more reliable than company-provided references.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Look at their office photos online",
+          "reflection": "Office photos can be easily staged or stolen from other companies. They don't provide reliable proof of a company's legitimacy or operations.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 5,
+      "prompt": "What's the safest approach to online job applications?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Apply to every opportunity you see",
+          "reflection": "Applying to every opportunity without proper research puts you at risk for scams and wastes your time on illegitimate positions. Quality over quantity is key.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Only apply through job boards you trust",
+          "reflection": "While trusted job boards are generally safer, even reputable platforms can occasionally host fake listings. Always verify the company independently regardless of the platform.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Focus only on high-paying positions",
+          "reflection": "Focusing solely on high pay can make you vulnerable to scams that promise unrealistic compensation. Consider the legitimacy and fit of positions, not just the salary.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Research thoroughly and verify legitimacy",
+          "reflection": "Exactly! Taking time to research companies, verify their legitimacy, and understand the hiring process protects you from scams and helps you find genuine opportunities.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 20
+    }
+  ]
+}

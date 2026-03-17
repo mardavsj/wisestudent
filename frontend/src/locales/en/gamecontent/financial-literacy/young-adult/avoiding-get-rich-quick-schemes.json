@@ -1,0 +1,177 @@
+{
+  "title": "Avoiding Get-Rich-Quick Schemes",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Red Flag Awareness",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Scam detection",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you verify the legitimacy of an investment opportunity?",
+    "What steps can you take to protect yourself from investment scams?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "“Guaranteed high returns” usually indicate:",
+      "options": [
+        {
+          "id": "safe",
+          "label": "Safe investment",
+          "reflection": "Guaranteed high returns are extremely rare and usually indicate either fraud or extremely high risk. Legitimate investments always carry some level of risk.",
+          "isCorrect": false
+        },
+        {
+          "id": "opportunity",
+          "label": "Great opportunity you shouldn't miss",
+          "reflection": "Claims of 'can't miss' opportunities with guaranteed returns are typically marketing tactics used by scammers to pressure you into making quick decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "professional",
+          "label": "Professional investment advice",
+          "reflection": "Professional advisors don't guarantee returns. They provide guidance based on analysis, but all investments carry uncertainty and risk.",
+          "isCorrect": false
+        },
+        {
+          "id": "scam",
+          "label": "Scam or high risk",
+          "reflection": "Exactly! Guaranteed returns are a red flag. No legitimate investment can guarantee high returns without corresponding high risk or potential fraud.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "What should you be suspicious of in investment offers?",
+      "options": [
+        {
+          "id": "guarantees",
+          "label": "Guaranteed returns with no risk",
+          "reflection": "Perfect! Any investment promising guaranteed returns with no risk should be viewed with extreme skepticism. All investments involve some level of risk.",
+          "isCorrect": true
+        },
+        {
+          "id": "diversification",
+          "label": "Diversification strategies",
+          "reflection": "Diversification is a legitimate and recommended investment strategy. It's used to spread risk across different investments, not eliminate it entirely.",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "label": "Thorough research and documentation",
+          "reflection": "Legitimate investments are backed by proper research and documentation. These are positive signs, not red flags to be suspicious of.",
+          "isCorrect": false
+        },
+        {
+          "id": "regulation",
+          "label": "Regulatory compliance",
+          "reflection": "Regulatory compliance is a good sign for legitimate investments. It shows the investment follows proper legal and financial standards.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "How do legitimate investments typically perform?",
+      "options": [
+        {
+          "id": "instant",
+          "label": "Instant wealth creation",
+          "reflection": "Legitimate wealth creation takes time and involves gradual growth. Claims of instant wealth are usually associated with scams or extremely high-risk investments.",
+          "isCorrect": false
+        },
+        {
+          "id": "guaranteed",
+          "label": "Guaranteed steady returns every month",
+          "reflection": "Guaranteed monthly returns are unrealistic for most investments. Market conditions change, and legitimate investments reflect these changes.",
+          "isCorrect": false
+        },
+        {
+          "id": "volatile",
+          "label": "Extremely volatile with huge swings",
+          "reflection": "While some investments can be volatile, consistently huge swings are usually a sign of high risk or potential fraud, not legitimate long-term investing.",
+          "isCorrect": false
+        },
+        {
+          "id": "gradual",
+          "label": "Gradual growth with market fluctuations",
+          "reflection": "Exactly! Legitimate investments typically show gradual growth over time, with normal market ups and downs. This is the reality of sound investing.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What is a common tactic used by investment scammers?",
+      "options": [
+        {
+          "id": "transparency",
+          "label": "Full transparency about risks",
+          "reflection": "Transparency about risks is a sign of legitimate investment offerings. Scammers typically hide or downplay risks to make their schemes more attractive.",
+          "isCorrect": false
+        },
+        {
+          "id": "education",
+          "label": "Providing educational resources",
+          "reflection": "Legitimate investment firms often provide educational resources to help investors make informed decisions. This is a positive practice, not a scam tactic.",
+          "isCorrect": false
+        },
+        {
+          "id": "urgency",
+          "label": "Creating artificial urgency",
+          "reflection": "Exactly! Scammers often create false urgency with phrases like 'limited time offer' or 'act now before it's too late' to pressure you into making hasty decisions without proper research.",
+          "isCorrect": true
+        },
+        {
+          "id": "credentials",
+          "label": "Showing proper credentials",
+          "reflection": "Displaying proper credentials and regulatory information is standard practice for legitimate investment professionals. Scammers typically lack or fake these credentials.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What should you do before making any investment?",
+      "options": [
+        {
+          "id": "ignore",
+          "label": "Ignore research and trust your gut",
+          "reflection": "Trusting your gut without research is risky. Proper due diligence is essential for making informed investment decisions and avoiding potential scams.",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "label": "Research thoroughly and understand the risks",
+          "reflection": "Perfect! Always research investments thoroughly, understand the risks involved, and only invest money you can afford to lose. This approach helps protect against scams.",
+          "isCorrect": true
+        },
+        {
+          "id": "follow",
+          "label": "Follow what everyone else is doing",
+          "reflection": "Following the crowd without understanding the investment is dangerous. Popular investments can still be scams, and what works for others may not be suitable for your situation.",
+          "isCorrect": false
+        },
+        {
+          "id": "quick",
+          "label": "Make quick decisions to get the best deals",
+          "reflection": "Rushing into investment decisions often leads to poor outcomes. Legitimate investments don't require immediate action, and taking time to evaluate is usually beneficial.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}
+

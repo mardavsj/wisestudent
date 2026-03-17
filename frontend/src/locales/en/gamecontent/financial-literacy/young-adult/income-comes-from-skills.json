@@ -1,0 +1,178 @@
+{
+  "title": "Income Comes from Skills",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Skill Development",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Strategic skill development",
+  "outcomeLine": "Outcome: Skills compound income.",
+  "outcomeLineShort": "Skills compound income.",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "Which skills in your field have the highest earning potential?",
+    "How can you strategically invest time in skill development for maximum career impact?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "What mostly determines earning potential?",
+      "options": [
+        {
+          "id": "luck",
+          "label": "Luck alone",
+          "reflection": "While luck can play a role in opportunities, relying solely on luck is not a sustainable strategy for building long-term earning potential. Success typically requires effort and skill development.",
+          "isCorrect": false
+        },
+        {
+          "id": "skills",
+          "label": "Skills and effort over time",
+          "reflection": "Exactly! Skills compound income. The more you develop your abilities and work consistently, the more valuable you become in the marketplace, leading to higher earning potential.",
+          "isCorrect": true
+        },
+        {
+          "id": "connections",
+          "label": "Connections and networking only",
+          "reflection": "While networking is valuable, it's not sufficient on its own. Strong skills and consistent effort are what make you genuinely valuable to employers and clients over the long term.",
+          "isCorrect": false
+        },
+        {
+          "id": "inheritance",
+          "label": "Inheritance or family wealth",
+          "reflection": "Inheritance can provide a financial head start, but it doesn't determine your earning potential from work. Your skills and effort are what you can control to build sustainable income.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "How do skills impact your career progression?",
+      "options": [
+        {
+          "id": "stagnant",
+          "label": "They keep you in the same position",
+          "reflection": "Skills are the key to career advancement. Without developing new abilities and improving existing ones, you're likely to remain stagnant while others who invest in their skills move ahead.",
+          "isCorrect": false
+        },
+        {
+          "id": "irrelevant",
+          "label": "They become irrelevant quickly",
+          "reflection": "While some specific skills may become outdated, the ability to learn and adapt is itself a valuable skill. Core competencies and learning abilities remain relevant throughout your career.",
+          "isCorrect": false
+        },
+        {
+          "id": "growth",
+          "label": "They unlock new opportunities and higher pay",
+          "reflection": "Perfect! As you develop skills, you become more valuable to employers, qualify for promotions, and can command higher salaries. Skills are the foundation of career growth.",
+          "isCorrect": true
+        },
+        {
+          "id": "automatic",
+          "label": "They automatically lead to promotions",
+          "reflection": "Skills alone don't guarantee automatic promotions. You also need to demonstrate your abilities, take initiative, and sometimes seek out opportunities to apply your enhanced skills.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "What is the relationship between investment in skills and income?",
+      "options": [
+        {
+          "id": "no",
+          "label": "There is no relationship",
+          "reflection": "There's a strong positive correlation between skill investment and income. The more you invest in developing your abilities, the more valuable you become and the higher your earning potential.",
+          "isCorrect": false
+        },
+        {
+          "id": "negative",
+          "label": "Investing in skills decreases income",
+          "reflection": "Investing in skills requires time and sometimes money upfront, but it typically pays dividends through higher income, better opportunities, and increased job security over time.",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "label": "The relationship is completely random",
+          "reflection": "While there can be some variability based on industry and timing, the general trend is clear: skill investment leads to increased earning potential across most career paths.",
+          "isCorrect": false
+        },
+        {
+          "id": "positive",
+          "label": "Investing in skills typically increases income over time",
+          "reflection": "Exactly! Like compound interest in finance, investing in skills compounds your income potential. Each new skill builds on previous ones, creating exponential value over your career.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "How should you approach skill development for maximum income impact?",
+      "options": [
+        {
+          "id": "strategic",
+          "label": "Strategically develop high-value skills",
+          "reflection": "Perfect! Identifying and developing skills that are in demand, align with your career goals, and complement your existing strengths maximizes your return on investment in learning.",
+          "isCorrect": true
+        },
+        {
+          "id": "random",
+          "label": "Learn whatever seems interesting",
+          "reflection": "While learning what interests you can be motivating, focusing on skills that are in demand in your field or desired career path will have a more direct impact on your earning potential.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid learning new skills to save time",
+          "reflection": "In today's rapidly changing economy, avoiding skill development can actually hurt your career prospects. Continuous learning is essential for maintaining and growing your earning potential.",
+          "isCorrect": false
+        },
+        {
+          "id": "quantity",
+          "label": "Focus on learning many skills superficially",
+          "reflection": "While having broad knowledge can be helpful, depth in key areas typically has more impact on income than surface-level knowledge across many topics. Prioritize depth over breadth.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What is the long-term benefit of consistent skill building?",
+      "options": [
+        {
+          "id": "limited",
+          "label": "Limited to your current job role",
+          "reflection": "Skills are transferable assets. The abilities you develop often apply across different roles, industries, and career stages, providing long-term value beyond any single position.",
+          "isCorrect": false
+        },
+        {
+          "id": "compounding",
+          "label": "Creates compounding advantages throughout your career",
+          "reflection": "Exactly! Skills compound income. Each new skill enhances your existing capabilities, making you more valuable and opening up new opportunities. This creates a snowball effect over time.",
+          "isCorrect": true
+        },
+        {
+          "id": "obsolete",
+          "label": "Becomes obsolete as you age",
+          "reflection": "While specific technical skills may evolve, the core competencies of critical thinking, problem-solving, and adaptability become more valuable with experience. Your accumulated skills are assets, not liabilities.",
+          "isCorrect": false
+        },
+        {
+          "id": "diminishing",
+          "label": "Provides diminishing returns over time",
+          "reflection": "The opposite is typically true. As you build a foundation of skills, each new addition becomes easier and more valuable, creating increasing returns rather than diminishing ones.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}

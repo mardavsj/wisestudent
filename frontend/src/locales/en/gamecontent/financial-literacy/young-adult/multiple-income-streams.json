@@ -1,0 +1,178 @@
+{
+  "title": "Multiple Income Streams",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Multiple Income",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Income stream strategy",
+  "outcomeLine": "Outcome: You understand how to stack income streams without losing focus.",
+  "outcomeLineShort": "You understand how to stack income streams.",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you identify income opportunities that complement your main skills?",
+    "What's your strategy for gradually building multiple income streams?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Multiple incomes are helpful when:",
+      "options": [
+        {
+          "id": "a",
+          "label": "They distract from main career",
+          "reflection": "Multiple incomes that distract from your main career can actually harm your primary earning potential and long-term growth.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "They require no effort",
+          "reflection": "Income streams that require no effort are rare and often unsustainable. Legitimate multiple incomes still require work and management.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "They complement main skills",
+          "reflection": "Exactly! Multiple income streams work best when they complement and enhance your main skills, creating synergies and reducing risk.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "They are completely unrelated",
+          "reflection": "Completely unrelated income streams can be difficult to manage and may not provide the stability or growth benefits you're seeking.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 2,
+      "prompt": "When should you consider multiple income streams?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Immediately when starting out",
+          "reflection": "Starting with multiple income streams immediately can spread you too thin and prevent you from developing expertise in your main career.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "After establishing your main career",
+          "reflection": "Perfect! Establishing your main career first provides a stable foundation and the skills needed to successfully manage additional income streams.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Only when your main job fails",
+          "reflection": "Waiting until your main job fails puts you in a vulnerable position. Proactive diversification is better than reactive scrambling.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Never, focus only on one income",
+          "reflection": "While focusing on one income can be wise early on, having multiple complementary streams can provide security and growth opportunities later.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 3,
+      "prompt": "What's the benefit of related income streams?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Shared skills and networks",
+          "reflection": "Exactly! Related income streams leverage your existing expertise, reducing the learning curve and allowing for better resource utilization.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "More time spent on each",
+          "reflection": "Related income streams often share skills, networks, and resources, which can actually make them more efficient to manage together.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Less overall income",
+          "reflection": "Related income streams typically increase total income by leveraging your strengths rather than diluting them across unrelated areas.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "More complexity to manage",
+          "reflection": "While there is some management complexity, related streams often simplify overall management through shared systems and processes.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 4,
+      "prompt": "How should you approach income diversification?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Jump into many unrelated streams",
+          "reflection": "Jumping into many unrelated streams can lead to overwhelm, poor performance, and actually reduce your total earning potential.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Quit your main job first",
+          "reflection": "Quitting your main job before establishing additional streams creates unnecessary financial risk and pressure.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Only pursue high-risk options",
+          "reflection": "High-risk options alone don't constitute a smart diversification strategy. Balance and gradual growth are more sustainable approaches.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Start with one, add gradually",
+          "reflection": "Excellent! Starting with one main income and gradually adding complementary streams allows for proper focus and sustainable growth.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 5,
+      "prompt": "What's the key to successful multiple incomes?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Maximizing the number of streams",
+          "reflection": "More streams don't automatically mean more success. Quality and compatibility matter more than quantity.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Equal time for each stream",
+          "reflection": "Equal time allocation isn't always optimal. Some streams may require more attention initially, while others can run more passively over time.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Strategic alignment and balance",
+          "reflection": "Perfect! Successful multiple income strategies involve strategic alignment with your skills and goals, plus proper balance to avoid burnout.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Quick setup with no planning",
+          "reflection": "Quick setup without proper planning often leads to failure. Successful multiple income strategies require thoughtful development and management.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    }
+  ]
+}

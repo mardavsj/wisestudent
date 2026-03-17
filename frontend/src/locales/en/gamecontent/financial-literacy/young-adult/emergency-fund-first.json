@@ -1,0 +1,177 @@
+{
+  "title": "Emergency Fund First",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Emergency Fund Priority",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Emergency fund strategy",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you start building your emergency fund today, even with a small amount?",
+    "What investment opportunities could you pursue more confidently with an emergency fund in place?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Before investing, what should you build?",
+      "options": [
+        {
+          "id": "emergency",
+          "label": "Emergency fund",
+          "reflection": "Exactly! An emergency fund provides the financial security needed to invest confidently without the fear of forced withdrawals during unexpected situations.",
+          "isCorrect": true
+        },
+        {
+          "id": "portfolio",
+          "label": "High-return portfolio",
+          "reflection": "While high returns are attractive, investing without an emergency fund can lead to forced withdrawals during emergencies, potentially locking in losses at market lows.",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "label": "Build both simultaneously",
+          "reflection": "While building both is ideal long-term, prioritizing an emergency fund first reduces risk and provides the stability needed for successful investing.",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "label": "Nothing - just start investing",
+          "reflection": "Starting to invest without any safety net is risky. Unexpected expenses can force you to sell investments at inopportune times, potentially at a loss.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "How much should your emergency fund cover?",
+      "options": [
+        {
+          "id": "minimal",
+          "label": "Just enough for one month",
+          "reflection": "One month is typically insufficient for most emergencies. Unexpected situations like job loss or medical expenses often last longer than a month.",
+          "isCorrect": false
+        },
+        {
+          "id": "standard",
+          "label": "3-6 months of expenses",
+          "reflection": "Perfect! Financial experts recommend 3-6 months of living expenses. This provides adequate coverage for most emergencies while keeping the goal achievable.",
+          "isCorrect": true
+        },
+        {
+          "id": "extreme",
+          "label": "One year of all expenses",
+          "reflection": "While comprehensive, saving for a full year can be overwhelming and may prevent you from starting to invest. The 3-6 month guideline balances security with practicality.",
+          "isCorrect": false
+        },
+        {
+          "id": "luxury",
+          "label": "Enough for luxury spending",
+          "reflection": "Emergency funds should cover essential expenses, not discretionary spending. The purpose is financial security, not maintaining lifestyle during emergencies.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "Where should you keep your emergency fund?",
+      "options": [
+        {
+          "id": "stocks",
+          "label": "In volatile stocks",
+          "reflection": "Emergency funds need to be accessible and stable. Stocks can lose value when you need the money most, defeating the purpose of having an emergency fund.",
+          "isCorrect": false
+        },
+        {
+          "id": "real-estate",
+          "label": "In real estate investments",
+          "reflection": "Real estate is illiquid and can't be quickly converted to cash during emergencies. Emergency funds need to be immediately accessible.",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "label": "In high-yield savings account",
+          "reflection": "Exactly! High-yield savings accounts offer liquidity, safety, and better returns than regular savings while keeping your money accessible during emergencies.",
+          "isCorrect": true
+        },
+        {
+          "id": "cryptocurrency",
+          "label": "In cryptocurrency",
+          "reflection": "Cryptocurrency is highly volatile and not suitable for emergency funds. You need stability and predictability when facing unexpected financial needs.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What happens if you invest without an emergency fund?",
+      "options": [
+        {
+          "id": "no-risk",
+          "label": "Nothing - it's the same either way",
+          "reflection": "Actually, investing without an emergency fund significantly increases risk. Unexpected expenses can force premature withdrawals, potentially at market lows.",
+          "isCorrect": false
+        },
+        {
+          "id": "benefit",
+          "label": "You'll benefit from compound growth",
+          "reflection": "While compound growth is beneficial, it can be negated by forced withdrawals during emergencies. The security of an emergency fund actually enables better long-term investing.",
+          "isCorrect": false
+        },
+        {
+          "id": "opportunity",
+          "label": "You'll have more investment opportunities",
+          "reflection": "Having an emergency fund actually provides more flexibility to take advantage of investment opportunities without the stress of financial insecurity.",
+          "isCorrect": false
+        },
+        {
+          "id": "forced",
+          "label": "You might be forced to sell at losses",
+          "reflection": "Exactly! Without emergency savings, unexpected expenses can force you to liquidate investments during market downturns, locking in losses and missing recovery opportunities.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "When should you start investing after building emergency fund?",
+      "options": [
+        {
+          "id": "immediately",
+          "label": "Immediately after reaching the goal",
+          "reflection": "Perfect! Once you have adequate emergency savings, you can invest confidently knowing you have a financial safety net to fall back on.",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "label": "Wait until you have more money",
+          "reflection": "Waiting too long can mean missing out on investment opportunities and the benefits of compound growth. Start investing once your emergency fund is established.",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "label": "Never - keep saving forever",
+          "reflection": "While saving is important, the purpose of an emergency fund is to provide security so you can also invest for long-term growth. Both saving and investing are important.",
+          "isCorrect": false
+        },
+        {
+          "id": "reduce",
+          "label": "Reduce emergency fund to invest more",
+          "reflection": "Reducing your emergency fund defeats its purpose. The fund should remain intact to provide security while you invest for growth.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}
+

@@ -1,0 +1,176 @@
+{
+  "title": "Fraud Safety Checkpoint",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Fraud Safety Checkpoint",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Fraud recognition skills",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "What red flags do you currently miss in suspicious communications?",
+    "How can you better verify the legitimacy of urgent financial requests?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You receive an email claiming your account will be closed unless you click a link and verify your details. What should you do?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Click the link immediately to save your account",
+          "reflection": "Clicking links in suspicious emails is extremely dangerous. These are often phishing attempts designed to steal your login credentials and personal information. Legitimate companies rarely ask for sensitive information via email with urgent deadlines.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ignore the email and contact the company directly",
+          "reflection": "Exactly! This is the safest approach. Contact the company through official channels like their verified website or customer service number to confirm if there's a real issue with your account. Never trust urgent requests made through unsolicited emails.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Forward the email to friends for advice",
+          "reflection": "While seeking advice can be helpful, forwarding suspicious emails might spread potential malware or phishing links to others. If you need advice, discuss the situation verbally or through secure messaging rather than sharing the email itself.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Reply to the email asking for more information",
+          "reflection": "Replying to suspicious emails confirms to scammers that your email address is active and can lead to more targeted attacks. It also risks exposing additional personal information that could be used for identity theft or financial fraud.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 2,
+      "prompt": "A caller claims to be from your bank and asks for your account password to 'verify your identity.' What's your response?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Hang up and call your bank using their official number",
+          "reflection": "Exactly! This is the correct response to suspected banking scams. Hang up immediately and contact your bank using the official customer service number on your bank statement or website. This ensures you're speaking with legitimate representatives.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Provide the password to verify your account",
+          "reflection": "Legitimate banks and financial institutions will never ask for your password over the phone. This is a classic social engineering scam designed to steal your account credentials. Providing passwords to unsolicited callers puts all your financial accounts at immediate risk.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ask the caller for their employee ID and verify it",
+          "reflection": "Even asking for verification details from suspicious callers can be risky, as scammers often have fake credentials ready. The safest approach is to end the call and independently verify any concerns through official channels rather than engaging with the suspicious caller.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Give them your debit card number instead",
+          "reflection": "Providing any financial information to unsolicited callers is extremely dangerous. Debit card numbers, like passwords, should never be shared over the phone with unverified individuals. Both types of information provide direct access to your financial accounts.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 3,
+      "prompt": "You see an online ad promising 'Get rich quick with no experience needed.' What's the most likely truth?",
+      "options": [
+        {
+          "id": "a",
+          "label": "It's a legitimate investment opportunity",
+          "reflection": "Legitimate investment opportunities typically require some knowledge, experience, or risk assessment. 'Get rich quick' claims with no experience needed are almost always scams designed to steal money or personal information under the guise of easy profits.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "The returns depend on market conditions",
+          "reflection": "While market conditions do affect investments, 'get rich quick' schemes typically ignore or downplay risks entirely. Legitimate investments always come with risk disclosures and realistic return expectations based on market analysis and historical performance data.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "You should invest small amounts to test it",
+          "reflection": "Investing even small amounts in 'get rich quick' schemes is risky. These are often designed to steal initial investments and then disappear, or they may be part of larger pyramid schemes that ultimately harm all participants except the organizers.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "It's likely a scam or misleading advertisement",
+          "reflection": "Exactly! 'Get rich quick' schemes are classic red flags for fraud. These offers often promise unrealistic returns with minimal risk or effort. They're designed to trick people into investing money or providing personal information that will be stolen.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 4,
+      "prompt": "You're asked to provide your Social Security Number to claim a prize you never entered. What should you do?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Provide the number to claim your prize",
+          "reflection": "Providing your Social Security Number to claim unsolicited prizes is extremely dangerous. This is a common identity theft scam. Legitimate prizes don't require sensitive personal information upfront, and you can't win prizes you never entered or applied for.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ask for the prize to be sent to a different address",
+          "reflection": "Changing the delivery address doesn't solve the fundamental problem of providing personal information to unknown parties. Scammers can use any address you provide, and sharing personal details still puts you at risk for identity theft and financial fraud.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Do not provide any personal information and report it",
+          "reflection": "Exactly! Never provide personal information for unsolicited prizes or offers. Report these attempts to the Federal Trade Commission (FTC) or your local consumer protection agency. This helps track scam patterns and protects others from similar attempts.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Provide only partial information to verify",
+          "reflection": "Providing any portion of your Social Security Number is still dangerous. Even partial information can be used for identity verification by criminals. The safest approach is to provide no personal information and report the suspicious contact to appropriate authorities.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 5,
+      "prompt": "A friend on social media sends you a message with a link saying 'You have to see this urgent financial news!' What's your best action?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Click the link immediately to stay informed",
+          "reflection": "Clicking links from social media messages, even from friends, can be risky. Accounts can be compromised, or the message might not actually be from your friend. Malicious links can install malware or lead to phishing sites that steal personal information.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Verify with your friend through another channel first",
+          "reflection": "Exactly! This is the safest approach. Social media accounts can be hacked, and messages might not be genuinely from your friend. Verify through phone, text, or another secure method before clicking any links to ensure the message is legitimate.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Forward the message to other friends",
+          "reflection": "Forwarding suspicious messages spreads potential risks to others. If the link is malicious, you're potentially exposing your friends to malware or phishing attempts. Always verify suspicious content before sharing it with others.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Report the message but still click the link",
+          "reflection": "Reporting suspicious messages is good practice, but clicking the link afterward still puts your device and personal information at risk. The safest approach is to avoid clicking suspicious links entirely and verify the message's legitimacy through other channels.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    }
+  ]
+}

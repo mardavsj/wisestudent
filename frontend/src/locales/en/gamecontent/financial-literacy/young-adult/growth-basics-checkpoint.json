@@ -1,0 +1,178 @@
+{
+  "title": "Growth Basics Checkpoint",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Task",
+  "scenarioValue": "7 Safe Decisions",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Foundation wealth building",
+  "outcomeLine": "Outcome: You have built a foundation for long-term financial growth.",
+  "outcomeLineShort": "You have built a foundation for long-term financial growth.",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you build a diversified investment portfolio that matches your risk tolerance?",
+    "What steps can you take today to establish the foundation for long-term wealth growth?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which is the safer approach to building wealth?",
+      "options": [
+        {
+          "id": "speculate",
+          "label": "Speculate on high-risk investments",
+          "reflection": "Speculating on high-risk investments can lead to significant losses. While the potential for high returns exists, the risk of losing your principal is also substantial.",
+          "isCorrect": false
+        },
+        {
+          "id": "diversify",
+          "label": "Diversify with a balanced portfolio",
+          "reflection": "Perfect! Diversification spreads risk across different investments, reducing the impact of any single investment's poor performance on your overall wealth.",
+          "isCorrect": true
+        },
+        {
+          "id": "concentrate",
+          "label": "Put all money in one investment",
+          "reflection": "Concentrating all your money in one investment exposes you to significant risk. If that investment performs poorly, you could lose a large portion of your wealth.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore investment risks entirely",
+          "reflection": "Ignoring risks doesn't eliminate them. Understanding and managing risk is crucial for long-term wealth building and financial security.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "What should be your first financial priority?",
+      "options": [
+        {
+          "id": "emergency",
+          "label": "Building an emergency fund",
+          "reflection": "Exactly! An emergency fund provides financial security and prevents you from going into debt when unexpected expenses arise. This foundation is essential before other investments.",
+          "isCorrect": true
+        },
+        {
+          "id": "luxury",
+          "label": "Buying luxury items to feel wealthy",
+          "reflection": "Purchasing luxury items early can derail your financial progress. These purchases often provide temporary satisfaction but can create long-term financial stress.",
+          "isCorrect": false
+        },
+        {
+          "id": "investments",
+          "label": "Starting aggressive investments immediately",
+          "reflection": "While investing is important, starting without an emergency fund can be risky. Unexpected expenses might force you to sell investments at a loss during market downturns.",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "label": "Taking on more debt for lifestyle",
+          "reflection": "Taking on unnecessary debt for lifestyle purposes typically hinders wealth building. Focus on eliminating high-interest debt and building positive cash flow first.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "How should you approach investing when starting out?",
+      "options": [
+        {
+          "id": "complex",
+          "label": "Use complex trading strategies",
+          "reflection": "Complex strategies are often unnecessary for beginners and can lead to poor outcomes due to lack of experience. Simple, consistent approaches typically perform better for new investors.",
+          "isCorrect": false
+        },
+        {
+          "id": "timing",
+          "label": "Try to time the market perfectly",
+          "reflection": "Market timing is extremely difficult even for professionals. Attempting to time the market often leads to buying high and selling low, which hurts long-term returns.",
+          "isCorrect": false
+        },
+        {
+          "id": "crypto",
+          "label": "Focus heavily on cryptocurrency",
+          "reflection": "While cryptocurrency can be part of a diversified portfolio, it shouldn't be the focus for beginners. Start with proven, stable investments before exploring more volatile assets.",
+          "isCorrect": false
+        },
+        {
+          "id": "simple",
+          "label": "Start with simple, low-cost index funds",
+          "reflection": "Perfect! Simple index funds offer instant diversification, low fees, and have historically provided solid long-term returns. They're ideal for building a foundation.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What is the most important factor in long-term wealth building?",
+      "options": [
+        {
+          "id": "returns",
+          "label": "Getting the highest possible returns",
+          "reflection": "Chasing the highest returns often leads to taking excessive risk. Sustainable wealth building is more about consistency and risk management than maximum returns.",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "label": "Relying on market luck",
+          "reflection": "While market timing luck can play a role, relying on it is not a strategy. Successful wealth building requires consistent habits and disciplined approaches regardless of market conditions.",
+          "isCorrect": false
+        },
+        {
+          "id": "time",
+          "label": "Starting early and staying consistent",
+          "reflection": "Exactly! Time is your greatest asset in wealth building. The power of compound interest means that starting early and staying consistent has a greater impact than chasing high returns.",
+          "isCorrect": true
+        },
+        {
+          "id": "spending",
+          "label": "Spending less on everything",
+          "reflection": "While spending less can free up money for investing, it's not the most important factor. The key is building positive cash flow and investing consistently over time.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What should you do with your investment gains?",
+      "options": [
+        {
+          "id": "spend",
+          "label": "Spend them immediately on wants",
+          "reflection": "Spending investment gains immediately can undermine your long-term wealth building. These gains should typically be reinvested to maintain the growth momentum of your portfolio.",
+          "isCorrect": false
+        },
+        {
+          "id": "reinvest",
+          "label": "Reinvest for continued growth",
+          "reflection": "Perfect! Reinvesting gains allows compound interest to work at full strength. This approach accelerates wealth building and helps you achieve your long-term financial goals faster.",
+          "isCorrect": true
+        },
+        {
+          "id": "withdraw",
+          "label": "Withdraw and keep as cash",
+          "reflection": "Withdrawing gains and keeping them as cash eliminates the growth potential. While some cash reserves are important, keeping too much in low-yield cash can hurt long-term wealth accumulation.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "label": "Ignore the gains entirely",
+          "reflection": "Ignoring investment gains isn't a productive approach. While you shouldn't obsess over short-term fluctuations, being mindful of gains and making intentional decisions about them is important for financial growth.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}

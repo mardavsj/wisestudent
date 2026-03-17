@@ -1,0 +1,178 @@
+{
+  "title": "Earning Readiness Checkpoint",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Earning Readiness",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Earning readiness strategy",
+  "outcomeLine": "Outcome: You are ready to earn responsibly and grow your income the right way.",
+  "outcomeLineShort": "You are ready to earn responsibly.",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you identify genuine market opportunities that match your skills?",
+    "What's your strategy for building both specialized and transferable skills?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which shows readiness to earn income responsibly?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Taking any job regardless of values",
+          "reflection": "Taking jobs regardless of values can lead to poor long-term satisfaction and potential ethical issues that harm your career and reputation.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Avoiding work until it's perfect",
+          "reflection": "Perfect work rarely exists. Delaying action prevents learning, building experience, and demonstrating work ethic and responsibility.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Only considering high-paying positions",
+          "reflection": "Focusing solely on pay can miss important opportunities to build foundational skills and networks. Entry-level work is crucial for future income growth.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Matching skills to genuine market demand",
+          "reflection": "Exactly! Earning readiness involves understanding both your capabilities and authentic market opportunities that align with your skills and interests.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 2,
+      "prompt": "How should you develop income-generating skills?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Choose based on easiest popularity",
+          "reflection": "Popular skills might attract more learners but don't ensure unique advantage or better returns. Match choices with authentic needs.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Imitate only what big names are doing",
+          "reflection": "Repeating celebrity techniques prevents recognition of growing opportunities. Track the future as well, but with added purpose through knowledge growth.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Build both transferable and field-specific abilities",
+          "reflection": "Perfect! Balancing field-specialized and versatile abilities boosts confidence while maintaining diverse professional appeal for future jobs.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Acquire fast courses then quickly resell",
+          "reflection": "Real credibility often comes from building experience yourself over time. Quickly consuming information often ignores the applied refinement steps behind skilled behaviors.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 3,
+      "prompt": "What earns more reliable early compensation?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Unstable remote freelance volume",
+          "reflection": "Highly unstable freelance work makes your income unpredictable, even if you work very hard. Without a reliable base of clients or fixed hours, it's difficult to plan expenses, save consistently, or build long‑term financial stability.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Stable mix: baseline hourly, plus high-effort topup",
+          "reflection": "Yes, stabilize consistency within your commitments and focus on clearly superior performance markers to achieve compounding upgrades in your success rate progressively over time.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Always stick only with simplest setups",
+          "reflection": "Staying only with the easiest, simplest earning setups can limit how much you grow. At some point you need slightly more advanced systems, tools, or responsibilities to increase your income and build stronger, future‑ready skills.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Wander between unrelated side projects",
+          "reflection": "Jumping between unrelated projects prevents building expertise and reputation. Focus on a few related areas to build credibility and attract better opportunities.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 4,
+      "prompt": "How do you handle early earning setbacks?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Analyze what went wrong and adjust approach",
+          "reflection": "Exactly! Analyzing setbacks helps identify areas for improvement and builds the resilience and adaptability needed for long-term earning success.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Blame external factors and give up",
+          "reflection": "Blaming external factors prevents learning from mistakes and building resilience. Setbacks are opportunities to improve skills and strategies.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Double down on the same failing strategy",
+          "reflection": "Repeating failed approaches without adjustment rarely leads to different results. Flexibility and willingness to change course are essential for growth.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ignore the setback and hope for better luck",
+          "reflection": "Ignoring setbacks prevents learning valuable lessons. Acknowledging and learning from failures is crucial for developing better earning strategies.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 5,
+      "prompt": "What's the foundation for sustainable income growth?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Quick wins and shortcuts to success",
+          "reflection": "Quick wins and shortcuts rarely lead to sustainable growth. Lasting income growth requires consistent effort, skill development, and building genuine value.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Consistent effort, skill building, and value creation",
+          "reflection": "Perfect! Sustainable income growth comes from consistently delivering value, building skills over time, and maintaining professional standards that attract better opportunities.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Relying on luck and connections alone",
+          "reflection": "While connections can help, relying solely on luck and connections without developing skills and delivering value is not a sustainable strategy for long-term income growth.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Maximizing short-term gains at all costs",
+          "reflection": "Maximizing short-term gains without considering long-term consequences can damage reputation and limit future opportunities. Sustainable growth requires balance and integrity.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "title": "Income Stability",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Income Stability",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Income stability awareness",
+  "outcomeLine": "Outcome: Stable income empowers long-term security.",
+  "outcomeLineShort": "Stable income empowers long-term security.",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can stable income help you achieve your long-term financial goals?",
+    "What steps can you take to create more stability in your income?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Why is stable income important?",
+      "options": [
+        {
+          "id": "a",
+          "label": "For spending freely",
+          "reflection": "While stable income does provide some freedom, the primary importance lies in the predictability and security it offers for financial planning.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "To show off to friends",
+          "reflection": "While financial stability can provide confidence, using it primarily for social status can lead to poor financial decisions and unnecessary spending pressure.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "To avoid working hard",
+          "reflection": "Stable income typically results from consistent effort and smart financial management, not from avoiding work. It's about working smarter, not necessarily less.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "For planning and saving safely",
+          "reflection": "Exactly! Stable income provides the foundation for consistent financial planning and secure savings, enabling long-term financial goals.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 2,
+      "prompt": "How does income stability affect budgeting?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Makes budgeting impossible",
+          "reflection": "Actually, stable income makes budgeting much easier and more effective, as you can predict and plan your expenses with greater accuracy.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Forces you to spend more",
+          "reflection": "Stable income gives you the flexibility to spend wisely, not necessarily more. It actually helps you avoid overspending by providing clear financial boundaries.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Allows for accurate monthly planning",
+          "reflection": "Perfect! Stable income enables you to create realistic budgets, set aside consistent savings, and plan for both short-term needs and long-term goals.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Eliminates the need for savings",
+          "reflection": "Even with stable income, savings remain crucial for emergencies, future goals, and financial security. Stability makes saving easier, not unnecessary.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 3,
+      "prompt": "What is the main benefit of predictable income?",
+      "options": [
+        {
+          "id": "a",
+          "label": "You can buy anything anytime",
+          "reflection": "While predictable income does provide some spending flexibility, the real benefit is in the financial security and planning ability it provides.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Reduces financial stress and uncertainty",
+          "reflection": "Exactly! Predictable income eliminates the anxiety of not knowing how much money you'll have, allowing for better decision-making and peace of mind.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "You never have to budget again",
+          "reflection": "Even with predictable income, budgeting remains important for financial health, goal-setting, and ensuring you're making the most of your resources.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Allows reckless spending",
+          "reflection": "Predictable income should actually encourage more responsible spending, as you can plan and allocate funds appropriately rather than spending impulsively.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 4,
+      "prompt": "How should you use stable income for financial growth?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Invest in skills and future opportunities",
+          "reflection": "Excellent! Stable income provides the perfect opportunity to invest in yourself through education, skills, and other growth opportunities that can increase your earning potential.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Spend it all on immediate wants",
+          "reflection": "While enjoying your income is important, spending it all on immediate wants prevents you from building long-term financial security and growth.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Keep it all in cash under the mattress",
+          "reflection": "While keeping some cash for emergencies is wise, keeping all your stable income idle prevents it from growing and working for you through investments or other opportunities.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Ignore it and hope for the best",
+          "reflection": "Ignoring stable income is a missed opportunity. Taking advantage of financial stability through planning and smart decisions is key to building wealth.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 5,
+      "prompt": "What does income stability enable you to do?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Avoid all financial responsibilities",
+          "reflection": "Income stability actually enables you to take on more financial responsibilities confidently, not avoid them. It provides the foundation for managing obligations effectively.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Spend without any thought",
+          "reflection": "While stable income provides some flexibility, thoughtful spending remains important for maintaining financial health and achieving long-term goals.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Stop caring about money",
+          "reflection": "Income stability should make you more, not less, financially conscious. It provides the opportunity to make strategic financial decisions that benefit your future.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Build long-term financial security",
+          "reflection": "Perfect! Income stability is the cornerstone of long-term financial security, enabling consistent saving, investing, and planning for future goals and retirement.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 20
+    }
+  ]
+}

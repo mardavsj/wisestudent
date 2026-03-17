@@ -1,0 +1,178 @@
+{
+  "title": "Time vs Money Trade-off",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Time Management",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Time management strategy",
+  "outcomeLine": "Outcome: Balance protects long-term earning ability.",
+  "outcomeLineShort": "Balance protects long-term earning ability.",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you determine the optimal number of commitments for your situation?",
+    "What strategies help you maintain quality work while managing multiple income sources?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Taking too many gigs leads to:",
+      "options": [
+        {
+          "id": "faster",
+          "label": "Faster growth",
+          "reflection": "While taking on multiple gigs might seem like a way to accelerate growth, overcommitting often leads to decreased quality of work and increased stress, which can actually hinder long-term progress.",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "label": "Perfect work-life balance",
+          "reflection": "Taking on too many gigs typically disrupts work-life balance rather than improving it. The key is finding a sustainable number of commitments that allows for quality work and personal time.",
+          "isCorrect": false
+        },
+        {
+          "id": "opportunity",
+          "label": "More networking opportunities",
+          "reflection": "While multiple gigs might offer more networking opportunities, spreading yourself too thin can prevent you from building meaningful relationships or delivering quality work that leads to genuine professional connections.",
+          "isCorrect": false
+        },
+        {
+          "id": "burnout",
+          "label": "Burnout and poor performance",
+          "reflection": "Exactly! Taking on too many gigs without proper time management leads to exhaustion, decreased productivity, and ultimately poor performance across all commitments.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "How should you prioritize your time when managing multiple income sources?",
+      "options": [
+        {
+          "id": "maximize",
+          "label": "Maximize the number of gigs to increase total income",
+          "reflection": "Focusing solely on quantity over quality often leads to burnout and decreased performance. It's better to focus on a manageable number of high-quality commitments.",
+          "isCorrect": false
+        },
+        {
+          "id": "quality",
+          "label": "Focus on quality and sustainable workload",
+          "reflection": "Perfect! Prioritizing quality work and maintaining a sustainable workload ensures better performance, reduces stress, and protects your long-term earning ability.",
+          "isCorrect": true
+        },
+        {
+          "id": "random",
+          "label": "Accept every opportunity that comes your way",
+          "reflection": "Accepting every opportunity without consideration leads to overcommitment and poor time management. Strategic selection of opportunities is key to sustainable success.",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "label": "Avoid all additional income sources to prevent stress",
+          "reflection": "Completely avoiding additional income sources can limit growth opportunities. The goal is to find a balance that allows for growth without compromising well-being.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "What is the impact of consistently overworking on your career?",
+      "options": [
+        {
+          "id": "accelerate",
+          "label": "Accelerates career advancement",
+          "reflection": "While hard work is important, consistently overworking leads to burnout, decreased productivity, and potential health issues that can actually hinder career advancement in the long run.",
+          "isCorrect": false
+        },
+        {
+          "id": "no-impact",
+          "label": "Has no significant impact on career trajectory",
+          "reflection": "Overworking consistently has a significant negative impact on career trajectory through decreased performance, increased error rates, and potential health issues that affect long-term productivity.",
+          "isCorrect": false
+        },
+        {
+          "id": "sustainable",
+          "label": "Creates sustainable long-term career growth",
+          "reflection": "Exactly! Consistent, sustainable effort over time leads to better career growth than short-term bursts of overwork that lead to burnout and decreased performance.",
+          "isCorrect": true
+        },
+        {
+          "id": "immediate",
+          "label": "Provides immediate benefits with no long-term consequences",
+          "reflection": "Overworking may provide short-term benefits but typically leads to long-term consequences such as burnout, decreased job satisfaction, and potential career setbacks due to poor performance.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "How does proper time management affect your earning potential?",
+      "options": [
+        {
+          "id": "enhance",
+          "label": "Enhances earning potential through improved performance",
+          "reflection": "Exactly! Good time management leads to higher quality work, better relationships, and sustained productivity, all of which enhance long-term earning potential and career advancement opportunities.",
+          "isCorrect": true
+        },
+        {
+          "id": "limit",
+          "label": "Limits earning potential by reducing available work hours",
+          "reflection": "Proper time management actually enhances earning potential by improving work quality, reducing errors, and preventing burnout that would limit long-term productivity and career advancement.",
+          "isCorrect": false
+        },
+        {
+          "id": "no-effect",
+          "label": "Has no effect on earning potential",
+          "reflection": "Time management significantly affects earning potential through its impact on work quality, productivity, and career advancement opportunities. Poor time management can severely limit earning potential.",
+          "isCorrect": false
+        },
+        {
+          "id": "reduce",
+          "label": "Reduces earning potential by creating unnecessary boundaries",
+          "reflection": "Setting appropriate boundaries through good time management actually increases earning potential by preventing burnout and maintaining high performance levels over the long term.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What is the key to maintaining long-term earning ability?",
+      "options": [
+        {
+          "id": "maximize-now",
+          "label": "Maximize current income at all costs",
+          "reflection": "Maximizing current income at all costs often leads to burnout and decreased long-term earning ability. Sustainable growth requires balancing current opportunities with long-term career health.",
+          "isCorrect": false
+        },
+        {
+          "id": "minimize-effort",
+          "label": "Minimize effort to avoid stress",
+          "reflection": "Minimizing effort to avoid stress can limit career growth and earning potential. The key is finding an optimal level of effort that maximizes results while maintaining sustainability.",
+          "isCorrect": false
+        },
+        {
+          "id": "constant-hustle",
+          "label": "Constant hustle and overcommitment",
+          "reflection": "Constant hustle and overcommitment lead to burnout and decreased performance over time. Sustainable success requires strategic effort and proper time management rather than constant overwork.",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "label": "Balance current opportunities with sustainable practices",
+          "reflection": "Exactly! Maintaining long-term earning ability requires finding a balance between taking advantage of current opportunities and implementing sustainable practices that protect your health and career trajectory.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}

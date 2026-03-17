@@ -1,0 +1,178 @@
+{
+  "title": "Public Device Risk",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Public Device Risk",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Device security awareness",
+  "outcomeLine": "Outcome: You understand how to protect your banking data when using shared or public devices.",
+  "outcomeLineShort": "You can avoid public device risks.",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "What precautions do you currently take when accessing financial accounts on shared devices?",
+    "How can you better protect your banking information when using public computers?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Is it safe to log into banking apps on shared devices?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Yes",
+          "reflection": "Logging into banking apps on shared devices is risky because these devices may have malware, keyloggers, or other security threats that can capture your login credentials and personal financial information.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "No, it risks data theft",
+          "reflection": "Exactly! Shared devices compromise security by potentially exposing your login credentials, personal information, and financial data to unauthorized access, malware, or keyloggers that can capture sensitive information.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Only if you trust the device owner",
+          "reflection": "Trust alone isn't sufficient protection when using shared devices. Even trusted devices can be compromised by malware, and the device owner may not be aware of security vulnerabilities or malicious software installed on their device.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Yes, if you log out afterward",
+          "reflection": "Simply logging out doesn't guarantee your data is secure on shared devices. Cached data, cookies, and other stored information can still be accessed by others, and keyloggers can capture your credentials even if you log out properly.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 2,
+      "prompt": "What's the main security risk of using public computers for banking?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Slow internet connection",
+          "reflection": "While slow internet can be inconvenient, it's not a security risk for your financial data. The main concerns with public computers are related to data capture and unauthorized access, not connection speed.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Limited browser compatibility",
+          "reflection": "Browser compatibility issues might affect functionality but don't pose a direct security threat to your financial data. The real risks come from malicious software and unauthorized access to your personal information.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "High usage fees",
+          "reflection": "Usage fees are a cost consideration, not a security risk. The primary security concerns with public computers involve data capture and unauthorized access to your financial information, not the cost of using the device.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Keyloggers and malware",
+          "reflection": "Exactly! Public computers often have keyloggers and malware installed that can capture your keystrokes, login credentials, and other sensitive information you enter, making them extremely dangerous for financial transactions.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 3,
+      "prompt": "How can you protect your banking information on shared devices?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Use incognito mode only",
+          "reflection": "While incognito mode prevents some data from being stored locally, it doesn't protect against keyloggers, malware, or network monitoring. These threats can still capture your credentials and financial information even in private browsing mode.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Change passwords frequently",
+          "reflection": "Changing passwords frequently is good practice but doesn't address the immediate risk of using shared devices. If your credentials are captured while using a compromised device, changing passwords afterward won't help if the damage is already done.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Avoid banking on shared devices entirely",
+          "reflection": "Exactly! The safest approach is to avoid banking on shared devices entirely. Use your personal device or a trusted private computer to ensure your financial information remains secure from potential threats and unauthorized access.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Use only well-known public computers",
+          "reflection": "Even well-known public computers like those in libraries or internet cafes can be compromised. The reputation of the location doesn't guarantee the security of the individual devices, which may still have malware or keyloggers installed.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 4,
+      "prompt": "What should you do if you must use a shared device for banking?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Use only websites with HTTPS",
+          "reflection": "While HTTPS encryption is important, it doesn't protect against keyloggers or malware on the device itself. The security of your credentials depends more on the device's integrity than the website's encryption protocol.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Use two-factor authentication and monitor accounts",
+          "reflection": "Exactly! If you must use a shared device, enable two-factor authentication for an extra layer of security, and monitor your accounts closely for any unauthorized activity. However, it's still better to avoid shared devices when possible.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Log in quickly and log out immediately",
+          "reflection": "Quick logging in and logging out doesn't protect against keyloggers or malware that can capture your credentials in real-time. The risk occurs during the login process itself, regardless of how quickly you complete it.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Use only during off-peak hours",
+          "reflection": "Using shared devices during off-peak hours doesn't reduce the security risks. The threats from malware, keyloggers, and unauthorized access are present regardless of when you use the device or how many other people are using it.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 5,
+      "prompt": "Which scenario represents a common shared device security threat?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Keylogger capturing login credentials",
+          "reflection": "Exactly! Keyloggers are a common threat on shared devices that silently record every keystroke you make, including usernames, passwords, and other sensitive information entered during banking sessions.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Device runs out of battery",
+          "reflection": "A device running out of battery is an inconvenience but not a security threat. The real security concerns with shared devices involve malicious software and unauthorized access to your personal and financial information.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Slow processing speed",
+          "reflection": "Slow processing speed affects user experience but doesn't pose a security risk to your financial data. The primary security threats involve data capture and unauthorized access, not the device's performance capabilities.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Limited storage space",
+          "reflection": "Limited storage space is a technical limitation that affects functionality but doesn't compromise the security of your financial information. The main security concerns are related to malicious software and unauthorized data access.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    }
+  ]
+}

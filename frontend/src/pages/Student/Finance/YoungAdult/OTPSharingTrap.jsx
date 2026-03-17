@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Trophy } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -166,12 +167,17 @@ const OTP_SHARING_TRAP_STAGES = [
   },
 ];
 
-const totalStages = OTP_SHARING_TRAP_STAGES.length;
-const successThreshold = totalStages;
-
 const OTPSharingTrap = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   const gameId = "finance-young-adult-83";
+  const gameContent = t(
+    "financial-literacy.young-adult.otp-sharing-trap",
+    { returnObjects: true }
+  );
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = stages.length;
+  const successThreshold = totalStages;
   const gameData = getGameDataById(gameId);
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 20;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 20;
@@ -188,19 +194,15 @@ const OTPSharingTrap = () => {
   const [selectedReflection, setSelectedReflection] = useState(null);
   const [canProceed, setCanProceed] = useState(false);
 
-  const reflectionPrompts = useMemo(
-    () => [
-      "What steps do you take to verify unexpected OTP requests?",
-      "How can you build better habits for protecting your OTPs from misuse?",
-    ],
-    []
-  );
+  const reflectionPrompts = Array.isArray(gameContent?.reflectionPrompts)
+    ? gameContent.reflectionPrompts
+    : [];
 
   const handleChoice = (option) => {
     if (selectedOption || showResult) return;
 
     resetFeedback();
-    const currentStageData = OTP_SHARING_TRAP_STAGES[currentStage];
+    const currentStageData = stages[currentStage];
     const updatedHistory = [
       ...history,
       { stageId: currentStageData.id, isCorrect: option.isCorrect },
@@ -249,8 +251,15 @@ const OTPSharingTrap = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
-  const stage = OTP_SHARING_TRAP_STAGES[Math.min(currentStage, totalStages - 1)];
+  const subtitle =
+    gameContent?.subtitleProgress
+      ?.replace("{{current}}", Math.min(currentStage + 1, totalStages || 1))
+      ?.replace("{{total}}", totalStages || 1) ||
+    `Stage ${Math.min(currentStage + 1, totalStages || 1)} of ${totalStages || 1}`;
+  const stage =
+    stages.length > 0
+      ? stages[Math.min(currentStage, stages.length - 1)]
+      : null;
   const hasPassed = finalScore === successThreshold;
 
   return (

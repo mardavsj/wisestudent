@@ -1,182 +1,29 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Trophy } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
-
-const DATA_SHARING_AWARENESS_STAGES = [
-  {
-    id: 1,
-    prompt: "Why should you limit sharing personal data online?",
-    options: [
-      {
-        id: "a",
-        label: "It doesn't matter",
-        reflection: "Sharing personal data online absolutely matters for your financial and personal security. Oversharing can lead to identity theft, financial fraud, and unauthorized access to your accounts. Your personal information is valuable to both legitimate businesses and criminals.",
-        isCorrect: false,
-      },
-      {
-        id: "b",
-        label: "Data can be misused for fraud",
-        reflection: "Exactly! Data protection is financial protection. Personal data can be misused for fraud, identity theft, and unauthorized financial transactions. Limiting what you share online protects your financial security and personal privacy.",
-        isCorrect: true,
-      },
-      {
-        id: "c",
-        label: "It makes you less social",
-        reflection: "While being cautious about data sharing might affect some social interactions, the security benefits far outweigh any minor social drawbacks. You can still be social while being smart about what personal information you share online.",
-        isCorrect: false,
-      },
-      {
-        id: "d",
-        label: "Companies need it for better service",
-        reflection: "While some data sharing can improve services, companies often collect far more information than necessary. You should carefully evaluate what data you share and with whom, rather than assuming all data collection is beneficial or required.",
-        isCorrect: false,
-      },
-    ],
-    reward: 20,
-  },
-  {
-    id: 2,
-    prompt: "Which type of personal data is most sensitive to share online?",
-    options: [
-      {
-        id: "a",
-        label: "Bank account details",
-        reflection: "Exactly! Bank account details are among the most sensitive types of personal data. Sharing this information online can lead to direct financial theft, unauthorized transactions, and complete account takeover. This information should never be shared except through secure, official channels.",
-        isCorrect: true,
-      },
-      {
-        id: "b",
-        label: "Your favorite color",
-        reflection: "While even seemingly harmless information like favorite colors can be used in social engineering attacks, it's generally considered low-risk compared to financial and identity information. However, it's still wise to be selective about what personal preferences you share publicly.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "c",
-        label: "Your hobbies",
-        reflection: "Hobbies are generally low-risk personal information, though they can still be used for targeted advertising or social engineering. The main concern with hobbies is privacy rather than direct financial risk, making them much less sensitive than financial data.",
-        isCorrect: false,
-      },
-      {
-        id: "d",
-        label: "Your birth year",
-        reflection: "While your birth year alone isn't extremely sensitive, it's part of the information needed for identity verification and can be combined with other data for fraudulent purposes. It's better to limit sharing even this type of information, but it's not as immediately dangerous as financial details.",
-        isCorrect: false,
-      },
-    ],
-    reward: 20,
-  },
-  {
-    id: 3,
-    prompt: "What's a good practice for protecting your data online?",
-    options: [
-      {
-        id: "a",
-        label: "Use the same password everywhere",
-        reflection: "Using the same password everywhere is extremely risky. If one account is compromised, all your accounts become vulnerable. This practice makes it easy for hackers to access multiple accounts and increases the potential damage from data breaches.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "b",
-        label: "Share everything to build connections",
-        reflection: "Sharing everything to build connections puts your personal and financial information at unnecessary risk. Genuine connections can be built without oversharing sensitive information. Focus on quality interactions rather than quantity of personal details shared.",
-        isCorrect: false,
-      },
-      {
-        id: "c",
-        label: "Ignore data breach notifications",
-        reflection: "Ignoring data breach notifications is dangerous because it prevents you from taking protective action. When a service you use experiences a breach, you should change passwords, monitor accounts for suspicious activity, and consider additional security measures to protect your information.",
-        isCorrect: false,
-      },
-      {
-        id: "d",
-        label: "Review privacy settings regularly",
-        reflection: "Exactly! Regularly reviewing privacy settings is a crucial practice for protecting your data online. Social media platforms and apps frequently change their privacy policies and settings, so staying informed and adjusting your settings helps maintain control over your personal information.",
-        isCorrect: true,
-      },
-    ],
-    reward: 20,
-  },
-  {
-    id: 4,
-    prompt: "What should you do if you suspect your data has been compromised?",
-    options: [
-      {
-        id: "a",
-        label: "Hope it resolves itself",
-        reflection: "Hoping a data compromise resolves itself is risky and often leads to greater financial and personal damage. Early action is crucial for minimizing the impact of data breaches and preventing further unauthorized access to your accounts and information.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "b",
-        label: "Share the news on social media",
-        reflection: "Sharing breach information on social media might alert others but can also provide scammers with information about your response. Focus first on securing your accounts, then consider sharing your experience through appropriate channels to help others without compromising your security.",
-        isCorrect: false,
-      },
-      {
-        id: "c",
-        label: "Change passwords and monitor accounts",
-        reflection: "Exactly! If you suspect your data has been compromised, immediately change passwords for affected accounts and monitor your financial accounts for unauthorized activity. Report the incident to relevant authorities and consider credit monitoring services for additional protection.",
-        isCorrect: true,
-      },
-      {
-        id: "d",
-        label: "Continue using the same credentials",
-        reflection: "Continuing to use compromised credentials makes you vulnerable to ongoing attacks and further data theft. Once you know or suspect a breach, changing passwords and updating security settings is essential for protecting your accounts and personal information.",
-        isCorrect: false,
-      },
-    ],
-    reward: 20,
-  },
-  {
-    id: 5,
-    prompt: "Which scenario represents responsible data sharing?",
-    options: [
-      {
-        id: "a",
-        label: "Providing full ID to every app",
-        reflection: "Providing full ID to every app is extremely irresponsible and puts you at high risk for identity theft and fraud. Apps should only request information necessary for their specific functions, and you should carefully evaluate whether the request is legitimate and necessary.",
-        isCorrect: false,
-      },
-      {
-        id: "b",
-        label: "Sharing only what's necessary",
-        reflection: "Exactly! Sharing only what's necessary is the most responsible approach to data sharing. This minimizes your exposure to potential misuse while still allowing you to use services effectively. Always evaluate whether requested information is truly needed for the service's core functions.",
-        isCorrect: true,
-      },
-      {
-        id: "c",
-        label: "Posting personal details publicly",
-        reflection: "Posting personal details publicly is irresponsible and can lead to privacy violations, stalking, identity theft, and targeted scams. Even seemingly harmless information can be combined with other data to create detailed profiles for malicious purposes.",
-        isCorrect: false,
-      },
-      {
-        id: "d",
-        label: "Using public Wi-Fi for banking",
-        reflection: "Using public Wi-Fi for banking is risky due to potential eavesdropping and man-in-the-middle attacks, but it's not directly related to data sharing practices. The main issue with public Wi-Fi is network security rather than the data you choose to share with services.",
-        isCorrect: false,
-      },
-    ],
-    reward: 20,
-  },
-];
-
-const totalStages = DATA_SHARING_AWARENESS_STAGES.length;
-const successThreshold = totalStages;
+import { useTranslation } from "react-i18next";
+import {
+  enFinancialLiteracyYoungAdultGameContent,
+  hiFinancialLiteracyYoungAdultGameContent,
+} from "../../../../i18n/financial-literacy/young-adult";
 
 const DataSharingAwareness = () => {
+  const { i18n, t } = useTranslation("gamecontent");
   const location = useLocation();
   const gameId = "finance-young-adult-89";
   const gameData = getGameDataById(gameId);
-  const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 20;
+  const coinsPerLevel =
+    gameData?.coins || location.state?.coinsPerLevel || 20;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 20;
   const totalXp = gameData?.xp || location.state?.totalXp || 40;
-  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } = useGameFeedback();
+  const {
+    flashPoints,
+    showAnswerConfetti,
+    showCorrectAnswerFeedback,
+    resetFeedback,
+  } = useGameFeedback();
 
   const [currentStage, setCurrentStage] = useState(0);
   const [coins, setCoins] = useState(0);
@@ -188,19 +35,28 @@ const DataSharingAwareness = () => {
   const [selectedReflection, setSelectedReflection] = useState(null);
   const [canProceed, setCanProceed] = useState(false);
 
-  const reflectionPrompts = useMemo(
-    () => [
-      "What personal data do you currently share online that might be unnecessary?",
-      "How can you better protect your sensitive information from potential misuse?",
-    ],
-    []
-  );
+  const currentLanguage = i18n.language;
+  const isHindi = currentLanguage === "hi";
+  const gameContent = isHindi
+    ? hiFinancialLiteracyYoungAdultGameContent["data-sharing-awareness"]
+    : enFinancialLiteracyYoungAdultGameContent["data-sharing-awareness"];
+
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = stages.length || 0;
+  const successThreshold = totalStages || 0;
+  const reflectionPrompts = Array.isArray(gameContent?.reflectionPrompts)
+    ? gameContent.reflectionPrompts
+    : [];
 
   const handleChoice = (option) => {
     if (selectedOption || showResult) return;
 
+    if (!stages.length) return;
+
     resetFeedback();
-    const currentStageData = DATA_SHARING_AWARENESS_STAGES[currentStage];
+    const currentStageData = stages[Math.min(currentStage, totalStages - 1)];
+    if (!currentStageData) return;
+
     const updatedHistory = [
       ...history,
       { stageId: currentStageData.id, isCorrect: option.isCorrect },
@@ -210,28 +66,27 @@ const DataSharingAwareness = () => {
     setSelectedReflection(option.reflection);
     setShowFeedback(true);
     setCanProceed(false);
-    
-    // Update coins if the answer is correct
+
     if (option.isCorrect) {
-      setCoins(prevCoins => prevCoins + 1);
+      setCoins((prevCoins) => prevCoins + 1);
     }
-    
-    // Wait for the reflection period before allowing to proceed
+
     setTimeout(() => {
       setCanProceed(true);
     }, 1500);
-    
-    // Handle the final stage separately
-    if (currentStage === totalStages - 1) {
+
+    if (totalStages > 0 && currentStage === totalStages - 1) {
       setTimeout(() => {
-        const correctCount = updatedHistory.filter((item) => item.isCorrect).length;
-        const passed = correctCount === successThreshold;
+        const correctCount = updatedHistory.filter(
+          (item) => item.isCorrect
+        ).length;
+        const passed = successThreshold > 0 && correctCount === successThreshold;
         setFinalScore(correctCount);
         setCoins(passed ? totalCoins : 0);
         setShowResult(true);
       }, 5500);
     }
-    
+
     if (option.isCorrect) {
       showCorrectAnswerFeedback(currentStageData.reward, true);
     } else {
@@ -247,24 +102,56 @@ const DataSharingAwareness = () => {
     setCoins(0);
     setFinalScore(0);
     setShowResult(false);
+    setShowFeedback(false);
+    setSelectedReflection(null);
+    setCanProceed(false);
   };
 
-  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
-  const stage = DATA_SHARING_AWARENESS_STAGES[Math.min(currentStage, totalStages - 1)];
-  const hasPassed = finalScore === successThreshold;
+  const subtitle =
+    gameContent?.subtitleProgress && totalStages > 0
+      ? t(
+          "financial-literacy.young-adult.data-sharing-awareness.subtitleProgress",
+          {
+            current: Math.min(currentStage + 1, totalStages),
+            total: totalStages,
+          }
+        )
+      : `Stage ${Math.min(currentStage + 1, totalStages || 1)} of ${
+          totalStages || 1
+        }`;
+
+  const stage =
+    stages.length > 0
+      ? stages[Math.min(currentStage, stages.length - 1)]
+      : null;
+
+  const hasPassed =
+    successThreshold > 0 && finalScore === successThreshold;
+
+  const maxScore = totalStages || 1;
+  const currentLevel =
+    totalStages > 0
+      ? Math.min(currentStage + 1, totalStages)
+      : 1;
 
   return (
     <GameShell
-      title="Data Sharing Awareness"
+      title={
+        gameContent?.title ||
+        t(
+          "financial-literacy.young-adult.data-sharing-awareness.title",
+          "Data Sharing Awareness"
+        )
+      }
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      maxScore={DATA_SHARING_AWARENESS_STAGES.length}
-      currentLevel={Math.min(currentStage + 1, DATA_SHARING_AWARENESS_STAGES.length)}
-      totalLevels={DATA_SHARING_AWARENESS_STAGES.length}
+      maxScore={maxScore}
+      currentLevel={currentLevel}
+      totalLevels={maxScore}
       gameId={gameId}
       gameType="finance"
       showGameOver={showResult}
@@ -276,27 +163,49 @@ const DataSharingAwareness = () => {
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>Data Sharing Awareness</span>
+            <span>
+              {gameContent?.scenarioLabel ||
+                t(
+                  "financial-literacy.young-adult.data-sharing-awareness.scenarioLabel",
+                  "Scenario"
+                )}
+            </span>
+            <span>
+              {gameContent?.scenarioValue ||
+                t(
+                  "financial-literacy.young-adult.data-sharing-awareness.scenarioValue",
+                  "Data Sharing Awareness"
+                )}
+            </span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+          <p className="text-lg text-white/90 mb-6">
+            {stage?.prompt || ""}
+          </p>
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {stage?.options?.map((option) => {
               const isSelected = selectedOption === option.id;
               return (
                 <button
                   key={option.id}
                   onClick={() => handleChoice(option)}
                   disabled={!!selectedOption}
-                  className={`rounded-2xl border-2 p-5 text-left transition ${isSelected
+                  className={`rounded-2xl border-2 p-5 text-left transition ${
+                    isSelected
                       ? option.isCorrect
                         ? "border-emerald-400 bg-emerald-500/20"
                         : "border-rose-400 bg-rose-500/10"
                       : "border-white/30 bg-white/5 hover:border-white/60 hover:bg-white/10"
-                    }`}
+                  }`}
                 >
                   <div className="flex justify-between items-center mb-2 text-sm text-white/70">
-                    <span>Choice {option.id.toUpperCase()}</span>
+                    <span>
+                      {gameContent?.choiceLabel
+                        ? gameContent.choiceLabel.replace(
+                            "{{id}}",
+                            option.id.toUpperCase()
+                          )
+                        : `Choice ${option.id.toUpperCase()}`}
+                    </span>
                   </div>
                   <p className="text-white font-semibold">{option.label}</p>
                 </button>
@@ -305,10 +214,18 @@ const DataSharingAwareness = () => {
           </div>
           {(showResult || showFeedback) && (
             <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-              <h4 className="text-lg font-semibold text-white">Reflection</h4>
+              <h4 className="text-lg font-semibold text-white">
+                {gameContent?.reflectionTitle ||
+                  t(
+                    "financial-literacy.young-adult.data-sharing-awareness.reflectionTitle",
+                    "Reflection"
+                  )}
+              </h4>
               {selectedReflection && (
                 <div className="max-h-24 overflow-y-auto pr-2">
-                  <p className="text-sm text-white/90">{selectedReflection}</p>
+                  <p className="text-sm text-white/90">
+                    {selectedReflection}
+                  </p>
                 </div>
               )}
               {showFeedback && !showResult && (
@@ -316,7 +233,7 @@ const DataSharingAwareness = () => {
                   {canProceed ? (
                     <button
                       onClick={() => {
-                        if (currentStage < totalStages - 1) {
+                        if (totalStages > 0 && currentStage < totalStages - 1) {
                           setCurrentStage((prev) => prev + 1);
                           setSelectedOption(null);
                           setSelectedReflection(null);
@@ -326,17 +243,21 @@ const DataSharingAwareness = () => {
                       }}
                       className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Continue
+                      {gameContent?.continueButton ||
+                        t(
+                          "financial-literacy.young-adult.data-sharing-awareness.continueButton",
+                          "Continue"
+                        )}
                     </button>
                   ) : (
-                    <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                    <div className="py-2 px-6 text-white font-semibold">
+                      {gameContent?.readingLabel ||
+                        t(
+                          "financial-literacy.young-adult.data-sharing-awareness.readingLabel",
+                          "Reading..."
+                        )}
+                    </div>
                   )}
-                </div>
-              )}
-              {/* Automatically advance if we're in the last stage and the timeout has passed */}
-              {!showResult && currentStage === totalStages - 1 && canProceed && (
-                <div className="mt-4 flex justify-center">
-                  
                 </div>
               )}
               {showResult && (
@@ -347,11 +268,27 @@ const DataSharingAwareness = () => {
                     ))}
                   </ul>
                   <p className="text-sm text-white/70">
-                    Skill unlocked: <strong>Data protection awareness</strong>
+                    {gameContent?.skillUnlockedLabel ||
+                      t(
+                        "financial-literacy.young-adult.data-sharing-awareness.skillUnlockedLabel",
+                        "Skill unlocked:"
+                      )}{" "}
+                    <strong>
+                      {gameContent?.skillName ||
+                        t(
+                          "financial-literacy.young-adult.data-sharing-awareness.skillName",
+                          "Data protection awareness"
+                        )}
+                    </strong>
                   </p>
                   {!hasPassed && (
                     <p className="text-xs text-amber-300">
-                      Answer all {totalStages} choices correctly to earn the full reward.
+                      {gameContent?.fullRewardHint
+                        ? gameContent.fullRewardHint.replace(
+                            "{{total}}",
+                            totalStages.toString()
+                          )
+                        : `Answer all ${totalStages} choices correctly to earn the full reward.`}
                     </p>
                   )}
                   {!hasPassed && (
@@ -359,44 +296,22 @@ const DataSharingAwareness = () => {
                       onClick={handleRetry}
                       className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Try Again
+                      {gameContent?.tryAgainButton ||
+                        t(
+                          "financial-literacy.young-adult.data-sharing-awareness.tryAgainButton",
+                          "Try Again"
+                        )}
                     </button>
                   )}
                 </>
               )}
             </div>
           )}
-         
         </div>
-        {showResult && (
-          <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection Prompts</h4>
-            <ul className="text-sm list-disc list-inside space-y-1">
-              {reflectionPrompts.map((prompt) => (
-                <li key={prompt}>{prompt}</li>
-              ))}
-            </ul>
-            <p className="text-sm text-white/70">
-              Skill unlocked: <strong>Data protection awareness</strong>
-            </p>
-            {!hasPassed && (
-              <p className="text-xs text-amber-300">
-                Answer all {totalStages} choices correctly to earn the full reward.
-              </p>
-            )}
-            {!hasPassed && (
-              <button
-                onClick={handleRetry}
-                className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
-              >
-                Try Again
-              </button>
-            )}
-          </div>
-        )}
       </div>
     </GameShell>
   );
 };
 
 export default DataSharingAwareness;
+

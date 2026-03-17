@@ -1,0 +1,177 @@
+{
+  "title": "Financial Accountability",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Financial Accountability",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Financial responsibility and integrity",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "What financial accountability systems do you currently have in place?",
+    "How can you better demonstrate financial responsibility in your daily money management?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "When mistakes happen, what's right?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Blame others",
+          "reflection": "Blaming others for financial mistakes avoids personal responsibility and prevents learning from errors. This approach damages relationships, creates conflict, and stops personal growth. Taking ownership of mistakes, even when others contributed, demonstrates maturity and builds trust with financial partners and institutions.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Take responsibility and correct them",
+          "reflection": "Exactly! Accountability builds maturity. Taking responsibility for financial mistakes, identifying what went wrong, and actively working to correct the situation demonstrates integrity and financial maturity. This approach builds trust, strengthens relationships, and creates opportunities for learning and improvement.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Ignore them and hope they go away",
+          "reflection": "Ignoring financial mistakes rarely makes them disappear - they typically grow worse over time. Unaddressed errors can lead to larger financial problems, damaged credit, legal issues, and lost opportunities. Responsible financial behavior requires acknowledging and actively addressing mistakes as soon as they're discovered.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Make excuses for why they weren't your fault",
+          "reflection": "Making excuses for financial mistakes prevents personal accountability and learning opportunities. While circumstances may contribute to errors, taking responsibility involves acknowledging your role and focusing on solutions rather than justifications. This approach builds character and demonstrates financial maturity.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 2,
+      "prompt": "What's the best way to handle discovering an error in your financial records?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Document the error and contact the relevant party immediately",
+          "reflection": "Exactly! This proactive approach demonstrates financial responsibility and integrity. Documenting the error with specific details, dates, and amounts provides clarity for resolution. Contacting the relevant party promptly shows accountability and often leads to quicker, more favorable resolution of the issue.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Wait to see if anyone notices before taking action",
+          "reflection": "Waiting for others to discover financial errors can damage your reputation and create bigger problems. The longer errors go unaddressed, the more complex and costly they become to resolve. Proactive error correction demonstrates responsibility and often results in more understanding and flexible resolution approaches.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Blame the accounting software or bank system",
+          "reflection": "Blaming systems or technology for financial errors avoids personal accountability and learning opportunities. While systems can contribute to errors, taking responsibility involves examining your own processes and controls. This approach builds better financial management skills and prevents similar mistakes in the future.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Assume the error will balance out with other transactions",
+          "reflection": "Assuming errors will naturally balance out is financially irresponsible and risky. Unaddressed errors typically compound over time, leading to larger discrepancies, potential fraud detection, and serious financial consequences. Proper financial management requires actively identifying and correcting all errors regardless of their perceived impact.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 3,
+      "prompt": "How should you approach a financial mistake that affects others?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Minimize your involvement to protect your reputation",
+          "reflection": "Minimizing involvement in financial mistakes that affect others damages trust and relationships. While protecting your reputation is important, true financial maturity involves taking appropriate responsibility for your actions. Honest acknowledgment of mistakes, even when uncomfortable, builds stronger, more trusting financial relationships.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Blame external factors beyond anyone's control",
+          "reflection": "Blaming external factors for financial mistakes that affect others avoids accountability and learning opportunities. While external factors may contribute to problems, responsible financial behavior involves examining all contributing factors including personal decisions and actions. This comprehensive approach leads to better solutions and prevents similar issues.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Let others handle the problem since you're not the only one involved",
+          "reflection": "Avoiding responsibility for financial mistakes that affect others demonstrates poor leadership and financial maturity. Even when multiple parties are involved, taking ownership of your specific role and contributions shows integrity and often inspires others to do the same. Collaborative problem-solving requires individual accountability from all participants.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Acknowledge your role and work collaboratively on solutions",
+          "reflection": "Exactly! Accountability builds maturity. Acknowledging your contribution to a financial mistake and working collaboratively with affected parties demonstrates integrity and leadership. This approach builds trust, strengthens relationships, and often leads to creative solutions that benefit everyone involved while maintaining financial responsibility.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 4,
+      "prompt": "What's the long-term benefit of accepting financial responsibility for mistakes?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Avoids short-term embarrassment and conflict",
+          "reflection": "Avoiding short-term embarrassment by not accepting financial responsibility often leads to much larger long-term problems. The temporary relief of avoiding accountability typically results in damaged relationships, lost opportunities, and a reputation for unreliability. True financial maturity involves facing short-term discomfort for long-term benefits.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Protects you from potential legal consequences",
+          "reflection": "While accepting responsibility for financial mistakes may seem risky, it often reduces legal consequences through demonstrated good faith and cooperation. Hiding or denying responsibility typically escalates legal issues and damages relationships. Responsible acknowledgment of mistakes, combined with proactive correction efforts, usually results in more favorable legal and financial outcomes.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Builds trust, credibility, and future opportunities",
+          "reflection": "Exactly! Accountability builds maturity. Accepting financial responsibility for mistakes builds trust and credibility with financial institutions, employers, business partners, and personal relationships. This reputation for integrity opens doors to better financial opportunities, favorable terms, and stronger professional and personal relationships built on mutual respect and trust.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Saves time by not having to explain or justify your actions",
+          "reflection": "Accepting financial responsibility often requires time and effort to explain and justify actions, but this investment builds valuable relationships and trust. The time spent on transparent communication and collaborative problem-solving typically saves more time in the long run by preventing future conflicts, building credibility, and creating opportunities for mutual support.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 5,
+      "prompt": "What's the best practice for preventing financial mistakes through accountability?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Rely on others to catch your errors and point them out",
+          "reflection": "Relying on others to catch financial errors demonstrates poor personal accountability and creates dependency. While feedback from others is valuable, responsible financial management requires developing your own error-checking skills and systems. Building personal accountability prevents mistakes and develops the financial maturity needed for long-term success.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Implement personal checks and regularly review your financial processes",
+          "reflection": "Exactly! Accountability builds maturity. Implementing personal checks and regularly reviewing financial processes demonstrates proactive responsibility and prevents mistakes before they occur. This systematic approach involves creating accountability measures, seeking feedback, and continuously improving financial management practices to build long-term financial stability and success.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Avoid complex financial situations to minimize error risk",
+          "reflection": "Avoiding complex financial situations to prevent errors limits growth opportunities and financial development. Responsible financial accountability involves building skills and systems to handle complexity confidently. The goal should be developing the maturity and processes to manage sophisticated financial situations successfully, not avoiding them out of fear of mistakes.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Blame past mistakes on lack of experience as you gain more knowledge",
+          "reflection": "Blaming past financial mistakes on lack of experience prevents learning from those experiences and building true accountability. While experience is valuable, financial maturity involves learning from all mistakes regardless of their cause. Taking ownership of errors and using them as learning opportunities builds the wisdom and responsibility needed for future financial success.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    }
+  ]
+}
+

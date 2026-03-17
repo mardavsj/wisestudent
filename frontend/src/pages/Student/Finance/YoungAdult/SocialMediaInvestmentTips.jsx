@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Trophy } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -167,12 +168,17 @@ const SOCIAL_MEDIA_INVESTMENT_TIPS_STAGES = [
   },
 ];
 
-const totalStages = SOCIAL_MEDIA_INVESTMENT_TIPS_STAGES.length;
-const successThreshold = totalStages;
-
 const SocialMediaInvestmentTips = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   const gameId = "finance-young-adult-84";
+  const gameContent = t(
+    "financial-literacy.young-adult.social-media-investment-tips",
+    { returnObjects: true }
+  );
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = stages.length;
+  const successThreshold = totalStages;
   const gameData = getGameDataById(gameId);
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 20;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 20;
@@ -189,19 +195,15 @@ const SocialMediaInvestmentTips = () => {
   const [selectedReflection, setSelectedReflection] = useState(null);
   const [canProceed, setCanProceed] = useState(false);
 
-  const reflectionPrompts = useMemo(
-    () => [
-      "How do you currently evaluate investment advice from social media?",
-      "What steps can you take to verify the credibility of financial influencers?",
-    ],
-    []
-  );
+  const reflectionPrompts = Array.isArray(gameContent?.reflectionPrompts)
+    ? gameContent.reflectionPrompts
+    : [];
 
   const handleChoice = (option) => {
     if (selectedOption || showResult) return;
 
     resetFeedback();
-    const currentStageData = SOCIAL_MEDIA_INVESTMENT_TIPS_STAGES[currentStage];
+    const currentStageData = stages[currentStage];
     const updatedHistory = [
       ...history,
       { stageId: currentStageData.id, isCorrect: option.isCorrect },
@@ -250,8 +252,15 @@ const SocialMediaInvestmentTips = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
-  const stage = SOCIAL_MEDIA_INVESTMENT_TIPS_STAGES[Math.min(currentStage, totalStages - 1)];
+  const subtitle =
+    gameContent?.subtitleProgress
+      ?.replace("{{current}}", Math.min(currentStage + 1, totalStages || 1))
+      ?.replace("{{total}}", totalStages || 1) ||
+    `Stage ${Math.min(currentStage + 1, totalStages || 1)} of ${totalStages || 1}`;
+  const stage =
+    stages.length > 0
+      ? stages[Math.min(currentStage, stages.length - 1)]
+      : null;
   const hasPassed = finalScore === successThreshold;
 
   return (

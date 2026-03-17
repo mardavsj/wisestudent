@@ -1,0 +1,177 @@
+{
+  "title": "Fixed Deposit Awareness",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Fixed Deposit Basics",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Fixed deposit strategy",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you balance safety and growth in your investment portfolio?",
+    "When would fixed deposits be the right choice for your financial goals?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Fixed deposits are best for:",
+      "options": [
+        {
+          "id": "quick",
+          "label": "Quick wealth",
+          "reflection": "Fixed deposits are not designed for quick wealth generation. They offer steady, predictable returns over time rather than rapid growth.",
+          "isCorrect": false
+        },
+        {
+          "id": "high-risk",
+          "label": "High-risk, high-reward investments",
+          "reflection": "Fixed deposits are low-risk instruments. For high-risk investments, other financial products like stocks or mutual funds would be more appropriate.",
+          "isCorrect": false
+        },
+        {
+          "id": "liquidity",
+          "label": "Immediate access to funds",
+          "reflection": "Fixed deposits typically have lock-in periods. For immediate access, savings accounts or liquid funds would be better options.",
+          "isCorrect": false
+        },
+        {
+          "id": "safe",
+          "label": "Safe and predictable savings",
+          "reflection": "Exactly! Fixed deposits are ideal for preserving capital with guaranteed returns, making them perfect for conservative investors seeking stability.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "What is the main advantage of fixed deposits?",
+      "options": [
+        {
+          "id": "returns",
+          "label": "Highest possible returns",
+          "reflection": "Fixed deposits offer moderate returns. For highest returns, you would need to consider higher-risk investments like equities.",
+          "isCorrect": false
+        },
+        {
+          "id": "capital",
+          "label": "Capital protection with guaranteed returns",
+          "reflection": "Exactly! Fixed deposits protect your principal amount and provide assured returns, making them a safe investment option.",
+          "isCorrect": true
+        },
+        {
+          "id": "flexibility",
+          "label": "Complete flexibility in withdrawals",
+          "reflection": "Fixed deposits usually have penalties for early withdrawal. They are better suited for funds you don't need immediate access to.",
+          "isCorrect": false
+        },
+        {
+          "id": "tax",
+          "label": "Tax-free income generation",
+          "reflection": "Fixed deposit interest is taxable. For tax-free options, consider instruments like PPF or ELSS mutual funds.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "When should you consider fixed deposits?",
+      "options": [
+        {
+          "id": "emergency",
+          "label": "For emergency fund purposes",
+          "reflection": "Emergency funds should be kept in highly liquid instruments. Fixed deposits may have penalties for early withdrawal, making them unsuitable for emergencies.",
+          "isCorrect": false
+        },
+        {
+          "id": "long-term",
+          "label": "For long-term wealth creation",
+          "reflection": "For long-term wealth creation, equity investments typically offer better returns due to the power of compounding over extended periods.",
+          "isCorrect": false
+        },
+        {
+          "id": "short-term",
+          "label": "For short-term goals with capital safety",
+          "reflection": "Perfect! Fixed deposits are ideal for short to medium-term goals (1-5 years) where you want to preserve capital while earning steady returns.",
+          "isCorrect": true
+        },
+        {
+          "id": "speculation",
+          "label": "For speculative trading",
+          "reflection": "Fixed deposits are not suitable for trading or speculation. They are designed for conservative, long-term holding.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What happens if you withdraw a fixed deposit early?",
+      "options": [
+        {
+          "id": "penalty",
+          "label": "You may face penalty or reduced interest",
+          "reflection": "Exactly! Most banks charge a penalty for premature withdrawal, which could be a percentage of the principal or reduced interest rate.",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "label": "Nothing - you get full amount back",
+          "reflection": "Early withdrawal usually involves penalties or reduced interest rates. The exact terms depend on the bank's policy.",
+          "isCorrect": false
+        },
+        {
+          "id": "bonus",
+          "label": "You get bonus interest for early withdrawal",
+          "reflection": "Banks don't offer bonus interest for early withdrawal. In fact, they discourage it through penalties to maintain their lending capacity.",
+          "isCorrect": false
+        },
+        {
+          "id": "forbidden",
+          "label": "It's completely forbidden",
+          "reflection": "While discouraged, early withdrawal is usually allowed with penalties. Some banks may have stricter policies, but it's not universally forbidden.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "How do fixed deposits compare to savings accounts?",
+      "options": [
+        {
+          "id": "lower",
+          "label": "Lower interest rates than savings accounts",
+          "reflection": "Fixed deposits typically offer higher interest rates than regular savings accounts, making them attractive for parking idle funds.",
+          "isCorrect": false
+        },
+        {
+          "id": "same",
+          "label": "Same interest rates as savings accounts",
+          "reflection": "Fixed deposits generally offer higher interest rates to compensate for the lock-in period and commitment from the investor.",
+          "isCorrect": false
+        },
+        {
+          "id": "unrelated",
+          "label": "They are completely unrelated products",
+          "reflection": "Both are banking products, but they serve different purposes. Fixed deposits are for earning higher returns with commitment, while savings accounts offer liquidity.",
+          "isCorrect": false
+        },
+        {
+          "id": "higher",
+          "label": "Higher interest rates with locked-in funds",
+          "reflection": "Exactly! Fixed deposits offer better returns than savings accounts, but your money is locked in for a specified period.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}
+

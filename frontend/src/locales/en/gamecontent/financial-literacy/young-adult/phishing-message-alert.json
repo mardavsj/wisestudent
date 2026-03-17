@@ -1,0 +1,178 @@
+{
+  "title": "Phishing Message Alert",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Phishing Alert",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Phishing detection",
+  "outcomeLine": "Outcome: You can spot and respond to phishing attempts safely.",
+  "outcomeLineShort": "You can recognize phishing attempts.",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "What steps do you typically take to verify suspicious financial messages?",
+    "How can you build better habits for recognizing and responding to phishing attempts?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You receive a message saying “Your bank account will be blocked. Click here.” What should you do?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Click immediately",
+          "reflection": "Clicking immediately on urgent messages is exactly what scammers want you to do. They create panic to prevent you from thinking clearly and verifying the message.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Ignore and verify through official channels",
+          "reflection": "Exactly! Urgency is a common scam tactic. Always verify through official channels like calling your bank directly or visiting their official website.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Forward to friends for advice",
+          "reflection": "While getting advice from trusted friends can be helpful, forwarding suspicious messages might spread the scam to others who might not be as cautious.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Check the sender's email address",
+          "reflection": "Checking the sender's email address is a good first step, but scammers often fake email addresses to look legitimate. Official verification is still necessary.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 2,
+      "prompt": "What's a red flag in phishing messages?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Professional email formatting",
+          "reflection": "Professional formatting can actually be used by scammers to appear legitimate. Don't rely on appearance alone to determine if a message is safe.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Use of your full name",
+          "reflection": "Using your full name doesn't make a message legitimate. Scammers can easily obtain personal information to make their messages appear more convincing.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Urgent action required immediately",
+          "reflection": "Perfect! Creating a sense of urgency is one of the most common phishing tactics. Legitimate organizations rarely demand immediate action through email.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Official-looking logos",
+          "reflection": "Official logos can be easily copied and used by scammers. The presence of a logo doesn't guarantee the legitimacy of a message.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 3,
+      "prompt": "How should you verify a suspicious financial message?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Call the number in the email",
+          "reflection": "Calling the number provided in a suspicious email is risky because it might connect you to the scammer. Always use contact information from official sources.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Reply to the email asking for confirmation",
+          "reflection": "Replying to suspicious emails confirms to scammers that your email address is active and might lead to more targeted attacks or requests for personal information.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Search the message content online",
+          "reflection": "Searching the message content online might provide some information, but it's not a reliable verification method. Official channels are the safest way to verify.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Use official contact information",
+          "reflection": "Exactly! Always verify through official contact information found on the organization's official website or statements, not from the suspicious message itself.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 4,
+      "prompt": "What should you do if you accidentally clicked a phishing link?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Change passwords and monitor accounts",
+          "reflection": "Perfect! Immediately change passwords for affected accounts and monitor your financial accounts for unauthorized activity. Report the incident to relevant authorities.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Ignore it and hope nothing happens",
+          "reflection": "Ignoring a potential security breach can lead to serious consequences. Immediate action is necessary to protect your accounts and personal information.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Click the link again to undo the action",
+          "reflection": "Clicking the link again will likely make the situation worse by providing scammers with more information or access to your accounts.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Tell everyone about it on social media",
+          "reflection": "Publicly sharing information about a security incident might expose you to further risks or provide scammers with information about your response.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 5,
+      "prompt": "What's the best long-term protection against phishing?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Never open any emails",
+          "reflection": "Never opening emails would prevent you from receiving important information and is not a practical approach to email security.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Security awareness and verification habits",
+          "reflection": "Perfect! Building strong security awareness and consistently verifying suspicious messages through official channels is the most effective long-term protection against phishing.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Rely on email spam filters alone",
+          "reflection": "While spam filters are helpful, they're not foolproof. Scammers constantly develop new techniques to bypass filters, so personal vigilance is still essential.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Trust your instincts only",
+          "reflection": "While instincts can be helpful, they're not always reliable. Following established verification procedures is more dependable than relying solely on gut feelings.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    }
+  ]
+}

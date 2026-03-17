@@ -1,0 +1,177 @@
+{
+  "title": "Why Save Early?",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Early Saving",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Early saving advantage",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "How can you start building your savings habit today, even with a small amount?",
+    "What long-term goals could benefit most from the power of compound interest?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Why is saving early powerful?",
+      "options": [
+        {
+          "id": "doesnt-matter",
+          "label": "It doesn't matter",
+          "reflection": "Actually, time is one of the most powerful tools in building wealth. Starting early gives you a significant advantage.",
+          "isCorrect": false
+        },
+        {
+          "id": "time-helps",
+          "label": "Time helps money grow",
+          "reflection": "Exactly! The power of compound interest means your money can grow exponentially over time when you start early.",
+          "isCorrect": true
+        },
+        {
+          "id": "money-grows",
+          "label": "Money grows on its own",
+          "reflection": "Money doesn't grow on its own - it needs time and consistent contributions to benefit from compound interest.",
+          "isCorrect": false
+        },
+        {
+          "id": "later-better",
+          "label": "Saving later is better",
+          "reflection": "While it's never too late to start saving, starting early maximizes the benefits of compound growth over decades.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "What happens when you start saving early?",
+      "options": [
+        {
+          "id": "no-difference",
+          "label": "No real difference in the long run",
+          "reflection": "Starting early makes a massive difference due to the compounding effect. Even small amounts can grow significantly over time.",
+          "isCorrect": false
+        },
+        {
+          "id": "more-pressure",
+          "label": "You feel more financial pressure",
+          "reflection": "Starting early actually reduces financial pressure by giving you more time to build your wealth gradually.",
+          "isCorrect": false
+        },
+        {
+          "id": "compound-advantage",
+          "label": "Compound interest works in your favor",
+          "reflection": "Perfect! Compound interest allows your earnings to generate their own earnings, creating exponential growth over time.",
+          "isCorrect": true
+        },
+        {
+          "id": "restrictive",
+          "label": "It becomes too restrictive",
+          "reflection": "Early saving habits, when started small, become natural and don't feel restrictive. They actually provide financial freedom.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "How does time affect your savings growth?",
+      "options": [
+        {
+          "id": "exponential-growth",
+          "label": "Time creates exponential growth potential",
+          "reflection": "Exactly! The longer your money has to compound, the more dramatic the growth becomes. This is the power of starting early.",
+          "isCorrect": true
+        },
+        {
+          "id": "linear-growth",
+          "label": "Savings grow at a steady, linear rate",
+          "reflection": "Savings with compound interest grow exponentially, not linearly. The growth accelerates over time as interest earns interest.",
+          "isCorrect": false
+        },
+        {
+          "id": "slows-down",
+          "label": "Growth slows down over time",
+          "reflection": "With compound interest, growth actually accelerates over time. The longer you leave money invested, the faster it grows.",
+          "isCorrect": false
+        },
+        {
+          "id": "unpredictable",
+          "label": "It's unpredictable and risky",
+          "reflection": "While investments carry risk, the time value of money is a mathematical certainty. Starting early reduces the risk of not having enough saved.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 4,
+      "prompt": "What's the biggest advantage young adults have when saving?",
+      "options": [
+        {
+          "id": "more-income",
+          "label": "Higher income than older adults",
+          "reflection": "While income may increase, the biggest advantage isn't necessarily higher income, but the abundance of time available.",
+          "isCorrect": false
+        },
+        {
+          "id": "fewer-expenses",
+          "label": "Fewer financial responsibilities",
+          "reflection": "While young adults may have fewer responsibilities, time remains the most powerful advantage for wealth building regardless of current expenses.",
+          "isCorrect": false
+        },
+        {
+          "id": "better-investments",
+          "label": "Access to better investment options",
+          "reflection": "Investment options are generally available to everyone. The key differentiator for young adults is the time horizon for their investments.",
+          "isCorrect": false
+        },
+        {
+          "id": "time-advantage",
+          "label": "Time is their greatest asset",
+          "reflection": "Perfect! Young adults have decades of potential compounding ahead of them, making time their most valuable resource for building wealth.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 5,
+      "prompt": "What should be your approach to early saving?",
+      "options": [
+        {
+          "id": "wait-large-amount",
+          "label": "Wait until you can save large amounts",
+          "reflection": "Waiting for large amounts often means missing out on years of compounding. Starting small early is more beneficial than waiting.",
+          "isCorrect": false
+        },
+        {
+          "id": "focus-on-spending",
+          "label": "Focus on enjoying your money now",
+          "reflection": "While enjoying your money is important, balancing present enjoyment with future security through early saving creates the best outcome.",
+          "isCorrect": false
+        },
+        {
+          "id": "start-small-consistent",
+          "label": "Start small but be consistent",
+          "reflection": "Exactly! Consistent small contributions early on can grow to substantial amounts due to the power of compound interest over time.",
+          "isCorrect": true
+        },
+        {
+          "id": "save-everything",
+          "label": "Save everything you earn",
+          "reflection": "Saving everything isn't sustainable or necessary. The key is finding a balance that allows for both current enjoyment and future growth through compounding.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}
+

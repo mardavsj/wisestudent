@@ -1,0 +1,176 @@
+{
+  "title": "Borrowing with Responsibility",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Borrowing with Responsibility",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Responsible borrowing practices",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "What borrowing decisions have you made that demonstrate responsibility?",
+    "How can you better assess your ability to repay before taking loans?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Borrowing is ethical when:",
+      "options": [
+        {
+          "id": "a",
+          "label": "You plan to repay fully and on time",
+          "reflection": "Exactly! Responsible borrowing starts with a clear commitment to repay the full amount according to the agreed terms. This demonstrates respect for the lender's trust and maintains your financial integrity while building a positive borrowing history.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "You assume delays are acceptable",
+          "reflection": "Assuming delays are acceptable shows a lack of respect for the lender and the borrowing agreement. This approach can damage relationships, harm your credit reputation, and create financial stress for both parties involved.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "You borrow as much as possible",
+          "reflection": "Borrowing as much as possible without considering your ability to repay is financially irresponsible and unethical. This approach can lead to overwhelming debt, damaged relationships, and long-term financial hardship.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "You only borrow from close friends",
+          "reflection": "While borrowing from friends might seem easier, it still requires the same ethical standards as borrowing from institutions. The relationship doesn't change the responsibility to repay according to agreed terms and maintain trust.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 2,
+      "prompt": "What's the first step before taking any loan?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Compare interest rates from different lenders",
+          "reflection": "While comparing interest rates is important, it should come after confirming you can afford the loan payments. The most attractive rate won't help if you can't manage the required payments, leading to default and financial damage.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Check what your friends are borrowing",
+          "reflection": "Your friends' borrowing decisions don't reflect your financial situation or needs. Making borrowing decisions based on others' choices can lead to inappropriate debt levels and financial strain that doesn't align with your personal circumstances.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Apply to multiple lenders simultaneously",
+          "reflection": "Applying to multiple lenders simultaneously can hurt your credit score and create confusion about your financial situation. It's better to research thoroughly first, then apply strategically to lenders that match your profile and needs.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Calculate if you can afford the payments",
+          "reflection": "Exactly! Responsible borrowing requires careful assessment of your ability to make regular payments without compromising your financial stability. This includes considering your income, existing obligations, and emergency fund needs.",
+          "isCorrect": true
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 3,
+      "prompt": "How should you handle a payment you might miss?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Wait until the payment is officially late",
+          "reflection": "Waiting until a payment is officially late can result in penalties, damage to your credit score, and reduced options for resolving the situation. Lenders are more willing to work with borrowers who communicate proactively about potential difficulties.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Borrow from another source to cover the payment",
+          "reflection": "Borrowing to cover existing payments can create a dangerous cycle of debt that becomes increasingly difficult to manage. This approach often leads to greater financial stress and can damage multiple relationships and credit accounts.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Contact the lender immediately to discuss options",
+          "reflection": "Exactly! Proactive communication with your lender demonstrates responsibility and often leads to workable solutions like payment plans or temporary adjustments. This approach protects your relationship with the lender and your credit standing.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Ignore the payment and hope for the best",
+          "reflection": "Ignoring payments and hoping for the best is financially irresponsible and can lead to serious consequences including damaged credit, legal action, and strained relationships. Responsible borrowers address payment issues directly and promptly.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 4,
+      "prompt": "What makes a borrowing relationship healthy?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Getting the maximum amount possible",
+          "reflection": "Focusing on maximum borrowing amounts rather than appropriate amounts can lead to financial strain and damaged relationships. Healthy borrowing is about meeting genuine needs within sustainable limits, not maximizing debt.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Clear terms and mutual respect",
+          "reflection": "Exactly! Healthy borrowing relationships are built on clear, agreed-upon terms and mutual respect between borrower and lender. This includes transparent communication about expectations, realistic repayment schedules, and respect for both parties' financial situations.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Borrowing without discussing consequences",
+          "reflection": "Borrowing without discussing potential consequences creates unrealistic expectations and can lead to misunderstandings when difficulties arise. Responsible borrowing requires honest conversations about risks, backup plans, and mutual responsibilities.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Never discussing the loan again after agreement",
+          "reflection": "Avoiding ongoing communication about loans can lead to misunderstandings and missed opportunities to address potential issues. Healthy borrowing relationships involve periodic check-ins and open communication about changing circumstances or concerns.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    },
+    {
+      "id": 5,
+      "prompt": "What's the impact of responsible borrowing on your future?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Builds trust and better opportunities",
+          "reflection": "Exactly! Responsible borrowing creates a positive track record that builds trust with lenders and opens doors to better financial opportunities. This includes favorable interest rates, higher credit limits, and access to important financial products when you need them most.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Limits your ability to borrow in emergencies",
+          "reflection": "Responsible borrowing actually enhances your ability to access emergency funds when needed. Lenders are more willing to work with borrowers who have demonstrated reliability and responsibility in their financial dealings.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Makes borrowing more expensive over time",
+          "reflection": "Responsible borrowing typically leads to better rates and terms over time, not higher costs. A good borrowing history demonstrates low risk to lenders, who reward this with more favorable conditions and opportunities.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Creates unnecessary financial restrictions",
+          "reflection": "Responsible borrowing creates sustainable financial habits that provide freedom rather than restrictions. By borrowing within your means and maintaining good relationships, you preserve flexibility and options for future financial needs.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 20
+    }
+  ]
+}

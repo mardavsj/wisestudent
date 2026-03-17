@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Trophy } from "lucide-react";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
@@ -166,12 +167,17 @@ const PHISHING_MESSAGE_STAGES = [
   },
 ];
 
-const totalStages = PHISHING_MESSAGE_STAGES.length;
-const successThreshold = totalStages;
-
 const PhishingMessageAlert = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
   const gameId = "finance-young-adult-81";
+  const gameContent = t(
+    "financial-literacy.young-adult.phishing-message-alert",
+    { returnObjects: true }
+  );
+  const stages = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = stages.length;
+  const successThreshold = totalStages;
   const gameData = getGameDataById(gameId);
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 20;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 20;
@@ -188,19 +194,15 @@ const PhishingMessageAlert = () => {
   const [selectedReflection, setSelectedReflection] = useState(null);
   const [canProceed, setCanProceed] = useState(false);
 
-  const reflectionPrompts = useMemo(
-    () => [
-      "What steps do you typically take to verify suspicious financial messages?",
-      "How can you build better habits for recognizing and responding to phishing attempts?",
-    ],
-    []
-  );
+  const reflectionPrompts = Array.isArray(gameContent?.reflectionPrompts)
+    ? gameContent.reflectionPrompts
+    : [];
 
   const handleChoice = (option) => {
     if (selectedOption || showResult) return;
 
     resetFeedback();
-    const currentStageData = PHISHING_MESSAGE_STAGES[currentStage];
+    const currentStageData = stages[currentStage];
     const updatedHistory = [
       ...history,
       { stageId: currentStageData.id, isCorrect: option.isCorrect },
@@ -249,22 +251,29 @@ const PhishingMessageAlert = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(currentStage + 1, totalStages)} of ${totalStages}`;
-  const stage = PHISHING_MESSAGE_STAGES[Math.min(currentStage, totalStages - 1)];
+  const subtitle =
+    gameContent?.subtitleProgress
+      ?.replace("{{current}}", Math.min(currentStage + 1, totalStages || 1))
+      ?.replace("{{total}}", totalStages || 1) ||
+    `Stage ${Math.min(currentStage + 1, totalStages || 1)} of ${totalStages || 1}`;
+  const stage =
+    stages.length > 0
+      ? stages[Math.min(currentStage, stages.length - 1)]
+      : null;
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="Phishing Message Alert"
+      title={gameContent?.title || "Phishing Message Alert"}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
       coinsPerLevel={coinsPerLevel}
       totalCoins={totalCoins}
       totalXp={totalXp}
-      maxScore={PHISHING_MESSAGE_STAGES.length}
-      currentLevel={Math.min(currentStage + 1, PHISHING_MESSAGE_STAGES.length)}
-      totalLevels={PHISHING_MESSAGE_STAGES.length}
+      maxScore={totalStages || 0}
+      currentLevel={Math.min(currentStage + 1, totalStages || 1)}
+      totalLevels={totalStages || 1}
       gameId={gameId}
       gameType="finance"
       showGameOver={showResult}
@@ -276,12 +285,12 @@ const PhishingMessageAlert = () => {
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>Phishing Alert</span>
+            <span>{gameContent?.scenarioLabel || "Scenario"}</span>
+            <span>{gameContent?.scenarioValue || "Phishing Alert"}</span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+          <p className="text-lg text-white/90 mb-6">{stage?.prompt}</p>
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {(stage?.options || []).map((option) => {
               const isSelected = selectedOption === option.id;
               return (
                 <button
@@ -296,7 +305,12 @@ const PhishingMessageAlert = () => {
                     }`}
                 >
                   <div className="flex justify-between items-center mb-2 text-sm text-white/70">
-                    <span>Choice {option.id.toUpperCase()}</span>
+                    <span>
+                      {(gameContent?.choiceLabel || "Choice {{id}}").replace(
+                        "{{id}}",
+                        option.id.toUpperCase()
+                      )}
+                    </span>
                   </div>
                   <p className="text-white font-semibold">{option.label}</p>
                 </button>
@@ -305,7 +319,9 @@ const PhishingMessageAlert = () => {
           </div>
           {(showResult || showFeedback) && (
             <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-              <h4 className="text-lg font-semibold text-white">Reflection</h4>
+              <h4 className="text-lg font-semibold text-white">
+                {gameContent?.reflectionTitle || "Reflection"}
+              </h4>
               {selectedReflection && (
                 <div className="max-h-24 overflow-y-auto pr-2">
                   <p className="text-sm text-white/90">{selectedReflection}</p>
@@ -326,10 +342,12 @@ const PhishingMessageAlert = () => {
                       }}
                       className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Continue
+                      {gameContent?.continueButton || "Continue"}
                     </button>
                   ) : (
-                    <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                    <div className="py-2 px-6 text-white font-semibold">
+                      {gameContent?.readingLabel || "Reading..."}
+                    </div>
                   )}
                 </div>
               )}
@@ -347,11 +365,17 @@ const PhishingMessageAlert = () => {
                     ))}
                   </ul>
                   <p className="text-sm text-white/70">
-                    Skill unlocked: <strong>Phishing detection</strong>
+                    {gameContent?.skillUnlockedLabel || "Skill unlocked:"}{" "}
+                    <strong>{gameContent?.skillName || "Phishing detection"}</strong>
                   </p>
                   {!hasPassed && (
                     <p className="text-xs text-amber-300">
-                      Answer all {totalStages} choices correctly to earn the full reward.
+                      {gameContent?.fullRewardHint
+                        ? gameContent.fullRewardHint.replace(
+                            "{{total}}",
+                            totalStages
+                          )
+                        : `Answer all ${totalStages} choices correctly to earn the full reward.`}
                     </p>
                   )}
                   {!hasPassed && (
@@ -359,7 +383,7 @@ const PhishingMessageAlert = () => {
                       onClick={handleRetry}
                       className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
                     >
-                      Try Again
+                      {gameContent?.tryAgainButton || "Try Again"}
                     </button>
                   )}
                 </>
@@ -370,18 +394,23 @@ const PhishingMessageAlert = () => {
         </div>
         {showResult && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection Prompts</h4>
+            <h4 className="text-lg font-semibold text-white">
+              {gameContent?.reflectionPromptsTitle || "Reflection Prompts"}
+            </h4>
             <ul className="text-sm list-disc list-inside space-y-1">
               {reflectionPrompts.map((prompt) => (
                 <li key={prompt}>{prompt}</li>
               ))}
             </ul>
             <p className="text-sm text-white/70">
-              Skill unlocked: <strong>Phishing detection</strong>
+              {gameContent?.skillUnlockedLabel || "Skill unlocked:"}{" "}
+              <strong>{gameContent?.skillName || "Phishing detection"}</strong>
             </p>
             {!hasPassed && (
               <p className="text-xs text-amber-300">
-                Answer all {totalStages} choices correctly to earn the full reward.
+                {gameContent?.fullRewardHint
+                  ? gameContent.fullRewardHint.replace("{{total}}", totalStages)
+                  : `Answer all ${totalStages} choices correctly to earn the full reward.`}
               </p>
             )}
             {!hasPassed && (
@@ -389,7 +418,7 @@ const PhishingMessageAlert = () => {
                 onClick={handleRetry}
                 className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
               >
-                Try Again
+                {gameContent?.tryAgainButton || "Try Again"}
               </button>
             )}
           </div>
