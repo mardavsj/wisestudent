@@ -280,12 +280,8 @@ const Navbar = () => {
                             <img
                                 src="/icons/icon.png"
                                 alt="WiseStudent logo"
-                                className="w-10 h-10 sm:w-11 sm:h-11 object-contain"
+                                className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain"
                             />
-                            <div className="ml-0 sm:ml-3">
-                                <h1 className="hidden lg:block text-lg sm:text-xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent tracking-tight">WiseStudent</h1>
-                                <p className="hidden lg:block text-xs text-gray-600 font-semibold">{getDashboardLabel()}</p>
-                            </div>
                         </motion.div>
                         
 

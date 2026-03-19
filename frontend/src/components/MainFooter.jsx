@@ -123,16 +123,11 @@ const MainFooter = () => {
             {/* Company Info & Newsletter */}
             <div className="space-y-6 lg:col-span-1">
               <div className="group">
-                
-                  <img
-                    src="/icons/icon.png"
-                    alt="WiseStudent logo"
-                    className="w-20 h-20 object-contain mb-4"
-                  />
-
-                <h3 className="text-2xl font-black mb-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent tracking-tight">
-                  WiseStudent
-                </h3>
+                <img
+                  src="/icons/icon.png"
+                  alt="WiseStudent logo"
+                  className="w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 object-contain mb-4"
+                />
                 <p className="text-gray-600 leading-relaxed text-sm mb-8">
                   Empowering education with innovative management and wellness
                   solutions for the next generation.
