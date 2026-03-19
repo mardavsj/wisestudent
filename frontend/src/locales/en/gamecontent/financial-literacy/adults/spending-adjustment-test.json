@@ -1,0 +1,84 @@
+{
+  "title": "Spending Adjustment Test",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Adjusting spending before borrowing",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Adjusting spending to close small gaps",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "When you last had a small money shortage, did you first try to adjust expenses or immediately think about borrowing?",
+    "Which 2–3 flexible expenses in your life could you temporarily reduce if a small gap appears?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You are short by ₹1,000 this month. Which is the safer first step?",
+      "options": [
+        {
+          "id": "cut-wants",
+          "label": "Reduce non‑essential spending and see if the gap closes",
+          "reflection": "Correct. For small gaps, adjusting wants and flexible expenses is usually safer than rushing to borrow.",
+          "isCorrect": true
+        },
+        {
+          "id": "instant-loan",
+          "label": "Take an instant app loan for ₹1,000",
+          "reflection": "For small, regular gaps, instant loans can quickly become a habit and add extra interest and fees.",
+          "isCorrect": false
+        },
+        {
+          "id": "delay-rent",
+          "label": "Delay rent or EMI and pay late",
+          "reflection": "Delaying critical payments can damage your credit and may lead to penalties or conflict with lenders or landlords.",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-friends",
+          "label": "Immediately borrow from friends every time this happens",
+          "reflection": "Depending on others regularly can strain relationships and still does not fix the root cause.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Which habit best prepares you to adjust spending when needed?",
+      "options": [
+        {
+          "id": "no-tracking",
+          "label": "Never tracking small daily expenses",
+          "reflection": "If you do not know where small amounts go, it is hard to know what to adjust in a crisis.",
+          "isCorrect": false
+        },
+        {
+          "id": "track-categories",
+          "label": "Tracking categories like food, travel, and entertainment",
+          "reflection": "Yes. Category tracking makes it easier to see where cuts are possible without touching essentials.",
+          "isCorrect": true
+        },
+        {
+          "id": "only-cash-gap",
+          "label": "Checking expenses only when there is already a big gap",
+          "reflection": "Waiting until the gap is big reduces your options. Early awareness gives you more control.",
+          "isCorrect": false
+        },
+        {
+          "id": "blame-income",
+          "label": "Blaming low income without looking at spending",
+          "reflection": "Income can be a challenge, but thoughtful spending is still an important part of financial control.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}
+

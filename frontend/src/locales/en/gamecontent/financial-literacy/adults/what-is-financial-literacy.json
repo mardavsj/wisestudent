@@ -1,0 +1,84 @@
+{
+  "title": "What Is Financial Literacy?",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Understanding money decisions",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Knowing what financial literacy means",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "In which areas of your life do you most need financial literacy today—earning, spending, borrowing, or protecting yourself?",
+    "What is one small financial decision you will handle more carefully after this game?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which statement best describes financial literacy?",
+      "options": [
+        {
+          "id": "only-rich",
+          "label": "A skill only rich people need",
+          "reflection": "Financial literacy is important for everyone, especially when money is limited. It helps you stretch and protect what you have.",
+          "isCorrect": false
+        },
+        {
+          "id": "smart-decisions",
+          "label": "The ability to make smart money decisions",
+          "reflection": "Correct. Financial literacy means understanding money well enough to make better choices when earning, saving, spending, and borrowing.",
+          "isCorrect": true
+        },
+        {
+          "id": "quick-profit",
+          "label": "Finding shortcuts to make quick profit",
+          "reflection": "Quick profits are often risky. Financial literacy is about long‑term stability, not get‑rich‑quick tricks.",
+          "isCorrect": false
+        },
+        {
+          "id": "only-investing",
+          "label": "Only about investing in the stock market",
+          "reflection": "Investing is just one part. Financial literacy also covers budgeting, debt, emergencies, and protecting yourself from fraud.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Which of these is a sign of good financial literacy?",
+      "options": [
+        {
+          "id": "no-budget",
+          "label": "Spending freely without tracking anything",
+          "reflection": "Not tracking at all makes it hard to know where your money is going or how to improve your situation.",
+          "isCorrect": false
+        },
+        {
+          "id": "balanced-choices",
+          "label": "Balancing today’s needs with future goals",
+          "reflection": "Yes. Good financial literacy helps you enjoy today while still planning for emergencies and long‑term goals.",
+          "isCorrect": true
+        },
+        {
+          "id": "follow-others",
+          "label": "Copying whatever friends do with money",
+          "reflection": "Everyone’s situation is different. Blindly copying others can lead you into decisions that don’t suit your income or responsibilities.",
+          "isCorrect": false
+        },
+        {
+          "id": "only-cash",
+          "label": "Avoiding all formal finance and only using cash",
+          "reflection": "Formal finance (banks, regulated lenders, insurance) gives you protections and opportunities that cash alone cannot.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}
+

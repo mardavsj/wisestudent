@@ -1,0 +1,84 @@
+{
+  "title": "Fixed vs Variable Expenses",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Understanding expense types",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Planning with fixed and variable costs",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "Which of your current expenses are truly fixed and which ones are flexible enough to change if income drops?",
+    "How could separating fixed and variable expenses help you build a safer monthly budget?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which of these is usually a FIXED expense?",
+      "options": [
+        {
+          "id": "rent-fixed",
+          "label": "Monthly house rent under a contract",
+          "reflection": "Correct. Rent under a contract is usually the same every month and hard to change quickly.",
+          "isCorrect": true
+        },
+        {
+          "id": "grocery",
+          "label": "Grocery spending that changes week to week",
+          "reflection": "Grocery is important, but the exact amount can often be adjusted, so it is more variable than fixed.",
+          "isCorrect": false
+        },
+        {
+          "id": "mobile-data",
+          "label": "Mobile data recharges that you choose",
+          "reflection": "You can usually switch plans or reduce usage, so this is more of a variable cost.",
+          "isCorrect": false
+        },
+        {
+          "id": "eating-out",
+          "label": "Eating out when you feel like it",
+          "reflection": "Restaurant spending is highly variable and fully under your control, not fixed.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Why is it useful to separate fixed and variable expenses in your budget?",
+      "options": [
+        {
+          "id": "no-reason",
+          "label": "There is no real benefit, it is just theory",
+          "reflection": "In reality, knowing which costs are fixed helps you see how much of your income is already committed every month.",
+          "isCorrect": false
+        },
+        {
+          "id": "adjust-variable",
+          "label": "It shows which expenses you can adjust when income falls",
+          "reflection": "Exactly. When you face money pressure, you can cut or reduce variable expenses first instead of missing fixed payments.",
+          "isCorrect": true
+        },
+        {
+          "id": "more-loans",
+          "label": "So that you can take more loans confidently",
+          "reflection": "The goal is safety, not taking extra loans. Understanding expenses helps you avoid unnecessary borrowing.",
+          "isCorrect": false
+        },
+        {
+          "id": "confuse",
+          "label": "To make budgeting more complicated",
+          "reflection": "A simple fixed vs variable list actually makes budgeting clearer, not more confusing.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}
+

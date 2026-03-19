@@ -1,0 +1,84 @@
+{
+  "title": "Tracking Money Habits",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Revealing hidden money leaks",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Building the habit of tracking",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "What simple tracking method (notebook, app, or SMS review) can you start using this week?",
+    "Which spending pattern would you most like to understand better by tracking for 30 days?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Why is tracking small daily expenses useful?",
+      "options": [
+        {
+          "id": "control",
+          "label": "It shows where small leaks are happening",
+          "reflection": "Correct. Many people are surprised by how much small, repeated expenses add up over a month.",
+          "isCorrect": true
+        },
+        {
+          "id": "waste-time",
+          "label": "It only wastes time and does not change anything",
+          "reflection": "Tracking by itself is simple, and it often changes behaviour because you become more aware of each decision.",
+          "isCorrect": false
+        },
+        {
+          "id": "for-rich",
+          "label": "It is only useful for people with very high income",
+          "reflection": "In fact, tracking is especially powerful when income is limited, because every rupee matters more.",
+          "isCorrect": false
+        },
+        {
+          "id": "memory-enough",
+          "label": "Your memory is always enough to know where money goes",
+          "reflection": "Most people underestimate how much they forget. Writing or recording gives a clearer picture than memory alone.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Which is a simple and practical way to start tracking?",
+      "options": [
+        {
+          "id": "notebook",
+          "label": "Write each expense in a small notebook or notes app",
+          "reflection": "Yes. Even a very simple record builds awareness and helps you see patterns in a few weeks.",
+          "isCorrect": true
+        },
+        {
+          "id": "once-a-year",
+          "label": "Check expenses only once a year during tax time",
+          "reflection": "Once a year is too late to correct habits. Tracking needs to be regular to guide daily decisions.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-sms",
+          "label": "Delete bank/SMS alerts so you don’t think about money",
+          "reflection": "Avoiding information does not protect you. SMS alerts are useful records you can review.",
+          "isCorrect": false
+        },
+        {
+          "id": "guess-end",
+          "label": "Guess where money went at the end of the month",
+          "reflection": "Guessing usually hides small but important leaks. Real numbers are more reliable than guesses.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}
+

@@ -1,182 +1,38 @@
 import React, { useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Trophy } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const STAGES = [
-  {
-    id: 1,
-    prompt: "Scenario: Match the expense type correctly: House rent → Fixed expense. What about eating out?",
-    options: [
-      {
-        id: "fixed",
-        label: "Eating out → Fixed expense",
-        reflection: "Eating out varies based on choices and frequency, making it a variable expense.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "both",
-        label: "Both fixed and variable depending on location",
-        reflection: "Eating out is consistently variable because the amount spent changes based on choices and frequency.",
-        isCorrect: false,
-      },
-      {
-        id: "variable",
-        label: "Eating out → Variable expense",
-        reflection: "Exactly! Eating out costs vary based on choices and frequency, making it a variable expense.",
-        isCorrect: true,
-      },
-      {
-        id: "sometimes",
-        label: "Sometimes fixed, sometimes variable",
-        reflection: "Eating out is consistently variable since the amount spent changes based on choices and frequency.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 2,
-    prompt: "Which expense is fixed and helps you plan safely?",
-    options: [
-      
-      {
-        id: "entertainment",
-        label: "Money spent on entertainment",
-        reflection: "Entertainment expenses vary based on choices and activities, making them variable expenses.",
-        isCorrect: false,
-      },
-      {
-        id: "rent",
-        label: "Monthly rent for housing",
-        reflection: "Exactly! Rent is a fixed expense that helps you plan safely because it stays consistent each month.",
-        isCorrect: true,
-      },
-      {
-        id: "groceries",
-        label: "Weekly grocery shopping",
-        reflection: "Grocery expenses can vary based on sales, needs, and choices, making them typically variable.",
-        isCorrect: false,
-      },
-      {
-        id: "gas",
-        label: "Gas for your vehicle",
-        reflection: "Gas expenses vary based on driving habits, distance, and fuel prices, making it a variable expense.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 3,
-    prompt: "Scenario: Why is knowing fixed expenses important for financial planning?",
-    options: [
-      {
-        id: "predictable",
-        label: "They're predictable and help calculate remaining budget",
-        reflection: "That's right! Fixed expenses are predictable, allowing you to calculate how much money remains for variable expenses and savings.",
-        isCorrect: true,
-      },
-      {
-        id: "high",
-        label: "They're usually the highest expenses",
-        reflection: "While fixed expenses can be high, their importance in planning comes from predictability, not necessarily size.",
-        isCorrect: false,
-      },
-      {
-        id: "automatic",
-        label: "They're automatically deducted",
-        reflection: "Though some fixed expenses are automatic, their importance in planning comes from their predictability and consistency.",
-        isCorrect: false,
-      },
-      {
-        id: "essential",
-        label: "They're always essential needs",
-        reflection: "Fixed expenses aren't always essential needs; their importance in planning comes from their predictability and consistency.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 4,
-    prompt: "Which of these is a variable expense that can be adjusted easily?",
-    options: [
-      {
-        id: "loan",
-        label: "Monthly loan payment",
-        reflection: "Loan payments are typically fixed amounts, making them fixed expenses.",
-        isCorrect: false,
-      },
-      {
-        id: "insurance",
-        label: "Insurance premiums",
-        reflection: "Insurance premiums are typically fixed amounts paid regularly, making them fixed expenses.",
-        isCorrect: false,
-      },
-      {
-        id: "utilities",
-        label: "Electricity and water bills",
-        reflection: "Utilities vary based on usage, making them variable expenses that can fluctuate monthly.",
-        isCorrect: false,
-      },
-      {
-        id: "dining",
-        label: "Money spent dining out",
-        reflection: "Yes! Dining out expenses vary based on choices and frequency, making them a variable expense that can be adjusted easily.",
-        isCorrect: true,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 5,
-    prompt: "How does understanding fixed vs variable expenses help in budgeting?",
-    options: [
-      {
-        id: "priority",
-        label: "Helps prioritize essential fixed expenses first",
-        reflection: "Exactly! Understanding expense types helps prioritize fixed expenses first since they're required and predictable.",
-        isCorrect: true,
-      },
-      {
-        id: "reduce",
-        label: "Makes it easier to reduce all expenses",
-        reflection: "Understanding expense types helps prioritize but doesn't necessarily make all expenses easier to reduce.",
-        isCorrect: false,
-      },
-      {
-        id: "avoid",
-        label: "Allows avoiding variable expenses completely",
-        reflection: "Variable expenses are often necessary and shouldn't be avoided completely; understanding them helps manage them better.",
-        isCorrect: false,
-      },
-      {
-        id: "increase",
-        label: "Helps increase both fixed and variable expenses",
-        reflection: "The goal is to manage expenses, not increase them; understanding expense types helps with control and planning.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-];
-
-const totalStages = STAGES.length;
-const successThreshold = totalStages;
-
 const FixedVsVariableExpenses = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
+
   const gameId = "finance-adults-4";
+
+  // 🔑 Base key (same pattern as ATMStory)
+  const baseKey = "financial-literacy.adults.fixed-vs-variable-expenses";
+
+  // 🔑 Get full JSON object
+  const gameContent = t(baseKey, { returnObjects: true });
+
   const gameData = getGameDataById(gameId);
+
+  const STAGES = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = STAGES.length;
+  const successThreshold = totalStages;
+
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
-  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } =
-    useGameFeedback();
+
+  const {
+    flashPoints,
+    showAnswerConfetti,
+    showCorrectAnswerFeedback,
+    resetFeedback,
+  } = useGameFeedback();
 
   const [stageIndex, setStageIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -189,47 +45,45 @@ const FixedVsVariableExpenses = () => {
   const [canProceed, setCanProceed] = useState(false);
 
   const reflectionPrompts = useMemo(
-    () => [
-      "How does knowing fixed expenses help you plan safely?",
-      "What strategies will help you manage variable expenses effectively?",
-    ],
-    []
+    () => gameContent?.reflectionPrompts || [],
+    [gameContent]
   );
 
   const handleSelect = (option) => {
     if (selectedOption || showResult) return;
+
     resetFeedback();
+
     const updatedHistory = [
       ...history,
       { stageId: STAGES[stageIndex].id, isCorrect: option.isCorrect },
     ];
+
     setHistory(updatedHistory);
     setSelectedOption(option.id);
-    setSelectedReflection(option.reflection); // Set the reflection for the selected option
-    setShowFeedback(true); // Show feedback after selection
-    setCanProceed(false); // Disable proceeding initially
-    
-    // Update coins if the answer is correct
+    setSelectedReflection(option.reflection);
+    setShowFeedback(true);
+    setCanProceed(false);
+
     if (option.isCorrect) {
-      setCoins(prevCoins => prevCoins + 1);
+      setCoins((prev) => prev + 1);
     }
-    
-    // Wait for the reflection period before allowing to proceed
+
     setTimeout(() => {
-      setCanProceed(true); // Enable proceeding after showing reflection
-    }, 1500); // Wait 1.5 seconds before allowing to proceed
-    
-    // Handle the final stage separately
+      setCanProceed(true);
+    }, 1500);
+
     if (stageIndex === totalStages - 1) {
       setTimeout(() => {
         const correctCount = updatedHistory.filter((item) => item.isCorrect).length;
         const passed = correctCount === successThreshold;
+
         setFinalScore(correctCount);
-        setCoins(passed ? totalCoins : 0); // Set final coins based on performance
+        setCoins(passed ? totalCoins : 0);
         setShowResult(true);
-      }, 5500); // Wait longer before showing final results
+      }, 3000);
     }
-    
+
     const points = option.isCorrect ? 1 : 0;
     showCorrectAnswerFeedback(points, option.isCorrect);
   };
@@ -244,13 +98,20 @@ const FixedVsVariableExpenses = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(stageIndex + 1, totalStages)} of ${totalStages}`;
+  const subtitle = showResult
+    ? gameContent?.subtitleComplete || "Complete!"
+    : t(`${baseKey}.subtitleProgress`, {
+      current: Math.min(stageIndex + 1, totalStages),
+      total: totalStages,
+      defaultValue: "Stage {{current}} of {{total}}",
+    });
+
   const stage = STAGES[Math.min(stageIndex, totalStages - 1)];
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="Fixed vs Variable Expenses"
+      title={gameContent?.title || "Fixed vs Variable Expenses"}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
@@ -270,46 +131,63 @@ const FixedVsVariableExpenses = () => {
     >
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
+
+          {/* Header */}
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>Fixed vs Variable</span>
+            <span>
+              {t(`${baseKey}.scenarioLabel`, { defaultValue: "Scenario" })}
+            </span>
+            <span>
+              {t(`${baseKey}.scenarioValue`, { defaultValue: "Understanding expense types" })}
+            </span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+
+          {/* Prompt */}
+          <p className="text-lg text-white/90 mb-6">{stage?.prompt}</p>
+
+          {/* Options */}
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {stage?.options?.map((option) => {
               const isSelected = selectedOption === option.id;
+
               return (
                 <button
                   key={option.id}
                   onClick={() => handleSelect(option)}
                   disabled={!!selectedOption}
-                  className={`rounded-2xl border-2 p-5 text-left transition ${
-                    isSelected
+                  className={`rounded-2xl border-2 p-5 text-left transition ${isSelected
                       ? option.isCorrect
                         ? "border-emerald-400 bg-emerald-500/20"
-                        : "border-red-400 bg-red-500/10 text-white"
-                        : "border-white/30 bg-white/5 hover:border-white/60 hover:bg-white/10"
-                  }`}
+                        : "border-red-400 bg-red-500/10"
+                      : "border-white/30 bg-white/5 hover:border-white/60 hover:bg-white/10"
+                    }`}
                 >
                   <div className="text-sm text-white/70 mb-2">
-                    Choice {option.id.toUpperCase()}
+                    {t(`${baseKey}.choiceLabel`, {
+                      id: option.id,
+                      defaultValue: "Choice {{id}}",
+                    })}
                   </div>
                   <p className="text-white font-semibold">{option.label}</p>
-                  
                 </button>
               );
             })}
           </div>
-          
         </div>
-        {(showResult || showFeedback) && (
+
+        {/* Feedback / Result */}
+        {(showFeedback || showResult) && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection</h4>
+
+            <h4 className="text-lg font-semibold text-white">
+              {t(`${baseKey}.reflectionTitle`, { defaultValue: "Reflection" })}
+            </h4>
+
             {selectedReflection && (
-              <div className="max-h-24 overflow-y-auto pr-2">
-                <p className="text-sm text-white/90">{selectedReflection}</p>
-              </div>
+              <p className="text-sm text-white/90">{selectedReflection}</p>
             )}
+
+            {/* Continue */}
             {showFeedback && !showResult && (
               <div className="mt-4 flex justify-center">
                 {canProceed ? (
@@ -323,49 +201,68 @@ const FixedVsVariableExpenses = () => {
                         setCanProceed(false);
                       }
                     }}
-                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
+                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold"
                   >
-                    Continue
+                    {t(`${baseKey}.continueButton`, { defaultValue: "Continue" })}
                   </button>
                 ) : (
-                  <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                  <div className="py-2 px-6 text-white font-semibold">
+                    {t(`${baseKey}.readingLabel`, { defaultValue: "Reading..." })}
+                  </div>
                 )}
               </div>
             )}
-            {/* Automatically advance if we're in the last stage and the timeout has passed */}
-            {!showResult && stageIndex === totalStages - 1 && canProceed && (
-              <div className="mt-4 flex justify-center">
-                
-              </div>
-            )}
+
+            {/* Final Result */}
             {showResult && (
               <>
+                <h5 className="font-semibold">
+                  {t(`${baseKey}.reflectionPromptsTitle`, {
+                    defaultValue: "Reflection Prompts",
+                  })}
+                </h5>
+
                 <ul className="text-sm list-disc list-inside space-y-1">
                   {reflectionPrompts.map((prompt) => (
                     <li key={prompt}>{prompt}</li>
                   ))}
                 </ul>
+
                 <p className="text-sm text-white/70">
-                  Skill unlocked: <strong>Understanding fixed vs variable expenses</strong>
+                  {t(`${baseKey}.skillUnlockedLabel`, {
+                    defaultValue: "Skill unlocked:",
+                  })}{" "}
+                  <strong>
+                    {t(`${baseKey}.skillName`, {
+                      defaultValue: "Planning with fixed and variable costs",
+                    })}
+                  </strong>
                 </p>
+
                 {!hasPassed && (
                   <p className="text-xs text-amber-300">
-                    Answer every stage sharply to earn the full reward.
+                    {t(`${baseKey}.fullRewardHint`, {
+                      total: totalStages,
+                      defaultValue:
+                        "Answer all {{total}} choices correctly to earn the full reward.",
+                    })}
                   </p>
                 )}
+
                 {!hasPassed && (
                   <button
                     onClick={handleRetry}
-                    className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
+                    className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold"
                   >
-                    Try Again
+                    {t(`${baseKey}.tryAgainButton`, {
+                      defaultValue: "Try Again",
+                    })}
                   </button>
                 )}
               </>
             )}
           </div>
         )}
-
       </div>
     </GameShell>
   );

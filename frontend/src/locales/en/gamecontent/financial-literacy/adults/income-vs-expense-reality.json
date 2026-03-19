@@ -1,0 +1,115 @@
+{
+  "title": "Income vs Expense Reality",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "₹18,000 vs ₹20,000",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Understanding income–expense gaps",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "What does a monthly expense higher than income do to your financial stress over time?",
+    "Which 2–3 expenses could you realistically adjust first if you were in this situation?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Your income is ₹18,000 and your total monthly expenses are ₹20,000. What does this gap mean for you?",
+      "options": [
+        {
+          "id": "no-issue",
+          "label": "It is not a problem if it happens only sometimes",
+          "reflection": "Even if it happens \"sometimes\", a repeated gap where expenses are higher than income usually leads to borrowing or unpaid bills.",
+          "isCorrect": false
+        },
+        {
+          "id": "warning-sign",
+          "label": "It is a warning sign that spending must change",
+          "reflection": "Correct. A monthly negative gap is an early warning that spending habits or income level must change to avoid debt.",
+          "isCorrect": true
+        },
+        {
+          "id": "income-will-grow",
+          "label": "Future income growth will automatically solve it",
+          "reflection": "Hoping that future income will fix everything is risky. You still need to adjust current spending or find extra income.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-bills",
+          "label": "You can safely delay some bills every month",
+          "reflection": "Delaying bills regularly can lead to penalties, service cut-offs, and stress. It is not a safe long‑term solution.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 2,
+      "prompt": "What is the safest first step when you notice that expenses are above income?",
+      "options": [
+        {
+          "id": "take-loan",
+          "label": "Immediately take a short-term loan",
+          "reflection": "Borrowing as a first step creates a habit of using credit for normal expenses. This usually leads to a debt cycle.",
+          "isCorrect": false
+        },
+        {
+          "id": "track-expenses",
+          "label": "List and track all expenses to find leaks",
+          "reflection": "Yes. Writing down and tracking expenses helps you see where small cuts can close the gap without new debt.",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore-gap",
+          "label": "Ignore the gap and hope next month will be better",
+          "reflection": "Ignoring the gap often makes the situation worse. Early awareness and action protect you from debt build‑up.",
+          "isCorrect": false
+        },
+        {
+          "id": "ask-friends",
+          "label": "Regularly borrow from friends and family",
+          "reflection": "Depending on others every month can damage relationships and still does not fix the real problem in your budget.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    },
+    {
+      "id": 3,
+      "prompt": "If this negative gap continues for 6–12 months, what is the most likely outcome?",
+      "options": [
+        {
+          "id": "more-freedom",
+          "label": "More financial freedom because loans give flexibility",
+          "reflection": "In reality, frequent borrowing usually reduces freedom. EMIs and informal debts limit your future choices.",
+          "isCorrect": false
+        },
+        {
+          "id": "debt-cycle",
+          "label": "A growing debt cycle and stress",
+          "reflection": "Correct. When expenses are regularly higher than income, unpaid amounts turn into loans, penalties, and financial stress.",
+          "isCorrect": true
+        },
+        {
+          "id": "no-change",
+          "label": "No big change as long as you manage somehow",
+          "reflection": "\"Managing somehow\" often hides growing problems. Without action, small gaps become serious debt in the long run.",
+          "isCorrect": false
+        },
+        {
+          "id": "easy-savings",
+          "label": "Automatic savings will cover the gap",
+          "reflection": "If there is already a gap, there is usually no automatic saving happening. Savings must be planned, not assumed.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 15
+    }
+  ]
+}
+

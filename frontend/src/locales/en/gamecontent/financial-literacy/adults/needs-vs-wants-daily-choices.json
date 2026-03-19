@@ -1,0 +1,84 @@
+{
+  "title": "Needs vs Wants - Daily Choices",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Daily spending decisions",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Separating needs and wants",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "Which of your regular expenses are true needs, and which are wants you could reduce if necessary?",
+    "What simple rule can you use this week to pause before spending on a want?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which of these is usually a NEED for most adults?",
+      "options": [
+        {
+          "id": "rent",
+          "label": "Basic rent or housing payment",
+          "reflection": "Correct. Safe shelter is a basic need and should usually come before most other spending.",
+          "isCorrect": true
+        },
+        {
+          "id": "new-phone",
+          "label": "Latest smartphone upgrade",
+          "reflection": "A phone can be important, but upgrading just for features is usually a want, not a basic need.",
+          "isCorrect": false
+        },
+        {
+          "id": "eating-out",
+          "label": "Eating at restaurants every week",
+          "reflection": "Food is a need, but frequent restaurant spending is usually a want. Home‑cooked food often meets the need more cheaply.",
+          "isCorrect": false
+        },
+        {
+          "id": "subscription",
+          "label": "Multiple entertainment subscriptions",
+          "reflection": "Entertainment can be helpful, but several paid subscriptions at once are mostly wants, not survival needs.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "You have limited money this month. Which choice shows better needs‑first thinking?",
+      "options": [
+        {
+          "id": "pay-rent",
+          "label": "Pay rent and groceries first, delay new clothes",
+          "reflection": "Yes. Prioritising housing and basic food before non‑urgent wants protects your stability.",
+          "isCorrect": true
+        },
+        {
+          "id": "new-shoes",
+          "label": "Buy new branded shoes and hope to manage rent later",
+          "reflection": "Putting wants before critical bills can quickly create stress, late fees, or the need to borrow.",
+          "isCorrect": false
+        },
+        {
+          "id": "party",
+          "label": "Spend on a big party to feel better",
+          "reflection": "Celebrations are important, but not at the cost of basic needs. Emotions should not drive risky spending.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-bills",
+          "label": "Ignore bills this month and catch up later",
+          "reflection": "Ignoring bills can lead to penalties and service cut‑offs. Needs should be handled as early as possible.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}
+

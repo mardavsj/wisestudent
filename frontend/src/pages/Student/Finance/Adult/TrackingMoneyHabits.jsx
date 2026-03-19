@@ -1,182 +1,37 @@
 import React, { useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Trophy } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const STAGES = [
-  {
-    id: 1,
-    prompt: "Scenario: Which habit helps most?",
-    options: [
-      {
-        id: "ignore",
-        label: "Ignoring expenses",
-        reflection: "Ignoring expenses makes it impossible to understand where your money goes or identify spending patterns.",
-        isCorrect: false,
-      },
-      {
-        id: "track",
-        label: "Tracking daily spending",
-        reflection: "Exactly! Tracking spending reveals hidden money leaks and helps you understand your financial patterns.",
-        isCorrect: true,
-      },
-      {
-        id: "estimate",
-        label: "Estimating expenses at the end of the month",
-        reflection: "Estimating at the end of the month is imprecise and often misses small but significant expenses that add up.",
-        isCorrect: false,
-      },
-      {
-        id: "review",
-        label: "Reviewing bank statements occasionally",
-        reflection: "While reviewing bank statements is helpful, daily tracking gives more detailed insight into spending patterns.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 2,
-    prompt: "What is the primary benefit of tracking your daily expenses?",
-    options: [
-      {
-        id: "leaks",
-        label: "It reveals hidden money leaks",
-        reflection: "That's right! Tracking expenses helps identify unnecessary spending that can add up significantly over time.",
-        isCorrect: true,
-      },
-      {
-        id: "control",
-        label: "It gives you complete financial control",
-        reflection: "While tracking helps with control, the primary benefit is revealing hidden money leaks you weren't aware of.",
-        isCorrect: false,
-      },
-      {
-        id: "awareness",
-        label: "It increases general financial awareness",
-        reflection: "Increased awareness is a benefit, but the primary benefit is specifically revealing hidden money leaks.",
-        isCorrect: false,
-      },
-      {
-        id: "record",
-        label: "It maintains a record of all transactions",
-        reflection: "Keeping records is helpful, but the main benefit is identifying and stopping hidden money leaks.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 3,
-    prompt: "Scenario: You track your expenses for a week and notice small daily purchases adding up. What should you do?",
-    options: [
-      {
-        id: "ignore",
-        label: "Ignore them since they're small amounts",
-        reflection: "Small daily purchases can accumulate to significant amounts over time and should not be ignored.",
-        isCorrect: false,
-      },
-      {
-        id: "analyze",
-        label: "Analyze if they align with your financial goals",
-        reflection: "Perfect! Analyzing whether small purchases align with your goals helps you make intentional spending decisions.",
-        isCorrect: true,
-      },
-      {
-        id: "stop",
-        label: "Stop all small purchases immediately",
-        reflection: "Completely stopping all small purchases might be too extreme; analyzing and making intentional choices is better.",
-        isCorrect: false,
-      },
-      {
-        id: "budget",
-        label: "Increase your budget to accommodate them",
-        reflection: "Simply increasing your budget without evaluating the necessity of these purchases doesn't address the underlying habit.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 4,
-    prompt: "How does tracking spending help with budgeting?",
-    options: [
-      
-      {
-        id: "reduce",
-        label: "It automatically reduces your expenses",
-        reflection: "Tracking itself doesn't reduce expenses; it reveals where to make reductions based on your actual spending.",
-        isCorrect: false,
-      },
-      {
-        id: "plan",
-        label: "It eliminates the need for budget planning",
-        reflection: "Tracking doesn't eliminate budget planning; it provides the data needed for effective budget planning.",
-        isCorrect: false,
-      },
-      {
-        id: "save",
-        label: "It forces you to save more money",
-        reflection: "Tracking doesn't force saving; it reveals spending patterns that help you decide how much to save.",
-        isCorrect: false,
-      },
-      {
-        id: "baseline",
-        label: "It provides a realistic baseline for your actual spending",
-        reflection: "Exactly! Tracking gives you real data about your spending patterns to create an effective budget.",
-        isCorrect: true,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 5,
-    prompt: "What is the best way to start tracking your money habits?",
-    options: [
-      
-      {
-        id: "paper",
-        label: "Write expenses on paper",
-        reflection: "While paper tracking works, digital tools offer better analysis and are more convenient for daily tracking.",
-        isCorrect: false,
-      },
-      {
-        id: "memory",
-        label: "Keep track in your memory",
-        reflection: "Relying on memory for daily tracking is unreliable and often misses important spending details.",
-        isCorrect: false,
-      },
-      {
-        id: "apps",
-        label: "Use a digital app or tool to track expenses",
-        reflection: "Great! Digital tools make tracking convenient and provide insights into spending categories and trends.",
-        isCorrect: true,
-      },
-      {
-        id: "bank",
-        label: "Just monitor your bank balance",
-        reflection: "Monitoring just your bank balance doesn't reveal spending patterns and categories like detailed tracking does.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-];
-
-const totalStages = STAGES.length;
-const successThreshold = totalStages;
-
 const TrackingMoneyHabits = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
+
   const gameId = "finance-adults-7";
+  const baseKey = "financial-literacy.adults.tracking-money-habits";
+
+  const gameContent = t(baseKey, { returnObjects: true });
   const gameData = getGameDataById(gameId);
-  const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
-  const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
-  const totalXp = gameData?.xp || location.state?.totalXp || 10;
-  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } =
-    useGameFeedback();
+
+  const STAGES = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = STAGES.length;
+  const successThreshold = totalStages;
+
+  const coinsPerLevel =
+    gameData?.coins || location.state?.coinsPerLevel || 5;
+  const totalCoins =
+    gameData?.coins || location.state?.totalCoins || 5;
+  const totalXp =
+    gameData?.xp || location.state?.totalXp || 10;
+
+  const {
+    flashPoints,
+    showAnswerConfetti,
+    showCorrectAnswerFeedback,
+    resetFeedback,
+  } = useGameFeedback();
 
   const [stageIndex, setStageIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -189,47 +44,49 @@ const TrackingMoneyHabits = () => {
   const [canProceed, setCanProceed] = useState(false);
 
   const reflectionPrompts = useMemo(
-    () => [
-      "How does tracking spending reveal hidden money leaks?",
-      "What strategies will help you maintain consistent expense tracking?",
-    ],
-    []
+    () => gameContent?.reflectionPrompts || [],
+    [gameContent]
   );
 
   const handleSelect = (option) => {
     if (selectedOption || showResult) return;
+
     resetFeedback();
+
     const updatedHistory = [
       ...history,
-      { stageId: STAGES[stageIndex].id, isCorrect: option.isCorrect },
+      {
+        stageId: STAGES[stageIndex].id,
+        isCorrect: option.isCorrect,
+      },
     ];
+
     setHistory(updatedHistory);
     setSelectedOption(option.id);
-    setSelectedReflection(option.reflection); // Set the reflection for the selected option
-    setShowFeedback(true); // Show feedback after selection
-    setCanProceed(false); // Disable proceeding initially
-    
-    // Update coins if the answer is correct
+    setSelectedReflection(option.reflection);
+    setShowFeedback(true);
+    setCanProceed(false);
+
     if (option.isCorrect) {
-      setCoins(prevCoins => prevCoins + 1);
+      setCoins((prev) => prev + 1);
     }
-    
-    // Wait for the reflection period before allowing to proceed
-    setTimeout(() => {
-      setCanProceed(true); // Enable proceeding after showing reflection
-    }, 1500); // Wait 1.5 seconds before allowing to proceed
-    
-    // Handle the final stage separately
+
+    setTimeout(() => setCanProceed(true), 1500);
+
     if (stageIndex === totalStages - 1) {
       setTimeout(() => {
-        const correctCount = updatedHistory.filter((item) => item.isCorrect).length;
+        const correctCount = updatedHistory.filter(
+          (item) => item.isCorrect
+        ).length;
+
         const passed = correctCount === successThreshold;
+
         setFinalScore(correctCount);
-        setCoins(passed ? totalCoins : 0); // Set final coins based on performance
+        setCoins(passed ? totalCoins : 0);
         setShowResult(true);
-      }, 5500); // Wait longer before showing final results
+      }, 3000); // ⬅️ aligned with other games
     }
-    
+
     const points = option.isCorrect ? 1 : 0;
     showCorrectAnswerFeedback(points, option.isCorrect);
   };
@@ -244,13 +101,20 @@ const TrackingMoneyHabits = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(stageIndex + 1, totalStages)} of ${totalStages}`;
+  const subtitle = showResult
+    ? gameContent?.subtitleComplete || "Complete!"
+    : t(`${baseKey}.subtitleProgress`, {
+      current: Math.min(stageIndex + 1, totalStages),
+      total: totalStages,
+      defaultValue: "Stage {{current}} of {{total}}",
+    });
+
   const stage = STAGES[Math.min(stageIndex, totalStages - 1)];
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="Tracking Money Habits"
+      title={gameContent?.title || "Tracking Money Habits"}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
@@ -270,46 +134,74 @@ const TrackingMoneyHabits = () => {
     >
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
+
+          {/* Header */}
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>Money Tracking</span>
+            <span>
+              {t(`${baseKey}.scenarioLabel`, { defaultValue: "Scenario" })}
+            </span>
+            <span>
+              {t(`${baseKey}.scenarioValue`, {
+                defaultValue: "Revealing hidden money leaks",
+              })}
+            </span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+
+          {/* Prompt */}
+          <p className="text-lg text-white/90 mb-6">
+            {stage?.prompt}
+          </p>
+
+          {/* Options */}
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {stage?.options?.map((option) => {
               const isSelected = selectedOption === option.id;
+
               return (
                 <button
                   key={option.id}
                   onClick={() => handleSelect(option)}
                   disabled={!!selectedOption}
-                  className={`rounded-2xl border-2 p-5 text-left transition ${
-                    isSelected
+                  className={`rounded-2xl border-2 p-5 text-left transition ${isSelected
                       ? option.isCorrect
                         ? "border-emerald-400 bg-emerald-500/20"
-                        : "border-red-400 bg-red-500/10 text-white"
-                        : "border-white/30 bg-white/5 hover:border-white/60 hover:bg-white/10"
-                  }`}
+                        : "border-red-400 bg-red-500/10"
+                      : "border-white/30 bg-white/5 hover:border-white/60 hover:bg-white/10"
+                    }`}
                 >
                   <div className="text-sm text-white/70 mb-2">
-                    Choice {option.id.toUpperCase()}
+                    {t(`${baseKey}.choiceLabel`, {
+                      id: option.id,
+                      defaultValue: "Choice {{id}}",
+                    })}
                   </div>
-                  <p className="text-white font-semibold">{option.label}</p>
-                  
+
+                  <p className="text-white font-semibold">
+                    {option.label}
+                  </p>
                 </button>
               );
             })}
           </div>
-          
         </div>
-        {(showResult || showFeedback) && (
+
+        {/* Feedback / Result */}
+        {(showFeedback || showResult) && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection</h4>
+
+            <h4 className="text-lg font-semibold text-white">
+              {t(`${baseKey}.reflectionTitle`, {
+                defaultValue: "Reflection",
+              })}
+            </h4>
+
             {selectedReflection && (
-              <div className="max-h-24 overflow-y-auto pr-2">
-                <p className="text-sm text-white/90">{selectedReflection}</p>
-              </div>
+              <p className="text-sm text-white/90">
+                {selectedReflection}
+              </p>
             )}
+
+            {/* Continue */}
             {showFeedback && !showResult && (
               <div className="mt-4 flex justify-center">
                 {canProceed ? (
@@ -323,49 +215,72 @@ const TrackingMoneyHabits = () => {
                         setCanProceed(false);
                       }
                     }}
-                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
+                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold"
                   >
-                    Continue
+                    {t(`${baseKey}.continueButton`, {
+                      defaultValue: "Continue",
+                    })}
                   </button>
                 ) : (
-                  <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                  <div className="py-2 px-6 text-white font-semibold">
+                    {t(`${baseKey}.readingLabel`, {
+                      defaultValue: "Reading...",
+                    })}
+                  </div>
                 )}
               </div>
             )}
-            {/* Automatically advance if we're in the last stage and the timeout has passed */}
-            {!showResult && stageIndex === totalStages - 1 && canProceed && (
-              <div className="mt-4 flex justify-center">
-                
-              </div>
-            )}
+
+            {/* Final Result */}
             {showResult && (
               <>
+                <h5 className="font-semibold">
+                  {t(`${baseKey}.reflectionPromptsTitle`, {
+                    defaultValue: "Reflection Prompts",
+                  })}
+                </h5>
+
                 <ul className="text-sm list-disc list-inside space-y-1">
                   {reflectionPrompts.map((prompt) => (
                     <li key={prompt}>{prompt}</li>
                   ))}
                 </ul>
+
                 <p className="text-sm text-white/70">
-                  Skill unlocked: <strong>Expense tracking and leak identification</strong>
+                  {t(`${baseKey}.skillUnlockedLabel`, {
+                    defaultValue: "Skill unlocked:",
+                  })}{" "}
+                  <strong>
+                    {t(`${baseKey}.skillName`, {
+                      defaultValue: "Building the habit of tracking",
+                    })}
+                  </strong>
                 </p>
+
                 {!hasPassed && (
                   <p className="text-xs text-amber-300">
-                    Answer every stage sharply to earn the full reward.
+                    {t(`${baseKey}.fullRewardHint`, {
+                      total: totalStages,
+                      defaultValue:
+                        "Answer all {{total}} choices correctly to earn the full reward.",
+                    })}
                   </p>
                 )}
+
                 {!hasPassed && (
                   <button
                     onClick={handleRetry}
-                    className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
+                    className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold"
                   >
-                    Try Again
+                    {t(`${baseKey}.tryAgainButton`, {
+                      defaultValue: "Try Again",
+                    })}
                   </button>
                 )}
               </>
             )}
           </div>
         )}
-
       </div>
     </GameShell>
   );

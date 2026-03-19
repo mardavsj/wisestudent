@@ -1,183 +1,38 @@
 import React, { useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Trophy } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const STAGES = [
-  {
-    id: 1,
-    prompt: "Scenario: You receive your monthly income today. What should you do first?",
-    options: [
-      {
-        id: "spend",
-        label: "Spend freely on wants and desires",
-        reflection: "Spending freely without planning can lead to running out of money before month-end.",
-        isCorrect: false,
-      },
-     
-      {
-        id: "invest",
-        label: "Immediately invest all available funds",
-        reflection: "While investing is important, you need to plan for expenses first before investing.",
-        isCorrect: false,
-      },
-      {
-        id: "debt",
-        label: "Pay off all debts before anything else",
-        reflection: "Paying debts is important, but first you need to plan for essential expenses and savings.",
-        isCorrect: false,
-      },
-       {
-        id: "plan",
-        label: "Plan expenses and set aside savings",
-        reflection: "Exactly! Planning first and setting aside savings prevents overspending and reduces the need for borrowing later.",
-        isCorrect: true,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 2,
-    prompt: "Why is planning your salary allocation important?",
-    options: [
-      
-      {
-        id: "save",
-        label: "It guarantees higher savings",
-        reflection: "While planning helps with savings, the primary benefit is preventing the need for borrowing by managing expenses.",
-        isCorrect: false,
-      },
-      {
-        id: "track",
-        label: "It makes tracking expenses easier",
-        reflection: "Tracking is a benefit, but the main advantage is avoiding the need to borrow by planning ahead.",
-        isCorrect: false,
-      },
-      {
-        id: "reduce",
-        label: "It helps reduce the need for borrowing later",
-        reflection: "That's right! Planning prevents overspending and ensures you have funds for all needs throughout the month.",
-        isCorrect: true,
-      },
-      {
-        id: "compare",
-        label: "It allows comparison with others",
-        reflection: "Comparing with others isn't the main purpose of salary planning; focus should be on personal financial stability.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 3,
-    prompt: "Scenario: You planned your salary allocation but got an unexpected expense. What should you do?",
-    options: [
-      {
-        id: "borrow",
-        label: "Borrow money immediately to cover it",
-        reflection: "Borrowing should be a last resort; first review your planned budget to see if funds can be reallocated.",
-        isCorrect: false,
-      },
-      {
-        id: "reassess",
-        label: "Reassess your planned budget to accommodate the expense",
-        reflection: "Excellent! Reassessing your budget helps find solutions without immediately resorting to borrowing.",
-        isCorrect: true,
-      },
-      {
-        id: "skip",
-        label: "Skip other planned expenses to cover it",
-        reflection: "Skipping essential planned expenses might cause bigger problems; reassessment is a better approach.",
-        isCorrect: false,
-      },
-      {
-        id: "ignore",
-        label: "Ignore the expense and stick to original plan",
-        reflection: "Ignoring unexpected expenses can lead to serious consequences; flexibility in planning is important.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 4,
-    prompt: "What is the best approach to handle your salary allocation?",
-    options: [
-      {
-        id: "pay",
-        label: "Pay yourself first (savings), then allocate for expenses",
-        reflection: "Perfect! Paying yourself first ensures savings are secured before other expenses are considered.",
-        isCorrect: true,
-      },
-      {
-        id: "needs",
-        label: "Cover all needs first, then wants, then savings",
-        reflection: "While covering needs first is important, paying yourself first (savings) is a more effective strategy to ensure consistent saving.",
-        isCorrect: false,
-      },
-      {
-        id: "flexible",
-        label: "Allocate flexible amounts without fixed percentages",
-        reflection: "Flexible allocation without structure can lead to inconsistent saving and potential overspending.",
-        isCorrect: false,
-      },
-      {
-        id: "minimum",
-        label: "Set aside minimum savings after all expenses",
-        reflection: "Setting aside savings last often means there's nothing left to save; pay yourself first is more effective.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 5,
-    prompt: "How does proper salary day planning affect your borrowing habits?",
-    options: [
-      
-      {
-        id: "delay",
-        label: "Just delays borrowing to a later time",
-        reflection: "Proper planning doesn't just delay borrowing; it prevents the need for it by ensuring adequate funds for expenses.",
-        isCorrect: false,
-      },
-      {
-        id: "shift",
-        label: "Shifts borrowing to different expenses",
-        reflection: "Effective planning eliminates the need for borrowing by ensuring proper allocation of funds.",
-        isCorrect: false,
-      },
-      {
-        id: "prevent",
-        label: "Prevents the need for borrowing by managing cash flow",
-        reflection: "Exactly! Proper planning ensures you have funds allocated appropriately, reducing the need to borrow.",
-        isCorrect: true,
-      },
-      {
-        id: "reduce",
-        label: "Reduces borrowing interest rates",
-        reflection: "Planning doesn't change interest rates; it prevents the need for borrowing altogether by managing funds effectively.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-];
-
-const totalStages = STAGES.length;
-const successThreshold = totalStages;
-
 const SalaryDayDecision = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
+
   const gameId = "finance-adults-5";
+
+  // 🔑 Base key
+  const baseKey = "financial-literacy.adults.salary-day-decision";
+
+  // 🔑 Full JSON
+  const gameContent = t(baseKey, { returnObjects: true });
+
   const gameData = getGameDataById(gameId);
+
+  const STAGES = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = STAGES.length;
+  const successThreshold = totalStages;
+
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
-  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } =
-    useGameFeedback();
+
+  const {
+    flashPoints,
+    showAnswerConfetti,
+    showCorrectAnswerFeedback,
+    resetFeedback,
+  } = useGameFeedback();
 
   const [stageIndex, setStageIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -190,47 +45,43 @@ const SalaryDayDecision = () => {
   const [canProceed, setCanProceed] = useState(false);
 
   const reflectionPrompts = useMemo(
-    () => [
-      "How does planning your salary allocation reduce the need for borrowing later?",
-      "What strategies will help you implement the 'pay yourself first' approach?",
-    ],
-    []
+    () => gameContent?.reflectionPrompts || [],
+    [gameContent]
   );
 
   const handleSelect = (option) => {
     if (selectedOption || showResult) return;
+
     resetFeedback();
+
     const updatedHistory = [
       ...history,
       { stageId: STAGES[stageIndex].id, isCorrect: option.isCorrect },
     ];
+
     setHistory(updatedHistory);
     setSelectedOption(option.id);
-    setSelectedReflection(option.reflection); // Set the reflection for the selected option
-    setShowFeedback(true); // Show feedback after selection
-    setCanProceed(false); // Disable proceeding initially
-    
-    // Update coins if the answer is correct
+    setSelectedReflection(option.reflection);
+    setShowFeedback(true);
+    setCanProceed(false);
+
     if (option.isCorrect) {
-      setCoins(prevCoins => prevCoins + 1);
+      setCoins((prev) => prev + 1);
     }
-    
-    // Wait for the reflection period before allowing to proceed
-    setTimeout(() => {
-      setCanProceed(true); // Enable proceeding after showing reflection
-    }, 1500); // Wait 1.5 seconds before allowing to proceed
-    
-    // Handle the final stage separately
+
+    setTimeout(() => setCanProceed(true), 1500);
+
     if (stageIndex === totalStages - 1) {
       setTimeout(() => {
         const correctCount = updatedHistory.filter((item) => item.isCorrect).length;
         const passed = correctCount === successThreshold;
+
         setFinalScore(correctCount);
-        setCoins(passed ? totalCoins : 0); // Set final coins based on performance
+        setCoins(passed ? totalCoins : 0);
         setShowResult(true);
-      }, 5500); // Wait longer before showing final results
+      }, 3000);
     }
-    
+
     const points = option.isCorrect ? 1 : 0;
     showCorrectAnswerFeedback(points, option.isCorrect);
   };
@@ -245,13 +96,20 @@ const SalaryDayDecision = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(stageIndex + 1, totalStages)} of ${totalStages}`;
+  const subtitle = showResult
+    ? gameContent?.subtitleComplete || "Complete!"
+    : t(`${baseKey}.subtitleProgress`, {
+      current: Math.min(stageIndex + 1, totalStages),
+      total: totalStages,
+      defaultValue: "Stage {{current}} of {{total}}",
+    });
+
   const stage = STAGES[Math.min(stageIndex, totalStages - 1)];
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="Salary Day Decision"
+      title={gameContent?.title || "Salary Day Decision"}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
@@ -271,46 +129,66 @@ const SalaryDayDecision = () => {
     >
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
+
+          {/* Header */}
           <div className="flex justify-between items-center mb-4 text-sm uppercase tracking-[0.3em] text-white/60">
-            <span>Scenario</span>
-            <span>Salary Planning</span>
+            <span>
+              {t(`${baseKey}.scenarioLabel`, { defaultValue: "Scenario" })}
+            </span>
+            <span>
+              {t(`${baseKey}.scenarioValue`, {
+                defaultValue: "Planning salary on payday",
+              })}
+            </span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+
+          {/* Prompt */}
+          <p className="text-lg text-white/90 mb-6">{stage?.prompt}</p>
+
+          {/* Options */}
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {stage?.options?.map((option) => {
               const isSelected = selectedOption === option.id;
+
               return (
                 <button
                   key={option.id}
                   onClick={() => handleSelect(option)}
                   disabled={!!selectedOption}
-                  className={`rounded-2xl border-2 p-5 text-left transition ${
-                    isSelected
+                  className={`rounded-2xl border-2 p-5 text-left transition ${isSelected
                       ? option.isCorrect
                         ? "border-emerald-400 bg-emerald-500/20"
-                        : "border-red-400 bg-red-500/10 text-white"
-                        : "border-white/30 bg-white/5 hover:border-white/60 hover:bg-white/10"
-                  }`}
+                        : "border-red-400 bg-red-500/10"
+                      : "border-white/30 bg-white/5 hover:border-white/60 hover:bg-white/10"
+                    }`}
                 >
                   <div className="text-sm text-white/70 mb-2">
-                    Choice {option.id.toUpperCase()}
+                    {t(`${baseKey}.choiceLabel`, {
+                      id: option.id,
+                      defaultValue: "Choice {{id}}",
+                    })}
                   </div>
+
                   <p className="text-white font-semibold">{option.label}</p>
-                  
                 </button>
               );
             })}
           </div>
-          
         </div>
-        {(showResult || showFeedback) && (
+
+        {/* Feedback / Result */}
+        {(showFeedback || showResult) && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection</h4>
+
+            <h4 className="text-lg font-semibold text-white">
+              {t(`${baseKey}.reflectionTitle`, { defaultValue: "Reflection" })}
+            </h4>
+
             {selectedReflection && (
-              <div className="max-h-24 overflow-y-auto pr-2">
-                <p className="text-sm text-white/90">{selectedReflection}</p>
-              </div>
+              <p className="text-sm text-white/90">{selectedReflection}</p>
             )}
+
+            {/* Continue */}
             {showFeedback && !showResult && (
               <div className="mt-4 flex justify-center">
                 {canProceed ? (
@@ -324,49 +202,68 @@ const SalaryDayDecision = () => {
                         setCanProceed(false);
                       }
                     }}
-                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
+                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold"
                   >
-                    Continue
+                    {t(`${baseKey}.continueButton`, { defaultValue: "Continue" })}
                   </button>
                 ) : (
-                  <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                  <div className="py-2 px-6 text-white font-semibold">
+                    {t(`${baseKey}.readingLabel`, { defaultValue: "Reading..." })}
+                  </div>
                 )}
               </div>
             )}
-            {/* Automatically advance if we're in the last stage and the timeout has passed */}
-            {!showResult && stageIndex === totalStages - 1 && canProceed && (
-              <div className="mt-4 flex justify-center">
-                
-              </div>
-            )}
+
+            {/* Final Result */}
             {showResult && (
               <>
+                <h5 className="font-semibold">
+                  {t(`${baseKey}.reflectionPromptsTitle`, {
+                    defaultValue: "Reflection Prompts",
+                  })}
+                </h5>
+
                 <ul className="text-sm list-disc list-inside space-y-1">
                   {reflectionPrompts.map((prompt) => (
                     <li key={prompt}>{prompt}</li>
                   ))}
                 </ul>
+
                 <p className="text-sm text-white/70">
-                  Skill unlocked: <strong>Salary planning and borrowing prevention</strong>
+                  {t(`${baseKey}.skillUnlockedLabel`, {
+                    defaultValue: "Skill unlocked:",
+                  })}{" "}
+                  <strong>
+                    {t(`${baseKey}.skillName`, {
+                      defaultValue: "Planning salary before spending",
+                    })}
+                  </strong>
                 </p>
+
                 {!hasPassed && (
                   <p className="text-xs text-amber-300">
-                    Answer every stage sharply to earn the full reward.
+                    {t(`${baseKey}.fullRewardHint`, {
+                      total: totalStages,
+                      defaultValue:
+                        "Answer all {{total}} choices correctly to earn the full reward.",
+                    })}
                   </p>
                 )}
+
                 {!hasPassed && (
                   <button
                     onClick={handleRetry}
-                    className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
+                    className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold"
                   >
-                    Try Again
+                    {t(`${baseKey}.tryAgainButton`, {
+                      defaultValue: "Try Again",
+                    })}
                   </button>
                 )}
               </>
             )}
           </div>
         )}
-
       </div>
     </GameShell>
   );

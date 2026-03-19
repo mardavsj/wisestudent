@@ -1,185 +1,38 @@
 import React, { useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Trophy } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import GameShell from "../GameShell";
 import useGameFeedback from "../../../../hooks/useGameFeedback";
 import { getGameDataById } from "../../../../utils/getGameData";
 
-const STAGES = [
-  {
-    id: 1,
-    prompt:
-      "You earn ₹18,000 but expenses are ₹20,000. What is the immediate truth?",
-    options: [
-      {
-        id: "saving",
-        label: "You are saving money",
-        reflection: "Reality check: When expenses exceed income, there's no surplus to save.",
-        isCorrect: false,
-      },
-      
-      {
-        id: "balanced",
-        label: "Your income and expenses are balanced",
-        reflection: "Reality check: When expenses exceed income, there's no balance.",
-        isCorrect: false,
-      },
-      {
-        id: "overspending",
-        label: "You are spending more than you earn",
-        reflection: "That's right! When expenses are ₹2,000 more than income, you're in a deficit situation.",
-        isCorrect: true,
-      },
-      {
-        id: "profitable",
-        label: "You are making a profit",
-        reflection: "Profit applies to businesses, not personal finance. Here you're losing money monthly.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 2,
-    prompt:
-      "How should you respond when take-home < expenses on a month?",
-    options: [
-      {
-        id: "pause",
-        label: "Pause discretionary purchases immediately",
-        reflection: "Excellent! Reducing discretionary spending is the first step when facing a shortfall.",
-        isCorrect: true,
-      },
-      {
-        id: "splurge",
-        label: "Enjoy now, handle shortfall later",
-        reflection: "This approach leads to accumulating debt and financial stress.",
-        isCorrect: false,
-      },
-      {
-        id: "borrow",
-        label: "Borrow money to cover expenses",
-        reflection: "Borrowing creates more debt and interest payments, worsening the financial situation.",
-        isCorrect: false,
-      },
-      {
-        id: "ignore",
-        label: "Ignore the problem",
-        reflection: "Ignoring financial problems makes them worse over time.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 3,
-    prompt: "What budgeting step keeps you in control?",
-    options: [
-      
-      {
-        id: "ignore",
-        label: "Ignore statements until payday",
-        reflection: "Ignoring expenses prevents you from identifying where money is going.",
-        isCorrect: false,
-      },
-      {
-        id: "estimate",
-        label: "Estimate expenses roughly",
-        reflection: "While estimates help, precise tracking gives better control over finances.",
-        isCorrect: false,
-      },
-      {
-        id: "guess",
-        label: "Guess how much you spend",
-        reflection: "Guessing leads to poor financial decisions and surprises.",
-        isCorrect: false,
-      },
-      {
-        id: "track",
-        label: "Track every expense and compare to income",
-        reflection: "Absolutely! Tracking expenses is the foundation of financial control.",
-        isCorrect: true,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 4,
-    prompt: "If subscriptions eat into your income, you would:",
-    options: [
-      
-      {
-        id: "keep",
-        label: "Keep them because they feel important now",
-        reflection: "Keeping unnecessary subscriptions continues to strain your budget.",
-        isCorrect: false,
-      },
-      {
-        id: "trim",
-        label: "Trim or pause subscriptions that aren’t essential",
-        reflection: "Great choice! Subscriptions often drain money without much thought.",
-        isCorrect: true,
-      },
-      {
-        id: "upgrade",
-        label: "Upgrade to premium versions",
-        reflection: "Upgrading increases expenses when you need to reduce them.",
-        isCorrect: false,
-      },
-      {
-        id: "double",
-        label: "Subscribe to more services",
-        reflection: "Adding more subscriptions increases expenses further.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-  {
-    id: 5,
-    prompt: "When income is less than expense, best next action is:",
-    options: [
-      {
-        id: "rethink",
-        label: "Rethink goals and plan a smaller spending target",
-        reflection: "Excellent! Adjusting spending targets to match income is financially responsible.",
-        isCorrect: true,
-      },
-      {
-        id: "borrow",
-        label: "Borrow to cover the exact gap",
-        reflection: "Borrowing without changing spending habits just delays the problem.",
-        isCorrect: false,
-      },
-      {
-        id: "increase",
-        label: "Increase income immediately",
-        reflection: "While increasing income helps, it takes time and effort to implement.",
-        isCorrect: false,
-      },
-      {
-        id: "panic",
-        label: "Panic and make hasty decisions",
-        reflection: "Panicking leads to poor financial decisions. Stay calm and think logically.",
-        isCorrect: false,
-      },
-    ],
-    reward: 5,
-  },
-];
-
-const totalStages = STAGES.length;
-const successThreshold = totalStages;
-
 const IncomeVsExpenseReality = () => {
   const location = useLocation();
+  const { t } = useTranslation("gamecontent");
+
   const gameId = "finance-adults-1";
+
+  // 🔑 Base key
+  const baseKey = "financial-literacy.adults.income-vs-expense-reality";
+
+  // 🔑 Full JSON
+  const gameContent = t(baseKey, { returnObjects: true });
+
   const gameData = getGameDataById(gameId);
+
+  const STAGES = Array.isArray(gameContent?.stages) ? gameContent.stages : [];
+  const totalStages = STAGES.length;
+  const successThreshold = totalStages;
+
   const coinsPerLevel = gameData?.coins || location.state?.coinsPerLevel || 5;
   const totalCoins = gameData?.coins || location.state?.totalCoins || 5;
   const totalXp = gameData?.xp || location.state?.totalXp || 10;
-  const { flashPoints, showAnswerConfetti, showCorrectAnswerFeedback, resetFeedback } =
-    useGameFeedback();
+
+  const {
+    flashPoints,
+    showAnswerConfetti,
+    showCorrectAnswerFeedback,
+    resetFeedback,
+  } = useGameFeedback();
 
   const [stageIndex, setStageIndex] = useState(0);
   const [coins, setCoins] = useState(0);
@@ -192,47 +45,43 @@ const IncomeVsExpenseReality = () => {
   const [canProceed, setCanProceed] = useState(false);
 
   const reflectionPrompts = useMemo(
-    () => [
-      "Which expense can you postpone while still meeting obligations?",
-      "How can you guard next month’s income from a deficit?",
-    ],
-    []
+    () => gameContent?.reflectionPrompts || [],
+    [gameContent]
   );
 
   const handleSelect = (option) => {
     if (selectedOption || showResult) return;
+
     resetFeedback();
+
     const updatedHistory = [
       ...history,
       { stageId: STAGES[stageIndex].id, isCorrect: option.isCorrect },
     ];
+
     setHistory(updatedHistory);
     setSelectedOption(option.id);
-    setSelectedReflection(option.reflection); // Set the reflection for the selected option
-    setShowFeedback(true); // Show feedback after selection
-    setCanProceed(false); // Disable proceeding initially
-    
-    // Update coins if the answer is correct
+    setSelectedReflection(option.reflection);
+    setShowFeedback(true);
+    setCanProceed(false);
+
     if (option.isCorrect) {
-      setCoins(prevCoins => prevCoins + 1);
+      setCoins((prev) => prev + 1);
     }
-    
-    // Wait for the reflection period before allowing to proceed
-    setTimeout(() => {
-      setCanProceed(true); // Enable proceeding after showing reflection
-    }, 1500); // Wait 1.5 seconds before allowing to proceed
-    
-    // Handle the final stage separately
+
+    setTimeout(() => setCanProceed(true), 1500);
+
     if (stageIndex === totalStages - 1) {
       setTimeout(() => {
         const correctCount = updatedHistory.filter((item) => item.isCorrect).length;
         const passed = correctCount === successThreshold;
+
         setFinalScore(correctCount);
-        setCoins(passed ? totalCoins : 0); // Set final coins based on performance
+        setCoins(passed ? totalCoins : 0);
         setShowResult(true);
-      }, 5500); // Wait longer before showing final results
+      }, 3000);
     }
-    
+
     const points = option.isCorrect ? 1 : 0;
     showCorrectAnswerFeedback(points, option.isCorrect);
   };
@@ -247,13 +96,20 @@ const IncomeVsExpenseReality = () => {
     setShowResult(false);
   };
 
-  const subtitle = `Stage ${Math.min(stageIndex + 1, totalStages)} of ${totalStages}`;
+  const subtitle = showResult
+    ? gameContent?.subtitleComplete || "Complete!"
+    : t(`${baseKey}.subtitleProgress`, {
+      current: Math.min(stageIndex + 1, totalStages),
+      total: totalStages,
+      defaultValue: "Stage {{current}} of {{total}}",
+    });
+
   const stage = STAGES[Math.min(stageIndex, totalStages - 1)];
   const hasPassed = finalScore === successThreshold;
 
   return (
     <GameShell
-      title="Income vs Expense Reality"
+      title={gameContent?.title || "Income vs Expense Reality"}
       subtitle={subtitle}
       score={showResult ? finalScore : coins}
       coins={coins}
@@ -273,46 +129,66 @@ const IncomeVsExpenseReality = () => {
     >
       <div className="space-y-5 text-white">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-4xl mx-auto">
+
+          {/* Header */}
           <div className="flex text-sm uppercase tracking-[0.3em] text-white/60 justify-between mb-4">
-            <span>Scenario</span>
-            <span>Budget Reality</span>
+            <span>
+              {t(`${baseKey}.scenarioLabel`, { defaultValue: "Scenario" })}
+            </span>
+            <span>
+              {t(`${baseKey}.scenarioValue`, {
+                defaultValue: "₹18,000 vs ₹20,000",
+              })}
+            </span>
           </div>
-          <p className="text-lg text-white/90 mb-6">{stage.prompt}</p>
+
+          {/* Prompt */}
+          <p className="text-lg text-white/90 mb-6">{stage?.prompt}</p>
+
+          {/* Options */}
           <div className="grid grid-cols-2 gap-4">
-            {stage.options.map((option) => {
+            {stage?.options?.map((option) => {
               const isSelected = selectedOption === option.id;
+
               return (
                 <button
                   key={option.id}
                   onClick={() => handleSelect(option)}
                   disabled={!!selectedOption}
-                  className={`rounded-2xl border-2 p-5 text-left transition ${
-                    isSelected
+                  className={`rounded-2xl border-2 p-5 text-left transition ${isSelected
                       ? option.isCorrect
                         ? "border-green-400 bg-emerald-500/20"
-                        : "border-red-400 bg-red-500/10 text-white"
+                        : "border-red-400 bg-red-500/10"
                       : "border-white/30 bg-white/5 hover:border-white/60 hover:bg-white/10"
-                  }`}
+                    }`}
                 >
                   <div className="text-sm text-white/70 mb-2">
-                    Choice {option.id.toUpperCase()}
+                    {t(`${baseKey}.choiceLabel`, {
+                      id: option.id,
+                      defaultValue: "Choice {{id}}",
+                    })}
                   </div>
+
                   <p className="text-white font-semibold">{option.label}</p>
-                  
                 </button>
               );
             })}
           </div>
-          
         </div>
-        {(showResult || showFeedback) && (
+
+        {/* Feedback / Result */}
+        {(showFeedback || showResult) && (
           <div className="bg-white/5 border border-white/20 rounded-3xl p-6 shadow-xl max-w-4xl mx-auto space-y-3">
-            <h4 className="text-lg font-semibold text-white">Reflection</h4>
+
+            <h4 className="text-lg font-semibold text-white">
+              {t(`${baseKey}.reflectionTitle`, { defaultValue: "Reflection" })}
+            </h4>
+
             {selectedReflection && (
-              <div className="max-h-24 overflow-y-auto pr-2">
-                <p className="text-sm text-white/90">{selectedReflection}</p>
-              </div>
+              <p className="text-sm text-white/90">{selectedReflection}</p>
             )}
+
+            {/* Continue */}
             {showFeedback && !showResult && (
               <div className="mt-4 flex justify-center">
                 {canProceed ? (
@@ -326,42 +202,62 @@ const IncomeVsExpenseReality = () => {
                         setCanProceed(false);
                       }
                     }}
-                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold shadow-lg hover:opacity-90"
+                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-6 font-semibold"
                   >
-                    Continue
+                    {t(`${baseKey}.continueButton`, { defaultValue: "Continue" })}
                   </button>
                 ) : (
-                  <div className="py-2 px-6 text-white font-semibold">Reading...</div>
+                  <div className="py-2 px-6 text-white font-semibold">
+                    {t(`${baseKey}.readingLabel`, { defaultValue: "Reading..." })}
+                  </div>
                 )}
               </div>
             )}
-            {/* Automatically advance if we're in the last stage and the timeout has passed */}
-            {!showResult && stageIndex === totalStages - 1 && canProceed && (
-              <div className="mt-4 flex justify-center">
-                
-              </div>
-            )}
+
+            {/* Final Result */}
             {showResult && (
               <>
+                <h5 className="font-semibold">
+                  {t(`${baseKey}.reflectionPromptsTitle`, {
+                    defaultValue: "Reflection Prompts",
+                  })}
+                </h5>
+
                 <ul className="text-sm list-disc list-inside space-y-1">
                   {reflectionPrompts.map((prompt) => (
                     <li key={prompt}>{prompt}</li>
                   ))}
                 </ul>
+
                 <p className="text-sm text-white/70">
-                  Skill unlocked: <strong>Expense awareness</strong>
+                  {t(`${baseKey}.skillUnlockedLabel`, {
+                    defaultValue: "Skill unlocked:",
+                  })}{" "}
+                  <strong>
+                    {t(`${baseKey}.skillName`, {
+                      defaultValue: "Understanding income–expense gaps",
+                    })}
+                  </strong>
                 </p>
+
                 {!hasPassed && (
                   <p className="text-xs text-amber-300">
-                    Answer every stage smartly to earn the full reward.
+                    {t(`${baseKey}.fullRewardHint`, {
+                      total: totalStages,
+                      defaultValue:
+                        "Answer all {{total}} choices correctly to earn the full reward.",
+                    })}
                   </p>
                 )}
+
                 {!hasPassed && (
                   <button
                     onClick={handleRetry}
-                    className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold shadow-lg hover:opacity-90"
+                    className="w-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 font-semibold"
                   >
-                    Try Again
+                    {t(`${baseKey}.tryAgainButton`, {
+                      defaultValue: "Try Again",
+                    })}
                   </button>
                 )}
               </>

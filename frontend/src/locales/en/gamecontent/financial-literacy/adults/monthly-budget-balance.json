@@ -1,0 +1,84 @@
+{
+  "title": "Monthly Budget Balance",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Balancing income and expenses",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Keeping a balanced monthly budget",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "When you look at your own month, do you usually end with surplus, balance, or shortage?",
+    "What is one concrete step you can take next month to move closer to a balanced or surplus budget?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which situation shows a healthier monthly budget?",
+      "options": [
+        {
+          "id": "small-surplus",
+          "label": "Income ₹20,000, expenses ₹19,000, ₹1,000 kept aside",
+          "reflection": "Correct. Even a small surplus, if repeated, builds a cushion and reduces the need for future borrowing.",
+          "isCorrect": true
+        },
+        {
+          "id": "equal-but-no-plan",
+          "label": "Income ₹20,000, expenses also ₹20,000 with no savings plan",
+          "reflection": "Breaking even is better than a loss, but with no savings, any shock can immediately push you into debt.",
+          "isCorrect": false
+        },
+        {
+          "id": "regular-shortage",
+          "label": "Income ₹20,000, expenses ₹22,000 every month",
+          "reflection": "A regular shortage usually leads to accumulating debt or unpaid bills. This is a warning sign.",
+          "isCorrect": false
+        },
+        {
+          "id": "guess-only",
+          "label": "No idea about exact income or expenses",
+          "reflection": "Not knowing numbers makes it very hard to feel in control or improve your situation.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Which habit helps you maintain a balanced budget over many months?",
+      "options": [
+        {
+          "id": "review-monthly",
+          "label": "Reviewing and adjusting the budget at the end of each month",
+          "reflection": "Yes. A monthly review helps you learn from mistakes and correct your plan for the next month.",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore-problems",
+          "label": "Ignoring issues as long as basic bills are somehow paid",
+          "reflection": "Ignoring small problems often lets them grow into big ones.",
+          "isCorrect": false
+        },
+        {
+          "id": "only-hope",
+          "label": "Relying only on hope that income will keep increasing",
+          "reflection": "Hope is not a plan. You still need to manage current income carefully.",
+          "isCorrect": false
+        },
+        {
+          "id": "increase-loans",
+          "label": "Using more and more credit whenever there is a shortage",
+          "reflection": "Relying on credit to fill every gap can quickly lead to a dangerous debt cycle.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}
+

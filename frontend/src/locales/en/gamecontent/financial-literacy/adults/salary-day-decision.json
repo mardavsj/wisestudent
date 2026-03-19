@@ -1,0 +1,84 @@
+{
+  "title": "Salary Day Decision",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Planning salary on payday",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Planning salary before spending",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "What is one change you can make on your next salary day to plan before spending?",
+    "How could a simple salary split (needs, goals, small wants) help you avoid borrowing at month‑end?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "Which is a safer first step when your salary comes in?",
+      "options": [
+        {
+          "id": "list-essentials",
+          "label": "List rent, EMIs, and essential bills first",
+          "reflection": "Correct. Protecting essentials on salary day reduces stress and the chance of emergency borrowing later.",
+          "isCorrect": true
+        },
+        {
+          "id": "celebrate-first",
+          "label": "Spend freely for a few days to celebrate",
+          "reflection": "Celebration is fine in moderation, but doing it before planning essential payments can cause problems later in the month.",
+          "isCorrect": false
+        },
+        {
+          "id": "random-shopping",
+          "label": "Go for unplanned shopping because money feels plenty",
+          "reflection": "Salary can feel like \"extra\" on day one, but there are 30 days of needs waiting. Unplanned use can force you into debt.",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-budgets",
+          "label": "Avoid thinking about budgets to reduce tension",
+          "reflection": "Ignoring the reality of bills does not remove tension—it usually increases it later.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Which salary split shows more disciplined planning?",
+      "options": [
+        {
+          "id": "all-wants",
+          "label": "Most money on wants, whatever remains for needs",
+          "reflection": "Putting wants before needs is a common reason for end‑of‑month borrowing.",
+          "isCorrect": false
+        },
+        {
+          "id": "needs-goals-wants",
+          "label": "First needs, then small savings/EMI goals, then limited wants",
+          "reflection": "Yes. A simple order—needs, goals, then controlled wants—reduces the chance of running short later.",
+          "isCorrect": true
+        },
+        {
+          "id": "only-debt",
+          "label": "Use full salary only to clear debt and leave nothing for needs",
+          "reflection": "Paying debt is important, but you must still keep enough for food, travel, and basic living.",
+          "isCorrect": false
+        },
+        {
+          "id": "no-plan",
+          "label": "Keep no plan and see what happens",
+          "reflection": "Without a plan, money tends to disappear quickly on low‑priority items.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}
+

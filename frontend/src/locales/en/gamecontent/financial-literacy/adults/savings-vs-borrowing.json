@@ -1,0 +1,84 @@
+{
+  "title": "Savings vs Borrowing",
+  "subtitleProgress": "Stage {{current}} of {{total}}",
+  "scenarioLabel": "Scenario",
+  "scenarioValue": "Using savings before credit",
+  "choiceLabel": "Choice {{id}}",
+  "reflectionTitle": "Reflection",
+  "continueButton": "Continue",
+  "readingLabel": "Reading...",
+  "reflectionPromptsTitle": "Reflection Prompts",
+  "skillUnlockedLabel": "Skill unlocked:",
+  "skillName": "Choosing savings over unnecessary borrowing",
+  "fullRewardHint": "Answer all {{total}} choices correctly to earn the full reward.",
+  "tryAgainButton": "Try Again",
+  "reflectionPrompts": [
+    "In what situations would you prefer to use savings instead of credit in your own life?",
+    "What kind of emergencies or goals are you currently NOT saving for but would benefit from a small savings buffer?"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "prompt": "You have ₹8,000 in savings and face a one‑time emergency expense of ₹5,000. What is usually the wiser choice?",
+      "options": [
+        {
+          "id": "use-savings",
+          "label": "Use savings and then slowly rebuild them",
+          "reflection": "Correct. Savings are meant to protect you from needing high‑cost credit in such emergencies.",
+          "isCorrect": true
+        },
+        {
+          "id": "take-loan",
+          "label": "Take a high‑interest loan to keep savings untouched",
+          "reflection": "Keeping savings but taking an expensive loan often increases your total stress and repayment burden.",
+          "isCorrect": false
+        },
+        {
+          "id": "delay-payment",
+          "label": "Ignore the emergency and delay payment",
+          "reflection": "Delaying an important emergency payment can create bigger health, job, or family problems later.",
+          "isCorrect": false
+        },
+        {
+          "id": "multiple-loans",
+          "label": "Take small loans from many places to feel safer",
+          "reflection": "Many small loans quickly become confusing and risky. A clear plan with savings is usually safer.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    },
+    {
+      "id": 2,
+      "prompt": "Why is building even a small emergency savings fund helpful?",
+      "options": [
+        {
+          "id": "no-need",
+          "label": "It is not helpful; credit will always be available",
+          "reflection": "Credit is not guaranteed and can be very costly. Savings give you more control and choice.",
+          "isCorrect": false
+        },
+        {
+          "id": "less-dependence",
+          "label": "It reduces dependence on loans for every shock",
+          "reflection": "Yes. Even a small buffer can prevent you from entering a debt cycle for minor emergencies.",
+          "isCorrect": true
+        },
+        {
+          "id": "show-off",
+          "label": "It is mainly to show others that you have money",
+          "reflection": "Savings are for your stability and peace of mind, not for show.",
+          "isCorrect": false
+        },
+        {
+          "id": "spend-faster",
+          "label": "It encourages you to spend more because money is available",
+          "reflection": "Healthy savings habits come with discipline. The goal is to use them wisely, not to spend faster.",
+          "isCorrect": false
+        }
+      ],
+      "reward": 10
+    }
+  ]
+}
+

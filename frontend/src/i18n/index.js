@@ -20,6 +20,10 @@ import {
   enFinancialLiteracyYoungAdultGameContent,
   hiFinancialLiteracyYoungAdultGameContent,
 } from "./financial-literacy/young-adult";
+import {
+  enFinancialLiteracyAdultsGameContent,
+  hiFinancialLiteracyAdultsGameContent,
+} from "./financial-literacy/adults";
 
 import enFinancialLiteracyTeens from "../locales/en/pages/games/financial-literacy/teens.json";
 import enFinancialLiteracyTeensCards from "../locales/en/pages/cardcontent/financial-literacy/teens.json";
@@ -289,6 +293,7 @@ const resources = {
         kids: enFinancialLiteracyKidsGameContent,
         teens: enFinancialLiteracyTeensGameContent,
         "young-adult": enFinancialLiteracyYoungAdultGameContent,
+        adults: enFinancialLiteracyAdultsGameContent,
       },
       "brain-health": {
         kids: enBrainKidsGameContent,
@@ -379,6 +384,7 @@ const resources = {
         kids: hiFinancialLiteracyKidsGameContent,
         teens: hiFinancialLiteracyTeensGameContent,
         "young-adult": hiFinancialLiteracyYoungAdultGameContent,
+        adults: hiFinancialLiteracyAdultsGameContent,
       },
       "brain-health": {
         kids: hiBrainKidsGameContent,
